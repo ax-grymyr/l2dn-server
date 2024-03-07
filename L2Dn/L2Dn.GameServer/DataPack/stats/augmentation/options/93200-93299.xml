@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93200" name="option_id_93200">
+		<!-- Received Skill Critical Damage -74 -->
+	</option>
+	<option id="93201" name="option_id_93201">
+		<!-- Received Skill Critical Damage -79 -->
+	</option>
+	<option id="93202" name="option_id_93202">
+		<!-- Received Skill Critical Damage -84 -->
+	</option>
+	<option id="93203" name="option_id_93203">
+		<!-- Received Skill Critical Damage -89 -->
+	</option>
+	<option id="93204" name="option_id_93204">
+		<!-- Received Skill Critical Damage -94 -->
+	</option>
+	<option id="93205" name="option_id_93205">
+		<!-- Received Skill Critical Damage -100 -->
+	</option>
+	<option id="93206" name="option_id_93206">
+		<!-- Received Skill Critical Damage -106 -->
+	</option>
+	<option id="93207" name="option_id_93207">
+		<!-- Received Skill Critical Damage -112 -->
+	</option>
+	<option id="93208" name="option_id_93208">
+		<!-- Received Skill Critical Damage -119 -->
+	</option>
+	<option id="93209" name="option_id_93209">
+		<!-- Received Skill Critical Damage -126 -->
+	</option>
+	<option id="93210" name="option_id_93210">
+		<!-- Received Skill Critical Damage -133 -->
+	</option>
+	<option id="93211" name="option_id_93211">
+		<!-- Received Skill Critical Damage -141 -->
+	</option>
+	<option id="93212" name="option_id_93212">
+		<!-- Received Skill Critical Damage -150 -->
+	</option>
+	<option id="93213" name="option_id_93213">
+		<!-- Received Skill Critical Damage -168 -->
+	</option>
+	<option id="93214" name="option_id_93214">
+		<!-- Received Skill Critical Damage -189 -->
+	</option>
+	<option id="93215" name="option_id_93215">
+		<!-- Received Skill Critical Damage -212 -->
+	</option>
+	<option id="93216" name="option_id_93216">
+		<!-- Received Skill Critical Damage -238 -->
+	</option>
+	<option id="93217" name="option_id_93217">
+		<!-- Received Skill Critical Damage -267 -->
+	</option>
+	<option id="93218" name="option_id_93218">
+		<!-- Received Skill Critical Damage -300 -->
+	</option>
+	<option id="93219" name="option_id_93219">
+		<!-- Received Skill Critical Damage -70 -->
+	</option>
+	<option id="93220" name="option_id_93220">
+		<!-- Received Skill Critical Damage -74 -->
+	</option>
+	<option id="93221" name="option_id_93221">
+		<!-- Received Skill Critical Damage -79 -->
+	</option>
+	<option id="93222" name="option_id_93222">
+		<!-- Received Skill Critical Damage -84 -->
+	</option>
+	<option id="93223" name="option_id_93223">
+		<!-- Received Skill Critical Damage -89 -->
+	</option>
+	<option id="93224" name="option_id_93224">
+		<!-- Received Skill Critical Damage -94 -->
+	</option>
+	<option id="93225" name="option_id_93225">
+		<!-- Received Skill Critical Damage -100 -->
+	</option>
+	<option id="93226" name="option_id_93226">
+		<!-- Received Skill Critical Damage -106 -->
+	</option>
+	<option id="93227" name="option_id_93227">
+		<!-- Received Skill Critical Damage -112 -->
+	</option>
+	<option id="93228" name="option_id_93228">
+		<!-- Received Skill Critical Damage -119 -->
+	</option>
+	<option id="93229" name="option_id_93229">
+		<!-- Received Skill Critical Damage -126 -->
+	</option>
+	<option id="93230" name="option_id_93230">
+		<!-- Received Skill Critical Damage -133 -->
+	</option>
+	<option id="93231" name="option_id_93231">
+		<!-- Received Skill Critical Damage -141 -->
+	</option>
+	<option id="93232" name="option_id_93232">
+		<!-- Received Skill Critical Damage -150 -->
+	</option>
+	<option id="93233" name="option_id_93233">
+		<!-- Received Skill Critical Damage -168 -->
+	</option>
+	<option id="93234" name="option_id_93234">
+		<!-- Received Skill Critical Damage -189 -->
+	</option>
+	<option id="93235" name="option_id_93235">
+		<!-- Received Skill Critical Damage -212 -->
+	</option>
+	<option id="93236" name="option_id_93236">
+		<!-- Received Skill Critical Damage -238 -->
+	</option>
+	<option id="93237" name="option_id_93237">
+		<!-- Received Skill Critical Damage -267 -->
+	</option>
+	<option id="93238" name="option_id_93238">
+		<!-- Received Skill Critical Damage -300 -->
+	</option>
+	<option id="93239" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93240" name="P. Def. +64">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93241" name="P. Def. +68">
+		<!-- P. Def. +68 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93242" name="P. Def. +72">
+		<!-- P. Def. +72 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93243" name="P. Def. +76">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93244" name="P. Def. +80">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93245" name="P. Def. +85">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93246" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93247" name="P. Def. +95">
+		<!-- P. Def. +95 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93248" name="P. Def. +100">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93249" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93250" name="P. Def. +112">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93251" name="P. Def. +118">
+		<!-- P. Def. +118 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93252" name="P. Def. +120">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93253" name="P. Def. +130">
+		<!-- P. Def. +130 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93254" name="P. Def. +141">
+		<!-- P. Def. +141 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93255" name="P. Def. +153">
+		<!-- P. Def. +153 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93256" name="P. Def. +166">
+		<!-- P. Def. +166 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93257" name="P. Def. +180">
+		<!-- P. Def. +180 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93258" name="P. Def. +200">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93259" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93260" name="P. Def. +64">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93261" name="P. Def. +68">
+		<!-- P. Def. +68 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93262" name="P. Def. +72">
+		<!-- P. Def. +72 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93263" name="P. Def. +76">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93264" name="P. Def. +80">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93265" name="P. Def. +85">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93266" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93267" name="P. Def. +95">
+		<!-- P. Def. +95 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93268" name="P. Def. +100">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93269" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93270" name="P. Def. +112">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93271" name="P. Def. +118">
+		<!-- P. Def. +118 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93272" name="P. Def. +120">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93273" name="P. Def. +130">
+		<!-- P. Def. +130 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93274" name="P. Def. +141">
+		<!-- P. Def. +141 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93275" name="P. Def. +153">
+		<!-- P. Def. +153 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93276" name="P. Def. +166">
+		<!-- P. Def. +166 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93277" name="P. Def. +180">
+		<!-- P. Def. +180 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93278" name="P. Def. +200">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93279" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93280" name="P. Def. +64">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93281" name="P. Def. +68">
+		<!-- P. Def. +68 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93282" name="P. Def. +72">
+		<!-- P. Def. +72 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93283" name="P. Def. +76">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93284" name="P. Def. +80">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93285" name="P. Def. +85">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93286" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93287" name="P. Def. +95">
+		<!-- P. Def. +95 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93288" name="P. Def. +100">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93289" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93290" name="P. Def. +112">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93291" name="P. Def. +118">
+		<!-- P. Def. +118 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93292" name="P. Def. +120">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93293" name="P. Def. +130">
+		<!-- P. Def. +130 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93294" name="P. Def. +141">
+		<!-- P. Def. +141 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93295" name="P. Def. +153">
+		<!-- P. Def. +153 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93296" name="P. Def. +166">
+		<!-- P. Def. +166 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93297" name="P. Def. +180">
+		<!-- P. Def. +180 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93298" name="P. Def. +200">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93299" name="M. Def. +60">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

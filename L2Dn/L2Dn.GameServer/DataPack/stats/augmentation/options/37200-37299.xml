@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37200" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37201" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37202" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37203" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +5.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37204" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37205" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37206" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37207" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37208" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37209" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37210" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37211" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37212" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37213" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37214" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37215" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37216" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37217" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37218" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37219" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37220" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37221" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37222" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37223" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +5.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37224" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37225" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37226" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37227" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37228" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37229" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37230" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37231" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37232" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37233" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37234" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37235" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37236" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37237" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37238" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37239" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37240" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37241" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37242" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37243" name="p_accuracy_ls_accessory">
+		<!-- M. Accuracy +5.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+
+	<option id="37244" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37245" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37246" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37247" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37248" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37249" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37250" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37251" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37252" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37253" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37254" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37255" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37256" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37257" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37258" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37259" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37260" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37261" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37262" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +7% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37263" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +10% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37264" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37265" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37266" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37267" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37268" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37269" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37270" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37271" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37272" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37273" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37274" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37275" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37276" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37277" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37278" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37279" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37280" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37281" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37282" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +7% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37283" name="m_accuracy_ls_accessory">
+		<!-- M. Damage Resistance +10% -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37284" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37285" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37286" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37287" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37288" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37289" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37290" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37291" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37292" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37293" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37294" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37295" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37296" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37297" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37298" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37299" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

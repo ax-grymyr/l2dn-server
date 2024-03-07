@@ -1,0 +1,1115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="49800" name="Sibi's Coin Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain 200 to 2000 Sibi's Coins. -->
+		<set name="icon" val="icon.event_orc_coinbox" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49783" min="200" max="200" chance="100" /> <!-- Sibi's Coin (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49801" name="Dandy's Pendant" additionalName="1-day" type="Armor">
+		<!-- M. Def. +20, Acquired XP/ SP +30%, P./ M. Atk. +50, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon skill. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="120" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="49802" name="Dandy's Shining Pendant" additionalName="1-day" type="Armor">
+		<!-- M. Def. +21, Acquired XP/ SP +30%, P./ M. Atk. +60, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon and Fire Dragon's Protection skills. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="120" />
+		<stats>
+			<stat type="pDef">52</stat>
+		</stats>
+	</item>
+	<item id="49803" name="Commemorable Uniform for 2017 Championship" additionalName="Sealed" type="Armor">
+		<!-- Allows use of Perfect Swing and Perfect Pitch skills. When equipped, it is impossible to wear armor. Hats, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.london_olympic_bikini" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49804" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49805" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49806" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49807" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49808" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49809" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49810" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49811" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49812" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49813" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49814" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49815" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49816" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49817" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49818" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49819" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49820" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49821" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49822" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49823" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49824" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49825" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49826" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49827" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49828" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49829" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49830" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49831" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49832" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49833" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49834" name="Ice Crystal Fragment" type="EtcItem">
+		<!-- A crystal which emits freezing energy. -->
+		<set name="icon" val="icon.event_cubic_piece_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49835" name="Food Sack" type="EtcItem">
+		<!-- Food for the poor. It is well-packed, so that all the contents remain inside. -->
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49836" name="Food Sack" type="EtcItem">
+		<!-- Food for the poor. It is well-packed, so that all the contents remain inside. -->
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49837" name="Food Sack" type="EtcItem">
+		<!-- Food for the poor. It is well-packed, so that all the contents remain inside. -->
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49838" name="Food Sack" type="EtcItem">
+		<!-- Food for the poor. It is well-packed, so that all the contents remain inside. -->
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49839" name="Rifken's Dish" type="EtcItem">
+		<!-- A dish cooked by Rifken. -->
+		<set name="icon" val="icon.etc_fish_seawater_i02" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49840" name="Rifken's Recipe Book" type="EtcItem">
+		<!-- A book containing secret recipes of Rifken. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49841" name="Bitter Cold Vodka" type="EtcItem">
+		<!-- A legendary beverage produced by combining fire and ice. Cold in the mouth, it gives a burning sensation in your stomach. -->
+		<set name="icon" val="icon.etc_luxury_wine_c_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49842" name="Bitter Cold Vodka" type="EtcItem">
+		<!-- A legendary beverage produced by combining fire and ice. Cold in the mouth, it gives a burning sensation in your stomach. -->
+		<set name="icon" val="icon.etc_luxury_wine_c_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49843" name="Bitter Cold Vodka" type="EtcItem">
+		<!-- A legendary beverage produced by combining fire and ice. Cold in the mouth, it gives a burning sensation in your stomach. -->
+		<set name="icon" val="icon.etc_luxury_wine_c_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49844" name="Sayha's Blessing Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_blessed_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39186" level="1" /> <!-- Sayha's Blessing Chest -->
+		</skills>
+	</item>
+	<item id="49845" name="Sayha's Blessing" type="EtcItem">
+		<!-- Sayha's Grace points +35,000. -->
+		<set name="icon" val="icon.etc_wind_potion_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="50149" level="1" /> <!-- Sayha's Blessing -->
+		</skills>
+	</item>
+	<item id="49846" name="Sayha's Silver Light Blessing" type="EtcItem">
+		<!-- Sayha's Grace points +70,000. -->
+		<set name="icon" val="icon.bm_sayha_silver_blessed" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="39192" level="1" /> <!-- Sayha's Silver Light Blessing -->
+		</skills>
+	</item>
+	<item id="49847" name="Sayha's Golden Light Blessing" type="EtcItem">
+		<!-- Sayha's Grace points +105,000. -->
+		<set name="icon" val="icon.bm_sayha_gold_blessed" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LIQUID" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39193" level="1" /> <!-- Sayha's Golden Light Blessing -->
+		</skills>
+	</item>
+	<item id="49848" name="+10 Fire Dragon Pendant Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pendant_pve_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49467" min="1" max="1" chance="100" minEnchant="10" maxEnchant="10" /> <!-- Fire Dragon Pendant - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49849" name="+10 Earth Dragon Pendant" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pendant_pvp_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49468" min="1" max="1" minEnchant="10" maxEnchant="10" chance="100" /> <!-- Earth Dragon Pendant - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49850" name="A-grade Accessory Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39187" level="1" /> <!-- Ornament Supply Box (A-grade) -->
+		</skills>
+	</item>
+	<item id="49851" name="Sayha's Storm Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Sayha's Grace Consumption +100%. Acquired XP +100%. Acquired SP +100%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(Requires 35,000+ Sayha's Grace.)</font> -->
+		<set name="icon" val="icon.bm_sayha_storm" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39194" level="1" /> <!-- Sayha's Storm Lv. 1 -->
+		</skills>
+	</item>
+	<item id="49852" name="Secret Book of Baggins' Enchantments - IV" type="EtcItem">
+		<!-- Prevents Talisman of Insolence from degrading to Lv. 2 in case of failure when enchanting it to Lv. 4. -->
+		<set name="icon" val="icon.mercenary_certification_i02" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49853" name="Secret Book of Baggins' Enchantments - V" type="EtcItem">
+		<!-- Prevents Talisman of Insolence from degrading to Lv. 3 in case of failure when enchanting it to Lv. 5. -->
+		<set name="icon" val="icon.mercenary_certification_i01" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49854" name="Maliss' MP Replenishing Potion" type="EtcItem">
+		<!-- Instantly recovers MP. -->
+		<set name="icon" val="icon.freya_potion" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39198" level="1" /> <!-- Melissa's MP Recovery Potion -->
+		</skills>
+	</item>
+	<item id="49855" name="Sayha's Golden Gift" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49862" min="1" max="1" chance="7.692307" /> <!-- Bracelet of Border Chest -->
+			<item id="49521" min="1" max="1" chance="7.692307" /> <!-- Refined Romantic Chapeau <STR +1 INT +1> -->
+			<item id="49788" min="1" max="1" chance="7.692307" /> <!-- Greater A-grade Enchant Scroll Pack -->
+			<item id="49787" min="1" max="1" chance="7.692307" /> <!-- Stable Scroll: A-grade Enchant Box -->
+			<item id="6662" min="1" max="1" chance="7.692307" /> <!-- Ring of Core -->
+			<item id="6661" min="1" max="1" chance="7.692307" /> <!-- Orfen's Earring -->
+			<item id="6660" min="1" max="1" chance="7.692307" /> <!-- Queen Ant's Ring -->
+			<item id="49516" min="1" max="1" chance="7.692307" /> <!-- Blessed Agathion Aries - Not Available -->
+			<item id="49682" min="1" max="1" chance="7.692307" /> <!-- Baium's Soul -->
+			<item id="49580" min="1" max="1" chance="7.692307" /> <!-- Baium's Ring -->
+			<item id="49738" min="1" max="1" chance="7.692307" /> <!-- Sealed Blessed Talisman of Border -->
+			<item id="49849" min="1" max="1" chance="7.692307" /> <!-- +10 Earth Dragon Pendant -->
+			<item id="49848" min="1" max="1" chance="7.692307" /> <!-- +10 Fire Dragon Pendant Pack -->
+		</capsuled_items>
+	</item>
+	<item id="49856" name="Sayha's Silver Gift" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49847" min="1" max="1" chance="3.703704" /> <!-- Sayha's Golden Light Blessing -->
+			<item id="948" min="1" max="1" chance="3.703704" /> <!-- Scroll: Enchant B-grade Armor -->
+			<item id="730" min="1" max="1" chance="3.703704" /> <!-- Scroll: Enchant A-grade Armor -->
+			<item id="951" min="1" max="1" chance="3.703704" /> <!-- Scroll: Enchant C-grade Weapon -->
+			<item id="947" min="1" max="1" chance="3.703704" /> <!-- Scroll: Enchant B-grade Weapon -->
+			<item id="729" min="1" max="1" chance="3.703704" /> <!-- Scroll: Enchant A-grade Weapon -->
+			<item id="33813" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant C-grade Armor -->
+			<item id="49483" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant C-grade Armor -->
+			<item id="33814" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant B-grade Armor -->
+			<item id="49485" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant B-grade Armor -->
+			<item id="33815" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+			<item id="22224" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant A-grade Armor -->
+			<item id="33807" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant C-grade Weapon -->
+			<item id="49484" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant C-grade Weapon -->
+			<item id="33808" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant B-grade Weapon -->
+			<item id="49486" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant B-grade Weapon -->
+			<item id="49669" min="1" max="1" chance="3.703704" /> <!-- C-grade Accessory Pack -->
+			<item id="49668" min="1" max="1" chance="3.703704" /> <!-- C-grade Armor Pack -->
+			<item id="49667" min="1" max="1" chance="3.703704" /> <!-- C-grade Weapon Pack -->
+			<item id="49666" min="1" max="1" chance="3.703704" /> <!-- B-grade Accessory Pack -->
+			<item id="49665" min="1" max="1" chance="3.703704" /> <!-- B-grade Armor Pack -->
+			<item id="49664" min="1" max="1" chance="3.703704" /> <!-- B-grade Weapon Pack -->
+			<item id="22223" min="1" max="1" chance="3.703704" /> <!-- Stable Scroll: Enchant A-grade Weapon -->
+			<item id="33809" min="1" max="1" chance="3.703704" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="49850" min="1" max="1" chance="3.703704" /> <!-- A-grade Accessory Pack -->
+			<item id="49786" min="1" max="1" chance="3.703704" /> <!-- A-grade Armor Pack -->
+			<item id="49785" min="1" max="1" chance="3.703704" /> <!-- A-grade Weapon Pack -->
+		</capsuled_items>
+	</item>
+	<item id="49857" name="Sayha's Gift" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="10649" min="1" max="1" chance="7.692307" /> <!-- Feather of Blessing -->
+			<item id="49854" min="3" max="3" chance="7.692307" /> <!-- Maliss' MP Replenishing Potion -->
+			<item id="49684" min="1" max="1" chance="7.692307" /> <!-- Talisman Crystal -->
+			<item id="49704" min="1" max="1" chance="7.692307" /> <!-- Talisman of Border Fragment -->
+			<item id="49081" min="3" max="3" chance="7.692307" /> <!-- XP Growth Scroll -->
+			<item id="13016" min="10" max="10" chance="7.692307" /> <!-- My Teleport Scroll -->
+			<item id="49663" min="3" max="3" chance="7.692307" /> <!-- Special HP Recovery Potion -->
+			<item id="9591" min="1" max="1" chance="7.692307" /> <!-- Talisman Bracelet Lv. 3 -->
+			<item id="49853" min="1" max="1" chance="7.692307" /> <!-- Secret Book of Baggins' Enchantments - V -->
+			<item id="49852" min="1" max="1" chance="7.692307" /> <!-- Secret Book of Baggins' Enchantments - IV -->
+			<item id="49685" min="1" max="1" chance="7.692307" /> <!-- Powerless Energy of Insolence -->
+			<item id="49702" min="1" max="1" chance="7.692307" /> <!-- Bracelet of Border Fragment -->
+			<item id="49681" min="1" max="1" chance="7.692307" /> <!-- Talisman of Insolence Lv. 6 -->
+		</capsuled_items>
+	</item>
+	<item id="49858" name="Wind Token" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_token" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49844" min="1" max="1" chance="100" /> <!-- Sayha's Blessing Pack -->
+			<item id="49851" min="1" max="1" chance="100" /> <!-- Sayha's Storm Lv. 1 -->
+			<item id="49857" min="1" max="1" chance="100" /> <!-- Sayha's Gift -->
+			<item id="49856" min="1" max="1" chance="100" /> <!-- Sayha's Silver Gift -->
+			<item id="49855" min="1" max="1" chance="100" /> <!-- Sayha's Golden Gift -->
+		</capsuled_items>
+	</item>
+	<item id="49859" name="Old Weapon Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Weapon Exchange Coupon is no longer used. Can be exchanged for Fishing Shots through Fishing Guildsman. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i01" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49860" name="Hero's Wondrous Cube" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 20. Double-click to obtain Soulshot Ticket, Scroll of Mood Melody, Hero's Top-grade HP Replenishing Potion, Hero's HP Recovery Potion, Angel Cat's Blessing, Improved Scroll of Resurrection, Chest of Enchant Scroll's Parts, Fishing Kit, Box of Scroll of Escape to Base, Blade Spirit, Weapon Exchange Coupon. Can be used only once a day. -->
+		<set name="icon" val="icon.etc_pink_crystal_cube_pc_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39199" level="1" /> <!-- Hero's Wondrous Cubic -->
+		</skills>
+	</item>
+	<item id="49861" name="Life Stone - Tester" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Test. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49862" name="Bracelet of Border Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_bronze" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49703" min="1" max="1" chance="100" /> <!-- Talisman Bracelet Lv. 4 -->
+		</capsuled_items>
+	</item>
+	<item id="49863" name="Best STR Dye (STR +1 CON -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49864" name="Best STR Dye (STR +1 DEX -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49865" name="Best CON Dye (CON +1 STR -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49866" name="Best CON Dye (CON +1 DEX -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49867" name="Best DEX Dye (DEX +1 STR -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49868" name="Best DEX Dye (DEX +1 CON -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49869" name="Best INT Dye (INT +1 MEN -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49870" name="Best INT Dye (INT +1 WIT -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49871" name="Best MEN Dye (MEN +1 INT -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49872" name="Best MEN Dye (MEN +1 WIT -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49873" name="Best WIT Dye (WIT +1 INT -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49874" name="Best WIT Dye (WIT +1 MEN -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49875" name="Best STR Dye (STR +1 CON -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49876" name="Best STR Dye (STR +1 DEX -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49877" name="Best CON Dye (CON +1 STR -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49878" name="Best CON Dye (CON +1 DEX -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49879" name="Best DEX Dye (DEX +1 STR -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49880" name="Best DEX Dye (DEX +1 CON -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49881" name="Best INT Dye (INT +1 MEN -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49882" name="Best INT Dye (INT +1 WIT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49883" name="Best MEN Dye (MEN +1 INT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49884" name="Best MEN Dye (MEN +1 WIT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49885" name="Best WIT Dye (WIT +1 INT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49886" name="Best WIT Dye (WIT +1 MEN -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49887" name="Best STR Dye (STR +1 CON -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49888" name="Best STR Dye (STR +1 DEX -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49889" name="Best CON Dye (CON +1 STR -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49890" name="Best CON Dye (CON +1 DEX -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best CON Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49891" name="Best DEX Dye (DEX +1 STR -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49892" name="Best DEX Dye (DEX +1 CON -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49893" name="Best INT Dye (INT +1 MEN -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49894" name="Best INT Dye (INT +1 WIT -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49895" name="Best MEN Dye (MEN +1 INT -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49896" name="Best MEN Dye (MEN +1 WIT -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49897" name="Best WIT Dye (WIT +1 INT -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49898" name="Best WIT Dye (WIT +1 MEN -1)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49899" name="Best STR Dye (STR +2 CON -3)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best STR Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv2_1_dye_str" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

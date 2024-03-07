@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 4 -->
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Package: Agathion Ignis -->
+		<production count="3" id="93134" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Package: Agathion Nebula -->
+		<production count="3" id="93135" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Package: Agathion Procella -->
+		<production count="3" id="93136" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Package: Agathion Petram -->
+		<production count="3" id="93137" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Package: Agathion Joy -->
+		<production count="3" id="93138" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Life Stone Lv. 2 - Armor Event -->
+		<production count="4" id="94212" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Life Stone Lv. 2 - Weapon Event -->
+		<production count="3" id="94210" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Life Stone - Accesories (Event) -->
+		<production count="3" id="94424" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Cursed Scroll: Enchant A-grade Weapon -->
+		<production count="1" id="93270" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="1" id="94492" />
+		<!-- Cursed Scroll: Enchant A-grade Armor -->
+		<production count="1" id="93271" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="2" id="94492" />
+		<!-- Improved Scroll: Enchant A-grade Weapon -->
+		<production count="1" id="93268" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 4 -->
+		<ingredient count="2" id="94492" />
+		<!-- Improved Scroll: Enchant A-grade Armor -->
+		<production count="1" id="93269" />
+	</item>
+</list>

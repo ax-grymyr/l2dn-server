@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30254</npc> <!-- Harmony -->
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90106" count="1" chance="100" /> <!-- Scroll: Mana Gain -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93106" count="1" chance="100" /> <!-- Scroll - Mass Dryad Root -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90105" count="1" chance="100" /> <!-- Scroll: Mass Vitalize -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93107" count="1" chance="100" /> <!-- Scroll: Massive Shackle of the Wind -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90104" count="1" chance="100" /> <!-- Scroll: Mass Cure Poison -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90109" count="1" chance="100" /> <!-- Scroll: Mass Purify -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90126" count="1" chance="100" /> <!-- Scroll: Miracle -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90122" count="1" chance="100" /> <!-- Scroll: Balance Life -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90107" count="1" chance="100" /> <!-- Scroll: Eva's Blessing -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90125" count="1" chance="100" /> <!-- Scroll: Salvation -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90111" count="1" chance="100" /> <!-- Scroll: Enlightenment -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90124" count="1" chance="100" /> <!-- Scroll: Chain Heal -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90123" count="1" chance="100" /> <!-- Scroll: Cleanse -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90110" count="1" chance="100" /> <!-- Scroll: Spirit of Shillien -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93105" count="1" chance="100" /> <!-- Scroll: Prophecy of Light -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90103" count="1" chance="100" /> <!-- Scroll: Prophecy of Water -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90108" count="1" chance="100" /> <!-- Scroll: Prophecy of Wind -->
+	</item>
+</list>

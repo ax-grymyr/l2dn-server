@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- STR Dye -->
+	<item>
+		<ingredient id="49995" count="1" /> <!-- Best STR Dye (STR +4 CON -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49996" count="1" /> <!-- Best STR Dye (STR +4 DEX -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49997" count="1" /> <!-- Best CON Dye (CON +4 STR -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49998" count="1" /> <!-- Best CON Dye (CON +4 DEX -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49999" count="1" /> <!-- Best DEX Dye (DEX +4 STR -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90000" count="1" /> <!-- Best DEX Dye (DEX +4 CON -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90001" count="1" /> <!-- Best INT Dye (INT +4 MEN -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90002" count="1" /> <!-- Best INT Dye (INT +4 WIT -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90003" count="1" /> <!-- Best MEN Dye (MEN +4 INT -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90004" count="1" /> <!-- Best MEN Dye (MEN +4 WIT -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90005" count="1" /> <!-- Best WIT Dye (WIT +4 INT -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="90006" count="1" /> <!-- Best WIT Dye (WIT +4 MEN -2) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="200" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93968" count="1" /> <!-- Best STR Dye (STR +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93969" count="1" /> <!-- Best CON Dye (CON +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93970" count="1" /> <!-- Best DEX Dye (DEX +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93971" count="1" /> <!-- Best INT Dye (INT +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93972" count="1" /> <!-- Best MEN Dye (MEN +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="93973" count="1" /> <!-- Best WIT Dye (WIT +3) -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="25" /> <!-- Dye Powder High -->
+		<production id="3031" count="110" chance="65" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49863" count="1" /> <!-- Best STR Dye (STR +1 CON -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49864" count="1" /> <!-- Best STR Dye (STR +1 DEX -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49865" count="1" /> <!-- Best CON Dye (CON +1 STR -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49866" count="1" /> <!-- Best CON Dye (CON +1 DEX -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49867" count="1" /> <!-- Best DEX Dye (DEX +1 STR -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49868" count="1" /> <!-- Best DEX Dye (DEX +1 CON -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49869" count="1" /> <!-- Best INT Dye (INT +1 MEN -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49870" count="1" /> <!-- Best INT Dye (INT +1 WIT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49871" count="1" /> <!-- Best MEN Dye (MEN +1 INT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49872" count="1" /> <!-- Best MEN Dye (MEN +1 WIT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49873" count="1" /> <!-- Best WIT Dye (WIT +1 INT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49874" count="1" /> <!-- Best WIT Dye (WIT +1 MEN -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="10" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49875" count="1" /> <!-- Best STR Dye (STR +1 CON -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49876" count="1" /> <!-- Best STR Dye (STR +1 DEX -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49877" count="1" /> <!-- Best CON Dye (CON +1 STR -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49878" count="1" /> <!-- Best CON Dye (CON +1 DEX -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49879" count="1" /> <!-- Best DEX Dye (DEX +1 STR -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49880" count="1" /> <!-- Best DEX Dye (DEX +1 CON -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49881" count="1" /> <!-- Best INT Dye (INT +1 MEN -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49882" count="1" /> <!-- Best INT Dye (INT +1 WIT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49883" count="1" /> <!-- Best MEN Dye (MEN +1 INT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49884" count="1" /> <!-- Best MEN Dye (MEN +1 WIT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49885" count="1" /> <!-- Best WIT Dye (WIT +1 INT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49886" count="1" /> <!-- Best WIT Dye (WIT +1 MEN -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49887" count="1" /> <!-- Best STR Dye (STR +1 CON -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49888" count="1" /> <!-- Best STR Dye (STR +1 DEX -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49889" count="1" /> <!-- Best CON Dye (CON +1 STR -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49890" count="1" /> <!-- Best CON Dye (CON +1 DEX -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49891" count="1" /> <!-- Best DEX Dye (DEX +1 STR -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49892" count="1" /> <!-- Best DEX Dye (DEX +1 CON -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49893" count="1" /> <!-- Best INT Dye (INT +1 MEN -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49894" count="1" /> <!-- Best INT Dye (INT +1 WIT -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49895" count="1" /> <!-- Best MEN Dye (MEN +1 INT -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49896" count="1" /> <!-- Best MEN Dye (MEN +1 WIT -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49897" count="1" /> <!-- Best WIT Dye (WIT +1 INT -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49898" count="1" /> <!-- Best WIT Dye (WIT +1 MEN -1) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="12" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49899" count="1" /> <!-- Best STR Dye (STR +2 CON -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49900" count="1" /> <!-- Best STR Dye (STR +2 DEX -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49901" count="1" /> <!-- Best CON Dye (CON +2 STR -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49902" count="1" /> <!-- Best CON Dye (CON +2 DEX -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49903" count="1" /> <!-- Best DEX Dye (DEX +2 STR -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49904" count="1" /> <!-- Best DEX Dye (DEX +2 CON -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49905" count="1" /> <!-- Best INT Dye (INT +2 MEN -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49906" count="1" /> <!-- Best INT Dye (INT +2 WIT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49907" count="1" /> <!-- Best MEN Dye (MEN +2 INT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49908" count="1" /> <!-- Best MEN Dye (MEN +2 WIT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49909" count="1" /> <!-- Best WIT Dye (WIT +2 INT -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49910" count="1" /> <!-- Best WIT Dye (WIT +2 MEN -3) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="25" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49911" count="1" /> <!-- Best STR Dye (STR +2 CON -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49912" count="1" /> <!-- Best STR Dye (STR +2 DEX -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49913" count="1" /> <!-- Best CON Dye (CON +2 STR -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49914" count="1" /> <!-- Best CON Dye (CON +2 DEX -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49915" count="1" /> <!-- Best DEX Dye (DEX +2 STR -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49916" count="1" /> <!-- Best DEX Dye (DEX +2 CON -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49917" count="1" /> <!-- Best INT Dye (INT +2 MEN -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49918" count="1" /> <!-- Best INT Dye (INT +2 WIT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49919" count="1" /> <!-- Best MEN Dye (MEN +2 INT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49920" count="1" /> <!-- Best MEN Dye (MEN +2 WIT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49921" count="1" /> <!-- Best WIT Dye (WIT +2 INT -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49922" count="1" /> <!-- Best WIT Dye (WIT +2 MEN -2) -->
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="30" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49923" count="1" /> <!-- Best STR Dye (STR +2 CON -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49924" count="1" /> <!-- Best STR Dye (STR +2 DEX -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49925" count="1" /> <!-- Best CON Dye (CON +2 STR -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49926" count="1" /> <!-- Best CON Dye (CON +2 DEX -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49927" count="1" /> <!-- Best DEX Dye (DEX +2 STR -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49928" count="1" /> <!-- Best DEX Dye (DEX +2 CON -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49929" count="1" /> <!-- Best INT Dye (INT +2 MEN -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49930" count="1" /> <!-- Best INT Dye (INT +2 WIT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49931" count="1" /> <!-- Best MEN Dye (MEN +2 INT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49932" count="1" /> <!-- Best MEN Dye (MEN +2 WIT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49933" count="1" /> <!-- Best WIT Dye (WIT +2 INT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49934" count="1" /> <!-- Best WIT Dye (WIT +2 MEN -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="50" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49935" count="1" /> <!-- Best STR Dye (STR +3 CON -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49936" count="1" /> <!-- Best STR Dye (STR +3 DEX -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49937" count="1" /> <!-- Best CON Dye (CON +3 STR -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49938" count="1" /> <!-- Best CON Dye (CON +3 DEX -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49939" count="1" /> <!-- Best DEX Dye (DEX +3 STR -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49940" count="1" /> <!-- Best DEX Dye (DEX +3 CON -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49941" count="1" /> <!-- Best INT Dye (INT +3 MEN -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49942" count="1" /> <!-- Best INT Dye (INT +3 WIT -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49943" count="1" /> <!-- Best MEN Dye (MEN +3 INT -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49944" count="1" /> <!-- Best MEN Dye (MEN +3 WIT -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49945" count="1" /> <!-- Best WIT Dye (WIT +3 INT -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49946" count="1" /> <!-- Best WIT Dye (WIT +3 MEN -3) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49947" count="1" /> <!-- Best STR Dye (STR +3 CON -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49948" count="1" /> <!-- Best STR Dye (STR +3 DEX -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49949" count="1" /> <!-- Best CON Dye (CON +3 STR -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49950" count="1" /> <!-- Best CON Dye (CON +3 DEX -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49951" count="1" /> <!-- Best DEX Dye (DEX +3 STR -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49952" count="1" /> <!-- Best DEX Dye (DEX +3 CON -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49953" count="1" /> <!-- Best INT Dye (INT +3 MEN -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49954" count="1" /> <!-- Best INT Dye (INT +3 WIT -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49955" count="1" /> <!-- Best MEN Dye (MEN +3 INT -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49956" count="1" /> <!-- Best MEN Dye (MEN +3 WIT -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49957" count="1" /> <!-- Best WIT Dye (WIT +3 INT -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49958" count="1" /> <!-- Best WIT Dye (WIT +3 MEN -2) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49959" count="1" /> <!-- Best STR Dye (STR +3 CON -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49960" count="1" /> <!-- Best STR Dye (STR +3 DEX -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49961" count="1" /> <!-- Best CON Dye (CON +3 STR -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49962" count="1" /> <!-- Best CON Dye (CON +3 DEX -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49963" count="1" /> <!-- Best DEX Dye (DEX +3 STR -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49964" count="1" /> <!-- Best DEX Dye (DEX +3 CON -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49965" count="1" /> <!-- Best INT Dye (INT +3 MEN -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49966" count="1" /> <!-- Best INT Dye (INT +3 WIT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49967" count="1" /> <!-- Best MEN Dye (MEN +3 INT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49968" count="1" /> <!-- Best MEN Dye (MEN +3 WIT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49969" count="1" /> <!-- Best WIT Dye (WIT +3 INT -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49970" count="1" /> <!-- Best WIT Dye (WIT +3 MEN -1) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="4" /> <!-- Dye Powder High -->
+		<production id="3031" count="100" chance="86" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49971" count="1" /> <!-- Best STR Dye (STR +4 CON -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49972" count="1" /> <!-- Best STR Dye (STR +4 DEX -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49973" count="1" /> <!-- Best CON Dye (CON +4 STR -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49974" count="1" /> <!-- Best CON Dye (CON +4 DEX -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49975" count="1" /> <!-- Best DEX Dye (DEX +4 STR -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49976" count="1" /> <!-- Best DEX Dye (DEX +4 CON -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49977" count="1" /> <!-- Best INT Dye (INT +4 MEN -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49978" count="1" /> <!-- Best INT Dye (INT +4 WIT -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49979" count="1" /> <!-- Best MEN Dye (MEN +4 INT -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49980" count="1" /> <!-- Best MEN Dye (MEN +4 WIT -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49981" count="1" /> <!-- Best WIT Dye (WIT +4 INT -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49982" count="1" /> <!-- Best WIT Dye (WIT +4 MEN -4) -->
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder High -->
+		<production id="3031" count="120" chance="80" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49983" count="1" /> <!-- Best STR Dye (STR +4 CON -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49984" count="1" /> <!-- Best STR Dye (STR +4 DEX -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49985" count="1" /> <!-- Best CON Dye (CON +4 STR -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49986" count="1" /> <!-- Best CON Dye (CON +4 DEX -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49987" count="1" /> <!-- Best DEX Dye (DEX +4 STR -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49988" count="1" /> <!-- Best DEX Dye (DEX +4 CON -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49989" count="1" /> <!-- Best INT Dye (INT +4 MEN -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49990" count="1" /> <!-- Best INT Dye (INT +4 WIT -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49991" count="1" /> <!-- Best MEN Dye (MEN +4 INT -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49992" count="1" /> <!-- Best MEN Dye (MEN +4 WIT -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49993" count="1" /> <!-- Best WIT Dye (WIT +4 INT -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+	<item>
+		<ingredient id="49994" count="1" /> <!-- Best WIT Dye (WIT +4 MEN -3) -->
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="20" /> <!-- Dye Powder High -->
+		<production id="3031" count="150" chance="60" /> <!-- Spirit Ore - Sealed High -->
+	</item>
+</list>

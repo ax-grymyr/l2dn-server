@@ -1,0 +1,1395 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="29500" name="Ring of Magic" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="mDef">18</stat>
+		</stats>
+	</item>
+	<item id="29501" name="Black Pearl Ring" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="mDef">20</stat>
+		</stats>
+	</item>
+	<item id="29502" name="Elven Ring" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="mDef">22</stat>
+		</stats>
+	</item>
+	<item id="29503" name="Mithril Ring" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="mDef">24</stat>
+		</stats>
+	</item>
+	<item id="29504" name="Ring of Devotion" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
+	</item>
+	<item id="29505" name="Normal VIP Gain Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Allows to regain 1000 VIP Points when used. (Not used) -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29506" name="Medium VIP Gain Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Allows to regain 5000 VIP Points when used. (Not used) -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29507" name="Good VIP Gain Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Allows to regain 20000 VIP Points when used. (Not used) -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29508" name="Perfect VIP Gain Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Allows to regain 100000 VIP Points when used. (Not used) -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29509" name="Feather of Blessing (temporary used by NPC)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blessed feather that allows to resurrect right in the place of death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29510" name="Newbie Kit Lv. 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soulshot (5000 pcs.), Spiritshot (1000 pcs.), XP/ SP Scroll (30%) (30 pcs.), Eva's Mark, Package: Agathion Singer and Dancer (30-day), HP Replenishing Potion (50 pcs.), Scroll of Escape (30 pcs.), Wind Walk Potion (30 pcs.), Haste Potion (30 pcs.), Newbie Kit Lv. 2. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="34603" min="5000" max="5000" chance="100" /> <!-- Mysterious No-grade Soulshot - Not Available -->
+			<item id="34610" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed No-grade Spiritshot - Not Available -->
+			<item id="29648" min="30" max="30" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="49032" min="1" max="1" chance="100" /> <!-- Eva's Mark - 30-day -->
+			<item id="49000" min="1" max="1" chance="100" /> <!-- Agathion Singer and Dancer - Not Available -->
+			<item id="29651" min="50" max="50" chance="100" /> <!-- Healing Potion - Not Available -->
+			<item id="10650" min="30" max="30" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+			<item id="49036" min="30" max="30" chance="100" /> <!-- Newbie Wind Walk Potion - Sealed -->
+			<item id="29653" min="30" max="30" chance="100" /> <!-- Haste Potion - Not Available -->
+			<item id="29511" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 2 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29511" name="Newbie Kit Lv. 2" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 30 Normal Buff Scrolls, Newbie Kit Lv. 3. Required level: 10. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29512" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 3 - Not Available -->
+			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="10" />
+		</cond>
+	</item>
+	<item id="29512" name="Newbie Kit Lv. 3" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Saber*Elven Sword (30-day), 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 4. Required level: 20+. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29527" min="1" max="1" chance="100" /> <!-- Saber*Elven Sword - Not Available -->
+			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+			<item id="29513" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 4 - Not Available -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="20" />
+		</cond>
+	</item>
+	<item id="29513" name="Newbie Kit Lv. 4" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Package: Necklace of Magic Making, Soulshot (9000 pcs.), Blessed Spiritshot (2000 pcs.), Newbie Kit Lv. 5. Required level: 25+. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29529" min="1" max="1" chance="100" /> <!-- Package: Necklace of Magic Making - Not Available -->
+			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+			<item id="29514" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 5 - Not Available -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="25" />
+		</cond>
+	</item>
+	<item id="29514" name="Newbie Kit Lv. 5" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Package: Tiger's Eye Making, 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 6. Required level: 30+. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29530" min="1" max="1" chance="100" /> <!-- Package: Tiger's Eye Making - Not Available -->
+			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+			<item id="29515" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 6 - Not Available -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="30" />
+		</cond>
+	</item>
+	<item id="29515" name="Newbie Kit Lv. 6" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 10 XP/ SP Scrolls (40%), 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 7. Required level: 35+. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29649" min="10" max="10" chance="100" /> <!-- XP/SP Scroll - Medium - Not Available -->
+			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+			<item id="29516" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 7 - Not Available -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="35" />
+		</cond>
+	</item>
+	<item id="29516" name="Newbie Kit Lv. 7" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Samurai Black Sword (30-day). Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49573" min="1" max="1" chance="100" /> <!-- Samurai Black Long Sword - 30-day -->
+		</capsuled_items>
+		<cond msgId="113" addName="1">
+			<player level="40" />
+		</cond>
+	</item>
+	<item id="29517" name="Improved Scroll of Escape" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Teleports to the nearest village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29518" name="Blessed Resurrection Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A magic scroll that resurrects a dead party member fully recovering their XP. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29519" name="XP/SP Scroll - Medium" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., acquired XP/ SP while hunting +40%. The effect remains after death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55000" level="2" /> <!-- XP/SP Scroll lvl 1 (30%) -->
+		</skills>
+	</item>
+	<item id="29520" name="VIP Coin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Required for purchasing various items from Game Assistants. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29521" name="Package: Mysterious No-grade Soulshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Mysterious No-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29023" min="1000" max="1000" chance="100" /> <!-- Mysterious No-grade Soulshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29522" name="Package: Mysterious Blessed No-grade Spiritshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed No-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29024" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed No-grade Spiritshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29523" name="Package: Mysterious D-grade Soulshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Mysterious D-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29025" min="1000" max="1000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29524" name="Package: Mysterious Blessed D-grade Spiritshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed D-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29525" name="Package: Mysterious C-grade Soulshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Mysterious C-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29027" min="1000" max="1000" chance="100" /> <!-- Mysterious C-grade Soulshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29526" name="Package: Mysterious Blessed C-grade Spiritshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed C-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29028" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed C-grade Spiritshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29527" name="Saber*Elven Sword" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. Available for 30 days. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2510" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="29528" name="Package: Elven Ring Making" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain the materials for making Elven Ring. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29529" name="Package: Magic Necklace Making" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain the materials for making Necklace of Magic. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1900" min="5" max="5" chance="100" /> <!-- Necklace of Magic Chain -->
+			<item id="1886" min="1" max="1" chance="100" /> <!-- Silver Mold -->
+			<item id="1878" min="15" max="15" chance="100" /> <!-- Durable Braid -->
+			<item id="1865" min="3" max="3" chance="100" /> <!-- Varnish -->
+			<item id="1458" min="18" max="18" chance="100" /> <!-- D-grade Crystal -->
+			<item id="2130" min="3" max="3" chance="100" /> <!-- D-grade Gemstone -->
+		</capsuled_items>
+	</item>
+	<item id="29530" name="Package: Tiger's Eye Making" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click the item to receive the materials, needed to make Tiger's Eye. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1901" min="6" max="6" chance="100" /> <!-- Tiger's Eye Stone -->
+			<item id="1886" min="1" max="1" chance="100" /> <!-- Silver Mold -->
+			<item id="1884" min="30" max="30" chance="100" /> <!-- Cord -->
+			<item id="1865" min="6" max="6" chance="100" /> <!-- Varnish -->
+			<item id="1458" min="22" max="22" chance="100" /> <!-- D-grade Crystal -->
+			<item id="2130" min="4" max="4" chance="100" /> <!-- D-grade Gemstone -->
+		</capsuled_items>
+	</item>
+	<item id="29531" name="Sniper's No-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 5000 Soulshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29023" min="5000" max="5000" chance="100" /> <!-- Mysterious No-grade Soulshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29532" name="Mystic's No-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed Spiritshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29024" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed No-grade Spiritshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29533" name="Sniper's D-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 5000 Soulshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29025" min="5000" max="5000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29534" name="Mystic's D-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed Spiritshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29535" name="Sniper's C-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 5000 Soulshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29027" min="5000" max="5000" chance="100" /> <!-- Mysterious C-grade Soulshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29536" name="Mystic's C-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed Spiritshots, 15 XP/ SP Scrolls (30%), and 15 1st Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29028" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed C-grade Spiritshot - Not Available -->
+			<item id="29648" min="15" max="15" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29011" min="15" max="15" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29537" name="Life Stone: Hair Accessory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Used by Blacksmiths to add special properties to a head accessory. (Not used) -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29538" name="No-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29539" name="Blessed No-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="4" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29540" name="D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29541" name="Blessed D-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="4" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29542" name="C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29543" name="Blessed C-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29544" name="Expensive Ring of Chronicle Heir" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. HP +10%, HP Recovery Rate +10%, P./ M. Accuracy +1, Weight Limit +5000. Increases Atk. Spd. and Casting Spd. Effects of two identical rings do not stack. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+	</item>
+	<item id="29545" name="Improved Scroll of Escape" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Teleports to the nearest village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29546" name="Blessed Resurrection Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A magic scroll that resurrects a dead party member fully recovering their XP. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29547" name="Scroll: Enchant D-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers, spears. P. Atk. +5 for two-handed swords/ blunts, fists, dual swords. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting from +4, P./ M. Atk. bonus is doubled. Can be safely enchanted up to +3. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29548" name="Scroll: Enchant D-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade armor and accessoriesP. Def. +1When enchanted to +4 or higher, P. Def. +3, HP is increased with each enchant value. Can be safely enchanted up to +4. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29549" name="Scroll: Enchant C-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers, spears. P. Atk. +5 for two-handed swords/ blunts, fists, dual swords. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting from +4, P./ M. Atk. bonus is doubled. Can be safely enchanted up to +3. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29550" name="Scroll: Enchant C-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade armor and accessoriesP. Def. +1When enchanted to +4 or higher, P. Def. +3, HP is increased with each enchant value. Can be safely enchanted up to +4. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29551" name="Ring of Chronicle Heir Part" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Material for enchanting Ring of Chronicle Heir sold by the Game Assistant. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29552" name="1st Class Buff Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., activates the following effects: Shield Lv. 2, Might Lv. 2, Concentration Lv. 2, Acumen Lv. 1, Wind Walk Lv. 1, Focus Lv. 1, Agility Lv. 1, Empower Lv. 1. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55035" level="1" /> <!-- 1st Class Buff Scroll -->
+		</skills>
+	</item>
+	<item id="29553" name="2nd Class Buff Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., activates the following effects: Shield Lv. 3, Acumen Lv. 2, Wind Walk Lv. 2, Focus Lv. 2, Regeneration Lv. 1, Guidance Lv. 1, Death Whisper Lv. 1, Magic Barrier Lv. 1, Blessed Body Lv. 1, Blessed Soul Lv. 1, Haste Lv. 1, Agility Lv. 2. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55036" level="2" /> <!-- 2nd Class Buff Scroll -->
+		</skills>
+	</item>
+	<item id="29554" name="Quick Healing Potion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A magic potion that instantly recovers HP. No cooldown. Cannot be used when HP is full. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55037" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
+	</item>
+	<item id="29555" name="Major Quick Healing Potion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Magic potion that instantly restores great amount of HP. No cooldown. Cannot be used when HP is full. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55038" level="1" /> <!-- Major Quick Healing Potion -->
+		</skills>
+	</item>
+	<item id="29556" name="Chronicle Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain one of the following items: Queen Ant's Ring (15-day), Orfen's Earring (15-day), Ring of Core (15-day), Blessed Scroll of Escape, Blessed Scroll of Resurrection, Enchant Scroll (D/ C-grade), Buff Scroll, Mid-grade HP Recovery Potion, Top-grade HP Recovery Potion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29557" name="Package: Mysterious No-grade Soulshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Mysterious No-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29558" name="Package: Mysterious Blessed No-grade Spiritshots (1000 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Blessed No-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29559" name="Package: Mysterious D-grade Soulshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Mysterious D-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29560" name="Package: Mysterious Blessed D-grade Spiritshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Blessed D-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29561" name="Package: Mysterious C-grade Soulshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Mysterious C-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29562" name="Package: Mysterious Blessed C-grade Spiritshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Blessed C-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29563" name="Lucky Coin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A coin for the Premium Lucky Game (several coins are required). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29564" name="Attendance Coin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A coin given in reward for Attendance. Can be exchanged for various items by the Game Assistant. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29565" name="XP/ SP Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 60 min., acquired XP/ SP while hunting +20%. The effect remains after death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55041" level="1" /> <!-- XP/SP Scroll lvl 1 (20%) -->
+		</skills>
+	</item>
+	<item id="29566" name="Attendance XP Rune" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Available for 7 d. When in inventory, acquired XP/ SP while hunting +10%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="55042" level="1" /> <!-- Attendance XP Rune -->
+		</skills>
+	</item>
+	<item id="29567" name="6-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Escape, 1 XP/ SP Scroll (20%), and 2 Mid-grade HP Recovery Potions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29568" name="7-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Resurrection and 1 XP/ SP Scroll (20%). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29569" name="13-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Escape, 1 XP/ SP Scroll (20%), and 2 Mid-grade HP Recovery Potions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29570" name="14-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Resurrection, 1 XP/ SP Scroll (20%), and 1 Chronicle Chest. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29571" name="20-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Escape, 1 XP/ SP Scroll (20%), and 3 Mid-grade HP Recovery Potions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29572" name="21-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Resurrection and 1 XP/ SP Scroll (20%). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29573" name="27-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Escape, 1 XP/ SP Scroll (20%), and 3 Mid-grade HP Recovery Potions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29574" name="28-day Reward" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Resurrection, 1 XP/ SP Scroll (20%), and 1 Rare Accessory Pack (30-day). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29575" name="Queen Ant's Ring Lv. 1" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Available for 30 d. MP +9, Infection Atk. Rate and Resistance +10%, P./ M. Accuracy +1, P./ M. Atk. +20%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">32</stat>
+			<stat type="maxMp">9</stat>
+		</stats>
+	</item>
+	<item id="29576" name="Orfen's Earring Lv. 1" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Available for 30 d. MP +19, Fear/ Hold/ Silence Resistance and Atk. Rate +10%, Received Healing +2%, Skill MP Consumption -2%. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="EARRING" />
+		<skills>
+			<skill id="3560" level="1" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">51</stat>
+			<stat type="maxMp">19</stat>
+		</stats>
+	</item>
+	<item id="29577" name="Ring of Core Lv. 1" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Available for 30 d. MP +9, Fear/ Silence Resistance and Atk. Rate +10%, P./ M. Evasion +1, received damage -2%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3563" level="1" /> <!-- Ring of Core -->
+		</skills>
+		<stats>
+			<stat type="mDef">32</stat>
+			<stat type="maxMp">9</stat>
+		</stats>
+	</item>
+	<item id="29578" name="Rare Accessory Pack Lv. 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain one of the following items: Queen Ant's Ring Lv. 1 (30-day), Orfen's Earring Lv. 1 (30-day), Ring of Core Lv. 1 (30-day). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39058" level="1" /> <!-- Rare Accessory Pack -->
+		</skills>
+	</item>
+	<item id="29579" name="Eva's Mark" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. An item for commemorating the launch of L2 Legacy server. Enables a skill that teleports you to the nearest village. Cooldown: 60 min. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39025" level="1" /> <!-- Adventurer's Scroll of Escape -->
+		</skills>
+	</item>
+	<item id="29580" name="Dreamin7 Coupon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Can be exchanged for Saber*Elven Sword (30-day) enchanted to +7 or higher. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29581" name="Lineage II Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A reward box given for collecting all the letters of the word “Lineage II”. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55044" level="1" /> <!-- Lineage II Chest -->
+		</skills>
+	</item>
+	<item id="29582" name="Chronicle Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A reward box given for collecting all the letters of the word “Chronicle”. There must be something interesting in there! Double-click to find out. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55045" level="1" /> <!-- Chronicle Chest -->
+		</skills>
+	</item>
+	<item id="29583" name="Memories Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A reward box given for collecting all the letters of the word “Memories”. There must be something interesting in there! Double-click to find out. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55046" level="1" /> <!-- Memories Chest -->
+		</skills>
+	</item>
+	<item id="29584" name="Angel Cat's Blessing Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click the item to receive Angel Cat's Blessing (30-day). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="35669" min="1" max="1" chance="100" /> <!-- Angel Cat's Blessing - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="29585" name="Refined Romantic Chapeau" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Refined Romantic Chapeau (30-day). Enables the Blessed Body and Wind Walk skills. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55047" level="1" /> <!-- Blessed Body -->
+			<skill id="55048" level="1" /> <!-- Wind Walk -->
+		</skills>
+	</item>
+	<item id="29586" name="Exquisite Hat Chest (30-day)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Refined Romantic Chapeau (30-day). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29587" name="Agathion Singer and Dancer" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Singer and Dancer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="150" />
+		<set name="material" val="SILVER" />
+		<skills>
+			<skill id="21233" level="1" /> <!-- Release Agathion's Seal - Singer and Dancer -->
+			<skill id="23234" level="1" /> <!-- Singer and Dancer Agathion Cute Trick -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="55270" level="1" /> <!-- Agathion - Dance of Fury -->
+			<skill id="55271" level="1" /> <!-- Agathion - Dance of Concentration -->
+			<skill id="55272" level="1" /> <!-- Agathion - Song of Wind -->
+		</skills>
+	</item>
+	<item id="29588" name="Black Long Samurai Sword Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click on the item to get Black Samurai Long Sword (30-day). Can be stored in a private warehouse. You cannot exchange, drop or sell Black Samurai Long Sword. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="29589" name="Black Long Samurai Sword Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click on the item to get Black Samurai Long Sword (30-day). Can be stored in a private warehouse. You cannot exchange, drop or sell Black Samurai Long Sword. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="29590" name="Samurai Black Long Sword" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. Cannot be enchanted for additional characteristics. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2340" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="29591" name="Samurai Black Long Sword" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. Cannot be enchanted for additional characteristics. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2340" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="29592" name="Floating Bird Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Eva's Mark (30-day). Eva's Mark cannot be exchanged, dropped or sold. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="29593" name="Floating Bird Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Eva's Mark (30-day). Eva's Mark cannot be exchanged, dropped or sold. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="29594" name="Expensive Ring of Chronicle Heir" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. HP +10%, HP Recovery Rate +10%, P./ M. Accuracy +1, Weight Limit +5000. Increases Atk. Spd. and Casting Spd. Effects of two identical rings do not stack. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+	</item>
+	<item id="29595" name="Expensive Ring of Chronicle Heir" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. HP +10%, HP Recovery Rate +10%, P./ M. Accuracy +1, Weight Limit +5000. Increases Atk. Spd. and Casting Spd. Effects of two identical rings do not stack. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+	</item>
+	<item id="29596" name="Expensive Ring of Chronicle Heir" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. HP +10%, HP Recovery Rate +10%, P./ M. Accuracy +1, Weight Limit +5000. Increases Atk. Spd. and Casting Spd. Effects of two identical rings do not stack. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+	</item>
+	<item id="29597" name="Expensive Ring of Chronicle Heir" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. HP +10%, HP Recovery Rate +10%, P./ M. Accuracy +1, Weight Limit +5000. Increases Atk. Spd. and Casting Spd. Effects of two identical rings do not stack. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+	</item>
+	<item id="29598" name="Chronic Noble Successor Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain the armor of the Noble Successor of Chronicle (for 3, 7, 15, 30 days or unlimited). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29599" name="Chronic Noble Successor Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain the armor of the Noble Successor of Chronicle (for 3, 7, 15, 30 days or unlimited). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

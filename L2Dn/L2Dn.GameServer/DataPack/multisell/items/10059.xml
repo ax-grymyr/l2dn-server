@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95517" count="1" /> <!-- Master's Book: Might - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95518" count="1" /> <!-- Master's Book: Shield - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95533" count="1" /> <!-- Master's Book: Empower - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95534" count="1" /> <!-- Master's Book: Magic Barrier - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95535" count="1" /> <!-- Master's Book: Focus - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95536" count="1" /> <!-- Master's Book: Death Whisper - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95537" count="1" /> <!-- Master's Book: Wind Walk - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95538" count="1" /> <!-- Master's Book: Haste - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95539" count="1" /> <!-- Master's Book: Acumen - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95769" count="1" /> <!-- Master's Book: Berserker Spirit - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95770" count="1" /> <!-- Master's Book: Clarity - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95771" count="1" /> <!-- Master's Book: Wild Magic - Sealed -->
+	</item>		
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95508" count="1" /> <!-- Spellbook: Death Guard - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95509" count="1" /> <!-- Spellbook: Bone Cage - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95511" count="1" /> <!-- Spellbook: Drain Magic Energy - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95512" count="1" /> <!-- Spellbook: Amazing Thunder Storm Mastery - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95515" count="1" /> <!-- Spellbook: Knight's Help - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95516" count="1" /> <!-- Spellbook: Amazing Spike Thrust Mastery - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95520" count="1" /> <!-- Spellbook: Pain of Sagittarius - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95521" count="1" /> <!-- Spellbook: Esprit - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95522" count="1" /> <!-- Spellbook: Dark Sense - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95523" count="1" /> <!-- Spellbook: Buff Thief - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95526" count="1" /> <!-- Spellbook: Wild Beat - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95527" count="1" /> <!-- Spellbook: Crazy Waltz - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95528" count="1" /> <!-- Spellbook: Frantic Pace - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95553" count="1" /> <!-- Spellbook: Pa'agrio's Cure - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95560" count="1" /> <!-- Spellbook: Chant of Healing - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="96274" count="1" /> <!-- Spellbook: Masterpiece Shield - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="96673" count="1" /> <!-- Spellbook: Fast Run Lv. 3 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="96900" count="1" /> <!-- Spellbook: Perfect Mastery - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="97114" count="1" /> <!-- Spellbook: Wild Charge - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="97858" count="1" /> <!-- Spellbook: Improved Sleep - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="95508" count="1" /> <!-- Spellbook: Death Guard - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="98539" count="1" /> <!-- Spellbook: Forward Move Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="98502" count="1" /> <!-- Spellbook: Blow Boost - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="98498" count="1" /> <!-- Spellbook: Murder Attempt Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97121" count="1" /> <!-- Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+		<production id="98497" count="1" /> <!-- Spellbook: Erosion Lv. 2 - Sealed -->
+	</item>
+</list>

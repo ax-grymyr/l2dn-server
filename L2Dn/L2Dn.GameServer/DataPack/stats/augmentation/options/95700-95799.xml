@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95700" name="option_id_95700">
+		<!-- M. Atk. +94 -->
+	</option>
+	<option id="95701" name="option_id_95701">
+		<!-- M. Atk. +100 -->
+	</option>
+	<option id="95702" name="option_id_95702">
+		<!-- M. Atk. +110 -->
+	</option>
+	<option id="95703" name="option_id_95703">
+		<!-- M. Atk. +120 -->
+	</option>
+	<option id="95704" name="option_id_95704">
+		<!-- M. Atk. +150 -->
+	</option>
+	<option id="95705" name="option_id_95705">
+		<!-- M. Atk. +200 -->
+	</option>
+	<option id="95706" name="option_id_95706">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95707" name="option_id_95707">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95708" name="option_id_95708">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95709" name="option_id_95709">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95710" name="option_id_95710">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95711" name="option_id_95711">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95712" name="option_id_95712">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="95713" name="option_id_95713">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="95714" name="option_id_95714">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="95715" name="option_id_95715">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="95716" name="option_id_95716">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="95717" name="option_id_95717">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="95718" name="option_id_95718">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="95719" name="option_id_95719">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="95720" name="option_id_95720">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="95721" name="option_id_95721">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="95722" name="option_id_95722">
+		<!-- P. Accuracy +1.7 -->
+	</option>
+	<option id="95723" name="option_id_95723">
+		<!-- P. Accuracy +1.8 -->
+	</option>
+	<option id="95724" name="option_id_95724">
+		<!-- P. Accuracy +2.0 -->
+	</option>
+	<option id="95725" name="option_id_95725">
+		<!-- P. Accuracy +3.0 -->
+	</option>
+	<option id="95726" name="option_id_95726">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95727" name="option_id_95727">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95728" name="option_id_95728">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95729" name="option_id_95729">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95730" name="option_id_95730">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95731" name="option_id_95731">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95732" name="option_id_95732">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="95733" name="option_id_95733">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="95734" name="option_id_95734">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="95735" name="option_id_95735">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="95736" name="option_id_95736">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="95737" name="option_id_95737">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="95738" name="option_id_95738">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="95739" name="option_id_95739">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="95740" name="option_id_95740">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="95741" name="option_id_95741">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="95742" name="option_id_95742">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="95743" name="option_id_95743">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="95744" name="option_id_95744">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="95745" name="option_id_95745">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="95746" name="option_id_95746">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95747" name="option_id_95747">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95748" name="option_id_95748">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95749" name="option_id_95749">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95750" name="option_id_95750">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95751" name="option_id_95751">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95752" name="option_id_95752">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95753" name="option_id_95753">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95754" name="option_id_95754">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95755" name="option_id_95755">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95756" name="option_id_95756">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95757" name="option_id_95757">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95758" name="option_id_95758">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95759" name="option_id_95759">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="95760" name="option_id_95760">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="95761" name="option_id_95761">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="95762" name="option_id_95762">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="95763" name="option_id_95763">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="95764" name="option_id_95764">
+		<!-- Bow Resistance +4% -->
+	</option>
+	<option id="95765" name="option_id_95765">
+		<!-- Bow Resistance +5% -->
+	</option>
+	<option id="95766" name="option_id_95766">
+		<!-- Max HP +5 -->
+	</option>
+	<option id="95767" name="option_id_95767">
+		<!-- Max HP +6 -->
+	</option>
+	<option id="95768" name="option_id_95768">
+		<!-- Max HP +7 -->
+	</option>
+	<option id="95769" name="option_id_95769">
+		<!-- Max HP +8 -->
+	</option>
+	<option id="95770" name="option_id_95770">
+		<!-- Max HP +9 -->
+	</option>
+	<option id="95771" name="option_id_95771">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="95772" name="option_id_95772">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="95773" name="option_id_95773">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="95774" name="option_id_95774">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="95775" name="option_id_95775">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="95776" name="option_id_95776">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="95777" name="option_id_95777">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="95778" name="option_id_95778">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="95779" name="option_id_95779">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="95780" name="option_id_95780">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="95781" name="option_id_95781">
+		<!-- Max HP +30 -->
+	</option>
+	<option id="95782" name="option_id_95782">
+		<!-- Max HP +32 -->
+	</option>
+	<option id="95783" name="option_id_95783">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="95784" name="option_id_95784">
+		<!-- Max HP +40 -->
+	</option>
+	<option id="95785" name="option_id_95785">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="95786" name="option_id_95786">
+		<!-- Max MP +5 -->
+	</option>
+	<option id="95787" name="option_id_95787">
+		<!-- Max MP +6 -->
+	</option>
+	<option id="95788" name="option_id_95788">
+		<!-- Max MP +7 -->
+	</option>
+	<option id="95789" name="option_id_95789">
+		<!-- Max MP +8 -->
+	</option>
+	<option id="95790" name="option_id_95790">
+		<!-- Max MP +9 -->
+	</option>
+	<option id="95791" name="option_id_95791">
+		<!-- Max MP +10 -->
+	</option>
+	<option id="95792" name="option_id_95792">
+		<!-- Max MP +12 -->
+	</option>
+	<option id="95793" name="option_id_95793">
+		<!-- Max MP +14 -->
+	</option>
+	<option id="95794" name="option_id_95794">
+		<!-- Max MP +16 -->
+	</option>
+	<option id="95795" name="option_id_95795">
+		<!-- Max MP +18 -->
+	</option>
+	<option id="95796" name="option_id_95796">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="95797" name="option_id_95797">
+		<!-- Max MP +22 -->
+	</option>
+	<option id="95798" name="option_id_95798">
+		<!-- Max MP +24 -->
+	</option>
+	<option id="95799" name="option_id_95799">
+		<!-- Max MP +26 -->
+	</option>
+</list>

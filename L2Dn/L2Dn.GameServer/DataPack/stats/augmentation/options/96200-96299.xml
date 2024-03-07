@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="96200" name="option_id_96200">
+		<!-- M. Accuracy +2 -->
+	</option>
+	<option id="96201" name="option_id_96201">
+		<!-- M. Accuracy +2.1 -->
+	</option>
+	<option id="96202" name="option_id_96202">
+		<!-- M. Accuracy +2.2 -->
+	</option>
+	<option id="96203" name="option_id_96203">
+		<!-- M. Accuracy +2.3 -->
+	</option>
+	<option id="96204" name="option_id_96204">
+		<!-- M. Accuracy +2.4 -->
+	</option>
+	<option id="96205" name="option_id_96205">
+		<!-- M. Accuracy +3 -->
+	</option>
+	<option id="96206" name="option_id_96206">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="96207" name="option_id_96207">
+		<!-- Bow Resistance +2.1% -->
+	</option>
+	<option id="96208" name="option_id_96208">
+		<!-- Bow Resistance +2.2% -->
+	</option>
+	<option id="96209" name="option_id_96209">
+		<!-- Bow Resistance +2.3% -->
+	</option>
+	<option id="96210" name="option_id_96210">
+		<!-- Bow Resistance +2.4% -->
+	</option>
+	<option id="96211" name="option_id_96211">
+		<!-- Bow Resistance +2.5% -->
+	</option>
+	<option id="96212" name="option_id_96212">
+		<!-- Bow Resistance +2.6% -->
+	</option>
+	<option id="96213" name="option_id_96213">
+		<!-- Bow Resistance +2.7% -->
+	</option>
+	<option id="96214" name="option_id_96214">
+		<!-- Bow Resistance +2.8% -->
+	</option>
+	<option id="96215" name="option_id_96215">
+		<!-- Bow Resistance +2.9% -->
+	</option>
+	<option id="96216" name="option_id_96216">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="96217" name="option_id_96217">
+		<!-- Bow Resistance +3.1% -->
+	</option>
+	<option id="96218" name="option_id_96218">
+		<!-- Bow Resistance +3.2% -->
+	</option>
+	<option id="96219" name="option_id_96219">
+		<!-- Bow Resistance +3.3% -->
+	</option>
+	<option id="96220" name="option_id_96220">
+		<!-- Bow Resistance +3.5% -->
+	</option>
+	<option id="96221" name="option_id_96221">
+		<!-- Bow Resistance +3.7% -->
+	</option>
+	<option id="96222" name="option_id_96222">
+		<!-- Bow Resistance +3.9% -->
+	</option>
+	<option id="96223" name="option_id_96223">
+		<!-- Bow Resistance +4.1% -->
+	</option>
+	<option id="96224" name="option_id_96224">
+		<!-- Bow Resistance +4.3% -->
+	</option>
+	<option id="96225" name="option_id_96225">
+		<!-- Bow Resistance +5% -->
+	</option>
+	<option id="96226" name="option_id_96226">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="96227" name="option_id_96227">
+		<!-- Max HP +13 -->
+	</option>
+	<option id="96228" name="option_id_96228">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="96229" name="option_id_96229">
+		<!-- Max HP +15 -->
+	</option>
+	<option id="96230" name="option_id_96230">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="96231" name="option_id_96231">
+		<!-- Max HP +17 -->
+	</option>
+	<option id="96232" name="option_id_96232">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="96233" name="option_id_96233">
+		<!-- Max HP +19 -->
+	</option>
+	<option id="96234" name="option_id_96234">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="96235" name="option_id_96235">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="96236" name="option_id_96236">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="96237" name="option_id_96237">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="96238" name="option_id_96238">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="96239" name="option_id_96239">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="96240" name="option_id_96240">
+		<!-- Max HP +37 -->
+	</option>
+	<option id="96241" name="option_id_96241">
+		<!-- Max HP +39 -->
+	</option>
+	<option id="96242" name="option_id_96242">
+		<!-- Max HP +41 -->
+	</option>
+	<option id="96243" name="option_id_96243">
+		<!-- Max HP +44 -->
+	</option>
+	<option id="96244" name="option_id_96244">
+		<!-- Max HP +47 -->
+	</option>
+	<option id="96245" name="option_id_96245">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="96246" name="option_id_96246">
+		<!-- Max MP +12 -->
+	</option>
+	<option id="96247" name="option_id_96247">
+		<!-- Max MP +13 -->
+	</option>
+	<option id="96248" name="option_id_96248">
+		<!-- Max MP +14 -->
+	</option>
+	<option id="96249" name="option_id_96249">
+		<!-- Max MP +15 -->
+	</option>
+	<option id="96250" name="option_id_96250">
+		<!-- Max MP +16 -->
+	</option>
+	<option id="96251" name="option_id_96251">
+		<!-- Max MP +17 -->
+	</option>
+	<option id="96252" name="option_id_96252">
+		<!-- Max MP +18 -->
+	</option>
+	<option id="96253" name="option_id_96253">
+		<!-- Max MP +19 -->
+	</option>
+	<option id="96254" name="option_id_96254">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="96255" name="option_id_96255">
+		<!-- Max MP +22 -->
+	</option>
+	<option id="96256" name="option_id_96256">
+		<!-- Max MP +24 -->
+	</option>
+	<option id="96257" name="option_id_96257">
+		<!-- Max MP +26 -->
+	</option>
+	<option id="96258" name="option_id_96258">
+		<!-- Max MP +28 -->
+	</option>
+	<option id="96259" name="option_id_96259">
+		<!-- Max MP +35 -->
+	</option>
+	<option id="96260" name="option_id_96260">
+		<!-- Max MP +37 -->
+	</option>
+	<option id="96261" name="option_id_96261">
+		<!-- Max MP +39 -->
+	</option>
+	<option id="96262" name="option_id_96262">
+		<!-- Max MP +41 -->
+	</option>
+	<option id="96263" name="option_id_96263">
+		<!-- Max MP +44 -->
+	</option>
+	<option id="96264" name="option_id_96264">
+		<!-- Max MP +47 -->
+	</option>
+	<option id="96265" name="option_id_96265">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="96266" name="option_id_96266">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="96267" name="option_id_96267">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="96268" name="option_id_96268">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96269" name="option_id_96269">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96270" name="option_id_96270">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96271" name="option_id_96271">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96272" name="option_id_96272">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96273" name="option_id_96273">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96274" name="option_id_96274">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96275" name="option_id_96275">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96276" name="option_id_96276">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="96277" name="option_id_96277">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="96278" name="option_id_96278">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="96279" name="option_id_96279">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="96280" name="option_id_96280">
+		<!-- P. Evasion +2 -->
+	</option>
+	<option id="96281" name="option_id_96281">
+		<!-- P. Evasion +2.1 -->
+	</option>
+	<option id="96282" name="option_id_96282">
+		<!-- P. Evasion +2.2 -->
+	</option>
+	<option id="96283" name="option_id_96283">
+		<!-- P. Evasion +2.3 -->
+	</option>
+	<option id="96284" name="option_id_96284">
+		<!-- P. Evasion +2.4 -->
+	</option>
+	<option id="96285" name="option_id_96285">
+		<!-- P. Evasion +3 -->
+	</option>
+	<option id="96286" name="option_id_96286">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="96287" name="option_id_96287">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="96288" name="option_id_96288">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96289" name="option_id_96289">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96290" name="option_id_96290">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96291" name="option_id_96291">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96292" name="option_id_96292">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96293" name="option_id_96293">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96294" name="option_id_96294">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96295" name="option_id_96295">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96296" name="option_id_96296">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="96297" name="option_id_96297">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="96298" name="option_id_96298">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="96299" name="option_id_96299">
+		<!-- M. Evasion +1.8 -->
+	</option>
+</list>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="195" parentClassId="194">
+		<skill skillName="Abyssal Power" skillId="1474" skillLevel="3" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Faery Shield" skillId="47440" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<removeSkill id="1556" onlyReplaceByLearn="true" /> <!-- Arcane Shield -->
+			<item id="97042,97037" count="1" /> <!-- Spellbook: Faery Shield -->
+		</skill>
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="8" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="9" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="10" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Focus" skillId="45139" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Soul Death Whisper" skillId="45140" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="1" getLevel="80" levelUpSp="1800000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="4" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="Soul Haste" skillId="45141" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Soul Wind Walk" skillId="45142" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Soul Magic Barrier" skillId="45143" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Lightning" skillId="791" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Lightning" skillId="791" skillLevel="2" getLevel="78" levelUpSp="1200000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="3" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="8" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="9" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Lightning" skillId="791" skillLevel="11" getLevel="91" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Soul Might" skillId="45144" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Soul Shield" skillId="45145" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Soul Acumen" skillId="45146" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Rapier Mastery" skillId="474" skillLevel="8" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Rapier Mastery" skillId="474" skillLevel="9" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Rapier Mastery" skillId="474" skillLevel="10" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Empower" skillId="45147" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Death Mark" skillId="1435" skillLevel="4" getLevel="78" levelUpSp="1200000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Death Mark" skillId="1435" skillLevel="5" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="2000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Wild Magic" skillId="45148" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Soul Berserker Spirit" skillId="45149" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Soul Clarity" skillId="45150" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Collect Light Souls" skillId="45151" skillLevel="2" getLevel="76" levelUpSp="800000">
+			<item id="95498,91942" count="1" /> <!-- Spellbook: Collect Light Souls Lv. 2 -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Collect Shadow Souls" skillId="45152" skillLevel="2" getLevel="76" levelUpSp="800000">
+			<item id="95499,91943" count="1" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 -->
+		</skill>
+		<skill skillName="Soul Steal" skillId="1440" skillLevel="3" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Soul Link" skillId="1378" skillLevel="5" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Sense" skillId="1379" skillLevel="5" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="1" getLevel="76" levelUpSp="800000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="2" getLevel="78" levelUpSp="1200000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="3" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="8" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="9" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Shadow Bind" skillId="1446" skillLevel="11" getLevel="91" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="1" getLevel="76" levelUpSp="800000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="2" getLevel="78" levelUpSp="1200000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="3" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="8" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="9" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Voice Bind" skillId="1447" skillLevel="11" getLevel="91" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="8" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="9" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="10" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="11" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="12" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Slash" skillId="45160" skillLevel="13" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blink" skillId="1448" skillLevel="1" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Soul Piercing" skillId="45161" skillLevel="6" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Piercing" skillId="45161" skillLevel="7" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Piercing" skillId="45161" skillLevel="8" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Spark" skillId="45163" skillLevel="6" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Spark" skillId="45163" skillLevel="7" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Spark" skillId="45163" skillLevel="8" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Spark" skillId="45163" skillLevel="9" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Spark" skillId="45163" skillLevel="10" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Lightning Barrier" skillId="1515" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Lightning Barrier" skillId="1515" skillLevel="2" getLevel="78" levelUpSp="1200000" />
+		<skill skillName="Lightning Barrier" skillId="1515" skillLevel="3" getLevel="80" levelUpSp="1800000" />
+		<skill skillName="Lightning Barrier" skillId="1515" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Lightning Barrier" skillId="1515" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Leopold" skillId="47979" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="97466,97465" count="1" /> <!-- Spellbook: Leopold -->
+		</skill>
+		<skill skillName="Soul Strike" skillId="1516" skillLevel="8" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Strike" skillId="1516" skillLevel="9" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Soul Strike" skillId="1516" skillLevel="10" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Fragarach" skillId="47981" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<removeSkill id="1515" onlyReplaceByLearn="true" /> <!-- Lightning Barrier -->
+			<item id="97470,97469" count="1" /> <!-- Spellbook: Fragarach -->
+		</skill>
+		<skill skillName="Master of Combat" skillId="430" skillLevel="1" getLevel="76" levelUpSp="800000" />
+		<skill skillName="Master of Combat" skillId="430" skillLevel="2" getLevel="80" levelUpSp="1800000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Master of Combat" skillId="430" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="97112,97104" count="1" /> <!-- Spellbook: Master of Combat Lv. 3 -->
+		</skill>
+		<skill skillName="Lightning Tornado" skillId="47983" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="97472,97471" count="1" /> <!-- Spellbook: Lightning Tornado -->
+		</skill>
+		<skill skillName="Critical Sense" skillId="626" skillLevel="4" getLevel="78" levelUpSp="1200000" />
+		<skill skillName="Critical Sense" skillId="626" skillLevel="5" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Mount Griffin" skillId="62002" skillLevel="1" getLevel="76" levelUpSp="800000" />
+		<skill skillName="Resonance" skillId="47988" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="97468,97467" count="1" /> <!-- Spellbook: Resonance -->
+		</skill>
+		<skill skillName="Lightning Mastery" skillId="47989" skillLevel="1" getLevel="76" levelUpSp="800000">
+			<item id="97474,97473" count="1" /> <!-- Spellbook: Lightning Mastery -->
+		</skill>
+		<skill skillName="Expert Casting" skillId="1527" skillLevel="3" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="800000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="800000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+	</skillTree>
+</list>

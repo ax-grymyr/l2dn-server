@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="87201" toLevel="5" name="Dark Form">
+		<!-- <<font color="FF8000">DP recovering skill</font>>. Your body is engulfed in enhancing flames. P. Atk. +20%. P. Critical Rate +20. P. Critical Damage +150. Speed +1. Recovers 1 DP after an attack. (Trigger cooldown: 1 sec.) -->
+		<icon>icon.skill30953</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<coolTime>500</coolTime>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>1000</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">22</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">150</value>
+					<value level="2">180</value>
+					<value level="3">200</value>
+					<value level="4">250</value>
+					<value level="5">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87202" toLevel="5" name="Dark Form">
+		<!-- <<font color="FF8000">DP recovering skill</font>>. Your body is engulfed in enhancing flames. P. Atk. +20%. P. Critical Rate +20. P. Critical Damage +150. Speed +1. Recovers 1 DP after an attack. (Trigger cooldown: 1 sec.) -->
+		<icon>icon.skill30953</icon>
+		<operateType>A2</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<magicCriticalRate>5</magicCriticalRate>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>1000</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">22</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">150</value>
+					<value level="2">180</value>
+					<value level="3">200</value>
+					<value level="4">250</value>
+					<value level="5">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87203" toLevel="5" name="Dark Form">
+		<!-- <<font color="FF8000">DP recovering skill</font>>. Your body is engulfed in enhancing flames. P. Atk. +20%. P. Critical Rate +20. P. Critical Damage +150. Speed +1. Recovers 1 DP after an attack. (Trigger cooldown: 1 sec.) -->
+		<icon>icon.skill30953</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>1000</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">22</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">150</value>
+					<value level="2">180</value>
+					<value level="3">200</value>
+					<value level="4">250</value>
+					<value level="5">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87204" toLevel="13" name="Flame Whip">
+		<!-- <<font color="FF8000">Pull skill</font>>. A fiery whip pulls enemies within the range of 700 and attacks them. Deals P. damage. Power 1500. Ignores Shield Defense. Ignores 5% of the target's defense. Critical. Applies <font color="FF8000">Deadly Touch</font> that increases the enemy's all received Critical Rate. <font color="FF8000">Deadly Touch</font>. All received Critical Rate +10% -->
+		<icon>icon.skill30961</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-450</value>
+			<value level="3">-500</value>
+			<value level="4">-600</value>
+			<value level="5">-650</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1</abnormalTime>
+	</skill>
+</list>

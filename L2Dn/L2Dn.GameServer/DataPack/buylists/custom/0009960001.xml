@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="118" price="0" /> <!-- Magic Necklace -->
+	<item id="906" price="0" /> <!-- Necklace of Knowledge -->
+	<item id="907" price="0" /> <!-- Necklace of Anguish -->
+	<item id="908" price="0" /> <!-- Necklace of Wisdom -->
+	<item id="909" price="0" /> <!-- Blue Diamond Necklace -->
+	<item id="49039" price="0" /> <!-- Necklace (Novice) -->
+	<item id="91117" price="0" /> <!-- Nebula's Necklace	-->
+	<item id="91043" price="0" /> <!-- Nebula's Old Necklace Lv. 1 -->
+	<item id="91044" price="0" /> <!-- Nebula's Old Necklace Lv. 2 -->
+	<item id="91045" price="0" /> <!-- Nebula's Old Necklace Lv. 3 -->
+	<item id="91116" price="0" /> <!-- Nebula's Old Necklace Lv. 4 -->
+	<item id="91119" price="0" /> <!-- Ignis' Necklace -->
+	<item id="91046" price="0" /> <!-- Ignis' Old Necklace Lv. 1 -->
+	<item id="91047" price="0" /> <!-- Ignis' Old Necklace Lv. 2 -->
+	<item id="91048" price="0" /> <!-- Ignis' Old Necklace Lv. 3 -->
+	<item id="91118" price="0" /> <!-- Ignis' Old Necklace Lv. 4 -->
+	<item id="91121" price="0" /> <!-- Procella's Necklace -->
+	<item id="91049" price="0" /> <!-- Procella's Old Necklace Lv. 1 -->
+	<item id="91050" price="0" /> <!-- Procella's Old Necklace Lv. 2 -->
+	<item id="91051" price="0" /> <!-- Procella's Old Necklace Lv. 3 -->
+	<item id="91120" price="0" /> <!-- Procella's Old Necklace Lv. 4 -->
+	<item id="91123" price="0" /> <!-- Petram's Necklace -->
+	<item id="91052" price="0" /> <!-- Petram's Old Necklace Lv. 1 -->
+	<item id="91053" price="0" /> <!-- Petram's Old Necklace Lv. 2 -->
+	<item id="91054" price="0" /> <!-- Petram's Old Necklace Lv. 3 -->
+	<item id="91122" price="0" /> <!-- Petram's Old Necklace Lv. 4 -->
+	<item id="93421" price="0" /> <!-- Valakas' Necklace (Event) -->
+</list>

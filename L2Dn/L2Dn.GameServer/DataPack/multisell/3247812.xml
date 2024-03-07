@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange 7-Day Doll Packs -->
+	<item>
+		<!-- Package: Baium Doll (7-day) -->
+		<ingredient count="15" id="93020" />
+		<!-- Baium Doll Lv. 1 -->
+		<production count="1" id="94153" />
+	</item>
+	<item>
+		<!-- Package: Frintezza's Doll (7-day) -->
+		<ingredient count="15" id="94511" />
+		<!-- Frintezza's Doll Lv. 1 -->
+		<production count="1" id="94509" />
+	</item>
+	<item>
+		<!-- Package: Queen Ant Doll (7-day) -->
+		<ingredient count="1" id="93019" />
+		<!-- Queen Ant Doll Lv. 1 -->
+		<production count="1" id="94154" />
+	</item>
+	<item>
+		<!-- Package: Orfen Doll (7-day) -->
+		<ingredient count="1" id="93021" />
+		<!-- Orfen Doll Lv. 1 -->
+		<production count="1" id="94155" />
+	</item>
+</list>

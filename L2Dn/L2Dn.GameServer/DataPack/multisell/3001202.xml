@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30012</npc> <!-- Fishing Guildsman -->
+	</npcs>
+	<item>
+		<!-- Old Inventory Expansion Coupon Lv.1 -->
+		<ingredient count="1" id="91113" />
+		<!-- Inventory Expansion Coupon Lv.1 -->
+		<production count="1" id="92004" />
+	</item>
+	<item>
+		<!-- Old Inventory Expansion Coupon Lv.2 -->
+		<ingredient count="1" id="91114" />
+		<!-- Inventory Expansion Coupon Lv.2 -->
+		<production count="1" id="92005" />
+	</item>
+	<item>
+		<!-- Old Inventory Expansion Coupon Lv.3 -->
+		<ingredient count="1" id="91115" />
+		<!-- Inventory Expansion Coupon Lv.3 -->
+		<production count="1" id="92006" />
+	</item>
+	<item>
+		<!-- Old Inventory Expansion Coupon Lv.4 -->
+		<ingredient count="1" id="91296" />
+		<!-- Inventory Expansion Coupon Lv.4 -->
+		<production count="1" id="92007" />
+	</item>
+	<item>
+		<!-- Old Inventory Expansion Coupon Lv.5 -->
+		<ingredient count="1" id="91297" />
+		<!-- Inventory Expansion Coupon Lv.5 -->
+		<production count="1" id="92008" />
+	</item>
+</list>

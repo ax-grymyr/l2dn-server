@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90500" name="Dragon's Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39270" level="1" /> <!-- Dragon's Treasure Chest -->
+		</skills>
+	</item>
+	<item id="90501" name="Dragon's Shining Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_shinning_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39271" level="1" /> <!-- Dragon's Shining Treasure Chest -->
+		</skills>
+	</item>
+	<item id="90502" name="Stone: Enchant D-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Enchant success rate +10% for D-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90503" name="Stone: Enchant C-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Enchant success rate +10% for C-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90504" name="Stone: Enchant B-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Enchant success rate +10% for B-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90505" name="Stone: Enchant A-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Enchant success rate +10% for A-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90506" name="Balthus Knights' Top-grade Mark" type="EtcItem">
+		<!-- Double-click to get a buff: acquired XP/ SP while hunting +20% for 2 h. Required level: 20+. When activated, allows participation in the Balthus Knights' prize draw for the duration of the effect. -->
+		<set name="icon" val="icon.ev_balthus_token" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="39272" level="1" /> <!-- Officer of Balthus Knights -->
+		</skills>
+	</item>
+	<item id="90507" name="Dragon Balthus Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90500" min="30" max="30" chance="100" /> <!-- Dragon's Treasure Chest -->
+		</capsuled_items>
+	</item>
+	<item id="90508" name="Special Dragon Fruit Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +12%. M. Atk. +12%. P. Def. +15%. M. Def. +15%. Max HP +25%. Max MP +25%. Max CP +25%. HP Recovery Rate +30%. MP Recovery Rate +30%. P. Critical Rate +10. M. Critical Rate +10. P. Critical Damage +5%. M. Critical Damage +5%. Acquired XP +10%. Acquired SP +10%. Absorbs 5% of the inflicted damage as HP. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>Can be exchanged to Berserker's Scroll (2 pcs.) by Pona.</font> -->
+		<set name="icon" val="icon.bm_dragon_fruit" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="39273" level="1" /> <!-- Special Dragons Fruit (Event) -->
+		</skills>
+	</item>
+	<item id="90509" name="Dragon's Golden Key" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged along with 15 Maliss' HP Recovery Potions for Shining Dragon's Treasure Chest by the Game Assistant. -->
+		<set name="icon" val="icon.bm_dragon_key" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90510" name="Talisman of Border Pack Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49731" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90511" name="Talisman of Border Pack Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49732" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90512" name="Talisman of Border Pack Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49733" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90513" name="Talisman of Border Pack Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49734" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90514" name="Talisman of Border Pack Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49735" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90515" name="Talisman of Border Pack Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49736" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90516" name="Lesser GM's Blessing Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39274" level="1" /> <!-- Lesser GM's Blessing Chest -->
+		</skills>
+	</item>
+	<item id="90517" name="Greater GM's Blessing Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39275" level="1" /> <!-- Greater GM's Blessing Chest -->
+		</skills>
+	</item>
+	<item id="90518" name="Greatest GM's Blessing Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39276" level="1" /> <!-- Greatest GM's Blessing Chest -->
+		</skills>
+	</item>
+	<item id="90519" name="Shining Scroll of Mood Melody" type="EtcItem">
+		<!-- For 20 min., activates the following buffs: Might, Shield, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Focus, Death Whisper, Guidance, Clarity, Wild Magic, Concentration. The effect remains after death. Note!. 1. Cannot be used along with Scroll of Mood Melody. 2. The effect is renewed upon re-use. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.bm_magmeld" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90520" name="Fire Dragon Blessing Scroll" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Buffs and debuffs remain even after death. Duration: 20 min. The effect does not remains after death. -->
+		<set name="icon" val="icon.bm_blessing_dragon" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51014" level="1" /> <!-- Fire Dragon's Blessing Scroll -->
+		</skills>
+	</item>
+	<item id="90521" name="Golden Fishing Rod Pouch" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_gold_fishing_poket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49589" min="180" max="180" chance="100" /> <!-- Golden Bait -->
+			<item id="38154" min="180" max="180" chance="100" /> <!-- Fishing Shot -->
+		</capsuled_items>
+	</item>
+	<item id="90522" name="Golden Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39052" level="1" /> <!-- Golden Treasure Chest -->
+		</skills>
+	</item>
+	<item id="90523" name="Shining Fishing kit Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="90139" min="25920" max="25920" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="90143" min="20" max="20" chance="100" /> <!-- Einhasad's Protection -->
+			<item id="90526" min="1" max="1" chance="100" /> <!-- Talisman of Baium Box - 30-day -->
+			<item id="90528" min="1" max="1" chance="100" /> <!-- Shining Jewel Box - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="90524" name="A-grade Armor Enchant Stone Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51008" level="1" /> <!-- Lucky Enchant Stone Chest - A-grade -->
+		</skills>
+	</item>
+	<item id="90525" name="B-grade Armor Enchant Stone Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90482" min="1" max="1" chance="33.34" /> <!-- Stone: Save B-grade Armor -->
+			<item id="90486" min="1" max="1" chance="33.33" /> <!-- Stone: Enchant C-grade Armor -->
+			<item id="90490" min="1" max="1" chance="33.33" /> <!-- Stone: Protect C-grade Armor -->
+		</capsuled_items>
+	</item>
+	<item id="90526" name="Talisman of Baium Box" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90527" min="1" max="1" chance="100" /> <!-- Talisman of Baium - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="90527" name="Talisman of Baium" additionalName="30-day" type="Armor">
+		<!-- <Properties>. P. Atk. +284. M. Atk. +392. M. Damage Resistance +10%. Skill Power +5%. Resistance to All Weapons +5%. P. Critical Rate +20. M. Skill Critical Rate +20. MP Consumption -5%. Skill Cooldown -3%. STR/ INT +1. DEX/ WIT +1. CON/ MEN +1. Available for 30 d. Required level: 60+. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.tallisman_baium" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35020" level="1" type="ON_EQUIP" /> <!-- Equip Talisman - Baium -->
+			<skill id="35021" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Baium -->
+			<skill id="35017" level="7" /> <!-- Equip Talisman - Baium -->
+			<skill id="50191" level="5" /> <!-- Enchant Effect: +5 Talisman of Baium -->
+		</skills>
+	</item>
+	<item id="90528" name="Shining Jewel Box" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90529" min="1" max="1" chance="100" /> <!-- Jade Lv. 5 - 30-day -->
+			<item id="90530" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 5 - 30-day -->
+			<item id="90531" min="1" max="1" chance="100" /> <!-- Garnet Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="90529" name="Jade Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Atk. Spd./ Casting Spd. +14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="5" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90530" name="Vital Stone Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +15%, Sayha's Grace Consumption -30%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="5" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90531" name="Garnet Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +20%. Grants immunity to debuffs for 15 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="5" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90532" name="+2 Rare Accessory Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earthworm_30day_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="94388" min="1" max="1" chance="25" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+			<item id="94393" min="1" max="1" chance="25" /> <!-- Package: +2 Orfen's Earring - Sealed -->
+			<item id="94398" min="1" max="1" chance="25" /> <!-- Package: +2 Ring of Core - Sealed -->
+			<item id="94403" min="1" max="1" chance="25" /> <!-- Package: +2 Baium's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90533" name="Rare Accessory Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_valakas_30day_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="6660" min="1" max="1" chance="25" /> <!-- Queen Ant's Ring -->
+			<item id="6661" min="1" max="1" chance="25" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" chance="25" /> <!-- Ring of Core -->
+			<item id="49580" min="1" max="1" chance="25" /> <!-- Baium's Ring -->
+		</capsuled_items>
+	</item>
+	<item id="90534" name="Sigel's Soul Crystal Lv. 1" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +56. Sigel's Protection. - Max HP +4% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90535" name="Sigel's Soul Crystal Lv. 2" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +68. Sigel's Protection. - Max HP +5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90536" name="Sigel's Soul Crystal Lv. 3" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +80. Sigel's Protection. - Max HP +6% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90537" name="Sigel's Soul Crystal Lv. 4" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +92. Sigel's Protection. - Max HP +7% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90538" name="Sigel's Soul Crystal Lv. 5" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +104. Sigel's Protection. - Max HP +8% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90539" name="Sigel's Soul Crystal Lv. 6" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +116. Sigel's Protection. - Max HP +9% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90540" name="Sigel's Soul Crystal Lv. 7" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +128. Sigel's Protection. - Max HP +10% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90541" name="Sigel's Soul Crystal Lv. 8" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +140. Sigel's Protection. - Max HP +12% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90542" name="Sigel's Soul Crystal Lv. 9" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +152. Sigel's Protection. - Max HP +14% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90543" name="Sigel's Soul Crystal Lv. 10" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +164. Sigel's Protection. - Max HP +16% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90544" name="Sigel's Soul Crystal Lv. 11" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +178. Sigel's Protection. - Max HP +18% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90545" name="Sigel's Soul Crystal Lv. 12" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +192. Sigel's Protection. - Max HP +20% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90546" name="Sigel's Soul Crystal Lv. 13" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +206. Sigel's Protection. - Max HP +22% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90547" name="Sigel's Soul Crystal Lv. 14" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Sigel's Defense. - P. Def. +227. Sigel's Protection. - Max HP +25% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90548" name="Sigel's Soul Crystal Lv. 15" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. <Soul crystal properties>. Sigel's Defense. - P. Def. +248. Sigel's Protection. - Max HP +28% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90549" name="Sigel's Rune Lv. 16" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90550" name="Sigel's Rune Lv. 17" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90551" name="Sigel's Rune Lv. 18" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90552" name="Sigel's Rune Lv. 19" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90553" name="Sigel's Rune Lv. 20" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90554" name="Tyrr's Soul Crystal Lv. 1" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 9% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +3% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90555" name="Tyrr's Soul Crystal Lv. 2" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - An 11% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +4% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90556" name="Tyrr's Soul Crystal Lv. 3" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 13% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90557" name="Tyrr's Soul Crystal Lv. 4" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 15% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +6% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90558" name="Tyrr's Soul Crystal Lv. 5" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 17% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +6.5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90559" name="Tyrr's Soul Crystal Lv. 6" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 19% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +7% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90560" name="Tyrr's Soul Crystal Lv. 7" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 21% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +7.5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90561" name="Tyrr's Soul Crystal Lv. 8" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 23% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +8% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90562" name="Tyrr's Soul Crystal Lv. 9" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 25% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +8.5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90563" name="Tyrr's Soul Crystal Lv. 10" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 27% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +9% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90564" name="Tyrr's Soul Crystal Lv. 11" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 29% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +9.3% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90565" name="Tyrr's Soul Crystal Lv. 12" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 31% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +9.6% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90566" name="Tyrr's Soul Crystal Lv. 13" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 33% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +10% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90567" name="Tyrr's Soul Crystal Lv. 14" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Tyrr's Critical Stun. - A 35% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +10.5% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90568" name="Tyrr's Soul Crystal Lv. 15" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. <Soul crystal properties>. Tyrr's Critical Stun. - A 37% chance to inflict Shock on the enemy after a physical critical attack. (requires a spear). Tyrr's Haste. - Atk. Spd. +11% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90569" name="Tyrr's Rune Lv. 16" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90570" name="Tyrr's Rune Lv. 17" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90571" name="Tyrr's Rune Lv. 18" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90572" name="Tyrr's Rune Lv. 19" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90573" name="Tyrr's Rune Lv. 20" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90574" name="Othell's Soul Crystal Lv. 1" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +25. Othell's Death Force. - Vital Point Attack Rate +14% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90575" name="Othell's Soul Crystal Lv. 2" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +31. Othell's Death Force. - Vital Point Attack Rate +18% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90576" name="Othell's Soul Crystal Lv. 3" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +37. Othell's Death Force. - Vital Point Attack Rate +22% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90577" name="Othell's Soul Crystal Lv. 4" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +43. Othell's Death Force. - Vital Point Attack Rate +25% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90578" name="Othell's Soul Crystal Lv. 5" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +49. Othell's Death Force. - Vital Point Attack Rate +28% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90579" name="Othell's Soul Crystal Lv. 6" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +54. Othell's Death Force. - Vital Point Attack Rate +31% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90580" name="Othell's Soul Crystal Lv. 7" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +59. Othell's Death Force. - Vital Point Attack Rate +34% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90581" name="Othell's Soul Crystal Lv. 8" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +64. Othell's Death Force. - Vital Point Attack Rate +37% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90582" name="Othell's Soul Crystal Lv. 9" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +69. Othell's Death Force. - Vital Point Attack Rate +40% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90583" name="Othell's Soul Crystal Lv. 10" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +74. Othell's Death Force. - Vital Point Attack Rate +43% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90584" name="Othell's Soul Crystal Lv. 11" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +76. Othell's Death Force. - Vital Point Attack Rate +45% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90585" name="Othell's Soul Crystal Lv. 12" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +78. Othell's Death Force. - Vital Point Attack Rate +47% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90586" name="Othell's Soul Crystal Lv. 13" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +80. Othell's Death Force. - Vital Point Attack Rate +49% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90587" name="Othell's Soul Crystal Lv. 14" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +82. Othell's Death Force. - Vital Point Attack Rate +51% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90588" name="Othell's Soul Crystal Lv. 15" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Othell's Focus. - P. Critical Rate +84. Othell's Death Force. - Vital Point Attack Rate +53% -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90589" name="Othell's Rune Lv. 16" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90590" name="Othell's Rune Lv. 17" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90591" name="Othell's Rune Lv. 18" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90592" name="Othell's Rune Lv. 19" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90593" name="Othell's Rune Lv. 20" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone with a symbol of ancient Giants engraved. If a skilled blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90594" name="Yul's Soul Crystal Lv. 1" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +92. Yul's Guidance. - P. Accuracy +2 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90595" name="Yul's Soul Crystal Lv. 2" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +113. Yul's Guidance. - P. Accuracy +2.4 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90596" name="Yul's Soul Crystal Lv. 3" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +134. Yul's Guidance. - P. Accuracy +2.8 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90597" name="Yul's Soul Crystal Lv. 4" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +155. Yul's Guidance. - P. Accuracy +3.2 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90598" name="Yul's Soul Crystal Lv. 5" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +176. Yul's Guidance. - P. Accuracy +3.6 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90599" name="Yul's Soul Crystal Lv. 6" type="EtcItem">
+		<!-- Has two properties. You can choose one of them and apply it to your weapon through a town blacksmith. Can be enhanced through compounding. <Soul crystal properties>. Yul's Critical Damage. - P. Critical Damage +196. Yul's Guidance. - P. Accuracy +4 -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+</list>

@@ -1,0 +1,61 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="product" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ingredient" maxOccurs="5">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:int" name="id" use="optional"/>
+											<xs:attribute type="xs:long" name="count" use="optional"/>
+											<xs:attribute type="xs:int" name="enchant" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="production">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:int" name="id" use="optional"/>
+											<xs:attribute type="xs:long" name="count" use="optional"/>
+											<xs:attribute type="xs:float" name="chance" use="optional"/>
+											<xs:attribute type="xs:boolean" name="announce" use="optional"/>
+											<xs:attribute type="xs:int" name="enchant" use="optional"/>
+											<xs:attribute type="xs:int" name="id2" use="optional"/>
+											<xs:attribute type="xs:long" name="count2" use="optional"/>
+											<xs:attribute type="xs:float" name="chance2" use="optional"/>
+											<xs:attribute type="xs:boolean" name="announce2" use="optional"/>
+											<xs:attribute type="xs:int" name="id3" use="optional"/>
+											<xs:attribute type="xs:long" name="count3" use="optional"/>
+											<xs:attribute type="xs:float" name="chance3" use="optional"/>
+											<xs:attribute type="xs:boolean" name="announce3" use="optional"/>
+											<xs:attribute type="xs:int" name="id4" use="optional"/>
+											<xs:attribute type="xs:long" name="count4" use="optional"/>
+											<xs:attribute type="xs:float" name="chance4" use="optional"/>
+											<xs:attribute type="xs:boolean" name="announce4" use="optional"/>
+											<xs:attribute type="xs:int" name="id5" use="optional"/>
+											<xs:attribute type="xs:long" name="count5" use="optional"/>
+											<xs:attribute type="xs:boolean" name="announce5" use="optional"/>
+											<xs:attribute type="xs:int" name="accountDailyLimit" use="optional"/>
+											<xs:attribute type="xs:int" name="accountMontlyLimit" use="optional"/>
+											<xs:attribute type="xs:int" name="accountBuyLimit" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:int" name="id" use="optional"/>
+						<xs:attribute type="xs:byte" name="category" use="optional"/>
+						<xs:attribute type="xs:int" name="minLevel" use="optional"/>
+						<xs:attribute type="xs:int" name="maxLevel" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="enabled"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="21" parentClassId="19">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="3" getLevel="60" levelUpSp="0">
+			<item id="57" count="6000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Guard Crush" skillId="45187" skillLevel="1" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Guard Crush" skillId="45187" skillLevel="2" getLevel="50" levelUpSp="41000" />
+		<skill skillName="Guard Crush" skillId="45187" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Guard Crush" skillId="45187" skillLevel="4" getLevel="70" levelUpSp="340000" />
+		<skill skillName="Guard Crush" skillId="45187" skillLevel="5" getLevel="75" levelUpSp="380000" />
+		<skill skillName="Elven Magic Resistance" skillId="264" skillLevel="1" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Pirate Transformation" skillId="1800" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Elven Melody" skillId="265" skillLevel="1" getLevel="52" levelUpSp="41000" />
+		<skill skillName="Dark Assassin Transformation" skillId="1801" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="Song of Water" skillId="266" skillLevel="1" getLevel="62" levelUpSp="140000" />
+		<skill skillName="White Assassin Transformation" skillId="1802" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="Song of Hunter" skillId="267" skillLevel="1" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Song of Hunter" skillId="267" skillLevel="2" getLevel="40" levelUpSp="12000">
+			<item id="95530,94325" count="1" /> <!-- Spellbook: Song of Hunter Lv. 2 -->
+		</skill>
+		<skill skillName="Elven Guard's Protection" skillId="268" skillLevel="1" getLevel="44" levelUpSp="20000" />
+		<skill skillName="Elven Life Boost" skillId="269" skillLevel="1" getLevel="48" levelUpSp="28000" />
+		<skill skillName="Song of Vengeance" skillId="270" skillLevel="1" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Sword Symphony" skillId="45391" skillLevel="1" getLevel="40" levelUpSp="12000">
+			<removeSkill id="98" onlyReplaceByLearn="true" /> <!-- Symphony -->
+			<item id="95524,94319" count="1" /> <!-- Spellbook: Sword Symphony -->
+		</skill>
+		<skill skillName="Shield" skillId="1040" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Majesty" skillId="82" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Majesty" skillId="82" skillLevel="3" getLevel="58" levelUpSp="78000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="1" getLevel="50" levelUpSp="41000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="2" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="4" getLevel="62" levelUpSp="140000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="5" getLevel="64" levelUpSp="180000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="6" getLevel="66" levelUpSp="200000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="7" getLevel="68" levelUpSp="270000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="8" getLevel="70" levelUpSp="340000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="9" getLevel="72" levelUpSp="380000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="10" getLevel="74" levelUpSp="380000" />
+		<skill skillName="Eliminate Obstruction" skillId="914" skillLevel="1" getLevel="74" levelUpSp="380000" />
+		<skill skillName="Recovery" skillId="21" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Recovery" skillId="21" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="1" getLevel="40" levelUpSp="12000">
+			<removeSkill id="232" onlyReplaceByLearn="true" /> <!-- Heavy Armor Mastery -->
+			<removeSkill id="91" onlyReplaceByLearn="true" /> <!-- Ability to Protect -->
+			<removeSkill id="142" onlyReplaceByLearn="true" /> <!-- Armor Mastery -->
+			<removeSkill id="197" onlyReplaceByLearn="true" /> <!-- Honor -->
+			<removeSkill id="147" onlyReplaceByLearn="true" /> <!-- Magic Resistance -->
+			<removeSkill id="112" onlyReplaceByLearn="true" /> <!-- Deflect Arrow -->
+		</skill>
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="2" getLevel="50" levelUpSp="41000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="4" getLevel="65" levelUpSp="180000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="5" getLevel="70" levelUpSp="340000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="1" getLevel="40" levelUpSp="12000">
+			<removeSkill id="217" onlyReplaceByLearn="true" /> <!-- Sword / Blunt Weapon Mastery -->
+			<removeSkill id="77" onlyReplaceByLearn="true" /> <!-- Ability to Attack -->
+			<removeSkill id="141" onlyReplaceByLearn="true" /> <!-- Weapon Mastery -->
+			<removeSkill id="196" onlyReplaceByLearn="true" /> <!-- Dignity -->
+			<removeSkill id="100" onlyReplaceByLearn="true" /> <!-- Shock Mastery -->
+			<removeSkill id="102" onlyReplaceByLearn="true" /> <!-- Entangle -->
+		</skill>
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="2" getLevel="50" levelUpSp="41000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="4" getLevel="65" levelUpSp="180000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="5" getLevel="70" levelUpSp="340000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="1" getLevel="40" levelUpSp="12000">
+			<removeSkill id="47284" onlyReplaceByLearn="true" /> <!-- Slowdown -->
+		</skill>
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="2" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Song of Vitality" skillId="349" skillLevel="1" getLevel="68" levelUpSp="270000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="1" getLevel="40" levelUpSp="12000">
+			<removeSkill id="70" onlyReplaceByLearn="true" /> <!-- Emergency Rescue -->
+			<removeSkill id="191" onlyReplaceByLearn="true" /> <!-- Focus Mind -->
+		</skill>
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="2" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="3" getLevel="47" levelUpSp="28000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="4" getLevel="53" levelUpSp="57000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="5" getLevel="57" levelUpSp="78000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="6" getLevel="63" levelUpSp="140000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="7" getLevel="67" levelUpSp="200000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="8" getLevel="73" levelUpSp="380000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="1" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="2" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="3" getLevel="64" levelUpSp="180000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="4" getLevel="68" levelUpSp="270000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="5" getLevel="72" levelUpSp="380000" />
+		<skill skillName="Sprint" skillId="230" skillLevel="2" getLevel="50" levelUpSp="41000" />
+		<skill skillName="Might" skillId="1068" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Elven Revival" skillId="364" skillLevel="1" getLevel="71" levelUpSp="340000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Song of Earth" skillId="304" skillLevel="1" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Song of Earth" skillId="304" skillLevel="2" getLevel="40" levelUpSp="12000">
+			<item id="95529,94324" count="1" /> <!-- Spellbook: Song of Earth Lv. 2 -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Song of Wind" skillId="305" skillLevel="1" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Song of Wind" skillId="305" skillLevel="2" getLevel="40" levelUpSp="12000">
+			<item id="95567,95348" count="1" /> <!-- Spellbook: Song of Wind Lv. 2 -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="12000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="3" getLevel="40" levelUpSp="12000" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="12000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="110000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Spirit Barrier" skillId="123" skillLevel="1" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Spirit Barrier" skillId="123" skillLevel="2" getLevel="45" levelUpSp="20000" />
+		<skill skillName="Spirit Barrier" skillId="123" skillLevel="3" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Elven Spirit" skillId="61" skillLevel="2" getLevel="40" levelUpSp="12000" />
+		<skill skillName="Elven Spirit" skillId="61" skillLevel="3" getLevel="60" levelUpSp="110000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="41000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="110000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+	</skillTree>
+</list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/clanHall.xsd">
+	<clanHall id="187" name="Ellia Hall 1" grade="GRADE_B" type="OTHER">
+		<auction minBid="0" lease="0" deposit="0" />
+		<npcs>
+			<npc id="33360" /> <!-- Maid -->
+		</npcs>
+		<ownerRestartPoint x="-122200" y="-116552" z="-5798" />
+		<banishPoint x="-83246" y="242118" z="-3730" />
+	</clanHall>
+</list>

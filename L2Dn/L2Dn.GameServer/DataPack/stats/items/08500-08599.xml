@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="8543" name="Bead Parcel" type="EtcItem">
+		<!-- Take this parcel of woven beads to Warehouse Chief Yasheni in the Town of Schuttgart. -->
+		<set name="icon" val="icon.accessary_mage_earing_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="8544" name="Timora Orc's Head" type="EtcItem">
+		<!-- Severed head of the cowardly Timora Orc who betrayed his own tribe and joined the Ragna Orcs. -->
+		<set name="icon" val="icon.etc_skull_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="8545" name="Kasha Spider's Tooth" type="EtcItem">
+		<!-- This crooked spider's tooth was pulled out by hand during close combat. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="8546" name="Horn of Baar Dre Vanul" type="EtcItem">
+		<!-- This smooth, flawless horn comes from Baar Dre Vanul, who inhabits the Immortal Plateau's Southern Region. -->
+		<set name="icon" val="icon.etc_horn_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="8559" name="Coronet" additionalName="Sealed" type="Armor">
+		<!-- A bride's head accessory. Female only. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_flower_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="1518">
+			<player sex="1" />
+		</cond>
+	</item>
+	<item id="8560" name="Teddy Bear Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny hat shaped like a teddy bear. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_bear_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8561" name="Piggy Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny hat shaped like a piggy. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pig_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8562" name="Jester Hat" additionalName="Sealed" type="Armor">
+		<!-- A jester hat with a split top. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_jester_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8563" name="Wizard Hat" additionalName="Sealed" type="Armor">
+		<!-- A wide-brimmed wizard hat. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_magic_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8564" name="Dapper Cap" additionalName="Sealed" type="Armor">
+		<!-- A stylish cap with a visor. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_dandy_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8569" name="Half Face Mask" type="Armor">
+		<!-- An accessory that covers a half of its wearer's face. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_half_face_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="price" val="500000" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

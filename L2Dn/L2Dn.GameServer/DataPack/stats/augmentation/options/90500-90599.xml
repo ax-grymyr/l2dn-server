@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="90500" name="option_id_90500">
+		<!-- Melee Weapon Resistance +2.1% -->
+	</option>
+	<option id="90501" name="option_id_90501">
+		<!-- Melee Weapon Resistance +2.2% -->
+	</option>
+	<option id="90502" name="option_id_90502">
+		<!-- Melee Weapon Resistance +2.3% -->
+	</option>
+	<option id="90503" name="option_id_90503">
+		<!-- Melee Weapon Resistance +2.4% -->
+	</option>
+	<option id="90504" name="option_id_90504">
+		<!-- Melee Weapon Resistance +2.5% -->
+	</option>
+	<option id="90505" name="option_id_90505">
+		<!-- Melee Weapon Resistance +2.6% -->
+	</option>
+	<option id="90506" name="option_id_90506">
+		<!-- Melee Weapon Resistance +2.7% -->
+	</option>
+	<option id="90507" name="option_id_90507">
+		<!-- Melee Weapon Resistance +2.8% -->
+	</option>
+	<option id="90508" name="option_id_90508">
+		<!-- Melee Weapon Resistance +2.9% -->
+	</option>
+	<option id="90509" name="option_id_90509">
+		<!-- Melee Weapon Resistance +3% -->
+	</option>
+	<option id="90510" name="option_id_90510">
+		<!-- Melee Weapon Resistance +3.2% -->
+	</option>
+	<option id="90511" name="option_id_90511">
+		<!-- Melee Weapon Resistance +3.5% -->
+	</option>
+	<option id="90512" name="option_id_90512">
+		<!-- Melee Weapon Resistance +4% -->
+	</option>
+	<option id="90513" name="option_id_90513">
+		<!-- Melee Weapon Resistance +4.1% -->
+	</option>
+	<option id="90514" name="option_id_90514">
+		<!-- Melee Weapon Resistance +4.2% -->
+	</option>
+	<option id="90515" name="option_id_90515">
+		<!-- Melee Weapon Resistance +4.3% -->
+	</option>
+	<option id="90516" name="option_id_90516">
+		<!-- Melee Weapon Resistance +4.5% -->
+	</option>
+	<option id="90517" name="option_id_90517">
+		<!-- Melee Weapon Resistance +4.7% -->
+	</option>
+	<option id="90518" name="option_id_90518">
+		<!-- Melee Weapon Resistance +5% -->
+	</option>
+	<option id="90519" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90520" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90521" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90522" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90523" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90524" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90525" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90526" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90527" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90528" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90529" name="Skill Evasion +2%">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90530" name="Skill Evasion +3%">
+		<!-- Skill Evasion +3% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90531" name="Skill Evasion +3%">
+		<!-- Skill Evasion +3% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90532" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90533" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90534" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90535" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90536" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90537" name="Skill Evasion +4%">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90538" name="Skill Evasion +5%">
+		<!-- Skill Evasion +5% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90539" name="P. Def. +32">
+		<!-- P. Def. +32 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90540" name="P. Def. +35">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90541" name="P. Def. +38">
+		<!-- P. Def. +38 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90542" name="P. Def. +41">
+		<!-- P. Def. +41 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90543" name="P. Def. +44">
+		<!-- P. Def. +44 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90544" name="P. Def. +48">
+		<!-- P. Def. +48 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90545" name="P. Def. +52">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90546" name="P. Def. +56">
+		<!-- P. Def. +56 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90547" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90548" name="P. Def. +65">
+		<!-- P. Def. +65 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90549" name="P. Def. +70">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90550" name="P. Def. +75">
+		<!-- P. Def. +75 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90551" name="P. Def. +81">
+		<!-- P. Def. +81 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90552" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90553" name="P. Def. +93">
+		<!-- P. Def. +93 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90554" name="P. Def. +96">
+		<!-- P. Def. +96 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90555" name="P. Def. +99">
+		<!-- P. Def. +99 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>99</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90556" name="P. Def. +102">
+		<!-- P. Def. +102 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90557" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90558" name="P. Def. +110">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90559" name="M. Def. +35">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90560" name="M. Def. +38">
+		<!-- M. Def. +38 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90561" name="M. Def. +41">
+		<!-- M. Def. +41 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90562" name="M. Def. +44">
+		<!-- M. Def. +44 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90563" name="M. Def. +48">
+		<!-- M. Def. +48 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90564" name="M. Def. +52">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90565" name="M. Def. +56">
+		<!-- M. Def. +56 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90566" name="M. Def. +60">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90567" name="M. Def. +65">
+		<!-- M. Def. +65 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90568" name="M. Def. +70">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90569" name="M. Def. +75">
+		<!-- M. Def. +75 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90570" name="M. Def. +81">
+		<!-- M. Def. +81 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90571" name="M. Def. +87">
+		<!-- M. Def. +87 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90572" name="M. Def. +93">
+		<!-- M. Def. +93 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90573" name="M. Def. +96">
+		<!-- M. Def. +96 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90574" name="M. Def. +99">
+		<!-- M. Def. +99 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>99</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90575" name="M. Def. +102">
+		<!-- M. Def. +102 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90576" name="M. Def. +106">
+		<!-- M. Def. +106 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90577" name="M. Def. +110">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90578" name="M. Def. +120">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90579" name="option_id_90579">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="90580" name="option_id_90580">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="90581" name="option_id_90581">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="90582" name="option_id_90582">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="90583" name="option_id_90583">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="90584" name="option_id_90584">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="90585" name="option_id_90585">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="90586" name="option_id_90586">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="90587" name="option_id_90587">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="90588" name="option_id_90588">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="90589" name="option_id_90589">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="90590" name="option_id_90590">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="90591" name="option_id_90591">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="90592" name="option_id_90592">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="90593" name="option_id_90593">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="90594" name="option_id_90594">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="90595" name="option_id_90595">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="90596" name="option_id_90596">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="90597" name="option_id_90597">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+	</option>
+	<option id="90598" name="option_id_90598">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+	</option>
+	<option id="90599" name="All received Critical Damage -4%">
+		<!-- All received Critical Damage -4% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-4.0</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-4.0</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

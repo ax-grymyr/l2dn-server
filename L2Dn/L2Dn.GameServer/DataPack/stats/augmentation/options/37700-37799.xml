@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37700" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37701" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37702" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37703" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37704" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37705" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37706" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37707" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37708" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37709" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37710" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37711" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37712" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37713" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37714" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37715" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37716" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37717" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37718" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37719" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37720" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37721" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37722" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37723" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37724" name="p_def_ls_accessory">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37725" name="p_def_ls_accessory">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37726" name="p_def_ls_accessory">
+		<!-- P. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37727" name="p_def_ls_accessory">
+		<!-- P. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37728" name="p_def_ls_accessory">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37729" name="p_def_ls_accessory">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37730" name="p_def_ls_accessory">
+		<!-- P. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37731" name="p_def_ls_accessory">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37732" name="p_def_ls_accessory">
+		<!-- P. Def. +58 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37733" name="p_def_ls_accessory">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37734" name="p_def_ls_accessory">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37735" name="p_def_ls_accessory">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37736" name="p_def_ls_accessory">
+		<!-- P. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37737" name="p_def_ls_accessory">
+		<!-- P. Def. +88 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37738" name="p_def_ls_accessory">
+		<!-- P. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37739" name="p_def_ls_accessory">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37740" name="p_def_ls_accessory">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37741" name="p_def_ls_accessory">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37742" name="p_def_ls_accessory">
+		<!-- P. Def. +150 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37743" name="p_def_ls_accessory">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37744" name="p_def_ls_accessory">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37745" name="p_def_ls_accessory">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37746" name="p_def_ls_accessory">
+		<!-- P. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37747" name="p_def_ls_accessory">
+		<!-- P. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37748" name="p_def_ls_accessory">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37749" name="p_def_ls_accessory">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37750" name="p_def_ls_accessory">
+		<!-- P. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37751" name="p_def_ls_accessory">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37752" name="p_def_ls_accessory">
+		<!-- P. Def. +58 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37753" name="p_def_ls_accessory">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37754" name="p_def_ls_accessory">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37755" name="p_def_ls_accessory">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37756" name="p_def_ls_accessory">
+		<!-- P. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37757" name="p_def_ls_accessory">
+		<!-- P. Def. +88 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37758" name="p_def_ls_accessory">
+		<!-- P. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37759" name="p_def_ls_accessory">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37760" name="p_def_ls_accessory">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37761" name="p_def_ls_accessory">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37762" name="p_def_ls_accessory">
+		<!-- P. Def. +150 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37763" name="p_def_ls_accessory">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37764" name="p_def_ls_accessory">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37765" name="p_def_ls_accessory">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37766" name="p_def_ls_accessory">
+		<!-- P. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37767" name="p_def_ls_accessory">
+		<!-- P. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37768" name="p_def_ls_accessory">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37769" name="p_def_ls_accessory">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37770" name="p_def_ls_accessory">
+		<!-- P. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37771" name="p_def_ls_accessory">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37772" name="p_def_ls_accessory">
+		<!-- P. Def. +58 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37773" name="p_def_ls_accessory">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37774" name="p_def_ls_accessory">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37775" name="p_def_ls_accessory">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37776" name="p_def_ls_accessory">
+		<!-- P. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37777" name="p_def_ls_accessory">
+		<!-- P. Def. +88 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37778" name="p_def_ls_accessory">
+		<!-- P. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37779" name="p_def_ls_accessory">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37780" name="p_def_ls_accessory">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37781" name="p_def_ls_accessory">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37782" name="p_def_ls_accessory">
+		<!-- P. Def. +150 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37783" name="p_def_ls_accessory">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37784" name="m_def_ls_accessory">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37785" name="m_def_ls_accessory">
+		<!-- M. Def. +16 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37786" name="m_def_ls_accessory">
+		<!-- M. Def. +22 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37787" name="m_def_ls_accessory">
+		<!-- M. Def. +28 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37788" name="m_def_ls_accessory">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37789" name="m_def_ls_accessory">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37790" name="m_def_ls_accessory">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37791" name="m_def_ls_accessory">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37792" name="m_def_ls_accessory">
+		<!-- M. Def. +58 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37793" name="m_def_ls_accessory">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37794" name="m_def_ls_accessory">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37795" name="m_def_ls_accessory">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37796" name="m_def_ls_accessory">
+		<!-- M. Def. +82 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37797" name="m_def_ls_accessory">
+		<!-- M. Def. +88 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37798" name="m_def_ls_accessory">
+		<!-- M. Def. +94 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37799" name="m_def_ls_accessory">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

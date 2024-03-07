@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="SchuttgartMonsterSpawns">
+		<group>
+			<npc id="27199" x="-16732" y="-79832" z="-3616" heading="0" respawnTime="180sec" /> <!-- Crimson Werewolf - Quest Monster -->
+			<npc id="20368" x="15003" y="-114806" z="-3321" heading="48933" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20415" x="16007" y="-112618" z="-3138" heading="17217" respawnTime="68sec" /> <!-- Scarlet Salamander -->
+			<npc id="20416" x="16197" y="-112312" z="-3188" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20415" x="16725" y="-112156" z="-3138" heading="5062" respawnTime="68sec" /> <!-- Scarlet Salamander -->
+			<npc id="20416" x="16595" y="-112612" z="-3196" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20415" x="17359" y="-112670" z="-3138" heading="54975" respawnTime="68sec" /> <!-- Scarlet Salamander -->
+			<npc id="20416" x="17137" y="-112208" z="-3138" heading="21557" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20415" x="16409" y="-112974" z="-3260" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander -->
+			<npc id="20416" x="16610" y="-112974" z="-3260" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20368" x="18710" y="-113141" z="-3280" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20429" x="18535" y="-112800" z="-3228" heading="18617" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20489" x="18527" y="-112537" z="-3228" heading="64838" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20489" x="19447" y="-111914" z="-3268" heading="0" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20487" x="19649" y="-111558" z="-3268" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20488" x="19548" y="-111380" z="-3268" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20489" x="19908" y="-112676" z="-3272" heading="0" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20487" x="20412" y="-112142" z="-3272" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20488" x="19807" y="-112142" z="-3272" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20489" x="19753" y="-113304" z="-3228" heading="50373" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20487" x="19930" y="-113323" z="-3272" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20488" x="19859" y="-113077" z="-3228" heading="8887" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20368" x="18981" y="-113878" z="-3280" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20429" x="18880" y="-113700" z="-3280" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20489" x="19283" y="-113344" z="-3280" heading="0" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20488" x="19881" y="-110684" z="-3328" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20542" x="21324" y="-110922" z="-3292" heading="59263" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="20988" y="-110176" z="-3352" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="20984" y="-109827" z="-3328" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21250" y="-109529" z="-3292" heading="6800" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="21740" y="-110914" z="-3340" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21740" y="-110558" z="-3340" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20543" x="20943" y="-111593" z="-3336" heading="0" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20329" x="20641" y="-111415" z="-3336" heading="0" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20543" x="21743" y="-112259" z="-3344" heading="0" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20329" x="21844" y="-111725" z="-3344" heading="0" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20543" x="22474" y="-112201" z="-3339" heading="52079" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20329" x="22640" y="-112121" z="-3384" heading="0" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20375" x="23212" y="-111605" z="-3339" heading="10753" respawnTime="68sec" /> <!-- Varangka's Escort -->
+			<npc id="20374" x="23701" y="-111599" z="-3400" heading="0" respawnTime="68sec" /> <!-- Varangka's Guard -->
+			<npc id="20375" x="23354" y="-110633" z="-3384" heading="0" respawnTime="68sec" /> <!-- Varangka's Escort -->
+			<npc id="20375" x="23354" y="-110277" z="-3384" heading="0" respawnTime="68sec" /> <!-- Varangka's Escort -->
+			<npc id="20374" x="23756" y="-110277" z="-3384" heading="0" respawnTime="68sec" /> <!-- Varangka's Guard -->
+			<npc id="20374" x="23455" y="-110455" z="-3384" heading="0" respawnTime="68sec" /> <!-- Varangka's Guard -->
+			<npc id="20542" x="21635" y="-108172" z="-3072" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="22138" y="-107994" z="-3072" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="21696" y="-107729" z="-3084" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21897" y="-107729" z="-3084" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="21451" y="-107689" z="-3068" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21753" y="-107511" z="-3068" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="19171" y="-107435" z="-3040" heading="31668" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21292" y="-107611" z="-3088" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="20818" y="-107900" z="-3076" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21120" y="-107722" z="-3076" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="20849" y="-108087" z="-3008" heading="61567" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="20844" y="-108155" z="-3076" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="21189" y="-108560" z="-3056" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21290" y="-108382" z="-3056" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20542" x="21622" y="-108544" z="-3084" heading="0" respawnTime="68sec" /> <!-- Skeleton Longbowman -->
+			<npc id="20341" x="21521" y="-108366" z="-3084" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20488" x="19490" y="-107807" z="-3076" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20491" x="17880" y="-108447" z="-3080" heading="0" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20487" x="18383" y="-108269" z="-3080" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20488" x="18182" y="-108269" z="-3080" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20488" x="18182" y="-108625" z="-3080" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20491" x="17953" y="-110195" z="-3072" heading="0" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20487" x="17953" y="-109839" z="-3072" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20488" x="18557" y="-109839" z="-3072" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman Hunter -->
+			<npc id="20368" x="16776" y="-109270" z="-3040" heading="14604" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20429" x="16518" y="-109108" z="-3080" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20491" x="16418" y="-109286" z="-3080" heading="0" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20368" x="16723" y="-109699" z="-3040" heading="63760" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20429" x="16707" y="-110038" z="-3025" heading="31120" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20491" x="16813" y="-110639" z="-3080" heading="0" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20491" x="16485" y="-110226" z="-3034" heading="62892" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20491" x="14478" y="-110095" z="-3488" heading="0" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20427" x="12884" y="-110252" z="-3484" heading="0" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="13488" y="-109896" z="-3484" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20340" x="12783" y="-110074" z="-3484" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="13488" y="-110252" z="-3484" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="13056" y="-110956" z="-3528" heading="0" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="13056" y="-110600" z="-3528" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="12854" y="-110600" z="-3528" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="13982" y="-110800" z="-3392" heading="0" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="14284" y="-110622" z="-3392" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="14559" y="-110648" z="-3346" heading="62633" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="14828" y="-111716" z="-3384" heading="0" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="14929" y="-111182" z="-3384" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="14929" y="-111538" z="-3384" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="14972" y="-115184" z="-3321" heading="51549" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="14999" y="-114519" z="-3321" heading="23577" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="14679" y="-114672" z="-3364" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="15009" y="-115656" z="-3321" heading="31329" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="14496" y="-115514" z="-3396" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="15000" y="-115692" z="-3396" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20340" x="15217" y="-116877" z="-3232" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20340" x="15937" y="-118260" z="-3248" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20429" x="16245" y="-120101" z="-3200" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20429" x="16447" y="-119745" z="-3200" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20429" x="17067" y="-120575" z="-3196" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20429" x="18213" y="-120730" z="-3192" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20489" x="18213" y="-120374" z="-3192" heading="0" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20429" x="19423" y="-120478" z="-3196" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20429" x="19430" y="-119690" z="-3200" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20429" x="19074" y="-119079" z="-3200" heading="0" respawnTime="68sec" /> <!-- Evil Eye Lookout -->
+			<npc id="20489" x="19055" y="-118002" z="-3176" heading="0" respawnTime="68sec" /> <!-- Quicksilver Beast -->
+			<npc id="20487" x="19055" y="-117646" z="-3176" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20487" x="17255" y="-116711" z="-3160" heading="0" respawnTime="68sec" /> <!-- Kuruka Ratman -->
+			<npc id="20427" x="17282" y="-115023" z="-3115" heading="41364" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="17089" y="-114993" z="-3160" heading="0" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="17332" y="-114481" z="-3104" heading="60503" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="16675" y="-114896" z="-3135" heading="30906" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="16427" y="-114895" z="-3168" heading="56795" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="16819" y="-114700" z="-3284" heading="0" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20427" x="16184" y="-113944" z="-3115" heading="36262" respawnTime="68sec" /> <!-- Evil Eye Watchman -->
+			<npc id="20340" x="16795" y="-113951" z="-3115" heading="65166" respawnTime="68sec" /> <!-- Slave Skeleton -->
+			<npc id="20368" x="16445" y="-113970" z="-3115" heading="33070" respawnTime="68sec" /> <!-- Graveyard Keeper -->
+			<npc id="20491" x="20546" y="-115050" z="-3292" heading="21087" respawnTime="68sec" /> <!-- Crypt Horror -->
+			<npc id="20415" x="21100" y="-115860" z="-3292" heading="60856" respawnTime="68sec" /> <!-- Scarlet Salamander -->
+			<npc id="20416" x="21452" y="-116219" z="-3344" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20416" x="21754" y="-116041" z="-3344" heading="0" respawnTime="68sec" /> <!-- Scarlet Salamander Elder -->
+			<npc id="20341" x="22031" y="-117770" z="-3292" heading="54461" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20341" x="22459" y="-118984" z="-3332" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20341" x="23642" y="-118462" z="-3428" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20341" x="23640" y="-116010" z="-3412" heading="49889" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20543" x="23765" y="-115560" z="-3398" heading="16510" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20543" x="23795" y="-114718" z="-3412" heading="15301" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20329" x="23395" y="-115183" z="-3412" heading="60138" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20341" x="21635" y="-120578" z="-3332" heading="0" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20341" x="22543" y="-120069" z="-3292" heading="45209" respawnTime="68sec" /> <!-- Undead Slave -->
+			<npc id="20543" x="22041" y="-120251" z="-3292" heading="35891" respawnTime="68sec" /> <!-- Ghost -->
+			<npc id="20329" x="22308" y="-119712" z="-3292" heading="28672" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20329" x="22973" y="-119859" z="-3292" heading="1675" respawnTime="68sec" /> <!-- Ghost Guardian -->
+			<npc id="20778" x="10906" y="-108040" z="-3624" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20778" x="10805" y="-107506" z="-3624" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20779" x="10906" y="-107684" z="-3624" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="20779" x="11409" y="-107862" z="-3624" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="27133" x="16156" y="-119917" z="-3196" heading="0" respawnTime="180sec" /> <!-- Evil Eye Lord - Quest Monster -->
+			<npc id="27041" x="16576" y="-118592" z="-768" heading="0" respawnTime="300sec" /> <!-- Varangka's Messenger - Quest Monster -->
+			<npc id="20778" x="12064" y="-94809" z="-2744" heading="38503" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20778" x="9660" y="-92734" z="-3100" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20778" x="14846" y="-95963" z="-2716" heading="58002" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20778" x="12944" y="-94740" z="-2797" heading="55160" respawnTime="180sec" /> <!-- Ragna Orc Prefect -->
+			<npc id="20779" x="9961" y="-92556" z="-3100" heading="0" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="20779" x="10360" y="-90709" z="-2868" heading="19846" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="20779" x="13736" y="-92925" z="-2680" heading="6524" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="20779" x="11876" y="-93037" z="-2782" heading="58095" respawnTime="180sec" /> <!-- Ragna Orc Priest -->
+			<npc id="27200" x="125124" y="-174219" z="-1062" heading="0" respawnTime="180sec" /> <!-- Krudel Lizardman - Quest Monster -->
+			<npc id="27200" x="125526" y="-174219" z="-1062" heading="0" respawnTime="180sec" /> <!-- Krudel Lizardman - Quest Monster -->
+			<npc id="27200" x="125326" y="-173863" z="-1062" heading="0" respawnTime="180sec" /> <!-- Krudel Lizardman - Quest Monster -->
+			<npc id="20423" x="140778" y="-170157" z="-1777" heading="32048" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20331" x="136288" y="-173530" z="-1777" heading="50419" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="137273" y="-174137" z="-1777" heading="31775" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="136969" y="-172860" z="-1777" heading="8290" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20330" x="136230" y="-172676" z="-1777" heading="23664" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="136887" y="-174447" z="-1820" heading="0" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="135880" y="-173379" z="-1820" heading="0" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20425" x="136237" y="-174022" z="-1777" heading="42475" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="137089" y="-173379" z="-1820" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="136081" y="-173023" z="-1820" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20540" x="136599" y="-172626" z="-1777" heading="18333" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20540" x="135982" y="-173913" z="-1820" heading="0" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20346" x="136673" y="-173407" z="-1756" heading="44106" respawnTime="34sec" /> <!-- Darkstone Golem -->
+			<npc id="20346" x="136384" y="-174269" z="-1820" heading="0" respawnTime="34sec" /> <!-- Darkstone Golem -->
+			<npc id="20423" x="136585" y="-174625" z="-1820" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20331" x="140803" y="-172968" z="-1828" heading="0" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="140702" y="-172790" z="-1828" heading="0" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="142039" y="-170721" z="-1777" heading="1019" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="144171" y="-169712" z="-1777" heading="10415" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20331" x="143439" y="-172225" z="-1777" heading="612" respawnTime="34sec" /> <!-- Monster Eye Tracker -->
+			<npc id="20330" x="144140" y="-170875" z="-1777" heading="15627" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="141741" y="-169937" z="-1773" heading="14885" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="142815" y="-172612" z="-1828" heading="0" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="142991" y="-171918" z="-1777" heading="1212" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="142012" y="-171900" z="-1828" heading="0" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20330" x="141004" y="-171900" z="-1828" heading="0" respawnTime="34sec" /> <!-- Spelunking Bat -->
+			<npc id="20425" x="141708" y="-173146" z="-1828" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="142659" y="-170816" z="-1777" heading="64741" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="142332" y="-171952" z="-1777" heading="34123" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="144076" y="-170291" z="-1777" heading="8503" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20425" x="141529" y="-170921" z="-1777" heading="35525" respawnTime="34sec" /> <!-- Akaste Skeleton Warrior -->
+			<npc id="20540" x="139904" y="-171165" z="-1777" heading="20652" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20540" x="140299" y="-172078" z="-1828" heading="0" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20540" x="143199" y="-171215" z="-1777" heading="10667" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20540" x="143498" y="-171774" z="-1777" heading="42257" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20540" x="141987" y="-172315" z="-1777" heading="62325" respawnTime="34sec" /> <!-- Gemstone Beast -->
+			<npc id="20346" x="141306" y="-172790" z="-1828" heading="0" respawnTime="34sec" /> <!-- Darkstone Golem -->
+			<npc id="20346" x="141485" y="-170368" z="-1777" heading="18451" respawnTime="34sec" /> <!-- Darkstone Golem -->
+			<npc id="20346" x="141213" y="-171930" z="-1777" heading="45986" respawnTime="34sec" /> <!-- Darkstone Golem -->
+			<npc id="20423" x="144538" y="-170266" z="-1777" heading="55855" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20423" x="144363" y="-176301" z="-1572" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20449" x="144464" y="-176479" z="-1572" heading="0" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20449" x="147043" y="-175778" z="-1520" heading="64564" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20435" x="144705" y="-174171" z="-1520" heading="49646" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="144475" y="-174458" z="-1521" heading="21325" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="144891" y="-175507" z="-1521" heading="31183" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="145383" y="-174603" z="-1521" heading="32297" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20389" x="144628" y="-175058" z="-1521" heading="52293" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="145470" y="-176835" z="-1572" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="145719" y="-175015" z="-1521" heading="62543" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20422" x="146169" y="-174876" z="-1521" heading="4051" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="144695" y="-175883" z="-1521" heading="33970" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="145370" y="-175589" z="-1572" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="146455" y="-175900" z="-1521" heading="61843" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20423" x="148962" y="-171333" z="328" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20423" x="150635" y="-170333" z="366" heading="8898" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20449" x="148559" y="-169909" z="328" heading="0" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20449" x="149431" y="-170695" z="366" heading="31366" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20435" x="150352" y="-170127" z="366" heading="26206" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="150568" y="-171556" z="366" heading="54390" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="149127" y="-169731" z="366" heading="17637" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20389" x="149314" y="-170183" z="366" heading="8701" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="150449" y="-169798" z="366" heading="2599" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="150126" y="-170789" z="366" heading="61427" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="148875" y="-170488" z="366" heading="37689" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20422" x="149935" y="-169739" z="366" heading="10676" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="148257" y="-170443" z="328" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="148346" y="-169652" z="366" heading="31630" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20389" x="144219" y="-169825" z="335" heading="32859" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20435" x="142177" y="-170507" z="-1777" heading="37247" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20389" x="143000" y="-169039" z="-1777" heading="4808" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="143147" y="-170303" z="-1777" heading="29824" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20422" x="142667" y="-169673" z="-1777" heading="39311" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="143249" y="-169817" z="364" heading="30438" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="143542" y="-169880" z="-1774" heading="19761" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20389" x="142171" y="-169662" z="364" heading="52250" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="144249" y="-169495" z="364" heading="105" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="142716" y="-169477" z="364" heading="64160" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20422" x="143705" y="-170626" z="-1777" heading="64362" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="142706" y="-169812" z="364" heading="32768" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="143595" y="-171045" z="-1777" heading="24361" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="142685" y="-169126" z="-1777" heading="53120" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20449" x="142234" y="-172875" z="336" heading="0" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20449" x="142335" y="-172697" z="336" heading="0" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20435" x="141992" y="-172658" z="364" heading="48062" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20422" x="142329" y="-172749" z="364" heading="18647" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20389" x="142638" y="-171912" z="-1777" heading="39471" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="142032" y="-172163" z="336" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20389" x="145125" y="-169828" z="364" heading="40559" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20423" x="141930" y="-172883" z="328" heading="0" respawnTime="34sec" /> <!-- Akaste Skeleton Archer -->
+			<npc id="20449" x="141930" y="-172171" z="328" heading="0" respawnTime="34sec" /> <!-- Will-O-Wisp -->
+			<npc id="20435" x="142031" y="-171562" z="364" heading="47854" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20435" x="142031" y="-172349" z="328" heading="0" respawnTime="34sec" /> <!-- Opal Beast -->
+			<npc id="20389" x="140490" y="-169326" z="-1777" heading="4199" respawnTime="34sec" /> <!-- Boogle Ratman -->
+			<npc id="20422" x="142316" y="-171648" z="364" heading="33807" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20422" x="141831" y="-170443" z="-1777" heading="19787" respawnTime="34sec" /> <!-- Akaste Skeleton Prefect -->
+			<npc id="20541" x="143206" y="-177246" z="366" heading="7161" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="143803" y="-177840" z="366" heading="57230" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="142786" y="-178736" z="324" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="143189" y="-178736" z="324" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20483" x="142987" y="-179092" z="324" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="142182" y="-178736" z="324" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="143347" y="-177946" z="366" heading="10014" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20390" x="142484" y="-178914" z="324" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="142584" y="-178380" z="324" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="142089" y="-176678" z="336" heading="48495" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="142830" y="-177867" z="366" heading="10068" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20511" x="142384" y="-179092" z="324" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="141981" y="-177668" z="324" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="142685" y="-178914" z="324" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20541" x="147873" y="-171920" z="2254" heading="16898" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="147197" y="-171040" z="2254" heading="16050" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="148000" y="-173490" z="2216" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="147395" y="-174202" z="2216" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="147193" y="-173490" z="2216" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20483" x="148159" y="-172025" z="2254" heading="54293" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="146809" y="-171044" z="2254" heading="18382" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="147090" y="-174574" z="2254" heading="52099" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="147998" y="-174202" z="2216" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="146789" y="-173846" z="2216" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="148320" y="-172924" z="2254" heading="51068" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20390" x="147090" y="-175269" z="2254" heading="50868" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="147698" y="-173312" z="2216" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="146943" y="-171516" z="2254" heading="30438" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="147828" y="-172379" z="2254" heading="42440" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="148221" y="-173941" z="2254" heading="51879" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20511" x="147467" y="-171508" z="2254" heading="22860" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147460" y="-172882" z="2267" heading="45566" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147371" y="-173561" z="2254" heading="47792" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147252" y="-172418" z="2254" heading="48284" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="146790" y="-173490" z="2216" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147886" y="-171151" z="2254" heading="7833" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20541" x="147658" y="-170219" z="1976" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="148061" y="-169151" z="1976" heading="0" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="148905" y="-169917" z="2014" heading="17606" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20483" x="147859" y="-169151" z="1976" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="147859" y="-169863" z="1976" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="148162" y="-168973" z="1976" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="149044" y="-169305" z="2014" heading="55567" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20390" x="147859" y="-170219" z="1976" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="147661" y="-168889" z="2014" heading="16875" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="148463" y="-169863" z="1976" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20511" x="147960" y="-169685" z="1976" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147457" y="-169863" z="1976" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="148615" y="-168501" z="2014" heading="3923" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="148060" y="-170219" z="1976" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20541" x="147572" y="-177158" z="110" heading="14430" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="147871" y="-176665" z="110" heading="25265" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20483" x="148187" y="-177301" z="110" heading="33767" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="148151" y="-176822" z="110" heading="24324" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="148708" y="-177386" z="110" heading="6330" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20390" x="147998" y="-177805" z="110" heading="55575" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="148433" y="-176992" z="110" heading="16533" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20511" x="147563" y="-177644" z="68" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="147847" y="-176396" z="110" heading="9653" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="148167" y="-177644" z="68" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20541" x="151797" y="-174963" z="-1777" heading="12283" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20541" x="151600" y="-174740" z="-1777" heading="57659" respawnTime="34sec" /> <!-- Ore Bat -->
+			<npc id="20483" x="150638" y="-174870" z="-1836" heading="0" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="151733" y="-175410" z="-1777" heading="60667" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20483" x="151305" y="-174332" z="-1777" heading="23130" respawnTime="34sec" /> <!-- Deadman's Lamp -->
+			<npc id="20390" x="151855" y="-175209" z="-1777" heading="7770" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20390" x="152047" y="-174870" z="-1836" heading="0" respawnTime="34sec" /> <!-- Boogle Ratman Captain -->
+			<npc id="20511" x="151192" y="-174751" z="-1777" heading="44591" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="151808" y="-174345" z="-1777" heading="11707" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20511" x="151343" y="-175048" z="-1836" heading="0" respawnTime="34sec" /> <!-- Pitchstone Golem -->
+			<npc id="20424" x="172969" y="-174553" z="3444" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="173830" y="-173867" z="3489" heading="45538" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="173078" y="-173814" z="3489" heading="32156" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="172618" y="-173812" z="3489" heading="25315" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="174170" y="-172973" z="3489" heading="9569" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="174521" y="-172866" z="3452" heading="34834" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="173933" y="-173363" z="3489" heading="48870" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="174575" y="-173086" z="3276" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="174676" y="-172908" z="3276" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="174575" y="-172730" z="3276" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="175185" y="-173083" z="3152" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="175446" y="-172756" z="3261" heading="35084" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="175688" y="-172905" z="3152" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="176566" y="-173789" z="3144" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="176364" y="-173077" z="3144" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="176667" y="-173611" z="3144" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="176969" y="-173433" z="3144" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="176062" y="-173255" z="3144" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="176327" y="-172842" z="3185" heading="26241" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="176808" y="-172936" z="3185" heading="18640" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="177151" y="-174006" z="3185" heading="30710" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="177136" y="-174903" z="3068" heading="15684" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="177231" y="-175823" z="2909" heading="51229" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="176807" y="-174325" z="3036" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="177108" y="-175891" z="2881" heading="64800" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="176957" y="-175317" z="2848" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="176856" y="-175495" z="2848" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="176626" y="-176323" z="2881" heading="64484" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="176941" y="-176317" z="2881" heading="33774" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="176212" y="-176219" z="2891" heading="3016" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="175520" y="-176426" z="2885" heading="45851" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="175366" y="-176307" z="2885" heading="12512" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="175475" y="-176048" z="2885" heading="9298" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="175654" y="-176219" z="2885" heading="57582" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="175358" y="-176665" z="2885" heading="42938" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="173449" y="-176290" z="2329" heading="17350" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="174196" y="-177098" z="2276" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="174196" y="-176386" z="2276" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="174888" y="-176139" z="2329" heading="12686" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="174783" y="-176808" z="2329" heading="62564" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="173592" y="-177098" z="2276" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="173342" y="-176132" z="2329" heading="12217" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="174239" y="-176854" z="2329" heading="62180" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="174909" y="-176456" z="2329" heading="12058" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="173692" y="-177276" z="2276" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="173649" y="-176004" z="2329" heading="42372" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="174196" y="-177454" z="2276" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="173692" y="-176564" z="2276" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="174044" y="-177252" z="2329" heading="51245" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="174170" y="-178265" z="2160" heading="13794" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="173988" y="-178030" z="2132" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="174189" y="-177674" z="2132" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="174082" y="-179170" z="2025" heading="44846" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="174398" y="-179345" z="2025" heading="42461" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="174204" y="-178841" z="1995" heading="21059" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="174904" y="-179625" z="2025" heading="12161" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="174784" y="-179488" z="1972" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="174440" y="-179401" z="2025" heading="40662" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20421" x="175541" y="-180068" z="1984" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="177449" y="-179818" z="2025" heading="21400" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="176346" y="-180424" z="1984" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="176199" y="-179608" z="2025" heading="33934" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="179891" y="-176492" z="255" heading="14353" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177524" y="-179246" z="2025" heading="62103" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="176448" y="-179178" z="1984" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="176648" y="-179890" z="1984" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175559" y="-179616" z="2025" heading="31975" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177613" y="-179436" z="2025" heading="57865" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="176245" y="-180246" z="1984" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="176548" y="-179712" z="1984" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="176808" y="-179008" z="2025" heading="50779" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175931" y="-179722" z="2025" heading="42455" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="176674" y="-178741" z="1824" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="176573" y="-178563" z="1824" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177177" y="-178563" z="1824" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="176746" y="-177731" z="1684" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="176947" y="-177731" z="1684" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="176961" y="-177705" z="1818" heading="50777" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="176922" y="-176536" z="1618" heading="51215" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="177012" y="-176060" z="1484" heading="12873" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="177069" y="-175070" z="1354" heading="49203" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177555" y="-174987" z="1354" heading="17883" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177006" y="-174474" z="1354" heading="23858" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177215" y="-175444" z="1354" heading="15339" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="177247" y="-174659" z="1354" heading="25061" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="177447" y="-174752" z="1354" heading="16845" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="177929" y="-176648" z="1296" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177746" y="-175654" z="1354" heading="16645" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177761" y="-176067" z="1354" heading="50082" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="177819" y="-178691" z="1050" heading="48568" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="177874" y="-177577" z="1264" heading="35323" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177821" y="-177610" z="1104" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="177750" y="-179110" z="1050" heading="3819" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="177663" y="-178919" z="1000" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177787" y="-178258" z="1050" heading="15941" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="177662" y="-179275" z="1000" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="176227" y="-179346" z="1050" heading="652" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="176924" y="-179165" z="1004" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177090" y="-179398" z="1050" heading="589" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="176722" y="-179521" z="1004" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="173943" y="-179493" z="1050" heading="31288" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="175669" y="-179376" z="1051" heading="60468" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="174624" y="-180422" z="988" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="174121" y="-180244" z="988" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="174750" y="-179136" z="1050" heading="27358" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="174141" y="-178542" z="1050" heading="47506" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="174222" y="-180422" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="174523" y="-180244" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175092" y="-179102" z="1050" heading="4251" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="174054" y="-179034" z="1050" heading="40195" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175127" y="-180244" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="174523" y="-180600" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="174825" y="-180066" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="174404" y="-179427" z="1050" heading="56592" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="174926" y="-180600" z="988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="173963" y="-178387" z="820" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="174265" y="-178209" z="820" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="173761" y="-178031" z="820" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="173837" y="-177533" z="704" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="174039" y="-177177" z="704" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="174030" y="-177164" z="791" heading="48843" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="174042" y="-176759" z="716" heading="57112" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="173861" y="-176260" z="746" heading="32768" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="174324" y="-176205" z="746" heading="30664" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="174632" y="-176238" z="724" heading="34110" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="174638" y="-176355" z="592" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="175427" y="-175988" z="631" heading="32641" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="175261" y="-176148" z="640" heading="34852" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="175522" y="-176336" z="396" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="175935" y="-176153" z="507" heading="26150" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="175925" y="-175980" z="396" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175753" y="-175992" z="533" heading="25214" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21133" x="177054" y="-176086" z="442" heading="6134" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="176752" y="-176359" z="364" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="176853" y="-176181" z="364" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="176954" y="-175647" z="364" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177139" y="-177212" z="342" heading="16113" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="177038" y="-176553" z="442" heading="57105" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177014" y="-176762" z="304" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="176932" y="-178833" z="64" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="177148" y="-178525" z="138" heading="17852" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="176831" y="-178655" z="64" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177103" y="-179378" z="138" heading="14662" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="176895" y="-179666" z="92" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177119" y="-179678" z="138" heading="42812" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="176382" y="-179709" z="138" heading="25430" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="173507" y="-184185" z="-1896" heading="43198" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="174177" y="-184106" z="-1988" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="173774" y="-184462" z="-1988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="173975" y="-184106" z="-1988" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="173586" y="-183321" z="-1896" heading="17909" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="173837" y="-184794" z="-1932" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="174542" y="-184972" z="-1932" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="174049" y="-185008" z="-1896" heading="54309" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="175822" y="-185100" z="-1896" heading="64521" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="176764" y="-185040" z="-1896" heading="64272" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="175555" y="-184955" z="-1944" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="175185" y="-184939" z="-1896" heading="6753" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177954" y="-184099" z="-1896" heading="52122" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="178273" y="-182570" z="-1896" heading="54809" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="178135" y="-183446" z="-1896" heading="49677" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="177623" y="-183287" z="-1972" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="178629" y="-183999" z="-1972" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="178630" y="-183643" z="-1972" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="178552" y="-182952" z="-1896" heading="58877" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="177815" y="-183535" z="-1896" heading="28528" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="178126" y="-183109" z="-1972" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="178328" y="-183821" z="-1972" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="177523" y="-183465" z="-1972" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="178026" y="-183643" z="-1972" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="178730" y="-183821" z="-1972" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="178153" y="-181673" z="-1896" heading="51713" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="178119" y="-180713" z="-1944" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="177732" y="-179731" z="-1896" heading="52552" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="178103" y="-180222" z="-1896" heading="16738" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177593" y="-180157" z="-1992" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="178097" y="-179623" z="-1992" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177895" y="-179979" z="-1992" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177324" y="-179096" z="-2128" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="177223" y="-178918" z="-2128" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177626" y="-178918" z="-2128" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177088" y="-178100" z="-2288" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="176887" y="-177744" z="-2288" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177189" y="-177566" z="-2288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="177296" y="-176916" z="-2488" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="177397" y="-176738" z="-2488" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="177497" y="-176916" z="-2488" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="178162" y="-174932" z="-2418" heading="35121" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="178486" y="-174858" z="-2418" heading="2343" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="178602" y="-174985" z="-2418" heading="1316" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="178253" y="-175274" z="-2488" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="20424" x="179070" y="-182992" z="-320" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="178969" y="-182458" z="-320" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="179271" y="-182992" z="-320" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="179091" y="-182114" z="-100" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="179091" y="-181758" z="-100" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="179493" y="-182114" z="-100" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="179087" y="-181365" z="112" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="179389" y="-181187" z="112" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="179205" y="-181222" z="193" heading="35660" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20424" x="178984" y="-180708" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="180191" y="-180352" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="179809" y="-179154" z="255" heading="35289" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="179185" y="-179284" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20424" x="178379" y="-179640" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Skeleton Lord -->
+			<npc id="20420" x="179339" y="-180107" z="255" heading="47594" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="179441" y="-178601" z="225" heading="16768" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="179441" y="-179450" z="255" heading="15625" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="179185" y="-180708" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20420" x="179689" y="-179818" z="196" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Turen -->
+			<npc id="20338" x="178279" y="-179818" z="196" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="179688" y="-180530" z="196" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="179777" y="-178515" z="255" heading="15159" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="178984" y="-180352" z="196" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20338" x="179185" y="-180352" z="196" heading="0" respawnTime="40sec" /> <!-- Nightmare Weaver -->
+			<npc id="20421" x="179979" y="-174025" z="-235" heading="39148" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="179678" y="-177791" z="255" heading="14578" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179549" y="-176988" z="204" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="180052" y="-177522" z="204" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="179720" y="-176168" z="396" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="179971" y="-175481" z="448" heading="35193" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179518" y="-175812" z="396" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="179899" y="-175020" z="564" heading="50133" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="178992" y="-174164" z="-288" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="178635" y="-173682" z="-235" heading="33713" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="179093" y="-173986" z="-288" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="179494" y="-173274" z="-288" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="179395" y="-174520" z="-288" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="179797" y="-173452" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179507" y="-173624" z="-235" heading="42397" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179896" y="-172918" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179595" y="-173918" z="-235" heading="61436" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="179194" y="-173452" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="180180" y="-173884" z="-235" heading="48332" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="178992" y="-172740" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="179898" y="-173630" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="179023" y="-173707" z="-235" heading="38679" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="179495" y="-174342" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="180290" y="-173246" z="-235" heading="31117" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="180317" y="-172916" z="-235" heading="6260" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="177081" y="-173727" z="-265" heading="23447" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="178166" y="-173654" z="-235" heading="2984" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="178111" y="-173798" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="177709" y="-173442" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="178213" y="-173264" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="178012" y="-173264" z="-288" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="174614" y="-174310" z="-320" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="175720" y="-173420" z="-320" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="175549" y="-173792" z="-235" heading="17431" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="176168" y="-173833" z="-235" heading="50720" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="174916" y="-174488" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175520" y="-174488" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175117" y="-173064" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175420" y="-174666" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175419" y="-173598" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="175519" y="-173420" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175620" y="-173954" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="174715" y="-174132" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175721" y="-174488" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175319" y="-173776" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="175848" y="-175528" z="-235" heading="50668" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="176302" y="-175584" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="175698" y="-175228" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="176101" y="-175584" z="-320" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="20421" x="175189" y="-178500" z="-564" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="175592" y="-178856" z="-564" heading="0" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="20421" x="175632" y="-177695" z="-515" heading="45740" respawnTime="40sec" /> <!-- Akaste Succubus Tilfo -->
+			<npc id="21256" x="175894" y="-177966" z="-564" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175823" y="-177091" z="-515" heading="58824" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21256" x="175390" y="-178856" z="-564" heading="0" respawnTime="40sec" /> <!-- Underground Werewolf -->
+			<npc id="21132" x="176574" y="-178138" z="-515" heading="60950" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175592" y="-178500" z="-564" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21132" x="175793" y="-178144" z="-564" heading="0" respawnTime="40sec" /> <!-- Underground Kobold -->
+			<npc id="21133" x="178306" y="-178493" z="-716" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="178507" y="-178137" z="-716" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="178608" y="-178315" z="-716" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="178910" y="-178137" z="-716" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="179595" y="-178410" z="-920" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="180299" y="-178232" z="-920" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="179998" y="-178054" z="-920" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="179696" y="-178588" z="-920" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="180501" y="-178944" z="-920" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="180099" y="-178588" z="-920" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="181946" y="-178633" z="-832" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="181351" y="-178163" z="-783" heading="46905" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="182183" y="-178193" z="-783" heading="63467" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="182390" y="-178813" z="-783" heading="52253" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="182441" y="-179329" z="-848" heading="50179" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="182497" y="-178883" z="-940" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="182396" y="-179061" z="-940" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="182471" y="-180435" z="-1087" heading="49434" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="182082" y="-180265" z="-1144" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="182475" y="-179810" z="-963" heading="15459" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="183387" y="-181395" z="-1653" heading="3944" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="182320" y="-181606" z="-1692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="182752" y="-181307" z="-1653" heading="1593" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="183731" y="-181945" z="-1653" heading="1025" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="182906" y="-181597" z="-1653" heading="28297" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="182723" y="-182318" z="-1692" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="182924" y="-182318" z="-1692" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="182723" y="-181962" z="-1692" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="183381" y="-183183" z="-1653" heading="38281" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="183682" y="-182911" z="-1653" heading="47192" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="183755" y="-182527" z="-1653" heading="49713" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="182081" y="-183130" z="-1653" heading="31074" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="182818" y="-183145" z="-1653" heading="37996" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="182755" y="-183556" z="-1692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="182352" y="-183556" z="-1692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="182856" y="-183734" z="-1692" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="182554" y="-183556" z="-1692" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="179962" y="-184431" z="-1896" heading="48648" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="180715" y="-184086" z="-1882" heading="54559" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="180183" y="-183223" z="-1944" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="179578" y="-183935" z="-1944" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="180475" y="-184266" z="-1896" heading="52485" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="179796" y="-182827" z="-1896" heading="26207" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="180004" y="-183673" z="-1896" heading="46556" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="180158" y="-182704" z="-1896" heading="6062" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="180818" y="-182404" z="-1896" heading="12300" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="180540" y="-182607" z="-1896" heading="12588" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="179825" y="-183477" z="-1896" heading="36514" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="180294" y="-183699" z="-1896" heading="45922" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="180283" y="-184469" z="-1944" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="179754" y="-184142" z="-1896" heading="43682" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="180683" y="-182022" z="-1940" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="180683" y="-181310" z="-1940" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="180582" y="-181488" z="-1940" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="178986" y="-180846" z="-1896" heading="30011" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="180819" y="-181822" z="-1896" heading="43040" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="179529" y="-180945" z="-1896" heading="36853" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="179869" y="-181081" z="-1896" heading="30226" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="180155" y="-181064" z="-1944" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="178805" y="-180489" z="-1948" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="179208" y="-180845" z="-1948" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="179108" y="-179955" z="-1948" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="179376" y="-180206" z="-1896" heading="5405" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="179457" y="-181020" z="-1896" heading="60827" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="179309" y="-181023" z="-1948" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21133" x="180374" y="-180120" z="-1926" heading="64257" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21133" x="180553" y="-178964" z="-1940" heading="0" respawnTime="40sec" /> <!-- Dead Pit Skeleton Archer -->
+			<npc id="21134" x="180653" y="-178786" z="-1940" heading="0" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21134" x="181110" y="-178457" z="-1896" heading="14288" respawnTime="40sec" /> <!-- Dead Pit Spartoi -->
+			<npc id="21135" x="181157" y="-179676" z="-1940" heading="0" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21135" x="181089" y="-179015" z="-1896" heading="14441" respawnTime="40sec" /> <!-- Underground Kobold Warrior -->
+			<npc id="21136" x="180602" y="-174607" z="-3567" heading="17372" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="181811" y="-175579" z="-3620" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="181057" y="-175002" z="-3567" heading="58578" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="180602" y="-175579" z="-3620" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="183427" y="-174950" z="-3567" heading="31981" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="182014" y="-174867" z="-3620" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="180905" y="-174689" z="-3620" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="181503" y="-175710" z="-3567" heading="64381" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="180826" y="-175380" z="-3567" heading="52329" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="181106" y="-175401" z="-3620" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="181563" y="-174493" z="-3567" heading="64122" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="180773" y="-174895" z="-3567" heading="30875" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="181163" y="-175736" z="-3597" heading="50574" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="181409" y="-174867" z="-3620" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="181111" y="-172840" z="-2801" heading="41045" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="181027" y="-172791" z="-2844" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="181194" y="-173052" z="-2801" heading="36123" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="181463" y="-172476" z="-2801" heading="7988" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21137" x="181496" y="-172782" z="-2988" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="181799" y="-172248" z="-2988" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="182198" y="-172772" z="-3180" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21138" x="182399" y="-172772" z="-3180" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="182784" y="-172797" z="-3300" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="182733" y="-172484" z="-2994" heading="62737" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="183300" y="-172793" z="-3464" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="183602" y="-172615" z="-3464" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="184268" y="-172518" z="-3527" heading="4392" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21138" x="183615" y="-172498" z="-3348" heading="28337" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="184848" y="-172939" z="-3567" heading="54211" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="184723" y="-172579" z="-3567" heading="706" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="184810" y="-173738" z="-3567" heading="49883" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="184698" y="-174770" z="-3567" heading="48072" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="185298" y="-174467" z="-3608" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="185298" y="-174111" z="-3608" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="181797" y="-175127" z="-3567" heading="34656" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="182510" y="-175077" z="-3620" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="182984" y="-175004" z="-3567" heading="31747" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186044" y="-172766" z="-3932" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186781" y="-172674" z="-3871" heading="12104" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186102" y="-172586" z="-3775" heading="25005" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186996" y="-176038" z="-3928" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186895" y="-175860" z="-3928" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186570" y="-175266" z="-3871" heading="54772" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186895" y="-175504" z="-3928" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186283" y="-174946" z="-3871" heading="22273" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186454" y="-175072" z="-3871" heading="50941" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186410" y="-174818" z="-3871" heading="56945" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="187445" y="-175423" z="-3928" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="187344" y="-174889" z="-3928" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="187244" y="-175067" z="-3928" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="187181" y="-177078" z="-3567" heading="63834" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="187511" y="-176031" z="-3636" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="187052" y="-176508" z="-3562" heading="40543" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="187668" y="-176221" z="-3567" heading="6997" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="187216" y="-176701" z="-3567" heading="17289" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186312" y="-176817" z="-3632" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="185867" y="-175607" z="-3593" heading="46476" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186312" y="-176461" z="-3632" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186627" y="-176379" z="-3567" heading="59172" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186185" y="-176070" z="-3562" heading="53632" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186944" y="-177039" z="-3567" heading="52991" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186614" y="-176639" z="-3632" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186942" y="-178778" z="-3652" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186740" y="-178066" z="-3652" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186841" y="-178244" z="-3652" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186337" y="-178066" z="-3652" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186740" y="-178422" z="-3652" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="187244" y="-178600" z="-3652" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="187042" y="-178244" z="-3652" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="184600" y="-179907" z="-3692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="187079" y="-182166" z="-3297" heading="55172" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="185856" y="-180595" z="-3601" heading="51499" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186345" y="-181330" z="-3418" heading="55636" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="185104" y="-180441" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="185003" y="-179195" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="185103" y="-179729" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="184701" y="-180085" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="185003" y="-180263" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="185506" y="-179373" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185104" y="-179017" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="184903" y="-180441" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185607" y="-179195" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="184295" y="-181780" z="-3759" heading="46685" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="184576" y="-181890" z="-3812" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="184475" y="-181000" z="-3812" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="184274" y="-181000" z="-3812" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="184073" y="-181000" z="-3812" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="184778" y="-180466" z="-3812" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="184878" y="-181712" z="-3812" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="184677" y="-181356" z="-3812" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="184475" y="-180644" z="-3812" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="185855" y="-182178" z="-3692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="187063" y="-182178" z="-3692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186057" y="-181110" z="-3692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186963" y="-182000" z="-3692" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="185453" y="-181110" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186258" y="-181466" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186762" y="-182356" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186057" y="-181466" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186057" y="-181822" z="-3692" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186661" y="-182178" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185956" y="-181644" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185653" y="-181822" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186459" y="-181822" z="-3692" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186183" y="-185475" z="-3309" heading="17301" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="185835" y="-184512" z="-3309" heading="26944" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186250" y="-182614" z="-3257" heading="12762" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="185485" y="-183747" z="-3376" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="184653" y="-184277" z="-3309" heading="31595" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186757" y="-184876" z="-3309" heading="2621" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="185757" y="-185902" z="-3309" heading="46043" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="187047" y="-183374" z="-3270" heading="54171" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="184820" y="-183790" z="-3309" heading="36089" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186720" y="-182644" z="-3273" heading="41910" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="185786" y="-184993" z="-3376" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="187077" y="-184030" z="-3309" heading="49628" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186276" y="-186085" z="-3309" heading="47671" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186280" y="-184790" z="-3309" heading="42512" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186363" y="-184093" z="-3309" heading="1881" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185787" y="-183925" z="-3376" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185545" y="-184313" z="-3309" heading="62954" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="186189" y="-187090" z="-3420" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186189" y="-186378" z="-3420" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="186793" y="-187090" z="-3420" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="186592" y="-186378" z="-3420" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="185786" y="-186734" z="-3420" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186592" y="-186734" z="-3420" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="186390" y="-186378" z="-3420" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186794" y="-186022" z="-3420" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="185987" y="-186022" z="-3420" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="186189" y="-186734" z="-3420" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="181078" y="-184741" z="-3507" heading="25861" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="183356" y="-184513" z="-3381" heading="38122" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="186400" y="-185653" z="-3309" heading="45082" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="181157" y="-186592" z="-3584" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="181056" y="-185702" z="-3584" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="181359" y="-185880" z="-3584" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="182139" y="-185058" z="-3507" heading="54441" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="182637" y="-184878" z="-3473" heading="34826" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="181699" y="-185203" z="-3507" heading="35007" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="181872" y="-185873" z="-3507" heading="57810" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="181353" y="-185362" z="-3507" heading="33078" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="180762" y="-185152" z="-3507" heading="26993" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="178909" y="-185129" z="-3609" heading="31702" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="180886" y="-185741" z="-3507" heading="1345" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="180552" y="-186236" z="-3584" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="181962" y="-186236" z="-3584" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="177863" y="-185082" z="-3721" heading="34726" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="179692" y="-185089" z="-3517" heading="32132" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="178055" y="-184774" z="-3804" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21136" x="176052" y="-186806" z="-3796" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="175448" y="-186450" z="-3796" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="175146" y="-186272" z="-3796" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="176354" y="-185916" z="-3796" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21136" x="175850" y="-186094" z="-3796" heading="0" respawnTime="40sec" /> <!-- Dead Pit Horror -->
+			<npc id="21137" x="175749" y="-186272" z="-3796" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="176455" y="-185738" z="-3796" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="176048" y="-184653" z="-3720" heading="13369" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="175649" y="-185738" z="-3796" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="176852" y="-184683" z="-3720" heading="63894" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21137" x="175247" y="-186450" z="-3796" heading="0" respawnTime="40sec" /> <!-- Iron Ore Golem -->
+			<npc id="21138" x="175623" y="-185081" z="-3720" heading="8120" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="176510" y="-184940" z="-3720" heading="37278" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="175650" y="-186094" z="-3796" heading="0" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="176995" y="-184363" z="-3720" heading="16090" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="21138" x="177199" y="-185343" z="-3720" heading="52132" respawnTime="40sec" /> <!-- Greedy Geist -->
+			<npc id="27114" x="176466" y="-185202" z="-3720" heading="35584" respawnTime="180sec" /> <!-- Succubus Queen - Quest Monster -->
+		</group>
+	</spawn>
+</list>

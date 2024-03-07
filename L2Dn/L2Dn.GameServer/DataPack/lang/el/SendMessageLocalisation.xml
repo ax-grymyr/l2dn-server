@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replaces Player sendMessage method messages with translated text. -->
+<!-- No pretty way of doing something like this. Consider using proper SystemMessages where possible. Keep this list short. -->
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/SendMessageLocalisation.xsd">
+	<localisation message="Entering world in Invulnerable mode." translation="Είσοδος στον κόσμο σε Άτρωτη κατάσταση." />
+	<localisation message="Entering world in Invisible mode." translation="Είσοδος στον κόσμο σε Αόρατη κατάσταση." />
+	<localisation message="Entering world in Silence mode." translation="Είσοδος στον κόσμο σε Σιωπηλή κατάσταση." />
+	<localisation message="You have learned XXX new skills." translation="Έμαθες XXX νέες ικανότητες." />
+</list>

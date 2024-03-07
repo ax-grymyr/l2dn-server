@@ -1,0 +1,877 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90000" name="Best DEX Dye (DEX +4 CON -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best DEX Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_dex" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90001" name="Best INT Dye (INT +4 MEN -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90002" name="Best INT Dye (INT +4 WIT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best INT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_int" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90003" name="Best MEN Dye (MEN +4 INT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90004" name="Best MEN Dye (MEN +4 WIT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best MEN Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_men" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90005" name="Best WIT Dye (WIT +4 INT -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90006" name="Best WIT Dye (WIT +4 MEN -2)" additionalName="3rd Class" type="EtcItem">
+		<!-- Required for applying Best WIT Pattern. Can be exchanged for Dye Powder through the Game Assistant. Note!. Applying the pattern requires 10 dyes. Requirements: all classes after the 3rd class change. Hidden power is not available. -->
+		<set name="icon" val="icon.lv4_1_dye_wit" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90007" name="Low-grade Life Stone - Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- Used for weapon augmentation. Can be exchanged for Dim Life Stone Lv. 1 - Weapon through the Game Assistant. D-grade Gemstones (50 pcs.) are required for augmentation. -->
+		<set name="icon" val="icon.etc_mineral_general_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="90008" name="Remnant Ashes" type="EtcItem">
+		<!-- An item you got from a prisoner of the Dungeon of Abyss. -->
+		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90009" name="Image of Evil" type="EtcItem">
+		<!-- An item you got from an especially dangerous prisoner of the Dungeon of Abyss. -->
+		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90010" name="Key to the West Wing of the Dungeon of Abyss" additionalName="Sealed" type="EtcItem">
+		<!-- The key to the door in the Dungeon of Abyss' western wing. -->
+		<set name="icon" val="icon.etc_dark_key_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90011" name="Key to the East Wing of the Dungeon of Abyss" additionalName="Sealed" type="EtcItem">
+		<!-- The key to the door in the Dungeon of Abyss' eastern wing. -->
+		<set name="icon" val="icon.etc_dark_key_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90012" name="Low-grade Life Stone - Weapon" type="EtcItem">
+		<!-- Used for weapon augmentation. D-grade Gemstones (50 pcs.) are required for augmentation. -->
+		<set name="icon" val="icon.etc_mineral_general_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90013" name="Mid-grade Life Stone - Weapon" type="EtcItem">
+		<!-- Used for weapon augmentation. C-grade Gemstones (50 pcs.) are required for augmentation. -->
+		<set name="icon" val="icon.etc_mineral_special_i03" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90014" name="High-grade Life Stone - Weapon" type="EtcItem">
+		<!-- Used for weapon augmentation. B-grade Gemstones (50 pcs.) are required for augmentation. -->
+		<set name="icon" val="icon.etc_mineral_rare_i03" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90015" name="Top-grade Life Stone - Weapon" type="EtcItem">
+		<!-- Used for weapon augmentation. A-grade Gemstones (50 pcs.) are required for augmentation. -->
+		<set name="icon" val="icon.etc_mineral_unique_i03" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90016" name="Shining Life Stone - Weapon" type="EtcItem">
+		<set name="icon" val="icon.renewal_mineral_r" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90017" name="A-grade Weapon Ingredient Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39200" level="1" /> <!-- Weapons Ingredient Box - A-grade -->
+		</skills>
+	</item>
+	<item id="90018" name="Elite Symbol of Monster Arena" additionalName="Sealed" type="EtcItem">
+		<!-- A reward for winning in the Elite Monster Arena. Can be traded for a special item by Arena Manager Lau. -->
+		<set name="icon" val="icon.etc_residence_token_royalguard" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90019" name="Symbol of Monster Arena" additionalName="Sealed" type="EtcItem">
+		<!-- A reward for winning in the Monster Arena. Can be traded for a special item by Arena Manager Lau. -->
+		<set name="icon" val="icon.etc_residence_token_giantchaser" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90020" name="Best Dye Pack" additionalName="3rd Class" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_4_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39201" level="1" /> <!-- Best Dye Box -->
+		</skills>
+	</item>
+	<item id="90021" name="Warrior's Talisman - Attack" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. PvE Damage +3%, P. Critical Damage/ M. Skill Critical Damage +20, P./ M. Skill Power +2%, P./ M. Accuracy +1. -->
+		<set name="icon" val="icon.r90_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90022" name="Warrior's Talisman - Defense" additionalName="30-day" type="Armor">
+		<!-- Available for 40 days. Received PvE Damage -3%, M. Damage Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Pull Resistance +10%. -->
+		<set name="icon" val="icon.r99_talisman_pd_up_passive" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90023" name="Belt" type="Armor">
+		<!-- Inventory Slots +2, Weight Limit +1000. Can be upgraded to Cloth Belt with a Magic Pin. -->
+		<set name="icon" val="icon.belt_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35040" level="1" /> <!-- Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="90024" name="Cloth Belt" type="Armor">
+		<!-- Inventory slots +2, weight limit +2000, HP Recovery Rate +1.24, MP Recovery Rate +0.83, CP Recovery Rate +1.66. Can be upgraded to Leather Belt with Mid-grade Magic Pin. -->
+		<set name="icon" val="icon.belt_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35041" level="1" /> <!-- Rag Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="90025" name="Leather Belt" type="Armor">
+		<!-- Inventory Slots +3, Weight Limit +3000, HP Recovery Rate +1.47, MP Recovery Rate +0.98, CP Recovery Rate +1.96, Max HP/ MP/ CP +100. Can be upgraded to Iron Belt with a High-grade Magic Pin. -->
+		<set name="icon" val="icon.belt_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35042" level="1" /> <!-- Leather Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="90026" name="Iron Belt" type="Armor">
+		<!-- Inventory Slots +4, Weight Limit +4000, HP Recovery Rate +1.70, MP Recovery Rate +1.13, CP Recovery Rate +2.26, Max HP/ MP/ CP +150. Can be upgraded to Mithril Belt with a Top-grade Magic Pin. -->
+		<set name="icon" val="icon.belt_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35043" level="1" /> <!-- Iron Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="90027" name="Mithril Belt" type="Armor">
+		<!-- Inventory slots +5, weight limit +5000, HP Recovery Rate +1.92, MP Recovery Rate +1.28, CP Recovery Rate +2.56, Max HP/ MP/ CP +200. -->
+		<set name="icon" val="icon.belt_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35044" level="1" /> <!-- Mithril Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="90028" name="Magic Pin" type="EtcItem">
+		<!-- Magic pin required for upgrading belts. Take it to Arena Manager Lau. -->
+		<set name="icon" val="icon.pin_i00" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="20" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90029" name="Mid-grade Magic Pin" type="EtcItem">
+		<!-- Magic pin required for upgrading belts. Take it to Arena Manager Lau. -->
+		<set name="icon" val="icon.pin_i01" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="20" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90030" name="High-grade Magic Pin" type="EtcItem">
+		<!-- Magic pin required for upgrading belts. Take it to Arena Manager Lau. -->
+		<set name="icon" val="icon.pin_i02" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="20" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90031" name="Top-grade Magic Pin" type="EtcItem">
+		<!-- Magic pin required for upgrading belts. Take it to Arena Manager Lau. -->
+		<set name="icon" val="icon.pin_i03" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="20" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90032" name="Elixir of Life" type="EtcItem">
+		<!-- Recovers a large amount of HP. Cooldown: 3 min. -->
+		<set name="icon" val="icon.etc_super_hp_potion_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90033" name="Elixir of Mind" type="EtcItem">
+		<!-- Recovers a large amount of MP. Cooldown: 3 min. -->
+		<set name="icon" val="icon.etc_super_mp_potion_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90034" name="Spellbook Chest - 3rd Class" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_silver" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39202" level="1" /> <!-- Spellbook Chest -->
+		</skills>
+	</item>
+	<item id="90035" name="Life Stone Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="CAPSULE" />
+		<set name="material" val="FISH" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39203" level="1" /> <!-- Life Stone Pack -->
+		</skills>
+	</item>
+	<item id="90036" name="Hero's Talisman - Attack" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. PvP Damage +3%, P. Critical Damage/ M. Skill Critical Damage +20, P./ M. Skill Power +2%, P./ M. Accuracy +1. -->
+		<set name="icon" val="icon.r90_sp_talisman_dr_hp_active" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="35038" level="1" /> <!-- Hero's Talisman - Attack -->
+		</skills>
+	</item>
+	<item id="90037" name="Hero's Talisman - Defense" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Received PvP Damage -3%, M. Damage Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%. -->
+		<set name="icon" val="icon.r95_talisman_ca_down_active" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="35039" level="1" /> <!-- Hero's Talisman - Defense -->
+		</skills>
+	</item>
+	<item id="90038" name="Spellbook: Mount Golden Lion (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Mount Golden Lion skill. Required level: 76 (after the 3rd class change). <Classes>. Human classes after the 3rd class change. <Skill effect>. Allows to mount Golden Lion. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90039" name="Spellbook: Mount Pegasus (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Mount Pegasus skill. Required level: 76 (after the 3rd class change). <Classes>. Elf classes after the 3rd class change. <Skill effect>. Allows to mount Pegasus. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90040" name="Spellbook: Mount Saber Tooth Cougar (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Mount Saber-toothed Cougar skill. Required level: 76 (after the 3rd class change). <Classes>. Dark Elf classes after the 3rd class change. <Skill effect>. Allows to mount Saber-toothed Cougar. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90041" name="Spellbook: Mount Kukuru (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Mount Kukuru skill. Required level: 76 (after the 3rd class change). <Classes>. Dwarf classes after the 3rd class change. <Skill effect>. Allows to mount Kukuru. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90042" name="Spellbook: Mount Black Bear (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Mount Black Bear skill. Required level: 76 (after the 3rd class change). <Classes>. Orc classes after the 3rd class change. <Skill effect>. Allows to mount Black Bear. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90043" name="Dark Assassin Transformation Potion" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Dark Assassin. <Transformation effect>. P. Atk. +2%. M. Atk. +2%. P. Def. +2%. M. Def. +2%. P. Accuracy +1. M. Accuracy +1. Max HP +5%. Max MP +5%. Atk. Spd. +3%. Speed +4. M. Critical Rate +1. Duration: 20 min. The effect remains after death. -->
+		<set name="icon" val="icon.empty_bottle" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39205" level="1" /> <!-- Dark Assassin Transformation Potion -->
+		</skills>
+	</item>
+	<item id="90044" name="Dimensional Blessing" additionalName="Sealed" type="EtcItem">
+		<!-- XP +37,000,000, SP +111,000. -->
+		<set name="icon" val="icon.etc_blessed_kalie_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39204" level="1" /> <!-- Dimensional Blessing -->
+		</skills>
+	</item>
+	<item id="90045" name="Magical Tablet" type="EtcItem">
+		<!-- A tablet filled with magic energy. Required for learning some skills. -->
+		<set name="icon" val="icon.etc_hidden_1st_page_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90046" name="Scroll: Vengeance" type="EtcItem">
+		<!-- A scroll for learning the Vengeance skill. <Classes>. Phoenix Knight, Hell Knight, Eva's Templar, Shillien Templar. <Skill effect>. Increases aggression of surrounding enemies. Increases P./ M. Def. and Buff Cancel Resistance, decreases Speed. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90047" name="Scroll: Touch of Life" type="EtcItem">
+		<!-- A scroll for learning the Touch of Life skill. <Classes>. Phoenix Knight, Eva's Templar. <Skill effect>. Grants a divine blessing by sacrificing oneself. Recovers HP and increases Buff Cancel Resistance, Debuff/ Anomaly Resistance and Received Healing. Continuously recovers HP. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90048" name="Scroll: Touch of Death" type="EtcItem">
+		<!-- A scroll for learning the Touch of Death skill. <Classes>. Hell Knight, Shillien Templar. <Skill effect>. Curses the enemy by sacrificing oneself. With a certain chance, removes buffs from the enemy, decreasing their CP, Max CP, Received Healing and Debuff/ Anomaly Resistance. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Shillien's Curse -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90049" name="Scroll: Shield of Faith" type="EtcItem">
+		<!-- A scroll for learning the Shield of Faith skill. <Classes>. Phoenix Knight, Hell Knight, Eva's Templar, Shillien Templar. <Skill effect>. Increases party members' P./ M. Def. You receive some of the damage inflicted to your party. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90050" name="Scroll: Shield of Sacrifice" type="EtcItem">
+		<!-- A scroll for learning the Shield of Sacrifice skill. <Class>. Phoenix Knight. <Skill effect>. The character sacrifices themselves, decreasing Max HP. Increases party members' P./ M. Def. and Received Healing. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Shield of Security -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90051" name="Scroll: Insane Crusher" type="EtcItem">
+		<!-- A scroll for learning the Insane Crusher skill. <Class>. Hell Knight. <Skill effect>. Casts a dark curse and unleashes a powerful strike dealing damage to nearby enemies. Cancels at least one of the enemy's buffs, and temporarily decreases their Max CP significantly. Decreases Debuff/ Anomaly Resistance and Received Healing. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Lunatic Crusher -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90052" name="Scroll: Eva's Defense" type="EtcItem">
+		<!-- A scroll for learning the Eva's Defense skill. <Class>. Eva's Templar. <Skill effect>. Increases P./ M. Def. and Speed. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Eva's Care -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90053" name="Scroll: Mass Lightning Strike" type="EtcItem">
+		<!-- A spellbook for learning the Mass Lightning Strike skill. <Class>. Shillien Templar. <Skill effect>. Strikes the target and surrounding enemies with a lightning bolt paralyzing them for some time. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90054" name="Scroll: Clear Movements" type="EtcItem">
+		<!-- A scroll for learning the Clear Movements skill. <Classes>. Adventurer, Wind Rider, Ghost Hunter. <Skill effect>. All senses sharpen, and cooldown time of the Hide and Shadow Step skills is reset. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90055" name="Scroll: Critical Wound" type="EtcItem">
+		<!-- A scroll for learning the Critical Wound skill. <Classes>. Adventurer, Wind Rider, Ghost Hunter. <Skill effect>. Increases target's Received P. Critical Damage and decreases their Vital Point Attack Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90056" name="Scroll: Focus Power" type="EtcItem">
+		<!-- A scroll for learning the Focus Power skill. <Classes>. Adventurer. Wind Rider. Ghost Hunter. <Skill effect>. Increases the bonus to Dagger Damage. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90057" name="Scroll: Focus Chance" type="EtcItem">
+		<!-- A scroll for learning the Focus Chance skill. <Classes>. Adventurer. Wind Rider. Ghost Hunter. <Skill effect>. Increases Vital Point Attack Rate and Vital Point Critical Rate. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90058" name="Scroll: Focus Death" type="EtcItem">
+		<!-- A scroll for learning the Focus Death skill. <Classes>. Adventurer. Wind Rider. Ghost Hunter. <Skill effect>. Increases Vital Point Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90059" name="Scroll: Mirage" type="EtcItem">
+		<!-- A scroll for learning the Mirage skill. <Class>. Adventurer. <Skill effect>. Increases Vital Point Attack Rate and decreases received P. Critical Damage/ received M. Skill Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90060" name="Scroll: Evasion" type="EtcItem">
+		<!-- A scroll for learning the Evasion skill. <Class>. Wind Rider. <Skill effect>. Increases P./ M. Skill Evasion. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90061" name="Scroll: Counterattack" type="EtcItem">
+		<!-- A scroll for learning the Counterattack skill. <Class>. Ghost Hunter. <Skill effect>. Reflects some of the received damage back to the enemy. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90062" name="Scroll: Real Target" type="EtcItem">
+		<!-- A scroll for learning the Real Target skill. <Classes>. Sagittarius, Moonlight Sentinel, Ghost Sentinel. <Skill effect>. Increases Shock Atk. Rate. With a certain chance after an attack, applies a debuff that decreases the target's Bow Resistance and Shock Resistance. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - True Aim -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90063" name="Scroll: Death Sting" type="EtcItem">
+		<!-- A scroll for learning the Death Sting skill. <Classes>. Sagittarius, Moonlight Sentinel, Ghost Sentinel. <Skill effect>. Shoots a deadly arrow at the enemy, blocking their magical skills. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90064" name="Scroll: Flame Hawk" type="EtcItem">
+		<!-- A scroll for learning the Flame Hawk skill. <Class>. Sagittarius. <Skill effect>. Fires an arrow imbued with the phoenix energy, attacking the target and enemies at the front. Inflicts additional damage over time. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Flame Arrow -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90065" name="Scroll: Arrow Rain" type="EtcItem">
+		<!-- A scroll for learning the Arrow Rain skill. <Class>. Moonlight Sentinel. <Skill effect>. Causes arrows to rain down from the sky, attacking the target and the enemies surrounding it. Deals additional damage over time. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Arrow Shower -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90066" name="Scroll: Ghost Piercing" type="EtcItem">
+		<!-- A scroll for learning the Ghost Piercing skill. <Class>. Ghost Sentinel. <Skill effect>. Shoots ghost arrows, attacking the target and enemies in the front. Deals additional damage over time. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Piercing Arrow -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90067" name="Scroll: Sonic Barrier" type="EtcItem">
+		<!-- A scroll for learning the Tough Body skill. <Class>. Duelist. <Skill effect>. Increases P./ M. Def, Debuff/ Anomaly Resistance, and Buff Cancel Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90068" name="Scroll: Indestructible Sound" type="EtcItem">
+		<!-- A scroll for learning the Indestructible Sound skill. <Class>. Duelist. <Skill effect>. Makes a powerful sword strike, completely blocking the target. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90069" name="Scroll: Maximum Sonic Focus" type="EtcItem">
+		<!-- A scroll for learning the Indestructible Sound skill. <Class>. Duelist. <Skill effect>. Charges Sword Spirit to the full. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90070" name="Scroll: Force Barrier" type="EtcItem">
+		<!-- A scroll for learning the Wondrous Power skill. <Class>. Grand Khavatari. <Skill effect>. Increases P./ M. Def, Debuff/ Anomaly Resistance, and Buff Cancel Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90071" name="Scroll: Rush" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90072" name="Scroll: Maximum Force Focus" type="EtcItem">
+		<!-- A scroll for learning the Maximum Force Focus skill. <Class>. Grand Khavatari. <Skill effect>. Momentarily increases Momentum to its maximum level. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90073" name="Scroll: Destroyer's Roar" type="EtcItem">
+		<!-- A scroll for learning the Destroyer's Roar skill. <Class>. Titan. <Skill effect>. Inflicts Fear on surrounding enemies and decreases their Speed. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90074" name="Scroll: Over the Body" type="EtcItem">
+		<!-- A scroll for learning the Over the Body skill. <Class>. Titan. <Skill effect>. Releases combat spirit, increasing Max HP, HP Recovery Rate, P. Atk., P. Def., Atk. Spd. and Speed. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Titan Champion -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90075" name="Scroll: Demolition Impact" type="EtcItem">
+		<!-- A scroll for learning the Demolition Impact skill. <Class>. Titan. <Skill effect>. Unleashes a destructive shockwave at the target. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90076" name="Scroll: Shocking Burst" type="EtcItem">
+		<!-- A scroll for learning the Shocking Burst skill. <Class>. Dreadnought. <Skill effect>. Creates a powerful shockwave that deals damage to the target and nearby enemies, inflicting Shock on them and decreasing their P./ M. Def. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Spear Cage -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90077" name="Scroll: Spear Howl" type="EtcItem">
+		<!-- A scroll for learning the Spear Howl skill. <Class>. Dreadnought. <Skill effect>. Strikes the earth with a spear attacking nearby enemies. Removes Speed-increasing buffs. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Spear Rumble -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90078" name="Scroll: Armor Crush" type="EtcItem">
+		<!-- A scroll for learning the Armor Crush skill. <Classes>. Titan, Fortune Seeker, Maestro. <Skill effect>. Attacks the target, inflicting Shock on them and decreasing P./ M. Def. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Titanic Break -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90079" name="Scroll: Spoil Crush" type="EtcItem">
+		<!-- A scroll for learning the Spoil Crush skill. <Class>. Fortune Seeker. <Skill effect>. Causes a change inside the monster while attacking it, and makes it possible to steal valuable items. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. -Trophy Thief -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90080" name="Scroll: Final Secret" type="EtcItem">
+		<!-- A scroll for learning the Final Secret Lv. 1 skill. <Classes>. Dreadnought. Duelist. Titan. Grand Khavatari. Vanguard Rider. Fortune Seeker. Maestro. Doombringer. <Skill effect>. Releases hidden spirit powers. Increases P. Skill Power, Basic PvP Damage, Bow Resistance and M. Def. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90081" name="Scroll: Arcane Power" type="EtcItem">
+		<!-- A scroll for learning the Arcane Power skill. <Classes>. Archmage, Mystic Muse, Storm Screamer. <Skill effect>. Maximizes spells' efficiency, increasing M. Atk. and MP Consumption. Consumes HP over time. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90082" name="Scroll: Fire Vortex Buster" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90083" name="Scroll: Ice Vortex Crusher" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90084" name="Scroll: Wind Vortex Slug" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90085" name="Scroll: Arcane Chaos" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90086" name="Scroll: Arcane Shield" type="EtcItem">
+		<!-- A scroll for learning the Arcane Shield skill. <Classes>. Archmage, Mystic Muse, Storm Screamer, Soul Hound. <Skill effect>. Decreases received damage, blocks the rest of the damage by consuming MP. The effect is cancelled when MP drops to 0. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Faery Shield -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90087" name="Scroll: Curse of Doom" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90088" name="Scroll: Curse of Abyss" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90089" name="Scroll: Vampiric Mist" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90090" name="Scroll: Song of Renewal" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90091" name="Scroll: Champion Song" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90092" name="Scroll: Song of Silence" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90093" name="Scroll: Song of Purification" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90094" name="Scroll: Dance of Shadows" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90095" name="Scroll: Dance of Siren" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90096" name="Scroll: Dance of Medusa" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90097" name="Scroll: Dance of Berserker" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90098" name="Scroll: Prophecy of Fire" type="EtcItem">
+		<!-- A scroll for learning the Prophecy of Fire skill. <Class>. Hierophant. <Skill effect>. Increases Max HP, HP Recovery Rate, P./ M. Def., Atk. Spd./ Casting Spd., damage to monsters, P. Skill Critical Damage, M. Skill Critical Rate, and Debuff/ Anomaly Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90099" name="Scroll: Block Defense" type="EtcItem">
+		<!-- A scroll for learning the Block Defense skill. <Class>. Hierophant. <Skill effect>. Prevents the enemy from getting buffs that increase P./ M. Def. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

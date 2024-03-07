@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AdenSquareMerchants">
+		<group>
+			<npc id="34152" x="147659" y="27346" z="-2200" heading="47814" respawnTime="1min" /> <!-- Juni -->
+			<npc id="30869" x="147259" y="27356" z="-2200" heading="47094" respawnTime="1min" /> <!-- Lemper - Pet Manager -->
+			<npc id="34218" x="147321" y="27315" z="-2200" heading="41794" respawnTime="1min" /> <!-- Greno - Equipment Merchant -->
+			<npc id="30843" x="147402" y="27277" z="-2200" heading="44416" respawnTime="1min" /> <!-- Romp - Warehouse Keeper -->
+			<npc id="30839" x="147466" y="27255" z="-2200" heading="52721" respawnTime="1min" /> <!-- Holly - Grocer -->
+			<npc id="30846" x="147545" y="27276" z="-2200" heading="55313" respawnTime="1min" /> <!-- Wilbert - Blacksmith -->
+			<!-- <npc id="31051" x="147596" y="27315" z="-2200" heading="55711" respawnTime="1min" /> Keach - Tattoo Master -->
+		</group>
+	</spawn>
+</list>

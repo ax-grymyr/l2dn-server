@@ -1,0 +1,1383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="83001" toLevel="20" name="P./ M. Atk.">
+		<!-- +50 -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">700</value>
+					<value level="11">900</value>
+					<value level="12">1000</value>
+					<value level="13">1100</value>
+					<value level="14">1200</value>
+					<value level="15">1400</value>
+					<value level="16">1500</value>
+					<value level="17">1600</value>
+					<value level="18">1700</value>
+					<value level="19">1800</value>
+					<value level="20">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">700</value>
+					<value level="11">900</value>
+					<value level="12">1000</value>
+					<value level="13">1100</value>
+					<value level="14">1200</value>
+					<value level="15">1400</value>
+					<value level="16">1500</value>
+					<value level="17">1600</value>
+					<value level="18">1700</value>
+					<value level="19">1800</value>
+					<value level="20">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83002" toLevel="20" name="P./ M. Def.">
+		<!-- +50 -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">700</value>
+					<value level="11">900</value>
+					<value level="12">1000</value>
+					<value level="13">1100</value>
+					<value level="14">1200</value>
+					<value level="15">1400</value>
+					<value level="16">1500</value>
+					<value level="17">1600</value>
+					<value level="18">1700</value>
+					<value level="19">1800</value>
+					<value level="20">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">700</value>
+					<value level="11">900</value>
+					<value level="12">1000</value>
+					<value level="13">1100</value>
+					<value level="14">1200</value>
+					<value level="15">1400</value>
+					<value level="16">1500</value>
+					<value level="17">1600</value>
+					<value level="18">1700</value>
+					<value level="19">1800</value>
+					<value level="20">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83003" toLevel="20" name="Atk. Spd./ Casting Spd.">
+		<!-- +10 -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+					<value level="5">20</value>
+					<value level="6">40</value>
+					<value level="7">60</value>
+					<value level="8">80</value>
+					<value level="9">100</value>
+					<value level="10">140</value>
+					<value level="11">180</value>
+					<value level="12">200</value>
+					<value level="13">220</value>
+					<value level="14">240</value>
+					<value level="15">280</value>
+					<value level="16">300</value>
+					<value level="17">320</value>
+					<value level="18">340</value>
+					<value level="19">360</value>
+					<value level="20">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">10</value>
+					<value level="5">20</value>
+					<value level="6">40</value>
+					<value level="7">60</value>
+					<value level="8">80</value>
+					<value level="9">100</value>
+					<value level="10">140</value>
+					<value level="11">180</value>
+					<value level="12">200</value>
+					<value level="13">220</value>
+					<value level="14">240</value>
+					<value level="15">280</value>
+					<value level="16">300</value>
+					<value level="17">320</value>
+					<value level="18">340</value>
+					<value level="19">360</value>
+					<value level="20">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83004" toLevel="20" name="Skill Damage Bonus">
+		<!-- +0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83005" toLevel="20" name="Received Skill Damage">
+		<!-- -0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83006" toLevel="20" name="Skill damage bonus in PvP">
+		<!-- +0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83007" toLevel="20" name="Received skill damage in PvP">
+		<!-- -0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83008" toLevel="20" name="Skill Critical Damage">
+		<!-- +0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83009" toLevel="20" name="Skill Critical Rate">
+		<!-- +0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0.1</value>
+					<value level="2">0.2</value>
+					<value level="3">0.3</value>
+					<value level="4">0.4</value>
+					<value level="5">0.6</value>
+					<value level="6">1.2</value>
+					<value level="7">1.8</value>
+					<value level="8">2.4</value>
+					<value level="9">3</value>
+					<value level="10">4.2</value>
+					<value level="11">5.4</value>
+					<value level="12">6</value>
+					<value level="13">6.6</value>
+					<value level="14">7.2</value>
+					<value level="15">8.4</value>
+					<value level="16">9</value>
+					<value level="17">9.6</value>
+					<value level="18">10.2</value>
+					<value level="19">10.8</value>
+					<value level="20">12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83010" toLevel="20" name="Received Skill Critical Damage">
+		<!-- -0.25% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83011" toLevel="20" name="Received Skill Critical Rate">
+		<!-- -0.2% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83012" toLevel="20" name="Soulshot/ Spiritshot damage">
+		<!-- +0.5% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83013" toLevel="20" name="Soulshot/ Spiritshot Damage Resistance">
+		<!-- +0.3% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>
+					<value level="1">-0.3</value>
+					<value level="2">-0.5</value>
+					<value level="3">-0.8</value>
+					<value level="4">-1</value>
+					<value level="5">-1.2</value>
+					<value level="6">-1.6</value>
+					<value level="7">-2</value>
+					<value level="8">-2.8</value>
+					<value level="9">-3.6</value>
+					<value level="10">-4.5</value>
+					<value level="11">-5.4</value>
+					<value level="12">-6</value>
+					<value level="13">-6.6</value>
+					<value level="14">-7.2</value>
+					<value level="15">-8.4</value>
+					<value level="16">-9</value>
+					<value level="17">-9.6</value>
+					<value level="18">-10.2</value>
+					<value level="19">-10.8</value>
+					<value level="20">-12</value>
+				</amount>
+			</effect>
+			<effect name="SpiritshotResistance">
+				<amount>
+					<value level="1">-0.3</value>
+					<value level="2">-0.5</value>
+					<value level="3">-0.8</value>
+					<value level="4">-1</value>
+					<value level="5">-1.2</value>
+					<value level="6">-1.6</value>
+					<value level="7">-2</value>
+					<value level="8">-2.8</value>
+					<value level="9">-3.6</value>
+					<value level="10">-4.5</value>
+					<value level="11">-5.4</value>
+					<value level="12">-6</value>
+					<value level="13">-6.6</value>
+					<value level="14">-7.2</value>
+					<value level="15">-8.4</value>
+					<value level="16">-9</value>
+					<value level="17">-9.6</value>
+					<value level="18">-10.2</value>
+					<value level="19">-10.8</value>
+					<value level="20">-12</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83014" toLevel="20" name="Damage Decrease">
+		<!-- -50 -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83015" toLevel="20" name="Damage Decrease Ignore">
+		<!-- +50 -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83016" toLevel="20" name="Anomaly Atk. Rate">
+		<!-- +0.3% -->
+		<icon>
+			<value level="1">icon.skill3080</value>
+			<value level="2">icon.skill3080</value>
+			<value level="3">icon.skill3080</value>
+			<value level="4">icon.skill3080</value>
+			<value level="5">icon.skill3080</value>
+			<value level="6">icon.skill3080</value>
+			<value level="7">icon.skill3080</value>
+			<value level="8">icon.skill3080</value>
+			<value level="9">icon.skill3080</value>
+			<value level="10">icon.skill3080</value>
+			<value level="11">icon.skill3080</value>
+			<value level="12">icon.skill3080</value>
+			<value level="13">icon.skill3080</value>
+			<value level="14">icon.skill3080</value>
+			<value level="15">icon.skill3080</value>
+			<value level="16">icon.skill3081</value>
+			<value level="17">icon.skill3082</value>
+			<value level="18">icon.skill3083</value>
+			<value level="19">icon.skill3084</value>
+			<value level="20">icon.skill3085</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83017" toLevel="21" name="Pattern (STR) Lv. 0">
+		<!-- <Additional effect>. P. Atk. +25. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_str_step_00</value>
+			<value level="2">icon.dye_str_step_01</value>
+			<value level="3">icon.dye_str_step_02</value>
+			<value level="4">icon.dye_str_step_03</value>
+			<value level="5">icon.dye_str_step_04</value>
+			<value level="6">icon.dye_str_step_05</value>
+			<value level="7">icon.dye_str_step_06</value>
+			<value level="8">icon.dye_str_step_07</value>
+			<value level="9">icon.dye_str_step_08</value>
+			<value level="10">icon.dye_str_step_09</value>
+			<value level="11">icon.dye_str_step_10</value>
+			<value level="12">icon.dye_str_step_11</value>
+			<value level="13">icon.dye_str_step_12</value>
+			<value level="14">icon.dye_str_step_13</value>
+			<value level="15">icon.dye_str_step_14</value>
+			<value level="16">icon.dye_str_step_15</value>
+			<value level="17">icon.dye_str_step_16</value>
+			<value level="18">icon.dye_str_step_17</value>
+			<value level="19">icon.dye_str_step_18</value>
+			<value level="20">icon.dye_str_step_19</value>
+			<value level="21">icon.dye_str_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">25</value>
+					<value level="5">50</value>
+					<value level="6">75</value>
+					<value level="7">100</value>
+					<value level="8">125</value>
+					<value level="9">150</value>
+					<value level="10">175</value>
+					<value level="11">200</value>
+					<value level="12">225</value>
+					<value level="13">250</value>
+					<value level="14">275</value>
+					<value level="15">300</value>
+					<value level="16">325</value>
+					<value level="17">350</value>
+					<value level="18">375</value>
+					<value level="19">400</value>
+					<value level="20">425</value>
+					<value level="21">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0.5</value>
+					<value level="18">1</value>
+					<value level="19">1.5</value>
+					<value level="20">2</value>
+					<value level="21">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83018" toLevel="21" name="Pattern (CON) Lv. 0">
+		<!-- <Additional effect>. P. Def. +32. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_con_step_00</value>
+			<value level="2">icon.dye_con_step_01</value>
+			<value level="3">icon.dye_con_step_02</value>
+			<value level="4">icon.dye_con_step_03</value>
+			<value level="5">icon.dye_con_step_04</value>
+			<value level="6">icon.dye_con_step_05</value>
+			<value level="7">icon.dye_con_step_06</value>
+			<value level="8">icon.dye_con_step_07</value>
+			<value level="9">icon.dye_con_step_08</value>
+			<value level="10">icon.dye_con_step_09</value>
+			<value level="11">icon.dye_con_step_10</value>
+			<value level="12">icon.dye_con_step_11</value>
+			<value level="13">icon.dye_con_step_12</value>
+			<value level="14">icon.dye_con_step_13</value>
+			<value level="15">icon.dye_con_step_14</value>
+			<value level="16">icon.dye_con_step_15</value>
+			<value level="17">icon.dye_con_step_16</value>
+			<value level="18">icon.dye_con_step_17</value>
+			<value level="19">icon.dye_con_step_18</value>
+			<value level="20">icon.dye_con_step_19</value>
+			<value level="21">icon.dye_con_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">32</value>
+					<value level="5">65</value>
+					<value level="6">97</value>
+					<value level="7">130</value>
+					<value level="8">162</value>
+					<value level="9">195</value>
+					<value level="10">227</value>
+					<value level="11">260</value>
+					<value level="12">295</value>
+					<value level="13">325</value>
+					<value level="14">357</value>
+					<value level="15">390</value>
+					<value level="16">422</value>
+					<value level="17">455</value>
+					<value level="18">487</value>
+					<value level="19">520</value>
+					<value level="20">552</value>
+					<value level="21">585</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">-1</value>
+					<value level="18">-1.5</value>
+					<value level="19">-2</value>
+					<value level="20">-3</value>
+					<value level="21">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83019" toLevel="21" name="Pattern (DEX) Lv. 0">
+		<!-- <Additional effect>. Received P. Skill Critical Rate -0.4%. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_dex_step_00</value>
+			<value level="2">icon.dye_dex_step_01</value>
+			<value level="3">icon.dye_dex_step_02</value>
+			<value level="4">icon.dye_dex_step_03</value>
+			<value level="5">icon.dye_dex_step_04</value>
+			<value level="6">icon.dye_dex_step_05</value>
+			<value level="7">icon.dye_dex_step_06</value>
+			<value level="8">icon.dye_dex_step_07</value>
+			<value level="9">icon.dye_dex_step_08</value>
+			<value level="10">icon.dye_dex_step_09</value>
+			<value level="11">icon.dye_dex_step_10</value>
+			<value level="12">icon.dye_dex_step_11</value>
+			<value level="13">icon.dye_dex_step_12</value>
+			<value level="14">icon.dye_dex_step_13</value>
+			<value level="15">icon.dye_dex_step_14</value>
+			<value level="16">icon.dye_dex_step_15</value>
+			<value level="17">icon.dye_dex_step_16</value>
+			<value level="18">icon.dye_dex_step_17</value>
+			<value level="19">icon.dye_dex_step_18</value>
+			<value level="20">icon.dye_dex_step_19</value>
+			<value level="21">icon.dye_dex_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-0.4</value>
+					<value level="5">-0.8</value>
+					<value level="6">-1.2</value>
+					<value level="7">-1.6</value>
+					<value level="8">-2</value>
+					<value level="9">-2.4</value>
+					<value level="10">-2.8</value>
+					<value level="11">-3.2</value>
+					<value level="12">-3.6</value>
+					<value level="13">-4</value>
+					<value level="14">-4.4</value>
+					<value level="15">-4.8</value>
+					<value level="16">-5.2</value>
+					<value level="17">-5.6</value>
+					<value level="18">-6</value>
+					<value level="19">-6.4</value>
+					<value level="20">-6.8</value>
+					<value level="21">-7.2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">1</value>
+					<value level="18">1.5</value>
+					<value level="19">2</value>
+					<value level="20">3</value>
+					<value level="21">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83020" toLevel="21" name="Pattern (INT) Lv. 0">
+		<!-- <Additional effect>. M. Atk. +25. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_int_step_00</value>
+			<value level="2">icon.dye_int_step_01</value>
+			<value level="3">icon.dye_int_step_02</value>
+			<value level="4">icon.dye_int_step_03</value>
+			<value level="5">icon.dye_int_step_04</value>
+			<value level="6">icon.dye_int_step_05</value>
+			<value level="7">icon.dye_int_step_06</value>
+			<value level="8">icon.dye_int_step_07</value>
+			<value level="9">icon.dye_int_step_08</value>
+			<value level="10">icon.dye_int_step_09</value>
+			<value level="11">icon.dye_int_step_10</value>
+			<value level="12">icon.dye_int_step_11</value>
+			<value level="13">icon.dye_int_step_12</value>
+			<value level="14">icon.dye_int_step_13</value>
+			<value level="15">icon.dye_int_step_14</value>
+			<value level="16">icon.dye_int_step_15</value>
+			<value level="17">icon.dye_int_step_16</value>
+			<value level="18">icon.dye_int_step_17</value>
+			<value level="19">icon.dye_int_step_18</value>
+			<value level="20">icon.dye_int_step_19</value>
+			<value level="21">icon.dye_int_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">25</value>
+					<value level="5">50</value>
+					<value level="6">75</value>
+					<value level="7">100</value>
+					<value level="8">125</value>
+					<value level="9">150</value>
+					<value level="10">175</value>
+					<value level="11">200</value>
+					<value level="12">225</value>
+					<value level="13">250</value>
+					<value level="14">275</value>
+					<value level="15">300</value>
+					<value level="16">325</value>
+					<value level="17">350</value>
+					<value level="18">375</value>
+					<value level="19">400</value>
+					<value level="20">425</value>
+					<value level="21">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0.5</value>
+					<value level="18">1</value>
+					<value level="19">1.5</value>
+					<value level="20">2</value>
+					<value level="21">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83021" toLevel="21" name="Pattern (MEN) Lv. 0">
+		<!-- <Additional effect>. M. Def. +37. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_men_step_00</value>
+			<value level="2">icon.dye_men_step_01</value>
+			<value level="3">icon.dye_men_step_02</value>
+			<value level="4">icon.dye_men_step_03</value>
+			<value level="5">icon.dye_men_step_04</value>
+			<value level="6">icon.dye_men_step_05</value>
+			<value level="7">icon.dye_men_step_06</value>
+			<value level="8">icon.dye_men_step_07</value>
+			<value level="9">icon.dye_men_step_08</value>
+			<value level="10">icon.dye_men_step_09</value>
+			<value level="11">icon.dye_men_step_10</value>
+			<value level="12">icon.dye_men_step_11</value>
+			<value level="13">icon.dye_men_step_12</value>
+			<value level="14">icon.dye_men_step_13</value>
+			<value level="15">icon.dye_men_step_14</value>
+			<value level="16">icon.dye_men_step_15</value>
+			<value level="17">icon.dye_men_step_16</value>
+			<value level="18">icon.dye_men_step_17</value>
+			<value level="19">icon.dye_men_step_18</value>
+			<value level="20">icon.dye_men_step_19</value>
+			<value level="21">icon.dye_men_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">37</value>
+					<value level="5">75</value>
+					<value level="6">112</value>
+					<value level="7">150</value>
+					<value level="8">187</value>
+					<value level="9">225</value>
+					<value level="10">262</value>
+					<value level="11">300</value>
+					<value level="12">337</value>
+					<value level="13">375</value>
+					<value level="14">412</value>
+					<value level="15">450</value>
+					<value level="16">487</value>
+					<value level="17">525</value>
+					<value level="18">562</value>
+					<value level="19">600</value>
+					<value level="20">637</value>
+					<value level="21">675</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">-1</value>
+					<value level="18">-1.5</value>
+					<value level="19">-2</value>
+					<value level="20">-3</value>
+					<value level="21">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83022" toLevel="21" name="Pattern (WIT) Lv. 0">
+		<!-- <Additional effect>. Received M. Skill Critical Rate -0.4%. Note!. Effects of identical patterns do not stack. -->
+		<icon>
+			<value level="1">icon.dye_wit_step_00</value>
+			<value level="2">icon.dye_wit_step_01</value>
+			<value level="3">icon.dye_wit_step_02</value>
+			<value level="4">icon.dye_wit_step_03</value>
+			<value level="5">icon.dye_wit_step_04</value>
+			<value level="6">icon.dye_wit_step_05</value>
+			<value level="7">icon.dye_wit_step_06</value>
+			<value level="8">icon.dye_wit_step_07</value>
+			<value level="9">icon.dye_wit_step_08</value>
+			<value level="10">icon.dye_wit_step_09</value>
+			<value level="11">icon.dye_wit_step_10</value>
+			<value level="12">icon.dye_wit_step_11</value>
+			<value level="13">icon.dye_wit_step_12</value>
+			<value level="14">icon.dye_wit_step_13</value>
+			<value level="15">icon.dye_wit_step_14</value>
+			<value level="16">icon.dye_wit_step_15</value>
+			<value level="17">icon.dye_wit_step_16</value>
+			<value level="18">icon.dye_wit_step_17</value>
+			<value level="19">icon.dye_wit_step_18</value>
+			<value level="20">icon.dye_wit_step_19</value>
+			<value level="21">icon.dye_wit_step_20</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-0.4</value>
+					<value level="5">-0.8</value>
+					<value level="6">-1.2</value>
+					<value level="7">-1.6</value>
+					<value level="8">-2</value>
+					<value level="9">-2.4</value>
+					<value level="10">-2.8</value>
+					<value level="11">-3.2</value>
+					<value level="12">-3.6</value>
+					<value level="13">-4</value>
+					<value level="14">-4.4</value>
+					<value level="15">-4.8</value>
+					<value level="16">-5.2</value>
+					<value level="17">-5.6</value>
+					<value level="18">-6</value>
+					<value level="19">-6.4</value>
+					<value level="20">-6.8</value>
+					<value level="21">-7.2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">1</value>
+					<value level="18">1.5</value>
+					<value level="19">2</value>
+					<value level="20">3</value>
+					<value level="21">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>
+

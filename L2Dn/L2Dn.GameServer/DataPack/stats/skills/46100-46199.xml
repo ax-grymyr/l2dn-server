@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="46100" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Ancient Sword -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46101" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Rapier -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46102" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Spear -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46103" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Dagger -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46104" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Shield -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46105" toLevel="1" name="Tooltip Test - equip_type">
+		<!-- Fishing Rod -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46106" toLevel="1" name="Tooltip Test - trait">
+		<!-- Hold -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46107" toLevel="1" name="Tooltip Test - trait">
+		<!-- Infection -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46108" toLevel="1" name="Tooltip Test - trait">
+		<!-- Sleep -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46109" toLevel="1" name="Tooltip Test - trait">
+		<!-- Shock -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46110" toLevel="1" name="Tooltip Test - trait">
+		<!-- Paralysis -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46111" toLevel="1" name="Tooltip Test - trait">
+		<!-- Seal -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46112" toLevel="1" name="Tooltip Test - trait">
+		<!-- Pull -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46113" toLevel="1" name="Tooltip Test - trait">
+		<!-- Silence -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46114" toLevel="1" name="Tooltip Test - trait">
+		<!-- Fear -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46115" toLevel="1" name="Tooltip Test - trait">
+		<!-- Suppression -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46116" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Enemies -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46117" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Enemies -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46118" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Allies -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46119" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Caster -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46120" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Servitors -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46121" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Target -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46122" toLevel="1" name="Tooltip Test - target_type">
+		<!-- Target -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46123" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Alone -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46124" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Party Member -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46125" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Clan Members -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46126" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46127" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46128" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46129" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46130" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46131" toLevel="1" name="Tooltip Test - affect_object">
+		<!-- Range -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46132" toLevel="1" name="Tooltip Test - Compound">
+		<!-- <Ultimate skill> Attacks the enemy twice with $s1 power. There is a certain chance to deliver an extra attack. The effect lasts for 10 sec. Target's M. Def. -10% A chance to knock back monsters after an attack Critical. Ignores Shield Defense. Ignores $s2 of the target's defense. -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

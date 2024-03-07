@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="false" isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30841</npc> <!-- Carson -->
+	</npcs>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93968" count="1" chance="100" /> <!-- Best Dye of STR <STR +3> 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93969" count="1" chance="100" /> <!-- Best Dye of CON <CON +3> 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93970" count="1" chance="100" /> <!-- Best Dye of DEX <DEX +3> 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93971" count="1" chance="100" /> <!-- Best Dye of INT <INT +3> 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93972" count="1" chance="100" /> <!-- Best Dye of MEN <MEN +3> 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="93974" count="1" /> <!-- Best Dye Coupon -->
+		<production id="93973" count="1" chance="100" /> <!-- Best Dye of WIT <WIT +3> 3rd class class -->
+	</item>
+</list>

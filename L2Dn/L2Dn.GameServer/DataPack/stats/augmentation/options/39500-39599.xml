@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39500" name="Hidding Ring">
+		<!-- Max HP +55 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39501" name="Peculiar Combination">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39502" name="B-grade Accessory Set I">
+		<!-- Max CP +55 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39503" name="B-grade Weapon Set I">
+		<!-- Max MP +65 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39504" name="B-grade Weapon Set II">
+		<!-- Max HP +65 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39505" name="B-grade Weapon Set III">
+		<!-- Max CP +80 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39506" name="B-grade Weapon Set IV">
+		<!-- Max MP +80 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39507" name="B-grade Weapon Set V">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39508" name="A-grade Weapon Set I">
+		<!-- P. Atk. +35 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39509" name="A-grade Weapon Set II">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39510" name="A-grade Weapon Set III">
+		<!-- M. Atk. +35 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39511" name="Unifitting Weapon">
+		<!-- P. Skill Critical Damage +1% -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39512" name="Rapier and Cloves of Nightmare">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39513" name="Spear and Majestic Gloves">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39514" name="Two-handed Blunt Weapon and Boots if Nifhtmar">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39515" name="Bow and Majestic Boots">
+		<!-- M. Skill Critical Rate +1% -->
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39516" name="Bow and Majestic Boots">
+		<!-- P. Skill Critical Rate +1% -->
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39517" name="One-handed Blunt Weapon and Majestic Circlet">
+		<!-- M. Skill Critical Damage +1% -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39518" name="Top-grade Heavy Armor and Black Accessories">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39519" name="Top-grade Light Armor and Phoenix Earring">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39520" name="Top-grade Robe and Shield">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39521" name="Lv. 2 Jewel Set I">
+		<!-- P./ M. Atk. +25 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39522" name="Lv. 2 Jewel Set II">
+		<!-- P./ M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39523" name="Lv. 3 Jewel Set I">
+		<!-- P./ M. Atk. +40 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39524" name="Lv. 3 Jewel Set II">
+		<!-- P./ M. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39525" name="Lv. 4 Jewel Set I">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39526" name="Lv. 4 Jewel Set II">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="39527" name="Lv. 5 Jewel Set I">
+		<!-- Skill Power +1%, Max MP +50 -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39528" name="Lv. 5 Jewel Set II">
+		<!-- Received damage -1%, Max HP +50 -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+			<effect name="MaxHp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39529" name="Lv. 5 Jewel Set III">
+		<!-- P./ M. Def. +50, HP Recovery Potions' Effect +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>50</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39530" name="New Power">
+		<!-- Skill MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</option>
+	<option id="39531" name="Luck Power I">
+		<!-- P./ M. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39532" name="Luck Power II">
+		<!-- P./ M. Atk. +60 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39533" name="Siege Collection I">
+		<!-- Received PvP damage -1%, Max CP +1%, Max HP +1% -->
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39534" name="Siege Collection II">
+		<!-- Received PvP damage -1%, PvP damage +1%, Max CP +1%, Max HP +1% -->
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39535" name="Siege Collection III">
+		<!-- Received PvP damage -1%, Max MP +500 -->
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39536" name="Siege Collection IV">
+		<!-- Received PvP damage -2%, Max CP +250, Max HP +250 -->
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39537" name="option_id_39537">
+		<!-- Received PvP damage -1%, PvP damage +1%, Max CP +1%, Max HP +1%, Skill Power +1%, HP Recovery Potions' Effect +20 -->
+	</option>
+	<option id="39539" name="option_id_39539">
+		<!-- Acquired XP/ SP +5%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +5, PvE damage +2%, received PvE damage -5% -->
+	</option>
+	<option id="39540" name="option_id_39540">
+		<!-- Acquired XP/ SP +10%, P./ M. Def. +100, Atk. Spd./ Casting Spd. +10, PvP damage +2%, received PvP damage -5% -->
+	</option>
+	<option id="39541" name="option_id_39541">
+	</option>
+	<option id="39542" name="option_id_39542">
+	</option>
+	<option id="39543" name="option_id_39543">
+	</option>
+	<option id="39544" name="option_id_39544">
+	</option>
+	<option id="39545" name="option_id_39545">
+	</option>
+	<option id="39546" name="option_id_39546">
+	</option>
+	<option id="39547" name="option_id_39547">
+	</option>
+	<option id="39548" name="option_id_39548">
+	</option>
+	<option id="39549" name="option_id_39549">
+	</option>
+	<option id="39550" name="option_id_39550">
+	</option>
+	<option id="39551" name="option_id_39551">
+	</option>
+	<option id="39552" name="option_id_39552">
+	</option>
+	<option id="39553" name="option_id_39553">
+	</option>
+	<option id="39554" name="option_id_39554">
+	</option>
+	<option id="39555" name="option_id_39555">
+	</option>
+	<option id="39556" name="option_id_39556">
+	</option>
+	<option id="39557" name="option_id_39557">
+	</option>
+	<option id="39558" name="option_id_39558">
+	</option>
+	<option id="39559" name="option_id_39559">
+	</option>
+	<option id="39560" name="option_id_39560">
+	</option>
+	<option id="39561" name="option_id_39561">
+	</option>
+	<option id="39562" name="option_id_39562">
+	</option>
+	<option id="39563" name="option_id_39563">
+	</option>
+	<option id="39564" name="option_id_39564">
+	</option>
+	<option id="39565" name="option_id_39565">
+	</option>
+	<option id="39566" name="option_id_39566">
+	</option>
+	<option id="39567" name="option_id_39567">
+	</option>
+	<option id="39568" name="option_id_39568">
+	</option>
+	<option id="39569" name="option_id_39569">
+	</option>
+	<option id="39570" name="option_id_39570">
+	</option>
+	<option id="39571" name="option_id_39571">
+	</option>
+	<option id="39572" name="option_id_39572">
+	</option>
+	<option id="39573" name="option_id_39573">
+	</option>
+	<option id="39574" name="option_id_39574">
+		<!-- Acquired XP/ SP +10%, Max HP/ MP/ CP +300, Speed +2, All received Critical Rate -2%, All received Critical Damage -2% -->
+	</option>
+	<option id="39575" name="option_id_39575">
+		<!-- Acquired XP/ SP +3%, Max HP/ MP/ CP +125, Atk. Spd./ Casting Spd. +10, All Critical Rate +1%, All Critical Damage +1% -->
+	</option>
+	<option id="39576" name="option_id_39576">
+		<!-- Acquired XP/ SP +2%, Max HP/ MP/ CP +75, Atk. Spd./ Casting Spd. +5, PvE damage +1%, received PvE damage -1% -->
+	</option>
+</list>

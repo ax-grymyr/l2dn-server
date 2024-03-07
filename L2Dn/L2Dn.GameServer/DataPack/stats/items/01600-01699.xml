@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="1600" name="Kasha Bear Claw" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A claw pulled out from a Kasha Bear after killing it. Collect 5 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1601" name="Kasha Blade Spider Talon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A talon pulled out from a Kasha Blade Spider after killing it. Collect 5 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1602" name="Scarlet Salamander Scale" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A scale of a Scarlet Salamander. Collect 5 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1603" name="Fiery Spirit Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The first scroll containing the secret of Kabart, the Orcs' traditional martial arts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1604" name="Rosheek's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter written by Khavatari Rosheek. Take it to Gantaki Zu Urutu. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1605" name="Gantaki's Letter of Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gantaki's letter of recommendation. Take it to Prefect Kasman in Gludin. You can get there by talking to Gatekeeper Tamil. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1606" name="Fig" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fig given by Prefect Kasman. Take it to Khavatari Toruku. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1607" name="Leather Pouch" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A leather pouch given by Khavatari Toruku. Kill fighters of various tribes and collect 12 of their tokens. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1608" name="Full Leather Pouch" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A pouch filled with tokens after killing fighters of various tribes. Take it to Khavatari Toruku. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1609" name="Vuku Orc Tusk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A tusk obtained after killing a Vuku Orc. Collect 3 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1610" name="Ratman Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fang from a dead Ratman Warrior. Collect 3 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1611" name="Langk Lizardman Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A tooth obtained after killing a Langk Lizardman. Collect 3 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1612" name="Felim Lizardman Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A tooth obtained after killing a Felim Lizardman. Collect 3 of these. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1613" name="Iron Will Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The second scroll containing the secret of Kabart, the Orcs' traditional martial arts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1614" name="Toruku's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Khavatari Toruku. Take it to Prefect Kasman. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1615" name="Khavatari Totem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A token given to those who are to become Orc Monks. Take it to the High Prefect to change your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1616" name="Fire Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not avalable. A charm inscribed with the fire mantra. Take it and find the 3 items that Tataru spoke of. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1617" name="Kasha Bear Pelt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A pelt of Kasha Bear. Take it to Tataru along with Kasha Blade Spider Husk and Fiery Egg. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1618" name="Kasha Blade Spider Husk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A husk of Kasha Blade Spider. Take it to Tataru along with Kasha Bear Pelt and Fiery Egg. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1619" name="Fiery Egg" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An egg obtained from Scarlet Salamander. Take it to Tataru along with Kasha Bear Pelt and Kasha Blade Spider Husk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1620" name="Hestui Mask" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bear mask. Take it to Hestui Totem Spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1621" name="Fiery Egg" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An egg obtained from Scarlet Salamander. Take it to Tataru along with Kasha Bear Pelt and Kasha Blade Spider Husk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1622" name="Totem Spirit Claw" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A claw received from Hestui Totem Spirit. Take it to Tataru. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1623" name="Tataru's Letter of Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter written by Tataru. Take it to Priest Umos in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1624" name="Flame Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm inscribed with the flame mantra. Take it and collect Grizzly Blood for Priest Umos. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1625" name="Grizzly Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A glass bottle filled with Grizzly Blood. Collect 3 of these and take them to Priest Umos. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1626" name="Blood Cauldron" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A cauldron filled with Grizzly Blood. Take it to Duda-Mara Totem Spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1627" name="Spirit Net" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A net made with spider silk. Use it to capture Durka Spirit hidden inside Poisonous Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1628" name="Durka Spirit" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Durka Spirit bound with Spirit Net. Take it to Duda-Mara Totem Spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1629" name="Durka Parasite" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An evil spirit that comes out from spiders possessed with Durka Spirit. Required for summoning Durka Spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1630" name="Totem Spirit Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blood of Duda-Mara Totem Spirit. Take it to Priest Umos. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1631" name="Mask of Medium" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mask given to those who are to become Orc Shamans. Take it to the High Prefect to change your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1632" name="Silvera's Ring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A ring given to Artisan aspirants by Blacksmith Silvera. Kill Boogle Ratmen and collect their teeth. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1633" name="1st Pass Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The certificate for passing the 1st Artisan test. To take the next test, you must go to Blacksmith Kluto in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1634" name="2nd Pass Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The certificate for passing the 2nd Artisan test. Take it to Blacksmith Kluto in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1635" name="Final Pass Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The certificate for passing the final Artisan test. Take it to the Head Blacksmith to change your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1636" name="Boogle Ratman Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An ugly tooth of a Boogle Ratman. Just looking at it makes you nauseous. Collect 10 of these and take them to Blacksmith Silvera. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1637" name="Boogle Ratman Captain's Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Boogle Ratman Captain's stinky tooth. Collect 2 of these and take them to Blacksmith Silvera. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1638" name="Kluto's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blacksmith Kluto's letter. Take to Blacksmith Pinter in Gludio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1639" name="Footprint of Thief" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A trace left by thieves. Kill Vuku Orc Warriors, recover stolen items and take them to Blacksmith Pinter. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1640" name="Stolen Secret Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A box stolen by Vuku Orc Warriors. Its contents are unknown, but anyway, take it to Blacksmith Pinter. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1641" name="Mysterious Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mysterious box received from Pinter. Its contents are unknown, but don't worry and take it to Blacksmith Kluto in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1642" name="Ring of Raven" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark given to those who are to become Scavengers. Take it to the Warehouse Chief to change your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1643" name="Pippi's Letter of Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter of recommendation written by Collector Pippi. Take it to Grocer Mion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1644" name="Raut's Scroll of Escape" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An order sheet given by Warehouse Keeper Raut. Take it to Torai in the southern part of the Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1645" name="Succubus Undies" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Succubus' underwear received from Torai. Take it to Warehouse Keeper Raut in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1646" name="Mion's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Grocer Mion to her brother. Take it to Master Toma. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1647" name="Bronk's Ingot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An ingot to be given to Head Blacksmith Bronk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1648" name="Shari's Axe" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An axe to be given to Armor Merchant Shari. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1649" name="Zimenf's Potion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A potion to give to Head Priest of the Earth Zimenf. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1650" name="Bronk's Pay" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Payment from Head Blacksmith Bronk. Take it to Grocer Mion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1651" name="Shari's Pay" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Payment from Shari. Take it to Grocer Mion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1652" name="Zimenf's Pay" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Payment from Zimenf. Take it to Grocer Mion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1653" name="Bear Picture" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bear's picture from Master Toma. Carry it with you while hunting Hunter Bears until a Honey Bear appears. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1654" name="Tarantula Picture" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spider's picture from Master Toma. Carry it with you while hunting Tarantulas. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1655" name="Honey Jar" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A honey jar from Honey Bear. Collect 5 of these and take them to Master Toma. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1656" name="Bead" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bead obtained from Tarantula. Gather 20 of these and take them to Master Toma. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1657" name="Bead Parcel" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A parcel made of beads. Take it to Warehouse Keeper Raut in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1658" name="Gatekeeper Charm" type="EtcItem">
+		<!-- Used to teleport from the Orc Village to Gludin. -->
+		<set name="icon" val="icon.etc_totem_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1659" name="Gatekeeper Token" type="EtcItem">
+		<!-- Used to teleport from the Dwarven Village to Gludin. -->
+		<set name="icon" val="icon.etc_coins_silver_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1660" name="Cursed Maingauche" type="Weapon">
+		<!-- Cursed Maingauche. P. Atk. is low, but it can inflict Bleeding after Critical Attack with a certain probability. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.t00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="2545" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1070" />
+		<set name="price" val="1400000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<skills>
+			<skill id="3005" level="1" type="ON_CRITICAL_SKILL" /> <!-- Bleed -->
+		</skills>
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">42</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="1661" name="Thief Key" type="EtcItem">
+		<set name="icon" val="icon.etc_key_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1665" name="World Map" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An ancient map. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="handler" val="Maps" />
+	</item>
+	<item id="1666" name="Recipe: Wooden Arrow (100%)" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for Wooden Arrow. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="600" />
+		<set name="recipe_id" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1667" name="Spellbook: Summon Shadow" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Shadow skill. Used by Dark Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1668" name="Spellbook: Summon Mew the Cat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Mew the Cat skill. Used by Human Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1669" name="Spellbook: Summon Boxer the Unicorn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Boxer the Unicorn skill. Used by Elven Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1670" name="Spellbook: Summon Mirage the Unicorn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Mirage the Unicorn skill. Used by Elven Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1671" name="Spellbook: Summon Silhouette" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Silhouette skill. Used by Dark Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

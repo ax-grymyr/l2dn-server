@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>34163</npc> <!-- Augustina -->
+	</npcs>
+	<item>
+		<ingredient id="94445" count="1" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="100" /> <!-- Augustina's Coupon -->
+		<production id="94377" count="10" /> <!-- Supply Pouch -->
+	</item>
+	<!--
+	<item>
+		<ingredient id="94445" count="1" /> Augustina's Coupon
+		<ingredient id="94446" count="200" /> Augustina's Coupon
+		<production id="93848" count="20" /> Sayha's Cookie - Event
+	</item>
+	-->
+	<item>
+		<ingredient id="94445" count="1" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="300" /> <!-- Augustina's Coupon -->
+		<production id="94380" count="10" /> <!-- Scroll: Boost Attack -->
+	</item>
+	<item>
+		<ingredient id="94445" count="1" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="300" /> <!-- Augustina's Coupon -->
+		<production id="94381" count="10" /> <!-- Scroll: Boost Defense -->
+	</item>
+	<!--
+	<item>
+		<ingredient id="94445" count="1" /> Augustina's Coupon
+		<ingredient id="94446" count="300" /> Augustina's Coupon
+		<production id="13016" count="10" /> My Teleport Scroll
+	</item>
+	-->
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="90479" count="1" /> <!-- Shiny Jewelry Box -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="91767" count="1" /> <!-- Enchant Kit: Talisman of Aden -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="92020" count="1" /> <!-- Enchant Kit: Talisman of Aden -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93685" count="1" /> <!-- Enchant Kit: Talisman of Aden -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93134" count="1" /> <!-- Package: Agathion Ignis -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93135" count="1" /> <!-- Package: Agathion Nebula -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93136" count="1" /> <!-- Package: Agathion Procella -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93137" count="1" /> <!-- Package: Agathion Petram -->
+	</item>
+	<item>
+		<ingredient id="94445" count="2" /> <!-- Augustina's Coupon -->
+		<ingredient id="94446" count="500" /> <!-- Augustina's Coupon -->
+		<production id="93138" count="1" /> <!-- Package: Agathion Joy -->
+	</item>
+	<!--
+	<item>
+		<ingredient id="94445" count="3" /> Augustina's Coupon
+		<ingredient id="94446" count="750" /> Augustina's Coupon
+		<production id="93499" count="1" /> Enchanted B-grade Weapon Coupon
+	</item>
+	<item>
+		<ingredient id="94445" count="3" /> Augustina's Coupon
+		<ingredient id="94446" count="1000" /> Augustina's Coupon
+		<production id="94328" count="2" /> Elixir Powder
+	</item>
+	-->
+</list>

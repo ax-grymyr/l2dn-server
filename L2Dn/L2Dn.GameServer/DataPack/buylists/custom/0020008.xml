@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="49467" price="0" /> <!-- Fire Dragon Pendant -->
+	<item id="49468" price="0" /> <!-- Earth Dragon Pendant -->
+	<item id="90969" price="0" /> <!-- Rare Blessed Fire Dragon Pendant -->
+	<item id="90970" price="0" /> <!-- Rare Blessed Earth Dragon Pendant -->
+	<item id="91244" price="0" /> <!-- Dragon Pendant Lv. 1 -->
+	<item id="91245" price="0" /> <!-- Dragon Pendant Lv. 2 -->
+	<item id="91246" price="0" /> <!-- Dragon Pendant Lv. 3 -->
+	<item id="91247" price="0" /> <!-- Dragon Pendant Lv. 4 -->
+	<item id="91248" price="0" /> <!-- Blessed Dragon Pendant -->
+	<item id="93296" price="0" /> <!-- Einhasad's Pendant Lv. 1 -->
+	<item id="93297" price="0" /> <!-- Einhasad's Pendant Lv. 2 -->
+	<item id="93298" price="0" /> <!-- Einhasad's Pendant Lv. 3 -->
+	<item id="93299" price="0" /> <!-- Einhasad's Pendant Lv. 4 -->
+</list>

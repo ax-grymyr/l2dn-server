@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1719000" id="57" />
+		<!-- Ring of Seal -->
+		<production count="1" id="886" />
+		<production count="1" id="886" />
+		<!-- Earring of Seal -->
+		<production count="1" id="854" />
+		<production count="1" id="854" />
+		<!-- Necklace of Seal -->
+		<production count="1" id="119" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1340000" id="57" />
+		<!-- Sealed Phoenix Necklace -->
+		<production count="1" id="6323" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1005000" id="57" />
+		<!-- Sealed Phoenix Earring -->
+		<production count="1" id="6324" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="670000" id="57" />
+		<!-- Sealed Phoenix Ring -->
+		<production count="1" id="6325" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="808000" id="57" />
+		<!-- Adamantite Necklace -->
+		<production count="1" id="918" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1230000" id="57" />
+		<!-- Black Ore Necklace -->
+		<production count="1" id="926" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="606000" id="57" />
+		<!-- Adamantite Earring -->
+		<production count="1" id="856" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="924000" id="57" />
+		<!-- Black Ore Earring -->
+		<production count="1" id="864" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="404000" id="57" />
+		<!-- Adamantite Ring -->
+		<production count="1" id="887" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="616000" id="57" />
+		<!-- Black Ore Ring -->
+		<production count="1" id="895" />
+	</item>
+</list>

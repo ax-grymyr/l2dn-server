@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Enchant Rare Accesories -->
+	<item>
+		<ingredient id="6660" count="1" /> <!-- Queen Ant's Ring -->
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="6660" count="1" chance="0" /> <!-- Queen Ant's Ring -->
+		<production id="94383" count="1" chance="50" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94184" count="1" chance="50" /> <!-- Scroll of Blessing -->
+	</item>
+	<item>
+		<ingredient id="6661" count="1" /> <!-- Orfens Earring -->
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="6661" count="1" chance="0" /> <!-- Orfen's Earring -->
+		<production id="94383" count="1" chance="50" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94184" count="1" chance="50" /> <!-- Scroll of Blessing -->
+	</item>
+	<item>
+		<ingredient id="6662" count="1" /> <!-- Ring of Core -->
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="6662" count="1" chance="0" /> <!-- Ring of Core -->
+		<production id="94383" count="1" chance="20" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94184" count="1" chance="80" /> <!-- Scroll of Blessing -->
+	</item>
+	<item>
+		<ingredient id="49580" count="1" /> <!-- Baium's Ring -->
+		<ingredient id="57" count="7500000" /> <!-- Adena -->
+		<production id="49580" count="1" chance="0" /> <!-- Baium's Ring -->
+		<production id="94383" count="1" chance="77" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94385" count="1" chance="23" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+	</item>
+	<item>
+		<ingredient id="90763" count="1" /> <!-- Zaken's Earring -->
+		<ingredient id="57" count="75000000" /> <!-- Adena -->
+		<production id="90763" count="1" chance="0" /> <!-- Zaken's Earring -->
+		<production id="94383" count="1" chance="80" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94184" count="1" chance="20" /> <!-- Scroll of Blessing -->
+	</item>
+	<item>
+		<ingredient id="90992" count="1" /> <!-- Antharas' Earring -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="90992" count="1" chance="0" /> <!-- Antharas' Earring -->
+		<production id="94383" count="1" chance="60" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94385" count="1" chance="40" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+	</item>
+	<item>
+		<ingredient id="91550" count="1" /> <!-- Frintezza's Necklace -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91550" count="1" chance="0" /> <!-- Frintezza's Necklace -->
+		<production id="94383" count="1" chance="60" /> <!-- Scroll: Enchant Rare Accessories -->
+		<production id="94385" count="1" chance="40" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+	</item>
+</list>

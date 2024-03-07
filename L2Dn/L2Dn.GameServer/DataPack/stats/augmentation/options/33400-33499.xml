@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33415" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="1" /> <!-- Talisman of Speed -->
+	</option>
+	<option id="33416" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="2" /> <!-- Blessed Talisman of Speed -->
+	</option>
+	<option id="33417" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="3" /> <!-- +1 Talisman of Speed -->
+	</option>
+	<option id="33418" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="4" /> <!-- +1 Blessed Talisman of Speed -->
+	</option>
+	<option id="33419" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="5" /> <!-- +2 Talisman of Speed -->
+	</option>
+	<option id="33420" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="6" /> <!-- +2 Blessed Talisman of Speed -->
+	</option>
+	<option id="33421" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="7" /> <!-- +3 Talisman of Speed -->
+	</option>
+	<option id="33422" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="8" /> <!-- +3 Blessed Talisman of Speed -->
+	</option>
+	<option id="33423" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="9" /> <!-- +4 Talisman of Speed -->
+	</option>
+	<option id="33424" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="10" /> <!-- +4 Blessed Talisman of Speed -->
+	</option>
+	<option id="33425" name="Talisman_of_Speed">
+		<passive_skill id="50293" level="11" /> <!-- +5 Talisman of Speed -->
+	</option>
+	<option id="33481" name="Adventurer's_Cloak">
+		<passive_skill id="50302" level="1" /> <!-- Adventurer's Cloak -->
+	</option>
+	<option id="33482" name="Adventurer's_Cloak">
+		<passive_skill id="50303" level="1" /> <!-- Enhanced Adventurer's Cloak -->
+	</option>
+	<option id="33494" name="option_id_33494">
+		<!-- P. Def. +5 -->
+	</option>
+	<option id="33495" name="option_id_33495">
+		<!-- P. Def. +6 -->
+	</option>
+	<option id="33496" name="option_id_33496">
+		<!-- P. Def. +7 -->
+	</option>
+	<option id="33497" name="option_id_33497">
+		<!-- P. Def. +8 -->
+	</option>
+	<option id="33498" name="option_id_33498">
+		<!-- P. Def. +9 -->
+	</option>
+	<option id="33499" name="option_id_33499">
+		<!-- P. Def. +10. -->
+	</option>
+</list>

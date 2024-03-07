@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Weapon C-Grade -->
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Samurai Long Sword -->
+		<production count="1" id="93436" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Demon's Staff -->
+		<production count="1" id="93437" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Ecliptic Axe -->
+		<production count="1" id="93438" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Crystal Dagger -->
+		<production count="1" id="93439" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Eminence Bow -->
+		<production count="1" id="93440" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Orcish Poleaxe -->
+		<production count="1" id="93441" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Katana*Katana -->
+		<production count="1" id="93442" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Yaksa Mace -->
+		<production count="1" id="93443" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Berserker Blade -->
+		<production count="1" id="93444" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Great Pata -->
+		<production count="1" id="93445" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Admiral's Estoc -->
+		<production count="1" id="93446" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Saber Tooth -->
+		<production count="1" id="93447" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<ingredient count="1" id="93498" />
+		<!-- +4 ~ +15 Weapon Pack - Flint Pistols -->
+		<production count="1" id="95658" />
+	</item>
+</list>

@@ -1,0 +1,1538 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Hellbound">
+		<group>
+			<npc id="22336" x="21466" y="256323" z="-1317" heading="3040" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="18554" x="21995" y="254683" z="-1330" heading="40265" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="18554" x="21291" y="256680" z="-1322" heading="43448" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="18554" x="20199" y="256294" z="-1335" heading="56862" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="22336" x="21516" y="254513" z="-1388" heading="9672" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22337" x="21589" y="254692" z="-1339" heading="9614" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22336" x="21473" y="254709" z="-1360" heading="31250" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22339" x="21717" y="254827" z="-1322" heading="61793" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22337" x="21673" y="254966" z="-1329" heading="31593" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22336" x="21857" y="255156" z="-1319" heading="13640" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22038" y="255377" z="-1321" heading="9004" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21628" y="255570" z="-1327" heading="33221" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21863" y="255831" z="-1318" heading="45342" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22031" y="255882" z="-1321" heading="54033" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21834" y="256178" z="-1331" heading="45860" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21520" y="256275" z="-1318" heading="42556" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21176" y="256134" z="-1315" heading="46930" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21031" y="256454" z="-1317" heading="51940" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20816" y="256587" z="-1320" heading="48989" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20722" y="256784" z="-1322" heading="58562" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20386" y="256891" z="-1321" heading="57043" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20114" y="257032" z="-1347" heading="51027" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19981" y="256849" z="-1360" heading="55900" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19906" y="256272" z="-1382" heading="54566" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20074" y="256008" z="-1365" heading="64122" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20382" y="256044" z="-1357" heading="56419" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20698" y="256429" z="-1319" heading="50083" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20607" y="256179" z="-1323" heading="49862" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20673" y="254408" z="-1399" heading="23016" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20922" y="254789" z="-1376" heading="10186" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20910" y="255516" z="-1360" heading="37137" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21052" y="254219" z="-1386" heading="1039" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22337" x="21262" y="254988" z="-1347" heading="9867" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21581" y="255293" z="-1334" heading="15401" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21860" y="255248" z="-1317" heading="63868" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21806" y="255860" z="-1316" heading="38454" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21083" y="256022" z="-1318" heading="32985" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="20963" y="256404" z="-1318" heading="46514" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="20160" y="256583" z="-1335" heading="53591" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19968" y="255112" z="-1366" heading="55911" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="20721" y="254299" z="-1387" heading="390" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="20456" y="255493" z="-1382" heading="54835" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22339" x="21230" y="255518" z="-1321" heading="49615" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="20782" y="255145" z="-1382" heading="65008" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="20209" y="255900" z="-1374" heading="38930" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="20603" y="255866" z="-1364" heading="61238" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="20866" y="256180" z="-1321" heading="9437" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21469" y="256015" z="-1319" heading="55909" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21237" y="256303" z="-1309" heading="52939" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22337" x="19818" y="255396" z="-1370" heading="754" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22336" x="19734" y="255175" z="-1382" heading="53935" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19814" y="255036" z="-1383" heading="2209" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20012" y="254895" z="-1370" heading="61918" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22338" x="19714" y="255293" z="-1377" heading="63556" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="19986" y="256537" z="-1363" heading="64496" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="20406" y="256314" z="-1322" heading="50182" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21401" y="256237" z="-1309" heading="35670" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21778" y="255799" z="-1315" heading="33399" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21950" y="255552" z="-1320" heading="55496" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21833" y="255175" z="-1318" heading="45488" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21755" y="254702" z="-1323" heading="52460" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="20374" y="255799" z="-1383" heading="16301" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="20457" y="254384" z="-1384" heading="1450" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22339" x="20644" y="254226" z="-1380" heading="58218" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="20798" y="254255" z="-1386" heading="1941" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="18554" x="20281" y="254363" z="-1380" heading="14815" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="22338" x="20486" y="255884" z="-1370" heading="53056" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22337" x="20703" y="256209" z="-1323" heading="2834" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21397" y="256498" z="-1318" heading="34471" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22336" x="21209" y="256812" z="-1320" heading="44015" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22299" y="254821" z="-1325" heading="31515" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22337" x="22280" y="254651" z="-1337" heading="23666" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22339" x="22435" y="254753" z="-1323" heading="27201" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22336" x="22232" y="255013" z="-1332" heading="33897" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22287" y="255296" z="-1337" heading="35594" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22338" x="22123" y="255125" z="-1322" heading="32658" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22337" x="20657" y="254271" z="-1379" heading="62665" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22338" x="20141" y="255003" z="-1372" heading="5691" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22337" x="20991" y="254989" z="-1372" heading="45301" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22336" x="20862" y="254872" z="-1367" heading="49034" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22339" x="21049" y="255919" z="-1318" heading="44984" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="18554" x="21726" y="249218" z="-1474" heading="32767" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="18554" x="21109" y="251207" z="-1454" heading="52699" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="22336" x="20710" y="248370" z="-1462" heading="15279" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20969" y="248269" z="-1464" heading="9408" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21463" y="248846" z="-1465" heading="63170" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21350" y="249138" z="-1465" heading="28328" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21952" y="249209" z="-1469" heading="10271" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22009" y="249479" z="-1470" heading="35718" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22005" y="249759" z="-1465" heading="31621" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22086" y="250143" z="-1473" heading="11835" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="22073" y="250553" z="-1468" heading="26223" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21791" y="250329" z="-1469" heading="34023" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="21354" y="250977" z="-1463" heading="47120" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20963" y="251061" z="-1458" heading="31488" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="20690" y="251255" z="-1458" heading="53681" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19613" y="251089" z="-1476" heading="58509" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19586" y="250718" z="-1470" heading="113" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22336" x="19553" y="250392" z="-1471" heading="63976" respawnTime="60sec" /> <!-- Steel Warrior -->
+			<npc id="22337" x="20955" y="248804" z="-1467" heading="13131" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21251" y="249206" z="-1454" heading="12625" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21870" y="249358" z="-1468" heading="3175" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="22234" y="249832" z="-1469" heading="47034" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21877" y="250197" z="-1473" heading="24384" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="21062" y="250980" z="-1454" heading="32420" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="20827" y="251009" z="-1467" heading="56506" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19733" y="251039" z="-1475" heading="4777" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19740" y="250756" z="-1468" heading="9150" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19520" y="250524" z="-1470" heading="37930" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19678" y="250314" z="-1469" heading="56236" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22337" x="19350" y="250255" z="-1465" heading="30333" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22339" x="21091" y="248680" z="-1459" heading="26932" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21431" y="248998" z="-1464" heading="13270" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21736" y="249106" z="-1473" heading="22484" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="22031" y="249425" z="-1469" heading="11964" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="22064" y="249860" z="-1472" heading="27183" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21922" y="250410" z="-1468" heading="24105" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22339" x="21235" y="251057" z="-1455" heading="36830" respawnTime="60sec" /> <!-- Steel Swordsman - Steel Manager -->
+			<npc id="22338" x="22107" y="250270" z="-1468" heading="33005" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21650" y="249514" z="-1473" heading="36515" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="21463" y="249292" z="-1472" heading="41895" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22337" x="20920" y="249538" z="-1464" heading="3240" respawnTime="60sec" /> <!-- Steel Worker -->
+			<npc id="22338" x="21921" y="250519" z="-1470" heading="12348" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="22338" x="19590" y="250499" z="-1473" heading="3475" respawnTime="60sec" /> <!-- Steel Stalker - Steel Manager -->
+			<npc id="34191" x="8138" y="249832" z="-1800" heading="22983" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7977" y="249738" z="-1784" heading="19542" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="7417" y="249728" z="-1792" heading="15344" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="7257" y="249769" z="-1792" heading="15344" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="6982" y="250100" z="-1800" heading="10250" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="6885" y="250239" z="-1800" heading="7866" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="6850" y="250867" z="-1800" heading="60901" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7186" y="251338" z="-1800" heading="52312" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7344" y="251384" z="-1800" heading="56190" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="6936" y="251014" z="-1800" heading="60701" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="8128" y="251363" z="-1800" heading="38113" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="8002" y="251453" z="-1800" heading="39278" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34193" x="7730" y="250566" z="-1800" heading="65002" respawnTime="120sec" /> <!-- Creanir - Grand Magister -->
+			<npc id="34190" x="9913" y="248785" z="-2008" heading="40222" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9833" y="248785" z="-2008" heading="40222" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9948" y="248735" z="-2008" heading="40222" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9913" y="248685" z="-2000" heading="40222" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34201" x="9916" y="248117" z="-2000" heading="61512" respawnTime="120sec" /> <!-- Warp Gate -->
+			<npc id="34198" x="8973" y="250051" z="-1960" heading="3254" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="9496" y="250864" z="-1952" heading="57345" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9583" y="250892" z="-1944" heading="35179" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="11606" y="249764" z="-2048" heading="47498" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34192" x="11870" y="249323" z="-2048" heading="34828" respawnTime="120sec" /> <!-- Mastie - Supply Manager -->
+			<npc id="18919" x="10421" y="249912" z="-2040" heading="0" respawnTime="120sec" />
+			<npc id="34191" x="11057" y="250263" z="-2040" heading="51708" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11111" y="250289" z="-2040" heading="48426" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34201" x="11327" y="250109" z="-2040" heading="0" respawnTime="120sec" /> <!-- Warp Gate -->
+			<npc id="18919" x="11641" y="251933" z="-1976" heading="53518" respawnTime="120sec" />
+			<npc id="18919" x="10044" y="246800" z="-2080" heading="0" respawnTime="120sec" />
+			<npc id="22340" x="14141" y="250579" z="-1680" heading="15791" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22320" x="8347" y="244089" z="-2424" heading="37501" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22317" x="6413" y="244878" z="-2416" heading="56801" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="6159" y="245017" z="-2424" heading="58195" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7425" y="244430" z="-2424" heading="4159" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7132" y="244163" z="-2424" heading="21832" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6996" y="244331" z="-2424" heading="56532" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7237" y="242405" z="-2440" heading="12405" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7419" y="242630" z="-2432" heading="12253" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7518" y="242941" z="-2424" heading="12484" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7596" y="243016" z="-2424" heading="12528" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="7440" y="243116" z="-2416" heading="21882" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7211" y="242380" z="-2440" heading="112" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="7163" y="242326" z="-2440" heading="349" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="18919" x="8448" y="242528" z="-2288" heading="0" respawnTime="120sec" />
+			<npc id="22318" x="10977" y="242102" z="-2416" heading="49926" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="10824" y="243378" z="-2424" heading="34635" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="11023" y="242055" z="-2424" heading="32767" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11017" y="242076" z="-2424" heading="38227" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="11112" y="242231" z="-2416" heading="50976" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10431" y="242958" z="-2424" heading="25338" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10517" y="243496" z="-2416" heading="32310" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="10422" y="243462" z="-2416" heading="2280" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10480" y="242525" z="-2416" heading="62540" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="6402" y="240425" z="-2432" heading="2463" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22319" x="9535" y="240088" z="-2424" heading="4412" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10582" y="241277" z="-2424" heading="12254" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10367" y="241565" z="-2424" heading="45177" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="10478" y="241602" z="-2424" heading="3558" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7305" y="238168" z="-2368" heading="5782" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="7323" y="238056" z="-2368" heading="20483" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="7537" y="238752" z="-2392" heading="31072" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="18919" x="6351" y="239583" z="-2696" heading="0" respawnTime="120sec" />
+			<npc id="22318" x="10058" y="238355" z="-2312" heading="64659" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="9474" y="238378" z="-2288" heading="61979" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="8837" y="238326" z="-2288" heading="57789" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="8967" y="238476" z="-2312" heading="40407" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="18919" x="9129" y="239132" z="-2408" heading="0" respawnTime="120sec" />
+			<npc id="22318" x="11309" y="238128" z="-2288" heading="42204" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="11640" y="238408" z="-2288" heading="10052" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="11393" y="238344" z="-2288" heading="56359" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11543" y="237917" z="-2280" heading="42894" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="11445" y="238070" z="-2280" heading="20648" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22320" x="7824" y="236831" z="-2288" heading="12132" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22317" x="7374" y="236637" z="-2296" heading="23171" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22319" x="7716" y="235991" z="-2296" heading="51812" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7619" y="236218" z="-2296" heading="15274" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="7795" y="235944" z="-2296" heading="49134" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="7859" y="236086" z="-2304" heading="4131" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7594" y="235803" z="-2288" heading="55494" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="18919" x="9125" y="236398" z="-2152" heading="0" respawnTime="120sec" />
+			<npc id="22318" x="11091" y="237262" z="-2288" heading="11716" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10857" y="237162" z="-2288" heading="221" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="10876" y="237313" z="-2288" heading="48168" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10945" y="235690" z="-2288" heading="16828" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10712" y="235522" z="-2288" heading="31413" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="11596" y="238383" z="-2288" heading="38141" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10421" y="241527" z="-2424" heading="59270" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="8061" y="234977" z="-2280" heading="16013" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="8061" y="235003" z="-2280" heading="3489" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="8697" y="234951" z="-2280" heading="12548" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="8595" y="234895" z="-2280" heading="51793" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="9258" y="234783" z="-2288" heading="47570" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="9128" y="235328" z="-2304" heading="25262" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="9192" y="235190" z="-2296" heading="6110" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9103" y="235106" z="-2288" heading="9914" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="8755" y="235207" z="-2288" heading="51177" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="8347" y="235304" z="-2288" heading="52342" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="10730" y="234826" z="-2288" heading="41615" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10530" y="235497" z="-2288" heading="49128" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="10582" y="235447" z="-2288" heading="35945" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10561" y="235412" z="-2288" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11066" y="234931" z="-2280" heading="11108" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10862" y="234806" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10414" y="234808" z="-2280" heading="20191" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10889" y="237029" z="-2280" heading="61333" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10416" y="241562" z="-2424" heading="63469" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22314" x="4202" y="236138" z="-3272" heading="10470" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4332" y="236413" z="-3248" heading="19547" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4476" y="237100" z="-3280" heading="45334" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="4322" y="236812" z="-3296" heading="47179" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22316" x="4242" y="235945" z="-3280" heading="45671" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="5001" y="235555" z="-3136" heading="6138" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4661" y="235822" z="-3248" heading="60691" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="4020" y="236238" z="-3296" heading="56329" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="3788" y="235555" z="-3328" heading="38019" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="3317" y="235753" z="-3352" heading="41396" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22313" x="3425" y="235580" z="-3352" heading="19886" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2911" y="235993" z="-3352" heading="29606" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="2257" y="235567" z="-3352" heading="1873" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="2934" y="235969" z="-3352" heading="64126" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2691" y="235949" z="-3352" heading="51317" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="2180" y="235896" z="-3352" heading="13061" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="2614" y="235777" z="-3352" heading="60545" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2882" y="235873" z="-3352" heading="34828" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="3518" y="236844" z="-3376" heading="63066" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22315" x="3361" y="237341" z="-3376" heading="38926" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="3139" y="237190" z="-3408" heading="573" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3598" y="236817" z="-3360" heading="39065" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4050" y="236565" z="-3288" heading="20463" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3677" y="236796" z="-3352" heading="46825" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="3439" y="237099" z="-3392" heading="30014" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="3193" y="236964" z="-3408" heading="3342" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="2877" y="237024" z="-3424" heading="30444" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="2115" y="236733" z="-3392" heading="52503" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="18919" x="2617" y="236654" z="-3408" heading="0" respawnTime="120sec" />
+			<npc id="22313" x="3431" y="238103" z="-3288" heading="50824" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3487" y="237787" z="-3320" heading="34271" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3565" y="237945" z="-3304" heading="26533" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="2656" y="238676" z="-3224" heading="846" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="2691" y="238693" z="-3224" heading="58974" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="2171" y="238935" z="-3160" heading="7729" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="2764" y="238864" z="-3192" heading="51303" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="2397" y="238786" z="-3192" heading="49934" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="18919" x="3949" y="237785" z="-3296" heading="0" respawnTime="120sec" />
+			<npc id="22313" x="3743" y="240991" z="-2832" heading="59078" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3404" y="240368" z="-2904" heading="16395" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22316" x="2510" y="239799" z="-3016" heading="34249" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="2473" y="239818" z="-3016" heading="48528" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="2522" y="239844" z="-3016" heading="36738" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22313" x="2501" y="239902" z="-3000" heading="33301" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="18919" x="2081" y="240129" z="-2944" heading="0" respawnTime="120sec" />
+			<npc id="22314" x="1218" y="236464" z="-3304" heading="45677" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="1690" y="236524" z="-3344" heading="22886" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22313" x="1862" y="236360" z="-3368" heading="17291" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="1002" y="236145" z="-3304" heading="17858" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="742" y="236528" z="-3272" heading="18415" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="557" y="236297" z="-3272" heading="3349" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22316" x="1670" y="237113" z="-3296" heading="44510" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22315" x="1720" y="237402" z="-3264" heading="31200" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="1377" y="237140" z="-3240" heading="57934" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1391" y="237241" z="-3224" heading="16750" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="1060" y="236599" z="-3296" heading="25088" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1604" y="237422" z="-3232" heading="60623" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="1147" y="237593" z="-3152" heading="1392" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="866" y="237739" z="-3136" heading="29161" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="930" y="237792" z="-3136" heading="4223" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="4481" y="237051" z="-3272" heading="58869" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1141" y="238994" z="-2992" heading="62580" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="1999" y="234372" z="-3368" heading="7789" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22315" x="1661" y="234047" z="-3336" heading="12613" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="1876" y="233783" z="-3320" heading="22032" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="1934" y="233958" z="-3352" heading="47108" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22313" x="1700" y="233906" z="-3336" heading="40795" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22316" x="1403" y="234108" z="-3328" heading="52552" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22313" x="1487" y="234262" z="-3344" heading="20078" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3778" y="233884" z="-3328" heading="33822" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="3703" y="234401" z="-3352" heading="27140" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="3677" y="234026" z="-3344" heading="27040" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="3989" y="234376" z="-3288" heading="18837" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="3911" y="234236" z="-3296" heading="50615" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="3429" y="233688" z="-3352" heading="27315" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="3511" y="234242" z="-3352" heading="43738" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="3479" y="234321" z="-3352" heading="11774" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="3217" y="234243" z="-3352" heading="55574" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="3754" y="234982" z="-3344" heading="28341" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22315" x="3688" y="234974" z="-3352" heading="11948" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="3707" y="234500" z="-3352" heading="51884" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3371" y="235169" z="-3352" heading="38210" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="3392" y="234715" z="-3352" heading="49132" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3293" y="235145" z="-3352" heading="42472" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3434" y="235287" z="-3352" heading="61352" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2947" y="233997" z="-3352" heading="48603" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22316" x="2771" y="234295" z="-3352" heading="1282" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="2138" y="234255" z="-3368" heading="12706" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2562" y="234026" z="-3352" heading="52926" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="2608" y="234190" z="-3352" heading="33816" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="2121" y="233678" z="-3328" heading="19641" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="3011" y="234330" z="-3352" heading="50898" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="2533" y="235311" z="-3352" heading="38299" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="18919" x="2353" y="233968" z="-3360" heading="0" respawnTime="120sec" />
+			<npc id="22316" x="4459" y="234282" z="-3232" heading="11226" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22315" x="4306" y="234065" z="-3240" heading="3620" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22314" x="4383" y="234152" z="-3224" heading="7996" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4309" y="234097" z="-3240" heading="64496" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4836" y="234248" z="-3160" heading="57271" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4635" y="234110" z="-3184" heading="19421" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4702" y="234355" z="-3192" heading="49570" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="4860" y="234755" z="-3152" heading="6753" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4656" y="235351" z="-3200" heading="526" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4889" y="234741" z="-3136" heading="56461" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4205" y="235117" z="-3272" heading="47672" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22316" x="4697" y="235007" z="-3168" heading="29685" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22314" x="4457" y="234521" z="-3232" heading="1701" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="4538" y="235486" z="-3232" heading="33821" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="4332" y="236188" z="-3256" heading="30026" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22313" x="3994" y="236263" z="-3296" heading="51247" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4461" y="237063" z="-3279" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="666" y="236651" z="-3272" heading="48619" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="3544" y="237699" z="-3320" heading="17036" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22313" x="3384" y="237990" z="-3296" heading="12706" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3440" y="237719" z="-3336" heading="10256" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="1252" y="238962" z="-3031" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22316" x="1129" y="237617" z="-3152" heading="30844" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22313" x="3664" y="241005" z="-2840" heading="63478" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3434" y="240741" z="-2880" heading="26888" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22315" x="3354" y="240604" z="-2888" heading="60694" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22318" x="8016" y="236999" z="-2288" heading="20199" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7884" y="236892" z="-2288" heading="54564" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22319" x="7800" y="236040" z="-2296" heading="38243" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="7424" y="236155" z="-2288" heading="6534" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7440" y="236335" z="-2296" heading="64344" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="7809" y="236059" z="-2304" heading="41687" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7894" y="236260" z="-2296" heading="33001" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7517" y="235759" z="-2288" heading="47094" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22320" x="7742" y="238547" z="-2376" heading="63818" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7514" y="237943" z="-2352" heading="7596" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="7378" y="237792" z="-2344" heading="7104" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7472" y="238066" z="-2360" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="7269" y="238151" z="-2368" heading="46848" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7780" y="238259" z="-2368" heading="34828" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6466" y="240317" z="-2440" heading="42061" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22313" x="4057" y="236383" z="-3280" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2840" y="242047" z="-2840" heading="678" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3388" y="241888" z="-2832" heading="14883" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22318" x="7519" y="242906" z="-2424" heading="30105" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22319" x="6955" y="242627" z="-2432" heading="32462" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="4887" y="244369" z="-2424" heading="38765" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22317" x="5639" y="243919" z="-2424" heading="27556" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="6205" y="244828" z="-2424" heading="18938" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6510" y="244943" z="-2416" heading="19426" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6840" y="244254" z="-2424" heading="44124" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6940" y="244208" z="-2432" heading="23962" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8037" y="243767" z="-2432" heading="56957" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11304" y="242296" z="-2408" heading="10490" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9729" y="243979" z="-2424" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11121" y="242019" z="-2416" heading="17489" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22341" x="14276" y="249892" z="-1600" heading="40655" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14150" y="250014" z="-1632" heading="47952" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="13568" y="250255" z="-1720" heading="62650" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14030" y="250536" z="-1688" heading="50307" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="13793" y="250205" z="-1688" heading="32580" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="13658" y="250173" z="-1712" heading="16940" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14022" y="250597" z="-1688" heading="17398" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14185" y="251178" z="-1728" heading="7742" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14216" y="251350" z="-1712" heading="19334" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="13372" y="251223" z="-1792" heading="64483" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="13343" y="251130" z="-1792" heading="13641" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14176" y="249992" z="-1632" heading="13003" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="13460" y="254104" z="-1584" heading="10656" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="13501" y="253997" z="-1584" heading="8191" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16113" y="250540" z="-1600" heading="41847" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15217" y="250641" z="-1616" heading="1799" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="15106" y="250751" z="-1616" heading="29577" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14597" y="250584" z="-1616" heading="13045" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14489" y="250493" z="-1608" heading="29627" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14345" y="250782" z="-1656" heading="0" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15108" y="251567" z="-1704" heading="19660" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15165" y="251365" z="-1712" heading="27104" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14155" y="249790" z="-1618" heading="0" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14350" y="249764" z="-1592" heading="19363" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="18919" x="20042" y="256585" z="-1336" heading="0" respawnTime="120sec" />
+			<npc id="22341" x="16328" y="254305" z="-1584" heading="25916" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16484" y="254452" z="-1592" heading="50370" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16903" y="254707" z="-1592" heading="13647" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16886" y="254827" z="-1584" heading="11721" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16910" y="254709" z="-1592" heading="59021" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16764" y="254587" z="-1608" heading="1567" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16749" y="254750" z="-1584" heading="26459" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16696" y="254593" z="-1592" heading="18736" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16327" y="256685" z="-1584" heading="23095" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16507" y="256604" z="-1592" heading="3682" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16632" y="256454" z="-1592" heading="8932" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="16607" y="256654" z="-1600" heading="54102" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15357" y="254515" z="-1584" heading="21240" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15090" y="254152" z="-1576" heading="38987" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="15935" y="254325" z="-1584" heading="42066" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15644" y="254504" z="-1584" heading="21751" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15954" y="254192" z="-1584" heading="30071" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14334" y="255694" z="-1584" heading="10525" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15248" y="255813" z="-1592" heading="7158" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15253" y="255841" z="-1592" heading="17080" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15324" y="255652" z="-1592" heading="36787" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16112" y="256074" z="-1584" heading="38535" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14903" y="255219" z="-1592" heading="25581" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14801" y="255090" z="-1592" heading="5867" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15391" y="255008" z="-1584" heading="64601" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14804" y="254630" z="-1584" heading="1338" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14792" y="254528" z="-1584" heading="42213" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15353" y="254871" z="-1584" heading="44875" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15293" y="254458" z="-1584" heading="14818" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16460" y="254428" z="-1592" heading="63490" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14898" y="256224" z="-1584" heading="41866" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14923" y="256302" z="-1584" heading="1529" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14745" y="256122" z="-1592" heading="63674" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15896" y="256397" z="-1584" heading="6484" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15999" y="256681" z="-1576" heading="8386" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15699" y="256331" z="-1584" heading="18682" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="15576" y="256062" z="-1584" heading="24333" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15626" y="256012" z="-1584" heading="1190" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16179" y="256088" z="-1584" heading="14672" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16183" y="255938" z="-1584" heading="7276" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="16154" y="256113" z="-1584" heading="37133" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="18919" x="16305" y="256374" z="-1592" heading="0" respawnTime="120sec" />
+			<npc id="22341" x="13393" y="254161" z="-1592" heading="57958" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="13660" y="253965" z="-1584" heading="57837" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="13530" y="254648" z="-1584" heading="8230" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="13466" y="254996" z="-1584" heading="13417" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14136" y="254682" z="-1584" heading="32528" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14252" y="254749" z="-1584" heading="41477" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="13374" y="255660" z="-1584" heading="59363" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="13547" y="256050" z="-1576" heading="32165" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="13486" y="256164" z="-1576" heading="62390" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="13422" y="256325" z="-1584" heading="11979" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14175" y="250039" z="-1632" heading="34184" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14258" y="251093" z="-1704" heading="22528" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14094" y="251103" z="-1720" heading="49721" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14152" y="251263" z="-1728" heading="5414" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="13529" y="251064" z="-1792" heading="43386" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14425" y="250014" z="-1600" heading="39141" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14296" y="250771" z="-1672" heading="62200" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="16016" y="250615" z="-1600" heading="10658" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14173" y="251039" z="-1720" heading="31766" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="15844" y="250509" z="-1616" heading="61764" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15082" y="250814" z="-1648" heading="38259" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="15033" y="250801" z="-1640" heading="58727" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14500" y="250596" z="-1616" heading="60580" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="14713" y="251379" z="-1712" heading="27790" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15146" y="251667" z="-1704" heading="45322" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14758" y="251733" z="-1720" heading="53107" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="15020" y="251378" z="-1712" heading="24411" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14946" y="251118" z="-1704" heading="31676" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15083" y="251374" z="-1712" heading="60223" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15161" y="251299" z="-1712" heading="60259" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="14777" y="250996" z="-1672" heading="44553" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="14606" y="251363" z="-1712" heading="16500" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14197" y="249911" z="-1616" heading="0" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="14192" y="249770" z="-1618" heading="0" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="18919" x="10044" y="246800" z="-2080" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="10421" y="249912" z="-2040" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="11641" y="251933" z="-1976" heading="53518" respawnTime="120sec" />
+			<npc id="18919" x="13607" y="254926" z="-1584" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="13674" y="251355" z="-1800" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="15241" y="249013" z="-1584" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="16305" y="256374" z="-1592" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="16678" y="250932" z="-1560" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="16861" y="254536" z="-1616" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="18033" y="253035" z="-1632" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="19973" y="251029" z="-1464" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="20042" y="256585" z="-1336" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="20056" y="254602" z="-1384" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="20230" y="248873" z="-1448" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="2081" y="240129" z="-2944" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="21765" y="250586" z="-1456" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="21925" y="253905" z="-1568" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="2353" y="233968" z="-3360" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="2617" y="236654" z="-3408" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="3949" y="237785" z="-3296" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="6351" y="239583" z="-2696" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="8448" y="242528" z="-2288" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="9125" y="236398" z="-2152" heading="0" respawnTime="120sec" />
+			<npc id="18919" x="9129" y="239132" z="-2408" heading="0" respawnTime="120sec" />
+			<npc id="22313" x="1060" y="236599" z="-3296" heading="25088" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1100" y="233111" z="-3296" heading="59535" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1167" y="238844" z="-3032" heading="50092" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1211" y="234646" z="-3352" heading="55241" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1284" y="236274" z="-3312" heading="44038" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1370" y="239448" z="-2976" heading="57486" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1401" y="238869" z="-3080" heading="35784" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1424" y="238353" z="-3109" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1428" y="238306" z="-3112" heading="17204" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1440" y="234559" z="-3352" heading="1829" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1459" y="234947" z="-3360" heading="43172" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1467" y="235754" z="-3312" heading="28264" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1485" y="238138" z="-3128" heading="10982" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1487" y="234262" z="-3344" heading="20078" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1555" y="233288" z="-3288" heading="23992" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1559" y="238300" z="-3136" heading="12629" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1561" y="235034" z="-3360" heading="58411" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1587" y="237852" z="-3184" heading="14555" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1604" y="237422" z="-3232" heading="60623" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1611" y="237972" z="-3168" heading="39564" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1625" y="237829" z="-3184" heading="39491" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1673" y="235241" z="-3360" heading="12609" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1700" y="233906" z="-3336" heading="40795" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1739" y="234397" z="-3368" heading="64952" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1754" y="239015" z="-3104" heading="36228" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1852" y="235834" z="-3360" heading="8371" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1862" y="236360" z="-3368" heading="17291" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1891" y="238750" z="-3144" heading="30461" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1908" y="239507" z="-3056" heading="30351" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="1982" y="239485" z="-3096" heading="39752" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2031" y="237017" z="-3360" heading="65010" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2036" y="237129" z="-3344" heading="19067" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2163" y="236255" z="-3384" heading="51456" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2178" y="233016" z="-3240" heading="12694" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2179" y="239123" z="-3128" heading="13714" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2180" y="235896" z="-3352" heading="13061" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2184" y="239665" z="-3048" heading="58075" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2209" y="234290" z="-3352" heading="6020" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2214" y="240593" z="-2896" heading="36738" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2215" y="236471" z="-3400" heading="5336" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2218" y="240866" z="-2864" heading="23775" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2243" y="238072" z="-3256" heading="11376" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2260" y="236901" z="-3392" heading="50679" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2283" y="235238" z="-3352" heading="37849" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2296" y="237311" z="-3360" heading="16761" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2307" y="239178" z="-3120" heading="26471" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2362" y="235745" z="-3352" heading="7076" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2397" y="238786" z="-3192" heading="49934" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2400" y="238582" z="-3224" heading="32350" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2474" y="239745" z="-3016" heading="58041" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2501" y="239902" z="-3000" heading="33301" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2523" y="236579" z="-3408" heading="273" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2559" y="234857" z="-3352" heading="5987" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2608" y="234190" z="-3352" heading="33816" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2670" y="234392" z="-3352" heading="38406" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2700" y="241200" z="-2848" heading="2938" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2770" y="241297" z="-2840" heading="42437" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2773" y="242483" z="-2808" heading="1059" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2779" y="241015" z="-2880" heading="59396" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2786" y="238193" z="-3296" heading="41246" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2793" y="240561" z="-2936" heading="15912" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2808" y="239548" z="-3064" heading="617" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2840" y="242047" z="-2840" heading="678" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2887" y="237370" z="-3400" heading="16395" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2911" y="235993" z="-3352" heading="29606" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2914" y="240929" z="-2880" heading="40410" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2930" y="238108" z="-3304" heading="15476" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="2947" y="233997" z="-3352" heading="48603" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3011" y="234330" z="-3352" heading="50898" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3033" y="233210" z="-3232" heading="55999" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3039" y="238136" z="-3312" heading="104" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3180" y="240846" z="-2888" heading="63300" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3193" y="236964" z="-3408" heading="3342" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3268" y="235776" z="-3352" heading="26559" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3290" y="235966" z="-3352" heading="65533" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3293" y="235145" z="-3352" heading="42472" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3308" y="241222" z="-2864" heading="9561" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3314" y="239560" z="-3072" heading="34349" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3345" y="233662" z="-3352" heading="23058" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3384" y="237990" z="-3296" heading="12706" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3388" y="241888" z="-2832" heading="14883" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3392" y="234715" z="-3352" heading="49132" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3404" y="240368" z="-2904" heading="16395" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3408" y="240581" z="-2888" heading="32766" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3418" y="239185" z="-3136" heading="578" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3425" y="235580" z="-3352" heading="19886" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3431" y="238103" z="-3288" heading="50824" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3434" y="235287" z="-3352" heading="61352" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3434" y="240741" z="-2880" heading="26888" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3440" y="237719" z="-3336" heading="10256" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3479" y="234321" z="-3352" heading="11774" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3487" y="237787" z="-3320" heading="34271" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3542" y="237259" z="-3376" heading="55830" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3562" y="238069" z="-3280" heading="23910" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3565" y="237945" z="-3304" heading="26533" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3664" y="241005" z="-2840" heading="63478" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3677" y="236796" z="-3352" heading="46825" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3682" y="241887" z="-2816" heading="9618" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3704" y="238096" z="-3248" heading="58069" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3716" y="239893" z="-2984" heading="48666" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3728" y="238063" z="-3256" heading="42011" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3733" y="238896" z="-3160" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3743" y="240991" z="-2832" heading="59078" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3778" y="233884" z="-3328" heading="33822" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3806" y="237084" z="-3352" heading="63439" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3851" y="236126" z="-3304" heading="22458" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3966" y="236332" z="-3296" heading="61173" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3989" y="234376" z="-3288" heading="50896" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="3994" y="236263" z="-3296" heading="51247" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4037" y="236788" z="-3312" heading="44307" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4050" y="236565" z="-3288" heading="20463" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4057" y="236383" z="-3280" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4183" y="234458" z="-3272" heading="763" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4205" y="235117" z="-3272" heading="47672" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4316" y="235778" z="-3288" heading="55425" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4320" y="238267" z="-3184" heading="64954" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4332" y="236413" z="-3248" heading="19547" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4461" y="237063" z="-3279" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4475" y="237983" z="-3216" heading="10248" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4476" y="237100" z="-3280" heading="45334" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4494" y="234947" z="-3192" heading="660" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4520" y="238052" z="-3184" heading="20548" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4523" y="236721" z="-3288" heading="8887" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4538" y="235486" z="-3232" heading="33821" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4611" y="236826" z="-3272" heading="45967" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4648" y="237688" z="-3200" heading="10963" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4657" y="237913" z="-3184" heading="15694" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4658" y="237788" z="-3200" heading="29318" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4661" y="235822" z="-3248" heading="60691" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4667" y="237723" z="-3200" heading="43783" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4702" y="234355" z="-3192" heading="49570" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4727" y="237828" z="-3184" heading="38342" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4730" y="237649" z="-3200" heading="11199" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4732" y="235923" z="-3248" heading="42654" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4809" y="237789" z="-3176" heading="43701" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4852" y="237127" z="-3232" heading="4042" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4876" y="237059" z="-3208" heading="46676" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="4889" y="234741" z="-3136" heading="56461" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="557" y="236297" z="-3272" heading="3349" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="594" y="238500" z="-3000" heading="61083" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="829" y="235429" z="-3272" heading="35638" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="887" y="236729" z="-3264" heading="0" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="919" y="237439" z="-3176" heading="53192" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="930" y="237792" z="-3136" heading="4223" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="964" y="236700" z="-3264" heading="6542" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22313" x="992" y="234537" z="-3336" heading="49217" respawnTime="120sec" /> <!-- Twilight Witch -->
+			<npc id="22314" x="1000" y="237088" z="-3200" heading="4693" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1002" y="236145" z="-3304" heading="17858" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1141" y="238994" z="-2992" heading="62580" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1147" y="237593" z="-3152" heading="1392" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1160" y="234646" z="-3352" heading="47066" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1174" y="239033" z="-3008" heading="58453" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1218" y="236464" z="-3304" heading="45677" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1252" y="238962" z="-3031" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1265" y="235858" z="-3296" heading="46640" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1274" y="239298" z="-2992" heading="60692" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1299" y="234108" z="-3328" heading="37027" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1301" y="235140" z="-3336" heading="11788" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1347" y="238843" z="-3056" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1356" y="238840" z="-3056" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1373" y="234187" z="-3336" heading="26904" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1377" y="237140" z="-3240" heading="57934" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1389" y="235799" z="-3296" heading="62278" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1391" y="237241" z="-3224" heading="16750" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1398" y="235176" z="-3336" heading="8878" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1398" y="238826" z="-3059" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1401" y="238819" z="-3056" heading="22153" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1405" y="238900" z="-3080" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1426" y="238863" z="-3088" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1427" y="238969" z="-3080" heading="43964" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1429" y="236201" z="-3320" heading="50670" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1433" y="238859" z="-3088" heading="31842" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1448" y="238114" z="-3128" heading="39813" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1457" y="236845" z="-3288" heading="43944" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1458" y="237905" z="-3160" heading="45599" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1464" y="233436" z="-3320" heading="4391" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1483" y="237672" z="-3208" heading="65432" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1516" y="233436" z="-3320" heading="52378" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1582" y="239373" z="-3056" heading="9403" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1609" y="234472" z="-3352" heading="12799" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1656" y="238130" z="-3152" heading="53391" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1693" y="234745" z="-3368" heading="23603" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1710" y="235271" z="-3360" heading="52709" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1711" y="232988" z="-3272" heading="19277" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1729" y="239508" z="-3064" heading="38210" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1757" y="239637" z="-3024" heading="12618" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1775" y="235942" z="-3352" heading="42594" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1789" y="233163" z="-3272" heading="39669" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1792" y="238229" z="-3176" heading="20303" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1795" y="237269" z="-3304" heading="64486" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1841" y="235893" z="-3360" heading="5184" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1846" y="234201" z="-3360" heading="37581" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1854" y="238250" z="-3176" heading="10148" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1873" y="239416" z="-3080" heading="15342" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1876" y="233783" z="-3320" heading="22032" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1903" y="236163" z="-3376" heading="31647" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1913" y="238769" z="-3144" heading="30129" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1924" y="235009" z="-3352" heading="22957" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1934" y="239023" z="-3136" heading="59917" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1947" y="233679" z="-3320" heading="52625" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="1949" y="236274" z="-3384" heading="14699" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2005" y="238985" z="-3136" heading="28432" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2102" y="241002" z="-2840" heading="54326" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2115" y="236733" z="-3392" heading="52503" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2121" y="233678" z="-3328" heading="19641" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2138" y="234255" z="-3368" heading="12706" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2171" y="237073" z="-3360" heading="18400" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2231" y="241076" z="-2848" heading="5432" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2245" y="239541" z="-3072" heading="24244" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2273" y="240453" z="-2928" heading="1049" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2274" y="240310" z="-2952" heading="60192" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2319" y="233855" z="-3352" heading="6249" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2324" y="233838" z="-3352" heading="31734" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2334" y="233291" z="-3280" heading="27942" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2341" y="241022" z="-2872" heading="57977" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2345" y="241774" z="-2840" heading="26429" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2361" y="237214" z="-3368" heading="27583" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2375" y="238424" z="-3240" heading="19717" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2393" y="235086" z="-3352" heading="33513" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2412" y="236650" z="-3400" heading="36767" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2424" y="241261" z="-2840" heading="49985" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2436" y="238642" z="-3216" heading="5180" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2443" y="240602" z="-2920" heading="61982" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2473" y="239818" z="-3016" heading="48528" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2490" y="233391" z="-3312" heading="5114" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2506" y="238355" z="-3248" heading="43058" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2522" y="233555" z="-3328" heading="63722" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2533" y="235311" z="-3352" heading="38299" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2540" y="241356" z="-2840" heading="18060" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2540" y="241713" z="-2840" heading="46455" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2542" y="241637" z="-2840" heading="26904" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2547" y="240896" z="-2880" heading="65010" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2562" y="234026" z="-3352" heading="52926" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2578" y="241277" z="-2856" heading="32402" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2586" y="240526" z="-2928" heading="27690" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2614" y="235777" z="-3352" heading="60545" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2616" y="241369" z="-2840" heading="12298" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2643" y="233310" z="-3296" heading="46838" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2647" y="240852" z="-2896" heading="19597" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2676" y="239536" z="-3064" heading="64228" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2688" y="236373" z="-3360" heading="14135" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2691" y="235949" z="-3352" heading="51317" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2691" y="238693" z="-3224" heading="58974" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2702" y="240804" z="-2896" heading="51434" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2725" y="240726" z="-2912" heading="51784" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2764" y="238864" z="-3192" heading="51303" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2775" y="241946" z="-2840" heading="62247" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2804" y="234690" z="-3352" heading="19449" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2811" y="238400" z="-3256" heading="54633" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2851" y="233060" z="-3248" heading="39903" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2866" y="242247" z="-2840" heading="4797" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2868" y="237707" z="-3368" heading="57836" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2874" y="234655" z="-3352" heading="4223" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2882" y="235873" z="-3352" heading="34828" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2934" y="235969" z="-3352" heading="64126" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="2952" y="237762" z="-3376" heading="37241" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3065" y="235710" z="-3352" heading="58417" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3124" y="235839" z="-3352" heading="58373" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3127" y="238269" z="-3280" heading="52213" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3127" y="241293" z="-2856" heading="6706" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3139" y="237190" z="-3408" heading="573" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3159" y="240688" z="-2904" heading="5550" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3161" y="239458" z="-3088" heading="11429" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3169" y="240294" z="-2952" heading="53707" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3196" y="241442" z="-2848" heading="8576" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3212" y="239509" z="-3072" heading="11699" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3217" y="234243" z="-3352" heading="55574" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3221" y="237553" z="-3384" heading="50530" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3221" y="240183" z="-2944" heading="21036" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3229" y="240728" z="-2896" heading="7767" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3262" y="240807" z="-2888" heading="36676" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3317" y="241234" z="-2864" heading="14715" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3325" y="242312" z="-2824" heading="36983" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3340" y="233848" z="-3352" heading="14269" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3371" y="235169" z="-3352" heading="38210" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3391" y="233575" z="-3336" heading="19403" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3394" y="240896" z="-2872" heading="38900" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3424" y="238194" z="-3272" heading="15291" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3431" y="241939" z="-2832" heading="41130" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3439" y="237099" z="-3392" heading="30014" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3441" y="238315" z="-3248" heading="6935" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3474" y="242292" z="-2800" heading="41430" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3494" y="237106" z="-3384" heading="5870" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3511" y="234242" z="-3352" heading="43738" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3570" y="241913" z="-2824" heading="59705" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3598" y="236817" z="-3360" heading="39065" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3630" y="238244" z="-3232" heading="27615" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3635" y="236320" z="-3336" heading="24647" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3677" y="234026" z="-3344" heading="27040" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3679" y="233765" z="-3352" heading="12529" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3707" y="234500" z="-3352" heading="51884" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3760" y="235827" z="-3336" heading="40814" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3788" y="233761" z="-3336" heading="29162" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3788" y="235555" z="-3328" heading="38019" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3834" y="234755" z="-3344" heading="26107" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3862" y="235991" z="-3320" heading="50773" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3911" y="234236" z="-3296" heading="50615" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3922" y="236081" z="-3304" heading="65170" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="3951" y="237368" z="-3320" heading="26793" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4047" y="240228" z="-2840" heading="12385" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4061" y="237670" z="-3296" heading="21058" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4064" y="237668" z="-3296" heading="8042" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4114" y="238424" z="-3176" heading="30178" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4202" y="236138" z="-3272" heading="10470" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4254" y="236538" z="-3248" heading="15292" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4283" y="236629" z="-3272" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4285" y="236644" z="-3272" heading="47919" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4289" y="237115" z="-3288" heading="45841" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4300" y="238066" z="-3232" heading="60694" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4301" y="237242" z="-3288" heading="47293" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4306" y="236559" z="-3272" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4308" y="237273" z="-3288" heading="29147" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4309" y="234097" z="-3240" heading="64496" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4321" y="236547" z="-3272" heading="25392" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4322" y="236603" z="-3272" heading="37091" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4332" y="236188" z="-3256" heading="30026" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4360" y="234694" z="-3232" heading="13301" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4383" y="234152" z="-3224" heading="7996" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4435" y="235711" z="-3272" heading="46060" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4447" y="235750" z="-3272" heading="6249" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4457" y="234521" z="-3232" heading="1701" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4481" y="236901" z="-3280" heading="7676" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4481" y="237051" z="-3272" heading="58869" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4483" y="238256" z="-3144" heading="37512" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4560" y="238392" z="-3128" heading="58009" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4567" y="238351" z="-3128" heading="1894" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4581" y="237671" z="-3240" heading="52465" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4606" y="235595" z="-3240" heading="1948" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4635" y="234110" z="-3184" heading="19421" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4655" y="237835" z="-3184" heading="13894" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4656" y="235351" z="-3200" heading="526" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4777" y="237529" z="-3208" heading="64002" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4784" y="236869" z="-3256" heading="49659" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4812" y="235936" z="-3216" heading="27484" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4836" y="234248" z="-3160" heading="57271" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4860" y="234755" z="-3152" heading="6753" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4861" y="235940" z="-3216" heading="4085" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="4902" y="236859" z="-3240" heading="9825" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="5001" y="235555" z="-3136" heading="6138" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="5138" y="237152" z="-3184" heading="33290" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="573" y="236836" z="-3232" heading="51092" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="596" y="236920" z="-3216" heading="0" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="666" y="236651" z="-3272" heading="48619" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="737" y="237353" z="-3184" heading="63018" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="742" y="236528" z="-3272" heading="18415" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="761" y="238228" z="-3056" heading="58679" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="794" y="237735" z="-3136" heading="2807" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="828" y="238375" z="-3048" heading="21454" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="829" y="235204" z="-3288" heading="2348" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="837" y="237720" z="-3136" heading="63311" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="852" y="234433" z="-3336" heading="28264" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="866" y="237739" z="-3136" heading="29161" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="878" y="237726" z="-3136" heading="1676" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="881" y="235254" z="-3288" heading="19857" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="894" y="234621" z="-3328" heading="17499" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="941" y="237416" z="-3176" heading="27260" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22314" x="985" y="236848" z="-3248" heading="6404" respawnTime="120sec" /> <!-- Twilight Warrior -->
+			<npc id="22315" x="1169" y="234433" z="-3344" heading="24854" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1202" y="236361" z="-3312" heading="61801" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1221" y="235690" z="-3288" heading="20833" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1231" y="238382" z="-3072" heading="49456" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1271" y="233724" z="-3288" heading="40609" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1362" y="234984" z="-3352" heading="23034" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1580" y="234994" z="-3360" heading="38304" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1661" y="234047" z="-3336" heading="12613" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1690" y="236524" z="-3344" heading="22886" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="1720" y="237402" z="-3264" heading="31200" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2033" y="235996" z="-3368" heading="51446" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2135" y="235831" z="-3352" heading="19170" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2257" y="235567" z="-3352" heading="1873" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2522" y="239844" z="-3016" heading="36738" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2552" y="237990" z="-3296" heading="16909" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2558" y="237871" z="-3312" heading="51791" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2582" y="233945" z="-3352" heading="49934" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2652" y="234288" z="-3352" heading="61794" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2656" y="238676" z="-3224" heading="846" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="2877" y="237024" z="-3424" heading="30444" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3307" y="235651" z="-3352" heading="48805" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3317" y="235753" z="-3352" heading="41396" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3354" y="240604" z="-2888" heading="60694" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3361" y="237341" z="-3376" heading="38926" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3429" y="233688" z="-3352" heading="27315" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3441" y="240564" z="-2888" heading="28216" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3471" y="236706" z="-3368" heading="32535" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3507" y="234163" z="-3352" heading="19620" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3538" y="237847" z="-3304" heading="377" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3544" y="237699" z="-3320" heading="17036" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3688" y="234974" z="-3352" heading="11948" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3703" y="234401" z="-3352" heading="27140" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="3849" y="233649" z="-3312" heading="25792" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4020" y="236238" z="-3296" heading="56329" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4306" y="234065" z="-3240" heading="3620" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4322" y="236812" z="-3296" heading="47179" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4457" y="237394" z="-3272" heading="45750" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4476" y="235970" z="-3272" heading="56288" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4546" y="235508" z="-3232" heading="7945" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4696" y="237452" z="-3232" heading="27797" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4779" y="237281" z="-3216" heading="21362" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22315" x="4954" y="236863" z="-3240" heading="30234" respawnTime="120sec" /> <!-- Demonic Wizard - Deiman's Cohort -->
+			<npc id="22316" x="1129" y="237617" z="-3152" heading="30844" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1153" y="235950" z="-3288" heading="49083" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1398" y="236191" z="-3312" heading="59581" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1403" y="234108" z="-3328" heading="52552" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1587" y="235426" z="-3336" heading="1849" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1670" y="237113" z="-3296" heading="44510" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1780" y="235154" z="-3360" heading="38873" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1817" y="235707" z="-3360" heading="43247" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1908" y="236370" z="-3368" heading="6205" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1934" y="233958" z="-3352" heading="47108" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="1999" y="234372" z="-3368" heading="7789" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2171" y="238935" z="-3160" heading="7729" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2305" y="238482" z="-3224" heading="3231" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2328" y="238300" z="-3248" heading="13748" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2510" y="239799" z="-3016" heading="34249" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2725" y="233734" z="-3352" heading="31416" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2771" y="234295" z="-3352" heading="1282" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2825" y="237124" z="-3416" heading="24358" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2859" y="236149" z="-3352" heading="30839" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="2961" y="235956" z="-3352" heading="36683" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3114" y="235795" z="-3352" heading="36125" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3223" y="239277" z="-3112" heading="63123" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3384" y="238231" z="-3272" heading="1318" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3409" y="234471" z="-3352" heading="39470" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3518" y="236844" z="-3376" heading="63066" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3542" y="233754" z="-3352" heading="49846" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3558" y="235487" z="-3352" heading="32258" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3706" y="240482" z="-2864" heading="65344" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3754" y="234982" z="-3344" heading="28341" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3809" y="233494" z="-3320" heading="3242" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3989" y="234376" z="-3288" heading="18837" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="3996" y="236215" z="-3296" heading="12248" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4092" y="237389" z="-3312" heading="11105" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4171" y="237269" z="-3304" heading="58649" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4195" y="237051" z="-3312" heading="21309" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4242" y="235945" z="-3280" heading="45671" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4300" y="238474" z="-3160" heading="38748" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4329" y="236584" z="-3272" heading="32767" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4459" y="234282" z="-3232" heading="11226" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4697" y="235007" z="-3168" heading="29685" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4823" y="236761" z="-3272" heading="16693" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22316" x="4852" y="237227" z="-3216" heading="46723" respawnTime="120sec" /> <!-- Demonic Warrior - Deiman's Cohort -->
+			<npc id="22317" x="10004" y="242043" z="-2424" heading="0" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10011" y="235750" z="-2288" heading="60366" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10036" y="242072" z="-2424" heading="169" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10103" y="243371" z="-2432" heading="46723" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10122" y="235403" z="-2280" heading="32535" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10122" y="240868" z="-2424" heading="14248" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10162" y="238505" z="-2336" heading="64217" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10320" y="235787" z="-2280" heading="56190" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10353" y="242808" z="-2424" heading="3741" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10356" y="242449" z="-2416" heading="15660" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10394" y="242434" z="-2416" heading="44061" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10400" y="241514" z="-2424" heading="5608" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10411" y="243281" z="-2424" heading="48805" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10421" y="241527" z="-2424" heading="59270" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10422" y="243462" z="-2416" heading="2280" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10556" y="241452" z="-2424" heading="5881" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10582" y="235447" z="-2288" heading="35945" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10723" y="241937" z="-2416" heading="17500" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10730" y="234826" z="-2288" heading="41615" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10747" y="238692" z="-2336" heading="28755" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10800" y="242681" z="-2416" heading="61479" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10824" y="243378" z="-2424" heading="34635" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="10876" y="237313" z="-2288" heading="48168" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11025" y="243376" z="-2424" heading="15308" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11062" y="243190" z="-2424" heading="49160" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11086" y="235676" z="-2288" heading="21831" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11095" y="242019" z="-2416" heading="6892" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11112" y="242231" z="-2416" heading="50976" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11218" y="235322" z="-2288" heading="2306" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11251" y="241769" z="-2384" heading="42729" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11445" y="238070" z="-2280" heading="20648" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11474" y="242424" z="-2400" heading="49111" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11498" y="237407" z="-2280" heading="40991" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11596" y="238383" z="-2288" heading="38141" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="11640" y="238408" z="-2288" heading="10052" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="4784" y="243420" z="-2424" heading="35100" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="4922" y="243856" z="-2424" heading="5540" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5254" y="243698" z="-2424" heading="43637" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5299" y="243891" z="-2424" heading="42258" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5341" y="243625" z="-2424" heading="31157" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5553" y="243173" z="-2432" heading="3223" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5639" y="243919" z="-2424" heading="27556" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5814" y="242591" z="-2432" heading="14662" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5841" y="242996" z="-2440" heading="14661" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5845" y="243020" z="-2440" heading="47318" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5847" y="243226" z="-2440" heading="40718" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5870" y="244209" z="-2432" heading="44853" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="5941" y="243277" z="-2432" heading="30725" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6051" y="241833" z="-2424" heading="15608" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6326" y="241207" z="-2424" heading="22860" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6367" y="240971" z="-2424" heading="29477" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6397" y="240931" z="-2424" heading="3577" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6402" y="240425" z="-2432" heading="2463" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6402" y="240905" z="-2424" heading="46179" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6413" y="244878" z="-2416" heading="56801" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6466" y="240317" z="-2440" heading="42061" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6469" y="240547" z="-2432" heading="44110" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6489" y="240524" z="-2432" heading="56618" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6489" y="244911" z="-2416" heading="31900" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6490" y="240587" z="-2432" heading="22468" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6504" y="240364" z="-2440" heading="61245" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6856" y="242472" z="-2432" heading="50264" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6889" y="242319" z="-2432" heading="15594" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6911" y="242926" z="-2432" heading="24639" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6913" y="242472" z="-2432" heading="59703" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6913" y="244347" z="-2424" heading="32943" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6924" y="244280" z="-2424" heading="11130" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6937" y="243932" z="-2440" heading="40234" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6943" y="242392" z="-2432" heading="28378" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="6977" y="244289" z="-2424" heading="59668" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7001" y="241955" z="-2456" heading="43083" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7006" y="241816" z="-2456" heading="11758" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7063" y="242991" z="-2424" heading="27454" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7071" y="241811" z="-2448" heading="47543" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7139" y="244316" z="-2424" heading="46791" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7153" y="243398" z="-2448" heading="16347" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7168" y="241911" z="-2440" heading="49143" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7211" y="242380" z="-2440" heading="112" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7220" y="236476" z="-2288" heading="45997" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7221" y="243920" z="-2456" heading="20315" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7269" y="238151" z="-2368" heading="46848" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7278" y="236317" z="-2288" heading="19778" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7303" y="241915" z="-2432" heading="8906" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7323" y="238056" z="-2368" heading="20483" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7358" y="244363" z="-2424" heading="0" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7364" y="244328" z="-2424" heading="48517" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7374" y="236637" z="-2296" heading="23171" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7394" y="236686" z="-2296" heading="19242" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7408" y="244165" z="-2432" heading="0" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7422" y="238944" z="-2448" heading="61874" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7430" y="238917" z="-2432" heading="45311" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7431" y="236729" z="-2304" heading="41905" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7440" y="243116" z="-2416" heading="21882" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7517" y="235759" z="-2288" heading="47094" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7687" y="243808" z="-2488" heading="40160" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7780" y="238259" z="-2368" heading="34828" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7797" y="236963" z="-2304" heading="1405" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7809" y="236059" z="-2304" heading="41687" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7833" y="244634" z="-2416" heading="27687" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7838" y="236988" z="-2288" heading="27138" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7846" y="238350" z="-2376" heading="53989" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7859" y="236086" z="-2304" heading="4131" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7880" y="238107" z="-2360" heading="8191" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7894" y="236260" z="-2296" heading="33001" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7975" y="240474" z="-2448" heading="46179" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="7986" y="244277" z="-2464" heading="17511" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8061" y="235003" z="-2280" heading="3489" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8106" y="243246" z="-2424" heading="401" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8113" y="235054" z="-2280" heading="64579" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8349" y="243624" z="-2424" heading="11141" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8595" y="234895" z="-2280" heading="51793" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8755" y="235207" z="-2288" heading="51177" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8813" y="240927" z="-2424" heading="44282" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="8967" y="238476" z="-2312" heading="40407" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9128" y="235328" z="-2304" heading="25262" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9449" y="243829" z="-2424" heading="1781" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9473" y="243418" z="-2424" heading="27629" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9474" y="238378" z="-2288" heading="61979" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9578" y="239980" z="-2424" heading="7365" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9669" y="239773" z="-2424" heading="47999" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9707" y="243618" z="-2424" heading="29092" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9721" y="239801" z="-2424" heading="63791" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9829" y="235565" z="-2288" heading="15937" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9857" y="240120" z="-2408" heading="654" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9859" y="243264" z="-2432" heading="10399" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9873" y="234884" z="-2288" heading="50020" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9875" y="234864" z="-2288" heading="0" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9903" y="235779" z="-2288" heading="4625" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9922" y="244320" z="-2424" heading="63790" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9939" y="241456" z="-2424" heading="49788" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9950" y="242970" z="-2424" heading="21841" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9965" y="241256" z="-2424" heading="22373" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22317" x="9991" y="241506" z="-2424" heading="24340" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="10008" y="240800" z="-2424" heading="26336" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10010" y="242123" z="-2424" heading="57800" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10017" y="241506" z="-2424" heading="50762" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10028" y="240440" z="-2424" heading="11547" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10036" y="242633" z="-2424" heading="41963" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10076" y="240526" z="-2424" heading="28146" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10107" y="238432" z="-2312" heading="47525" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10122" y="240943" z="-2424" heading="17366" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10144" y="242885" z="-2424" heading="50381" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10145" y="235040" z="-2288" heading="11103" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10145" y="243414" z="-2424" heading="21903" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10171" y="243389" z="-2424" heading="38444" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10211" y="235646" z="-2280" heading="3612" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10219" y="235750" z="-2288" heading="33382" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10225" y="241481" z="-2424" heading="65025" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10278" y="238004" z="-2296" heading="7853" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10285" y="235743" z="-2280" heading="2351" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10307" y="241737" z="-2424" heading="22500" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10414" y="234808" z="-2280" heading="20191" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10415" y="235765" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10416" y="241562" z="-2424" heading="63469" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10426" y="241402" z="-2424" heading="65163" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10431" y="242958" z="-2424" heading="25338" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10474" y="235722" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10478" y="241602" z="-2424" heading="3558" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10480" y="236236" z="-2288" heading="64765" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10480" y="242525" z="-2416" heading="62540" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10509" y="234596" z="-2288" heading="47163" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10517" y="243496" z="-2416" heading="32310" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10529" y="235497" z="-2288" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10530" y="235497" z="-2288" heading="49128" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10532" y="235483" z="-2288" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10549" y="234648" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10558" y="241535" z="-2424" heading="40835" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10561" y="235412" z="-2288" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10573" y="235163" z="-2288" heading="60061" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10613" y="242908" z="-2424" heading="58821" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10671" y="241687" z="-2424" heading="2862" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10688" y="242600" z="-2424" heading="3262" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10699" y="243696" z="-2424" heading="59124" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10712" y="235522" z="-2288" heading="31413" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10845" y="241878" z="-2416" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10857" y="237162" z="-2288" heading="221" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10862" y="234806" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10867" y="242575" z="-2416" heading="12954" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10876" y="238536" z="-2328" heading="61461" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10889" y="237029" z="-2280" heading="61333" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10924" y="237933" z="-2288" heading="18316" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10960" y="242019" z="-2424" heading="10900" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10966" y="238502" z="-2320" heading="3361" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10969" y="242092" z="-2416" heading="52396" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10977" y="242102" z="-2416" heading="49926" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="10986" y="242008" z="-2424" heading="17585" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11010" y="243065" z="-2424" heading="36979" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11014" y="242563" z="-2416" heading="3589" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11017" y="242076" z="-2424" heading="38227" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11023" y="242055" z="-2424" heading="32767" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11047" y="243664" z="-2408" heading="3854" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11060" y="235726" z="-2288" heading="24153" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11062" y="243165" z="-2424" heading="42248" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11066" y="234931" z="-2280" heading="11108" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11088" y="242910" z="-2424" heading="19384" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11091" y="237262" z="-2288" heading="11716" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11121" y="242019" z="-2416" heading="17489" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11190" y="243480" z="-2416" heading="34203" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11194" y="243503" z="-2416" heading="62874" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11202" y="236416" z="-2288" heading="9377" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11218" y="235047" z="-2280" heading="49962" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11254" y="236491" z="-2288" heading="38207" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11290" y="237457" z="-2280" heading="50921" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11304" y="242296" z="-2408" heading="10490" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11349" y="242525" z="-2416" heading="21374" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11372" y="238329" z="-2288" heading="45877" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11393" y="238344" z="-2288" heading="56359" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11400" y="235347" z="-2280" heading="7166" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11413" y="242522" z="-2400" heading="4131" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11459" y="236450" z="-2280" heading="4248" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11469" y="236483" z="-2280" heading="55081" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11476" y="238863" z="-2328" heading="23383" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11489" y="242471" z="-2400" heading="4533" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11520" y="236482" z="-2280" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11543" y="237917" z="-2280" heading="42894" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="11707" y="237780" z="-2280" heading="47564" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="4756" y="244267" z="-2424" heading="62502" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="4887" y="244369" z="-2424" heading="38765" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="4939" y="243345" z="-2424" heading="53327" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="4948" y="243781" z="-2424" heading="65154" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="4997" y="243880" z="-2424" heading="21427" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5176" y="243273" z="-2424" heading="36267" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5356" y="242953" z="-2424" heading="11558" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5402" y="243040" z="-2424" heading="55024" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5423" y="242748" z="-2424" heading="15332" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5461" y="243256" z="-2424" heading="59885" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5569" y="243205" z="-2424" heading="60935" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5665" y="243644" z="-2424" heading="22130" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5693" y="243374" z="-2440" heading="63076" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5768" y="242908" z="-2432" heading="15541" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5831" y="242979" z="-2440" heading="41573" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5892" y="242641" z="-2440" heading="58914" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5911" y="243994" z="-2424" heading="4717" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="5999" y="241758" z="-2424" heading="63670" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6102" y="242926" z="-2440" heading="40966" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6159" y="245017" z="-2424" heading="58195" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6192" y="241230" z="-2424" heading="58875" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6205" y="244828" z="-2424" heading="18938" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6332" y="241170" z="-2424" heading="21869" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6405" y="245103" z="-2424" heading="64945" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6476" y="243604" z="-2456" heading="50361" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6492" y="240513" z="-2432" heading="5158" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6510" y="244943" z="-2416" heading="19426" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6699" y="240628" z="-2432" heading="10361" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6801" y="240628" z="-2432" heading="9891" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6840" y="244254" z="-2424" heading="44124" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6842" y="241558" z="-2456" heading="62263" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6851" y="244261" z="-2424" heading="62249" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6889" y="243889" z="-2432" heading="34998" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6940" y="244208" z="-2432" heading="23962" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="6996" y="244331" z="-2424" heading="56532" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7050" y="241757" z="-2440" heading="49934" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7058" y="242581" z="-2432" heading="45699" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7062" y="243818" z="-2456" heading="20195" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7063" y="242056" z="-2448" heading="56079" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7091" y="244045" z="-2432" heading="47694" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7098" y="241323" z="-2440" heading="12961" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7102" y="236920" z="-2264" heading="18185" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7111" y="236684" z="-2264" heading="16970" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7132" y="244163" z="-2424" heading="21832" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7161" y="241501" z="-2432" heading="20331" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7163" y="242326" z="-2440" heading="349" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7196" y="241578" z="-2424" heading="10445" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7221" y="243818" z="-2456" heading="38563" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7237" y="242405" z="-2440" heading="12405" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7301" y="241961" z="-2432" heading="62842" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7305" y="238168" z="-2368" heading="5782" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7374" y="244073" z="-2456" heading="15085" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7374" y="244717" z="-2416" heading="13606" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7378" y="237792" z="-2344" heading="7104" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7391" y="241517" z="-2424" heading="54521" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7405" y="244684" z="-2416" heading="60875" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7419" y="242630" z="-2432" heading="12253" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7424" y="236155" z="-2288" heading="6534" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7425" y="244430" z="-2424" heading="4159" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7430" y="241578" z="-2424" heading="8744" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7436" y="238134" z="-2368" heading="52755" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7440" y="236335" z="-2296" heading="64344" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7455" y="235617" z="-2280" heading="26055" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7472" y="238066" z="-2360" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7491" y="243326" z="-2424" heading="3796" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7518" y="242941" z="-2424" heading="12484" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7519" y="242906" z="-2424" heading="30105" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7537" y="238752" z="-2392" heading="31072" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7537" y="242140" z="-2432" heading="10274" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7596" y="243016" z="-2424" heading="12528" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7628" y="236323" z="-2304" heading="53805" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7641" y="242165" z="-2424" heading="9746" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7647" y="243526" z="-2432" heading="28921" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7795" y="235944" z="-2296" heading="49134" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7801" y="237915" z="-2344" heading="44336" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7816" y="234990" z="-2288" heading="3578" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7829" y="236226" z="-2296" heading="50949" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7884" y="236892" z="-2288" heading="54564" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7893" y="244493" z="-2424" heading="35993" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7903" y="237336" z="-2296" heading="643" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7917" y="238123" z="-2360" heading="36427" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="7928" y="237616" z="-2312" heading="42187" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8016" y="236999" z="-2288" heading="20199" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8028" y="243646" z="-2424" heading="12169" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8037" y="236892" z="-2288" heading="55050" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8037" y="243767" z="-2432" heading="56957" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8061" y="234977" z="-2280" heading="16013" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8158" y="243246" z="-2424" heading="10403" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8175" y="240211" z="-2448" heading="54144" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8295" y="235379" z="-2288" heading="47767" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8332" y="240909" z="-2424" heading="7291" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8347" y="235304" z="-2288" heading="52342" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8436" y="240471" z="-2432" heading="35081" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8448" y="240375" z="-2432" heading="18179" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8464" y="240894" z="-2424" heading="63701" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8530" y="243406" z="-2424" heading="62981" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8561" y="235574" z="-2288" heading="28864" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8634" y="238426" z="-2344" heading="9680" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8651" y="235432" z="-2288" heading="21683" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8656" y="240865" z="-2424" heading="13999" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8689" y="240615" z="-2424" heading="30401" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8697" y="234951" z="-2280" heading="12548" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8717" y="235337" z="-2288" heading="52354" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8718" y="240427" z="-2424" heading="2047" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8785" y="238276" z="-2312" heading="24479" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="8837" y="238326" z="-2288" heading="57789" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9103" y="235106" z="-2288" heading="9914" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9125" y="235854" z="-2288" heading="24812" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9145" y="243603" z="-2424" heading="10847" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9169" y="235868" z="-2288" heading="21255" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9187" y="235828" z="-2288" heading="22693" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9192" y="235190" z="-2296" heading="6110" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9196" y="235803" z="-2288" heading="25323" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9210" y="235764" z="-2288" heading="21692" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9240" y="238278" z="-2288" heading="5517" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9258" y="234783" z="-2288" heading="47570" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9395" y="239976" z="-2424" heading="11831" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9408" y="243263" z="-2424" heading="58080" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9472" y="240118" z="-2424" heading="23699" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9474" y="238328" z="-2288" heading="58548" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9525" y="243266" z="-2424" heading="62481" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9551" y="243518" z="-2424" heading="17598" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9576" y="243714" z="-2424" heading="3334" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9608" y="244445" z="-2424" heading="19760" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9609" y="235332" z="-2288" heading="19729" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9638" y="244154" z="-2424" heading="21363" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9648" y="240096" z="-2424" heading="39546" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9673" y="243829" z="-2424" heading="62290" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9686" y="234962" z="-2288" heading="42470" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9707" y="240488" z="-2424" heading="35010" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9709" y="240607" z="-2424" heading="31856" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9712" y="244320" z="-2424" heading="19700" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9716" y="243929" z="-2424" heading="25070" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9729" y="243979" z="-2424" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9732" y="244132" z="-2424" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9755" y="243214" z="-2432" heading="61095" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9755" y="243664" z="-2424" heading="22535" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9757" y="243828" z="-2424" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9767" y="240504" z="-2424" heading="24633" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9776" y="241766" z="-2424" heading="35987" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9791" y="243752" z="-2424" heading="0" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9862" y="240918" z="-2424" heading="16229" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9880" y="239812" z="-2408" heading="24792" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9897" y="244016" z="-2424" heading="9374" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9897" y="244166" z="-2424" heading="20239" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9940" y="241296" z="-2424" heading="44664" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9953" y="235845" z="-2288" heading="738" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9954" y="243388" z="-2432" heading="51410" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9962" y="244284" z="-2424" heading="16996" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9970" y="243415" z="-2432" heading="52103" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9972" y="243389" z="-2432" heading="52668" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9978" y="243373" z="-2432" heading="54143" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22318" x="9999" y="243297" z="-2432" heading="52190" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22319" x="10095" y="241356" z="-2424" heading="50509" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10367" y="241565" z="-2424" heading="45177" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10575" y="237827" z="-2296" heading="46052" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10789" y="238659" z="-2336" heading="38109" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10855" y="238020" z="-2296" heading="49130" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="10894" y="238718" z="-2328" heading="6792" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="5775" y="243887" z="-2432" heading="58668" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6298" y="243246" z="-2440" heading="9556" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6505" y="244286" z="-2424" heading="12456" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6955" y="242627" z="-2432" heading="32462" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6970" y="242571" z="-2432" heading="41122" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7456" y="241553" z="-2424" heading="11633" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7464" y="244290" z="-2424" heading="0" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7623" y="244208" z="-2448" heading="8869" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7672" y="239038" z="-2432" heading="35209" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7716" y="235991" z="-2296" heading="51812" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7800" y="236040" z="-2296" heading="38243" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="7931" y="238270" z="-2368" heading="20552" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="8071" y="236899" z="-2288" heading="9265" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="8140" y="240628" z="-2440" heading="32748" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="8582" y="238101" z="-2320" heading="318" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="8811" y="238126" z="-2304" heading="31476" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9535" y="240088" z="-2424" heading="4412" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9604" y="238503" z="-2312" heading="47149" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9834" y="240941" z="-2424" heading="58981" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9850" y="240797" z="-2424" heading="15603" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9931" y="240067" z="-2408" heading="0" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9940" y="239995" z="-2416" heading="50654" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9954" y="238105" z="-2288" heading="28913" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="9992" y="240718" z="-2424" heading="0" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10043" y="241531" z="-2424" heading="35029" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10103" y="238401" z="-2312" heading="5987" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10582" y="241277" z="-2424" heading="12254" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10983" y="238592" z="-2328" heading="23984" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6470" y="240259" z="-2440" heading="6887" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6565" y="244486" z="-2416" heading="30674" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6566" y="240260" z="-2440" heading="19023" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6613" y="244568" z="-2416" heading="43738" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6794" y="242430" z="-2432" heading="14050" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6920" y="242399" z="-2432" heading="59221" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6958" y="241647" z="-2448" heading="233" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="6965" y="243172" z="-2432" heading="35550" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7012" y="243144" z="-2432" heading="51785" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7323" y="241415" z="-2424" heading="16385" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7376" y="241552" z="-2424" heading="2997" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7514" y="237943" z="-2352" heading="7596" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7557" y="238205" z="-2368" heading="32266" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7619" y="236218" z="-2296" heading="15274" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7709" y="238915" z="-2408" heading="23025" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7735" y="236643" z="-2296" heading="50278" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7737" y="238937" z="-2408" heading="26345" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7742" y="238547" z="-2376" heading="63818" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7801" y="236279" z="-2304" heading="23370" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7824" y="236831" z="-2288" heading="12132" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7931" y="238525" z="-2384" heading="22109" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8014" y="240810" z="-2432" heading="22528" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8030" y="244604" z="-2424" heading="51490" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8199" y="244030" z="-2432" heading="5441" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8347" y="244089" z="-2424" heading="37501" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8568" y="240792" z="-2424" heading="23483" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9045" y="238301" z="-2288" heading="33287" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9266" y="238253" z="-2288" heading="8906" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9564" y="239912" z="-2424" heading="1552" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9608" y="241726" z="-2424" heading="0" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9688" y="240138" z="-2424" heading="29603" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9966" y="240693" z="-2424" heading="12283" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="34191" x="10754" y="247566" z="-2032" heading="39416" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="10802" y="247514" z="-2032" heading="39416" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="10850" y="247462" z="-2032" heading="39416" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="10900" y="247412" z="-2040" heading="39416" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11057" y="250263" z="-2040" heading="51708" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11111" y="250289" z="-2040" heading="48426" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11590" y="248509" z="-2072" heading="28213" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="6885" y="250239" z="-1800" heading="7866" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="6982" y="250100" z="-1800" heading="10250" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7186" y="251338" z="-1800" heading="52312" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7344" y="251384" z="-1800" heading="56190" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="7977" y="249738" z="-1784" heading="19542" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="8138" y="249832" z="-1800" heading="22983" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="9496" y="250864" z="-1952" heading="57345" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34192" x="11870" y="249323" z="-2048" heading="34828" respawnTime="120sec" /> <!-- Mastie - Supply Manager -->
+			<npc id="34198" x="11541" y="248511" z="-2072" heading="15229" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34198" x="11604" y="248612" z="-2072" heading="26298" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34198" x="8973" y="250051" z="-1960" heading="3254" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34198" x="8992" y="250010" z="-1968" heading="1258" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34198" x="9041" y="250003" z="-1960" heading="9671" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34199" x="11615" y="248556" z="-2072" heading="23962" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34199" x="9009" y="250099" z="-1960" heading="57345" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34200" x="9530" y="250904" z="-1944" heading="49451" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34201" x="11327" y="250109" z="-2040" heading="0" respawnTime="120sec" /> <!-- Warp Gate -->
+			<npc id="34201" x="9916" y="248117" z="-2000" heading="61512" respawnTime="120sec" /> <!-- Warp Gate -->
+			<npc id="34190" x="8157" y="251338" z="-1803" heading="40959" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="7233" y="249827" z="-1803" heading="3355" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="7542" y="249826" z="-1802" heading="18727" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="22320" x="6794" y="243955" z="-2442" heading="64563" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7752" y="243092" z="-2432" heading="54674" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="5892" y="243114" z="-2446" heading="32988" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="11028" y="242275" z="-2425" heading="2626" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10242" y="243387" z="-2433" heading="44824" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22317" x="8531" y="240460" z="-2440" heading="8581" respawnTime="120sec" /> <!-- Old Vampire -->
+			<npc id="22318" x="8347" y="240574" z="-2446" heading="19792" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22320" x="8078" y="243388" z="-2432" heading="18836" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9586" y="244008" z="-2432" heading="36577" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9376" y="235239" z="-2302" heading="16251" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="9876" y="238592" z="-2341" heading="26783" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22320" x="6887" y="240338" z="-2453" heading="59739" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6728" y="240558" z="-2440" heading="23162" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6809" y="240644" z="-2443" heading="24216" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22319" x="6665" y="240503" z="-2441" heading="21429" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22318" x="6633" y="240657" z="-2438" heading="59943" respawnTime="120sec" /> <!-- Hunting Vampire -->
+			<npc id="22320" x="11120" y="237869" z="-2293" heading="19029" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10050" y="238471" z="-2333" heading="37427" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="9362" y="238603" z="-2334" heading="62300" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="34191" x="10759" y="247817" z="-2026" heading="1249" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="10859" y="247857" z="-2029" heading="3968" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="10010" y="248279" z="-1997" heading="30410" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9896" y="248276" z="-2003" heading="17538" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34190" x="9800" y="248234" z="-2005" heading="15794" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11073" y="247906" z="-2050" heading="35795" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11008" y="248005" z="-2041" heading="9018" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="10993" y="247893" z="-2041" heading="22052" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11137" y="247838" z="-2055" heading="40068" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="11111" y="247957" z="-2054" heading="37459" respawnTime="120sec" /> <!-- Elite Wizard -->
+			<npc id="22319" x="7291" y="238515" z="-2383" heading="54215" respawnTime="120sec" /> <!-- Bloody Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7407" y="238545" z="-2379" heading="2639" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="7742" y="238270" z="-2372" heading="50316" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10430" y="235365" z="-2288" heading="6081" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10985" y="237048" z="-2287" heading="42440" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="11318" y="238570" z="-2329" heading="30592" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="10748" y="235756" z="-2294" heading="47639" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22320" x="8599" y="240273" z="-2442" heading="23272" respawnTime="120sec" /> <!-- Rueful Vampire - Satina's Elite Legionary -->
+			<npc id="22342" x="15139" y="248899" z="-1582" heading="64175" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22341" x="16825" y="249717" z="-1585" heading="47534" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16778" y="249510" z="-1590" heading="46823" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="17000" y="250243" z="-1583" heading="13316" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="17138" y="250606" z="-1560" heading="38404" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="16522" y="250861" z="-1581" heading="41783" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22340" x="16315" y="250729" z="-1592" heading="61100" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="18554" x="14779" y="249066" z="-1594" heading="1480" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="18554" x="15259" y="251128" z="-1703" heading="1517" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="22341" x="15493" y="249127" z="-1584" heading="37907" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15998" y="248948" z="-1583" heading="65087" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22340" x="15638" y="249522" z="-1579" heading="19669" respawnTime="120sec" /> <!-- Zamad -->
+			<npc id="22341" x="16367" y="250441" z="-1585" heading="9744" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="15837" y="250345" z="-1597" heading="33243" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16518" y="250256" z="-1579" heading="56582" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16330" y="249083" z="-1583" heading="46658" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22341" x="16371" y="248713" z="-1576" heading="23790" respawnTime="120sec" /> <!-- Vegskytt -->
+			<npc id="22342" x="15717" y="249170" z="-1579" heading="31351" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15186" y="249217" z="-1584" heading="42101" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22344" x="15592" y="248679" z="-1586" heading="2658" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22342" x="16131" y="248468" z="-1578" heading="1290" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16104" y="250176" z="-1591" heading="64332" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22344" x="16609" y="249910" z="-1576" heading="41096" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16135" y="249524" z="-1589" heading="51089" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16032" y="249117" z="-1583" heading="57602" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15694" y="249260" z="-1583" heading="28562" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14527" y="250954" z="-1690" heading="16975" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14975" y="251165" z="-1710" heading="34395" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15026" y="250993" z="-1695" heading="27559" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14865" y="250961" z="-1688" heading="41015" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16389" y="249843" z="-1583" heading="18799" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22342" x="16187" y="249932" z="-1578" heading="35670" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16062" y="250221" z="-1589" heading="11502" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="25934" x="5517" y="244773" z="-2431" heading="51509" respawnTime="60sec" /> <!-- Satina - Vampire Queen -->
+			<npc id="25934" x="11276" y="239224" z="-2350" heading="42682" respawnTime="60sec" /> <!-- Satina - Vampire Queen -->
+			<npc id="25934" x="12331" y="234596" z="-2291" heading="43064" respawnTime="60sec" /> <!-- Satina - Vampire Queen -->
+			<npc id="25933" x="2267" y="237501" z="-3339" heading="8009" respawnTime="60sec" chaseRange="4000" /> <!-- Deiman - Mutant -->
+			<npc id="22342" x="13963" y="254811" z="-1591" heading="45454" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13687" y="254393" z="-1590" heading="39864" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13361" y="255033" z="-1584" heading="8907" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13472" y="255225" z="-1584" heading="12753" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13527" y="255685" z="-1586" heading="16833" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13202" y="256115" z="-1586" heading="25866" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="13901" y="255610" z="-1585" heading="60724" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="14135" y="255413" z="-1585" heading="55821" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="14234" y="255168" z="-1591" heading="49614" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="14395" y="255029" z="-1595" heading="64090" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="14996" y="254852" z="-1594" heading="61601" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15233" y="254533" z="-1587" heading="52628" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="14701" y="254310" z="-1584" heading="33042" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15365" y="254251" z="-1583" heading="64404" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16056" y="254764" z="-1589" heading="9905" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16229" y="254977" z="-1584" heading="8473" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16644" y="255162" z="-1582" heading="2347" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="17031" y="255144" z="-1586" heading="63886" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16940" y="254855" z="-1587" heading="44188" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22344" x="16302" y="255071" z="-1589" heading="27903" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16040" y="255243" z="-1585" heading="25479" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15761" y="255338" z="-1581" heading="33124" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15531" y="255624" z="-1587" heading="20641" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15525" y="255939" z="-1587" heading="16565" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15604" y="256278" z="-1587" heading="12718" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15823" y="256543" z="-1581" heading="7453" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16348" y="256251" z="-1595" heading="50874" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16534" y="256048" z="-1586" heading="56919" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16051" y="255808" z="-1582" heading="36156" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15231" y="254533" z="-1584" heading="46141" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14965" y="254316" z="-1585" heading="37759" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14792" y="254486" z="-1584" heading="24667" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="13226" y="255700" z="-1587" heading="22842" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="13220" y="255979" z="-1585" heading="15064" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="13439" y="256118" z="-1583" heading="55945" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="14073" y="254412" z="-1586" heading="42573" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="13985" y="253855" z="-1584" heading="29748" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="18554" x="14331" y="256014" z="-1585" heading="18046" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="18554" x="16720" y="256025" z="-1584" heading="56511" respawnTime="60sec" /> <!-- Otherworldly Shard - Full of Energy -->
+			<npc id="22342" x="16212" y="256401" z="-1590" heading="32836" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="16241" y="256599" z="-1585" heading="14867" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15969" y="256669" z="-1578" heading="30140" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15737" y="256549" z="-1585" heading="37746" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15723" y="256284" z="-1586" heading="48601" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15722" y="256070" z="-1592" heading="5094" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22342" x="15983" y="256118" z="-1593" heading="64931" respawnTime="60sec" /> <!-- Shisuck - Ancient Hero Mutant -->
+			<npc id="22344" x="16660" y="254563" z="-1609" heading="60279" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="16117" y="254468" z="-1591" heading="35251" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+			<npc id="22344" x="15403" y="254658" z="-1594" heading="33854" respawnTime="60sec" /> <!-- Beleth' Eye - Extraterrestrial Watchman -->
+		</group>
+	</spawn>
+</list>

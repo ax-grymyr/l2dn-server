@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36300" name="option_id_36300">
+		<!-- P. Accuracy +1.7 -->
+	</option>
+	<option id="36301" name="option_id_36301">
+		<!-- P. Accuracy +1.8 -->
+	</option>
+	<option id="36302" name="option_id_36302">
+		<!-- P. Accuracy +2.0 -->
+	</option>
+	<option id="36303" name="option_id_36303">
+		<!-- P. Accuracy +3.0 -->
+	</option>
+	<option id="36304" name="option_id_36304">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36305" name="option_id_36305">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36306" name="option_id_36306">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36307" name="option_id_36307">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36308" name="option_id_36308">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36309" name="option_id_36309">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36310" name="option_id_36310">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36311" name="option_id_36311">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36312" name="option_id_36312">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36313" name="option_id_36313">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36314" name="option_id_36314">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36315" name="option_id_36315">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36316" name="option_id_36316">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36317" name="option_id_36317">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="36318" name="option_id_36318">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="36319" name="option_id_36319">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="36320" name="option_id_36320">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="36321" name="option_id_36321">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="36322" name="option_id_36322">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="36323" name="option_id_36323">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="36324" name="option_id_36324">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36325" name="option_id_36325">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36326" name="option_id_36326">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36327" name="option_id_36327">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36328" name="option_id_36328">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36329" name="option_id_36329">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36330" name="option_id_36330">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36331" name="option_id_36331">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36332" name="option_id_36332">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36333" name="option_id_36333">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36334" name="option_id_36334">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36335" name="option_id_36335">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36336" name="option_id_36336">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36337" name="option_id_36337">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="36338" name="option_id_36338">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="36339" name="option_id_36339">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="36340" name="option_id_36340">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="36341" name="option_id_36341">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="36342" name="option_id_36342">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="36343" name="option_id_36343">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="36344" name="option_id_36344">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36345" name="option_id_36345">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36346" name="option_id_36346">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36347" name="option_id_36347">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36348" name="option_id_36348">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36349" name="option_id_36349">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36350" name="option_id_36350">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36351" name="option_id_36351">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36352" name="option_id_36352">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36353" name="option_id_36353">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36354" name="option_id_36354">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36355" name="option_id_36355">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36356" name="option_id_36356">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36357" name="option_id_36357">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="36358" name="option_id_36358">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="36359" name="option_id_36359">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="36360" name="option_id_36360">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="36361" name="option_id_36361">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="36362" name="option_id_36362">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="36363" name="option_id_36363">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="36364" name="option_id_36364">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36365" name="option_id_36365">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36366" name="option_id_36366">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36367" name="option_id_36367">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36368" name="option_id_36368">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36369" name="option_id_36369">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36370" name="option_id_36370">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36371" name="option_id_36371">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36372" name="option_id_36372">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36373" name="option_id_36373">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36374" name="option_id_36374">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36375" name="option_id_36375">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36376" name="option_id_36376">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36377" name="option_id_36377">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36378" name="option_id_36378">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="36379" name="option_id_36379">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="36380" name="option_id_36380">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="36381" name="option_id_36381">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="36382" name="option_id_36382">
+		<!-- Bow Resistance +4% -->
+	</option>
+	<option id="36383" name="option_id_36383">
+		<!-- Bow Resistance +5% -->
+	</option>
+	<option id="36384" name="option_id_36384">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36385" name="option_id_36385">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36386" name="option_id_36386">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36387" name="option_id_36387">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36388" name="option_id_36388">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36389" name="option_id_36389">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36390" name="option_id_36390">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36391" name="option_id_36391">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36392" name="option_id_36392">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36393" name="option_id_36393">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36394" name="option_id_36394">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36395" name="option_id_36395">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36396" name="option_id_36396">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36397" name="option_id_36397">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="36398" name="option_id_36398">
+		<!-- Bow Resistance +2% -->
+	</option>
+	<option id="36399" name="option_id_36399">
+		<!-- Bow Resistance +2% -->
+	</option>
+</list>

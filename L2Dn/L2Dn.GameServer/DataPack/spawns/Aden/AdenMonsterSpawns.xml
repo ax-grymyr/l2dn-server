@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AdenMonsterSpawns1">
+		<group>
+			<npc id="30938" x="131240" y="114159" z="-3696" heading="10747" respawnTime="60sec" /> <!-- Vanutu - Priest -->
+		</group>
+	</spawn>
+	<spawn name="AdenMonsterSpawns2">
+		<group>
+			<npc id="20963" x="120717" y="-4774" z="-4100" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="119084" y="-3184" z="-3892" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="119587" y="-3362" z="-3892" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="121815" y="-4858" z="-3876" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="122017" y="-5214" z="-3876" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="122617" y="-6112" z="-3832" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="123020" y="-5756" z="-3832" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="128203" y="-1678" z="-2178" heading="9310" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="125609" y="-2492" z="-2772" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20959" x="126163" y="-1353" z="-2376" heading="18529" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20963" x="126355" y="-4239" z="-3211" heading="28063" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20959" x="127789" y="-5551" z="-3289" heading="6311" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="126711" y="-3499" z="-3013" heading="18124" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="129734" y="-7742" z="-3872" heading="55835" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="126499" y="-7972" z="-3804" heading="24953" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20963" x="128638" y="-11180" z="-3772" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="129041" y="-10824" z="-3772" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20959" x="128839" y="-11180" z="-3772" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="129041" y="-11536" z="-3772" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20963" x="127612" y="-13504" z="-3852" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20959" x="128015" y="-13504" z="-3852" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="127914" y="-13326" z="-3852" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20959" x="128440" y="-12456" z="-3792" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20963" x="124560" y="-10592" z="-3908" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20959" x="124862" y="-10414" z="-3908" heading="0" respawnTime="37sec" /> <!-- Dark Guard -->
+			<npc id="20963" x="119548" y="-9244" z="-3484" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="119851" y="-9066" z="-3484" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="118070" y="-9752" z="-3336" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20963" x="117984" y="-7808" z="-3664" heading="0" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="20589" x="106924" y="37053" z="-4585" heading="45324" respawnTime="80sec" /> <!-- Fline -->
+			<npc id="20590" x="107377" y="38140" z="-4607" heading="41316" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20589" x="109432" y="39238" z="-4586" heading="44223" respawnTime="80sec" /> <!-- Fline -->
+			<npc id="20590" x="108041" y="38807" z="-4566" heading="34862" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20589" x="109829" y="41073" z="-4640" heading="50039" respawnTime="80sec" /> <!-- Fline -->
+			<npc id="20592" x="115014" y="50448" z="-4696" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20594" x="115215" y="50448" z="-4696" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20592" x="118673" y="48995" z="-4583" heading="24322" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="119827" y="48539" z="-4560" heading="35098" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20592" x="121864" y="47668" z="-4692" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="119723" y="47456" z="-3776" heading="33285" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="122174" y="47464" z="-3717" heading="28263" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20589" x="123246" y="57607" z="-4549" heading="50220" respawnTime="80sec" /> <!-- Fline -->
+			<npc id="20590" x="123149" y="58354" z="-4624" heading="0" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20590" x="126437" y="44128" z="-4629" heading="19780" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20592" x="126626" y="43557" z="-4627" heading="1889" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20591" x="122794" y="40335" z="-4552" heading="16663" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20591" x="123763" y="39981" z="-4545" heading="35464" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20591" x="126552" y="41720" z="-4561" heading="5660" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20591" x="124386" y="40442" z="-4428" heading="63611" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20592" x="125466" y="39952" z="-4401" heading="23250" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="124156" y="39030" z="-4637" heading="65253" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="126544" y="41018" z="-4508" heading="11585" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="122676" y="39039" z="-4637" heading="5137" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="124438" y="39616" z="-4680" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="125237" y="40448" z="-4339" heading="8901" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="124538" y="39438" z="-4680" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="125930" y="39352" z="-4479" heading="9793" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="125211" y="38758" z="-4599" heading="881" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20591" x="124213" y="41925" z="-4472" heading="23924" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20592" x="124930" y="41138" z="-4365" heading="14834" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20591" x="120477" y="40824" z="-4582" heading="2140" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20591" x="120664" y="41265" z="-4566" heading="12201" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20592" x="120855" y="41919" z="-4566" heading="23261" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="119748" y="40883" z="-4565" heading="271" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="118841" y="40617" z="-4533" heading="9594" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20592" x="117443" y="40496" z="-4485" heading="63660" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="117175" y="40987" z="-4494" heading="17245" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20591" x="120968" y="37695" z="-4517" heading="38167" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20591" x="121741" y="38630" z="-4585" heading="5432" respawnTime="80sec" /> <!-- Valley Treant -->
+			<npc id="20592" x="121148" y="38243" z="-4536" heading="37768" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20590" x="116010" y="36192" z="-4612" heading="0" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20592" x="116010" y="36548" z="-4612" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="116240" y="35860" z="-3712" heading="56346" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20590" x="114359" y="40168" z="-4452" heading="33536" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20590" x="114169" y="40757" z="-4555" heading="34545" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20592" x="115144" y="40122" z="-4435" heading="21288" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20589" x="112800" y="41152" z="-4607" heading="54071" respawnTime="80sec" /> <!-- Fline -->
+			<npc id="20590" x="113326" y="41093" z="-4565" heading="62360" respawnTime="80sec" /> <!-- Liele -->
+			<npc id="20593" x="108580" y="40254" z="-3508" heading="22156" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20592" x="111118" y="35616" z="-3876" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="110815" y="36506" z="-3876" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="110879" y="37463" z="-3518" heading="44200" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="111420" y="35794" z="-3876" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20592" x="110714" y="36684" z="-3876" heading="0" respawnTime="80sec" /> <!-- Satyr -->
+			<npc id="20593" x="111017" y="36150" z="-3876" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="111520" y="36328" z="-3876" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="111218" y="36150" z="-3876" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="111319" y="35616" z="-3876" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="112024" y="35794" z="-3876" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20594" x="111521" y="35972" z="-3876" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="112187" y="38037" z="-3651" heading="12642" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="110110" y="36684" z="-3876" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="110210" y="36862" z="-3876" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="111219" y="35794" z="-3876" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20593" x="111218" y="38927" z="-3760" heading="48048" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20594" x="111965" y="39133" z="-3708" heading="33739" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20593" x="112518" y="37593" z="-3630" heading="19461" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="113062" y="36445" z="-3505" heading="63027" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20593" x="113962" y="36400" z="-3808" heading="0" respawnTime="80sec" /> <!-- Unicorn -->
+			<npc id="20594" x="113929" y="37708" z="-3720" heading="54184" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="115615" y="36192" z="-3638" heading="57832" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="113862" y="35154" z="-3808" heading="0" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="114416" y="36992" z="-3650" heading="58928" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="113703" y="38984" z="-3721" heading="18763" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20594" x="120008" y="36626" z="-3723" heading="32596" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="119788" y="36820" z="-3820" heading="0" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20594" x="121469" y="36759" z="-3723" heading="35030" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="123139" y="37345" z="-3723" heading="56415" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="122871" y="37954" z="-3768" heading="53995" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20596" x="123889" y="37594" z="-3723" heading="3325" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20594" x="111135" y="41588" z="-4644" heading="63717" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="112593" y="43055" z="-3853" heading="30919" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="112960" y="41328" z="-4608" heading="27999" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="111927" y="41472" z="-4264" heading="0" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="115300" y="39815" z="-4448" heading="50306" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="114691" y="40897" z="-4592" heading="64941" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20596" x="112381" y="41794" z="-4645" heading="24419" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="112003" y="41735" z="-4644" heading="27433" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20594" x="119172" y="37233" z="-4570" heading="41731" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="120142" y="37483" z="-4451" heading="58916" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="119822" y="39013" z="-3723" heading="19579" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20594" x="119586" y="38468" z="-3723" heading="43572" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="119086" y="38300" z="-4024" heading="0" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="117483" y="38846" z="-3718" heading="24118" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20595" x="119856" y="39572" z="-3723" heading="11247" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20596" x="120421" y="39499" z="-3723" heading="12545" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="118732" y="38256" z="-3695" heading="1696" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="118118" y="38161" z="-3824" heading="57270" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="119395" y="39393" z="-3723" heading="56373" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20594" x="121065" y="39922" z="-3723" heading="8881" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20595" x="121395" y="40180" z="-3728" heading="7052" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20596" x="121597" y="40606" z="-4132" heading="0" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="121743" y="40190" z="-3770" heading="2951" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="118713" y="41809" z="-3702" heading="15911" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="119658" y="42705" z="-4104" heading="46255" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="117550" y="46658" z="-3716" heading="32164" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20597" x="121522" y="45770" z="-3725" heading="64527" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="118363" y="42767" z="-3749" heading="55050" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="119694" y="43191" z="-4106" heading="47248" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20598" x="118104" y="43656" z="-3723" heading="63587" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="118755" y="43108" z="-3851" heading="65461" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="118701" y="44147" z="-3721" heading="45611" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20599" x="119136" y="42662" z="-3958" heading="32729" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="119282" y="45469" z="-3715" heading="12682" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="119091" y="44673" z="-3723" heading="12392" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20596" x="116519" y="43810" z="-3374" heading="56426" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="114523" y="42019" z="-3841" heading="7315" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="118207" y="43006" z="-3779" heading="55784" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20597" x="116435" y="44601" z="-3618" heading="20960" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="117318" y="45782" z="-3552" heading="8288" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20598" x="117422" y="45469" z="-3521" heading="3805" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="117410" y="44147" z="-3721" heading="23143" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="114379" y="44010" z="-3403" heading="39868" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20599" x="117410" y="44700" z="-3695" heading="50284" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="115143" y="44330" z="-3388" heading="8247" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="115776" y="44705" z="-3579" heading="19466" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20596" x="120990" y="44512" z="-4184" heading="0" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20597" x="120806" y="45077" z="-4007" heading="14359" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="118133" y="46120" z="-3674" heading="49078" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20598" x="123573" y="46271" z="-3707" heading="5483" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20599" x="120443" y="45277" z="-3893" heading="20547" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="121212" y="44916" z="-4106" heading="59175" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20596" x="121238" y="42455" z="-4558" heading="6802" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="123909" y="43678" z="-3948" heading="0" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="121741" y="44054" z="-4409" heading="744" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20596" x="122702" y="44746" z="-3948" heading="0" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20597" x="123912" y="44746" z="-3948" heading="0" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="120215" y="44032" z="-4106" heading="51488" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="122473" y="43198" z="-4532" heading="4086" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="123500" y="42718" z="-4564" heading="58603" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20598" x="123249" y="45713" z="-3723" heading="20020" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="121686" y="43192" z="-4566" heading="9482" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="124670" y="45988" z="-3557" heading="1181" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="121663" y="42793" z="-4532" heading="7018" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20598" x="120461" y="43283" z="-4106" heading="40655" respawnTime="80sec" /> <!-- Satyr Elder -->
+			<npc id="20599" x="122938" y="43653" z="-4535" heading="30916" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="124909" y="43525" z="-3637" heading="51809" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="122054" y="43495" z="-4566" heading="2582" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20599" x="122558" y="43641" z="-4535" heading="57968" respawnTime="80sec" /> <!-- Elder the Unicorn -->
+			<npc id="20595" x="118319" y="47136" z="-3434" heading="567" respawnTime="80sec" /> <!-- Fline Elder -->
+			<npc id="20596" x="118993" y="46743" z="-3357" heading="57641" respawnTime="80sec" /> <!-- Liele Elder -->
+			<npc id="20597" x="117669" y="47989" z="-3552" heading="25007" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="121129" y="47747" z="-3942" heading="2043" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="121590" y="49208" z="-4579" heading="29759" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20597" x="120584" y="48802" z="-4578" heading="35590" respawnTime="80sec" /> <!-- Valley Treant Elder -->
+			<npc id="20594" x="124472" y="57406" z="-3467" heading="12653" respawnTime="80sec" /> <!-- Forest Runner -->
+			<npc id="20600" x="103632" y="79440" z="-2748" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="104281" y="80375" z="-2483" heading="29974" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="103833" y="79440" z="-2748" heading="0" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="104776" y="79973" z="-2449" heading="61581" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="104228" y="81860" z="-3284" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="105132" y="80931" z="-2538" heading="20924" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="105135" y="82750" z="-3284" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="107822" y="83467" z="-2473" heading="64361" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="104933" y="83818" z="-3284" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="105521" y="79430" z="-2246" heading="57567" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="105803" y="82941" z="-2811" heading="597" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="104842" y="82900" z="-2650" heading="58912" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="104021" y="81297" z="-2565" heading="22745" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="104101" y="82437" z="-2532" heading="25801" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="105330" y="80300" z="-2517" heading="57592" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="105459" y="83251" z="-2760" heading="36785" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="105788" y="82103" z="-2988" heading="1774" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="104984" y="83337" z="-2694" heading="20502" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="104811" y="81802" z="-2691" heading="52121" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="106702" y="83710" z="-2481" heading="25397" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="108517" y="81595" z="-2810" heading="57189" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="107495" y="82835" z="-2543" heading="61152" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="108631" y="80776" z="-2810" heading="51196" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="108654" y="80226" z="-2811" heading="48253" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="108298" y="80008" z="-2813" heading="38955" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="106466" y="86857" z="-3127" heading="17236" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="105989" y="86007" z="-2896" heading="18166" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="107345" y="86524" z="-3142" heading="56297" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="106117" y="85416" z="-2893" heading="27260" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="107191" y="85832" z="-3067" heading="45144" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="107023" y="87025" z="-3142" heading="6759" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="106023" y="87851" z="-3141" heading="42459" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="106740" y="89129" z="-2804" heading="3177" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="106822" y="88025" z="-3142" heading="10830" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="106500" y="88188" z="-3142" heading="22924" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="107392" y="87755" z="-3142" heading="63076" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="106729" y="85771" z="-2998" heading="51004" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="106789" y="87880" z="-3142" heading="44675" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20603" x="113809" y="88108" z="-3051" heading="42361" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="108275" y="90758" z="-2555" heading="20766" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="112132" y="88723" z="-2747" heading="29500" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="113553" y="91629" z="-2460" heading="32428" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="112098" y="90524" z="-2593" heading="14534" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="114051" y="90054" z="-2634" heading="3853" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="108006" y="89951" z="-2520" heading="35983" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="111383" y="87441" z="-2905" heading="34838" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="110240" y="87242" z="-3236" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="109156" y="90028" z="-2615" heading="34862" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="110620" y="87788" z="-2904" heading="33786" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="113009" y="89179" z="-2842" heading="10204" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="112403" y="87522" z="-2904" heading="63042" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="111330" y="86769" z="-2846" heading="46778" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="110341" y="87064" z="-3236" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="110555" y="90121" z="-2510" heading="63484" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="108232" y="89242" z="-2497" heading="19252" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="109939" y="92974" z="-2240" heading="12996" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="111271" y="92004" z="-2587" heading="3083" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="109314" y="91405" z="-2549" heading="11051" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="111972" y="86994" z="-2847" heading="27320" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="106977" y="92672" z="-2128" heading="21759" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="117821" y="88321" z="-3813" heading="44041" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="119371" y="90352" z="-3573" heading="14556" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="116849" y="88902" z="-3813" heading="55077" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="117414" y="90414" z="-3764" heading="15580" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="117653" y="89157" z="-3813" heading="55563" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="119200" y="88359" z="-3799" heading="47125" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="118380" y="89385" z="-3813" heading="34969" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="118768" y="91315" z="-3516" heading="13185" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="120353" y="89426" z="-3366" heading="1962" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="118038" y="83444" z="-3076" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="121618" y="84464" z="-2733" heading="55253" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="118372" y="85784" z="-2885" heading="62688" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="120960" y="85497" z="-2816" heading="54156" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="121785" y="83721" z="-2697" heading="52841" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="119570" y="86379" z="-2893" heading="7389" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="122357" y="81109" z="-2583" heading="54966" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="121637" y="85123" z="-2814" heading="4960" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="118641" y="83444" z="-3076" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="121313" y="86354" z="-2863" heading="17505" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="119969" y="86872" z="-2889" heading="27479" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="121018" y="87735" z="-2939" heading="63410" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="120500" y="86287" z="-2868" heading="54535" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="122275" y="89227" z="-3098" heading="30050" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="118965" y="86339" z="-2899" heading="36684" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="119851" y="91563" z="-3316" heading="53169" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="121041" y="91687" z="-3586" heading="31035" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="119494" y="92991" z="-2829" heading="1180" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="117148" y="92281" z="-2730" heading="37453" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="121150" y="93654" z="-2515" heading="8054" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="123012" y="90892" z="-2476" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="122911" y="91782" z="-2476" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="123315" y="92138" z="-2476" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="122810" y="92316" z="-2476" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="123012" y="91248" z="-2476" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="123717" y="91070" z="-2476" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="123517" y="92138" z="-2476" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="123716" y="90714" z="-2476" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="123416" y="91960" z="-2476" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="123516" y="91070" z="-2476" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="123315" y="91426" z="-2476" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="122811" y="91248" z="-2476" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="123290" y="89234" z="-3097" heading="64531" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20603" x="126548" y="88012" z="-2532" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20603" x="126850" y="88190" z="-2532" heading="0" respawnTime="25sec" /> <!-- Kronbe Spider -->
+			<npc id="20604" x="126346" y="88368" z="-2532" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20604" x="126749" y="88012" z="-2532" heading="0" respawnTime="25sec" /> <!-- Lakin -->
+			<npc id="20605" x="126346" y="88724" z="-2532" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="126144" y="88724" z="-2532" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20605" x="127052" y="88902" z="-2532" heading="0" respawnTime="25sec" /> <!-- Weird Drake -->
+			<npc id="20600" x="124336" y="81564" z="-2912" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126792" y="80087" z="-2002" heading="54956" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126250" y="83997" z="-2211" heading="6021" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126276" y="82684" z="-2095" heading="46070" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="127376" y="81821" z="-1752" heading="51234" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126990" y="84473" z="-1843" heading="28533" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126741" y="80978" z="-1905" heading="42275" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="125181" y="83018" z="-2387" heading="50643" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="125018" y="81905" z="-2533" heading="8318" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="124437" y="82454" z="-2912" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="127863" y="82524" z="-1882" heading="22518" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="127370" y="83481" z="-1994" heading="3191" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="124423" y="82961" z="-2603" heading="24035" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="128416" y="83984" z="-1390" heading="3959" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="125001" y="83835" z="-2387" heading="52255" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="124730" y="85167" z="-2468" heading="6712" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="123857" y="82039" z="-2883" heading="47836" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="125102" y="80619" z="-2447" heading="49123" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="125023" y="86427" z="-2467" heading="18092" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="128605" y="81645" z="-1571" heading="64286" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="128475" y="82711" z="-1828" heading="16966" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="125744" y="81920" z="-2912" heading="0" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="128927" y="76262" z="-1701" heading="56854" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="125942" y="79668" z="-2948" heading="0" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="126020" y="80566" z="-2252" heading="16448" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="125539" y="79668" z="-2948" heading="0" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="126646" y="78082" z="-2077" heading="57419" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="126036" y="79046" z="-2213" heading="39226" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="125536" y="78972" z="-2348" heading="62224" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20602" x="126747" y="78956" z="-2948" heading="0" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="126545" y="73495" z="-2809" heading="47600" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="127483" y="73878" z="-2494" heading="8499" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="127831" y="76936" z="-1908" heading="1207" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="126637" y="74840" z="-2540" heading="16353" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="126661" y="76956" z="-1982" heading="4909" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="123867" y="75033" z="-2825" heading="25278" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="124079" y="76696" z="-2433" heading="16654" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="125849" y="78391" z="-2308" heading="36909" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="123897" y="75960" z="-2556" heading="50089" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="122662" y="79584" z="-2193" heading="45796" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20600" x="123340" y="79482" z="-2229" heading="22218" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="122564" y="80510" z="-2397" heading="61196" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="122979" y="80317" z="-2403" heading="62110" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="20600" x="110612" y="89187" z="-2590" heading="56897" respawnTime="25sec" /> <!-- Karul Bugbear -->
+			<npc id="20601" x="109061" y="90806" z="-2604" heading="25355" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20601" x="109883" y="91447" z="-2490" heading="17754" respawnTime="25sec" /> <!-- Tamlin Orc -->
+			<npc id="20602" x="107999" y="91529" z="-2417" heading="58763" respawnTime="25sec" /> <!-- Tamlin Orc Archer -->
+			<npc id="27185" x="113356" y="93848" z="-2072" heading="28672" respawnTime="60sec" /> <!-- Fairy Tree of Wind - Quest Monster -->
+			<npc id="27186" x="117733" y="94108" z="-2068" heading="57344" respawnTime="60sec" /> <!-- Fairy Tree of Star - Quest Monster -->
+			<npc id="27187" x="127714" y="90495" z="-2095" heading="0" respawnTime="60sec" /> <!-- Twilight Fairy Tree - Quest Monster -->
+			<npc id="27188" x="106671" y="93905" z="-2070" heading="49152" respawnTime="60sec" /> <!-- Fairy Tree of Abyss - Quest Monster -->
+			<npc id="20636" x="155946" y="65036" z="-3529" heading="7093" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20630" x="136588" y="65624" z="-3780" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="137192" y="65624" z="-3780" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="131593" y="66005" z="-3723" heading="34988" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="132902" y="67691" z="-3622" heading="41858" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="135144" y="67051" z="-3508" heading="30762" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="134149" y="66734" z="-3732" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="131363" y="68425" z="-3718" heading="32859" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="135815" y="73140" z="-3666" heading="19368" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="135679" y="73817" z="-3688" heading="22788" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="135077" y="72154" z="-3728" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="139248" y="73236" z="-3732" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="138745" y="74121" z="-3524" heading="48354" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="139349" y="74126" z="-3732" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20636" x="135704" y="80515" z="-3607" heading="32392" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="135682" y="81857" z="-3523" heading="10213" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="135105" y="81317" z="-3501" heading="41786" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="135544" y="83048" z="-3440" heading="14999" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="135690" y="84692" z="-3736" heading="0" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="135137" y="86903" z="-3540" heading="46522" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="135138" y="86117" z="-3389" heading="51061" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="136596" y="85226" z="-3736" heading="0" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="137235" y="85956" z="-3151" heading="44590" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="135224" y="87702" z="-3551" heading="39737" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="135031" y="89782" z="-3668" heading="37148" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="134326" y="89423" z="-3667" heading="44376" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="140460" y="85185" z="-3368" heading="5612" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="138729" y="84823" z="-3480" heading="32537" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="139962" y="86019" z="-3467" heading="6638" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="139442" y="86675" z="-3480" heading="23427" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="158174" y="68205" z="-3526" heading="32288" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="155887" y="66986" z="-3544" heading="44620" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="159372" y="67894" z="-3474" heading="23009" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="154627" y="67484" z="-3513" heading="33243" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="155085" y="66036" z="-3647" heading="59163" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20636" x="156460" y="66182" z="-3820" heading="0" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="156906" y="67184" z="-3566" heading="49414" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="156560" y="65648" z="-3820" heading="0" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20638" x="157193" y="66465" z="-3616" heading="34926" respawnTime="23sec" /> <!-- Forest of Mirrors Ghost -->
+			<npc id="20630" x="146034" y="65676" z="-3808" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="147142" y="66566" z="-3808" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="147142" y="66210" z="-3808" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="146437" y="66032" z="-3808" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20630" x="143284" y="65728" z="-3812" heading="0" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20974" x="178231" y="-25856" z="-2620" heading="54301" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="175125" y="-23689" z="-3687" heading="61797" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="179281" y="-22714" z="-3085" heading="27611" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="182485" y="-24244" z="-2700" heading="27183" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="183656" y="-27000" z="-2700" heading="0" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="180841" y="-20361" z="-2822" heading="24021" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="183872" y="-22326" z="-2868" heading="0" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="189492" y="-13085" z="-1398" heading="12931" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="188579" y="-15712" z="-1340" heading="45583" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="187426" y="-11284" z="-1940" heading="64900" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="185024" y="-7149" z="-2808" heading="19192" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="171794" y="-12368" z="-3016" heading="30288" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="20974" x="172470" y="-13004" z="-3043" heading="35000" respawnTime="110sec" /> <!-- Spiteful Soul Leader -->
+			<npc id="27181" x="169833" y="17911" z="-3456" heading="54234" respawnTime="180sec" /> <!-- Imperial Gravekeeper - Quest Monster -->
+			<npc id="27181" x="169448" y="21516" z="-3504" heading="0" respawnTime="180sec" /> <!-- Imperial Gravekeeper - Quest Monster -->
+		</group>
+	</spawn>
+</list>

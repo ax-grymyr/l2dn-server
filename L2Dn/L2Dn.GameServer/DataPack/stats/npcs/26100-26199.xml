@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="26100" level="85" type="Folk" name="Cave Keeper" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="73" /> <!-- Shamshir -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="34" />
+			<height normal="95" />
+		</collision>
+	</npc>
+	<npc id="26101" level="85" type="Folk" name="Cave Maiden" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="68" /> <!-- Falchion -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="50" />
+			<height normal="133" />
+		</collision>
+	</npc>
+	<npc id="26102" level="85" type="Folk" name="Cave Banshee" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="3939" /> <!-- Monster Only (Bensh) - Not Available - Not Available -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="18" />
+			<height normal="49" />
+		</collision>
+	</npc>
+	<npc id="26103" level="85" type="Folk" name="Maluk Succubus" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="75" />
+		</collision>
+	</npc>
+	<npc id="26104" level="85" type="Folk" name="Royal Cave Servant" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="22" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="26105" level="85" type="Folk" name="Headless Knight" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="124" /> <!-- Two-handed Sword -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3337282" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="42" />
+			<height normal="65" />
+		</collision>
+	</npc>
+	<npc id="26106" level="85" type="Folk" name="Cave Keeper" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="73" /> <!-- Shamshir -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="34" />
+			<height normal="95" />
+		</collision>
+	</npc>
+	<npc id="26107" level="85" type="Folk" name="Cave Maiden" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="68" /> <!-- Falchion -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="50" />
+			<height normal="133" />
+		</collision>
+	</npc>
+	<npc id="26108" level="85" type="Folk" name="Cave Banshee" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="3939" /> <!-- Monster Only (Bensh) - Not Available - Not Available -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3098905" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="18" />
+			<height normal="49" />
+		</collision>
+	</npc>
+	<npc id="26109" level="85" type="Folk" name="Maluk Succubus" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3337282" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="75" />
+		</collision>
+	</npc>
+	<npc id="26110" level="85" type="Folk" name="Royal Cave Servant" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="22" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="26111" level="85" type="Folk" name="Headless Knight" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="124" /> <!-- Two-handed Sword -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="42" />
+			<height normal="65" />
+		</collision>
+	</npc>
+	<npc id="26112" level="85" type="Folk" name="Thunder Wyrm" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3098905" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="40" />
+			<height normal="147" />
+		</collision>
+	</npc>
+	<npc id="26113" level="85" type="Folk" name="Dragon Bomber" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3337282" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="35" />
+				<run ground="250" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="84" />
+			<height normal="72" />
+		</collision>
+	</npc>
+	<npc id="26114" level="85" type="Folk" name="Skyla" title="Vanguard Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="8682" /> <!-- Naga's Storm -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="106" />
+				<run ground="280" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="83" />
+		</collision>
+	</npc>
+	<npc id="26115" level="85" type="Folk" name="Isirr" title="Senior Seer">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="195" /> <!-- Cursed Staff -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="25029619" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="106" />
+				<run ground="280" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="83" />
+		</collision>
+	</npc>
+	<npc id="26116" level="85" type="Folk" name="Ipos" title="Archbishop">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="26221505" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="140" />
+				<run ground="360" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="91" />
+		</collision>
+	</npc>
+	<npc id="26117" level="85" type="Folk" name="Abaga" title="Soldier">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="27413392" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="200" />
+				<run ground="360" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="41.4" />
+			<height normal="86.7" />
+		</collision>
+	</npc>
+	<npc id="26118" level="85" type="Folk" name="Tamash" title="Raider Captain">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="28605279" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="110" />
+				<run ground="400" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="78" />
+		</collision>
+	</npc>
+	<npc id="26119" level="85" type="Folk" name="Gadzan" title="Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="29797165" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="77" />
+				<run ground="260" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="77" />
+		</collision>
+	</npc>
+	<npc id="26120" level="85" type="Folk" name="Guard Captain" title="Zenta Order">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="8682" /> <!-- Naga's Storm -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="19070186" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="53" />
+				<run ground="190" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="45" />
+			<height normal="65" />
+		</collision>
+	</npc>
+	<npc id="26121" level="85" type="Folk" name="Bishop" title="Zenta Order">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="90" /> <!-- Goat Head Staff -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="21453959" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="28.5" />
+			<height normal="71" />
+		</collision>
+	</npc>
+	<npc id="26122" level="85" type="Folk" name="Archbishop" title="Zenta Order">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="75" />
+				<run ground="190" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="43.5" />
+			<height normal="72" />
+		</collision>
+	</npc>
+	<npc id="26123" level="85" type="Folk" name="Aide" title="Lizardman Mercenary">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="195" /> <!-- Cursed Staff -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="53" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="45" />
+			<height normal="63" />
+		</collision>
+	</npc>
+	<npc id="26124" level="85" type="Folk" name="Maentor" title="Lizardman Mercenary">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="19070186" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="90" />
+				<run ground="140" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="64" />
+			<height normal="87.4" />
+		</collision>
+	</npc>
+	<npc id="26125" level="85" type="Folk" name="Soldier" title="Lizardman Mercenary">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="21453959" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="100" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="75" />
+		</collision>
+	</npc>
+	<npc id="26126" level="85" type="Folk" name="Assault Commander" title="Lizardmen Special Squad Warrior">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="8682" /> <!-- Naga's Storm -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="53" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="45" />
+			<height normal="66" />
+		</collision>
+	</npc>
+	<npc id="26127" level="85" type="Folk" name="Commando Captain" title="Lizardmen Special Squad Warrior">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="77" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="77" />
+		</collision>
+	</npc>
+	<npc id="26128" level="85" type="Folk" name="Special Squad Leader" title="Lizardmen Special Squad Warrior">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="19070186" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="58" />
+				<run ground="175" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="56" />
+			<height normal="78" />
+		</collision>
+	</npc>
+	<npc id="26129" level="85" type="Folk" name="Commander" title="Zenta Praetorian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="16" /> <!-- Spear -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="21453959" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="52" />
+				<run ground="190" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="24" />
+			<height normal="63" />
+		</collision>
+	</npc>
+	<npc id="26130" level="85" type="Folk" name="Legate" title="Zenta Praetorian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="58" />
+				<run ground="175" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="56" />
+			<height normal="78" />
+		</collision>
+	</npc>
+	<npc id="26131" level="85" type="Folk" name="Commander" title="Zenta Praetorian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="23837732" hpRegen="10.5" mp="1411" mpRegen="3.6" />
+			<speed>
+				<walk ground="77" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="36" />
+			<height normal="77" />
+		</collision>
+	</npc>
+	<npc id="26132" level="85" type="Folk" name="Escort" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="221" /> <!-- Assassin Knife -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="37" />
+				<run ground="190" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="48" />
+		</collision>
+	</npc>
+	<npc id="26133" level="85" type="Folk" name="Knight" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="291" /> <!-- Trident -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="53" />
+		</collision>
+	</npc>
+	<npc id="26134" level="85" type="Folk" name="Underling" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="234" /> <!-- Demon's Dagger -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="37" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="48" />
+		</collision>
+	</npc>
+	<npc id="26135" level="85" type="Folk" name="Sagittarius" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available - Not Available -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40.25" />
+		</collision>
+	</npc>
+	<npc id="26136" level="85" type="Folk" name="Shaman" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="92964" /> <!-- Cabrio's Hand - Sealed -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="43" />
+		</collision>
+	</npc>
+	<npc id="26137" level="85" type="Folk" name="Aide" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="193" /> <!-- Stick of Faith -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="155" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="43" />
+		</collision>
+	</npc>
+	<npc id="26138" level="85" type="Folk" name="Escort" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="221" /> <!-- Assassin Knife -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="37" />
+				<run ground="190" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="48" />
+		</collision>
+	</npc>
+	<npc id="26139" level="85" type="Folk" name="Knight" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="291" /> <!-- Trident -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="41" />
+		</collision>
+	</npc>
+	<npc id="26140" level="85" type="Folk" name="Escort" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="8683" /> <!-- Tiphon's Spear -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3098905" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="41" />
+		</collision>
+	</npc>
+	<npc id="26141" level="85" type="Folk" name="Sagittarius" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available - Not Available -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3337282" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40.25" />
+		</collision>
+	</npc>
+	<npc id="26142" level="85" type="Folk" name="Aide" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="193" /> <!-- Stick of Faith -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2383773" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="155" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+	</npc>
+	<npc id="26143" level="85" type="Folk" name="Underling" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="234" /> <!-- Demon's Dagger -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2622150" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="37" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="39" />
+		</collision>
+	</npc>
+	<npc id="26144" level="85" type="Folk" name="Escort" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="223" /> <!-- Kukuri -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3098905" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="53" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="26145" level="85" type="Folk" name="Shaman" title="Minion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="92964" /> <!-- Cabrio's Hand - Sealed -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3337282" hpRegen="10.5" mp="1881" mpRegen="3.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="170" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+	</npc>
+</list>

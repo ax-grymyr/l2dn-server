@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: White Guardian -->
+		<production count="1" id="92401" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Devour -->
+		<production count="1" id="94137" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Hellfire -->
+		<production count="1" id="93631" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Ultimate Death Knight Transformation -->
+		<production count="1" id="93387" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Divine Beam -->
+		<production count="1" id="93103" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Book of Shadows -->
+		<production count="1" id="91945" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Book of Light -->
+		<production count="1" id="91944" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Elemental Burst -->
+		<production count="1" id="93869" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Ethereal Strike -->
+		<production count="1" id="93870" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Burning Field -->
+		<production count="1" id="93384" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Frozen Field -->
+		<production count="1" id="93385" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Spellbook: Lightning Storm -->
+		<production count="1" id="93386" />
+	</item>
+</list>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="955" price="0" /> <!-- Scroll: Enchant Weapon (D-Grade) -->
+	<item id="956" price="0" /> <!-- Scroll: Enchant Armor (D-Grade) -->
+	<item id="6575" price="0" /> <!-- Blessed Scroll: Enchant Weapon (D-Grade) -->
+	<item id="6576" price="0" /> <!-- Blessed Scroll: Enchant Armor (D-Grade) -->
+	<item id="951" price="0" /> <!-- Scroll: Enchant Weapon (C-Grade) -->
+	<item id="952" price="0" /> <!-- Scroll: Enchant Armor (C-Grade) -->
+	<item id="6573" price="0" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
+	<item id="6574" price="0" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
+	<item id="947" price="0" /> <!-- Scroll: Enchant Weapon (B-Grade) -->
+	<item id="948" price="0" /> <!-- Scroll: Enchant Armor (B-Grade) -->
+	<item id="6571" price="0" /> <!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
+	<item id="6572" price="0" /> <!-- Blessed Scroll: Enchant Armor (B-Grade) -->
+	<item id="729" price="0" /> <!-- Scroll: Enchant Weapon (A-Grade) -->
+	<item id="730" price="0" /> <!-- Scroll: Enchant Armor (A-Grade) -->
+	<item id="6569" price="0" /> <!-- Blessed Scroll: Enchant Weapon (A-Grade) -->
+	<item id="6570" price="0" /> <!-- Blessed Scroll: Enchant Armor (A-Grade) -->
+	<item id="959" price="0" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
+	<item id="960" price="0" /> <!-- Scroll: Enchant Armor (S-Grade) -->
+	<item id="6577" price="0" /> <!-- Blessed Scroll: Enchant Weapon (S-Grade) -->
+	<item id="6578" price="0" /> <!-- Blessed Scroll: Enchant Armor (S-Grade) -->
+	<item id="49481" price="0" /> <!-- Stable Scroll: Enchant Armor (D-Grade) -->
+	<item id="49482" price="0" /> <!-- Stable Scroll: Enchant Weapon (D-Grade) -->
+	<item id="49483" price="0" /> <!-- Stable Scroll: Enchant Armor (C-Grade) -->
+	<item id="49484" price="0" /> <!-- Stable Scroll: Enchant Weapon (C-Grade) -->
+	<item id="49485" price="0" /> <!-- Stable Scroll: Enchant Armor (B-Grade) -->
+	<item id="49486" price="0" /> <!-- Stable Scroll: Enchant Weapon (B-Grade) -->
+	<item id="22223" price="0" /> <!-- Stable Scroll: Enchant Weapon (A-Grade) -->
+	<item id="22224" price="0" /> <!-- Stable Scroll: Enchant Armor (A-Grade) -->
+	<item id="22221" price="0" /> <!-- Stable Scroll: Enchant Weapon (S-Grade) -->
+	<item id="22222" price="0" /> <!-- Stable Scroll: Enchant Armor (S-Grade) -->
+	<item id="48046" price="0" /> <!-- Scroll: Enchant Agathion -->
+	<item id="93133" price="0" /> <!-- Scroll: Enchant Agathion -->
+	<item id="90963" price="0" /> <!-- Stable Scroll: Enchant Agathion -->
+	<item id="90149" price="0" /> <!-- Savior Scroll: Enchant Weapon -->
+	<item id="90990" price="0" /> <!-- Scroll: Enchant Savior's Earring -->
+	<item id="90494" price="0" /> <!-- Eva's Scroll: Enchant Hair Accessory -->
+	<item id="90885" price="0" /> <!-- Stabilized Eva's Scroll: Enchant Hair Accessory -->
+	<item id="90958" price="0" /> <!-- Scroll: Enchant Fishing Weapon -->
+	<item id="91187" price="0" /> <!-- Scroll: Enchant Spirit Accessory -->
+	<item id="91575" price="0" /> <!-- Scroll: Enchant Yogi's Weapon(Event) -->
+	<item id="91722" price="0" /> <!-- Scroll: Enchant Special Sayha's Cloak -->
+	<item id="91756" price="0" /> <!-- Scroll: Enchant Talisman of Aden -->
+	<item id="91863" price="0" /> <!-- Scroll: Enchant Dragon Belt -->
+	<item id="91951" price="0" /> <!-- Scroll: Enchant Talisman of Baium -->
+	<item id="91966" price="0" /> <!-- Scroll: Enchant Ring of Insolence -->
+	<item id="91967" price="0" /> <!-- Scroll: Enchant Dragon Valley's Earring -->
+	<item id="92017" price="0" /> <!-- Scroll: Enchant Talisman of Eva -->
+	<item id="92402" price="0" /> <!-- Scroll: Enchant Talisman of Speed -->
+	<item id="93043" price="0" /> <!-- Adventurer's Scroll: Enchant Hair Accessory -->
+	<item id="93045" price="0" /> <!-- Scroll: Enchant Adventurer's Cloak -->
+	<item id="93046" price="0" /> <!-- Scroll: Enchant Adventurer's Belt -->
+	<item id="93329" price="0" /> <!-- Scroll: Enchant Talisman of Authority -->
+	<item id="94169" price="0" /> <!-- Scroll: Enchant Circlet of Hero -->
+	<item id="94305" price="0" /> <!-- Scroll: Enchant Stats (Exchangeable) -->
+	<item id="94306" price="0" /> <!-- Scroll: Enchant Stats -->
+	<item id="94383" price="0" /> <!-- Scroll: Enchant Rare Accessories -->
+</list>

@@ -1,0 +1,1563 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="92000" name="Fire Spirit Jewel Shard" additionalName="Sealed" type="EtcItem">
+		<!-- Contains the power of Fire. Double-click to acquire 9300 Fire Attribute XP points. -->
+		<set name="icon" val="icon.elemental_fire_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92001" name="Wind Spirit Jewel Shard" additionalName="Sealed" type="EtcItem">
+		<!-- Contains the power of Wind. Double-click to acquire 9300 Wind Attribute XP points. -->
+		<set name="icon" val="icon.elemental_wind_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92002" name="Earth Spirit Jewel Shard" additionalName="Sealed" type="EtcItem">
+		<!-- Contains the power of Earth. Double-click to acquire 9300 Earth Attribute XP points. -->
+		<set name="icon" val="icon.elemental_earth_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92003" name="Package: Special Shots" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<cond msgId="1902">
+			<player levelRange="1;75" />
+		</cond>
+		<capsuled_items>
+			<item id="91910" min="10" max="10" chance="100" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
+			<item id="90907" min="30" max="30" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="500" max="500" chance="100" /> <!-- Spirit Ore - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92004" name="Inventory Expansion Ticket Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning and upgrading the Expand Inventory Lv. 1-3 skill. <font color=EEAA22>Can be upgraded up to Lv. 5.</font>. <font color=bbaa88><Classes></font>. All. <font color=bbaa88><Skill effect></font>. Increases the number of items you can carry with you. -->
+		<set name="icon" val="icon.etc_add_inventory_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92005" name="Inventory Expansion Ticket Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning Expand Inventory Lv. 2. <Classes>. All. <Skill effect>. Inventory slots +20. Note!. You must have the skill of the previous level to upgrade it to the next level. -->
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92006" name="Inventory Expansion Ticket Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning Expand Inventory Lv. 3. <Classes>. All. <Skill effect>. Inventory slots +30. Note!. You must have the skill of the previous level to upgrade it to the next level. -->
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92007" name="Inventory Expansion Ticket Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning Expand Inventory Lv. 4-5. <Classes>. All. <Skill effect>. Increases the number of items you can carry with you. -->
+		<set name="icon" val="icon.etc_add_inventory_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92008" name="Inventory Expansion Ticket Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning Expand Inventory Lv. 5. <Classes>. All. <Skill effect>. Inventory slots +50. Note!. You must have the skill of the previous level to upgrade it to the next level. -->
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92009" name="Shiny Unidentified Rock" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.destiny_stone" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91032" min="1" max="1" chance="11.11111" /> <!-- Fire Spirit Evolution Stone -->
+			<item id="91033" min="1" max="1" chance="11.11111" /> <!-- Wind Spirit Evolution Stone -->
+			<item id="91031" min="1" max="1" chance="11.11111" /> <!-- Water Spirit Evolution Stone -->
+			<item id="91034" min="1" max="1" chance="11.11111" /> <!-- Earth Spirit Evolution Stone -->
+			<item id="91976" min="10" max="10" chance="11.11111" /> <!-- Old Unidentified Rock -->
+			<item id="91036" min="5" max="5" chance="11.11111" /> <!-- Fire Spirit Ore -->
+			<item id="91037" min="5" max="5" chance="11.11111" /> <!-- Wind Spirit Ore -->
+			<item id="91035" min="5" max="5" chance="11.11111" /> <!-- Water Spirit Ore -->
+			<item id="91038" min="5" max="5" chance="11.11111" /> <!-- Earth Spirit Ore -->
+		</capsuled_items>
+	</item>
+	<item id="92010" name="Majestic Robe Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2409" min="1" max="1" chance="100" /> <!-- Majestic Robe -->
+			<item id="90478" min="1" max="1" chance="100" /> <!-- Majestic Circlet (Robe) -->
+			<item id="5776" min="1" max="1" chance="100" /> <!-- Majestic Gauntlets (Robe) -->
+			<item id="5788" min="1" max="1" chance="100" /> <!-- Majestic Boots (Robe) -->
+		</capsuled_items>
+	</item>
+	<item id="92011" name="Majestic Light Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5775" min="1" max="1" chance="100" /> <!-- Majestic Gauntlets (Light) -->
+			<item id="5787" min="1" max="1" chance="100" /> <!-- Majestic Boots (Light) -->
+			<item id="90477" min="1" max="1" chance="100" /> <!-- Majestic Circlet (Light) -->
+			<item id="2395" min="1" max="1" chance="100" /> <!-- Majestic Leather Armor -->
+		</capsuled_items>
+	</item>
+	<item id="92012" name="Dark Crystal Robe Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2407" min="1" max="1" chance="100" /> <!-- Dark Crystal Robe -->
+			<item id="5767" min="1" max="1" chance="100" /> <!-- Dark Crystal Gloves (Robe) -->
+			<item id="5779" min="1" max="1" chance="100" /> <!-- Dark Crystal Boots (Robe) -->
+			<item id="90472" min="1" max="1" chance="100" /> <!-- Dark Crystal Helmet (Robe) -->
+		</capsuled_items>
+	</item>
+	<item id="92013" name="Dark Crystal Light Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5766" min="1" max="1" chance="100" /> <!-- Dark Crystal Gloves (Light) -->
+			<item id="5778" min="1" max="1" chance="100" /> <!-- Dark Crystal Boots (Light) -->
+			<item id="90471" min="1" max="1" chance="100" /> <!-- Dark Crystal Helmet (Light) -->
+			<item id="2385" min="1" max="1" chance="100" /> <!-- Dark Crystal Leather Armor -->
+			<item id="2389" min="1" max="1" chance="100" /> <!-- Dark Crystal Leggings -->
+		</capsuled_items>
+	</item>
+	<item id="92014" name="Heavy Armor of Nightmare Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5771" min="1" max="1" chance="100" /> <!-- Gauntlets of Nightmare (Heavy) -->
+			<item id="5783" min="1" max="1" chance="100" /> <!-- Boots of Nightmare (Heavy) -->
+			<item id="90473" min="1" max="1" chance="100" /> <!-- Helm of Nightmare (Heavy) -->
+			<item id="374" min="1" max="1" chance="100" /> <!-- Armor of Nightmare -->
+		</capsuled_items>
+	</item>
+	<item id="92015" name="Tallum Heavy Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t77_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2382" min="1" max="1" chance="100" /> <!-- Tallum Plate Armor -->
+			<item id="5768" min="1" max="1" chance="100" /> <!-- Tallum Gloves (Heavy) -->
+			<item id="5780" min="1" max="1" chance="100" /> <!-- Tallum Boots (Heavy) -->
+			<item id="90467" min="1" max="1" chance="100" /> <!-- Tallum Helmet (Heavy) -->
+		</capsuled_items>
+	</item>
+	<item id="92016" name="Package: Sayha's Blessing (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the specified item. -->
+		<set name="icon" val="icon.etc_wind_potion_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91641" min="2" max="2" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92017" name="Scroll: Enchant Talisman of Eva" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for enchanting Talisman of Eva. -->
+		<set name="icon" val="icon.bm_eva_talisman_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" /> <!-- BLESS_ENCHT_AM -->
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40056" level="1" /> <!-- Scroll: Enchant Talisman of Eva -->
+		</skills>
+	</item>
+	<item id="92018" name="Talisman of Eva" additionalName="Sealed" type="Armor">
+		<!-- A talisman that contains the energy of Eva. Can be enchanted up to +10 with Scroll: Enchant Talisman of Eva. Activates special effects depending on the enchant value. The enchanting isn't safe even to +1. Effects of two identical talismans do not stack. Talisman of Eva enchanted to +4 or higher can be used for making Blessed Talisman of Eva in the Special Craft tab. -->
+		<set name="icon" val="icon.bm_eva_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="bodypart" val="talisman" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50193" level="1" /> <!-- Talisman of Eva -->
+			<skill id="50193" level="3" type="ON_ENCHANT" type_value="1" /> <!-- Enchant Effect: +1 Talisman of Eva -->
+			<skill id="50193" level="5" type="ON_ENCHANT" type_value="2" /> <!-- Enchant Effect: +2 Talisman of Eva -->
+			<skill id="50193" level="7" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect: +3 Talisman of Eva -->
+			<skill id="50193" level="9" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect: +4 Talisman of Eva -->
+			<skill id="50193" level="11" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: +5 Talisman of Eva -->
+			<skill id="50193" level="13" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: +6 Talisman of Eva -->
+			<skill id="50193" level="15" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: +7 Talisman of Eva -->
+			<skill id="50193" level="17" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: +8 Talisman of Eva -->
+			<skill id="50193" level="19" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: +9 Talisman of Eva -->
+			<skill id="50193" level="21" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: +10 Talisman of Eva -->
+		</skills>
+	</item>
+	<item id="92019" name="Siege Support Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49487" min="20" max="20" chance="4.0" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49674" min="5" max="5" chance="4.0" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="49683" min="1" max="1" chance="4.0" /> <!-- Talisman of Baium -->
+			<item id="90045" min="31" max="31" chance="4.0" /> <!-- Magic Tablet -->
+			<item id="91159" min="1" max="1" chance="4.0" /> <!-- Agathion Exchange Coupon -->
+			<item id="91213" min="1" max="1" chance="4.0" /> <!-- Scroll: Enchant Sayha's Cloak -->
+			<item id="91227" min="1" max="1" chance="4.0" /> <!-- Sayha's Cloak Coupon -->
+			<item id="91246" min="1" max="1" chance="4.0" /> <!-- Dragon Pendant Lv. 3 -->
+			<item id="91247" min="1" max="1" chance="4.0" /> <!-- Dragon Pendant Lv. 4 -->
+			<item id="91690" min="5" max="5" chance="4.0" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="91712" min="5" max="5" chance="4.0" /> <!-- Sayha's Storm - Sealed -->
+			<item id="91767" min="1" max="1" chance="4.0" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+			<item id="91780" min="5" max="5" chance="4.0" /> <!-- Old Battle Scroll - Sealed -->
+			<item id="91781" min="5" max="5" chance="4.0" /> <!-- Old Sayha's Buff Scroll - Sealed -->
+			<item id="91864" min="1" max="1" chance="4.0" /> <!-- Dragon Belt Pack - Sealed -->
+			<item id="92010" min="1" max="1" chance="4.0" /> <!-- Majestic Robe Set -->
+			<item id="92011" min="1" max="1" chance="4.0" /> <!-- Majestic Light Armor Set -->
+			<item id="92012" min="1" max="1" chance="4.0" /> <!-- Dark Crystal Robe Set -->
+			<item id="92013" min="1" max="1" chance="4.0" /> <!-- Dark Crystal Light Armor Set -->
+			<item id="92014" min="1" max="1" chance="4.0" /> <!-- Heavy Armor of Nightmare Set -->
+			<item id="92015" min="1" max="1" chance="4.0" /> <!-- Tallum Heavy Armor Set -->
+			<item id="92020" min="1" max="1" chance="4.0" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+			<item id="862" min="1" max="1" chance="4.0" /> <!-- Majestic Earring -->
+			<item id="893" min="1" max="1" chance="4.0" /> <!-- Majestic Ring -->
+			<item id="924" min="1" max="1" chance="4.0" /> <!-- Majestic Necklace -->
+		</capsuled_items>
+	</item>
+	<item id="92020" name="Enchant Kit: Talisman of Eva" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92018" min="1" max="1" chance="100" /> <!-- Talisman of Eva - Sealed -->
+			<item id="92017" min="10" max="10" chance="100" /> <!-- Scroll: Enchant Talisman of Eva - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92021" name="Letter D" additionalName="Sealed" type="EtcItem">
+		<!-- Combine with other letters to create a special word and get a reward! -->
+		<set name="icon" val="icon.etc_alphabet_d_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92022" name="Letter P" additionalName="Sealed" type="EtcItem">
+		<!-- Combine with other letters to create a special word and get a reward! -->
+		<set name="icon" val="icon.etc_alphabet_p_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92023" name="+9 Ring of Insolence Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ring_of_oman" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91952" min="1" max="1" minEnchant="9" maxEnchant="9" chance="100" /> <!-- Ring of Insolence -->
+		</capsuled_items>
+	</item>
+	<item id="92024" name="+9 Dragon Valley's Earring Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_catseye_earing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91953" min="1" max="1" minEnchant="9" maxEnchant="9" chance="100" /> <!-- Dragon Valley's Earring -->
+		</capsuled_items>
+	</item>
+	<item id="92025" name="Event Rune Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90836" min="1" max="1" chance="100" /> <!-- Hero's XP Amulet - 7-day -->
+			<item id="91692" min="1" max="1" chance="100" /> <!-- Blessing of Plenty - 100% - 3-day -->
+		</capsuled_items>
+	</item>
+	<item id="92026" name="Majestic Heavy Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2383" min="1" max="1" chance="100" /> <!-- Majestic Plate Armor -->
+			<item id="5774" min="1" max="1" chance="100" /> <!-- Majestic Gauntlets (Heavy) -->
+			<item id="5786" min="1" max="1" chance="100" /> <!-- Majestic Boots (Heavy) -->
+			<item id="90476" min="1" max="1" chance="100" /> <!-- Majestic Circlet (Heavy) -->
+		</capsuled_items>
+	</item>
+	<item id="92027" name="Dark Crystal Heavy Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="365" min="1" max="1" chance="100" /> <!-- Dark Crystal Breastplate -->
+			<item id="388" min="1" max="1" chance="100" /> <!-- Dark Crystal Gaiters -->
+			<item id="5765" min="1" max="1" chance="100" /> <!-- Dark Crystal Gloves (Heavy) -->
+			<item id="5777" min="1" max="1" chance="100" /> <!-- Dark Crystal Boots (Heavy) -->
+			<item id="90470" min="1" max="1" chance="100" /> <!-- Dark Crystal Helmet (Heavy) -->
+		</capsuled_items>
+	</item>
+	<item id="92028" name="Tallum Light Armor Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t78_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2393" min="1" max="1" chance="100" /> <!-- Tallum Leather Armor -->
+			<item id="5769" min="1" max="1" chance="100" /> <!-- Tallum Gloves (Light) -->
+			<item id="5781" min="1" max="1" chance="100" /> <!-- Tallum Boots (Light) -->
+			<item id="90468" min="1" max="1" chance="100" /> <!-- Tallum Helmet (Light) -->
+		</capsuled_items>
+	</item>
+	<item id="92029" name="Tallum Robe Set" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2400" min="1" max="1" chance="100" /> <!-- Tallum Tunic -->
+			<item id="2405" min="1" max="1" chance="100" /> <!-- Tallum Stockings -->
+			<item id="5770" min="1" max="1" chance="100" /> <!-- Tallum Gloves (Robe) -->
+			<item id="5782" min="1" max="1" chance="100" /> <!-- Tallum Boots (Robe) -->
+			<item id="90469" min="1" max="1" chance="100" /> <!-- Tallum Helmet (Robe) -->
+		</capsuled_items>
+	</item>
+	<item id="92030" name="Hero's XP Amulet Package" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.skill19226" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90836" min="1" max="1" chance="100" /> <!-- Hero's XP Amulet - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="92031" name="Talisman Bracelet Lv. 5" type="Armor">
+		<!-- Talisman slots +6. P. Atk. +200. M. Atk. +200. <font color=bbaa88><Compound></font>. Materials: Talisman Bracelets and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.dimension_bracelet_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="price" val="5400000" />
+		<set name="commissionItemType" val="BRACELET" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50192" level="5" /> <!-- Talisman Bracelet Lv. 5 -->
+		</skills>
+	</item>
+	<item id="92032" name="Talisman Bracelet Lv. 6" type="Armor">
+		<!-- Talisman slots +6. P. Atk. +300. M. Atk. +300. <font color=bbaa88><Compound></font>. Materials: Talisman Bracelets and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.dimension_bracelet_i05" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="price" val="5400000" />
+		<set name="commissionItemType" val="BRACELET" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50192" level="6" /> <!-- Talisman Bracelet Lv. 6 -->
+		</skills>
+	</item>
+	<item id="92033" name="Magic Fire" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Magic Lamp charging rate +100%. Duration: 60 min. Cooldown: 1 min. Required level: 1-85. Note!. Cannot be used with items that apply the Magic Lamp charging rate effect. -->
+		<set name="icon" val="icon.bm_soul_of_shilen" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<cond msgId="1902">
+			<player levelRange="1;75" />
+		</cond>
+		<skills>
+			<skill id="54069" level="1" /> <!-- Magic Fire (Event) -->
+		</skills>
+	</item>
+	<item id="92034" name="Reinforced Jewelry Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92176" min="1" max="1" chance="14.2" /> <!-- Amber Jewelry Box Lv. 1 -->
+			<item id="92186" min="1" max="1" chance="14.2" /> <!-- Opal Jewelry Box Lv. 1 -->
+			<item id="92196" min="1" max="1" chance="14.2" /> <!-- Coral Jewelry Box Lv. 1 -->
+			<item id="92206" min="1" max="1" chance="14.2" /> <!-- Onyx Jewelry Box Lv. 1 -->
+			<item id="92216" min="1" max="1" chance="14.2" /> <!-- Spinel Jewelry Box Lv. 1 -->
+			<item id="92226" min="1" max="1" chance="14.2" /> <!-- Zircon Jewelry Box Lv. 1 -->
+			<item id="92236" min="1" max="1" chance="14.2" /> <!-- Moonstone Jewelry Box Lv. 1 -->
+		</capsuled_items>
+	</item>
+	<item id="92035" name="Shiny Jewelry Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92036" min="1" max="1" chance="14.2" /> <!-- Amber Lv. 1 - Sealed -->
+			<item id="92046" min="1" max="1" chance="14.2" /> <!-- Opal Lv. 1 - Sealed -->
+			<item id="92056" min="1" max="1" chance="14.2" /> <!-- Coral Lv. 1 - Sealed -->
+			<item id="92066" min="1" max="1" chance="14.2" /> <!-- Onyx Lv. 1 - Sealed -->
+			<item id="92076" min="1" max="1" chance="14.2" /> <!-- Spinel Lv. 1 - Sealed -->
+			<item id="92086" min="1" max="1" chance="14.2" /> <!-- Zircon Lv. 1 - Sealed -->
+			<item id="92096" min="1" max="1" chance="14.2" /> <!-- Moonstone Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92036" name="Amber Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 500 fixed damage. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50194" level="1" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92037" name="Amber Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 700 fixed damage. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50194" level="2" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92038" name="Amber Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 1000 fixed damage. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50194" level="3" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92039" name="Amber Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 1500 fixed damage. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="4" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92040" name="Amber Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color="FFBB00"><Properties></font>After receiving damage, there is a certain chance to block the enemy's <font color=bbaa88>additional attack</font> damage for 10 sec. <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 2500 fixed damage. P./ M. Def. -4%. With a 20% chance, removes debuffs and anomalies. <PvE effect>. P./ M. Def. -10%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="6" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92041" name="Amber Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color="FFBB00"><Properties></font>After receiving damage, there is a certain chance to block the enemy's <font color=bbaa88>additional attack</font> damage for 10 sec. <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 3000 fixed damage. P./ M. Def. -8%. With a 30% chance, removes debuffs and anomalies. <PvE effect>. P./ M. Def. -15%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="7" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92042" name="Amber Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color="FFBB00"><Properties></font>. With a certain chance, blocks the enemy's <font color=bbaa88>additional attack</font> damage for 10 sec. when hit. <Active skill>. Interrupts the target's skill casting. <PvP effect>. Ignores CP and deals 3500 fixed damage. P./ M. Def. -12%. With a 50% chance, removes debuffs and anomalies. <PvE effect>. P./ M. Def. -20%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="8" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92043" name="Amber Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="8" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92044" name="Amber Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="9" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92045" name="Amber Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="10" /> <!-- Gem: Amber -->
+		</skills>
+	</item>
+	<item id="92046" name="Opal Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +3%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50195" level="1" /> <!-- Gem: Opal -->
+		</skills>
+	</item>
+	<item id="92047" name="Opal Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +5%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50195" level="2" /> <!-- Gem: Opal -->
+		</skills>
+	</item>
+	<item id="92048" name="Opal Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +8%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50195" level="3" /> <!-- Gem: Opal -->
+		</skills>
+	</item>
+	<item id="92049" name="Opal Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +12%. <Active skill>. Grants immunity to debuffs and anomalies for 5 sec. - Cooldown: 5 min. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50195" level="4" /> <!-- Gem: Opal -->
+			<skill id="50196" level="4" /> <!-- Gem: Opal - Special Ability -->
+		</skills>
+	</item>
+	<item id="92050" name="Opal Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +20%. HP/ MP +200. <Active skill>. Grants immunity to debuffs and anomalies for 15 sec. - Cooldown: 5 min. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50195" level="6" /> <!-- Gem: Opal -->
+			<skill id="50196" level="6" /> <!-- Gem: Opal - Special Ability -->
+		</skills>
+	</item>
+	<item id="92051" name="Opal Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +25%. HP/ MP +300. <Active skill>. Grants immunity to debuffs and anomalies for 20 sec. - Cooldown: 5 min. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50195" level="7" /> <!-- Gem: Opal -->
+			<skill id="50196" level="7" /> <!-- Gem: Opal - Special Ability -->
+		</skills>
+	</item>
+	<item id="92052" name="Opal Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Shock/ Pull/ Fear/ Silence/ Paralysis Resistance +30%. HP/ MP +500. <Active skill>. Grants immunity to debuffs and anomalies for 25 sec. Cooldown: 5 min. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50195" level="8" /> <!-- Gem: Opal -->
+			<skill id="50196" level="8" /> <!-- Gem: Opal - Special Ability -->
+		</skills>
+	</item>
+	<item id="92053" name="Opal Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92054" name="Opal Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92055" name="Opal Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92056" name="Coral Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +1%. Casting Spd. +1%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50197" level="1" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92057" name="Coral Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +2%. Casting Spd. +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50197" level="2" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92058" name="Coral Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +4%. Casting Spd. +4%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50197" level="3" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92059" name="Coral Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +7%. Casting Spd. +7%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="4" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92060" name="Coral Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +14%. Casting Spd. +14%. Speed +1. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="6" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92061" name="Coral Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +18%. Casting Spd. +18%. Speed +2. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="7" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92062" name="Coral Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Atk. Spd. +22%. Casting Spd. +22%. Speed +3. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="8" /> <!-- Gem: Coral -->
+		</skills>
+	</item>
+	<item id="92063" name="Coral Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92064" name="Coral Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92065" name="Coral Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92066" name="Onyx Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50204" level="1" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92067" name="Onyx Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +3%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50204" level="2" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92068" name="Onyx Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +5%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50204" level="3" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92069" name="Onyx Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +8%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="4" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92070" name="Onyx Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +16%. P. Atk. +50. M. Atk. +50. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="6" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92071" name="Onyx Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +20%. P. Atk. +150. M. Atk. +150. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="7" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92072" name="Onyx Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Soulshot/ Spiritshot damage +25%. P. Atk. +300. M. Atk. +300. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="8" /> <!-- Gem: Onyx -->
+		</skills>
+	</item>
+	<item id="92073" name="Onyx Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92074" name="Onyx Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92075" name="Onyx Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92076" name="Spinel Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. P. Def. +20. M. Def. +10. With a certain chance, recovers 12 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50206" level="1" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92077" name="Spinel Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON/ MEN +1. P. Def. +30. M. Def. +20. With a certain chance, recovers 16 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50206" level="2" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92078" name="Spinel Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. DEX +1. CON/ MEN +1. P. Def. +60. M. Def. +30. With a certain chance, recovers 20 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50206" level="3" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92079" name="Spinel Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. DEX/ WIT +1. CON/ MEN +1. Received P. Critical Damage -4%. Received M. Skill Critical Damage -4%. P. Def. +100. M. Def. +60. With a certain chance, recovers 30 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="4" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92080" name="Spinel Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. STR/ INT +1. DEX/ WIT +1. CON/ MEN +2. Received P. Critical Damage -10%. Received M. Skill Critical Damage -10%. P. Def. +200. M. Def. +150. With a certain chance, recovers 50 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="6" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92081" name="Spinel Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. STR/ INT +2. DEX/ WIT +2. CON/ MEN +2. All received Critical Damage -15%. P. Def. +250. M. Def. +220. With a certain chance, recovers 60 MP when using skills (cooldown: 3 sec.). <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="7" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92082" name="Spinel Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. STR/ INT +3. DEX/ WIT +3. CON/ MEN +3. All received Critical Damage -20%. P. Def. +350. M. Def. +300. With a certain chance, recovers 70 MP when using skills (cooldown: 3 sec.). Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="8" /> <!-- Gem: Spinel -->
+		</skills>
+	</item>
+	<item id="92083" name="Spinel Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92084" name="Spinel Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92085" name="Spinel Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92086" name="Zircon Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +2%. M. Skill Critical Damage +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50207" level="1" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92087" name="Zircon Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +4%. M. Skill Critical Damage +4%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50207" level="2" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92088" name="Zircon Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +6%. M. Skill Critical Damage +6%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50207" level="3" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92089" name="Zircon Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +8%. M. Skill Critical Damage +8%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="4" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92090" name="Zircon Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +15%. M. Skill Critical Damage +15%. P. Skill Critical Damage +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="6" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92091" name="Zircon Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +15%. M. Skill Critical Damage +19%. P. Skill Critical Damage +5%. Skill Power +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="7" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92092" name="Zircon Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. P. Critical Damage +15%. M. Skill Critical Damage +23%. P. Skill Critical Damage +9%. Skill Power +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="8" /> <!-- Gem: Zircon -->
+		</skills>
+	</item>
+	<item id="92093" name="Zircon Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92094" name="Zircon Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92095" name="Zircon Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="92096" name="Moonstone Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Acquired XP/ SP +1%. With Sayha's Grace, acquired XP/ SP +2%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50208" level="1" /> <!-- Gem: Moonstone -->
+		</skills>
+	</item>
+	<item id="92097" name="Moonstone Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Acquired XP/ SP +1%. With Sayha's Grace, acquired XP/ SP +3%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50208" level="2" /> <!-- Gem: Moonstone -->
+		</skills>
+	</item>
+	<item id="92098" name="Moonstone Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Acquired XP/ SP +2%. With Sayha's Grace, acquired XP/ SP +4%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50208" level="3" /> <!-- Gem: Moonstone -->
+		</skills>
+	</item>
+	<item id="92099" name="Moonstone Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. Acquired XP/ SP +2%. With Sayha's Grace, acquired XP/ SP +6%. Sayha's Grace Consumption -10%. <font color=bbaa88><Compound></font>. Materials: identical Jewels and Jewelry Boxes. In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50208" level="4" /> <!-- Gem: Moonstone -->
+		</skills>
+	</item>
+</list>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="OrenCastle">
+		<group>
+			<npc id="35189" x="84026" y="37191" z="-2272" heading="32768" respawnTime="60sec" /> <!-- Oren Holy Artifact -->
+			<npc id="35221" x="82611" y="38772" z="-1578" heading="49152" respawnTime="60sec" /> <!-- Mass Gatekeeper - Oren -->
+			<npc id="35222" x="78737" y="36852" z="-2544" heading="32768" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Oren -->
+			<npc id="35222" x="79085" y="36798" z="-2544" heading="49152" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Oren -->
+			<npc id="35223" x="81296" y="37025" z="-2254" heading="32768" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Oren -->
+			<npc id="35223" x="81651" y="36959" z="-2294" heading="49152" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Oren -->
+			<npc id="35224" x="82464" y="37592" z="-2450" heading="44984" respawnTime="60sec" /> <!-- Blacksmith - Oren -->
+			<npc id="35225" x="82043" y="37132" z="-2450" heading="65001" respawnTime="60sec" /> <!-- Warehouse Keeper - Oren -->
+			<npc id="35227" x="83853" y="37192" z="-1835" heading="49000" respawnTime="60sec" /> <!-- Finrod - Wyvern Manager -->
+			<npc id="35228" x="83056" y="37425" z="-2280" heading="32768" respawnTime="60sec" /> <!-- Morrison - Mercenary Manager -->
+			<!-- <npc id="35232" x="75275" y="40132" z="-3150" heading="32768" respawnTime="60sec" /> Sherwood - Herald from Oren -->
+		</group>
+	</spawn>
+</list>

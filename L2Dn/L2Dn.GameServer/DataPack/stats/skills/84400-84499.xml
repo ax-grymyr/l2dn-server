@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="84400" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84401" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84402" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84403" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84404" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84405" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84406" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84407" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84408" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84409" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84410" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84411" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84412" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84413" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84414" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84415" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84416" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84417" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84418" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84419" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84420" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84421" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84422" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84423" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84424" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84425" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84426" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84427" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84428" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84429" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84430" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84431" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84432" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84433" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84434" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84435" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84436" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84437" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84438" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84439" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84440" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84441" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84442" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84443" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84444" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84445" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84446" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84447" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84448" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84449" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84450" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84451" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84452" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84453" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84454" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84455" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84456" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84457" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84458" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84459" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84460" toLevel="1" name="Melee Weapon Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84461" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84462" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84463" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84464" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84465" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84466" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84467" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84468" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84469" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84470" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84471" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84472" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84473" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84474" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84475" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84476" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84477" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84478" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84479" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84480" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84481" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84482" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84483" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84484" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84485" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84486" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84487" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84488" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84489" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84490" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84491" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84492" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84493" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84494" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84495" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84496" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84497" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84498" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84499" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

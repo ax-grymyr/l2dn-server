@@ -1,0 +1,2010 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="18200" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<ai clanHelpRange="600" aggroRange="300">
+			<clanList>
+				<clan>TOMB1</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18201" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18202" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18203" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18204" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18205" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18206" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18207" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18208" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18209" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18210" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18211" level="85" type="Monster" name="Charm of Corner">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18212" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18213" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="15" /> <!-- Strong M. Atk. -->
+			<skill id="4412" level="15" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18214" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18215" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="17" /> <!-- Very Strong P. Atk. -->
+			<skill id="4411" level="17" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18216" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="19" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18217" level="85" type="Monster" name="Halisha's Archon">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="21" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="21" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="21" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+	</npc>
+	<npc id="18218" level="85" type="Monster" name="Halisha's Archon">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18219" level="85" type="Monster" name="Halisha's Archon">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6722" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="35" />
+				<run ground="185" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="57.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="4" /> <!-- One-handed Sword -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18220" level="85" type="Monster" name="Shaman of Darkness">
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="3939" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="80" />
+				<run ground="160" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="9" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="18221" level="85" type="Monster" name="Shaman of Darkness">
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="3939" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="80" />
+				<run ground="160" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="9" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="18222" level="85" type="Monster" name="Dark Assassin">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="41" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="19" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="37.5" />
+		</collision>
+	</npc>
+	<npc id="18223" level="85" type="Monster" name="Dark Assassin">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="41" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="19" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="37.5" />
+		</collision>
+	</npc>
+	<npc id="18224" level="85" type="Monster" name="Dark Assassin">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="41" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="19" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="37.5" />
+		</collision>
+	</npc>
+	<npc id="18225" level="85" type="Monster" name="Dark Assassin">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="41" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="37.5" />
+		</collision>
+	</npc>
+	<npc id="18226" level="85" type="Monster" name="Caster of Darkness">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="70" />
+				<run ground="155" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18227" level="85" type="Monster" name="Caster of Darkness">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="70" />
+				<run ground="155" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+	</npc>
+	<npc id="18228" level="85" type="Monster" name="Caster of Darkness">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="70" />
+				<run ground="155" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+	</npc>
+	<npc id="18229" level="85" type="Monster" name="Caster of Darkness">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="70" />
+				<run ground="155" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="19" /> <!-- Extremely Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+	</npc>
+	<npc id="18230" level="85" type="Monster" name="Emperor's Seal Device">
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="40" />
+				<run ground="60" />
+			</speed>
+			<hitTime>350</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="12" />
+			<height normal="8" />
+		</collision>
+	</npc>
+	<npc id="18231" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18232" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18233" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18234" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18235" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18236" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18237" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18238" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18239" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18240" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18241" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18242" level="85" type="Monster" name="Statue of Protection">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="266105.7" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4436" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4437" level="5" /> <!-- Greater Infection Resistance -->
+			<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18243" level="85" type="Monster" name="Statue of Protection">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" />
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44350.854" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="17" /> <!-- Very Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="14765" level="5" /> <!-- Blood Siphon Resistance -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+			<skill id="5599" level="12" /> <!-- Shock Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+	</npc>
+	<npc id="18244" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18245" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18246" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18247" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18248" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18249" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18250" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18251" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18252" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18253" level="85" type="Monster" name="Watchman of Grave">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="177403.8" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="714.800322" />
+			<speed>
+				<walk ground="90" />
+				<run ground="1" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
+			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18254" level="85" type="Monster" name="Halisha's Chest">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="80" />
+				<run ground="1" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18255" level="85" type="Monster" name="Halisha's Treasure Chest">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="80" />
+				<run ground="1" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		</skillList>
+	</npc>
+	<npc id="18256" level="85" type="Monster" name="Halisha's Treasure Chest">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5563" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="80" />
+				<run ground="1" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		</skillList>
+	</npc>
+</list>

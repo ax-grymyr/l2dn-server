@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 5 -->
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Enchant Kit: Talisman of Authority -->
+		<production count="4" id="93330" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Opal Lv. 3 -->
+		<production count="1" id="92048" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Amber Lv. 3 -->
+		<production count="1" id="92038" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Moonstone Lv. 3 -->
+		<production count="1" id="92098" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="2" id="94493" />
+		<!-- Spinel Lv. 3 -->
+		<production count="1" id="92078" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="2" id="94493" />
+		<!-- Zircon Lv. 3 -->
+		<production count="1" id="92088" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="2" id="94493" />
+		<!-- Onyx Lv. 3 -->
+		<production count="1" id="92068" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="2" id="94493" />
+		<!-- Coral Lv. 3 -->
+		<production count="1" id="92058" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="4" id="94493" />
+		<!-- Regular Pet Training Guide -->
+		<production count="1" id="94096" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Anakim's Rune - Stage 1 -->
+		<production count="5" id="91163" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="1" id="94493" />
+		<!-- Lilith's Rune - Stage 1 -->
+		<production count="5" id="91173" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="10" id="94493" />
+		<!-- Anakim's Rune - Stage 6 -->
+		<production count="1" id="91168" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 5 -->
+		<ingredient count="10" id="94493" />
+		<!-- Lilith's Rune - Stage 6 -->
+		<production count="1" id="91178" />
+	</item>
+</list>

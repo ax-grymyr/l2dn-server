@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="91129" price="0" /> <!-- Agathion Ignis -->
+	<item id="93128" price="0" /> <!-- Agathion Ignis -->
+	<item id="91130" price="0" /> <!-- Agathion Nebula -->
+	<item id="93129" price="0" /> <!-- Agathion Nebula -->
+	<item id="91131" price="0" /> <!-- Agathion Procella -->
+	<item id="93130" price="0" /> <!-- Agathion Procella -->
+	<item id="91132" price="0" /> <!-- Agathion Petram -->
+	<item id="93131" price="0" /> <!-- Agathion Petram -->
+	<item id="91133" price="0" /> <!-- Agathion Joy -->
+	<item id="93132" price="0" /> <!-- Agathion Joy -->
+	<item id="48054" price="0" /> <!-- Agathion Gemini -->
+	<item id="91622" price="0" /> <!-- High Quality Agathion Gemini -->
+	<item id="91477" price="0" /> <!-- Sealed Agathion Gemini +5 -->
+	<item id="48050" price="0" /> <!-- Agathion Libra -->
+	<item id="91608" price="0" /> <!-- High Quality Agathion Libra (Fire Dragon) -->
+	<item id="91616" price="0" /> <!-- High Quality Agathion Libra (Earth Dragon) -->
+	<item id="91474" price="0" /> <!-- Sealed Agathion Libra +5 -->
+	<item id="91812" price="0" /> <!-- Agathion Libra +3(3-Day) -->
+	<item id="48056" price="0" /> <!-- Agathion Aquarius -->
+	<item id="91612" price="0" /> <!-- High Quality Agathion Aquarius (Fire Dragon) -->
+	<item id="91620" price="0" /> <!-- High Quality Agathion Aquarius (Earth Dragon) -->
+	<item id="91479" price="0" /> <!-- Sealed Agathion Aquarius +5 -->
+	<item id="91821" price="0" /> <!-- Sealed Agathion Aquarius +3(3-Day) -->
+	<item id="91815" price="0" /> <!-- Agathion Aquarius +3(3-Day) -->
+	<item id="48048" price="0" /> <!-- Agathion Virgo -->
+	<item id="91606" price="0" /> <!-- High Quality Agathion Virgo (Fire Dragon) -->
+	<item id="91614" price="0" /> <!-- High Quality Agathion Virgo (Earth Dragon) -->
+	<item id="91472" price="0" /> <!-- Sealed Virgo +5 -->
+	<item id="48049" price="0" /> <!-- Agathion Capricorn -->
+	<item id="91607" price="0" /> <!-- High Quality Agathion Capricorn (Fire Dragon) -->
+	<item id="91615" price="0" /> <!-- High Quality Agathion Capricorn (Earth Dragon) -->
+	<item id="91473" price="0" /> <!-- Sealed Agathion Capricorn +5 -->
+	<item id="91817" price="0" /> <!-- Sealed Agathion Capricorn +3(3-Day) -->
+	<item id="91811" price="0" /> <!-- Agathion Capricorn +3(3-Day) -->
+	<item id="48053" price="0" /> <!-- Agathion Leo -->
+	<item id="91610" price="0" /> <!-- High Quality Agathion Leo (Fire Dragon) -->
+	<item id="91618" price="0" /> <!-- High Quality Agathion Leo (Earth Dragon) -->
+	<item id="91476" price="0" /> <!-- Sealed Agathion Leo +5 -->
+	<item id="91819" price="0" /> <!-- Sealed Agathion Leo +3(3-Day) -->
+	<item id="91813" price="0" /> <!-- Agathion Leo +3(3-Day) -->
+	<item id="48055" price="0" /> <!-- Agathion Scorpio -->
+	<item id="91611" price="0" /> <!-- High Quality Agathion Scorpio (Fire Dragon) -->
+	<item id="91619" price="0" /> <!-- High Quality Agathion Scorpio (Earth Dragon) -->
+	<item id="91478" price="0" /> <!-- Sealed Agathion Scorpio +5 -->
+	<item id="91820" price="0" /> <!-- Sealed Agathion Scorpio +3(3-Day) -->
+	<item id="91814" price="0" /> <!-- Agathion Scorpio +3(3-Day) -->
+	<item id="48052" price="0" /> <!-- Agathion Taurus -->
+	<item id="91609" price="0" /> <!-- High Quality Agathion Taurus (Fire Dragon) -->
+	<item id="91617" price="0" /> <!-- High Quality Agathion Taurus (Earth Dragon) -->
+	<item id="91475" price="0" /> <!-- Sealed Agathion Aquarius +5 -->
+	<item id="90902" price="0" /> <!-- Agathion Pisces (15-Day) -->
+	<item id="91111" price="0" /> <!-- Agathion Scorpio (30-Day) -->
+	<item id="48046" price="0" /> <!-- Scroll: Enchant Agathion -->
+	<item id="90963" price="0" /> <!-- Stable Scroll: Enchant Agathion -->
+	<item id="91623" price="0" /> <!-- Stable Scroll: Enchant High Quality Agathion -->
+	<item id="93040" price="0" /> <!-- Stable Scroll: Enchant Adventurer's Agathion Griffin -->
+	<item id="93133" price="0" /> <!-- Scroll: Enchant Agathion -->
+	<item id="91159" price="0" /> <!-- Agathion Exchange Coupon -->
+</list>

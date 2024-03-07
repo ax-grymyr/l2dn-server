@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="84000" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84001" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84002" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84003" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84004" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84005" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84006" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84007" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84008" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84009" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84010" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84011" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84012" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84013" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84014" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84015" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84016" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84017" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84018" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84019" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84020" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84021" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84022" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84023" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84024" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84025" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84026" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84027" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84028" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84029" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84030" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84031" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84032" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84033" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84034" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84035" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84036" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84037" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84038" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84039" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84040" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84041" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84042" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84043" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84044" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84045" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84046" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84047" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84048" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84049" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84050" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84051" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84052" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84053" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84054" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84055" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84056" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84057" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84058" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84059" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84060" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84061" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84062" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84063" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84064" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84065" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84066" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84067" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84068" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84069" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84070" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84071" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84072" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84073" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84074" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84075" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84076" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84077" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84078" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84079" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84080" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84081" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84082" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84083" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84084" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84085" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84086" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84087" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84088" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84089" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84090" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84091" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84092" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84093" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84094" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84095" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84096" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84097" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84098" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="84099" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

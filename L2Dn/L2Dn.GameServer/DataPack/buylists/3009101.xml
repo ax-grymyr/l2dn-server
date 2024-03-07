@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<npcs>
+		<npc>30091</npc> <!-- Ellie -->
+	</npcs>
+	<item id="877" price="5920" /> <!-- Ring of Wisdom -->
+	<item id="878" price="10700" /> <!-- Blue Coral Ring -->
+	<item id="845" price="8890" /> <!-- Cat's Eye Earring -->
+	<item id="846" price="16000" /> <!-- Coral Earring -->
+	<item id="908" price="11900" /> <!-- Necklace of Wisdom -->
+	<item id="909" price="21300" /> <!-- Blue Diamond Necklace -->
+	<item id="890" price="18000" /> <!-- Ring of Devotion -->
+	<item id="879" price="28400" /> <!-- Ring of Magic -->
+	<item id="880" price="42800" /> <!-- Black Pearl Ring -->
+	<item id="881" price="62300" /> <!-- Elven Ring -->
+	<item id="882" price="80800" /> <!-- Mithril Ring -->
+	<item id="847" price="26900" /> <!-- Red Crescent -->
+	<item id="848" price="42600" /> <!-- Earring of Magic -->
+	<item id="849" price="64300" /> <!-- Tiger's Eye -->
+	<item id="850" price="93400" /> <!-- Elven Earring -->
+	<item id="851" price="121000" /> <!-- Onyx Beast's eye Earring -->
+	<item id="910" price="35900" /> <!-- Necklace of Devotion -->
+	<item id="911" price="56800" /> <!-- Magic Necklace -->
+	<item id="912" price="85700" /> <!-- Necklace of Old Forest -->
+	<item id="913" price="125000" /> <!-- Elven Necklace -->
+	<item id="914" price="162000" /> <!-- Dark Necklace -->
+	<item id="883" price="103000" /> <!-- Aquastone Ring -->
+	<item id="885" price="196000" /> <!-- Ring of Ages -->
+	<item id="852" price="155000" /> <!-- Moonstone Earring -->
+	<item id="854" price="295000" /> <!-- Earring of Seal -->
+	<item id="915" price="207000" /> <!-- Aquastone Necklace -->
+	<item id="917" price="393000" /> <!-- Necklace of Mermaid -->
+</list>

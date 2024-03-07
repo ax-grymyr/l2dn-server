@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange A-grade Heavy Armor Coupon - Upper -->
+	<item>
+		<ingredient id="98503" count="1" /> <!-- A-grade Heavy Armor Coupon - Upper - Sealed -->
+		<production id="92261" count="1" /> <!-- Tallum Plate Armor - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98503" count="1" /> <!-- A-grade Heavy Armor Coupon - Upper - Sealed -->
+		<production id="92256" count="1" /> <!-- Armor of Nightmare - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98503" count="1" /> <!-- A-grade Heavy Armor Coupon - Upper - Sealed -->
+		<production id="92262" count="1" /> <!-- Majestic Plate Armor - Sealed -->
+	</item>
+</list>

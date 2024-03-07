@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90470" price="0" /> <!-- Dark Crystal Helmet - Heavy Armor -->
+	<item id="92304" price="0" /> <!-- Dark Crystal Helmet - Heavy Armor - Sealed -->
+	<item id="92255" price="0" /> <!-- Dark Crystal Helmet - Sealed -->
+	<item id="365" price="0" /> <!-- Dark Crystal Breastplate - Heavy Armor -->
+	<item id="92255" price="0" /> <!-- Dark Crystal Breastplate - Heavy Armor - Sealed -->
+	<item id="388" price="0" /> <!-- Dark Crystal Gaiters - Heavy Armor -->
+	<item id="92257" price="0" /> <!-- Dark Crystal Gaiters - Heavy Armor - Sealed -->
+	<item id="5765" price="0" /> <!-- Dark Crystal Gloves - Heavy Armor -->
+	<item id="92277" price="0" /> <!-- Dark Crystal Gloves - Heavy Armor - Sealed -->
+	<item id="5777" price="0" /> <!-- Dark Crystal Boots - Heavy Armor -->
+	<item id="92289" price="0" /> <!-- Dark Crystal Boots - Heavy Armor	-	Sealed -->
+	<item id="641" price="0" /> <!-- Dark Crystal Shield - Heavy Armor -->
+	<item id="90467" price="0" /> <!-- Tallum Helm - Heavy Armor -->
+	<item id="92301" price="0" /> <!-- Tallum Helmet - Heavy - Sealed -->
+	<item id="92259" price="0" /> <!-- Tallum Helmet - Sealed -->
+	<item id="2382" price="0" /> <!-- Tallum Plate Armor - Heavy Armor -->
+	<item id="92261" price="0" /> <!-- Tallum Plate Armor - Heavy Armor - Sealed -->
+	<item id="5768" price="0" /> <!-- Tallum Gloves - Heavy Armor -->
+	<item id="92280" price="0" /> <!-- Tallum Gloves - Heavy - Sealed -->
+	<item id="5780" price="0" /> <!-- Tallum Boots - Heavy Armor -->
+	<item id="92292" price="0" /> <!-- Tallum Boots - Heavy - Sealed -->
+	<item id="90473" price="0" /> <!-- Helm of Nightmare - Heavy Armor -->
+	<item id="92273" price="0" /> <!-- Helm of Nightmare - Sealed -->
+	<item id="92307" price="0" /> <!-- Helm of Nightmare - Heavy Armor - Sealed -->
+	<item id="374" price="0" /> <!-- Armor of Nightmare - Heavy Armor -->
+	<item id="92256" price="0" /> <!-- Armor of Nightmare - Heavy Armor - Sealed -->
+	<item id="5771" price="0" /> <!-- Gauntlets of Nightmare - Heavy Armor -->
+	<item id="92283" price="0" /> <!-- Gauntlets of Nightmare - Heavy - Sealed -->
+	<item id="5783" price="0" /> <!-- Boots of Nightmare - Heavy Armor -->
+	<item id="92286" price="0" /> <!-- Boots of Nightmare - Heavy - Sealed -->
+	<item id="2498" price="0" /> <!-- Shield of Nightmare - Heavy Armor -->
+	<item id="90476" price="0" /> <!-- Majestic Circlet - Heavy Armor -->
+	<item id="92310" price="0" /> <!-- Majestic Circlet - Heavy Armor - Sealed -->
+	<item id="92274" price="0" /> <!-- Majestic Circlet - Sealed -->
+	<item id="2383" price="0" /> <!-- Majestic Plate Armor - Heavy Armor -->
+	<item id="92262" price="0" /> <!-- Majestic Plate Armor - Sealed -->
+	<item id="5774" price="0" /> <!-- Majestic Gauntlets - Heavy Armor -->
+	<item id="92286" price="0" /> <!-- Majestic Gauntlets - Heavy - Sealed -->
+	<item id="5786" price="0" /> <!-- Majestic Boots - Heavy Armor -->
+	<item id="92298" price="0" /> <!-- Majestic Boots - Heavy - Sealed -->
+	<item id="93139" price="0" /> <!-- Ice Crystal Breastpalte - Heavy Armor -->
+	<item id="93141" price="0" /> <!-- Ice Crystal Breastpalte - Heavy Armor - Sealed -->
+	<item id="93140" price="0" /> <!-- Ice Crystal Gaiters - Heavy Armor -->
+	<item id="93142" price="0" /> <!-- Ice Crystal Gaiters - Heavy Armor - Sealed -->
+</list>

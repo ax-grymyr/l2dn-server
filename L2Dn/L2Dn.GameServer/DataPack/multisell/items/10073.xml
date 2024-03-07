@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange A-grade Robe Coupon - Upper -->
+	<item>
+		<ingredient id="98511" count="1" /> <!-- A-grade Robe Coupon - Upper - Sealed -->
+		<production id="92270" count="1" /> <!-- Dark Crystal Robe - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98511" count="1" /> <!-- A-grade Robe Coupon - Upper - Sealed -->
+		<production id="92271" count="1" /> <!-- Robe of Nightmare - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98511" count="1" /> <!-- A-grade Robe Coupon - Upper - Sealed -->
+		<production id="92272" count="1" /> <!-- Majestic Robe - Sealed -->
+	</item>
+</list>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_01" minZ="-4172" maxZ="-3572">
+				<node x="134340" y="120" />
+				<node x="136996" y="212" />
+				<node x="135356" y="2096" />
+				<node x="133880" y="1332" />
+			</territory>
+		</territories>
+		<npc id="20684" count="9" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="9" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="9" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="15" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="134574" y="492" z="-3736" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="135425" y="709" z="-3944" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="135477" y="1017" z="-3968" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_02" minZ="-3812" maxZ="-3412">
+				<node x="132992" y="1888" />
+				<node x="133848" y="1312" />
+				<node x="134644" y="1868" />
+				<node x="134416" y="2672" />
+				<node x="133552" y="3116" />
+				<node x="132924" y="2656" />
+			</territory>
+		</territories>
+		<npc id="20684" count="7" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="7" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="7" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<group>
+			<npc id="20683" x="134055" y="2494" z="-3720" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="133235" y="2430" z="-3592" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="133401" y="1992" z="-3608" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_03" minZ="-4200" maxZ="-3600">
+				<node x="133104" y="4652" />
+				<node x="135380" y="2860" />
+				<node x="135520" y="3684" />
+				<node x="134480" y="4656" />
+			</territory>
+		</territories>
+		<npc id="20684" count="10" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="10" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="10" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<group>
+			<npc id="20683" x="134831" y="3632" z="-4000" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="134496" y="4334" z="-3992" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="134531" y="3882" z="-4008" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_t03" minZ="-4200" maxZ="-3600">
+				<node x="133104" y="4652" />
+				<node x="135380" y="2860" />
+				<node x="135520" y="3684" />
+				<node x="134480" y="4656" />
+			</territory>
+		</territories>
+		<npc id="24014" count="15" respawnTime="3sec" /> <!-- Vanor -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_04" minZ="-4580" maxZ="-3980">
+				<node x="138228" y="212" />
+				<node x="141620" y="192" />
+				<node x="140400" y="2708" />
+				<node x="135688" y="2804" />
+			</territory>
+		</territories>
+		<npc id="20684" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="23" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="27" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="30" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<group>
+			<npc id="20683" x="138292" y="430" z="-4400" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="139562" y="1969" z="-4512" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_05" minZ="-4576" maxZ="-3976">
+				<node x="138544" y="2960" />
+				<node x="140364" y="2880" />
+				<node x="141196" y="3628" />
+				<node x="140456" y="6660" />
+				<node x="138368" y="7108" />
+			</territory>
+		</territories>
+		<npc id="20684" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="15" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="20" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<group>
+			<npc id="20683" x="140667" y="3762" z="-4480" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="139333" y="5960" z="-4352" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_06" minZ="-4588" maxZ="-4188">
+				<node x="136740" y="3176" />
+				<node x="137664" y="3016" />
+				<node x="137848" y="7096" />
+				<node x="136028" y="7220" />
+				<node x="134516" y="5780" />
+			</territory>
+		</territories>
+		<npc id="20684" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="16" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="16" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="23" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="20" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<group>
+			<npc id="20683" x="136740" y="3770" z="-4496" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="137288" y="6002" z="-4384" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_07" minZ="-4512" maxZ="-3712">
+				<node x="131296" y="6064" />
+				<node x="132436" y="5332" />
+				<node x="134368" y="5948" />
+				<node x="135812" y="7348" />
+				<node x="135055" y="8870" />
+				<node x="131338" y="8966" />
+			</territory>
+		</territories>
+		<npc id="20684" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="15" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="7" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="20" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_077" minZ="-4512" maxZ="-3712">
+				<node x="131261" y="12138" />
+				<node x="131325" y="9013" />
+				<node x="135055" y="8910" />
+				<node x="133654" y="12140" />
+			</territory>
+		</territories>
+		<npc id="20684" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="15" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="30" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_08" minZ="-4412" maxZ="-3712">
+				<node x="135983" y="7429" />
+				<node x="137827" y="7301" />
+				<node x="138607" y="11153" />
+				<node x="134725" y="10497" />
+			</territory>
+		</territories>
+		<npc id="20684" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="20" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="30" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_088" minZ="-4412" maxZ="-3712">
+				<node x="134721" y="10530" />
+				<node x="138606" y="11175" />
+				<node x="138924" y="13340" />
+				<node x="135260" y="14520" />
+				<node x="134052" y="11956" />
+			</territory>
+		</territories>
+		<npc id="20684" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="20" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="30" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_11" minZ="-4040" maxZ="-3440">
+				<node x="135412" y="14676" />
+				<node x="139528" y="13264" />
+				<node x="141372" y="15620" />
+				<node x="139260" y="18148" />
+			</territory>
+		</territories>
+		<npc id="20681" count="40" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="40" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="35" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<group>
+			<npc id="20683" x="140559" y="15747" z="-3928" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="137421" y="15314" z="-3864" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_12" minZ="-3852" maxZ="-3252">
+				<node x="135568" y="21920" />
+				<node x="137652" y="17888" />
+				<node x="138420" y="19364" />
+				<node x="138332" y="20596" />
+				<node x="137364" y="22240" />
+			</territory>
+		</territories>
+		<npc id="20681" count="30" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="30" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="12" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="30" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="137942" y="19380" z="-3672" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="137165" y="20740" z="-3656" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_13" minZ="-3884" maxZ="-3084">
+				<node x="134376" y="21940" />
+				<node x="137168" y="22452" />
+				<node x="137008" y="26988" />
+				<node x="132480" y="27216" />
+				<node x="132004" y="24500" />
+			</territory>
+		</territories>
+		<npc id="20681" count="60" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="60" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="18" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="60" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="136592" y="23111" z="-3584" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="134405" y="25837" z="-3792" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_14" minZ="-3944" maxZ="-2944">
+				<node x="132220" y="27736" />
+				<node x="137284" y="27732" />
+				<node x="138004" y="28780" />
+				<node x="137128" y="30060" />
+				<node x="133608" y="29696" />
+				<node x="132212" y="28952" />
+			</territory>
+		</territories>
+		<npc id="20681" count="30" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="30" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="12" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="30" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="135458" y="28922" z="-3720" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="133872" y="28156" z="-3792" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_15" minZ="-3924" maxZ="-3524">
+				<node x="131256" y="29288" />
+				<node x="134540" y="30724" />
+				<node x="134712" y="32472" />
+				<node x="131288" y="32456" />
+			</territory>
+		</territories>
+		<npc id="20681" count="30" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="30" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="12" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="30" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="131824" y="30060" z="-3792" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="133111" y="31993" z="-3688" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_16" minZ="-3924" maxZ="-3124">
+				<node x="134756" y="30792" />
+				<node x="139312" y="31184" />
+				<node x="139468" y="32476" />
+				<node x="134856" y="32420" />
+			</territory>
+		</territories>
+		<npc id="20681" count="30" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="30" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="12" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="30" respawnTime="3sec" /> <!-- Vanor -->
+		<group>
+			<npc id="20683" x="135333" y="31948" z="-3648" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+			<npc id="20683" x="137215" y="31301" z="-3704" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_qm2319_01" minZ="-4356" maxZ="-3756">
+				<node x="140703" y="8981" />
+				<node x="140303" y="6892" />
+				<node x="138256" y="7381" />
+				<node x="138577" y="9490" />
+			</territory>
+		</territories>
+		<npc id="20681" count="20" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="20" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_qm2218_01" minZ="-4398" maxZ="-3798">
+				<node x="138584" y="9639" />
+				<node x="140709" y="9062" />
+				<node x="141072" y="10801" />
+				<node x="138825" y="11366" />
+			</territory>
+		</territories>
+		<npc id="20681" count="20" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="20" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_qm2317_01" minZ="-4274" maxZ="-3574">
+				<node x="139092" y="11867" />
+				<node x="140951" y="11084" />
+				<node x="141417" y="13240" />
+				<node x="140546" y="13758" />
+			</territory>
+		</territories>
+		<npc id="20681" count="20" respawnTime="3sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="20" respawnTime="3sec" /> <!-- Vanor Silenos Soldier -->
+		<npc id="20683" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="20" respawnTime="3sec" /> <!-- Vanor -->
+		<npc id="20683" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Vanor Silenos Scout -->
+	</spawn>
+</list>

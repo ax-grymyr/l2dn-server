@@ -1,0 +1,1907 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="600" toLevel="1" name="Residence Guidance">
+		<!-- P. Accuracy of clan members in residence +4. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="601" toLevel="1" name="Residence Agility">
+		<!-- P. Evasion of clan members in residence +4. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="602" toLevel="1" name="Residence Shield Block">
+		<!-- Shield Defense of clan members in residence +20%. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="603" toLevel="1" name="Residence Shield Defense">
+		<!-- Shield Defense. of clan members in residence +225. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ShieldDefence">
+				<amount>225</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="604" toLevel="1" name="Residence Typhoon Resistance">
+		<!-- Water/ Wind Resistance of clan members in residence +10. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WIND</attribute>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="605" toLevel="1" name="Residence Lava Resistance">
+		<!-- Fire/ Earth Resistance of clan members in residence +10. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="606" toLevel="1" name="Residence Fortitude">
+		<!-- Increases Stun Resistance by 10 of each member of the clan occupying the dwelling. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>10</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="607" toLevel="1" name="Residence Freedom">
+		<!-- Hold Resistance of clan members in residence +10. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<HOLD>10</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="608" toLevel="1" name="Residence Vigilance">
+		<!-- Sleep Resistance of clan members in residence +10. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<SLEEP>10</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="609" toLevel="1" name="Residence Movement">
+		<!-- The Speed of clan members in residence +6. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="Speed">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="610" toLevel="1" name="Residence Death Fortune">
+		<!-- When a clan member within the residence is killed by PK/ ordinary monster, the item drop rate and XP decrease rate are decreased. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ReduceDropPenalty">
+				<exp>-12</exp>
+				<deathPenalty>-12</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-30</exp>
+				<deathPenalty>-30</deathPenalty>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="611" toLevel="3" name="Fire Squad">
+		<!-- The corresponding troops' P. Atk. +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>17.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="612" toLevel="3" name="Water Squad">
+		<!-- The corresponding troops' P. Def. +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">17.6</value>
+					<value level="3">17.6</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>27.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">6</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="613" toLevel="3" name="Wind Squad">
+		<!-- The corresponding troops' P. Accuracy +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">3</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="614" toLevel="3" name="Earth Squad">
+		<!-- The corresponding troops' M. Def. +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">17</value>
+					<value level="2">31.1</value>
+					<value level="3">44</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="615" toLevel="3" name="Holy Squad">
+		<!-- The corresponding troops' Healing Power +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="616" toLevel="3" name="Dark Squad">
+		<!-- The corresponding troops' M. Atk. +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">7.17</value>
+					<value level="2">19.32</value>
+					<value level="3">19.32</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="619" toLevel="2" name="Cancel Transformation">
+		<!-- Cancels transformation. -->
+		<icon>icon.skilltransform2</icon>
+		<effectPoint>10</effectPoint>
+		<hitTime>2500</hitTime>
+		<magicLevel>56</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanUntransform" />
+		</conditions>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>TRANSFORM,-1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="622" toLevel="3" name="Ultimate Escape">
+		<!-- Duration: 30 sec. P. Evasion +20. M. Evasion +20. P. Skill Evasion +20%. M. Skill Evasion +20%. Speed +30 -->
+		<icon>icon.skill0622</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>AVOID_UP_SPECIAL</abnormalType>
+		<effectPoint>
+			<value level="1">200</value>
+			<value level="2">300</value>
+			<value level="3">400</value>
+		</effectPoint>
+		<hitTime>1500</hitTime>
+		<magicLevel>
+			<value level="1">28</value>
+			<value level="2">52</value>
+			<value level="3">76</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">40</value>
+			<value level="2">60</value>
+			<value level="3">60</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>
+			<value level="1">900000</value>
+			<value level="2">900000</value>
+			<value level="3">600000</value>
+		</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">35</value>
+					<value level="3">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">35</value>
+					<value level="3">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">40</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">20</value>
+				</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">20</value>
+				</ANOMALY>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="625" toLevel="1" name="Soul Gathering">
+		<!-- Gathers in nearby souls. Up to 8 souls can be absorbed at once. Consumes 10 Spirit Ore. -->
+		<effectPoint>150</effectPoint>
+		<hitTime>1500</hitTime>
+		<hpConsume>200</hpConsume>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<magicLevel>46</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpSoulMax" />
+		</conditions>
+		<effects>
+			<effect name="FocusSouls">
+				<charge>50</charge>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="626" toLevel="5" name="Critical Sense">
+		<!-- P. Critical Rate +10%. P. Critical Damage +100 -->
+		<icon>icon.skill10812</icon>
+		<magicLevel>
+			<value level="1">45</value>
+			<value level="2">55</value>
+			<value level="3">67</value>
+			<value level="4">78</value>
+			<value level="5">85</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="4">500</value>
+					<value level="5">500</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">14</value>
+					<value level="4">16</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="627" toLevel="10" name="Mental Panic Shot">
+		<!-- <Fear skill>. Attacks the target with 2651 power. For 3 sec., inflicts Fear on the target. -->
+		<icon>icon.skill10771</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>
+			<value level="1">-460</value>
+			<value level="2">-470</value>
+			<value level="3">-480</value>
+			<value level="4">-490</value>
+			<value level="5">-500</value>
+			<value level="6">-500</value>
+			<value level="7">-500</value>
+			<value level="8">-500</value>
+			<value level="9">-500</value>
+			<value level="10">-500</value>
+		</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">78</value>
+			<value level="3">80</value>
+			<value level="4">82</value>
+			<value level="5">84</value>
+			<value level="6">86</value>
+			<value level="7">88</value>
+			<value level="8">89</value>
+			<value level="9">90</value>
+			<value level="10">91</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">40</value>
+			<value level="2">45</value>
+			<value level="3">50</value>
+			<value level="4">55</value>
+			<value level="5">60</value>
+			<value level="6">65</value>
+			<value level="7">70</value>
+			<value level="8">75</value>
+			<value level="9">80</value>
+			<value level="10">85</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>20000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>FEAR</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">2651</value>
+					<value level="2">2739</value>
+					<value level="3">2827</value>
+					<value level="4">2915</value>
+					<value level="5">3005</value>
+					<value level="6">7737</value>
+					<value level="7">7964</value>
+					<value level="8">8078</value>
+					<value level="9">8192</value>
+					<value level="10">8307</value>
+				</power>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="630" toLevel="1" name="Rabbit Tornado">
+		<!-- Opens a treasure chest with a spinning kick. -->
+		<castRange>40</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>2500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>DOOR_TREASURE</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
+	</skill>
+	<skill id="631" toLevel="6" name="Emergent Ability: Attack">
+		<!-- Increases P. Atk. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+			<value level="4">80</value>
+			<value level="5">80</value>
+			<value level="6">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>
+					<value level="1">1.8</value>
+					<value level="2">3.5</value>
+					<value level="3">5</value>
+					<value level="4">6.3</value>
+					<value level="5">7.4</value>
+					<value level="6">8.3</value>
+				</pAtkAmount>
+				<pAtkMode>PER</pAtkMode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>
+					<value level="1">1.8</value>
+					<value level="2">3.5</value>
+					<value level="3">5</value>
+					<value level="4">6.3</value>
+					<value level="5">7.4</value>
+					<value level="6">8.3</value>
+				</pAtkAmount>
+				<pAtkMode>PER</pAtkMode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">8.4</value>
+					<value level="2">16</value>
+					<value level="3">22.9</value>
+					<value level="4">29</value>
+					<value level="5">34.4</value>
+					<value level="6">38.2</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">7.4</value>
+					<value level="2">14</value>
+					<value level="3">20.1</value>
+					<value level="4">25.4</value>
+					<value level="5">30.1</value>
+					<value level="6">33.4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">13.3</value>
+					<value level="2">25.4</value>
+					<value level="3">36.3</value>
+					<value level="4">46</value>
+					<value level="5">54.4</value>
+					<value level="6">60.5</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">7.8</value>
+					<value level="2">15</value>
+					<value level="3">21.4</value>
+					<value level="4">27.1</value>
+					<value level="5">32.1</value>
+					<value level="6">35.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10.2</value>
+					<value level="2">19.5</value>
+					<value level="3">27.9</value>
+					<value level="4">35.3</value>
+					<value level="5">41.8</value>
+					<value level="6">46.5</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">9.1</value>
+					<value level="2">17.4</value>
+					<value level="3">24.8</value>
+					<value level="4">31.4</value>
+					<value level="5">37.2</value>
+					<value level="6">41.4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">21.7</value>
+					<value level="2">41.4</value>
+					<value level="3">59.2</value>
+					<value level="4">75</value>
+					<value level="5">88.8</value>
+					<value level="6">98.7</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="632" toLevel="6" name="Emergent Ability: Defense">
+		<!-- Increases P. Def. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+			<value level="4">80</value>
+			<value level="5">80</value>
+			<value level="6">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">17.9</value>
+					<value level="2">35.7</value>
+					<value level="3">53.6</value>
+					<value level="4">71.4</value>
+					<value level="5">89.3</value>
+					<value level="6">107.1</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">9</value>
+					<value level="2">17.9</value>
+					<value level="3">26.8</value>
+					<value level="4">35.7</value>
+					<value level="5">44.7</value>
+					<value level="6">53.6</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">13.4</value>
+					<value level="2">26.8</value>
+					<value level="3">40.2</value>
+					<value level="4">53.6</value>
+					<value level="5">67</value>
+					<value level="6">80.3</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="633" toLevel="6" name="Emergent Ability: Empower">
+		<!-- Increases M. Atk. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+			<value level="4">80</value>
+			<value level="5">80</value>
+			<value level="6">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10.5</value>
+					<value level="2">20.1</value>
+					<value level="3">28.7</value>
+					<value level="4">36.3</value>
+					<value level="5">43</value>
+					<value level="6">47.8</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="634" toLevel="6" name="Emergent Ability: M. Def.">
+		<!-- Increases M. Def. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+			<value level="4">80</value>
+			<value level="5">80</value>
+			<value level="6">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">15.1</value>
+					<value level="2">30.2</value>
+					<value level="3">45.4</value>
+					<value level="4">60.5</value>
+					<value level="5">75.6</value>
+					<value level="6">90.7</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="635" toLevel="3" name="Not in Use">
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+	</skill>
+	<skill id="636" toLevel="3" name="Not in Use">
+		<magicLevel>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+	</skill>
+	<skill id="637" toLevel="1" name="Master Ability: Attack">
+		<!-- Increases P. Atk. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>60</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>27.9</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>59.2</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>22.9</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>20.1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>36.3</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>21.4</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>24.8</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>5</pAtkAmount>
+				<pAtkMode>DIFF</pAtkMode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>5</pAtkAmount>
+				<pAtkMode>DIFF</pAtkMode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="638" toLevel="1" name="Master Ability: Empower">
+		<!-- Increases M. Atk. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>60</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MAtk">
+				<amount>28.65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="639" toLevel="1" name="Master Ability: Casting">
+		<!-- Increases Casting Spd. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="640" toLevel="1" name="Master Ability: Focus">
+		<!-- Increases P. Critical Rate. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="641" toLevel="1" name="Knight Ability: Boost HP">
+		<!-- Increases Max HP. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxHp">
+				<amount>295.32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="642" toLevel="1" name="Enchanter Ability: Boost Mana">
+		<!-- Increases Max MP. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxMp">
+				<amount>148.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="643" toLevel="1" name="Summoner's Ability: Boost HP / MP">
+		<!-- Increases Max HP and Max MP. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxHp">
+				<amount>147.66</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>74.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="644" toLevel="1" name="Rogue Ability: Evasion">
+		<!-- Increases P. Evasion. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="645" toLevel="1" name="Rogue Ability: Long Shot">
+		<!-- Increases the bow's range. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalAttackRange">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="646" toLevel="1" name="Wizard Ability: Mana Gain">
+		<!-- When using the Recharge skill, MP Recovery Rate increases. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ManaCharge">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="647" toLevel="1" name="Enchanter Ability: Mana Recovery">
+		<!-- Increases MP recovery. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="648" toLevel="1" name="Healer Ability: Prayer">
+		<!-- Increases Received Healing. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="650" toLevel="1" name="Warrior Ability: Attribute Resistance">
+		<!-- Increases the Paralysis/ Hold/ Sleep/ Stun/ Buff-canceling Attack Resistance. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>5</SHOCK>
+				<SLEEP>5</SLEEP>
+				<HOLD>5</HOLD>
+				<PARALYZE>5</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="651" toLevel="1" name="Warrior Ability: Haste">
+		<!-- Has a chance to increase Atk. Spd. while attacking. Excludes damage caused by a skill or ranged attack. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<!-- Warrior Ability - Haste -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5572</skillId> <!-- Warrior Ability: Haste -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="652" toLevel="1" name="Knight Ability: Defense">
+		<!-- Has a chance to increase P. Def./ M. Def. while being attacked. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<!-- Knight Ability - Defense -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5573</skillId> <!-- Knight Ability: Defense -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="653" toLevel="1" name="Rogue Ability: Critical Chance">
+		<!-- Has a chance to increase P. Critical Rate while attacking. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<!-- Log Ability - Critical Chance -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5574</skillId> <!-- Rogue Ability: Critical Chance -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="654" toLevel="1" name="Wizard Ability: Mana Steal">
+		<!-- Has a chance to recover MP when striking. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<!-- Wizard Ability - Mana Steal -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>5575</skillId> <!-- Wizard Ability: Mana Steal -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="655" toLevel="1" name="Enchanter Ability: Barrier">
+		<!-- Has a chance to grant invincibility while being attacked. -->
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>75</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<!-- Enchanter Ability - Barrier -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>5576</skillId> <!-- Enchanter Ability: Barrier -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="675" toLevel="1" name="Divine Warrior Cross Slash">
+		<!-- Attacks the enemy with 2904 Power added to P. Atk. Critical. Over-hit. -->
+		<castRange>40</castRange>
+		<coolTime>167</coolTime>
+		<effectPoint>-598</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1733</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>112</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2904</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="676" toLevel="1" name="Divine Warrior Sonic Blaster">
+		<!-- A long-distance attack with 2323 Power added to P. Atk. Critical. Over-hit. -->
+		<castRange>600</castRange>
+		<effectPoint>-342</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1900</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>56</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2323</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="677" toLevel="1" name="Divine Warrior Transfixion of Earth">
+		<!-- Cuts with a downward blow to attack nearby enemies with 2323 power. Ignores Shield Defense. Over-hit. -->
+		<affectLimit>6-12</affectLimit>
+		<affectRange>150</affectRange>
+		<coolTime>733</coolTime>
+		<effectPoint>-342</effectPoint>
+		<hitTime>1067</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>80</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>4000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2323</power>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="678" toLevel="1" name="Divine Warrior War Cry">
+		<!-- Increases P. Atk. by 25% for 1 min. -->
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>PA_UP_SPECIAL</abnormalType>
+		<effectPoint>408</effectPoint>
+		<hitTime>1500</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>36</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>45000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="679" toLevel="1" name="Sacrifice Warrior">
+		<!-- Sacrifices oneself to increase P. Atk. of all party members by 20% for 30 sec. Available only when HP is under 30%. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>TRANSFORM_SCRIFICE</abnormalType>
+		<affectRange>300</affectRange>
+		<effectPoint>1</effectPoint>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>30</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>5602</skillId> <!-- Transform Sacrifice -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="680" toLevel="1" name="Divine Knight Hate">
+		<!-- Provokes the enemy to attack you. Power 6752. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TARGET_LOCK</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-6752</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>700</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>51</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>6000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="TargetMe" />
+		</effects>
+	</skill>
+	<skill id="681" toLevel="1" name="Divine Knight Aggression Aura">
+		<!-- Provokes nearby enemies to attack you. Power 6752. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TARGET_LOCK</abnormalType>
+		<activateRate>40</activateRate>
+		<affectLimit>10-10</affectLimit>
+		<affectRange>200</affectRange>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-6752</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>144</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>40000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="TargetMe" />
+		</effects>
+	</skill>
+	<skill id="682" toLevel="1" name="Divine Knight Stun Attack">
+		<!-- Attacks and stuns the enemy with 1162 power. Over-hit. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-342</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>76</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1162</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="683" toLevel="1" name="Divine Knight Thunder Storm">
+		<!-- Attacks and stuns nearby enemies with 775 power. Ignores Shield Defense. Over-hit. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<affectLimit>6-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<coolTime>720</coolTime>
+		<effectPoint>-171</effectPoint>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>114</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>775</power>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="684" toLevel="1" name="Divine Knight Ultimate Defense">
+		<!-- Momentarily and drastically increases resistance to attacks that decreases P. Def./ M. Def. or cancels buffs. The player cannot move while the effect lasts. -->
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>PD_UP_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<effectPoint>676</effectPoint>
+		<hitTime>1000</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>36</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>900000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockMove" />
+			<effect name="MagicalDefence">
+				<amount>2700</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3600</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="685" toLevel="1" name="Sacrifice Knight">
+		<!-- Increases P. Def. of the party members by sacrificing yourself. Available only when HP is under 30 percent. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>TRANSFORM_SCRIFICE</abnormalType>
+		<affectRange>300</affectRange>
+		<effectPoint>1</effectPoint>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>30</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>5602</skillId> <!-- Transform Sacrifice -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="686" toLevel="1" name="Divine Rogue Stun Shot">
+		<!-- Shoots arrows with 2323 power that deal damage to the enemy stunning them and making them lose their target. Over-hit. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>900</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>-684</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>116</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2323</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+			<effect name="TargetCancel">
+				<chance>40</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="687" toLevel="1" name="Divine Rogue Double Shot">
+		<!-- Shoots 2 arrows in succession with 6195 power. Critical. Over-hit. -->
+		<castRange>900</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>-684</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitTime>3000</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>159</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6195</power>
+				<overHit>true</overHit>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="688" toLevel="1" name="Divine Rogue Bleed Attack">
+		<!-- Strikes the enemy making them bleed. Over-hit. -->
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-342</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>80</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>INFECTION</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1549</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DamOverTime">
+				<power>139</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="689" toLevel="1" name="Divine Rogue Deadly Blow">
+		<!-- Attacks the target's vital points with 6969 power. Half-kill. Over-hit. -->
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-342</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1080</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>72</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>6969</power>
+				<overHit>true</overHit>
+				<chanceBoost>200</chanceBoost>
+			</effect>
+			<effect name="Lethal">
+				<fullLethal>0</fullLethal>
+				<halfLethal>10</halfLethal>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="690" toLevel="1" name="Divine Rogue Agility">
+		<!-- Temporarily P. Evasion +4. -->
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>AVOID_UP</abnormalType>
+		<castRange>400</castRange>
+		<effectPoint>676</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>73</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="691" toLevel="1" name="Sacrifice Rogue">
+		<!-- Increases P. Evasion of the party members by sacrificing yourself. Available only when HP<30%. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>TRANSFORM_SCRIFICE</abnormalType>
+		<affectRange>300</affectRange>
+		<effectPoint>1</effectPoint>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>30</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>5602</skillId> <!-- Transform Sacrifice -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="692" toLevel="1" name="Divine Wizard: Divine Prayer">
+		<!-- Deals non-attribute magic damage to target. Power 102. -->
+		<abnormalLevel>0</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>MA_DOWN</abnormalType>
+		<castRange>150</castRange>
+		<effectPoint>-541</effectPoint>
+		<effectRange>650</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>73</mpConsume>
+		<operateType>A3</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>102</power>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="693" toLevel="1" name="Divine Wizard Holy Strike">
+		<!-- Unleashes holy attack with 128 power. Over-hit. -->
+		<castRange>900</castRange>
+		<effectPoint>-844</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>20</attributeValue>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>90</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>8000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>128</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="694" toLevel="1" name="Divine Wizard Divine Curtain">
+		<!-- Attack a large number of enemies with divine rainstorm. Power 64. -->
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<castRange>500</castRange>
+		<effectPoint>-338</effectPoint>
+		<effectRange>1000</effectRange>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>20</attributeValue>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>109</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>4000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>64</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="695" toLevel="1" name="Divine Wizard: Divine Cloud">
+		<!-- Summons divine clouds making nearby enemies fall sleep. Decreases probability of additional sleep state while the effect lasts. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SLEEP</abnormalType>
+		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<affectLimit>9-10</affectLimit>
+		<affectRange>200</affectRange>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>500</castRange>
+		<effectPoint>-676</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>109</mpConsume>
+		<operateType>A2</operateType>
+		<removedOnDamage>true</removedOnDamage>
+		<reuseDelay>8000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SLEEP</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>100</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="696" toLevel="1" name="Divine Wizard: Surrender to Holy">
+		<!-- Immediately decreases Holy Attacks Resistance and increases Dark Attacks Resistance. -->
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>ARMOR_UNHOLY</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>750</castRange>
+		<effectPoint>-331</effectPoint>
+		<effectRange>1250</effectRange>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>73</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<attributeType>DARK</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>-25</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>12</amount>
+				<attribute>DARK</attribute>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="697" toLevel="1" name="Sacrifice Wizard">
+		<!-- Sacrifices the character to increase party s M. Atk. Can be used only when MP < 10%. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>TRANSFORM_SCRIFICE</abnormalType>
+		<affectRange>300</affectRange>
+		<effectPoint>1</effectPoint>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="RemainMpPer">
+				<amount>10</amount>
+				<percentType>LESS</percentType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>5602</skillId> <!-- Transform Sacrifice -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="698" toLevel="1" name="Divine Healer Major Heal">
+		<!-- Restores HP. Power 946. -->
+		<castRange>600</castRange>
+		<effectPoint>826</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>84</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>946</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="699" toLevel="1" name="Divine Healer Battle Heal">
+		<!-- Restores HP with 826 Power. -->
+		<castRange>600</castRange>
+		<effectPoint>661</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<mpConsume>189</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>826</power>
+			</effect>
+		</effects>
+	</skill>
+</list>

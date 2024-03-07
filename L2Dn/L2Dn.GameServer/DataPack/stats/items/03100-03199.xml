@@ -1,0 +1,1151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="3100" name="Spellbook: Guidance" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Guidance skill. Used by Prophets and Shillien Elders. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3101" name="Spellbook: Death Whisper" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Death Whisper skill. <Classes>. All classes after the 1st class change, except Orcs. <Skill effect>. Increases P. Critical Damage. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="3102" name="Spellbook: Blessed Shield" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Blessed Shield skill. Used by Prophets and Elven Elders. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3103" name="Amulet: Pa'agrio's Wisdom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Pa'agrio's Wisdom skill. Used by Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3104" name="Amulet: Pa'agrio's Glory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Pa'agrio's Glory skill. Used by Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3105" name="Amulet: Seal of Winter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Winter skill. Used by Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3106" name="Amulet: Seal of Flame" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Flame skill. Used by Overlords. Required level: 48. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="4600" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3107" name="Amulet: Seal of Gloom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Gloom skill. Used by Overlords. Required level: 44. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3850" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3108" name="Amulet: Seal of Mirage" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Mirage skill. Used by Overlords. Required level: 44. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3850" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3109" name="Amulet: Seal of Silence" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Silence skill. <Class>. Overlord. <Skill effect>. Blocks magic skills of nearby enemies. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="3110" name="Amulet: Seal of Scourge" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Scourge skill. Used by Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3111" name="Amulet: Seal of Suspension" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Seal of Suspension skill. <Class>. Overlord. <Skill effect>. Increases P./ M. Skill Cooldown of nearby enemies. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="3112" name="Amulet: Pa'agrio's Vision" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Pa'agrio's Vision skill. Used by Overlords. Required level: 44. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3850" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3113" name="Amulet: Pa'agrio's Protection" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Pa'agrio's Protection skill. Used by Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3114" name="Amulet: Steal Essence" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Steal Essence skill. Used by Warcryers and Overlords. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3115" name="Amulet: Freezing Flame" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Freezing Flame skill. Used by Warcryers. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3116" name="Amulet: Chant of Haste" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Chant of Haste skill. <Classes>. All Orcs after the 1st class change. <Skill effect>. Increases Atk. Spd. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="3117" name="Amulet: Chant of Evasion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Chant of Evasion skill. Used by Warcryers. Required level: 40. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3200" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="3118" name="Amulet: Chant of Death Whisper" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Chant of Death Whisper skill. <Classes>. All Orcs after the 1st class change. <Skill effect>. Increases P. Critical Damage. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="3119" name="Mark of Guildsman" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Mark given to those who have passed the Trial of the Guildsman. Class transfer related item. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3120" name="Valkon's Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Recommendation letter written by Warehouse Keeper Valkon from Giran. Take this and go to Blacksmith Altran of the Talking Island Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3121" name="Mandragora Berry" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The fruit of mandragoras, known for their uses in treating ailments. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3122" name="Altran's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blacksmith Altran's instructions. You are to collect the required materials and create 7 Journeyman Rings. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3123" name="Altran's Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Recommendation letter written by Blacksmith Altran. Take this and go to Warehouse Keeper Norman of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3124" name="Altran's Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Recommendation letter written by Blacksmith Altran. Take this and go to Blacksmith Pinter of the Town of Gludio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3125" name="Norman's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Instructions left by Warehouse Keeper Norman from Gludin. According to them, you should go to Blacksmith Duning in Hunters' Village and bring back the key. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3126" name="Norman's Receipt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A receipt from Warehouse Keeper Norman from Gludin. Take it to Blacksmith Duning in Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3127" name="Duning's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blacksmith Duning's instructions. You are to recover 30 keys from Breka Orcs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3128" name="Duning's Key" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mithril key recovered from Breka Orcs. Collect 30 of these and take them to Blacksmith Duning. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3129" name="Norman's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of Warehouse Keeper Norman from the Village of Gludin. Procure Grey Bone Powder by slaying a Lesser Ghoul or a Lesser Strain on the Execution Grounds -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3130" name="Grey Bone Powder" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The powder collected from the bones of Lesser Ghoul and Lesser Strain dwelling on the Execution Grounds. Gather 70 of these and take them to Warehouse Keeper Norman in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3131" name="Granite Whetstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Whetstone made from the fragments of Lesser Granite Golem dwelling on the Execution Grounds. Gather 70 of these and take them to Warehouse Keeper Norman in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3132" name="Red Pigment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Red Pigment obtained by slaying the Lesser Corpse Tracker dwelling on the Execution Grounds. Gather 70 of these and take them to Warehouse Keeper Norman in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3133" name="Braided Yarn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Braided Yarn obtained by slaying Silenos on the Plains of Dion. Gather 70 of these and take them to Warehouse Keeper Norman in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3134" name="Journeyman Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A material required for making Journeyman Ring. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3135" name="Pinter's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Instructions from Blacksmith Pinter: collect 70 Amber Beads. You can get them by slaying Wasteland Lizardmen and Anta from the Ant Nest, but there is also another way. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3136" name="Amber Bead" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bead-shaped piece of amber. Collect 70 of these and take them to Blacksmith Pinter in Gludio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3137" name="Amber Lump" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Unrefined lump of amber. The material used in creating the Amber Bead. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3138" name="Journeyman Deco Beads" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A material required for making Journeyman Ring. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3139" name="Journeyman Ring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. To pass the Trial of the Guildsman, you must create 7 of these rings. Take the completed rings to Warehouse Keeper Valkon in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3140" name="Mark of Life" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Testimony of Life. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3141" name="Cardien's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter by Master Cardien. Take this and go to Hierarch Asterios of the Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3142" name="Camomile Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm given by Hierarch Asterios of the Elven Village. Take it to Master Cardien in the Town of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3143" name="Hierarch's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter given by Hierarch Asterios of the Elven Village. Take this and go to Thalia, who lives on the eastern shores of Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3144" name="Moonflower Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm given by Hierarch Asterios of the Elven Village. Keep it while searching for the Water of Life. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3145" name="Grail Diagram" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Pure Mithril Cup blueprint given by Thalia. Take it to Blacksmith Pushkin of Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3146" name="Thalia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Thalia's letter. Take this and go to Arkenia, who is at the Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3147" name="Thalia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Thalia to Isael Silvershadow of Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3148" name="Thalia's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter containing Thalia's instructions. The instructions are to come back after reaching level 38. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3149" name="Pushkin's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List given by Blacksmith Pushkin from Giran. He needs 10 pieces of Pure Mithril Ore obtained by slaying a Guardian Basilisk in Death Pass, 20 units of Ant Soldier Acid obtained by slaying Ant Soldiers in the Ant Nest, 20 Wyrm's Fangs obtained by slaying Wyrms in the Gorgon Flower Garden. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3150" name="Pure Mithril Cup" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Cup crafted by Blacksmith Pushkin of Giran that is made of pure mithril. Take this back to Thalia who can be found on an eastern shore of Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3151" name="Arkenia's Contract" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Contract written by Arkenia. The contract states that she will give stardust in return for Andariel's book from the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3152" name="Arkenia's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Arkenia's instructions: bring back Andariel's book from the Temple of Einhasad in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3153" name="Adonius' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List given by Priest Adonius of the Village of Gludin. 20 sample of Spider Ichor from a Marsh Spider dwelling in Cruma Marshlands, 20 Harpy's Feathers from a Harpy nesting in the Gorgon Flower Garden. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3154" name="Andariel's Scriptures Copy" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Andariel's Scriptures Copy given by Priest Adonius of the Village of Gludin. Take it to Witch Arkenia at the Altar of Rites in the Dark Elven Forest. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3155" name="Stardust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The silver dust received from Witch Arkenia at the Altar of Rites. Take it to Thalia at the eastern shore or Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3156" name="Isael's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Orders of Isael Silvershadow from Hunters' Village. Collect 6 pieces of Talin's Spear from Leto Lizardman Shamans and Leto Lizardman Chiefs on the Plains of the Lizardmen. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3157" name="Isael's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter given by Isael Silvershadow from Hunters' Village. Take it, along with Talin's Spear, to Thalia on the eastern shore of Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3158" name="Grail of Purity" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A cup of Pure Mithril. Gather Tears of Unicorn in the Cup and take it back to Thalia at the eastern shore or Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3159" name="Tears of Unicorn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The tears shed by Eva's unicorn when it was killed with Talin's Spear. Take this back to Thalia at the eastern shore or Iris Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3160" name="Water of Life" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Water of Life. It has the power to rejuvenate the Tree of Life. Take it to Hierarch Asterios in Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3161" name="Pure Mithril Ore" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Pure mithril ore. Collect 10 of these, along with the rest of the ingredients, and take them to Blacksmith Pushkin in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3162" name="Ant Soldier Acid" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The acid collected from Ant Soldiers at the Ant Nest after slaying them. Gather 20 bottles of this, along with the rest of the ingredients, and take them back to Blacksmith Pushkin in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3163" name="Wyrm's Talon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The talon of a Wyrm from the Gorgon Flower Garden obtained after slaying it. Gather 20 of these, along with the rest of the ingredients, and take them back to Blacksmith Pushkin in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3164" name="Spider Ichor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The ichor of Marsh Spider. Gather 20 units of this and take them back to Priest Adonius in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3165" name="Harpy's Feather" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The down feathers obtained after slaying a harpy. Gather 20 of these and take them back to Priest Adonius in the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3166" name="Talin's Spear Blade" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A blade of Talin's Spear. Take it, along with the remaining spear parts, to Isael Silvershadow in Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3167" name="Talin's Spear Shaft" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A shaft of Talin's Spear. Take it, along with the remaining spear parts, to Isael Silvershadow in Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3168" name="Talin's Ruby" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Decorative jewel that adorned Talin's Spear. Take this, along with the remaining portions of the spear, back to Isael Silvershadow in Hunters Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3169" name="Talin's Aquamarine" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Decorative jewel that adorned Talin's Spear. Take this, along with the remaining portions of the spear, back to Isael Silvershadow in Hunters Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3170" name="Talin's Amethyst" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Decorative jewel that adorned Talin's Spear. Take this, along with the remaining portions of the spear, back to Isael Silvershadow in Hunters Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3171" name="Talin's Peridot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Decorative jewel that adorned Talin's Spear. Take this, along with the remaining portions of the spear, back to Isael Silvershadow in Hunters Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3172" name="Mark of Fate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Testimony of Fate. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3173" name="Kaira's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter sent by Magister Kaira to Brother Metheus from the Temple of Einhasad of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3174" name="Metheus' Funeral Jar" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Jar for storing the remains of the dead. Take this to the Execution Grounds and search for the remains of Metheus' sister. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3175" name="Kassandra's Remains" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The remains of Kassandra, Metheus' sister. Take it to Brother Metheus of the Temple of Einhasad in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3176" name="Herbology Textbook" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Textbook that contains information about the deadly Poison belladonna. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3177" name="Ixia's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtain 10 units of each of the following items: Medusa's Blood from slaying Medusa in the Gorgon Flower Garden, Marsh Spider Fluids from slaying a Marsh Spider in Cruma Marshlands, Corpse Tracker Dung from slaying a Corpse Tracker on the Execution Grounds, Tyrant's Blood from slaying Tyrant in the Wastelands, and Nightshade Root from slaying a Marsh Stakato in Cruma Marshlands. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3178" name="Medusa's Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bottled blood of Medusa. Collect 10 of these and take them to Master Ixia in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3179" name="Marsh Spider Fluids" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The bottled fluids of a marsh spider. Collect 10 of these and take them back to Master Ixia in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3180" name="Corpse Tracker Dung" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Dung of Corpse Trackers. Collect 10 of these and take them to Master Ixia in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3181" name="Tyrant's Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The bottled blood of Tyrant. Collect 10 of these and take them back to Master Ixia in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3182" name="Nightshade Root" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A root of the rare nightshade herb. Collect 10 of these and take them to Master Ixia in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3183" name="Belladonna" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Legendary Poison that can kill a bull with a single drop. Take this to Brother Metheus of the Temple of Einhasad in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3184" name="Alders' Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The skull of Alders who drafted the copy of Kaysha's Revelations. Take it to Magister Kaira in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3185" name="Alders' Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Skull of Priest Alders. Take it to Magister Roa, a distant descendant of the priest. Magister Roa can be found in the Mystic Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3186" name="Alders' Receipt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A receipt for the item that Alders entrusted to a warehouse. Take it and go to the warehouse in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3187" name="Revelations Manuscript" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Copy of Kaysha's Revelations. Take this to Magister Kaira in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3188" name="Kaira's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Note where the instructions of Magister Kaira of Giran are written. The instructions are to come back after reaching level 38. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3189" name="Kaira's Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A recommendation letter written by Magister Kaira of Giran. Take it to Great Hierarch Thifiell in the Dark Elf Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3190" name="Palus Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Charm given to you by Great Hierarch Thifiell for the initiation ceremony of the Shillien Circle. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3191" name="Thifiell's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Great Hierarch Thifiell to Arkenia at the Dark Elven Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3192" name="Arkenia's Note" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A note written by Arkenia. It contains instructions to bring back Red Fairy Dust and Blight Treant Sap. You can get them by killing Bloody Pixies and Blight Treants to the east of the Dark Elf Village near Shillien's Temple. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3193" name="Pixy Garnet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A garnet given by Bloody Pixy as a token of her promise. Bring one skull each of 4 different tribes. For this, you need to slay Grandis in the Death Pass, Karul Bugbear in Hunters' Village, Breka Orc Prefect in Breka's Stronghold and Leto Lizardman Overlord in the Plains of the Lizardmen. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3194" name="Grandis' Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A skull of Grandis. Take it to Bloody Pixy who can be found in the eastern part of Dark Elf Village at the Shillien Temple. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3195" name="Karul Bugbear Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A skull of Karul Bugbear. Take it to Bloody Pixy who can be found in the eastern part of Dark Elf Village at the Shillien Temple. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3196" name="Breka Overlord Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A skull of Breka Prefect. Take it to Bloody Pixy who can be found in the eastern part of Dark Elf Village at the Shillien Temple. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3197" name="Leto Overlord Skull" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A skull of Leto Lizardman Overlord from the Plains of the Lizardmen. Take it to Bloody Pixy who can be found in the eastern part of Dark Elf Village at the Shillien Temple. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3198" name="Red Fairy Dust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Red fairy dust given by the Bloody Pixy. Take this to Arkenia at the Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3199" name="Blight Treant Seed" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Seed given by a Blight Treant as a mark of promise. Slay the Black Willow Lurker and bring back its leaf. Black Willow Lurker can be found in a Swampland at the south of Dark Elf Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="116" price="0" /> <!-- Magic Ring -->
+	<item id="875" price="0" /> <!-- Ring of Knowledge -->
+	<item id="876" price="0" /> <!-- Ring of Anguish -->
+	<item id="877" price="0" /> <!-- Ring of Wisdom -->
+	<item id="878" price="0" /> <!-- Blue Coral Ring -->
+	<item id="91952" price="0" /> <!-- Ring of Insolence -->
+</list>

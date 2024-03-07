@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="81000" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81001" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81002" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81003" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81004" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81005" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81006" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81007" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81008" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81009" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81010" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81011" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81012" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81013" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81014" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81015" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81016" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81017" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81018" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81019" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81020" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81021" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81022" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81023" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81024" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81025" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81026" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81027" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81028" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81029" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81030" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81031" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81032" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81033" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81034" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81035" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81036" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81037" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81038" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81039" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81040" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81041" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81042" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81043" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81044" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81045" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81046" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81047" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81048" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81049" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81050" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81051" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81052" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81053" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81054" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81055" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81056" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81057" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81058" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81059" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81060" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81061" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81062" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81063" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81064" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81065" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81066" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81067" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81068" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81069" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81070" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81071" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81072" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81073" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81074" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81075" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81076" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81077" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81078" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81079" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81080" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81081" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81082" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81083" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81084" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81085" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81086" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81087" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81088" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81089" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81090" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81091" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81092" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81093" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81094" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81095" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81096" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81097" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81098" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81099" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/AppearanceStones.xsd">
+	<appearance_stone id="94041" type="RESTORE"> <!-- Scroll: Restore Equipment -->
+		<grade>D</grade>
+		<grade>C</grade>
+		<grade>B</grade>
+		<grade>A</grade>
+		<grade>S</grade>
+		<targetType>WEAPON</targetType>
+		<targetType>ARMOR</targetType>
+	</appearance_stone>
+	<appearance_stone id="94042" targetType="WEAPON" type="FIXED">
+		<visual id="94026" weaponType="SWORD" handType="ONE_HANDED" />
+		<visual id="94027" weaponType="DAGGER" handType="ONE_HANDED" />
+		<visual id="94028" weaponType="SWORD" handType="TWO_HANDED" />
+		<visual id="94029" weaponType="FIST" handType="ONE_HANDED" />
+		<visual id="94029" weaponType="DUALFIST" handType="TWO_HANDED" />
+		<visual id="94030" weaponType="POLE" handType="TWO_HANDED" />
+		<visual id="94031" weaponType="BOW" handType="TWO_HANDED" />
+		<visual id="94032" weaponType="CROSSBOW" handType="TWO_HANDED" />
+		<visual id="94033" weaponType="BLUNT" handType="ONE_HANDED" />
+		<visual id="94034" weaponType="DUALBLUNT" handType="TWO_HANDED" />
+		<visual id="94035" weaponType="BLUNT" handType="ONE_HANDED" />
+		<visual id="94036" weaponType="DUALBLUNT" handType="TWO_HANDED" />
+		<visual id="94037" weaponType="DUAL" handType="TWO_HANDED" />
+		<visual id="94038" weaponType="DUALDAGGER" handType="TWO_HANDED" />
+		<visual id="94039" weaponType="DUALBLUNT" handType="TWO_HANDED" />
+	</appearance_stone>
+</list>

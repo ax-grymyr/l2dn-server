@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_002" minZ="-3784" maxZ="-3384">
+				<node x="47348" y="65716" />
+				<node x="53396" y="65652" />
+				<node x="52464" y="67284" />
+			</territory>
+		</territories>
+		<npc id="20470" count="5" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20336" count="2" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_003" minZ="-3800" maxZ="-3400">
+				<node x="54552" y="65632" />
+				<node x="58764" y="65620" />
+				<node x="60580" y="70164" />
+				<node x="56516" y="69612" />
+				<node x="53668" y="67608" />
+			</territory>
+		</territories>
+		<npc id="20468" count="10" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20470" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20336" count="4" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_004" minZ="-3780" maxZ="-3380">
+				<node x="58976" y="70676" />
+				<node x="60504" y="70176" />
+				<node x="61028" y="73880" />
+				<node x="59904" y="74344" />
+				<node x="58888" y="72948" />
+			</territory>
+		</territories>
+		<npc id="20470" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20336" count="2" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_005" minZ="-3788" maxZ="-3238">
+				<node x="54284" y="69472" />
+				<node x="57332" y="71724" />
+				<node x="57852" y="74800" />
+				<node x="57120" y="75764" />
+				<node x="53724" y="75496" />
+				<node x="53108" y="70720" />
+			</territory>
+		</territories>
+		<npc id="20470" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20469" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20336" count="5" respawnTime="27sec" /> <!-- Green Dryad -->
+		<npc id="20509" count="4" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_006" minZ="-3700" maxZ="-3300">
+				<node x="57948" y="74832" />
+				<node x="61208" y="76588" />
+				<node x="60140" y="80780" />
+				<node x="56932" y="81004" />
+				<node x="54980" y="79120" />
+			</territory>
+		</territories>
+		<npc id="20509" count="6" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="5" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="5" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_007" minZ="-3708" maxZ="-3308">
+				<node x="56972" y="81092" />
+				<node x="60016" y="80868" />
+				<node x="60536" y="81712" />
+				<node x="59768" y="83732" />
+				<node x="58068" y="84768" />
+				<node x="56444" y="84904" />
+				<node x="56200" y="83340" />
+			</territory>
+		</territories>
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="2" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_008" minZ="-3828" maxZ="-3428">
+				<node x="54788" y="87612" />
+				<node x="59056" y="87960" />
+				<node x="61096" y="92960" />
+				<node x="56740" y="92912" />
+				<node x="51984" y="92012" />
+			</territory>
+		</territories>
+		<npc id="20509" count="9" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="5" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="7" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_009" minZ="-3788" maxZ="-3388">
+				<node x="49860" y="89976" />
+				<node x="53416" y="89648" />
+				<node x="51744" y="92164" />
+				<node x="49012" y="93432" />
+			</territory>
+		</territories>
+		<npc id="20471" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="2" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_011" minZ="-3812" maxZ="-3412">
+				<node x="46620" y="87800" />
+				<node x="49712" y="89932" />
+				<node x="48848" y="93488" />
+				<node x="44496" y="94904" />
+				<node x="42576" y="93980" />
+				<node x="41220" y="90484" />
+			</territory>
+		</territories>
+		<npc id="20471" count="6" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="8" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="10" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_012" minZ="-3808" maxZ="-3158">
+				<node x="38392" y="88972" />
+				<node x="41016" y="90068" />
+				<node x="42280" y="93676" />
+				<node x="38468" y="93408" />
+				<node x="36460" y="91872" />
+			</territory>
+		</territories>
+		<npc id="20471" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="4" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_013" minZ="-3756" maxZ="-3156">
+				<node x="35804" y="87764" />
+				<node x="38132" y="88916" />
+				<node x="36284" y="91840" />
+				<node x="32972" y="90360" />
+				<node x="33052" y="87676" />
+			</territory>
+		</territories>
+		<npc id="20471" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="2" respawnTime="27sec" /> <!-- Dryad -->
+		<npc id="20019" count="3" respawnTime="27sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_014" minZ="-3644" maxZ="-3244">
+				<node x="38040" y="87980" />
+				<node x="41148" y="87040" />
+				<node x="43256" y="88384" />
+				<node x="41816" y="89344" />
+				<node x="40072" y="89164" />
+			</territory>
+		</territories>
+		<npc id="20471" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="2" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_015" minZ="-3648" maxZ="-3248">
+				<node x="32988" y="83192" />
+				<node x="41760" y="83160" />
+				<node x="42436" y="83924" />
+				<node x="41064" y="86984" />
+				<node x="37980" y="87956" />
+				<node x="33024" y="86460" />
+			</territory>
+		</territories>
+		<npc id="20509" count="7" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="6" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="6" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="7" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_016" minZ="-3748" maxZ="-3298">
+				<node x="33004" y="78680" />
+				<node x="37372" y="79728" />
+				<node x="38244" y="83040" />
+				<node x="33060" y="83048" />
+			</territory>
+		</territories>
+		<npc id="20509" count="4" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+		<npc id="20473" count="4" respawnTime="27sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="4" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_017" minZ="-3796" maxZ="-3296">
+				<node x="33032" y="71956" />
+				<node x="37292" y="70972" />
+				<node x="40136" y="74304" />
+				<node x="38940" y="78236" />
+				<node x="37492" y="79736" />
+				<node x="33060" y="78536" />
+			</territory>
+		</territories>
+		<npc id="20470" count="18" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20469" count="5" respawnTime="27sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20336" count="9" respawnTime="27sec" /> <!-- Green Dryad -->
+		<npc id="20509" count="9" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_018" minZ="-3772" maxZ="-3372">
+				<node x="33016" y="67584" />
+				<node x="36580" y="67752" />
+				<node x="37420" y="68892" />
+				<node x="37176" y="70688" />
+				<node x="33088" y="71736" />
+			</territory>
+		</territories>
+		<npc id="20336" count="4" respawnTime="27sec" /> <!-- Green Dryad -->
+		<npc id="20509" count="4" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_019" minZ="-3736" maxZ="-3236">
+				<node x="42340" y="67164" />
+				<node x="46504" y="67172" />
+				<node x="46340" y="70956" />
+				<node x="44532" y="72920" />
+				<node x="40348" y="70948" />
+				<node x="38792" y="68384" />
+				<node x="39504" y="67828" />
+			</territory>
+		</territories>
+		<npc id="20470" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20469" count="3" respawnTime="27sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20336" count="7" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_020" minZ="-3748" maxZ="-3298">
+				<node x="49688" y="68060" />
+				<node x="52236" y="69396" />
+				<node x="51988" y="71508" />
+				<node x="49036" y="73016" />
+				<node x="48028" y="72672" />
+				<node x="46708" y="70272" />
+				<node x="46712" y="67224" />
+			</territory>
+		</territories>
+		<npc id="20470" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20469" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20336" count="5" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_021" minZ="-3740" maxZ="-3440">
+				<node x="55584" y="66728" />
+				<node x="58040" y="66764" />
+				<node x="58756" y="67928" />
+				<node x="57900" y="69080" />
+				<node x="55924" y="68404" />
+			</territory>
+		</territories>
+		<npc id="20336" count="3" respawnTime="27sec" /> <!-- Green Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_022" minZ="-3652" maxZ="-3252">
+				<node x="53424" y="71004" />
+				<node x="54500" y="70268" />
+				<node x="56228" y="71608" />
+				<node x="54508" y="71884" />
+			</territory>
+		</territories>
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_023" minZ="-3656" maxZ="-3356">
+				<node x="56804" y="77312" />
+				<node x="58504" y="76840" />
+				<node x="58780" y="80240" />
+				<node x="56760" y="80072" />
+				<node x="56016" y="78784" />
+			</territory>
+		</territories>
+		<npc id="20013" count="3" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_024" minZ="-3760" maxZ="-3360">
+				<node x="54360" y="89456" />
+				<node x="56616" y="88576" />
+				<node x="58152" y="90164" />
+				<node x="56556" y="91636" />
+				<node x="53564" y="91028" />
+			</territory>
+		</territories>
+		<npc id="20013" count="3" respawnTime="27sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_025" minZ="-3772" maxZ="-3372">
+				<node x="46508" y="89244" />
+				<node x="48304" y="90876" />
+				<node x="47488" y="92304" />
+				<node x="45004" y="92160" />
+			</territory>
+		</territories>
+		<npc id="20019" count="3" respawnTime="27sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_026" minZ="-3632" maxZ="-3332">
+				<node x="43036" y="89900" />
+				<node x="44376" y="90388" />
+				<node x="43632" y="92172" />
+				<node x="41904" y="91152" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="27sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_027" minZ="-3596" maxZ="-3196">
+				<node x="38620" y="89932" />
+				<node x="40224" y="90448" />
+				<node x="40772" y="92268" />
+				<node x="37736" y="91832" />
+			</territory>
+		</territories>
+		<npc id="20019" count="3" respawnTime="27sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_028" minZ="-3548" maxZ="-3248">
+				<node x="38876" y="84332" />
+				<node x="41132" y="83724" />
+				<node x="40832" y="86328" />
+				<node x="39368" y="86336" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="27sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_029" minZ="-3744" maxZ="-3444">
+				<node x="34160" y="77080" />
+				<node x="36148" y="76712" />
+				<node x="37924" y="78016" />
+				<node x="36288" y="78996" />
+				<node x="34172" y="78328" />
+			</territory>
+		</territories>
+		<npc id="20336" count="2" respawnTime="27sec" /> <!-- Green Dryad -->
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_030" minZ="-3664" maxZ="-3264">
+				<node x="35280" y="73096" />
+				<node x="37540" y="72916" />
+				<node x="37868" y="75376" />
+				<node x="34936" y="76100" />
+			</territory>
+		</territories>
+		<npc id="20336" count="2" respawnTime="27sec" /> <!-- Green Dryad -->
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_031" minZ="-3788" maxZ="-3488">
+				<node x="34496" y="69360" />
+				<node x="36352" y="68236" />
+				<node x="36756" y="69380" />
+				<node x="36492" y="70424" />
+				<node x="34712" y="70912" />
+			</territory>
+		</territories>
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_032" minZ="-3548" maxZ="-3148">
+				<node x="40444" y="68984" />
+				<node x="43596" y="68888" />
+				<node x="44672" y="69892" />
+				<node x="44072" y="71904" />
+				<node x="41112" y="70332" />
+			</territory>
+		</territories>
+		<npc id="20509" count="2" respawnTime="27sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="2" respawnTime="27sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t21_20_033" minZ="-3616" maxZ="-3216">
+				<node x="48752" y="68412" />
+				<node x="50692" y="69100" />
+				<node x="51264" y="70916" />
+				<node x="48596" y="71560" />
+				<node x="47560" y="69940" />
+			</territory>
+		</territories>
+		<npc id="20509" count="3" respawnTime="27sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_01" minZ="-3764" maxZ="-3464">
+				<node x="49544" y="40940" />
+				<node x="50360" y="43672" />
+				<node x="48036" y="44652" />
+				<node x="46048" y="44604" />
+				<node x="46276" y="42400" />
+			</territory>
+		</territories>
+		<npc id="20530" count="6" respawnTime="3sec" /> <!-- Young Red Keltir -->
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="6" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_01s" minZ="-3580" maxZ="-3380">
+				<node x="46992" y="42496" />
+				<node x="49276" y="41448" />
+				<node x="49488" y="42848" />
+				<node x="47708" y="43292" />
+			</territory>
+		</territories>
+		<npc id="20534" count="12" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_02" minZ="-3740" maxZ="-3440">
+				<node x="54168" y="40008" />
+				<node x="55116" y="42996" />
+				<node x="50384" y="43664" />
+				<node x="49576" y="40924" />
+				<node x="51628" y="38928" />
+			</territory>
+		</territories>
+		<npc id="20530" count="8" respawnTime="3sec" /> <!-- Young Red Keltir -->
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="2" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_021s" minZ="-3572" maxZ="-3372">
+				<node x="49900" y="41048" />
+				<node x="50700" y="40080" />
+				<node x="51364" y="40528" />
+				<node x="50540" y="42044" />
+			</territory>
+		</territories>
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_022s" minZ="-3656" maxZ="-3456">
+				<node x="51816" y="41152" />
+				<node x="52884" y="40028" />
+				<node x="54064" y="41128" />
+				<node x="52684" y="42304" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20534" count="2" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="2" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_03" minZ="-3712" maxZ="-3512">
+				<node x="48880" y="38740" />
+				<node x="50712" y="36892" />
+				<node x="51616" y="38912" />
+				<node x="50284" y="40168" />
+			</territory>
+		</territories>
+		<npc id="20534" count="6" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="6" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_04" minZ="-3784" maxZ="-3484">
+				<node x="46612" y="36436" />
+				<node x="51116" y="36488" />
+				<node x="48844" y="38752" />
+				<node x="45216" y="38304" />
+			</territory>
+		</territories>
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_04s" minZ="-3672" maxZ="-3472">
+				<node x="47292" y="36972" />
+				<node x="48360" y="36956" />
+				<node x="48684" y="37880" />
+				<node x="47292" y="38208" />
+			</territory>
+		</territories>
+		<npc id="20534" count="6" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_05" minZ="-3668" maxZ="-3468">
+				<node x="43628" y="35060" />
+				<node x="46624" y="36428" />
+				<node x="44380" y="39404" />
+				<node x="42680" y="39168" />
+				<node x="42104" y="36548" />
+			</territory>
+		</territories>
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_05s" minZ="-3584" maxZ="-3384">
+				<node x="43564" y="36704" />
+				<node x="44848" y="37220" />
+				<node x="43764" y="38344" />
+				<node x="42892" y="37512" />
+			</territory>
+		</territories>
+		<npc id="20534" count="6" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_06" minZ="-3708" maxZ="-3508">
+				<node x="42108" y="36560" />
+				<node x="42680" y="39160" />
+				<node x="42288" y="40724" />
+				<node x="39340" y="40268" />
+				<node x="39984" y="37912" />
+			</territory>
+		</territories>
+		<npc id="20530" count="6" respawnTime="3sec" /> <!-- Young Red Keltir -->
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="6" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_06s" minZ="-3596" maxZ="-3396">
+				<node x="41084" y="38108" />
+				<node x="42096" y="39108" />
+				<node x="41284" y="39880" />
+				<node x="40604" y="39184" />
+			</territory>
+		</territories>
+		<npc id="20534" count="6" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_07" minZ="-3704" maxZ="-3504">
+				<node x="39324" y="40300" />
+				<node x="42320" y="40740" />
+				<node x="43240" y="41508" />
+				<node x="41292" y="43608" />
+			</territory>
+		</territories>
+		<npc id="20530" count="6" respawnTime="3sec" /> <!-- Young Red Keltir -->
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="6" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_07s" minZ="-3600" maxZ="-3400">
+				<node x="41660" y="40972" />
+				<node x="42272" y="40956" />
+				<node x="42876" y="41572" />
+				<node x="41664" y="42104" />
+			</territory>
+		</territories>
+		<npc id="20534" count="6" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_08" minZ="-3752" maxZ="-3452">
+				<node x="43288" y="41500" />
+				<node x="45740" y="42280" />
+				<node x="45496" y="44544" />
+				<node x="43812" y="45000" />
+				<node x="41440" y="43564" />
+			</territory>
+		</territories>
+		<npc id="20530" count="6" respawnTime="3sec" /> <!-- Young Red Keltir -->
+		<npc id="20534" count="8" respawnTime="3sec" /> <!-- Red Keltir -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_08s" minZ="-3736" maxZ="-3436">
+				<node x="43468" y="41772" />
+				<node x="45208" y="42388" />
+				<node x="44456" y="43584" />
+				<node x="43372" y="43260" />
+			</territory>
+		</territories>
+		<npc id="20534" count="4" respawnTime="3sec" /> <!-- Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_09" minZ="-3712" maxZ="-3512">
+				<node x="36616" y="40472" />
+				<node x="39316" y="40368" />
+				<node x="41208" y="43532" />
+				<node x="38480" y="42760" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="6" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_09s" minZ="-3720" maxZ="-3520">
+				<node x="38064" y="41272" />
+				<node x="39352" y="41060" />
+				<node x="39988" y="42628" />
+				<node x="38796" y="42568" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="2" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_10" minZ="-3748" maxZ="-3548">
+				<node x="36880" y="36032" />
+				<node x="40012" y="37860" />
+				<node x="39280" y="40368" />
+				<node x="36608" y="40472" />
+			</territory>
+		</territories>
+		<npc id="20525" count="8" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="14" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_10s" minZ="-3668" maxZ="-3468">
+				<node x="37768" y="38216" />
+				<node x="39164" y="38608" />
+				<node x="38696" y="39780" />
+				<node x="37584" y="39980" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="2" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_11" minZ="-3804" maxZ="-3504">
+				<node x="39744" y="33456" />
+				<node x="42084" y="36516" />
+				<node x="40036" y="37848" />
+				<node x="36840" y="36020" />
+			</territory>
+		</territories>
+		<npc id="20525" count="14" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_11s" minZ="-3704" maxZ="-3504">
+				<node x="38876" y="35764" />
+				<node x="40788" y="35796" />
+				<node x="39880" y="37212" />
+				<node x="38876" y="36504" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="2" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_12" minZ="-3784" maxZ="-3484">
+				<node x="39828" y="33388" />
+				<node x="45164" y="33444" />
+				<node x="42084" y="36468" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_13" minZ="-3796" maxZ="-3596">
+				<node x="45212" y="33488" />
+				<node x="51144" y="36472" />
+				<node x="46664" y="36396" />
+				<node x="43600" y="35012" />
+			</territory>
+		</territories>
+		<npc id="20525" count="14" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20537" count="8" respawnTime="3sec" /> <!-- Elder Red Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_14" minZ="-3800" maxZ="-3500">
+				<node x="50376" y="43704" />
+				<node x="55112" y="43056" />
+				<node x="56040" y="48224" />
+				<node x="53404" y="47940" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="15" respawnTime="3sec" /> <!-- Goblin Raider -->
+		<npc id="20468" count="10" respawnTime="3sec" /> <!-- Kaboo Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_14s" minZ="-3696" maxZ="-3496">
+				<node x="52720" y="44212" />
+				<node x="54796" y="43932" />
+				<node x="54472" y="45644" />
+				<node x="52680" y="45772" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="3" respawnTime="3sec" /> <!-- Goblin Raider -->
+		<npc id="20468" count="3" respawnTime="3sec" /> <!-- Kaboo Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_15" minZ="-3644" maxZ="-3444">
+				<node x="48044" y="44660" />
+				<node x="50360" y="43688" />
+				<node x="53384" y="47952" />
+				<node x="50436" y="48324" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="25" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_17" minZ="-3740" maxZ="-3340">
+				<node x="53344" y="48000" />
+				<node x="55924" y="48276" />
+				<node x="55284" y="54524" />
+				<node x="52836" y="52764" />
+			</territory>
+		</territories>
+		<npc id="20470" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20468" count="15" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20325" count="10" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_17s" minZ="-3740" maxZ="-3540">
+				<node x="53944" y="50448" />
+				<node x="55416" y="51156" />
+				<node x="55392" y="52428" />
+				<node x="54104" y="52448" />
+			</territory>
+		</territories>
+		<npc id="20470" count="3" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20468" count="3" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20325" count="3" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_18" minZ="-3684" maxZ="-3384">
+				<node x="50444" y="48372" />
+				<node x="53352" y="48012" />
+				<node x="52852" y="52804" />
+				<node x="50180" y="52828" />
+			</territory>
+		</territories>
+		<npc id="20470" count="15" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20468" count="15" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20325" count="15" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_19" minZ="-3692" maxZ="-3292">
+				<node x="52940" y="52816" />
+				<node x="55268" y="54580" />
+				<node x="54072" y="58920" />
+				<node x="50652" y="56452" />
+				<node x="50188" y="52924" />
+			</territory>
+		</territories>
+		<npc id="20525" count="14" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20468" count="10" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20325" count="15" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_19s" minZ="-3564" maxZ="-3264">
+				<node x="52192" y="54412" />
+				<node x="53696" y="54400" />
+				<node x="53396" y="56460" />
+				<node x="51556" y="56528" />
+			</territory>
+		</territories>
+		<npc id="20468" count="8" respawnTime="3sec" /> <!-- Kaboo Orc -->
+		<npc id="20325" count="8" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_20" minZ="-3768" maxZ="-3268">
+				<node x="47444" y="54188" />
+				<node x="49252" y="54068" />
+				<node x="49716" y="56908" />
+				<node x="48740" y="58608" />
+			</territory>
+		</territories>
+		<npc id="20525" count="8" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="10" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_20s" minZ="-3592" maxZ="-3392">
+				<node x="48256" y="55448" />
+				<node x="48544" y="54752" />
+				<node x="49124" y="55476" />
+				<node x="48924" y="56188" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="3" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_21" minZ="-3816" maxZ="-3416">
+				<node x="49768" y="56924" />
+				<node x="52808" y="58768" />
+				<node x="53384" y="60244" />
+				<node x="52236" y="61432" />
+				<node x="48924" y="61212" />
+				<node x="48792" y="58660" />
+			</territory>
+		</territories>
+		<npc id="20525" count="8" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="10" respawnTime="3sec" /> <!-- Goblin Raider -->
+		<npc id="20468" count="10" respawnTime="3sec" /> <!-- Kaboo Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_2119_21s" minZ="-3548" maxZ="-3348">
+				<node x="50676" y="58692" />
+				<node x="52324" y="58848" />
+				<node x="52112" y="60408" />
+				<node x="50888" y="60768" />
+			</territory>
+		</territories>
+		<npc id="20525" count="2" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="3" respawnTime="3sec" /> <!-- Goblin Raider -->
+		<npc id="20468" count="3" respawnTime="3sec" /> <!-- Kaboo Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_22" minZ="-3788" maxZ="-3488">
+				<node x="42372" y="59392" />
+				<node x="47012" y="58452" />
+				<node x="46900" y="61864" />
+				<node x="45116" y="64524" />
+				<node x="40784" y="63092" />
+			</territory>
+		</territories>
+		<npc id="20336" count="16" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20470" count="28" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_22s" minZ="-3676" maxZ="-3476">
+				<node x="44180" y="59712" />
+				<node x="46020" y="61292" />
+				<node x="43612" y="62776" />
+				<node x="42356" y="61040" />
+			</territory>
+		</territories>
+		<npc id="20336" count="2" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20470" count="3" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_23" minZ="-3804" maxZ="-3504">
+				<node x="40680" y="63068" />
+				<node x="45152" y="64548" />
+				<node x="44316" y="65256" />
+				<node x="37704" y="65324" />
+				<node x="38136" y="64216" />
+			</territory>
+		</territories>
+		<npc id="20336" count="8" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_24" minZ="-3752" maxZ="-3452">
+				<node x="32828" y="56952" />
+				<node x="38160" y="64068" />
+				<node x="37688" y="65304" />
+				<node x="32920" y="65292" />
+			</territory>
+		</territories>
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="14" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="11" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_25" minZ="-3772" maxZ="-3372">
+				<node x="38228" y="64012" />
+				<node x="36520" y="61744" />
+				<node x="42336" y="59368" />
+				<node x="40768" y="63004" />
+			</territory>
+		</territories>
+		<npc id="20336" count="8" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_26" minZ="-3760" maxZ="-3460">
+				<node x="33000" y="56944" />
+				<node x="38240" y="56912" />
+				<node x="42272" y="59364" />
+				<node x="36452" y="61704" />
+			</territory>
+		</territories>
+		<npc id="20336" count="12" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="14" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_27" minZ="-3772" maxZ="-3272">
+				<node x="43004" y="54136" />
+				<node x="44976" y="54324" />
+				<node x="46756" y="58484" />
+				<node x="42384" y="59364" />
+				<node x="38248" y="56852" />
+			</territory>
+		</territories>
+		<npc id="20336" count="10" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20470" count="28" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_28" minZ="-3696" maxZ="-3296">
+				<node x="38020" y="54536" />
+				<node x="40848" y="53216" />
+				<node x="41496" y="54928" />
+				<node x="38288" y="56736" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="10" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_29" minZ="-3740" maxZ="-3440">
+				<node x="32900" y="52936" />
+				<node x="37952" y="54508" />
+				<node x="38160" y="56860" />
+				<node x="32872" y="56848" />
+			</territory>
+		</territories>
+		<npc id="20470" count="15" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20469" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="16" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_30" minZ="-3772" maxZ="-3372">
+				<node x="32888" y="49636" />
+				<node x="36144" y="48972" />
+				<node x="37064" y="53528" />
+				<node x="32980" y="52116" />
+			</territory>
+		</territories>
+		<npc id="20470" count="15" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_31" minZ="-3664" maxZ="-3164">
+				<node x="37176" y="53532" />
+				<node x="40304" y="51024" />
+				<node x="40548" y="52564" />
+			</territory>
+		</territories>
+		<npc id="20525" count="12" respawnTime="3sec" /> <!-- Gray Wolf -->
+		<npc id="20325" count="8" respawnTime="3sec" /> <!-- Goblin Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_32" minZ="-3748" maxZ="-3348">
+				<node x="36200" y="49008" />
+				<node x="39700" y="47488" />
+				<node x="40360" y="50848" />
+				<node x="37036" y="53512" />
+			</territory>
+		</territories>
+		<npc id="20336" count="12" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20470" count="25" respawnTime="3sec" /> <!-- Kaboo Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_33" minZ="-3792" maxZ="-3392">
+				<node x="37820" y="43800" />
+				<node x="40280" y="44816" />
+				<node x="39732" y="47392" />
+				<node x="36164" y="48924" />
+			</territory>
+		</territories>
+		<npc id="20336" count="8" respawnTime="3sec" /> <!-- Green Dryad -->
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="14" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_34" minZ="-3844" maxZ="-3444">
+				<node x="32924" y="45292" />
+				<node x="37848" y="43692" />
+				<node x="36188" y="48972" />
+				<node x="32908" y="49628" />
+			</territory>
+		</territories>
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="16" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2119_34s" minZ="-3804" maxZ="-3604">
+				<node x="36572" y="47152" />
+				<node x="35588" y="47788" />
+				<node x="34764" y="46896" />
+				<node x="35476" y="45856" />
+				<node x="36240" y="46164" />
+			</territory>
+		</territories>
+		<npc id="20471" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_01" minZ="-3820" maxZ="-3520">
+				<node x="30412" y="46964" />
+				<node x="32568" y="45176" />
+				<node x="32488" y="51732" />
+				<node x="29832" y="50956" />
+				<node x="29284" y="49260" />
+			</territory>
+		</territories>
+		<npc id="20473" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="14" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_02" minZ="-3760" maxZ="-3360">
+				<node x="24708" y="48192" />
+				<node x="29288" y="49288" />
+				<node x="29812" y="50876" />
+				<node x="26996" y="53284" />
+				<node x="23660" y="53552" />
+				<node x="22228" y="49220" />
+			</territory>
+		</territories>
+		<npc id="20473" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="12" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_02s" minZ="-3621" maxZ="-3321">
+				<node x="23468" y="49748" />
+				<node x="25588" y="50092" />
+				<node x="26440" y="51980" />
+				<node x="24172" y="51904" />
+			</territory>
+		</territories>
+		<npc id="20013" count="2" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_03" minZ="-3744" maxZ="-3444">
+				<node x="22100" y="42756" />
+				<node x="24808" y="44356" />
+				<node x="24660" y="48212" />
+				<node x="21160" y="49704" />
+				<node x="19580" y="45916" />
+			</territory>
+		</territories>
+		<npc id="20473" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="12" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_03s" minZ="-3728" maxZ="-3528">
+				<node x="22492" y="45432" />
+				<node x="23736" y="46732" />
+				<node x="22692" y="48136" />
+				<node x="21628" y="46656" />
+			</territory>
+		</territories>
+		<npc id="20013" count="2" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_04" minZ="-3790" maxZ="-3390">
+				<node x="23396" y="39656" />
+				<node x="28404" y="38044" />
+				<node x="28488" y="41268" />
+				<node x="24792" y="44356" />
+				<node x="22128" y="42740" />
+			</territory>
+		</territories>
+		<npc id="20473" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_04s" minZ="-3766" maxZ="-3566">
+				<node x="23568" y="40296" />
+				<node x="25172" y="39704" />
+				<node x="26256" y="41092" />
+				<node x="25228" y="42416" />
+				<node x="23524" y="41876" />
+			</territory>
+		</territories>
+		<npc id="20473" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="6" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20472" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_05" minZ="-3784" maxZ="-3484">
+				<node x="22808" y="35448" />
+				<node x="26340" y="35500" />
+				<node x="28408" y="38012" />
+				<node x="23360" y="39672" />
+				<node x="21532" y="37788" />
+			</territory>
+		</territories>
+		<npc id="20469" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Archer -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_05s" minZ="-3776" maxZ="-3476">
+				<node x="23220" y="36860" />
+				<node x="24936" y="36696" />
+				<node x="25192" y="37652" />
+				<node x="22864" y="38776" />
+			</territory>
+		</territories>
+		<npc id="20509" count="6" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_06" minZ="-3768" maxZ="-3468">
+				<node x="17196" y="40220" />
+				<node x="21452" y="37792" />
+				<node x="23388" y="39708" />
+				<node x="22100" y="42744" />
+				<node x="17224" y="41256" />
+			</territory>
+		</territories>
+		<npc id="20473" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20472" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_06s" minZ="-3780" maxZ="-3580">
+				<node x="21272" y="38588" />
+				<node x="22348" y="39804" />
+				<node x="21764" y="41056" />
+				<node x="19984" y="40536" />
+			</territory>
+		</territories>
+		<npc id="20473" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="2" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_07" minZ="-3768" maxZ="-3568">
+				<node x="16564" y="42492" />
+				<node x="17236" y="41280" />
+				<node x="22060" y="42780" />
+				<node x="19560" y="45904" />
+			</territory>
+		</territories>
+		<npc id="20473" count="6" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="6" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+		<npc id="20509" count="8" respawnTime="3sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_07s" minZ="-3772" maxZ="-3572">
+				<node x="18060" y="42996" />
+				<node x="18964" y="42428" />
+				<node x="20436" y="43088" />
+				<node x="19040" y="44252" />
+			</territory>
+		</territories>
+		<npc id="20473" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20013" count="6" respawnTime="3sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_08" minZ="-3784" maxZ="-3534">
+				<node x="19556" y="45892" />
+				<node x="16660" y="42540" />
+				<node x="15300" y="42092" />
+				<node x="14240" y="44720" />
+				<node x="15880" y="47620" />
+				<node x="21168" y="49744" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_08s" minZ="-3764" maxZ="-3364">
+				<node x="16536" y="44676" />
+				<node x="18188" y="45872" />
+				<node x="17952" y="47556" />
+				<node x="16056" y="46308" />
+			</territory>
+		</territories>
+		<npc id="20013" count="2" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_09" minZ="-3804" maxZ="-3604">
+				<node x="15888" y="47640" />
+				<node x="19988" y="49284" />
+				<node x="19172" y="51720" />
+				<node x="15188" y="50072" />
+			</territory>
+		</territories>
+		<npc id="20019" count="8" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_10" minZ="-3804" maxZ="-3504">
+				<node x="15196" y="50020" />
+				<node x="20712" y="52396" />
+				<node x="22032" y="54148" />
+				<node x="13700" y="54884" />
+				<node x="12552" y="53080" />
+				<node x="13200" y="51224" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="12" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_10s" minZ="-3728" maxZ="-3428">
+				<node x="14508" y="51192" />
+				<node x="16772" y="51340" />
+				<node x="17776" y="53036" />
+				<node x="15304" y="53352" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="8" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_11" minZ="-3744" maxZ="-3344">
+				<node x="9728" y="53812" />
+				<node x="12460" y="53076" />
+				<node x="14072" y="55428" />
+				<node x="11040" y="59600" />
+				<node x="8452" y="58332" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="15" respawnTime="3sec" /> <!-- Crimson Spider -->
+		<npc id="20308" count="18" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_11s" minZ="-3712" maxZ="-3412">
+				<node x="9892" y="54772" />
+				<node x="11104" y="53684" />
+				<node x="12000" y="54848" />
+				<node x="10868" y="56616" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="3" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_12" minZ="-3700" maxZ="-3300">
+				<node x="2780" y="59360" />
+				<node x="6188" y="57296" />
+				<node x="11072" y="59652" />
+				<node x="6224" y="63080" />
+			</territory>
+		</territories>
+		<npc id="20036" count="12" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="15" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="18" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_12s" minZ="-3716" maxZ="-3516">
+				<node x="4508" y="59844" />
+				<node x="6308" y="58356" />
+				<node x="7456" y="60412" />
+				<node x="6108" y="61564" />
+			</territory>
+		</territories>
+		<npc id="20036" count="2" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="3" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="3" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_13" minZ="-3824" maxZ="-3224">
+				<node x="1100" y="58420" />
+				<node x="2836" y="59352" />
+				<node x="6260" y="63148" />
+				<node x="5016" y="65312" />
+				<node x="708" y="65312" />
+			</territory>
+		</territories>
+		<npc id="20036" count="12" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="25" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20044" count="8" respawnTime="3sec" /> <!-- Lirein Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_13s" minZ="-3684" maxZ="-3384">
+				<node x="2540" y="61064" />
+				<node x="3660" y="61780" />
+				<node x="3640" y="63484" />
+				<node x="1720" y="62940" />
+			</territory>
+		</territories>
+		<npc id="20466" count="3" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20044" count="2" respawnTime="3sec" /> <!-- Lirein Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_14" minZ="-3792" maxZ="-3192">
+				<node x="6352" y="55148" />
+				<node x="6140" y="57332" />
+				<node x="2832" y="59312" />
+				<node x="1072" y="58400" />
+				<node x="1696" y="55320" />
+				<node x="3428" y="52980" />
+			</territory>
+		</territories>
+		<npc id="20036" count="14" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="10" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="10" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_14s" minZ="-3640" maxZ="-3340">
+				<node x="3852" y="55056" />
+				<node x="4628" y="55308" />
+				<node x="4716" y="56732" />
+				<node x="3360" y="56768" />
+				<node x="2916" y="55960" />
+			</territory>
+		</territories>
+		<npc id="20036" count="2" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="3" respawnTime="3sec" /> <!-- Pincer Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_15" minZ="-3776" maxZ="-3376">
+				<node x="6464" y="49776" />
+				<node x="10336" y="52268" />
+				<node x="5956" y="54748" />
+				<node x="3424" y="52924" />
+			</territory>
+		</territories>
+		<npc id="20019" count="14" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="8" respawnTime="3sec" /> <!-- Crimson Spider -->
+		<npc id="20308" count="10" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_15s" minZ="-3764" maxZ="-3464">
+				<node x="5484" y="52472" />
+				<node x="7124" y="51316" />
+				<node x="9028" y="52224" />
+				<node x="6924" y="53820" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="3" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_16" minZ="-3784" maxZ="-3484">
+				<node x="10056" y="46604" />
+				<node x="11616" y="48148" />
+				<node x="10756" y="52484" />
+				<node x="6492" y="49696" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20460" count="18" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_16s" minZ="-3784" maxZ="-3584">
+				<node x="9388" y="48492" />
+				<node x="10436" y="49160" />
+				<node x="10492" y="50664" />
+				<node x="8980" y="50620" />
+			</territory>
+		</territories>
+		<npc id="20019" count="2" respawnTime="3sec" /> <!-- Dryad Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_17" minZ="-3788" maxZ="-3488">
+				<node x="12828" y="46232" />
+				<node x="14452" y="48260" />
+				<node x="13596" y="50068" />
+				<node x="10068" y="46632" />
+				<node x="10640" y="45128" />
+			</territory>
+		</territories>
+		<npc id="20019" count="8" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="6" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_18" minZ="-3792" maxZ="-3392">
+				<node x="24444" y="62088" />
+				<node x="28100" y="60940" />
+				<node x="29100" y="65300" />
+				<node x="25144" y="65264" />
+			</territory>
+		</territories>
+		<npc id="20473" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20472" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_18s" minZ="-3724" maxZ="-3524">
+				<node x="25128" y="63632" />
+				<node x="26800" y="62196" />
+				<node x="27776" y="63396" />
+				<node x="26724" y="64908" />
+			</territory>
+		</territories>
+		<npc id="20509" count="8" respawnTime="3sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_19" minZ="-3728" maxZ="-3328">
+				<node x="23352" y="55320" />
+				<node x="28100" y="60916" />
+				<node x="24468" y="62076" />
+				<node x="21428" y="58564" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_19s" minZ="-3652" maxZ="-3352">
+				<node x="23300" y="58256" />
+				<node x="25180" y="58048" />
+				<node x="26728" y="59872" />
+				<node x="24956" y="60272" />
+			</territory>
+		</territories>
+		<npc id="20013" count="2" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_20" minZ="-3668" maxZ="-3168">
+				<node x="15564" y="55744" />
+				<node x="23220" y="55496" />
+				<node x="21412" y="58540" />
+				<node x="13952" y="58876" />
+				<node x="12616" y="58324" />
+			</territory>
+		</territories>
+		<npc id="20019" count="12" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+		<npc id="20472" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+		<npc id="20460" count="8" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_20s" minZ="-3600" maxZ="-3300">
+				<node x="18556" y="56248" />
+				<node x="19584" y="57448" />
+				<node x="17204" y="58464" />
+				<node x="16180" y="56244" />
+			</territory>
+		</territories>
+		<npc id="20460" count="10" respawnTime="3sec" /> <!-- Crimson Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_21" minZ="-3676" maxZ="-3276">
+				<node x="12588" y="58332" />
+				<node x="13904" y="58872" />
+				<node x="12968" y="61688" />
+				<node x="11192" y="60712" />
+			</territory>
+		</territories>
+		<npc id="20019" count="8" respawnTime="3sec" /> <!-- Dryad Elder -->
+		<npc id="20460" count="8" respawnTime="3sec" /> <!-- Crimson Spider -->
+		<npc id="20308" count="8" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_22" minZ="-3844" maxZ="-3444">
+				<node x="7516" y="62884" />
+				<node x="11188" y="60736" />
+				<node x="12948" y="61712" />
+				<node x="10568" y="65244" />
+				<node x="5868" y="65212" />
+			</territory>
+		</territories>
+		<npc id="20036" count="14" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="10" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="15" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_22s" minZ="-3756" maxZ="-3456">
+				<node x="9200" y="62864" />
+				<node x="10076" y="62928" />
+				<node x="10280" y="63780" />
+				<node x="9448" y="64308" />
+				<node x="8876" y="63800" />
+			</territory>
+		</territories>
+		<npc id="20466" count="8" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="3" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_23" minZ="-3812" maxZ="-3412">
+				<node x="28920" y="60188" />
+				<node x="32524" y="58916" />
+				<node x="32560" y="65280" />
+				<node x="30040" y="65284" />
+			</territory>
+		</territories>
+		<npc id="20473" count="14" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20509" count="12" respawnTime="3sec" /> <!-- Spore Fungus -->
+		<npc id="20471" count="12" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_23s" minZ="-3668" maxZ="-3368">
+				<node x="30580" y="60492" />
+				<node x="32244" y="60744" />
+				<node x="31996" y="63084" />
+				<node x="30360" y="63228" />
+			</territory>
+		</territories>
+		<npc id="20473" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20471" count="2" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_24" minZ="-3764" maxZ="-3214">
+				<node x="29876" y="51948" />
+				<node x="32476" y="52484" />
+				<node x="32536" y="58928" />
+				<node x="28432" y="60296" />
+				<node x="24856" y="55652" />
+			</territory>
+		</territories>
+		<npc id="20473" count="10" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<npc id="20471" count="16" respawnTime="3sec" /> <!-- Kaboo Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_241s" minZ="-3540" maxZ="-3140">
+				<node x="26612" y="57152" />
+				<node x="28340" y="56928" />
+				<node x="29132" y="57744" />
+				<node x="28316" y="59252" />
+			</territory>
+		</territories>
+		<npc id="20013" count="8" respawnTime="3sec" /> <!-- Dryad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_242s" minZ="-3428" maxZ="-3128">
+				<node x="27792" y="53568" />
+				<node x="29972" y="53808" />
+				<node x="27756" y="55240" />
+				<node x="26708" y="55092" />
+			</territory>
+		</territories>
+		<npc id="20472" count="8" respawnTime="3sec" /> <!-- Kaboo Orc Warrior Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2019_243s" minZ="-3672" maxZ="-3372">
+				<node x="31116" y="54492" />
+				<node x="32228" y="54768" />
+				<node x="32228" y="58068" />
+				<node x="31324" y="57548" />
+			</territory>
+		</territories>
+		<npc id="20509" count="8" respawnTime="3sec" /> <!-- Spore Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_01" minZ="-3792" maxZ="-3592">
+				<node x="5676" y="66908" />
+				<node x="5736" y="65692" />
+				<node x="10336" y="65788" />
+				<node x="7800" y="67508" />
+			</territory>
+		</territories>
+		<npc id="20036" count="6" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="10" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="8" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_02" minZ="-3816" maxZ="-3516">
+				<node x="300" y="65740" />
+				<node x="5000" y="65724" />
+				<node x="5092" y="66820" />
+				<node x="208" y="69640" />
+			</territory>
+		</territories>
+		<npc id="20036" count="8" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="18" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20044" count="12" respawnTime="3sec" /> <!-- Lirein Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_03" minZ="-3540" maxZ="-3240">
+				<node x="5184" y="69420" />
+				<node x="8224" y="69864" />
+				<node x="8464" y="71056" />
+				<node x="5728" y="74060" />
+			</territory>
+		</territories>
+		<npc id="20036" count="14" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="15" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="8" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_04" minZ="-3892" maxZ="-3392">
+				<node x="424" y="72732" />
+				<node x="4356" y="69788" />
+				<node x="2920" y="74056" />
+				<node x="264" y="74820" />
+			</territory>
+		</territories>
+		<npc id="20036" count="8" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="15" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20044" count="8" respawnTime="3sec" /> <!-- Lirein Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_05" minZ="-3872" maxZ="-3572">
+				<node x="3612" y="73264" />
+				<node x="4676" y="73120" />
+				<node x="5712" y="75844" />
+				<node x="4052" y="75508" />
+			</territory>
+		</territories>
+		<npc id="20036" count="6" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20466" count="8" respawnTime="3sec" /> <!-- Pincer Spider -->
+		<npc id="20308" count="8" respawnTime="3sec" /> <!-- Hook Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_06" minZ="-3884" maxZ="-3584">
+				<node x="232" y="75708" />
+				<node x="3380" y="75140" />
+				<node x="2492" y="79916" />
+				<node x="276" y="77908" />
+			</territory>
+		</territories>
+		<npc id="20036" count="14" respawnTime="3sec" /> <!-- Lirein -->
+		<npc id="20044" count="16" respawnTime="3sec" /> <!-- Lirein Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_07" minZ="-3700" maxZ="-3500">
+				<node x="4728" y="75656" />
+				<node x="5676" y="75868" />
+				<node x="5348" y="78796" />
+				<node x="3704" y="78528" />
+			</territory>
+		</territories>
+		<npc id="20044" count="8" respawnTime="3sec" /> <!-- Lirein Elder -->
+		<npc id="20466" count="10" respawnTime="3sec" /> <!-- Pincer Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_08" minZ="-3664" maxZ="-3164">
+				<node x="3736" y="78528" />
+				<node x="5336" y="78796" />
+				<node x="7104" y="84200" />
+				<node x="4376" y="85876" />
+				<node x="3216" y="81580" />
+			</territory>
+		</territories>
+		<npc id="20044" count="10" respawnTime="3sec" /> <!-- Lirein Elder -->
+		<npc id="20466" count="28" respawnTime="3sec" /> <!-- Pincer Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren04_2020_08s" minZ="-3644" maxZ="-3344">
+				<node x="4372" y="82036" />
+				<node x="5380" y="82076" />
+				<node x="5380" y="83892" />
+				<node x="4232" y="83340" />
+			</territory>
+		</territories>
+		<npc id="20044" count="2" respawnTime="3sec" /> <!-- Lirein Elder -->
+		<npc id="20466" count="3" respawnTime="3sec" /> <!-- Pincer Spider -->
+	</spawn>
+</list>

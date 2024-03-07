@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange +7 Frozen Weapon Coupon -->
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96751" /> <!-- Frost Lord's Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96752" /> <!-- Frost Lord's Two-handed Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96753" /> <!-- Frost Lord's Axe - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96754" /> <!-- Frost Lord's Dagger - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96755" /> <!-- Frost Lord's Spear - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96756" /> <!-- Frost Lord's Bow - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96757" /> <!-- Frost Lord's Blade Fists - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96758" /> <!-- Frost Lord's Magic Blunt Weapon - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96759" /> <!-- Frost Lord's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96760" /> <!-- Frost Lord's Ancient Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96761" /> <!-- Frost Lord's Rapier - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96762" /> <!-- Frost Lord's Pistols - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="97924" /> <!-- +7 Frozen Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" id="96763" /> <!-- Frost Lord's Dual Swords - Sealed -->
+	</item>
+</list>

@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34100" name="p_atk">
+		<!-- P. Atk. +76 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34101" name="p_atk">
+		<!-- P. Atk. +82 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34102" name="p_atk">
+		<!-- P. Atk. +88 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34103" name="p_atk">
+		<!-- P. Atk. +94 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34104" name="p_atk">
+		<!-- P. Atk. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34105" name="p_atk">
+		<!-- P. Atk. +120 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34106" name="p_atk">
+		<!-- P. Atk. +150 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34107" name="p_atk">
+		<!-- P. Atk. +180 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34108" name="p_atk">
+		<!-- P. Atk. +220 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34109" name="p_atk">
+		<!-- P. Atk. +30 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34110" name="p_atk">
+		<!-- P. Atk. +32 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34111" name="p_atk">
+		<!-- P. Atk. +44 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34112" name="p_atk">
+		<!-- P. Atk. +56 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34113" name="p_atk">
+		<!-- P. Atk. +68 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34114" name="p_atk">
+		<!-- P. Atk. +80 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34115" name="p_atk">
+		<!-- P. Atk. +92 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>92</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34116" name="p_atk">
+		<!-- P. Atk. +104 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>104</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34117" name="p_atk">
+		<!-- P. Atk. +116 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>116</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34118" name="p_atk">
+		<!-- P. Atk. +128 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>128</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34119" name="p_atk">
+		<!-- P. Atk. +140 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34120" name="p_atk">
+		<!-- P. Atk. +152 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>152</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34121" name="p_atk">
+		<!-- P. Atk. +164 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>164</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34122" name="p_atk">
+		<!-- P. Atk. +176 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>176</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34123" name="p_atk">
+		<!-- P. Atk. +188 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34124" name="p_atk">
+		<!-- P. Atk. +200 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34125" name="p_atk">
+		<!-- P. Atk. +240 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34126" name="p_atk">
+		<!-- P. Atk. +300 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34127" name="p_atk">
+		<!-- P. Atk. +360 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34128" name="p_atk">
+		<!-- P. Atk. +425 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>425</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34129" name="m_atk">
+		<!-- M. Atk. +10 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34130" name="m_atk">
+		<!-- M. Atk. +16. -->
+		<effects>
+			<effect name="MAtk">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34131" name="m_atk">
+		<!-- M. Atk. +22 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34132" name="m_atk">
+		<!-- M. Atk. +28 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34133" name="m_atk">
+		<!-- M. Atk. +34 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34134" name="m_atk">
+		<!-- M. Atk. +40 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34135" name="m_atk">
+		<!-- M. Atk. +46 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34136" name="m_atk">
+		<!-- M. Atk. +52 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34137" name="m_atk">
+		<!-- M. Atk. +58 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34138" name="m_atk">
+		<!-- M. Atk. +64 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34139" name="m_atk">
+		<!-- M. Atk. +70 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34140" name="m_atk">
+		<!-- M. Atk. +76 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34141" name="m_atk">
+		<!-- M. Atk. +82 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34142" name="m_atk">
+		<!-- M. Atk. +88 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34143" name="m_atk">
+		<!-- M. Atk. +94 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34144" name="m_atk">
+		<!-- M. Atk. +100 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34145" name="m_atk">
+		<!-- M. Atk. +140 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34146" name="m_atk">
+		<!-- M. Atk. +170 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>170</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34147" name="m_atk">
+		<!-- M. Atk. +210 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>210</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34148" name="m_atk">
+		<!-- M. Atk. +270 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>270</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34149" name="m_atk">
+		<!-- M. Atk. +30 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34150" name="m_atk">
+		<!-- M. Atk. +32 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34151" name="m_atk">
+		<!-- M. Atk. +44 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34152" name="m_atk">
+		<!-- M. Atk. +56 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34153" name="m_atk">
+		<!-- M. Atk. +68 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34154" name="m_atk">
+		<!-- M. Atk. +80 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34155" name="m_atk">
+		<!-- M. Atk. +92 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>92</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34156" name="m_atk">
+		<!-- M. Atk. +104 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>104</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34157" name="m_atk">
+		<!-- M. Atk. +116 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>116</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34158" name="m_atk">
+		<!-- M. Atk. +128 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>128</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34159" name="m_atk">
+		<!-- M. Atk. +140 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34160" name="m_atk">
+		<!-- M. Atk. +152 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>152</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34161" name="m_atk">
+		<!-- M. Atk. +164 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>164</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34162" name="m_atk">
+		<!-- M. Atk. +176 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>176</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34163" name="m_atk">
+		<!-- M. Atk. +188 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34164" name="m_atk">
+		<!-- M. Atk. +200 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34165" name="m_atk">
+		<!-- M. Atk. +280 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>280</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34166" name="m_atk">
+		<!-- M. Atk. +340 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>340</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34167" name="m_atk">
+		<!-- M. Atk. +420 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34168" name="m_atk">
+		<!-- M. Atk. +535 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>535</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34169" name="critical_rate">
+		<!-- P. Critical Rate +10 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34170" name="critical_rate">
+		<!-- P. Critical Rate +11 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34171" name="critical_rate">
+		<!-- P. Critical Rate +12 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34172" name="critical_rate">
+		<!-- P. Critical Rate +13 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34173" name="critical_rate">
+		<!-- P. Critical Rate +14 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34174" name="critical_rate">
+		<!-- P. Critical Rate +15 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34175" name="critical_rate">
+		<!-- P. Critical Rate +17 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34176" name="critical_rate">
+		<!-- P. Critical Rate +19 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>19</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34177" name="critical_rate">
+		<!-- P. Critical Rate +21 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34178" name="critical_rate">
+		<!-- P. Critical Rate +23 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34179" name="critical_rate">
+		<!-- P. Critical Rate +25 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34180" name="critical_rate">
+		<!-- P. Critical Rate +27 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34181" name="critical_rate">
+		<!-- P. Critical Rate +29 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34182" name="critical_rate">
+		<!-- P. Critical Rate +31 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34183" name="critical_rate">
+		<!-- P. Critical Rate +33 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34184" name="critical_rate">
+		<!-- P. Critical Rate +35 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34185" name="critical_rate">
+		<!-- P. Critical Rate +37 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>37</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34186" name="critical_rate">
+		<!-- P. Critical Rate +40 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34187" name="critical_rate">
+		<!-- P. Critical Rate +45 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34188" name="critical_rate">
+		<!-- P. Critical Rate +50 -->
+		<effects>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+
+
+
+
+
+
+	<option id="34189" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +10 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34190" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +15 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34191" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +20 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34192" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +25 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34193" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +30 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34194" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +35 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34195" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +40 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34196" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +45 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34197" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +50 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34198" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +60 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34199" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +70 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

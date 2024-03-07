@@ -1,0 +1,2004 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="87101" toLevel="1" name="Amadeus">
+		<!-- A beautiful melody flows from a string instrument and covers all the battlefield. For 20 min., you get:. Max HP +1000. P. Atk. +1000. P. Def. +1000. M. Def. +500. Received P. Skill Critical Damage -500. Speed +15. <Use effect>. For 8 sec., you and your allies get:. P. Def. +300. M. Def. 20 min.0. Received P. Skill Critical Damage 20 min.1. <Skill upgrade>. Ultimate Defense → Ultimate Defense: Bard. Frantic Pace → Rapid Frantic Pace. When attacking with Rapid Frantic Pace:. With a 35% chance, makes an <font color="FFBB00">additional attack</font>. <font color="FFBB00">Additional attack</font>: Deals P. damage with 7053 power. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. -->
+		<icon>icon.s_amadeus_self</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
+		<hitTime>2000</hitTime>
+		<effectPoint>1200</effectPoint>
+		<isMagic>1</isMagic>
+		<itemConsumeCount>50</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>76</magicLevel>
+		<mpConsume>375</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>87102</skillId> <!-- Amadeus - C -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<!-- Ultimate Defense -->
+			<!-- Ultimate Defense: Bard -->
+			<!-- <effect name="ReplaceSkillBySkill">
+				<existingSkillId>110</existingSkillId> 
+				<replacementSkillId>87150</replacementSkillId>
+			</effect> -->
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>45402</existingSkillId> <!-- Frantic Pace -->
+				<replacementSkillId>87105</replacementSkillId> <!-- Rapid Frantic Pace: Sword Muse -->
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>87105</attackSkillId> <!-- Rapid Frantic Pace: Sword Muse -->
+				<attackerType>Creature</attackerType>
+				<minDamage>50</minDamage>
+				<chance>15</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>87107</skillId> <!-- Rapid Frantic Pace: Sword Muse -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87102" toLevel="2" name="Amadeus - C">
+		<!-- P. Def. +300. M. Def. +150. Received P. Skill Critical Damage -2000 -->
+		<icon>icon.s_amadeus_party</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>600</effectPoint>
+		<affectRange>700</affectRange>
+		<abnormalTime>8</abnormalTime>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87103" toLevel="1" name="Flamenco">
+		<!-- A colorful flower blooms on the battlefield. For 20 min., you get:. Max HP +1000. P. Atk. +1000. P. Def. +1000. M. Def. +500. Received P. Skill Critical Rate -5%. Speed +15. <Use effect>. For 8 sec., you and your allies get:. P. Atk. +300. M. Atk. 20 min.0. Received P. Skill Critical Rate 20 min.1. <Skill upgrade>. Ultimate Defense → Ultimate Defense: Bard. Frantic Pace → Rapid Frantic Pace. When attacking with Rapid Frantic Pace:. With a 30% chance, makes an <font color="FFBB00">additional attack</font>. <font color="FFBB00">Additional attack</font>: Deals P. damage with 7286 power. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. -->
+		<icon>icon.s_flamenco_self</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
+		<hitTime>2000</hitTime>
+		<effectPoint>1200</effectPoint>
+		<isMagic>1</isMagic>
+		<itemConsumeCount>50</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>76</magicLevel>
+		<mpConsume>375</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>87104</skillId> <!-- Flamenco - C -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<!-- Ultimate Defense -->
+			<!-- Ultimate Defense: Bard -->
+			<!-- <effect name="ReplaceSkillBySkill">
+				<existingSkillId>110</existingSkillId> 
+				<replacementSkillId>87150</replacementSkillId> 
+			</effect> -->
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>45402</existingSkillId> <!-- Frantic Pace -->
+				<replacementSkillId>87106</replacementSkillId> <!-- Rapid Frantic Pace: Dancer -->
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>87106</attackSkillId> <!-- Rapid Frantic Pace: Dancer -->
+				<attackerType>Creature</attackerType>
+				<minDamage>50</minDamage>
+				<chance>15</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>87108</skillId> <!-- Rapid Frantic Pace: Dancer -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87104" toLevel="2" name="Flamenco - C">
+		<!-- P. Atk. +300. M. Atk. +300. Received P. Skill Critical Rate -20% -->
+		<icon>icon.s_flamenco_party</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>600</effectPoint>
+		<affectRange>700</affectRange>
+		<abnormalTime>8</abnormalTime>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87105" toLevel="10" name="Rapid Frantic Pace: Sword Muse">
+		<!-- Attacks the enemy with 7834 power. The skill's power +20% if the target is inflicted with Hold. Deals damage to the target hit with an <font color="FFBB00">additional attack</font> triggered with a 35% chance. Applies Sword Muse's Stigma. <PvP effect>. If the target is affected by Sword Muse's Stigma:. - Spectral Dancer applies Dancer's Stigma -->
+		<icon>icon.s_rextemp_sodmz</icon>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-450</value>
+			<value level="2">-460</value>
+			<value level="3">-470</value>
+			<value level="4">-480</value>
+			<value level="5">-490</value>
+			<value level="6">-500</value>
+			<value level="7">-510</value>
+			<value level="8">-520</value>
+			<value level="9">-530</value>
+			<value level="10">-540</value>
+		</effectPoint>
+		<magicLevel>
+			<value level="1">82</value>
+			<value level="2">84</value>
+			<value level="3">86</value>
+			<value level="4">88</value>
+			<value level="5">90</value>
+			<value level="6">91</value>
+			<value level="7">92</value>
+			<value level="8">93</value>
+			<value level="9">94</value>
+			<value level="10">95</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">64</value>
+			<value level="2">66</value>
+			<value level="3">67</value>
+			<value level="4">69</value>
+			<value level="5">70</value>
+			<value level="6">72</value>
+			<value level="7">74</value>
+			<value level="8">76</value>
+			<value level="9">78</value>
+			<value level="10">80</value>
+		</mpConsume>
+		<hitTime>1500</hitTime>
+		<effectRange>400</effectRange>
+		<reuseDelay>1000</reuseDelay>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">6267</value>
+					<value level="2">6347</value>
+					<value level="3">6425</value>
+					<value level="4">6505</value>
+					<value level="5">6583</value>
+					<value level="6">6801</value>
+					<value level="7">6984</value>
+					<value level="8">7193</value>
+					<value level="9">7408</value>
+					<value level="10">7630</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+				<abnormalType>ROOT_PHYSICALLY;ROOT_MAGICALLY</abnormalType>
+				<powerModifier>1.5</powerModifier>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87106" toLevel="10" name="Rapid Frantic Pace: Dancer">
+		<!-- Attacks the enemy with 8174 power. The skill's power +20% if the target is inflicted with Hold. Deals damage to the target hit with an <font color="FFBB00">additional attack</font> triggered with a 30% chance. Applies Dancer's Stigma. <PvP effect>. If the target is affected by Dancer's Stigma:. - Sword Muse applies Sword Muse's Stigma -->
+		<icon>icon.s_rextemp_sptdan</icon>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-450</value>
+			<value level="2">-460</value>
+			<value level="3">-470</value>
+			<value level="4">-480</value>
+			<value level="5">-490</value>
+			<value level="6">-500</value>
+			<value level="7">-510</value>
+			<value level="8">-520</value>
+			<value level="9">-530</value>
+			<value level="10">-540</value>
+		</effectPoint>
+		<magicLevel>
+			<value level="1">82</value>
+			<value level="2">84</value>
+			<value level="3">86</value>
+			<value level="4">88</value>
+			<value level="5">90</value>
+			<value level="6">91</value>
+			<value level="7">92</value>
+			<value level="8">93</value>
+			<value level="9">94</value>
+			<value level="10">95</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">64</value>
+			<value level="2">66</value>
+			<value level="3">67</value>
+			<value level="4">69</value>
+			<value level="5">70</value>
+			<value level="6">72</value>
+			<value level="7">74</value>
+			<value level="8">76</value>
+			<value level="9">78</value>
+			<value level="10">80</value>
+		</mpConsume>
+		<hitTime>1500</hitTime>
+		<effectRange>400</effectRange>
+		<reuseDelay>1000</reuseDelay>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">6539</value>
+					<value level="2">6622</value>
+					<value level="3">6703</value>
+					<value level="4">6787</value>
+					<value level="5">6869</value>
+					<value level="6">7099</value>
+					<value level="7">7286</value>
+					<value level="8">7504</value>
+					<value level="9">7729</value>
+					<value level="10">7960</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+				<abnormalType>ROOT_PHYSICALLY;ROOT_MAGICALLY</abnormalType>
+				<powerModifier>1.5</powerModifier>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87107" toLevel="1" name="Rapid Frantic Pace: Sword Muse">
+		<!-- Sword Muse's Stigma is applied -->
+		<icon>icon.s_rextemp_sodmz</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<effectPoint>-225</effectPoint>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<pAtkMod>0.5</pAtkMod>
+			</effect>
+		</effects>
+		<pvpEffects>
+			<effect name="CallSkill">
+				<skillId>87109</skillId> <!-- Sword Muse's Stigma -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>87111</skillId> <!-- Stigma Explosion -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</pvpEffects>
+	</skill>
+	<skill id="87108" toLevel="1" name="Rapid Frantic Pace: Dancer">
+		<!-- Dancer's Stigma is applied -->
+		<icon>icon.s_rextemp_sptdan</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<effectPoint>-225</effectPoint>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<pAtkMod>0.5</pAtkMod>
+			</effect>
+		</effects>
+		<pvpEffects>
+			<effect name="CallSkill">
+				<skillId>87110</skillId> <!-- Dancer's Stigma -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>87111</skillId> <!-- Stigma Explosion -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</pvpEffects>
+	</skill>
+	<skill id="87109" toLevel="1" name="Sword Muse's Stigma">
+		<!-- A stigma that was applied by Sword Muse. P. Atk. -100 -->
+		<icon>icon.s_stigma_of_sodmz</icon>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<abnormalType>SM_STIGMA</abnormalType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<effectPoint>-250</effectPoint>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87110" toLevel="1" name="Dancer's Stigma">
+		<!-- A stigma that was applied by Dancer. P. Atk. -100 -->
+		<icon>icon.s_stigma_of_sptdan</icon>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<abnormalType>SD_STIGMA</abnormalType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<effectPoint>-250</effectPoint>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87111" toLevel="1" name="Stigma Explosion">
+		<icon>Icon.skill1050</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>SM_STIGMA</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>SD_STIGMA</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Hp">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87112" toLevel="1" name="Petrification Removal">
+		<icon>icon.skill1540</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87113" toLevel="2" name="Song of Hunter">
+		<!-- Elven hunters' song. P. Critical Rate +100 -->
+		<icon>icon.song_of_hunter_02</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<mpConsume>50</mpConsume>
+	</skill>
+	<skill id="87114" toLevel="2" name="Song of Wind">
+		<!-- Elven wind-praising song. Speed +20 -->
+		<icon>icon.song_of_wind_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87115" toLevel="2" name="Song of Earth">
+		<!-- Elven earth-praising song. P. Def. +200. M. Def. +250 -->
+		<icon>icon.song_of_earth_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects><effect name="PhysicalDefence">
+				<amount>0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87116" toLevel="2" name="Dance of Fury">
+		<!-- Dark Elven fury-praising dance. Atk. Spd. +100 -->
+		<icon>icon.dance_of_fury_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87117" toLevel="2" name="Dance of Fire">
+		<!-- Dark Elven fire-praising dance. P. Critical Damage +40% -->
+		<icon>icon.dance_of_fire_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87118" toLevel="2" name="Dance of Warrior">
+		<!-- Dark Elven battle dance. P. Atk. +200 -->
+		<icon>icon.dance_of_warrior_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87119" toLevel="1" name="Music Mastery">
+		<!-- Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Song of Hunter. - Song of Earth. - Song of Wind. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Song of Hunter. - Song of Earth. - Song of Wind. <STR 95+>. P. Atk. +400. Hold/ Silence/ Paralysis Atk. Rate +5%. The number of targets affected by the following skills: +10. - Song of Hunter. - Song of Earth. - Song of Wind -->
+		<icon>icon.s_sodmz_mastery</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87120" toLevel="1" name="Music Mastery">
+		<!-- Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Song of Hunter. - Song of Earth. - Song of Wind. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Song of Hunter. - Song of Earth. - Song of Wind. <STR 95+>. Hold/ Silence/ Paralysis Atk. Rate +5%. P. Atk. +400. The number of targets affected by the following skills: +10. - Song of Hunter. - Song of Earth. - Song of Wind -->
+		<icon>icon.s_sodmz_mastery</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87121" toLevel="1" name="Music Mastery Lv. 1">
+		<!-- Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Song of Hunter. - Song of Earth. - Song of Wind -->
+		<icon>icon.s_sodmz_mastery</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87122" toLevel="1" name="Music Mastery Lv. 2">
+		<!-- Grants additional effects according to STR. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Song of Hunter. - Song of Earth. - Song of Wind -->
+		<icon>icon.s_sodmz_mastery</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87123" toLevel="1" name="Music Mastery Lv. 3">
+		<!-- Gives additional effects according to STR. <STR 95+>. P. Atk. +400. Hold/ Silence/ Paralysis Atk. Rate +5%. The number of targets affected the following skills +10. - Song of Hunter. - Song of Earth. - Song of Wind -->
+		<icon>icon.s_sodmz_mastery</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87124" toLevel="1" name="Dance Mastery">
+		<!-- P. Atk. +5%. Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Dance of Fury. - Dance of Fire. - Dance of Warrior. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Dance of Fury. - Dance of Fire. - Dance of Warrior. <STR 95+>. P. Atk. +400. Hold/ Imprisonment/ Sleep Atk. Rate +5%. The number of targets affected by the following skills: +10. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
+		<icon>icon.s_sptdan_mastery</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87125" toLevel="1" name="Dance Mastery">
+		<!-- P. Atk. +5%. Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Dance of Fury. - Dance of Fire. - Dance of Warrior. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Dance of Fury. - Dance of Fire. - Dance of Warrior. <STR 95+>. P. Atk. +400. Hold/ Imprisonment/ Sleep Atk. Rate +5%. The number of targets affected by the following skills: +10. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
+		<icon>icon.s_sptdan_mastery</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87126" toLevel="1" name="Dance Mastery Lv. 1">
+		<!-- P. Atk. +5%. Grants additional effects according to STR. <STR 68-80>. The number of targets affected by the following skills: +2. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
+		<icon>icon.s_sptdan_mastery</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87127" toLevel="1" name="Dance Mastery Lv. 2">
+		<!-- P. Atk. +5%. Grants additional effects according to STR. <STR 81-94>. Hold Atk. Rate +5%. The number of targets affected by the following skills: +4. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
+		<icon>icon.s_sptdan_mastery</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87128" toLevel="1" name="Dance Mastery Lv. 3">
+		<!-- P. Atk. +5%. Grants additional effects according to STR. <STR 95+>. P. Atk. +400. Hold/ Imprisonment/ Sleep Atk. Rate +5%. The number of targets affected by the following skills: +10. - Dance of Fury. - Dance of Fire. - Dance of Warrior -->
+		<icon>icon.s_sptdan_mastery</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87129" toLevel="1" name="Eliminate Obstruction - Activation">
+		<icon>icon.skill0305</icon>
+		<operateType>A1</operateType>
+		<mpConsume>50</mpConsume>
+	</skill>
+	<skill id="87130" toLevel="12" name="Bard's Weapon Mastery">
+		<!-- <Basic effect>. P. Atk. +10%. Silence/ Imprisonment Atk. Rate +7%. <When using a sword or a blunt weapon>. P. Atk. +325. <When using dual swords>. P. Atk. +335 -->
+		<icon>icon.s_bard_weapon_mastery</icon>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">65</value>
+			<value level="5">70</value>
+			<value level="6">76</value>
+			<value level="7">80</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
+			<value level="10">86</value>
+			<value level="11">88</value>
+			<value level="12">90</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<SHOCK>15</SHOCK>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">325</value>
+					<value level="2">425</value>
+					<value level="3">600</value>
+					<value level="4">625</value>
+					<value level="5">650</value>
+					<value level="6">800</value>
+					<value level="7">825</value>
+					<value level="8">845</value>
+					<value level="9">860</value>
+					<value level="10">870</value>
+					<value level="11">875</value>
+					<value level="12">880</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">335</value>
+					<value level="2">410</value>
+					<value level="3">560</value>
+					<value level="4">585</value>
+					<value level="5">610</value>
+					<value level="6">735</value>
+					<value level="7">760</value>
+					<value level="8">780</value>
+					<value level="9">795</value>
+					<value level="10">805</value>
+					<value level="11">810</value>
+					<value level="12">815</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87131" toLevel="12" name="Bard's Armor Mastery">
+		<!-- <Heavy armor effect>. P. Def. +275. M. Def. +140. Received P. Critical Damage -25%. M. Damage Resistance +5%. Bow Resistance +40%. <Power Stance>. With a certain chance, increases P. Atk./ Atk. Spd. when hit. (Trigger cooldown: 10 sec.) -->
+		<icon>icon.s_bard_armour_mastery</icon>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">65</value>
+			<value level="5">70</value>
+			<value level="6">76</value>
+			<value level="7">80</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
+			<value level="10">86</value>
+			<value level="11">88</value>
+			<value level="12">90</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">230</value>
+					<value level="3">250</value>
+					<value level="4">265</value>
+					<value level="5">285</value>
+					<value level="6">300</value>
+					<value level="7">310</value>
+					<value level="8">320</value>
+					<value level="9">320</value>
+					<value level="10">330</value>
+					<value level="11">335</value>
+					<value level="12">340</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">130</value>
+					<value level="2">155</value>
+					<value level="3">165</value>
+					<value level="4">180</value>
+					<value level="5">190</value>
+					<value level="6">200</value>
+					<value level="7">210</value>
+					<value level="8">220</value>
+					<value level="9">225</value>
+					<value level="10">230</value>
+					<value level="11">235</value>
+					<value level="12">240</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">-25</value>
+					<value fromLevel="2" toLevel="12">-35</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+					<value level="12">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>40</BOW>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>50</minDamage>
+				<skillId>53007</skillId> <!-- Power Stance -->
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>4</skillLevelScaleTo>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87132" toLevel="14" name="Bard's Recovery Mastery">
+		<!-- HP Recovery Rate +3. MP Recovery Rate +3.25. MP Recovery Rate +10% -->
+		<icon>icon.s_bard_recovery_mastery</icon>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">43</value>
+			<value level="3">47</value>
+			<value level="4">53</value>
+			<value level="5">57</value>
+			<value level="6">63</value>
+			<value level="7">67</value>
+			<value level="8">73</value>
+			<value level="9">78</value>
+			<value level="10">81</value>
+			<value level="11">83</value>
+			<value level="12">85</value>
+			<value level="13">87</value>
+			<value level="14">89</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5.5</value>
+					<value level="4">6.5</value>
+					<value level="5">8</value>
+					<value level="6">9.25</value>
+					<value level="7">10.5</value>
+					<value level="8">11.75</value>
+					<value level="9">12.5</value>
+					<value level="10">13</value>
+					<value level="11">13.5</value>
+					<value level="12">14</value>
+					<value level="13">14.5</value>
+					<value level="14">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">3.25</value>
+					<value level="2">3.5</value>
+					<value level="3">4</value>
+					<value level="4">4.5</value>
+					<value level="5">4.5</value>
+					<value level="6">4.7</value>
+					<value level="7">5.1</value>
+					<value level="8">5.15</value>
+					<value level="9">5.2</value>
+					<value level="10">5.25</value>
+					<value level="11">5.3</value>
+					<value level="12">5.35</value>
+					<value level="13">5.4</value>
+					<value level="14">5.45</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87133" toLevel="8" name="Additional Strain">
+		<!-- For 8 sec., the target gets. P. Skill Cooldown +3 sec. M. Skill Cooldown +3 sec. -->
+		<icon>icon.s_walkout</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<abnormalType>REUSE_DELAY_UP</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-840</value>
+			<value level="3">-850</value>
+			<value level="4">-860</value>
+			<value level="5">-870</value>
+			<value level="6">-880</value>
+			<value level="7">-890</value>
+			<value level="8">-900</value>
+		</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1500</hitTime>
+		<hitCancelTime>0.5</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">60</value>
+			<value level="3">76</value>
+			<value level="4">80</value>
+			<value level="5">83</value>
+			<value level="6">87</value>
+			<value level="7">90</value>
+			<value level="8">92</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">10</value>
+			<value level="2">25</value>
+			<value level="3">45</value>
+			<value level="4">70</value>
+			<value level="5">100</value>
+			<value level="6">135</value>
+			<value level="7">175</value>
+			<value level="8">220</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>40000</reuseDelay>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Reuse">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87134" toLevel="8" name="Break">
+		<!-- For 8 sec., decreases the target's P. Atk. and P. Def. <PvP effect>. P. Atk. -740. P. Def. -740. <PvE effect>. P. Atk. -300. P. Def. -23% -->
+		<icon>icon.s_break</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">1</value>
+			<value level="3">1</value>
+			<value level="4">2</value>
+			<value level="5">2</value>
+			<value level="6">2</value>
+			<value level="7">3</value>
+			<value level="8">3</value>
+		</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<abnormalType>PA_PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-840</value>
+			<value level="3">-850</value>
+			<value level="4">-860</value>
+			<value level="5">-870</value>
+			<value level="6">-880</value>
+			<value level="7">-890</value>
+			<value level="8">-900</value>
+		</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1200</hitTime>
+		<hitCancelTime>0.5</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">60</value>
+			<value level="3">76</value>
+			<value level="4">80</value>
+			<value level="5">83</value>
+			<value level="6">87</value>
+			<value level="7">90</value>
+			<value level="8">92</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">10</value>
+			<value level="2">25</value>
+			<value level="3">45</value>
+			<value level="4">70</value>
+			<value level="5">100</value>
+			<value level="6">135</value>
+			<value level="7">175</value>
+			<value level="8">220</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>40000</reuseDelay>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<pvpEffects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-740</value>
+					<value level="2">-800</value>
+					<value level="3">-860</value>
+					<value level="4">-940</value>
+					<value level="5">-1000</value>
+					<value level="6">-1060</value>
+					<value level="7">-1140</value>
+					<value level="8">-1200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-740</value>
+					<value level="2">-800</value>
+					<value level="3">-860</value>
+					<value level="4">-940</value>
+					<value level="5">-1000</value>
+					<value level="6">-1060</value>
+					<value level="7">-1140</value>
+					<value level="8">-1200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">-100</value>
+					<value level="2">-140</value>
+					<value level="3">-170</value>
+					<value level="4">-200</value>
+					<value level="5">-240</value>
+					<value level="6">-270</value>
+					<value level="7">-300</value>
+					<value level="8">-340</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-300</value>
+					<value level="2">-340</value>
+					<value level="3">-370</value>
+					<value level="4">-400</value>
+					<value level="5">-440</value>
+					<value level="6">-470</value>
+					<value level="7">-500</value>
+					<value level="8">-540</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</pveEffects>
+	</skill>
+	<skill id="87135" toLevel="2" name="Song of Hunter">
+		<!-- Elven hunters' song. P. Critical Rate +100 -->
+		<icon>icon.song_of_hunter_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="87136" toLevel="2" name="Song of Hunter">
+		<!-- Elven hunters' song. P. Critical Rate +100 -->
+		<icon>icon.song_of_hunter_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="87137" toLevel="2" name="Song of Wind">
+		<!-- Elven wind-praising song. Speed +20 -->
+		<icon>icon.song_of_wind_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87138" toLevel="2" name="Song of Wind">
+		<!-- Elven wind-praising song. Speed +20 -->
+		<icon>icon.song_of_wind_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87139" toLevel="2" name="Song of Earth">
+		<!-- Elven earth-praising song. P. Def. +200. M. Def. +250 -->
+		<icon>icon.song_of_earth_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87140" toLevel="2" name="Song of Earth">
+		<!-- Elven earth-praising song. P. Def. +200. M. Def. +250 -->
+		<icon>icon.song_of_earth_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87141" toLevel="2" name="Dance of Fury">
+		<!-- Dark Elven fury-praising dance. Atk. Spd. +100 -->
+		<icon>icon.dance_of_fury_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87142" toLevel="2" name="Dance of Fury">
+		<!-- Dark Elven fury-praising dance. Atk. Spd. +100 -->
+		<icon>icon.dance_of_fury_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87143" toLevel="2" name="Dance of Fire">
+		<!-- Dark Elven fire-praising dance. P. Critical Damage +40% -->
+		<icon>icon.dance_of_fire_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87144" toLevel="2" name="Dance of Fire">
+		<!-- Dark Elven fire-praising dance. P. Critical Damage +40% -->
+		<icon>icon.dance_of_fire_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87145" toLevel="2" name="Dance of Warrior">
+		<!-- Dark Elven battle dance. P. Atk. +200 -->
+		<icon>icon.dance_of_warrior_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87146" toLevel="2" name="Dance of Warrior">
+		<!-- Dark Elven battle dance. P. Atk. +200 -->
+		<icon>icon.dance_of_warrior_02</icon>
+		<operateType>A2</operateType>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">0</value>
+			<value level="2">200</value>
+		</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">50</value>
+		</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">200</value>
+					<value level="2">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87148" toLevel="1" name="Amadeus">
+		<!-- A beautiful melody flows from a string instrument and covers all the battlefield. Max HP +1000. P. Atk. +1000. P. Def. +1000. M. Def. +500. Received P. Skill Critical Damage -500. Speed +15. <Skill upgrade>. Ultimate Defense → Ultimate Defense: Bard. Frantic Pace → Rapid Frantic Pace. When attacking with Rapid Frantic Pace:. With a 35% chance, makes an <font color="FFBB00">additional attack</font>. <font color="FFBB00">Additional attack</font>: Deals P. damage with 7053 power. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. -->
+		<icon>icon.s_amadeus_self</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>900</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87149" toLevel="1" name="Flamenco">
+		<!-- A colorful flower blooms on the battlefield. Max HP +1000. P. Atk. +1000. P. Def. +1000. M. Def. +500. Received P. Skill Critical Rate -5%. Speed +15. <Skill upgrade>. Ultimate Defense → Ultimate Defense: Bard. Frantic Pace → Rapid Frantic Pace. When attacking with Rapid Frantic Pace:. With a 30% chance, makes an <font color="FFBB00">additional attack</font>. <font color="FFBB00">Additional attack</font>: Deals P. damage with 7286 power. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. -->
+		<icon>icon.s_flamenco_self</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>900</effectPoint>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87150" toLevel="1" name="Ultimate Defense: Bard">
+		<!-- P. Def. +1800. M. Def. +1620. Buff Cancel Resistance +80% -->
+		<icon>icon.s_ultimate_defence_bard</icon>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>900000</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<mpConsume>10</mpConsume>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>1620</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1620</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87151" toLevel="1" name="Stigma Explosion">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="87152" toLevel="13" name="Dark Panther Help">
+		<icon>icon.skill0283</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="87153" toLevel="1" name="Purple State">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="87154" toLevel="3" name="Ultimate Defense">
+		<!-- P. Def. +1800. M. Def. +1620. Buff Cancel Resistance +80%. The target is unable to move. -->
+		<icon>
+			<value level="1">icon.skill0110</value>
+			<value level="2">icon.skill0110</value>
+			<value level="3">icon.s_ultimate_defence3_eva</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">10</value>
+			<value level="2">21</value>
+			<value level="3">33</value>
+		</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>
+			<value level="1">900000</value>
+			<value level="2">900000</value>
+			<value level="3">300000</value>
+		</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">30</value>
+			<value level="2">30</value>
+			<value level="3">15</value>
+		</abnormalTime>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1800</value>
+					<value level="2">3600</value>
+					<value level="3">4500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">1620</value>
+					<value level="2">3240</value>
+					<value level="3">4500</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="3">6000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+		<!--<effects> TODO: NEED TO IMPLEMENT-->
+		<!--	<effect name="Ignore Defense Resistance">45%</effect>-->
+		<!--	<effect name="Buff Cancel Resistance">-->
+		<!--		<value level="1">+80%</value>-->
+		<!--		<value level="2">+80%</value>-->
+		<!--		<value level="3">+90%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Defense Ignore Removal">45%</effect>-->
+		<!--	<effect name="When used, recovers HP.">6000</effect>-->
+		<!--	<effect name="All received Critical Rate">-5%</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="87155" toLevel="1" name="Shadow Blast">
+		<!-- Summoned <font color="FFBB00">shadow</font> explodes dealing damage in the nearby area. <font color="FF8000">Note!</font>. Cannot be triggered if there are no summoned <font color="FFBB00">shadows</font>. If there are no enemies nearby, the <font color="FFBB00">shadow</font> will not explode. -->
+		<icon>icon.s_assassin_shadow_explosion</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>-500</effectPoint>
+		<targetType>SUMMON</targetType>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="OpHaveSummonedNpc">
+				<npcId>15995</npcId> <!-- Shadow -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>87453</skillId> <!-- Shadow Blast Effect -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Unsummon" />
+		</effects>
+	</skill>
+	<skill id="87156" toLevel="2" name="Eva's Help">
+		<icon>icon.assist_of_eva</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="87157" toLevel="1" name="Master of Aggression">
+		<!-- <Skill upgrade>. Aggression → Defensive Aggression. <Upgrade effect>. The Aggression power is increased. When using Defensive Aggression, deals self-damage for 3 sec. Activates Power of Aggression. <When triggered: Power of Aggression>. Received P. Skill Critical Rate -5%. P. Def. +400. M. Def. +400. Speed +10 -->
+		<icon>icon.s_master_of_hate</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="87158" toLevel="1" name="Power of Aggression">
+		<!-- Received P. Skill Critical Rate -5%. P. Def. +400. M. Def. +400. Speed +10 -->
+		<icon>icon.s_force_hate_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<abnormalTime>3</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87159" toLevel="57" name="Defensive Aggression">
+		<!-- <Skill with fixed cooldown>. Provokes the enemy making them change their target and attack you. Power 7180. Activates <Power of Aggression> for 3 sec. Received P. Skill Critical Rate -5%. P. Def. +400. M. Def. +400. Speed +10 -->
+		<icon>icon.s_resister_hate</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>
+			<value level="1">400</value>
+			<value level="2">400</value>
+			<value level="3">400</value>
+			<value level="4">400</value>
+			<value level="5">400</value>
+			<value level="6">400</value>
+			<value level="7">400</value>
+			<value level="8">400</value>
+			<value level="9">400</value>
+			<value level="10">400</value>
+			<value level="11">400</value>
+			<value level="12">400</value>
+			<value level="13">600</value>
+			<value level="14">600</value>
+			<value level="15">600</value>
+			<value level="16">600</value>
+			<value level="17">600</value>
+			<value level="18">600</value>
+			<value level="19">600</value>
+			<value level="20">600</value>
+			<value level="21">600</value>
+			<value level="22">600</value>
+			<value level="23">600</value>
+			<value level="24">600</value>
+			<value level="25">600</value>
+			<value level="26">600</value>
+			<value level="27">600</value>
+			<value level="28">600</value>
+			<value level="29">600</value>
+			<value level="30">600</value>
+			<value level="31">600</value>
+			<value level="32">600</value>
+			<value level="33">600</value>
+			<value level="34">700</value>
+			<value level="35">700</value>
+			<value level="36">700</value>
+			<value level="37">700</value>
+			<value level="38">700</value>
+			<value level="39">700</value>
+			<value level="40">700</value>
+			<value level="41">700</value>
+			<value level="42">700</value>
+			<value level="43">700</value>
+			<value level="44">700</value>
+			<value level="45">700</value>
+			<value level="46">700</value>
+			<value level="47">700</value>
+			<value level="48">700</value>
+			<value level="49">700</value>
+			<value level="50">700</value>
+			<value level="51">700</value>
+			<value level="52">700</value>
+			<value level="53">700</value>
+			<value level="54">700</value>
+			<value level="55">700</value>
+			<value level="56">700</value>
+			<value level="57">700</value>
+		</castRange>
+		<hitTime>700</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>6000</reuseDelay>
+		<effectPoint>
+			<value level="1">-7180</value>
+			<value level="2">-7440</value>
+			<value level="3">-7700</value>
+			<value level="4">-8250</value>
+			<value level="5">-8530</value>
+			<value level="6">-8810</value>
+			<value level="7">-9380</value>
+			<value level="8">-9680</value>
+			<value level="9">-9980</value>
+			<value level="10">-10590</value>
+			<value level="11">-10900</value>
+			<value level="12">-11210</value>
+			<value level="13">-11840</value>
+			<value level="14">-12160</value>
+			<value level="15">-12470</value>
+			<value level="16">-12800</value>
+			<value level="17">-13120</value>
+			<value level="18">-13440</value>
+			<value level="19">-13770</value>
+			<value level="20">-14090</value>
+			<value level="21">-14410</value>
+			<value level="22">-14740</value>
+			<value level="23">-15060</value>
+			<value level="24">-15380</value>
+			<value level="25">-15690</value>
+			<value level="26">-16010</value>
+			<value level="27">-16310</value>
+			<value level="28">-16620</value>
+			<value level="29">-16930</value>
+			<value level="30">-17230</value>
+			<value level="31">-17520</value>
+			<value level="32">-17810</value>
+			<value level="33">-18100</value>
+			<value level="34">-18370</value>
+			<value level="35">-18650</value>
+			<value level="36">-18910</value>
+			<value level="37">-19170</value>
+			<value level="38">-19430</value>
+			<value level="39">-19670</value>
+			<value level="40">-19900</value>
+			<value level="41">-20120</value>
+			<value level="42">-20340</value>
+			<value level="43">-20550</value>
+			<value level="44">-20750</value>
+			<value level="45">-20930</value>
+			<value level="46">-21110</value>
+			<value level="47">-21270</value>
+			<value level="48">-21430</value>
+			<value level="49">-21570</value>
+			<value level="50">-21710</value>
+			<value level="51">-21860</value>
+			<value level="52">-22000</value>
+			<value level="53">-22290</value>
+			<value level="54">-22430</value>
+			<value level="55">-22570</value>
+			<value level="56">-22720</value>
+			<value level="57">-22860</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+		<effects>
+			<effect name="TriggerSkillBySkill">
+				<castSkillId>87159</castSkillId>
+				<skillId>87158</skillId> <!-- Power of Aggression -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="87160" toLevel="1" name="Master of Aggression">
+		<!-- <Skill upgrade>. Aggression → Overwhelming Aggression. <Upgrade effect>. The Aggression power is increased. When using Overrwhelming Aggression, deals self-damage for 3 sec. Enables Power of Aggression. <When triggered: Power of Aggression>. Received P. Skill Critical Damage -8%. Debuff/ Anomaly Resistance +2%. Speed +6 -->
+		<icon>icon.s_master_of_hate</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>3</abnormalTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>-8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>-30</ANOMALY>
+			</effect>
+			<effect name="Speed">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

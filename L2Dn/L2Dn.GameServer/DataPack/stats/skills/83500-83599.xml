@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="83500" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83501" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83502" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83503" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83504" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83505" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83506" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83507" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83508" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83509" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83510" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83511" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83512" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83513" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83514" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83515" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83516" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83517" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83518" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83519" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83520" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83521" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83522" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83523" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83524" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83525" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83526" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83527" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83528" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83529" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83530" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83531" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83532" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83533" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83534" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83535" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83536" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83537" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83538" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83539" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83540" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83541" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83542" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83543" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83544" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83545" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83546" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83547" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83548" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83549" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83550" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83551" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83552" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83553" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83554" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83555" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83556" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83557" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83558" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83559" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83560" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83561" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83562" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83563" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83564" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83565" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83566" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83567" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83568" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83569" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83570" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83571" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83572" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83573" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83574" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83575" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83576" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83577" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83578" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83579" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83580" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83581" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83582" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83583" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83584" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83585" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83586" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83587" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83588" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83589" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83590" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83591" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83592" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83593" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83594" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83595" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83596" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83597" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83598" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83599" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

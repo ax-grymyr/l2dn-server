@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33900" name="Circlet of Hero">
+		<passive_skill id="50389" level="1" /> <!-- Circlet of Hero -->
+	</option>
+	<option id="33901" name="Circlet of Hero">
+		<passive_skill id="50389" level="2" /> <!-- +1 Circlet of Hero -->
+	</option>
+	<option id="33902" name="Circlet of Hero">
+		<passive_skill id="50389" level="3" /> <!-- +2 Circlet of Hero -->
+	</option>
+	<option id="33903" name="Circlet of Hero">
+		<passive_skill id="50389" level="4" /> <!-- +3 Circlet of Hero -->
+	</option>
+	<option id="33904" name="Circlet of Hero">
+		<passive_skill id="50389" level="5" /> <!-- +4 Circlet of Hero -->
+	</option>
+	<option id="33905" name="Circlet of Hero">
+		<passive_skill id="50389" level="6" /> <!-- +5 Circlet of Hero -->
+	</option>
+	<option id="33906" name="Circlet of Hero">
+		<passive_skill id="50389" level="7" /> <!-- +6 Circlet of Hero -->
+	</option>
+	<option id="33907" name="Circlet of Hero">
+		<passive_skill id="50389" level="8" /> <!-- +7 Circlet of Hero -->
+	</option>
+	<option id="33908" name="Circlet of Hero">
+		<passive_skill id="50389" level="9" /> <!-- +8 Circlet of Hero -->
+	</option>
+	<option id="33909" name="Circlet of Hero">
+		<passive_skill id="50389" level="10" /> <!-- +9 Circlet of Hero -->
+	</option>
+	<option id="33910" name="Circlet of Hero">
+		<passive_skill id="50389" level="11" /> <!-- +10 Circlet of Hero -->
+	</option>
+	<option id="33911" name="option_id_33911">
+	</option>
+	<option id="33912" name="option_id_33912">
+	</option>
+	<option id="33913" name="option_id_33913">
+	</option>
+	<option id="33914" name="option_id_33914">
+	</option>
+	<option id="33915" name="option_id_33915">
+	</option>
+	<option id="33916" name="option_id_33916">
+	</option>
+	<option id="33917" name="option_id_33917">
+	</option>
+	<option id="33918" name="Blessed Circlet of Hero">
+		<!-- Max HP +100\nMax MP +100\nMax CP +100\nP. Def. +1%\nM. Def. +1%\nReceived damage -1% -->
+		<passive_skill id="50390" level="1" /> <!-- Blessed Circlet of Hero -->
+	</option>
+	<option id="33919" name="Blessed Circlet of Hero">
+		<!-- Max HP +200\nMax MP +200\nMax CP +200\nP. Def. +2%\nM. Def. +2%\nReceived damage -2% -->
+		<passive_skill id="50390" level="2" /> <!-- +1 Blessed Circlet of Hero -->
+	</option>
+	<option id="33920" name="Blessed Circlet of Hero">
+		<!-- Max HP +300\nMax MP +300\nMax CP +300\nP. Def. +3%\nM. Def. +3%\nReceived damage -3% -->
+		<passive_skill id="50390" level="3" /> <!-- +2 Blessed Circlet of Hero -->
+	</option>
+	<option id="33921" name="Blessed Circlet of Hero">
+		<!-- Max HP +400\nMax MP +400\nMax CP +400\nP. Def. +4%\nM. Def. +4%\nReceived damage -4% -->
+		<passive_skill id="50390" level="4" /> <!-- +3 Blessed Circlet of Hero -->
+	</option>
+	<option id="33922" name="Blessed Circlet of Hero">
+		<!-- Max HP +500\nMax MP +500\nMax CP +500\nP. Def. +5%\nM. Def. +5%\nReceived damage -5%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +5% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 5%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="5" /> <!-- Blessed Circlet of Hero +4 -->
+	</option>
+	<option id="33923" name="Blessed Circlet of Hero">
+		<!-- Max HP +600\nMax MP +600\nMax CP +600\nP. Def. +6%\nM. Def. +6%\nReceived damage -6%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +15% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 10%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="6" /> <!-- Blessed Circlet of Hero +5 -->
+	</option>
+	<option id="33924" name="Blessed Circlet of Hero">
+		<!-- Max HP +700\nMax MP +700\nMax CP +700\nP. Def. +7%\nM. Def. +7%\nReceived damage -7%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +25% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 10%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="7" /> <!-- Blessed Circlet of Hero +6 -->
+	</option>
+	<option id="33925" name="Blessed Circlet of Hero">
+		<!-- Max HP +800\nMax MP +800\nMax CP +800\nP. Def. +8%\nM. Def. +8%\nReceived damage -8%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +40% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 10%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="8" /> <!-- Blessed Circlet of Hero +7 -->
+	</option>
+	<option id="33926" name="Blessed Circlet of Hero">
+		<!-- Max HP +1000\nMax MP +1000\nMax CP +1000\nP. Def. +10%\nM. Def. +10%\nReceived damage -10%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +60% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 15%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="9" /> <!-- Blessed Circlet of Hero +8 -->
+	</option>
+	<option id="33927" name="Blessed Circlet of Hero">
+		<!-- Max HP +2000\nMax MP +2000\nMax CP +2000\nP. Def. +12%\nM. Def. +12%\nReceived damage -12%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +80% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 15%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="10" /> <!-- Blessed Circlet of Hero +9 -->
+	</option>
+	<option id="33928" name="Blessed Circlet of Hero">
+		<!-- Max HP +3000\nMax MP +3000\nMax CP +3000\nP. Def. +15%\nM. Def. +15%\nReceived damage -15%\n\n<Fatal Critical Strike>\nP./ M. Skill Critical Damage +100% on basic attacks and attack skills for 8 sec.\n(Trigger rate: 15%, trigger cooldown: 8 sec.) -->
+		<passive_skill id="50390" level="11" /> <!-- +10 Blessed Circlet of Hero -->
+	</option>
+	<option id="33929" name="atk_speed">
+		<!-- Atk. Spd. +5 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33930" name="atk_speed">
+		<!-- Atk. Spd. +8 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33931" name="atk_speed">
+		<!-- Atk. Spd. +12 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33932" name="atk_speed">
+		<!-- Atk. Spd. +15 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33933" name="atk_speed">
+		<!-- Atk. Spd. +18 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33934" name="atk_speed">
+		<!-- Atk. Spd. +21 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33935" name="atk_speed">
+		<!-- Atk. Spd. +24 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33936" name="atk_speed">
+		<!-- Atk. Spd. +27 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33937" name="atk_speed">
+		<!-- Atk. Spd. +30 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33938" name="atk_speed">
+		<!-- Atk. Spd. +33 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33939" name="atk_speed">
+		<!-- Atk. Spd. +36 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33940" name="atk_speed">
+		<!-- Atk. Spd. +39 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33941" name="atk_speed">
+		<!-- Atk. Spd. +42 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33942" name="atk_speed">
+		<!-- Atk. Spd. +45 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33943" name="atk_speed">
+		<!-- Atk. Spd. +50 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33944" name="atk_speed">
+		<!-- Atk. Spd. +55 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33945" name="atk_speed">
+		<!-- Atk. Spd. +60 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33946" name="atk_speed">
+		<!-- Atk. Spd. +65 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33947" name="atk_speed">
+		<!-- Atk. Spd. +70 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33948" name="atk_speed">
+		<!-- Atk. Spd. +100 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33949" name="atk_speed">
+		<!-- Atk. Spd. +10 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33950" name="atk_speed">
+		<!-- Atk. Spd. +15 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33951" name="atk_speed">
+		<!-- Atk. Spd. +20 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33952" name="atk_speed">
+		<!-- Atk. Spd. +25 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33953" name="atk_speed">
+		<!-- Atk. Spd. +30 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33954" name="atk_speed">
+		<!-- Atk. Spd. +35 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33955" name="atk_speed">
+		<!-- Atk. Spd. +40 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33956" name="atk_speed">
+		<!-- Atk. Spd. +45 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33957" name="atk_speed">
+		<!-- Atk. Spd. +50 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33958" name="atk_speed">
+		<!-- Atk. Spd. +55 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33959" name="atk_speed">
+		<!-- Atk. Spd. +60 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33960" name="atk_speed">
+		<!-- Atk. Spd. +65 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33961" name="atk_speed">
+		<!-- Atk. Spd. +70 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33962" name="atk_speed">
+		<!-- Atk. Spd. +75 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33963" name="atk_speed">
+		<!-- Atk. Spd. +80 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33964" name="atk_speed">
+		<!-- Atk. Spd. +90 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33965" name="atk_speed">
+		<!-- Atk. Spd. +100 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33966" name="atk_speed">
+		<!-- Atk. Spd. +110 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33967" name="atk_speed">
+		<!-- Atk. Spd. +120 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33968" name="atk_speed">
+		<!-- Atk. Spd. +150 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33969" name="casting_speed">
+		<!-- Casting Spd. +5 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33970" name="casting_speed">
+		<!-- Casting Spd. +8 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33971" name="casting_speed">
+		<!-- Casting Spd. +12 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33972" name="casting_speed">
+		<!-- Casting Spd. +15 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33973" name="casting_speed">
+		<!-- Casting Spd. +18 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33974" name="casting_speed">
+		<!-- Casting Spd. +21 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33975" name="casting_speed">
+		<!-- Casting Spd. +24 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33976" name="casting_speed">
+		<!-- Casting Spd. +27 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33977" name="casting_speed">
+		<!-- Casting Spd. +30 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33978" name="casting_speed">
+		<!-- Casting Spd. +33 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33979" name="casting_speed">
+		<!-- Casting Spd. +36 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33980" name="casting_speed">
+		<!-- Casting Spd. +39 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33981" name="casting_speed">
+		<!-- Casting Spd. +42 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33982" name="casting_speed">
+		<!-- Casting Spd. +45 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33983" name="casting_speed">
+		<!-- Casting Spd. +50 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33984" name="casting_speed">
+		<!-- Casting Spd. +55 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33985" name="casting_speed">
+		<!-- Casting Spd. +60 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33986" name="casting_speed">
+		<!-- Casting Spd. +65 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33987" name="casting_speed">
+		<!-- Casting Spd. +70 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33988" name="casting_speed">
+		<!-- Casting Spd. +100 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33989" name="casting_speed">
+		<!-- Casting Spd. +10 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33990" name="casting_speed">
+		<!-- Casting Spd. +15 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33991" name="casting_speed">
+		<!-- Casting Spd. +20 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33992" name="casting_speed">
+		<!-- Casting Spd. +25 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33993" name="casting_speed">
+		<!-- Casting Spd. +30 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33994" name="casting_speed">
+		<!-- Casting Spd. +35 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33995" name="casting_speed">
+		<!-- Casting Spd. +40 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33996" name="casting_speed">
+		<!-- Casting Spd. +45 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33997" name="casting_speed">
+		<!-- Casting Spd. +50 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33998" name="casting_speed">
+		<!-- Casting Spd. +55 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33999" name="casting_speed">
+		<!-- Casting Spd. +60 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

@@ -1,0 +1,5768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/NewQuestData.xsd">
+	<quest id="10001" type="1" name="Sedrick's Best Pupil" endNpcId="30008">
+		<locations>
+			<param name="startLocationId">485</param>
+			<param name="endLocationId">485</param>
+		</locations>
+		<conditions>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Grand Master Roien</param>
+		</goals>
+	</quest>
+	<quest id="10002" type="1" name="Fighting Skill" startNpcId="30008" endNpcId="30008">
+		<locations>
+			<param name="endLocationId">485</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10001</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10003" type="1" name="Strength of Spirit" startNpcId="30008" endNpcId="30008">
+		<locations>
+			<param name="endLocationId">485</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10002</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10004" type="1" name="Learning to Auto-hunt" startNpcId="30008">
+		<locations>
+			<param name="startLocationId">56</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10003</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10005" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">56</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10004</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Talking Island (east)</param>
+		</goals>
+	</quest>
+	<quest id="10006" type="1" name="Useful Preparations" endNpcId="30002">
+		<locations>
+			<param name="startLocationId">56</param>
+			<param name="endLocationId">487</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10005</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Talking Island (east)</param>
+		</goals>
+	</quest>
+	<quest id="10007" type="1" name="Time to Think About Weapons" startNpcId="30002">
+		<locations>
+			<param name="startLocationId">55</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10006</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10008" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">55</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10007</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10009" type="1" name="Developing Your Abilities" endNpcId="30008">
+		<locations>
+			<param name="startLocationId">55</param>
+			<param name="endLocationId">485</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10008</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10010" type="1" name="Time to Change Class" startNpcId="30008" endNpcId="30008">
+		<locations>
+			<param name="endLocationId">485</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10009</param>
+			<param name="classIds">0;1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Roien (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10011" type="1" name="Going Out" startNpcId="30008" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10010</param>
+			<param name="classIds">1;4;7;2;3;5;6;8;9</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10012" type="1" name="Outstanding Mage's First Steps" endNpcId="30017">
+		<locations>
+			<param name="startLocationId">486</param>
+			<param name="endLocationId">486</param>
+		</locations>
+		<conditions>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Grand Magister Gallint</param>
+		</goals>
+	</quest>
+	<quest id="10013" type="1" name="Fighting Skill" startNpcId="30017" endNpcId="30017">
+		<locations>
+			<param name="endLocationId">486</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10012</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10014" type="1" name="Strength of Spirit" startNpcId="30017" endNpcId="30017">
+		<locations>
+			<param name="endLocationId">486</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10013</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10015" type="1" name="Learning to Auto-hunt" startNpcId="30017">
+		<locations>
+			<param name="startLocationId">56</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10014</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10016" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">56</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10015</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Talking Island (east)</param>
+		</goals>
+	</quest>
+	<quest id="10017" type="1" name="Useful Preparations" endNpcId="30002">
+		<locations>
+			<param name="startLocationId">56</param>
+			<param name="endLocationId">487</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10016</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Talking Island (east)</param>
+		</goals>
+	</quest>
+	<quest id="10018" type="1" name="Time to Think About Weapons" startNpcId="30002">
+		<locations>
+			<param name="startLocationId">55</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10017</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10019" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">55</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10018</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10020" type="1" name="Developing Your Abilities" endNpcId="30017">
+		<locations>
+			<param name="startLocationId">55</param>
+			<param name="endLocationId">486</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10019</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Talking Island (west)</param>
+		</goals>
+	</quest>
+	<quest id="10021" type="1" name="Time to Change Class" startNpcId="30017" endNpcId="30017">
+		<locations>
+			<param name="endLocationId">486</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10020</param>
+			<param name="classIds">10;11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gallint (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10022" type="1" name="Going Out" startNpcId="30017" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10021</param>
+			<param name="classIds">11;15;12;13;14;16;17</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10023" type="1" name="Under the Mother Tree" endNpcId="30370">
+		<locations>
+			<param name="startLocationId">488</param>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Water Guardian Nerupa</param>
+		</goals>
+	</quest>
+	<quest id="10024" type="1" name="New Life's Lessons" startNpcId="30370" endNpcId="30370">
+		<locations>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10023</param>
+			<param name="classIds">18;19;22;20;21;23;24</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10025" type="1" name="New Life's Lessons" startNpcId="30370" endNpcId="30370">
+		<locations>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10023</param>
+			<param name="classIds">25;26;29;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10026" type="1" name="Strength of Spirit" startNpcId="30370" endNpcId="30370">
+		<locations>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10024</param>
+			<param name="classIds">18;19;22;20;21;23;24</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10027" type="1" name="Strength of Spirit" startNpcId="30370" endNpcId="30370">
+		<locations>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10025</param>
+			<param name="classIds">25;26;29;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10028" type="1" name="Learning to Auto-hunt" startNpcId="30370">
+		<locations>
+			<param name="startLocationId">69</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10026;10027</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+			<param name="oneOfPreQuests">true</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10029" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">69</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10028</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Shadow of the Mother Tree</param>
+		</goals>
+	</quest>
+	<quest id="10030" type="1" name="Useful Preparations" endNpcId="30150">
+		<locations>
+			<param name="startLocationId">69</param>
+			<param name="endLocationId">489</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10029</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Shadow of the Mother Tree</param>
+		</goals>
+	</quest>
+	<quest id="10031" type="1" name="Time to Think About Weapons" startNpcId="30150">
+		<locations>
+			<param name="startLocationId">68</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10030</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Elven Forest</param>
+		</goals>
+	</quest>
+	<quest id="10032" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">68</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10031</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Elven Forest</param>
+		</goals>
+	</quest>
+	<quest id="10033" type="1" name="Developing Your Abilities" endNpcId="30370">
+		<locations>
+			<param name="startLocationId">68</param>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10032</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Elven Forest</param>
+		</goals>
+	</quest>
+	<quest id="10034" type="1" name="Time to Change Class" startNpcId="30370" endNpcId="30370">
+		<locations>
+			<param name="endLocationId">488</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10033</param>
+			<param name="classIds">18;19;22;25;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Nerupa (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10035" type="1" name="Wanderer's Path" startNpcId="30370" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10034</param>
+			<param name="classIds">19;22;26;29;20;21;23;24;27;28;30</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10036" type="1" name="From the Depth of Abyss" endNpcId="30129">
+		<locations>
+			<param name="startLocationId">490</param>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Dark Elf Chief Mitraell</param>
+		</goals>
+	</quest>
+	<quest id="10037" type="1" name="New Life's Lessons" startNpcId="30129" endNpcId="30129">
+		<locations>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10036</param>
+			<param name="classIds">31;32;35;33;34;36;37</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10038" type="1" name="New Life's Lessons" startNpcId="30129" endNpcId="30129">
+		<locations>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10036</param>
+			<param name="classIds">38;39;42;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10039" type="1" name="Strength of Spirit" startNpcId="30129" endNpcId="30129">
+		<locations>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10037</param>
+			<param name="classIds">31;32;35;33;34;36;37</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10040" type="1" name="Strength of Spirit" startNpcId="30129" endNpcId="30129">
+		<locations>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10038</param>
+			<param name="classIds">38;39;42;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91930" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10041" type="1" name="Learning to Auto-hunt" startNpcId="30129">
+		<locations>
+			<param name="startLocationId">517</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10039;10040</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+			<param name="oneOfPreQuests">true</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10042" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">517</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10041</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in Shillien's Garden</param>
+		</goals>
+	</quest>
+	<quest id="10043" type="1" name="Useful Preparations" endNpcId="30137">
+		<locations>
+			<param name="startLocationId">517</param>
+			<param name="endLocationId">491</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10042</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in Shillien's Garden</param>
+		</goals>
+	</quest>
+	<quest id="10044" type="1" name="Time to Think About Weapons" startNpcId="30137">
+		<locations>
+			<param name="startLocationId">77</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10043</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Swampland</param>
+		</goals>
+	</quest>
+	<quest id="10045" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">77</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10044</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Swampland</param>
+		</goals>
+	</quest>
+	<quest id="10046" type="1" name="Developing Your Abilities" endNpcId="30129">
+		<locations>
+			<param name="startLocationId">77</param>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10045</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Swampland</param>
+		</goals>
+	</quest>
+	<quest id="10047" type="1" name="Time to Change Class" startNpcId="30129" endNpcId="30129">
+		<locations>
+			<param name="endLocationId">490</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10046</param>
+			<param name="classIds">31;32;35;38;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Mitraell (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10048" type="1" name="Blessing of Abyss" startNpcId="30129" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10047</param>
+			<param name="classIds">32;35;39;42;33;34;36;37;40;41;43</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10049" type="1" name="Fiercest Flame" endNpcId="30573">
+		<locations>
+			<param name="startLocationId">495</param>
+			<param name="endLocationId">495</param>
+		</locations>
+		<conditions>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Flame Guardian Vulkus</param>
+		</goals>
+	</quest>
+	<quest id="10050" type="1" name="New Life's Lessons" startNpcId="30573" endNpcId="30573">
+		<locations>
+			<param name="endLocationId">495</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10049</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10051" type="1" name="Strength of Spirit" startNpcId="30573" endNpcId="30573">
+		<locations>
+			<param name="endLocationId">495</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10050</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10052" type="1" name="Learning to Auto-hunt" startNpcId="30573">
+		<locations>
+			<param name="startLocationId">135</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10051</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10053" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">135</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10052</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Valley of Heroes</param>
+		</goals>
+	</quest>
+	<quest id="10054" type="1" name="Useful Preparations" endNpcId="30602">
+		<locations>
+			<param name="startLocationId">135</param>
+			<param name="endLocationId">497</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10053</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Valley of Heroes</param>
+		</goals>
+	</quest>
+	<quest id="10055" type="1" name="Time to Think About Weapons" startNpcId="30602">
+		<locations>
+			<param name="startLocationId">136</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10054</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10056" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">136</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10055</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10057" type="1" name="Developing Your Abilities" endNpcId="30587">
+		<locations>
+			<param name="startLocationId">136</param>
+			<param name="endLocationId">498</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10056</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10058" type="1" name="Time to Change Class" startNpcId="30587" endNpcId="30587">
+		<locations>
+			<param name="endLocationId">498</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10057</param>
+			<param name="classIds">44;45;47;49;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gantaki Zu Urutu (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10059" type="1" name="Among the bravest of Orcs" startNpcId="30587" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10058</param>
+			<param name="classIds">45;47;50;46;48;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10060" type="1" name="New Flame of Orcs" endNpcId="34335">
+		<locations>
+			<param name="startLocationId">496</param>
+			<param name="endLocationId">496</param>
+		</locations>
+		<conditions>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Sabitus</param>
+		</goals>
+	</quest>
+	<quest id="10061" type="1" name="New Life's Lessons" startNpcId="34335" endNpcId="34335">
+		<locations>
+			<param name="endLocationId">496</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10060</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10062" type="1" name="Strength of Spirit" startNpcId="34335" endNpcId="34335">
+		<locations>
+			<param name="endLocationId">496</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10061</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10063" type="1" name="Learning to Auto-hunt" startNpcId="34335">
+		<locations>
+			<param name="startLocationId">135</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10062</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10064" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">135</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10063</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Valley of Heroes</param>
+		</goals>
+	</quest>
+	<quest id="10065" type="1" name="Useful Preparations" endNpcId="30602">
+		<locations>
+			<param name="startLocationId">135</param>
+			<param name="endLocationId">497</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10064</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Valley of Heroes</param>
+		</goals>
+	</quest>
+	<quest id="10066" type="1" name="Time to Think About Weapons" startNpcId="30602">
+		<locations>
+			<param name="startLocationId">136</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10065</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10067" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">136</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10066</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10068" type="1" name="Developing Your Abilities" endNpcId="30587">
+		<locations>
+			<param name="startLocationId">136</param>
+			<param name="endLocationId">498</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10067</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters on the Immortal Plateau (north)</param>
+		</goals>
+	</quest>
+	<quest id="10069" type="1" name="Time to Change Class" startNpcId="30587" endNpcId="30587">
+		<locations>
+			<param name="endLocationId">498</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10068</param>
+			<param name="classIds">217;218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gantaki Zu Urutu (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10070" type="1" name="Among the bravest of Orcs" startNpcId="30587" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10069</param>
+			<param name="classIds">218;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10071" type="1" name="Ore from the Strip Mine" endNpcId="30528">
+		<locations>
+			<param name="startLocationId">492</param>
+			<param name="endLocationId">492</param>
+		</locations>
+		<conditions>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Foreman Laferon</param>
+		</goals>
+	</quest>
+	<quest id="10072" type="1" name="New Life's Lessons" startNpcId="30528" endNpcId="30528">
+		<locations>
+			<param name="endLocationId">492</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10071</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10073" type="1" name="Strength of Spirit" startNpcId="30528" endNpcId="30528">
+		<locations>
+			<param name="endLocationId">492</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10072</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10074" type="1" name="Learning to Auto-hunt" startNpcId="30528">
+		<locations>
+			<param name="startLocationId">144</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10073</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10075" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">144</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10074</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Frozen Valley</param>
+		</goals>
+	</quest>
+	<quest id="10076" type="1" name="Useful Preparations" endNpcId="30519">
+		<locations>
+			<param name="startLocationId">144</param>
+			<param name="endLocationId">493</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10075</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Frozen Valley</param>
+		</goals>
+	</quest>
+	<quest id="10077" type="1" name="Time to Think About Weapons" startNpcId="30519">
+		<locations>
+			<param name="startLocationId">145</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10076</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Western Mining Zone</param>
+		</goals>
+	</quest>
+	<quest id="10078" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">145</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10077</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Western Mining Zone</param>
+		</goals>
+	</quest>
+	<quest id="10079" type="1" name="Developing Your Abilities" endNpcId="30650">
+		<locations>
+			<param name="startLocationId">145</param>
+			<param name="endLocationId">494</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10078</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Western Mining Zone</param>
+		</goals>
+	</quest>
+	<quest id="10080" type="1" name="Time to Change Class" startNpcId="30650" endNpcId="30650">
+		<locations>
+			<param name="endLocationId">494</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10079</param>
+			<param name="classIds">53;54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gerald (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10081" type="1" name="Best Miner" startNpcId="30650" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10080</param>
+			<param name="classIds">54;56;55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10082" type="1" name="Efficient Training" endNpcId="34109">
+		<locations>
+			<param name="startLocationId">499</param>
+			<param name="endLocationId">499</param>
+		</locations>
+		<conditions>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Elder Ragnir</param>
+		</goals>
+	</quest>
+	<quest id="10083" type="1" name="New Life's Lessons" startNpcId="34109" endNpcId="34109">
+		<locations>
+			<param name="endLocationId">499</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10082</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10084" type="1" name="Strength of Spirit" startNpcId="34109" endNpcId="34109">
+		<locations>
+			<param name="endLocationId">499</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10083</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Gremlins</param>
+		</goals>
+	</quest>
+	<quest id="10085" type="1" name="Learning to Auto-hunt" startNpcId="34109">
+		<locations>
+			<param name="startLocationId">417</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10084</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10086" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">417</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10085</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Hill of Hope</param>
+		</goals>
+	</quest>
+	<quest id="10087" type="1" name="Useful Preparations" endNpcId="34111">
+		<locations>
+			<param name="startLocationId">417</param>
+			<param name="endLocationId">501</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10086</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Hill of Hope</param>
+		</goals>
+	</quest>
+	<quest id="10088" type="1" name="Time to Think About Weapons" startNpcId="34111">
+		<locations>
+			<param name="startLocationId">418</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10087</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Golden Hills</param>
+		</goals>
+	</quest>
+	<quest id="10089" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">418</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10088</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Golden Hills</param>
+		</goals>
+	</quest>
+	<quest id="10090" type="1" name="Developing Your Abilities" endNpcId="34110">
+		<locations>
+			<param name="startLocationId">418</param>
+			<param name="endLocationId">500</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10089</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Golden Hills</param>
+		</goals>
+	</quest>
+	<quest id="10091" type="1" name="Time to Change Class" startNpcId="34110" endNpcId="34110">
+		<locations>
+			<param name="endLocationId">500</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10090</param>
+			<param name="classIds">192;125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Krenir (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10092" type="1" name="New Horizons" startNpcId="34110" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10091</param>
+			<param name="classIds">125;126;193;127;130;194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10093" type="1" name="The Life of a Death Knight" endNpcId="34138">
+		<locations>
+			<param name="startLocationId">502</param>
+			<param name="endLocationId">502</param>
+		</locations>
+		<conditions>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Head Trainer Kilremange</param>
+		</goals>
+	</quest>
+	<quest id="10094" type="1" name="New Life's Lessons" startNpcId="34138" endNpcId="34138">
+		<locations>
+			<param name="endLocationId">502</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10093</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10095" type="1" name="Strength of Spirit" startNpcId="34138" endNpcId="34138">
+		<locations>
+			<param name="endLocationId">502</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10094</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10096" type="1" name="Learning to Auto-hunt" startNpcId="34138">
+		<locations>
+			<param name="startLocationId">430</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10095</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots</param>
+		</goals>
+	</quest>
+	<quest id="10097" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">430</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10096</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the 1st Training Grounds</param>
+		</goals>
+	</quest>
+	<quest id="10098" type="1" name="Useful Preparations" endNpcId="34139">
+		<locations>
+			<param name="startLocationId">430</param>
+			<param name="endLocationId">503</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10097</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the 1st Training Grounds</param>
+		</goals>
+	</quest>
+	<quest id="10099" type="1" name="Time to Think About Weapons" startNpcId="34139">
+		<locations>
+			<param name="startLocationId">431</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10098</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the 2nd Training Grounds</param>
+		</goals>
+	</quest>
+	<quest id="10100" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">431</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10099</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the 2nd Training Grounds</param>
+		</goals>
+	</quest>
+	<quest id="10101" type="1" name="Developing Your Abilities" endNpcId="34138">
+		<locations>
+			<param name="startLocationId">431</param>
+			<param name="endLocationId">502</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10100</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the 2nd Training Grounds</param>
+		</goals>
+	</quest>
+	<quest id="10102" type="1" name="Time to Change Class" startNpcId="34138" endNpcId="34138">
+		<locations>
+			<param name="endLocationId">502</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10101</param>
+			<param name="classIds">196;197;200;201;204;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Kilremange (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10103" type="1" name="Challenging Your Destiny" startNpcId="34138" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10102</param>
+			<param name="classIds">197;201;205;198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10104" type="1" name="Sayha's Children" startNpcId="34209" endNpcId="34210">
+		<locations>
+			<param name="startLocationId">505</param>
+			<param name="endLocationId">505</param>
+		</locations>
+		<conditions>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Master Kerkir</param>
+		</goals>
+	</quest>
+	<quest id="10105" type="1" name="New Life's Lessons" startNpcId="34210" endNpcId="34210">
+		<locations>
+			<param name="endLocationId">505</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10104</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10106" type="1" name="Strength of Spirit" startNpcId="34210" endNpcId="34210">
+		<locations>
+			<param name="endLocationId">505</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10105</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10107" type="1" name="Learning to Auto-hunt" startNpcId="34210">
+		<locations>
+			<param name="startLocationId">457</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10106</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots on the Quiet Plain</param>
+		</goals>
+	</quest>
+	<quest id="10108" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">457</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10107</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Quiet Plain</param>
+		</goals>
+	</quest>
+	<quest id="10109" type="1" name="Useful Preparations" endNpcId="34211">
+		<locations>
+			<param name="startLocationId">457</param>
+			<param name="endLocationId">506</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10108</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters on the Quiet Plain</param>
+		</goals>
+	</quest>
+	<quest id="10110" type="1" name="Time to Think About Weapons" startNpcId="34211">
+		<locations>
+			<param name="startLocationId">458</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10109</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Whispering Woods</param>
+		</goals>
+	</quest>
+	<quest id="10111" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">458</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10110</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Whispering Woods</param>
+		</goals>
+	</quest>
+	<quest id="10112" type="1" name="Developing Your Abilities" endNpcId="34209">
+		<locations>
+			<param name="startLocationId">458</param>
+			<param name="endLocationId">504</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10111</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Whispering Woods</param>
+		</goals>
+	</quest>
+	<quest id="10113" type="1" name="Time to Change Class" startNpcId="34209" endNpcId="34209">
+		<locations>
+			<param name="endLocationId">504</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10112</param>
+			<param name="classIds">208;209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Andra (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10114" type="1" name="We Sylphs" startNpcId="34209" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10113</param>
+			<param name="classIds">209;210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10115" type="1" name="Only for Noda members" startNpcId="34384" endNpcId="34401">
+		<locations>
+			<param name="startLocationId">512</param>
+			<param name="endLocationId">512</param>
+		</locations>
+		<conditions>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Mentor Aijul</param>
+		</goals>
+	</quest>
+	<quest id="10116" type="1" name="New Life's Lessons" startNpcId="34401" endNpcId="34401">
+		<locations>
+			<param name="endLocationId">512</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10115</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10117" type="1" name="Strength of Spirit" startNpcId="34401" endNpcId="34401">
+		<locations>
+			<param name="endLocationId">512</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10116</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91927" count="500" />
+			</items>
+			<param name="rewardLevel">5</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Training Dummy</param>
+		</goals>
+	</quest>
+	<quest id="10118" type="1" name="Learning to Auto-hunt" startNpcId="34401">
+		<locations>
+			<param name="startLocationId">515</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10117</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98464</param>
+			<param name="goalCount">3</param>
+			<param name="goalString">Herb Roots in the Basic Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10119" type="1" name="Be Prepared">
+		<locations>
+			<param name="startLocationId">515</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10118</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="49674" count="3" />
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Basic Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10120" type="1" name="Useful Preparations" endNpcId="34402">
+		<locations>
+			<param name="startLocationId">515</param>
+			<param name="endLocationId">513</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10119</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98474" count="1" />
+				<item id="98475" count="1" />
+				<item id="98476" count="1" />
+				<item id="98477" count="1" />
+				<item id="98478" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">15</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">3</param>
+			<param name="goalString">Monsters in the Basic Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10121" type="1" name="Time to Think About Weapons" startNpcId="34402">
+		<locations>
+			<param name="startLocationId">516</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10120</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Combat Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10122" type="1" name="Watch Out">
+		<locations>
+			<param name="startLocationId">516</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10121</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Combat Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10123" type="1" name="Developing Your Abilities" endNpcId="34384">
+		<locations>
+			<param name="startLocationId">516</param>
+			<param name="endLocationId">511</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10122</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="50" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">20</param>
+			<param name="rewardSp">5000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">5</param>
+			<param name="goalString">Monsters in the Combat Training Zone</param>
+		</goals>
+	</quest>
+	<quest id="10124" type="1" name="Time to Change Class" startNpcId="34384" endNpcId="34384">
+		<locations>
+			<param name="endLocationId">511</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10123</param>
+			<param name="classIds">221;222;225;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">20000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Frost (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10125" type="1" name="Assassin's First Job" startNpcId="34384" endNpcId="30332">
+		<locations>
+			<param name="startLocationId">32</param>
+			<param name="endLocationId">507</param>
+		</locations>
+		<conditions>
+			<param name="preQuestId">10124</param>
+			<param name="classIds">222;226;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91934" count="1" />
+				<item id="91767" count="1" />
+				<item id="92020" count="1" />
+				<item id="93330" count="1" />
+				<item id="93685" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">25</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Ruins of Agony Purge</param>
+		</goals>
+	</quest>
+	<quest id="10301" type="1" name="More Experience" startNpcId="30332" endNpcId="30289">
+		<locations>
+			<param name="startLocationId">38</param>
+			<param name="endLocationId">508</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">25</param>
+			<param name="preQuestId">10011;10022;10035;10048;10059;10070;10081;10092;10103;10114;10125</param>
+			<param name="oneOfPreQuests">true</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91932" count="1" />
+				<item id="92046" count="1" />
+				<item id="92056" count="1" />
+				<item id="92066" count="1" />
+				<item id="92086" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">30</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">25</param>
+			<param name="goalString">Monsters in the Abandoned Camp</param>
+		</goals>
+	</quest>
+	<quest id="10302" type="1" name="Secret Garden" startNpcId="30289" endNpcId="30120">
+		<locations>
+			<param name="startLocationId">29</param>
+			<param name="endLocationId">509</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">30</param>
+			<param name="preQuestId">10301</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91933" count="1" />
+				<item id="93134" count="1" />
+				<item id="93136" count="1" />
+				<item id="93137" count="1" />
+				<item id="93138" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">35</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">30</param>
+			<param name="goalString">Monsters in the Gorgon Flower Garden</param>
+		</goals>
+	</quest>
+	<quest id="10303" type="1" name="Death Mysteries" startNpcId="30120" endNpcId="30120">
+		<locations>
+			<param name="startLocationId">21</param>
+			<param name="endLocationId">509</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">35</param>
+			<param name="preQuestId">10302</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="94168" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">40</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">35</param>
+			<param name="goalString">Monsters in the Death Pass</param>
+		</goals>
+	</quest>
+	<quest id="10304" type="1" name="A New Look" startNpcId="30120" endNpcId="30120">
+		<locations>
+			<param name="endLocationId">509</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">40</param>
+			<param name="preQuestId">10303</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardSp">1000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Maximilian (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="10305" type="1" name="Spore-infested place" startNpcId="30120" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">79</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">40</param>
+			<param name="preQuestId">10304</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91757" count="2" />
+				<item id="93274" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardLevel">45</param>
+			<param name="rewardSp">1060000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Sea of Spores</param>
+		</goals>
+	</quest>
+	<quest id="10306" type="1" name="Peace in the Cemetery - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10305</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="3031" count="100" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98466</param>
+			<param name="goalCount">40</param>
+			<param name="goalString">Stolen Burial Items x40</param>
+		</goals>
+	</quest>
+	<quest id="10307" type="1" name="Peace in the Cemetery - 2">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10306</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="15" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10308" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">5;6;20;21;33</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93422" count="1" />
+				<item id="95132" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10309" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">3;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93423" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10310" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">2;34</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93430" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10311" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">8;23;36;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98516" count="1" />
+				<item id="93427" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10312" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">9;24;37;130</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98516" count="1" />
+				<item id="93429" count="1" />
+				<item id="95493" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10313" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">12;13;14;16;17;27;28;30;40;41;43;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98517" count="1" />
+				<item id="98522" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10314" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">46</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93431" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10315" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">48</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98516" count="1" />
+				<item id="93428" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10316" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93424" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10317" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">127</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93434" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10318" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98516" count="1" />
+				<item id="93435" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10319" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98515" count="1" />
+				<item id="93422" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10320" type="1" name="Peace in the Cemetery - 3">
+		<locations>
+			<param name="startLocationId">104</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10307</param>
+			<param name="classIds">210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98516" count="1" />
+				<item id="95418" count="1" />
+				<item id="94894" count="1" />
+				<item id="93406" count="4" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10321" type="1" name="Peace in the Cemetery - 4" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">104</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">45</param>
+			<param name="preQuestId">10308;10309;10310;10311;10312;10313;10314;10315;10316;10317;10318;10319;10320</param>
+			<param name="oneOfPreQuests">true</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93296" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">40000000</param>
+			<param name="rewardSp">400000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Cemetery</param>
+		</goals>
+	</quest>
+	<quest id="10322" type="1" name="Pay Respects to Fallen Brethren - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">118</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">52</param>
+			<param name="preQuestId">10321</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="3031" count="100" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">100000000</param>
+			<param name="rewardSp">1000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Monsters in the Fields of Massacre</param>
+		</goals>
+	</quest>
+	<quest id="10323" type="1" name="Pay Respects to Fallen Brethren - 2">
+		<locations>
+			<param name="startLocationId">118</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">52</param>
+			<param name="preQuestId">10322</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="15" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">100000000</param>
+			<param name="rewardSp">1000000</param>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98467</param>
+			<param name="goalCount">50</param>
+			<param name="goalString">Old Poison in the Fields of Massacre</param>
+		</goals>
+	</quest>
+	<quest id="10324" type="1" name="Pay Respects to Fallen Brethren - 3">
+		<locations>
+			<param name="startLocationId">118</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">52</param>
+			<param name="preQuestId">10323</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="90907" count="15" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">100000000</param>
+			<param name="rewardSp">1000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Monsters in the Fields of Massacre</param>
+		</goals>
+	</quest>
+	<quest id="10325" type="1" name="Pay Respects to Fallen Brethren - 4" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">118</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">52</param>
+			<param name="preQuestId">10324</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93303" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">100000000</param>
+			<param name="rewardSp">1000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Monsters in the Fields of Massacre</param>
+		</goals>
+	</quest>
+	<quest id="10326" type="1" name="Memory of the Glorious Past - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10325</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10327" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">5;6;20;21;33</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92955" count="1" />
+				<item id="92276" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10328" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">3;219</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92960" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10329" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">2;34</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92966" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10330" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">8;23;36;223;227</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98507" count="1" />
+				<item id="98508" count="1" />
+				<item id="98509" count="1" />
+				<item id="98510" count="1" />
+				<item id="92959" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10331" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">9;24;37;130</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98507" count="1" />
+				<item id="98508" count="1" />
+				<item id="98509" count="1" />
+				<item id="98510" count="1" />
+				<item id="92961" count="1" />
+				<item id="95494" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10332" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">12;13;14;16;17;27;28;30;40;41;43;51;52</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98511" count="1" />
+				<item id="98512" count="1" />
+				<item id="98513" count="1" />
+				<item id="98514" count="1" />
+				<item id="98521" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10333" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">46</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92956" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10334" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">48</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98507" count="1" />
+				<item id="98508" count="1" />
+				<item id="98509" count="1" />
+				<item id="98510" count="1" />
+				<item id="92962" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10335" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">55;57</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92957" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10336" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">127</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92967" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10337" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">194</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98507" count="1" />
+				<item id="98508" count="1" />
+				<item id="98509" count="1" />
+				<item id="98510" count="1" />
+				<item id="92970" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10338" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">198;202;206</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98503" count="1" />
+				<item id="98504" count="1" />
+				<item id="98505" count="1" />
+				<item id="98506" count="1" />
+				<item id="92955" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10339" type="1" name="Memory of the Glorious Past - 2">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10326</param>
+			<param name="classIds">210</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98507" count="1" />
+				<item id="98508" count="1" />
+				<item id="98509" count="1" />
+				<item id="98510" count="1" />
+				<item id="95420" count="1" />
+				<item id="94895" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10340" type="1" name="Memory of the Glorious Past - 3">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10327;10328;10329;10330;10331;10332;10333;10334;10335;10336;10337;10338;10339</param>
+			<param name="oneOfPreQuests">true</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10341" type="1" name="Memory of the Glorious Past - 4" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">117</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="preQuestId">10340</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91864" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">80</param>
+			<param name="goalString">Monsters in the Plains of Glory</param>
+		</goals>
+	</quest>
+	<quest id="10342" type="1" name="Traces of Battle - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">119</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="preQuestId">10341;19902</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">400000000</param>
+			<param name="rewardSp">4000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters on the War-Torn Plains</param>
+		</goals>
+	</quest>
+	<quest id="10343" type="1" name="Traces of Battle - 2">
+		<locations>
+			<param name="startLocationId">119</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="preQuestId">10342</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">400000000</param>
+			<param name="rewardSp">4000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters on the War-Torn Plains</param>
+		</goals>
+	</quest>
+	<quest id="10344" type="1" name="Traces of Battle - 3">
+		<locations>
+			<param name="startLocationId">119</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="preQuestId">10343</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">400000000</param>
+			<param name="rewardSp">4000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters on the War-Torn Plains</param>
+		</goals>
+	</quest>
+	<quest id="10345" type="1" name="Traces of Battle - 4">
+		<locations>
+			<param name="startLocationId">119</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="preQuestId">10344</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">400000000</param>
+			<param name="rewardSp">4000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters on the War-Torn Plains</param>
+		</goals>
+	</quest>
+	<quest id="10346" type="1" name="Traces of Battle - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">119</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="preQuestId">10345</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">400000000</param>
+			<param name="rewardSp">4000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters on the War-Torn Plains</param>
+		</goals>
+	</quest>
+	<quest id="10347" type="1" name="Not So Silent Valley - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">115</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="preQuestId">10346;19903</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Monsters in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="10348" type="1" name="Not So Silent Valley - 2">
+		<locations>
+			<param name="startLocationId">115</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="preQuestId">10347</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98468</param>
+			<param name="goalCount">100</param>
+			<param name="goalString">Giant's Traces in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="10349" type="1" name="Not So Silent Valley - 3">
+		<locations>
+			<param name="startLocationId">115</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="preQuestId">10348</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalItemId">98469</param>
+			<param name="goalCount">50</param>
+			<param name="goalString">Cores of Creation in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="10350" type="1" name="Not So Silent Valley - 4">
+		<locations>
+			<param name="startLocationId">115</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="preQuestId">10349</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Monsters in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="10351" type="1" name="Not So Silent Valley - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">115</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="preQuestId">10350</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Monsters in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="10352" type="1" name="Stop the Lizardmen - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">84</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">19901</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91931" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Tanta Lizardmen</param>
+		</goals>
+	</quest>
+	<quest id="10353" type="1" name="Stop the Lizardmen - 2">
+		<locations>
+			<param name="startLocationId">84</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">10352</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Tanta Lizardman Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10354" type="1" name="Stop the Lizardmen - 3">
+		<locations>
+			<param name="startLocationId">84</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">10353</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Tanta Lizardman Berserkers</param>
+		</goals>
+	</quest>
+	<quest id="10355" type="1" name="Stop the Lizardmen - 4">
+		<locations>
+			<param name="startLocationId">84</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">10354</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Tanta Lizardman Archers</param>
+		</goals>
+	</quest>
+	<quest id="10356" type="1" name="Stop the Lizardmen - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">84</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">10355</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">150</param>
+			<param name="goalString">Tanta Lizardman Summoners</param>
+		</goals>
+	</quest>
+	<quest id="10357" type="1" name="Reconnaissance in the Western Dragon Valley - 1" startNpcId="30120">
+		<locations>
+			<param name="startLocationId">518</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10356</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Cave Servant area</param>
+		</goals>
+	</quest>
+	<quest id="10358" type="1" name="Reconnaissance in the Western Dragon Valley - 2">
+		<locations>
+			<param name="startLocationId">519</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10357</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Maluk Succubus area</param>
+		</goals>
+	</quest>
+	<quest id="10359" type="1" name="Reconnaissance in the Western Dragon Valley - 3">
+		<locations>
+			<param name="startLocationId">520</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10358</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Headless Knight area</param>
+		</goals>
+	</quest>
+	<quest id="10360" type="1" name="Reconnaissance in the Western Dragon Valley - 4">
+		<locations>
+			<param name="startLocationId">521</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10359</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Drake area</param>
+		</goals>
+	</quest>
+	<quest id="10361" type="1" name="Reconnaissance in the Western Dragon Valley - 5" endNpcId="30120">
+		<locations>
+			<param name="startLocationId">435</param>
+			<param name="endLocationId">509</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10360</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Dragon Valley (west)</param>
+		</goals>
+	</quest>
+	<quest id="10362" type="1" name="Exploring the Cruma Tower's 3rd Floor - 1">
+		<locations>
+			<param name="startLocationId">5</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10361</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 3rd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10363" type="1" name="Exploring the Cruma Tower's 3rd Floor - 2">
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10362</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 3rd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10364" type="1" name="Exploring the Cruma Tower's 3rd Floor - 3">
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10363</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 3rd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10365" type="1" name="Exploring the Cruma Tower's 3rd Floor - 4">
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10364</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Level Managers and Level Watchers</param>
+		</goals>
+	</quest>
+	<quest id="10366" type="1" name="Exploring the Cruma Tower's 3rd Floor - 5">
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="preQuestId">10365</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Level Managers and Level Watchers</param>
+		</goals>
+	</quest>
+	<quest id="10367" type="1" name="Thwarting Dragons' Plans - 1" startNpcId="30120">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10366</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Dragon Soldiers/ Dragon Lancers</param>
+		</goals>
+	</quest>
+	<quest id="10368" type="1" name="Thwarting Dragons' Plans - 2">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10367</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Dragon Minions/ Dragon Mages</param>
+		</goals>
+	</quest>
+	<quest id="10369" type="1" name="Thwarting Dragons' Plans - 3">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10368</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Dragon Berserkers/ Elite Dragon Mages</param>
+		</goals>
+	</quest>
+	<quest id="10370" type="1" name="Thwarting Dragons' Plans - 4">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10369</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Drake Minions/ Mutated Drakes</param>
+		</goals>
+	</quest>
+	<quest id="10371" type="1" name="Thwarting Dragons' Plans - 5">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10370</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Dragon Valley (east)</param>
+		</goals>
+	</quest>
+	<quest id="10372" type="1" name="Exploring the Cruma Tower's 2nd Floor - 1">
+		<locations>
+			<param name="startLocationId">5</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10371</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 2nd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10373" type="1" name="Exploring the Cruma Tower's 2nd Floor - 2">
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10372</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 2nd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10374" type="1" name="Exploring the Cruma Tower's 2nd Floor - 3">
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10373</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters on the 2nd floor of the Cruma Tower</param>
+		</goals>
+	</quest>
+	<quest id="10375" type="1" name="Exploring the Cruma Tower's 2nd Floor - 4">
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10374</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Level Managers and Level Watchers</param>
+		</goals>
+	</quest>
+	<quest id="10376" type="1" name="Exploring the Cruma Tower's 2nd Floor - 5">
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="preQuestId">10375</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Level Managers and Level Watchers</param>
+		</goals>
+	</quest>
+	<quest id="10377" type="1" name="Stop Sel Mahum's Troops - 1" startNpcId="30289">
+		<locations>
+			<param name="startLocationId">434</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="preQuestId">10376</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Sel Mahum Snipers</param>
+		</goals>
+	</quest>
+	<quest id="10378" type="1" name="Stop Sel Mahum's Troops - 2">
+		<locations>
+			<param name="startLocationId">434</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="preQuestId">10377</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Sel Mahum Raiders</param>
+		</goals>
+	</quest>
+	<quest id="10379" type="1" name="Stop Sel Mahum's Troops - 3">
+		<locations>
+			<param name="startLocationId">434</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="preQuestId">10378</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Sel Mahum Berserkers</param>
+		</goals>
+	</quest>
+	<quest id="10380" type="1" name="Stop Sel Mahum's Troops - 4">
+		<locations>
+			<param name="startLocationId">434</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="preQuestId">10379</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Sel Mahum Mages</param>
+		</goals>
+	</quest>
+	<quest id="10381" type="1" name="Stop Sel Mahum's Troops - 5" endNpcId="30289">
+		<locations>
+			<param name="startLocationId">434</param>
+			<param name="endLocationId">508</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="preQuestId">10380</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">1500000000</param>
+			<param name="rewardSp">15000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Sel Mahum Thieves</param>
+		</goals>
+	</quest>
+	<quest id="10382" type="1" name="Mutated Giants' Research - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">524</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10381</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="70" />
+				<item id="49674" count="3" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Giant Mercenaries</param>
+		</goals>
+	</quest>
+	<quest id="10383" type="1" name="Mutated Giants' Research - 2">
+		<locations>
+			<param name="startLocationId">524</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10382</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="140" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Mutated Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10384" type="1" name="Mutated Giants' Research - 3">
+		<locations>
+			<param name="startLocationId">524</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10383</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="210" />
+				<item id="49674" count="9" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Mutated Trackers</param>
+		</goals>
+	</quest>
+	<quest id="10385" type="1" name="Mutated Giants' Research - 4">
+		<locations>
+			<param name="startLocationId">524</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10384</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="280" />
+				<item id="49674" count="12" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Mutated Archers</param>
+		</goals>
+	</quest>
+	<quest id="10386" type="1" name="Mutated Giants' Research - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">524</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10385</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="350" />
+				<item id="49674" count="15" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters at the entrance to the Giant's Cave</param>
+		</goals>
+	</quest>
+	<quest id="10387" type="1" name="Protect Hot Springs Nepenthes - 1" startNpcId="34319">
+		<locations>
+			<param name="startLocationId">525</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10386</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="70" />
+				<item id="49674" count="3" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Tailed Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10388" type="1" name="Protect Hot Springs Nepenthes - 2">
+		<locations>
+			<param name="startLocationId">525</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10387</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="140" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Tailed Hunters</param>
+		</goals>
+	</quest>
+	<quest id="10389" type="1" name="Protect Hot Springs Nepenthes - 3">
+		<locations>
+			<param name="startLocationId">525</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10388</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="210" />
+				<item id="49674" count="9" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Tailed Berserkers</param>
+		</goals>
+	</quest>
+	<quest id="10390" type="1" name="Protect Hot Springs Nepenthes - 4">
+		<locations>
+			<param name="startLocationId">525</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10389</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="280" />
+				<item id="49674" count="12" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Tailed Wizards</param>
+		</goals>
+	</quest>
+	<quest id="10391" type="1" name="Protect Hot Springs Nepenthes - 5" endNpcId="34319">
+		<locations>
+			<param name="startLocationId">525</param>
+			<param name="endLocationId">527</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10390</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="350" />
+				<item id="49674" count="15" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Hot Springs</param>
+		</goals>
+	</quest>
+	<quest id="10392" type="1" name="Lowering Lizardmen's Ambitions - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">526</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10391</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="70" />
+				<item id="49674" count="3" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Melat Lizardmen</param>
+		</goals>
+	</quest>
+	<quest id="10393" type="1" name="Lowering Lizardmen's Ambitions - 2">
+		<locations>
+			<param name="startLocationId">526</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10392</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="140" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Melat Lizardman Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10394" type="1" name="Lowering Lizardmen's Ambitions - 3">
+		<locations>
+			<param name="startLocationId">526</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10393</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="210" />
+				<item id="49674" count="9" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Melat Lizardman Shamans</param>
+		</goals>
+	</quest>
+	<quest id="10395" type="1" name="Lowering Lizardmen's Ambitions - 4">
+		<locations>
+			<param name="startLocationId">526</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10394</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="280" />
+				<item id="49674" count="12" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Melat Lizardman Snipers</param>
+		</goals>
+	</quest>
+	<quest id="10396" type="1" name="Lowering Lizardmen's Ambitions - 5">
+		<locations>
+			<param name="startLocationId">526</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10395</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="350" />
+				<item id="49674" count="15" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Melat Lizardman Berserkers</param>
+		</goals>
+	</quest>
+	<quest id="10397" type="1" name="Hunt in the Forgotten Garden">
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10396</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="92400" count="1" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Garden of Eva</param>
+		</goals>
+	</quest>
+	<quest id="10398" type="1" name="Hunt in the Tower of Insolence">
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10397</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98034" count="1" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Tower of Insolence</param>
+		</goals>
+	</quest>
+	<quest id="10399" type="1" name="Pagan Temple and Kelbim's Fortress">
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10398</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="98199" count="1" />
+				<item id="98214" count="1" />
+			</items>
+			<param name="rewardExp">2000000000</param>
+			<param name="rewardSp">20000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Pagan Temple and Kelbim's Fortress</param>
+		</goals>
+	</quest>
+	<quest id="10400" type="1" name="Invitation to Hellbound">
+		<locations>
+			<param name="startLocationId">442</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="preQuestId">10399</param>
+		</conditions>
+		<rewards>
+			<param name="rewardExp">500000000</param>
+			<param name="rewardSp">5000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Magister, Master of Hellbound Portal</param>
+		</goals>
+	</quest>
+	<quest id="10401" type="1" name="Study of the Ivory Tower Crater" startNpcId="34392">
+		<locations>
+			<param name="startLocationId">484</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10400</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+				<item id="49674" count="1" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters at the Ivory Tower</param>
+		</goals>
+	</quest>
+	<quest id="10402" type="1" name="Exploring the Ancient Battleground" startNpcId="34390">
+		<locations>
+			<param name="startLocationId">483</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10401</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="200" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters on the Ancient Battleground</param>
+		</goals>
+	</quest>
+	<quest id="10403" type="1" name="Exploring the Enchanted Valley" startNpcId="34391">
+		<locations>
+			<param name="startLocationId">103</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10402</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="3" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Unicorns, Satyrs, Flines</param>
+		</goals>
+	</quest>
+	<quest id="10404" type="1" name="Exploring Anghel Waterfall" startNpcId="34389">
+		<locations>
+			<param name="startLocationId">106</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10403</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="400" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Harit Lizardmen, Harit Lizardman Warriors, Harit Lizardman Archers</param>
+		</goals>
+	</quest>
+	<quest id="10405" type="1" name="Exploring the Blazing Swamp" startNpcId="34393">
+		<locations>
+			<param name="startLocationId">99</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10404</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="500" />
+				<item id="49674" count="5" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">40</param>
+			<param name="goalString">Monsters in the Blazing Swamp</param>
+		</goals>
+	</quest>
+	<quest id="10406" type="1" name="Invaders of the Ivory Tower Crater" startNpcId="34392">
+		<locations>
+			<param name="startLocationId">484</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10405</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+				<item id="49674" count="3" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">10</param>
+			<param name="goalString">Reinforced Gargoyles</param>
+		</goals>
+	</quest>
+	<quest id="10407" type="1" name="Invaders of the Ancient Battleground" startNpcId="34390">
+		<locations>
+			<param name="startLocationId">483</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10406</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="200" />
+				<item id="49674" count="5" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">10</param>
+			<param name="goalString">Bloody Priests</param>
+		</goals>
+	</quest>
+	<quest id="10408" type="1" name="Invaders of the Enchanted Valley" startNpcId="34391">
+		<locations>
+			<param name="startLocationId">103</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10407</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="7" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">10</param>
+			<param name="goalString">Valley Treants</param>
+		</goals>
+	</quest>
+	<quest id="10409" type="1" name="Invaders of Anghel Waterfall" startNpcId="34389">
+		<locations>
+			<param name="startLocationId">106</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10408</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="400" />
+				<item id="49674" count="9" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">10</param>
+			<param name="goalString">Harit Lizardman Matriarchs</param>
+		</goals>
+	</quest>
+	<quest id="10410" type="1" name="Invaders of the Blazing Swamp" startNpcId="34393">
+		<locations>
+			<param name="startLocationId">99</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10409</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="500" />
+				<item id="49674" count="11" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">10</param>
+			<param name="goalString">Judges of Marsh</param>
+		</goals>
+	</quest>
+	<quest id="10411" type="1" name="Rumors about Gorde - 1" startNpcId="34321">
+		<locations>
+			<param name="startLocationId">529</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10410</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="100" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the west of Gorde Canyon</param>
+		</goals>
+	</quest>
+	<quest id="10412" type="1" name="Rumors about Gorde - 2">
+		<locations>
+			<param name="startLocationId">529</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10411</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="200" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the west of Gorde Canyon</param>
+		</goals>
+	</quest>
+	<quest id="10413" type="1" name="Rumors about Gorde - 3" endNpcId="34321">
+		<locations>
+			<param name="startLocationId">529</param>
+			<param name="endLocationId">528</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10412</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the west of Gorde Canyon</param>
+		</goals>
+	</quest>
+	<quest id="10414" type="1" name="Rumors about Gorde - 4" startNpcId="34321">
+		<locations>
+			<param name="startLocationId">530</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10413</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="400" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the east of Gorde Canyon</param>
+		</goals>
+	</quest>
+	<quest id="10415" type="1" name="Rumors about Gorde - 5">
+		<locations>
+			<param name="startLocationId">530</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="preQuestId">10414</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="500" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the east of Gorde Canyon</param>
+		</goals>
+	</quest>
+	<quest id="10416" type="1" name="Tayga, the Leader of Sel Mahum - 1" startNpcId="30289">
+		<locations>
+			<param name="startLocationId">531</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10415</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="120" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Tayga Knights</param>
+		</goals>
+	</quest>
+	<quest id="10417" type="1" name="Tayga, the Leader of Sel Mahum - 2">
+		<locations>
+			<param name="startLocationId">531</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10416</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="240" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Tayga Archers</param>
+		</goals>
+	</quest>
+	<quest id="10418" type="1" name="Tayga, the Leader of Sel Mahum - 3">
+		<locations>
+			<param name="startLocationId">531</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10417</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="360" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Tayga Astrologers</param>
+		</goals>
+	</quest>
+	<quest id="10419" type="1" name="Tayga, the Leader of Sel Mahum - 4">
+		<locations>
+			<param name="startLocationId">531</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10418</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="480" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Tayga Elite Knights</param>
+		</goals>
+	</quest>
+	<quest id="10420" type="1" name="Tayga, the Leader of Sel Mahum - 5" endNpcId="30289">
+		<locations>
+			<param name="startLocationId">531</param>
+			<param name="endLocationId">508</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10419</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="600" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Tayga Elite Knight Captains</param>
+		</goals>
+	</quest>
+	<quest id="10421" type="1" name="Secret Giant Surveillance - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">548</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10420</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="120" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Lesser Giant Soldiers and Lesser Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10422" type="1" name="Secret Giant Surveillance - 2">
+		<locations>
+			<param name="startLocationId">548</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10421</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="240" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Lesser Giant Archers and Lesser Archers</param>
+		</goals>
+	</quest>
+	<quest id="10423" type="1" name="Secret Giant Surveillance - 3">
+		<locations>
+			<param name="startLocationId">548</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10422</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="360" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Lesser Giant Wizards and Lesser Hunters</param>
+		</goals>
+	</quest>
+	<quest id="10424" type="1" name="Secret Giant Surveillance - 4">
+		<locations>
+			<param name="startLocationId">548</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10423</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="480" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Inner Watchmen</param>
+		</goals>
+	</quest>
+	<quest id="10425" type="1" name="Secret Giant Surveillance - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">548</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="preQuestId">10424</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="600" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Monsters in the Giant's Cave Center</param>
+		</goals>
+	</quest>
+	<quest id="10426" type="1" name="Evolution of the Giants - 1" startNpcId="30857">
+		<locations>
+			<param name="startLocationId">549</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10425</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="150" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Evolved Lesser Giant Mercenaries and\nBaron's Warriors</param>
+		</goals>
+	</quest>
+	<quest id="10427" type="1" name="Evolution of the Giants - 2">
+		<locations>
+			<param name="startLocationId">549</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10426</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Evolved Lesser Giant Commanders and\nBaron's Rangers</param>
+		</goals>
+	</quest>
+	<quest id="10428" type="1" name="Evolution of the Giants - 3">
+		<locations>
+			<param name="startLocationId">549</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10427</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="450" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Evolved Lesser Giant Shooters and\nBaron's Punchers</param>
+		</goals>
+	</quest>
+	<quest id="10429" type="1" name="Evolution of the Giants - 4">
+		<locations>
+			<param name="startLocationId">551</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10428</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="600" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Evolved Lesser Giant Lords and\nBaron's Overlords</param>
+		</goals>
+	</quest>
+	<quest id="10430" type="1" name="Evolution of the Giants - 5" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">549</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10429</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="750" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Inner Managers</param>
+		</goals>
+	</quest>
+	<quest id="10431" type="1" name="Windmill Hill Invaded by Fairies - 1" startNpcId="34436">
+		<locations>
+			<param name="startLocationId">547</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10430</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="150" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Fairy Rogues</param>
+		</goals>
+	</quest>
+	<quest id="10432" type="1" name="Windmill Hill Invaded by Fairies - 2">
+		<locations>
+			<param name="startLocationId">547</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10431</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Fairy Mystics</param>
+		</goals>
+	</quest>
+	<quest id="10433" type="1" name="Windmill Hill Invaded by Fairies - 3">
+		<locations>
+			<param name="startLocationId">547</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10432</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="450" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Fairy Archons titled Lycaria's Kin</param>
+		</goals>
+	</quest>
+	<quest id="10434" type="1" name="Windmill Hill Invaded by Fairies - 4">
+		<locations>
+			<param name="startLocationId">547</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10433</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="600" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Fairy Impalers and Fairy Shamans</param>
+		</goals>
+	</quest>
+	<quest id="10435" type="1" name="Windmill Hill Invaded by Fairies - 5" endNpcId="34436">
+		<locations>
+			<param name="startLocationId">547</param>
+			<param name="endLocationId">550</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10434</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="750" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Fairy-invaded Lands (south)</param>
+		</goals>
+	</quest>
+	<quest id="10436" type="1" name="Reconnaissance in the Fairy-invaded Lands - 1" startNpcId="34436">
+		<locations>
+			<param name="startLocationId">546</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10435</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="150" />
+				<item id="49674" count="2" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Elder Fairy Rogues</param>
+		</goals>
+	</quest>
+	<quest id="10437" type="1" name="Reconnaissance in the Fairy-invaded Lands - 2">
+		<locations>
+			<param name="startLocationId">546</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10436</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="300" />
+				<item id="49674" count="4" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Elder Fairy Mystics</param>
+		</goals>
+	</quest>
+	<quest id="10438" type="1" name="Reconnaissance in the Fairy-invaded Lands - 3">
+		<locations>
+			<param name="startLocationId">546</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10437</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="450" />
+				<item id="49674" count="6" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Elder Fairy Archons titled\nLyansus' Kin</param>
+		</goals>
+	</quest>
+	<quest id="10439" type="1" name="Reconnaissance in the Fairy-invaded Lands - 4">
+		<locations>
+			<param name="startLocationId">546</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10438</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="600" />
+				<item id="49674" count="8" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">20</param>
+			<param name="goalString">Elder Fairy Impalers and\nElder Fairy Shamans</param>
+		</goals>
+	</quest>
+	<quest id="10440" type="1" name="Reconnaissance in the Fairy-invaded Lands - 5" endNpcId="34436">
+		<locations>
+			<param name="startLocationId">546</param>
+			<param name="endLocationId">550</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">90</param>
+			<param name="preQuestId">10439</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="91912" count="750" />
+				<item id="49674" count="10" />
+			</items>
+			<param name="rewardExp">2500000000</param>
+			<param name="rewardSp">25000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">200</param>
+			<param name="goalString">Monsters in the Fairy-invaded Lands (north)</param>
+		</goals>
+	</quest>
+	<quest id="19900" type="1" name="Saga of Legend" startNpcId="30857" endNpcId="30857">
+		<locations>
+			<param name="startLocationId">115</param>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="classIds">2;3;5;6;8;9;12;13;14;16;17;20;21;23;24;27;28;30;33;34;36;37;40;41;43;46;48;51;52;55;57;127;130;194;198;202;206;210;219;223;227</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">100</param>
+			<param name="goalString">Monsters in the Silent Valley</param>
+		</goals>
+	</quest>
+	<quest id="19901" type="1" name="Almost a Legend" startNpcId="30857" endNpcId="30857">
+		<locations>
+			<param name="endLocationId">510</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="preQuestId">19900</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Orven (after class change)</param>
+		</goals>
+	</quest>
+	<quest id="19902" type="1" name="Level Up to 64">
+		<locations>
+			<param name="startLocationId">117</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">58</param>
+			<param name="maxLevel">63</param>
+			<param name="preQuestId">10341</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 64</param>
+		</goals>
+	</quest>
+	<quest id="19903" type="1" name="Level Up to 70">
+		<locations>
+			<param name="startLocationId">119</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">64</param>
+			<param name="maxLevel">69</param>
+			<param name="preQuestId">10346</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 70</param>
+		</goals>
+	</quest>
+	<quest id="19904" type="1" name="Level Up to 76">
+		<locations>
+			<param name="startLocationId">115</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">70</param>
+			<param name="maxLevel">75</param>
+			<param name="preQuestId">10351</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 76</param>
+		</goals>
+	</quest>
+	<quest id="19905" type="1" name="Level Up to 78">
+		<locations>
+			<param name="startLocationId">84</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">76</param>
+			<param name="maxLevel">77</param>
+			<param name="preQuestId">10356</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 78</param>
+		</goals>
+	</quest>
+	<quest id="19906" type="1" name="Level Up to 81">
+		<locations>
+			<param name="startLocationId">435</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">78</param>
+			<param name="maxLevel">80</param>
+			<param name="preQuestId">10366</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 81</param>
+		</goals>
+	</quest>
+	<quest id="19907" type="1" name="Level Up to 84">
+		<locations>
+			<param name="startLocationId">436</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">81</param>
+			<param name="maxLevel">83</param>
+			<param name="preQuestId">10376</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 84</param>
+		</goals>
+	</quest>
+	<quest id="19908" type="1" name="Level Up to 85">
+		<locations>
+			<param name="startLocationId">434</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">84</param>
+			<param name="maxLevel">84</param>
+			<param name="preQuestId">10381</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 85</param>
+		</goals>
+	</quest>
+	<quest id="19909" type="1" name="Level Up to 87">
+		<locations>
+			<param name="startLocationId">525</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">85</param>
+			<param name="maxLevel">86</param>
+			<param name="preQuestId">10400</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 87</param>
+		</goals>
+	</quest>
+	<quest id="19910" type="1" name="Level Up to 88">
+		<locations>
+			<param name="startLocationId">530</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">87</param>
+			<param name="maxLevel">87</param>
+			<param name="preQuestId">10415</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 88</param>
+		</goals>
+	</quest>
+	<quest id="19911" type="1" name="Level Up to 90">
+		<locations>
+			<param name="startLocationId">548</param>
+		</locations>
+		<conditions>
+			<param name="minLevel">88</param>
+			<param name="maxLevel">89</param>
+			<param name="preQuestId">10425</param>
+		</conditions>
+		<goals>
+			<param name="goalCount">1</param>
+			<param name="goalString">Reach Lv. 90</param>
+		</goals>
+	</quest>
+	<quest id="20001" type="4" name="Deton's First Request" startItemId="93346">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93356" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20002" type="4" name="Deton's Second Request" startItemId="93347">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93357" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20003" type="4" name="Deton's Third Request" startItemId="93348">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93358" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">2000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20004" type="4" name="Deton's Fourth Request" startItemId="93349">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93359" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20005" type="4" name="Deton's Fifth Request" startItemId="93350">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93360" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20006" type="4" name="Deton's Sixth Request" startItemId="93351">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93361" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">2000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20007" type="4" name="Deton's Seventh Request" startItemId="93352">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93362" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20008" type="4" name="Deton's Eighth Request" startItemId="93353">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93363" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20009" type="4" name="Deton's Ninth Request" startItemId="93354">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93364" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">1000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20010" type="4" name="Deton's Tenth Request" startItemId="93355">
+		<conditions>
+			<param name="minLevel">76</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93365" count="1" />
+			</items>
+		</rewards>
+		<goals>
+			<param name="goalCount">5000</param>
+			<param name="goalString">Request monsters</param>
+		</goals>
+	</quest>
+	<quest id="20011" type="1" name="Acquiring Transcendent Power">
+		<conditions>
+			<param name="minLevel">60</param>
+		</conditions>
+		<rewards>
+			<items>
+				<item id="93948" count="1" />
+				<item id="91912" count="50" />
+			</items>
+			<param name="rewardExp">200000000</param>
+			<param name="rewardSp">2000000</param>
+		</rewards>
+		<goals>
+			<param name="goalCount">50</param>
+			<param name="goalString">Monsters in transcendent instance zones</param>
+		</goals>
+	</quest>
+</list>

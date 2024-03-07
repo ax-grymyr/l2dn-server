@@ -1,0 +1,1851 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="55800" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- EXP when hunting +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55801" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- SP when hunting +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55802" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Has a chance to recover $s1 of damage as HP. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55803" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- P. Skill MP Consumption -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55804" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- M. Skill MP Consumption -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55805" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Reflect $s1 of received damage -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">8</value>
+					<value level="3">10</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55806" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">9</value>
+					<value level="7">11</value>
+					<value level="8">12</value>
+					<value level="9">15</value>
+					<value level="10">31</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55807" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">11</value>
+					<value level="8">13</value>
+					<value level="9">16</value>
+					<value level="10">33</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55808" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- Atk. Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">13</value>
+					<value level="7">16</value>
+					<value level="8">18</value>
+					<value level="9">22</value>
+					<value level="10">45</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55809" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- Casting Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">13</value>
+					<value level="7">16</value>
+					<value level="8">18</value>
+					<value level="9">22</value>
+					<value level="10">45</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55810" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Accuracy +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55811" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Accuracy +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55812" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- Max HP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55813" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- Max MP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55814" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- Max CP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55815" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- STR +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55816" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- CON +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55817" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- MEN +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55818" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- DEX +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55819" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- WIT +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55820" toLevel="2" name="Empire Legendary Cloak Augmentation">
+		<!-- INT +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55821" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0.8</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.2</value>
+					<value level="7">2.6</value>
+					<value level="8">3</value>
+					<value level="9">3.7</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55822" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Skill Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55823" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55824" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55825" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Skill Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55826" toLevel="10" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55827" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Stun Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55828" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Hold Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55829" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Bleeding Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55830" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Paralysis Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55831" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Mind Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<SILENCE>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</SILENCE>
+				<FEAR>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55832" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Sleep Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55833" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Poison Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55835" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Pull Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<PULL>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</PULL>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55836" toLevel="9" name="Empire Legendary Cloak Augmentation">
+		<!-- Petrification Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<TURN_STONE>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</TURN_STONE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55837" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Max HP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55838" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Max MP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55839" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Max CP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55840" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55841" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Def. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55842" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Atk. Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55843" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Speed +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">13</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55844" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55845" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Def. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55846" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Casting Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55847" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- PvP Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55848" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Received PvP Damage -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55849" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- PvE Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55850" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Received PvE Damage -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55851" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- EXP when hunting +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55852" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- SP when hunting +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55853" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Has a chance to recover $s1 of damage as HP. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55854" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Skill MP Consumption -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55855" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Skill MP Consumption -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55856" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Fixed damage resistance +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="RealDamageResist">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55857" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Has a $s1 chance to return all status effects to the enemy. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ReflectSkill">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55858" toLevel="1" name="Empire Legendary Cloak Augmentation">
+		<!-- When using a single attack skill, there's a chance for Silence to be activated. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<!-- Legendary Cloak - Silence -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55859</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55859" toLevel="1" name="Legendary Cloak - Silence">
+		<!-- Skills are sealed momentarily because of Silence. Ignores debuff immunity. -->
+		<isDebuff>true</isDebuff>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>1200</castRange>
+		<effectRange>1400</effectRange>
+		<hitTime>500</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>81</magicLevel>
+		<operateType>A2</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<trait>SILENCE</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mute" />
+		</effects>
+	</skill>
+	<skill id="55860" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- Activates a shield that has a chance to absorb $s1 damage when hit. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="TriggerSkillByDamage" fromLevel="1" toLevel="1">
+				<!-- Legendary Cloak - Barrier -->
+				<attackerType>Creature</attackerType>
+				<chance>5</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55861</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="2" toLevel="2">
+				<!-- Legendary Cloak - Barrier -->
+				<attackerType>Creature</attackerType>
+				<chance>5</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55861</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="3" toLevel="3">
+				<!-- Legendary Cloak - Barrier -->
+				<attackerType>Creature</attackerType>
+				<chance>5</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55861</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55861" toLevel="3" name="Legendary Cloak - Barrier">
+		<!-- Activates a shield that has a chance to absorb $s2 damage when hit for $s1. -->
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>
+			<value level="1">4</value>
+			<value level="2">6</value>
+			<value level="3">9</value>
+		</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>BARRIER</abnormalType>
+		<abnormalVisualEffect>ABSORB_SHIELD</abnormalVisualEffect>
+		<castRange>1200</castRange>
+		<effectRange>1400</effectRange>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AbsorbDamage">
+				<damage>
+					<value level="1">1000</value>
+					<value level="2">1500</value>
+					<value level="3">2500</value>
+				</damage>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55862" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P./M. Skill Power +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55863" toLevel="1" name="Empire Legendary Cloak Augmentation">
+		<!-- Resurrects from death with full recovery. Buffs/debuffs stay when dying. However, the Noblesse Blessing and Lucky Charms disappear. -->
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>600</castRange>
+		<hitTime>4000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>RESURRECTION_SPECIAL</abnormalType>
+		<effectRange>900</effectRange>
+		<magicLevel>79</magicLevel>
+		<operateType>A2</operateType>
+		<staticReuse>true</staticReuse>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ResurrectionSpecial">
+				<power>100</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55864" toLevel="1" name="Empire Legendary Cloak Augmentation">
+		<!-- Invincibility activated for 5 seconds if damage received when HP is below 30%. This effect is only activated once every 5 minutes. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<!-- Legendary Cloak - Invincibility -->
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<hpPercent>30</hpPercent>
+				<minDamage>1</minDamage>
+				<skillId>55865</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55865" toLevel="1" name="Legendary Cloak - Invincibility">
+		<!-- Become invincible. -->
+		<hitTime>200</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>SUB_TRIGGER_DEFENCE</abnormalType>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<castRange>400</castRange>
+		<effectRange>900</effectRange>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelBySlotMyself">
+				<dispel>MAGICAL_STANCE</dispel>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+		</effects>
+	</skill>
+	<skill id="55866" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- P. Critical Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">125</value>
+					<value level="3">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55867" toLevel="3" name="Empire Legendary Cloak Augmentation">
+		<!-- M. Critical Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55868" toLevel="1" name="Scroll: Enchant Cloak">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55869" toLevel="1" name="Scroll: Enchant Cloak - Legendary">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55870" toLevel="1" name="Scroll: Ancient Cloak">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55871" toLevel="1" name="Life Stone Pack - Legendary">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55872" toLevel="1" name="Iron Gate Guild Treasure Chest">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55873" toLevel="1" name="Stable Scroll: Enchant Cloak - Legendary">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55874" toLevel="1" name="Ancient Cloak (Legendary) Scroll Pack">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55875" toLevel="1" name="+10 Elmoreden Cloak - Legendary Box">
+		<!-- Double-click to obtain a +10 Elmoreden Cloak - Legendary. -->
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55876" toLevel="1" name="+10 Aden Cloak - Legendary Box">
+		<!-- Double-click to obtain a +10 Aden Cloak - Legendary. -->
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55877" toLevel="1" name="+10 Elmore Cloak - Legendary Box">
+		<!-- Double-click to obtain a +10 Elmore Cloak - Legendary. -->
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55878" toLevel="1" name="+10 Ferios Cloak - Legendary Box">
+		<!-- Double-click to obtain a +10 Ferios Cloak - Legendary. -->
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55879" toLevel="1" name="Battle Box Lv. 1">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55880" toLevel="1" name="Battle Box Lv. 2">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55881" toLevel="1" name="Battle Box Lv. 3">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55882" toLevel="1" name="Battle Box Lv. 4">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55883" toLevel="1" name="Valor Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55884" toLevel="1" name="Bracelet of Duty - Lv. 6">
+		<!-- Up to 4 Talismans can be equipped. Additionally STR/ INT/ DEX/ WIT/ CON/ MEN +1. -->
+		<magicLevel>20</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>4</slots>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55885" toLevel="2" name="Agathion Bracelet Stats Increase">
+		<!-- STR/ INT/ CON/ MEN +$s1. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="2">1</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="2">1</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55886" toLevel="2" name="Agathion Bracelet Resistance Increase">
+		<!-- Mental/ Stun/ Sleep/ Paralysis Attack Resistance +$s1. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<DERANGEMENT>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</DERANGEMENT>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</SHOCK>
+				<SLEEP>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</SLEEP>
+				<PARALYZE>
+					<value level="1">5</value>
+					<value level="2">8</value>
+				</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55887" toLevel="5" name="Clan Exuberance">
+		<!-- Clan members' HP/ MP/ CP Recovery Bonus +$s1, received PVE damage -$s2, Acquired XP/ SP +$s3. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+					<value level="3">11</value>
+					<value level="4">15</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">8</value>
+					<value level="3">11</value>
+					<value level="4">15</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55888" toLevel="4" name="Halloween Blessing">
+		<!-- Rico's Halloween buff. Acquired XP/SP +$s1, P./M. Atk. +$s2, Atk. Spd./Casting Spd. +$s3. You can receive a Halloween Gift once the Lv. 3 buff expires. -->
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>4000</hitTime>
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<irreplacableBuff>true</irreplacableBuff>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill" fromLevel="3" toLevel="3">
+				<skillId>55890</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="55889" toLevel="1" name="Halloween Blessing">
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55890" toLevel="1" name="Halloween Gift">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>90136</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55891" toLevel="1" name="Treasure Chest of Forgotten Island">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55892" toLevel="1" name="Dragon's Miracle Potion">
+		<!-- For 20 min., Acquired XP/ SP +50%, P./ M. Atk. +18%, P./ M. Def. +22%, Atk. Spd./ Casting Spd. +5%, P./ M. Crirical Rate +30, P./ M. Critical Damage +10%, HP/ MP/ CP +25%, HP/ MP Recovery +30%. At a certain chance absorbs 5% of the damage inflicted on target as HP. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="55893" toLevel="1" name="Balthus Knights' Trophy Chest">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55894" toLevel="1" name="Transformation into Teddy Bear">
+		<!-- Transforms into teddy bear. During transformation HP/ MP +20%, P./ M. Def. +3%, acquired XP/ SP +5%. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55895" toLevel="1" name="Transformation into Panda">
+		<!-- Transforms into panda. During transformation HP/ MP +10%, P./ M. Def. +2%, acquired XP/ SP +5%. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55896" toLevel="1" name="Transformation into Cat">
+		<!-- Transforms into cat. During transformation HP/ MP +10%, P./ M. Def. +1%, acquired XP/ SP +5%. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55897" toLevel="1" name="Campfire">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
+		<effects>
+			<effect name="SummonNpc">
+				<npcId>9023</npcId> <!-- Campfire -->
+				<npcCount>1</npcCount>
+				<despawnDelay>30000</despawnDelay>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55898" toLevel="1" name="Regular Dish">
+		<!-- For 30 min., acquired XP/ SP +30%, Max HP/ MP/ CP +5%, P. Atk./ M. Atk./ P. Def./ M. Def. +5%. -->
+		<icon>icon.etc_food_dish_i00</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>REGULAR_DISH</abnormalType>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>5000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55899" toLevel="1" name="Match Girls' Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+</list>

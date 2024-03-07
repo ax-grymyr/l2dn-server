@@ -1,0 +1,38 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="zone" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="enterLocation" />
+							<xs:element type="xs:string" name="subEnterLocation1" minOccurs="0" />
+							<xs:element type="xs:string" name="subEnterLocation2" minOccurs="0" />
+							<xs:element type="xs:string" name="subEnterLocation3" minOccurs="0" />
+							<xs:element type="xs:string" name="exitLocation" minOccurs="0"/>
+							<xs:element type="xs:int" name="initialTime" />
+							<xs:element type="xs:int" name="resetDelay" minOccurs="0" />
+							<xs:element type="xs:int" name="maxAddedTime" />
+							<xs:element type="xs:int" name="remainRefillTime" minOccurs="0" />
+							<xs:element type="xs:int" name="refillTimeMax" minOccurs="0" />
+							<xs:element type="xs:int" name="entryItemId" minOccurs="0" />
+							<xs:element type="xs:int" name="entryFee" />
+							<xs:element type="xs:short" name="minLevel" />
+							<xs:element type="xs:short" name="maxLevel" />
+							<xs:element type="xs:int" name="instanceId" minOccurs="0" />
+							<xs:element type="xs:boolean" name="soloInstance" minOccurs="0" />
+							<xs:element type="xs:boolean" name="pvpZone" minOccurs="0" />
+							<xs:element type="xs:boolean" name="noPvpZone" minOccurs="0" />
+							<xs:element type="xs:boolean" name="weekly" minOccurs="0" />
+							<xs:element type="xs:boolean" name="useWorldPrefix" minOccurs="0" />
+							<xs:element type="xs:boolean" name="zonePremiumUserOnly" minOccurs="0" />
+						</xs:sequence>
+						<xs:attribute type="xs:byte" name="id" use="optional" />
+						<xs:attribute type="xs:string" name="name" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:boolean" name="enabled" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="49">
+		<skill skillName="Life Drain" skillId="1090" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="2" getLevel="5" levelUpSp="5" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="3" getLevel="8" levelUpSp="5" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="4" getLevel="12" levelUpSp="19" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="5" getLevel="16" levelUpSp="25" />
+		<skill skillName="Fear" skillId="1092" skillLevel="1" getLevel="14" levelUpSp="19" />
+		<skill skillName="Orc Resistance" skillId="134" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Venom" skillId="1095" skillLevel="1" getLevel="7" levelUpSp="5" />
+		<skill skillName="Venom" skillId="1095" skillLevel="2" getLevel="14" levelUpSp="19" />
+		<skill skillName="Glorious Warrior's Resurrection Cost Decrease" skillId="47240" skillLevel="1" getLevel="91" levelUpSp="0" autoGet="true" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="1" getLevel="7" levelUpSp="5" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="2" getLevel="14" levelUpSp="19" />
+		<skill skillName="Chill Flame" skillId="1100" skillLevel="1" getLevel="7" levelUpSp="5" />
+		<skill skillName="Chill Flame" skillId="1100" skillLevel="2" getLevel="14" levelUpSp="19" />
+		<skill skillName="Expand Trade" skillId="1370" skillLevel="1" getLevel="1" levelUpSp="0">
+			<item id="98086,98084" count="1" /> <!-- Private Store Coupon -->
+		</skill>
+		<skill skillName="Expand Trade" skillId="1370" skillLevel="2" getLevel="1" levelUpSp="0">
+			<item id="98086,98084" count="1" /> <!-- Private Store Coupon -->
+		</skill>
+		<skill skillName="Expand Trade" skillId="1370" skillLevel="3" getLevel="1" levelUpSp="0">
+			<item id="98086,98084" count="1" /> <!-- Private Store Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="1" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="2" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="3" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="4" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="5" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="6" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="7" getLevel="1" levelUpSp="0">
+			<item id="98085,98083" count="1" /> <!-- Private Warehouse Coupon -->
+		</skill>
+		<skill skillName="Expand Inventory" skillId="1372" skillLevel="1" getLevel="1" levelUpSp="0">
+			<item id="92004,98082" count="1" /> <!-- Inventory Expansion Coupon -->
+		</skill>
+		<skill skillName="Expand Inventory" skillId="1372" skillLevel="2" getLevel="1" levelUpSp="0">
+			<item id="92004,98082" count="1" /> <!-- Inventory Expansion Coupon -->
+		</skill>
+		<skill skillName="Expand Inventory" skillId="1372" skillLevel="3" getLevel="1" levelUpSp="0">
+			<item id="92004,98082" count="1" /> <!-- Inventory Expansion Coupon -->
+		</skill>
+		<skill skillName="Expand Inventory" skillId="1372" skillLevel="4" getLevel="1" levelUpSp="0">
+			<item id="92007" count="1" />
+		</skill>
+		<skill skillName="Expand Inventory" skillId="1372" skillLevel="5" getLevel="1" levelUpSp="0">
+			<item id="92007" count="1" />
+		</skill>
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="1" getLevel="86" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="2" getLevel="87" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="3" getLevel="88" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="4" getLevel="89" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="5" getLevel="90" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="6" getLevel="91" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="7" getLevel="92" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="8" getLevel="93" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="9" getLevel="94" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior: Elixir Upgrade" skillId="45471" skillLevel="10" getLevel="95" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior's Special Teleport" skillId="45472" skillLevel="1" getLevel="88" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Special Teleports" skillId="45473" skillLevel="1" getLevel="89" levelUpSp="0" autoGet="true" />
+		<skill skillName="Glorious Warrior's Unique Title Color" skillId="45474" skillLevel="1" getLevel="90" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Head Accessory Slots" skillId="45475" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Head Accessory Display" skillId="17192" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Battle Cry" skillId="1001" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Battle Cry" skillId="1001" skillLevel="2" getLevel="14" levelUpSp="19" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="1" getLevel="88" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="2" getLevel="91" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="3" getLevel="92" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="4" getLevel="93" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="5" getLevel="94" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="6" getLevel="95" levelUpSp="0" autoGet="true" />
+		<skill skillName="Expand Glorious Warrior's Magic Lamp" skillId="45483" skillLevel="7" getLevel="96" levelUpSp="0" autoGet="true" />
+		<skill skillName="Eagle Spirit" skillId="1003" skillLevel="1" getLevel="10" levelUpSp="16" />
+		<skill skillName="Soul Evasion" skillId="1005" skillLevel="1" getLevel="10" levelUpSp="16" />
+		<skill skillName="Chant of Might" skillId="1007" skillLevel="1" getLevel="3" levelUpSp="5" />
+		<skill skillName="Chant of Shield" skillId="1009" skillLevel="1" getLevel="2" levelUpSp="5" />
+		<skill skillName="Spirit Shield" skillId="1010" skillLevel="1" getLevel="7" levelUpSp="5" />
+		<skill skillName="Magician's Curiosity" skillId="118" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="1" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="2" getLevel="14" levelUpSp="19" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="1" getLevel="4" levelUpSp="5" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="2" getLevel="7" levelUpSp="5" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="3" getLevel="11" levelUpSp="16" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="4" getLevel="14" levelUpSp="19" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="1" getLevel="4" levelUpSp="5" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="2" getLevel="7" levelUpSp="5" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="3" getLevel="11" levelUpSp="16" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="4" getLevel="14" levelUpSp="19" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="1" getLevel="11" levelUpSp="16" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="2" getLevel="14" levelUpSp="19" />
+	</skillTree>
+</list>

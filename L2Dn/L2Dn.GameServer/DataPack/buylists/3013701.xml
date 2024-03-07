@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<npcs>
+		<npc>30137</npc> <!-- Vollodos -->
+	</npcs>
+	<item id="91927" /> <!-- Soulshot -->
+	<item id="91930" /> <!-- Blessed Spiritshot -->
+	<item id="91912" /> <!-- HP Potion -->
+	<item id="97799" /> <!-- Mid-grade HP Recovery Potion -->
+	<item id="3031" /> <!-- Spirit Ore -->
+	<item id="736" /> <!-- Scroll of Escape -->
+	<item id="93966" /> <!-- Pet Food -->
+	<item id="93967" /> <!-- Pet's HP Recovery Potion -->
+	<item id="97434" /> <!-- Pet's Special HP Recovery Potion -->
+	<item id="17" /> <!-- Wooden Arrow -->
+	<item id="1341" /> <!-- Bone Arrow -->
+	<item id="94891" /> <!-- No-grade Elemental Orb (Sealed) -->
+	<item id="94892" /> <!-- D-grade Elemental Orb (Sealed) -->
+	<item id="1831" /> <!-- Antidote -->
+	<item id="1833" /> <!-- Bandage -->
+	<item id="734" /> <!-- Wind Walk Potion -->
+	<item id="735" /> <!-- Haste Potion -->
+	<item id="6035" /> <!-- Cast Quickening Potion -->
+	<item id="1785" /> <!-- Soulstone -->
+	<item id="5589" /> <!-- Momentum Stone -->
+	<item id="93662" /> <!-- Facelifting Potion A -->
+	<item id="93663" /> <!-- Facelifting Potion B -->
+	<item id="93664" /> <!-- Facelifting Potion C -->
+	<item id="97944" /> <!-- Facelifting Potion D -->
+	<item id="97945" /> <!-- Facelifting Potion E -->
+	<item id="93665" /> <!-- Dye Potion A -->
+	<item id="93666" /> <!-- Dye Potion B -->
+	<item id="93667" /> <!-- Dye Potion C -->
+	<item id="93668" /> <!-- Dye Potion D -->
+	<item id="93669" /> <!-- Hair Style Potion A -->
+	<item id="93670" /> <!-- Hair Style Potion B -->
+	<item id="93671" /> <!-- Hair Style Potion C -->
+	<item id="93672" /> <!-- Hair Style Potion D -->
+	<item id="93673" /> <!-- Hair Style Potion E -->
+	<item id="93674" /> <!-- Hair Style Potion F -->
+	<item id="93675" /> <!-- Hair Style Potion G -->
+	<item id="98087" /> <!-- Hair Style Potion F -->
+	<item id="98088" /> <!-- Hair Style Potion G -->
+	<item id="97946" /> <!-- Hair Style Potion H -->
+	<item id="97947" /> <!-- Hair Style Potion I -->
+	<item id="97948" /> <!-- Hair Style Potion J -->
+	<item id="97949" /> <!-- Hair Style Potion K -->
+	<item id="97950" /> <!-- Hair Style Potion L -->
+</list>

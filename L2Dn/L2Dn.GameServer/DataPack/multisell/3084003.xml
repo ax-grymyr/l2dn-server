@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="90038" count="1" chance="100" /> <!-- Spellbook - Ride the Golden Lion -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="90038" count="1" chance="100" /> <!-- Spellbook - Ride Pegasus -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="90040" count="1" chance="100" /> <!-- Spellbook - Ride Sabretooth Cougar -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="90041" count="1" chance="100" /> <!-- Spellbook - Ride Kukura -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="90042" count="1" chance="100" /> <!-- Spellbook - Mount Black Bear -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91946" count="1" chance="100" /> <!-- Spellbook - Mount Griffin -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="93383" count="1" chance="100" /> <!-- Spellbook: Mount Nightmare Steed -->
+	</item>
+</list>

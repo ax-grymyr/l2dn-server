@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33800" name="option_id_33800">
+		<!-- Sleep Atk. Rate +5%. -->
+	</option>
+	<option id="33801" name="option_id_33801">
+		<!-- Hold Atk. Rate +0.5% -->
+	</option>
+	<option id="33802" name="option_id_33802">
+		<!-- Hold Atk. Rate +1% -->
+	</option>
+	<option id="33803" name="option_id_33803">
+		<!-- Hold Atk. Rate +1.5% -->
+	</option>
+	<option id="33804" name="option_id_33804">
+		<!-- Hold Atk. Rate +3%. -->
+	</option>
+	<option id="33805" name="option_id_33805">
+		<!-- Hold Atk. Rate +3.5% -->
+	</option>
+	<option id="33806" name="option_id_33806">
+		<!-- Hold Atk. Rate +5% -->
+	</option>
+	<option id="33807" name="option_id_33807">
+		<!-- Bow Resistance +0.5% -->
+	</option>
+	<option id="33808" name="option_id_33808">
+		<!-- Bow Resistance +1% -->
+	</option>
+	<option id="33809" name="option_id_33809">
+		<!-- Bow Resistance +1.5% -->
+	</option>
+	<option id="33810" name="option_id_33810">
+		<!-- Bow Resistance +2.5% -->
+	</option>
+	<option id="33811" name="option_id_33811">
+		<!-- Bow Resistance +3% -->
+	</option>
+	<option id="33812" name="option_id_33812">
+		<!-- Bow Resistance +3.5% -->
+	</option>
+	<option id="33813" name="option_id_33813">
+		<!-- Drain Resistance +2.5% -->
+	</option>
+	<option id="33814" name="option_id_33814">
+		<!-- Drain Resistance +3.5% -->
+	</option>
+	<option id="33815" name="option_id_33815">
+		<!-- Drain Resistance +5% -->
+	</option>
+	<option id="33816" name="option_id_33816">
+		<!-- Drain Resistance +7.5% -->
+	</option>
+	<option id="33817" name="option_id_33817">
+		<!-- Drain Resistance +9% -->
+	</option>
+	<option id="33818" name="option_id_33818">
+		<!-- Drain Resistance +10% -->
+	</option>
+	<option id="33830" name="option_id_33830">
+	</option>
+	<option id="33831" name="option_id_33831">
+	</option>
+	<option id="33832" name="option_id_33832">
+	</option>
+	<option id="33833" name="option_id_33833">
+	</option>
+	<option id="33834" name="option_id_33834">
+	</option>
+	<option id="33835" name="option_id_33835">
+	</option>
+	<option id="33836" name="option_id_33836">
+	</option>
+	<option id="33837" name="option_id_33837">
+	</option>
+	<option id="33838" name="option_id_33838">
+	</option>
+	<option id="33839" name="option_id_33839">
+	</option>
+	<option id="33840" name="option_id_33840">
+	</option>
+	<option id="33841" name="option_id_33841">
+	</option>
+	<option id="33842" name="option_id_33842">
+	</option>
+	<option id="33843" name="option_id_33843">
+	</option>
+	<option id="33844" name="option_id_33844">
+	</option>
+	<option id="33845" name="option_id_33845">
+	</option>
+	<option id="33846" name="option_id_33846">
+	</option>
+	<option id="33847" name="option_id_33847">
+	</option>
+	<option id="33848" name="option_id_33848">
+	</option>
+	<option id="33849" name="option_id_33849">
+	</option>
+	<option id="33850" name="option_id_33850">
+	</option>
+	<option id="33851" name="option_id_33851">
+	</option>
+	<option id="33852" name="Talisman of Authority">
+		<passive_skill id="50352" level="1" /> <!-- Talisman of Authority -->
+	</option>
+	<option id="33853" name="Talisman of Authority">
+		<passive_skill id="50352" level="2" /> <!-- Blessed Talisman of Authority -->
+	</option>
+	<option id="33854" name="Talisman of Authority">
+		<passive_skill id="50352" level="3" /> <!-- +1 Talisman of Authority -->
+	</option>
+	<option id="33855" name="Talisman of Authority">
+		<passive_skill id="50352" level="4" /> <!-- +1 Blessed Talisman of Authority -->
+	</option>
+	<option id="33856" name="Talisman of Authority">
+		<passive_skill id="50352" level="5" /> <!-- +2 Talisman of Authority -->
+	</option>
+	<option id="33857" name="Talisman of Authority">
+		<passive_skill id="50352" level="6" /> <!-- +2 Blessed Talisman of Authority -->
+	</option>
+	<option id="33858" name="Talisman of Authority">
+		<passive_skill id="50352" level="7" /> <!-- +3 Talisman of Authority -->
+	</option>
+	<option id="33859" name="Talisman of Authority">
+		<passive_skill id="50352" level="8" /> <!-- +3 Blessed Talisman of Authority -->
+	</option>
+	<option id="33860" name="Talisman of Authority">
+		<passive_skill id="50352" level="9" /> <!-- +4 Talisman of Authority -->
+	</option>
+	<option id="33861" name="Talisman of Authority">
+		<passive_skill id="50352" level="10" /> <!-- +4 Blessed Talisman of Authority -->
+	</option>
+	<option id="33862" name="Talisman of Authority">
+		<passive_skill id="50352" level="11" /> <!-- +5 Talisman of Authority -->
+	</option>
+	<option id="33863" name="option_id_33863">
+	</option>
+	<option id="33864" name="option_id_33864">
+	</option>
+	<option id="33865" name="option_id_33865">
+	</option>
+	<option id="33866" name="option_id_33866">
+	</option>
+	<option id="33867" name="option_id_33867">
+	</option>
+	<option id="33868" name="option_id_33868">
+	</option>
+	<option id="33869" name="option_id_33869">
+	</option>
+	<option id="33870" name="option_id_33870">
+	</option>
+	<option id="33871" name="option_id_33871">
+	</option>
+	<option id="33872" name="option_id_33872">
+	</option>
+	<option id="33873" name="option_id_33873">
+	</option>
+	<option id="33874" name="option_id_33874">
+	</option>
+	<option id="33875" name="option_id_33875">
+	</option>
+	<option id="33876" name="option_id_33876">
+	</option>
+	<option id="33877" name="option_id_33877">
+	</option>
+	<option id="33878" name="option_id_33878">
+	</option>
+	<option id="33879" name="option_id_33879">
+	</option>
+	<option id="33880" name="option_id_33880">
+	</option>
+	<option id="33881" name="option_id_33881">
+	</option>
+	<option id="33882" name="option_id_33882">
+	</option>
+	<option id="33883" name="option_id_33883">
+	</option>
+	<option id="33884" name="option_id_33884">
+	</option>
+	<option id="33885" name="A Death Knight's flame sword cursed by Valakas">
+		<passive_skill id="50364" level="1" /> <!-- Death Knight's Flame Sword -->
+	</option>
+	<option id="33886" name="A Death Knight's flame sword cursed by Valakas +1">
+		<passive_skill id="50365" level="1" /> <!-- +1 Death Knight's Flame Sword -->
+	</option>
+	<option id="33887" name="A Death Knight's flame sword cursed by Valakas +2">
+		<passive_skill id="50365" level="2" /> <!-- +2 Death Knight's Flame Sword -->
+	</option>
+	<option id="33888" name="A Death Knight's flame sword cursed by Valakas +3">
+		<passive_skill id="50365" level="3" /> <!-- +3 Death Knight's Flame Sword -->
+	</option>
+	<option id="33889" name="A Death Knight's flame sword cursed by Valakas +4">
+		<passive_skill id="50365" level="4" /> <!-- +4 Death Knight's Flame Sword -->
+	</option>
+	<option id="33890" name="A Death Knight's flame sword cursed by Valakas +5">
+		<passive_skill id="50365" level="5" /> <!-- +5 Death Knight's Flame Sword -->
+	</option>
+	<option id="33891" name="A Death Knight's flame sword cursed by Valakas +6">
+		<passive_skill id="50365" level="6" /> <!-- +6 Death Knight's Flame Sword -->
+	</option>
+	<option id="33892" name="A Death Knight's flame sword cursed by Valakas +7">
+		<passive_skill id="50365" level="7" /> <!-- +7 Death Knight's Flame Sword -->
+	</option>
+	<option id="33893" name="A Death Knight's flame sword cursed by Valakas +8">
+		<passive_skill id="50365" level="8" /> <!-- +8 Death Knight's Flame Sword -->
+	</option>
+	<option id="33894" name="A Death Knight's flame sword cursed by Valakas +9">
+		<passive_skill id="50365" level="9" /> <!-- +9 Death Knight's Flame Sword -->
+	</option>
+	<option id="33895" name="A Death Knight's flame sword cursed by Valakas +10">
+		<passive_skill id="50365" level="10" /> <!-- +10 Death Knight's Flame Sword -->
+	</option>
+	<option id="33896" name="option_id_33896">
+	</option>
+	<option id="33897" name="option_id_33897">
+	</option>
+	<option id="33898" name="option_id_33898">
+	</option>
+	<option id="33899" name="option_id_33899">
+	</option>
+</list>

@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48700" toLevel="1" name="Triol's Enslavement Protection">
+		<!-- Cancel Triol's Enslavement -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48701" toLevel="2" name="Submission to Triol">
+		<!-- <Submission>. Submission to Triol makes you unable to move. -->
+		<icon>icon.temple_sit_skill</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">10</value>
+			<value level="2">20</value>
+		</abnormalTime>
+	</skill>
+	<skill id="48702" toLevel="1" name="Triol's Voice">
+		<!-- Deals physical damage to the enemy. Power 100%. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48703" toLevel="1" name="Triol's Hold">
+		<!-- You are inflicted with Hold and cannot move. -->
+		<icon>icon.skill4047</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>5</abnormalTime>
+	</skill>
+	<skill id="48704" toLevel="1" name="Marsha's Death Ring">
+		<!-- Deals massive magic damage to nearby enemies. Power 150. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48705" toLevel="1" name="Vess' Evil">
+		<!-- Deals massive physical damage to nearby enemies. Power 150%. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48706" toLevel="1" name="Hide">
+		<!-- Hide Presentation skill -->
+		<icon>icon.skill0922</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="48707" toLevel="1" name="Triol's Recovery">
+		<!-- Recovers 10% HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48708" toLevel="1" name="Bora's Luck - Combat">
+		<!-- P. Atk. +2%. P. Critical Rate +2%. P. Skill Critical Rate +2%. P. Critical Damage +2%. P. Skill Critical Damage +2%. Max HP +200. Max MP +200. Atk. Spd. +20. The effect remains after death. The effect can be cancelled. -->
+		<icon>icon.skill1499</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>14400</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="P. Critical Rate">+2%</effect>-->
+		<!--	<effect name="Max HP">+200</effect>-->
+		<!--	<effect name="P. Skill Critical Rate">+2%</effect>-->
+		<!--	<effect name="P. Skill Critical Damage">+2%</effect>-->
+		<!--	<effect name="P. Atk.">+2%</effect>-->
+		<!--	<effect name="Max MP">+200</effect>-->
+		<!--	<effect name="Atk. Spd.">+20</effect>-->
+		<!--	<effect name="P. Critical Damage">+2%</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48709" toLevel="1" name="Bora's Luck - Magic">
+		<!-- M. Atk. +2%. M. Skill Critical Rate +2%. M. Skill Critical Damage +2%. Max HP +200. Max MP +200. Casting Spd. +20. The effect remains after death. The effect can be cancelled. -->
+		<icon>icon.skill1500</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>14400</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="M. Skill Critical Damage">+2%</effect>-->
+		<!--	<effect name="M. Atk.">+2%</effect>-->
+		<!--	<effect name="Max HP">+200</effect>-->
+		<!--	<effect name="Casting Spd.">+20</effect>-->
+		<!--	<effect name="M. Skill Critical Rate">+2%</effect>-->
+		<!--	<effect name="Max MP">+200</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48710" toLevel="1" name="Bora's Luck - Status">
+		<!-- P. Def. +3%. M. Def. +3%. All received Critical Rate -3%. All received Critical Damage -3%. Max HP +200. Max MP +200. Atk. Spd. +20. Casting Spd. +20. Speed +2. The effect remains after death. The effect can be cancelled. -->
+		<icon>icon.skill1501</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>14400</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="Speed">+2</effect>-->
+		<!--	<effect name="Max HP">+200</effect>-->
+		<!--	<effect name="Casting Spd.">+20</effect>-->
+		<!--	<effect name="All received Critical Damage">-3%</effect>-->
+		<!--	<effect name="M. Def.">+3%</effect>-->
+		<!--	<effect name="Max MP">+200</effect>-->
+		<!--	<effect name="Atk. Spd.">+20</effect>-->
+		<!--	<effect name="P. Def.">+3%</effect>-->
+		<!--	<effect name="All received Critical Rate">-3%</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48711" toLevel="1" name="Deliver Message">
+		<!-- Deliver Message -->
+		<icon>icon.per_controler_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="48712" toLevel="1" name="General AoE Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48713" toLevel="1" name="Inflict Paralysis - AoE Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48714" toLevel="1" name="Inflict Fear - AoE Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48715" toLevel="1" name="Inflict Hold - AoE Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48716" toLevel="1" name="Inflict Suppression - AoE Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48717" toLevel="1" name="General Direct Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48718" toLevel="1" name="Inflict Paralysis - Direct Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48719" toLevel="1" name="Inflict Fear - Direct Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48720" toLevel="1" name="Inflict Hold - Direct Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48721" toLevel="1" name="Inflict Suppression - Direct Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48722" toLevel="1" name="Paralysis">
+		<!-- Temporarily paralyzes preventing any action. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48723" toLevel="1" name="Fear">
+		<!-- Frightens the target making it move against own will. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48724" toLevel="1" name="Stun">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48725" toLevel="1" name="Suppression">
+		<!-- Target is attacked and slowed down. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48726" toLevel="1" name="Paralysis">
+		<!-- Temporarily paralyzes preventing any action. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48727" toLevel="1" name="Fear">
+		<!-- Frightens the target making it move against own will. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48728" toLevel="1" name="Stun">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48729" toLevel="1" name="Suppression">
+		<!-- Target is attacked and slowed down. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>80</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7</abnormalTime>
+	</skill>
+	<skill id="48730" toLevel="1" name="Tombstone Installation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3600</abnormalTime>
+	</skill>
+	<skill id="48731" toLevel="1" name="Lakar's Annihilation Reward">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Acquired XP/ SP +10%. Atk. Spd. +30. Casting Spd. +30. Acquired Magic Lamp XP +3%. Max HP +300. Max MP +300. HP Recovery Rate +3. MP Recovery Rate +3. Sayha's Grace Consumption -30% -->
+		<icon>icon.s_npc_ev_2022_newserver_bless</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10800</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="Sayha's Grace Consumption">-30%</effect>-->
+		<!--	<effect name="MP Recovery Rate">+3</effect>-->
+		<!--	<effect name="HP Recovery Rate">+3</effect>-->
+		<!--	<effect name="M. Def.">+100</effect>-->
+		<!--	<effect name="P. Atk.">+50</effect>-->
+		<!--	<effect name="Max MP">+300</effect>-->
+		<!--	<effect name="M. Atk.">+50</effect>-->
+		<!--	<effect name="Magic Lamp charging rate">+3%</effect>-->
+		<!--	<effect name="Max HP">+300</effect>-->
+		<!--	<effect name="Casting Spd.">+30</effect>-->
+		<!--	<effect name="Atk. Spd.">+30</effect>-->
+		<!--	<effect name="P. Def.">+100</effect>-->
+		<!--	<effect name="Acquired XP/ SP">+10%</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48732" toLevel="1" name="Radin's Long Range Knockback">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48733" toLevel="1" name="Fear">
+		<!-- Frightens the target making it move against own will. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>5</abnormalTime>
+	</skill>
+	<skill id="48734" toLevel="1" name="Strengthen Boss">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48735" toLevel="1" name="Knight's Special Support Lv. 1">
+		<!-- Grants a knight's special support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2 -->
+		<icon>icon.ev22_trial_buff01</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48736" toLevel="1" name="Knight's Special Support Lv. 2">
+		<!-- Grants a knight's special support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2 -->
+		<icon>icon.ev22_trial_buff02</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48737" toLevel="1" name="Knight's Special Support Lv. 3">
+		<!-- Grants a knight's special support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2 -->
+		<icon>icon.ev22_trial_buff03</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48738" toLevel="1" name="Knight's Special Support Lv. 4">
+		<!-- Grants a knight's special support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2. Core Doll's Sorcery Lv. 2. Talisman of Baium. Einhasad's Pendant Lv. 5 -->
+		<icon>icon.ev22_trial_buff04</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48739" toLevel="19" name="P./ M. Atk. Decrease">
+		<!-- P./ M. Atk. -5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48740" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48741" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48742" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Atk. Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48743" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Casting Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48744" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Skill Critical Rate +11% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48745" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Skill Critical Rate +21% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48746" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +500 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48747" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Soulshot damage +10%. Spiritshot damage +10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48748" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Skill Power +10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48749" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48750" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 3% of the inflicted damage as MP -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48751" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 8% of the inflicted damage as HP -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48752" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48753" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48754" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Max HP +33%. Max MP +33% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48755" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Speed +12 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48756" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48757" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -300 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48758" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Rate -15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48759" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Received PvE damage -10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48760" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. HP Recovery Potions' Effect +100 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48761" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48762" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48763" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Atk. Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48764" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Casting Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48765" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Skill Critical Rate +11% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48766" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Skill Critical Rate +21% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48767" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +500 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48768" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Soulshot damage +10%. Spiritshot damage +10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48769" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Skill Power +10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48770" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48771" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 3% of the inflicted damage as MP -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48772" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 8% of the inflicted damage as HP -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48773" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48774" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48775" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Max HP +33%. Max MP +33% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48776" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Speed +12 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48777" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48778" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -300 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48779" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Rate -15% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48780" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Received PvE damage -10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48781" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. HP Recovery Potions' Effect +100 -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48782" toLevel="3" name="Knight Captain Kegor's Support Lv. 1">
+		<!-- Grants Knight Captain Kegor's support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 1. Queen Ant Doll's Sorcery Lv. 1. Orfen Doll's Sorcery Lv. 1. Core Doll's Sorcery Lv. 1 -->
+		<icon>
+			<value level="1">icon.s_npc_ev_221221_freya_skill1</value>
+			<value level="2">icon.s_npc_ev_221221_freya_skill2</value>
+			<value level="3">icon.s_npc_ev_221221_freya_skill3</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48783" toLevel="1" name="Freya's Energy Crystal">
+		<!-- Atk. Spd. +50. Casting Spd. +50. Received PvE damage -5%. P. Def. +300. M. Def. +300. HP Recovery Potions' Effect +20. Sayha's Grace Consumption -10%. Acquired XP/ SP +10% -->
+		<icon>icon.s_npc_ev_freya_reward_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48784" toLevel="1" name="Freya's Energy Crystal">
+		<!-- Atk. Spd. +50. Casting Spd. +50. Received PvE damage -5%. P. Def. +300. M. Def. +300. HP Recovery Potions' Effect +20. Sayha's Grace Consumption -10%. Acquired XP/ SP +10% -->
+		<icon>icon.s_npc_ev_freya_reward_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48785" toLevel="1" name="Eternal Blizzard">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>7000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48786" toLevel="1" name="Ice Crystal">
+		<!-- Immobilizes for 5 sec. and 50 HP is lost per sec. -->
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48787" toLevel="1" name="Throw Carrot">
+		<!-- With a certain chance, stuns a fleeing rabbit. -->
+		<icon>icon.ev_carrot</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>450</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-10000</effectPoint>
+	</skill>
+	<skill id="48788" toLevel="3" name="Black Rabbit's Luck Lv. 1">
+		<!-- Max HP +230. Max MP +230. Acquired XP/ SP +23% -->
+		<icon>
+			<value level="1">icon.s_npc_ev_2023_blackrabbit_gift1</value>
+			<value level="2">icon.s_npc_ev_2023_blackrabbit_gift2</value>
+			<value level="3">icon.s_npc_ev_2023_blackrabbit_gift3</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48789" toLevel="1" name="Damage of Limit">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="48790" toLevel="3" name="Master's Blessing - Mysterious Blessing">
+		<!-- The GM is always by your side. Mysterious powers make your head bigger. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.skill2513</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48791" toLevel="1" name="Cemetery Grounds' Abilities">
+		<!-- Grants graveyard soil abilities. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2. Core Doll's Sorcery Lv. 2. Talisman of Baium. Einhasad's Pendant Lv. 5 -->
+		<icon>icon.skilltransform1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="48792" toLevel="1" name="Tantar Strike">
+		<!-- A single physical attack. Power. 15,000. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48793" toLevel="1" name="Tantar Magic Strike">
+		<!-- A single magic attack. Power 300. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48794" toLevel="2" name="Tantar Poison Shot">
+		<!-- Tantar's toxin that decreases HP over time. -->
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>500</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48795" toLevel="1" name="Tantar Mass Poison">
+		<!-- Tantar's toxin that decreases HP over time. -->
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48796" toLevel="2" name="Tantar Range Poison Attack">
+		<!-- Tantar's toxin that decreases HP over time. -->
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>200</castRange>
+		<hitTime>4000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48797" toLevel="1" name="Presence of Tantar Aztacan">
+		<!-- You feel Aztacan's presence. Speed +100. Anomaly rate +50%. Rush and Dash skills cannot be used. -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48798" toLevel="1" name="Pet Association's Gratitude">
+		<!-- P. Atk. +100. M. Atk. +100. P. Def. +100. M. Def. +100. HP Recovery Potions' Effect +10. MP Recovery Rate +5. Acquired XP/ SP +10%. Received damage -2%. Satiety recovery +10% -->
+		<icon>icon.pet_town_buff_skill</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48799" toLevel="1" name="Inis' Spirit">
+		<!-- Imbued with Inis' spirit. Another guardian's spirit cannot be absorbed. Allows to destroy Inis' Guardian Totem. -->
+		<icon>icon.skill30011</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+	</skill>
+</list>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="49510" price="0" /> <!-- Pierre Letter -->
+	<item id="49504" price="0" /> <!-- Fish Report -->
+	<item id="49505" price="0" /> <!-- Sealed Bootle -->
+	<item id="6353" price="0" /> <!-- Blue Gemstone -->
+	<item id="8765" price="0" /> <!-- Red Gem -->
+	<item id="8868" price="0" /> <!-- Ziggo's Jewel -->
+	<item id="90045" price="0" /> <!-- Magical Tablet -->
+	<item id="91936" price="0" /> <!-- Adventure Rough Jewel Lv.1 -->
+	<item id="93065" price="0" /> <!-- Adventure Rough Jewel Lv.2 -->
+	<item id="91935" price="0" /> <!-- Adventurer's Aghation Griffin -->
+	<item id="93040" price="0" /> <!-- Enchant Scroll Adventurer's Aghation Griffin -->
+	<item id="93044" price="0" /> <!-- Adventurer's Sheep Hat -->
+	<item id="93042" price="0" /> <!-- Adventurer's Belt -->
+	<item id="93043" price="0" /> <!-- Enchant Scroll Adventurer's Sheep Hat -->
+	<item id="93046" price="0" /> <!-- Enchant Scroll Adventurer's Belt -->
+	<item id="93041" price="0" /> <!-- Adventurer's Cloak -->
+	<item id="93045" price="0" /> <!-- Enchant Scroll Adventurer's Cloak -->
+	<item id="91652" price="0" /> <!-- Giant Cobweb -->
+	<item id="91653" price="0" /> <!-- Venom Sac -->
+</list>

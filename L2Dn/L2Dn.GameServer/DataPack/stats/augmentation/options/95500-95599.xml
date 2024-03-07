@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95500" name="option_id_95500">
+		<!-- P./ M. Accuracy +2.6 -->
+	</option>
+	<option id="95501" name="option_id_95501">
+		<!-- P./ M. Accuracy +2.7 -->
+	</option>
+	<option id="95502" name="option_id_95502">
+		<!-- P./ M. Accuracy +2.8 -->
+	</option>
+	<option id="95503" name="option_id_95503">
+		<!-- P./ M. Accuracy +2.9 -->
+	</option>
+	<option id="95504" name="option_id_95504">
+		<!-- P./ M. Accuracy +3 -->
+	</option>
+	<option id="95505" name="option_id_95505">
+		<!-- P./ M. Accuracy +3.2 -->
+	</option>
+	<option id="95506" name="option_id_95506">
+		<!-- P./ M. Accuracy +3.4 -->
+	</option>
+	<option id="95507" name="option_id_95507">
+		<!-- P./ M. Accuracy +3.6 -->
+	</option>
+	<option id="95508" name="option_id_95508">
+		<!-- P./ M. Accuracy +3.9 -->
+	</option>
+	<option id="95509" name="option_id_95509">
+		<!-- P./ M. Accuracy +4.3 -->
+	</option>
+	<option id="95510" name="option_id_95510">
+		<!-- P./ M. Accuracy +5 -->
+	</option>
+	<option id="95511" name="option_id_95511">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="95512" name="option_id_95512">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="95513" name="option_id_95513">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="95514" name="option_id_95514">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="95515" name="option_id_95515">
+		<!-- Soulshot/ Spiritshot damage +2.1% -->
+	</option>
+	<option id="95516" name="option_id_95516">
+		<!-- Soulshot/ Spiritshot damage +2.2% -->
+	</option>
+	<option id="95517" name="option_id_95517">
+		<!-- Soulshot/ Spiritshot damage +2.3% -->
+	</option>
+	<option id="95518" name="option_id_95518">
+		<!-- Soulshot/ Spiritshot damage +2.4% -->
+	</option>
+	<option id="95519" name="option_id_95519">
+		<!-- Soulshot/ Spiritshot damage +2.5% -->
+	</option>
+	<option id="95520" name="option_id_95520">
+		<!-- Soulshot/ Spiritshot damage +2.6% -->
+	</option>
+	<option id="95521" name="option_id_95521">
+		<!-- Soulshot/ Spiritshot damage +2.7% -->
+	</option>
+	<option id="95522" name="option_id_95522">
+		<!-- Soulshot/ Spiritshot damage +2.8% -->
+	</option>
+	<option id="95523" name="option_id_95523">
+		<!-- Soulshot/ Spiritshot damage +2.9% -->
+	</option>
+	<option id="95524" name="option_id_95524">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+	</option>
+	<option id="95525" name="option_id_95525">
+		<!-- Soulshot/ Spiritshot damage +3.2% -->
+	</option>
+	<option id="95526" name="option_id_95526">
+		<!-- Soulshot/ Spiritshot damage +3.4% -->
+	</option>
+	<option id="95527" name="option_id_95527">
+		<!-- Soulshot/ Spiritshot damage +3.6% -->
+	</option>
+	<option id="95528" name="option_id_95528">
+		<!-- Soulshot/ Spiritshot damage +3.9% -->
+	</option>
+	<option id="95529" name="option_id_95529">
+		<!-- Soulshot/ Spiritshot damage +4.3% -->
+	</option>
+	<option id="95530" name="option_id_95530">
+		<!-- Soulshot/ Spiritshot damage +5% -->
+	</option>
+	<option id="95531" name="option_id_95531">
+		<!-- P. Def. +70 -->
+	</option>
+	<option id="95532" name="option_id_95532">
+		<!-- P. Def. +77 -->
+	</option>
+	<option id="95533" name="option_id_95533">
+		<!-- P. Def. +84 -->
+	</option>
+	<option id="95534" name="option_id_95534">
+		<!-- P. Def. +92 -->
+	</option>
+	<option id="95535" name="option_id_95535">
+		<!-- P. Def. +101 -->
+	</option>
+	<option id="95536" name="option_id_95536">
+		<!-- P. Def. +111 -->
+	</option>
+	<option id="95537" name="option_id_95537">
+		<!-- P. Def. +121 -->
+	</option>
+	<option id="95538" name="option_id_95538">
+		<!-- P. Def. +132 -->
+	</option>
+	<option id="95539" name="option_id_95539">
+		<!-- P. Def. +144 -->
+	</option>
+	<option id="95540" name="option_id_95540">
+		<!-- P. Def. +157 -->
+	</option>
+	<option id="95541" name="option_id_95541">
+		<!-- P. Def. +172 -->
+	</option>
+	<option id="95542" name="option_id_95542">
+		<!-- P. Def. +188 -->
+	</option>
+	<option id="95543" name="option_id_95543">
+		<!-- P. Def. +205 -->
+	</option>
+	<option id="95544" name="option_id_95544">
+		<!-- P. Def. +233 -->
+	</option>
+	<option id="95545" name="option_id_95545">
+		<!-- P. Def. +243 -->
+	</option>
+	<option id="95546" name="option_id_95546">
+		<!-- P. Def. +253 -->
+	</option>
+	<option id="95547" name="option_id_95547">
+		<!-- P. Def. +264 -->
+	</option>
+	<option id="95548" name="option_id_95548">
+		<!-- P. Def. +275 -->
+	</option>
+	<option id="95549" name="option_id_95549">
+		<!-- P. Def. +286 -->
+	</option>
+	<option id="95550" name="option_id_95550">
+		<!-- P. Def. +300 -->
+	</option>
+	<option id="95551" name="option_id_95551">
+		<!-- M. Def. +70 -->
+	</option>
+	<option id="95552" name="option_id_95552">
+		<!-- M. Def. +77 -->
+	</option>
+	<option id="95553" name="option_id_95553">
+		<!-- M. Def. +84 -->
+	</option>
+	<option id="95554" name="option_id_95554">
+		<!-- M. Def. +92 -->
+	</option>
+	<option id="95555" name="option_id_95555">
+		<!-- M. Def. +101 -->
+	</option>
+	<option id="95556" name="option_id_95556">
+		<!-- M. Def. +111 -->
+	</option>
+	<option id="95557" name="option_id_95557">
+		<!-- M. Def. +121 -->
+	</option>
+	<option id="95558" name="option_id_95558">
+		<!-- M. Def. +132 -->
+	</option>
+	<option id="95559" name="option_id_95559">
+		<!-- M. Def. +144 -->
+	</option>
+	<option id="95560" name="option_id_95560">
+		<!-- M. Def. +157 -->
+	</option>
+	<option id="95561" name="option_id_95561">
+		<!-- M. Def. +172 -->
+	</option>
+	<option id="95562" name="option_id_95562">
+		<!-- M. Def. +188 -->
+	</option>
+	<option id="95563" name="option_id_95563">
+		<!-- M. Def. +205 -->
+	</option>
+	<option id="95564" name="option_id_95564">
+		<!-- M. Def. +233 -->
+	</option>
+	<option id="95565" name="option_id_95565">
+		<!-- M. Def. +243 -->
+	</option>
+	<option id="95566" name="option_id_95566">
+		<!-- M. Def. +253 -->
+	</option>
+	<option id="95567" name="option_id_95567">
+		<!-- M. Def. +264 -->
+	</option>
+	<option id="95568" name="option_id_95568">
+		<!-- M. Def. +275 -->
+	</option>
+	<option id="95569" name="option_id_95569">
+		<!-- M. Def. +286 -->
+	</option>
+	<option id="95570" name="option_id_95570">
+		<!-- M. Def. +300 -->
+	</option>
+	<option id="95571" name="option_id_95571">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="95572" name="option_id_95572">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="95573" name="option_id_95573">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="95574" name="option_id_95574">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="95575" name="option_id_95575">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="95576" name="option_id_95576">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="95577" name="option_id_95577">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="95578" name="option_id_95578">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="95579" name="option_id_95579">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="95580" name="option_id_95580">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="95581" name="option_id_95581">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="95582" name="option_id_95582">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="95583" name="option_id_95583">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="95584" name="option_id_95584">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="95585" name="option_id_95585">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="95586" name="option_id_95586">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="95587" name="option_id_95587">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="95588" name="option_id_95588">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="95589" name="option_id_95589">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+	</option>
+	<option id="95590" name="option_id_95590">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+	</option>
+	<option id="95591" name="option_id_95591">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="95592" name="option_id_95592">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="95593" name="option_id_95593">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="95594" name="option_id_95594">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="95595" name="option_id_95595">
+		<!-- P./ M. Evasion +2.1 -->
+	</option>
+	<option id="95596" name="option_id_95596">
+		<!-- P./ M. Evasion +2.2 -->
+	</option>
+	<option id="95597" name="option_id_95597">
+		<!-- P./ M. Evasion +2.3 -->
+	</option>
+	<option id="95598" name="option_id_95598">
+		<!-- P./ M. Evasion +2.4 -->
+	</option>
+	<option id="95599" name="option_id_95599">
+		<!-- P./ M. Evasion +2.5 -->
+	</option>
+</list>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30254</npc> <!-- Harmony -->
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93104" count="1" chance="100" /> <!-- Scroll - Earth Tremor -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90075" count="1" chance="100" /> <!-- Scroll: Demolition Impact -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91921" count="1" chance="100" /> <!-- Scroll - Disarm -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90073" count="1" chance="100" /> <!-- Scroll: Destroyer's Roar -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91922" count="1" chance="100" /> <!-- Scroll - Lightning Barrier -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91923" count="1" chance="100" /> <!-- Scroll - Lightning -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91920" count="1" chance="100" /> <!-- Scroll: Magic Break -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90069" count="1" chance="100" /> <!-- Scroll: Maximum Sonic Focu -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90072" count="1" chance="100" /> <!-- Scroll: Maximum Force Focus -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90067" count="1" chance="100" /> <!-- Scroll: Sonic Barrier -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90076" count="1" chance="100" /> <!-- Scroll: Stun Blast -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90079" count="1" chance="100" /> <!-- Scroll: Spoil Crush -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90078" count="1" chance="100" /> <!-- Scroll: Armor Crush -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93866" count="1" chance="100" /> <!-- Scroll - Mastery Amazing Upward Attack -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="93868" count="1" chance="100" /> <!-- Scroll - Mastery of Awesome Crushing Soul Blow -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90068" count="1" chance="100" /> <!-- Scroll: Indestructible Sound -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90074" count="1" chance="100" /> <!-- Scroll: Over the Body -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91292" count="1" chance="100" /> <!-- Scroll: Master of Creation Lv.1 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91495" count="1" chance="100" /> <!-- Scroll: Master of Creation Lv.2 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91496" count="1" chance="100" /> <!-- Scroll: Master of Creation Lv.3 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91290" count="1" chance="100" /> <!-- Scroll: Critical Creation Lv.1 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91291" count="1" chance="100" /> <!-- Scroll: Critical Creation Lv.2 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91494" count="1" chance="100" /> <!-- Scroll: Critical Creation Lv.3 -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91295" count="1" chance="100" /> <!-- Scroll: Hawk Spirit Totem -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90080" count="1" chance="100" /> <!-- Scroll: Final Secret -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90070" count="1" chance="100" /> <!-- Scroll: Force Barrier -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91201" count="1" chance="100" /> <!-- Scroll: Full Knockdown -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91486" count="1" chance="100" /> <!-- Scroll - Full Swing -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90077" count="1" chance="100" /> <!-- Scroll: Spear Howl -->
+	</item>
+</list>

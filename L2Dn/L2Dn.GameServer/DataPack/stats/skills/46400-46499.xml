@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="46400" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46401" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46402" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46403" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46404" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46405" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46406" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46407" toLevel="1" name="Fall Damage/ Night Accuracy Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46408" toLevel="1" name="Spell Power Decrease 5 per">
+		<!-- Spell Power $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46409" toLevel="1" name="Spell Power Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46410" toLevel="1" name="Spell Power Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46411" toLevel="1" name="Spell Power Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46412" toLevel="1" name="Spell Power Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46413" toLevel="1" name="Spell Power Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46414" toLevel="1" name="Spell Power Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46415" toLevel="1" name="Spell Power Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46416" toLevel="1" name="Spell Power Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46417" toLevel="1" name="Spell Power Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46418" toLevel="1" name="Spell Power Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46419" toLevel="1" name="Spell Power Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46420" toLevel="1" name="Spell Power Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46421" toLevel="1" name="Spell Power Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46422" toLevel="1" name="Spell Power Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46423" toLevel="1" name="Spell Power Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46424" toLevel="1" name="Spell Power Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46425" toLevel="1" name="Spell Power Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46426" toLevel="1" name="Spell Power Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46427" toLevel="1" name="Spell Power Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46428" toLevel="1" name="Rear Damage Decrease 5 per">
+		<!-- Rear Damage $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46429" toLevel="1" name="Rear Damage Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46430" toLevel="1" name="Rear Damage Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46431" toLevel="1" name="Rear Damage Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46432" toLevel="1" name="Rear Damage Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46433" toLevel="1" name="Rear Damage Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46434" toLevel="1" name="Rear Damage Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46435" toLevel="1" name="Rear Damage Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46436" toLevel="1" name="Rear Damage Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46437" toLevel="1" name="Rear Damage Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46438" toLevel="1" name="Rear Damage Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46439" toLevel="1" name="Rear Damage Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46440" toLevel="1" name="Rear Damage Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46441" toLevel="1" name="Rear Damage Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46442" toLevel="1" name="Rear Damage Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46443" toLevel="1" name="Rear Damage Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46444" toLevel="1" name="Rear Damage Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46445" toLevel="1" name="Rear Damage Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46446" toLevel="1" name="Rear Damage Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46447" toLevel="1" name="Rear Damage Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46448" toLevel="1" name="Craft Point Up Decrease 5 per">
+		<!-- Craft Point Increase $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46449" toLevel="1" name="Craft Point Up Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46450" toLevel="1" name="Craft Point Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46451" toLevel="1" name="Craft Point Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46452" toLevel="1" name="Craft Point Up Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46453" toLevel="1" name="Craft Point Up Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46454" toLevel="1" name="Craft Point Up Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46455" toLevel="1" name="Craft Point Up Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46456" toLevel="1" name="Craft Point Up Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46457" toLevel="1" name="Craft Point Up Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46458" toLevel="1" name="Craft Point Up Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46459" toLevel="1" name="Craft Point Up Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46460" toLevel="1" name="Craft Point Up Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46461" toLevel="1" name="Craft Point Up Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46462" toLevel="1" name="Craft Point Up Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46463" toLevel="1" name="Craft Point Up Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46464" toLevel="1" name="Craft Point Up Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46465" toLevel="1" name="Craft Point Up Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46466" toLevel="1" name="Craft Point Up Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46467" toLevel="1" name="Craft Point Up Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46468" toLevel="1" name="P. Skill Critical Rate Decrease 5 per">
+		<!-- P. Skill Critical Rate $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46469" toLevel="1" name="P. Skill Critical Rate Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46470" toLevel="1" name="P. Skill Critical Rate Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46471" toLevel="1" name="P. Skill Critical Rate Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46472" toLevel="1" name="P. Skill Critical Rate Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46473" toLevel="1" name="P. Skill Critical Rate Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46474" toLevel="1" name="P. Skill Critical Rate Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46475" toLevel="1" name="P. Skill Critical Rate Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46476" toLevel="1" name="P. Skill Critical Rate Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46477" toLevel="1" name="P. Skill Critical Rate Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46478" toLevel="1" name="P. Skill Critical Rate Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46479" toLevel="1" name="P. Skill Critical Rate Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46480" toLevel="1" name="P. Skill Critical Rate Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46481" toLevel="1" name="P. Skill Critical Rate Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46482" toLevel="1" name="P. Skill Critical Rate Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46483" toLevel="1" name="P. Skill Critical Rate Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46484" toLevel="1" name="P. Skill Critical Rate Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46485" toLevel="1" name="P. Skill Critical Rate Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46486" toLevel="1" name="P. Skill Critical Rate Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46487" toLevel="1" name="P. Skill Critical Rate Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46488" toLevel="1" name="P. Skill Critical Damage Decrease 5 per">
+		<!-- P. Skill Critical Damage $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46489" toLevel="1" name="P. Skill Critical Damage Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46490" toLevel="1" name="P. Skill Critical Damage Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46491" toLevel="1" name="P. Skill Critical Damage Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46492" toLevel="1" name="P. Skill Critical Damage Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46493" toLevel="1" name="P. Skill Critical Damage Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46494" toLevel="1" name="P. Skill Critical Damage Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46495" toLevel="1" name="P. Skill Critical Damage Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46496" toLevel="1" name="P. Skill Critical Damage Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46497" toLevel="1" name="P. Skill Critical Damage Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46498" toLevel="1" name="P. Skill Critical Damage Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46499" toLevel="1" name="P. Skill Critical Damage Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

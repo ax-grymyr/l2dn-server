@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="226" parentClassId="225">
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Might" skillId="87461" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Blow" skillId="87301" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Empower" skillId="87463" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Empower" skillId="87463" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Shield" skillId="87462" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Agile Movements" skillId="87398" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Haste" skillId="87465" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Magic Barrier" skillId="87464" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Wind Walk" skillId="87467" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Wind Walk" skillId="87467" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Acumen" skillId="87466" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Acumen" skillId="87466" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Focus" skillId="87469" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Focus" skillId="87469" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Berserker Spirit" skillId="87468" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Wild Magic" skillId="87471" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Death Whisper" skillId="87470" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Death Whisper" skillId="87470" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="HP Recovery" skillId="87473" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Clarity" skillId="87472" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Clarity" skillId="87472" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="MP Recovery" skillId="87474" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="2" getLevel="20" levelUpSp="100" />
+	</skillTree>
+</list>

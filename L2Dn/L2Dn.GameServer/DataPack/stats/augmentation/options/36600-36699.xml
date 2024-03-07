@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36600" name="option_id_36600">
+		<!-- P. Evasion +1.7 -->
+	</option>
+	<option id="36601" name="option_id_36601">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="36602" name="option_id_36602">
+		<!-- P. Evasion +2.0 -->
+	</option>
+	<option id="36603" name="option_id_36603">
+		<!-- P. Evasion +3.0 -->
+	</option>
+	<option id="36604" name="option_id_36604">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36605" name="option_id_36605">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36606" name="option_id_36606">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36607" name="option_id_36607">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36608" name="option_id_36608">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36609" name="option_id_36609">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36610" name="option_id_36610">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36611" name="option_id_36611">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36612" name="option_id_36612">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36613" name="option_id_36613">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36614" name="option_id_36614">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36615" name="option_id_36615">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36616" name="option_id_36616">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36617" name="option_id_36617">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="36618" name="option_id_36618">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="36619" name="option_id_36619">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="36620" name="option_id_36620">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="36621" name="option_id_36621">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="36622" name="option_id_36622">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="36623" name="option_id_36623">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="36624" name="option_id_36624">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36625" name="option_id_36625">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36626" name="option_id_36626">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36627" name="option_id_36627">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36628" name="option_id_36628">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36629" name="option_id_36629">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36630" name="option_id_36630">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36631" name="option_id_36631">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36632" name="option_id_36632">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36633" name="option_id_36633">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36634" name="option_id_36634">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36635" name="option_id_36635">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36636" name="option_id_36636">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36637" name="option_id_36637">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="36638" name="option_id_36638">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="36639" name="option_id_36639">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="36640" name="option_id_36640">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="36641" name="option_id_36641">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="36642" name="option_id_36642">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="36643" name="option_id_36643">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="36644" name="option_id_36644">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36645" name="option_id_36645">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36646" name="option_id_36646">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36647" name="option_id_36647">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36648" name="option_id_36648">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36649" name="option_id_36649">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36650" name="option_id_36650">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36651" name="option_id_36651">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36652" name="option_id_36652">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36653" name="option_id_36653">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36654" name="option_id_36654">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36655" name="option_id_36655">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36656" name="option_id_36656">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36657" name="option_id_36657">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="36658" name="option_id_36658">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="36659" name="option_id_36659">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="36660" name="option_id_36660">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="36661" name="option_id_36661">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="36662" name="option_id_36662">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="36663" name="option_id_36663">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="36664" name="option_id_36664">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36665" name="option_id_36665">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36666" name="option_id_36666">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36667" name="option_id_36667">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36668" name="option_id_36668">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36669" name="option_id_36669">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36670" name="option_id_36670">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36671" name="option_id_36671">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36672" name="option_id_36672">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36673" name="option_id_36673">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36674" name="option_id_36674">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36675" name="option_id_36675">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36676" name="option_id_36676">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36677" name="option_id_36677">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36678" name="option_id_36678">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36679" name="option_id_36679">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36680" name="option_id_36680">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36681" name="option_id_36681">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36682" name="option_id_36682">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36683" name="option_id_36683">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="36684" name="option_id_36684">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36685" name="option_id_36685">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36686" name="option_id_36686">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36687" name="option_id_36687">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36688" name="option_id_36688">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36689" name="option_id_36689">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36690" name="option_id_36690">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36691" name="option_id_36691">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36692" name="option_id_36692">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36693" name="option_id_36693">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36694" name="option_id_36694">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36695" name="option_id_36695">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36696" name="option_id_36696">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36697" name="option_id_36697">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36698" name="option_id_36698">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36699" name="option_id_36699">
+		<!-- Received damage -1% -->
+	</option>
+</list>

@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="91700" name="M. Atk. +64">
+		<!-- M. Atk. +64 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91701" name="M. Atk. +68">
+		<!-- M. Atk. +68 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91702" name="M. Atk. +72">
+		<!-- M. Atk. +72 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91703" name="M. Atk. +76">
+		<!-- M. Atk. +76 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91704" name="M. Atk. +80">
+		<!-- M. Atk. +80 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91705" name="M. Atk. +85">
+		<!-- M. Atk. +85 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91706" name="M. Atk. +90">
+		<!-- M. Atk. +90 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91707" name="M. Atk. +95">
+		<!-- M. Atk. +95 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91708" name="M. Atk. +100">
+		<!-- M. Atk. +100 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91709" name="M. Atk. +106">
+		<!-- M. Atk. +106 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91710" name="M. Atk. +112">
+		<!-- M. Atk. +112 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91711" name="M. Atk. +118">
+		<!-- M. Atk. +118 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91712" name="M. Atk. +120">
+		<!-- M. Atk. +120 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91713" name="M. Atk. +130">
+		<!-- M. Atk. +130 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91714" name="M. Atk. +141">
+		<!-- M. Atk. +141 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91715" name="M. Atk. +153">
+		<!-- M. Atk. +153 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91716" name="M. Atk. +166">
+		<!-- M. Atk. +166 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91717" name="M. Atk. +180">
+		<!-- M. Atk. +180 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91718" name="M. Atk. +200">
+		<!-- M. Atk. +200 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91719" name="M. Atk. +60">
+		<!-- M. Atk. +60 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91720" name="M. Atk. +64">
+		<!-- M. Atk. +64 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91721" name="M. Atk. +68">
+		<!-- M. Atk. +68 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91722" name="M. Atk. +72">
+		<!-- M. Atk. +72 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91723" name="M. Atk. +76">
+		<!-- M. Atk. +76 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91724" name="M. Atk. +80">
+		<!-- M. Atk. +80 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91725" name="M. Atk. +85">
+		<!-- M. Atk. +85 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91726" name="M. Atk. +90">
+		<!-- M. Atk. +90 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91727" name="M. Atk. +95">
+		<!-- M. Atk. +95 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91728" name="M. Atk. +100">
+		<!-- M. Atk. +100 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91729" name="M. Atk. +106">
+		<!-- M. Atk. +106 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91730" name="M. Atk. +112">
+		<!-- M. Atk. +112 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91731" name="M. Atk. +118">
+		<!-- M. Atk. +118 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91732" name="M. Atk. +120">
+		<!-- M. Atk. +120 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91733" name="M. Atk. +130">
+		<!-- M. Atk. +130 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91734" name="M. Atk. +141">
+		<!-- M. Atk. +141 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91735" name="M. Atk. +153">
+		<!-- M. Atk. +153 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91736" name="M. Atk. +166">
+		<!-- M. Atk. +166 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91737" name="M. Atk. +180">
+		<!-- M. Atk. +180 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91738" name="M. Atk. +200">
+		<!-- M. Atk. +200 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91739" name="M. Atk. +60">
+		<!-- M. Atk. +60 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91740" name="M. Atk. +64">
+		<!-- M. Atk. +64 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91741" name="M. Atk. +68">
+		<!-- M. Atk. +68 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91742" name="M. Atk. +72">
+		<!-- M. Atk. +72 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91743" name="M. Atk. +76">
+		<!-- M. Atk. +76 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91744" name="M. Atk. +80">
+		<!-- M. Atk. +80 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91745" name="M. Atk. +85">
+		<!-- M. Atk. +85 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91746" name="M. Atk. +90">
+		<!-- M. Atk. +90 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91747" name="M. Atk. +95">
+		<!-- M. Atk. +95 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91748" name="M. Atk. +100">
+		<!-- M. Atk. +100 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91749" name="M. Atk. +106">
+		<!-- M. Atk. +106 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91750" name="M. Atk. +112">
+		<!-- M. Atk. +112 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91751" name="M. Atk. +118">
+		<!-- M. Atk. +118 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91752" name="M. Atk. +120">
+		<!-- M. Atk. +120 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91753" name="M. Atk. +130">
+		<!-- M. Atk. +130 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91754" name="M. Atk. +141">
+		<!-- M. Atk. +141 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91755" name="M. Atk. +153">
+		<!-- M. Atk. +153 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91756" name="M. Atk. +166">
+		<!-- M. Atk. +166 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91757" name="M. Atk. +180">
+		<!-- M. Atk. +180 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91758" name="M. Atk. +200">
+		<!-- M. Atk. +200 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91759" name="P. Accuracy +1.2">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91760" name="P. Accuracy +1.2">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91761" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91762" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91763" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91764" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91765" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91766" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91767" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91768" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91769" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91770" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91771" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91772" name="P. Accuracy +1.8">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91773" name="P. Accuracy +2">
+		<!-- P. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91774" name="P. Accuracy +2.1">
+		<!-- P. Accuracy +2.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91775" name="P. Accuracy +2.2">
+		<!-- P. Accuracy +2.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91776" name="P. Accuracy +2.3">
+		<!-- P. Accuracy +2.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91777" name="P. Accuracy +2.4">
+		<!-- P. Accuracy +2.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91778" name="P. Accuracy +3">
+		<!-- P. Accuracy +3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91779" name="P. Accuracy +1.2">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91780" name="P. Accuracy +1.2">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91781" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91782" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91783" name="P. Accuracy +1.3">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91784" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91785" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91786" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91787" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91788" name="P. Accuracy +1.4">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91789" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91790" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91791" name="P. Accuracy +1.5">
+		<!-- P. Accuracy +1.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91792" name="P. Accuracy +1.8">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91793" name="P. Accuracy +2">
+		<!-- P. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91794" name="P. Accuracy +2.1">
+		<!-- P. Accuracy +2.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91795" name="P. Accuracy +2.2">
+		<!-- P. Accuracy +2.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91796" name="P. Accuracy +2.3">
+		<!-- P. Accuracy +2.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91797" name="P. Accuracy +2.4">
+		<!-- P. Accuracy +2.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91798" name="P. Accuracy +3">
+		<!-- P. Accuracy +3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91799" name="P. Accuracy +1.2">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

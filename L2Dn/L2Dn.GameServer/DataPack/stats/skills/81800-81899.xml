@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="81800" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81801" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81802" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81803" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81804" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81805" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81806" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81807" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81808" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81809" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81810" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81811" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81812" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81813" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81814" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81815" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81816" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81817" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81818" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81819" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81820" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81821" toLevel="1" name="Received Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81822" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81823" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81824" toLevel="1" name="Buff Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="EnlargeAbnormalSlot">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81825" toLevel="1" name="Inventory Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>INVENTORY_NORMAL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81826" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81827" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81828" toLevel="1" name="Store Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>TRADE_BUY</type>
+				<type>TRADE_SELL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81829" toLevel="1" name="Warehouse Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>STORAGE_PRIVATE</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81830" toLevel="1" name="Soulshot/ Spiritshot damage">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81831" toLevel="1" name="P. Skill Critical Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81832" toLevel="1" name="Item Loss Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81833" toLevel="1" name="Lost Item Recovery Fee Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81834" toLevel="1" name="Death XP Penalty Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ReduceDropPenalty">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81835" toLevel="1" name="Cooldown Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="Reuse">
+				<amount>1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81836" toLevel="1" name="Inventory Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>INVENTORY_NORMAL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81837" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81838" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81839" toLevel="1" name="Soulshot/ Spiritshot damage">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81840" toLevel="1" name="CON/ MEN">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81841" toLevel="1" name="Inventory Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>INVENTORY_NORMAL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81842" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81843" toLevel="1" name="Skill Power">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81844" toLevel="1" name="Skill Power">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81845" toLevel="1" name="Cooldown Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="Reuse">
+				<amount>1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81846" toLevel="1" name="DEX/ WIT">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81847" toLevel="1" name="Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81848" toLevel="1" name="STR/ INT">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81849" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81850" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81851" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81852" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81853" toLevel="1" name="Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81854" toLevel="1" name="Magic Lamp Charging Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81855" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81856" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81857" toLevel="1" name="P. Skill Critical Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81858" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81859" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81860" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81861" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81862" toLevel="1" name="P. Skill Critical Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81863" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81864" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81865" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81866" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81867" toLevel="1" name="17th Anniversary Collection - XP">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GiveXp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81868" toLevel="1" name="17th Anniversary Collection - Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81869" toLevel="1" name="Sayha's Grace Consumption Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81870" toLevel="1" name="Sayha's Grace Charging Rate Increase">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityExpRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81871" toLevel="1" name="Sayha's Grace Consumption Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81872" toLevel="1" name="Sayha's Grace Charging Rate Increase">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VitalityExpRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81873" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81874" toLevel="1" name="Inventory Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<type>INVENTORY_NORMAL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81875" toLevel="1" name="Soulshot/ Spiritshot damage">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81876" toLevel="1" name="Skill Power">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81877" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81878" toLevel="1" name="STR/ INT">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81879" toLevel="1" name="STR/ INT/ DEX/ WIT">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="81880" toLevel="1" name="Death Knight Figurine - Collection I">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81881" toLevel="1" name="Death Knight Figurine - Collection II">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81882" toLevel="1" name="Winter Event - Collection I">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81883" toLevel="1" name="Winter Event - Collection II">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81884" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81885" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81886" toLevel="1" name="Sayha's Grace Charging Rate Increase">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81887" toLevel="1" name="Sayha's Grace Charging Rate Increase">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81888" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81889" toLevel="1" name="Inventory Slots">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81890" toLevel="1" name="Acquired XP/ SP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81891" toLevel="1" name="Sayha's Grace Consumption Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81892" toLevel="1" name="Sayha's Grace Consumption Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81893" toLevel="1" name="Received P. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81894" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81895" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81896" toLevel="1" name="P. Skill Critical Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81897" toLevel="1" name="Received P. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81898" toLevel="1" name="Received M. Skill Critical Rate Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="81899" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

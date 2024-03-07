@@ -1,0 +1,1358 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90700" name="Sealed Soul Crystal Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_blue_sealed_rune" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90540" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 7 -->
+			<item id="90560" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 7 -->
+			<item id="90580" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 7 -->
+			<item id="90600" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 7 -->
+			<item id="90620" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 7 -->
+			<item id="90640" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 7 -->
+			<item id="90660" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 7 -->
+			<item id="90680" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 7 -->
+		</capsuled_items>
+	</item>
+	<item id="90701" name="Sealed Soul Crystal Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_blue_sealed_rune" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90541" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 8 -->
+			<item id="90561" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 8 -->
+			<item id="90581" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 8 -->
+			<item id="90601" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 8 -->
+			<item id="90621" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 8 -->
+			<item id="90641" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 8 -->
+			<item id="90661" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 8 -->
+			<item id="90681" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 8 -->
+		</capsuled_items>
+	</item>
+	<item id="90702" name="Sealed Soul Crystal Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_blue_sealed_rune" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90542" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 9 -->
+			<item id="90562" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 9 -->
+			<item id="90582" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 9 -->
+			<item id="90602" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 9 -->
+			<item id="90622" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 9 -->
+			<item id="90642" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 9 -->
+			<item id="90662" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 9 -->
+			<item id="90682" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 9 -->
+		</capsuled_items>
+	</item>
+	<item id="90703" name="Sealed Soul Crystal Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_blue_sealed_rune" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90543" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 10 -->
+			<item id="90563" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 10 -->
+			<item id="90583" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 10 -->
+			<item id="90603" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 10 -->
+			<item id="90623" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 10 -->
+			<item id="90643" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 10 -->
+			<item id="90663" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 10 -->
+			<item id="90683" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 10 -->
+		</capsuled_items>
+	</item>
+	<item id="90704" name="Sealed Soul Crystal Lv. 11" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_red_sealed_rune_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90544" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 11 -->
+			<item id="90564" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 11 -->
+			<item id="90584" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 11 -->
+			<item id="90604" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 11 -->
+			<item id="90624" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 11 -->
+			<item id="90644" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 11 -->
+			<item id="90664" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 11 -->
+			<item id="90684" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 11 -->
+		</capsuled_items>
+	</item>
+	<item id="90705" name="Sealed Soul Crystal Lv. 12" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_red_sealed_rune_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90545" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 12 -->
+			<item id="90565" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 12 -->
+			<item id="90585" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 12 -->
+			<item id="90605" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 12 -->
+			<item id="90625" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 12 -->
+			<item id="90645" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 12 -->
+			<item id="90665" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 12 -->
+			<item id="90685" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 12 -->
+		</capsuled_items>
+	</item>
+	<item id="90706" name="Sealed Soul Crystal Lv. 13" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_red_sealed_rune_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90546" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 13 -->
+			<item id="90566" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 13 -->
+			<item id="90586" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 13 -->
+			<item id="90606" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 13 -->
+			<item id="90626" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 13 -->
+			<item id="90646" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 13 -->
+			<item id="90666" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 13 -->
+			<item id="90686" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 13 -->
+		</capsuled_items>
+	</item>
+	<item id="90707" name="Sealed Soul Crystal Lv. 14" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_red_sealed_rune_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90547" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 14 -->
+			<item id="90567" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 14 -->
+			<item id="90587" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 14 -->
+			<item id="90607" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 14 -->
+			<item id="90627" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 14 -->
+			<item id="90647" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 14 -->
+			<item id="90667" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 14 -->
+			<item id="90687" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 14 -->
+		</capsuled_items>
+	</item>
+	<item id="90708" name="Sealed Soul Crystal Lv. 15" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.g_red_sealed_rune_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90548" min="1" max="1" chance="12" /> <!-- Sigel's Soul Crystal Lv. 15 -->
+			<item id="90568" min="1" max="1" chance="13" /> <!-- Tyrr's Soul Crystal Lv. 15 -->
+			<item id="90588" min="1" max="1" chance="12" /> <!-- Othell's Soul Crystal Lv. 15 -->
+			<item id="90608" min="1" max="1" chance="13" /> <!-- Yul's Soul Crystal Lv. 15 -->
+			<item id="90628" min="1" max="1" chance="12" /> <!-- Feoh's Soul Crystal Lv. 15 -->
+			<item id="90648" min="1" max="1" chance="13" /> <!-- Iss' Soul Crystal Lv. 15 -->
+			<item id="90668" min="1" max="1" chance="12" /> <!-- Wynn's Soul Crystal Lv. 15 -->
+			<item id="90688" min="1" max="1" chance="13" /> <!-- Aeore's Soul Crystal Lv. 15 -->
+		</capsuled_items>
+	</item>
+	<item id="90709" name="Sealed Soul Crystal Lv. 16" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soul Crystal Lv. 16 for weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90549" min="1" max="1" chance="12" /> <!-- Sigel's Rune Lv. 16 - Not Available -->
+			<item id="90569" min="1" max="1" chance="13" /> <!-- Tyrr's Rune Lv. 16 - Not Available -->
+			<item id="90589" min="1" max="1" chance="12" /> <!-- Othell's Rune Lv. 16 - Not Available -->
+			<item id="90609" min="1" max="1" chance="13" /> <!-- Yul's Rune Lv. 16 - Not Available -->
+			<item id="90629" min="1" max="1" chance="12" /> <!-- Feoh's Rune Lv. 16 - Not Available -->
+			<item id="90649" min="1" max="1" chance="13" /> <!-- Iss' Rune Lv. 16 - Not Available -->
+			<item id="90669" min="1" max="1" chance="12" /> <!-- Wynn's Rune Lv. 16 - Not Available -->
+			<item id="90689" min="1" max="1" chance="13" /> <!-- Aeore's Rune Lv. 16 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="90710" name="Sealed Soul Crystal Lv. 17" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soul Crystal Lv. 17 for weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90550" min="1" max="1" chance="12" /> <!-- Sigel's Rune Lv. 17 - Not Available -->
+			<item id="90570" min="1" max="1" chance="13" /> <!-- Tyrr's Rune Lv. 17 - Not Available -->
+			<item id="90590" min="1" max="1" chance="12" /> <!-- Othell's Rune Lv. 17 - Not Available -->
+			<item id="90610" min="1" max="1" chance="13" /> <!-- Yul's Rune Lv. 17 - Not Available -->
+			<item id="90630" min="1" max="1" chance="12" /> <!-- Feoh's Rune Lv. 17 - Not Available -->
+			<item id="90650" min="1" max="1" chance="13" /> <!-- Iss' Rune Lv. 17 - Not Available -->
+			<item id="90670" min="1" max="1" chance="12" /> <!-- Wynn's Rune Lv. 17 - Not Available -->
+			<item id="90690" min="1" max="1" chance="13" /> <!-- Aeore's Rune Lv. 17 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="90711" name="Sealed Soul Crystal Lv. 18" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soul Crystal Lv. 18 for weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90551" min="1" max="1" chance="12" /> <!-- Sigel's Rune Lv. 18 - Not Available -->
+			<item id="90571" min="1" max="1" chance="13" /> <!-- Tyrr's Rune Lv. 18 - Not Available -->
+			<item id="90591" min="1" max="1" chance="12" /> <!-- Othell's Rune Lv. 18 - Not Available -->
+			<item id="90611" min="1" max="1" chance="13" /> <!-- Yul's Rune Lv. 18 - Not Available -->
+			<item id="90631" min="1" max="1" chance="12" /> <!-- Feoh's Rune Lv. 18 - Not Available -->
+			<item id="90651" min="1" max="1" chance="13" /> <!-- Iss' Rune Lv. 18 - Not Available -->
+			<item id="90671" min="1" max="1" chance="12" /> <!-- Wynn's Rune Lv. 18 - Not Available -->
+			<item id="90691" min="1" max="1" chance="13" /> <!-- Aeore's Rune Lv. 18 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="90712" name="Sealed Soul Crystal Lv. 19" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soul Crystal Lv. 19 for weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90552" min="1" max="1" chance="12" /> <!-- Sigel's Rune Lv. 19 - Not Available -->
+			<item id="90572" min="1" max="1" chance="13" /> <!-- Tyrr's Rune Lv. 19 - Not Available -->
+			<item id="90592" min="1" max="1" chance="12" /> <!-- Othell's Rune Lv. 19 - Not Available -->
+			<item id="90612" min="1" max="1" chance="13" /> <!-- Yul's Rune Lv. 19 - Not Available -->
+			<item id="90632" min="1" max="1" chance="12" /> <!-- Feoh's Rune Lv. 19 - Not Available -->
+			<item id="90652" min="1" max="1" chance="13" /> <!-- Iss' Rune Lv. 19 - Not Available -->
+			<item id="90672" min="1" max="1" chance="12" /> <!-- Wynn's Rune Lv. 19 - Not Available -->
+			<item id="90692" min="1" max="1" chance="13" /> <!-- Aeore's Rune Lv. 19 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="90713" name="Sealed Soul Crystal Lv. 20" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Soul Crystal Lv. 20 for weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90553" min="1" max="1" chance="12" /> <!-- Sigel's Rune Lv. 20 - Not Available -->
+			<item id="90573" min="1" max="1" chance="13" /> <!-- Tyrr's Rune Lv. 20 - Not Available -->
+			<item id="90593" min="1" max="1" chance="12" /> <!-- Othell's Rune Lv. 20 - Not Available -->
+			<item id="90613" min="1" max="1" chance="13" /> <!-- Yul's Rune Lv. 20 - Not Available -->
+			<item id="90633" min="1" max="1" chance="12" /> <!-- Feoh's Rune Lv. 20 - Not Available -->
+			<item id="90653" min="1" max="1" chance="13" /> <!-- Iss' Rune Lv. 20 - Not Available -->
+			<item id="90673" min="1" max="1" chance="12" /> <!-- Wynn's Rune Lv. 20 - Not Available -->
+			<item id="90693" min="1" max="1" chance="13" /> <!-- Aeore's Rune Lv. 20 - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="90714" name="Soul Crystal Lv. 1 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90715" name="Soul Crystal Lv. 2 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90716" name="Soul Crystal Lv. 3 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90717" name="Soul Crystal Lv. 4 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90718" name="Soul Crystal Lv. 5 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90719" name="Soul Crystal Lv. 6 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90720" name="Soul Crystal Lv. 7 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90721" name="Soul Crystal Lv. 8 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90722" name="Soul Crystal Lv. 9 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90723" name="Soul Crystal Lv. 10 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90724" name="Soul Crystal Lv. 11 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90725" name="Soul Crystal Lv. 12 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90726" name="Soul Crystal Lv. 13 Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to a grocer or a proficient blacksmith to get a soul crystal. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90727" name="Banana Sweets" additionalName="Sealed" type="EtcItem">
+		<!-- For 5 min., acquired XP/ SP while hunting +50%, P. Atk. +15%, M. Atk. +23%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +10%, Speed +10, HP/ MP Recovery Rate +30%. The effect remains after death, but disappears after logout. -->
+		<set name="icon" val="icon.songpyeon_herb" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90728" name="Fresh Monkey Bait" additionalName="Sealed" type="EtcItem">
+		<!-- A fishing bait for catching a Tuna. Gives a small chance to get Flower Sweets and Pumpkin Sweets. -->
+		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="90729" name="Flower Sweets" type="EtcItem">
+		<!-- For 20 minutes Max HP/ MP +5%, Acquired XP/ SP +20%. If used with Life Control Tower's Scroll of Blessing and Angel Cat's Blessing, the effect does not stack. -->
+		<set name="icon" val="icon.flower_songpyeon" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90730" name="Pumpkin Sweets" additionalName="Sealed" type="EtcItem">
+		<!-- Sayha's Grace points +35,000. For 20 min., P./ M. Atk. +12%, P./ M. Def. +15%, Max HP/ MP/ CP +25%, P. Critical Rate/ M. Skill Critical Rate +10, P. Critical Damage/ M. Skill Critical Damage +5%, HP/ MP Recovery Rate +30%. With a certain chance, absorbs 5% of the inflicted damage as HP. Does not stack with the Special Pirate/ Dragon Fruit's effect. -->
+		<set name="icon" val="icon.pumpkin_songpyeon" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90731" name="Hanbok" additionalName="Sealed" type="Armor">
+		<!-- Changes armor appearance to that of a Hanbok. When equipped, it is impossible to wear armor. Hats, weapons and accessories are not removed. The Head Enlargement and Firecracker skills can be used. -->
+		<set name="icon" val="icon.ev_kr_traditional_dress" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90732" name="+8 B-grade Armor Set Coupon" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.etc_exchange_ticket_i02" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90733" name="Eigis Ein Orders" type="EtcItem">
+		<!-- Orders received from Eigis Ein of the Warrior Guild of Giran. Meet Agent of the Devil's Isle Fethin in Giran Harbor, and he will tell you your next task. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90734" name="Spiteful Soul Skull" type="EtcItem">
+		<!-- Skull found while exploring the Heap of Bones of the Devil's Isle. Take it, along with other remains, to Pirate Spirit who can be found near the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_skull_white_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90735" name="Spiteful Soul Rib Bone" type="EtcItem">
+		<!-- Rib Bone found while exploring the Heap of Bones of the Devil's Isle. Take it, along with other remains, to Pirate Spirit who can be found near the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_rib_white_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90736" name="Spiteful Soul Arm Bone" type="EtcItem">
+		<!-- Arm Bone found while exploring the Heap of Bones of the Devil's Isle. Take it, along with other remains, to Pirate Spirit who can be found near the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_piece_bone_white_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90737" name="Spiteful Soul Thigh Bone" type="EtcItem">
+		<!-- Thigh Bone found while exploring the Heap of Bones of the Devil's Isle. Take it, along with other remains, to Pirate Spirit who can be found near the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_piece_bone_white_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90738" name="Vengeful Spirit's Note" type="EtcItem">
+		<!-- Letter, shrouded in the mystery of the Devil's Isle. It was given to you by Pirate Spirit as his thanks for gathering all what's left of his mortal body. Take the letter to Nikia, an Agent of the Devil's Isle. You can find him at the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90739" name="Vengeful Spirit's Note" type="EtcItem">
+		<!-- Letter, shrouded in the mystery of the Devil's Isle. It was given to you by Pirate Spirit as his thanks for gathering all what's left of his mortal body. Take the letter to Eigis Ein of the Warrior Guild of Giran. -->
+		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90740" name="Eigis Ein Orders" type="EtcItem">
+		<!-- Orders of Eigis Ein. Take it to Nikia, an Agent of the Devil's Isle. You can find him at the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90741" name="Eigis Ein Orders" type="EtcItem">
+		<!-- Orders of Eigis Ein. Take it to Garom, an Agent of the Devil's Isle. You can find him at the entrance to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90742" name="Sombrie's Proof" type="EtcItem">
+		<!-- Proof of Sombrie, Zaken's Minion that you have met on the Devil's Isle. Take it, along with other Subordinates' proofs, to Agent of Devil's Isle Garom. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90743" name="Rissuos' Proof" type="EtcItem">
+		<!-- Proof of Rissuos, Zaken's Minion, that you have met on the Devil's Isle. Take it, along with other Subordinates' proofs, to Agent of the Devil's Isle Garom. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90744" name="Gallu's Proof" type="EtcItem">
+		<!-- Proof of Gallu, Zaken's Minion that you have met on the Devil's Isle. Take it, along with other Subordinates' proofs, to Agent of the Devil's Isle Garom. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90745" name="Kukoni's Proof" type="EtcItem">
+		<!-- Proof of Kukoni, Zaken's Minion, that you have met on the Devil's Isle. Take it, along with other Subordinates' proofs, to Agent of the Devil's Isle Garom. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90746" name="Zaken's Relic" type="EtcItem">
+		<!-- A Chest with Zaken's Relic received for your help to Zaken's Minions that you have met on the Devil's Isle. It might prove to be useful to Agent of the Devil's Isle Garom. Go to him. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90747" name="Zaken's Relic - original" type="EtcItem">
+		<!-- The true Zaken's Relic received from Zaken's Minions. It might shed some light on the mystery of his whereabouts. -->
+		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90748" name="Zaken's Relic - imitation" type="EtcItem">
+		<!-- A false Zaken's Relic received from Zaken's Minions. It won't shed any light on the mystery of his whereabouts, but it might prove to be useful for something else. -->
+		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90749" name="Unfinished Zaken Tracking Device" type="EtcItem">
+		<!-- Zaken Tracking Device. Doesn't work. To understand the cause, take it Eigis Ein at the Warrior Guild of Giran. -->
+		<set name="icon" val="icon.etc_instrument_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90750" name="Vanor Silenos Totem" type="EtcItem">
+		<!-- A Totem obtained after slaying Vanor Silenos on the Plains of Glory. Take it to Magister Kaiena of Dark Elf Guild of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_barka_badge_grunt_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90751" name="Monster Blood" type="EtcItem">
+		<!-- Blood obtained after slaying monsters on the War-Torn Plains. Take it to Magister Kaiena of Dark Elf Guild of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_dragons_blood_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90752" name="Zaken Tracking Device" type="EtcItem">
+		<!-- Finished Zaken Tracking Device. Take it to Eigis Ein of the Warrior Guild of Giran. -->
+		<set name="icon" val="icon.etc_mechanic_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90753" name="Zaken Tracking Device" type="EtcItem">
+		<!-- Zaken Tracking Device. Take it and kill Zaken. -->
+		<set name="icon" val="icon.etc_mechanic_box_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90754" name="Zaken's Blood" type="EtcItem">
+		<!-- Blood obtained after killing the Pirate King Zaken. Take it to Eigis Ein of the Warrior Guild of Giran. -->
+		<set name="icon" val="icon.etc_dragons_blood_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90755" name="Pirate's Treasure Map Piece" additionalName="Sealed" type="EtcItem">
+		<!-- A piece of map obtained from killed pirates of the Devil's Isle. It's quite possible that pieces like this form a whole map. Collect 25 of such pieces and take them to Agent of the Devil's Isle Garom to get a complete Pirate Map. -->
+		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90756" name="Pirate's Treasure Map" additionalName="Sealed" type="EtcItem">
+		<!-- A Treasure Map that leads into the depths of the Devil's Isle. Double-click to view. -->
+		<set name="icon" val="icon.etc_plan_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90757" name="Map with a Mark" additionalName="Sealed" type="EtcItem">
+		<!-- This Map marks the place on the Devil's Isle where treasures are hidden. -->
+		<set name="icon" val="icon.etc_plan_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90758" name="Pirate Potion" type="EtcItem">
+		<!-- A Potion that cheered up Pirates on long voyages. Fuddles the mind. Bring it to Zaken's Minion Sombrie. -->
+		<set name="icon" val="icon.etc_dragons_blood_i01" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90759" name="Pirate Steak" type="EtcItem">
+		<!-- Steaks that Pirates carried around with them. It might serve as a long-awaited meal for someone. Bring Steaks to Zaken's Minion Rissuos. -->
+		<set name="icon" val="icon.etc_bodypart_liver_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90760" name="Energy of Frost" type="EtcItem">
+		<!-- An item that emits icy energy. Collected from the killed Pirates who were put under an excruciating curse. Bring it to Zaken's Minion Gallu. -->
+		<set name="icon" val="icon.giant_item_equip_part" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90761" name="Pirate Skull" type="EtcItem">
+		<!-- A Skull obtained after the death of a Pirate. It's not yet clear how it might be useful, but bring it to Zaken's Minion Kukoni still. -->
+		<set name="icon" val="icon.etc_skull_red_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90762" name="Pirate's Treasure Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i02" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39294" level="1" /> <!-- Pirate's Treasure Chest -->
+		</skills>
+	</item>
+	<item id="90763" name="Zaken's Earring" type="Armor">
+		<!-- Max enchant value: +6. (Requires Scroll: Enchant Rare Accessories.). Boosts the item's parameters after enchanting. Effects of two identical earrings do not stack. Safe enchanting to +1 -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="50448" level="1" /> <!-- Zaken's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">107</stat>
+		</stats>
+	</item>
+	<item id="90764" name="Zaken's Earring Lv. 2" type="Armor">
+		<!-- <Properties>. MP Consumption -3%. Received Healing +6%. HP Recovery Rate +15%. Max MP +28. Infection Atk. Rate and Resistance +15%. Shock Atk. Rate and Resistance +10%. Silence Atk. Rate and Resistance +10%. Fear Atk. Rate and Resistance +10%. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="50442" level="2" /> <!-- Zaken Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">70</stat>
+			<stat type="maxMp">28</stat>
+		</stats>
+	</item>
+	<item id="90765" name="Zaken's Earring Lv. 3" type="Armor">
+		<!-- <Properties>. MP Consumption -4%. Received Healing +10%. HP Recovery Rate +20%. Vampiric Rage effect +8%. Max MP +34. Infection Atk. Rate and Resistance +20%. Shock Atk. Rate and Resistance +15%. Silence Atk. Rate and Resistance +15%. Fear Atk. Rate and Resistance +15%. Effects of two identical earrings do not stack. Cannot be enchanted. Take 2 of these earrings to Blacksmith Baggins in Giran to exchange them for Essence of Zaken. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="50442" level="3" /> <!-- Zaken Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">80</stat>
+			<stat type="maxMp">34</stat>
+		</stats>
+	</item>
+	<item id="90766" name="Scroll of Escape: Entrance to the Devil's Isle" additionalName="Sealed" type="EtcItem">
+		<!-- Teleports to the Devil's Isle. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="weight" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90767" name="Zaken's Earring Lv. 1" additionalName="7-day" type="Armor">
+		<!-- <Properties>. MP Consumption -2%. Received Healing +4%. HP Recovery Rate +10%. Max MP +22. Infection Atk. Rate and Resistance +10%. Shock Atk. Rate and Resistance +5%. Silence Atk. Rate and Resistance +5%. Fear Atk. Rate and Resistance +5%. Available for 7 d. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="50442" level="1" /> <!-- Zaken Earring Lv .1 -->
+		</skills>
+		<stats>
+			<stat type="mDef">60</stat>
+			<stat type="maxMp">22</stat>
+		</stats>
+	</item>
+	<item id="90768" name="Hair Accessory Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- A coupon for the clan head accessory. Can be exchanged for an animal-shaped head accessory via High Priest Orven. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i04" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90769" name="Teddy Bear Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny bear-shaped head accessory. Can be used for teleportation to your Clan Hall. Cooldown: 1 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_bear_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90770" name="Piggy Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny piggy-shaped head accessory. Can be used for teleportation to your Clan Hall. Cooldown: 1 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pig_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90771" name="Frog Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny frog-shaped head accessory. Can be used for teleportation to your Clan Hall. Cooldown: 1 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_frog_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90772" name="Fish Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny fish-shaped head accessory. Can be used for teleportation to your Clan Hall. Cooldown: 1 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_fish_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90773" name="Chicken Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny chicken-shaped head accessory. Can be used for teleportation to your Clan Hall. Cooldown: 1 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_chicken_cap2_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90774" name="+3 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- When equipped, M. Def. +13. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">31</stat>
+		</stats>
+	</item>
+	<item id="90775" name="Talisman of Border Lv. 3" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +17, P./ M. Evasion +1, Max HP/ MP/ CP +80, Speed +3, Acquired XP/ SP +3%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90776" name="+4 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +14, acquired XP/ SP +2%. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">34</stat>
+		</stats>
+	</item>
+	<item id="90777" name="Talisman of Border Lv. 4" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +19, P./ M. Evasion +1, Max HP/ MP/ CP +80, Speed +3, Atk. Spd./ Casting Spd. +7, Acquired XP/ SP +3%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90778" name="+5 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +15, acquired XP/ SP +5%, P./ M. Atk. +10. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">37</stat>
+		</stats>
+	</item>
+	<item id="90779" name="Talisman of Border Lv. 5" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +22, P./ M. Evasion +1, Max HP/ MP/ CP +120, Speed +5, Atk. Spd./ Casting Spd. +10, acquired XP/ SP +4%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90780" name="+6 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +16, acquired XP/ SP +10%, P./ M. Atk. +20. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">40</stat>
+		</stats>
+	</item>
+	<item id="90781" name="Talisman of Border Lv. 6" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +24, P./ M. Evasion +2, HP/ MP/ CP +160, Speed +5, Atk. Spd./ Casting Spd. +15, Acquired XP/ SP +4%. Enables Border Purification (removes Paralysis, Petrification, Poisoning, and Bleeding). Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90782" name="+7 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +17, acquired XP/ SP +20%, P./ M. Atk. +30. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">43</stat>
+		</stats>
+	</item>
+	<item id="90783" name="Talisman of Border Lv. 7" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +29, P./ M. Evasion +2, Max HP/ MP/ CP +160, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +5%. Enables Dimensional Border Power Lv. 1 (with a certain chance increases attack power). Enables Border Purification (removes Paralysis, Petrification, Poison, and Bleed). Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90784" name="Vital Stone Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +8%, Sayha's Grace Consumption -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55472" level="4" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90785" name="Diamond Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. P. Def. +81, received P. Critical Damage -4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55475" level="4" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90786" name="Pearl Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. When equipped, M. Def. +46, received M. Skill Critical Damage -4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55476" level="4" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90787" name="Jade Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. Atk. Spd./ Casting Spd. +7%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55474" level="4" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90788" name="Fire Dragon Belt" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. Inventory Slots +6, Weight Limit +7000, STR/ INT +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, HP Recovery Potions' Effect +100, P. Critical Damage/ M. Skill Critical Damage +4%. -->
+		<set name="icon" val="icon.bm_vallakas_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="35047" level="1" /> <!-- Fire Dragon Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="90789" name="Garnet Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +11%. Grants immunity to debuffs for 5 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55485" level="4" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90790" name="+8 Fire Dragon Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +18, Acquired XP/ SP +25%, P./ M. Atk. +40, P. Critical Damage/ M. Skill Critical Damage +5%. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="90791" name="Talisman of Border Lv. 8" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. P./ M. Def. +34, P./ M. Evasion +2, Max HP/ MP/ CP +200, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +5%. Enables Dimensional Border Power Lv. 2 (with a certain chance increases attack power). Enables Border Purification (removes Paralysis, Petrification, Poison, and Bleed). Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90792" name="Topaz Lv. 4" additionalName="15-day" type="Armor">
+		<!-- Available for 15 days. Interrupts the target's skill casting. Inflicts 1357 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="55471" level="4" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90793" name="Chef's Fish Stew Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font>. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55715" level="1" /> <!-- Chef's Fish Stew Box -->
+		</skills>
+	</item>
+	<item id="90794" name="Shining Scroll of Mood Melody" additionalName="Sealed" type="EtcItem">
+		<!-- For 20 min., grants the following effects: Might, Shield, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Focus, Death Whisper, Guidance, Clarity, Wild Magic, Concentration. The effect remains after death. Note!. 1. Cannot be used together with Scroll of Mood Melody. 2. The effect is renewed upon re-use. <font color=eeaa22>Can be exchanged to Spirit Ore (500 pcs.) by Pona.</font> -->
+		<set name="icon" val="icon.bm_magmeld" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90795" name="Zaken's Earring Box Lv. 1" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90767" min="1" max="1" chance="100" /> <!-- Zaken's Earring Lv. 1 - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90796" name="+3 Fire Dragon Pendant Pack" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90774" min="1" max="1" chance="100" /> <!-- +3 Fire Dragon Pendant - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90797" name="Talisman of Border Pack Lv. 3" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90775" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 3 - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90798" name="+4 Fire Dragon Pendant Pack" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90776" min="1" max="1" chance="100" /> <!-- +4 Fire Dragon Pendant - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90799" name="Talisman of Border Pack Lv. 4" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90777" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 4 - 7-day -->
+		</capsuled_items>
+	</item>
+</list>

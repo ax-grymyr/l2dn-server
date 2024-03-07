@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list" type="listType" />
+	<xs:complexType name="paramType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="locationsType">
+		<xs:sequence>
+			<xs:element type="paramType" name="param" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="conditionsType">
+		<xs:sequence>
+			<xs:element type="paramType" name="param" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="itemType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:int" name="id" />
+				<xs:attribute type="xs:int" name="count" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="itemsType">
+		<xs:sequence>
+			<xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rewardsType">
+		<xs:sequence>
+			<xs:element type="itemsType" name="items" maxOccurs="unbounded" minOccurs="0" />
+			<xs:element type="paramType" name="param" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="goalsType">
+		<xs:sequence>
+			<xs:element type="paramType" name="param" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="quest">
+		<xs:sequence>
+			<xs:element type="locationsType" name="locations" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element type="conditionsType" name="conditions" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element type="rewardsType" name="rewards" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element type="goalsType" name="goals" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute type="xs:int" name="id" />
+		<xs:attribute type="xs:short" name="type" />
+		<xs:attribute type="xs:string" name="name" />
+		<xs:attribute type="xs:int" name="startNpcId" />
+		<xs:attribute type="xs:int" name="endNpcId" />
+		<xs:attribute type="xs:int" name="startItemId" />
+	</xs:complexType>
+	<xs:complexType name="listType">
+		<xs:sequence>
+			<xs:element type="quest" name="quest" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

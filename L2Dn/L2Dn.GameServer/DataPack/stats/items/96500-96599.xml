@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="96500" name="Dark Crystal Gloves (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Evasion +2. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96501" name="Dark Crystal Gloves (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Interruption Rate -25. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96502" name="Tallum Gloves (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Def. +10. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96503" name="Tallum Gloves (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Max MP +120. Casting Spd. +15%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96504" name="Tallum Gloves (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +20. Max HP +50. Casting Spd. +15%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96505" name="Gauntlets of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Atk. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96506" name="Gauntlets of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. A chance to absorb 2% of the inflicted damage as HP. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96507" name="Gauntlets of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. M. Atk. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96508" name="Majestic Gauntlets (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. Atk. Spd. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96509" name="Majestic Gauntlets (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Skill Critical Damage +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96510" name="Majestic Gauntlets (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Spd. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t85_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96511" name="Dark Crystal Boots (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +200. Speed +4. Received Healing +2%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96512" name="Dark Crystal Boots (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Evasion +2. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96513" name="Dark Crystal Boots (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +7. Casting Interruption Rate -25. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96514" name="Tallum Boots (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Def. +10. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96515" name="Tallum Boots (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Max MP +120. Speed +4. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96516" name="Tallum Boots (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +20. Max HP +50. Speed +4. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+	<item id="96517" name="Boots of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Atk. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96518" name="Boots of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. A chance to absorb 2% of the inflicted damage as HP. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96519" name="Boots of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. M. Atk. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96520" name="Majestic Boots (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +7. Atk. Spd. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96521" name="Majestic Boots (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Skill Critical Damage +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96522" name="Majestic Boots (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. Casting Spd. +50. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t85_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1110" />
+		<set name="price" val="1355000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="96523" name="Tallum Helmet (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. Max HP +50. P. Atk. +4%. HP Recovery Rate +5.5%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96524" name="Tallum Helmet (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96525" name="Tallum Helmet (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +5.5%. M. Def. +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96526" name="Dark Crystal Helmet (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. Max HP +100. P. Atk. +4%. HP Recovery Rate +5.5%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96527" name="Dark Crystal Helmet (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +5.5%. P. Critical Damage +30. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96528" name="Dark Crystal Helmet (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +5.5%. P. Def. +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96529" name="Helm of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8%. 5% damage reflection. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96530" name="Helm of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96531" name="Helm of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +8%. M. Skill Critical Damage +30. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96532" name="Majestic Circlet (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96533" name="Majestic Circlet (Light) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +5.5%. Bow P. Atk. +8%. Firearms P. Atk. +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96534" name="Majestic Circlet (Robe) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. Max MP +300. M. Atk. +8%. MP Recovery Rate +8%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96535" name="Majestic Necklace (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- MP +33. <font color=eeaa22><Permanent item craft></font>. Can be created in the Accessories tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="price" val="1998000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">95</stat>
+			<stat type="maxMp">33</stat>
+		</stats>
+	</item>
+	<item id="96536" name="Majestic Earring (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- MP +25. <font color=eeaa22><Permanent item craft></font>. Can be created in the Accessories tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="price" val="1498000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">25</stat>
+		</stats>
+	</item>
+	<item id="96537" name="Majestic Ring (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- MP +17. <font color=eeaa22><Permanent item craft></font>. Can be created in the Accessories tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="999000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">47</stat>
+			<stat type="maxMp">17</stat>
+		</stats>
+	</item>
+	<item id="96538" name="Package: Dark Crystal Breastplate (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96539" name="Package: Armor of Nightmare (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96540" name="Package: Dark Crystal Gaiters (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t74_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96541" name="Package: Dark Crystal Helmet (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96542" name="Package: Tallum Helmet (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96543" name="Package: Dark Crystal Shield (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96544" name="Package: Tallum Plate Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t77_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96545" name="Package: Majestic Plate Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96546" name="Package: Dark Crystal Leather Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96547" name="Package: Dark Crystal Leggings (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t75_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96548" name="Package: Tallum Leather Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t78_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96549" name="Package: Leather Armor of Nightmare (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t81_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96550" name="Package: Majestic Leather Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96551" name="Package: Tallum Tunic (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96552" name="Package: Tallum Stockings (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t79_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96553" name="Package: Dark Crystal Robe (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96554" name="Package: Robe of Nightmare (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t82_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96555" name="Package: Majestic Robe (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96556" name="Package: Helm of Nightmare (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96557" name="Package: Majestic Circlet (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96558" name="Package: Dark Crystal Gloves (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t15_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96559" name="Package: Shield of Nightmare (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96560" name="Package: Dark Crystal Gloves (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t74_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96561" name="Package: Dark Crystal Gloves (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t75_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96562" name="Package: Dark Crystal Gloves (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t76_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96563" name="Package: Tallum Gloves (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t77_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96564" name="Package: Tallum Gloves (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t78_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96565" name="Package: Tallum Gloves (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t79_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96566" name="Package: Gauntlets of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t80_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96567" name="Package: Gauntlets of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t81_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96568" name="Package: Gauntlets of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t82_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96569" name="Package: Majestic Gauntlets (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t83_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96570" name="Package: Majestic Gauntlets (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t84_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96571" name="Package: Majestic Gauntlets (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t85_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96572" name="Package: Dark Crystal Boots (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t74_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96573" name="Package: Dark Crystal Boots (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t75_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96574" name="Package: Dark Crystal Boots (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t76_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96575" name="Package: Tallum Boots (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t77_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96576" name="Package: Tallum Boots (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t78_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96577" name="Package: Tallum Boots (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t79_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96578" name="Package: Boots of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t80_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96579" name="Package: Boots of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t81_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96580" name="Package: Boots of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t82_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96581" name="Package: Majestic Boots (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t83_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96582" name="Package: Majestic Boots (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t84_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96583" name="Package: Majestic Boots (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_t85_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96584" name="Package: Tallum Helmet (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96585" name="Package: Tallum Helmet (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96586" name="Package: Tallum Helmet (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96587" name="Package: Dark Crystal Helmet (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96588" name="Package: Dark Crystal Helmet (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96589" name="Package: Dark Crystal Helmet (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96590" name="Package: Helm of Nightmare (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96591" name="Package: Helm of Nightmare (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96592" name="Package: Helm of Nightmare (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96593" name="Package: Majestic Circlet (Heavy) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96594" name="Package: Majestic Circlet (Light) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96595" name="Package: Majestic Circlet (Robe) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96596" name="Package: Majestic Necklace (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96597" name="Package: Majestic Earring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96598" name="Package: Majestic Ring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="96599" name="Sword of Ipos - Not Available" type="Weapon">
+		<!-- Monsters' weapon, unavailable. -->
+		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1820" />
+		<set name="price" val="26968400" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">137</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+</list>

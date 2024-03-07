@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="59817" toLevel="1" name="Returning Hero's Symbol">
+		<!-- STR/ DEX/ CON/ INT/ WIT/ MEN +1 -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59819" toLevel="1" name="Sayha's Grace Sustain Rune">
+		<!-- Sayha's Grace Sustain -->
+		<icon>icon.ev_charge_run</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59820" toLevel="1" name="Anniversary Firecracker NCJ 20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59821" toLevel="1" name="Blue Firecracker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59822" toLevel="1" name="Red Firecracker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59823" toLevel="1" name="Green Firecracker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59824" toLevel="1" name="NCJ 20 Anniversary Gift">
+		<!-- A gift for the NCJ 20 Anniversary. P. Atk. +250. M. Atk. +250. P. Def. +150. M. Def. +150. Max HP +300. Max MP +250. Acquired XP +10%. Acquired SP +10%. The effect remains after death. -->
+		<icon>BranchIcon.icon.ev_ncjapan_20th_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59825" toLevel="6" name="L2M Blessing - Lv. 1">
+		<!-- A buff for commemorating the L2M launch. A reward is given once per hour. For 1 h., Atk. Spd./ Casting Spd. 100, Speed 10, all stats +1. Note!. You cannot get a reward if your character is dead. -->
+		<icon>BranchIcon.icon.g_ev_l2m_blessing_ncw_00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59826" toLevel="1" name="L2M Blessing Reward">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59827" toLevel="1" name="Happy New Year!">
+		<!-- We wish you luck in all your endeavors!. P. Atk. +200. M. Atk. +200. P. Def. +200. M. Def. +200. Max HP +200. Max MP +200. Acquired XP +10%. Acquired SP +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59828" toLevel="1" name="Red Lantern">
+		<icon>icon.etc_holy_grail_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59829" toLevel="1" name="Transcendent Prophecy">
+		<!-- PvE damage +5%. Acquired XP/ SP +50%. Sayha's Grace sustention effect. Note!. Available only in transcendent instance zones. -->
+		<icon>icon.skill10318</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59830" toLevel="1" name="$s2's Reward for Rank $s1">
+		<!-- A buff for all characters of name's server to celebrate their ranking rank in the World Festival Ranking. Acquired XP/ SP +7%. P. Atk. +100. M. Atk. +100. P. Def. +100. M. Def. +100. Max HP +200 -->
+		<icon>BranchIcon.Icon.bm_wrf_reward_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59831" toLevel="1" name="$s2's Reward for Rank $s1">
+		<!-- A buff for all characters of name's server to celebrate their ranking rank in the World Festival Ranking. Acquired XP/ SP +5%. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Max HP +100 -->
+		<icon>BranchIcon.Icon.bm_wrf_reward_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59832" toLevel="1" name="$s2's Reward for Rank $s1">
+		<!-- A buff for all characters of name's server to celebrate their ranking rank in the World Festival Ranking. Acquired XP/ SP +3%. P. Atk. +30. M. Atk. +30 -->
+		<icon>BranchIcon.Icon.bm_wrf_reward_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59833" toLevel="1" name="$s2's Reward for Rank $s1">
+		<!-- A buff for all characters of name's server to celebrate their ranking rank in the World Festival Ranking. P. Atk. +20. M. Atk. +20 -->
+		<icon>BranchIcon.Icon.bm_wrf_reward_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59834" toLevel="1" name="$s2's Reward for Rank $s1">
+		<!-- A buff for all characters of name's server to celebrate their ranking rank in the World Festival Ranking. P. Atk. +10. M. Atk. +10 -->
+		<icon>BranchIcon.Icon.bm_wrf_reward_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59835" toLevel="1" name="Dragon Berserker Evolver">
+		<!-- P. Atk. +500. M. Atk. +500. Atk. Spd. +100. Casting Spd. +100. P. Critical Rate +30. Skill Critical Rate +30%. Acquired XP/ SP +30%. Sayha's Grace Consumption -15%. XP recovery fee -20% -->
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59836" toLevel="1" name="Wild Wolf Transformation">
+		<!-- P. Atk. +300. M. Atk. +300. Atk. Spd. +50. Casting Spd. +50. P. Critical Rate +15. Skill Critical Rate +15%. Acquired XP/ SP +30%. Sayha's Grace Consumption -10%. XP recovery fee -20% -->
+		<icon>icon.bm2018_barbarian_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59837" toLevel="1" name="High Priest Transformation">
+		<!-- P. Atk. +300. M. Atk. +300. Atk. Spd. +50. Casting Spd. +50. P. Critical Rate +15. Skill Critical Rate +15%. Acquired XP/ SP +30%. Sayha's Grace Consumption -10%. XP recovery fee -20% -->
+		<icon>icon.bm2018_healer_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59838" toLevel="1" name="Panda Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59839" toLevel="1" name="Cat Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59840" toLevel="1" name="Transform: Kat the Cat">
+		<!-- P. Atk. +200. M. Atk. +200. Atk. Spd. +20. Casting Spd. +20. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>icon.cat_the_cat_change_0</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59841" toLevel="1" name="Cool Summer Slushie">
+		<!-- Acquired XP/ SP +10%. P. Atk./ M. Atk./ P. Def./ M. Def. +100. - Duration: 20 min. - Cooldown: 1 min. - The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>BranchSys3.icon1.g_ev_sweet_icewater</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59842" toLevel="1" name="Aden Transformation Scroll">
+		<icon>icon.random_transform_00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59843" toLevel="1" name="Einhasad Hero's Support">
+		<!-- Acquired XP/ SP +10%. Share Location fee -50%. My Teleport's Share Location fee -50%. XP recovery fee -20%. Common monsters' item drop rate +5%. Acquired adena +2% -->
+		<icon>icon.skill5662</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59844" toLevel="1" name="Transformation Scroll: Alluring Swimsuit">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59845" toLevel="1" name="Transformation Scroll: Seductive Swimsuit">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59846" toLevel="1" name="Transformation Scroll: Beach Swimsuit">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -20% -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59847" toLevel="1" name="Season Pass Bonus (Time-limited)">
+		<!-- All stats +1. P. Atk./ M. Atk./ P. Def./ M. Def. +50. Max HP/ MP/ CP +100. Acquired XP/ SP +5%. Duration: 30 min. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.super_elixir_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59848" toLevel="1" name="Shining Season Pass Bonus">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="59849" toLevel="1" name="Gorezones' Luck Rune">
+		<!-- A personal rune gifted on occasion of the first A-grade weapon enchantment up to +10. Enchant success rate +1% when enchanting any item with weapon enchant scrolls. Enchant success rate +1% when enchanting any item with armor enchant scrolls -->
+		<icon>BranchSys3.icon1.g_rune_of_half_power</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="59850" toLevel="1" name="Death Knight's Rune">
+		<!-- The Death Knight growth buff. Acquired XP/ SP +30%. STR +1. INT +1. DEX +1. WIT +1. CON +1. MEN +1. Max HP +300. P. Def. +100. M. Def. +100. Sayha's Grace sustention. Does not work on servitors. -->
+		<icon>icon.skill30980</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59853" toLevel="1" name="Verlin's Protection">
+		<!-- A buff from Verlin, a great bug hunter. Acquired XP/ SP +10% Enchant success rate +1% Skill MP Consumption -1% HP Recovery Potions' Effect +5 P./ M. Atk. +50 P./ M. Def. +50 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>14400</abnormalTime>
+		<abnormalType>EVENT_BUFF</abnormalType>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="EnchantRate">
+				<amount>1</amount>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

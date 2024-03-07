@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="2500" price="0" /> <!-- Dark Legion's Edge -->
+	<item id="81" price="0" /> <!-- Dragon Slayer -->
+	<item id="151" price="0" /> <!-- Sword of Miracles -->
+	<item id="150" price="0" /> <!-- Elemental Sword -->
+	<item id="80" price="0" /> <!-- Tallum Blade -->
+	<item id="305" price="0" /> <!-- Tallum Glaive -->
+	<item id="98" price="0" /> <!-- Halberd -->
+	<item id="270" price="0" /> <!-- Dragon Grinder -->
+	<item id="269" price="0" /> <!-- Blood Tornado -->
+	<item id="236" price="0" /> <!-- Soul Separator -->
+	<item id="235" price="0" /> <!-- Bloody Orchid -->
+	<item id="289" price="0" /> <!-- Soul Bow -->
+	<item id="288" price="0" /> <!-- Carnage Bow -->
+	<item id="213" price="0" /> <!-- Branch of the Mother Tree -->
+	<item id="164" price="0" /> <!-- Elysian -->
+	<item id="2504" price="0" /> <!-- Meteor Shower -->
+	<item id="8678" price="0" /> <!-- Sirra's Blade -->
+	<item id="8679" price="0" /> <!-- Sword of Ipos -->
+	<item id="8680" price="0" /> <!-- Barakiel's Axe -->
+	<item id="8681" price="0" /> <!-- Behemoth's Tuning Fork -->
+	<item id="8682" price="0" /> <!-- Naga Storm -->
+	<item id="8683" price="0" /> <!-- Tiphon's Spear -->
+	<item id="8684" price="0" /> <!-- Shyeed's Bow -->
+	<item id="8685" price="0" /> <!-- Sobekk's Hurricane -->
+	<item id="8686" price="0" /> <!-- Themis' Tongue -->
+	<item id="8687" price="0" /> <!-- Cabrio's Hand -->
+	<item id="8688" price="0" /> <!-- Daimon Crystal -->
+	<item id="7902" price="0" /> <!-- Doom Crusher -->
+	<item id="7899" price="0" /> <!-- Destroyer Hammer -->
+	<item id="7894" price="0" /> <!-- Spiritual Eye -->
+	<item id="7895" price="0" /> <!-- Flaming Dragon Skull -->
+	<item id="5705" price="0" /> <!-- Keshanberk*Damascus -->
+	<item id="5706" price="0" /> <!-- Damascus*Damascus -->
+</list>

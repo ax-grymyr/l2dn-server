@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="85100" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85101" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85102" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85103" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85104" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85105" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85106" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85107" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85108" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85109" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85110" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85111" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85112" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85113" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85114" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85115" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85116" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85117" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85118" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85119" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85120" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85121" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85122" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85123" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85124" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85125" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85126" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85127" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85128" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85129" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85130" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85131" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85132" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85133" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85134" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85135" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85136" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85137" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85138" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85139" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85140" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85141" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85142" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85143" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85144" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85145" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85146" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85147" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85148" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85149" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85150" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85151" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85152" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85153" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85154" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85155" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85156" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85157" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85158" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85159" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="85160" toLevel="1" name="HP/ MP Recovery Rate">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+</list>

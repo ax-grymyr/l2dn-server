@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="40100" name="o_s_cl_mg">
+		<!-- Max CP +51.37 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>51.37</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40101" name="o_s_cl_mg">
+		<!-- Max CP +51.37 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>51.37</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40102" name="o_s_cl_mg">
+		<!-- Max CP +51.37 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>51.37</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40103" name="o_s_cl_mg">
+		<!-- P. Atk. +5.42. -->
+		<!-- P. Critical Damage +8.13 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5.42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40104" name="o_s_cl_mg">
+		<!-- P. Atk. +5.42. -->
+		<!-- M. Skill Critical Damage +9.23 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5.42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40105" name="o_s_cl_mg">
+		<!-- P. Atk. +5.42. -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5.42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40106" name="o_s_cl_mg">
+		<!-- P. Atk. +5.42. -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5.42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40107" name="o_s_cl_mg">
+		<!-- P. Atk. +5.42. -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5.42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40108" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- M. Skill Critical Damage +9.23 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40109" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- HP Recovery Rate +0.18 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40110" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- MP Recovery Rate +0.08 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40111" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- CP Recovery Rate +0.18 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40112" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- P. Evasion +0.96 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40113" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- P. Accuracy +0.96 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40114" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- P. Critical Rate +10.4 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>10.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40115" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40116" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40117" name="o_s_cl_mg">
+		<!-- P. Critical Damage +8.13 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40118" name="o_s_cl_mg">
+		<!-- M. Atk. +6.35. -->
+		<!-- P. Critical Damage +8.13 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>6.35</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>8.13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40119" name="o_s_cl_mg">
+		<!-- M. Atk. +6.35. -->
+		<!-- M. Skill Critical Damage +9.23 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>6.35</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40120" name="o_s_cl_mg">
+		<!-- M. Atk. +6.35. -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>6.35</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40121" name="o_s_cl_mg">
+		<!-- M. Atk. +6.35. -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>6.35</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40122" name="o_s_cl_mg">
+		<!-- M. Atk. +6.35. -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>6.35</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40123" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- HP Recovery Rate +0.08 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40124" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- MP Recovery Rate +0.18 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40125" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- CP Recovery Rate +0.96 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40126" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- P. Evasion +0.96 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40127" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- P. Accuracy +1.04 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1.04</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40128" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- P. Critical Rate +9.6 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>9.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40129" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1.04</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40130" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40131" name="o_s_cl_mg">
+		<!-- M. Skill Critical Damage +9.23 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>9.23</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40132" name="o_s_cl_mg">
+		<!-- HP Recovery Rate +0.18 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40133" name="o_s_cl_mg">
+		<!-- HP Recovery Rate +0.18 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40134" name="o_s_cl_mg">
+		<!-- HP Recovery Rate +0.18 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40135" name="o_s_cl_mg">
+		<!-- MP Recovery Rate +0.08 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>0.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40136" name="o_s_cl_mg">
+		<!-- MP Recovery Rate +0.08 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>0.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40137" name="o_s_cl_mg">
+		<!-- MP Recovery Rate +0.08 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>0.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40138" name="o_s_cl_mg">
+		<!-- CP Recovery Rate +0.18 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40139" name="o_s_cl_mg">
+		<!-- CP Recovery Rate +0.18 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40140" name="o_s_cl_mg">
+		<!-- CP Recovery Rate +0.18 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>0.18</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40141" name="o_s_cl_mg">
+		<!-- P. Evasion +0.96 -->
+		<!-- M. Evasion +0.96 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40142" name="o_s_cl_mg">
+		<!-- P. Evasion +0.96 -->
+		<!-- M. Accuracy +0.96 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40143" name="o_s_cl_mg">
+		<!-- P. Evasion +0.96 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40144" name="o_s_cl_mg">
+		<!-- P. Accuracy +0.96 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40145" name="o_s_cl_mg">
+		<!-- M. Accuracy +0.96 -->
+		<!-- M. Skill Critical Rate +10 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>0.96</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40146" name="o_s_cl_hg">
+		<!-- M. Skill Critical Damage +23.03 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>18.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40147" name="o_s_cl_hg">
+		<!-- P. Critical Damage +19.72 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>16.26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40148" name="o_s_cl_hg">
+		<!-- M. Evasion +2.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40149" name="o_s_cl_hg">
+		<!-- M. Accuracy +2.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40150" name="o_s_cl_hg">
+		<!-- M. Skill Critical Rate +23.2 -->
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>21.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40151" name="o_s_cl_hg">
+		<!-- P. Def. +10.93. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.03</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40152" name="o_s_cl_hg">
+		<!-- P. Def. +10.93. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.03</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40153" name="o_s_cl_hg">
+		<!-- P. Def. +10.93. -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.03</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40154" name="o_s_cl_hg">
+		<!-- P. Def. +10.93. -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.03</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40155" name="o_s_cl_hg">
+		<!-- P. Def. +10.93. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.03</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40156" name="o_s_cl_hg">
+		<!-- M. Def. +8.8. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40157" name="o_s_cl_hg">
+		<!-- M. Def. +8.8. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40158" name="o_s_cl_hg">
+		<!-- M. Def. +8.8. -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40159" name="o_s_cl_hg">
+		<!-- M. Def. +8.8. -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40160" name="o_s_cl_hg">
+		<!-- M. Def. +8.8. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40161" name="o_s_cl_hg">
+		<!-- Max HP +44.48 -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44.48</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40162" name="o_s_cl_hg">
+		<!-- Max HP +44.48 -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44.48</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40163" name="o_s_cl_hg">
+		<!-- Max HP +44.48 -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44.48</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40164" name="o_s_cl_hg">
+		<!-- Max HP +44.48 -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44.48</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40165" name="o_s_cl_hg">
+		<!-- Max HP +44.48 -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44.48</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40166" name="o_s_cl_hg">
+		<!-- Max MP +14.51. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14.51</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40167" name="o_s_cl_hg">
+		<!-- Max MP +14.51. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14.51</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40168" name="o_s_cl_hg">
+		<!-- Max MP +14.51. -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14.51</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40169" name="o_s_cl_hg">
+		<!-- Max MP +14.51. -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14.51</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40170" name="o_s_cl_hg">
+		<!-- Max MP +14.51. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14.51</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40171" name="o_s_cl_hg">
+		<!-- Max CP +61.43. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>61.43</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40172" name="o_s_cl_hg">
+		<!-- Max CP +61.43. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>61.43</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40173" name="o_s_cl_hg">
+		<!-- Max CP +61.43. -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>61.43</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40174" name="o_s_cl_hg">
+		<!-- Max CP +61.43. -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>61.43</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40175" name="o_s_cl_hg">
+		<!-- Max CP +61.43. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>61.43</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40176" name="o_s_cl_hg">
+		<!-- P. Atk. +6.92. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>6.92</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40177" name="o_s_cl_hg">
+		<!-- P. Atk. +6.92. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>6.92</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40178" name="o_s_cl_hg">
+		<!-- P. Atk. +6.92. -->
+		<!-- M. Evasion +0.1 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>6.92</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40179" name="o_s_cl_hg">
+		<!-- P. Atk. +6.92. -->
+		<!-- M. Accuracy +0.1 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>6.92</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40180" name="o_s_cl_hg">
+		<!-- P. Atk. +6.92. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>6.92</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40181" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40182" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- HP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40183" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- MP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40184" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- CP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40185" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- P. Evasion +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40186" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- P. Accuracy +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40187" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- P. Critical Rate +0.2 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40188" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40189" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40190" name="o_s_cl_hg">
+		<!-- P. Critical Damage +9.34 -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40191" name="o_s_cl_hg">
+		<!-- M. Atk. +8.08. -->
+		<!-- P. Critical Damage +9.34 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>9.34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40192" name="o_s_cl_hg">
+		<!-- M. Atk. +8.08. -->
+		<!-- M. Skill Critical Damage +10.91 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40193" name="o_s_cl_hg">
+		<!-- M. Atk. +8.08. -->
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40194" name="o_s_cl_hg">
+		<!-- M. Atk. +8.08. -->
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40195" name="o_s_cl_hg">
+		<!-- M. Atk. +8.08. -->
+		<!-- M. Skill Critical Rate +11.3 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8.08</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>11.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40196" name="o_s_cl_hg">
+		<!-- M. Skill Critical Damage +10.91 -->
+		<!-- HP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40197" name="o_s_cl_hg">
+		<!-- M. Skill Critical Damage +10.91 -->
+		<!-- MP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40198" name="o_s_cl_hg">
+		<!-- M. Skill Critical Damage +10.91 -->
+		<!-- CP Recovery Rate +0.2 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="40199" name="o_s_cl_hg">
+		<!-- M. Skill Critical Damage +10.91 -->
+		<!-- P. Evasion +0.2 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>10.91</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>0.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

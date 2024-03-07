@@ -1,0 +1,1946 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="93500" name="Enchanted B-grade Armor Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for B-grade armor through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_armor_ticket_b" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93501" name="Zubei's Breastplate" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t64_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="7970" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">157</stat>
+		</stats>
+	</item>
+	<item id="93502" name="Blue Wolf Breastplate" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t68_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="7820" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">166</stat>
+		</stats>
+	</item>
+	<item id="93503" name="Zubei's Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t64_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="3570" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">98</stat>
+		</stats>
+	</item>
+	<item id="93504" name="Avadon Breastplate" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t66_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="7920" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">157</stat>
+		</stats>
+	</item>
+	<item id="93505" name="Avadon Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t66_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="3520" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">98</stat>
+		</stats>
+	</item>
+	<item id="93506" name="Blue Wolf Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t68_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="3370" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+	<item id="93507" name="Doom Plate Armor" additionalName="Sealed" type="Armor">
+		<!-- One-piece armor. -->
+		<set name="icon" val="icon.armor_t71_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="9980" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">270</stat>
+		</stats>
+	</item>
+	<item id="93508" name="Zubei's Leather Shirt" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t65_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="4330" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">117</stat>
+		</stats>
+	</item>
+	<item id="93509" name="Zubei's Leather Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t65_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1480" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="93510" name="Avadon Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- One-piece armor. -->
+		<set name="icon" val="icon.armor_t67_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">191</stat>
+		</stats>
+	</item>
+	<item id="93511" name="Blue Wolf Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- One-piece armor. -->
+		<set name="icon" val="icon.armor_t69_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">202</stat>
+		</stats>
+	</item>
+	<item id="93512" name="Doom Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- One-piece armor. -->
+		<set name="icon" val="icon.armor_t72_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">202</stat>
+		</stats>
+	</item>
+	<item id="93513" name="Zubei's Tunic" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t56_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1960" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">78</stat>
+			<stat type="maxMp">345</stat>
+		</stats>
+	</item>
+	<item id="93514" name="Blue Wolf Tunic" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t70_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1920" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">83</stat>
+			<stat type="maxMp">377</stat>
+		</stats>
+	</item>
+	<item id="93515" name="Doom Tunic" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t73_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1900" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">83</stat>
+			<stat type="maxMp">377</stat>
+		</stats>
+	</item>
+	<item id="93516" name="Zubei's Stockings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t56_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="940" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+			<stat type="maxMp">216</stat>
+		</stats>
+	</item>
+	<item id="93517" name="Blue Wolf Stockings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t70_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="920" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">236</stat>
+		</stats>
+	</item>
+	<item id="93518" name="Doom Stockings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t73_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="910" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">236</stat>
+		</stats>
+	</item>
+	<item id="93519" name="Avadon Robe" additionalName="Sealed" type="Armor">
+		<!-- One-piece armor. -->
+		<set name="icon" val="icon.armor_t59_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2540" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">127</stat>
+			<stat type="maxMp">561</stat>
+		</stats>
+	</item>
+	<item id="93520" name="Zubei's Gauntlets (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t64_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93521" name="Zubei's Gauntlets (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t65_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93522" name="Zubei's Gauntlets (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t56_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93523" name="Avadon Gloves (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t66_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93524" name="Avadon Gloves (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t67_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93525" name="Avadon Gloves (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t59_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93526" name="Blue Wolf Gloves (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t68_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93527" name="Blue Wolf Gloves (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t69_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93528" name="Blue Wolf Gloves (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t70_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93529" name="Doom Gloves (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t71_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93530" name="Doom Gloves (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t72_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93531" name="Doom Gloves (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t73_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93532" name="Zubei's Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t64_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93533" name="Zubei's Boots (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t65_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93534" name="Zubei's Boots (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t56_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93535" name="Avadon Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t66_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93536" name="Avadon Boots (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t67_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93537" name="Avadon Boots (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t59_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
+	</item>
+	<item id="93538" name="Blue Wolf Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t68_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93539" name="Blue Wolf Boots (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t69_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93540" name="Blue Wolf Boots (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t70_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93541" name="Doom Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t71_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93542" name="Doom Boots (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t72_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93543" name="Doom Boots (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t73_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
+	</item>
+	<item id="93544" name="Avadon Circlet (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93545" name="Avadon Circlet (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93546" name="Avadon Circlet (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93547" name="Zubei's Helmet (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93548" name="Zubei's Helmet (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93549" name="Zubei's Helmet (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="93550" name="Blue Wolf Helmet (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93551" name="Blue Wolf Helmet (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93552" name="Blue Wolf Helmet (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93553" name="Doom Helmet (Heavy)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93554" name="Doom Helmet (Light)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93555" name="Doom Helmet (Robe)" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="93556" name="+0 ~ +5 Armor Pack - Zubei's Breastplate" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t64_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93501" min="1" max="1" chance="25" /> <!-- Zubei's Breastplate - Sealed -->
+			<item id="93501" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Breastplate - Sealed -->
+			<item id="93501" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Breastplate - Sealed -->
+			<item id="93501" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Breastplate - Sealed -->
+			<item id="93501" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Breastplate - Sealed -->
+			<item id="93501" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Breastplate - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93557" name="+0 ~ +5 Armor Pack - Blue Wolf Breastplate" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t68_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93502" min="1" max="1" chance="25" /> <!-- Blue Wolf Breastplate - Sealed -->
+			<item id="93502" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Breastplate - Sealed -->
+			<item id="93502" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Breastplate - Sealed -->
+			<item id="93502" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Breastplate - Sealed -->
+			<item id="93502" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Breastplate - Sealed -->
+			<item id="93502" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Breastplate - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93558" name="+0 ~ +5 Armor Pack - Zubei's Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t64_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93503" min="1" max="1" chance="25" /> <!-- Zubei's Gaiters - Sealed -->
+			<item id="93503" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Gaiters - Sealed -->
+			<item id="93503" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Gaiters - Sealed -->
+			<item id="93503" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Gaiters - Sealed -->
+			<item id="93503" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Gaiters - Sealed -->
+			<item id="93503" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93559" name="+0 ~ +5 Armor Pack - Avadon Breastplate" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t66_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93504" min="1" max="1" chance="25" /> <!-- Avadon Breastplate - Sealed -->
+			<item id="93504" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Breastplate - Sealed -->
+			<item id="93504" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Breastplate - Sealed -->
+			<item id="93504" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Breastplate - Sealed -->
+			<item id="93504" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Breastplate - Sealed -->
+			<item id="93504" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Breastplate - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93560" name="+0 ~ +5 Armor Pack - Avadon Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t66_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93505" min="1" max="1" chance="25" /> <!-- Avadon Gaiters - Sealed -->
+			<item id="93505" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Gaiters - Sealed -->
+			<item id="93505" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Gaiters - Sealed -->
+			<item id="93505" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Gaiters - Sealed -->
+			<item id="93505" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Gaiters - Sealed -->
+			<item id="93505" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93561" name="+0 ~ +5 Armor Pack - Blue Wolf Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t68_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93506" min="1" max="1" chance="25" /> <!-- Blue Wolf Gaiters - Sealed -->
+			<item id="93506" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Gaiters - Sealed -->
+			<item id="93506" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Gaiters - Sealed -->
+			<item id="93506" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Gaiters - Sealed -->
+			<item id="93506" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Gaiters - Sealed -->
+			<item id="93506" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93562" name="+0 ~ +5 Armor Pack - Doom Plate Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t71_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93507" min="1" max="1" chance="25" /> <!-- Doom Plate Armor - Sealed -->
+			<item id="93507" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Plate Armor - Sealed -->
+			<item id="93507" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Plate Armor - Sealed -->
+			<item id="93507" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Plate Armor - Sealed -->
+			<item id="93507" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Plate Armor - Sealed -->
+			<item id="93507" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Plate Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93563" name="+0 ~ +5 Armor Pack - Zubei's Leather Shirt" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t65_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93508" min="1" max="1" chance="25" /> <!-- Zubei's Leather Shirt - Sealed -->
+			<item id="93508" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Leather Shirt - Sealed -->
+			<item id="93508" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Leather Shirt - Sealed -->
+			<item id="93508" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Leather Shirt - Sealed -->
+			<item id="93508" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Leather Shirt - Sealed -->
+			<item id="93508" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Leather Shirt - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93564" name="+0 ~ +5 Armor Pack - Zubei's Leather Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t65_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93509" min="1" max="1" chance="25" /> <!-- Zubei's Leather Gaiters - Sealed -->
+			<item id="93509" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Leather Gaiters - Sealed -->
+			<item id="93509" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Leather Gaiters - Sealed -->
+			<item id="93509" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Leather Gaiters - Sealed -->
+			<item id="93509" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Leather Gaiters - Sealed -->
+			<item id="93509" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Leather Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93565" name="+0 ~ +5 Armor Pack - Avadon Leather Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t67_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93510" min="1" max="1" chance="25" /> <!-- Avadon Leather Armor - Sealed -->
+			<item id="93510" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Leather Armor - Sealed -->
+			<item id="93510" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Leather Armor - Sealed -->
+			<item id="93510" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Leather Armor - Sealed -->
+			<item id="93510" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Leather Armor - Sealed -->
+			<item id="93510" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Leather Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93566" name="+0 ~ +5 Armor Pack - Blue Wolf Leather Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t69_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93511" min="1" max="1" chance="25" /> <!-- Blue Wolf Leather Armor - Sealed -->
+			<item id="93511" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Leather Armor - Sealed -->
+			<item id="93511" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Leather Armor - Sealed -->
+			<item id="93511" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Leather Armor - Sealed -->
+			<item id="93511" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Leather Armor - Sealed -->
+			<item id="93511" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Leather Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93567" name="+0 ~ +5 Armor Pack - Doom Leather Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t72_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93512" min="1" max="1" chance="25" /> <!-- Doom Leather Armor - Sealed -->
+			<item id="93512" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Leather Armor - Sealed -->
+			<item id="93512" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Leather Armor - Sealed -->
+			<item id="93512" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Leather Armor - Sealed -->
+			<item id="93512" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Leather Armor - Sealed -->
+			<item id="93512" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Leather Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93568" name="+0 ~ +5 Armor Pack - Zubei's Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t56_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93513" min="1" max="1" chance="25" /> <!-- Zubei's Tunic - Sealed -->
+			<item id="93513" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Tunic - Sealed -->
+			<item id="93513" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Tunic - Sealed -->
+			<item id="93513" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Tunic - Sealed -->
+			<item id="93513" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Tunic - Sealed -->
+			<item id="93513" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Tunic - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93569" name="+0 ~ +5 Armor Pack - Blue Wolf Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t70_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93514" min="1" max="1" chance="25" /> <!-- Blue Wolf Tunic - Sealed -->
+			<item id="93514" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Tunic - Sealed -->
+			<item id="93514" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Tunic - Sealed -->
+			<item id="93514" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Tunic - Sealed -->
+			<item id="93514" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Tunic - Sealed -->
+			<item id="93514" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Tunic - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93570" name="+0 ~ +5 Armor Pack - Doom Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t73_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93515" min="1" max="1" chance="25" /> <!-- Doom Tunic - Sealed -->
+			<item id="93515" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Tunic - Sealed -->
+			<item id="93515" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Tunic - Sealed -->
+			<item id="93515" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Tunic - Sealed -->
+			<item id="93515" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Tunic - Sealed -->
+			<item id="93515" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Tunic - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93571" name="+0 ~ +5 Armor Pack - Zubei's Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t56_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93516" min="1" max="1" chance="25" /> <!-- Zubei's Stockings - Sealed -->
+			<item id="93516" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Stockings - Sealed -->
+			<item id="93516" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Stockings - Sealed -->
+			<item id="93516" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Stockings - Sealed -->
+			<item id="93516" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Stockings - Sealed -->
+			<item id="93516" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Stockings - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93572" name="+0 ~ +5 Armor Pack - Blue Wolf Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t70_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93517" min="1" max="1" chance="25" /> <!-- Blue Wolf Stockings - Sealed -->
+			<item id="93517" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Stockings - Sealed -->
+			<item id="93517" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Stockings - Sealed -->
+			<item id="93517" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Stockings - Sealed -->
+			<item id="93517" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Stockings - Sealed -->
+			<item id="93517" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Stockings - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93573" name="+0 ~ +5 Armor Pack - Doom Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t73_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93518" min="1" max="1" chance="25" /> <!-- Doom Stockings - Sealed -->
+			<item id="93518" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Stockings - Sealed -->
+			<item id="93518" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Stockings - Sealed -->
+			<item id="93518" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Stockings - Sealed -->
+			<item id="93518" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Stockings - Sealed -->
+			<item id="93518" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Stockings - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93574" name="+0~+5 Armor Pack - Avadon Robe" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t59_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93519" min="1" max="1" chance="25" /> <!-- Avadon Robe - Sealed -->
+			<item id="93519" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Robe - Sealed -->
+			<item id="93519" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Robe - Sealed -->
+			<item id="93519" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Robe - Sealed -->
+			<item id="93519" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Robe - Sealed -->
+			<item id="93519" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Robe - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93575" name="+0 ~ +5 Armor Pack - Zubei's Gauntlets (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t64_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93520" min="1" max="1" chance="25" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+			<item id="93520" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+			<item id="93520" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+			<item id="93520" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+			<item id="93520" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+			<item id="93520" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93576" name="+0 ~ +5 Armor Pack - Zubei's Gauntlets (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t65_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93521" min="1" max="1" chance="25" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+			<item id="93521" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+			<item id="93521" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+			<item id="93521" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+			<item id="93521" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+			<item id="93521" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93577" name="+0 ~ +5 Armor Pack - Zubei's Gauntlets (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t56_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93522" min="1" max="1" chance="25" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+			<item id="93522" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+			<item id="93522" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+			<item id="93522" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+			<item id="93522" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+			<item id="93522" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93578" name="+0 ~ +5 Armor Pack - Avadon Gloves (Heavy)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t66_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93523" min="1" max="1" chance="25" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+			<item id="93523" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+			<item id="93523" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+			<item id="93523" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+			<item id="93523" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+			<item id="93523" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93579" name="+0~+5 Armor Pack - Avadon Gloves (Light)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t67_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93524" min="1" max="1" chance="25" /> <!-- Avadon Gloves (Light) - Sealed -->
+			<item id="93524" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Gloves (Light) - Sealed -->
+			<item id="93524" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Gloves (Light) - Sealed -->
+			<item id="93524" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Gloves (Light) - Sealed -->
+			<item id="93524" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Gloves (Light) - Sealed -->
+			<item id="93524" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Gloves (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93580" name="+0~+5 Armor Pack - Avadon Gloves (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t59_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93525" min="1" max="1" chance="25" /> <!-- Avadon Gloves (Robe) - Sealed -->
+			<item id="93525" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Gloves (Robe) - Sealed -->
+			<item id="93525" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Gloves (Robe) - Sealed -->
+			<item id="93525" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Gloves (Robe) - Sealed -->
+			<item id="93525" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Gloves (Robe) - Sealed -->
+			<item id="93525" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Gloves (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93581" name="+0 ~ +5 Armor Pack - Blue Wolf Gloves (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t68_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93526" min="1" max="1" chance="25" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+			<item id="93526" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+			<item id="93526" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+			<item id="93526" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+			<item id="93526" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+			<item id="93526" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93582" name="+0 ~ +5 Armor Pack - Blue Wolf Gloves (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t69_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93527" min="1" max="1" chance="25" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+			<item id="93527" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+			<item id="93527" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+			<item id="93527" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+			<item id="93527" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+			<item id="93527" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93583" name="+0 ~ +5 Armor Pack - Blue Wolf Gloves (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t70_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93528" min="1" max="1" chance="25" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+			<item id="93528" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+			<item id="93528" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+			<item id="93528" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+			<item id="93528" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+			<item id="93528" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93584" name="+0 ~ +5 Armor Pack - Doom Gloves (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t71_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93529" min="1" max="1" chance="25" /> <!-- Doom Gloves (Heavy) - Sealed -->
+			<item id="93529" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Gloves (Heavy) - Sealed -->
+			<item id="93529" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Gloves (Heavy) - Sealed -->
+			<item id="93529" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Gloves (Heavy) - Sealed -->
+			<item id="93529" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Gloves (Heavy) - Sealed -->
+			<item id="93529" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Gloves (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93585" name="+0 ~ +5 Armor Pack - Doom Gloves (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t72_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93530" min="1" max="1" chance="25" /> <!-- Doom Gloves (Light) - Sealed -->
+			<item id="93530" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Gloves (Light) - Sealed -->
+			<item id="93530" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Gloves (Light) - Sealed -->
+			<item id="93530" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Gloves (Light) - Sealed -->
+			<item id="93530" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Gloves (Light) - Sealed -->
+			<item id="93530" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Gloves (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93586" name="+0 ~ +5 Armor Pack - Doom Gloves (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t73_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93531" min="1" max="1" chance="25" /> <!-- Doom Gloves (Robe) - Sealed -->
+			<item id="93531" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Gloves (Robe) - Sealed -->
+			<item id="93531" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Gloves (Robe) - Sealed -->
+			<item id="93531" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Gloves (Robe) - Sealed -->
+			<item id="93531" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Gloves (Robe) - Sealed -->
+			<item id="93531" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Gloves (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93587" name="+0 ~ +5 Armor Pack - Zubei's Boots (Heavy)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t64_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93532" min="1" max="1" chance="25" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+			<item id="93532" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+			<item id="93532" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+			<item id="93532" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+			<item id="93532" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+			<item id="93532" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93588" name="+0 ~ +5 Armor Pack - Zubei's Boots (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t65_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93533" min="1" max="1" chance="25" /> <!-- Zubei's Boots (Light) - Sealed -->
+			<item id="93533" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Boots (Light) - Sealed -->
+			<item id="93533" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Boots (Light) - Sealed -->
+			<item id="93533" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Boots (Light) - Sealed -->
+			<item id="93533" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Boots (Light) - Sealed -->
+			<item id="93533" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Boots (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93589" name="+0 ~ +5 Armor Pack - Zubei's Boots (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t56_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93534" min="1" max="1" chance="25" /> <!-- Zubei's Boots (Robe) - Sealed -->
+			<item id="93534" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Zubei's Boots (Robe) - Sealed -->
+			<item id="93534" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Zubei's Boots (Robe) - Sealed -->
+			<item id="93534" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Zubei's Boots (Robe) - Sealed -->
+			<item id="93534" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Zubei's Boots (Robe) - Sealed -->
+			<item id="93534" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Zubei's Boots (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93590" name="+0~+5 Armor Pack - Avadon Boots (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t66_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93535" min="1" max="1" chance="25" /> <!-- Avadon Boots (Heavy) - Sealed -->
+			<item id="93535" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Boots (Heavy) - Sealed -->
+			<item id="93535" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Boots (Heavy) - Sealed -->
+			<item id="93535" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Boots (Heavy) - Sealed -->
+			<item id="93535" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Boots (Heavy) - Sealed -->
+			<item id="93535" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Boots (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93591" name="+0~+5 Armor Pack - Avadon Boots (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t67_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93536" min="1" max="1" chance="25" /> <!-- Avadon Boots (Light) - Sealed -->
+			<item id="93536" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Boots (Light) - Sealed -->
+			<item id="93536" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Boots (Light) - Sealed -->
+			<item id="93536" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Boots (Light) - Sealed -->
+			<item id="93536" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Boots (Light) - Sealed -->
+			<item id="93536" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Boots (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93592" name="+0~+5 Armor Pack - Avadon Boots (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t59_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93537" min="1" max="1" chance="25" /> <!-- Avadon Boots (Robe) - Sealed -->
+			<item id="93537" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Boots (Robe) - Sealed -->
+			<item id="93537" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Boots (Robe) - Sealed -->
+			<item id="93537" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Boots (Robe) - Sealed -->
+			<item id="93537" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Boots (Robe) - Sealed -->
+			<item id="93537" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Boots (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93593" name="+0 ~ +5 Armor Pack - Blue Wolf Boots (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t68_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93538" min="1" max="1" chance="25" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+			<item id="93538" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+			<item id="93538" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+			<item id="93538" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+			<item id="93538" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+			<item id="93538" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93594" name="+0 ~ +5 Armor Pack - Blue Wolf Boots (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t69_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93539" min="1" max="1" chance="25" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+			<item id="93539" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+			<item id="93539" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+			<item id="93539" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+			<item id="93539" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+			<item id="93539" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93595" name="+0 ~ +5 Armor Pack - Blue Wolf Boots (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t70_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93540" min="1" max="1" chance="25" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+			<item id="93540" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+			<item id="93540" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+			<item id="93540" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+			<item id="93540" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+			<item id="93540" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93596" name="+0 ~ +5 Armor Pack - Doom Boots (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t71_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93541" min="1" max="1" chance="25" /> <!-- Doom Boots (Heavy) - Sealed -->
+			<item id="93541" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Boots (Heavy) - Sealed -->
+			<item id="93541" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Boots (Heavy) - Sealed -->
+			<item id="93541" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Boots (Heavy) - Sealed -->
+			<item id="93541" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Boots (Heavy) - Sealed -->
+			<item id="93541" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Boots (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93597" name="+0 ~ +5 Armor Pack - Doom Boots (Light Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t72_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93542" min="1" max="1" chance="25" /> <!-- Doom Boots (Light) - Sealed -->
+			<item id="93542" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Boots (Light) - Sealed -->
+			<item id="93542" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Boots (Light) - Sealed -->
+			<item id="93542" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Boots (Light) - Sealed -->
+			<item id="93542" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Boots (Light) - Sealed -->
+			<item id="93542" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Boots (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93598" name="+0 ~ +5 Armor Pack - Doom Boots (Robe)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t73_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93543" min="1" max="1" chance="25" /> <!-- Doom Boots (Robe) - Sealed -->
+			<item id="93543" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Doom Boots (Robe) - Sealed -->
+			<item id="93543" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Doom Boots (Robe) - Sealed -->
+			<item id="93543" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Doom Boots (Robe) - Sealed -->
+			<item id="93543" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Doom Boots (Robe) - Sealed -->
+			<item id="93543" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Doom Boots (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93599" name="+0~+5 Armor Pack - Avadon Circlet (Heavy Armor)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93544" min="1" max="1" chance="25" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+			<item id="93544" min="1" max="1" minEnchant="1" maxEnchant="1" chance="20" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+			<item id="93544" min="1" max="1" minEnchant="2" maxEnchant="2" chance="20" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+			<item id="93544" min="1" max="1" minEnchant="3" maxEnchant="3" chance="20" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+			<item id="93544" min="1" max="1" minEnchant="4" maxEnchant="4" chance="10" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+			<item id="93544" min="1" max="1" minEnchant="5" maxEnchant="5" chance="5" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

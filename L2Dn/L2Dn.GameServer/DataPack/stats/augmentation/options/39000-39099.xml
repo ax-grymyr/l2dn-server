@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39000" name="option_id_39000">
+	</option>
+	<option id="39001" name="option_id_39001">
+	</option>
+	<option id="39002" name="option_id_39002">
+	</option>
+	<option id="39003" name="option_id_39003">
+	</option>
+	<option id="39004" name="option_id_39004">
+	</option>
+	<option id="39005" name="option_id_39005">
+	</option>
+	<option id="39006" name="option_id_39006">
+	</option>
+	<option id="39007" name="option_id_39007">
+	</option>
+	<option id="39008" name="option_id_39008">
+	</option>
+	<option id="39009" name="option_id_39009">
+	</option>
+	<option id="39010" name="option_id_39010">
+	</option>
+	<option id="39011" name="option_id_39011">
+	</option>
+	<option id="39012" name="option_id_39012">
+	</option>
+	<option id="39013" name="option_id_39013">
+	</option>
+	<option id="39014" name="option_id_39014">
+	</option>
+	<option id="39015" name="option_id_39015">
+	</option>
+	<option id="39016" name="option_id_39016">
+	</option>
+	<option id="39017" name="option_id_39017">
+	</option>
+	<option id="39018" name="option_id_39018">
+	</option>
+	<option id="39019" name="option_id_39019">
+	</option>
+	<option id="39020" name="option_id_39020">
+	</option>
+	<option id="39021" name="option_id_39021">
+	</option>
+	<option id="39022" name="option_id_39022">
+	</option>
+	<option id="39023" name="option_id_39023">
+	</option>
+	<option id="39024" name="option_id_39024">
+	</option>
+	<option id="39025" name="option_id_39025">
+	</option>
+	<option id="39026" name="option_id_39026">
+	</option>
+	<option id="39027" name="option_id_39027">
+	</option>
+	<option id="39028" name="option_id_39028">
+	</option>
+	<option id="39029" name="option_id_39029">
+	</option>
+	<option id="39030" name="option_id_39030">
+	</option>
+	<option id="39031" name="Col_1">
+		<!-- P. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39032" name="Col_2">
+		<!-- P. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39033" name="Col_3">
+		<!-- M. Def. +9 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39034" name="Col_4">
+		<!-- P. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39035" name="Col_5">
+		<!-- M. Def. +9 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39036" name="Col_6">
+		<!-- M. Def. +9 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39037" name="Col_7">
+		<!-- Atk. Spd. +12 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39038" name="Col_8">
+		<!-- P. Atk. +7 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39039" name="Col_9">
+		<!-- Atk. Spd. +13 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39040" name="Col_10">
+		<!-- M. Atk. +8 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39041" name="Col_11">
+		<!-- Casting Spd. +13 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39042" name="Col_12">
+		<!-- Casting Spd. +12 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39043" name="Col_13">
+		<!-- P. Atk. +23 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39044" name="Col_14">
+		<!-- M. Atk. +22 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39045" name="Col_15">
+		<!-- M. Def. +25 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39046" name="Col_16">
+		<!-- P. Def. +24 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39047" name="Col_17">
+		<!-- Max MP +55 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39048" name="Col_18">
+		<!-- Max HP +55 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39049" name="Col_19">
+		<!-- Max CP +95 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39050" name="Col_20">
+		<!-- P. Def. +33 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39051" name="Col_21">
+		<!-- M. Def. +26 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39052" name="Col_22">
+		<!-- Atk. Spd. +25 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39053" name="Col_23">
+		<!-- Casting Spd. +25 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39054" name="Col_24">
+		<!-- M. Def. +29 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39055" name="Col_25">
+		<!-- P. Atk. +15 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39056" name="Col_26">
+		<!-- P. Def. +17 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39057" name="Col_27">
+		<!-- M. Def. +18 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39058" name="Col_28">
+		<!-- M. Atk. +12 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39059" name="Col_29">
+		<!-- P. Def. +33 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39060" name="Col_30">
+		<!-- P. Atk. +28 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39061" name="Col_31">
+		<!-- M. Atk. +25 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39062" name="Col_32">
+		<!-- P. Atk. +31. -->
+		<effects>
+			<effect name="PAtk">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39063" name="Col_33">
+		<!-- M. Atk. +30 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39064" name="Col_34">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39065" name="Col_35">
+		<!-- M. Def. +30 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39066" name="Col_36">
+		<!-- Received Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39067" name="Col_37">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39068" name="Col_38">
+		<!-- Max MP +45 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39069" name="Col_39">
+		<!-- Max HP +45 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39070" name="Col_40">
+		<!-- Max CP +80 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39071" name="Col_41">
+		<!-- M. Atk. +20 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39072" name="Col_42">
+		<!-- P. Atk. +20 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39073" name="Col_43">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39074" name="Col_44">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39075" name="Col_45">
+		<!-- P. Def. +55 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39076" name="Col_46">
+		<!-- Effect slots +1 -->
+		<effects>
+			<effect name="EnlargeAbnormalSlot">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39077" name="Col_47">
+		<!-- Inventory slots +1 -->
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39078" name="Col_48">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39079" name="Col_49">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39080" name="Col_50">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39081" name="Col_51">
+		<!-- P. Def. +36 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39082" name="Col_52">
+		<!-- M. Def. +37 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>37</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39083" name="Col_53">
+		<!-- Weight limit +500 -->
+		<effects>
+			<effect name="WeightLimit">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39084" name="Col_54">
+		<!-- M. Atk. +25 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39085" name="Col_55">
+		<!-- P./ M. Atk. +200 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39086" name="Col_56">
+		<!-- M. Skill Critical Damage +15 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39087" name="Col_57">
+		<!-- P. Skill Critical Damage +25 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39088" name="Col_58">
+		<!-- P. Atk. +70 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39089" name="Col_59">
+		<!-- Paralysis Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PARALYZE>1</PARALYZE>
+			</effect>
+		</effects>
+	</option>
+	<option id="39090" name="Col_60">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39091" name="Col_61">
+		<!-- Imprisonment Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>1</IMPRISON>
+			</effect>
+		</effects>
+	</option>
+	<option id="39092" name="Col_62">
+		<!-- Paralysis Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PARALYZE>1</PARALYZE>
+			</effect>
+		</effects>
+	</option>
+	<option id="39093" name="Col_63">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39094" name="Col_64">
+		<!-- M. Def. +56 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39095" name="Col_65">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39096" name="Col_66">
+		<!-- Imprisonment Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>1</IMPRISON>
+			</effect>
+		</effects>
+	</option>
+	<option id="39097" name="Col_67">
+		<!-- Pull Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PULL>1</PULL>
+			</effect>
+		</effects>
+	</option>
+	<option id="39098" name="Col_68">
+		<!-- Max HP +65 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39099" name="Col_69">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

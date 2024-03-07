@@ -1,0 +1,1653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/ensoulFees.xsd">
+<fee stoneId="90534"><!-- Sigel's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90535"><!-- Sigel's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90536"><!-- Sigel's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90537"><!-- Sigel's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90538"><!-- Sigel's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90539"><!-- Sigel's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90540"><!-- Sigel's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90541"><!-- Sigel's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90542"><!-- Sigel's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90543"><!-- Sigel's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90544"><!-- Sigel's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90545"><!-- Sigel's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90546"><!-- Sigel's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90547"><!-- Sigel's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90548"><!-- Sigel's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90549"><!-- Sigel's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90550"><!-- Sigel's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90551"><!-- Sigel's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90552"><!-- Sigel's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90553"><!-- Sigel's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90554"><!-- Tyrr's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90555"><!-- Tyrr's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90556"><!-- Tyrr's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90557"><!-- Tyrr's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90558"><!-- Tyrr's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90559"><!-- Tyrr's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90560"><!-- Tyrr's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90561"><!-- Tyrr's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90562"><!-- Tyrr's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90563"><!-- Tyrr's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90564"><!-- Tyrr's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90565"><!-- Tyrr's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90566"><!-- Tyrr's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90567"><!-- Tyrr's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90568"><!-- Tyrr's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90569"><!-- Tyrr's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90570"><!-- Tyrr's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90571"><!-- Tyrr's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90572"><!-- Tyrr's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90573"><!-- Tyrr's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90574"><!-- Othell's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90575"><!-- Othell's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90576"><!-- Othell's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90577"><!-- Othell's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90578"><!-- Othell's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90579"><!-- Othell's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90580"><!-- Othell's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90581"><!-- Othell's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90582"><!-- Othell's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90583"><!-- Othell's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90584"><!-- Othell's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90585"><!-- Othell's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90586"><!-- Othell's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90587"><!-- Othell's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90588"><!-- Othell's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90589"><!-- Othell's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90590"><!-- Othell's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90591"><!-- Othell's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90592"><!-- Othell's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90593"><!-- Othell's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90594"><!-- Yul's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90595"><!-- Yul's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90596"><!-- Yul's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90597"><!-- Yul's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90598"><!-- Yul's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90599"><!-- Yul's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90600"><!-- Yul's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90601"><!-- Yul's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90602"><!-- Yul's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90603"><!-- Yul's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90604"><!-- Yul's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90605"><!-- Yul's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90606"><!-- Yul's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90607"><!-- Yul's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90608"><!-- Yul's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90609"><!-- Yul's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90610"><!-- Yul's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90611"><!-- Yul's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90612"><!-- Yul's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90613"><!-- Yul's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90614"><!-- Feoh's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90615"><!-- Feoh's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90616"><!-- Feoh's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90617"><!-- Feoh's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90618"><!-- Feoh's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90619"><!-- Feoh's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90620"><!-- Feoh's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90621"><!-- Feoh's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90622"><!-- Feoh's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90623"><!-- Feoh's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90624"><!-- Feoh's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90625"><!-- Feoh's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90626"><!-- Feoh's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90627"><!-- Feoh's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90628"><!-- Feoh's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90629"><!-- Feoh's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90630"><!-- Feoh's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90631"><!-- Feoh's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90632"><!-- Feoh's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90633"><!-- Feoh's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90634"><!-- Iss' Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90635"><!-- Iss' Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90636"><!-- Iss' Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90637"><!-- Iss' Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90638"><!-- Iss' Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90639"><!-- Iss' Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90640"><!-- Iss' Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90641"><!-- Iss' Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90642"><!-- Iss' Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90643"><!-- Iss' Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90644"><!-- Iss' Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90645"><!-- Iss' Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90646"><!-- Iss' Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90647"><!-- Iss' Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90648"><!-- Iss' Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90649"><!-- Iss' Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90650"><!-- Iss' Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90651"><!-- Iss' Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90652"><!-- Iss' Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90653"><!-- Iss' Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90654"><!-- Wynn's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90655"><!-- Wynn's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90656"><!-- Wynn's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90657"><!-- Wynn's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90658"><!-- Wynn's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90659"><!-- Wynn's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90660"><!-- Wynn's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90661"><!-- Wynn's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90662"><!-- Wynn's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90663"><!-- Wynn's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90664"><!-- Wynn's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90665"><!-- Wynn's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90666"><!-- Wynn's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90667"><!-- Wynn's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90668"><!-- Wynn's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90669"><!-- Wynn's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90670"><!-- Wynn's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90671"><!-- Wynn's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90672"><!-- Wynn's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90673"><!-- Wynn's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="90674"><!-- Aeore's Soul Crystal Lv. 1 -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="90675"><!-- Aeore's Soul Crystal Lv. 2 -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="90676"><!-- Aeore's Soul Crystal Lv. 3 -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="90677"><!-- Aeore's Soul Crystal Lv. 4 -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="90678"><!-- Aeore's Soul Crystal Lv. 5 -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="90679"><!-- Aeore's Soul Crystal Lv. 6 -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="90680"><!-- Aeore's Soul Crystal Lv. 7 -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="90681"><!-- Aeore's Soul Crystal Lv. 8 -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="90682"><!-- Aeore's Soul Crystal Lv. 9 -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="90683"><!-- Aeore's Soul Crystal Lv. 10 -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="90684"><!-- Aeore's Soul Crystal Lv. 11 -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="90685"><!-- Aeore's Soul Crystal Lv. 12 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="90686"><!-- Aeore's Soul Crystal Lv. 13 -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="90687"><!-- Aeore's Soul Crystal Lv. 14 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="90688"><!-- Aeore's Soul Crystal Lv. 15 -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="90689"><!-- Aeore's Rune Lv. 16 - Not Available (Not Available) -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="90690"><!-- Aeore's Rune Lv. 17 - Not Available (Not Available) -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="90691"><!-- Aeore's Rune Lv. 18 - Not Available (Not Available) -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="90692"><!-- Aeore's Rune Lv. 19 - Not Available (Not Available) -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="90693"><!-- Aeore's Rune Lv. 20 - Not Available (Not Available) -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="91163"><!-- Anakim's Soul Crystal Lv. 1 (Rare) -->
+		<third itemId="2132" count="2" />
+		<reThird itemId="2132" count="2" />
+		<remove itemId="2132" count="40" />
+	</fee>
+	<fee stoneId="91164"><!-- Anakim's Soul Crystal Lv. 2 (Rare) -->
+		<third itemId="2132" count="5" />
+		<reThird itemId="2132" count="5" />
+		<remove itemId="2132" count="80" />
+	</fee>
+	<fee stoneId="91165"><!-- Anakim's Soul Crystal Lv. 3 (Rare) -->
+		<third itemId="2132" count="12" />
+		<reThird itemId="2132" count="12" />
+		<remove itemId="2132" count="140" />
+	</fee>
+	<fee stoneId="91166"><!-- Anakim's Soul Crystal Lv. 4 (Rare) -->
+		<third itemId="2132" count="16" />
+		<reThird itemId="2132" count="16" />
+		<remove itemId="2132" count="210" />
+	</fee>
+	<fee stoneId="91167"><!-- Anakim's Soul Crystal Lv. 5 (Rare) -->
+		<third itemId="2132" count="25" />
+		<reThird itemId="2132" count="25" />
+		<remove itemId="2132" count="380" />
+	</fee>
+	<fee stoneId="91168"><!-- Anakim's Soul Crystal Lv. 6 (Rare) -->
+		<third itemId="2132" count="33" />
+		<reThird itemId="2132" count="33" />
+		<remove itemId="2132" count="530" />
+	</fee>
+	<fee stoneId="91169"><!-- Anakim's Soul Crystal Lv. 7 (Rare) -->
+		<third itemId="2132" count="37" />
+		<reThird itemId="2132" count="37" />
+		<remove itemId="2132" count="600" />
+	</fee>
+	<fee stoneId="91170"><!-- Anakim's Soul Crystal Lv. 8 (Rare) -->
+		<third itemId="2132" count="45" />
+		<reThird itemId="2132" count="45" />
+		<remove itemId="2132" count="710" />
+	</fee>
+	<fee stoneId="91171"><!-- Anakim's Soul Crystal Lv. 9 (Rare) -->
+		<third itemId="2132" count="59" />
+		<reThird itemId="2132" count="59" />
+		<remove itemId="2132" count="980" />
+	</fee>
+	<fee stoneId="91172"><!-- Anakim's Soul Crystal Lv. 10 (Rare) -->
+		<third itemId="2132" count="121" />
+		<reThird itemId="2132" count="120" />
+		<remove itemId="2132" count="1210" />
+	</fee>
+	<fee stoneId="91173"><!-- Lilith' Soul Crystal Lv. 1 (Rare) -->
+		<third itemId="2132" count="2" />
+		<reThird itemId="2132" count="2" />
+		<remove itemId="2132" count="40" />
+	</fee>
+	<fee stoneId="91174"><!-- Lilith' Soul Crystal Lv. 2 (Rare) -->
+		<third itemId="2132" count="5" />
+		<reThird itemId="2132" count="5" />
+		<remove itemId="2132" count="80" />
+	</fee>
+	<fee stoneId="91175"><!-- Lilith' Soul Crystal Lv. 3 (Rare) -->
+		<third itemId="2132" count="12" />
+		<reThird itemId="2132" count="12" />
+		<remove itemId="2132" count="140" />
+	</fee>
+	<fee stoneId="91176"><!-- Lilith' Soul Crystal Lv. 4 (Rare) -->
+		<third itemId="2132" count="16" />
+		<reThird itemId="2132" count="16" />
+		<remove itemId="2132" count="210" />
+	</fee>
+	<fee stoneId="91177"><!-- Lilith' Soul Crystal Lv. 5 (Rare) -->
+		<third itemId="2132" count="25" />
+		<reThird itemId="2132" count="25" />
+		<remove itemId="2132" count="380" />
+	</fee>
+	<fee stoneId="91178"><!-- Lilith' Soul Crystal Lv. 6 (Rare) -->
+		<third itemId="2132" count="33" />
+		<reThird itemId="2132" count="33" />
+		<remove itemId="2132" count="530" />
+	</fee>
+	<fee stoneId="91179"><!-- Lilith' Soul Crystal Lv. 7 (Rare) -->
+		<third itemId="2132" count="37" />
+		<reThird itemId="2132" count="37" />
+		<remove itemId="2132" count="600" />
+	</fee>
+	<fee stoneId="91180"><!-- Lilith' Soul Crystal Lv. 8 (Rare) -->
+		<third itemId="2132" count="45" />
+		<reThird itemId="2132" count="45" />
+		<remove itemId="2132" count="710" />
+	</fee>
+	<fee stoneId="91181"><!-- Lilith' Soul Crystal Lv. 9 (Rare) -->
+		<third itemId="2132" count="59" />
+		<reThird itemId="2132" count="59" />
+		<remove itemId="2132" count="980" />
+	</fee>
+	<fee stoneId="91182"><!-- Lilith' Soul Crystal Lv. 10 (Rare) -->
+		<third itemId="2132" count="121" />
+		<reThird itemId="2132" count="120" />
+		<remove itemId="2132" count="1210" />
+	</fee>
+	<fee stoneId="92920"><!-- Lilith' Soul Crystal Lv. 11 (Rare) -->
+		<third itemId="2133" count="9" />
+		<reThird itemId="2133" count="9" />
+		<remove itemId="2133" count="89" />
+	</fee>
+	<fee stoneId="92921"><!-- Lilith' Soul Crystal Lv. 12 (Rare) -->
+		<third itemId="2133" count="10" />
+		<reThird itemId="2133" count="10" />
+		<remove itemId="2133" count="100" />
+	</fee>
+	<fee stoneId="92922"><!-- Lilith' Soul Crystal Lv. 13 (Rare) -->
+		<third itemId="2133" count="12" />
+		<reThird itemId="2133" count="12" />
+		<remove itemId="2133" count="119" />
+	</fee>
+	<fee stoneId="92923"><!-- Lilith' Soul Crystal Lv. 14 (Rare) -->
+		<third itemId="2133" count="14" />
+		<reThird itemId="2133" count="14" />
+		<remove itemId="2133" count="137" />
+	</fee>
+	<fee stoneId="92924"><!-- Lilith' Soul Crystal Lv. 15 (Rare) -->
+		<third itemId="2133" count="16" />
+		<reThird itemId="2133" count="16" />
+		<remove itemId="2133" count="161" />
+	</fee>
+	<fee stoneId="92925"><!-- Anakim's Soul Crystal Lv. 11 (Rare) -->
+		<third itemId="2133" count="9" />
+		<reThird itemId="2133" count="9" />
+		<remove itemId="2133" count="89" />
+	</fee>
+	<fee stoneId="92926"><!-- Anakim's Soul Crystal Lv. 12 (Rare) -->
+		<third itemId="2133" count="10" />
+		<reThird itemId="2133" count="10" />
+		<remove itemId="2133" count="100" />
+	</fee>
+	<fee stoneId="92927"><!-- Anakim's Soul Crystal Lv. 13 (Rare) -->
+		<third itemId="2133" count="12" />
+		<reThird itemId="2133" count="12" />
+		<remove itemId="2133" count="119" />
+	</fee>
+	<fee stoneId="92928"><!-- Anakim's Soul Crystal Lv. 14 (Rare) -->
+		<third itemId="2133" count="14" />
+		<reThird itemId="2133" count="14" />
+		<remove itemId="2133" count="137" />
+	</fee>
+	<fee stoneId="92929"><!-- Anakim's Soul Crystal Lv. 15 (Rare) -->
+		<third itemId="2133" count="16" />
+		<reThird itemId="2133" count="16" />
+		<remove itemId="2133" count="161" />
+	</fee>
+	<fee stoneId="95783"><!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="95784"><!-- Aden's Soul Crystal Lv. 2 - Weapon -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="95785"><!-- Aden's Soul Crystal Lv. 3 - Weapon -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="95786"><!-- Aden's Soul Crystal Lv. 4 - Weapon -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="95787"><!-- Aden's Soul Crystal Lv. 5 - Weapon -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="95788"><!-- Aden's Soul Crystal Lv. 6 - Weapon -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="95789"><!-- Aden's Soul Crystal Lv. 7 - Weapon -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="95790"><!-- Aden's Soul Crystal Lv. 8 - Weapon -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="95791"><!-- Aden's Soul Crystal Lv. 9 - Weapon -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="95792"><!-- Aden's Soul Crystal Lv. 10 - Weapon -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="95793"><!-- Aden's Soul Crystal Lv. 11 - Weapon -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="95794"><!-- Aden's Soul Crystal Lv. 12 - Weapon -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="95795"><!-- Aden's Soul Crystal Lv. 13 - Weapon -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="95796"><!-- Aden's Soul Crystal Lv. 14 - Weapon -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="95797"><!-- Aden's Soul Crystal Lv. 15 - Weapon -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="95798"><!-- Aden's Soul Crystal Lv. 16 - Weapon -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="95799"><!-- Aden's Soul Crystal Lv. 17 - Weapon -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="95800"><!-- Aden's Soul Crystal Lv. 18 - Weapon -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="95801"><!-- Aden's Soul Crystal Lv. 19 - Weapon -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="95802"><!-- Aden's Soul Crystal Lv. 20 - Weapon -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="95803"><!-- Hardin's Soul Crystal Lv. 1 (Rare) -->
+		<third itemId="2132" count="2" />
+		<reThird itemId="2132" count="2" />
+		<remove itemId="2132" count="40" />
+	</fee>
+	<fee stoneId="95804"><!-- Hardin's Soul Crystal Lv. 2 (Rare) -->
+		<third itemId="2132" count="5" />
+		<reThird itemId="2132" count="5" />
+		<remove itemId="2132" count="80" />
+	</fee>
+	<fee stoneId="95805"><!-- Hardin's Soul Crystal Lv. 3 (Rare) -->
+		<third itemId="2132" count="12" />
+		<reThird itemId="2132" count="12" />
+		<remove itemId="2132" count="140" />
+	</fee>
+	<fee stoneId="95806"><!-- Hardin's Soul Crystal Lv. 4 (Rare) -->
+		<third itemId="2132" count="16" />
+		<reThird itemId="2132" count="16" />
+		<remove itemId="2132" count="210" />
+	</fee>
+	<fee stoneId="95807"><!-- Hardin's Soul Crystal Lv. 5 (Rare) -->
+		<third itemId="2132" count="25" />
+		<reThird itemId="2132" count="25" />
+		<remove itemId="2132" count="380" />
+	</fee>
+	<fee stoneId="95808"><!-- Hardin's Soul Crystal Lv. 6 (Rare) -->
+		<third itemId="2132" count="33" />
+		<reThird itemId="2132" count="33" />
+		<remove itemId="2132" count="530" />
+	</fee>
+	<fee stoneId="95809"><!-- Hardin's Soul Crystal Lv. 7 (Rare) -->
+		<third itemId="2132" count="37" />
+		<reThird itemId="2132" count="37" />
+		<remove itemId="2132" count="600" />
+	</fee>
+	<fee stoneId="95810"><!-- Hardin's Soul Crystal Lv. 8 (Rare) -->
+		<third itemId="2132" count="45" />
+		<reThird itemId="2132" count="45" />
+		<remove itemId="2132" count="710" />
+	</fee>
+	<fee stoneId="95811"><!-- Hardin's Soul Crystal Lv. 9 (Rare) -->
+		<third itemId="2132" count="59" />
+		<reThird itemId="2132" count="59" />
+		<remove itemId="2132" count="980" />
+	</fee>
+	<fee stoneId="95812"><!-- Hardin's Soul Crystal Lv. 10 (Rare) -->
+		<third itemId="2132" count="121" />
+		<reThird itemId="2132" count="120" />
+		<remove itemId="2132" count="1210" />
+	</fee>
+	<fee stoneId="95813"><!-- Hardin's Soul Crystal Lv. 11 (Rare) -->
+		<third itemId="2133" count="9" />
+		<reThird itemId="2133" count="9" />
+		<remove itemId="2133" count="89" />
+	</fee>
+	<fee stoneId="95814"><!-- Hardin's Soul Crystal Lv. 12 (Rare) -->
+		<third itemId="2133" count="10" />
+		<reThird itemId="2133" count="10" />
+		<remove itemId="2133" count="100" />
+	</fee>
+	<fee stoneId="95815"><!-- Hardin's Soul Crystal Lv. 13 (Rare) -->
+		<third itemId="2133" count="12" />
+		<reThird itemId="2133" count="12" />
+		<remove itemId="2133" count="119" />
+	</fee>
+	<fee stoneId="95816"><!-- Hardin's Soul Crystal Lv. 14 (Rare) -->
+		<third itemId="2133" count="14" />
+		<reThird itemId="2133" count="14" />
+		<remove itemId="2133" count="137" />
+	</fee>
+	<fee stoneId="95817"><!-- Hardin's Soul Crystal Lv. 15 (Rare) -->
+		<third itemId="2133" count="16" />
+		<reThird itemId="2133" count="16" />
+		<remove itemId="2133" count="161" />
+	</fee>
+	<fee stoneId="95818"><!-- Hardin's Soul Crystal Lv. 16 (Rare) -->
+		<third itemId="2133" count="19" />
+		<reThird itemId="2133" count="19" />
+		<remove itemId="2133" count="183" />
+	</fee>
+	<fee stoneId="95819"><!-- Hardin's Soul Crystal Lv. 17 (Rare) -->
+		<third itemId="2133" count="21" />
+		<reThird itemId="2133" count="21" />
+		<remove itemId="2133" count="209" />
+	</fee>
+	<fee stoneId="95820"><!-- Hardin's Soul Crystal Lv. 18 (Rare) -->
+		<third itemId="2133" count="22" />
+		<reThird itemId="2133" count="22" />
+		<remove itemId="2133" count="222" />
+	</fee>
+	<fee stoneId="95821"><!-- Hardin's Soul Crystal Lv. 19 (Rare) -->
+		<third itemId="2133" count="24" />
+		<reThird itemId="2133" count="24" />
+		<remove itemId="2133" count="242" />
+	</fee>
+	<fee stoneId="95822"><!-- Hardin's Soul Crystal Lv. 20 (Rare) -->
+		<third itemId="2133" count="65" />
+		<reThird itemId="2133" count="65" />
+		<remove itemId="2133" count="655" />
+	</fee>
+	<fee stoneId="96901"><!-- Aden's Soul Crystal Lv. 1 - Armor -->
+		<first itemId="2132" count="1" />
+		<secondary itemId="2132" count="2" />
+		<reNormal itemId="2132" count="2" />
+		<reSecondary itemId="2132" count="2" />
+		<remove itemId="2132" count="1" />
+	</fee>
+	<fee stoneId="96902"><!-- Aden's Soul Crystal Lv. 2 - Armor -->
+		<first itemId="2132" count="2" />
+		<secondary itemId="2132" count="4" />
+		<reNormal itemId="2132" count="4" />
+		<reSecondary itemId="2132" count="4" />
+		<remove itemId="2132" count="3" />
+	</fee>
+	<fee stoneId="96903"><!-- Aden's Soul Crystal Lv. 3 - Armor -->
+		<first itemId="2132" count="5" />
+		<secondary itemId="2132" count="10" />
+		<reNormal itemId="2132" count="10" />
+		<reSecondary itemId="2132" count="10" />
+		<remove itemId="2132" count="6" />
+	</fee>
+	<fee stoneId="96904"><!-- Aden's Soul Crystal Lv. 4 - Armor -->
+		<first itemId="2132" count="7" />
+		<secondary itemId="2132" count="15" />
+		<reNormal itemId="2132" count="15" />
+		<reSecondary itemId="2132" count="15" />
+		<remove itemId="2132" count="15" />
+	</fee>
+	<fee stoneId="96905"><!-- Aden's Soul Crystal Lv. 5 - Armor -->
+		<first itemId="2132" count="10" />
+		<secondary itemId="2132" count="20" />
+		<reNormal itemId="2132" count="20" />
+		<reSecondary itemId="2132" count="20" />
+		<remove itemId="2132" count="30" />
+	</fee>
+	<fee stoneId="96906"><!-- Aden's Soul Crystal Lv. 6 - Armor -->
+		<first itemId="2132" count="14" />
+		<secondary itemId="2132" count="29" />
+		<reNormal itemId="2132" count="29" />
+		<reSecondary itemId="2132" count="29" />
+		<remove itemId="2132" count="41" />
+	</fee>
+	<fee stoneId="96907"><!-- Aden's Soul Crystal Lv. 7 - Armor -->
+		<first itemId="2132" count="16" />
+		<secondary itemId="2132" count="31" />
+		<reNormal itemId="2132" count="31" />
+		<reSecondary itemId="2132" count="31" />
+		<remove itemId="2132" count="51" />
+	</fee>
+	<fee stoneId="96908"><!-- Aden's Soul Crystal Lv. 8 - Armor -->
+		<first itemId="2132" count="18" />
+		<secondary itemId="2132" count="36" />
+		<reNormal itemId="2132" count="36" />
+		<reSecondary itemId="2132" count="36" />
+		<remove itemId="2132" count="64" />
+	</fee>
+	<fee stoneId="96909"><!-- Aden's Soul Crystal Lv. 9 - Armor -->
+		<first itemId="2132" count="24" />
+		<secondary itemId="2132" count="48" />
+		<reNormal itemId="2132" count="48" />
+		<reSecondary itemId="2132" count="48" />
+		<remove itemId="2132" count="75" />
+	</fee>
+	<fee stoneId="96910"><!-- Aden's Soul Crystal Lv. 10 - Armor -->
+		<first itemId="2132" count="31" />
+		<secondary itemId="2132" count="62" />
+		<reNormal itemId="2132" count="62" />
+		<reSecondary itemId="2132" count="62" />
+		<remove itemId="2132" count="100" />
+	</fee>
+	<fee stoneId="96911"><!-- Aden's Soul Crystal Lv. 11 - Armor -->
+		<first itemId="2133" count="2" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="9" />
+	</fee>
+	<fee stoneId="96912"><!-- Aden's Soul Crystal Lv. 12 - Armor -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="5" />
+		<reNormal itemId="2133" count="5" />
+		<reSecondary itemId="2133" count="5" />
+		<remove itemId="2133" count="12" />
+	</fee>
+	<fee stoneId="96913"><!-- Aden's Soul Crystal Lv. 13 - Armor -->
+		<first itemId="2133" count="3" />
+		<secondary itemId="2133" count="6" />
+		<reNormal itemId="2133" count="6" />
+		<reSecondary itemId="2133" count="6" />
+		<remove itemId="2133" count="15" />
+	</fee>
+	<fee stoneId="96914"><!-- Aden's Soul Crystal Lv. 14 - Armor -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="7" />
+		<reNormal itemId="2133" count="7" />
+		<reSecondary itemId="2133" count="7" />
+		<remove itemId="2133" count="17" />
+	</fee>
+	<fee stoneId="96915"><!-- Aden's Soul Crystal Lv. 15 - Armor -->
+		<first itemId="2133" count="4" />
+		<secondary itemId="2133" count="8" />
+		<reNormal itemId="2133" count="8" />
+		<reSecondary itemId="2133" count="8" />
+		<remove itemId="2133" count="21" />
+	</fee>
+	<fee stoneId="96916"><!-- Aden's Soul Crystal Lv. 16 - Armor -->
+		<first itemId="2133" count="5" />
+		<secondary itemId="2133" count="11" />
+		<reNormal itemId="2133" count="11" />
+		<reSecondary itemId="2133" count="11" />
+		<remove itemId="2133" count="26" />
+	</fee>
+	<fee stoneId="96917"><!-- Aden's Soul Crystal Lv. 17 - Armor -->
+		<first itemId="2133" count="7" />
+		<secondary itemId="2133" count="13" />
+		<reNormal itemId="2133" count="13" />
+		<reSecondary itemId="2133" count="13" />
+		<remove itemId="2133" count="33" />
+	</fee>
+	<fee stoneId="96918"><!-- Aden's Soul Crystal Lv. 18 - Armor -->
+		<first itemId="2133" count="9" />
+		<secondary itemId="2133" count="19" />
+		<reNormal itemId="2133" count="19" />
+		<reSecondary itemId="2133" count="19" />
+		<remove itemId="2133" count="40" />
+	</fee>
+	<fee stoneId="96919"><!-- Aden's Soul Crystal Lv. 19 - Armor -->
+		<first itemId="2133" count="11" />
+		<secondary itemId="2133" count="21" />
+		<reNormal itemId="2133" count="21" />
+		<reSecondary itemId="2133" count="21" />
+		<remove itemId="2133" count="49" />
+	</fee>
+	<fee stoneId="96920"><!-- Aden's Soul Crystal Lv. 20 - Armor -->
+		<first itemId="2133" count="15" />
+		<secondary itemId="2133" count="30" />
+		<reNormal itemId="2133" count="30" />
+		<reSecondary itemId="2133" count="30" />
+		<remove itemId="2133" count="128" />
+	</fee>
+</list>

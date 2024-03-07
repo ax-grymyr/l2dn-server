@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="30176" name="option_id_30176">
+	</option>
+	<option id="30177" name="option_id_30177">
+		<!-- M. Def. +1 -->
+	</option>
+	<option id="30178" name="option_id_30178">
+		<!-- M. Def. +2 -->
+	</option>
+	<option id="30179" name="option_id_30179">
+		<!-- M. Def. +3 -->
+	</option>
+	<option id="30180" name="option_id_30180">
+		<!-- M. Def. +4 -->
+	</option>
+	<option id="30181" name="option_id_30181">
+		<!-- M. Def. +5 -->
+	</option>
+	<option id="30182" name="option_id_30182">
+		<!-- M. Def. +6 -->
+	</option>
+	<option id="30183" name="option_id_30183">
+		<!-- M. Def. +7 -->
+	</option>
+	<option id="30184" name="option_id_30184">
+		<!-- M. Def. +8 -->
+	</option>
+	<option id="30185" name="option_id_30185">
+		<!-- M. Def. +9 -->
+	</option>
+	<option id="30186" name="option_id_30186">
+		<!-- M. Def. +10 -->
+	</option>
+	<option id="30187" name="option_id_30187">
+		<!-- M. Def. +11 -->
+	</option>
+	<option id="30188" name="option_id_30188">
+		<!-- M. Def. +12 -->
+	</option>
+	<option id="30189" name="option_id_30189">
+		<!-- M. Def. +13 -->
+	</option>
+	<option id="30190" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +14 -->
+		<passive_skill id="45040" level="1" /> <!-- Dragon Pendant Lv. 1 -->
+	</option>
+	<option id="30191" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +15 -->
+		<passive_skill id="45040" level="2" /> <!-- +1 Dragon Pendant Lv. 1 -->
+	</option>
+	<option id="30192" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +16 -->
+		<passive_skill id="45040" level="3" /> <!-- +2 Dragon Pendant Lv. 1 -->
+	</option>
+	<option id="30193" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +17 -->
+		<passive_skill id="45040" level="4" /> <!-- +3 Dragon Pendant Lv. 1 -->
+	</option>
+	<option id="30194" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +18 -->
+		<passive_skill id="45040" level="5" /> <!-- +4 Dragon Pendant Lv. 1 -->
+	</option>
+	<option id="30195" name="Dragon_Pendant_Lv1">
+		<!-- M. Def. +19 -->
+		<passive_skill id="45040" level="6" /> <!-- +5 Dragon Pendant Lv. 1 -->
+	</option>
+
+	<option id="30196" name="Dragon_Pendant_Lv2">
+		<!-- M. Def. +20 -->
+		<passive_skill id="45041" level="1" /> <!-- Dragon Pendant Lv. 2 -->
+	</option>
+	<option id="30197" name="Dragon_Pendant_Lv2">
+		<!-- M. Def. +21 -->
+		<passive_skill id="45041" level="2" /> <!-- +1 Dragon Pendant Lv. 2 -->
+	</option>
+	<option id="30198" name="Dragon_Pendant_Lv2">
+		<!-- M. Def. +22 -->
+		<passive_skill id="45041" level="3" /> <!-- +2 Dragon Pendant Lv. 2 -->
+	</option>
+	<option id="30199" name="Dragon_Pendant_Lv2">
+		<!-- M. Def. +23 -->
+		<passive_skill id="45041" level="4" /> <!-- +3 Dragon Pendant Lv. 2 -->
+	</option>
+</list>

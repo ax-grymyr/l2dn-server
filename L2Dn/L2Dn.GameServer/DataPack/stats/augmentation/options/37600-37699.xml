@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37600" name="d_p_s_c_d_ls_accessory">
+		<!-- Received P. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37601" name="d_p_s_c_d_ls_accessory">
+		<!-- Received P. Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37602" name="d_p_s_c_d_ls_accessory">
+		<!-- Received P. Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37603" name="d_p_s_c_d_ls_accessory">
+		<!-- Received P. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37604" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37605" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37606" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37607" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37608" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37609" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37610" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37611" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37612" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37613" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37614" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37615" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37616" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37617" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37618" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37619" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37620" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37621" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37622" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37623" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37624" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37625" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37626" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37627" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37628" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37629" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37630" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37631" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37632" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37633" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37634" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37635" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37636" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37637" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37638" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37639" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37640" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37641" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37642" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37643" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37644" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37645" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37646" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37647" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37648" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37649" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37650" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37651" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37652" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37653" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37654" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37655" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37656" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37657" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37658" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37659" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37660" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37661" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37662" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37663" name="d_m_s_c_d_ls_accessory">
+		<!-- Received M. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37664" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37665" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37666" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37667" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37668" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37669" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37670" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37671" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37672" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37673" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37674" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37675" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37676" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37677" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37678" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37679" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37680" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37681" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37682" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37683" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37684" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37685" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37686" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37687" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37688" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37689" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -35 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37690" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37691" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -45 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37692" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37693" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37694" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37695" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37696" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37697" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37698" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -110 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37699" name="d_s_c_d_ls_accessory">
+		<!-- Received Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

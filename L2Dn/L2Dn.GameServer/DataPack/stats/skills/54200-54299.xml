@@ -1,0 +1,1326 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="54200" toLevel="1" name="Mount Glorious Steed">
+		<!-- Allows to mount Glorious Steed. <font color="FF8000">Note!</font>. The Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider classes cannot use mounts. -->
+		<icon>icon.warhorse_vehicle</icon>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLevel>1</abnormalLevel>
+		<excludedFromCheck>true</excludedFromCheck>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>206</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>206</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54201" toLevel="1" name="Mount White Wing">
+		<!-- Allows to mount White Wing. <font color="FF8000">Note!</font>. The Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider classes cannot use mounts. -->
+		<icon>icon.skill8605</icon>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLevel>1</abnormalLevel>
+		<excludedFromCheck>true</excludedFromCheck>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>204</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>204</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54202" toLevel="1" name="Mount Shining Lady">
+		<!-- Allows to mount Shining Lady. <font color="FF8000">Note!</font>. The Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider classes cannot use mounts. -->
+		<icon>icon.skill8607</icon>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLevel>1</abnormalLevel>
+		<excludedFromCheck>true</excludedFromCheck>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>207</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>207</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54203" toLevel="1" name="Silent Ride">
+		<!-- Monsters don't attack first for 30 sec. Speed -20%. Can be used during riding only. The skill is disabled when the character is dismounted. -->
+		<icon>icon.skill0221</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54204" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Human power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_HUMAN</abnormalVisualEffect>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>385</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>385</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54205" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Kamael power grants you two black wings. Max HP +300 -->
+		<icon>icon.skill1926</icon>
+		<abnormalVisualEffect>RANKER_DECO_KAMAEL</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>386</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54206" toLevel="2" name="Ultimate Death Knight Transformation">
+		<!-- Transforms into a Death Knight who is cursed by the Fire Dragon Valakas, but possesses great powers. <Appearance effect>. P. Atk. +40%. P. Critical Damage +40%. P. Skill Critical Damage +40%. Atk. Spd. +50%. P. Def. +250. Speed +5. Resistance to All Weapons +8%. Decreases penalty of Received Healing. Increases Holy Resistance. -->
+		<icon>
+			<value level="1">icon.death_knight_transform</value>
+			<value level="2">icon.s_death_knight_transform_new</value>
+		</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
+		<abnormalVisualEffect>
+			<value level="1">JDK_BODY_FIRE_1</value>
+			<value level="2">JDK_BODY_FIRE_2</value>
+		</abnormalVisualEffect>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<itemConsumeCount>
+			<value level="1">50</value>
+			<value level="2">60</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PULL>40</PULL>
+				<IMPRISON>30</IMPRISON>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">250</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BLUNT>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</BLUNT>
+				<ANCIENTSWORD>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</ANCIENTSWORD>
+				<RAPIER>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</RAPIER>
+				<PISTOLS>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</PISTOLS>
+				<SWORD>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</SWORD>
+				<DUAL>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DUAL>
+				<BOW>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</BOW>
+				<POLE>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</POLE>
+				<DAGGER>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DAGGER>
+				<DUALFIST>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DUALFIST>
+				<PULL>
+					<value level="1">0</value>
+					<value level="2">20</value>
+				</PULL>
+				<IMPRISON>
+					<value level="1">0</value>
+					<value level="2">20</value>
+				</IMPRISON>
+			</effect>
+			<effect name="HealEffect">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>47536</skillId> <!-- Impending Death Whisper -->
+				<skillLevel>1</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>47536</skillId> <!-- Impending Death Whisper -->
+				<skillLevel>1</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54207" toLevel="1" name="Mount Night Mare">
+		<!-- Allows to mount Night Mare. -->
+		<icon>icon.riding_knightmare</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>208</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54208" toLevel="1" name="Worthy Warrior Effect">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among Death Knights. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54209" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Orc power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_ORC</abnormalVisualEffect>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>424</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54210" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Elven power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_ELF</abnormalVisualEffect>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>428</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54211" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Dark Elven power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_DARKELF</abnormalVisualEffect>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>429</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54212" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Dwarven power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_DWARF</abnormalVisualEffect>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>430</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54213" toLevel="1" name="Mount Air Bike">
+		<!-- Allows to ride Air Bike. -->
+		<icon>icon.etc_dwarf_craft_vehicle</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>209</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>209</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54214" toLevel="1" name="Dragon Berserker Evolver">
+		<!-- P. Atk. +500. M. Atk. +500. Atk. Spd. +100. Casting Spd. +100. P. Critical Rate +30. Skill Critical Rate +30%. Acquired XP/ SP +30%. Sayha's Grace Consumption -15% -->
+		<icon>icon.bm2018_dragon_i01</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_R</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54215" toLevel="1" name="High Priest Transformation">
+		<!-- P. Atk. +300. M. Atk. +300. Atk. Spd. +50. Casting Spd. +50. P. Critical Rate +15. Skill Critical Rate +15%. Acquired XP/ SP +30%. Sayha's Grace Consumption -10% -->
+		<icon>icon.bm2018_healer_i01</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54216" toLevel="1" name="Baby Shark Transformation">
+		<!-- P. Atk. +200. M. Atk. +200. Atk. Spd. +20. Casting Spd. +20. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -10% -->
+		<icon>icon.shark_suit</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>BLUE_DYNASTY</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54217" toLevel="1" name="Panda Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -10% -->
+		<icon>icon.sayha2017_panda</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>RUDOLPH</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54218" toLevel="1" name="Cat Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3% -->
+		<icon>icon.sayha2017_cat</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_8</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54219" toLevel="1" name="Teddy Bear Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3% -->
+		<icon>icon.gomdori_chest_change</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_6</abnormalVisualEffect>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54220" toLevel="1" name="Dragon Berserker Evolver">
+		<!-- P. Atk. +500. M. Atk. +500. Atk. Spd. +100. Casting Spd. +100. P. Critical Rate +30. Skill Critical Rate +30%. Acquired XP/ SP +30%. Sayha's Grace Consumption -15%. XP recovery fee -10% -->
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54221" toLevel="1" name="Wild Wolf Transformation">
+		<!-- P. Atk. +300. M. Atk. +300. Atk. Spd. +50. Casting Spd. +50. P. Critical Rate +15. Skill Critical Rate +15%. Acquired XP/ SP +30%. Sayha's Grace Consumption -10%. XP recovery fee -10% -->
+		<icon>icon.bm2018_barbarian_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54222" toLevel="1" name="Holiday Attire">
+		<!-- P. Atk. +200. M. Atk. +200. Atk. Spd. +20. Casting Spd. +20. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -10% -->
+		<icon>icon.whiteday_suit</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54223" toLevel="1" name="Transform: Kat the Cat">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -10% -->
+		<icon>icon.cat_the_cat_change_0</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54224" toLevel="1" name="Hanbok Transformation">
+		<!-- P. Atk. +200. M. Atk. +200. Atk. Spd. +20. Casting Spd. +20. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3% -->
+		<icon>icon.ev_kr_traditional_dress</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54225" toLevel="1" name="Mount Elemental Lyn Draco">
+		<!-- Allows to mount Elemental Lyn Draco. -->
+		<icon>icon.etc_lind_vehicle</icon>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLevel>1</abnormalLevel>
+		<excludedFromCheck>true</excludedFromCheck>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<magicLevel>76</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>220</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>220</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54226" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Sylph power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<abnormalVisualEffect>RANKER_DECO_SYLPH</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>387</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54227" toLevel="1" name="Mount Black Wyvern">
+		<!-- Allows to mount Black Wyvern. When mounting a Wyvern, your weapon and shield/ sigil are unequipped. Only several buff skills can be used while riding a Wyvern. -->
+		<icon>icon.s_wyvern_black</icon>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<excludedFromCheck>true</excludedFromCheck>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="54228" toLevel="1" name="Inuit Transformation">
+		<!-- P. Atk. +100. M. Atk. +100. Atk. Spd. +10. Casting Spd. +10. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3% -->
+		<icon>icon.eskimo_suit</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54229" toLevel="1" name="Santa Claus Transformation">
+		<!-- P. Atk. +200. M. Atk. +200. Atk. Spd. +20. Casting Spd. +20. P. Critical Rate +5. Skill Critical Rate +5%. Acquired XP/ SP +20%. Sayha's Grace Consumption -3%. XP recovery fee -10% -->
+		<icon>icon.armor_ev_santas_clothes</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54230" toLevel="1" name="Castle Guardian Transformation">
+		<!-- P. Atk. +200. M. Atk. +200. P. Def. +300. M. Def. +300. Atk. Spd. +30. Casting Spd. +30. Max HP +500. Max MP +500. PvP damage +2%. Note!. The effect is removed when you leave the world server. Does not stack with Dragon Slayer Appearance. -->
+		<icon>icon.lionelhunter_dress</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54231" toLevel="1" name="Dragon Slayer Appearance">
+		<!-- P. Atk. +200. M. Atk. +200. P. Def. +300. M. Def. +300. Atk. Spd. +30. Casting Spd. +30. Max HP +500. Max MP +500. Note!. Does not stack with Castle Guardian Transformation. -->
+		<icon>icon.dragon_slayer_suit</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>S_DRAGON_SLAYER</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>45</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeId>3031</itemConsumeId>
+		<itemConsumeCount>20</itemConsumeCount>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54230</skillId> <!-- Castle Guardian Transformation -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54232" toLevel="1" name="Dizzy Lv. 1">
+		<!-- You feel dizzy from cold. PvE damage +2%. Received PvE damage -2%. Atk. Spd./ Casting Spd. +5%. All received Critical Rate -2%. All received Critical Damage -2%. Sayha's Grace Sustain. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54233" toLevel="1" name="Dizzy Lv. 1">
+		<!-- You feel dizzy from cold. Received PvE damage -7%. Sustains Sayha's Grace. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54234" toLevel="1" name="Dizzy Lv. 1">
+		<!-- You feel dizzy from cold. Atk. Spd. +10%. Casting Spd. +10%. Sustains Sayha's Grace. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54235" toLevel="1" name="Dizzy Lv. 2">
+		<!-- You feel dizzy from cold. PvE damage +5%. Received PvE damage -5%. Atk. Spd./ Casting Spd. +10%. All received Critical Rate -5%. All received Critical Damage -5%. Sayha's Grace Sustain. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54236" toLevel="1" name="Dizzy Lv. 2">
+		<!-- You feel dizzy from cold. Received PvE damage -15%. Sustains Sayha's Grace. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54237" toLevel="1" name="Dizzy Lv. 2">
+		<!-- You feel dizzy from cold. Atk. Spd. +20%. Casting Spd. +20%. Sustains Sayha's Grace. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54238" toLevel="1" name="Swimsuit Transformation">
+		<!-- P. Atk. +300. M. Atk. +300. Atk. Spd. +50. Casting Spd. +50. P. Critical Rate +15. Skill Critical Rate +15%. Acquired XP/ SP +30%. Sayha's Grace Consumption -10%. XP recovery fee -20% -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54239" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Vanguard Rider power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54240" toLevel="1" name="Mount Red Wyvern">
+		<!-- Allows to mount Red Wyvern. When mounting a Wyvern, your weapon and shield/ sigil are unequipped. Only several buff skills can be used while riding a Wyvern. -->
+		<icon>icon.s_wyvern_red</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54241" toLevel="1" name="Labyrinth Uniform">
+		<!-- Clothes worn by Underground Labyrinth' prisoners. -->
+		<icon>icon.prison_uniform</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54242" toLevel="1" name="Worthy Warrior Transformation">
+		<!-- For adventurers who have taken the 1st-3rd places in rankings among their race. The Assassin power grants you a unique appearance. Max HP +300 -->
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3600</abnormalTime>
+	</skill>
+	<skill id="54243" toLevel="1" name="Assassin's Secret Notes - 1st Page">
+		<!-- <<font color="00FF00">Secret Notes</font>>. Reading secret notes addressed to Assassins temporarily grants some abilities. Max HP +3%. Max MP +3%. P. Atk. +2%. M. Atk. +2%. P. Def. +2%. M. Def. +2%. Atk. Spd. +2%. P. Accuracy +1. M. Accuracy +1. M. Skill Critical Rate +10. Speed +3. <font color="FF8000">Note!</font>. The same Assassins' notes cannot be read twice. Cannot be used with White Guardian. -->
+		<icon>icon.etc_piece_of_paper_gray_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKA_AVE</abnormalVisualEffect>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7200000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54244</skillId> <!-- Assassin's Secret Notes - 2nd Page -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54245</skillId> <!-- Assassin's Secret Notes - 3rd Page -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54244" toLevel="1" name="Assassin's Secret Notes - 2nd Page">
+		<!-- <<font color="00FF00">Secret Notes</font>>. Reading secret notes addressed to Assassins temporarily grants some abilities. Max HP +5%. Max MP +5%. P. Atk. +2%. M. Atk. +2%. P. Def. +2%. M. Def. +2%. Atk. Spd. +3%. P. Accuracy +1. M. Accuracy +1. M. Skill Critical Rate +10. Speed +4. <font color="FF8000">Note!</font>. The same Assassins' notes cannot be read twice. Cannot be used with White Guardian. -->
+		<icon>icon.etc_piece_of_paper_black_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKB_AVE</abnormalVisualEffect>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7200000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54243</skillId> <!-- Assassin's Secret Notes - 1st Page -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54245</skillId> <!-- Assassin's Secret Notes - 3rd Page -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54245" toLevel="1" name="Assassin's Secret Notes - 3rd Page">
+		<!-- <<font color="00FF00">Secret Notes</font>>. Reading secret notes addressed to Assassins temporarily grants some abilities. Max HP +7%. Max MP +7%. P. Atk. +3%. M. Atk. +3%. P. Def. +3%. M. Def. +3%. Atk. Spd. +5%. P. Accuracy +2. M. Accuracy +2. M. Skill Critical Rate +20. Speed +5. <font color="FF8000">Note!</font>. The same Assassins' notes cannot be read twice. Cannot be used with White Guardian. -->
+		<icon>icon.etc_piece_of_paper_white_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKC_AVE</abnormalVisualEffect>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3600000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54243</skillId> <!-- Assassin's Secret Notes - 1st Page -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54244</skillId> <!-- Assassin's Secret Notes - 2nd Page -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54246" toLevel="1" name="Silver Wolf">
+		<!-- Allows to mount Silver Wolf. -->
+		<icon>icon.s_assassin_riding_wolf</icon>
+		<operateType>A2</operateType>
+		<isMagic>2</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<magicLevel>76</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>224</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>224</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54247" toLevel="1" name="Mount Twilight Wyvern">
+		<!-- Allows to mount Twilight Wyvern. When mounting a Wyvern, your weapon and shield/ sigil are unequipped. Only several buff skills can be used while riding a Wyvern. -->
+		<icon>icon.shadow_wyvern</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+	</skill>
+</list>

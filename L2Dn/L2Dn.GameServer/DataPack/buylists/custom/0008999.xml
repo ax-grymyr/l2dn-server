@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="99" price="0" /> <!-- Apprentice's Spellbook -->
+	<item id="100" price="0" /> <!-- Voodoo Doll -->
+	<item id="308" price="0" /> <!-- Buffalo's Horn -->
+	<item id="309" price="0" /> <!-- Tear's of Eva -->
+	<item id="310" price="0" /> <!-- Relic of the Saints -->
+	<item id="311" price="0" /> <!-- Crucifix of Blessing -->
+	<item id="91676" price="0" /> <!-- Reinforced Voodoo Doll -->
+</list>

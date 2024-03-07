@@ -1,0 +1,2278 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="51001" toLevel="1" name="Sayha's Storm Lv. 2 (Event)">
+		<!-- Sayha's Grace Consumption +100%. Acquired attribute XP +150%. Acquired SP +150%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90874</itemConsumeId> <!-- Sayha's Storm Lv. 2 -->
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>150</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>150</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51002" toLevel="1" name="Sayha's Storm Lv. 2">
+		<!-- Sayha's Grace Consumption +100%. Acquired attribute XP +150%. Acquired SP +150%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90875</itemConsumeId> <!-- Sayha's Storm Lv. 2 (Exchangeable) -->
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>150</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>150</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51003" toLevel="1" name="Sayha's Grace Box">
+		<icon>icon.bm_nebit_box</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90876</itemConsumeId> <!-- Sayha Grace Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="50.0">
+						<item id="49844" count="1" /> <!-- Sayha's Blessing Pack -->
+					</item>
+					<item chance="50.0">
+						<item id="49851" count="1" /> <!-- Sayha's Storm Lv. 1 -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51004" toLevel="1" name="Sayha's Golden Treasure">
+		<icon>icon.bm_sayha_gold_present</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90877</itemConsumeId> <!-- Sayha's Golden Treasure -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90876" count="1" /> <!-- Sayha's Grace Box -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51005" toLevel="1" name="Sayha's Silver Treasure">
+		<icon>icon.bm_sayha_silver_present</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90878</itemConsumeId> <!-- Sayha's Silver Treasure -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90876" count="1" /> <!-- Sayha's Grace Box -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51006" toLevel="1" name="Sayha's Grace Potion">
+		<!-- For 10 min., activates the Sayha's Grace effect. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.bm_freya_potion</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="51007" toLevel="1" name="Sayha's XP Amulet">
+		<!-- Acquired XP/ SP +20%, Sayha Grace Consumption -10%. -->
+		<icon>icon.bm_sayha_rune</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51008" toLevel="1" name="Eva's Stable Scroll: Enchant Head Accessory (Low-grade)">
+		<!-- Required for enchanting head accessories. -->
+		<icon>icon.scroll_of_unidentify_am_s</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90524</itemConsumeId> <!-- Lucky Enchant Stone Chest - A-grade -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="33.34">
+						<item id="90483" count="1" /> <!-- Stone: Save A-grade Armor -->
+					</item>
+					<item chance="33.33">
+						<item id="90487" count="1" /> <!-- Stone: Enchant D-grade Armor -->
+					</item>
+					<item chance="33.33">
+						<item id="90491" count="1" /> <!-- Stone: Protect D-grade Armor -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51009" toLevel="1" name="Golden Treasure Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>45488</itemConsumeId> <!-- Golden Treasure Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="40">
+						<item id="38154" count="20" /> <!-- Fishing Shot -->
+					</item>
+					<item chance="20">
+						<item id="38154" count="100" /> <!-- Fishing Shot -->
+					</item>
+					<item chance="4">
+						<item id="49446" count="1" /> <!-- Blue Mackerel Chest: One-handed Sword -->
+					</item>
+					<item chance="4">
+						<item id="49447" count="1" /> <!-- Trumpetfish Chest: Dagger -->
+					</item>
+					<item chance="4">
+						<item id="49448" count="1" /> <!-- Shark Chest: Two-handed Sword -->
+					</item>
+					<item chance="4">
+						<item id="49449" count="1" /> <!-- Squid Chest: Spear -->
+					</item>
+					<item chance="4">
+						<item id="49450" count="1" /> <!-- Sea Horse Chest: Two-handed Magic Blunt Weapon -->
+					</item>
+					<item chance="4">
+						<item id="49451" count="1" /> <!-- Lobster Chest: Fist Weapon -->
+					</item>
+					<item chance="4">
+						<item id="49452" count="1" /> <!-- Giant Crab Chest: Bow -->
+					</item>
+					<item chance="4">
+						<item id="49453" count="1" /> <!-- Turtle Chest: Shield -->
+					</item>
+					<item chance="4">
+						<item id="49454" count="1" /> <!-- Blue Mackerel Chest: Dual Sword -->
+					</item>
+					<item chance="4">
+						<item id="49455" count="1" /> <!-- Blue Mackerel Chest: One-handed Blunt Weapon -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51010" toLevel="1" name="A-grade Armor Enchant Stone Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51011" toLevel="1" name="B-grade Armor Enchant Stone Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51012" toLevel="1" name="Refined Rare Accessory Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51013" toLevel="1" name="Rare Accessory Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51014" toLevel="1" name="Fire Dragon's Blessing Scroll">
+		<!-- Grants you Blessing Of Fire Dragon for 20 min.: Buff/ debuff effects remain after death, but Blessing of Fire Dragon is consumed. -->
+		<icon>icon.bm_blessing_dragon</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90520</itemConsumeId> <!-- Fire Dragon's Blessing Scroll -->
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>100</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="NoblesseBless" />
+		</effects>
+	</skill>
+	<skill id="51015" toLevel="1" name="Shining Mood Melody">
+		<!-- For 20 min., activates the following effects: Might, Shield, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Focus, Death Whisper, Guidance, Clarity, Wild Magic, Concentration. Cooldown: 1 min. The effect remains after death. Note!. Shining Scroll of Mood Melody can't be used while the buff is still active. -->
+		<icon>icon.bm_magmeld</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="51016" toLevel="1" name="Clan's Bonus - XP Lv. 1">
+		<!-- Acquired XP/ SP +3%. The effect is applied if at least 7 clan members are logged in. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_XP</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>3</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>3</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51017" toLevel="1" name="Clan's Bonus - XP Lv. 2">
+		<!-- Acquired XP/ SP +6%. The effect is applied if at least 14 clan members are logged in. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_XP</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>6</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>6</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51018" toLevel="1" name="Clan's Bonus - XP Lv. 3">
+		<!-- Acquired XP/ SP +10%. The effect is applied if at least 21 clan members are logged in. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_XP</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51019" toLevel="1" name="Clan's Bonus - XP Lv. 4">
+		<!-- Acquired XP/ SP +20%. The effect is applied if at least 28 clan members are logged in. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_XP</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51020" toLevel="1" name="Clan's Bonus - P. Atk. Lv. 1">
+		<!-- PvE damage +5%. Requires at least 3,267,000 clan hunting points for the effect to be applied. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_ATTACK</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51021" toLevel="1" name="Clan's Bonus - P. Atk. Lv. 2">
+		<!-- PvE damage +10%. Requires at least 6,534,000 clan hunting points for the effect to be applied. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_ATTACK</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51022" toLevel="1" name="Clan's Bonus - P. Atk. Lv. 3">
+		<!-- PvE damage +15%. Requires at least 9,801,000 clan hunting points for the effect to be applied. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_ATTACK</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51023" toLevel="1" name="Clan's Bonus - P. Atk. Lv. 4">
+		<!-- PvE damage +15%. PvP damage +10%. Requires at least 13,068,000 clan hunting points for the effect to be applied. -->
+		<icon>icon.skill19011</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>BR_CLAN_ATTACK</abnormalType>
+		<operateType>A2</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51024" toLevel="1" name="Expand Primary and Secondary Agathion Slots">
+		<!-- Does not add agathion slots. -->
+		<icon>icon.etc_bm_brooch_lavianrose_i04</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51025" toLevel="4" name="Expand Primary and Secondary Agathion Slots">
+		<!-- Unlocks the main agathion slot. Unlocks side agathion slots: 1 pcs. -->
+		<icon>
+			<value level="1">icon.agathion_magmeld_teleport</value>
+			<value level="2">icon.bracelet_tersi_agathion</value>
+			<value level="3">icon.high_agathion_bracelet_i01</value>
+			<value level="4">icon.pi_high_agathion_bracelet_i00</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AgathionSlot">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51026" toLevel="1" name="Summon Agathion Aries">
+		<!-- Releases the seal of Agathion Aries. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="51027" toLevel="1" name="Summon Agathion Joy">
+		<!-- Releases the seal of Agathion Joy. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>16056</npcId> <!-- Joy -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51028" toLevel="1" name="Summon Agathion Pisces">
+		<!-- Releases the seal of Agathion Pisces. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13562</npcId> <!-- Agathion Pisces -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51029" toLevel="1" name="Summon Agathion Cancer">
+		<!-- Releases the seal of Agathion Cancer. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13564</npcId> <!-- Agathion Cancer -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51030" toLevel="1" name="Teleport: Gludio">
+		<!-- Teleports to Gludio. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-14225</x>
+				<y>123540</y>
+				<z>-3121</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51031" toLevel="1" name="Teleport: Dion">
+		<!-- Teleports to Dion. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>18748</x>
+				<y>145437</y>
+				<z>-3132</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51032" toLevel="1" name="Teleport: Giran">
+		<!-- Teleports to Giran. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>82698</x>
+				<y>148638</y>
+				<z>-3473</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51033" toLevel="1" name="Teleport: Oren">
+		<!-- Teleports to Oren. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>82321</x>
+				<y>55139</y>
+				<z>-1529</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51034" toLevel="1" name="Teleport: Hunters' Village">
+		<!-- Teleports to Hunters' Village. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>116589</x>
+				<y>76268</y>
+				<z>-2734</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51035" toLevel="1" name="Summon Agathion Rudolph">
+		<!-- Releases the seal of Agathion Rudolph. -->
+		<icon>BranchSys2.icon.event_lbracelet_rudolph</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>16073</npcId> <!-- Agathion Rudolph -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51036" toLevel="1" name="Rudolph's Blessing">
+		<!-- Atk. Spd./ Casting Spd. +5%, acquired XP/ SP +10%. -->
+		<icon>BranchSys2.icon.event_lbracelet_rudolph</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51037" toLevel="1" name="Release Agathion">
+		<!-- Releases the summoned agathion. -->
+		<icon>icon.etc_unsummon_aga_agit_i01</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="51038" toLevel="1" name="Battle Box Lv. 1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90911</itemConsumeId> <!-- Battle Box Lv. 1 -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="60.0">
+						<item id="49757" count="1" /> <!-- Sayha's Holy Water - Sealed -->
+					</item>
+					<item chance="40.0">
+						<item id="49758" count="1" /> <!-- Blood Crystal -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51039" toLevel="1" name="Battle Box Lv. 2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90912</itemConsumeId> <!-- Battle Box Lv. 2 -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="40.0">
+						<item id="94271" count="1" /> <!-- Scroll: Boost Defense - Sealed -->
+					</item>
+					<item chance="25.0">
+						<item id="49757" count="2" /> <!-- Sayha's Holy Water - Sealed -->
+					</item>
+					<item chance="10.0">
+						<item id="49671" count="1" /> <!-- B-grade Armor/ Accessory Ingredient Pack -->
+					</item>
+					<item chance="10.0">
+						<item id="49670" count="1" /> <!-- B-grade Weapon Ingredient Pack -->
+					</item>
+					<item chance="8.0">
+						<item id="49666" count="1" /> <!-- B-grade Accessory Pack -->
+					</item>
+					<item chance="7.0">
+						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51040" toLevel="1" name="Battle Box Lv. 3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90913</itemConsumeId> <!-- Battle Box Lv. 3 -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="37.0">
+						<item id="94271" count="2" /> <!-- Scroll: Boost Defense - Sealed -->
+					</item>
+					<item chance="37.0">
+						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+					</item>
+					<item chance="20.0">
+						<item id="49663" count="1" /> <!-- Special HP Recovery Potion -->
+					</item>
+					<item chance="5.0">
+						<item id="49662" count="1" /> <!-- Stylish Color Title - Sealed -->
+					</item>
+					<item chance="1.0">
+						<item id="90014" count="1" /> <!-- High-grade Life Stone - Weapon -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51041" toLevel="1" name="Battle Box Lv. 4">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90914</itemConsumeId> <!-- Battle Box Lv. 4 -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="40.0">
+						<item id="94187" count="1" /> <!-- Dim Life Stone Lv. 1 - Armor -->
+					</item>
+					<item chance="40.0">
+						<item id="94185" count="1" /> <!-- Dim Life Stone Lv. 1 - Weapon -->
+					</item>
+					<item chance="15.0">
+						<item id="49761" count="1" /> <!-- A-grade Accessory Pack -->
+					</item>
+					<item chance="4.0">
+						<item id="49760" count="1" /> <!-- A-grade Armor Pack -->
+					</item>
+					<item chance="1.0">
+						<item id="49765" count="1" /> <!-- Life Control Tower's Scroll of Blessing -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51042" toLevel="1" name="Valor Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90915</itemConsumeId> <!-- Battle Box Lv. 4 -->
+		<isMagic>0</isMagic> <!-- Auto generated with parser -->
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="19.6">
+						<item count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+					</item>
+					<item chance="19.6">
+						<item id="947" count="1" /> <!-- Scroll: Enchant B-grade Weapon -->
+					</item>
+					<item chance="19.6">
+						<item id="948" count="1" /> <!-- Scroll: Enchant B-grade Armor -->
+					</item>
+					<item chance="19.6">
+						<item id="729" count="1" /> <!-- Scroll: Enchant A-grade Weapon -->
+					</item>
+					<item chance="19.6">
+						<item id="730" count="1" /> <!-- Scroll: Enchant A-grade Armor -->
+					</item>
+					<item chance="2">
+						<item id="49756" count="1" /> <!-- Cloth Piece -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51043" toLevel="1" name="XP Scroll: 10M">
+		<!-- XP +10,000,000. -->
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90917</itemConsumeId> <!-- XP Scroll: 10,000,000 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<reuseDelay>500</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>10000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51044" toLevel="1" name="XP Scroll: 50M">
+		<!-- XP +50,000,000. -->
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90918</itemConsumeId> <!-- XP Scroll: 50,000,000 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<reuseDelay>500</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>50000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51045" toLevel="1" name="XP Scroll: 100M">
+		<!-- XP +100,000,000. -->
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90919</itemConsumeId> <!-- XP Scroll: 100,000,000 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<reuseDelay>500</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>100000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51046" toLevel="1" name="Zodiac Agathion Box">
+		<icon>icon.star_agathion_cube</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>48066</itemConsumeId> <!-- Zodiac Agathion Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="11.12">
+						<item id="48056" count="1" /> <!-- Agathion Aquarius -->
+					</item>
+					<item chance="11.11">
+						<item id="48050" count="1" /> <!-- Agathion Libra -->
+					</item>
+					<item chance="11.11">
+						<item id="48052" count="1" /> <!-- Agathion Taurus -->
+					</item>
+					<item chance="11.11">
+						<item id="48054" count="1" /> <!-- Agathion Gemini -->
+					</item>
+					<item chance="11.11">
+						<item id="48053" count="1" /> <!-- Agathion Leo -->
+					</item>
+					<item chance="11.11">
+						<item id="48048" count="1" /> <!-- Agathion Virgo -->
+					</item>
+					<item chance="11.11">
+						<item id="48055" count="1" /> <!-- Agathion Scorpio -->
+					</item>
+					<item chance="11.11">
+						<item id="48058" count="1" /> <!-- Agathion Sagittarius -->
+					</item>
+					<item chance="11.11">
+						<item id="48049" count="1" /> <!-- Agathion Capricorn -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51047" toLevel="1" name="Scroll: Enchant Agathion">
+		<icon>icon.star_scrl_of_ench_ag</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51048" toLevel="1" name="Scroll: Enchant High-grade Agathion">
+		<icon>icon.star_giantscrl_of_ench_ag</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51049" toLevel="1" name="Stable Scroll: Enchant Agathion">
+		<icon>icon.star_giantscrl_of_ench_ag</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51050" toLevel="1" name="Raid Lucky Charm">
+		<!-- Death XP Penalty -50%. Cannot be used by chaotic characters. -->
+		<icon>icon.etc_cross_of_einhasad_i00</icon>
+		<operateType>P</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ReduceDropPenalty">
+				<exp>-50</exp>
+				<mode>PER</mode>
+				<type>MOB</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-50</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51051" toLevel="1" name="Sealed Doll of Border Box">
+		<icon>icon.star_agathion_cube</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90964</itemConsumeId> <!-- Sealed Doll of Border Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="33.34">
+						<item id="90822" count="1" /> <!-- Sealed Doll of Border - Baium - 30-day -->
+					</item>
+					<item chance="33.33">
+						<item id="90823" count="1" /> <!-- Sealed Doll of Border - Queen Ant - 30-day -->
+					</item>
+					<item chance="33.33">
+						<item id="90824" count="1" /> <!-- Sealed Doll of Border - Orfen - 30-day -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51052" toLevel="1" name="Raid Lucky Charm Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90966</itemConsumeId> <!-- Raid Lucky Charm Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100.0">
+						<item id="90965" count="1" /> <!-- Raid Lucky Charm - 7-day -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51053" toLevel="1" name="GM Repi Gift Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90968</itemConsumeId> <!-- GM Repi Gift Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="46254" count="1" /> <!-- Dandy's Home Run Ball - Sealed -->
+					</item>
+					<item chance="25.0">
+						<item id="49674" count="3" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="25.0">
+						<item id="90831" count="3" /> <!-- Transformation Scroll: White Assassin - Sealed -->
+					</item>
+					<item chance="25.0">
+						<item id="90874" count="3" /> <!-- Sayha's Storm Lv. 2 - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51054" toLevel="1" name="High-grade Shining Pendant Polish Box">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90971</itemConsumeId> <!-- High-grade Shining Pendant Polish Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="33.34">
+						<item id="49513" count="1" /> <!-- Shining Pendant Polish box -->
+					</item>
+					<item chance="33.33">
+						<item id="90137" count="1" /> <!-- Matte Pendant Polish -->
+					</item>
+					<item chance="33.33">
+						<item id="90138" count="1" /> <!-- Glittering Pendant Polish -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51055" toLevel="1" name="Item Seal Scroll">
+		<icon>icon.scrl_item_lock</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51056" toLevel="1" name="Scroll: Release Item Seal">
+		<icon>icon.scrl_item_unlock</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51057" toLevel="1" name="+8 A-grade Weapon Pack">
+		<icon>icon.etc_treasure_box_i07</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29745</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="4.5">
+						<item id="235" count="1" minEnchant="8" maxEnchant="8" /> <!-- Bloody Orchid -->
+					</item>
+					<item chance="4.5">
+						<item id="236" count="1" minEnchant="8" maxEnchant="8" /> <!-- Soul Separator -->
+					</item>
+					<item chance="4.5">
+						<item id="80" count="1" minEnchant="8" maxEnchant="8" /> <!-- Tallum Blade -->
+					</item>
+					<item chance="4.5">
+						<item id="2500" count="1" minEnchant="8" maxEnchant="8" /> <!-- Dark Legion's Edge -->
+					</item>
+					<item chance="4.5">
+						<item id="7884" count="1" minEnchant="8" maxEnchant="8" /> <!-- Infernal Master -->
+					</item>
+					<item chance="4.5">
+						<item id="81" count="1" minEnchant="8" maxEnchant="8" /> <!-- Dragon Slayer -->
+					</item>
+					<item chance="4.5">
+						<item id="288" count="1" minEnchant="8" maxEnchant="8" /> <!-- Carnage Bow -->
+					</item>
+					<item chance="4.5">
+						<item id="289" count="1" minEnchant="8" maxEnchant="8" /> <!-- Soul Bow -->
+					</item>
+					<item chance="4.5">
+						<item id="2504" count="1" minEnchant="8" maxEnchant="8" /> <!-- Meteor Shower -->
+					</item>
+					<item chance="4.5">
+						<item id="164" count="1" minEnchant="8" maxEnchant="8" /> <!-- Elysian -->
+					</item>
+					<item chance="4.5">
+						<item id="7899" count="1" minEnchant="8" maxEnchant="8" /> <!-- Destroyer Hammer -->
+					</item>
+					<item chance="4.5">
+						<item id="7902" count="1" minEnchant="8" maxEnchant="8" /> <!-- Doom Crusher -->
+					</item>
+					<item chance="4.5">
+						<item id="98" count="1" minEnchant="8" maxEnchant="8" /> <!-- Halberd -->
+					</item>
+					<item chance="4.5">
+						<item id="305" count="1" minEnchant="8" maxEnchant="8" /> <!-- Tallum Glaive -->
+					</item>
+					<item chance="4.5">
+						<item id="269" count="1" minEnchant="8" maxEnchant="8" /> <!-- Bloody Tornado -->
+					</item>
+					<item chance="4.5">
+						<item id="270" count="1" minEnchant="8" maxEnchant="8" /> <!-- Dragon Grinder -->
+					</item>
+					<item chance="4.5">
+						<item id="150" count="1" minEnchant="8" maxEnchant="8" /> <!-- Elemental Sword -->
+					</item>
+					<item chance="4.5">
+						<item id="151" count="1" minEnchant="8" maxEnchant="8" /> <!-- Sword of Miracles -->
+					</item>
+					<item chance="4.5">
+						<item id="212" count="1" minEnchant="8" maxEnchant="8" /> <!-- Dasparion's Staff -->
+					</item>
+					<item chance="4.5">
+						<item id="213" count="1" minEnchant="8" maxEnchant="8" /> <!-- Branch of the Mother Tree -->
+					</item>
+					<item chance="4.5">
+						<item id="7894" count="1" minEnchant="8" maxEnchant="8" /> <!-- Spiritual Eye -->
+					</item>
+					<item chance="4.5">
+						<item id="7895" count="1" minEnchant="8" maxEnchant="8" /> <!-- Flaming Dragon Skull -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51058" toLevel="1" name="Lucky Cube of Growth (30-day)">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51059" toLevel="1" name="Scroll: Enchant Savior's Earring">
+		<!-- Enchants Savior's Earring. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51060" toLevel="1" name="Savior's Earring Box">
+		<icon>icon.etc_treasure_box_i07</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90989</itemConsumeId> <!-- Savior's Earring Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="90.0">
+						<item id="90987" minEnchant="3" maxEnchant="3" count="1" /> <!-- Savior's Earring - Sealed -->
+					</item>
+					<item chance="10.0">
+						<item id="90987" count="1" /> <!-- Savior's Earring - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51061" toLevel="1" name="Burglar's Luck">
+		<!-- For 5 min. party members' acquired XP/ SP +10%, Sayha Grace XP/ SP +20% while hunting. -->
+		<icon>icon.Accessary_middle_ages_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>2500</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>669</effectPoint>
+	</skill>
+	<skill id="51062" toLevel="1" name="Balthus Knights' Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51063" toLevel="1" name="Balthus Knights' Matte Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51064" toLevel="1" name="Balthus Knights' Shining Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51065" toLevel="1" name="Balthus Knights' Glittering Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51066" toLevel="1" name="Rash's Supplies - Antharas">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51067" toLevel="1" name="Rash's Supplies - Baium">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51068" toLevel="1" name="Summon Sin Eater Agathion">
+		<!-- Release Agathion's Seal - Sin Eater. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="51069" toLevel="1" name="Hour of Penitence">
+		<!-- For 2 h., allows you to receive Crumbs of Penitence while hunting. -->
+		<icon>icon.etc_leash_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="51070" toLevel="3" name="Dragon's Miracle Potion">
+		<!-- Recovers Sayha's Grace points. For 20 min., acquired XP/ SP +20%, P./ M. Atk. +12%, P./ M. Def. +15%, P. Critical Rate/ M. Skill Critical Rate +20, P. Critical Damage/ M. Skill Critical Damage +5%, HP/ MP/ CP +25%, HP/ MP Recovery Rate +30%, Sayha's Grace Consumption -10%. With a certain chance, absorbs 5% of the inflicted damage as HP. The Dragon's Miracle Potion effect stacks up to 3 times. The effect remains after death. -->
+		<icon>
+			<value level="1">icon.bm_dragon_posion_brave_1</value>
+			<value level="2">icon.bm_dragon_posion_brave_2</value>
+			<value level="3">icon.bm_dragon_posion_brave_3</value>
+		</icon>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>DRAGON_MIRACLE</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91027</itemConsumeId> <!-- Dragon's Miracle Potion -->
+		<operateType>A2</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+					<value level="3">18</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+					<value level="3">18</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">18</value>
+					<value level="3">22</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">18</value>
+					<value level="3">22</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>5</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51071" toLevel="1" name="Dragon's Relic Box">
+		<icon>icon.bm_special_pendant_abradant_box</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91008</itemConsumeId> <!-- Dragon's Relic Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="80.0">
+						<item id="90499" count="1" /> <!-- Special Dragon Fruit Lv. 1 -->
+					</item>
+					<item chance="20.0">
+						<item id="91026" count="1" /> <!-- Dragon's Heart -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51072" toLevel="1" name="Fire Dragon's Relic Box">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91009</itemConsumeId> <!-- Fire Dragon's Relic Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="91008" count="1" /> <!-- Dragon's Relic Box -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51073" toLevel="1" name="Earth Dragon's Relic Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51074" toLevel="1" name="Dragon Dye Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91011</itemConsumeId> <!-- Dragon's Dye Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.37">
+						<item id="49959" count="1" /> <!-- Faded Best STR Dye <STR +3 CON -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49960" count="1" /> <!-- Faded Best STR Dye <STR +3 DEX -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49961" count="1" /> <!-- Faded Best CON Dye <CON +3 STR -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49962" count="1" /> <!-- Faded Best CON Dye <CON +3 DEX -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49963" count="1" /> <!-- Faded Best DEX Dye <DEX +3 STR -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49964" count="1" /> <!-- Faded Best DEX Dye <DEX +3 CON -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49965" count="1" /> <!-- Faded Best INT Dye <INT +3 MEN -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49966" count="1" /> <!-- Faded Best INT Dye <INT +3 WIT -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49967" count="1" /> <!-- Faded Best MEN Dye <MEN +3 INT -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49968" count="1" /> <!-- Faded Best MEN Dye <MEN +3 WIT -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49969" count="1" /> <!-- Faded Best WIT Dye <WIT +3 INT -1> - Lv. 0 -->
+					</item>
+					<item chance="8.33">
+						<item id="49970" count="1" /> <!-- Faded Best WIT Dye <WIT +3 MEN -1> - Lv. 0 -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51075" toLevel="1" name="Top-grade A-grade Weapon Pack">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91012</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="9.09">
+						<item id="8678" count="1" /> <!-- Sirra's Blade -->
+					</item>
+					<item chance="9.09">
+						<item id="8679" count="1" /> <!-- Sword of Ipos -->
+					</item>
+					<item chance="9.09">
+						<item id="8680" count="1" /> <!-- Barakiel's Axe -->
+					</item>
+					<item chance="9.09">
+						<item id="8681" count="1" /> <!-- Behemoth' Tuning Fork -->
+					</item>
+					<item chance="9.09">
+						<item id="8682" count="1" /> <!-- Naga's Storm -->
+					</item>
+					<item chance="9.09">
+						<item id="8683" count="1" /> <!-- Tiphon's Spear -->
+					</item>
+					<item chance="9.09">
+						<item id="8684" count="1" /> <!-- Shyeed's Bow -->
+					</item>
+					<item chance="9.09">
+						<item id="8685" count="1" /> <!-- Sobekk's Hurricane -->
+					</item>
+					<item chance="9.09">
+						<item id="8686" count="1" /> <!-- Themis' Tongue -->
+					</item>
+					<item chance="9.09">
+						<item id="8687" count="1" /> <!-- Cabrio's Hand -->
+					</item>
+					<item chance="9.09">
+						<item id="8688" count="1" /> <!-- Daimon Crystal -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51076" toLevel="1" name="Top A-grade Weapon Ingredient/ Recipe Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51077" toLevel="1" name="Weapon Recipe Box (Best A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91014</itemConsumeId> <!-- Weapon Recipe Box (Best A-grade) -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="9.09">
+						<item id="8690" count="1" /> <!-- Recipe: Sirra's Blade (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8692" count="1" /> <!-- Recipe: Sword of Ipos (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8694" count="1" /> <!-- Recipe: Barakiel's Axe (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8696" count="1" /> <!-- Recipe: Behemoth' Tuning Fork (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8698" count="1" /> <!-- Recipe: Naga's Storm (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8700" count="1" /> <!-- Recipe: Tiphon's Spear (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8702" count="1" /> <!-- Recipe: Shyeed's Bow (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8704" count="1" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8706" count="1" /> <!-- Recipe: Themis' Tongue (60%) -->
+					</item>
+					<item chance="9.1">
+						<item id="8708" count="1" /> <!-- Recipe: Cabrio's Hand (60%) -->
+					</item>
+					<item chance="9.09">
+						<item id="8710" count="1" /> <!-- Recipe: Daimon Crystal (60%) -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51078" toLevel="1" name="Rash's Supplies - Zaken">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51079" toLevel="1" name="Hidden Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91029</itemConsumeId> <!-- Hidden Box -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="50.0">
+						<item id="90139" count="200" /> <!-- Silver Bait - Sealed -->
+					</item>
+					<item chance="30.0">
+						<item id="46254" count="10" /> <!-- Dandy's Home Run Ball - Sealed -->
+					</item>
+					<item chance="9.9945">
+						<item id="90149" count="1" /> <!-- Scroll: Enchant Savior's Weapon - Sealed -->
+					</item>
+					<item chance="9.9945">
+						<item id="90990" count="1" /> <!-- Scroll: Enchant Savior's Earring - Sealed -->
+					</item>
+					<item chance="0.01">
+						<item id="90988" count="1" /> <!-- Shining Savior's Earring -->
+					</item>
+					<item chance="0.001">
+						<item id="90763" count="1" /> <!-- Zaken's Earring -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51080" toLevel="1" name="Golden Fishing Supply Items">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51081" toLevel="1" name="Big Fish' Golden Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51082" toLevel="1" name="Big Fish' Silver Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51083" toLevel="1" name="High-grade Maliss' HP Recovery Potion">
+		<icon>icon.etc_bm_hero_red_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51084" toLevel="1" name="Improved Stone: Enchant B-grade Armor">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51085" toLevel="1" name="Improved Stone: Enchant A-grade Armor">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51086" toLevel="1" name="Wind Cube of Abundance - 30 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51087" toLevel="1" name="Wind Cube of Abundance - 90 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51088" toLevel="1" name="Amulet of Winds">
+		<!-- When equipped, acquired XP/ SP while hunting +20%, acquired XP/ SP while fishing +50%, STR +1, CON +1, DEX +1, INT +1, WIT +1, MEN +1. -->
+		<icon>icon.bm_sayha_rune</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51089" toLevel="1" name="Teleport: Forge of Gods">
+		<!-- Teleports you to Forge of the Gods. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>169091</x>
+				<y>-116162</y>
+				<z>-2456</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51090" toLevel="1" name="Teleport - Garden of Eva">
+		<!-- Teleports you to Garden of Eva. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>82103</x>
+				<y>252409</y>
+				<z>-10588</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51091" toLevel="1" name="Teleport to Land of Winds">
+		<!-- Teleports you to Land of Winds. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>177347</x>
+				<y>173049</y>
+				<z>-1915</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51092" toLevel="1" name="Teleport to Wall of Argos">
+		<!-- Teleports you to Wall of Argos. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>30000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>165054</x>
+				<y>-47861</y>
+				<z>-3560</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51093" toLevel="1" name="Fire Attack">
+		<!-- Fire Attack +100. -->
+		<icon>icon.agathion_fire_1</icon>
+		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<passiveConditions>
+			<condition name="OpNeedAgathion" />
+		</passiveConditions>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>100</amount>
+				<type>FIRE</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51094" toLevel="1" name="Water Attack">
+		<!-- Water Attribute Attack +100. -->
+		<icon>icon.agathion_water_1</icon>
+		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<passiveConditions>
+			<condition name="OpNeedAgathion" />
+		</passiveConditions>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>100</amount>
+				<type>WATER</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51095" toLevel="1" name="Wind Attack">
+		<!-- Wind Attribute Attack +100. -->
+		<icon>icon.agathion_wind_1</icon>
+		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<passiveConditions>
+			<condition name="OpNeedAgathion" />
+		</passiveConditions>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>100</amount>
+				<type>WIND</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51096" toLevel="1" name="Earth Attack">
+		<!-- Earth Attribute Attack +100. -->
+		<icon>icon.agathion_earth_1</icon>
+		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<passiveConditions>
+			<condition name="OpNeedAgathion" />
+		</passiveConditions>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>100</amount>
+				<type>EARTH</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51097" toLevel="1" name="Radiant Spirit's Varnish">
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51098" toLevel="1" name="Blue Dynasty Transformation">
+		<!-- Blue Dynasty outfit. Max HP/ MP +20%, acquired XP/ SP while hunting +20%, while Sayha's Grace is active. The effect remains after death. -->
+		<icon>icon.armor_t91_u_i00</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>BLUE_DYNASTY</abnormalVisualEffect>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91109</itemConsumeId> <!-- Blue Dynasty Scroll -->
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51099" toLevel="1" name="Transform: Kat the Cat">
+		<!-- Kat the Cat transformation. Max HP/ MP +20%, acquired XP/ SP while hunting +20%, while Sayha's Grace is active. The effect remains after death. -->
+		<icon>icon.cat_the_cat_change_0</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_8</abnormalVisualEffect>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91110</itemConsumeId> <!-- Kat the Cat Scroll -->
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+</list>

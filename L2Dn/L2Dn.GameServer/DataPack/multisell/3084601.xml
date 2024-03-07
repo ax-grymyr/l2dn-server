@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30298</npc> <!-- Pinter -->
+		<npc>30300</npc> <!-- Pushkin -->
+		<npc>30317</npc> <!-- Kluto -->
+		<npc>30458</npc> <!-- Poitan -->
+		<npc>30471</npc> <!-- Rupio -->
+		<npc>30846</npc> <!-- Wilbert -->
+		<npc>30678</npc> <!-- Helton -->
+		<npc>30688</npc> <!-- Duning -->
+		<npc>31271</npc> <!-- Hilda -->
+		<npc>31583</npc> <!-- Feynn -->
+	</npcs>
+	<!-- Siegel's -->
+	<item>
+		<ingredient count="1" id="90534" /> <!-- Siegel's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90535" /> <!-- Siegel's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90536" /> <!-- Siegel's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90537" /> <!-- Siegel's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90538" /> <!-- Siegel's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90539" /> <!-- Siegel's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90540" /> <!-- Siegel's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90541" /> <!-- Siegel's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90542" /> <!-- Siegel's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90543" /> <!-- Siegel's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90544" /> <!-- Siegel's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90545" /> <!-- Siegel's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90546" /> <!-- Siegel's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90547" /> <!-- Siegel's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90548" /> <!-- Siegel's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Tyrr's -->
+	<item>
+		<ingredient count="1" id="90554" /> <!-- Tyrr's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90555" /> <!-- Tyrr's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90556" /> <!-- Tyrr's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90557" /> <!-- Tyrr's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90558" /> <!-- Tyrr's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90559" /> <!-- Tyrr's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90560" /> <!-- Tyrr's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90561" /> <!-- Tyrr's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90562" /> <!-- Tyrr's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90563" /> <!-- Tyrr's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90564" /> <!-- Tyrr's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90565" /> <!-- Tyrr's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90566" /> <!-- Tyrr's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90567" /> <!-- Tyrr's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90568" /> <!-- Tyrr's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Othell's -->
+	<item>
+		<ingredient count="1" id="90574" /> <!-- Othell's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90575" /> <!-- Othell's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90576" /> <!-- Othell's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90577" /> <!-- Othell's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90578" /> <!-- Othell's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90579" /> <!-- Othell's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90580" /> <!-- Othell's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90581" /> <!-- Othell's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90582" /> <!-- Othell's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90583" /> <!-- Othell's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90584" /> <!-- Othell's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90585" /> <!-- Othell's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90586" /> <!-- Othell's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90587" /> <!-- Othell's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90588" /> <!-- Othell's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Yul's -->
+	<item>
+		<ingredient count="1" id="90594" /> <!-- Yul's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90595" /> <!-- Yul's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90596" /> <!-- Yul's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90597" /> <!-- Yul's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90598" /> <!-- Yul's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90599" /> <!-- Yul's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90600" /> <!-- Yul's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90601" /> <!-- Yul's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90602" /> <!-- Yul's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90603" /> <!-- Yul's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90604" /> <!-- Yul's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90605" /> <!-- Yul's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90606" /> <!-- Yul's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90607" /> <!-- Yul's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90608" /> <!-- Yul's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Feoh's -->
+	<item>
+		<ingredient count="1" id="90614" /> <!-- Feoh's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90615" /> <!-- Feoh's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90616" /> <!-- Feoh's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90617" /> <!-- Feoh's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90618" /> <!-- Feoh's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90619" /> <!-- Feoh's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90620" /> <!-- Feoh's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90621" /> <!-- Feoh's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90622" /> <!-- Feoh's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90623" /> <!-- Feoh's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90624" /> <!-- Feoh's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90625" /> <!-- Feoh's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90626" /> <!-- Feoh's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90627" /> <!-- Feoh's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90628" /> <!-- Feoh's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Iss's -->
+	<item>
+		<ingredient count="1" id="90634" /> <!-- Iss's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90635" /> <!-- Iss's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90636" /> <!-- Iss's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90637" /> <!-- Iss's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90638" /> <!-- Iss's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90639" /> <!-- Iss's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90640" /> <!-- Iss's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90641" /> <!-- Iss's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90642" /> <!-- Iss's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90643" /> <!-- Iss's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90644" /> <!-- Iss's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90645" /> <!-- Iss's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90646" /> <!-- Iss's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90647" /> <!-- Iss's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90648" /> <!-- Iss's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Wynn's -->
+	<item>
+		<ingredient count="1" id="90654" /> <!-- Wynn's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90655" /> <!-- Wynn's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90656" /> <!-- Wynn's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90657" /> <!-- Wynn's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90658" /> <!-- Wynn's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90659" /> <!-- Wynn's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90660" /> <!-- Wynn's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90661" /> <!-- Wynn's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90662" /> <!-- Wynn's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90663" /> <!-- Wynn's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90664" /> <!-- Wynn's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90665" /> <!-- Wynn's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90666" /> <!-- Wynn's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90667" /> <!-- Wynn's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90668" /> <!-- Wynn's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+	<!-- Aeore's -->
+	<item>
+		<ingredient count="1" id="90674" /> <!-- Aeore's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90675" /> <!-- Aeore's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90676" /> <!-- Aeore's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90677" /> <!-- Aeore's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90678" /> <!-- Aeore's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90679" /> <!-- Aeore's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90680" /> <!-- Aeore's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90681" /> <!-- Aeore's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90682" /> <!-- Aeore's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90683" /> <!-- Aeore's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90684" /> <!-- Aeore's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90685" /> <!-- Aeore's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90686" /> <!-- Aeore's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90687" /> <!-- Aeore's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90688" /> <!-- Aeore's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+</list>

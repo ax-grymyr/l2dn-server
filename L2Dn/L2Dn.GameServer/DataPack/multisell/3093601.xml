@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30936</npc> <!-- Pona -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="4" id="48046" /> <!-- Scroll: Enchant Agathion -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48048" /> <!-- Agathion Virgo -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48049" /> <!-- Agathion Capricorn -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48050" /> <!-- Agathion Libra -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48052" /> <!-- Agathion Taurus -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48053" /> <!-- Agathion Leo -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48054" /> <!-- Agathion Gemini -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48055" /> <!-- Agathion Scorpio -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48056" /> <!-- Agathion Aquarius -->
+	</item>
+	<item>
+		<ingredient count="1" id="91159" /> <!-- Agathion Exchange Coupon -->
+		<production count="1" id="48058" /> <!-- Agathion Sagittarius -->
+	</item>
+</list>

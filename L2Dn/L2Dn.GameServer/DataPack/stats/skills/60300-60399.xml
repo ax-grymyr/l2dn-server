@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60300" toLevel="1" name="P. Evasion: 100 - Healing 30%">
+		<!-- P. Evasion: 100 - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60301" toLevel="1" name="Equipped Shield - Atk. Spd. +100%">
+		<!-- Equipped Shield - Atk. Spd.: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60302" toLevel="1" name="Equipped Shield - Atk. Spd. +100">
+		<!-- Equipped Shield - Atk. Spd. +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60303" toLevel="1" name="Atk. Spd.: 100% - Healing 60%">
+		<!-- Atk. Spd.: 100% - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60304" toLevel="1" name="Atk. Spd.: 100 - Healing 60%">
+		<!-- Atk. Spd.: 100 - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60305" toLevel="1" name="Atk. Spd.: 100% - Healing 30%">
+		<!-- Atk. Spd.: 100% - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60306" toLevel="1" name="Atk. Spd.: 100 - Healing 30%">
+		<!-- Atk. Spd.: 100 - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60307" toLevel="1" name="Speed: 100 - Out of combat">
+		<!-- Speed: 100 - Out of combat -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60308" toLevel="1" name="P. Atk.: Increase due to the level">
+		<!-- P. Atk.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60309" toLevel="1" name="M. Atk.: Increase due to the level">
+		<!-- M. Atk.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60310" toLevel="1" name="P. Def.: Increase due to the level">
+		<!-- P. Def.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60311" toLevel="1" name="M. Def.: Increase due to the level">
+		<!-- M. Def.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60312" toLevel="1" name="P. Accuracy: Increase due to the level">
+		<!-- P. Accuracy: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60313" toLevel="1" name="M. Accuracy: Increase due to the level">
+		<!-- M. Accuracy: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60314" toLevel="1" name="P. Evasion: Increase due to the level">
+		<!-- P. Evasion: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60315" toLevel="1" name="M. Evasion: Increase due to the level">
+		<!-- M. Evasion: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60316" toLevel="1" name="Atk. Spd.: Increase due to the level">
+		<!-- Atk. Spd.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60317" toLevel="1" name="Casting Spd.: Increase due to the level">
+		<!-- Casting Spd.: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60318" toLevel="1" name="P. Accuracy: Heavy Armor - 100%">
+		<!-- P. Accuracy: Heavy Armor - 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60319" toLevel="1" name="P. Accuracy: Heavy Armor - 100">
+		<!-- P. Accuracy: Heavy Armor - 100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60320" toLevel="1" name="P. Accuracy: Light Armor - 100%">
+		<!-- P. Accuracy: Light Armor - 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60321" toLevel="1" name="P. Accuracy: Light Armor - 100">
+		<!-- P. Accuracy: Light Armor - 100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60322" toLevel="1" name="P. Accuracy: Robe - 100%">
+		<!-- P. Accuracy: Robe - 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60323" toLevel="1" name="P. Accuracy: Robe - 100">
+		<!-- P. Accuracy: Robe - 100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60324" toLevel="1" name="P. Accuracy: All - 100%">
+		<!-- P. Accuracy: All - 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60325" toLevel="1" name="P. Accuracy: All - 100">
+		<!-- P. Accuracy: All - 100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60326" toLevel="1" name="Speed: Increase due to the level">
+		<!-- Speed: Increase due to the level -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60327" toLevel="1" name="M. Accuracy: 100%">
+		<!-- M. Accuracy: 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60328" toLevel="1" name="M. Accuracy: +100">
+		<!-- M. Accuracy: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60329" toLevel="1" name="M. Evasion: 100%">
+		<!-- M. Evasion: 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60330" toLevel="1" name="M. Evasion: 100">
+		<!-- M. Evasion: 100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60331" toLevel="1" name="Casting Spd. - Bow: 100%">
+		<!-- Casting Spd. - Bow: 100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60332" toLevel="1" name="Casting Spd. - Bow: 100">
+		<!-- Casting Spd. - Bow: 100 -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="23234" toLevel="1" name="Singer and Dancer Agathion Cute Trick">
+		<!-- See the summoned agathion perform cute tricks. -->
+		<icon>icon.skill_agathion_cute</icon>
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="23298" toLevel="1" name="Flame Hawk">
+		<!-- The flame inflicts damage over time. -->
+		<icon>icon.skill0771</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<activateRate>80</activateRate>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-800</effectPoint>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>900</affectRange>
+		<effectRange>1400</effectRange>
+		<fanRange>0;0;900;40</fanRange>
+		<trait>INFECTION</trait>
+		<operateType>A2</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="23299" toLevel="1" name="Arrow Rain">
+		<!-- The wind inflicts damage over time. -->
+		<icon>icon.skill0772</icon>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<effectRange>1100</effectRange>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<attributeType>WIND</attributeType>
+		<attributeValue>20</attributeValue>
+		<operateType>A2</operateType>
+		<effectPoint>-800</effectPoint>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
+		<trait>INFECTION</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+</list>

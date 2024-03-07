@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="62000" toLevel="5" name="Test - Harmony">
+		<!-- Max HP +100. Max MP +100 -->
+		<icon>icon.harmony</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+	</skill>
+	<skill id="62001" toLevel="1" name="White Assassin Transformation">
+		<!-- You are transformed into White Assassin. For 20 min., Max HP/ MP +7%, P./ M. Accuracy +2, P./ M. Atk. +3%, P./ M. Def. +3%, Atk. Spd. +5%, M. Skill Critical Rate +20, Speed +5. The effect remains after death. -->
+		<icon>icon.scroll_of_verification_i06</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>WHITE_ASSASSIN_SUIT</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<magicLevel>70</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1800</skillId> <!-- Transformation: Pirate -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1801</skillId> <!-- Dark Assassin Transformation -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="62002" toLevel="1" name="Mount Griffin">
+		<!-- Allows to mount Griffin. -->
+		<icon>icon.griffin_vehicle</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>204</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>204</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="62003" toLevel="4" name="Presentation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>2300</hitTime>
+	</skill>
+	<skill id="62004" toLevel="1" name="Hellfire Demonstration Scroll">
+		<!-- Transforms into the Ultimate Death Knight and summons the Hellfire. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="62005" toLevel="1" name="Test - Essential Fatal Crush - Presentation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="62006" toLevel="1" name="Test - Shining Wave">
+		<icon>icon.s_shining_buster</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="62007" toLevel="2" name="Test - Absolute Zero">
+		<icon>icon.skill10103</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>900</castRange>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="62008" toLevel="1" name="Test - Essential Fatal Crush">
+		<icon>icon.essential_fatal_smash</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-950</effectPoint>
+		<mpConsume>80</mpConsume>
+	</skill>
+	<skill id="62009" toLevel="1" name="Test - Essential Fatal Crush">
+		<icon>icon.essential_fatal_smash</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>1000</hitTime>
+		<effectPoint>-950</effectPoint>
+	</skill>
+	<skill id="62010" toLevel="1" name="Test - Essential Fatal Crush">
+		<icon>icon.essential_fatal_smash</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>1000</hitTime>
+		<effectPoint>-950</effectPoint>
+	</skill>
+	<skill id="62011" toLevel="1" name="Test - Shining Beam">
+		<icon>icon.s_shining_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>1000</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-950</effectPoint>
+		<mpConsume>80</mpConsume>
+	</skill>
+	<skill id="62012" toLevel="1" name="Test - Lightning Wipeout">
+		<icon>icon.brandish_b</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-595</effectPoint>
+		<mpConsume>80</mpConsume>
+	</skill>
+	<skill id="62013" toLevel="1" name="Test - Shadow Attack">
+		<icon>icon.s_assassin_charge_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-485</effectPoint>
+		<mpConsume>103</mpConsume>
+	</skill>
+	<skill id="62014" toLevel="1" name="Test - Shadow Attack">
+		<icon>icon.s_assassin_charge_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-485</effectPoint>
+		<mpConsume>103</mpConsume>
+	</skill>
+	<skill id="62015" toLevel="1" name="Test - Shadow Attack">
+		<icon>icon.s_assassin_charge_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-485</effectPoint>
+		<mpConsume>103</mpConsume>
+	</skill>
+	<skill id="62016" toLevel="1" name="Test - Quick Spear">
+		<icon>icon.skill1606</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<hitTime>2500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-1370</effectPoint>
+		<mpConsume>105</mpConsume>
+	</skill>
+	<skill id="62017" toLevel="1" name="Test - Quick Spear">
+		<icon>icon.skill1606</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>1000</castRange>
+		<effectPoint>-1370</effectPoint>
+	</skill>
+	<skill id="62018" toLevel="1" name="Test - Flame Burst">
+		<icon>icon.flame_blast</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>1000</castRange>
+		<hitTime>4000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-445</effectPoint>
+		<mpConsume>140</mpConsume>
+	</skill>
+	<skill id="62019" toLevel="1" name="Test - Flame Burst">
+		<!-- Drains HP/ MP for 10 sec. -->
+		<icon>icon.flame_blast2</icon>
+		<operateType>T</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<effectPoint>-140</effectPoint>
+	</skill>
+	<skill id="62020" toLevel="1" name="Test - Flame Burst">
+		<!-- Drains HP/ MP for 10 sec. -->
+		<icon>icon.flame_blast2</icon>
+		<operateType>T</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<effectPoint>-140</effectPoint>
+	</skill>
+	<skill id="62023" toLevel="1" name="Test - +10 Frost Lord's Sword">
+		<icon>icon.frozen_weapon_sword</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="62024" toLevel="1" name="Test - ignore_hp">
+		<!-- Test - ignore_consume_hp -->
+		<icon>icon.death_knight_transform</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>180000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="62025" toLevel="1" name="Test - ignore_mp">
+		<!-- Test - ignore_consume_mp -->
+		<icon>icon.death_knight_transform</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>180000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="62026" toLevel="1" name="Test - ignore_dp">
+		<!-- Test - ignore_consume_dp -->
+		<icon>icon.death_knight_transform</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>180000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="62027" toLevel="2" name="Test - Absolute Zero">
+		<icon>icon.skill11128</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="62028" toLevel="1" name="Test - (End) Ultimate Death Knight">
+		<!-- Transforms into a Death Knight who is cursed by the Fire Dragon Valakas, but possesses great powers. <Transformation effect>. P. Atk. +40%. Skill Power +10%. P. Skill Critical Rate +20%. P. Critical Damage +40%. P. Skill Critical Damage +40%. Atk. Spd. +50%. P. Def. +500. Скорость +40. Resistance to All Weapons +10%. Decreases penalty of Received Healing. Increases Holy Resistance. With a 50% chance, triggers <font color="FF0000">Impending Death Whisper</font> on attack. <<font color="FF0000">Impending Death Whisper</font>>. For 30 sec. Hold/ Suppression Resistance +50%. Skills do not consume DP. (Trigger cooldown: 180 сек.) -->
+		<icon>icon.death_knight_transform</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+</list>

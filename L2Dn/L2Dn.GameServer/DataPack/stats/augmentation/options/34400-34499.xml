@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34400" name="p_def">
+		<!-- P. Def. +37 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>37</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34401" name="p_def">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34402" name="p_def">
+		<!-- P. Def. +43 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34403" name="p_def">
+		<!-- P. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34404" name="p_def">
+		<!-- P. Def. +56 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34405" name="p_def">
+		<!-- P. Def. +66 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>66</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34406" name="p_def">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34407" name="p_def">
+		<!-- P. Def. +86 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34408" name="p_def">
+		<!-- P. Def. +96 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34409" name="p_def">
+		<!-- P. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34410" name="p_def">
+		<!-- P. Def. +11 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34411" name="p_def">
+		<!-- P. Def. +14 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34412" name="p_def">
+		<!-- P. Def. +17 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34413" name="p_def">
+		<!-- P. Def. +20 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34414" name="p_def">
+		<!-- P. Def. +23 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34415" name="p_def">
+		<!-- P. Def. +26 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34416" name="p_def">
+		<!-- P. Def. +29 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34417" name="p_def">
+		<!-- P. Def. +32 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34418" name="p_def">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34419" name="p_def">
+		<!-- P. Def. +38 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34420" name="p_def">
+		<!-- P. Def. +41 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34421" name="p_def">
+		<!-- P. Def. +44 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34422" name="p_def">
+		<!-- P. Def. +47 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34423" name="p_def">
+		<!-- P. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34424" name="p_def">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34425" name="p_def">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34426" name="p_def">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34427" name="p_def">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34428" name="p_def">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34429" name="p_def">
+		<!-- M. Def. +4 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34430" name="p_def">
+		<!-- M. Def. +7 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34431" name="p_def">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34432" name="p_def">
+		<!-- M. Def. +13 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34433" name="p_def">
+		<!-- M. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34434" name="p_def">
+		<!-- M. Def. +19 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>19</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34435" name="p_def">
+		<!-- M. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34436" name="p_def">
+		<!-- M. Def. +25 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34437" name="p_def">
+		<!-- M. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34438" name="p_def">
+		<!-- M. Def. +31 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34439" name="p_def">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34440" name="p_def">
+		<!-- M. Def. +37 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>37</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34441" name="p_def">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34442" name="p_def">
+		<!-- M. Def. +43 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34443" name="p_def">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34444" name="p_def">
+		<!-- M. Def. +56 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34445" name="p_def">
+		<!-- M. Def. +66 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>66</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34446" name="p_def">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34447" name="p_def">
+		<!-- M. Def. +86 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34448" name="p_def">
+		<!-- M. Def. +96 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34449" name="p_def">
+		<!-- M. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34450" name="p_def">
+		<!-- M. Def. +11 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34451" name="p_def">
+		<!-- M. Def. +14 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34452" name="p_def">
+		<!-- M. Def. +17 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34453" name="p_def">
+		<!-- M. Def. +20 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34454" name="p_def">
+		<!-- M. Def. +23 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34455" name="p_def">
+		<!-- M. Def. +26 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34456" name="p_def">
+		<!-- M. Def. +29 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34457" name="p_def">
+		<!-- M. Def. +32 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34458" name="p_def">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34459" name="p_def">
+		<!-- M. Def. +38 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34460" name="p_def">
+		<!-- M. Def. +41 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34461" name="p_def">
+		<!-- M. Def. +44 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34462" name="p_def">
+		<!-- M. Def. +47 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34463" name="p_def">
+		<!-- M. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34464" name="p_def">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34465" name="p_def">
+		<!-- M. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34466" name="p_def">
+		<!-- M. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34467" name="p_def">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34468" name="p_def">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34469" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34470" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34471" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34472" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34473" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34474" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34475" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34476" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34477" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34478" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34479" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-2</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34480" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-2</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34481" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-3</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34482" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-4</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34483" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-5</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34484" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-6</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34485" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-7</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34486" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-8</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34487" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-9</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34488" name="res_debuff">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+		<effects>
+			<effect name="ResistDispelByCategory">
+				<amount>-10</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34489" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34490" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34491" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34492" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34493" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34494" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34495" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34496" name="decre_crit_dmg">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34497" name="decre_crit_dmg">
+		<!-- All received Critical Damage -2% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34498" name="decre_crit_dmg">
+		<!-- All received Critical Damage -3% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34499" name="decre_crit_dmg">
+		<!-- All received Critical Damage -4% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

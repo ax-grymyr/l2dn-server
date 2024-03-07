@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GiranMonsterSpawns">
+		<group>
+			<npc id="20832" x="40355" y="196013" z="-4696" heading="0" respawnTime="55sec" /> <!-- Zaken's Pikeman -->
+			<npc id="20832" x="39697" y="195199" z="-4656" heading="9376" respawnTime="55sec" /> <!-- Zaken's Pikeman -->
+			<npc id="20836" x="38385" y="195442" z="-4639" heading="30079" respawnTime="55sec" /> <!-- Pirate Zombie -->
+			<npc id="21604" x="41254" y="195325" z="-4657" heading="49869" respawnTime="180sec" /> <!-- Ancient Holy Ground's Vision -->
+			<npc id="21604" x="39244" y="195717" z="-4661" heading="28558" respawnTime="180sec" /> <!-- Ancient Holy Ground's Vision -->
+			<npc id="21604" x="37953" y="194663" z="-4646" heading="39856" respawnTime="180sec" /> <!-- Ancient Holy Ground's Vision -->
+			<npc id="20832" x="41260" y="196191" z="-4696" heading="0" respawnTime="55sec" /> <!-- Zaken's Pikeman -->
+			<npc id="20832" x="41099" y="194285" z="-4656" heading="57499" respawnTime="55sec" /> <!-- Zaken's Pikeman -->
+			<npc id="20833" x="38748" y="193837" z="-4534" heading="7930" respawnTime="55sec" /> <!-- Zaken's Archer -->
+			<npc id="20833" x="40019" y="195386" z="-4661" heading="15263" respawnTime="55sec" /> <!-- Zaken's Archer -->
+			<npc id="21607" x="39979" y="194390" z="-4650" heading="43672" respawnTime="180sec" /> <!-- Nephilim Cardinal -->
+			<npc id="21607" x="40632" y="195532" z="-4660" heading="50306" respawnTime="180sec" /> <!-- Nephilim Cardinal -->
+			<npc id="20271" x="78520" y="120088" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="78823" y="120978" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="78923" y="120444" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="78520" y="120444" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="78722" y="120800" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="78318" y="120444" z="-2320" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20271" x="80312" y="122260" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="81117" y="121904" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="80514" y="122616" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="80816" y="122794" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="80716" y="122972" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="80915" y="122260" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="80413" y="122794" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="80312" y="122616" z="-2380" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20271" x="76690" y="122704" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="77495" y="123060" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="77193" y="122526" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="76992" y="122526" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="77193" y="122882" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="77194" y="123238" z="-2828" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20267" x="77968" y="126918" z="-3764" heading="0" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="78638" y="127137" z="-3457" heading="49341" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="78090" y="128285" z="-3457" heading="33473" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="78349" y="130658" z="-3713" heading="15128" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="77836" y="129648" z="-3605" heading="17327" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="78078" y="127514" z="-3457" heading="49903" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="80866" y="128505" z="-3457" heading="6044" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20271" x="80352" y="125924" z="-2884" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="80956" y="125568" z="-2884" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="80453" y="126102" z="-2884" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20271" x="85392" y="125442" z="-2728" heading="0" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="85896" y="125976" z="-2728" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="85291" y="125620" z="-2728" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="85695" y="125976" z="-2728" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20267" x="83421" y="129722" z="-3553" heading="9857" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="82778" y="128776" z="-3457" heading="57913" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="82117" y="129250" z="-3536" heading="54503" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="84657" y="128963" z="-3430" heading="6840" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="84101" y="128786" z="-3752" heading="0" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="81983" y="130384" z="-3660" heading="7669" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20267" x="87897" y="128738" z="-3640" heading="60422" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="83157" y="126986" z="-2893" heading="40762" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="85533" y="129110" z="-3788" heading="0" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="85881" y="129517" z="-3516" heading="60789" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="84998" y="127661" z="-3013" heading="40265" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="86480" y="128285" z="-3020" heading="64467" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="84210" y="127542" z="-3020" heading="40960" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="87068" y="128102" z="-3044" heading="63192" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20267" x="92469" y="128540" z="-3680" heading="0" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="91613" y="130336" z="-3628" heading="22190" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="89873" y="129977" z="-3667" heading="30392" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="93010" y="128103" z="-3561" heading="34826" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="92781" y="129718" z="-3628" heading="7819" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="90698" y="129265" z="-3628" heading="41238" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="91794" y="128953" z="-3628" heading="58995" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20271" x="92475" y="123188" z="-2450" heading="56649" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="93793" y="125018" z="-2450" heading="7736" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="93058" y="123939" z="-2450" heading="25588" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20271" x="94101" y="123588" z="-2450" heading="49934" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20269" x="92795" y="123398" z="-2780" heading="0" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="91750" y="124001" z="-2450" heading="25886" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20269" x="92073" y="124243" z="-2450" heading="32768" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="92994" y="124734" z="-2450" heading="57269" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="93297" y="123220" z="-2780" heading="0" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="94042" y="124268" z="-2450" heading="53460" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20270" x="93570" y="122994" z="-2450" heading="45199" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20267" x="71527" y="130375" z="-3719" heading="51027" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20270" x="88944" y="129749" z="-3685" heading="41425" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20267" x="92986" y="130833" z="-3554" heading="49106" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="72948" y="133218" z="-3519" heading="9253" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="71845" y="132058" z="-3532" heading="40939" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="69693" y="131397" z="-3645" heading="33196" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="71377" y="131212" z="-3720" heading="0" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20267" x="74632" y="132801" z="-3472" heading="23412" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="77006" y="132275" z="-3654" heading="18135" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="77280" y="131469" z="-3678" heading="57298" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20269" x="89259" y="131453" z="-3669" heading="27207" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20270" x="89021" y="132824" z="-3627" heading="10161" respawnTime="33sec" /> <!-- Breka Orc Prefect -->
+			<npc id="20267" x="91355" y="131730" z="-3700" heading="0" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20267" x="93664" y="131388" z="-3594" heading="53557" respawnTime="33sec" /> <!-- Breka Orc -->
+			<npc id="20268" x="92343" y="133190" z="-3651" heading="13318" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20268" x="92103" y="131999" z="-3649" heading="41413" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20781" x="68742" y="165652" z="-3560" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Shaman -->
+			<npc id="20781" x="68943" y="166008" z="-3560" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Shaman -->
+			<npc id="20781" x="68440" y="165830" z="-3560" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Shaman -->
+			<npc id="27097" x="75152" y="165688" z="-3684" heading="0" respawnTime="180sec" /> <!-- Singing Flower of Darkness - Quest Monster -->
+			<npc id="27097" x="75655" y="165866" z="-3684" heading="0" respawnTime="180sec" /> <!-- Singing Flower of Darkness - Quest Monster -->
+			<npc id="27097" x="75555" y="166044" z="-3684" heading="0" respawnTime="180sec" /> <!-- Singing Flower of Darkness - Quest Monster -->
+		</group>
+	</spawn>
+</list>

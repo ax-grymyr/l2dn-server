@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="83600" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83601" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83602" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83603" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83604" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83605" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83606" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83607" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83608" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83609" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83610" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83611" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83612" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83613" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83614" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83615" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83616" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83617" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83618" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83619" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83620" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83621" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83622" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83623" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83624" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83625" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83626" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83627" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83628" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83629" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83630" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83631" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83632" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83633" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83634" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83635" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83636" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83637" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83638" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83639" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83640" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83641" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83642" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83643" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83644" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83645" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83646" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83647" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83648" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83649" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83650" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83651" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83652" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83653" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83654" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83655" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83656" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83657" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83658" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83659" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83660" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83661" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83662" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83663" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83664" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83665" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83666" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83667" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83668" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83669" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83670" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83671" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83672" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83673" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83674" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83675" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83676" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83677" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83678" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83679" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83680" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83681" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83682" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83683" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83684" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83685" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83686" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83687" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83688" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83689" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83690" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83691" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83692" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83693" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83694" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83695" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83696" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83697" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83698" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83699" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

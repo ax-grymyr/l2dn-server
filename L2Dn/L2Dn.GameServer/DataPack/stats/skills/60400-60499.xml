@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60437" toLevel="1" name="i_hp_drain_link">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60438" toLevel="1" name="i_death_link">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60439" toLevel="1" name="i_death_link_mp">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60440" toLevel="1" name="i_hp_drain">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

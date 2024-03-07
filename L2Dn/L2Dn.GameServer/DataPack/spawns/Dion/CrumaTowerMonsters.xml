@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_001" minZ="-9080" maxZ="-8880">
+				<node x="14699" y="108550" />
+				<node x="15557" y="108550" />
+				<node x="15557" y="110359" />
+				<node x="14699" y="110359" />
+			</territory>
+		</territories>
+		<npc id="22206" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Premo -->
+		<npc id="22207" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<npc id="22210" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22207" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22206" x="14915" y="108666" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+			<npc id="22207" x="15341" y="109671" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="14915" y="110211" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="15352" y="110198" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_002" minZ="-9080" maxZ="-8880">
+				<node x="11520" y="108399" />
+				<node x="14091" y="108376" />
+				<node x="14114" y="111572" />
+				<node x="11558" y="111580" />
+			</territory>
+		</territories>
+		<npc id="22208" count="9" respawnTime="3sec" chaseRange="2000" /> <!-- Dicor -->
+		<npc id="22209" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22210" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22211" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22209" x="13121" y="111400" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12478" y="111388" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="11849" y="111389" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="13194" y="108580" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12551" y="108567" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="11922" y="108569" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="13924" y="110012" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="13926" y="109212" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="11733" y="110714" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="11722" y="109128" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12209" y="109085" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="13228" y="109029" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="12701" y="109362" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12259" y="109808" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="12633" y="110397" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_003" minZ="-9100" maxZ="-8900">
+				<node x="13496" y="111992" />
+				<node x="13877" y="111992" />
+				<node x="13877" y="115487" />
+				<node x="13496" y="115487" />
+			</territory>
+		</territories>
+		<npc id="22210" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22209" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="13568" y="112224" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="13810" y="112240" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="13570" y="112680" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="13813" y="112696" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="13573" y="113043" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="13816" y="113059" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="13575" y="113406" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="13818" y="113422" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="13565" y="113729" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="13808" y="113745" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="13567" y="114052" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22207" x="13573" y="114765" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="13816" y="114781" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="13575" y="115128" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="13818" y="115144" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_004" minZ="-9028" maxZ="-8828">
+				<node x="13349" y="115654" />
+				<node x="14043" y="115654" />
+				<node x="14043" y="116019" />
+				<node x="13843" y="116266" />
+				<node x="13515" y="116265" />
+				<node x="13367" y="116001" />
+			</territory>
+		</territories>
+		<npc id="22211" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22211" x="13543" y="115978" z="-9008" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22211" x="13880" y="115954" z="-9008" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_005" minZ="-9104" maxZ="-8904">
+				<node x="11577" y="112740" />
+				<node x="11958" y="112740" />
+				<node x="11958" y="116218" />
+				<node x="11577" y="116218" />
+			</territory>
+		</territories>
+		<npc id="22210" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22209" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="11651" y="116025" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="11876" y="116022" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="11667" y="115547" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="11892" y="115544" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="11656" y="115203" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="11882" y="115200" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="11659" y="114858" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="11884" y="114855" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="11661" y="114514" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="11887" y="114511" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="11664" y="114143" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="11889" y="114140" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="11653" y="113772" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="11879" y="113769" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="11656" y="113454" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_006" minZ="-9028" maxZ="-8828">
+				<node x="11560" y="111969" />
+				<node x="11992" y="111969" />
+				<node x="12169" y="112231" />
+				<node x="12116" y="112601" />
+				<node x="11448" y="112596" />
+				<node x="11433" y="112252" />
+			</territory>
+		</territories>
+		<npc id="22211" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22211" x="11578" y="112301" z="-9008" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22211" x="11954" y="112277" z="-9008" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_007" minZ="-9080" maxZ="-8880">
+				<node x="11338" y="116632" />
+				<node x="13798" y="116632" />
+				<node x="13798" y="119860" />
+				<node x="11338" y="119860" />
+			</territory>
+		</territories>
+		<npc id="22208" count="9" respawnTime="3sec" chaseRange="2000" /> <!-- Dicor -->
+		<npc id="22209" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22210" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22211" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22209" x="12187" y="116860" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12813" y="116838" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="13477" y="116835" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="12184" y="119697" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12810" y="119675" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="13474" y="119672" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="13678" y="118332" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="13656" y="117662" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="11537" y="119069" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="11531" y="117691" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="11996" y="117416" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="12999" y="117311" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="12546" y="117706" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="12095" y="118120" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="12042" y="118638" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_008" minZ="-9080" maxZ="-8880">
+				<node x="14714" y="118170" />
+				<node x="15573" y="118170" />
+				<node x="15573" y="119902" />
+				<node x="14714" y="119902" />
+			</territory>
+		</territories>
+		<npc id="22210" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22207" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<npc id="22206" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Premo -->
+		<group>
+			<npc id="22210" x="14889" y="118304" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="15318" y="118294" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22206" x="14879" y="118746" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+			<npc id="22207" x="15308" y="118736" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22206" x="14895" y="119175" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_009" minZ="-9076" maxZ="-8876">
+				<node x="19865" y="118177" />
+				<node x="20724" y="118177" />
+				<node x="20724" y="119924" />
+				<node x="19865" y="119924" />
+			</territory>
+		</territories>
+		<npc id="22210" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22207" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<npc id="22206" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Premo -->
+		<group>
+			<npc id="22210" x="20058" y="118303" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="20528" y="118305" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22206" x="20088" y="118717" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+			<npc id="22207" x="20558" y="118720" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22206" x="20077" y="119160" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_010" minZ="-9076" maxZ="-8876">
+				<node x="21190" y="116650" />
+				<node x="22451" y="116650" />
+				<node x="22464" y="118890" />
+				<node x="21190" y="118890" />
+			</territory>
+		</territories>
+		<npc id="22210" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22208" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Dicor -->
+		<npc id="22209" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="22256" y="116832" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22208" x="21543" y="116738" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22209" x="21353" y="117042" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="21850" y="116921" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="22292" y="117088" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="21841" y="117228" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="21458" y="117409" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22208" x="22203" y="117493" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22209" x="22205" y="117853" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="22015" y="118144" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22208" x="21776" y="118538" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22210" x="22124" y="118707" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_011" minZ="-9080" maxZ="-8880">
+				<node x="23566" y="116670" />
+				<node x="24004" y="116670" />
+				<node x="24004" y="119047" />
+				<node x="23566" y="119047" />
+			</territory>
+		</territories>
+		<npc id="22210" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22209" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="23652" y="116756" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="23915" y="116758" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="23654" y="117033" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="23918" y="117035" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="23643" y="117365" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="23906" y="117367" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="23645" y="117739" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="23908" y="117741" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="23647" y="118071" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="23911" y="118073" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22209" x="23915" y="118737" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_012" minZ="-9008" maxZ="-8808">
+				<node x="23423" y="119098" />
+				<node x="24147" y="119098" />
+				<node x="24147" y="119546" />
+				<node x="23960" y="119794" />
+				<node x="23606" y="119791" />
+				<node x="23454" y="119529" />
+			</territory>
+		</territories>
+		<npc id="22211" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22211" x="23563" y="119437" z="-8985" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22211" x="24019" y="119412" z="-8985" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_013" minZ="-9080" maxZ="-8880">
+				<node x="21370" y="113161" />
+				<node x="24016" y="113191" />
+				<node x="23964" y="115064" />
+				<node x="21370" y="115024" />
+			</territory>
+		</territories>
+		<npc id="22209" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22210" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22211" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22209" x="23770" y="113371" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="23778" y="113834" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="23769" y="114355" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="23777" y="114867" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="21570" y="113352" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="21577" y="113815" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="21569" y="114335" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="21576" y="114848" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="22281" y="113403" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="23005" y="113431" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="22215" y="114822" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="22938" y="114850" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22209" x="23202" y="114347" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22210" x="23289" y="113880" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22211" x="22798" y="113802" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_014" minZ="-9080" maxZ="-8880">
+				<node x="22927" y="109349" />
+				<node x="24105" y="109349" />
+				<node x="24119" y="111561" />
+				<node x="22941" y="111561" />
+			</territory>
+		</territories>
+		<npc id="22210" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22208" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Dicor -->
+		<npc id="22209" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="23173" y="109468" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22208" x="23710" y="109474" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22209" x="23890" y="109817" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="23425" y="109761" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22208" x="23124" y="110043" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22210" x="23519" y="110151" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="23882" y="110310" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22208" x="23888" y="110714" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+			<npc id="22209" x="23495" y="110792" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22208" x="23169" y="111038" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Dicor -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_015" minZ="-9076" maxZ="-8876">
+				<node x="21332" y="109751" />
+				<node x="21752" y="109751" />
+				<node x="21752" y="111591" />
+				<node x="21332" y="111591" />
+			</territory>
+		</territories>
+		<npc id="22210" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22209" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Perum -->
+		<npc id="22207" count="4" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<group>
+			<npc id="22210" x="21419" y="110151" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="21692" y="110147" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="21425" y="110486" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22209" x="21698" y="110481" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+			<npc id="22207" x="21430" y="110851" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="21703" y="110847" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22209" x="21688" y="111192" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Perum -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_016" minZ="-9012" maxZ="-8812">
+				<node x="21337" y="109014" />
+				<node x="21772" y="109008" />
+				<node x="21905" y="109284" />
+				<node x="21882" y="109709" />
+				<node x="21241" y="109713" />
+				<node x="21170" y="109303" />
+			</territory>
+		</territories>
+		<npc id="22211" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Death Lord -->
+		<group>
+			<npc id="22211" x="21369" y="109350" z="-8985" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+			<npc id="22211" x="21755" y="109356" z="-8985" respawnTime="5sec" chaseRange="2000" /> <!-- Death Lord -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_02f_017" minZ="-9080" maxZ="-8880">
+				<node x="19883" y="108294" />
+				<node x="20739" y="108294" />
+				<node x="20739" y="110069" />
+				<node x="19883" y="110069" />
+			</territory>
+		</territories>
+		<npc id="22210" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Torfe -->
+		<npc id="22207" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Validus -->
+		<npc id="22206" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Premo -->
+		<group>
+			<npc id="22210" x="20125" y="108474" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+			<npc id="22207" x="20470" y="108459" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22206" x="20131" y="108901" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Premo -->
+			<npc id="22207" x="20476" y="108886" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Validus -->
+			<npc id="22210" x="20477" y="109689" z="-9056" respawnTime="5sec" chaseRange="2000" /> <!-- Torfe -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_001" minZ="-12132" maxZ="-11932">
+				<node x="13747" y="110293" />
+				<node x="15403" y="110293" />
+				<node x="15404" y="111814" />
+				<node x="13748" y="111814" />
+			</territory>
+		</territories>
+		<npc id="22203" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<npc id="22201" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<group>
+			<npc id="22200" x="15342" y="111355" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="14048" y="110375" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="14567" y="111062" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="14300" y="110805" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="14819" y="110800" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="14888" y="111267" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="14243" y="111251" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="15040" y="111597" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="14595" y="111425" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22201" x="14736" y="111682" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="14260" y="111614" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="13951" y="111431" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="13988" y="111017" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="13941" y="110687" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="14387" y="110514" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_002" minZ="-12132" maxZ="-11932">
+				<node x="11414" y="109299" />
+				<node x="15453" y="109299" />
+				<node x="15453" y="109982" />
+				<node x="11414" y="109982" />
+			</territory>
+		</territories>
+		<npc id="22202" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Mordeo -->
+		<npc id="22203" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22202" x="15289" y="109401" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="15284" y="109784" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14886" y="109417" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="14881" y="109800" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="14304" y="109433" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14299" y="109816" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="13691" y="109418" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="13686" y="109801" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="12512" y="109403" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_003" minZ="-12116" maxZ="-11916">
+				<node x="12758" y="107367" />
+				<node x="13410" y="107367" />
+				<node x="13393" y="111916" />
+				<node x="12741" y="111916" />
+			</territory>
+		</territories>
+		<npc id="22202" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Mordeo -->
+		<npc id="22203" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22202" x="12881" y="107925" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="13296" y="107930" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="12876" y="108528" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="13291" y="108533" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="12882" y="109152" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="13296" y="109157" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12866" y="110133" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="13281" y="110138" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="12872" y="110788" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_004" minZ="-12120" maxZ="-11920">
+				<node x="13703" y="107420" />
+				<node x="14857" y="107420" />
+				<node x="14857" y="108965" />
+				<node x="13703" y="108965" />
+			</territory>
+		</territories>
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22201" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22200" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<group>
+			<npc id="22204" x="14708" y="107558" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22201" x="14450" y="107669" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="14687" y="107980" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="14192" y="107538" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="13871" y="107670" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="14108" y="107886" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="13881" y="108113" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="14340" y="108076" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="14609" y="108408" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22201" x="14593" y="108740" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="14272" y="108862" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="14262" y="108346" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_005" minZ="-12128" maxZ="-11928">
+				<node x="11049" y="110253" />
+				<node x="12437" y="110253" />
+				<node x="12437" y="111798" />
+				<node x="11049" y="111798" />
+			</territory>
+		</territories>
+		<npc id="22200" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<npc id="22201" count="14" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22200" x="12283" y="110362" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="12277" y="111621" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="12262" y="110994" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="12056" y="110694" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="12041" y="111311" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11857" y="111643" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="11535" y="111511" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="11225" y="111664" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11283" y="111333" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="11710" y="111222" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="11926" y="110943" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11352" y="111012" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="11189" y="110733" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="11211" y="110386" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_006" minZ="-12120" maxZ="-11920">
+				<node x="11035" y="107437" />
+				<node x="12443" y="107445" />
+				<node x="12443" y="108976" />
+				<node x="11047" y="108976" />
+			</territory>
+		</territories>
+		<npc id="22200" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<npc id="22201" count="14" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22200" x="12256" y="107590" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="11987" y="107869" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="12245" y="108096" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="12103" y="108397" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="12267" y="108760" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11903" y="108829" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="11709" y="108539" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="11746" y="108197" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11604" y="107865" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="11746" y="107555" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="11320" y="107581" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="11146" y="107945" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_007" minZ="-12128" maxZ="-11928">
+				<node x="19998" y="110152" />
+				<node x="21694" y="110161" />
+				<node x="21694" y="111845" />
+				<node x="20007" y="111857" />
+			</territory>
+		</territories>
+		<npc id="22203" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<npc id="22201" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<group>
+			<npc id="22200" x="20141" y="111348" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="21400" y="110254" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="21478" y="110563" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20961" y="110286" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="21039" y="110649" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="20159" y="110256" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20521" y="110423" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="20253" y="110705" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="20642" y="110775" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20214" y="110995" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="20540" y="111144" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="20574" y="111488" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20315" y="111709" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="20883" y="111709" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="20988" y="111254" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_008" minZ="-12128" maxZ="-11928">
+				<node x="22073" y="107513" />
+				<node x="22666" y="107513" />
+				<node x="22666" y="111738" />
+				<node x="22073" y="111738" />
+			</territory>
+		</territories>
+		<npc id="22202" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Mordeo -->
+		<npc id="22203" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22202" x="22192" y="107648" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="22541" y="107634" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="22208" y="108113" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22557" y="108100" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="22194" y="108681" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="22544" y="108668" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22181" y="109335" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="22531" y="109322" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="22183" y="109873" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22533" y="109860" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22203" x="22199" y="110513" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="22549" y="110500" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22508" y="111649" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_009" minZ="-12120" maxZ="-11920">
+				<node x="20022" y="107445" />
+				<node x="21684" y="107445" />
+				<node x="21684" y="109284" />
+				<node x="20022" y="109284" />
+			</territory>
+		</territories>
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22201" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22200" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<group>
+			<npc id="22204" x="21412" y="109179" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22201" x="21526" y="108795" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="21027" y="108882" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="20768" y="109129" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="20669" y="108666" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="21253" y="108540" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="21508" y="108254" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="21134" y="108074" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="20733" y="108224" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="20287" y="108541" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="20330" y="108992" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22201" x="20266" y="108129" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22200" x="20841" y="107861" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22200" x="20541" y="107535" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_010" minZ="-12120" maxZ="-11920">
+				<node x="23030" y="110083" />
+				<node x="24416" y="110062" />
+				<node x="24416" y="111836" />
+				<node x="23030" y="111857" />
+			</territory>
+		</territories>
+		<npc id="22200" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<npc id="22201" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22200" x="24128" y="110158" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="24231" y="110425" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23874" y="110337" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23613" y="110171" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23170" y="110274" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23472" y="110411" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23956" y="110618" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="24257" y="110781" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23554" y="110702" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23189" y="110648" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23318" y="110942" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23862" y="110888" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="24182" y="111069" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23608" y="111128" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23209" y="111265" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23628" y="111485" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22204" x="23332" y="111631" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_011" minZ="-12120" maxZ="-11920">
+				<node x="23083" y="107441" />
+				<node x="24407" y="107441" />
+				<node x="24407" y="109256" />
+				<node x="23083" y="109256" />
+			</territory>
+		</territories>
+		<npc id="22200" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Porta -->
+		<npc id="22201" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<npc id="22204" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22200" x="23406" y="109144" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23223" y="108831" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23612" y="108864" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23905" y="109132" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="24250" y="108905" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23963" y="108661" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23537" y="108521" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23233" y="108347" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23621" y="108224" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="24018" y="108301" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="24311" y="108438" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="24206" y="107995" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="23798" y="107916" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22201" x="23363" y="108010" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Excuro -->
+			<npc id="22204" x="23509" y="107722" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_012" minZ="-12120" maxZ="-11920">
+				<node x="13724" y="116423" />
+				<node x="15416" y="116403" />
+				<node x="15416" y="118115" />
+				<node x="13724" y="118136" />
+			</territory>
+		</territories>
+		<npc id="22203" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<npc id="22201" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<group>
+			<npc id="22200" x="15274" y="116934" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="15110" y="116548" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14792" y="116812" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="15057" y="117187" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="15132" y="117640" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14712" y="117869" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="14129" y="118039" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="13966" y="117722" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14392" y="117900" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="14793" y="117497" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="14493" y="116538" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14038" y="116631" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="13909" y="116955" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="14318" y="116791" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14215" y="117090" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_013" minZ="-12128" maxZ="-11928">
+				<node x="12383" y="116559" />
+				<node x="12992" y="116559" />
+				<node x="12992" y="120744" />
+				<node x="12383" y="120744" />
+			</territory>
+		</territories>
+		<npc id="22202" count="12" respawnTime="3sec" chaseRange="2000" /> <!-- Mordeo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22202" x="12880" y="120656" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12505" y="120646" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12858" y="120219" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12484" y="120209" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12874" y="119593" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12500" y="119584" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12890" y="118930" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12516" y="118920" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12881" y="118329" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12507" y="118320" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12871" y="117704" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12497" y="117694" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="12887" y="117128" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="12513" y="117119" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_014" minZ="-12128" maxZ="-11928">
+				<node x="13426" y="120245" />
+				<node x="15425" y="120245" />
+				<node x="15425" y="120854" />
+				<node x="13426" y="120854" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="15215" y="120336" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="15205" y="120680" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="14841" y="120352" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="14831" y="120696" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="14479" y="120356" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="14470" y="120699" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="14105" y="120359" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_015" minZ="-12116" maxZ="-11916">
+				<node x="11037" y="119040" />
+				<node x="12046" y="119040" />
+				<node x="12058" y="120819" />
+				<node x="11037" y="120819" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="11902" y="120231" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11566" y="120342" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11250" y="120243" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="11530" y="120042" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11837" y="119909" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11230" y="119857" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="11551" y="119690" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11892" y="119523" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11244" y="119505" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_016" minZ="-12120" maxZ="-11920">
+				<node x="11025" y="116432" />
+				<node x="12021" y="116419" />
+				<node x="12021" y="118199" />
+				<node x="11025" y="118211" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="11864" y="116552" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11499" y="116653" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11141" y="116534" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="11213" y="116854" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11843" y="116877" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11513" y="116992" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="11261" y="117163" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="11800" y="117222" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="11533" y="117329" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_017" minZ="-12116" maxZ="-11916">
+				<node x="20019" y="116391" />
+				<node x="21708" y="116407" />
+				<node x="21708" y="118171" />
+				<node x="20019" y="118171" />
+			</territory>
+		</territories>
+		<npc id="22203" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<npc id="22201" count="7" respawnTime="3sec" chaseRange="2000" /> <!-- Excuro -->
+		<group>
+			<npc id="22200" x="21532" y="116567" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="21316" y="116892" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="21448" y="117346" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="21503" y="117801" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="21132" y="118010" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="21071" y="117562" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20983" y="117101" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="21025" y="116653" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="20590" y="116888" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20606" y="117291" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="20570" y="117745" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="20238" y="117954" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22200" x="20125" y="117455" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Porta -->
+			<npc id="22203" x="20167" y="117019" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="20885" y="117967" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_018" minZ="-12116" maxZ="-11916">
+				<node x="22150" y="116486" />
+				<node x="22715" y="116501" />
+				<node x="22715" y="120756" />
+				<node x="22150" y="120741" />
+			</territory>
+		</territories>
+		<npc id="22202" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Mordeo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<group>
+			<npc id="22202" x="22642" y="120635" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22268" y="120637" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22618" y="120185" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22244" y="120187" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22622" y="119621" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22247" y="119623" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22609" y="118924" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22235" y="118927" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22625" y="118322" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22251" y="118324" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22602" y="117680" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22228" y="117683" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22202" x="22618" y="117052" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Mordeo -->
+			<npc id="22204" x="22244" y="117054" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_019" minZ="-12120" maxZ="-11920">
+				<node x="20038" y="119015" />
+				<node x="21240" y="119015" />
+				<node x="21240" y="120855" />
+				<node x="20038" y="120855" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="21090" y="120613" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="21029" y="120242" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="20697" y="120606" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="20223" y="120622" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="20626" y="120264" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="20229" y="120125" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="20696" y="119896" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="21086" y="119809" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="20935" y="119451" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="21067" y="119158" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_020" minZ="-12124" maxZ="-11924">
+				<node x="23062" y="119134" />
+				<node x="24425" y="119134" />
+				<node x="24434" y="120868" />
+				<node x="23062" y="120868" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="24157" y="119239" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="24279" y="119575" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="23821" y="119520" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="23423" y="119251" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="23226" y="119552" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="23526" y="119769" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="24063" y="119820" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="24280" y="120121" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="23811" y="120018" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="23282" y="120082" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="23535" y="120382" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="23954" y="120386" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_021" minZ="-12116" maxZ="-11916">
+				<node x="23111" y="116423" />
+				<node x="24424" y="116423" />
+				<node x="24424" y="118257" />
+				<node x="23111" y="118257" />
+			</territory>
+		</territories>
+		<npc id="22203" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Ricenseo -->
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22203" x="23344" y="116768" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="23798" y="116558" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="24181" y="116788" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="23771" y="117005" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="23348" y="117175" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="24217" y="117132" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="23996" y="117373" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="23550" y="117472" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="23270" y="117689" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22203" x="23855" y="117776" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Ricenseo -->
+			<npc id="22204" x="24273" y="117709" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="20_21_03f_022" minZ="-12116" maxZ="-11916">
+				<node x="14496" y="118445" />
+				<node x="15414" y="118445" />
+				<node x="15414" y="119413" />
+				<node x="14496" y="119413" />
+			</territory>
+		</territories>
+		<npc id="22204" count="2" respawnTime="3sec" chaseRange="2000" /> <!-- Krator -->
+		<npc id="22205" count="6" respawnTime="3sec" chaseRange="2000" /> <!-- Catherok -->
+		<group>
+			<npc id="22204" x="14641" y="118605" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="14941" y="118755" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+			<npc id="22204" x="15241" y="118604" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Krator -->
+			<npc id="22205" x="15257" y="119038" z="-12096" respawnTime="5sec" chaseRange="2000" /> <!-- Catherok -->
+		</group>
+	</spawn>
+</list>

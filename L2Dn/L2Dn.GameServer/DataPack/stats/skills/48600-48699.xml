@@ -1,0 +1,1058 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48600" toLevel="1" name="Beast Evolution">
+		<icon>icon.skill1434</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48601" toLevel="1" name="Beast Charge">
+		<icon>icon.s_wild_rush</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48602" toLevel="1" name="Beast Stomp">
+		<icon>icon.skill33915</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48603" toLevel="1" name="Beast Stomp">
+		<!-- Knocked down by a powerful blow. -->
+		<icon>icon.skill33915</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48604" toLevel="1" name="Fury Attack">
+		<icon>icon.s_arc_impale</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48605" toLevel="1" name="Fury Wave">
+		<icon>icon.s_brandish_wave</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48606" toLevel="1" name="Fury Spirit">
+		<icon>icon.s_phantom_charge</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48607" toLevel="1" name="Fury Evolution">
+		<icon>icon.skill1434</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48608" toLevel="1" name="Fury Charge">
+		<icon>icon.s_wild_rush</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48609" toLevel="1" name="Fury Stomp">
+		<icon>icon.skill33915</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48610" toLevel="1" name="Fury Stomp">
+		<!-- Knocked down by a powerful blow. -->
+		<icon>icon.skill33915</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48611" toLevel="1" name="Curse of Dawn">
+		<!-- Security system is activated. A dreadful curse is cast. -->
+		<icon>icon.skill0046</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48612" toLevel="1" name="Fury Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48613" toLevel="2" name="Blood Charge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48614" toLevel="2" name="Raging Fire Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48615" toLevel="2" name="Blood Crusher">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48616" toLevel="2" name="Blood Flame">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48617" toLevel="2" name="Khan's Fire Breath">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48618" toLevel="2" name="Fire Edge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48619" toLevel="1" name="Control Unit Activation">
+		<!-- Stop the statue destruction while the security system is active. -->
+		<icon>icon.skill6038</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48620" toLevel="1" name="Horror of Dawn">
+		<!-- Unbearable horror disables all movements. -->
+		<icon>icon.skill1169</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48621" toLevel="1" name="Statue Notification">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48622" toLevel="1" name="Light of Dawn">
+		<!-- A light of dawn shines and fills you with power. PvE damage +25%. Received PvE damage -25%. Absorbs 3% of the inflicted damage as MP (triggered with a certain chance). -->
+		<icon>icon.skill11764</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48623" toLevel="1" name="Damage of Limit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48624" toLevel="1" name="Black Tiger's Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48625" toLevel="1" name="Black Tiger's Bite">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48626" toLevel="1" name="Black Tiger's Fury">
+		<icon>icon.skill1434</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48627" toLevel="1" name="Thankful Tiger">
+		<!-- P. Atk. +20. M. Atk. +20. P. Def. +22. M. Def. +22. Max HP +200. Max MP +200. Acquired XP/ SP +22% -->
+		<icon>icon.ev_tiger_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48628" toLevel="1" name="Holiday Honey Wheat Cake">
+		<!-- It's a favorite food of the tiger. Distracts the tiger for 2 sec. -->
+		<icon>icon.honey_ricecake_01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48629" toLevel="1" name="Holiday Dumpling Soup">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48630" toLevel="1" name="Black Tiger's HP Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48631" toLevel="1" name="Black Tiger's Curse">
+		<!-- A petrification curse that affects some races. -->
+		<icon>icon.skill4111</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48632" toLevel="1" name="Skill Block Area">
+		<!-- Blocks all skills. -->
+		<icon>icon.skill1336</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48633" toLevel="1" name="Garden Spring Wind">
+		<!-- Atk. Spd. +50. Casting Spd. +50. Speed +2. MP Recovery Rate +8. Skill MP Consumption -2%. P. Def. +100. M. Def. +100. Max HP +100. Max MP +100. Acquired XP/ SP +10% -->
+		<icon>icon.ev_garden_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48634" toLevel="2" name="Transformation - Leona Blackbird">
+		<!-- Transforms you into Leona Blackbird. so you can train in Leona's Dungeon -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48635" toLevel="1" name="Leona's Multi-attack">
+		<!-- When Leona's Spear or Leona's Pistols are used,. allows to attack multiple opponents. <Low HP/ MP absorption, when using a spear> -->
+		<icon>icon.skill0215</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48636" toLevel="1" name="Leona's Provocation">
+		<!-- Provokes nearby enemies. Decreases their Spear/ Firearm Resistance. The effect lasts for 10 sec. Spear/ Firearm Resistance -5% -->
+		<icon>icon.skill10027</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1436</effectPoint>
+		<mpConsume>54</mpConsume>
+	</skill>
+	<skill id="48637" toLevel="1" name="Leona's Thunder Storm">
+		<!-- <Shock skill>. Stuns for 3 sec. -->
+		<icon>icon.skill0048</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1280</effectPoint>
+		<mpConsume>80</mpConsume>
+	</skill>
+	<skill id="48638" toLevel="1" name="Leona's Thunder Storm">
+		<!-- Cannot move due to shock. -->
+		<icon>icon.skill0048</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1280</effectPoint>
+	</skill>
+	<skill id="48639" toLevel="1" name="Leona's Power">
+		<!-- Fills with Leona's heroic power. -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48640" toLevel="4" name="Leona's Blessing - Focus">
+		<!-- P. Critical Rate +20 -->
+		<icon>icon.skill1077</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48641" toLevel="4" name="Leona's Blessing - Death Whisper">
+		<!-- P. Critical Damage +25% -->
+		<icon>icon.skill1242</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48642" toLevel="3" name="Leona's Blessing - Wild Magic">
+		<!-- M. Skill Critical Rate +10 -->
+		<icon>icon.skill1303</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48643" toLevel="3" name="Leona's Blessing - Haste">
+		<!-- Atk. Spd. +15% -->
+		<icon>icon.skill1086</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48644" toLevel="4" name="Leona's Blessing - Acumen">
+		<!-- Casting Spd. +15% -->
+		<icon>icon.skill1085</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48645" toLevel="4" name="Leona's Blessing - Might">
+		<!-- P. Atk. +80 -->
+		<icon>icon.skill1068</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48646" toLevel="4" name="Leona's Blessing - Empower">
+		<!-- M. Atk. +100 -->
+		<icon>icon.skill1059</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48647" toLevel="4" name="Leona's Blessing - Shield">
+		<!-- P. Def. +100 -->
+		<icon>icon.skill1040</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48648" toLevel="3" name="Leona's Blessing - Magic Barrier">
+		<!-- M. Def. +250 -->
+		<icon>icon.skill1036</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48649" toLevel="3" name="Leona's Blessing - Wind Walk">
+		<!-- Speed +20 -->
+		<icon>icon.skill1204</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48650" toLevel="4" name="Leona's Blessing - Clarity">
+		<!-- Song/ Dance/ P. Skill MP Consumption -10%. M. Skill MP Consumption -4% -->
+		<icon>icon.skill1397</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48651" toLevel="3" name="Leona's Blessing - Berserker Spirit">
+		<!-- Max HP -20%. Max MP -20%. P. Atk. +5%. M. Atk. +10%. Atk. Spd. +5%. Casting Spd. +5%. Speed +5 -->
+		<icon>icon.skill1062</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48652" toLevel="2" name="Leona's Blessing - HP Recovery">
+		<!-- Constantly recovers a certain amount of HP. The amount of HP recovered and its recovery rate are increased with the skill level. -->
+		<icon>icon.skill0211</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48653" toLevel="2" name="Leona's Blessing - MP Recovery">
+		<!-- Constantly recovers a certain amount of MP. The amount of MP recovered and its recovery rate are increased with the skill level. -->
+		<icon>icon.skill0213</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48654" toLevel="1" name="Orcs' Prophetic Sorcery">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Acquired XP/ SP +10%. Atk. Spd. +30. Casting Spd. +30. Acquired Magic Lamp XP +3%. Max HP +300. Max MP +300. HP Recovery Rate +3. MP Recovery Rate +3. Sayha's Grace Consumption -30% -->
+		<icon>icon.ev_bigorc_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48655" toLevel="1" name="Suppression">
+		<!-- <Knockback/ Suppression skill>. Knocks back the target and enemies around them. Deals magic damage with 130 power. Duration: 5 sec. Greatly decreases Atk. Spd./ Casting Spd./ Speed. P. Skill Cooldown +5%. M. Skill Cooldown +5%. Duration: 10 sec. Speed buffs are disabled. Gap-closing skills cannot be used. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48656" toLevel="1" name="Suppression">
+		<!-- Greatly decreases Atk. Spd./ Casting Spd./ Speed. P. Skill Cooldown +5%. M. Skill Cooldown +5% -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48657" toLevel="1" name="Suppression">
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48658" toLevel="1" name="Suppression">
+		<!-- Speed buffs are disabled. Gap-closing skills cannot be used. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48659" toLevel="1" name="Kelbim's Atelia Buff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>692</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48660" toLevel="1" name="Kelbim's Atelia Buff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>692</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48661" toLevel="1" name="Kelbim's Atelia Buff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>692</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48662" toLevel="1" name="Kelbim's Atelia Buff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>692</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48663" toLevel="1" name="Kelbim's Atelia Buff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>692</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>60</abnormalTime>
+	</skill>
+	<skill id="48664" toLevel="1" name="Atelia Stun">
+		<!-- Immobilizes and stuns the target for 15 sec. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>15</abnormalTime>
+	</skill>
+	<skill id="48665" toLevel="1" name="Atelia Petrification">
+		<!-- Makes the target's body as hard as stone for 15 sec. -->
+		<icon>icon.skill4111</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>15</abnormalTime>
+	</skill>
+	<skill id="48666" toLevel="1" name="Atelia Disarm">
+		<!-- Disarms the target for 15 sec. -->
+		<icon>icon.skill0485</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>15</abnormalTime>
+	</skill>
+	<skill id="48667" toLevel="1" name="Atelia Fear">
+		<!-- The target runs away in fear for 15 sec. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>15</abnormalTime>
+	</skill>
+	<skill id="48668" toLevel="1" name="Atelia Critical Hit">
+		<!-- The target's HP and CP drop to 1 for 15 sec. Healing is unavailable at that time. -->
+		<icon>icon.skill1269</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>15</abnormalTime>
+	</skill>
+	<skill id="48669" toLevel="1" name="Fatal Strike">
+		<!-- Inflicts a powerful blow on the single target. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>660</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48670" toLevel="1" name="Dark Cloud">
+		<!-- Deals heavy magic damage to all nearby enemies. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>1</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>800</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48671" toLevel="1" name="Dancing Blade">
+		<!-- Deals heavy damage to nearby enemies inflicting Bleed on them. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>1</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="48672" toLevel="1" name="Frost Storm">
+		<!-- Attacks enemies that are at a certain distance from Kelbim, freezing them for 5 sec. -->
+		<icon>icon.skll10094</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>1</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>6000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="48673" toLevel="1" name="Armor of Reflection">
+		<!-- Reflects the received damage. -->
+		<icon>icon.kelbim_reflection_armor</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>1</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>7200</abnormalTime>
+	</skill>
+	<skill id="48674" toLevel="3" name="Master's Blessing - Combat">
+		<!-- The GM is always by your side. P. Atk. +15%. P. Critical Rate +5%. P. Skill Critical Rate +5%. Critical Damage for basic attacks +5%. P. Skill Critical Damage +5%. Max HP +3000. Max MP +3000. Atk. Spd. +50. With a certain chance, absorbs 3% of the inflicted damage as HP. Continuously recovers some MP. The effect remains after death. Can be cancelled. -->
+		<icon>icon.skill1499</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">3600</value>
+			<value level="2">14400</value>
+			<value level="3">28800</value>
+		</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
+		<!--		<value level="1">3%</value>-->
+		<!--		<value level="2">3%</value>-->
+		<!--		<value level="3">3%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="P. Critical Rate">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max HP">-->
+		<!--		<value level="1">+3000</value>-->
+		<!--		<value level="2">+3000</value>-->
+		<!--		<value level="3">+3000</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="P. Skill Critical Rate">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="P. Skill Critical Damage">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="P. Atk.">-->
+		<!--		<value level="1">+15%</value>-->
+		<!--		<value level="2">+15%</value>-->
+		<!--		<value level="3">+15%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max MP">-->
+		<!--		<value level="1">+3000</value>-->
+		<!--		<value level="2">+3000</value>-->
+		<!--		<value level="3">+3000</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Atk. Spd.">-->
+		<!--		<value level="1">+50</value>-->
+		<!--		<value level="2">+50</value>-->
+		<!--		<value level="3">+50</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Critical Damage for basic attacks">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48675" toLevel="3" name="Master's Blessing - Magic">
+		<!-- The GM is always by your side. M. Atk. +15%. M. Skill Critical Rate +5%. M. Skill Critical Damage +5%. Max HP +3000. Max MP +3000. Casting Spd. +50. With a certain chance, absorbs 3% of the inflicted damage as HP. Continuously recovers some MP. The effect remains after death. Can be cancelled. -->
+		<icon>icon.skill1500</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">3600</value>
+			<value level="2">14400</value>
+			<value level="3">28800</value>
+		</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
+		<!--		<value level="1">3%</value>-->
+		<!--		<value level="2">3%</value>-->
+		<!--		<value level="3">3%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="M. Skill Critical Damage">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="M. Atk.">-->
+		<!--		<value level="1">+15%</value>-->
+		<!--		<value level="2">+15%</value>-->
+		<!--		<value level="3">+15%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max HP">-->
+		<!--		<value level="1">+3000</value>-->
+		<!--		<value level="2">+3000</value>-->
+		<!--		<value level="3">+3000</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Casting Spd.">-->
+		<!--		<value level="1">+50</value>-->
+		<!--		<value level="2">+50</value>-->
+		<!--		<value level="3">+50</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="M. Skill Critical Rate">-->
+		<!--		<value level="1">+5%</value>-->
+		<!--		<value level="2">+5%</value>-->
+		<!--		<value level="3">+5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max MP">-->
+		<!--		<value level="1">+3000</value>-->
+		<!--		<value level="2">+3000</value>-->
+		<!--		<value level="3">+3000</value>-->
+		<!--	</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48676" toLevel="3" name="Master's Blessing - Status">
+		<!-- The GM is always by your side. P. Def. +15%. M. Def. +15%. All received Critical Rate -5%. All received Critical Damage -5%. Max HP +4000. Max MP +4000. Atk. Spd. +50. Casting Spd. +50. Speed +5. With a certain chance, absorbs 3% of the inflicted damage as HP. Continuously recovers some MP. The effect remains after death. Can be cancelled. -->
+		<icon>icon.skill1501</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">3600</value>
+			<value level="2">14400</value>
+			<value level="3">28800</value>
+		</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="Speed">-->
+		<!--		<value level="1">+5</value>-->
+		<!--		<value level="2">+5</value>-->
+		<!--		<value level="3">+5</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="With a certain chance, absorbs of the inflicted damage as HP.">-->
+		<!--		<value level="1">3%</value>-->
+		<!--		<value level="2">3%</value>-->
+		<!--		<value level="3">3%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max HP">-->
+		<!--		<value level="1">+4000</value>-->
+		<!--		<value level="2">+4000</value>-->
+		<!--		<value level="3">+4000</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Casting Spd.">-->
+		<!--		<value level="1">+50</value>-->
+		<!--		<value level="2">+50</value>-->
+		<!--		<value level="3">+50</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="All received Critical Damage">-->
+		<!--		<value level="1">-5%</value>-->
+		<!--		<value level="2">-5%</value>-->
+		<!--		<value level="3">-5%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="M. Def.">-->
+		<!--		<value level="1">+15%</value>-->
+		<!--		<value level="2">+15%</value>-->
+		<!--		<value level="3">+15%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Max MP">-->
+		<!--		<value level="1">+4000</value>-->
+		<!--		<value level="2">+4000</value>-->
+		<!--		<value level="3">+4000</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="Atk. Spd.">-->
+		<!--		<value level="1">+50</value>-->
+		<!--		<value level="2">+50</value>-->
+		<!--		<value level="3">+50</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="P. Def.">-->
+		<!--		<value level="1">+15%</value>-->
+		<!--		<value level="2">+15%</value>-->
+		<!--		<value level="3">+15%</value>-->
+		<!--	</effect>-->
+		<!--	<effect name="All received Critical Rate">-->
+		<!--		<value level="1">-5%</value>-->
+		<!--		<value level="2">-5%</value>-->
+		<!--		<value level="3">-5%</value>-->
+		<!--	</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48677" toLevel="20" name="P. Skill Power Decrease When Hit 5%">
+		<!-- P. Skill Power -5% when hit -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="P. Skill Power when hit">-->
+		<!--		<value level="1">-5%</value>-->
+		<!--		<value level="2">-10%</value>-->
+		<!--		<value level="3">-15%</value>-->
+		<!--		<value level="4">-20%</value>-->
+		<!--		<value level="5">-25%</value>-->
+		<!--		<value level="6">-30%</value>-->
+		<!--		<value level="7">-35%</value>-->
+		<!--		<value level="8">-40%</value>-->
+		<!--		<value level="9">-45%</value>-->
+		<!--		<value level="10">-50%</value>-->
+		<!--		<value level="11">-55%</value>-->
+		<!--		<value level="12">-60%</value>-->
+		<!--		<value level="13">-65%</value>-->
+		<!--		<value level="14">-70%</value>-->
+		<!--		<value level="15">-75%</value>-->
+		<!--		<value level="16">-80%</value>-->
+		<!--		<value level="17">-85%</value>-->
+		<!--		<value level="18">-90%</value>-->
+		<!--		<value level="19">-95%</value>-->
+		<!--		<value level="20">-100%</value>-->
+		<!--	</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48678" toLevel="20" name="M. Skill Power Decrease When Hit 5%">
+		<!-- M. Skill Power -5% when hit -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="M. Skill Power when hit">-->
+		<!--		<value level="1">-5%</value>-->
+		<!--		<value level="2">-10%</value>-->
+		<!--		<value level="3">-15%</value>-->
+		<!--		<value level="4">-20%</value>-->
+		<!--		<value level="5">-25%</value>-->
+		<!--		<value level="6">-30%</value>-->
+		<!--		<value level="7">-35%</value>-->
+		<!--		<value level="8">-40%</value>-->
+		<!--		<value level="9">-45%</value>-->
+		<!--		<value level="10">-50%</value>-->
+		<!--		<value level="11">-55%</value>-->
+		<!--		<value level="12">-60%</value>-->
+		<!--		<value level="13">-65%</value>-->
+		<!--		<value level="14">-70%</value>-->
+		<!--		<value level="15">-75%</value>-->
+		<!--		<value level="16">-80%</value>-->
+		<!--		<value level="17">-85%</value>-->
+		<!--		<value level="18">-90%</value>-->
+		<!--		<value level="19">-95%</value>-->
+		<!--		<value level="20">-100%</value>-->
+		<!--	</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48679" toLevel="2" name="Acropolis' Strike">
+		<!-- A single physical attack. Power. 15,000. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>660</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48680" toLevel="2" name="Acropolis' Poison Attack">
+		<!-- Damage over time. -->
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>20</abnormalTime>
+	</skill>
+	<skill id="48681" toLevel="4" name="Acropolis' Magic Attack">
+		<!-- A single magic attack. Power 300. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48682" toLevel="2" name="Acropolis' Dark Storm">
+		<!-- A magic AoE attack. Power 300. -->
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-264</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48683" toLevel="2" name="Acropolis' Arrow Multishot">
+		<!-- An AoE attack. Power 40,000. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48684" toLevel="2" name="Acropolis' Bleed Attack">
+		<!-- Damage over time. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>6000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>20</abnormalTime>
+	</skill>
+	<skill id="48685" toLevel="2" name="Acropolis' Cure">
+		<!-- Recovers 20% HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>5000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48686" toLevel="2" name="Acropolis' Stun">
+		<!-- Stuns the target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="48687" toLevel="1" name="Acropolis' Paralysis">
+		<!-- Paralyzes the target. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>1400</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>20</abnormalTime>
+	</skill>
+	<skill id="48688" toLevel="1" name="Acropolis' Aggression Aura">
+		<!-- Aggression aura. -->
+		<icon>icon.skill0018</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>40000</reuseDelay>
+		<effectPoint>-7121</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="48689" toLevel="1" name="Acropolis' Chain Snake">
+		<!-- Acropolis' Chain Snake -->
+		<icon>icon.skill10016</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-200</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1</abnormalTime>
+	</skill>
+	<skill id="48690" toLevel="40" name="Teleport Overload Lv. 1">
+		<!-- Teleports you to Kelbim's Fortress' upper floors, but makes you overloaded at the same time. The teleport fee depends on the overload's level. -->
+		<icon>icon.skill10700</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>300</abnormalTime>
+	</skill>
+	<skill id="48691" toLevel="1" name="Frosting">
+		<!-- You are frozen and cannot move. -->
+		<icon>icon.skill1174</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-1600</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>5</abnormalTime>
+	</skill>
+	<skill id="48692" toLevel="1" name="Sky Lantern Imbued with Prophet's Magic">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Acquired XP/ SP +10%. Atk. Spd. +30. Casting Spd. +30. Max HP +300. Max MP +300. HP Recovery Rate +3. MP Recovery Rate +3. Sayha's Grace Consumption -30% -->
+		<icon>icon.ev_2022_chuseok_yellow_lamp</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10800</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="Sayha's Grace Consumption">-30%</effect>-->
+		<!--	<effect name="MP Recovery Rate">+3</effect>-->
+		<!--	<effect name="M. Atk.">+50</effect>-->
+		<!--	<effect name="Max HP">+300</effect>-->
+		<!--	<effect name="HP Recovery Rate">+3</effect>-->
+		<!--	<effect name="Casting Spd.">+30</effect>-->
+		<!--	<effect name="M. Def.">+100</effect>-->
+		<!--	<effect name="P. Atk.">+50</effect>-->
+		<!--	<effect name="Max MP">+300</effect>-->
+		<!--	<effect name="Atk. Spd.">+30</effect>-->
+		<!--	<effect name="P. Def.">+100</effect>-->
+		<!--	<effect name="Acquired XP/ SP">+10%</effect>-->
+		<!--</effects>-->
+	</skill>
+	<skill id="48693" toLevel="1" name="Lightning Discharge">
+		<!-- A lightning bolt deals magic damage and paralyzes for 5 sec. Power 80. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>5</abnormalTime>
+	</skill>
+	<skill id="48694" toLevel="1" name="Range Attack">
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48695" toLevel="3" name="Drain HP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48696" toLevel="3" name="Fire Spike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-115</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48697" toLevel="3" name="Magic Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>8000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48698" toLevel="3" name="Temple Thorns">
+		<!-- Deals physical damage with 4000 power. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="48699" toLevel="3" name="Triol's Enslavement">
+		<!-- <Aerial Yoke>. Enemies are bound in the air, unable to do anything. -->
+		<icon>icon.temple_air_bind_skill</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>
+			<value level="1">10</value>
+			<value level="2">15</value>
+			<value level="3">20</value>
+		</abnormalTime>
+	</skill>
+</list>

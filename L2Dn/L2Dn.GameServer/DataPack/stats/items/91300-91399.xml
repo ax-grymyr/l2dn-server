@@ -1,0 +1,1233 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="91300" name="Spring Energy Lv. 3" type="EtcItem">
+		<!-- For 20 min., Max HP/ MP +15%, P. Atk. +15%, M. Atk. +23%, Atk. Spd./ Casting Spd. +15%, P./ M. Def. +15%, acquired XP/ SP +15%, Sayha's Grace Consumption -15%. Note!. The Spring Energy effects don't stack, the higher-level effect takes precedence. -->
+		<set name="icon" val="icon.etc_leaf_green_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91301" name="Sayha's Spring Wind" additionalName="Sealed" type="EtcItem">
+		<!-- Filled with new spring's fresh breeeze. For 10 min., while hunting, Sayha's Grace Consumption +100%, acquired XP/ SP +150%. Cooldown: 20 min. This effect remains after death. Available if Sayha's Grace bar is filled by 1 unit or more. Does not stack with the Sayha's Storm effect. -->
+		<set name="icon" val="icon.ev_magic_flame_game_wind1" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91302" name="Spring's Blessing Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="13016" min="2" max="2" chance="6.25" /> <!-- My Teleport Scroll -->
+			<item id="90144" min="1" max="1" chance="6.25" /> <!-- Transformation Scroll: White Assassin -->
+			<item id="49684" min="1" max="1" chance="6.25" /> <!-- Talisman Crystal -->
+			<item id="49685" min="1" max="1" chance="6.25" /> <!-- Powerless Energy of Insolence -->
+			<item id="91235" min="1" max="1" chance="6.25" /> <!-- D-grade Enchant Scroll Ticket -->
+			<item id="91234" min="1" max="1" chance="6.25" /> <!-- C-grade Enchant Scroll Ticket -->
+			<item id="91233" min="1" max="1" chance="6.25" /> <!-- B-grade Enchant Scroll Ticket -->
+			<item id="91232" min="1" max="1" chance="6.25" /> <!-- A-grade Enchant Scroll Ticket -->
+			<item id="2133" min="2" max="2" chance="6.25" /> <!-- A-grade Gemstone -->
+			<item id="49704" min="1" max="1" chance="6.25" /> <!-- Talisman of Border Fragment -->
+			<item id="32250" min="1" max="1" chance="6.25" /> <!-- Infinite Bone Quiver -->
+			<item id="32251" min="1" max="1" chance="6.25" /> <!-- Infinite Steel Quiver -->
+			<item id="32252" min="1" max="1" chance="6.25" /> <!-- Infinite Silver Quiver -->
+			<item id="32253" min="1" max="1" chance="6.25" /> <!-- Infinite Mithril Quiver -->
+			<item id="90497" min="1" max="1" chance="6.25" /> <!-- Fire Dragon Belt -->
+			<item id="90496" min="1" max="1" chance="6.25" /> <!-- Earth Dragon Belt -->
+		</capsuled_items>
+	</item>
+	<item id="91303" name="Brooch Lv. 4" type="Armor">
+		<!-- Jewel slots +5. Inventory slots +12. P. Def. +100. M. Def. +100. <font color=bbaa88><Compound></font>. Materials: Brooches and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="13659" level="1" /> <!-- Activates 5 jewel slots. -->
+			<skill id="13661" level="4" /> <!-- Inventory Slot +12. -->
+			<skill id="13650" level="1" type="ON_EQUIP" /> <!-- Brooch Lv. 4 On. -->
+			<skill id="13651" level="1" type="ON_UNEQUIP" /> <!-- Brooch Lv. 4 Off. -->
+		</skills>
+	</item>
+	<item id="91304" name="Brooch Lv. 5" type="Armor">
+		<!-- Jewel slots +6. Inventory slots +15. P. Def. +200. M. Def. +200. <font color=bbaa88><Compound></font>. Materials: Brooches and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="13660" level="1" /> <!-- Activates 6 jewel slots. -->
+			<skill id="13661" level="5" /> <!-- Inventory Slot +15. -->
+			<skill id="13648" level="1" type="ON_EQUIP" /> <!-- Brooch Lv. 5 On. -->
+			<skill id="13649" level="1" type="ON_UNEQUIP" /> <!-- Brooch Lv. 5 Off. -->
+		</skills>
+	</item>
+	<item id="91305" name="Greater Topaz Lv. 1" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 2500 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91306" name="Greater Topaz Lv. 2" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 2800 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91307" name="Greater Topaz Lv. 3" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 3400 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91308" name="Greater Topaz Lv. 4" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 4300 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91309" name="Greater Topaz Lv. 5" type="Armor">
+		<!-- Disrupts the target's skill casting. Inflicts 6000 PvP damage. Activates a special ability that removes up to 3 debuffs. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91310" name="Greater Garnet Lv. 1" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +22%. Grants immunity to debuffs for 16 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="6" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91311" name="Greater Garnet Lv. 2" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +24%. Grants immunity to debuffs for 17 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="7" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91312" name="Greater Garnet Lv. 3" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +26%. Grants immunity to debuffs for 18 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="8" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91313" name="Greater Garnet Lv. 4" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +30%. Grants immunity to debuffs for 20 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="9" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91314" name="Greater Garnet Lv. 5" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +40%, Sleep/ Poison Resistance +10%. Grants immunity to debuffs for 25 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="10" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91315" name="Greater Jade Lv. 1" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +15%, Speed +1%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="6" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91316" name="Greater Jade Lv. 2" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +16%, Speed +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="7" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91317" name="Greater Jade Lv. 3" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +17%, Speed +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="8" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91318" name="Greater Jade Lv. 4" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +18%, Speed +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="9" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91319" name="Greater Jade Lv. 5" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +20%, Speed +7%, Melee Weapon Resistance +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="10" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91320" name="Greater Ruby Lv. 1" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +17%, P. Atk. +1%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="6" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91321" name="Greater Ruby Lv. 2" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +18%, P. Atk. +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="7" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91322" name="Greater Ruby Lv. 3" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +19%, P. Atk. +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="8" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91323" name="Greater Ruby Lv. 4" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +20%, P. Atk. +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="9" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91324" name="Greater Ruby Lv. 5" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +20%, P. Atk. +7%, P. Critical Rate +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="10" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91325" name="Greater Sapphire Lv. 1" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot Damage +17%, M. Atk. +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="6" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91326" name="Greater Sapphire Lv. 2" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +18%, M. Atk. +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="7" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91327" name="Greater Sapphire Lv. 3" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +19%, M. Atk. +6%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="8" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91328" name="Greater Sapphire Lv. 4" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +20%, M. Atk. +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="9" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91329" name="Greater Sapphire Lv. 5" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot Damage +20%, M. Atk. +14%, M. Critical Rate +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="10" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91330" name="Greater Diamond Lv. 1" type="Armor">
+		<!-- When equipped, P. Def. +150, received P. Critical Damage -11%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="6" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91331" name="Greater Diamond Lv. 2" type="Armor">
+		<!-- When equipped, P. Def. +180, received P. Critical Damage -12%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="7" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91332" name="Greater Diamond Lv. 3" type="Armor">
+		<!-- When equipped, P. Def. +220, received P. Critical Damage -14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="8" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91333" name="Greater Diamond Lv. 4" type="Armor">
+		<!-- When equipped, P. Def. +280, received P. Critical Damage -16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="9" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91334" name="Greater Diamond Lv. 5" type="Armor">
+		<!-- When equipped, P. Def. +400, received P. Critical Damage -20%, received P. Critical Rate -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="10" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91335" name="Greater Pearl Lv. 1" type="Armor">
+		<!-- When equipped, M. Def. +85, received M. Skill Critical Damage -11%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="6" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91336" name="Greater Pearl Lv. 2" type="Armor">
+		<!-- When equipped, M. Def. +100, received M. Skill Critical Damage -12%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="7" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91337" name="Greater Pearl Lv. 3" type="Armor">
+		<!-- When equipped, M. Def. +125, received M. Skill Critical Damage -14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be compounded with Jewel Energy. In case of failure, its enchant value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="8" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91338" name="Greater Pearl Lv. 4" type="Armor">
+		<!-- When equipped, M. Def. +160, received M. Skill Critical Damage -16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="9" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91339" name="Greater Pearl Lv. 5" type="Armor">
+		<!-- M. Def. +250, Received M. Skill Critical Damage -20%, Received M. Skill Critical Rate -10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="10" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91340" name="Greater Vital Stone Lv. 1" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +17%, Sayha's Grace Consumption -30%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="6" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91341" name="Greater Vital Stone Lv. 2" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +19%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="7" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91342" name="Greater Vital Stone Lv. 3" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +21%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="8" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91343" name="Greater Vital Stone Lv. 4" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +23%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="9" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91344" name="Greater Vital Stone Lv. 5" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +30%, acquired XP while hunting in the attribute zones +50%, Sayha's Grace Consumption -35%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="10" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91345" name="Greater Aquamarine Lv. 1" type="Armor">
+		<!-- Max MP +2%, with a certain chance MP +60 when using skills. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91346" name="Greater Aquamarine Lv. 2" type="Armor">
+		<!-- When equipped, Max MP +5%, with a certain chance MP +80 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91347" name="Greater Aquamarine Lv. 3" type="Armor">
+		<!-- When equipped, Max MP +8%, with a certain chance MP +100 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91348" name="Greater Aquamarine Lv. 4" type="Armor">
+		<!-- When equipped, Max MP +12%, with a certain chance MP +130 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91349" name="Greater Aquamarine Lv. 5" type="Armor">
+		<!-- Max MP +20%, with a certain chance MP +200 when using skills. Recovers 10% MP when using basic skills. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91350" name="Greater Cat's Eye Lv. 1" type="Armor">
+		<!-- P. Critical Damage/ M. Skill Critical Damage +16%, P./ M. Skill Power +1%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91351" name="Greater Cat's Eye Lv. 2" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +17%, P./ M. Skill Power +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure, the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91352" name="Greater Cat's Eye Lv. 3" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +18%, P./ M. Skill Power +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91353" name="Greater Cat's Eye Lv. 4" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +19%, P./ M. Skill Power +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91354" name="Greater Cat's Eye Lv. 5" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +20%, P./ M. Skill Power +7%, Buff Cancel Resistance +40%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91355" name="Radiant Jewelry Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90369" min="1" max="1" chance="9.90" /> <!-- Topaz Chest -->
+			<item id="90370" min="1" max="1" chance="9.90" /> <!-- Garnet Chest -->
+			<item id="90371" min="1" max="1" chance="9.90" /> <!-- Jade Chest -->
+			<item id="90372" min="1" max="1" chance="9.90" /> <!-- Ruby Chest -->
+			<item id="90373" min="1" max="1" chance="9.90" /> <!-- Sapphire Chest -->
+			<item id="90374" min="1" max="1" chance="9.90" /> <!-- Diamond Chest -->
+			<item id="90375" min="1" max="1" chance="9.90" /> <!-- Pearl Chest -->
+			<item id="90376" min="1" max="1" chance="9.90" /> <!-- Vital Stone Chest -->
+			<item id="90936" min="1" max="1" chance="9.90" /> <!-- Aquamarine Chest -->
+			<item id="90940" min="1" max="1" chance="9.90" /> <!-- Cat's Eye Jewelry Box -->
+			<item id="91367" min="1" max="1" chance="9.90" /> <!-- Emerald Chest -->
+		</capsuled_items>
+	</item>
+	<item id="91356" name="Jewel Energy" type="EtcItem">
+		<!-- Required for upgrading a jewel. Can be exchanged for Shining Ore through the Game Assistant. -->
+		<set name="icon" val="icon.bm_blessed_jewel" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91357" name="Emerald Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- CON +1. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_emerald_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91358" name="Emerald Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- CON/ MEN +1. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_emerald_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91359" name="Emerald Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- CON/ MEN/ DEX +1. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_emerald_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91360" name="Emerald Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT +1. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_emerald_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91361" name="Emerald Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT/ STR/ INT +1. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_emerald_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91362" name="Greater Emerald Lv. 1" type="Armor">
+		<!-- CON +2, MEN/ DEX/ WIT/ STR/ INT +1, Damage Reflection Resistance +2%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91363" name="Greater Emerald Lv. 2" type="Armor">
+		<!-- When equipped, CON/ MEN +2, DEX/ WIT/ STR/ INT +1, Damage Reflection Resistance +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91364" name="Greater Emerald Lv. 3" type="Armor">
+		<!-- When equipped, CON/ MEN/ DEX +2, WIT/ STR/ INT +1, Damage Reflection Resistance +6%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91365" name="Greater Emerald Lv. 4" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT +2, STR/ INT +1, Damage Reflection Resistance +10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91366" name="Greater Emerald Lv. 5" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT/ STR/ INT +2, Damage Reflection Resistance +20%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91367" name="Emerald Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91357" min="1" max="1" chance="100" /> <!-- Emerald Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91368" name="Emerald Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91359" min="1" max="1" chance="100" /> <!-- Emerald Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91369" name="Emerald Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91360" min="1" max="1" chance="100" /> <!-- Emerald Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91370" name="Emerald Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91361" min="1" max="1" chance="100" /> <!-- Emerald Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91371" name="Radiant Brooch Fragment" type="EtcItem">
+		<!-- Take it along with Brooch Lv. 4 to the Game Assistant to exchange for Brooch Lv. 5. -->
+		<set name="icon" val="icon.bm_2018_brooch_piece" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91372" name="Good Deeds Bait" additionalName="Sealed" type="EtcItem">
+		<!-- Event fishing bait. Can be used to catch Blue Mackerel or Whale. Gives a low chance to obtain a Good Deeds Coin. -->
+		<set name="icon" val="icon.fishing_cube_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91373" name="Good Deeds Fishing Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="38154" min="85000" max="85000" chance="100" /> <!-- Fishing Shot -->
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="91372" min="85000" max="85000" chance="100" /> <!-- Good Deeds Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91374" name="Good Deeds Coin" type="EtcItem">
+		<!-- Can be exchanged for useful items from Kavari in Gludin Harbor or Giran Harbor. -->
+		<set name="icon" val="icon.etc_magic_coin_blue_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91375" name="Skilled Fisherman's Rune - Professional" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 1-76. When in inventory, Acquired XP/ SP (fishing) +300%. -->
+		<set name="icon" val="icon.fishing_zone_ticket_1" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="91376" name="Skilled Fisherman's Rune - Master" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 76-80. When in inventory, Acquired XP/ SP (fishing) +300%. -->
+		<set name="icon" val="icon.fishing_zone_ticket_1" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="91377" name="Skilled Fisherman's Rune - Expert" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 81. When in inventory, Acquired XP/ SP (fishing) +300%. -->
+		<set name="icon" val="icon.fishing_zone_ticket_1" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="91378" name="Queen Ant's Ring Lv. 4" type="Armor">
+		<!-- <Properties>. P. Atk. +10%. M. Atk. +15%. P. Critical Damage +15%. M. Skill Critical Damage +10%. P. Accuracy +5. M. Accuracy +5. Max MP +30. Infection Atk. Rate and Resistance +30%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="3562" level="4" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">62</stat>
+			<stat type="maxMp">30</stat>
+		</stats>
+	</item>
+	<item id="91379" name="Orfen's Earring Lv. 4" type="Armor">
+		<!-- <Properties>. MP Consumption -10%. Received Healing +12%. With a certain chance, absorbs some of the inflicted damage as MP. Max MP +40. Silence Atk. Rate and Resistance +20%. Fear Atk. Rate and Resistance +20%. Hold Atk. Rate and Resistance +30%. <Orfen's Earring>. Enemy's Max MP in PvP -10%. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="3560" level="4" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">83</stat>
+			<stat type="maxMp">40</stat>
+		</stats>
+	</item>
+	<item id="91380" name="Ring of Core Lv. 4" type="Armor">
+		<!-- <Properties>. Received P. Damage -10%. Received M. Damage -10%. P. Evasion +5. M. Evasion +5. Max MP +30. Silence Atk. Rate and Resistance +30%. Fear Atk. Rate and Resistance +30%. Sleep Resistance +20%. <Ring of Core>. Removes all debuffs and anomalies when used. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="3563" level="4" /> <!-- Ring of Core -->
+		</skills>
+		<stats>
+			<stat type="mDef">62</stat>
+			<stat type="maxMp">30</stat>
+		</stats>
+	</item>
+	<item id="91381" name="Baium's Ring Lv. 4" type="Armor">
+		<!-- <Properties>. P. Skill Power +20%. M. Skill Power +20%. Atk. Spd. +10%. Casting Spd. +10%. P. Accuracy +8. M. Accuracy +8. P. Critical Damage +20%. M. Skill Critical Damage +20%. Max MP +35. Shock Atk. Rate and Resistance +30%. Infection Atk. Rate and Resistance +20%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="50443" level="4" /> <!-- Baium's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">70</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91382" name="Zaken's Earring Lv. 4" type="Armor">
+		<!-- <Properties>. MP Consumption -10%. Received Healing +15%. HP Recovery Rate +20%. Vampiric Rage effect +8%. Max MP +45. Infection Atk. Rate and Resistance +30%. Shock Atk. Rate and Resistance +20%. Silence Atk. Rate and Resistance +20%. Fear Atk. Rate and Resistance +20%. <Zaken's Earring>. Decreases the enemy's HP/ MP/ CP Recovery Rate in PvP. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="50442" level="4" /> <!-- Zaken Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">96</stat>
+			<stat type="maxMp">45</stat>
+		</stats>
+	</item>
+	<item id="91383" name="Antharas' Earring Lv. 4" type="Armor">
+		<!-- MP +50, CON +2, MEN +2, Bleed Resistance and Atk. Rate +30%, Fear/ Silence Resistance and Atk. Rate +30%, Damage Reflection Resistance +20%, Received Healing +20%, Vampiric Rage effect +6%, Skill MP Consumption -15%. Enables a special skill that blocks the enemy's P./ M. skills. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_antaras_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="50441" level="4" /> <!-- Antharas' Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">96</stat>
+			<stat type="maxMp">50</stat>
+		</stats>
+	</item>
+	<item id="91384" name="Essence of Queen Ant" type="EtcItem">
+		<!-- Take it along with Phoenix Ring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Queen Ant's Ring Lv. 4. -->
+		<set name="icon" val="icon.queen_ant_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91385" name="Essence of Orfen" type="EtcItem">
+		<!-- Take it along with Black Ore Earring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Orfen's Earring Lv. 4. -->
+		<set name="icon" val="icon.earring_of_orfen_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91386" name="Essence of Core" type="EtcItem">
+		<!-- Take it along with Black Ore Ring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Ring of Core Lv. 4. -->
+		<set name="icon" val="icon.ring_of_core_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91387" name="Essence of Baium" type="EtcItem">
+		<!-- Take it along with Majestic Ring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Baium's Ring Lv. 4. -->
+		<set name="icon" val="icon.ring_of_baium_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91388" name="Essence of Zaken" type="EtcItem">
+		<!-- Take it along with Phoenix Earring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Zaken's Earring Lv. 4. -->
+		<set name="icon" val="icon.earring_of_zaken_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91389" name="Essence of Antharas" type="EtcItem">
+		<!-- Take it along with Majestic Earring enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Antharas' Earring Lv. 4. -->
+		<set name="icon" val="icon.earring_of_antaras_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91390" name="Topaz Lv. 5" additionalName="15-day" type="Armor">
+		<!-- Available for 15 days. Interrupts the target's skill casting. Inflicts 2375 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+	</item>
+	<item id="91391" name="Fish Stew - Guild's Gratitude Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Acquired XP +30%. Acquired SP +30%. Duration: 20 min. -->
+		<set name="icon" val="icon.ev_invasion_buff_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91392" name="Night Goblin's Liquor" additionalName="Sealed" type="EtcItem">
+		<!-- For 5 min., P. Atk. +15%, M. Atk. +23%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +15%, HP/ MP Recovery Rate +30%. -->
+		<set name="icon" val="icon.bm_goblin_buff_herong" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+	</item>
+	<item id="91393" name="Forgotten Manuscript - Page 1" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91394" name="Forgotten Manuscript - Page 2" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91395" name="Forgotten Manuscript - Page 3" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91396" name="Forgotten Manuscript - Page 4" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91397" name="Manuscript Fragment - Page 1" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91398" name="Manuscript Fragment - Page 2" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91399" name="Manuscript Part - Page 2" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

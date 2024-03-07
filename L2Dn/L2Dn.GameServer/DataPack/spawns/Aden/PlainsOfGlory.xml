@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="PlainsOfGlory">
+		<group>
+			<npc id="31649" x="140406" y="12433" z="-3954" heading="49151" respawnTime="60sec" /> <!-- Tablet Of Vision -->
+		</group>
+	</spawn>
+</list>

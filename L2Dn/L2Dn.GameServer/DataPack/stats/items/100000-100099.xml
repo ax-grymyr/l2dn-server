@@ -1,0 +1,1194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="100000" name="+7 Talisman Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Talisman of Speed/ Eva/ Authority/ Aden enchanted to +7. -->
+		<set name="icon" val="icon.level_reward_talisman_ticket" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100001" name="Lv. 7 Jewel Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Lv. 7 jewel: Onyx/ Zircon/ Coral/ Opal/ Amber/ Moonstone. -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100002" name="Package: Andreas van Halter Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99804" min="1" max="1" chance="100" /> <!-- Package: Andreas van Halter Doll Lv. 2 -->
+		</capsuled_items>
+	</item>
+	<item id="100003" name="Package: Andreas van Halter Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99803" min="1" max="1" chance="100" /> <!-- Package: Andreas van Halter Doll Lv. 3 -->
+		</capsuled_items>
+	</item>
+	<item id="100004" name="Package: Andreas van Halter Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll_00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99802" min="1" max="1" chance="100" /> <!-- Package: Andreas van Halter Doll Lv. 4 -->
+		</capsuled_items>
+	</item>
+	<item id="100005" name="Package: Andreas van Halter Doll Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99801" min="1" max="1" chance="100" /> <!-- Package: Andreas van Halter Doll Lv. 5 -->
+		</capsuled_items>
+	</item>
+	<item id="100006" name="Package: +2 Antharas' Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_antaras_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95332" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Antharas' Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100007" name="Package: +2 Frintezza's Necklace (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95333" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Frintezza's Necklace - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100008" name="Package: +2 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95330" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Baium's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100009" name="Package: +2 Beleth' Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_dynasty_ring_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97074" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Beleth' Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100010" name="Package: +2 Zaken's Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95331" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Zaken's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100011" name="Package: +2 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95327" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Queen Ant's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100012" name="Package: +2 Orfen's Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95328" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Orfen's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100013" name="Package: +2 Ring of Core (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95329" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Ring of Core - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100014" name="Rare Accessory Fortune Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="100016" min="1" max="1" chance="5" /> <!-- Package: +3 Antharas' Earring (Sealed) - Sealed -->
+			<item id="100017" min="1" max="1" chance="5" /> <!-- Package: +3 Frintezza's Necklace (Sealed) - Sealed -->
+			<item id="100018" min="1" max="1" chance="5" /> <!-- Package: +3 Baium's Ring (Sealed) - Sealed -->
+			<item id="100019" min="1" max="1" chance="5" /> <!-- Package: +3 Beleth' Ring (Sealed) - Sealed -->
+			<item id="100020" min="1" max="1" chance="5" /> <!-- Package: +3 Zaken's Earring (Sealed) - Sealed -->
+			<item id="100021" min="1" max="1" chance="5" /> <!-- Package: +3 Queen Ant's Ring (Sealed) - Sealed -->
+			<item id="100022" min="1" max="1" chance="5" /> <!-- Package: +3 Orfen's Earring (Sealed) - Sealed -->
+			<item id="100023" min="1" max="1" chance="5" /> <!-- Package: +3 Ring of Core (Sealed) - Sealed -->
+			<item id="100006" min="1" max="1" chance="5" /> <!-- Package: +2 Antharas' Earring (Sealed) - Sealed -->
+			<item id="100007" min="1" max="1" chance="5" /> <!-- Package: +2 Frintezza's Necklace (Sealed) - Sealed -->
+			<item id="100008" min="1" max="1" chance="5" /> <!-- Package: +2 Baium's Ring (Sealed) - Sealed -->
+			<item id="100009" min="1" max="1" chance="5" /> <!-- Package: +2 Beleth' Ring (Sealed) - Sealed -->
+			<item id="100010" min="1" max="1" chance="5" /> <!-- Package: +2 Zaken's Earring (Sealed) - Sealed -->
+			<item id="100011" min="1" max="1" chance="5" /> <!-- Package: +2 Queen Ant's Ring (Sealed) - Sealed -->
+			<item id="100012" min="1" max="1" chance="5" /> <!-- Package: +2 Orfen's Earring (Sealed) - Sealed -->
+			<item id="100013" min="1" max="1" chance="5" /> <!-- Package: +2 Ring of Core (Sealed) - Sealed -->
+			<item id="94386" min="1" max="1" chance="5" /> <!-- Improved Scroll: Enchant Rare Accessories - Sealed -->
+			<item id="94384" min="1" max="1" chance="5" /> <!-- Scroll: Enchant Rare Accessories - Sealed -->
+			<item id="97860" min="1" max="1" chance="5" /> <!-- Stable Scroll: Enchant Rare Accessories - Sealed -->
+			<item id="94424" min="1" max="1" chance="5" /> <!-- Augmenting Stone: Accessory - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100015" name="Package: +6 Hunter's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_earing_of_blessing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98931" min="1" max="1" minEnchant="6" maxEnchant="6" chance="100" /> <!-- Hunter's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100016" name="Package: +3 Antharas' Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_antaras_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95332" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Antharas' Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100017" name="Package: +3 Frintezza's Necklace (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95333" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Frintezza's Necklace - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100018" name="Package: +3 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95330" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Baium's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100019" name="Package: +3 Beleth' Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_dynasty_ring_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97074" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Beleth' Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100020" name="Package: +3 Zaken's Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95331" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Zaken's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100021" name="Package: +3 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95327" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Queen Ant's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100022" name="Package: +3 Orfen's Earring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95328" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Orfen's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100023" name="Package: +3 Ring of Core (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95329" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Ring of Core - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="100024" name="Baium Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 2> Skill Cooldown -3% P. Def. +12% M. Def. +12% Silence Resistance +40% Fear Resistance +40% Paralysis Resistance +20% Knockback Resistance +20% Pull Resistance +20% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Baium Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100025" name="Baium Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 3> Skill Cooldown -4% P. Def. +15% M. Def. +15% Silence Resistance +45% Fear Resistance +45% Paralysis Resistance +25% Knockback Resistance +25% Pull Resistance +25% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Baium Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100026" name="Baium Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 4> Skill Cooldown -4% P. Def. +18% M. Def. +18% Silence Resistance +45% Fear Resistance +45% Paralysis Resistance +25% Knockback Resistance +25% Pull Resistance +27% Shock Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Baium Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_baium_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100027" name="Queen Ant Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 2> P. Atk. +8% P. Critical Damage +8% P. Skill Critical Damage +8% Max HP +12% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Queen Ant Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100028" name="Queen Ant Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 3> P. Atk. +12% P. Critical Damage +10% P. Skill Critical Damage +10% Max HP +15% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Queen Ant Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100029" name="Queen Ant Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 4> P. Atk. +15% P. Critical Damage +12% P. Skill Critical Damage +12% Max HP +17% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Queen Ant Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100030" name="Orfen Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 2> M. Atk. +8% M. Skill Critical Damage +8% Max MP +12% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Orfen Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100031" name="Orfen Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 3> M. Atk. +15% M. Skill Critical Damage +10% Max MP +15% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Orfen Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100032" name="Orfen Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 4> M. Atk. +20% M. Skill Critical Damage +12% Max MP +17% Melee Weapon Resistance +1% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Orfen Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100033" name="Frintezza Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 2> STR/ INT +1 DEX/ WIT +1 CON/ MEN +1 Skill Power +2% Atk. Spd. +50 Casting Spd. +50 Speed +2 Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Frintezza Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100034" name="Frintezza Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 3> STR/ INT +2 DEX/ WIT +2 CON/ MEN +2 Skill Power +5% Atk. Spd. +100 Casting Spd. +100 Speed +5 Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Frintezza Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100035" name="Frintezza Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 4> STR/ INT +2 DEX/ WIT +3 CON/ MEN +2 Skill Power +6% Atk. Spd. +110 Casting Spd. +110 Speed +5 Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Frintezza Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100036" name="Zaken Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Zaken Doll's Sorcery Lv. 2> Skill Critical Rate +40 HP Recovery Potions' Effect +50 Skill Critical Damage +200 Absorbs 2% of inflicted damage as HP (with a certain chance) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Zaken Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100037" name="Zaken Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Zaken Doll's Sorcery Lv. 3> Skill Critical Rate +60 HP Recovery Potions' Effect +80 Skill Critical Damage +300 Absorbs 3% of inflicted damage as HP (with a certain chance) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Zaken Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100038" name="Zaken Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Zaken Doll's Sorcery Lv. 4> Skill Critical Rate +70 HP Recovery Potions' Effect +110 Skill Critical Damage +300 Absorbs 3% of inflicted damage as HP (with a certain chance) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Zaken Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100039" name="Core Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Core Doll's Sorcery Lv. 2> Received Skill Critical Damage -10% Received Skill Critical Rate -5% Shock Resistance +20% Sleep Resistance +20% Knockback Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Core Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100040" name="Core Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Core Doll's Sorcery Lv. 3> Received Skill Critical Damage -15% Received Skill Critical Rate -8% Shock Resistance +30% Sleep Resistance +30% Knockback Resistance +20% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Core Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100041" name="Core Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Core Doll's Sorcery Lv. 4> Received Skill Critical Damage -17% Received Skill Critical Rate -10% Shock Resistance +35% Sleep Resistance +35% Knockback Resistance +20% Paralysis Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Core Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_core_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100042" name="Antharas Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Antharas Doll's Sorcery Lv. 2> CON +2 MEN +2 Received damage -5% Knockback Resistance +10% Shock Resistance +10% Pull Resistance +10% Soulshot Damage Resistance +3% Spiritshot Damage Resistance +3% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Antharas Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100043" name="Antharas Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Antharas Doll's Sorcery Lv. 3> CON +3 MEN +3 Received damage -10% Knockback Resistance +20% Shock Resistance +20% Pull Resistance +20% Soulshot Damage Resistance +10% Spiritshot Damage Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Antharas Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100044" name="Antharas Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Antharas Doll's Sorcery Lv. 4> CON +4 MEN +4 Received damage -12% Knockback Resistance +25% Shock Resistance +25% Pull Resistance +25% Soulshot Damage Resistance +12% Spiritshot Damage Resistance +12% Imprisonment Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Antharas Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100045" name="Behemoth Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 2> Damage decrease ignore +200 Skill Critical Damage +5% Hold Resistance +10% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Behemoth Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100046" name="Behemoth Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 3> Damage decrease ignore +300 Skill Critical Damage +10% Hold Resistance +20% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Behemoth Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100047" name="Behemoth Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 4> Damage decrease ignore +400 Skill Critical Damage +15% Hold Resistance +22% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Behemoth Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100048" name="Behemoth Doll Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 5> Damage decrease ignore +500 Skill Critical Damage +20% Hold Resistance +25% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Behemoth Doll Lv. 5 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100049" name="Glakias Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 2> All Weapon P. Atk. +10 All Weapon M. Atk. +10 Soulshot damage +5% Spiritshot damage +5% Recovers 100 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100050" name="Glakias Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 3> All Weapon P. Atk. +15 All Weapon M. Atk. +15 Soulshot damage +8% Spiritshot damage +8% Recovers 150 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100051" name="Glakias Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 4> All Weapon P. Atk. +20 All Weapon M. Atk. +20 Soulshot damage +10% Spiritshot damage +10% Recovers 200 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll_00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100052" name="Glakias Doll Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 5> All Weapon P. Atk. +35 All Weapon M. Atk. +35 Soulshot damage +15% Spiritshot damage +15% Recovers 300 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 5 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100053" name="Spellbook Coupon - 4 Stars" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Spellbook - 4 Stars <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.ev_sb_4_trade_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100054" name="Doll Craft Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to obtain Doll Coupon Lv. 2 (Sealed) through the special craft. -->
+		<set name="icon" val="icon.bm_boss_doll_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100055" name="Doll Coupon Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 of the items for exchange. <font color=EEAA22><Items for exchange></font> Glakias Doll Lv. 2 (Sealed) - 10 coupons Behemoth Doll Lv. 2 (Sealed) - 10 coupons Antharas Doll Lv. 2 (Sealed) - 6 coupons Baium Doll Lv. 2 (Sealed) - 3 coupons Frintezza Doll Lv. 2 (Sealed) - 3 coupons Zaken Doll Lv. 2 (Sealed) - 3 coupons Core Doll Lv. 2 (Sealed) - 2 coupons Queen Ant Doll Lv. 2 (Sealed) - 1 coupon Orfen Doll Lv. 2 (Sealed) - 1 coupon -->
+		<set name="icon" val="icon.bm_boss_doll_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100056" name="Doll Lucky Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100057" name="Shining Mask Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_battle_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100058" name="Sealed Doll Pack Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100059" name="Leona's Equipment Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_4_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100060" name="Leona's Supply Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100061" name="Package: Talisman of Aden (200 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100062" name="Package: Talisman of Aden (40 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100063" name="Package: Dragon Belt (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_bronze" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100064" name="Package: Circlet of Hero (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_barka_karm_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100065" name="Package: Talisman of Authority (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayhas_talisman_new" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100066" name="Package: Talisman of Eva (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100067" name="Package: Talisman of Speed (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_king_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100068" name="Package: Cloak of Protection (50 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100069" name="Package: Circlet of Hero (20 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100070" name="Package: Hunter's Earring (100 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_earing_of_blessing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100071" name="Package: Ancient Adena (250 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ancient_adena_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100072" name="Golden Key (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Required for creating various items through the special craft. -->
+		<set name="icon" val="icon.bm_dragon_key" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100073" name="Package: Core Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100074" name="+8 Frost Lord's Weapon Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Weapon <font color=ff6666>(unexchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100075" name="Package: Frintezza Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100076" name="Package: Antharas Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100077" name="Package: Glakias Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_glacies_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100078" name="Manager's +2 Rare Accessory Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 item from the list. <Available items> Package: +2 Queen Ant's Ring (Sealed) Package: +2 Orfen's Earring (Sealed) Package: +2 Zaken's Earring (Sealed) Package: +2 Ring of Core (Sealed) -->
+		<set name="icon" val="icon.bm_boss_accessory_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100079" name="Scroll of Blessing: Weapon/ Armor Selection Ticket (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose Scroll of Blessing: Weapon/ Armor <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100080" name="Package: +8 Frost Lord's Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100081" name="Package: +8 Frost Lord's Two-handed Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Two-handed Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100082" name="Package: +8 Frost Lord's Axe (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Axe <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_blunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100083" name="Package: +8 Frost Lord's Dagger (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Dagger <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dagger" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100084" name="Package: +8 Frost Lord's Spear (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Spear <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_pole" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100085" name="Package: +8 Frost Lord's Bow (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Bow <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_bow" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100086" name="Package: +8 Frost Lord's Blade Fists (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Blade Fists <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dualfist" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100087" name="Package: +8 Frost Lord's Magic Blunt Weapon (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Magic Blunt Weapon <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100088" name="Package: +8 Frost Lord's Staff (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Staff <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100089" name="Package: +8 Frost Lord's Ancient Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Ancient Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_ancientsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100090" name="Package: +8 Frost Lord's Rapier (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Rapier <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_rapier" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100091" name="Package: +8 Frost Lord's Pistols (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Pistols <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_shooter" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100092" name="Package: +8 Frost Lord's Dual Swords (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Dual Swords <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dual_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100093" name="Package: Core Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100094" name="Package: Frintezza Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100095" name="Package: Antharas Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100096" name="Package: Glakias Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_glacies_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100097" name="Package: Behemoth Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100098" name="Manager's Surprise Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.surprise_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100099" name="Package: Behemoth Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60800" toLevel="1" name="Basic Critical Damage_Increase_2000">
+		<!-- Basic Critical Damage_Increase_2000 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60801" toLevel="1" name="P. Skill Critical Damage_Increase_100">
+		<!-- P. Skill Critical Damage_Increase_100 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60802" toLevel="1" name="P. Skill Critical Damage_Increase_200">
+		<!-- P. Skill Critical Damage_Increase_200 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60803" toLevel="1" name="P. Skill Critical Damage_Increase_300">
+		<!-- P. Skill Critical Damage_Increase_300 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60804" toLevel="1" name="P. Skill Critical Damage_Increase_400">
+		<!-- P. Skill Critical Damage_Increase_400 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60805" toLevel="1" name="P. Skill Critical Damage_Increase_500">
+		<!-- P. Skill Critical Damage_Increase_500 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60806" toLevel="1" name="P. Skill Critical Damage_Increase_600">
+		<!-- P. Skill Critical Damage_Increase_600 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60807" toLevel="1" name="P. Skill Critical Damage_Increase_700">
+		<!-- P. Skill Critical Damage_Increase_700 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60808" toLevel="1" name="P. Skill Critical Damage_Increase_800">
+		<!-- P. Skill Critical Damage_Increase_800 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60809" toLevel="1" name="P. Skill Critical Damage_Increase_900">
+		<!-- P. Skill Critical Damage_Increase_900 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60810" toLevel="1" name="P. Skill Critical Damage_Increase_1000">
+		<!-- P. Skill Critical Damage_Increase_1000 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60811" toLevel="1" name="P. Skill Critical Damage_Increase_1100">
+		<!-- P. Skill Critical Damage_Increase_1100 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60812" toLevel="1" name="P. Skill Critical Damage_Increase_1200">
+		<!-- P. Skill Critical Damage_Increase_1200 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60813" toLevel="1" name="P. Skill Critical Damage_Increase_1300">
+		<!-- P. Skill Critical Damage_Increase_1300 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60814" toLevel="1" name="P. Skill Critical Damage_Increase_1400">
+		<!-- P. Skill Critical Damage_Increase_1400 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60815" toLevel="1" name="P. Skill Critical Damage_Increase_1500">
+		<!-- P. Skill Critical Damage_Increase_1500 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60816" toLevel="1" name="P. Skill Critical Damage_Increase_1600">
+		<!-- P. Skill Critical Damage_Increase_1600 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60817" toLevel="1" name="P. Skill Critical Damage_Increase_1700">
+		<!-- P. Skill Critical Damage_Increase_1700 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60818" toLevel="1" name="P. Skill Critical Damage_Increase_1800">
+		<!-- P. Skill Critical Damage_Increase_1800 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60819" toLevel="1" name="P. Skill Critical Damage_Increase_1900">
+		<!-- P. Skill Critical Damage_Increase_1900 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60820" toLevel="1" name="P. Skill Critical Damage_Increase_2000">
+		<!-- P. Skill Critical Damage_Increase_2000 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60821" toLevel="1" name="M. Skill Critical Damage_Increase_100">
+		<!-- M. Skill Critical Damage_Increase_100 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60822" toLevel="1" name="M. Skill Critical Damage_Increase_200">
+		<!-- M. Skill Critical Damage_Increase_200 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60823" toLevel="1" name="M. Skill Critical Damage_Increase_300">
+		<!-- M. Skill Critical Damage_Increase_300 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60824" toLevel="1" name="M. Skill Critical Damage_Increase_400">
+		<!-- M. Skill Critical Damage_Increase_400 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60825" toLevel="1" name="M. Skill Critical Damage_Increase_500">
+		<!-- M. Skill Critical Damage_Increase_500 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60826" toLevel="1" name="M. Skill Critical Damage_Increase_600">
+		<!-- M. Skill Critical Damage_Increase_600 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60827" toLevel="1" name="M. Skill Critical Damage_Increase_700">
+		<!-- M. Skill Critical Damage_Increase_700 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60828" toLevel="1" name="M. Skill Critical Damage_Increase_800">
+		<!-- M. Skill Critical Damage_Increase_800 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60829" toLevel="1" name="M. Skill Critical Damage_Increase_900">
+		<!-- M. Skill Critical Damage_Increase_900 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60830" toLevel="1" name="M. Skill Critical Damage_Increase_1000">
+		<!-- M. Skill Critical Damage_Increase_1000 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60831" toLevel="1" name="M. Skill Critical Damage_Increase_1100">
+		<!-- M. Skill Critical Damage_Increase_1100 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60832" toLevel="1" name="M. Skill Critical Damage_Increase_1200">
+		<!-- M. Skill Critical Damage_Increase_1200 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60833" toLevel="1" name="M. Skill Critical Damage_Increase_1300">
+		<!-- M. Skill Critical Damage_Increase_1300 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60834" toLevel="1" name="M. Skill Critical Damage_Increase_1400">
+		<!-- M. Skill Critical Damage_Increase_1400 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60835" toLevel="1" name="M. Skill Critical Damage_Increase_1500">
+		<!-- M. Skill Critical Damage_Increase_1500 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60836" toLevel="1" name="M. Skill Critical Damage_Increase_1600">
+		<!-- M. Skill Critical Damage_Increase_1600 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60837" toLevel="1" name="M. Skill Critical Damage_Increase_1700">
+		<!-- M. Skill Critical Damage_Increase_1700 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60838" toLevel="1" name="M. Skill Critical Damage_Increase_1800">
+		<!-- M. Skill Critical Damage_Increase_1800 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60839" toLevel="1" name="M. Skill Critical Damage_Increase_1900">
+		<!-- M. Skill Critical Damage_Increase_1900 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60840" toLevel="1" name="M. Skill Critical Damage_Increase_2000">
+		<!-- M. Skill Critical Damage_Increase_2000 -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60841" toLevel="1" name="5% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60842" toLevel="1" name="10% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60843" toLevel="1" name="15% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60844" toLevel="1" name="20% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60845" toLevel="1" name="25% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60846" toLevel="1" name="30% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60847" toLevel="1" name="35% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60848" toLevel="1" name="40% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60849" toLevel="1" name="45% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60850" toLevel="1" name="50% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60851" toLevel="1" name="55% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60852" toLevel="1" name="60% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60853" toLevel="1" name="65% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60854" toLevel="1" name="70% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60855" toLevel="1" name="75% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60856" toLevel="1" name="80% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60857" toLevel="1" name="85% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60858" toLevel="1" name="90% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60859" toLevel="1" name="95% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60860" toLevel="1" name="100% Received PvE Damage From Basic Attacks Decrease">
+		<!-- Received PvE damage from basic attacks -100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60861" toLevel="1" name="5% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60862" toLevel="1" name="10% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60863" toLevel="1" name="15% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60864" toLevel="1" name="20% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60865" toLevel="1" name="25% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60866" toLevel="1" name="30% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60867" toLevel="1" name="35% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60868" toLevel="1" name="40% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60869" toLevel="1" name="45% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60870" toLevel="1" name="50% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60871" toLevel="1" name="55% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60872" toLevel="1" name="60% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60873" toLevel="1" name="65% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60874" toLevel="1" name="70% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60875" toLevel="1" name="75% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60876" toLevel="1" name="80% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60877" toLevel="1" name="85% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60878" toLevel="1" name="90% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60879" toLevel="1" name="95% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60880" toLevel="1" name="100% Received P. Skill Damage in PvE Decrease">
+		<!-- Received P. Skill Damage in PvE -100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60881" toLevel="1" name="5% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60882" toLevel="1" name="10% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60883" toLevel="1" name="15% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60884" toLevel="1" name="20% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60885" toLevel="1" name="25% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60886" toLevel="1" name="30% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60887" toLevel="1" name="35% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60888" toLevel="1" name="40% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60889" toLevel="1" name="45% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60890" toLevel="1" name="50% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60891" toLevel="1" name="55% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60892" toLevel="1" name="60% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60893" toLevel="1" name="65% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60894" toLevel="1" name="70% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60895" toLevel="1" name="75% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60896" toLevel="1" name="80% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60897" toLevel="1" name="85% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60898" toLevel="1" name="90% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60899" toLevel="1" name="95% Received M. Skill Damage in PvE Decrease">
+		<!-- Received M. Skill Damage in PvE -95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

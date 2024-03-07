@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61000" toLevel="1" name="100% P. Skill Damage in PvE Increase">
+		<!-- P. Skill Damage in PvE 100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61001" toLevel="1" name="5% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61002" toLevel="1" name="10% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61003" toLevel="1" name="15% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61004" toLevel="1" name="20% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61005" toLevel="1" name="25% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61006" toLevel="1" name="30% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61007" toLevel="1" name="35% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61008" toLevel="1" name="40% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61009" toLevel="1" name="45% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61010" toLevel="1" name="50% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61011" toLevel="1" name="55% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61012" toLevel="1" name="60% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61013" toLevel="1" name="65% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61014" toLevel="1" name="70% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61015" toLevel="1" name="75% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61016" toLevel="1" name="80% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61017" toLevel="1" name="85% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61018" toLevel="1" name="90% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61019" toLevel="1" name="95% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61020" toLevel="1" name="100% M. Skill Damage in PvE Increase">
+		<!-- M. Skill Damage in PvE 100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61021" toLevel="1" name="5% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61022" toLevel="1" name="10% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61023" toLevel="1" name="15% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61024" toLevel="1" name="20% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61025" toLevel="1" name="25% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61026" toLevel="1" name="30% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61027" toLevel="1" name="35% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61028" toLevel="1" name="40% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61029" toLevel="1" name="45% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61030" toLevel="1" name="50% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61031" toLevel="1" name="55% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61032" toLevel="1" name="60% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61033" toLevel="1" name="65% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61034" toLevel="1" name="70% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61035" toLevel="1" name="75% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61036" toLevel="1" name="80% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61037" toLevel="1" name="85% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61038" toLevel="1" name="90% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61039" toLevel="1" name="95% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61040" toLevel="1" name="100% PvP Damage From Basic Attacks Increase">
+		<!-- PvP damage from basic attacks 100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61041" toLevel="1" name="5% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61042" toLevel="1" name="10% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61043" toLevel="1" name="15% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61044" toLevel="1" name="20% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61045" toLevel="1" name="25% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61046" toLevel="1" name="30% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61047" toLevel="1" name="35% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61048" toLevel="1" name="40% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61049" toLevel="1" name="45% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61050" toLevel="1" name="50% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61051" toLevel="1" name="55% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61052" toLevel="1" name="60% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61053" toLevel="1" name="65% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61054" toLevel="1" name="70% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61055" toLevel="1" name="75% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61056" toLevel="1" name="80% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61057" toLevel="1" name="85% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61058" toLevel="1" name="90% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61059" toLevel="1" name="95% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61060" toLevel="1" name="100% P. Skill Damage in PvP Increase">
+		<!-- P. Skill Damage in PvP 100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61061" toLevel="1" name="5% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 5% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61062" toLevel="1" name="10% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61063" toLevel="1" name="15% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 15% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61064" toLevel="1" name="20% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 20% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61065" toLevel="1" name="25% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 25% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61066" toLevel="1" name="30% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 30% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61067" toLevel="1" name="35% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 35% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61068" toLevel="1" name="40% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 40% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61069" toLevel="1" name="45% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 45% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61070" toLevel="1" name="50% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 50% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61071" toLevel="1" name="55% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 55% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61072" toLevel="1" name="60% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 60% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61073" toLevel="1" name="65% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 65% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61074" toLevel="1" name="70% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 70% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61075" toLevel="1" name="75% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61076" toLevel="1" name="80% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61077" toLevel="1" name="85% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61078" toLevel="1" name="90% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 90% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61079" toLevel="1" name="95% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61080" toLevel="1" name="100% M. Skill Damage in PvP Increase">
+		<!-- M. Skill Damage in PvP 100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61081" toLevel="1" name="replace a to b">
+		<!-- Power Strike to Arena Fatal Strike -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61082" toLevel="1" name="replace b to c">
+		<!-- Fatal Strike to Armor Crush -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61083" toLevel="1" name="replace c to d">
+		<!-- Armor Crush to Demolition Impact -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61084" toLevel="1" name="replace d to a">
+		<!-- Demolition Impact to Power Strike -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61085" toLevel="1" name="replace a to c">
+		<!-- Power Strike to Armor Crush -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61086" toLevel="1" name="replace a block">
+		<!-- Forced Power Strike -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61091" toLevel="1" name="Test P. Skill Evasion 10%">
+		<!-- P. Skill Evasion 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61092" toLevel="1" name="Test P. Skill Evasion 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61093" toLevel="1" name="Test P. Skill Evasion 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61094" toLevel="1" name="Test P. Skill Evasion 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61095" toLevel="1" name="Test P. Skill Evasion 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61096" toLevel="1" name="Test P. Skill Evasion 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61097" toLevel="1" name="Test P. Skill Evasion 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61098" toLevel="1" name="Test P. Skill Evasion 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61099" toLevel="1" name="Test P. Skill Evasion 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

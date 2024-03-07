@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95800" name="option_id_95800">
+		<!-- Max MP +28 -->
+	</option>
+	<option id="95801" name="option_id_95801">
+		<!-- Max MP +30 -->
+	</option>
+	<option id="95802" name="option_id_95802">
+		<!-- Max MP +32 -->
+	</option>
+	<option id="95803" name="option_id_95803">
+		<!-- Max MP +35 -->
+	</option>
+	<option id="95804" name="option_id_95804">
+		<!-- Max MP +40 -->
+	</option>
+	<option id="95805" name="option_id_95805">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="95806" name="option_id_95806">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95807" name="option_id_95807">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95808" name="option_id_95808">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95809" name="option_id_95809">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95810" name="option_id_95810">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95811" name="option_id_95811">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95812" name="option_id_95812">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="95813" name="option_id_95813">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="95814" name="option_id_95814">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="95815" name="option_id_95815">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="95816" name="option_id_95816">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="95817" name="option_id_95817">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="95818" name="option_id_95818">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="95819" name="option_id_95819">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="95820" name="option_id_95820">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="95821" name="option_id_95821">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="95822" name="option_id_95822">
+		<!-- P. Evasion +1.7 -->
+	</option>
+	<option id="95823" name="option_id_95823">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="95824" name="option_id_95824">
+		<!-- P. Evasion +2.0 -->
+	</option>
+	<option id="95825" name="option_id_95825">
+		<!-- P. Evasion +3.0 -->
+	</option>
+	<option id="95826" name="option_id_95826">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95827" name="option_id_95827">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95828" name="option_id_95828">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95829" name="option_id_95829">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95830" name="option_id_95830">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95831" name="option_id_95831">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95832" name="option_id_95832">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="95833" name="option_id_95833">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="95834" name="option_id_95834">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="95835" name="option_id_95835">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="95836" name="option_id_95836">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="95837" name="option_id_95837">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="95838" name="option_id_95838">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="95839" name="option_id_95839">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="95840" name="option_id_95840">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="95841" name="option_id_95841">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="95842" name="option_id_95842">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="95843" name="option_id_95843">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="95844" name="option_id_95844">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="95845" name="option_id_95845">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="95846" name="option_id_95846">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95847" name="option_id_95847">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95848" name="option_id_95848">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95849" name="option_id_95849">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95850" name="option_id_95850">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95851" name="option_id_95851">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95852" name="option_id_95852">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95853" name="option_id_95853">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95854" name="option_id_95854">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95855" name="option_id_95855">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95856" name="option_id_95856">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95857" name="option_id_95857">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95858" name="option_id_95858">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95859" name="option_id_95859">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95860" name="option_id_95860">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95861" name="option_id_95861">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="95862" name="option_id_95862">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="95863" name="option_id_95863">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="95864" name="option_id_95864">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="95865" name="option_id_95865">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="95866" name="option_id_95866">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95867" name="option_id_95867">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95868" name="option_id_95868">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95869" name="option_id_95869">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95870" name="option_id_95870">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95871" name="option_id_95871">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95872" name="option_id_95872">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95873" name="option_id_95873">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95874" name="option_id_95874">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95875" name="option_id_95875">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95876" name="option_id_95876">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95877" name="option_id_95877">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95878" name="option_id_95878">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95879" name="option_id_95879">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="95880" name="option_id_95880">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="95881" name="option_id_95881">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="95882" name="option_id_95882">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="95883" name="option_id_95883">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="95884" name="option_id_95884">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="95885" name="option_id_95885">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="95886" name="option_id_95886">
+		<!-- P. Def. +10 -->
+	</option>
+	<option id="95887" name="option_id_95887">
+		<!-- P. Def. +16 -->
+	</option>
+	<option id="95888" name="option_id_95888">
+		<!-- P. Def. +22 -->
+	</option>
+	<option id="95889" name="option_id_95889">
+		<!-- P. Def. +28 -->
+	</option>
+	<option id="95890" name="option_id_95890">
+		<!-- P. Def. +34 -->
+	</option>
+	<option id="95891" name="option_id_95891">
+		<!-- P. Def. +40 -->
+	</option>
+	<option id="95892" name="option_id_95892">
+		<!-- P. Def. +46 -->
+	</option>
+	<option id="95893" name="option_id_95893">
+		<!-- P. Def. +52 -->
+	</option>
+	<option id="95894" name="option_id_95894">
+		<!-- P. Def. +58 -->
+	</option>
+	<option id="95895" name="option_id_95895">
+		<!-- P. Def. +64 -->
+	</option>
+	<option id="95896" name="option_id_95896">
+		<!-- P. Def. +70 -->
+	</option>
+	<option id="95897" name="option_id_95897">
+		<!-- P. Def. +76 -->
+	</option>
+	<option id="95898" name="option_id_95898">
+		<!-- P. Def. +82 -->
+	</option>
+	<option id="95899" name="option_id_95899">
+		<!-- P. Def. +88 -->
+	</option>
+</list>

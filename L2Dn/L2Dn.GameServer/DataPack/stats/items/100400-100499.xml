@@ -1,0 +1,1341 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="100400" name="Doll Pack Lv. 2 (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.unknown_figure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100401" name="Scroll: Enchant A-grade Weapon/ Armor Pack (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100402" name="Augmenting Stone Pack (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.r_mineral_unique_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100403" name="Blessed Augmenting Stone Pack (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.renewal_mineral_r" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100404" name="Package: Hidden Power Booster (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain Hidden Power Booster <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.etc_powder_orange_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100405" name="Doll Pack Lv. 1 (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100406" name="Doll Pack Lv. 2 (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100407" name="Doll Pack Lv. 3 (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100408" name="Rare Accessory Pack (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100409" name="Jewelry Box Lv. 5 (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_shhadai" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100410" name="+7 Agathion Pack (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.star_agathion_cube" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100411" name="+7 Talisman Pack (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font> The pack can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100412" name="Boss Weapon Coupon (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain 1 Boss weapon <font color=ff6666>(unexchangeable)</font> of your choice. <font color=ff6666>Note!</font> The coupon can be traded, but items received with it are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.boss_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100413" name="Frost Lord's Weapon Coupon (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain 1 Frost Lord's weapon <font color=ff6666>(unexchangeable)</font> of your choice. <font color=ff6666>Note!</font> The coupon can be traded, but its contents are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100414" name="+5 Special Armor Coupon (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain 1 special armor <font color=ff6666>(unexchangeable)</font> of your choice. <font color=EEAA22><Items for exchange></font> +5 Ice Crystal Breastplate (1 coupon) +5 Ice Crystal Gaiters (1 coupon) +5 Leather Armor of Lightning (1 coupon) +5 Leather Leggings of Lightning (1 coupon) +5 Flaming Tunic (1 coupon) +5 Flaming Stockings (1 coupon) +5 Helmet of Mana (1 coupon) +5 Stun Gauntlets (1 coupon) +5 Boots of Evasion (1 coupon) <font color=ff6666>Note!</font> The coupon can be traded, but items received with it are <font color=ff6666>unexchangeable</font>. -->
+		<set name="icon" val="icon.rare_armor_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100415" name="Sealed Doll Pack Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100416" name="Sealed Doll Pack Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100417" name="Sealed Doll Pack Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100418" name="Sealed Doll Pack Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_valakas_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100419" name="Sealed Doll Pack Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_valakas_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100420" name="Sealed Doll Pack Lv. 1-5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100421" name="Shining Doll Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100422" name="+6 Enchanted Equipment Lucky Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100423" name="Immortal Baium's Treasure Chest (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.freya_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100424" name="GM Blessing Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100425" name="Package: Ancient Adena (250 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ancient_adena_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100426" name="Full Pack of Ancient Adena" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100427" name="Appearance - Assassin's Dual Swords" additionalName="Sealed" type="Weapon">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">129</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100428" name="Spellbook: Indestructible Blade" type="EtcItem">
+		<!-- A spellbook for learning the Indestructible Blade skill. <Class> Duelist <Skill effect> Attacks the target inflicting Imprisonment on them. Imprisoned enemies can be attacked only by the Duelist. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Indestructible Seal -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100429" name="Spellbook: Ultimate Rising Attack" type="EtcItem">
+		<!-- A book for learning the Ultimate Rising Attack skill. <Class> Duelist <Skill effect> Deals sword damage, its amount depends on attack range. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Rising Attack - Amazing Rising Attack - Amazing Rising Attack Mastery - Blade Rage -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100430" name="Spellbook: Blade Rush" type="EtcItem">
+		<!-- A spellbook for learning the Blade Rush skill. <Class> Duelist <Skill effect> Rushes to the target and attacks them. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Rush -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100431" name="Spellbook: Tough Body: Dual Weapons" type="EtcItem">
+		<!-- A book for learning the Tough Body: Dual Weapons skill. <Class> Duelist <Skill effect> Increases P./ M. Def, Debuff Resistance, Anomaly Resistance, Buff Cancel Resistance, Skill Evasion. Deacreases received AoE Skill Damage. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100432" name="Spellbook: Final Secret: Dual Weapons" type="EtcItem">
+		<!-- A book for learning the Final Secret: Dual Weapons skill. <Class> Duelist <Skill effect> Increases P. Skill Power, damage, Max HP, Bow Resistance, M. Damage Resistance, Speed. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100433" name="Spellbook: Challenger: Master" type="EtcItem">
+		<!-- A book for learning the Challenger: Master skill. <Class> Duelist <Skill effect> You are craving for battle, and your sword is filled with incredible power. Increases P. Atk., P. Skill Power, P. Skill Critical Rate, P. Skill Critical Damage, P. Skill Damage, Shock Atk. Rate, Imprisonment Atk. Rate, Max HP, Atk. Spd., Speed. Skill upgrade Triple Slash → Triple Slash - Master Blade Wave → Blade Wave - Challenger Slashing Blades → Slashing Blades - Master Enables <font color="FF8000">Blade Assault</font>. <font color="FF8000">Blade Assault</font> deals heavy damage twice and applies a debuff that decreases Imprisonment Resistance. With a certain chance, makes 1 attack at surrounding enemies and applies a debuff that increases their received AoE Skill Damage. Killing an enemy with <font color="FF8000">Blade Assault</font> decreases the <font color="FF8000">Blade Assault's</font> cooldown. When the target is killed, the skill can be used consecutively for 3 sec. (Max 2 times) -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100434" name="Spellbook: Indestructible Blade" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Indestructible Blade skill. <Class> Duelist <Skill effect> Attacks the target inflicting Imprisonment on them. Imprisoned enemies can be attacked only by the Duelist. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Indestructible Seal -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100435" name="Spellbook: Ultimate Rising Attack" additionalName="Sealed" type="EtcItem">
+		<!-- A book for learning the Ultimate Rising Attack skill. <Class> Duelist <Skill effect> Deals sword damage, its amount depends on attack range. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Rising Attack - Amazing Rising Attack - Amazing Rising Attack Mastery - Blade Rage -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100436" name="Spellbook: Blade Rush" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Blade Rush skill. <Class> Duelist <Skill effect> Rushes to the target and attacks them. <font color=ff6666>Note!</font> The skill will be removed after learning a more powerful skill: - Rush -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100437" name="Spellbook: Tough Body: Dual Weapons" additionalName="Sealed" type="EtcItem">
+		<!-- A book for learning the Tough Body: Dual Weapons skill. <Class> Duelist <Skill effect> Increases P./ M. Def, Debuff Resistance, Anomaly Resistance, Buff Cancel Resistance, Skill Evasion. Deacreases received AoE Skill Damage. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100438" name="Spellbook: Final Secret: Dual Weapons" additionalName="Sealed" type="EtcItem">
+		<!-- A book for learning the Final Secret: Dual Weapons skill. <Class> Duelist <Skill effect> Increases P. Skill Power, damage, Max HP, Bow Resistance, M. Damage Resistance, Speed. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100439" name="Spellbook: Challenger: Master" additionalName="Sealed" type="EtcItem">
+		<!-- A book for learning the Challenger: Master skill. <Class> Duelist <Skill effect> You are craving for battle, and your sword is filled with incredible power. Increases P. Atk., P. Skill Power, P. Skill Critical Rate, P. Skill Critical Damage, P. Skill Damage, Shock Atk. Rate, Imprisonment Atk. Rate, Max HP, Atk. Spd., Speed. Skill upgrade Triple Slash → Triple Slash - Master Blade Wave → Blade Wave - Challenger Slashing Blades → Slashing Blades - Master Enables <font color="FF8000">Blade Assault</font>. <font color="FF8000">Blade Assault</font> deals heavy damage twice and applies a debuff that decreases Imprisonment Resistance. With a certain chance, makes 1 attack at surrounding enemies and applies a debuff that increases their received AoE Skill Damage. Killing an enemy with <font color="FF8000">Blade Assault</font> decreases the <font color="FF8000">Blade Assault's</font> cooldown. When the target is killed, the skill can be used consecutively for 3 sec. (Max 2 times) -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100440" name="Package: Agathion Dragon Egg (200 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_valakas_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100441" name="Package: +10 Agathion Dragon Egg" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_valakas_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100442" name="Pack of Seals (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100443" name="Dye Change Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- To change a dye type, use this coupon and pay a fee. -->
+		<set name="icon" val="icon.dye_trade_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100444" name="Spellbook Change Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- To change Spellbook Coupon, use this coupon and pay a fee. -->
+		<set name="icon" val="icon.skill_book_trade_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100445" name="Novice Spellbook Step-up Kit I" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100446" name="Novice Spellbook Step-up Kit II" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100447" name="Novice Spellbook Step-up Kit III" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100448" name="Novice Spellbook Step-up Kit IV" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100449" name="Watermelon Hat" additionalName="Sealed" type="Armor">
+		<!-- A funny watermelon-shaped head accessory. Enables the head-enlarging skill (cooldown: 5 min.). <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="BranchSys.icon.br_watermelon_cap_a_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100450" name="Bloodthirsty Blood Sword - One-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_cutter_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100451" name="Bloodthirsty Blood Sword - Dagger" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_shaper_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100452" name="Bloodthirsty Blood Sword - Two-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_slasher_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100453" name="Bloodthirsty Blood Sword - Fist Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_fist_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100454" name="Bloodthirsty Blood Sword - Spear" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_spear_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100455" name="Bloodthirsty Blood Sword - Bow" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_bow_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="100456" name="Bloodthirsty Blood Sword - One-handed Blunt Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehand_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100457" name="Bloodthirsty Blood Sword - Two-handed Blunt Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_spear_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100458" name="Bloodthirsty Blood Sword - One-handed Staff" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehand_magic_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100459" name="Bloodthirsty Blood Sword - Two-handed Staff" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_twohand_magic_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100460" name="Bloodthirsty Blood Sword - Dual Swords" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_dual_sword_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100463" name="Bloodthirsty Blood Sword - Firearms" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.beam_shooter" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="PISTOLS" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100464" name="Bloodthirsty Blood Sword - Ancient Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_slasher_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100465" name="Bloodthirsty Blood Sword - Rapier" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehane_magic_sword_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100466" name="Appearance Stone: Bloodthirsty Blood Sword" additionalName="Sealed" type="EtcItem">
+		<!-- A reward for being the first to reach Lv. 94. Changes your weapon's appearance to that of Blood Sword. The modified weapon's appearance can be restored with Scroll: Restore Equipment. Cannot be used with shields and sigils. <font color=ff6666>Note!</font> The weapon's enchant value does not affect the changed appearance's visual effects. -->
+		<set name="icon" val="icon.shape_shifting_dagger_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100467" name="Renewed Weapon Buff Stew (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Your weapon becomes as good as new, and receives the following effects. <Effects> P./ M. Atk. +100 P./ M. Def. +100 PvE damage +3% Received PvE damage -3% All received Critical Rate -5% All received Critical Damage -5% Sustains Sayha's Grace. Duration: 20 min. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. <Weapon/ shield/ sigil appearance change> One-handed sword: Blue Mackerel Rapier: Blue Mackerel One-handed blunt weapon: Blue Mackerel One-handed magic blunt weapon: Blue Mackerel Dual swords: Blue Mackerel Two-handed sword: Shark Ancient sword: Shark Dagger: Trumpetfish Spear: Squid Bow: Giant Crab Fist weapon: Lobster Two-handed magic blunt weapon: Sea Horse Firearms: Crayfish Shield: Turtle Sigil: Starfish -->
+		<set name="icon" val="icon.fish_stew_residence_luc" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100468" name="Defeated Monster Commander Trophy I" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_4_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100469" name="Defeated Monster Commander Trophy II" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_4_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100470" name="Defeated Monster Commander Trophy III" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_4_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100471" name="Defeated Elder Monster Trophy I" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100472" name="Defeated Elder Monster Trophy II" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100473" name="Defeated Elder Monster Trophy III" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100474" name="Defeated Elder Monster Trophy IV" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100475" name="Defeated Elder Monster Trophy V" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100476" name="Defeated Elder Monster Trophy VI" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100477" name="Invader's Supply Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100478" name="Vivacity Buff Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_2020_summer_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100479" name="Blood Sword - One-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_cutter_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100480" name="Blood Sword - Dagger" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_shaper_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100481" name="Blood Sword - Two-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_slasher_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100482" name="Blood Sword - Fist Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_fist_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100483" name="Blood Sword - Spear" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_spear_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100484" name="Blood Sword - Bow" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_bow_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="100485" name="Blood Sword - One-handed Blunt Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehand_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100486" name="Blood Sword - Two-handed Blunt Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_spear_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100487" name="Blood Sword - One-handed Staff" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehand_magic_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100488" name="Blood Sword - Two-handed Staff" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_twohand_magic_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100489" name="Blood Sword - Dual Swords" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_dual_sword_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100490" name="Blood Sword - Firearms" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.beam_shooter" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="PISTOLS" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100491" name="Blood Sword - Ancient Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_slasher_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100492" name="Blood Sword - Rapier" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.aka_manaf_onehane_magic_sword_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100493" name="Demonic Sword - One-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_cutter_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100494" name="Demonic Sword - Dagger" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_shaper_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100495" name="Demonic Sword - Two-handed Sword" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_slasher_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100496" name="Demonic Sword - Fist Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_fist_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100497" name="Demonic Sword - Spear" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_spear_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="100498" name="Demonic Sword - Bow" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_bow_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="100499" name="Demonic Sword - One-handed Blunt Weapon" type="Weapon">
+		<!-- An original appearance-modifying item. -->
+		<set name="icon" val="icon.zariche_onehand_blunt_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+</list>

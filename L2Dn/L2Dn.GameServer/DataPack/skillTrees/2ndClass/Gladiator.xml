@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="2" parentClassId="1">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="3" getLevel="60" levelUpSp="0">
+			<item id="57" count="6000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Accuracy" skillId="256" skillLevel="2" getLevel="40" levelUpSp="5500">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Rising Attack" skillId="1" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="4" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="5" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="6" getLevel="41" levelUpSp="6500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="7" getLevel="42" levelUpSp="6500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="8" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="9" getLevel="44" levelUpSp="9700" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="10" getLevel="45" levelUpSp="9700" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="11" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="12" getLevel="47" levelUpSp="13000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="13" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="14" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="15" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="16" getLevel="51" levelUpSp="19000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="17" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="18" getLevel="53" levelUpSp="27000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="19" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="20" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="21" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="22" getLevel="57" levelUpSp="37000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="23" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="24" getLevel="59" levelUpSp="54000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="25" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="26" getLevel="61" levelUpSp="54000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="27" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="28" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="29" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="30" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="31" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="32" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="33" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="34" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="35" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="36" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="37" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="38" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="39" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Rising Attack" skillId="1" skillLevel="40" getLevel="75" levelUpSp="180000" />
+		<skill skillName="Blade Movement" skillId="451" skillLevel="1" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Blade Movement" skillId="451" skillLevel="2" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Blade Movement" skillId="451" skillLevel="3" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="4" getLevel="41" levelUpSp="6500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="5" getLevel="42" levelUpSp="6500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="6" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Power Break" skillId="260" skillLevel="7" getLevel="44" levelUpSp="9700" />
+		<skill skillName="Power Break" skillId="260" skillLevel="8" getLevel="45" levelUpSp="9700" />
+		<skill skillName="Power Break" skillId="260" skillLevel="9" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Power Break" skillId="260" skillLevel="10" getLevel="47" levelUpSp="13000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="11" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="12" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="13" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="14" getLevel="51" levelUpSp="19000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="15" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="16" getLevel="53" levelUpSp="27000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="17" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="18" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="19" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="20" getLevel="57" levelUpSp="37000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="21" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="22" getLevel="59" levelUpSp="54000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="23" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="24" getLevel="61" levelUpSp="54000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="25" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="26" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="27" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="28" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="29" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="30" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="31" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="32" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="33" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="34" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="35" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="36" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="37" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Dual Weapon Defense" skillId="1605" skillLevel="1" getLevel="41" levelUpSp="6500" />
+		<skill skillName="Dual Weapon Defense" skillId="1605" skillLevel="2" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Dual Weapon Defense" skillId="1605" skillLevel="3" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="1" getLevel="40" levelUpSp="5500">
+			<removeSkill id="3" onlyReplaceByLearn="true" /> <!-- Power Strike -->
+			<removeSkill id="56" onlyReplaceByLearn="true" /> <!-- Power Shot -->
+			<removeSkill id="16" onlyReplaceByLearn="true" /> <!-- Mortal Blow -->
+			<removeSkill id="245" onlyReplaceByLearn="true" /> <!-- Wild Sweep -->
+		</skill>
+		<skill skillName="Triple Slash" skillId="261" skillLevel="2" getLevel="42" levelUpSp="6500" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="3" getLevel="44" levelUpSp="9700" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="4" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="5" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="6" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="7" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="8" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="9" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="10" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="11" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="12" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="13" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="14" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="15" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="16" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="17" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="18" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="19" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="20" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="21" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="22" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="23" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="24" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Triple Slash" skillId="261" skillLevel="25" getLevel="75" levelUpSp="180000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="4" getLevel="41" levelUpSp="6500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="5" getLevel="42" levelUpSp="6500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="6" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="7" getLevel="44" levelUpSp="9700" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="8" getLevel="45" levelUpSp="9700" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="9" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="10" getLevel="47" levelUpSp="13000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="11" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="12" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="13" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="14" getLevel="51" levelUpSp="19000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="15" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="16" getLevel="53" levelUpSp="27000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="17" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="18" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="19" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="20" getLevel="57" levelUpSp="37000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="21" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="22" getLevel="59" levelUpSp="54000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="23" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="24" getLevel="61" levelUpSp="54000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="25" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="26" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="27" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="28" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="29" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="30" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="31" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="32" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="33" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="34" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="35" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="36" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Blade Blaster" skillId="6" skillLevel="37" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="1" getLevel="47" levelUpSp="13000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="2" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="3" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="4" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="5" getLevel="51" levelUpSp="19000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="6" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="7" getLevel="53" levelUpSp="27000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="8" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="9" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="10" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="11" getLevel="57" levelUpSp="37000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="12" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="13" getLevel="59" levelUpSp="54000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="14" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="15" getLevel="61" levelUpSp="54000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="16" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="17" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="18" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="19" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="20" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="21" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="22" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="23" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="24" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="25" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="26" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="27" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Blade Storm Dance" skillId="7" skillLevel="28" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Pirate Transformation" skillId="1800" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="1" getLevel="41" levelUpSp="6500" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="2" getLevel="42" levelUpSp="6500" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="3" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="4" getLevel="44" levelUpSp="9700" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="5" getLevel="45" levelUpSp="9700" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="6" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="7" getLevel="47" levelUpSp="13000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="8" getLevel="48" levelUpSp="13000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="9" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="10" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="11" getLevel="51" levelUpSp="19000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="12" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="13" getLevel="53" levelUpSp="27000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="14" getLevel="54" levelUpSp="27000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="15" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="16" getLevel="56" levelUpSp="37000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="17" getLevel="57" levelUpSp="37000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="18" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="19" getLevel="59" levelUpSp="54000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="20" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="21" getLevel="61" levelUpSp="54000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="22" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="23" getLevel="63" levelUpSp="67000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="24" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="25" getLevel="65" levelUpSp="84000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="26" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="27" getLevel="67" levelUpSp="95000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="28" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="29" getLevel="69" levelUpSp="130000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="30" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="31" getLevel="71" levelUpSp="160000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="32" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="33" getLevel="73" levelUpSp="180000" />
+		<skill skillName="Blade Tide" skillId="9" skillLevel="34" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Dark Assassin Transformation" skillId="1801" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="White Assassin Transformation" skillId="1802" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="War Cry" skillId="78" skillLevel="2" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Dual Sword Mastery" skillId="47951" skillLevel="1" getLevel="40" levelUpSp="5500">
+			<removeSkill id="144" onlyReplaceByLearn="true" /> <!-- Dual Sword Mastery -->
+			<removeSkill id="141" onlyReplaceByLearn="true" /> <!-- Weapon Mastery -->
+			<removeSkill id="77" onlyReplaceByLearn="true" /> <!-- Ability to Attack -->
+			<removeSkill id="297" onlyReplaceByLearn="true" /> <!-- Duelist Spirit -->
+			<removeSkill id="257" onlyReplaceByLearn="true" /> <!-- Sword / Blunt Weapon Mastery -->
+			<removeSkill id="216" onlyReplaceByLearn="true" /> <!-- Polearm Mastery -->
+		</skill>
+		<skill skillName="Dual Sword Mastery" skillId="47951" skillLevel="2" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Dual Sword Mastery" skillId="47951" skillLevel="3" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Dual Sword Mastery" skillId="47951" skillLevel="4" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Light Armor Mastery" skillId="47952" skillLevel="1" getLevel="40" levelUpSp="5500">
+			<removeSkill id="227" onlyReplaceByLearn="true" /> <!-- Light Armor Mastery -->
+			<removeSkill id="91" onlyReplaceByLearn="true" /> <!-- Ability to Protect -->
+			<removeSkill id="142" onlyReplaceByLearn="true" /> <!-- Armor Mastery -->
+		</skill>
+		<skill skillName="Light Armor Mastery" skillId="47952" skillLevel="2" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Light Armor Mastery" skillId="47952" skillLevel="3" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Light Armor Mastery" skillId="47952" skillLevel="4" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Heavy Armor Mastery" skillId="47953" skillLevel="1" getLevel="40" levelUpSp="5500">
+			<removeSkill id="231" onlyReplaceByLearn="true" /> <!-- Heavy Armor Mastery -->
+			<removeSkill id="91" onlyReplaceByLearn="true" /> <!-- Ability to Protect -->
+			<removeSkill id="142" onlyReplaceByLearn="true" /> <!-- Armor Mastery -->
+		</skill>
+		<skill skillName="Heavy Armor Mastery" skillId="47953" skillLevel="2" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Heavy Armor Mastery" skillId="47953" skillLevel="3" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Heavy Armor Mastery" skillId="47953" skillLevel="4" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Recovery Mastery" skillId="47954" skillLevel="1" getLevel="40" levelUpSp="5500">
+			<removeSkill id="148" onlyReplaceByLearn="true" /> <!-- Vital Force -->
+			<removeSkill id="212" onlyReplaceByLearn="true" /> <!-- Quick HP Recovery -->
+			<removeSkill id="70" onlyReplaceByLearn="true" /> <!-- Emergency Rescue -->
+			<removeSkill id="211" onlyReplaceByLearn="true" /> <!-- Boost HP -->
+		</skill>
+		<skill skillName="Recovery Mastery" skillId="47954" skillLevel="2" getLevel="50" levelUpSp="19000" />
+		<skill skillName="Recovery Mastery" skillId="47954" skillLevel="3" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Recovery Mastery" skillId="47954" skillLevel="4" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Purify" skillId="88" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Lionheart" skillId="287" skillLevel="2" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Lionheart" skillId="287" skillLevel="3" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="1" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="2" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="3" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="4" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="5" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="6" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="7" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="8" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="9" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="10" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="11" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="12" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="13" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="14" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Rush" skillId="994" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Rush" skillId="994" skillLevel="2" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Bandage" skillId="34" skillLevel="2" getLevel="45" levelUpSp="9700" />
+		<skill skillName="Bandage" skillId="34" skillLevel="3" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Acumen" skillId="104" skillLevel="1" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Might" skillId="1068" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Empower" skillId="45105" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Focus" skillId="45109" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Haste" skillId="45111" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="5500">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="6" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="7" getLevel="43" levelUpSp="6500" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="8" getLevel="46" levelUpSp="9700" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="9" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="10" getLevel="52" levelUpSp="19000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="11" getLevel="55" levelUpSp="27000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="12" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="13" getLevel="60" levelUpSp="54000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="14" getLevel="62" levelUpSp="67000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="15" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="16" getLevel="66" levelUpSp="95000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="17" getLevel="68" levelUpSp="130000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="18" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="19" getLevel="72" levelUpSp="180000" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="20" getLevel="74" levelUpSp="180000" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="3" getLevel="40" levelUpSp="5500" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="5500">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="54000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Battle Roar" skillId="121" skillLevel="2" getLevel="40" levelUpSp="5500" />
+		<skill skillName="Battle Roar" skillId="121" skillLevel="3" getLevel="49" levelUpSp="13000" />
+		<skill skillName="Battle Roar" skillId="121" skillLevel="4" getLevel="58" levelUpSp="37000" />
+		<skill skillName="Battle Roar" skillId="121" skillLevel="5" getLevel="64" levelUpSp="84000" />
+		<skill skillName="Battle Roar" skillId="121" skillLevel="6" getLevel="70" levelUpSp="160000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="19000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="54000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+		<skill skillName="Sword Spirit" skillId="47933" skillLevel="1" getLevel="40" levelUpSp="5500" />
+	</skillTree>
+</list>

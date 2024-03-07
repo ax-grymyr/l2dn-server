@@ -1,0 +1,1350 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="96300" name="Spellbook: Dragon Slayer" type="EtcItem">
+		<!-- Required for learning the Dragon Slayer Transformation. <Classes>. All classes after the 3rd class change. <Skill effect>. Transforms into Dragon Slayer. Increases Max HP, Max MP, P. Atk./ M. Atk./ P. Def./ M. Def., Atk. Spd., Casting Spd. -->
+		<set name="icon" val="icon.si_phanteon_book" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="9300000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="96301" name="Package: +5 Breastplate of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t901_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94842" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Breastplate of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96302" name="Package: +5 Gaiters of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t901_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94843" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Gaiters of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96303" name="Package: +5 Leather Armor of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t902_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94846" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Leather Armor of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96304" name="Package: +5 Leather Leggings of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t902_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94847" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Leather Leggings of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96305" name="Package: +5 Tunic of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t903_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94850" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Tunic of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96306" name="Package: +5 Stockings of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t903_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94851" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Stockings of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96307" name="Package: +5 Leather Armor of Lightning" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Leather Armor of Lightning <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t101_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93317" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Leather Armor of Lightning - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96308" name="Package: +5 Leather Leggings of Lightning" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Leather Leggings of Lightning <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t102_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93318" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Leather Leggings of Lightning - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96309" name="Package: +5 Ice Crystal Breastplate" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Ice Crystal Breastplate <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t94_u_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93141" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Ice Crystal Breastplate - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96310" name="Package: +5 Ice Crystal Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Ice Crystal Gaiters <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t94_l_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93142" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Ice Crystal Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96311" name="Package: +5 Flaming Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Flaming Tunic <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t96_u_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93735" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Flaming Tunic - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96312" name="Package: +5 Flaming Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Flaming Stockings <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t96_l_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93736" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Flaming Stockings - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96313" name="Package: +5 Helmet of Mana" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Helmet of Mana <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94084" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Helmet of Mana - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96314" name="Package: +5 Boots of Evasion" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Boots of Evasion <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t100_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94086" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Boots of Evasion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96315" name="Package: +5 Stun Gauntlets" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Stun Gauntlets <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t96_g_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94264" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Stun Gauntlets - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96316" name="Package: +5 Sigil of Inevitability" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Sigil of Inevitability <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94300" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Sigil of Inevitability - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96317" name="Package: +5 Shield of Vengeance" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +5 Shield of Vengeance <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.shield_of_revenge" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94302" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Shield of Vengeance - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96318" name="Package: +5 Helmet of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95935" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Helmet of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96319" name="Package: +5 Gauntlets of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t901_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95936" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Gauntlets of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96320" name="Package: +5 Boots of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t901_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95937" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Boots of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96321" name="Package: +5 Sigil of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sigil_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95664" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Sigil of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96322" name="Package: +5 Shield of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shield_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95666" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Shield of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96323" name="Package: Scroll: Boost Attack (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.scrl_of_ladies_silver_knife_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94269" min="1000" max="1000" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96324" name="Package: Scroll: Boost Defense (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.scrl_of_ench_bracelet_lucien_01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94271" min="1000" max="1000" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96325" name="Package: XP Growth Scroll (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49674" min="1000" max="1000" chance="100" /> <!-- XP Growth Scroll - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96326" name="Package: Soulshot Ticket (5000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90907" min="5000" max="5000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96327" name="Package: Special HP Recovery Potion (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91690" min="1000" max="1000" chance="100" /> <!-- Special HP Recovery Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96328" name="Support Box: +4 Talisman of Eva (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.bm_eva_talisman" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96172" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Talisman of Eva - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="96329" name="Support Box: +4 Dragon Belt (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.r2_belt_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96173" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Dragon Belt (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96330" name="Support Box: +4 Cloak of Protection (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96174" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Cloak of Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96331" name="Support Box: +4 Talisman of Authority (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.sayhas_talisman_new" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96175" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Talisman of Authority - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="96332" name="Support Box: Einhasad's Pendant Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="BranchIcon.Icon.bm_pendant_pve_white" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96176" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 2 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96333" name="Support Box: +4 Circlet of Hero (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.accessory_barka_karm_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96177" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Circlet of Hero - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="96334" name="Support Box: Brooch Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96182" min="1" max="1" chance="100" /> <!-- Brooch Lv. 5 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96335" name="Support Box: Opal Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96183" min="1" max="1" chance="100" /> <!-- Opal Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96336" name="Support Box: Coral Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96184" min="1" max="1" chance="100" /> <!-- Coral Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96337" name="Support Box: Onyx Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96185" min="1" max="1" chance="100" /> <!-- Onyx Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96338" name="Support Box: Spinel Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96186" min="1" max="1" chance="100" /> <!-- Spinel Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96339" name="Support Box: Zircon Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96187" min="1" max="1" chance="100" /> <!-- Zircon Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96340" name="Support Box: Moonstone Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96188" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 4 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96341" name="Support Box: Agathion Bracelet Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96189" min="1" max="1" chance="100" /> <!-- Agathion Bracelet Lv. 5 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96342" name="Support Box: +5 Agathion Ignis (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.agathion_fire_1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96190" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Ignis (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96343" name="Support Box: +5 Agathion Nebula (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.agathion_water_1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96191" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Nebula (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96344" name="Support Box: +5 Agathion Procella (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.agathion_wind_1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96192" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Procella (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96345" name="Support Box: +5 Agathion Petram (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.agathion_earth_1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96193" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Petram (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96346" name="Support Box: +5 Agathion Joy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.pleasure_agathion_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96194" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Joy (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96347" name="Support Box: Talisman Bracelet Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.dimension_bracelet_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96195" min="1" max="1" chance="100" /> <!-- Talisman Bracelet Lv. 5 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96348" name="Support Box: Venir's Talisman Lv. 12 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96196" min="1" max="1" chance="100" /> <!-- Venir's Talisman Lv. 12 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="96349" name="Test Period 3" additionalName="2 min." type="EtcItem">
+		<!-- Item type: Cube. Double-click to obtain 1 Scroll: Summon Storm and 1 Sayha's Treasure Chest. (Can be used only once a day.) -->
+		<set name="icon" val="icon.sa_cube" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96350" name="Antharas Expedition Mark" additionalName="Sealed" type="EtcItem">
+		<!-- Granted to brave adventurers who managed to defeat Antharas. <How to use>. Special Craft - Spellbook: Dragon Slayer -->
+		<set name="icon" val="icon.etc_kyles_blood_dragon_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96351" name="Faded Antharas' Earring" type="EtcItem">
+		<!-- Antharas' Earring that lost all its power. <How to use>. Special Craft - Antharas' Earring -->
+		<set name="icon" val="icon.earring_of_antaras_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96352" name="Beleth' Treasure Chest Key" additionalName="Sealed" type="EtcItem">
+		<!-- Granted to brave adventurers who managed to defeat Beleth. <How to use>. Required for opening Beleth' Treasure Chest. Disappears after use. -->
+		<set name="icon" val="icon.bereth_reward_box_key" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96353" name="Package: Sayha's Storm (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_storm" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91713" min="1000" max="1000" chance="100" /> <!-- Sayha's Storm -->
+		</capsuled_items>
+	</item>
+	<item id="96354" name="Scroll: Enchant Aden Cloak" type="EtcItem">
+		<!-- Required for enchanting Aden Cloak. The maximum enchant value is +5. -->
+		<set name="icon" val="icon.sayha2017_scrl" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="96355" name="STR Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96356" name="STR Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96357" name="STR Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +25. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 3. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96358" name="STR Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +50. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96359" name="STR Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +75. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96360" name="STR Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +100. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96361" name="STR Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +125. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 7. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96362" name="STR Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +150. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 8. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96363" name="STR Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +175. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 9. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96364" name="STR Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +4. <font color=bbaa88><Additional effect></font>. P. Atk. +200. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96365" name="STR Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +225. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96366" name="STR Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +250. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96367" name="STR Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +275. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96368" name="STR Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +300. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96369" name="STR Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +325. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96370" name="STR Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +350. P. Skill Critical Rate +0.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96371" name="STR Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +375. P. Skill Critical Rate +1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96372" name="STR Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +400. P. Skill Critical Rate +1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96373" name="STR Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying STR Pattern. <font color=bbaa88><Effect></font>. STR +5. <font color=bbaa88><Additional effect></font>. P. Atk. +425. P. Skill Critical Rate +2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96374" name="STR Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying STR Pattern. Applying the pattern requires 1 dye. <Effect>. STR +5. <Additional effect>. P. Atk. +450. P. Skill Critical Rate +3%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon1.g_premium_dye_attribute_unholy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96375" name="CON Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 1 -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96376" name="CON Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96377" name="CON Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +32. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 3. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96378" name="CON Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +65. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96379" name="CON Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +97. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96380" name="CON Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +130. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96381" name="CON Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +162. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 7. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96382" name="CON Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +195. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 8. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96383" name="CON Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +227. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 9. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96384" name="CON Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +4. <font color=bbaa88><Additional effect></font>. P. Def. +260. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96385" name="CON Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +292. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96386" name="CON Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +325. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96387" name="CON Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +357. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96388" name="CON Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +390. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96389" name="CON Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +422. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96390" name="CON Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +455. Received P. Skill Damage -1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96391" name="CON Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +487. Received P. Skill Damage -1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96392" name="CON Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +520. Received P. Skill Damage -2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96393" name="CON Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying CON Pattern. <font color=bbaa88><Effect></font>. CON +5. <font color=bbaa88><Additional effect></font>. P. Def. +552. Received P. Skill Damage -3%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96394" name="CON Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying CON Pattern. Applying the pattern requires 1 dye. <Effect>. CON +5. <Additional effect>. P. Def. +585. Received P. Skill Damage -5%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon5.g_premium_dye_attribute_fire" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96395" name="DEX Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 1 -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96396" name="DEX Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96397" name="DEX Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +0.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 3. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96398" name="DEX Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +0.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96399" name="DEX Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +1.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

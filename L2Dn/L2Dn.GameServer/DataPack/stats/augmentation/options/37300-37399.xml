@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37300" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37301" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37302" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +7% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37303" name="m_damage_resistance_ls_accessory">
+		<!-- M. Damage Resistance +10% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37304" name="max_hp_ls_accessory">
+		<!-- Max HP +5 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37305" name="max_hp_ls_accessory">
+		<!-- Max HP +8 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37306" name="max_hp_ls_accessory">
+		<!-- Max HP +11 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37307" name="max_hp_ls_accessory">
+		<!-- Max HP +14 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37308" name="max_hp_ls_accessory">
+		<!-- Max HP +17 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37309" name="max_hp_ls_accessory">
+		<!-- Max HP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37310" name="max_hp_ls_accessory">
+		<!-- Max HP +23 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37311" name="max_hp_ls_accessory">
+		<!-- Max HP +26 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37312" name="max_hp_ls_accessory">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37313" name="max_hp_ls_accessory">
+		<!-- Max HP +33 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37314" name="max_hp_ls_accessory">
+		<!-- Max HP +36 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37315" name="max_hp_ls_accessory">
+		<!-- Max HP +39 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37316" name="max_hp_ls_accessory">
+		<!-- Max HP +42 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37317" name="max_hp_ls_accessory">
+		<!-- Max HP +45 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37318" name="max_hp_ls_accessory">
+		<!-- Max HP +48 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37319" name="max_hp_ls_accessory">
+		<!-- Max HP +60 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37320" name="max_hp_ls_accessory">
+		<!-- Max HP +70 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37321" name="max_hp_ls_accessory">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37322" name="max_hp_ls_accessory">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37323" name="max_hp_ls_accessory">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37324" name="max_hp_ls_accessory">
+		<!-- Max HP +5 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37325" name="max_hp_ls_accessory">
+		<!-- Max HP +8 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37326" name="max_hp_ls_accessory">
+		<!-- Max HP +11 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37327" name="max_hp_ls_accessory">
+		<!-- Max HP +14 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37328" name="max_hp_ls_accessory">
+		<!-- Max HP +17 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37329" name="max_hp_ls_accessory">
+		<!-- Max HP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37330" name="max_hp_ls_accessory">
+		<!-- Max HP +23 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37331" name="max_hp_ls_accessory">
+		<!-- Max HP +26 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37332" name="max_hp_ls_accessory">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37333" name="max_hp_ls_accessory">
+		<!-- Max HP +33 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37334" name="max_hp_ls_accessory">
+		<!-- Max HP +36 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37335" name="max_hp_ls_accessory">
+		<!-- Max HP +39 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37336" name="max_hp_ls_accessory">
+		<!-- Max HP +42 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37337" name="max_hp_ls_accessory">
+		<!-- Max HP +45 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37338" name="max_hp_ls_accessory">
+		<!-- Max HP +48 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37339" name="max_hp_ls_accessory">
+		<!-- Max HP +60 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37340" name="max_hp_ls_accessory">
+		<!-- Max HP +70 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37341" name="max_hp_ls_accessory">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37342" name="max_hp_ls_accessory">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37343" name="max_hp_ls_accessory">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37344" name="max_hp_ls_accessory">
+		<!-- Max HP +5 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37345" name="max_hp_ls_accessory">
+		<!-- Max HP +8 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37346" name="max_hp_ls_accessory">
+		<!-- Max HP +11 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37347" name="max_hp_ls_accessory">
+		<!-- Max HP +14 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37348" name="max_hp_ls_accessory">
+		<!-- Max HP +17 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37349" name="max_hp_ls_accessory">
+		<!-- Max HP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37350" name="max_hp_ls_accessory">
+		<!-- Max HP +23 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37351" name="max_hp_ls_accessory">
+		<!-- Max HP +26 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37352" name="max_hp_ls_accessory">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37353" name="max_hp_ls_accessory">
+		<!-- Max HP +33 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37354" name="max_hp_ls_accessory">
+		<!-- Max HP +36 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37355" name="max_hp_ls_accessory">
+		<!-- Max HP +39 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37356" name="max_hp_ls_accessory">
+		<!-- Max HP +42 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37357" name="max_hp_ls_accessory">
+		<!-- Max HP +45 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37358" name="max_hp_ls_accessory">
+		<!-- Max HP +48 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37359" name="max_hp_ls_accessory">
+		<!-- Max HP +60 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37360" name="max_hp_ls_accessory">
+		<!-- Max HP +70 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37361" name="max_hp_ls_accessory">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37362" name="max_hp_ls_accessory">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37363" name="max_hp_ls_accessory">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37364" name="max_mp_ls_accessory">
+		<!-- Max MP +5 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37365" name="max_mp_ls_accessory">
+		<!-- Max MP +8 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37366" name="max_mp_ls_accessory">
+		<!-- Max MP +11 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37367" name="max_mp_ls_accessory">
+		<!-- Max MP +14 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37368" name="max_mp_ls_accessory">
+		<!-- Max MP +17 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37369" name="max_mp_ls_accessory">
+		<!-- Max MP +20 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37370" name="max_mp_ls_accessory">
+		<!-- Max MP +23 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37371" name="max_mp_ls_accessory">
+		<!-- Max MP +26 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37372" name="max_mp_ls_accessory">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37373" name="max_mp_ls_accessory">
+		<!-- Max MP +33 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37374" name="max_mp_ls_accessory">
+		<!-- Max MP +36 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37375" name="max_mp_ls_accessory">
+		<!-- Max MP +39 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37376" name="max_mp_ls_accessory">
+		<!-- Max MP +42 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37377" name="max_mp_ls_accessory">
+		<!-- Max MP +45 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37378" name="max_mp_ls_accessory">
+		<!-- Max MP +48 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37379" name="max_mp_ls_accessory">
+		<!-- Max MP +60 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37380" name="max_mp_ls_accessory">
+		<!-- Max MP +70 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37381" name="max_mp_ls_accessory">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37382" name="max_mp_ls_accessory">
+		<!-- Max MP +80 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37383" name="max_mp_ls_accessory">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37384" name="max_mp_ls_accessory">
+		<!-- Max MP +5 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37385" name="max_mp_ls_accessory">
+		<!-- Max MP +8 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37386" name="max_mp_ls_accessory">
+		<!-- Max MP +11 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37387" name="max_mp_ls_accessory">
+		<!-- Max MP +14 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37388" name="max_mp_ls_accessory">
+		<!-- Max MP +17 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37389" name="max_mp_ls_accessory">
+		<!-- Max MP +20 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37390" name="max_mp_ls_accessory">
+		<!-- Max MP +23 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37391" name="max_mp_ls_accessory">
+		<!-- Max MP +26 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37392" name="max_mp_ls_accessory">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37393" name="max_mp_ls_accessory">
+		<!-- Max MP +33 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37394" name="max_mp_ls_accessory">
+		<!-- Max MP +36 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37395" name="max_mp_ls_accessory">
+		<!-- Max MP +39 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37396" name="max_mp_ls_accessory">
+		<!-- Max MP +42 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37397" name="max_mp_ls_accessory">
+		<!-- Max MP +45 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37398" name="max_mp_ls_accessory">
+		<!-- Max MP +48 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37399" name="max_mp_ls_accessory">
+		<!-- Max MP +60 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

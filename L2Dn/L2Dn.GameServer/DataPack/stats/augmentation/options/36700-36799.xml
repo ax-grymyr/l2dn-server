@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36700" name="option_id_36700">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36701" name="option_id_36701">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36702" name="option_id_36702">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36703" name="option_id_36703">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="36704" name="option_id_36704">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36705" name="option_id_36705">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36706" name="option_id_36706">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36707" name="option_id_36707">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36708" name="option_id_36708">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36709" name="option_id_36709">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36710" name="option_id_36710">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36711" name="option_id_36711">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36712" name="option_id_36712">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36713" name="option_id_36713">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36714" name="option_id_36714">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36715" name="option_id_36715">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36716" name="option_id_36716">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36717" name="option_id_36717">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36718" name="option_id_36718">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36719" name="option_id_36719">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="36720" name="option_id_36720">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36721" name="option_id_36721">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36722" name="option_id_36722">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="36723" name="option_id_36723">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="36724" name="option_id_36724">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36725" name="option_id_36725">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36726" name="option_id_36726">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36727" name="option_id_36727">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36728" name="option_id_36728">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36729" name="option_id_36729">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36730" name="option_id_36730">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36731" name="option_id_36731">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36732" name="option_id_36732">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36733" name="option_id_36733">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36734" name="option_id_36734">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36735" name="option_id_36735">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36736" name="option_id_36736">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36737" name="option_id_36737">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36738" name="option_id_36738">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36739" name="option_id_36739">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36740" name="option_id_36740">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36741" name="option_id_36741">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36742" name="option_id_36742">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="36743" name="option_id_36743">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="36744" name="option_id_36744">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36745" name="option_id_36745">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36746" name="option_id_36746">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36747" name="option_id_36747">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36748" name="option_id_36748">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36749" name="option_id_36749">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36750" name="option_id_36750">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36751" name="option_id_36751">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36752" name="option_id_36752">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36753" name="option_id_36753">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36754" name="option_id_36754">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36755" name="option_id_36755">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36756" name="option_id_36756">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36757" name="option_id_36757">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36758" name="option_id_36758">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36759" name="option_id_36759">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36760" name="option_id_36760">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36761" name="option_id_36761">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36762" name="option_id_36762">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="36763" name="option_id_36763">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="36764" name="option_id_36764">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36765" name="option_id_36765">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36766" name="option_id_36766">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36767" name="option_id_36767">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36768" name="option_id_36768">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36769" name="option_id_36769">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36770" name="option_id_36770">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36771" name="option_id_36771">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36772" name="option_id_36772">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36773" name="option_id_36773">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36774" name="option_id_36774">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36775" name="option_id_36775">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36776" name="option_id_36776">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36777" name="option_id_36777">
+		<!-- Received Healing +1% -->
+	</option>
+	<option id="36778" name="option_id_36778">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36779" name="option_id_36779">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="36780" name="option_id_36780">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36781" name="option_id_36781">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="36782" name="option_id_36782">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="36783" name="option_id_36783">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="36784" name="option_id_36784">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="36785" name="option_id_36785">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="36786" name="option_id_36786">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="36787" name="option_id_36787">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="36788" name="option_id_36788">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="36789" name="option_id_36789">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="36790" name="option_id_36790">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="36791" name="option_id_36791">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="36792" name="option_id_36792">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="36793" name="option_id_36793">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="36794" name="option_id_36794">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="36795" name="option_id_36795">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="36796" name="option_id_36796">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="36797" name="option_id_36797">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="36798" name="option_id_36798">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="36799" name="option_id_36799">
+		<!-- P. Atk. +100 -->
+	</option>
+</list>

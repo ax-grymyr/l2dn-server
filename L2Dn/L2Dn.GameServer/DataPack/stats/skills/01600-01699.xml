@@ -1,0 +1,1796 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="1600" toLevel="1" name="Soul Instinct">
+		<!-- For 15 sec., P. Atk., P. Critical Rate, M. Atk., and M. Critical Rate +50%, Atk. Spd. and Casting Spd. +20%. -->
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>INSTINCT</abnormalType>
+		<affectRange>600</affectRange>
+		<operateType>A2</operateType>
+		<mpConsume>148</mpConsume>
+		<hitTime>2500</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>549</effectPoint>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>83</magicLevel>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1601" toLevel="1" name="Fishing">
+		<!-- Attempt to fish at the dock. Put on a fishing rod and bait. -->
+		<operateType>A1</operateType>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="1602" toLevel="13" name="Reeling">
+		<!-- Loosen the fishing line when the fish is struggling. -->
+		<operateType>A1</operateType>
+		<mpConsume>2</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="1603" toLevel="13" name="Pumping">
+		<!-- Tighten the fishing line when the fish is tired. -->
+		<operateType>A1</operateType>
+		<mpConsume>2</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="1604" toLevel="13" name="Fishing Expertise">
+		<!-- Higher expertise gets you better fish. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="1605" toLevel="5" name="Dual Weapon Defense">
+		<!-- Duration: 30 sec. P. Skill Evasion +30% -->
+		<icon>icon.skill1605</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>AVOID_SKILL</abnormalType>
+		<hitTime>1000</hitTime>
+		<magicLevel>
+			<value level="1">41</value>
+			<value level="2">54</value>
+			<value level="3">67</value>
+			<value level="4">80</value>
+			<value level="5">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">18</value>
+			<value level="3">21</value>
+			<value level="4">30</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>240000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">30</value>
+					<value level="2">35</value>
+					<value level="3">40</value>
+					<value level="4">40</value>
+					<value level="5">40</value>
+				</amount>
+			</effect>
+			<effect name="MagicalEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">10</value>
+					<value level="5">20</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1606" toLevel="13" name="Quick Spear">
+		<!-- <Shock skill>. Attacks the target and enemies around them with 801 power. Stuns for 3 sec. Ignores Shield Defense. -->
+		<icon>icon.skill1606</icon>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>1000</effectRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">-650</value>
+			<value level="2">-710</value>
+			<value level="3">-770</value>
+			<value level="4">-830</value>
+			<value level="5">-890</value>
+			<value level="6">-950</value>
+			<value level="7">-1010</value>
+			<value level="8">-1070</value>
+			<value level="9">-1130</value>
+			<value level="10">-1190</value>
+			<value level="11">-1250</value>
+			<value level="12">-1310</value>
+			<value level="13">-1370</value>
+		</effectPoint>
+		<magicLevel>
+			<value level="1">42</value>
+			<value level="2">46</value>
+			<value level="3">50</value>
+			<value level="4">54</value>
+			<value level="5">58</value>
+			<value level="6">62</value>
+			<value level="7">66</value>
+			<value level="8">70</value>
+			<value level="9">74</value>
+			<value level="10">78</value>
+			<value level="11">82</value>
+			<value level="12">86</value>
+			<value level="13">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">51</value>
+			<value level="2">55</value>
+			<value level="3">60</value>
+			<value level="4">64</value>
+			<value level="5">69</value>
+			<value level="6">73</value>
+			<value level="7">78</value>
+			<value level="8">82</value>
+			<value level="9">87</value>
+			<value level="10">91</value>
+			<value level="11">95</value>
+			<value level="12">97</value>
+			<value level="13">101</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">801</value>
+					<value level="2">1002</value>
+					<value level="3">1234</value>
+					<value level="4">1497</value>
+					<value level="5">1788</value>
+					<value level="6">2104</value>
+					<value level="7">2437</value>
+					<value level="8">2726</value>
+					<value level="9">3123</value>
+					<value level="10">3435</value>
+					<value level="11">3524</value>
+					<value level="12">3592</value>
+					<value level="13">3642</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45491</skillId> <!-- Quick Spear -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1607" toLevel="45" name="Excruciating Strike">
+		<!-- Attacks the enemy with 465 power. Ignores Shield Defense. Ignores 30% of Defense. -->
+		<icon>icon.skill11513</icon>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-590</value>
+			<value level="2">-605</value>
+			<value level="3">-620</value>
+			<value level="4">-635</value>
+			<value level="5">-650</value>
+			<value level="6">-665</value>
+			<value level="7">-680</value>
+			<value level="8">-695</value>
+			<value level="9">-710</value>
+			<value level="10">-725</value>
+			<value level="11">-740</value>
+			<value level="12">-755</value>
+			<value level="13">-770</value>
+			<value level="14">-785</value>
+			<value level="15">-800</value>
+			<value level="16">-815</value>
+			<value level="17">-830</value>
+			<value level="18">-845</value>
+			<value level="19">-860</value>
+			<value level="20">-875</value>
+			<value level="21">-890</value>
+			<value level="22">-905</value>
+			<value level="23">-920</value>
+			<value level="24">-935</value>
+			<value level="25">-950</value>
+			<value level="26">-965</value>
+			<value level="27">-980</value>
+			<value level="28">-995</value>
+			<value level="29">-1010</value>
+			<value level="30">-1025</value>
+			<value level="31">-1040</value>
+			<value level="32">-1055</value>
+			<value level="33">-1070</value>
+			<value level="34">-1085</value>
+			<value level="35">-1100</value>
+			<value level="36">-1115</value>
+			<value level="37">-1130</value>
+			<value level="38">-1160</value>
+			<value level="39">-1175</value>
+			<value level="40">-1190</value>
+			<value level="41">-1220</value>
+			<value level="42">-1235</value>
+			<value level="43">-1250</value>
+			<value level="44">-1265</value>
+			<value level="45">-1280</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>2400</hitTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">40</value>
+			<value level="3">40</value>
+			<value level="4">41</value>
+			<value level="5">42</value>
+			<value level="6">43</value>
+			<value level="7">44</value>
+			<value level="8">45</value>
+			<value level="9">46</value>
+			<value level="10">47</value>
+			<value level="11">48</value>
+			<value level="12">49</value>
+			<value level="13">50</value>
+			<value level="14">51</value>
+			<value level="15">52</value>
+			<value level="16">53</value>
+			<value level="17">54</value>
+			<value level="18">55</value>
+			<value level="19">56</value>
+			<value level="20">57</value>
+			<value level="21">58</value>
+			<value level="22">59</value>
+			<value level="23">60</value>
+			<value level="24">61</value>
+			<value level="25">62</value>
+			<value level="26">63</value>
+			<value level="27">64</value>
+			<value level="28">65</value>
+			<value level="29">66</value>
+			<value level="30">67</value>
+			<value level="31">68</value>
+			<value level="32">69</value>
+			<value level="33">70</value>
+			<value level="34">71</value>
+			<value level="35">72</value>
+			<value level="36">73</value>
+			<value level="37">74</value>
+			<value level="38">76</value>
+			<value level="39">77</value>
+			<value level="40">80</value>
+			<value level="41">80</value>
+			<value level="42">81</value>
+			<value level="43">82</value>
+			<value level="44">83</value>
+			<value level="45">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">46</value>
+			<value level="2">48</value>
+			<value level="3">49</value>
+			<value level="4">49</value>
+			<value level="5">51</value>
+			<value level="6">52</value>
+			<value level="7">54</value>
+			<value level="8">54</value>
+			<value level="9">55</value>
+			<value level="10">57</value>
+			<value level="11">58</value>
+			<value level="12">58</value>
+			<value level="13">60</value>
+			<value level="14">61</value>
+			<value level="15">63</value>
+			<value level="16">63</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">67</value>
+			<value level="20">67</value>
+			<value level="21">69</value>
+			<value level="22">70</value>
+			<value level="23">72</value>
+			<value level="24">72</value>
+			<value level="25">73</value>
+			<value level="26">75</value>
+			<value level="27">76</value>
+			<value level="28">76</value>
+			<value level="29">78</value>
+			<value level="30">79</value>
+			<value level="31">81</value>
+			<value level="32">81</value>
+			<value level="33">82</value>
+			<value level="34">84</value>
+			<value level="35">85</value>
+			<value level="36">85</value>
+			<value level="37">87</value>
+			<value level="38">90</value>
+			<value level="39">90</value>
+			<value level="40">91</value>
+			<value level="41">94</value>
+			<value level="42">94</value>
+			<value level="43">96</value>
+			<value level="44">97</value>
+			<value level="45">99</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">465</value>
+					<value level="2">494</value>
+					<value level="3">525</value>
+					<value level="4">557</value>
+					<value level="5">590</value>
+					<value level="6">625</value>
+					<value level="7">662</value>
+					<value level="8">699</value>
+					<value level="9">738</value>
+					<value level="10">779</value>
+					<value level="11">821</value>
+					<value level="12">864</value>
+					<value level="13">909</value>
+					<value level="14">956</value>
+					<value level="15">1004</value>
+					<value level="16">1052</value>
+					<value level="17">1103</value>
+					<value level="18">1155</value>
+					<value level="19">1208</value>
+					<value level="20">1262</value>
+					<value level="21">1318</value>
+					<value level="22">1374</value>
+					<value level="23">1432</value>
+					<value level="24">1490</value>
+					<value level="25">1550</value>
+					<value level="26">1610</value>
+					<value level="27">1671</value>
+					<value level="28">1733</value>
+					<value level="29">1796</value>
+					<value level="30">1859</value>
+					<value level="31">1922</value>
+					<value level="32">1985</value>
+					<value level="33">2049</value>
+					<value level="34">2112</value>
+					<value level="35">2175</value>
+					<value level="36">2239</value>
+					<value level="37">2301</value>
+					<value level="38">2361</value>
+					<value level="39">2420</value>
+					<value level="40">2478</value>
+					<value level="41">2592</value>
+					<value level="42">2649</value>
+					<value level="43">2706</value>
+					<value level="44">2763</value>
+					<value level="45">2820</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+				<pDefMod>0.7</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1608" toLevel="2" name="Dynamic Recovery">
+		<!-- Recovers 20% HP to the character. -->
+		<icon>icon.skill1915</icon>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">52</value>
+			<value level="2">76</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">38</value>
+			<value level="2">42</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<endEffects>
+			<effect name="HealPercent">
+				<power>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</power>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="1609" toLevel="4" name="Sword Expert">
+		<!-- When using a two-handed sword. Atk. Spd. +30. P. Atk. +40. P. Accuracy +2 -->
+		<icon>icon.skill1609</icon>
+		<magicLevel>
+			<value level="1">46</value>
+			<value level="2">58</value>
+			<value level="3">70</value>
+			<value level="4">82</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>NONE</targetType>
+		<effects>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkSpeedAmount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">80</value>
+				</pAtkSpeedAmount>
+				<pAtkAmount>
+					<value level="1">40</value>
+					<value level="2">50</value>
+					<value level="3">60</value>
+					<value level="4">90</value>
+				</pAtkAmount>
+				<pAtkMode>PER</pAtkMode>
+				<accuracyAmount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</accuracyAmount>
+				<accuracyMode>DIFF</accuracyMode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1610" toLevel="29" name="Life Rescue">
+		<!-- For 10 sec. restores 19 HP to the target in one cycle. -->
+		<icon>icon.skill1610</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+			<value level="12">12</value>
+			<value level="13">13</value>
+			<value level="14">14</value>
+			<value level="15">15</value>
+			<value level="16">16</value>
+			<value level="17">17</value>
+			<value level="18">18</value>
+			<value level="19">19</value>
+			<value level="20">20</value>
+			<value level="21">21</value>
+			<value level="22">22</value>
+			<value level="23">23</value>
+			<value level="24">24</value>
+			<value level="25">25</value>
+			<value level="26">26</value>
+			<value level="27">27</value>
+			<value level="28">28</value>
+			<value level="29">29</value>
+		</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>LIFE_FORCE_ORC</abnormalType>
+		<affectLimit>50-50</affectLimit>
+		<affectRange>1000</affectRange>
+		<hitTime>3500</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">22</value>
+			<value level="3">26</value>
+			<value level="4">30</value>
+			<value level="5">34</value>
+			<value level="6">40</value>
+			<value level="7">42</value>
+			<value level="8">46</value>
+			<value level="9">50</value>
+			<value level="10">54</value>
+			<value level="11">56</value>
+			<value level="12">58</value>
+			<value level="13">60</value>
+			<value level="14">62</value>
+			<value level="15">64</value>
+			<value level="16">66</value>
+			<value level="17">68</value>
+			<value level="18">70</value>
+			<value level="19">72</value>
+			<value level="20">74</value>
+			<value level="21">76</value>
+			<value level="22">77</value>
+			<value level="23">78</value>
+			<value level="24">79</value>
+			<value level="25">80</value>
+			<value level="26">81</value>
+			<value level="27">82</value>
+			<value level="28">83</value>
+			<value level="29">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">32</value>
+			<value level="2">39</value>
+			<value level="3">45</value>
+			<value level="4">51</value>
+			<value level="5">58</value>
+			<value level="6">62</value>
+			<value level="7">67</value>
+			<value level="8">72</value>
+			<value level="9">75</value>
+			<value level="10">81</value>
+			<value level="11">85</value>
+			<value level="12">88</value>
+			<value level="13">90</value>
+			<value level="14">91</value>
+			<value level="15">92</value>
+			<value level="16">93</value>
+			<value level="17">95</value>
+			<value level="18">96</value>
+			<value level="19">97</value>
+			<value level="20">99</value>
+			<value level="21">100</value>
+			<value level="22">101</value>
+			<value level="23">102</value>
+			<value level="24">103</value>
+			<value level="25">105</value>
+			<value level="26">106</value>
+			<value level="27">107</value>
+			<value level="28">108</value>
+			<value level="29">109</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<effectPoint>
+			<value level="1">204</value>
+			<value level="2">243</value>
+			<value level="3">285</value>
+			<value level="4">331</value>
+			<value level="5">379</value>
+			<value level="6">418</value>
+			<value level="7">457</value>
+			<value level="8">495</value>
+			<value level="9">532</value>
+			<value level="10">549</value>
+			<value level="11">566</value>
+			<value level="12">582</value>
+			<value level="13">597</value>
+			<value level="14">611</value>
+			<value level="15">624</value>
+			<value level="16">635</value>
+			<value level="17">646</value>
+			<value level="18">655</value>
+			<value level="19">659</value>
+			<value level="20">663</value>
+			<value level="21">667</value>
+			<value level="22">670</value>
+			<value level="23">673</value>
+			<value level="24">675</value>
+			<value level="25">677</value>
+			<value level="26">678</value>
+			<value level="27">679</value>
+			<value level="28">680</value>
+			<value level="29">681</value>
+		</effectPoint>
+		<reuseDelay>3000</reuseDelay>
+		<castRange>600</castRange>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealOverTime">
+				<power>
+					<value level="1">19</value>
+					<value level="2">24</value>
+					<value level="3">28</value>
+					<value level="4">33</value>
+					<value level="5">36</value>
+					<value level="6">41</value>
+					<value level="7">46</value>
+					<value level="8">49</value>
+					<value level="9">54</value>
+					<value level="10">59</value>
+					<value level="11">62</value>
+					<value level="12">67</value>
+					<value level="13">72</value>
+					<value level="14">75</value>
+					<value level="15">80</value>
+					<value level="16">84</value>
+					<value level="17">89</value>
+					<value level="18">94</value>
+					<value level="19">95</value>
+					<value level="20">99</value>
+					<value level="21">102</value>
+					<value level="22">103</value>
+					<value level="23">105</value>
+					<value level="24">107</value>
+					<value level="25">108</value>
+					<value level="26">110</value>
+					<value level="27">112</value>
+					<value level="28">113</value>
+					<value level="29">115</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1611" toLevel="6" name="Power Supremacy">
+		<!-- When activated. P. Atk. +10%. Max HP -10% -->
+		<icon>icon.skill1611</icon>
+		<magicLevel>
+			<value level="1">48</value>
+			<value level="2">56</value>
+			<value level="3">64</value>
+			<value level="4">72</value>
+			<value level="5">80</value>
+			<value level="6">84</value>
+		</magicLevel>
+		<mpInitialConsume>0</mpInitialConsume>
+		<operateType>T</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>NONE</targetType>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">14</value>
+					<value level="4">16</value>
+					<value level="5">20</value>
+					<value level="6">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-11</value>
+					<value level="3">-12</value>
+					<value level="4">-13</value>
+					<value level="5">-14</value>
+					<value level="6">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1612" toLevel="1" name="Slowing Power">
+		<!-- Speed -20% -->
+		<icon>icon.skill0210</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>-204</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>200</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1613" toLevel="12" name="Body Crush">
+		<!-- <Shock/ fixed cooldown skill>. Attacks the enemy with 1014 power. Stuns for 3 sec. With a certain chance, removes up to 1 buff(s) from the target. Ignores Shield Defense. -->
+		<icon>icon.skill1613</icon>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<hitTime>1200</hitTime>
+		<effectPoint>
+			<value level="1">-230</value>
+			<value level="2">-250</value>
+			<value level="3">-270</value>
+			<value level="4">-290</value>
+			<value level="5">-310</value>
+			<value level="6">-330</value>
+			<value level="7">-350</value>
+			<value level="8">-370</value>
+			<value level="9">-390</value>
+			<value level="10">-410</value>
+			<value level="11">-430</value>
+			<value level="12">-450</value>
+		</effectPoint>
+		<magicLevel>
+			<value level="1">42</value>
+			<value level="2">46</value>
+			<value level="3">50</value>
+			<value level="4">54</value>
+			<value level="5">58</value>
+			<value level="6">62</value>
+			<value level="7">66</value>
+			<value level="8">70</value>
+			<value level="9">74</value>
+			<value level="10">78</value>
+			<value level="11">82</value>
+			<value level="12">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">34</value>
+			<value level="2">37</value>
+			<value level="3">40</value>
+			<value level="4">43</value>
+			<value level="5">46</value>
+			<value level="6">49</value>
+			<value level="7">52</value>
+			<value level="8">55</value>
+			<value level="9">58</value>
+			<value level="10">61</value>
+			<value level="11">64</value>
+			<value level="12">66</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>20000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<coolTime>500</coolTime>
+		<nextAction>ATTACK</nextAction>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1014</value>
+					<value level="2">1279</value>
+					<value level="3">1548</value>
+					<value level="4">1821</value>
+					<value level="5">2097</value>
+					<value level="6">2376</value>
+					<value level="7">2658</value>
+					<value level="8">2944</value>
+					<value level="9">3232</value>
+					<value level="10">4129</value>
+					<value level="11">4359</value>
+					<value level="12">4474</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45492</skillId> <!-- Body Crush -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1615" toLevel="6" name="Weapon Reinforcement">
+		<!-- Duration: 20 min. When using a sword, a blunt weapon or a spear:. P. Atk. +3%. With a certain chance on a basic attack:. Duration: 15 sec. Atk. Spd. -10%. Casting Spd. -10%. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.skill1615</icon>
+		<reuseDelay>10000</reuseDelay>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<magicLevel>
+			<value level="1">42</value>
+			<value level="2">52</value>
+			<value level="3">62</value>
+			<value level="4">77</value>
+			<value level="5">82</value>
+			<value level="6">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">25</value>
+			<value level="2">30</value>
+			<value level="3">35</value>
+			<value level="4">40</value>
+			<value level="5">45</value>
+			<value level="6">50</value>
+		</mpConsume>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">12</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>POLE</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="1" toLevel="1">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>TARGET</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>BLUNT,POLE</allowWeapons>
+				<skillId>1616</skillId> <!-- Physical Damage -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="1" toLevel="1">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>TARGET</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>BLUNT,POLE</allowWeapons>
+				<skillId>1616</skillId> <!-- Physical Damage -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>TARGET</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>BLUNT,POLE</allowWeapons>
+				<skillId>1616</skillId> <!-- Physical Damage -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>TARGET</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>BLUNT,POLE</allowWeapons>
+				<skillId>1616</skillId> <!-- Physical Damage -->
+				<skillLevel>2</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1616" toLevel="2" name="Physical Damage">
+		<!-- Atk. Spd. -10%. Casting Spd. -10% -->
+		<icon>icon.skill1615</icon>
+		<operateType>A2</operateType>
+		<effectPoint>
+			<value level="1">-190</value>
+			<value level="2">-250</value>
+		</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<castRange>600</castRange>
+		<reuseDelay>15000</reuseDelay>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1617" toLevel="4" name="Tenacity">
+		<!-- Enhances the body. Shock Resistance +3%. With a certain chance, recovers HP when hit. (Trigger cooldown: 5 sec.) -->
+		<icon>icon.skill1617</icon>
+		<reuseDelay>10000</reuseDelay>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>379</effectPoint>
+		<magicLevel>
+			<value level="1">44</value>
+			<value level="2">56</value>
+			<value level="3">64</value>
+			<value level="4">80</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">30</value>
+			<value level="3">36</value>
+			<value level="4">72</value>
+		</mpConsume>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<operateType>A2</operateType>
+		<isMagic>0</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeCount>
+			<value level="1">0</value>
+			<value level="2">1</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+				</SHOCK>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="1" toLevel="1">
+				<attackerType>Creature</attackerType>
+				<chance>5</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1618</skillId> <!-- Body Reconstruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="2" toLevel="2">
+				<attackerType>Creature</attackerType>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1618</skillId> <!-- Body Reconstruction -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="3" toLevel="3">
+				<attackerType>Creature</attackerType>
+				<chance>15</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1618</skillId> <!-- Body Reconstruction -->
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="4" toLevel="4">
+				<attackerType>Creature</attackerType>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1618</skillId> <!-- Body Reconstruction -->
+				<skillLevel>4</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1618" toLevel="4" name="Body Reconstruction">
+		<!-- Recovers HP. Power 188. -->
+		<icon>icon.skill0045</icon>
+		<reuseDelay>5000</reuseDelay>
+		<magicLevel>
+			<value level="1">44</value>
+			<value level="2">56</value>
+			<value level="3">64</value>
+			<value level="4">80</value>
+		</magicLevel>
+		<operateType>A1</operateType>
+		<effectPoint>204</effectPoint>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>
+					<value level="1">188</value>
+					<value level="2">289</value>
+					<value level="3">361</value>
+					<value level="4">431</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1619" toLevel="8" name="Sonic Focus">
+		<!-- Max Energy 1 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="1620" toLevel="8" name="Focus Force">
+		<!-- Max Energy 1 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="1621" toLevel="5" name="Shield of Sacrifice">
+		<!-- <Skill with fixed cooldown>. The character sacrifices themselves enhancing party members for 5 min.. <Caster>. Max HP -20%. <Party Members>. P. Def. +15%. M. Def. +20%. Received Healing +20%. For 5 min. after the effect disappears. Shield of Sacrifice cannot be applied. -->
+		<icon>icon.skill1621</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>POSSESSION_SPECIAL</abnormalType>
+		<affectRange>900</affectRange>
+		<hitTime>2000</hitTime>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<magicLevel>
+			<value level="1">80</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">38</value>
+			<value level="2">45</value>
+			<value level="3">52</value>
+			<value level="4">59</value>
+			<value level="5">66</value>
+		</mpConsume>
+		<operateType>A4</operateType>
+		<reuseDelay>450000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>1622</skillId> <!-- Blood of Sacrifice -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">16</value>
+					<value level="3">17</value>
+					<value level="4">18</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">21</value>
+					<value level="3">22</value>
+					<value level="4">23</value>
+					<value level="5">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">22</value>
+					<value level="3">24</value>
+					<value level="4">26</value>
+					<value level="5">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1622" toLevel="5" name="Blood of Sacrifice">
+		<!-- Max HP -20% -->
+		<icon>icon.skill1621</icon>
+		<abnormalLevel>6</abnormalLevel>
+		<abnormalType>POSSESSION_SPECIAL</abnormalType>
+		<abnormalTime>180</abnormalTime>
+		<isMagic>4</isMagic>
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<isDebuff>true</isDebuff>
+		<canBeDispelled>false</canBeDispelled>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-18</value>
+					<value level="3">-16</value>
+					<value level="4">-14</value>
+					<value level="5">-12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1623" toLevel="5" name="Eva's Defense">
+		<!-- <Skill with fixed cooldown>. Eva grants her protection. The effect lasts for 5 min. P. Def. +15%. M. Def. +10%. Speed +4 -->
+		<icon>icon.skill1623</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+		</abnormalLevel>
+		<abnormalType>POSSESSION_SPECIAL</abnormalType>
+		<abnormalTime>300</abnormalTime>
+		<effectRange>900</effectRange>
+		<hitTime>2000</hitTime>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<isMagic>1</isMagic>
+		<magicLevel>
+			<value level="1">80</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">114</value>
+			<value level="2">116</value>
+			<value level="3">118</value>
+			<value level="4">120</value>
+			<value level="5">122</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>450000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+					<value level="3">12</value>
+					<value level="4">13</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">16</value>
+					<value level="3">17</value>
+					<value level="4">18</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">5</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1624" toLevel="7" name="Indestructible Sound">
+		<!-- <Imprisonment skill>. Attacks the enemy with 1091 power. For 5 sec. inflicts Imprisonment. Once the Imprisonment effect disappears, P. Def. -10% for 5 sec. Critical. -->
+		<icon>icon.skill1624</icon>
+		<castRange>600</castRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<coolTime>500</coolTime>
+		<hitTime>2500</hitTime>
+		<effectPoint>
+			<value level="1">-1560</value>
+			<value level="2">-1600</value>
+			<value level="3">-1640</value>
+			<value level="4">-1680</value>
+			<value level="5">-1720</value>
+			<value level="6">-1760</value>
+			<value level="7">-1800</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<magicLevel>
+			<value level="1">78</value>
+			<value level="2">80</value>
+			<value level="3">82</value>
+			<value level="4">84</value>
+			<value level="5">86</value>
+			<value level="6">88</value>
+			<value level="7">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">61</value>
+			<value level="2">63</value>
+			<value level="3">64</value>
+			<value level="4">66</value>
+			<value level="5">67</value>
+			<value level="6">68</value>
+			<value level="7">69</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1091</value>
+					<value level="2">1183</value>
+					<value level="3">1278</value>
+					<value level="4">1376</value>
+					<value level="5">1477</value>
+					<value level="6">1581</value>
+					<value level="7">1688</value>
+				</power>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45500</skillId> <!-- Indestructible Sound -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1625" toLevel="4" name="Throwing Spear">
+		<!-- <Hold skill>. Attacks the enemy with 801 power. Holds for 5 sec. Ignores Shield Defense. -->
+		<icon>icon.skill1625</icon>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-450</value>
+			<value level="3">-500</value>
+			<value level="4">-550</value>
+		</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>1400</effectRange>
+		<hitTime>1500</hitTime>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">64</value>
+			<value level="3">68</value>
+			<value level="4">72</value>
+		</mpConsume>
+		<magicLevel>
+			<value level="1">78</value>
+			<value level="2">82</value>
+			<value level="3">86</value>
+			<value level="4">90</value>
+		</magicLevel>
+		<nextAction>ATTACK</nextAction>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">801</value>
+					<value level="2">961</value>
+					<value level="3">1069</value>
+					<value level="4">1184</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45504</skillId> <!-- Throwing Spear -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1626" toLevel="1" name="Spear Howl">
+		<!-- Attacks nearby enemies with 2911 power. Cancels target's buffs increasing Speed. Ignores Shield Defense. -->
+		<icon>icon.skill1626</icon>
+		<basicProperty>PHYSICAL</basicProperty>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>80</magicLevel>
+		<mpConsume>91</mpConsume>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1190</effectPoint>
+		<reuseDelay>8000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>150</affectRange>
+		<affectLimit>6-12</affectLimit>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2911</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<dispel>IMPROVE_SPEED_AVOID_UP;SPEED_UP;SPEED_UP_SPECIAL;SONG_OF_WIND</dispel>
+				<rate>100</rate>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1627" toLevel="1" name="Destroyer's Roar">
+		<!-- <Fear/ Suppression skill>. For 3 sec., for nearby enemies:. Applies Fear. Speed -90%. -->
+		<icon>icon.skill1481</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>FEAR</trait>
+		<affectLimit>10-10</affectLimit>
+		<affectRange>200</affectRange>
+		<magicLevel>77</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="CallSkill">
+				<skillId>45501</skillId> <!-- Destroyer's Roar -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1628" toLevel="4" name="Wide Swing">
+		<!-- The effect lasts for 20 min. When using a two-handed sword, a number of targets +2 -->
+		<icon>icon.skill1628</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>POLEARM_ATTACK</abnormalType>
+		<operateType>A2</operateType>
+		<hitTime>2000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">78</value>
+			<value level="3">80</value>
+			<value level="4">82</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">34</value>
+			<value level="2">41</value>
+			<value level="3">50</value>
+			<value level="4">60</value>
+		</mpConsume>
+		<reuseDelay>75000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeCount>3</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="HitNumber">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1629" toLevel="1" name="Throw Dagger in Wrist">
+		<!-- Attacks the enemy with 396 power. For the target affected by the skill:. There is a certain chance to interrupt spellcasting for 30 sec. because of a deep wound on the wrist. -->
+		<icon>icon.skill1629</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>20</lvlBonusRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>900</effectRange>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>60</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>396</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="SkillTurningOverTime">
+				<chance>65</chance>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1630" toLevel="1" name="Throwing Blood Dagger">
+		<!-- Attacks the enemy with 396 power. For the target affected by the skill:. With a certain chance, for 30 sec., decreases HP when using skills. -->
+		<icon>icon.skill1630</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>CRITICAL_PROB_UP</abnormalType>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>20</lvlBonusRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>900</effectRange>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>60</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<pvpEffects>
+			<effect name="HealOverTime">
+				<power>-50</power>
+				<ticks>5</ticks>
+			</effect>
+		</pvpEffects>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>396</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="TriggerSkillByMagicType">
+				<!-- PvP Weapon - Attack Rate -->
+				<magicTypes>0</magicTypes>
+				<skillId>5684</skillId> <!-- PvP Weapon - Attack Rate -->
+				<skillLevel>1</skillLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1631" toLevel="2" name="Clear Movements">
+		<!-- Hide/ Seclusion/ Shadow Step. Resets cooldowns. -->
+		<icon>icon.skill10518</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">669</value>
+			<value level="2">675</value>
+		</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">77</value>
+			<value level="2">81</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">80</value>
+			<value level="2">104</value>
+		</mpConsume>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<reuseDelay>600000</reuseDelay>
+		<isMagic>0</isMagic>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ReuseSkillById">
+				<skillId>821</skillId> <!-- Shadow Step -->
+			</effect>
+			<effect name="ReuseSkillById">
+				<skillId>922</skillId> <!-- Hide -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1632" toLevel="15" name="Deadly Strike">
+		<!-- Attacks the target with 3692 power. If the target is affected by Hold, Power +50%. For 10 sec. P. Def. -23%. Ignores Shield Defense. Ignores 10% of the target's defense. Critical. -->
+		<icon>icon.s_deadly_beat_classic1</icon>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>SWORD_SYMPHONY</abnormalType>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>40</castRange>
+		<effectRange>400</effectRange>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">60</value>
+			<value level="3">61</value>
+			<value level="4">62</value>
+			<value level="5">63</value>
+			<value level="6">63</value>
+			<value level="7">64</value>
+			<value level="8">65</value>
+			<value level="9">65</value>
+			<value level="10">65</value>
+			<value level="11">65</value>
+			<value level="12">65</value>
+			<value level="13">65</value>
+			<value level="14">65</value>
+			<value level="15">65</value>
+		</mpConsume>
+		<hitTime>1200</hitTime>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-405</value>
+			<value level="3">-410</value>
+			<value level="4">-420</value>
+			<value level="5">-425</value>
+			<value level="6">-430</value>
+			<value level="7">-435</value>
+			<value level="8">-440</value>
+			<value level="9">-440</value>
+			<value level="10">-440</value>
+			<value level="11">-440</value>
+			<value level="12">-440</value>
+			<value level="13">-440</value>
+			<value level="14">-440</value>
+			<value level="15">-440</value>
+		</effectPoint>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">77</value>
+			<value level="3">78</value>
+			<value level="4">80</value>
+			<value level="5">81</value>
+			<value level="6">82</value>
+			<value level="7">83</value>
+			<value level="8">84</value>
+			<value level="9">95</value>
+			<value level="10">95</value>
+			<value level="11">95</value>
+			<value level="12">95</value>
+			<value level="13">95</value>
+			<value level="14">95</value>
+			<value level="15">95</value>
+		</magicLevel>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3692</value>
+					<value level="2">3744</value>
+					<value level="3">3795</value>
+					<value level="4">3845</value>
+					<value level="5">3897</value>
+					<value level="6">3948</value>
+					<value level="7">3999</value>
+					<value level="8">4050</value>
+					<value level="9">4050</value>
+					<value level="10">4050</value>
+					<value level="11">4050</value>
+					<value level="12">4050</value>
+					<value level="13">4050</value>
+					<value level="14">4050</value>
+					<value level="15">4050</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

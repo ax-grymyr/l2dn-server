@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>34119</npc> <!-- Stone -->
+	</npcs>
+	<item>
+		<ingredient id="91964" count="100" /> <!-- Scroll of Escape: Tower of Insolence (11th Floor) - Sealed -->
+		<production id="92433" count="1" chance="0" /> <!-- Tower of Insolence' Stone of Memory - Floor 12 - Sealed -->
+		<production id="92433" count="1" chance="5" /> <!-- Tower of Insolence' Stone of Memory - Floor 12 - Sealed -->
+		<production id="91964" count="20" chance="95" /> <!-- Scroll of Escape: Tower of Insolence (11th Floor) - Sealed -->
+	</item>
+	<item>
+		<ingredient id="91965" count="100" /> <!-- Scroll of Escape: Tower of Insolence (12th Floor) - Sealed -->
+		<production id="92433" count="1" chance="0" /> <!-- Tower of Insolence' Stone of Memory - Floor 12 - Sealed -->
+		<production id="92433" count="1" chance="10" /> <!-- Tower of Insolence' Stone of Memory - Floor 12 - Sealed -->
+		<production id="91965" count="20" chance="90" /> <!-- Scroll of Escape: Tower of Insolence (12th Floor) - Sealed -->
+	</item>
+</list>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="48400" name="Items Seal Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for sealing items. The sealed item cannot be augmented, exchanged, dropped, destroyed, or stored in the clan warehouse. You can seal weapons, armor, some accessories. Temporary items (and some others) cannot be sealed. Use Item Unseal Scroll to remove the seal. -->
+		<set name="icon" val="icon.scrl_item_lock" />
+		<set name="price" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="48401" name="Item Unseal Scroll" additionalName="15 min." type="EtcItem">
+		<!-- Use to unseal a sealed item. -->
+		<set name="icon" val="icon.scrl_item_unlock" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="time" val="15" />
+	</item>
+	<item id="48411" name="Item Unseal Scroll (15-min) Box" additionalName="15 min." type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys3.g_ev_invite_fantasy_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48401" min="10" max="10" chance="100" /> <!-- Scroll: Release Item Seal - 15-min. -->
+		</capsuled_items>
+	</item>
+</list>

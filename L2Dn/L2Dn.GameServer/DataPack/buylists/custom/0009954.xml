@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90458" price="0" /> <!-- Zubei's Helmet - Heavy Armor -->
+	<item id="93547" price="0" /> <!-- Zubei's Helmet (Heavy) - Sealed -->
+	<item id="357" price="0" /> <!-- Zubei's Breastplate - Heavy Armor -->
+	<item id="93501" price="0" /> <!-- Zubei's Breastplate - Sealed -->
+	<item id="383" price="0" /> <!-- Zubei's Gaiters - Heavy Armor -->
+	<item id="93503" price="0" /> <!-- Zubei's Gaiters - Sealed -->
+	<item id="5710" price="0" /> <!-- Zubei's Gauntlets - Heavy Armor -->
+	<item id="93520" price="0" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+	<item id="5726" price="0" /> <!-- Zubei's Boots - Heavy Armor -->
+	<item id="93532" price="0" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+	<item id="633" price="0" /> <!-- Zubei's Shield - Heavy Armor -->
+	<item id="93116" price="0" /> <!-- Zubei's Sigil - Sealed -->
+	<item id="90461" price="0" /> <!-- Blue Wolf Helmet - Heavy Armor -->
+	<item id="93550" price="0" /> <!-- Blue Wolf Helmet (Heavy) - Sealed -->
+	<item id="358" price="0" /> <!-- Blue Wolf Breastplate - Heavy Armor -->
+	<item id="93502" price="0" /> <!-- Blue Wolf Breastplate - Sealed -->
+	<item id="2380" price="0" /> <!-- Blue Wolf Gaiters - Heavy Armor -->
+	<item id="93506" price="0" /> <!-- Blue Wolf Gaiters - Sealed -->
+	<item id="5718" price="0" /> <!-- Blue Wolf Gloves - Heavy Armor -->
+	<item id="93526" price="0" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+	<item id="5734" price="0" /> <!-- Blue Wolf Boots - Heavy Armor -->
+	<item id="93538" price="0" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+	<item id="90455" price="0" /> <!-- Avadon Circlet - Heavy Armor -->
+	<item id="93544" price="0" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+	<item id="2376" price="0" /> <!-- Avadon Breastplate - Heavy Armor -->
+	<item id="93504" price="0" /> <!-- Avadon Breastplate - Sealed -->
+	<item id="2379" price="0" /> <!-- Avadon Gaiters - Heavy Armor -->
+	<item id="93505" price="0" /> <!-- Avadon Gaiters - Sealed -->
+	<item id="5714" price="0" /> <!-- Avadon Gloves - Heavy Armor -->
+	<item id="93523" price="0" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+	<item id="5730" price="0" /> <!-- Avadon Boots - Heavy Armor -->
+	<item id="93535" price="0" /> <!-- Avadon Boots (Heavy) - Sealed -->
+	<item id="90464" price="0" /> <!-- Doom Helmet - Heavy Armor -->
+	<item id="93553" price="0" /> <!-- Doom Helmet (Heavy) - Sealed -->
+	<item id="2381" price="0" /> <!-- Doom Plate Armor - Heavy Armor -->
+	<item id="93507" price="0" /> <!-- Doom Plate Armor - Sealed -->
+	<item id="5722" price="0" /> <!-- Doom Gloves - Heavy Armor -->
+	<item id="93529" price="0" /> <!-- Doom Gloves (Heavy) - Sealed -->
+	<item id="5738" price="0" /> <!-- Doom Boots - Heavy Armor -->
+	<item id="93541" price="0" /> <!-- Doom Boots (Heavy) - Sealed -->
+	<item id="110" price="0" /> <!-- Doom Shield - Heavy Armor -->
+	<item id="673" price="0" /> <!-- Avadon Shield - Heavy Armor -->
+</list>

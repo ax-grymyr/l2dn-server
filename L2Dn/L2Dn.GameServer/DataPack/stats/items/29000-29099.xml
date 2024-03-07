@@ -1,0 +1,1183 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="29001" name="Daily Present - VIP 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Scroll of Escape, 3 HP Replenishing Potions, 5 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="736" min="1" max="1" chance="100" /> <!-- Scroll of Escape -->
+			<item id="29651" min="3" max="3" chance="100" /> <!-- Healing Potion - Not Available -->
+			<item id="29520" min="5" max="5" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29002" name="Daily Present - VIP 2" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Scroll of Resurrection, 3 HP Replenishing Potions, 5 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="737" min="1" max="1" chance="100" /> <!-- Scroll of Resurrection -->
+			<item id="29651" min="3" max="3" chance="100" /> <!-- Healing Potion - Not Available -->
+			<item id="29520" min="10" max="10" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29003" name="Daily Present - VIP 3" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Scroll of Escape, 1 Scroll of Resurrection, 5 HP Replenishing Potions, 15 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="736" min="1" max="1" chance="100" /> <!-- Scroll of Escape -->
+			<item id="737" min="1" max="1" chance="100" /> <!-- Scroll of Resurrection -->
+			<item id="29651" min="5" max="5" chance="100" /> <!-- Healing Potion - Not Available -->
+			<item id="29520" min="15" max="15" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29004" name="Daily Present - VIP 4" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Scroll of Escape, 1 Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 25 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="736" min="1" max="1" chance="100" /> <!-- Scroll of Escape -->
+			<item id="737" min="1" max="1" chance="100" /> <!-- Scroll of Resurrection -->
+			<item id="29652" min="3" max="3" chance="100" /> <!-- Greater Healing Potion - Not Available -->
+			<item id="29520" min="25" max="25" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29005" name="Daily Present - VIP 5" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Escape, 3 High-grade HP Replenishing Potions, 40 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1538" min="1" max="1" chance="100" /> <!-- Improved Scroll of Escape -->
+			<item id="29652" min="3" max="3" chance="100" /> <!-- Greater Healing Potion - Not Available -->
+			<item id="29520" min="40" max="40" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29006" name="Daily Present - VIP 6" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 100 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3936" min="1" max="1" chance="100" /> <!-- Blessed Scroll of Resurrection -->
+			<item id="29652" min="3" max="3" chance="100" /> <!-- Greater Healing Potion - Not Available -->
+			<item id="29520" min="100" max="100" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29007" name="Daily Present - VIP 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain a Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 150 VIP Coins. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1538" min="1" max="1" chance="100" /> <!-- Improved Scroll of Escape -->
+			<item id="3936" min="1" max="1" chance="100" /> <!-- Blessed Scroll of Resurrection -->
+			<item id="29652" min="3" max="3" chance="100" /> <!-- Greater Healing Potion - Not Available -->
+			<item id="29520" min="150" max="150" chance="100" /> <!-- VIP Coin - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29008" name="XP/ SP Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., acquired XP/ SP while hunting +30%. The effect remains after death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55000" level="1" /> <!-- XP/SP Scroll lvl 1 (30%) -->
+		</skills>
+	</item>
+	<item id="29009" name="XP/SP Scroll - Normal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., acquired XP/ SP while hunting +30%. The effect remains after death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55000" level="3" /> <!-- XP/SP Scroll lvl 1 (30%) -->
+		</skills>
+	</item>
+	<item id="29010" name="XP/SP Scroll - High" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., acquired XP/ SP while hunting +100%. The effect remains after death. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55000" level="4" /> <!-- XP/SP Scroll lvl 1 (30%) -->
+		</skills>
+	</item>
+	<item id="29011" name="1st Class Buff Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., activates the following effects: Shield Lv. 2, Might Lv. 2, Concentration Lv. 2, Acumen Lv. 1, Wind Walk Lv. 1, Focus Lv. 1, Agility Lv. 1, Empower Lv. 1. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55003" level="1" /> <!-- 1st Class Buff Scroll -->
+		</skills>
+	</item>
+	<item id="29012" name="2nd Class Buff Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For 20 min., activates the following effects: Shield Lv. 3, Acumen Lv. 2, Wind Walk Lv. 2, Focus Lv. 2, Regeneration Lv. 1, Guidance Lv. 1, Death Whisper Lv. 1, Magic Barrier Lv. 1, Blessed Body Lv. 1, Blessed Soul Lv. 1, Haste Lv. 1, Agility Lv. 2. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55004" level="2" /> <!-- 2nd Class Buff Scroll -->
+		</skills>
+	</item>
+	<item id="29013" name="Scroll: Song of Hunter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Grants the effect of Song of Hunter. For 10 min., P. Critical Rate +100%. Does not stack with Song of Hunter. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29014" name="Scroll: Dance of Fire" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Grants the effect of the Dance of Fire. For 10 min. P. Critical Damage +35%. Does not stack with the Dance of Fire. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55700" level="1" /> <!-- Scroll: Dance of Fire -->
+		</skills>
+	</item>
+	<item id="29015" name="Scroll: Enchant D-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers, spears. P. Atk. +5 for two-handed swords/ blunts, fists, dual swords. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting from +4, P./ M. Atk. bonus is doubled. Can be safely enchanted up to +3. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29016" name="Scroll: Enchant D-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade armor and accessoriesP. Def. +1When enchanted to +4 or higher, P. Def. +3, HP is increased with each enchant value. Can be safely enchanted up to +4. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29017" name="Scroll: Enchant C-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers, spears. P. Atk. +5 for two-handed swords/ blunts, fists, dual swords. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting from +4, P./ M. Atk. bonus is doubled. Can be safely enchanted up to +3. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29018" name="Scroll: Enchant C-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade armor and accessoriesP. Def. +1When enchanted to +4 or higher, P. Def. +3, HP is increased with each enchant value. Can be safely enchanted up to +4. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29019" name="Scroll: Enchant D-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers and spears. P. Atk. +5 for two-handed swords/ blunts, dual swords, and fist weapons. P. Atk. +8 for bows. M. Atk. +3 for all weapons. When enchanted to +4 and higher, P./ M. Atk. bonus is doubled. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29020" name="Scroll: Enchant D-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For D-grade armor and accessoriesP. Def. +1When enchanted to +4 and higher, P. Def. +3, Max HP is increased with each enchant value.The enchanting is safe up to +4.In case of failure the item does not disappear, but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29021" name="Scroll: Enchant C-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers and spears. P. Atk. +5 for two-handed swords/ blunts, dual swords, and fist weapons. P. Atk. +8 for bows. M. Atk. +3 for all weapons. When enchanted to +4 and higher, P./ M. Atk. bonus is doubled. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29022" name="Scroll: Enchant C-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For C-grade armor and accessoriesP. Def. +1When enchanted to +4 and higher, P. Def. +3, Max HP is increased with each enchant value.The enchanting is safe up to +4.In case of failure the item does not disappear, but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29023" name="Mysterious No-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="9293" level="1" /> <!-- Player Commendation - No-grade Soulshot -->
+		</skills>
+	</item>
+	<item id="29024" name="Mysterious Blessed No-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<skills>
+			<skill id="9300" level="1" /> <!-- Player Commendation - No-grade Blessed Spiritshot -->
+		</skills>
+	</item>
+	<item id="29025" name="Mysterious D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="9294" level="1" /> <!-- Player Commendation - Soulshot (D-grade) -->
+		</skills>
+	</item>
+	<item id="29026" name="Mysterious Blessed D-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9301" level="1" /> <!-- Player Commendation - Blessed Spiritshot (D-grade) -->
+		</skills>
+	</item>
+	<item id="29027" name="Mysterious C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="9295" level="1" /> <!-- Player Commendation - Soulshot (C-grade) -->
+		</skills>
+	</item>
+	<item id="29028" name="Mysterious Blessed C-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9302" level="1" /> <!-- Player Commendation - Blessed Spiritshot (C-grade) -->
+		</skills>
+	</item>
+	<item id="29029" name="Improved Scroll of Escape" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Teleports to the nearest village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29030" name="Blessed Resurrection Scroll" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A magic scroll that resurrects a dead party member fully recovering their XP. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29031" name="Quick Healing Potion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A magic potion that instantly recovers HP. No cooldown. Cannot be used when HP is full. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55015" level="1" /> <!-- Quick Healing Potion -->
+		</skills>
+	</item>
+	<item id="29032" name="Major Quick Healing Potion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Magic potion that instantly restores great amount of HP. No cooldown. Cannot be used when HP is full. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55016" level="1" /> <!-- Major Quick Healing Potion -->
+		</skills>
+	</item>
+	<item id="29033" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 1st month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29034" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 2nd month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29035" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 3rd month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29036" name="Refined Romantic Chapeau: Red" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29037" name="Refined Angel Ring" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A refined angel's ring. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29038" name="Refined Wizard Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A refined wizard's hat. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29039" name="Laborer Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A hat worn by Lei Feng. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29040" name="Top Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A hat of a mysterious magician. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29041" name="Vigilante Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Vigilante Hat. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29042" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 10th month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29043" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 11th month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29044" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 12th month. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29045" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 1st month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29046" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 2nd month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29047" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 3rd month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29048" name="Refined Romantic Chapeau: Red" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29049" name="Refined Angel Ring" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A refined angel's ring. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29050" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 6th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29051" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 7th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29052" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 8th month. Available for the 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29053" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 9th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29054" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 10th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29055" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 11th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29056" name="Adventurer's Hat (Event)" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A head accessory for the 12th month. Available for 30 d. Enables a special skill. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29057" name="Agathion Virgo" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Virgo. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29058" name="Agathion Virgo" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Virgo (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29059" name="Agathion Capricorn" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Capricorn. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29060" name="Agathion Capricorn" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Capricorn. Available for 30 d. Enables a special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29061" name="Agathion Libra" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Libra. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29062" name="Agathion Libra" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Libra (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29063" name="Agathion Aries" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aries. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29064" name="Agathion Aries" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aries (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29065" name="Agathion Taurus" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Taurus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29066" name="Agathion Taurus" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Taurus. 30-day item. Allows to use special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29067" name="Agathion Leo" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Leo. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29068" name="Agathion Leo" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Leo (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29069" name="Agathion Gemini" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Gemini. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29070" name="Agathion Gemini" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Gemini (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29071" name="Agathion Scorpio" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Agathion Scorpio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29072" name="Agathion Scorpio" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Scorpio. 30-day item. Allows to use special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29073" name="Agathion Aquarius" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aquarius. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29074" name="Agathion Aquarius" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aquarius (30-day). Enables its special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29075" name="Agathion Pisces" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Pisces. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29076" name="Agathion Pisces" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Pisces. 30-day item. Allows to use special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29077" name="Agathion Sagittarius" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Sagittarius. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29078" name="Agathion Sagittarius" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Sagittarius. 30-day item. Allows to use special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29079" name="Agathion Cancer" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Cancer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29080" name="Agathion Cancer" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Summons Cancer. 30-day item. Allows to use special skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29081" name="Premium STR Dye (STR +1 CON -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29082" name="Premium STR Dye (STR +1 DEX -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29083" name="Premium CON Dye (CON +1 STR -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29084" name="Premium CON Dye (CON +1 DEX -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29085" name="Premium DEX Dye (DEX +1 STR -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29086" name="Premium DEX Dye (DEX +1 CON -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29087" name="Premium INT Dye (INT +1 MEN -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29088" name="Premium INT Dye (INT +1 WIT -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29089" name="Premium MEN Dye (MEN +1 INT -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29090" name="Premium MEN Dye (MEN +1 WIT -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29091" name="Premium WIT Dye (WIT +1 INT -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29092" name="Premium WIT Dye (WIT +1 MEN -1)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29093" name="Premium STR Dye (STR +2 CON -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29094" name="Premium STR Dye (STR +2 DEX -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29095" name="Premium CON Dye (CON +2 STR -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29096" name="Premium CON Dye (CON +2 DEX -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29097" name="Premium DEX Dye (DEX +2 STR -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29098" name="Premium DEX Dye (DEX +2 CON -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29099" name="Premium INT Dye (INT +2 MEN -2)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 units and take them to the Symbol Maker in town to get a symbol that boosts your abilities. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

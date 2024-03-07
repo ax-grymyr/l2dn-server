@@ -26,7 +26,6 @@ public class Config
 	// --------------------------------------------------
 	// Config File Definitions
 	// --------------------------------------------------
-	public const string INTERFACE_CONFIG_FILE = "./config/Interface.ini";
 	public const string NETWORK_CONFIG_FILE = "./config/Network.ini";
 	public const string OLYMPIAD_CONFIG_FILE = "./config/Olympiad.ini";
 
@@ -45,7 +44,6 @@ public class Config
 	private const string GRANDBOSS_CONFIG_FILE = "./config/GrandBoss.ini";
 	private const string HUNT_PASS_CONFIG_FILE = "./config/HuntPass.ini";
 	private const string ACHIEVEMENT_BOX_CONFIG_FILE = "./config/AchievementBox.ini";
-	private const string LOGIN_CONFIG_FILE = "./config/LoginServer.ini";
 	private const string MAGIC_LAMP_FILE = "./config/MagicLamp.ini";
 	private const string NPC_CONFIG_FILE = "./config/NPC.ini";
 	private const string ORC_FORTRESS_CONFIG_FILE = "./config/OrcFortress.ini";
@@ -1456,8 +1454,8 @@ public class Config
 		MYSQL_BIN_PATH = parser.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
 		BACKUP_PATH = parser.getString("BackupPath", "../backup/");
 		BACKUP_DAYS = parser.getInt("BackupDays", 30);
-		DATAPACK_ROOT_PATH = parser.GetPath("DatapackRoot", ".");
-		SCRIPT_ROOT_PATH = parser.GetPath("ScriptRoot", "./data/scripts");
+		DATAPACK_ROOT_PATH = parser.GetPath("DatapackRoot", "./DataPack");
+		SCRIPT_ROOT_PATH = parser.GetPath("ScriptRoot", "./DataPack/scripts");
 		CHARNAME_TEMPLATE_PATTERN = parser.GetRegex("CnameTemplate", defaultRegex);
 		PET_NAME_TEMPLATE = parser.GetRegex("PetNameTemplate", defaultRegex);
 		CLAN_NAME_TEMPLATE = parser.GetRegex("ClanNameTemplate", defaultRegex);

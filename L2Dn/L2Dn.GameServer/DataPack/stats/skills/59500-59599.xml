@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="59500" toLevel="1" name="High Priest - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59501" toLevel="1" name="High Priest - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59502" toLevel="1" name="High Priest - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59503" toLevel="1" name="High Priest - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59504" toLevel="1" name="White Noblesse - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59505" toLevel="1" name="White Noblesse - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59506" toLevel="1" name="White Noblesse - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59507" toLevel="1" name="White Noblesse - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59508" toLevel="1" name="White Noblesse - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59509" toLevel="1" name="Purple Cowboy - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59510" toLevel="1" name="Purple Cowboy - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59511" toLevel="1" name="Purple Cowboy - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59512" toLevel="1" name="Purple Cowboy - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59513" toLevel="1" name="Purple Cowboy - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59514" toLevel="1" name="Blue Musketeer - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59515" toLevel="1" name="Blue Musketeer - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59516" toLevel="1" name="Blue Musketeer - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59517" toLevel="1" name="Blue Musketeer - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59518" toLevel="1" name="Blue Musketeer - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59519" toLevel="1" name="Zaken - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59520" toLevel="1" name="Zaken - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59521" toLevel="1" name="Zaken - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59522" toLevel="1" name="Zaken - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59523" toLevel="1" name="Zaken - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59524" toLevel="1" name="Dragon Berserker - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59525" toLevel="1" name="Dragon Berserker - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59526" toLevel="1" name="Dragon Berserker - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59527" toLevel="1" name="Dragon Berserker - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59528" toLevel="1" name="Dragon Berserker - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59529" toLevel="1" name="Anakim - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59530" toLevel="1" name="Anakim - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59531" toLevel="1" name="Anakim - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59532" toLevel="1" name="Anakim - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59533" toLevel="1" name="Anakim - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59534" toLevel="1" name="Lilith - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59535" toLevel="1" name="Lilith - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59536" toLevel="1" name="Lilith - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59537" toLevel="1" name="Lilith - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59538" toLevel="1" name="Lilith - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59539" toLevel="1" name="Freya - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59540" toLevel="1" name="Freya - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59541" toLevel="1" name="Freya - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59542" toLevel="1" name="Freya - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59543" toLevel="1" name="Freya - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59544" toLevel="1" name="Transformation Sealbook: Random Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59545" toLevel="1" name="Transformation Sealbook: Standard/ High-grade Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59546" toLevel="1" name="Transformation Sealbook: Standard/ High-grade/ Rare Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59547" toLevel="1" name="Transformation Sealbook: High-grade/ Rare/ Legendary Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59548" toLevel="1" name="Transformation Sealbook: Rare/ Legendary Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59549" toLevel="1" name="Transformation Sealbook: Legendary/ Mythic Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59550" toLevel="1" name="Transformation Sealbook: Random Standard Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59551" toLevel="1" name="Transformation Sealbook: Random High-grade Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59552" toLevel="1" name="Transformation Sealbook: Random Rare Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59553" toLevel="1" name="Transformation Sealbook: Random Legendary Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59554" toLevel="1" name="Holiday Joy Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59555" toLevel="1" name="Transformation Sealbook: Random Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59556" toLevel="1" name="Transformation Sealbook: Standard/ High-grade Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59557" toLevel="1" name="Transformation Sealbook: Standard/ High-grade/ Rare Appearance">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59558" toLevel="1" name="Transformation Sealbook: Kat the Cat">
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="59559" toLevel="1" name="Dragon Pendant - Attack Lv. 1">
+		<!-- M. Def. +6. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59560" toLevel="5" name="Dragon Pendant - Attack Lv. 1 +1">
+		<!-- M. Def. +$s1. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59561" toLevel="1" name="Dragon Pendant - Attack Lv. 2">
+		<!-- M. Def. +15, Acquired XP/ SP +10%, Received P./ M. Damage -2%, Atk. Spd. +2%. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59562" toLevel="5" name="Dragon Pendant - Attack Lv. 2 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59563" toLevel="1" name="Dragon Pendant - Attack Lv. 3">
+		<!-- M. Def. +25, Acquired XP/ SP +30%, Received P./ M. Damage -7%, Atk. Spd. +3%, P. Atk. +5%, P. Critical Damage +5%, Max HP +100, Max MP +50. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59564" toLevel="5" name="Dragon Pendant - Attack Lv. 3 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4, P. Atk. +$s5, P. Critical Damage +$s6, Max HP +$s7, Max MP +$s8. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59565" toLevel="1" name="Dragon Pendant - Attack Lv. 4">
+		<!-- M. Def. +30, Acquired XP/ SP +40%, Received P./ M. Damage -20%, Atk. Spd. +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200, Max MP +140. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59566" toLevel="5" name="Dragon Pendant - Attack Lv. 4 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4, P. Atk. +$s5, P. Critical Damage +$s6, P. Critical Rate +$s7, Max HP +$s8, Max MP +$s9. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59567" toLevel="1" name="Dragon Pendant - Magic Power Lv. 1">
+		<!-- M. Def. +6. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59568" toLevel="5" name="Dragon Pendant - Magic Power Lv. 1 +1">
+		<!-- M. Def. +$s1. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59569" toLevel="1" name="Dragon Pendant - Magic Power Lv. 2">
+		<!-- M. Def. +15, Acquired XP/ SP +10%, Received P./ M. Damage -2%, Casting Speed +2%. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59570" toLevel="5" name="Dragon Pendant - Magic Power Lv. 2 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59571" toLevel="1" name="Dragon Pendant - Magic Power Lv. 3">
+		<!-- M. Def. +25, Acquired XP/ SP +30%, Received P./ M. Damage -7%, Casting Speed +3%, M. Atk. +5%, M. Skill Critical Damage +5%, Max HP +100, Max MP +50. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59572" toLevel="5" name="Dragon Pendant - Magic Power Lv. 3 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4, M. Atk. +$s5, M. Skill Critical Damage +$s6, Max HP +$s7, Max MP +$s8. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59573" toLevel="1" name="Dragon Pendant - Magic Power Lv. 4">
+		<!-- M. Def. +30, Acquired XP/ SP +40%, Received P./ M. Damage -20%, Casting Speed +5%, M. Atk. +10%, M. Skill Critical Damage +10%, M. Skill Critical Rate +6%, Max HP +200, Max MP +140. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59574" toLevel="5" name="Dragon Pendant - Magic Power Lv. 4 +1">
+		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4, M. Atk. +$s5, M. Skill Critical Damage +$s6, M. Skill Critical Rate +$s7, Max HP +$s8, Max MP +$s9. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59575" toLevel="1" name="Blessing of a Dragon">
+		<!-- Buff/ debuff effects remain after death, but Blessing of a Dragon is consumed. -->
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59576" toLevel="1" name="Protection of a Dragon">
+		<!-- Buff/ debuff effects remain after death, the character is resurrected with full HP, but Protection of a Dragon is consumed. -->
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59577" toLevel="1" name="Dragon Meditation">
+		<!-- For 15 sec., Max HP +100, Max MP +50, Speed +33. -->
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>673</effectPoint>
+	</skill>
+	<skill id="59578" toLevel="1" name="Dragon Barrier">
+		<!-- For 10 sec. creates temporary defensive barrier that reflects normal attacks, skills and debuffs. -->
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>673</effectPoint>
+	</skill>
+	<skill id="59579" toLevel="1" name="Summon Agathion Love">
+		<!-- Summons Agathion Love. -->
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59580" toLevel="1" name="Reinforced Compound Bow Chest">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59581" toLevel="1" name="+7 Eminence Bow">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59582" toLevel="1" name="Shadow Master - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59583" toLevel="1" name="Shadow Master - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59584" toLevel="1" name="Shadow Master - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59585" toLevel="1" name="Shadow Master - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59586" toLevel="1" name="Shadow Master - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59587" toLevel="1" name="Admiral - Standard Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59588" toLevel="1" name="Admiral - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59589" toLevel="1" name="Admiral - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59590" toLevel="1" name="Admiral - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59591" toLevel="1" name="Admiral - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59592" toLevel="1" name="Nymph - Standard Transform">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59593" toLevel="1" name="Nymph - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59594" toLevel="1" name="Nymph - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59595" toLevel="1" name="Nymph - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59596" toLevel="1" name="Nymph - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59597" toLevel="1" name="Demon - Standard Transform">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59598" toLevel="1" name="Demon - High-grade Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59599" toLevel="1" name="Demon - Rare Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+</list>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="3031" price="0" /> <!-- Spirit Ore -->
+	<item id="1785" price="0" /> <!-- Soul Ore -->
+	<item id="5589" price="0" /> <!-- Energy Stone -->
+	<item id="91481" price="0" /> <!-- Soul Crystal -->
+	<item id="90714" price="0" /> <!-- Soul Crystal Lv.1 Coupon -->
+	<item id="90715" price="0" /> <!-- Soul Crystal Lv.2 Coupon -->
+	<item id="90716" price="0" /> <!-- Soul Crystal Lv.3 Coupon -->
+	<item id="90717" price="0" /> <!-- Soul Crystal Lv.4 Coupon -->
+	<item id="90718" price="0" /> <!-- Soul Crystal Lv.5 Coupon -->
+	<item id="90719" price="0" /> <!-- Soul Crystal Lv.6 Coupon -->
+	<item id="90720" price="0" /> <!-- Soul Crystal Lv.7 Coupon -->
+	<item id="90721" price="0" /> <!-- Soul Crystal Lv.8 Coupon -->
+	<item id="90722" price="0" /> <!-- Soul Crystal Lv.9 Coupon -->
+	<item id="90723" price="0" /> <!-- Soul Crystal Lv.10 Coupon -->
+	<item id="90724" price="0" /> <!-- Soul Crystal Lv.11 Coupon -->
+	<item id="90725" price="0" /> <!-- Soul Crystal Lv.12 Coupon -->
+	<item id="90726" price="0" /> <!-- Soul Crystal Lv.13 Coupon -->
+	<item id="90732" price="0" /> <!-- +8 B-grade Armor Set Coupon -->
+	<item id="90768" price="0" /> <!-- Hair Accessory Coupon -->
+	<item id="91159" price="0" /> <!-- Agathion Exchange Coupon -->
+	<item id="91226" price="0" /> <!-- Red's Weapon Coupon -->
+	<item id="91227" price="0" /> <!-- Sayha's Coupon -->
+	<item id="91631" price="0" /> <!-- Crafting Supplies Coupon -->
+	<item id="93448" price="0" /> <!-- A-grade Weapon Coupon -->
+	<item id="93449" price="0" /> <!-- A-grade Armor Coupon -->
+	<item id="93498" price="0" /> <!-- Enchanted C-grade Weapon Coupon -->
+	<item id="93499" price="0" /> <!-- Enchanted B-grade Weapon Coupon -->
+	<item id="93500" price="0" /> <!-- Enchanted B-grade Armor Coupon -->
+	<item id="93930" price="0" /> <!-- Special Armor Coupon -->
+	<item id="92680" price="0" /> <!-- Agathion Spirit Coupon -->
+	<item id="93717" price="0" /> <!-- +3 Talisman/ Belt Coupon -->
+	<item id="93718" price="0" /> <!-- +4 Talisman/ Belt Coupon -->
+	<item id="93719" price="0" /> <!-- +5 Talisman/ Belt Coupon -->
+	<item id="93720" price="0" /> <!-- +6 Talisman/ Belt Coupon -->
+	<item id="93721" price="0" /> <!-- +7 Talisman/ Belt Coupon -->
+	<item id="93722" price="0" /> <!-- +8 Talisman/ Belt Coupon -->
+	<item id="93951" price="0" /> <!-- Class Change Coupon -->
+	<item id="93974" price="0" /> <!-- Best Dye Coupon -->
+	<item id="94093" price="0" /> <!-- High-grade Item Craft Coupon -->
+	<item id="94623" price="0" /> <!-- Belt Craft Coupon -->
+	<item id="46444" price="0" /> <!-- Kain's Soul Crystal Lv.1 -->
+	<item id="46459" price="0" /> <!-- Mermoden's Soul Crystal Lv.1 -->
+	<item id="46474" price="0" /> <!-- Leona's Soul Crystal Lv.1 -->
+	<item id="46489" price="0" /> <!-- Pantheon's Soul Crystal Lv.1 -->
+	<item id="46504" price="0" /> <!-- Lionel's Soul Crystal Lv.1 -->
+	<item id="90534" price="0" /> <!-- Sigel Soul Crystal Lv.1 -->
+	<item id="90535" price="0" /> <!-- Sigel Soul Crystal Lv.2 -->
+	<item id="90536" price="0" /> <!-- Sigel Soul Crystal Lv.3 -->
+	<item id="90537" price="0" /> <!-- Sigel Soul Crystal Lv.4 -->
+	<item id="90538" price="0" /> <!-- Sigel Soul Crystal Lv.5 -->
+	<item id="90539" price="0" /> <!-- Sigel Soul Crystal Lv.6 -->
+	<item id="90540" price="0" /> <!-- Sigel Soul Crystal Lv.7 -->
+	<item id="90541" price="0" /> <!-- Sigel Soul Crystal Lv.8 -->
+	<item id="90542" price="0" /> <!-- Sigel Soul Crystal Lv.9 -->
+	<item id="90543" price="0" /> <!-- Sigel Soul Crystal Lv.10 -->
+	<item id="90544" price="0" /> <!-- Sigel Soul Crystal Lv.11 -->
+	<item id="90545" price="0" /> <!-- Sigel Soul Crystal Lv.12 -->
+	<item id="90546" price="0" /> <!-- Sigel Soul Crystal Lv.13 -->
+	<item id="90547" price="0" /> <!-- Sigel Soul Crystal Lv.14 -->
+	<item id="90548" price="0" /> <!-- Sigel Soul Crystal Lv.15 -->
+	<item id="90554" price="0" /> <!-- Tyrr Soul Crystal Lv.1 -->
+	<item id="90555" price="0" /> <!-- Tyrr Soul Crystal Lv.2 -->
+	<item id="90556" price="0" /> <!-- Tyrr Soul Crystal Lv.3 -->
+	<item id="90557" price="0" /> <!-- Tyrr Soul Crystal Lv.4 -->
+	<item id="90558" price="0" /> <!-- Tyrr Soul Crystal Lv.5 -->
+	<item id="90559" price="0" /> <!-- Tyrr Soul Crystal Lv.6 -->
+	<item id="90560" price="0" /> <!-- Tyrr Soul Crystal Lv.7 -->
+	<item id="90561" price="0" /> <!-- Tyrr Soul Crystal Lv.8 -->
+	<item id="90562" price="0" /> <!-- Tyrr Soul Crystal Lv.9 -->
+	<item id="90563" price="0" /> <!-- Tyrr Soul Crystal Lv.10 -->
+	<item id="90564" price="0" /> <!-- Tyrr Soul Crystal Lv.11 -->
+	<item id="90565" price="0" /> <!-- Tyrr Soul Crystal Lv.12 -->
+	<item id="90566" price="0" /> <!-- Tyrr Soul Crystal Lv.13 -->
+	<item id="90567" price="0" /> <!-- Tyrr Soul Crystal Lv.14 -->
+	<item id="90568" price="0" /> <!-- Tyrr Soul Crystal Lv.15 -->
+	<item id="90574" price="0" /> <!-- Othell Soul Crystal Lv.1 -->
+	<item id="90575" price="0" /> <!-- Othell Soul Crystal Lv.2 -->
+	<item id="90576" price="0" /> <!-- Othell Soul Crystal Lv.3 -->
+	<item id="90577" price="0" /> <!-- Othell Soul Crystal Lv.4 -->
+	<item id="90578" price="0" /> <!-- Othell Soul Crystal Lv.5 -->
+	<item id="90579" price="0" /> <!-- Othell Soul Crystal Lv.6 -->
+	<item id="90580" price="0" /> <!-- Othell Soul Crystal Lv.7 -->
+	<item id="90581" price="0" /> <!-- Othell Soul Crystal Lv.8 -->
+	<item id="90582" price="0" /> <!-- Othell Soul Crystal Lv.9 -->
+	<item id="90583" price="0" /> <!-- Othell Soul Crystal Lv.10 -->
+	<item id="90584" price="0" /> <!-- Othell Soul Crystal Lv.11 -->
+	<item id="90585" price="0" /> <!-- Othell Soul Crystal Lv.12 -->
+	<item id="90586" price="0" /> <!-- Othell Soul Crystal Lv.13 -->
+	<item id="90587" price="0" /> <!-- Othell Soul Crystal Lv.14 -->
+	<item id="90588" price="0" /> <!-- Othell Soul Crystal Lv.15 -->
+	<item id="90594" price="0" /> <!-- Yul Soul Crystal Lv.1 -->
+	<item id="90595" price="0" /> <!-- Yul Soul Crystal Lv.2 -->
+	<item id="90596" price="0" /> <!-- Yul Soul Crystal Lv.3 -->
+	<item id="90597" price="0" /> <!-- Yul Soul Crystal Lv.4 -->
+	<item id="90598" price="0" /> <!-- Yul Soul Crystal Lv.5 -->
+	<item id="90599" price="0" /> <!-- Yul Soul Crystal Lv.6 -->
+	<item id="90600" price="0" /> <!-- Yul Soul Crystal Lv.7 -->
+	<item id="90601" price="0" /> <!-- Yul Soul Crystal Lv.8 -->
+	<item id="90602" price="0" /> <!-- Yul Soul Crystal Lv.9 -->
+	<item id="90603" price="0" /> <!-- Yul Soul Crystal Lv.10 -->
+	<item id="90604" price="0" /> <!-- Yul Soul Crystal Lv.11 -->
+	<item id="90605" price="0" /> <!-- Yul Soul Crystal Lv.12 -->
+	<item id="90606" price="0" /> <!-- Yul Soul Crystal Lv.13 -->
+	<item id="90607" price="0" /> <!-- Yul Soul Crystal Lv.14 -->
+	<item id="90608" price="0" /> <!-- Yul Soul Crystal Lv.15 -->
+	<item id="90614" price="0" /> <!-- Feoh Soul Crystal Lv.1 -->
+	<item id="90615" price="0" /> <!-- Feoh Soul Crystal Lv.2 -->
+	<item id="90616" price="0" /> <!-- Feoh Soul Crystal Lv.3 -->
+	<item id="90617" price="0" /> <!-- Feoh Soul Crystal Lv.4 -->
+	<item id="90618" price="0" /> <!-- Feoh Soul Crystal Lv.5 -->
+	<item id="90619" price="0" /> <!-- Feoh Soul Crystal Lv.6 -->
+	<item id="90620" price="0" /> <!-- Feoh Soul Crystal Lv.7 -->
+	<item id="90621" price="0" /> <!-- Feoh Soul Crystal Lv.8 -->
+	<item id="90622" price="0" /> <!-- Feoh Soul Crystal Lv.9 -->
+	<item id="90623" price="0" /> <!-- Feoh Soul Crystal Lv.10 -->
+	<item id="90624" price="0" /> <!-- Feoh Soul Crystal Lv.11 -->
+	<item id="90625" price="0" /> <!-- Feoh Soul Crystal Lv.12 -->
+	<item id="90626" price="0" /> <!-- Feoh Soul Crystal Lv.13 -->
+	<item id="90627" price="0" /> <!-- Feoh Soul Crystal Lv.14 -->
+	<item id="90628" price="0" /> <!-- Feoh Soul Crystal Lv.15 -->
+	<item id="90634" price="0" /> <!-- Iss Soul Crystal Lv.1 -->
+	<item id="90635" price="0" /> <!-- Iss Soul Crystal Lv.2 -->
+	<item id="90636" price="0" /> <!-- Iss Soul Crystal Lv.3 -->
+	<item id="90637" price="0" /> <!-- Iss Soul Crystal Lv.4 -->
+	<item id="90638" price="0" /> <!-- Iss Soul Crystal Lv.5 -->
+	<item id="90639" price="0" /> <!-- Iss Soul Crystal Lv.6 -->
+	<item id="90640" price="0" /> <!-- Iss Soul Crystal Lv.7 -->
+	<item id="90641" price="0" /> <!-- Iss Soul Crystal Lv.8 -->
+	<item id="90642" price="0" /> <!-- Iss Soul Crystal Lv.9 -->
+	<item id="90643" price="0" /> <!-- Iss Soul Crystal Lv.10 -->
+	<item id="90644" price="0" /> <!-- Iss Soul Crystal Lv.11 -->
+	<item id="90645" price="0" /> <!-- Iss Soul Crystal Lv.12 -->
+	<item id="90646" price="0" /> <!-- Iss Soul Crystal Lv.13 -->
+	<item id="90647" price="0" /> <!-- Iss Soul Crystal Lv.14 -->
+	<item id="90648" price="0" /> <!-- Iss Soul Crystal Lv.15 -->
+	<item id="90654" price="0" /> <!-- Wynn Soul Crystal Lv.1 -->
+	<item id="90655" price="0" /> <!-- Wynn Soul Crystal Lv.2 -->
+	<item id="90656" price="0" /> <!-- Wynn Soul Crystal Lv.3 -->
+	<item id="90657" price="0" /> <!-- Wynn Soul Crystal Lv.4 -->
+	<item id="90658" price="0" /> <!-- Wynn Soul Crystal Lv.5 -->
+	<item id="90659" price="0" /> <!-- Wynn Soul Crystal Lv.6 -->
+	<item id="90660" price="0" /> <!-- Wynn Soul Crystal Lv.7 -->
+	<item id="90661" price="0" /> <!-- Wynn Soul Crystal Lv.8 -->
+	<item id="90662" price="0" /> <!-- Wynn Soul Crystal Lv.9 -->
+	<item id="90663" price="0" /> <!-- Wynn Soul Crystal Lv.10 -->
+	<item id="90664" price="0" /> <!-- Wynn Soul Crystal Lv.11 -->
+	<item id="90665" price="0" /> <!-- Wynn Soul Crystal Lv.12 -->
+	<item id="90666" price="0" /> <!-- Wynn Soul Crystal Lv.13 -->
+	<item id="90667" price="0" /> <!-- Wynn Soul Crystal Lv.14 -->
+	<item id="90668" price="0" /> <!-- Wynn Soul Crystal Lv.15 -->
+	<item id="90674" price="0" /> <!-- Aeore Soul Crystal Lv.1 -->
+	<item id="90675" price="0" /> <!-- Aeore Soul Crystal Lv.2 -->
+	<item id="90676" price="0" /> <!-- Aeore Soul Crystal Lv.3 -->
+	<item id="90677" price="0" /> <!-- Aeore Soul Crystal Lv.4 -->
+	<item id="90678" price="0" /> <!-- Aeore Soul Crystal Lv.5 -->
+	<item id="90679" price="0" /> <!-- Aeore Soul Crystal Lv.6 -->
+	<item id="90680" price="0" /> <!-- Aeore Soul Crystal Lv.7 -->
+	<item id="90681" price="0" /> <!-- Aeore Soul Crystal Lv.8 -->
+	<item id="90682" price="0" /> <!-- Aeore Soul Crystal Lv.9 -->
+	<item id="90683" price="0" /> <!-- Aeore Soul Crystal Lv.10 -->
+	<item id="90684" price="0" /> <!-- Aeore Soul Crystal Lv.11 -->
+	<item id="90685" price="0" /> <!-- Aeore Soul Crystal Lv.12 -->
+	<item id="90686" price="0" /> <!-- Aeore Soul Crystal Lv.13 -->
+	<item id="90687" price="0" /> <!-- Aeore Soul Crystal Lv.14 -->
+	<item id="90688" price="0" /> <!-- Aeore Soul Crystal Lv.15 -->
+	<item id="90694" price="0" /> <!-- Sealed Soul Crystal Lv.1 -->
+	<item id="90695" price="0" /> <!-- Sealed Soul Crystal Lv.2 -->
+	<item id="90696" price="0" /> <!-- Sealed Soul Crystal Lv.3 -->
+	<item id="90697" price="0" /> <!-- Sealed Soul Crystal Lv.4 -->
+	<item id="90698" price="0" /> <!-- Sealed Soul Crystal Lv.5 -->
+	<item id="90699" price="0" /> <!-- Sealed Soul Crystal Lv.6 -->
+	<item id="90700" price="0" /> <!-- Sealed Soul Crystal Lv.7 -->
+	<item id="90701" price="0" /> <!-- Sealed Soul Crystal Lv.8 -->
+	<item id="90702" price="0" /> <!-- Sealed Soul Crystal Lv.9 -->
+	<item id="90703" price="0" /> <!-- Sealed Soul Crystal Lv.10 -->
+	<item id="90704" price="0" /> <!-- Sealed Soul Crystal Lv.11 -->
+	<item id="90705" price="0" /> <!-- Sealed Soul Crystal Lv.12 -->
+	<item id="90706" price="0" /> <!-- Sealed Soul Crystal Lv.13 -->
+	<item id="90707" price="0" /> <!-- Sealed Soul Crystal Lv.14 -->
+	<item id="90708" price="0" /> <!-- Sealed Soul Crystal Lv.15 -->
+	<item id="91163" price="0" /> <!-- Anakim's Soul Crystal Lv.1 (Rare) -->
+	<item id="91164" price="0" /> <!-- Anakim's Soul Crystal Lv.2 (Rare) -->
+	<item id="91165" price="0" /> <!-- Anakim's Soul Crystal Lv.3 (Rare) -->
+	<item id="91166" price="0" /> <!-- Anakim's Soul Crystal Lv.4 (Rare) -->
+	<item id="91167" price="0" /> <!-- Anakim's Soul Crystal Lv.5 (Rare) -->
+	<item id="91168" price="0" /> <!-- Anakim's Soul Crystal Lv.6 (Rare) -->
+	<item id="91169" price="0" /> <!-- Anakim's Soul Crystal Lv.7 (Rare) -->
+	<item id="91170" price="0" /> <!-- Anakim's Soul Crystal Lv.8 (Rare) -->
+	<item id="91171" price="0" /> <!-- Anakim's Soul Crystal Lv.9 (Rare) -->
+	<item id="91172" price="0" /> <!-- Anakim's Soul Crystal Lv.10 (Rare) -->
+	<item id="92925" price="0" /> <!-- Anakim's Soul Crystal Lv.11 (Rare) -->
+	<item id="92926" price="0" /> <!-- Anakim's Soul Crystal Lv.12 (Rare) -->
+	<item id="92927" price="0" /> <!-- Anakim's Soul Crystal Lv.13 (Rare) -->
+	<item id="92928" price="0" /> <!-- Anakim's Soul Crystal Lv.14 (Rare) -->
+	<item id="92929" price="0" /> <!-- Anakim's Soul Crystal Lv.15 (Rare) -->
+	<item id="91173" price="0" /> <!-- Lilith's Soul Crystal Lv.1 (Rare) -->
+	<item id="91174" price="0" /> <!-- Lilith's Soul Crystal Lv.2 (Rare) -->
+	<item id="91175" price="0" /> <!-- Lilith's Soul Crystal Lv.3 (Rare) -->
+	<item id="91176" price="0" /> <!-- Lilith's Soul Crystal Lv.4 (Rare) -->
+	<item id="91177" price="0" /> <!-- Lilith's Soul Crystal Lv.5 (Rare) -->
+	<item id="91178" price="0" /> <!-- Lilith's Soul Crystal Lv.6 (Rare) -->
+	<item id="91179" price="0" /> <!-- Lilith's Soul Crystal Lv.7 (Rare) -->
+	<item id="91180" price="0" /> <!-- Lilith's Soul Crystal Lv.8 (Rare) -->
+	<item id="91181" price="0" /> <!-- Lilith's Soul Crystal Lv.9 (Rare) -->
+	<item id="91182" price="0" /> <!-- Lilith's Soul Crystal Lv.10 (Rare) -->
+	<item id="92920" price="0" /> <!-- Lilith's Soul Crystal Lv.11 (Rare) -->
+	<item id="92921" price="0" /> <!-- Lilith's Soul Crystal Lv.12 (Rare) -->
+	<item id="92922" price="0" /> <!-- Lilith's Soul Crystal Lv.13 (Rare) -->
+	<item id="92923" price="0" /> <!-- Lilith's Soul Crystal Lv.14 (Rare) -->
+	<item id="92924" price="0" /> <!-- Lilith's Soul Crystal Lv.15 (Rare) -->
+</list>

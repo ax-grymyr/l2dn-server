@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="112" price="0" /> <!-- Apprentice's Earring -->
+	<item id="113" price="0" /> <!-- Mystic's Earring -->
+	<item id="114" price="0" /> <!-- Earring of Strength -->
+	<item id="115" price="0" /> <!-- Earring of Wisdom -->
+	<item id="845" price="0" /> <!-- Cat's Eye Earring -->
+	<item id="91953" price="0" /> <!-- Dragon Valley's Earring -->
+	<item id="94616" price="0" /> <!-- Pirate Earring (Event) -->
+</list>

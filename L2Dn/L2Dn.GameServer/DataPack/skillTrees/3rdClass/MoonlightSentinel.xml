@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="102" parentClassId="24">
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Light Arrow Rain" skillId="772" skillLevel="1" getLevel="80" levelUpSp="1740000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Real Target" skillId="522" skillLevel="1" getLevel="78" levelUpSp="1740000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Real Target" skillId="522" skillLevel="2" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Real Target" skillId="522" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Real Target" skillId="522" skillLevel="4" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Detect Darkness" skillId="53005" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Detect Darkness" skillId="53005" skillLevel="2" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Double Shot" skillId="19" skillLevel="41" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="42" getLevel="77" levelUpSp="740000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="43" getLevel="78" levelUpSp="1740000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="44" getLevel="79" levelUpSp="1740000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="45" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="46" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="47" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="48" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="49" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="50" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="51" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="52" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="53" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="54" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Double Shot" skillId="19" skillLevel="55" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="1" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="2" getLevel="77" levelUpSp="740000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="3" getLevel="78" levelUpSp="1740000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="4" getLevel="79" levelUpSp="1740000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="5" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Lethal Shot" skillId="343" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Legendary Archer" skillId="47384" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<item id="96887,96873" count="1" /> <!-- Spellbook: Legendary Archer -->
+		</skill>
+		<skill skillName="Legendary Archer: Master" skillId="47384" skillLevel="2" getLevel="76" levelUpSp="980000">
+			<item id="100273,100265" count="1" /> <!-- Spellbook: Legendary Archer: Master -->
+		</skill>
+		<skill skillName="Rapid Fire" skillId="413" skillLevel="9" getLevel="80" levelUpSp="1740000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Rapid Fire" skillId="413" skillLevel="10" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Holding Shot" skillId="990" skillLevel="1" getLevel="79" levelUpSp="1740000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Archer Spirit" skillId="415" skillLevel="1" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Hamstring Shot" skillId="354" skillLevel="1" getLevel="77" levelUpSp="740000" />
+		<skill skillName="True Aim" skillId="47396" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<removeSkill id="522" onlyReplaceByLearn="true" /> <!-- Real Target -->
+			<item id="96888,96874" count="1" /> <!-- Spellbook: True Aim -->
+		</skill>
+		<skill skillName="True Aim" skillId="47396" skillLevel="2" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="True Aim" skillId="47396" skillLevel="3" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="8" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="9" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<removeSkill id="354" onlyReplaceByLearn="true" /> <!-- Hamstring Shot -->
+			<item id="96890,96876" count="1" /> <!-- Spellbook: Thorn Shot -->
+		</skill>
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="2" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="3" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="4" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="5" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="6" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="7" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Thorn Shot" skillId="47400" skillLevel="8" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Mount Pegasus" skillId="1834" skillLevel="1" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Ultimate Evasion" skillId="111" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="96900,96886" count="1" /> <!-- Spellbook: Perfect Mastery -->
+		</skill>
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Alacrity" skillId="47412" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<removeSkill id="413" onlyReplaceByLearn="true" /> <!-- Rapid Fire -->
+			<item id="96897,96883" count="1" /> <!-- Spellbook: Alacrity -->
+		</skill>
+		<skill skillName="Alacrity" skillId="47412" skillLevel="2" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Alacrity" skillId="47412" skillLevel="3" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="5" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="6" getLevel="78" levelUpSp="1740000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="7" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="12" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Archer's Weapon Mastery" skillId="47414" skillLevel="13" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="5" getLevel="76" levelUpSp="740000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="6" getLevel="78" levelUpSp="1740000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="7" getLevel="80" levelUpSp="1740000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="16" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="17" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Archer's Armor Mastery" skillId="47415" skillLevel="18" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Dexterous Body" skillId="47417" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<item id="96899,96885" count="1" /> <!-- Spellbook: Dexterous Body -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="740000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="740000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+		<skill skillName="Target Lock" skillId="47682" skillLevel="1" getLevel="76" levelUpSp="980000">
+			<item id="100271,100263" count="1" /> <!-- Spellbook: Target Lock -->
+		</skill>
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="1" getLevel="76" levelUpSp="630000">
+			<item id="100272,100264" count="1" /> <!-- Spellbook: Spiral Shot -->
+		</skill>
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="3" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="4" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="5" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="6" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="7" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Spiral Shot" skillId="47608" skillLevel="8" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Water Arrow Rain" skillId="47406" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<removeSkill id="772" onlyReplaceByLearn="true" /> <!-- Light Arrow Rain -->
+			<item id="96893,96879" count="1" /> <!-- Spellbook: Water Arrow Rain -->
+		</skill>
+		<skill skillName="Water Arrow Rain" skillId="47406" skillLevel="2" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Freezing Shot" skillId="47606" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<removeSkill id="47601" onlyReplaceByLearn="true" /> <!-- Vortex Shot -->
+			<item id="100269,100261" count="1" /> <!-- Spellbook: Freezing Shot -->
+		</skill>
+		<skill skillName="Freezing Shot" skillId="47606" skillLevel="2" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Freezing Shot" skillId="47606" skillLevel="3" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Freezing Shot" skillId="47606" skillLevel="4" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Freezing Shot" skillId="47606" skillLevel="5" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="1" getLevel="76" levelUpSp="630000">
+			<removeSkill id="990" onlyReplaceByLearn="true" /> <!-- Holding Shot -->
+			<item id="100267,100259" count="1" /> <!-- Spellbook: Binding Shot -->
+		</skill>
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="2" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="3" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="4" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="5" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="6" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="7" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Binding Shot" skillId="47603" skillLevel="8" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="1" getLevel="76" levelUpSp="630000">
+			<removeSkill id="16" onlyReplaceByLearn="true" /> <!-- Mortal Blow -->
+			<removeSkill id="56" onlyReplaceByLearn="true" /> <!-- Power Shot -->
+			<removeSkill id="3" onlyReplaceByLearn="true" /> <!-- Power Strike -->
+			<removeSkill id="19" onlyReplaceByLearn="true" /> <!-- Double Shot -->
+			<item id="100266,100258" count="1" /> <!-- Spellbook: Triple Shot -->
+		</skill>
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="2" getLevel="79" levelUpSp="1470000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="4" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="5" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="8" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="9" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Triple Shot" skillId="47602" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Elven Senses" skillId="47673" skillLevel="1" getLevel="76" levelUpSp="740000">
+			<item id="95521,94139" count="1" /> <!-- Spellbook: Elven Senses -->
+		</skill>
+		<skill skillName="Vortex Shot" skillId="47601" skillLevel="6" getLevel="77" levelUpSp="630000" />
+		<skill skillName="Vortex Shot" skillId="47601" skillLevel="7" getLevel="79" levelUpSp="1470000" />
+		<skill skillName="Vortex Shot" skillId="47601" skillLevel="8" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Vortex Shot" skillId="47601" skillLevel="9" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Vortex Shot" skillId="47601" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Legendary Shot" skillId="47652" skillLevel="1" getLevel="76" levelUpSp="0" autoGet="true" />
+	</skillTree>
+</list>

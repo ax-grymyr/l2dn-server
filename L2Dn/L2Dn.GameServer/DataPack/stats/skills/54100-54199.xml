@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="54100" toLevel="1" name="Sayha's Shield">
+		<!-- For 20 min., P. Def. +300. -->
+		<icon>icon.skill1040</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54101" toLevel="1" name="Sayha's Magic Barrier">
+		<!-- For 20 min., M. Def. +350. -->
+		<icon>icon.skill1036</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MD_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54102" toLevel="1" name="White Guardian Transformation">
+		<!-- Duration: 20 min. Max HP +15%. Max MP +15%. P. Atk. +3%. M. Atk. +3%. P. Def. +3%. M. Def. +3%. Atk. Spd. +5%. P. Accuracy +2. M. Accuracy +2. M. Skill Critical Rate +20. P. Skill Critical Damage +200. Speed +5 -->
+		<icon>icon.white_knight_suit</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>AVE_WHITE_KNIGHT</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>3500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeId>3031</itemConsumeId>
+		<itemConsumeCount>100</itemConsumeCount>
+		<effects>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54103" toLevel="1" name="Sayha's Decrease Weight">
+		<!-- For 20 min., weight limit +9000. -->
+		<icon>icon.skill1257</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>DECREASE_WEIGHT_PENALTY</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="WeightPenalty">
+				<amount>9000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54104" toLevel="1" name="Sayha's Berserker Spirit">
+		<!-- For 20 min., Max HP/ MP -15%, P. Atk. +10%, M. Atk. +20%, Atk. Spd. +8%, Casting Spd. +8%, Speed +8. -->
+		<icon>icon.skill1062</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54105" toLevel="1" name="Sayha's Wind Walk">
+		<!-- For 20 min., Speed +33. -->
+		<icon>icon.skill1204</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54106" toLevel="1" name="Sayha's Might">
+		<!-- For 20 min., P. Atk. +230. -->
+		<icon>icon.skill1068</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>230</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54108" toLevel="1" name="Sayha's Focus">
+		<!-- For 20 min., P. Critical Rate +40. -->
+		<icon>icon.skill1077</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CRITICAL_PROB_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54109" toLevel="1" name="Sayha's Haste">
+		<!-- For 20 min., Atk. Spd. +33%. -->
+		<icon>icon.skill1086</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54110" toLevel="1" name="Sayha's Death Whisper">
+		<!-- For 20 min., P. Critical Damage +35%. -->
+		<icon>icon.skill1242</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CRITICAL_DMG_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54111" toLevel="1" name="Sayha's Empower">
+		<!-- For 20 min., M. Atk. +300. -->
+		<icon>icon.skill1059</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54112" toLevel="1" name="Sayha's Clarity">
+		<!-- For 20 min., P. Skill/ Song/ Dance MP Consumption -20%, M. Skill MP Consumption -10%. -->
+		<icon>icon.skill1397</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHEAP_MAGIC</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54113" toLevel="1" name="Sayha's Wild Magic">
+		<!-- For 20 min., M. Skill Critical Rate +20. -->
+		<icon>icon.skill1303</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MAGIC_CRITICAL_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54114" toLevel="1" name="Sayha's Acumen">
+		<!-- For 20 min., Casting Spd. +30%. -->
+		<icon>icon.skill1085</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54115" toLevel="1" name="Sayha's Concentration">
+		<!-- For 20 min., Casting Interruption Rate -53%. -->
+		<icon>icon.skill1078</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CANCEL_PROB_DOWN</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ReduceCancel">
+				<amount>-53</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54116" toLevel="1" name="Sayha's Victory">
+		<!-- For 20 min., Max HP/ MP/ CP +300, P./ M. Atk. +200, Atk. Spd./ Casting Spd. +60, P. Critical Rate/ M. Skill Critical Rate +20, P. Critical Damage/ M. Skill Critical Damage +10%. -->
+		<icon>icon.skill5074</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54117" toLevel="1" name="Sayha's Recover HP">
+		<!-- For 20 min., recovers HP. -->
+		<icon>icon.skill0211</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>HP_REGEN_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpRegen">
+				<amount>1.1</amount> <!-- TODO: Correct value -->
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54118" toLevel="1" name="Sayha's MP Recovery">
+		<!-- For 20 min., recovers MP. The Sayha's Buff Scroll cannot be used if the buff is active. -->
+		<icon>icon.skill0213</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MP_REGEN_UP</abnormalType>
+		<effectPoint>100</effectPoint>
+		<hitTime>1800</hitTime>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MpRegen">
+				<amount>1.1</amount> <!-- TODO: Correct value -->
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54119" toLevel="1" name="Chef's Fish Stew - Victory">
+		<!-- For 3 h., HP/ MP Recovery Rate +20%, P. Accuracy +4, P./ M. Evasion +4, PvE damage +15%, Atk. Spd./ Casting Spd. +10%, P. Critical Rate/ M. Skill Critical Rate +15%, P. Critical Damage/ M. Skill Critical Damage +15%. The effect remains after death. -->
+		<icon>icon.fish_stew_residence_cha</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54120" toLevel="1" name="Adventurer's Chest: High Priest Transformation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91828</itemConsumeId> <!-- Adventurer's Chest: High Priest Transformation -->
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="95">
+						<item id="91825" count="3" /> <!-- Adventurer's Scroll: High Priest Transformation - Sealed -->
+					</item>
+					<item chance="10">
+						<item id="91827" count="1" /> <!-- Adventurer's Scroll: Dragon Berserker Transformation - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54121" toLevel="1" name="Adventurer's Chest: Valkyrie Transformation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91829</itemConsumeId> <!-- Adventurer's Chest: Valkyrie Transformation -->
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="95">
+						<item id="91826" count="3" /> <!-- Adventurer's Scroll: Valkyrie Transformation - Sealed -->
+					</item>
+					<item chance="10">
+						<item id="91827" count="1" /> <!-- Adventurer's Scroll: Dragon Berserker Transformation - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54122" toLevel="1" name="Improved Fire Attack Potion">
+		<!-- For 20 min., Fire Attack +80. Cooldown: 1 min. -->
+		<icon>icon.etc_fire_potion_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>80</amount>
+				<type>FIRE</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54123" toLevel="1" name="Improved Water Attack Potion">
+		<!-- For 20 min., Water Attack +80. Cooldown: 1 min. -->
+		<icon>icon.etc_water_potion_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>80</amount>
+				<type>WATER</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54124" toLevel="1" name="Improved Wind Attack Potion">
+		<!-- For 20 min., Wind Attack +80. Cooldown: 1 min. -->
+		<icon>icon.etc_wind_potion_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>80</amount>
+				<type>WIND</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54125" toLevel="1" name="Improved Earth Attack Potion">
+		<!-- For 20 min., Earth Attack +80. Cooldown: 1 min. -->
+		<icon>icon.etc_earth_potion_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>80</amount>
+				<type>EARTH</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54126" toLevel="3" name="Sayha's Grace Box">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">91834</value> <!-- Sayha's Grace Box -->
+			<value level="2">91834</value> <!-- Sayha's Grace Box -->
+			<value level="3">92394</value> <!-- Sayha's Grace Kit -->
+		</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom" fromLevel="1" toLevel="1">
+				<items>
+					<item chance="100.0">
+						<item id="91641" count="200" /> <!-- Sayha's Blessing - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="1" toLevel="1">
+				<items>
+					<item chance="100.0">
+						<item id="91713" count="30" /> <!-- Sayha's Storm -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="2" toLevel="2">
+				<items>
+					<item chance="3.22">
+						<item id="8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+					</item>
+					<item chance="3.22">
+						<item id="8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+					</item>
+					<item chance="3.22">
+						<item id="8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+					</item>
+					<item chance="3.22">
+						<item id="8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+					</item>
+					<item chance="3.22">
+						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49666" count="1" /> <!-- B-grade Accessory Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49668" count="1" /> <!-- C-grade Armor Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49669" count="1" /> <!-- C-grade Accessory Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="49674" count="10" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="3.22">
+						<item id="49790" count="1" /> <!-- +16 C-grade Weapon Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="90822" count="1" /> <!-- Sealed Doll of Border - Baium - 30-day -->
+					</item>
+					<item chance="3.22">
+						<item id="90823" count="1" /> <!-- Sealed Doll of Border - Queen Ant - 30-day -->
+					</item>
+					<item chance="3.22">
+						<item id="90824" count="1" /> <!-- Sealed Doll of Border - Orfen - 30-day -->
+					</item>
+					<item chance="3.4">
+						<item id="90907" count="100" /> <!-- Soulshot Ticket - Sealed -->
+					</item>
+					<item chance="3.22">
+						<item id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+					</item>
+					<item chance="3.22">
+						<item id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+					</item>
+					<item chance="3.22">
+						<item id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+					</item>
+					<item chance="3.22">
+						<item id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+					</item>
+					<item chance="3.22">
+						<item id="91113" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 1 -->
+					</item>
+					<item chance="3.22">
+						<item id="91114" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 2 -->
+					</item>
+					<item chance="3.22">
+						<item id="91115" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 3 -->
+					</item>
+					<item chance="3.22">
+						<item id="91188" count="1" /> <!-- Blessed Scroll: Enchant Spirit Accessory -->
+					</item>
+					<item chance="3.22">
+						<item id="91216" count="1" /> <!-- +16 B-grade Weapon Pack -->
+					</item>
+					<item chance="3.22">
+						<item id="91296" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 4 -->
+					</item>
+					<item chance="3.22">
+						<item id="91297" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 5 -->
+					</item>
+					<item chance="3.22">
+						<item id="91741" count="10" /> <!-- Einhasad's Protection - Sealed -->
+					</item>
+					<item chance="3.22">
+						<item id="91767" count="1" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+					</item>
+					<item chance="3.22">
+						<item id="91780" count="10" /> <!-- Old Battle Scroll - Sealed -->
+					</item>
+					<item chance="3.22">
+						<item id="91781" count="10" /> <!-- Old Sayha's Buff Scroll - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
+				<items>
+					<item chance="100.0">
+						<item id="91641" count="250" /> <!-- Sayha's Blessing - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
+				<items>
+					<item chance="100.0">
+						<item id="91712" count="20" /> <!-- Sayha's Storm - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
+				<items>
+					<item chance="100.0">
+						<item id="91781" count="20" /> <!-- Old Sayha's Buff Scroll - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
+				<items>
+					<item chance="100.0">
+						<item id="91952" count="1" /> <!-- Ring of Insolence -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
+				<items>
+					<item chance="100.0">
+						<item id="91953" count="1" /> <!-- Dragon Valley's Earring -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+</list>

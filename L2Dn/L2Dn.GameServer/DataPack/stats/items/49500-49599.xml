@@ -1,0 +1,1338 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="49500" name="Blessed Scroll of Escape" type="EtcItem">
+		<!-- Can be used to teleport to the nearest village. Its casting time is very short. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49501" name="Fish Stew - Guild's Gratitude Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Acquired XP +10%. Acquired SP +10%. Duration: 20 min. -->
+		<set name="icon" val="icon.ev_invasion_buff_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39076" level="1" /> <!-- Fish Stew. The guild's gratitude -->
+		</skills>
+	</item>
+	<item id="49502" name="Scroll of Escape: Giran Harbor" type="EtcItem">
+		<!-- A magic scroll that can teleport you to the Giran Harbor. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="39078" level="1" /> <!-- Teleport: Giran Harbor -->
+		</skills>
+	</item>
+	<item id="49503" name="Scroll of Escape: Gludin Harbor" type="EtcItem">
+		<!-- A magic scroll that can teleport you to the Gludin Harbor. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="39077" level="1" /> <!-- Teleport: Gludin Harbor -->
+		</skills>
+	</item>
+	<item id="49504" name="Report about Fish" type="EtcItem">
+		<!-- Report of Analysis Result of local fish. Take it to water researcher Baikal. -->
+		<set name="icon" val="icon.mercenary_certification_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49505" name="Sealed Bottle" type="EtcItem">
+		<!-- A bottle filled with water polluting substance. Take it to Fisher Pierre. -->
+		<set name="icon" val="icon.etc_hot_spring_glass_bottle_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49506" name="Fishing Rod" additionalName="10-day" type="Weapon">
+		<!-- Available for 10 days. Requires 1 Fishing Shot. -->
+		<set name="icon" val="icon.weapon_fishing_rod_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="14400" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="49507" name="Fishing Rod Pack" additionalName="10-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49506" min="1" max="1" chance="100" /> <!-- Fishing Rod - 10-day -->
+		</capsuled_items>
+	</item>
+	<item id="49508" name="Normal Bait" additionalName="Sealed" type="EtcItem">
+		<!-- Necessary for fishing. -->
+		<set name="icon" val="icon.etc_huge_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49509" name="Ring of Core Lv. 1" additionalName="15-day" type="Armor">
+		<!-- <Properties>. Received P. Damage -2%. Received M. Damage -2%. P. Evasion +1. M. Evasion +1. Max MP +9. Silence Atk. Rate and Resistance +10%. Fear Atk. Rate and Resistance +10%. Available for 15 d. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="commissionItemType" val="RING" />
+		<set name="handler" val="ItemSkills" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="3563" level="1" /> <!-- Ring of Core -->
+		</skills>
+		<stats>
+			<stat type="mDef">32</stat>
+			<stat type="maxMp">9</stat>
+		</stats>
+	</item>
+	<item id="49510" name="Pierre's Letter" type="EtcItem">
+		<!-- Urgent message from Fisherman Pierre. Take it to Ferma. -->
+		<set name="icon" val="icon.etc_letter_envelope_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49511" name="Sheep Gift" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49541" min="1" max="1" chance="16.66667" /> <!-- Spellbook Chest - Not Available -->
+			<item id="49525" min="1" max="1" chance="16.66667" /> <!-- Rare Accessory Pack Lv. 1 - 15-day -->
+			<item id="49490" min="1" max="1" chance="16.66667" /> <!-- Fishing Kit - Sealed -->
+			<item id="49500" min="1" max="1" chance="16.66667" /> <!-- Blessed Scroll of Escape -->
+			<item id="1540" min="1" max="1" chance="16.66667" /> <!-- High-grade HP Recovery Potion -->
+			<item id="49488" min="1" max="1" chance="16.66667" /> <!-- Hero's Top-grade HP Replenishing Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49512" name="Friend-or-Foe Warrior's Amulet" additionalName="14-day" type="EtcItem">
+		<!-- Available for 14 d. When in inventory, STR +1, INT +1, CON +1, MEN +1, DEX +1, WIT +1. -->
+		<set name="icon" val="BranchSys3.icon.g_rune_itemdrop_up" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="20160" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="is_premium" val="true" />
+		<skills>
+			<skill id="39082" level="1" /> <!-- Amulet: Prosperity -->
+		</skills>
+	</item>
+	<item id="49513" name="Shining Pendant Polish box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49470" min="1" max="1" chance="100" /> <!-- Shining Pendant Polish -->
+		</capsuled_items>
+	</item>
+	<item id="49514" name="Agathion Aries" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Available for 60 d. A bracelet for summoning Agathion Aries. <Active skill>. 1. Agathion Teleport: Teleports to Gludio/ Dion/ Giran/ Oren. Cooldown: 30 min. <Item skill>. 1. Aries Power: STR/ INT/ CON/ MEN +1. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="86400" />
+	</item>
+	<item id="49515" name="Agathion Aries" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aries. <Active skill>. 1. Agathion Teleport: Teleports to Gludio/ Dion/ Giran/ Oren. Cooldown: 30 min. <Item skill>. 1. Aries Power: STR/ INT/ CON/ MEN +1. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49516" name="Blessed Agathion Aries" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Aries. <Active skill>. 1. Agathion Teleport: Teleports to Gludio/ Dion/ Giran/ Oren. Cooldown: 30 min. <Item skills>. 1. Aries Power: STR/ INT/ CON/ MEN +1. 2. Aries Blessing: Fear/ Stun/ Sleep/ Paralysis/ Silence Resistance +5%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49517" name="Pirate Trophy Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_battle_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49518" min="2" max="2" chance="100" /> <!-- Special Pirate Fruit -->
+		</capsuled_items>
+	</item>
+	<item id="49518" name="Special Pirate Fruit" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +7%. M. Atk. +7%. P. Def. +10%. M. Def. +10%. Max HP +15%. Max MP +15%. Max CP +15%. HP Recovery Rate +20%. MP Recovery Rate +20%. A chance to absorb 3% of the inflicted damage as HP. Acquired XP +5%. Acquired SP +5%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.etc_codran_i09" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<set name="reuse_delay" val="60000" />
+		<skills>
+			<skill id="39144" level="1" /> <!-- Special Pirate Fruit -->
+		</skills>
+	</item>
+	<item id="49519" name="King Pirate's Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39086" level="1" /> <!-- King Pirate's Treasure Chest -->
+		</skills>
+	</item>
+	<item id="49520" name="Agation box: Aries" additionalName="60 days" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="86400" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90895" min="1" max="1" chance="100" /> <!-- Agathion Aries -->
+		</capsuled_items>
+	</item>
+	<item id="49521" name="Refined Romantic Chapeau (STR+1 INT+1)" type="Armor">
+		<!-- When equipped, STR +1, INT +1. Enables the Refined Romantic Chapeau: Teleport skill (cooldown: 2 h.). <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_archer_hat2_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+	</item>
+	<item id="49522" name="Pirate King Hat (STR+1 INT+1)" type="Armor">
+		<!-- When equipped, STR +1, INT +1, enables the Pirate King Hat: Teleport skill (cooldown: 2 h.). <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="BranchSys2.icon.zaken_hair_accessary" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+	</item>
+	<item id="49523" name="Demon's Circlet (STR +1, INT +1)" type="Armor">
+		<!-- When equipped, STR +1, INT +1, enables the Demon's Circlet: Teleport skill (cooldown: 2 h.). <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+	</item>
+	<item id="49524" name="Captain Pirate Hat Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_king_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39087" level="1" /> <!-- Captain Pirate Hat Box -->
+		</skills>
+	</item>
+	<item id="49525" name="Rare Accessory Pack Lv. 1" additionalName="15-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_10th_present2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55089" level="1" /> <!-- Rare Accessory Pack -->
+		</skills>
+	</item>
+	<item id="49526" name="Improved Scroll of Resurrection" type="EtcItem">
+		<!-- Magic scroll resurrecting a dead party member and restoring 50% of XP. -->
+		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39088" level="1" /> <!-- Improved Scroll of Resurrection -->
+		</skills>
+	</item>
+	<item id="49527" name="My Teleport Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="13015" min="1" max="1" chance="100" /> <!-- My Teleport Book -->
+			<item id="13016" min="10" max="10" chance="100" /> <!-- My Teleport Scroll -->
+		</capsuled_items>
+	</item>
+	<item id="49528" name="Pirate's HP Recovery Potion" type="EtcItem">
+		<!-- Momentarily recovers 600 HP. If HP is full, CP is recovered. -->
+		<set name="icon" val="icon.etc_potion_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="weight" val="1" />
+	</item>
+	<item id="49529" name="Blue Dynasty - Heavy Armor" type="Armor">
+		<!-- An item for L2 Assist Application. Full Blue Dynasty heavy armor set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49530" name="Blue Dynasty Circlet" type="Armor">
+		<!-- An item for the L2 Assist App. Blue Dynasty Circlet. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49531" name="Red Zubei's Heavy Armor" type="Armor">
+		<!-- An item for L2 Assist Application. Full Red Zubei's heavy armor set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49532" name="White Assassin Suit" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. For L2 Assist app. White Assassin Suit. When equipped, it is impossible to wear armor. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49533" name="Hero's HP Recovery Potion" additionalName="Sealed" type="EtcItem">
+		<!-- Momentarily recovers 500 HP. If HP is full, CP is recovered. -->
+		<set name="icon" val="icon.etc_lesser_potion_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_event_restricted" val="true" />
+		<set name="commissionItemType" val="POTION" />
+		<skills>
+			<skill id="39103" level="1" /> <!-- Quick Hero Healing Potion -->
+		</skills>
+	</item>
+	<item id="49534" name="Hero's Cube" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 20. Double-click to obtain Soulshot Ticket, Buff Scroll Chest, Hero's Top-grade HP Replenishing Potion, Hero's HP Recovery Potion, Angel Cat's Blessing, Improved Scroll of Resurrection, Chest of Enchant Scroll's Parts, Fishing Kit, Box of Scroll of Escape to Base, Blade Spirit, Spellbook Chest. Can be used only once a day. -->
+		<set name="icon" val="icon.special_cube_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="49535" name="Returned Hero's Fishing Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_elite_marguene_collection_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49487" min="3" max="3" chance="100" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49506" min="1" max="1" chance="100" /> <!-- Fishing Rod - 10-day -->
+			<item id="49508" min="2160" max="2160" chance="100" /> <!-- Common Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49536" name="Box of Scroll of Escape to Base" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49537" min="1" max="1" chance="100" /> <!-- Scroll of Escape: Dragon Valley Bridge -->
+			<item id="49538" min="1" max="1" chance="100" /> <!-- Scroll of Escape: Antharas' Lair -->
+			<item id="49539" min="1" max="1" chance="100" /> <!-- Scroll of Escape: Entrance to Cruma Tower -->
+			<item id="49540" min="1" max="1" chance="100" /> <!-- Scroll of Escape: Entrance to Orc Barracks -->
+		</capsuled_items>
+	</item>
+	<item id="49537" name="Scroll of Escape: Dragon Valley Bridge" type="EtcItem">
+		<!-- Can be used to teleport to the Dragon Valley Bridge. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49538" name="Scroll of Escape: Antharas' Lair" type="EtcItem">
+		<!-- Can be used to teleport to Antharas' Lair. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49539" name="Scroll of Escape: Entrance to Cruma Tower" type="EtcItem">
+		<!-- Can be used to teleport to the entrance to Cruma Tower. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49540" name="Scroll of Escape: Entrance to Orc Barracks" type="EtcItem">
+		<!-- Can be used to teleport to the entrance to the Orc Barracks. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49541" name="Spellbook Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain one of various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39059" level="1" /> <!-- Spellbook Chest -->
+		</skills>
+	</item>
+	<item id="49542" name="Improved Scroll of Resurrection" additionalName="Sealed" type="EtcItem">
+		<!-- Magic scroll resurrecting a dead party member and restoring 50% of XP. -->
+		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39109" level="1" /> <!-- Improved Scroll of Resurrection -->
+		</skills>
+	</item>
+	<item id="49543" name="Elemental Stone (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A stone containing incredible power. -->
+		<set name="icon" val="icon.etc_crystal_cave_crystal_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49544" name="Pirate" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in warrior's armor. Required level: 45. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49545" name="Dark Assassin" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in warrior's armor. Required level: 55. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49546" name="Warrior's Armor3" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in warrior's armor. Required level: 65. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49547" name="Mage's Armor1" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in wizard's armor. Required level: 45. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49548" name="Mage's Armor2" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in wizard's armor. Required level: 55. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49549" name="Mage's Armor3" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. You look as if you were in wizard's armor. Required level: 65. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49550" name="Teleport Device - Entrance to Enchanted Valley" type="EtcItem">
+		<!-- Magic scroll that teleports one to Enchanted Valley. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49551" name="Blue Dynasty - Light Armor" type="Armor">
+		<!-- An item for L2 Assist Application. Full Blue Dynasty light armor set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49552" name="Blue Dynasty - Robe" type="Armor">
+		<!-- An item for L2 Assist Application. Full Blue Dynasty robe set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49553" name="Red Zubei's Light Armor" type="Armor">
+		<!-- An item for L2 Assist Application. Full Red Zubei's light armor set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49554" name="Red Zubei's Robe" type="Armor">
+		<!-- An item for L2 Assist Application. Full Red Zubei's robe set. Has no class restrictions, but for some races and classes heavy armor, light armor and robe sets look the same. When equipping, your current armor is taken off and becomes unavailable. Headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49555" name="Mold" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Goods delivered by Trader Damion in Gludio. Take them to Amora near Fellmere Lake. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49556" name="Amora's Receipt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A receipt from Amora. Take it to Trader Damion in Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49557" name="Armor Trade Contract" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A contract found on Turek Orc Commander's body. There's a Dwarven seal on it. Take it to Moon Knight Jones. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49558" name="Turek Orc Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An order to attack found on Turek Orc Commander's body. Take it to Moon Knight Jones. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49559" name="Rolento's Bag" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. This is the Equipment, which Trader Rolento has to deliver to Hierarch Ol Mahum. Take it to Hierarch Ol Mahum Gudzu. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="49560" name="Iron Scale Guild Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A certificate insuring your membership in the Iron Scale Guild -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49561" name="Turek Orc Invader Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A severed head of Turek Orc Invader. Collect 10 of these and take them to Ol Mahum Hierarch Gudz. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49562" name="Spellbook: Spirit Sharing" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Spirit Sharing skill. <Classes>. Warlock, Elemental Summoner, Phantom Summoner. <Skill effect>. Increases P./ M. Atk., Atk. Spd/ Casting Spd. and P. Critical Rate/ M. Skill Critical Rate. Transfers the caster's abilities to the summoned servitor. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49563" name="1,000,000,000 Adena" additionalName="Sealed" type="EtcItem">
+		<!-- Adens look like adenas, but are rarer and more valuable. Take them to Misfety to obtain some buffs. -->
+		<set name="icon" val="icon.fairy_adena_joke" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49564" name="10,000,000,000 Adena" additionalName="Sealed" type="EtcItem">
+		<!-- Adens look like adenas, but are rarer and more valuable. Take them to Misfety to obtain a gift and some buffs. -->
+		<set name="icon" val="icon.fairy_adena_joke" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49565" name="Misfety's Gift" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_joy_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49466" min="1" max="1" chance="100" /> <!-- Hero's XP Amulet - 30-day -->
+			<item id="21468" min="1" max="1" chance="100" /> <!-- Sheep Hat - 14-day -->
+			<item id="49031" min="1" max="1" chance="100" /> <!-- Ring of Heir - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49566" name="Roa's Gift" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ev_draco_gift_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49487" min="1" max="1" chance="16.66667" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49494" min="1" max="1" chance="16.66667" /> <!-- Buff Scroll Pack - Sealed -->
+			<item id="49536" min="1" max="1" chance="16.66667" /> <!-- Box of Scroll of Escape to Base - Sealed -->
+			<item id="49490" min="1" max="1" chance="16.66667" /> <!-- Fishing Kit - Sealed -->
+			<item id="10649" min="1" max="1" chance="16.66667" /> <!-- Feather of Blessing -->
+			<item id="49541" min="1" max="1" chance="16.66667" /> <!-- Spellbook Chest - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="49567" name="Roa's Lost Item" additionalName="Sealed" type="EtcItem">
+		<!-- An item lost by Character Helper Roa. Bring it back to her to obtain valuable gifts. The exchange is available only once a day. Will be removed after the event. -->
+		<set name="icon" val="icon.event_july_seven_park_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49568" name="Spellbook: Sonic Move" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Sonic Move skill. <Class>. Gladiator. <Skill effect>. Increases Speed. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49569" name="Spellbook: Sand Bomb" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Sand Bomb skill. <Classes>. Treasure Hunter, Plains Walker, Abyss Walker. <Skill effect>. Hurls a sand cloud onto the enemy, decreasing their P./ M. Accuracy. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49570" name="Spellbook: Mass Curse Gloom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Mass Curse Gloom skill. <Class>. Necromancer. <Skill effect>. Curses the target and nearby enemies, decreasing their M. Def. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49571" name="Spellbook: Clear Mind" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Clear Mind skill. <Classes>. Sorcerer, Spellsinger, Spellhowler. <Skill effect>. Increases MP Recovery Rate while standing/ walking. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49573" name="Samurai Black Long Sword" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Cannot be enchanted or endued with special characteristics. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2340" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49574" name="Queen Ant's Ring Lv. 2" type="Armor">
+		<!-- <Properties>. P. Atk. +6%. M. Atk. +6%. P. Accuracy +2. M. Accuracy +2. Max MP +15. Infection Atk. Rate and Resistance +15%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3562" level="2" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">15</stat>
+		</stats>
+	</item>
+	<item id="49575" name="Orfen's Earring Lv. 2" type="Armor">
+		<!-- <Properties>. MP Consumption -3%. Received Healing +4%. Max MP +25. Silence Resistance and Atk. Rate +10%. Fear Resistance and Atk. Rate +10%. Hold Resistance and Atk. Rate +15%. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="EARRING" />
+		<skills>
+			<skill id="3560" level="2" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">61</stat>
+			<stat type="maxMp">25</stat>
+		</stats>
+	</item>
+	<item id="49576" name="Ring of Core Lv. 2" type="Armor">
+		<!-- <Properties>. Received P. Damage -4%. Received M. Damage -4%. P. Evasion +2. M. Evasion +2. Max MP +15. Silence Atk. Rate and Resistance +15%. Fear Atk. Rate and Resistance +15%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3563" level="2" /> <!-- Ring of Core -->
+		</skills>
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">15</stat>
+		</stats>
+	</item>
+	<item id="49577" name="Queen Ant's Ring Lv. 3" type="Armor">
+		<!-- <Properties>. P. Atk. +7%. M. Atk. +7%. P. Critical Damage +10%. M. Skill Critical Damage +5%. P. Accuracy +3. M. Accuracy +3. Max MP +21. Infection Atk. Rate and Resistance +20%. Effects of two identical rings do not stack. Cannot be enchanted. Take 2 of these rings to Blacksmith Baggins in Giran to exchange them for Essence of Queen Ant. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3562" level="3" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
+	</item>
+	<item id="49578" name="Orfen's Earring Lv. 3" type="Armor">
+		<!-- <Properties>. MP Consumption -5%. Received Healing +6%. With a certain chance, absorbs some of the inflicted damage as MP. Max MP +31. Silence Atk. Rate and Resistance +15%. Fear Atk. Rate and Resistance +15%. Hold Atk. Rate and Resistance +20%. Effects of two identical earrings do not stack. Cannot be enchanted. Take 2 of these earrings to Blacksmith Baggins in Giran to exchange them for Essence of Orfen. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="EARRING" />
+		<skills>
+			<skill id="3560" level="3" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
+	</item>
+	<item id="49579" name="Ring of Core Lv. 3" type="Armor">
+		<!-- <Properties>. Received P. Damage -6%. Received M. Damage -6%. P. Evasion +3. M. Evasion +3. Max MP +21. Silence Atk. Rate and Resistance +20%. Fear Atk. Rate and Resistance +20%. <Ring of Core>. Removes all debuffs and anomalies when used. Effects of two identical rings do not stack. Cannot be enchanted. Take 2 of these rings to Blacksmith Baggins in Giran to exchange them for Essence of Core. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3563" level="3" /> <!-- Ring of Core -->
+			<skill id="35016" level="1" /> <!-- Ring of Core Ability Skill -->
+		</skills>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
+	</item>
+	<item id="49580" name="Baium's Ring" type="Armor">
+		<!-- Max enchant value: +6. (Requires Scroll: Enchant Rare Accessories.). Boosts the item's parameters after enchanting. Effects of two identical rings do not stack. Safe enchanting to +1 -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="50446" level="1" /> <!-- Baium's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">73</stat>
+		</stats>
+	</item>
+	<item id="49581" name="Baium's Ring Lv. 2" type="Armor">
+		<!-- <Properties>. P. Skill Power +6%. M. Skill Power +6%. Atk. Spd. +4%. Casting Spd. +4%. P. Accuracy +3. M. Accuracy +3. Max MP +21. Shock Atk. Rate and Resistance +15%. Infection Atk. Rate and Resistance +10%. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="50443" level="2" /> <!-- Baium's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">15</stat>
+		</stats>
+	</item>
+	<item id="49582" name="Baium's Ring Lv. 3" type="Armor">
+		<!-- <Properties>. P. Skill Power +10%. M. Skill Power +10%. Atk. Spd. +5%. Casting Spd. +4%. P. Accuracy +4. M. Accuracy +4. P. Critical Damage +15%. M. Skill Critical Damage +10%. Max MP +27. Shock Atk. Rate and Resistance +20%. Infection Atk. Rate and Resistance +15%. Effects of two identical rings do not stack. Cannot be enchanted. Take 2 of these rings to Blacksmith Baggins in Giran to exchange them for Essence of Baium. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="50443" level="3" /> <!-- Baium's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
+	</item>
+	<item id="49583" name="Golden Chest of Mermaid's Fishing Supplies" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i08" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49589" min="180" max="180" chance="100" /> <!-- Golden Bait -->
+			<item id="38154" min="180" max="180" chance="100" /> <!-- Fishing Shot -->
+			<item id="49502" min="5" max="5" chance="100" /> <!-- Scroll of Escape: Giran Harbor -->
+			<item id="49503" min="5" max="5" chance="100" /> <!-- Scroll of Escape: Gludin Harbor -->
+		</capsuled_items>
+	</item>
+	<item id="49584" name="Golden Boot" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_shose" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="45488" min="1" max="1" chance="100" /> <!-- Golden Treasure Chest -->
+		</capsuled_items>
+	</item>
+	<item id="49585" name="Golden Mermaid's Tears" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 d. Double-click to get a buff: acquired XP/ SP while hunting +50% for 1 h. Note! If you use Golden Mermaid's Tears while the Sayha's Storm is active, the buff will not be applied. -->
+		<set name="icon" val="icon.general_fuel_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39113" level="1" /> <!-- Golden Necklace of Mermaid -->
+		</skills>
+	</item>
+	<item id="49586" name="Golden Mermaid's Fishing Rod" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Consumes 1 Fishing Shot. Activates the skill to teleport to Giran/ Gludin Harbor. Cooldown: 1 min. -->
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="49587" name="Golden Mermaid's Fishing Rod" type="Weapon">
+		<!-- Consumes 1 Fishing Shot. Activates the skill to teleport to Giran/ Gludin Harbor. Cooldown: 1 min. -->
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="49588" name="Golden Mermaid's Fishing Rod Chest" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_lure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49586" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="49589" name="Golden Bait" type="EtcItem">
+		<!-- Fishing bait. Can be used to catch a Whale. Gives a small chance to get a Golden Boot. -->
+		<set name="icon" val="icon.bm_gold_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49590" name="Rare Accessory Pack Lv. 3" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49591" min="1" max="1" chance="100" /> <!-- Queen Ant's Ring Lv. 3 - 30-day -->
+			<item id="49592" min="1" max="1" chance="100" /> <!-- Orfen's Earring Lv. 3 - 30-day -->
+			<item id="49593" min="1" max="1" chance="100" /> <!-- Ring of Core Lv. 3 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="49591" name="Queen Ant's Ring Lv. 3" additionalName="30-day" type="Armor">
+		<!-- <Properties>. P. Atk. +7%. M. Atk. +7%. P. Critical Damage +10%. M. Skill Critical Damage +5%. P. Accuracy +3. M. Accuracy +3. Max MP +21. Infection Atk. Rate and Resistance +20%. Available for 30 d. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3562" level="3" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
+	</item>
+	<item id="49592" name="Orfen's Earring Lv. 3" additionalName="30-day" type="Armor">
+		<!-- <Properties>. MP Consumption -5%. Received Healing +6%. With a certain chance, absorbs some of the inflicted damage as MP. Max MP +31. Silence Atk. Rate and Resistance +15%. Fear Atk. Rate and Resistance +15%. Hold Atk. Rate and Resistance +20%. Available for 30 d. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="EARRING" />
+		<skills>
+			<skill id="3560" level="3" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
+	</item>
+	<item id="49593" name="Ring of Core Lv. 3" additionalName="30-day" type="Armor">
+		<!-- <Properties>. Received P. Damage -6%. Received M. Damage -6%. P. Evasion +3. M. Evasion +3. Max MP +21. Silence Atk. Rate and Resistance +20%. Fear Atk. Rate and Resistance +20%. <Ring of Core>. Removes all debuffs and anomalies when used. Available for 30 d. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_core_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3563" level="3" /> <!-- Ring of Core -->
+			<skill id="35016" level="1" /> <!-- Ring of Core Ability Skill -->
+		</skills>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
+	</item>
+	<item id="49594" name="Whale" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain some SP. Can be exchanged for SP Scroll through a Fishing Guildsman. -->
+		<set name="icon" val="icon.fish_huge_i15" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49595" name="Scroll: 2000 SP" type="EtcItem">
+		<!-- SP +2000. -->
+		<set name="icon" val="icon.etc_sp_scroll1_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39118" level="1" /> <!-- Scroll: 2000 SP -->
+		</skills>
+	</item>
+	<item id="49596" name="Scroll: 10,000 SP" type="EtcItem">
+		<!-- SP +10,000. -->
+		<set name="icon" val="icon.etc_sp_scroll2_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39119" level="1" /> <!-- Scroll: 10,000 SP -->
+		</skills>
+	</item>
+	<item id="49597" name="Golden Boot" additionalName="Not Available" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49598" name="Blue Talisman - P. Crit." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. P. Critical Rate +10. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="49599" name="Blue Talisman - P. Atk." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. P. Atk. +3%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="deco1" />
+	</item>
+</list>

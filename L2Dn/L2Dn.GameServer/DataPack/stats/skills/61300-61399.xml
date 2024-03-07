@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61300" toLevel="1" name="Rapier Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61301" toLevel="1" name="Blunt Weapon Damage 10%">
+		<!-- Blunt Weapon Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61302" toLevel="1" name="Blunt Weapon Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61303" toLevel="1" name="Blunt Weapon Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61304" toLevel="1" name="Blunt Weapon Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61305" toLevel="1" name="Blunt Weapon Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61306" toLevel="1" name="Blunt Weapon Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61307" toLevel="1" name="Blunt Weapon Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61308" toLevel="1" name="Blunt Weapon Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61309" toLevel="1" name="Blunt Weapon Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61310" toLevel="1" name="Blunt Weapon Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61311" toLevel="1" name="Spear Damage 10%">
+		<!-- Spear Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61312" toLevel="1" name="Spear Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61313" toLevel="1" name="Spear Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61314" toLevel="1" name="Spear Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61315" toLevel="1" name="Spear Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61316" toLevel="1" name="Spear Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61317" toLevel="1" name="Spear Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61318" toLevel="1" name="Spear Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61319" toLevel="1" name="Spear Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61320" toLevel="1" name="Spear Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61321" toLevel="1" name="Fist Weapon Damage 10%">
+		<!-- Fist Weapon Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61322" toLevel="1" name="Fist Weapon Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61323" toLevel="1" name="Fist Weapon Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61324" toLevel="1" name="Fist Weapon Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61325" toLevel="1" name="Fist Weapon Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61326" toLevel="1" name="Fist Weapon Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61327" toLevel="1" name="Fist Weapon Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61328" toLevel="1" name="Fist Weapon Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61329" toLevel="1" name="Fist Weapon Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61330" toLevel="1" name="Fist Weapon Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61331" toLevel="1" name="Dual Swords Damage 10%">
+		<!-- Dual Swords Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61332" toLevel="1" name="Dual Swords Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61333" toLevel="1" name="Dual Swords Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61334" toLevel="1" name="Dual Swords Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61335" toLevel="1" name="Dual Swords Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61336" toLevel="1" name="Dual Swords Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61337" toLevel="1" name="Dual Swords Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61338" toLevel="1" name="Dual Swords Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61339" toLevel="1" name="Dual Swords Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61340" toLevel="1" name="Dual Swords Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61341" toLevel="1" name="Bow Damage 10%">
+		<!-- Bow Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61342" toLevel="1" name="Bow Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61343" toLevel="1" name="Bow Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61344" toLevel="1" name="Bow Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61345" toLevel="1" name="Bow Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61346" toLevel="1" name="Bow Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61347" toLevel="1" name="Bow Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61348" toLevel="1" name="Bow Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61349" toLevel="1" name="Bow Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61350" toLevel="1" name="Bow Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61351" toLevel="1" name="Firearms Damage 10%">
+		<!-- Firearms Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61352" toLevel="1" name="Firearms Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61353" toLevel="1" name="Firearms Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61354" toLevel="1" name="Firearms Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61355" toLevel="1" name="Firearms Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61356" toLevel="1" name="Firearms Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61357" toLevel="1" name="Firearms Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61358" toLevel="1" name="Firearms Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61359" toLevel="1" name="Firearms Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61360" toLevel="1" name="Firearms Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61361" toLevel="1" name="Basic Damage 10%">
+		<!-- Basic damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61362" toLevel="1" name="Basic Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61363" toLevel="1" name="Basic Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61364" toLevel="1" name="Basic Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61365" toLevel="1" name="Basic Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61366" toLevel="1" name="Basic Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61367" toLevel="1" name="Basic Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61368" toLevel="1" name="Basic Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61369" toLevel="1" name="Basic Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61370" toLevel="1" name="Basic Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61371" toLevel="1" name="P. Skill Damage 10%">
+		<!-- P. Skill Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61372" toLevel="1" name="P. Skill Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61373" toLevel="1" name="P. Skill Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61374" toLevel="1" name="P. Skill Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61375" toLevel="1" name="P. Skill Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61376" toLevel="1" name="P. Skill Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61377" toLevel="1" name="P. Skill Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61378" toLevel="1" name="P. Skill Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61379" toLevel="1" name="P. Skill Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61380" toLevel="1" name="P. Skill Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61381" toLevel="1" name="M. Skill Damage 10%">
+		<!-- M. Skill Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61382" toLevel="1" name="M. Skill Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61383" toLevel="1" name="M. Skill Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61384" toLevel="1" name="M. Skill Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61385" toLevel="1" name="M. Skill Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61386" toLevel="1" name="M. Skill Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61387" toLevel="1" name="M. Skill Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61388" toLevel="1" name="M. Skill Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61389" toLevel="1" name="M. Skill Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61390" toLevel="1" name="M. Skill Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61391" toLevel="1" name="AoE Skill Damage 10%">
+		<!-- AoE Skill Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61392" toLevel="1" name="AoE Skill Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61393" toLevel="1" name="AoE Skill Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61394" toLevel="1" name="AoE Skill Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61395" toLevel="1" name="AoE Skill Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61396" toLevel="1" name="AoE Skill Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61397" toLevel="1" name="AoE Skill Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61398" toLevel="1" name="AoE Skill Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61399" toLevel="1" name="AoE Skill Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

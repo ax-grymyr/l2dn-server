@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30254</npc> <!-- Harmony -->
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90066" count="1" chance="100" /> <!-- Scroll: Ghost Piercing -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90063" count="1" chance="100" /> <!-- Scroll: Death Sting -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91482" count="1" chance="100" /> <!-- Scroll - Detect Darkness -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90062" count="1" chance="100" /> <!-- Scroll: Real Target -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91925" count="1" chance="100" /> <!-- Scroll: Soul Stigma -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91924" count="1" chance="100" /> <!-- Scroll: Mental Panic -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90065" count="1" chance="100" /> <!-- Scroll: Arrow Rain -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90064" count="1" chance="100" /> <!-- Scroll: Flame Hawk -->
+	</item>
+</list>

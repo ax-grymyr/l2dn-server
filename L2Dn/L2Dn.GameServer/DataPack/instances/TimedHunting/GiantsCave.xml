@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="215" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Giant's Cave (90+) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="187549" y="59885" z="-4976" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="90" />
+			<param name="max" value="999" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34122" x="187456" y="59617" z="-4976" heading="14791" /> <!-- Manager Bunch -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22411" x="187537" y="60298" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187540" y="60570" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187771" y="60329" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187771" y="60560" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187964" y="60335" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187952" y="60554" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187948" y="60781" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187764" y="60791" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187758" y="61051" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187950" y="61048" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187949" y="61217" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187770" y="61226" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187289" y="60338" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187103" y="60337" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187281" y="60545" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187114" y="60544" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187092" y="60779" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187253" y="60781" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187251" y="61019" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187249" y="61231" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187100" y="61235" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187100" y="61035" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="187390" y="61109" z="-4976" heading="49511" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="187646" y="61129" z="-4976" heading="49511" /> <!-- Evolved Lesser Giant Lord -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22425" x="187092" y="60779" z="-4976" heading="49511" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="187289" y="60338" z="-4976" heading="49511" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="187758" y="61051" z="-4976" heading="49511" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="187771" y="60560" z="-4976" heading="49511" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22424" x="187537" y="60579" z="-4987" heading="49515" /> <!-- Giant Guardian -->
+		</group>
+	</spawnlist>
+</instance>

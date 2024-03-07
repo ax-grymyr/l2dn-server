@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49400" toLevel="1" name="Pet Experience Transfer">
+		<!-- A pet of Lv. 40 and higher gains 1,000,000 XP. A pet of Lv. 1-39 gains 100,000 XP. -->
+		<icon>icon.bm_freya_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49401" toLevel="2" name="Pet's Protection - Master Recharge">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Constantly recovers MP. Recovers 30 MP every 9.9 sec. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49402" toLevel="2" name="Pet's Protection - Master Evasion">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Skill Evasion +2%. P. Evasion +5. M. Evasion +5. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49403" toLevel="2" name="Pet's Protection - Master Power">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Skill Power +1%. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49404" toLevel="2" name="Pet's Protection - Master Health">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Max HP +700. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49405" toLevel="2" name="Pet's Protection - Master Speed">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Speed +2. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49406" toLevel="2" name="Pet's Protection - Master Chance">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. All Critical Rate +1%. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49407" toLevel="1" name="While a Master's effect is active">
+		<!-- To test the effect -->
+		<icon>icon.skill11272</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49451" toLevel="1" name="Pet's Special HP Recovery Potion">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49452" toLevel="1" name="Scroll: Boost Pet's Attack">
+		<!-- Pet's P. Atk. +200. Pet's M. Atk. +200. Pet's Skill Power +2%. Pet's satiety recovery +50%. Pet's acquired XP +10% -->
+		<icon>icon.pet_atk_scrl</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalType>BOOST_ATTACK_PET</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97432</itemConsumeId> <!-- Scroll: Pet Boost Attack -->
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49453" toLevel="1" name="Scroll: Boost Pet's Defense">
+		<!-- Pet's P. Def. +400. Pet's M. Def. +400. Pet's HP +500. Pet's HP Recovery Potions' Effect +50%. Pet's acquired XP +10% -->
+		<icon>icon.pet_def_scrl</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalType>BOOST_DEFENCE_PET</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97433</itemConsumeId> <!-- Scroll: Boost Pet's Defense -->
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

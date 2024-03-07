@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="86" price="0" /> <!-- Tomahawk -->
+	<item id="88" price="0" /> <!-- Morning Star -->
+	<item id="156" price="0" /> <!-- Hand Axe -->
+	<item id="157" price="0" /> <!-- Spiked Club -->
+	<item id="158" price="0" /> <!-- Tarbar -->
+	<item id="159" price="0" /> <!-- Bonebreaker -->
+	<item id="166" price="0" /> <!-- Heavy Mace -->
+	<item id="167" price="0" /> <!-- Scalpel -->
+	<item id="168" price="0" /> <!-- Work Hammer -->
+	<item id="169" price="0" /> <!-- Skull Breaker -->
+	<item id="172" price="0" /> <!-- Heavy Bone Club -->
+	<item id="93031" price="0" /> <!-- Aden Club -->
+</list>

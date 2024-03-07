@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93000" name="M. Evasion +2.1">
+		<!-- M. Evasion +2.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93001" name="M. Evasion +2.2">
+		<!-- M. Evasion +2.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93002" name="M. Evasion +2.3">
+		<!-- M. Evasion +2.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93003" name="M. Evasion +2.4">
+		<!-- M. Evasion +2.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93004" name="M. Evasion +2.5">
+		<!-- M. Evasion +2.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93005" name="M. Evasion +2.6">
+		<!-- M. Evasion +2.6 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93006" name="M. Evasion +2.7">
+		<!-- M. Evasion +2.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93007" name="M. Evasion +2.8">
+		<!-- M. Evasion +2.8 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93008" name="M. Evasion +2.9">
+		<!-- M. Evasion +2.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93009" name="M. Evasion +3">
+		<!-- M. Evasion +3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93010" name="M. Evasion +3.1">
+		<!-- M. Evasion +3.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93011" name="M. Evasion +3.2">
+		<!-- M. Evasion +3.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93012" name="M. Evasion +3.3">
+		<!-- M. Evasion +3.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93013" name="M. Evasion +3.5">
+		<!-- M. Evasion +3.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93014" name="M. Evasion +3.7">
+		<!-- M. Evasion +3.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93015" name="M. Evasion +3.9">
+		<!-- M. Evasion +3.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93016" name="M. Evasion +4.1">
+		<!-- M. Evasion +4.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93017" name="M. Evasion +4.3">
+		<!-- M. Evasion +4.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93018" name="M. Evasion +5">
+		<!-- M. Evasion +5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93019" name="M. Evasion +2">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93020" name="M. Evasion +2.1">
+		<!-- M. Evasion +2.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93021" name="M. Evasion +2.2">
+		<!-- M. Evasion +2.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93022" name="M. Evasion +2.3">
+		<!-- M. Evasion +2.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93023" name="M. Evasion +2.4">
+		<!-- M. Evasion +2.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93024" name="M. Evasion +2.5">
+		<!-- M. Evasion +2.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93025" name="M. Evasion +2.6">
+		<!-- M. Evasion +2.6 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93026" name="M. Evasion +2.7">
+		<!-- M. Evasion +2.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93027" name="M. Evasion +2.8">
+		<!-- M. Evasion +2.8 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93028" name="M. Evasion +2.9">
+		<!-- M. Evasion +2.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93029" name="M. Evasion +3">
+		<!-- M. Evasion +3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93030" name="M. Evasion +3.1">
+		<!-- M. Evasion +3.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93031" name="M. Evasion +3.2">
+		<!-- M. Evasion +3.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93032" name="M. Evasion +3.3">
+		<!-- M. Evasion +3.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93033" name="M. Evasion +3.5">
+		<!-- M. Evasion +3.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93034" name="M. Evasion +3.7">
+		<!-- M. Evasion +3.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93035" name="M. Evasion +3.9">
+		<!-- M. Evasion +3.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93036" name="M. Evasion +4.1">
+		<!-- M. Evasion +4.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93037" name="M. Evasion +4.3">
+		<!-- M. Evasion +4.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93038" name="M. Evasion +5">
+		<!-- M. Evasion +5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93039" name="M. Evasion +2">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93040" name="M. Evasion +2.1">
+		<!-- M. Evasion +2.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93041" name="M. Evasion +2.2">
+		<!-- M. Evasion +2.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93042" name="M. Evasion +2.3">
+		<!-- M. Evasion +2.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93043" name="M. Evasion +2.4">
+		<!-- M. Evasion +2.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93044" name="M. Evasion +2.5">
+		<!-- M. Evasion +2.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93045" name="M. Evasion +2.6">
+		<!-- M. Evasion +2.6 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93046" name="M. Evasion +2.7">
+		<!-- M. Evasion +2.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93047" name="M. Evasion +2.8">
+		<!-- M. Evasion +2.8 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93048" name="M. Evasion +2.9">
+		<!-- M. Evasion +2.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93049" name="M. Evasion +3">
+		<!-- M. Evasion +3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93050" name="M. Evasion +3.1">
+		<!-- M. Evasion +3.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93051" name="M. Evasion +3.2">
+		<!-- M. Evasion +3.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93052" name="M. Evasion +3.3">
+		<!-- M. Evasion +3.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93053" name="M. Evasion +3.5">
+		<!-- M. Evasion +3.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93054" name="M. Evasion +3.7">
+		<!-- M. Evasion +3.7 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93055" name="M. Evasion +3.9">
+		<!-- M. Evasion +3.9 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93056" name="M. Evasion +4.1">
+		<!-- M. Evasion +4.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93057" name="M. Evasion +4.3">
+		<!-- M. Evasion +4.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93058" name="M. Evasion +5">
+		<!-- M. Evasion +5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93059" name="option_id_93059">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="93060" name="option_id_93060">
+		<!-- Received P. Skill Critical Damage -74 -->
+	</option>
+	<option id="93061" name="option_id_93061">
+		<!-- Received P. Skill Critical Damage -79 -->
+	</option>
+	<option id="93062" name="option_id_93062">
+		<!-- Received P. Skill Critical Damage -84 -->
+	</option>
+	<option id="93063" name="option_id_93063">
+		<!-- Received P. Skill Critical Damage -89 -->
+	</option>
+	<option id="93064" name="option_id_93064">
+		<!-- Received P. Skill Critical Damage -94 -->
+	</option>
+	<option id="93065" name="option_id_93065">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="93066" name="option_id_93066">
+		<!-- Received P. Skill Critical Damage -106 -->
+	</option>
+	<option id="93067" name="option_id_93067">
+		<!-- Received P. Skill Critical Damage -112 -->
+	</option>
+	<option id="93068" name="option_id_93068">
+		<!-- Received P. Skill Critical Damage -119 -->
+	</option>
+	<option id="93069" name="option_id_93069">
+		<!-- Received P. Skill Critical Damage -126 -->
+	</option>
+	<option id="93070" name="option_id_93070">
+		<!-- Received P. Skill Critical Damage -133 -->
+	</option>
+	<option id="93071" name="option_id_93071">
+		<!-- Received P. Skill Critical Damage -141 -->
+	</option>
+	<option id="93072" name="option_id_93072">
+		<!-- Received P. Skill Critical Damage -150 -->
+	</option>
+	<option id="93073" name="option_id_93073">
+		<!-- Received P. Skill Critical Damage -168 -->
+	</option>
+	<option id="93074" name="option_id_93074">
+		<!-- Received P. Skill Critical Damage -189 -->
+	</option>
+	<option id="93075" name="option_id_93075">
+		<!-- Received P. Skill Critical Damage -212 -->
+	</option>
+	<option id="93076" name="option_id_93076">
+		<!-- Received P. Skill Critical Damage -238 -->
+	</option>
+	<option id="93077" name="option_id_93077">
+		<!-- Received P. Skill Critical Damage -267 -->
+	</option>
+	<option id="93078" name="option_id_93078">
+		<!-- Received P. Skill Critical Damage -300 -->
+	</option>
+	<option id="93079" name="option_id_93079">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="93080" name="option_id_93080">
+		<!-- Received P. Skill Critical Damage -74 -->
+	</option>
+	<option id="93081" name="option_id_93081">
+		<!-- Received P. Skill Critical Damage -79 -->
+	</option>
+	<option id="93082" name="option_id_93082">
+		<!-- Received P. Skill Critical Damage -84 -->
+	</option>
+	<option id="93083" name="option_id_93083">
+		<!-- Received P. Skill Critical Damage -89 -->
+	</option>
+	<option id="93084" name="option_id_93084">
+		<!-- Received P. Skill Critical Damage -94 -->
+	</option>
+	<option id="93085" name="option_id_93085">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="93086" name="option_id_93086">
+		<!-- Received P. Skill Critical Damage -106 -->
+	</option>
+	<option id="93087" name="option_id_93087">
+		<!-- Received P. Skill Critical Damage -112 -->
+	</option>
+	<option id="93088" name="option_id_93088">
+		<!-- Received P. Skill Critical Damage -119 -->
+	</option>
+	<option id="93089" name="option_id_93089">
+		<!-- Received P. Skill Critical Damage -126 -->
+	</option>
+	<option id="93090" name="option_id_93090">
+		<!-- Received P. Skill Critical Damage -133 -->
+	</option>
+	<option id="93091" name="option_id_93091">
+		<!-- Received P. Skill Critical Damage -141 -->
+	</option>
+	<option id="93092" name="option_id_93092">
+		<!-- Received P. Skill Critical Damage -150 -->
+	</option>
+	<option id="93093" name="option_id_93093">
+		<!-- Received P. Skill Critical Damage -168 -->
+	</option>
+	<option id="93094" name="option_id_93094">
+		<!-- Received P. Skill Critical Damage -189 -->
+	</option>
+	<option id="93095" name="option_id_93095">
+		<!-- Received P. Skill Critical Damage -212 -->
+	</option>
+	<option id="93096" name="option_id_93096">
+		<!-- Received P. Skill Critical Damage -238 -->
+	</option>
+	<option id="93097" name="option_id_93097">
+		<!-- Received P. Skill Critical Damage -267 -->
+	</option>
+	<option id="93098" name="option_id_93098">
+		<!-- Received P. Skill Critical Damage -300 -->
+	</option>
+	<option id="93099" name="option_id_93099">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+</list>

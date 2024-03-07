@@ -1,0 +1,1534 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="94200" name="Scroll of Random Escape: Black Anvil Guild Camp (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Teleports to any place in the Black Anvil Guild Camp at random. -->
+		<set name="icon" val="icon.freya_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94201" name="Dark Bezoar (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- It is consumed when using skills in the boss form. -->
+		<set name="icon" val="icon.accessory_punishment_talisman_i01" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94202" name="Transformation Scroll: Queen Ant (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Queen Ant for 15 min. <Appearance skills>. - Queen Ant's Ground Shaker. Deals minor damage to nearby enemies. (Consumes 4 Dark Bezoars). - Queen Ant's Rain of Stones. Deals minor damage to the target and nearby enemies. (Consumes 4 Dark Bezoars). Can be used only in Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i09" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48103" level="1" /> <!-- Queen Ant Transformation -->
+		</skills>
+	</item>
+	<item id="94203" name="Transformation Scroll: Orfen (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Orfen for 15 min. <Appearance skills>. - Orfen's Poisonous Sound. Deals minor damage to nearby enemies. (Consumes 6 Dark Bezoars). - Orfen's Ashen Strike. Deals minor damage to the target and nearby enemies. (Consumes 6 Dark Bezoars). Can be used only in Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48104" level="1" /> <!-- Orfen Transformation -->
+		</skills>
+	</item>
+	<item id="94204" name="Transformation Scroll: Baium (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Baium for 15 min. <Appearance skills>. - Baium's Earthquake. Deals immense damage to nearby enemies. (Consumes 12 Dark Bezoars). - Baium's Lightning. Deals immense damage to the target and nearby enemies. (Consumes 12 Dark Bezoars). Can be used only in Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48105" level="1" /> <!-- Baium Transformation -->
+		</skills>
+	</item>
+	<item id="94205" name="Transformation Scroll: Zaken (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Zaken for 15 min. <Appearance skills>. - Zaken's Dancing Swords. Deals damage to nearby enemies. (Consumes 8 Dark Bezoars). - Zaken's Bloody Tornado. Deals damage to the target and nearby enemies. (Consumes 8 Dark Bezoars). Can be used only in Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48106" level="1" /> <!-- Zaken Transformation -->
+		</skills>
+	</item>
+	<item id="94206" name="Transformation Scroll: Anakim (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Anakim for 15 min. <Appearance skills>. - Anakim's Energy Attack. Deals significant damage to nearby enemies. (Consumes 10 Dark Bezoars). - Anakim's Holy Rain. Deals significant damage to the target and nearby enemies. (Consumes 10 Dark Bezoars). Can be used only in the Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48107" level="1" /> <!-- Anakim Transformation -->
+		</skills>
+	</item>
+	<item id="94207" name="Transformation Scroll: Lilith (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Transforms into Lilith for 15 min. <Appearance skills>. - Lilith's Dark Bog. Deals significant damage to nearby enemies. (Consumes 10 Dark Bezoars). - Lilith's Unholy Strike. Deals significant damage to the target and nearby enemies. (Consumes 10 Dark Bezoars). Can be used only in Black Anvil Guild Camp. -->
+		<set name="icon" val="icon.scroll_of_verification_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="48108" level="1" /> <!-- Lilith Transformation -->
+		</skills>
+	</item>
+	<item id="94208" name="Scroll of Blessing" additionalName="Sealed" type="EtcItem">
+		<!-- When used, blesses your weapon with a certain chance. -->
+		<set name="icon" val="icon.bless_scroll_wp" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="BLESS_ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="BlessingScrolls" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="40217" level="1" /> <!-- Scroll of Blessing -->
+		</skills>
+	</item>
+	<item id="94209" name="Life Stone Lv. 1 - Weapon" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.renewal_mineral_r" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94210" name="Life Stone Lv. 2 - Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- Augments weapons. Adena required. -->
+		<set name="icon" val="icon.variation_mineral_wp" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94211" name="Life Stone Lv. 1 - Armor" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.renewal_mineral_r95" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94212" name="Life Stone Lv. 2 - Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Augments armor/ shield/ sigil. Adena required. -->
+		<set name="icon" val="icon.variation_mineral_am" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94213" name="Talisman Lucky Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain one of the following items. <Random>. Enchant Kit: Talisman of Aden. Enchant Kit: Talisman of Speed. Enchant Kit: Talisman of Eva -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91767" min="1" max="1" chance="33.33" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+			<item id="93685" min="1" max="1" chance="33.33" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+			<item id="92020" min="1" max="1" chance="33.33" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94214" name="Mark of Maestro (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- The proof of the Black Anvil Guild's membership. Can be used in the Special Craft tab in L-Coin Store for creating a useful item (one try costs 335 Marks of Maestro). -->
+		<set name="icon" val="icon.etc_badge_silver_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94215" name="Jewelry Box Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain one of the following items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92036" min="1" max="1" chance="14.29" /> <!-- Amber Lv. 1 - Sealed -->
+			<item id="92046" min="1" max="1" chance="14.285" /> <!-- Opal Lv. 1 - Sealed -->
+			<item id="92056" min="1" max="1" chance="14.285" /> <!-- Coral Lv. 1 - Sealed -->
+			<item id="92066" min="1" max="1" chance="14.285" /> <!-- Onyx Lv. 1 - Sealed -->
+			<item id="92076" min="1" max="1" chance="14.285" /> <!-- Spinel Lv. 1 - Sealed -->
+			<item id="92086" min="1" max="1" chance="14.285" /> <!-- Zircon Lv. 1 - Sealed -->
+			<item id="92096" min="1" max="1" chance="14.285" /> <!-- Moonstone Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94216" name="Daily Kit: Charging (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain following items. <Guaranteed>. Charging Stone of Random Craft - 1 Charge (20 pcs.). Sayha's Blessing (100 pcs.). Sayha's Storm Lv. 3 (100 pcs.). My Teleport Scroll (50 pcs.). Extra Pass: Transcendent Instance Zone -->
+		<set name="icon" val="icon.freya_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90405" min="50" max="50" chance="100" /> <!-- My Teleport Scroll - Sealed -->
+			<item id="91641" min="100" max="100" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+			<item id="91712" min="100" max="100" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="93080" min="20" max="20" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge - Sealed -->
+			<item id="93948" min="1" max="1" chance="100" /> <!-- Extra Pass: Transcendent Instance Zone - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94217" name="Kit: Enchant Scrolls (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain one of the following items. <Guaranteed>. Giran Seal (20 pcs.). <Random>. Improved Scroll: Enchant A-grade Weapon. Cursed Scroll: Enchant A-grade Weapon. Improved Scroll: Enchant A-grade Armor. Cursed Scroll: Enchant A-grade Armor -->
+		<set name="icon" val="icon.freya_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92314" min="20" max="20" chance="100" /> <!-- Giran Seal -->
+		</capsuled_items>
+	</item>
+	<item id="94218" name="Sparkling Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys3.icon.g_cash_fortuna_box_r" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="94385" min="1" max="1" chance="9.090909" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+			<item id="94383" min="1" max="1" chance="9.090909" /> <!-- Scroll: Enchant Rare Accessories -->
+			<item id="90992" min="1" max="1" chance="9.090909" /> <!-- Antharas' Earring -->
+			<item id="96600" min="1" max="1" chance="9.090909" /> <!-- Beleth' Ring -->
+			<item id="91550" min="1" max="1" chance="9.090909" /> <!-- Frintezza's Necklace -->
+			<item id="49580" min="1" max="1" chance="9.090909" /> <!-- Baium's Ring -->
+			<item id="90763" min="1" max="1" chance="9.090909" /> <!-- Zaken's Earring -->
+			<item id="6661" min="1" max="1" chance="9.090909" /> <!-- Orfen's Earring -->
+			<item id="6660" min="1" max="1" chance="9.090909" /> <!-- Queen Ant's Ring -->
+			<item id="6662" min="1" max="1" chance="9.090909" /> <!-- Ring of Core -->
+			<item id="91690" min="100" max="100" chance="9.090909" /> <!-- Special HP Recovery Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94219" name="Boss' Accessory Fragment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for various items through the Game Assistant. <Items for exchange>. - Ring of Core (5 fragments). - Queen Ant's Ring (10 fragments). - Orfen's Earring (10 fragments). - Zaken's Earring (15 fragments). - Baium's Ring (30 fragments). - Frintezza's Necklace (40 fragments). - Beleth' Ring (50 fragments). - Antharas' Earring (70 fragments). - Scroll: Enchant Rare Accessories (15 fragments). - Improved Scroll: Enchant Rare Accessories (30 fragments). - Sparkling Accessory Pack (1 fragment) -->
+		<set name="icon" val="icon.icon_material_renewal_mineral" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94220" name="Special Growth Support Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. <Guaranteed>. Valakas' Necklace. Refined Romantic Chapeau: Gold. Dragon Belt Pack (3 pcs.). Package: Cloak of Protection (3 pcs.). Soulshot Ticket (200 pcs.). Spirit Ore (2000 pcs.) -->
+		<set name="icon" val="icon.sayha2017_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93421" min="1" max="1" chance="100" /> <!-- Valakas' Necklace - Sealed -->
+			<item id="91640" min="1" max="1" chance="100" /> <!-- Refined Romantic Chapeau: Gold - Sealed -->
+			<item id="91864" min="3" max="3" chance="100" /> <!-- Dragon Belt Pack - Sealed -->
+			<item id="93303" min="3" max="3" chance="100" /> <!-- Package: Cloak of Protection - Sealed -->
+			<item id="3031" min="2000" max="2000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="90907" min="200" max="200" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94221" name="Growth Potion (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- When used, XP +7,490,000, SP +20,000. Note!. Required level: 60+. Cannot be used by chaotic characters. -->
+		<set name="icon" val="icon.bm_freya_potion" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94222" name="Growth Formula's Pack - Lv. 60 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 60+. <Guaranteed>. - Growth Potion (6 pcs.). - Growth Formula's Pack - Lv. 61 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="6" max="6" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94223" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 61 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94223" name="Growth Formula's Pack - Lv. 61 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 61+. <Guaranteed>. - Growth Potion (7 pcs.). - Growth Formula's Pack - Lv. 62 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="7" max="7" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94224" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 62 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94224" name="Growth Formula's Pack - Lv. 62 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 62+. <Guaranteed>. - Growth Potion (8 pcs.). - Growth Formula's Pack - Lv. 63 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="8" max="8" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94225" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 63 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94225" name="Growth Formula's Pack - Lv. 63 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 63+. <Guaranteed>. - Growth Potion (9 pcs.). - Growth Formula's Pack - Lv. 64 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="9" max="9" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94226" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 64 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94226" name="Growth Formula's Pack - Lv. 64 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 64+. <Guaranteed>. - Growth Potion (11 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="11" max="11" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94227" name="Growth Formula's Pack - Lv. 65 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 65+. <Guaranteed>. - Growth Potion (13 pcs.). - Growth Formula's Pack - Lv. 66 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="13" max="13" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94228" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 66 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94228" name="Growth Formula's Pack - Lv. 66 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 66+. <Guaranteed>. - Growth Potion (15 pcs.). - Growth Formula's Pack - Lv. 67 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="15" max="15" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94229" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 67 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94229" name="Growth Formula's Pack - Lv. 67 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 67+. <Guaranteed>. - Growth Potion (18 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="18" max="18" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94230" name="Growth Formula's Pack - Lv. 68 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 68+. <Guaranteed>. - Growth Potion (21 pcs.). - Growth Formula's Pack - Lv. 69 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="21" max="21" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94231" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 69 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94231" name="Growth Formula's Pack - Lv. 69 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 69+. <Guaranteed>. - Growth Potion (25 pcs.). - Growth Formula's Pack - Lv. 70 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="25" max="25" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94232" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 70 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94232" name="Growth Formula's Pack - Lv. 70 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 70+. <Guaranteed>. - Growth Potion (29 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="29" max="29" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94233" name="Growth Formula's Pack - Lv. 71 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 71+. <Guaranteed>. - Growth Potion (33 pcs.). - Growth Formula's Pack - Lv. 72 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="33" max="33" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94234" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 72 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94234" name="Growth Formula's Pack - Lv. 72 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 72+. <Guaranteed>. - Growth Potion (38 pcs.). - Growth Formula's Pack - Lv. 73 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="38" max="38" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94235" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 73 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94235" name="Growth Formula's Pack - Lv. 73 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 73+. <Guaranteed>. - Growth Potion (43 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="43" max="43" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94236" name="Growth Formula's Pack - Lv. 74 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 74+. <Guaranteed>. - Growth Potion (48 pcs.). - Growth Formula's Pack - Lv. 75 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="48" max="48" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94237" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 75 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94237" name="Growth Formula's Pack - Lv. 75 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 75+. <Guaranteed>. - Growth Potion (55 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="55" max="55" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94238" name="Growth Formula's Pack - Lv. 76 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 76+. <Guaranteed>. - Growth Potion (62 pcs.). - Growth Formula's Pack - Lv. 77 -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="62" max="62" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+			<item id="94239" min="1" max="1" chance="100" /> <!-- Growth Formula's Pack - Lv. 77 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94239" name="Growth Formula's Pack - Lv. 77 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 77+. <Guaranteed>. - Growth Potion (70 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="70" max="70" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94240" name="Growth Formula's Pack - Lv. 78 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 78+. <Guaranteed>. - Growth Potion (80 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="80" max="80" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94241" name="Growth Formula's Pack - Lv. 79 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 79+. <Guaranteed>. - Growth Potion (95 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="95" max="95" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94242" name="Growth Formula's Pack - Lv. 80 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 80+. <Guaranteed>. - Growth Potion (120 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="120" max="120" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94243" name="Growth Formula's Pack - Lv. 81 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 81+. <Guaranteed>. - Growth Potion (150 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="150" max="150" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94244" name="Growth Formula's Pack - Lv. 82 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 82+. <Guaranteed>. - Growth Potion (200 pcs.) -->
+		<set name="icon" val="icon.etc_crystal_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94221" min="200" max="200" chance="100" /> <!-- Growth Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94245" name="Growth Supply Pack - Lv. 60 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 60+. <Guaranteed>. - Sayha's Cookie (10 pcs.). - Combat Scroll (20 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="10" max="10" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="20" max="20" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94246" name="Growth Supply Pack - Lv. 65 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 65+. <Guaranteed>. - Sayha's Cookie (10 pcs.). - Combat Scroll (20 pcs.). - Charging Stone of Random Craft - 1 Charge (5 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="10" max="10" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="20" max="20" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+			<item id="93701" min="5" max="5" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94247" name="Growth Supply Pack - Lv. 68 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 68+. <Guaranteed>. - Sayha's Cookie (20 pcs.). - Combat Scroll (50 pcs.). - Charging Stone of Random Craft - 1 Charge (10 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="20" max="20" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="50" max="50" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+			<item id="93701" min="10" max="10" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94248" name="Growth Supply Pack - Lv. 71 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 71+. <Guaranteed>. - Sayha's Cookie (20 pcs.). - Combat Scroll (50 pcs.). - Charging Stone of Random Craft - 1 Charge (10 pcs.). - Enchanted B-grade Armor Coupon -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="20" max="20" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="50" max="50" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+			<item id="93701" min="10" max="10" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+			<item id="93500" min="1" max="1" chance="100" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94249" name="Growth Supply Pack - Lv. 74 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 74+. <Guaranteed>. - Sayha's Cookie (20 pcs.). - Combat Scroll (50 pcs.). - Charging Stone of Random Craft - 1 Charge (10 pcs.). - Enchanted B-grade Armor Coupon -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="20" max="20" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="50" max="50" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+			<item id="93701" min="10" max="10" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+			<item id="93500" min="1" max="1" chance="100" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94250" name="Growth Supply Pack - Lv. 76 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 76+. <Guaranteed>. - Sayha's Cookie (20 pcs.). - Combat Scroll (50 pcs.). - Charging Stone of Random Craft - 1 Charge (10 pcs.). - Enchanted B-grade Armor Coupon -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93848" min="20" max="20" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="91975" min="50" max="50" chance="100" /> <!-- Combat Scroll (Time-limited) - Sealed -->
+			<item id="93701" min="10" max="10" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+			<item id="93500" min="1" max="1" chance="100" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94251" name="Growth Supply Pack - Lv. 78 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 78+. <Guaranteed>. - Shiny Jewelry Box (3 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92035" min="3" max="3" chance="100" /> <!-- Shiny Jewelry Box - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94252" name="Growth Supply Pack - Lv. 79 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 79+. <Guaranteed>. - Package: Agathion Ignis. - Package: Agathion Nebula. - Package: Agathion Procella. - Package: Agathion Petram. - Package: Agathion Joy -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93134" min="1" max="1" chance="100" /> <!-- Package: Agathion Ignis - Sealed -->
+			<item id="93135" min="1" max="1" chance="100" /> <!-- Package: Agathion Nebula - Sealed -->
+			<item id="93136" min="1" max="1" chance="100" /> <!-- Package: Agathion Procella - Sealed -->
+			<item id="93137" min="1" max="1" chance="100" /> <!-- Package: Agathion Petram - Sealed -->
+			<item id="93138" min="1" max="1" chance="100" /> <!-- Package: Agathion Joy - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94253" name="Growth Supply Pack - Lv. 80 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 80+. <Guaranteed>. - Enchant Kit: Talisman of Authority (2 pcs.). - Enchant Kit: Talisman of Speed (2 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93330" min="2" max="2" chance="100" /> <!-- Enchant Kit: Talisman of Authority - Sealed -->
+			<item id="93685" min="2" max="2" chance="100" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94254" name="Growth Supply Pack - Lv. 81 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 81+. <Guaranteed>. - Enchant Kit: Circlet of Hero (2 pcs.) -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94168" min="2" max="2" chance="100" /> <!-- Enchant Kit: Circlet of Hero - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94255" name="Growth Supply Pack - Lv. 82 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. Required level: 82+. <Guaranteed>. - A-grade Weapon Coupon -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93448" min="1" max="1" chance="100" /> <!-- A-grade Weapon Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94256" name="Master's Blessing Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. <Guaranteed>. - Master's Seal (5 pcs.). <Random>. - Spellbook: Ultimate Death Knight Transformation. - Boss' Weapon Pack. - Frintezza's Necklace. - Baium's Ring. - Zaken's Earring. - Queen Ant's Ring. - Orfen's Earring. - Ring of Core. - other items -->
+		<set name="icon" val="icon.sayha2017_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94257" name="Master's Seal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for various items through the Game Assistant or in the Special Craft tab. <Exchange>. - Sealed Majestic Sigil (1000 pcs.). - A-grade Weapon Coupon (500 pcs.). - A-grade Armor Coupon (500 pcs.). - Enchant Kit: Circlet of Hero (100 pcs.). - Enchant Kit: Talisman of Authority (50 pcs.). - Einhasad's Pendant Lv. 1 (100 pcs.). - other items. <Special craft>. - Einhasad's Pendant Special Craft (814 pcs.). - Scroll of Blessing Special Craft (36 pcs.) -->
+		<set name="icon" val="icon.etc_royal_seal_of_lord_i05" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="94258" name="Package: Einhasad's Pendant Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font>. Materials: pendants and packages of the same level. In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93296" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94259" name="Package: Einhasad's Pendant Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font>. Materials: pendants and packages of the same level. In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93297" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94260" name="Package: Einhasad's Pendant Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font>. Materials: pendants and packages of the same level. In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93298" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94261" name="Package: Einhasad's Pendant Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font>. Materials: pendants and packages of the same level. In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93299" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94262" name="Package: Einhasad's Pendant Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93300" min="1" max="1" chance="100" /> <!-- Einhasad's Pendant Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94263" name="Stun Gauntlets" type="Armor">
+		<!-- <Properties>. STR +1. INT +1. Overweight limit +1000. Atk. Spd. +10%. Casting Spd. +18%. Max HP +200. M. Def. +50 -->
+		<set name="icon" val="icon.armor_t96_g_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="price" val="1355000" />
+		<set name="enchant_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">65</stat>
+		</stats>
+		<skills>
+			<skill id="50428" level="1" /> <!-- Stun Gauntlets -->
+			<skill id="50430" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="83222" level="3" type="ON_BLESSING" /> <!-- Armor Blessing Effect -->
+			<skill id="83197" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83198" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83199" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="94264" name="Stun Gauntlets" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. INT +1. Overweight limit +1000. Atk. Spd. +10%. Casting Spd. +18%. Max HP +200. M. Def. +50 -->
+		<set name="icon" val="icon.armor_t96_g_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="108" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="price" val="1355000" />
+		<set name="enchant_enabled" val="true" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="GLOVES" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">65</stat>
+		</stats>
+		<skills>
+			<skill id="50428" level="1" /> <!-- Stun Gauntlets -->
+			<skill id="50430" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="50430" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: Stun Gauntlets -->
+			<skill id="83222" level="3" type="ON_BLESSING" /> <!-- Armor Blessing Effect -->
+			<skill id="83197" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83198" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83199" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="94265" name="Kit: Growth (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain following items. <Guaranteed>. Sayha's Blessing (200 pcs.). Sayha's Storm Lv. 3 (100 pcs.). Magic Lamp Charging Potion (20 pcs.). Einhasad's Blessing Scroll (100 pcs.). Spirit Ore (5000 pcs.). Soulshot Ticket (1000 pcs.) -->
+		<set name="icon" val="icon.bm_freya_dark_rune_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3031" min="5000" max="5000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="91641" min="200" max="200" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+			<item id="91712" min="100" max="100" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="91757" min="20" max="20" chance="100" /> <!-- Magic Lamp Charging Potion - Sealed -->
+			<item id="92991" min="100" max="100" chance="100" /> <!-- Einhasad's Blessing Scroll - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94266" name="Kit: Equipment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. <Guaranteed>. Dragon Belt Pack (5 pcs.). Package: Cloak of Protection (5 pcs.). Enchant Kit: Talisman of Aden (5 pcs.). Enchant Kit: Talisman of Eva (5 pcs.). Enchant Kit: Talisman of Speed (5 pcs.). Shiny Jewelry Box (20 pcs.). Brooch Lv. 3. Talisman Bracelet Lv. 3 -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="9591" min="1" max="1" chance="100" /> <!-- Talisman Bracelet Lv. 3 -->
+			<item id="90934" min="1" max="1" chance="100" /> <!-- Brooch Lv. 3 -->
+			<item id="91767" min="5" max="5" chance="100" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+			<item id="91864" min="5" max="5" chance="100" /> <!-- Dragon Belt Pack - Sealed -->
+			<item id="92020" min="5" max="5" chance="100" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+			<item id="92035" min="20" max="20" chance="100" /> <!-- Shiny Jewelry Box - Sealed -->
+			<item id="93303" min="5" max="5" chance="100" /> <!-- Package: Cloak of Protection - Sealed -->
+			<item id="93685" min="5" max="5" chance="100" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94267" name="Kit: Combat (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following items. <Guaranteed>. - Special HP Recovery Potion (1000 pcs.). - Blessed Scroll of Escape (100 pcs.). - Scroll: Boost Attack (100 pcs.). - Scroll: Boost Defense (100 pcs.). - XP Growth Scroll (100 pcs.). - Primeval Isle's Time Stone (3 pcs.). - Primeval Garden's Time Stone (3 pcs.) -->
+		<set name="icon" val="icon.etc_treasure_box_i10" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49674" min="100" max="100" chance="100" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="91689" min="100" max="100" chance="100" /> <!-- Blessed Scroll of Escape - Sealed -->
+			<item id="91690" min="1000" max="1000" chance="100" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="91983" min="1" max="1" chance="100" /> <!-- Primeval Isle's Time Stone - Sealed -->
+			<item id="92400" min="1" max="1" chance="100" /> <!-- Forgotten Garden's Time Stone - Sealed -->
+			<item id="94269" min="100" max="100" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="100" max="100" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="94268" name="Scroll: Boost Attack" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +800. M. Atk. +800. Max HP +1000. All received Critical Damage -100. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.scrl_of_ladies_silver_knife_01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40219" level="1" /> <!-- Scroll: Enchant Attack -->
+		</skills>
+	</item>
+	<item id="94269" name="Scroll: Boost Attack" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +800. M. Atk. +800. Max HP +1000. All received Critical Damage -100. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40220" level="1" /> <!-- Scroll: Enchant Attack -->
+		</skills>
+	</item>
+	<item id="94270" name="Scroll: Boost Defense" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +500. M. Def. +500. Max MP +800. Speed +2. All Critical Rate +30. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.scrl_of_ench_bracelet_lucien_01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40221" level="1" /> <!-- Scroll: Enchant Defense -->
+		</skills>
+	</item>
+	<item id="94271" name="Scroll: Boost Defense" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +500. M. Def. +500. Max MP +800. Speed +2. All Critical Rate +30. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40222" level="1" /> <!-- Scroll: Boost Defense -->
+		</skills>
+	</item>
+	<item id="94272" name="Test - Test Item for Create Item 1" additionalName="Test" type="EtcItem">
+		<!-- Test Item. Test item item_multi_create -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49080" min="2" max="2" chance="100" /> <!-- Rice Cake of Fighting Spirit -->
+			<item id="49082" min="1" max="1" chance="100" /> <!-- Get-Rich-Quick Supply Chest -->
+			<item id="1" min="1" max="1" chance="100" /> <!-- Short Sword -->
+			<item id="135" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Samurai Long Sword -->
+			<item id="91882" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Saber Tooth -->
+			<item id="2" min="1" max="1" chance="100" /> <!-- Long Sword -->
+			<item id="3" min="1" max="1" chance="100" /> <!-- Broadsword -->
+		</capsuled_items>
+	</item>
+	<item id="94273" name="Chocolate (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Chocolate lost by Marshmallow. Required for creating Chocolate Dolls. -->
+		<set name="icon" val="BranchSys.icon.br_valentine_darkchoco_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94274" name="White Chocolate (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Chocolate lost by Marshmallow. Required for creating Chocolate Dolls. -->
+		<set name="icon" val="BranchSys.icon.br_valentine_whitechoco_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94275" name="Chocolate Doll - Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 1>. - Soulshot/ Spiritshot damage +1%. - Acquired XP/ SP +1%. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="1" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94276" name="Chocolate Doll - Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 2>. - Soulshot/ Spiritshot damage +2%. - Acquired XP/ SP +2%. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="2" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94277" name="Chocolate Doll - Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 3>. - Soulshot/ Spiritshot damage +3%. - Acquired XP/ SP +3%. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="3" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94278" name="Chocolate Doll - Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 4>. - Soulshot/ Spiritshot damage +4%. - Acquired XP/ SP +5%. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="4" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94279" name="Chocolate Doll - Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 5>. - Soulshot/ Spiritshot damage +5%. - Acquired XP/ SP +7%. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="5" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94280" name="Chocolate Doll - Lv. 6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 6>. - Soulshot/ Spiritshot damage +6%. - Acquired XP/ SP +10%. - P./ M. Atk. +10. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="6" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94281" name="Chocolate Doll - Lv. 7 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 7>. - Soulshot/ Spiritshot damage +7%. - Acquired XP/ SP +11%. - P./ M. Atk. +30. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="7" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94282" name="Chocolate Doll - Lv. 8 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 8>. - Soulshot/ Spiritshot damage +8%. - Acquired XP/ SP +13%. - P./ M. Atk. +50. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="8" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94283" name="Chocolate Doll - Lv. 9 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 9>. - Soulshot/ Spiritshot damage +9%. - Acquired XP/ SP +15%. - P./ M. Atk. +80. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="9" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94284" name="Chocolate Doll - Lv. 10 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 10>. - Soulshot/ Spiritshot damage +10%. - Acquired XP/ SP +17%. - P./ M. Atk. +120. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="10" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94285" name="Chocolate Doll - Lv. 11 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 11>. - Soulshot/ Spiritshot damage +11%. - Acquired XP/ SP +20%. - P./ M. Atk. +170. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="11" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94286" name="Chocolate Doll - Lv. 12 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 12>. - Soulshot/ Spiritshot damage +12%. - Acquired XP/ SP +21%. - P./ M. Atk. +230. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="12" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94287" name="Chocolate Doll - Lv. 13 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 13>. - Soulshot/ Spiritshot damage +13%. - Acquired XP/ SP +23%. - P./ M. Atk. +300. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="13" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94288" name="Chocolate Doll - Lv. 14 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 14>. - Soulshot/ Spiritshot damage +14%. - Acquired XP/ SP +25%. - P./ M. Atk. +380. Can be upgraded through compounding with Chocolate. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="14" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94289" name="Chocolate Doll - Lv. 15 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Chocolate Doll's effect Lv. 15>. - Soulshot and Spiritshot damage +15%. - Acquired XP/ SP +30%. - P./ M. Atk. +700 -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50440" level="15" /> <!-- Chocolate Doll -->
+		</skills>
+	</item>
+	<item id="94290" name="Valentine's Day Gift Basket (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A Dark Chocolate's gift basket that has to be delivered to Marshmallow. You may look what's inside. -->
+		<set name="icon" val="icon.etc_whiteday_choco" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94291" name="White Day's Gift Basket (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A Marshmallow's gift basket that was prepared specially for Dark Chocolate. You may look what's inside, when the White Day comes. -->
+		<set name="icon" val="icon.etc_whiteday_candy" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94292" name="Jewel Essence Lv. 5 - Amber (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Amber Lv. 4 to get Amber Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94293" name="Jewel Essence Lv. 5 - Opal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Opal Lv. 4 to get Opal Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94294" name="Jewel Essence Lv. 5 - Coral (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Coral Lv. 4 to get Coral Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94295" name="Jewel Essence Lv. 5 - Onyx (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Onyx Lv. 4 to get Onyx Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94296" name="Jewel Essence Lv. 5 - Spinel (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Spinel Lv. 4 to get Spinel Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94297" name="Jewel Essence Lv. 5 - Zircon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Zircon Lv. 4 to get Zircon Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94298" name="Jewel Essence Lv. 5 - Moonstone (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Compound it with Moonstone Lv. 4 to get Moonstone Lv. 5. There is a 100% chance of success. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="94299" name="Sigil of Inevitability" type="Armor">
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1200" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="SIGIL" />
+		<set name="isAppearanceable" val="true" />
+		<stats>
+			<stat type="pDef">56</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50432" level="1" /> <!-- A-grade: Sigil of Inevitability -->
+			<skill id="50433" level="1" type="ON_ENCHANT" type_value="1" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="2" type="ON_ENCHANT" type_value="2" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="3" type="ON_ENCHANT" type_value="3" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="4" type="ON_ENCHANT" type_value="4" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="5" type="ON_ENCHANT" type_value="5" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="6" type="ON_ENCHANT" type_value="6" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="7" type="ON_ENCHANT" type_value="7" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="8" type="ON_ENCHANT" type_value="8" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="9" type="ON_ENCHANT" type_value="9" /> <!-- +1 Sigil of Inevitability -->
+			<skill id="50433" level="10" type="ON_ENCHANT" type_value="10" /> <!-- +1 Sigil of Inevitability -->
+		</skills>
+	</item>
+</list>

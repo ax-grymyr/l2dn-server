@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="35700" name="option_id_35700">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="35701" name="option_id_35701">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="35702" name="option_id_35702">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="35703" name="option_id_35703">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="35704" name="option_id_35704">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35705" name="option_id_35705">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35706" name="option_id_35706">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35707" name="option_id_35707">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35708" name="option_id_35708">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35709" name="option_id_35709">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35710" name="option_id_35710">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35711" name="option_id_35711">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35712" name="option_id_35712">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35713" name="option_id_35713">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35714" name="option_id_35714">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35715" name="option_id_35715">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35716" name="option_id_35716">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35717" name="option_id_35717">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35718" name="option_id_35718">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35719" name="option_id_35719">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35720" name="option_id_35720">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35721" name="option_id_35721">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35722" name="option_id_35722">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="35723" name="option_id_35723">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="35724" name="option_id_35724">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35725" name="option_id_35725">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35726" name="option_id_35726">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35727" name="option_id_35727">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35728" name="option_id_35728">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35729" name="option_id_35729">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35730" name="option_id_35730">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35731" name="option_id_35731">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35732" name="option_id_35732">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35733" name="option_id_35733">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35734" name="option_id_35734">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35735" name="option_id_35735">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35736" name="option_id_35736">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35737" name="option_id_35737">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35738" name="option_id_35738">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35739" name="option_id_35739">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35740" name="option_id_35740">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35741" name="option_id_35741">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35742" name="option_id_35742">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="35743" name="option_id_35743">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="35744" name="option_id_35744">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35745" name="option_id_35745">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35746" name="option_id_35746">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35747" name="option_id_35747">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35748" name="option_id_35748">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35749" name="option_id_35749">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35750" name="option_id_35750">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35751" name="option_id_35751">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35752" name="option_id_35752">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35753" name="option_id_35753">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35754" name="option_id_35754">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35755" name="option_id_35755">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35756" name="option_id_35756">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35757" name="option_id_35757">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="35758" name="option_id_35758">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35759" name="option_id_35759">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="35760" name="option_id_35760">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35761" name="option_id_35761">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="35762" name="option_id_35762">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="35763" name="option_id_35763">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="35764" name="option_id_35764">
+		<!-- Max HP +5 -->
+	</option>
+	<option id="35765" name="option_id_35765">
+		<!-- Max HP +6 -->
+	</option>
+	<option id="35766" name="option_id_35766">
+		<!-- Max HP +7 -->
+	</option>
+	<option id="35767" name="option_id_35767">
+		<!-- Max HP +8 -->
+	</option>
+	<option id="35768" name="option_id_35768">
+		<!-- Max HP +9 -->
+	</option>
+	<option id="35769" name="option_id_35769">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="35770" name="option_id_35770">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="35771" name="option_id_35771">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="35772" name="option_id_35772">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="35773" name="option_id_35773">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="35774" name="option_id_35774">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="35775" name="option_id_35775">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="35776" name="option_id_35776">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="35777" name="option_id_35777">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="35778" name="option_id_35778">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="35779" name="option_id_35779">
+		<!-- Max HP +30 -->
+	</option>
+	<option id="35780" name="option_id_35780">
+		<!-- Max HP +32 -->
+	</option>
+	<option id="35781" name="option_id_35781">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="35782" name="option_id_35782">
+		<!-- Max HP +40 -->
+	</option>
+	<option id="35783" name="option_id_35783">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="35784" name="option_id_35784">
+		<!-- Max HP +5 -->
+	</option>
+	<option id="35785" name="option_id_35785">
+		<!-- Max HP +6 -->
+	</option>
+	<option id="35786" name="option_id_35786">
+		<!-- Max HP +7 -->
+	</option>
+	<option id="35787" name="option_id_35787">
+		<!-- Max HP +8 -->
+	</option>
+	<option id="35788" name="option_id_35788">
+		<!-- Max HP +9 -->
+	</option>
+	<option id="35789" name="option_id_35789">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="35790" name="option_id_35790">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="35791" name="option_id_35791">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="35792" name="option_id_35792">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="35793" name="option_id_35793">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="35794" name="option_id_35794">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="35795" name="option_id_35795">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="35796" name="option_id_35796">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="35797" name="option_id_35797">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="35798" name="option_id_35798">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="35799" name="option_id_35799">
+		<!-- Max HP +30 -->
+	</option>
+</list>

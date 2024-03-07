@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element name="maxPoints" minOccurs="1" maxOccurs="1" />
+				<xs:element name="maxTicketCharge" minOccurs="1" maxOccurs="1" />
+				<xs:element name="fees" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="option" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="index" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="fee" type="xs:positiveInteger" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="groups" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="group" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence minOccurs="1" maxOccurs="1">
+										<xs:element name="option" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="index" type="xs:nonNegativeInteger" use="required" />
+												<xs:attribute name="chance" type="xs:positiveInteger" use="required" />
+												<xs:attribute name="minEnchant" type="xs:nonNegativeInteger" use="required" />
+												<xs:attribute name="maxEnchant" type="xs:nonNegativeInteger" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence minOccurs="1" maxOccurs="1">
+													<xs:element name="enchant" minOccurs="1" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="level" type="xs:positiveInteger" use="required" />
+															<xs:attribute name="points" type="xs:positiveInteger" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

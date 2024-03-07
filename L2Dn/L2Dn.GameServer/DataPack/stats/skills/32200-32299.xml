@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="32203" toLevel="1" name="Limit Barrier">
+		<!-- Creates a barrier that protects from 500 hits. If you don't deal 500 hits for 15 sec., the boss' HP will be fully recovered. -->
+		<icon>icon.skill11621</icon>
+		<operateType>A2</operateType>
+		<mpConsume>1</mpConsume>
+		<hitTime>100</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<staticReuse>true</staticReuse>
+		<abnormalVisualEffect>INFINITE_SHIELD4_AVE_2</abnormalVisualEffect>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<affectObject>FRIEND</affectObject>
+	</skill>
+</list>

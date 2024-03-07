@@ -1,0 +1,1955 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="51100" toLevel="1" name="Fishing Agathion's Blessing">
+		<!-- Acquired XP/ SP while fishing +10%. -->
+		<icon>icon.agathion_tersi_guard_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51101" toLevel="1" name="Summon Agathion Ignis">
+		<!-- Summons Agathion Ignis. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13568</npcId> <!-- Ignis -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51102" toLevel="1" name="Summon Agathion Nebula">
+		<!-- Summons Agathion Nebula. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13572</npcId> <!-- Nebula -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51103" toLevel="1" name="Summon Agathion Procella">
+		<!-- Summons Agathion Procella. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13576</npcId> <!-- Procella -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51104" toLevel="1" name="Summon Agathion Petram">
+		<!-- Summons Agathion Petram. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13580</npcId> <!-- Petram -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51105" toLevel="1" name="Improved Master Fisherman's Blessing">
+		<!-- For 2 h., acquired XP/ SP while fishing +200%. The effect remains after death. -->
+		<icon>icon.fishing_zone_ticket</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>7200</abnormalTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91133</itemConsumeId> <!-- Improved Master Fisherman's Blessing (2 h.) -->
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51106" toLevel="1" name="Improved Master Fisherman's Blessing">
+		<!-- For 4 h., acquired XP/ SP while fishing +200%. The effect remains after death. -->
+		<icon>icon.fishing_zone_ticket</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>14400</abnormalTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91134</itemConsumeId> <!-- Improved Master Fisherman's Blessing (4 h.) -->
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51107" toLevel="1" name="Improved Master Fisherman's Blessing">
+		<!-- For 8 h., acquired XP/ SP while fishing +200%. The effect remains after death. -->
+		<icon>icon.fishing_zone_ticket</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>28800</abnormalTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91135</itemConsumeId> <!-- Improved Master Fisherman's Blessing (8 h.) -->
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51108" toLevel="1" name="Dandy's Golden Ball">
+		<!-- Sayha's Grace points +140,000. For 1 h., Acquired XP/ SP +100%. Changes the armor's appearance to that of NC Dinos Uniform. The effect remains after death. -->
+		<icon>icon.ev_dinos_baseball_gold</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<effects>
+			<effect name="ExpModify">
+				<amount>100</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51109" toLevel="1" name="Windstorm Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51110" toLevel="1" name="Fisherman's Blessing">
+		<!-- For 24 h., acquired XP/ SP while fishing +50%. The effect remains after death. -->
+		<icon>icon.fishing_zone_ticket_1</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="51111" toLevel="1" name="Head Enlargement">
+		<!-- Increases your head's size. -->
+		<icon>icon.ev_kr_traditional_dress</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51112" toLevel="1" name="Firecracker">
+		<!-- Launches fireworks. -->
+		<icon>icon.ev_kr_traditional_dress</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1500</reuseDelay>
+	</skill>
+	<skill id="51113" toLevel="1" name="Dumpling Soup">
+		<!-- For 5 min., changes armor appearance to that of Hanbok. Acquired XP/ SP +10%, P./ M. Atk. +15%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +10%, Speed +10, Sayha's Grace Consumption -30%. The effect disappears after logout. -->
+		<icon>BranchSys.icon.br_taiwan_newyear_food_d_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="51114" toLevel="1" name="Agathion Enchant Scroll Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51115" toLevel="1" name="Exquisite Jewel Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91148</itemConsumeId> <!-- Jewel Box Lv. 5 -->
+		<isMagic>2</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="10.0">
+						<item id="90379" count="1" /> <!-- Topaz Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90382" count="1" /> <!-- Garnet Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90385" count="1" /> <!-- Jade Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90388" count="1" /> <!-- Ruby Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90391" count="1" /> <!-- Sapphire Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90394" count="1" /> <!-- Diamond Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90397" count="1" /> <!-- Pearl Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90400" count="1" /> <!-- Vital Stone Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90939" count="1" /> <!-- Aquamarine Jewelry Box Lv. 5 -->
+					</item>
+					<item chance="10.0">
+						<item id="90943" count="1" /> <!-- Cat's Eye Jewelry Box Lv. 5 -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51116" toLevel="1" name="Attribute Necklace Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51117" toLevel="1" name="Blessed Pendant Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51118" toLevel="1" name="+5 Agathion Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="51119" toLevel="1" name="+10 Agathion Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="51120" toLevel="1" name="+15 Top-grade A-grade Weapon Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="51121" toLevel="1" name="Sibi's Weapon Enchant Scroll">
+		<!-- Enchants Sibi's Samurai Black Long Sword. -->
+		<icon>icon.yogi_scroll_of_enchant_weapon_grade_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51122" toLevel="1" name="Maphr Potion">
+		<!-- Increases the enchant success rate for 10 sec. Cannot be used for enchanting some items. -->
+		<icon>icon.etc_instant_lucky_potion_i00</icon>
+		<operateType>P</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="51123" toLevel="1" name="Maphr Potion">
+		<!-- Increases the enchant success rate for 10 sec. Cannot be used for enchanting some items. -->
+		<icon>icon.etc_instant_lucky_potion_i00</icon>
+		<operateType>P</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="51124" toLevel="1" name="Chronicle Token">
+		<!-- CON +1, MEN +1, DEX +1, WIT +1, STR +1, INT +1, Atk. Spd./ Casting Spd. +5%. -->
+		<icon>icon.etc_scroll_of_memory_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51125" toLevel="1" name="MP Replenishing Potion">
+		<icon>icon.etc_potion_blue_i00</icon>
+		<operateType>A1</operateType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51126" toLevel="1" name="Mid-grade Spirit's Blessing">
+		<!-- For 20 min., acquired attribute XP while hunting +30%. -->
+		<icon>icon.elemental_bless_scrl_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SpiritExpModify">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51127" toLevel="1" name="High-grade Spirit's Blessing">
+		<!-- For 20 min., acquired attribute XP while hunting +50%. -->
+		<icon>icon.elemental_bless_scrl_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SpiritExpModify">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51128" toLevel="1" name="Scroll: Enchant Spirit Accessory">
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51129" toLevel="1" name="Blessed Scroll: Enchant Spirit Accessory">
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51130" toLevel="1" name="Fire Attack Potion">
+		<!-- For 20 min., Fire Attack +50. Cooldown: 1 min. -->
+		<icon>icon.etc_fire_potion_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>50</amount>
+				<type>FIRE</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51131" toLevel="1" name="Water Attack Potion">
+		<!-- For 20 min., Water Attack +50. Cooldown: 1 min. -->
+		<icon>icon.etc_water_potion_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>50</amount>
+				<type>WATER</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51132" toLevel="1" name="Wind Attack Potion">
+		<!-- For 20 min., Wind Attack +50. Cooldown: 1 min. -->
+		<icon>icon.etc_wind_potion_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>50</amount>
+				<type>WIND</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51133" toLevel="1" name="Earth Attack Potion">
+		<!-- For 20 min., Earth Attack +50. Cooldown: 1 min. -->
+		<icon>icon.etc_earth_potion_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ElementalSpiritAttack">
+				<amount>50</amount>
+				<type>EARTH</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51134" toLevel="1" name="Scroll of Escape: Forge of Gods">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>10000</hitTime>
+	</skill>
+	<skill id="51135" toLevel="1" name="Scroll of Escape: Garden of Eva">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>10000</hitTime>
+	</skill>
+	<skill id="51136" toLevel="1" name="Scroll of Escape: Land of Winds">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>10000</hitTime>
+	</skill>
+	<skill id="51137" toLevel="1" name="Scroll of Escape: Wall of Argos">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>10000</hitTime>
+	</skill>
+	<skill id="51138" toLevel="1" name="Wind Treasure Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91909</itemConsumeId> <!-- Wind Treasure Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="34">
+						<item id="49845" count="2" /> <!-- Sayha's Blessing -->
+					</item>
+					<item chance="33">
+						<item id="49846" count="1" /> <!-- Sayha's Silver Light Blessing -->
+					</item>
+					<item chance="33">
+						<item id="49847" count="1" /> <!-- Sayha's Golden Light Blessing -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51139" toLevel="1" name="Wind's Blessing Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91207</itemConsumeId> <!-- Wind's Blessing Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="34">
+						<item id="49845" count="2" /> <!-- Sayha's Blessing -->
+					</item>
+					<item chance="33">
+						<item id="49846" count="1" /> <!-- Sayha's Silver Light Blessing -->
+					</item>
+					<item chance="33">
+						<item id="49847" count="1" /> <!-- Sayha's Golden Light Blessing -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51140" toLevel="1" name="Golden Wind Chest">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51141" toLevel="1" name="Silver Wind Chest">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51142" toLevel="1" name="Scroll: Enchant Sayha's Cloak">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51143" toLevel="1" name="Radiant Scroll: Enchant Sayha's Cloak">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51144" toLevel="1" name="Shining Scroll: Enchant Sayha's Cloak">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51145" toLevel="1" name="+16 B-grade Weapon Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="51146" toLevel="1" name="+10 Head Accessory Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="51147" toLevel="1" name="Panda Transformation">
+		<!-- Panda transformation. Max HP/ MP +20%, acquired XP/ SP while hunting +20%, while Sayha's Grace is active. The effect remains after death. -->
+		<icon>icon.sayha2017_panda</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_7</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>45</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeId>91218</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount> <!-- Transformation Scroll: Panda -->
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,1</dispel>
+			</effect>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51148" toLevel="1" name="Cat Transformation">
+		<!-- Cat transformation. Max HP/ MP +20%, acquired XP/ SP while hunting +20%, while Sayha's Grace is active. The effect remains after death. -->
+		<icon>icon.sayha2017_cat</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_8</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>45</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeId>91219</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount> <!-- Transformation Scroll: Cat -->
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,1</dispel>
+			</effect>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51149" toLevel="1" name="Gift from Wealthy Merchant Red">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51150" toLevel="1" name="Chronicle Cube - 30 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51151" toLevel="1" name="Chronicle Cube - 90 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51152" toLevel="2" name="Santa Girl's Gift">
+		<!-- Santa Girl's Gift. You can receive a Santa Girl's Gift Pouch once the buff expires. Songs/ dances skills' MP Consumption -15%. Acquired XP/ SP +20%. <Warning> If your character dies at the time the item is given, you cannot receive the gift. You also cannot receive the gift if there is no empty slot in your inventory. -->
+		<icon>BranchSys.Icon.Br_santa_gift_click_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="51153" toLevel="1" name="Christmas Buff Kit">
+		<!-- Santa Girl's Gift Pouch can be obtained. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="51154" toLevel="1" name="Santa Girl's Magic Chest">
+		<!-- Activates Santa Girl's Gift when used. -->
+		<icon>BranchSys.icon.br_valentine_agathion_pack_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51155" toLevel="1" name="Christmas Tree Blessing">
+		<!-- Immediately restores 5000 HP and 1500 MP of party members. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51156" toLevel="1" name="Santa Girl's Gift Pouch">
+		<!-- Allows to obtain an item. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51157" toLevel="1" name="Christmas Amulet">
+		<!-- Acquired XP/ SP while hunting/ fishing +20%. -->
+		<icon>BranchSys.icon.br_xmas_present_luck_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="FishingExpSpBonus">
+				<amount>20</amount>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51158" toLevel="1" name="Lucky Herb Pouch">
+		<!-- For 5 min., P./ M. Atk. +15%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +15%, HP/ MP Recovery Rate +30%, Speed +10. The effect disappears upon logout. -->
+		<icon>icon.christmas_card_box2</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="51159" toLevel="1" name="Dragon Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51160" toLevel="1" name="Radiant Dragon Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="51161" toLevel="1" name="Top-grade HP Recovery Potion">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51162" toLevel="1" name="High-grade MP Replenishing Potion">
+		<!-- Momentarily recovers 300 MP. -->
+		<icon>icon.etc_potion_blue_i00</icon>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51163" toLevel="1" name="Sealed Rune Lv. 14">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51164" toLevel="1" name="Sealed Rune Lv. 15">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51165" toLevel="1" name="Valentine Party Herb">
+		<!-- For 5 min., P./ M. Atk. +15%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +15%, HP/ MP Recovery Rate +30%, Speed +10. The effect disappears upon logout. -->
+		<icon>icon.etc_red_rose_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="51166" toLevel="1" name="Adventurer - Song of Earth">
+		<!-- For 5 min., all party members' P. Def. +25%. -->
+		<icon>icon.skill0264</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>523</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51167" toLevel="1" name="Adventurer - Song of Wind">
+		<!-- For 5 min., Speed +20 for all party members. -->
+		<icon>icon.skill0268</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>438</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51168" toLevel="1" name="Adventurer - Song of Hunter">
+		<!-- For 5 min., P. Critical Rate +100% for all party members. -->
+		<icon>icon.skill0269</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>467</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51169" toLevel="1" name="Adventurer - Song of Vitality">
+		<!-- For 5 min., HP +30% for all party members. -->
+		<icon>icon.skill0304</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>611</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51170" toLevel="1" name="Adventurer - Dance of Warrior">
+		<!-- For 5 min., P. Def. +12% for all party members. -->
+		<icon>icon.skill0271</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>523</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51171" toLevel="1" name="Adventurer - Dance of Fire">
+		<!-- For 5 min., P. Critical Damage +35% for all party members. -->
+		<icon>icon.skill0274</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>379</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51172" toLevel="1" name="Adventurer - Dance of Rage">
+		<!-- For 5 min., Atk. Spd. +15% for all party members. -->
+		<icon>icon.skill0275</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>549</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51173" toLevel="1" name="Adventurer - Dance of Concentration">
+		<!-- For 5 min., all party members' Casting Spd. +30%, Casting Interruption Rate -40. -->
+		<icon>icon.skill0276</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>495</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51174" toLevel="1" name="Transformation into a Sword Singer">
+		<!-- Transformation into a Sword Singer. Attacking is not possible. After a restart or when used during a duel, the Buff is removed after duel ends. -->
+		<icon>icon.ev_13th_paper_inzone</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<effectPoint>1</effectPoint>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91259</itemConsumeId> <!-- Spirit Transformation Scroll - Singer -->
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>157</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>157</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51175" toLevel="1" name="Transformation into a Blade Dancer">
+		<!-- Transformation into a Blade Dancer. Attacking is not possible. After a restart or when used during a duel, the Buff is removed after duel ends. -->
+		<icon>icon.ev_13th_paper_field</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<effectPoint>1</effectPoint>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91260</itemConsumeId> <!-- Spirit Transformation Scroll - Dancer -->
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>105</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>105</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51176" toLevel="1" name="Dragon's Relic">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="51177" toLevel="1" name="Transformation into a Singer and Dancer">
+		<!-- Transformation into a Singer and Dancer. Attacking is not possible. After a restart or when used during a duel, the Buff is removed after duel ends. -->
+		<icon>icon.etc_roll_of_paper_black_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="51178" toLevel="1" name="Adventurer - Dance of Warrior">
+		<!-- For 5 min., P. Def. +12% for all party members. -->
+		<icon>icon.skill0271</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>523</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51179" toLevel="1" name="Adventurer - Dance of Fire">
+		<!-- For 5 min., P. Critical Damage +35% for all party members. -->
+		<icon>icon.skill0274</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>379</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51180" toLevel="1" name="Adventurer - Dance of Rage">
+		<!-- For 5 min., Atk. Spd. +15% for all party members. -->
+		<icon>icon.skill0275</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>549</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51181" toLevel="1" name="Adventurer - Dance of Concentration">
+		<!-- For 5 min., all party members' Casting Spd. +30%, Casting Interruption Rate -40. -->
+		<icon>icon.skill0276</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>495</effectPoint>
+		<mpConsume>66</mpConsume>
+	</skill>
+	<skill id="51182" toLevel="1" name="Adventurer - Dance of Shadows">
+		<!-- For 5 min., party members' Speed -50%, they are protected from monsters' preemptive attacks. The effect is cancelled if any party member launches an attack. -->
+		<icon>icon.skill0366</icon>
+		<operateType>A1</operateType>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>666</effectPoint>
+		<mpConsume>73</mpConsume>
+	</skill>
+	<skill id="51183" toLevel="1" name="Dragon Berserker">
+		<!-- You are transformed into Dragon Berserker. For 20 min., Atk. Spd. +200, Casting Spd. +250, P. Atk. +1000, M. Atk. +1500. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 4 pcs. -->
+		<icon>icon.bm2018_dragon_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>D_CHAOS_MATCH_DECO_SMALL</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>7200000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51184" toLevel="1" name="Ninja Assassin">
+		<!-- You are transformed into Ninja Assassin. For 20 min., acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P. Critical Damage/ M. Skill Critical Damage +5%. Cooldown: 3 h. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance cancels the target of a random enemy with 100% chance after a successful attack or skill use. -->
+		<icon>icon.bm2018_ninja_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_R</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51204</skillId> <!-- Ninja Assassin - Cancel Target -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51204</skillId> <!-- Ninja Assassin - Cancel Target -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51185" toLevel="1" name="Blue Musketeer">
+		<!-- You are transformed into Blue Musketeer. For 20 min., acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P. Critical Damage/ M. Skill Critical Damage +5%. Cooldown: 3 h. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance stuns for 5 sec. after a successful attack or skill use. -->
+		<icon>icon.bm2018_bluemusketeer_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_B</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51205</skillId> <!-- Blue Mustekeer - Stun -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51205</skillId> <!-- Blue Mustekeer - Stun -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51186" toLevel="1" name="Valkyrie">
+		<!-- You are transformed into Valkyrie. For 20 min, Atk. Spd. +100, P. Atk. +300. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 2 pcs. -->
+		<icon>icon.bm2018_valkyrie_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_Y</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51187" toLevel="1" name="Wild Wolf">
+		<!-- You are transformed into Wild Wolf. For 20 min., acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P. Critical Damage/ M. Skill Critical Damage +5%. Cooldown: 3 h. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance the enemy's P. Def. -23% after a successful attack or skill use. -->
+		<icon>icon.bm2018_barbarian_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_G</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51207</skillId> <!-- Wild Wolf - Hex -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51207</skillId> <!-- Wild Wolf - Hex -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51188" toLevel="1" name="Pirate">
+		<!-- You are transformed into Pirate. For 20 min, Atk. Spd. +50, Casting Spd. +80. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 1 pcs. -->
+		<icon>icon.bm2018_pirate_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_P</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51189" toLevel="1" name="Purple Cowboy">
+		<!-- You are transformed into Purple Cowboy. For 20 min., Atk. Spd. +100, P. Critical Rate +120. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 2 pcs. -->
+		<icon>icon.bm2018_cowboy_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_P2</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51190" toLevel="1" name="High Priest">
+		<!-- You are transformed into High Priest. For 20 min., Casting Spd. +150, Max MP +20%. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 2 pcs. -->
+		<icon>icon.bm2018_healer_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51191" toLevel="1" name="Blood Noblesse">
+		<!-- You are transformed into Blood Noblesse. For 20 min., acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P. Critical Damage/ M. Skill Critical Damage +5%. Cooldown: 3 h. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance deals magic damage to the target with 145 power after a successful attack or skill use. -->
+		<icon>icon.bm2018_rednoblesse_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_R2</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51211</skillId> <!-- Blood Noblesse - Magical Attack -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51211</skillId> <!-- Blood Noblesse - Magical Attack -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51192" toLevel="1" name="White Noblesse">
+		<!-- You are transformed into White Noblesse. For 20 min., Atk. Spd. +150, M. Atk. +500. Cooldown: 20 min. Transformation effect remains after death. <Item consumption>. Incarnation Fragment 2 pcs. -->
+		<icon>icon.bm2018_whitenoblesse_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W2</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10800000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<excludedFromCheck>true</excludedFromCheck>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51193" toLevel="1" name="Dragon Berserker Energy">
+		<!-- Grants the power of Dragon Berserker. For 20 min., acquired XP +20%, P. Atk. +10%, M. Atk. +10%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance P. Atk. +50%, M. Atk. +50%, Atk. Spd. +50%, Casting Spd. +50%, Damage Reflection +15% after a successful attack or skill use. -->
+		<icon>icon.bm2018_dragon_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>D_CHAOS_MATCH_DECO_SMALL</abnormalVisualEffect>
+		<itemConsumeId>91271</itemConsumeId> <!-- Transformation Scroll: Dragon Berserker -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51203</skillId> <!-- Berserker Spirit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51203</skillId> <!-- Berserker Spirit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51203</skillId> <!-- Berserker Spirit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51194" toLevel="1" name="Ninja Assassin Energy">
+		<!-- Grants the power of Ninja Assassin. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance cancels the target of the enemy after a successful attack or skill use. -->
+		<icon>icon.bm2018_ninja_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_R</abnormalVisualEffect>
+		<itemConsumeId>91262</itemConsumeId> <!-- Transformation Scroll: Ninja Assassin -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51204</skillId> <!-- Ninja Assassin - Cancel Target -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51204</skillId> <!-- Ninja Assassin - Cancel Target -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51195" toLevel="1" name="Blue Musketeer Energy">
+		<!-- Grants the power of Blue Musketeer. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance stuns for 5 sec. after a successful attack or skill use. -->
+		<icon>icon.bm2018_bluemusketeer_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_B</abnormalVisualEffect>
+		<itemConsumeId>91265</itemConsumeId> <!-- Transformation Scroll: Blue Musketeer -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51205</skillId> <!-- Blue Mustekeer - Stun -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51205</skillId> <!-- Blue Mustekeer - Stun -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51196" toLevel="1" name="Valkyrie Energy">
+		<!-- Grants the power of Valkyrie. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance paralyzes for 5 sec. after a successful attack or skill use. -->
+		<icon>icon.bm2018_valkyrie_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_Y</abnormalVisualEffect>
+		<itemConsumeId>91269</itemConsumeId> <!-- Transformation Scroll: Valkyrie -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51206</skillId> <!-- Valkyrie - Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51206</skillId> <!-- Valkyrie - Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51197" toLevel="1" name="Wild Wolf Energy">
+		<!-- Grants the power of Wild Wolf. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance the enemy's P. Def. -23% after a successful attack or skill use. -->
+		<icon>icon.bm2018_barbarian_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_G</abnormalVisualEffect>
+		<itemConsumeId>91268</itemConsumeId> <!-- Transformation Scroll: Wild Wolf -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51207</skillId> <!-- Wild Wolf - Hex -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51207</skillId> <!-- Wild Wolf - Hex -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51198" toLevel="1" name="Pirate Energy">
+		<!-- Grants the power of Pirate. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance P./ M. Atk. +10% after a successful attack or skill use. -->
+		<icon>icon.bm2018_pirate_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_G</abnormalVisualEffect>
+		<itemConsumeId>91270</itemConsumeId> <!-- Transformation Scroll: Pirate -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>MY_PARTY</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51208</skillId> <!-- Pirate's Blessing -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>MY_PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51208</skillId> <!-- Pirate's Blessing -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51208</skillId> <!-- Pirate's Blessing -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51199" toLevel="1" name="Purple Cowboy Energy">
+		<!-- Grants the power of Purple Cowboy. For 20 min., acquired XP +10%, P. Atk. +7%, M. Atk. +7%. Cooldown: 1 min. The transformation effect remains after death. <Special ability>. While the transformation is active, with a certain chance deals physical damage to the target with 3939 power after a successful attack or skill use. -->
+		<icon>icon.bm2018_cowboy_i01</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_P2</abnormalVisualEffect>
+		<itemConsumeId>91266</itemConsumeId> <!-- Transformation Scroll: Purple Cowboy -->
+		<itemConsumeId>1</itemConsumeId>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<skillId>51209</skillId> <!-- Purple Cowboy - Physical Attack -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<skillId>51209</skillId> <!-- Purple Cowboy - Physical Attack -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+</list>

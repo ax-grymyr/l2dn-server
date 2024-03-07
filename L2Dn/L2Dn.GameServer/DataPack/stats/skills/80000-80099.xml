@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="80001" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80002" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80003" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80004" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80005" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80006" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<value>1</value>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80007" toLevel="1" name="Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="80011" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80012" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80013" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80014" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80015" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80016" toLevel="1" name="Stun Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>2</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80021" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80022" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80023" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80024" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80025" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80026" toLevel="1" name="Paralysis Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>2</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80031" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80032" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80033" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80034" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80035" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80036" toLevel="1" name="Sleep Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>2</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80041" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80042" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80043" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80044" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80045" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80046" toLevel="1" name="Hold Atk. Rate Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>2</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80051" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80052" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80053" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80054" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80055" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80056" toLevel="1" name="Bow Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80061" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80062" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80063" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80064" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80065" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80066" toLevel="1" name="Drain Resistance Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<INFECTION>2</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80067" toLevel="10" name="Arcane Power Break">
+		<!-- P. Atk. -2000 -->
+		<icon>icon.etc_str_symbol_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-2500</effectPoint>
+	</skill>
+	<skill id="80068" toLevel="10" name="Arcane Magic Break">
+		<!-- M. Atk. -2000 -->
+		<icon>icon.etc_int_symbol_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-2500</effectPoint>
+	</skill>
+	<skill id="80071" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80072" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80073" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80074" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80075" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80076" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80077" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80078" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80079" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80080" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80081" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80082" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80083" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80084" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80085" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80086" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80087" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80088" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80089" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80090" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80091" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80092" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80093" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80094" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80095" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80096" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80097" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80098" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="80099" toLevel="1" name="MP Consumption Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

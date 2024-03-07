@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33709" name="option_id_33709">
+		<!-- P. Def. +5 -->
+	</option>
+	<option id="33710" name="option_id_33710">
+		<!-- P. Def. +6 -->
+	</option>
+	<option id="33711" name="option_id_33711">
+		<!-- P. Def. +7 -->
+	</option>
+	<option id="33712" name="option_id_33712">
+		<!-- P. Def. +8 -->
+	</option>
+	<option id="33713" name="option_id_33713">
+		<!-- P. Def. +9 -->
+	</option>
+	<option id="33714" name="option_id_33714">
+		<!-- P. Def. +10. -->
+	</option>
+	<option id="33715" name="option_id_33715">
+		<!-- P. Def. +12.5 -->
+	</option>
+	<option id="33716" name="option_id_33716">
+		<!-- P. Def. +15 -->
+	</option>
+	<option id="33717" name="option_id_33717">
+		<!-- P. Def. +20 -->
+	</option>
+	<option id="33718" name="option_id_33718">
+		<!-- P. Def. +25 -->
+	</option>
+	<option id="33719" name="option_id_33719">
+		<!-- P. Def. +30 -->
+	</option>
+	<option id="33720" name="option_id_33720">
+		<!-- P. Def. +35 -->
+	</option>
+	<option id="33721" name="option_id_33721">
+		<!-- P. Def. +50 -->
+	</option>
+	<option id="33722" name="option_id_33722">
+		<!-- M. Def. +5 -->
+	</option>
+	<option id="33723" name="option_id_33723">
+		<!-- M. Def. +6 -->
+	</option>
+	<option id="33724" name="option_id_33724">
+		<!-- M. Def. +7 -->
+	</option>
+	<option id="33725" name="option_id_33725">
+		<!-- M. Def. +8 -->
+	</option>
+	<option id="33726" name="option_id_33726">
+		<!-- M. Def. +9 -->
+	</option>
+	<option id="33727" name="option_id_33727">
+		<!-- M. Def. +10 -->
+	</option>
+	<option id="33728" name="option_id_33728">
+		<!-- M. Def. +12.5 -->
+	</option>
+	<option id="33729" name="option_id_33729">
+		<!-- M. Def. +15 -->
+	</option>
+	<option id="33730" name="option_id_33730">
+		<!-- M. Def. +20 -->
+	</option>
+	<option id="33731" name="option_id_33731">
+		<!-- M. Def. +25 -->
+	</option>
+	<option id="33732" name="option_id_33732">
+		<!-- M. Def. +30 -->
+	</option>
+	<option id="33733" name="option_id_33733">
+		<!-- M. Def. +35 -->
+	</option>
+	<option id="33734" name="option_id_33734">
+		<!-- M. Def. +50 -->
+	</option>
+	<option id="33735" name="option_id_33735">
+		<!-- Max HP +250 -->
+	</option>
+	<option id="33736" name="option_id_33736">
+		<!-- Max HP +350 -->
+	</option>
+	<option id="33737" name="option_id_33737">
+		<!-- Max HP +450 -->
+	</option>
+	<option id="33738" name="option_id_33738">
+		<!-- Max HP +600 -->
+	</option>
+	<option id="33739" name="option_id_33739">
+		<!-- Max HP +750 -->
+	</option>
+	<option id="33740" name="option_id_33740">
+		<!-- Max HP +1000 -->
+	</option>
+	<option id="33741" name="option_id_33741">
+		<!-- Max HP +1250 -->
+	</option>
+	<option id="33742" name="option_id_33742">
+		<!-- Max HP +1500 -->
+	</option>
+	<option id="33743" name="option_id_33743">
+		<!-- Max HP +2000 -->
+	</option>
+	<option id="33744" name="option_id_33744">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="33745" name="option_id_33745">
+		<!-- Max MP +70 -->
+	</option>
+	<option id="33746" name="option_id_33746">
+		<!-- Max MP +90 -->
+	</option>
+	<option id="33747" name="option_id_33747">
+		<!-- Max MP +120 -->
+	</option>
+	<option id="33748" name="option_id_33748">
+		<!-- Max MP +150 -->
+	</option>
+	<option id="33749" name="option_id_33749">
+		<!-- Max MP +200 -->
+	</option>
+	<option id="33750" name="option_id_33750">
+		<!-- Max MP +250 -->
+	</option>
+	<option id="33751" name="option_id_33751">
+		<!-- Max MP +300 -->
+	</option>
+	<option id="33752" name="option_id_33752">
+		<!-- Max MP +400 -->
+	</option>
+	<option id="33753" name="option_id_33753">
+		<!-- Max CP +100 -->
+	</option>
+	<option id="33754" name="option_id_33754">
+		<!-- Max CP +140 -->
+	</option>
+	<option id="33755" name="option_id_33755">
+		<!-- Max CP +180. -->
+	</option>
+	<option id="33756" name="option_id_33756">
+		<!-- Max CP +240 -->
+	</option>
+	<option id="33757" name="option_id_33757">
+		<!-- Max CP +300 -->
+	</option>
+	<option id="33758" name="option_id_33758">
+		<!-- Max CP +400 -->
+	</option>
+	<option id="33759" name="option_id_33759">
+		<!-- Max CP +500 -->
+	</option>
+	<option id="33760" name="option_id_33760">
+		<!-- Max CP +600 -->
+	</option>
+	<option id="33761" name="option_id_33761">
+		<!-- Max CP +800 -->
+	</option>
+	<option id="33762" name="option_id_33762">
+		<!-- HP Recovery Rate +0.5 -->
+	</option>
+	<option id="33763" name="option_id_33763">
+		<!-- HP Recovery Rate +1 -->
+	</option>
+	<option id="33764" name="option_id_33764">
+		<!-- HP Recovery Rate +1.5 -->
+	</option>
+	<option id="33765" name="option_id_33765">
+		<!-- HP Recovery Rate +2 -->
+	</option>
+	<option id="33766" name="option_id_33766">
+		<!-- HP Recovery Rate +2.5 -->
+	</option>
+	<option id="33767" name="option_id_33767">
+		<!-- MP Recovery Rate +0.5 -->
+	</option>
+	<option id="33768" name="option_id_33768">
+		<!-- MP Recovery Rate +1 -->
+	</option>
+	<option id="33769" name="option_id_33769">
+		<!-- MP Recovery Rate +1.5 -->
+	</option>
+	<option id="33770" name="option_id_33770">
+		<!-- MP Recovery Rate +2 -->
+	</option>
+	<option id="33771" name="option_id_33771">
+		<!-- MP Recovery Rate +2.5 -->
+	</option>
+	<option id="33772" name="option_id_33772">
+		<!-- CP Recovery Rate +0.5 -->
+	</option>
+	<option id="33773" name="option_id_33773">
+		<!-- CP Recovery Rate +1 -->
+	</option>
+	<option id="33774" name="option_id_33774">
+		<!-- CP Recovery Rate +1.5 -->
+	</option>
+	<option id="33775" name="option_id_33775">
+		<!-- CP Recovery Rate +2 -->
+	</option>
+	<option id="33776" name="option_id_33776">
+		<!-- CP Recovery Rate +2.5 -->
+	</option>
+	<option id="33777" name="option_id_33777">
+		<!-- Received Healing +2.5% -->
+	</option>
+	<option id="33778" name="option_id_33778">
+		<!-- Received Healing +3.5% -->
+	</option>
+	<option id="33779" name="option_id_33779">
+		<!-- Received Healing +4.5% -->
+	</option>
+	<option id="33780" name="option_id_33780">
+		<!-- Received Healing +5.5% -->
+	</option>
+	<option id="33781" name="option_id_33781">
+		<!-- Received Healing +6.5% -->
+	</option>
+	<option id="33782" name="option_id_33782">
+		<!-- Received Healing +7.5% -->
+	</option>
+	<option id="33783" name="option_id_33783">
+		<!-- Shock Atk. Rate +0.5% -->
+	</option>
+	<option id="33784" name="option_id_33784">
+		<!-- Shock Atk. Rate +1% -->
+	</option>
+	<option id="33785" name="option_id_33785">
+		<!-- Shock Atk. Rate +1.5% -->
+	</option>
+	<option id="33786" name="option_id_33786">
+		<!-- Shock Atk. Rate +3% -->
+	</option>
+	<option id="33787" name="option_id_33787">
+		<!-- Shock Atk. Rate +3.5% -->
+	</option>
+	<option id="33788" name="option_id_33788">
+		<!-- Shock Atk. Rate +5% -->
+	</option>
+	<option id="33789" name="option_id_33789">
+		<!-- Paralysis Atk. Rate +0.5% -->
+	</option>
+	<option id="33790" name="option_id_33790">
+		<!-- Paralysis Atk. Rate +1% -->
+	</option>
+	<option id="33791" name="option_id_33791">
+		<!-- Paralysis Atk. Rate +1.5% -->
+	</option>
+	<option id="33792" name="option_id_33792">
+		<!-- Paralysis Atk. Rate +3%. -->
+	</option>
+	<option id="33793" name="option_id_33793">
+		<!-- Paralysis Atk. Rate +3.5% -->
+	</option>
+	<option id="33794" name="option_id_33794">
+		<!-- Paralysis Atk. Rate +5% -->
+	</option>
+	<option id="33795" name="option_id_33795">
+		<!-- Sleep Atk. Rate +0.5% -->
+	</option>
+	<option id="33796" name="option_id_33796">
+		<!-- Sleep Atk. Rate +1% -->
+	</option>
+	<option id="33797" name="option_id_33797">
+		<!-- Sleep Atk. Rate +1.5% -->
+	</option>
+	<option id="33798" name="option_id_33798">
+		<!-- Sleep Atk. Rate +3% -->
+	</option>
+	<option id="33799" name="option_id_33799">
+		<!-- Sleep Atk. Rate +3.5% -->
+	</option>
+</list>

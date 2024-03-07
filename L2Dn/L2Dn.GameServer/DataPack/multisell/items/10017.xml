@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98324" count="1" /> <!-- Spellbook: Bloody Strike - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98495" count="1" /> <!-- Spellbook: Constraint - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98496" count="1" /> <!-- Spellbook: Resolve to Kill - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98493" count="1" /> <!-- Spellbook: Clone Dance - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98494" count="1" /> <!-- Spellbook: Assassination - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="98291" count="1" /> <!-- Spellbook: Trophy Thief - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96892" count="1" /> <!-- Spellbook: Flame Arrow - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95351" count="1" /> <!-- Spellbook: Goring Charge - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95353" count="1" /> <!-- Spellbook: Elemental Changing - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95366" count="1" /> <!-- Spellbook: Elemental Spirit Lv. 4 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95503" count="1" /> <!-- Spellbook: Divine Beam - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95504" count="1" /> <!-- Spellbook: Burning Field - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95505" count="1" /> <!-- Spellbook: Frozen Field - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95506" count="1" /> <!-- Spellbook: Lightning Storm - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95510" count="1" /> <!-- Spellbook: Hellfire - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95513" count="1" /> <!-- Spellbook: Elemental Burst - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95514" count="1" /> <!-- Spellbook: Ethereal Strike - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95519" count="1" /> <!-- Spellbook: Devour - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95529" count="1" /> <!-- Spellbook: Song of Earth Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95530" count="1" /> <!-- Spellbook: Song of Hunter Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95531" count="1" /> <!-- Spellbook: Dance of Warrior Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95532" count="1" /> <!-- Spellbook: Dance of Fire Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95540" count="1" /> <!-- Spellbook: Life Force Harmony - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95542" count="1" /> <!-- Spellbook: Titanic Weapon - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95543" count="1" /> <!-- Spellbook: Titanic Sweep - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95544" count="1" /> <!-- Spellbook: Titanic Break - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95545" count="1" /> <!-- Spellbook: Ogre Spirit Totem Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95546" count="1" /> <!-- Spellbook: Rabbit Spirit Totem Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95547" count="1" /> <!-- Spellbook: Puma Spirit Totem Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95550" count="1" /> <!-- Spellbook: Armor Break - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95554" count="1" /> <!-- Spellbook: Debuff Master - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95555" count="1" /> <!-- Spellbook: Flame Burst - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95558" count="1" /> <!-- Spellbook: Blood Bond - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95567" count="1" /> <!-- Spellbook: Song of Wind Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95568" count="1" /> <!-- Spellbook: Dance of Fury Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95640" count="1" /> <!-- Spellbook: Extra Hit - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95864" count="1" /> <!-- Spellbook: Fortune Time - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95870" count="1" /> <!-- Spellbook: Mechanical Masterpiece - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="95871" count="1" /> <!-- Spellbook: Blacksmith' Attack - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96051" count="1" /> <!-- Spellbook: Sensation - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96052" count="1" /> <!-- Spellbook: Balanced Body - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96054" count="1" /> <!-- Spellbook: Treatment - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96055" count="1" /> <!-- Spellbook: Eva's Nocturne - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96057" count="1" /> <!-- Spellbook: Duress - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96058" count="1" /> <!-- Spellbook: Nemesis - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96284" count="1" /> <!-- Spellbook: Power of Life - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96286" count="1" /> <!-- Spellbook: Toughness - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96288" count="1" /> <!-- Spellbook: Ultimate Defense Lv. 3 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96606" count="1" /> <!-- Spellbook: Shield of Security - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96608" count="1" /> <!-- Spellbook: Lunatic Crusher - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96610" count="1" /> <!-- Spellbook: Eva's Care - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96612" count="1" /> <!-- Spellbook: Shillien's Curse - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96677" count="1" /> <!-- Spellbook: Seclusion - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96678" count="1" /> <!-- Spellbook: Dark Blow - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96679" count="1" /> <!-- Spellbook: Reversed Pull - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96680" count="1" /> <!-- Spellbook: Synchro Freedom - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96681" count="1" /> <!-- Spellbook: Ethereal Blood - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96888" count="1" /> <!-- Spellbook: True Aim - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96889" count="1" /> <!-- Spellbook: Deadly Shooter - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96890" count="1" /> <!-- Spellbook: Thorn Shot - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96891" count="1" /> <!-- Spellbook: Chain Arrest - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96892" count="1" /> <!-- Spellbook: Flame Arrow - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96893" count="1" /> <!-- Spellbook: Arrow Shower - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="96894" count="1" /> <!-- Spellbook: Piercing Arrow - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97042" count="1" /> <!-- Spellbook: Faery Shield - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97043" count="1" /> <!-- Spellbook: Soul Guardian - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97044" count="1" /> <!-- Spellbook: Spiral - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97112" count="1" /> <!-- Spellbook: Master of Combat Lv. 3 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97116" count="1" /> <!-- Spellbook: Wild Growl Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97117" count="1" /> <!-- Spellbook: Darkness Unleashing - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97194" count="1" /> <!-- Spellbook: Cubic of Secrets Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97195" count="1" /> <!-- Spellbook: Elemental Cubic Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97196" count="1" /> <!-- Spellbook: Phantom Cubic Lv. 2 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97197" count="1" /> <!-- Spellbook: Ray of Light - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97232" count="1" /> <!-- Spellbook: Giant's Stomp - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97330" count="1" /> <!-- Spellbook: Slashing Blades - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97329" count="1" /> <!-- Spellbook: Blade Wave - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97334" count="1" /> <!-- Spellbook: Spear Cage - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97335" count="1" /> <!-- Spellbook: Spear Rumble - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97464" count="1" /> <!-- Spellbook: Death Pain - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97460" count="1" /> <!-- Spellbook: Soul Guard Lv. 3 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97456" count="1" /> <!-- Spellbook: Soul Mark - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97468" count="1" /> <!-- Spellbook: Resonance - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97472" count="1" /> <!-- Spellbook: Lightning Tornado - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97849" count="1" /> <!-- Spellbook: Song of Silence Lv. 4 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97847" count="1" /> <!-- Spellbook: Music Mastery - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97854" count="1" /> <!-- Spellbook: Essential Energy - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97852" count="1" /> <!-- Spellbook: Unique Seal of Damage - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97856" count="1" /> <!-- Spellbook: Great Attack Lv. 3 - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97848" count="1" /> <!-- Spellbook: Dance Mastery - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97177" count="1" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		<production id="97850" count="1" /> <!-- Spellbook: Dance of Medusa Lv. 4 - Sealed -->
+	</item>
+</list>

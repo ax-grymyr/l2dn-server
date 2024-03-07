@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37800" name="m_def_ls_accessory">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37801" name="m_def_ls_accessory">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37802" name="m_def_ls_accessory">
+		<!-- M. Def. +150 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37803" name="m_def_ls_accessory">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37804" name="m_def_ls_accessory">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37805" name="m_def_ls_accessory">
+		<!-- M. Def. +16 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37806" name="m_def_ls_accessory">
+		<!-- M. Def. +22 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37807" name="m_def_ls_accessory">
+		<!-- M. Def. +28 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37808" name="m_def_ls_accessory">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37809" name="m_def_ls_accessory">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37810" name="m_def_ls_accessory">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37811" name="m_def_ls_accessory">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37812" name="m_def_ls_accessory">
+		<!-- M. Def. +58 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37813" name="m_def_ls_accessory">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37814" name="m_def_ls_accessory">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37815" name="m_def_ls_accessory">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37816" name="m_def_ls_accessory">
+		<!-- M. Def. +82 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37817" name="m_def_ls_accessory">
+		<!-- M. Def. +88 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37818" name="m_def_ls_accessory">
+		<!-- M. Def. +94 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37819" name="m_def_ls_accessory">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37820" name="m_def_ls_accessory">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37821" name="m_def_ls_accessory">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37822" name="m_def_ls_accessory">
+		<!-- M. Def. +150 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37823" name="m_def_ls_accessory">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37824" name="m_def_ls_accessory">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37825" name="m_def_ls_accessory">
+		<!-- M. Def. +16 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37826" name="m_def_ls_accessory">
+		<!-- M. Def. +22 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37827" name="m_def_ls_accessory">
+		<!-- M. Def. +28 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37828" name="m_def_ls_accessory">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37829" name="m_def_ls_accessory">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37830" name="m_def_ls_accessory">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37831" name="m_def_ls_accessory">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37832" name="m_def_ls_accessory">
+		<!-- M. Def. +58 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37833" name="m_def_ls_accessory">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37834" name="m_def_ls_accessory">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37835" name="m_def_ls_accessory">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37836" name="m_def_ls_accessory">
+		<!-- M. Def. +82 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37837" name="m_def_ls_accessory">
+		<!-- M. Def. +88 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37838" name="m_def_ls_accessory">
+		<!-- M. Def. +94 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37839" name="m_def_ls_accessory">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37840" name="m_def_ls_accessory">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37841" name="m_def_ls_accessory">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37842" name="m_def_ls_accessory">
+		<!-- M. Def. +150 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37843" name="m_def_ls_accessory">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37844" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37845" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37846" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37847" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37848" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37849" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37850" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37851" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37852" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37853" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37854" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37855" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37856" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37857" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37858" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37859" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37860" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37861" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37862" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37863" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +5.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37864" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37865" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37866" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37867" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37868" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37869" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37870" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37871" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37872" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37873" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37874" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37875" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37876" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37877" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37878" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37879" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37880" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37881" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37882" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37883" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +5.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37884" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37885" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37886" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37887" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37888" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37889" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37890" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37891" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37892" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37893" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37894" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37895" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37896" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37897" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37898" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="37899" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

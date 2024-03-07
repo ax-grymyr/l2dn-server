@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36100" name="option_id_36100">
+		<!-- Received M. Skill Critical Damage -60 -->
+	</option>
+	<option id="36101" name="option_id_36101">
+		<!-- Received M. Skill Critical Damage -65 -->
+	</option>
+	<option id="36102" name="option_id_36102">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="36103" name="option_id_36103">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="36104" name="option_id_36104">
+		<!-- Received M. Skill Critical Damage -5 -->
+	</option>
+	<option id="36105" name="option_id_36105">
+		<!-- Received M. Skill Critical Damage -8 -->
+	</option>
+	<option id="36106" name="option_id_36106">
+		<!-- Received M. Skill Critical Damage -11 -->
+	</option>
+	<option id="36107" name="option_id_36107">
+		<!-- Received M. Skill Critical Damage -14 -->
+	</option>
+	<option id="36108" name="option_id_36108">
+		<!-- Received M. Skill Critical Damage -17 -->
+	</option>
+	<option id="36109" name="option_id_36109">
+		<!-- Received M. Skill Critical Damage -20 -->
+	</option>
+	<option id="36110" name="option_id_36110">
+		<!-- Received M. Skill Critical Damage -23 -->
+	</option>
+	<option id="36111" name="option_id_36111">
+		<!-- Received M. Skill Critical Damage -26 -->
+	</option>
+	<option id="36112" name="option_id_36112">
+		<!-- Received M. Skill Critical Damage -30 -->
+	</option>
+	<option id="36113" name="option_id_36113">
+		<!-- Received M. Skill Critical Damage -33 -->
+	</option>
+	<option id="36114" name="option_id_36114">
+		<!-- Received M. Skill Critical Damage -36 -->
+	</option>
+	<option id="36115" name="option_id_36115">
+		<!-- Received M. Skill Critical Damage -39 -->
+	</option>
+	<option id="36116" name="option_id_36116">
+		<!-- Received M. Skill Critical Damage -42 -->
+	</option>
+	<option id="36117" name="option_id_36117">
+		<!-- Received M. Skill Critical Damage -45 -->
+	</option>
+	<option id="36118" name="option_id_36118">
+		<!-- Received M. Skill Critical Damage -48 -->
+	</option>
+	<option id="36119" name="option_id_36119">
+		<!-- Received M. Skill Critical Damage -55 -->
+	</option>
+	<option id="36120" name="option_id_36120">
+		<!-- Received M. Skill Critical Damage -60 -->
+	</option>
+	<option id="36121" name="option_id_36121">
+		<!-- Received M. Skill Critical Damage -65 -->
+	</option>
+	<option id="36122" name="option_id_36122">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="36123" name="option_id_36123">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="36124" name="option_id_36124">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="36125" name="option_id_36125">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="36126" name="option_id_36126">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="36127" name="option_id_36127">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="36128" name="option_id_36128">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="36129" name="option_id_36129">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="36130" name="option_id_36130">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="36131" name="option_id_36131">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="36132" name="option_id_36132">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="36133" name="option_id_36133">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="36134" name="option_id_36134">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="36135" name="option_id_36135">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="36136" name="option_id_36136">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="36137" name="option_id_36137">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="36138" name="option_id_36138">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="36139" name="option_id_36139">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="36140" name="option_id_36140">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="36141" name="option_id_36141">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="36142" name="option_id_36142">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="36143" name="option_id_36143">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="36144" name="option_id_36144">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="36145" name="option_id_36145">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="36146" name="option_id_36146">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="36147" name="option_id_36147">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="36148" name="option_id_36148">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="36149" name="option_id_36149">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="36150" name="option_id_36150">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="36151" name="option_id_36151">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="36152" name="option_id_36152">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="36153" name="option_id_36153">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="36154" name="option_id_36154">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="36155" name="option_id_36155">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="36156" name="option_id_36156">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="36157" name="option_id_36157">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="36158" name="option_id_36158">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="36159" name="option_id_36159">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="36160" name="option_id_36160">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="36161" name="option_id_36161">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="36162" name="option_id_36162">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="36163" name="option_id_36163">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="36164" name="option_id_36164">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="36165" name="option_id_36165">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="36166" name="option_id_36166">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="36167" name="option_id_36167">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="36168" name="option_id_36168">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="36169" name="option_id_36169">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="36170" name="option_id_36170">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="36171" name="option_id_36171">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="36172" name="option_id_36172">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="36173" name="option_id_36173">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="36174" name="option_id_36174">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="36175" name="option_id_36175">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="36176" name="option_id_36176">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="36177" name="option_id_36177">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="36178" name="option_id_36178">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="36179" name="option_id_36179">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="36180" name="option_id_36180">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="36181" name="option_id_36181">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="36182" name="option_id_36182">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="36183" name="option_id_36183">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="36184" name="option_id_36184">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="36185" name="option_id_36185">
+		<!-- M. Atk. +16. -->
+	</option>
+	<option id="36186" name="option_id_36186">
+		<!-- M. Atk. +22 -->
+	</option>
+	<option id="36187" name="option_id_36187">
+		<!-- M. Atk. +28 -->
+	</option>
+	<option id="36188" name="option_id_36188">
+		<!-- M. Atk. +34 -->
+	</option>
+	<option id="36189" name="option_id_36189">
+		<!-- M. Atk. +40 -->
+	</option>
+	<option id="36190" name="option_id_36190">
+		<!-- M. Atk. +46 -->
+	</option>
+	<option id="36191" name="option_id_36191">
+		<!-- M. Atk. +52 -->
+	</option>
+	<option id="36192" name="option_id_36192">
+		<!-- M. Atk. +58 -->
+	</option>
+	<option id="36193" name="option_id_36193">
+		<!-- M. Atk. +64 -->
+	</option>
+	<option id="36194" name="option_id_36194">
+		<!-- M. Atk. +70 -->
+	</option>
+	<option id="36195" name="option_id_36195">
+		<!-- M. Atk. +76 -->
+	</option>
+	<option id="36196" name="option_id_36196">
+		<!-- M. Atk. +82 -->
+	</option>
+	<option id="36197" name="option_id_36197">
+		<!-- M. Atk. +88 -->
+	</option>
+	<option id="36198" name="option_id_36198">
+		<!-- M. Atk. +94 -->
+	</option>
+	<option id="36199" name="option_id_36199">
+		<!-- M. Atk. +100 -->
+	</option>
+</list>

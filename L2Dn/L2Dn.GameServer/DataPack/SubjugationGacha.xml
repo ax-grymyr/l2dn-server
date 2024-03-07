@@ -1,0 +1,74 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/SubjugationGacha.xsd">
+	<purge category="1">
+		<item id="95432" rate="10.0" /> <!-- Excuro's Staff -->
+		<item id="95433" rate="10.0" /> <!-- Torfe's Claw -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95482" rate="20.0" /> <!-- Recipe: Cruma Tower Purge Equipment -->
+		<item id="95474" rate="20.0" /> <!-- High-grade Supply Box - Cruma Tower Purge -->
+		<item id="95467" rate="20.0" /> <!-- Low-grade Supply Box - Cruma Tower Purge -->
+	</purge>
+	<purge category="2">
+		<item id="95434" rate="10.0" /> <!-- Giants' Club -->
+		<item id="95435" rate="10.0" /> <!-- Ancient Rapier -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95483" rate="20.0" /> <!-- Recipe: Silent Valley Purge Equipment -->
+		<item id="95475" rate="20.0" /> <!-- High-grade Supply Box - Silent Valley Purge -->
+		<item id="95468" rate="20.0" /> <!-- Low-grade Supply Box - Silent Valley Purge -->
+	</purge>
+	<purge category="3">
+		<item id="95438" rate="10.0" /> <!-- Lizardman Shaman's Staff -->
+		<item id="95439" rate="10.0" /> <!-- Lizard Slayer -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95485" rate="20.0" /> <!-- Recipe: Plains of the Lizardmen Purge Equipment -->
+		<item id="95477" rate="20.0" /> <!-- High-grade Supply Box - Plains of the Lizardmen Purge -->
+		<item id="95470" rate="20.0" /> <!-- Low-grade Supply Box - Plains of the Lizardmen Purge -->
+	</purge>
+	<purge category="4">
+		<item id="95436" rate="10.0" /> <!-- Guardian Messenger's Spear -->
+		<item id="95437" rate="10.0" /> <!-- Sealed Angel's Hammer -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95484" rate="20.0" /> <!-- Recipe: Tower of Insolence Purge Equipment -->
+		<item id="95476" rate="20.0" /> <!-- High-grade Supply Box - Tower of Insolence Purge -->
+		<item id="95469" rate="20.0" /> <!-- Low-grade Supply Box - Tower of Insolence Purge -->
+	</purge>
+	<purge category="5">
+		<item id="95440" rate="10.0" /> <!-- Deadman's Dagger -->
+		<item id="95441" rate="10.0" /> <!-- Dragon Bone Blade -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95486" rate="20.0" /> <!-- Recipe: Dragon Valley Purge Equipment -->
+		<item id="95478" rate="20.0" /> <!-- High-grade Supply Box - Dragon Valley Purge -->
+		<item id="95471" rate="20.0" /> <!-- Low-grade Supply Box - Dragon Valley Purge -->
+	</purge>
+	<purge category="6">
+		<item id="95442" rate="10.0" /> <!-- Berserker's Sword -->
+		<item id="95443" rate="10.0" /> <!-- Sel Mahum Sniper -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95487" rate="20.0" /> <!-- Recipe: Sel Mahum Base Purge Equipment -->
+		<item id="95479" rate="20.0" /> <!-- High-grade Supply Box - Sel Mahum Base Purge -->
+		<item id="95472" rate="20.0" /> <!-- Low-grade Supply Box - Sel Mahum Base Purge -->
+	</purge>
+	<purge category="7">
+		<item id="95444" rate="10.0" /> <!-- Turek Orc Prefect's Dual Swords -->
+		<item id="95445" rate="10.0" /> <!-- Butcher's Long Sword -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="95488" rate="20.0" /> <!-- Recipe: Orc Barracks Purge Equipment -->
+		<item id="95480" rate="20.0" /> <!-- High-grade Supply Box - Orc Barracks Purge -->
+		<item id="95473" rate="20.0" /> <!-- Low-grade Supply Box - Orc Barracks Purge -->
+	</purge>
+	<purge category="8">
+		<item id="96720" rate="10.0" /> <!-- Giant sword -->
+		<item id="96721" rate="10.0" /> <!-- Giant staff -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="96727" rate="20.0" /> <!-- Recipe: Giant purge Equipment -->
+		<item id="96726" rate="20.0" /> <!-- High-grade Supply Box - Giant purge -->
+		<item id="96725" rate="20.0" /> <!-- Low-grade Supply Box - Giant purge -->
+	</purge>
+	<purge category="9">
+		<item id="97236" rate="10.0" /> <!-- Spear of Xilenos -->
+		<item id="97238" rate="10.0" /> <!-- Shield of Xilenos -->
+		<item id="95481" rate="20.0" /> <!-- Aden Purge Crystal -->
+		<item id="97228" rate="20.0" /> <!-- Recipe: Goddard Purge Equipment -->
+		<item id="97227" rate="20.0" /> <!-- High-grade Supply Box - Goddard Purge -->
+		<item id="97226" rate="20.0" /> <!-- Low-grade Supply Box - Goddard Purge -->
+	</purge>
+</list>

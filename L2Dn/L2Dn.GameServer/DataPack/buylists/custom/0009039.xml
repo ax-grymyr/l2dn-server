@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="235" price="0" /> <!-- Bloody Orchid -->
+	<item id="236" price="0" /> <!-- Soul Separator -->
+	<item id="8682" price="0" /> <!-- Naga Storm -->
+	<item id="92408" price="0" /> <!-- Baium's Thunder Breaker -->
+	<item id="92938" price="0" /> <!-- Bloody Orchid - Sealed -->
+	<item id="92939" price="0" /> <!-- Soul Separator - Sealed -->
+	<item id="92959" price="0" /> <!-- Naga Storm - Sealed -->
+	<item id="93294" price="0" /> <!-- Baium's Thunder Breaker - Sealed -->
+</list>

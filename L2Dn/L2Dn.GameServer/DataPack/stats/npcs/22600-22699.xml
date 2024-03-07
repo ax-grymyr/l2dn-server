@@ -1,0 +1,3674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="22600" level="93" type="Monster" name="Dark Dragon Berserker" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> <!-- Sword of Valhalla -->
+		<acquire exp="1411139" sp="14107" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="111384.8" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="60" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="22133" max="24464" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.19" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.104" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.069" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22601" level="93" type="Monster" name="Rafinael" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="1609579" sp="16087" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76290.9485954" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="44" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="30254" max="33440" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.13" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.071" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.095" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.049" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.049" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22602" level="94" type="Monster" name="Divine Pilgrim" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
+		<acquire exp="1863630" sp="18635" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="133661.4" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.8" grown="9.9" />
+			<height normal="33.3" grown="40.45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="30019" max="33174" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22603" level="94" type="Monster" name="Divine Watcher" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="1553025" sp="15525" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="30019" max="33174" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22604" level="94" type="Monster" name="Divine Shooter" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="1553025" sp="15525" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="30019" max="33174" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.296" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.163" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.108" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22605" level="94" type="Monster" name="Muriel" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2090835" sp="20906" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="38194" max="42208" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.188" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.103" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="98039" min="1" max="1" chance="0.001" /> <!-- Incredible Upgrade Stone -->
+				<item id="96623" min="1" max="1" chance="0.069" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.071" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.071" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22606" level="95" type="Monster" name="Celestial Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2713415" sp="27129" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160394.3" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="38288" max="42331" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22607" level="95" type="Monster" name="Celestial Witch" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2261179" sp="22608" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="38288" max="42331" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22608" level="95" type="Monster" name="Celestial Archer" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="2261179" sp="22608" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="42.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="38288" max="42331" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.439" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.241" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.161" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22609" level="95" type="Monster" name="Arkhes" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2989789" sp="29891" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="47663" max="52695" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.273" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.15" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="98039" min="1" max="1" chance="0.002" /> <!-- Incredible Upgrade Stone -->
+				<item id="96623" min="1" max="1" chance="0.1" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.104" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.104" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22610" level="95" type="Monster" name="Immortal Elder" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2989789" sp="29891" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="45794" max="50582" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22611" level="95" type="Monster" name="Immortal Bodyguard" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2989789" sp="29891" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="37.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="45794" max="50582" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22612" level="95" type="Monster" name="Immortal Ruler" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2989789" sp="29891" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="44.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="45794" max="50582" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.617" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.339" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.226" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22613" level="95" type="Monster" name="Dynamis" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="2989789" sp="29891" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.5" />
+			<height normal="48.35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="45794" max="50582" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.309" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.17" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="98039" min="1" max="1" chance="0.002" /> <!-- Incredible Upgrade Stone -->
+				<item id="96623" min="1" max="1" chance="0.113" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.117" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.117" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22614" level="95" type="Monster" name="Arel" title="Tower of Insolence Guardian" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> <!-- Lance -->
+		<acquire exp="4512500" sp="45125" attributeExp="1359" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52442.6524104131" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="63.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+			<skill id="4086" level="1" /> <!-- Critical Rate -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="4286" level="1" /> <!-- Greater Sleep Resistance -->
+		</skillList>
+	</npc>
+	<npc id="22615" level="88" type="Monster" name="Evolved Nightshade" title="Tower of Insolence Guardian" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="387200" sp="3872" attributeExp="1258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="14635.78182" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="42.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="4086" level="1" /> <!-- Critical Rate -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="4286" level="1" /> <!-- Greater Sleep Resistance -->
+		</skillList>
+	</npc>
+	<npc id="22616" level="90" type="Monster" name="Evolved Etiko" title="Tower of Insolence Guardian" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="810000" sp="8100" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25290.63098496" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="53.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="4286" level="1" /> <!-- Greater Sleep Resistance -->
+		</skillList>
+	</npc>
+	<npc id="22617" level="92" type="Monster" name="Fortress Guard Captain" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2557324" sp="25570" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="45.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="94184" min="1" max="1" chance="0.235" /> <!-- Scroll of Blessing: Weapon -->
+				<item id="97338" min="1" max="1" chance="0.141" /> <!-- Scroll of Blessing: Armor -->
+				<item id="98196" min="1" max="1" chance="2.522" /> <!-- Knights' Merit Badge -->
+				<item id="98197" min="1" max="1" chance="17.656" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.353" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22618" level="92" type="Monster" name="Fortress Guard Captain" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2557324" sp="25570" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27.3" />
+			<height normal="69.15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="94184" min="1" max="1" chance="0.235" /> <!-- Scroll of Blessing: Weapon -->
+				<item id="97338" min="1" max="1" chance="0.141" /> <!-- Scroll of Blessing: Armor -->
+				<item id="98196" min="1" max="1" chance="2.522" /> <!-- Knights' Merit Badge -->
+				<item id="98197" min="1" max="1" chance="17.656" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.353" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22619" level="92" type="Monster" name="Fortress Guard Captain" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2557324" sp="25570" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="31.2" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="94184" min="1" max="1" chance="0.235" /> <!-- Scroll of Blessing: Weapon -->
+				<item id="97338" min="1" max="1" chance="0.141" /> <!-- Scroll of Blessing: Armor -->
+				<item id="98196" min="1" max="1" chance="2.522" /> <!-- Knights' Merit Badge -->
+				<item id="98197" min="1" max="1" chance="17.656" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.353" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22620" level="91" type="Monster" name="Fortress Praetorian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Saber -->
+		<acquire exp="1728056" sp="17274" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="105480" max="116621" chance="70" /> <!-- Adena -->
+				<item id="98196" min="1" max="1" chance="5.167" /> <!-- Knights' Merit Badge -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.723" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22621" level="91" type="Monster" name="Fortress Praetorian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="123" /> <!-- Saber -->
+		<acquire exp="1728056" sp="17274" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="105480" max="116621" chance="70" /> <!-- Adena -->
+				<item id="98196" min="1" max="1" chance="5.167" /> <!-- Knights' Merit Badge -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.723" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22622" level="91" type="Monster" name="Fortress Praetorian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="123" /> <!-- Saber -->
+		<acquire exp="1728056" sp="17274" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="105480" max="116621" chance="70" /> <!-- Adena -->
+				<item id="98196" min="1" max="1" chance="10.335" /> <!-- Knights' Merit Badge -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22623" level="91" type="Monster" name="Fortress Praetorian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1728056" sp="17274" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.875" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="105480" max="116621" chance="70" /> <!-- Adena -->
+				<item id="98196" min="1" max="1" chance="10.335" /> <!-- Knights' Merit Badge -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22624" level="91" type="Monster" name="Servitors" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="83762.66" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22625" level="94" type="Monster" name="Attack Squad Officer" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22626" level="94" type="Monster" name="Mage Squad Officer" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="59.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22627" level="94" type="Monster" name="Assaulter Squad Officer" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="108" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+	</npc>
+	<npc id="22628" level="94" type="Monster" name="Archer Squad Fighter" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.2" />
+			<height normal="87" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22629" level="94" type="Monster" name="Warrior Squad Fighter" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22630" level="94" type="Monster" name="Healer Squad Fighter" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22631" level="94" type="Monster" name="Summoner Squad Fighter" title="Kelbim's Legion" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<acquire exp="2459806" sp="24591" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+	</npc>
+	<npc id="22632" level="93" type="Monster" name="Servitors" title="Summoner Commander" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="2407748" sp="24070" attributeExp="1860" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60309.050271975" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="80" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="63" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22633" level="88" type="Monster" name="Elite Fortress Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="97301" /> <!-- Gorde's Flame Spear -->
+		<acquire exp="230274" sp="2300" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="58867.08861" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4909" max="5428" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22634" level="89" type="Monster" name="Elite Fortress Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92404" lhand="94301" /> <!-- Zaken's Blood Sword / Shield of Vengeance -->
+		<acquire exp="320359" sp="3200" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="136739.87342" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22635" level="88" type="Monster" name="Elite Fortress Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92421" /> <!-- Queen Ant's Stone Breaker -->
+		<acquire exp="230274" sp="2300" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="58867.08861" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4909" max="5428" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22636" level="89" type="Monster" name="Elite Fortress Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="96268" /> <!-- Beleth' Soul Eater -->
+		<acquire exp="320359" sp="3200" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="136739.87342" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22637" level="86" type="Monster" name="Outer Castle's Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8683" /> <!-- Tiphon's Spear -->
+		<acquire exp="104571" sp="1043" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2941" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22638" level="87" type="Monster" name="Outer Castle's Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8678" lhand="2498" /> <!-- Sirra's Blade / Shield of Nightmare -->
+		<acquire exp="169913" sp="1695" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="56867.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2968" max="3276" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22639" level="86" type="Monster" name="Outer Castle's Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8687" /> <!-- Cabrio's Hand -->
+		<acquire exp="104571" sp="1043" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2941" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22640" level="87" type="Monster" name="Outer Castle's Guardian" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8688" /> <!-- Daimon Crystal -->
+		<acquire exp="169913" sp="1695" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="56867.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2968" max="3276" chance="70" /> <!-- Adena -->
+				<item id="98198" min="1" max="1" chance="0.007" /> <!-- Kelbim's Fortress' Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22641" level="86" type="Monster" name="Old Aristocrat's Soldier" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98218" /> <!-- Monster Only (Zombie Gate Guard Spear) - Not Available -->
+		<acquire exp="115028" sp="1146" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="33" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="30.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2941" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22642" level="86" type="Monster" name="Royal Archon" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="115028" sp="1146" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="22.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2941" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22643" level="86" type="Monster" name="Forgotten Sacrifice" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98230" /> <!-- Monster Only (Zombie Laborer Sword) -->
+		<acquire exp="115028" sp="1146" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="24.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2941" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22644" level="87" type="Monster" name="Ritual Sacrifice" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="186904" sp="1862" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="85301.26582" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="30" />
+				<run ground="240" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="40.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2968" max="3276" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22645" level="88" type="Monster" name="Solemn Servitor" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98230" /> <!-- Monster Only (Zombie Laborer Sword) -->
+		<acquire exp="253301" sp="2532" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="88300.63291" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.2" />
+			<height normal="30.12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3308" max="3658" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22646" level="87" type="Monster" name="Ritual Offering" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="186904" sp="1862" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="85301.26582" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="17" />
+			<height normal="22.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2968" max="3276" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22647" level="89" type="Monster" name="Triol's Believer" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="94186" min="1" max="1" chance="0.01" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="0.02" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="0.02" /> <!-- Augmenting Stone: Accessory -->
+				<item id="97787" min="1" max="1" chance="0.02" /> <!-- Augmenting Stone: Special Equipment -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22648" level="89" type="Monster" name="Triol's Believer" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="31.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22649" level="89" type="Monster" name="Triol's Believer" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="37" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22650" level="89" type="Monster" name="Triol's Apostle" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="34.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22651" level="89" type="Monster" name="Triol's Priest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8206" /> <!-- Monster Only (Heretic Priest Sword) -->
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="80" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="25.73" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5475" max="6047" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22652" level="91" type="Monster" name="Triol's Fanatic" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="46" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="6.6" grown="7.8" />
+			<height normal="34.2" grown="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="110754" max="122452" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="10.852" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22653" level="91" type="Monster" name="Triol's Fanatic" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="15" />
+				<run ground="185" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="31.56" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="110754" max="122452" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="10.852" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22654" level="91" type="Monster" name="Triol's Fanatic" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6723" /> <!-- Monster Only (Vampire Warrior) -->
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="43" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" grown="10" />
+			<height normal="31.5" grown="38" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="110754" max="122452" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="10.852" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22655" level="91" type="Monster" name="Suffering Fanatic" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> <!-- Skeleton Dagger -->
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="92" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="38.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="110754" max="122452" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="10.852" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22656" level="91" type="Monster" name="Triol's High Priest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="80" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="25.73" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="110754" max="122452" chance="70" /> <!-- Adena -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="10.852" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22657" level="89" type="Monster" name="Priest's Guard" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
+		<acquire exp="528598" sp="5283" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="205109.49367" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="58" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.47" />
+			<height normal="31.54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22658" level="91" type="Monster" name="Priest's Guard Warrior" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
+		<acquire exp="1900862" sp="19005" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="58" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.47" />
+			<height normal="31.54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22659" level="88" type="Monster" name="Temple's Resurrected Knight" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98219" /> <!-- Monster Only (Death Knight_2hs) - Not Available -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="29726.004" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="42" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.88" />
+			<height normal="41.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22660" level="92" type="Monster" name="Temple Swordsman" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2813056" sp="28126" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" />
+			<height normal="32.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="97859" min="1" max="1" chance="0.009" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+				<item id="98039" min="1" max="1" chance="0.009" /> <!-- Incredible Upgrade Stone -->
+				<item id="98197" min="1" max="1" chance="22.07" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="3.153" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22661" level="92" type="Monster" name="Temple Guardian Warrior" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="98217" lhand="98216" /> <!-- Monster Only (Monk Warrior Sword) - Not Available / Monster Only (Monk Warrior Shield) - Not Available -->
+		<acquire exp="2813056" sp="28126" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="53" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="34.68" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="97859" min="1" max="1" chance="0.009" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+				<item id="98039" min="1" max="1" chance="0.009" /> <!-- Incredible Upgrade Stone -->
+				<item id="98197" min="1" max="1" chance="22.07" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="3.153" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22662" level="92" type="Monster" name="Temple Berserker" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2813056" sp="28126" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="45.96" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="128823" max="142316" chance="70" /> <!-- Adena -->
+				<item id="97859" min="1" max="1" chance="0.009" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+				<item id="98039" min="1" max="1" chance="0.009" /> <!-- Incredible Upgrade Stone -->
+				<item id="98197" min="1" max="1" chance="22.07" /> <!-- Tobald's Prophesy Pack - Sealed -->
+				<item id="98213" min="1" max="1" chance="0.007" /> <!-- Pagan Temple's Time Stone -->
+				<item id="98325" min="1" max="1" chance="3.153" /> <!-- Triol's Brand -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22663" level="80" type="Monster" name="Harpe" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="56333" sp="563" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="51.6" />
+			<height normal="52.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22664" level="80" type="Monster" name="Harpe's Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="56333" sp="563" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="55.2" />
+			<height normal="60.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22665" level="80" type="Monster" name="Harpe's Wizard" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="56333" sp="563" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.4" />
+			<height normal="53.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22666" level="80" type="Monster" name="Harpe's Guard" title="Bearer of Sacred Power" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="125184" sp="1248" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="75044.93671" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="55.2" />
+			<height normal="60.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1079" max="1193" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Acumen -->
+				<item id="95803" min="1" max="1" chance="0.0005" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22667" level="85" type="Monster" name="Dark Wizard of Shadows" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="134949" sp="1626" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3393" max="3746" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22668" level="85" type="Monster" name="Archer of Shadows" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="134949" sp="910" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="155" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" />
+			<height normal="44.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2728" max="3016" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22669" level="85" type="Monster" name="Scout of Shadows" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="134949" sp="910" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="48.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2728" max="3016" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22670" level="85" type="Monster" name="Apostle of Shadows" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="134949" sp="1626" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" />
+			<height normal="44.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3393" max="3746" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.003" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.0001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.0001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.0001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Acumen -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22671" level="85" type="Monster" name="Judge of Shadows" title="Bearer of Sacred Power" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="202423" sp="2298" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="121267.08861" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.8" />
+			<height normal="52.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3853" max="4255" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.003" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.0001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.0002" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.0002" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Acumen -->
+				<item id="95803" min="1" max="1" chance="0.012" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22672" level="85" type="Monster" name="Harit Lizardman" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="88" lhand="945" /> <!-- Morning Star / Skeleton Buckler -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="37" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="56.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.015" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92905" min="1" max="1" chance="0.023" /> <!-- Themis' Tongue Piece -->
+				<item id="92907" min="1" max="1" chance="0.023" /> <!-- Daimon Crystal Fragment -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8686" min="1" max="1" chance="0.0008" /> <!-- Themis' Tongue -->
+				<item id="8688" min="1" max="1" chance="0.0008" /> <!-- Daimon Crystal -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8706" min="1" max="1" chance="0.006" /> <!-- Recipe: Themis' Tongue (60%) -->
+				<item id="8707" min="1" max="1" chance="0.003" /> <!-- Recipe: Themis' Tongue (100%) -->
+				<item id="8710" min="1" max="1" chance="0.006" /> <!-- Recipe: Daimon Crystal (60%) -->
+				<item id="8711" min="1" max="1" chance="0.003" /> <!-- Recipe: Daimon Crystal (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22673" level="85" type="Monster" name="Harit Lizardman Warrior" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> <!-- Lance -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.1" grown="37.4" />
+			<height normal="61.6" grown="73.84" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.023" /> <!-- Naga's Storm Piece -->
+				<item id="92904" min="1" max="1" chance="0.023" /> <!-- Sobekk's Hurricane Edge -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.007" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.0005" /> <!-- Naga's Storm -->
+				<item id="8685" min="1" max="1" chance="0.0005" /> <!-- Sobekk's Hurricane -->
+				<item id="93139" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.00005" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.00005" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.00005" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.00005" /> <!-- Flaming Stockings -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.006" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.003" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8704" min="1" max="1" chance="0.006" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+				<item id="8705" min="1" max="1" chance="0.003" /> <!-- Recipe: Sobekk's Hurricane (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22674" level="85" type="Monster" name="Harit Lizardman Archer" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="287" /> <!-- Bow of Peril -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="37" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="53.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="8690" min="1" max="1" chance="0.005" /> <!-- Recipe: Sirra's Blade (60%) -->
+				<item id="8691" min="1" max="1" chance="0.003" /> <!-- Recipe: Sirra's Blade (100%) -->
+				<item id="8700" min="1" max="1" chance="0.005" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.003" /> <!-- Recipe: Tiphon's Spear (100%) -->
+				<item id="92812" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.349" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.009" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="0.0007" /> <!-- Sirra's Blade -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.019" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.012" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.083" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.05" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="92897" min="1" max="1" chance="0.038" /> <!-- Sirra's Blade Edge -->
+				<item id="92902" min="1" max="1" chance="0.038" /> <!-- Tiphon's Spear Edge -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22675" level="85" type="Monster" name="Harit Lizardman Matriarch" title="Invader of Anghel Waterfall" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8682" /> <!-- Naga's Storm -->
+		<acquire exp="837522" sp="8374" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="34" grown="40.8" />
+			<height normal="70.1" grown="83.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="97653" min="1" max="1" chance="0.017" /> <!-- Collector's Weapon C - Sealed -->
+				<item id="97654" min="1" max="1" chance="0.034" /> <!-- Collector's Armor C - Sealed -->
+				<item id="98089" min="1" max="1" chance="0.008" /> <!-- Collector's Weapon B - Sealed -->
+				<item id="98090" min="1" max="1" chance="0.017" /> <!-- Collector's Armor B - Sealed -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22676" level="85" type="Monster" name="Knight of the Past" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="131" lhand="103" /> <!-- Spirit Sword / Tower Shield -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="53" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.015" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92905" min="1" max="1" chance="0.023" /> <!-- Themis' Tongue Piece -->
+				<item id="92907" min="1" max="1" chance="0.023" /> <!-- Daimon Crystal Fragment -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8686" min="1" max="1" chance="0.0008" /> <!-- Themis' Tongue -->
+				<item id="8688" min="1" max="1" chance="0.0008" /> <!-- Daimon Crystal -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8706" min="1" max="1" chance="0.006" /> <!-- Recipe: Themis' Tongue (60%) -->
+				<item id="8707" min="1" max="1" chance="0.003" /> <!-- Recipe: Themis' Tongue (100%) -->
+				<item id="8710" min="1" max="1" chance="0.006" /> <!-- Recipe: Daimon Crystal (60%) -->
+				<item id="8711" min="1" max="1" chance="0.003" /> <!-- Recipe: Daimon Crystal (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22677" level="85" type="Monster" name="Ghostly Warrior" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="299" /> <!-- Orcish Poleaxe -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="155" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" grown="24" />
+			<height normal="59" grown="69" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.023" /> <!-- Naga's Storm Piece -->
+				<item id="92904" min="1" max="1" chance="0.023" /> <!-- Sobekk's Hurricane Edge -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.007" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.0005" /> <!-- Naga's Storm -->
+				<item id="8685" min="1" max="1" chance="0.0005" /> <!-- Sobekk's Hurricane -->
+				<item id="93139" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.00005" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.00005" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.00005" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.00005" /> <!-- Flaming Stockings -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.006" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.003" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8704" min="1" max="1" chance="0.006" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+				<item id="8705" min="1" max="1" chance="0.003" /> <!-- Recipe: Sobekk's Hurricane (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22678" level="85" type="Monster" name="Nihil Invader" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="60" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="8690" min="1" max="1" chance="0.005" /> <!-- Recipe: Sirra's Blade (60%) -->
+				<item id="8691" min="1" max="1" chance="0.003" /> <!-- Recipe: Sirra's Blade (100%) -->
+				<item id="8700" min="1" max="1" chance="0.005" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.003" /> <!-- Recipe: Tiphon's Spear (100%) -->
+				<item id="92812" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.349" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.009" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="0.0007" /> <!-- Sirra's Blade -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.019" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.012" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.083" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.05" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="92897" min="1" max="1" chance="0.038" /> <!-- Sirra's Blade Edge -->
+				<item id="92902" min="1" max="1" chance="0.038" /> <!-- Tiphon's Spear Edge -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22679" level="85" type="Monster" name="Bloody Priest" title="Invader of the Ancient Battleground" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="837522" sp="8374" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30.8" />
+			<height normal="91.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="97653" min="1" max="1" chance="0.017" /> <!-- Collector's Weapon C - Sealed -->
+				<item id="97654" min="1" max="1" chance="0.034" /> <!-- Collector's Armor C - Sealed -->
+				<item id="98089" min="1" max="1" chance="0.008" /> <!-- Collector's Weapon B - Sealed -->
+				<item id="98090" min="1" max="1" chance="0.017" /> <!-- Collector's Armor B - Sealed -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22680" level="85" type="Monster" name="Unicorn" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="46" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="23.8" />
+			<height normal="53.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.015" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92905" min="1" max="1" chance="0.023" /> <!-- Themis' Tongue Piece -->
+				<item id="92907" min="1" max="1" chance="0.023" /> <!-- Daimon Crystal Fragment -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8686" min="1" max="1" chance="0.0008" /> <!-- Themis' Tongue -->
+				<item id="8688" min="1" max="1" chance="0.0008" /> <!-- Daimon Crystal -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8706" min="1" max="1" chance="0.006" /> <!-- Recipe: Themis' Tongue (60%) -->
+				<item id="8707" min="1" max="1" chance="0.003" /> <!-- Recipe: Themis' Tongue (100%) -->
+				<item id="8710" min="1" max="1" chance="0.006" /> <!-- Recipe: Daimon Crystal (60%) -->
+				<item id="8711" min="1" max="1" chance="0.003" /> <!-- Recipe: Daimon Crystal (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22681" level="85" type="Monster" name="Satyr" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>FAIRY</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> <!-- Lance -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="45" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.2" />
+			<height normal="46.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="13" /> <!-- Fairies -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.023" /> <!-- Naga's Storm Piece -->
+				<item id="92904" min="1" max="1" chance="0.023" /> <!-- Sobekk's Hurricane Edge -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.007" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.0005" /> <!-- Naga's Storm -->
+				<item id="8685" min="1" max="1" chance="0.0005" /> <!-- Sobekk's Hurricane -->
+				<item id="93139" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.00005" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.00005" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.00005" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.00005" /> <!-- Flaming Stockings -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.006" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.003" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8704" min="1" max="1" chance="0.006" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+				<item id="8705" min="1" max="1" chance="0.003" /> <!-- Recipe: Sobekk's Hurricane (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22682" level="85" type="Monster" name="Fline" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="80" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="61.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="8690" min="1" max="1" chance="0.005" /> <!-- Recipe: Sirra's Blade (60%) -->
+				<item id="8691" min="1" max="1" chance="0.003" /> <!-- Recipe: Sirra's Blade (100%) -->
+				<item id="8700" min="1" max="1" chance="0.005" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.003" /> <!-- Recipe: Tiphon's Spear (100%) -->
+				<item id="92812" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.349" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.009" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="0.0007" /> <!-- Sirra's Blade -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.019" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.012" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.083" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.05" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="92897" min="1" max="1" chance="0.038" /> <!-- Sirra's Blade Edge -->
+				<item id="92902" min="1" max="1" chance="0.038" /> <!-- Tiphon's Spear Edge -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22683" level="85" type="Monster" name="Valley Treant" title="Invader of the Enchanted Valley" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="837522" sp="8374" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="12" />
+				<run ground="12" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="32.2" />
+			<height normal="127.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="97653" min="1" max="1" chance="0.017" /> <!-- Collector's Weapon C - Sealed -->
+				<item id="97654" min="1" max="1" chance="0.034" /> <!-- Collector's Armor C - Sealed -->
+				<item id="98089" min="1" max="1" chance="0.008" /> <!-- Collector's Weapon B - Sealed -->
+				<item id="98090" min="1" max="1" chance="0.017" /> <!-- Collector's Armor B - Sealed -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22684" level="85" type="Monster" name="Manashen Gargoyle" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="140" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27.2" />
+			<height normal="87.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.015" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92905" min="1" max="1" chance="0.023" /> <!-- Themis' Tongue Piece -->
+				<item id="92907" min="1" max="1" chance="0.023" /> <!-- Daimon Crystal Fragment -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8686" min="1" max="1" chance="0.0008" /> <!-- Themis' Tongue -->
+				<item id="8688" min="1" max="1" chance="0.0008" /> <!-- Daimon Crystal -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8706" min="1" max="1" chance="0.006" /> <!-- Recipe: Themis' Tongue (60%) -->
+				<item id="8707" min="1" max="1" chance="0.003" /> <!-- Recipe: Themis' Tongue (100%) -->
+				<item id="8710" min="1" max="1" chance="0.006" /> <!-- Recipe: Daimon Crystal (60%) -->
+				<item id="8711" min="1" max="1" chance="0.003" /> <!-- Recipe: Daimon Crystal (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22685" level="85" type="Monster" name="Reinforced Steel Golem" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="20" />
+				<run ground="60" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30.6" />
+			<height normal="59.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.023" /> <!-- Naga's Storm Piece -->
+				<item id="92904" min="1" max="1" chance="0.023" /> <!-- Sobekk's Hurricane Edge -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.007" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.0005" /> <!-- Naga's Storm -->
+				<item id="8685" min="1" max="1" chance="0.0005" /> <!-- Sobekk's Hurricane -->
+				<item id="93139" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.00005" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.00005" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.00005" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.00005" /> <!-- Flaming Stockings -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.006" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.003" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8704" min="1" max="1" chance="0.006" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+				<item id="8705" min="1" max="1" chance="0.003" /> <!-- Recipe: Sobekk's Hurricane (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22686" level="85" type="Monster" name="Reinforced Monster Eye" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="90" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="35.7" />
+			<height normal="75.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="8690" min="1" max="1" chance="0.005" /> <!-- Recipe: Sirra's Blade (60%) -->
+				<item id="8691" min="1" max="1" chance="0.003" /> <!-- Recipe: Sirra's Blade (100%) -->
+				<item id="8700" min="1" max="1" chance="0.005" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.003" /> <!-- Recipe: Tiphon's Spear (100%) -->
+				<item id="92812" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.349" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.009" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="0.0007" /> <!-- Sirra's Blade -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.019" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.012" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.083" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.05" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="92897" min="1" max="1" chance="0.038" /> <!-- Sirra's Blade Edge -->
+				<item id="92902" min="1" max="1" chance="0.038" /> <!-- Tiphon's Spear Edge -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22687" level="85" type="Monster" name="Reinforced Gargoyle" title="Invader of the Ivory Tower Crater" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="837522" sp="8374" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="100" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="97653" min="1" max="1" chance="0.017" /> <!-- Collector's Weapon C - Sealed -->
+				<item id="97654" min="1" max="1" chance="0.034" /> <!-- Collector's Armor C - Sealed -->
+				<item id="98089" min="1" max="1" chance="0.008" /> <!-- Collector's Weapon B - Sealed -->
+				<item id="98090" min="1" max="1" chance="0.017" /> <!-- Collector's Armor B - Sealed -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22688" level="85" type="Monster" name="Conjurer Bat" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="70" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.015" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92905" min="1" max="1" chance="0.023" /> <!-- Themis' Tongue Piece -->
+				<item id="92907" min="1" max="1" chance="0.023" /> <!-- Daimon Crystal Fragment -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.015" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8686" min="1" max="1" chance="0.0008" /> <!-- Themis' Tongue -->
+				<item id="8688" min="1" max="1" chance="0.0008" /> <!-- Daimon Crystal -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8706" min="1" max="1" chance="0.006" /> <!-- Recipe: Themis' Tongue (60%) -->
+				<item id="8707" min="1" max="1" chance="0.003" /> <!-- Recipe: Themis' Tongue (100%) -->
+				<item id="8710" min="1" max="1" chance="0.006" /> <!-- Recipe: Daimon Crystal (60%) -->
+				<item id="8711" min="1" max="1" chance="0.003" /> <!-- Recipe: Daimon Crystal (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22689" level="85" type="Monster" name="Hames Orc Foot Soldier" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="233" lhand="110" /> <!-- Dark Screamer / Doom Shield -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="45" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="54.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="92812" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.094" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.459" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.071" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.306" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.023" /> <!-- Naga's Storm Piece -->
+				<item id="92904" min="1" max="1" chance="0.023" /> <!-- Sobekk's Hurricane Edge -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.007" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.01" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.0005" /> <!-- Naga's Storm -->
+				<item id="8685" min="1" max="1" chance="0.0005" /> <!-- Sobekk's Hurricane -->
+				<item id="93139" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.00005" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.00005" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.00005" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.00005" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.00005" /> <!-- Flaming Stockings -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.022" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.013" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.109" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.065" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.017" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.01" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.073" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.044" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.006" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.003" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8704" min="1" max="1" chance="0.006" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+				<item id="8705" min="1" max="1" chance="0.003" /> <!-- Recipe: Sobekk's Hurricane (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22690" level="85" type="Monster" name="Hames Orc Prefect" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" lhand="103" /> <!-- Caliburs / Tower Shield -->
+		<acquire exp="418761" sp="4183" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="36" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" grown="25.2" />
+			<height normal="45.6" grown="54.24" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="8690" min="1" max="1" chance="0.005" /> <!-- Recipe: Sirra's Blade (60%) -->
+				<item id="8691" min="1" max="1" chance="0.003" /> <!-- Recipe: Sirra's Blade (100%) -->
+				<item id="8700" min="1" max="1" chance="0.005" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.003" /> <!-- Recipe: Tiphon's Spear (100%) -->
+				<item id="92812" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.107" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="0.524" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="0.349" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="5316" min="1" max="1" chance="0.002" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.009" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.014" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.003" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="0.0007" /> <!-- Sirra's Blade -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.026" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.015" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.124" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.075" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.019" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.012" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.083" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.05" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="92897" min="1" max="1" chance="0.038" /> <!-- Sirra's Blade Edge -->
+				<item id="92902" min="1" max="1" chance="0.038" /> <!-- Tiphon's Spear Edge -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22691" level="85" type="Monster" name="Judge of Marsh" title="Invader of the Blazing Swamp" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>PLANT</race>
+		<sex>MALE</sex>
+		<acquire exp="837522" sp="8374" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="55" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="59.5" grown="71.4" />
+			<height normal="138.1" grown="165.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="5" /> <!-- Plants -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2967" max="3289" chance="70" /> <!-- Adena -->
+				<item id="97653" min="1" max="1" chance="0.017" /> <!-- Collector's Weapon C - Sealed -->
+				<item id="97654" min="1" max="1" chance="0.034" /> <!-- Collector's Armor C - Sealed -->
+				<item id="98089" min="1" max="1" chance="0.008" /> <!-- Collector's Weapon B - Sealed -->
+				<item id="98090" min="1" max="1" chance="0.017" /> <!-- Collector's Armor B - Sealed -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22692" level="80" type="Monster" name="Skeleton Soldier" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="466752" sp="4666" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22693" level="80" type="Monster" name="Skeleton Pikeman" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="466752" sp="4666" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22694" level="80" type="Monster" name="Skeleton Archer" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="466752" sp="4666" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="26.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22695" level="80" type="Monster" name="Skeleton Mage" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="466752" sp="4666" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="33.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22696" level="80" type="Monster" name="Skeleton Soldier" title="Elite" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1867008" sp="18669" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="53.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22697" level="80" type="Monster" name="Skeleton Pikeman" title="Elite" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1867008" sp="18669" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22698" level="80" type="Monster" name="Skeleton Archer" title="Elite" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1867008" sp="18669" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="41.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22699" level="80" type="Monster" name="Skeleton Mage" title="Elite" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1867008" sp="18669" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="51.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+</list>

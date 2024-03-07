@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38900" name="option_id_38900">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="38901" name="option_id_38901">
+		<!-- P. Evasion +1.7 -->
+	</option>
+	<option id="38902" name="option_id_38902">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="38903" name="option_id_38903">
+		<!-- P. Evasion +2.0 -->
+	</option>
+	<option id="38904" name="option_id_38904">
+		<!-- P. Evasion +3.0 -->
+	</option>
+	<option id="38905" name="option_id_38905">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38906" name="option_id_38906">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38907" name="option_id_38907">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38908" name="option_id_38908">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38909" name="option_id_38909">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38910" name="option_id_38910">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38911" name="option_id_38911">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="38912" name="option_id_38912">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="38913" name="option_id_38913">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="38914" name="option_id_38914">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="38915" name="option_id_38915">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="38916" name="option_id_38916">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="38917" name="option_id_38917">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="38918" name="option_id_38918">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="38919" name="option_id_38919">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="38920" name="option_id_38920">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="38921" name="option_id_38921">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="38922" name="option_id_38922">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="38923" name="option_id_38923">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="38924" name="option_id_38924">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="38925" name="option_id_38925">
+		<!-- Received P. Skill Critical Damage -5 -->
+	</option>
+	<option id="38926" name="option_id_38926">
+		<!-- Received P. Skill Critical Damage -8 -->
+	</option>
+	<option id="38927" name="option_id_38927">
+		<!-- Received P. Skill Critical Damage -11 -->
+	</option>
+	<option id="38928" name="option_id_38928">
+		<!-- Received P. Skill Critical Damage -14 -->
+	</option>
+	<option id="38929" name="option_id_38929">
+		<!-- Received P. Skill Critical Damage -17 -->
+	</option>
+	<option id="38930" name="option_id_38930">
+		<!-- Received P. Skill Critical Damage -20 -->
+	</option>
+	<option id="38931" name="option_id_38931">
+		<!-- Received P. Skill Critical Damage -23 -->
+	</option>
+	<option id="38932" name="option_id_38932">
+		<!-- Received P. Skill Critical Damage -26 -->
+	</option>
+	<option id="38933" name="option_id_38933">
+		<!-- Received P. Skill Critical Damage -30 -->
+	</option>
+	<option id="38934" name="option_id_38934">
+		<!-- Received P. Skill Critical Damage -33 -->
+	</option>
+	<option id="38935" name="option_id_38935">
+		<!-- Received P. Skill Critical Damage -36 -->
+	</option>
+	<option id="38936" name="option_id_38936">
+		<!-- Received P. Skill Critical Damage -39 -->
+	</option>
+	<option id="38937" name="option_id_38937">
+		<!-- Received P. Skill Critical Damage -42 -->
+	</option>
+	<option id="38938" name="option_id_38938">
+		<!-- Received P. Skill Critical Damage -45 -->
+	</option>
+	<option id="38939" name="option_id_38939">
+		<!-- Received P. Skill Critical Damage -48 -->
+	</option>
+	<option id="38940" name="option_id_38940">
+		<!-- Received P. Skill Critical Damage -55 -->
+	</option>
+	<option id="38941" name="option_id_38941">
+		<!-- Received P. Skill Critical Damage -60 -->
+	</option>
+	<option id="38942" name="option_id_38942">
+		<!-- Received P. Skill Critical Damage -65 -->
+	</option>
+	<option id="38943" name="option_id_38943">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="38944" name="option_id_38944">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="38945" name="option_id_38945">
+		<!-- Received M. Skill Critical Damage -5 -->
+	</option>
+	<option id="38946" name="option_id_38946">
+		<!-- Received M. Skill Critical Damage -8 -->
+	</option>
+	<option id="38947" name="option_id_38947">
+		<!-- Received M. Skill Critical Damage -11 -->
+	</option>
+	<option id="38948" name="option_id_38948">
+		<!-- Received M. Skill Critical Damage -14 -->
+	</option>
+	<option id="38949" name="option_id_38949">
+		<!-- Received M. Skill Critical Damage -17 -->
+	</option>
+	<option id="38950" name="option_id_38950">
+		<!-- Received M. Skill Critical Damage -20 -->
+	</option>
+	<option id="38951" name="option_id_38951">
+		<!-- Received M. Skill Critical Damage -23 -->
+	</option>
+	<option id="38952" name="option_id_38952">
+		<!-- Received M. Skill Critical Damage -26 -->
+	</option>
+	<option id="38953" name="option_id_38953">
+		<!-- Received M. Skill Critical Damage -30 -->
+	</option>
+	<option id="38954" name="option_id_38954">
+		<!-- Received M. Skill Critical Damage -33 -->
+	</option>
+	<option id="38955" name="option_id_38955">
+		<!-- Received M. Skill Critical Damage -36 -->
+	</option>
+	<option id="38956" name="option_id_38956">
+		<!-- Received M. Skill Critical Damage -39 -->
+	</option>
+	<option id="38957" name="option_id_38957">
+		<!-- Received M. Skill Critical Damage -42 -->
+	</option>
+	<option id="38958" name="option_id_38958">
+		<!-- Received M. Skill Critical Damage -45 -->
+	</option>
+	<option id="38959" name="option_id_38959">
+		<!-- Received M. Skill Critical Damage -48 -->
+	</option>
+	<option id="38960" name="option_id_38960">
+		<!-- Received M. Skill Critical Damage -55 -->
+	</option>
+	<option id="38961" name="option_id_38961">
+		<!-- Received M. Skill Critical Damage -60 -->
+	</option>
+	<option id="38962" name="option_id_38962">
+		<!-- Received M. Skill Critical Damage -65 -->
+	</option>
+	<option id="38963" name="option_id_38963">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="38964" name="option_id_38964">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="38965" name="option_id_38965">
+	</option>
+	<option id="38966" name="option_id_38966">
+	</option>
+	<option id="38967" name="option_id_38967">
+	</option>
+	<option id="38968" name="option_id_38968">
+	</option>
+	<option id="38969" name="option_id_38969">
+	</option>
+	<option id="38970" name="option_id_38970">
+	</option>
+	<option id="38971" name="option_id_38971">
+	</option>
+	<option id="38972" name="option_id_38972">
+	</option>
+	<option id="38973" name="option_id_38973">
+	</option>
+	<option id="38974" name="option_id_38974">
+	</option>
+	<option id="38975" name="option_id_38975">
+	</option>
+	<option id="38976" name="option_id_38976">
+	</option>
+	<option id="38977" name="option_id_38977">
+	</option>
+	<option id="38978" name="option_id_38978">
+	</option>
+	<option id="38979" name="option_id_38979">
+	</option>
+	<option id="38980" name="option_id_38980">
+	</option>
+	<option id="38981" name="option_id_38981">
+	</option>
+	<option id="38982" name="option_id_38982">
+	</option>
+	<option id="38983" name="option_id_38983">
+	</option>
+	<option id="38984" name="option_id_38984">
+	</option>
+	<option id="38985" name="option_id_38985">
+	</option>
+	<option id="38986" name="option_id_38986">
+	</option>
+	<option id="38987" name="option_id_38987">
+	</option>
+	<option id="38988" name="option_id_38988">
+	</option>
+	<option id="38989" name="option_id_38989">
+	</option>
+	<option id="38990" name="option_id_38990">
+	</option>
+	<option id="38991" name="option_id_38991">
+	</option>
+	<option id="38992" name="option_id_38992">
+	</option>
+	<option id="38993" name="option_id_38993">
+	</option>
+	<option id="38994" name="option_id_38994">
+	</option>
+	<option id="38995" name="option_id_38995">
+	</option>
+	<option id="38996" name="option_id_38996">
+	</option>
+	<option id="38997" name="option_id_38997">
+	</option>
+	<option id="38998" name="option_id_38998">
+	</option>
+	<option id="38999" name="option_id_38999">
+	</option>
+</list>

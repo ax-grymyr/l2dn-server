@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/RandomCraftExtractData.xsd">
+	<extract>
+		<item id="1458" points="65" fee="1" /> <!-- D-grade Crystal -->
+		<item id="1459" points="300" fee="6" /> <!-- C-grade Crystal -->
+		<item id="1460" points="900" fee="18" /> <!-- B-grade Crystal -->
+		<item id="1461" points="1250" fee="25" /> <!-- A-grade Crystal -->
+		<item id="1462" points="1500" fee="30" /> <!-- S-grade Crystal -->
+		<item id="21973" points="10370500" fee="207410" /> <!-- Mardil's Wind - Not Available -->
+		<item id="21974" points="10370500" fee="207410" /> <!-- Mardil's Wind - Not Available -->
+		<item id="21975" points="10370500" fee="207410" /> <!-- Mardil's Wind - Not Available -->
+		<item id="21976" points="10370500" fee="207410" /> <!-- Mardil's Wind - Not Available -->
+		<item id="29517" points="400" fee="8" /> <!-- Improved Scroll of Escape - Not Available -->
+		<item id="29518" points="2000" fee="40" /> <!-- Blessed Resurrection Scroll - Not Available -->
+		<item id="71936" points="4650000" fee="93000" /> <!-- Spellbook: Ninja -->
+		<item id="71937" points="4650000" fee="93000" /> <!-- Spellbook: Cowboy -->
+		<item id="71938" points="4650000" fee="93000" /> <!-- Spellbook: Steampunk -->
+		<item id="71939" points="4650000" fee="93000" /> <!-- Spellbook: Qipao -->
+		<item id="71940" points="4650000" fee="93000" /> <!-- Spellbook: Traditional Taiwanese Costume -->
+		<item id="90007" points="10000" fee="500" /> <!-- Low-grade Life Stone - Weapon - Sealed -->
+		<item id="90012" points="10000" fee="500" /> <!-- Low-grade Life Stone - Weapon -->
+		<item id="90013" points="15000" fee="750" /> <!-- Mid-grade Life Stone - Weapon -->
+		<item id="90014" points="45000" fee="2250" /> <!-- High-grade Life Stone - Weapon -->
+		<item id="90015" points="135000" fee="6750" /> <!-- Top-grade Life Stone - Weapon -->
+		<item id="90856" points="100000" fee="5000" /> <!-- Life Stone Lv. 1 - Head Accessory -->
+		<item id="90857" points="300000" fee="15000" /> <!-- Life Stone Lv. 2 - Head Accessory -->
+		<item id="92255" points="178100" fee="8910" /> <!-- Dark Crystal Breastplate - Sealed -->
+		<item id="92256" points="440200" fee="22010" /> <!-- Armor of Nightmare - Sealed -->
+		<item id="92257" points="111300" fee="5570" /> <!-- Dark Crystal Gaiters - Sealed -->
+		<item id="92258" points="66800" fee="3340" /> <!-- Dark Crystal Helmet - Sealed -->
+		<item id="92259" points="66800" fee="3340" /> <!-- Tallum Helmet - Sealed -->
+		<item id="92260" points="46750" fee="2340" /> <!-- Dark Crystal Shield - Sealed -->
+		<item id="92261" points="289400" fee="14470" /> <!-- Tallum Plate Armor - Sealed -->
+		<item id="92262" points="440200" fee="22010" /> <!-- Majestic Plate Armor - Sealed -->
+		<item id="92263" points="133550" fee="6680" /> <!-- Dark Crystal Leather Armor - Sealed -->
+		<item id="92264" points="83500" fee="4180" /> <!-- Dark Crystal Leggings - Sealed -->
+		<item id="92265" points="217050" fee="10850" /> <!-- Tallum Leather Armor - Sealed -->
+		<item id="92266" points="330150" fee="16510" /> <!-- Leather Armor of Nightmare - Sealed -->
+		<item id="92267" points="330150" fee="16510" /> <!-- Majestic Leather Armor - Sealed -->
+		<item id="92268" points="133550" fee="6680" /> <!-- Tallum Tunic - Sealed -->
+		<item id="92269" points="83500" fee="4180" /> <!-- Tallum Stockings - Sealed -->
+		<item id="92270" points="217050" fee="10850" /> <!-- Dark Crystal Robe - Sealed -->
+		<item id="92271" points="330150" fee="16510" /> <!-- Robe of Nightmare - Sealed -->
+		<item id="92272" points="330150" fee="16510" /> <!-- Majestic Robe - Sealed -->
+		<item id="92273" points="101600" fee="5080" /> <!-- Helm of Nightmare - Sealed -->
+		<item id="92274" points="101600" fee="5080" /> <!-- Majestic Circlet - Sealed -->
+		<item id="92275" points="44500" fee="2230" /> <!-- Dark Crystal Gloves - Sealed -->
+		<item id="92276" points="71100" fee="3560" /> <!-- Shield of Nightmare - Sealed -->
+		<item id="92277" points="44500" fee="2230" /> <!-- Dark Crystal Gloves (Heavy) - Sealed -->
+		<item id="92278" points="44500" fee="2230" /> <!-- Dark Crystal Gloves (Light) - Sealed -->
+		<item id="92279" points="44500" fee="2230" /> <!-- Dark Crystal Gloves (Robe) - Sealed -->
+		<item id="92280" points="44500" fee="2230" /> <!-- Tallum Gloves (Heavy) - Sealed -->
+		<item id="92281" points="44500" fee="2230" /> <!-- Tallum Gloves (Light) - Sealed -->
+		<item id="92282" points="44500" fee="2230" /> <!-- Tallum Gloves (Robe) - Sealed -->
+		<item id="92283" points="67750" fee="3390" /> <!-- Gauntlets of Nightmare (Heavy) - Sealed -->
+		<item id="92284" points="67750" fee="3390" /> <!-- Gauntlets of Nightmare (Light) - Sealed -->
+		<item id="92285" points="67750" fee="3390" /> <!-- Gauntlets of Nightmare (Robe) - Sealed -->
+		<item id="92286" points="67750" fee="3390" /> <!-- Majestic Gauntlets (Heavy) - Sealed -->
+		<item id="92287" points="67750" fee="3390" /> <!-- Majestic Gauntlets (Light) - Sealed -->
+		<item id="92288" points="67750" fee="3390" /> <!-- Majestic Gauntlets (Robe) - Sealed -->
+		<item id="92289" points="44500" fee="2230" /> <!-- Dark Crystal Boots (Heavy) - Sealed -->
+		<item id="92290" points="44500" fee="2230" /> <!-- Dark Crystal Boots (Light) - Sealed -->
+		<item id="92291" points="44500" fee="2230" /> <!-- Dark Crystal Boots (Robe) - Sealed -->
+		<item id="92292" points="44500" fee="2230" /> <!-- Tallum Boots (Heavy) - Sealed -->
+		<item id="92293" points="44500" fee="2230" /> <!-- Tallum Boots (Light) - Sealed -->
+		<item id="92294" points="44500" fee="2230" /> <!-- Tallum Boots (Robe) - Sealed -->
+		<item id="92295" points="67750" fee="3390" /> <!-- Boots of Nightmare (Heavy) - Sealed -->
+		<item id="92296" points="67750" fee="3390" /> <!-- Boots of Nightmare (Light) - Sealed -->
+		<item id="92297" points="67750" fee="3390" /> <!-- Boots of Nightmare (Robe) - Sealed -->
+		<item id="92298" points="67750" fee="3390" /> <!-- Majestic Boots (Heavy) - Sealed -->
+		<item id="92299" points="67750" fee="3390" /> <!-- Majestic Boots (Light) - Sealed -->
+		<item id="92300" points="67750" fee="3390" /> <!-- Majestic Boots (Robe) - Sealed -->
+		<item id="92301" points="66800" fee="3340" /> <!-- Tallum Helmet (Heavy) - Sealed -->
+		<item id="92302" points="66800" fee="3340" /> <!-- Tallum Helmet (Light) - Sealed -->
+		<item id="92303" points="66800" fee="3340" /> <!-- Tallum Helmet (Robe) - Sealed -->
+		<item id="92304" points="66800" fee="3340" /> <!-- Dark Crystal Helmet (Heavy) - Sealed -->
+		<item id="92305" points="66800" fee="3340" /> <!-- Dark Crystal Helmet (Light) - Sealed -->
+		<item id="92306" points="66800" fee="3340" /> <!-- Dark Crystal Helmet (Robe) - Sealed -->
+		<item id="92307" points="101600" fee="5080" /> <!-- Helm of Nightmare (Heavy) - Sealed -->
+		<item id="92308" points="101600" fee="5080" /> <!-- Helm of Nightmare (Light) - Sealed -->
+		<item id="92309" points="101600" fee="5080" /> <!-- Helm of Nightmare (Robe) - Sealed -->
+		<item id="92310" points="101600" fee="5080" /> <!-- Majestic Circlet (Heavy) - Sealed -->
+		<item id="92311" points="101600" fee="5080" /> <!-- Majestic Circlet (Light) - Sealed -->
+		<item id="92312" points="101600" fee="5080" /> <!-- Majestic Circlet (Robe) - Sealed -->
+		<item id="92483" points="47" fee="0" /> <!-- Necklace of Anguish Chain -->
+		<item id="92484" points="119" fee="10" /> <!-- Necklace of Wisdom Chain -->
+		<item id="92485" points="213" fee="10" /> <!-- Blue Diamond Necklace Gem -->
+		<item id="92486" points="120" fee="10" /> <!-- Necklace of Devotion Chain -->
+		<item id="92487" points="189" fee="10" /> <!-- Necklace of Magic Chain -->
+		<item id="92488" points="214" fee="10" /> <!-- Tiger's Eye Stone -->
+		<item id="92489" points="311" fee="20" /> <!-- Elven Earring Beads -->
+		<item id="92490" points="208" fee="10" /> <!-- Elven Ring Piece -->
+		<item id="92491" points="417" fee="20" /> <!-- Elven Necklace Beads -->
+		<item id="92492" points="403" fee="20" /> <!-- Onyx Beast's Eye Earring Gemstone -->
+		<item id="92493" points="269" fee="10" /> <!-- Mithril Ring Wire -->
+		<item id="92494" points="540" fee="30" /> <!-- Dark Necklace Gem -->
+		<item id="92495" points="310" fee="20" /> <!-- Moonstone Earring Wire -->
+		<item id="92496" points="206" fee="10" /> <!-- Aquastone Ring Wire -->
+		<item id="92497" points="414" fee="20" /> <!-- Aquastone Necklace Chain -->
+		<item id="92498" points="392" fee="20" /> <!-- Earring of Protection Gemstone -->
+		<item id="92499" points="260" fee="10" /> <!-- Ring of Protection Gemstone -->
+		<item id="92500" points="522" fee="30" /> <!-- Necklace of Protection Gemstone -->
+		<item id="92501" points="590" fee="30" /> <!-- Earring of Seal Gemstone -->
+		<item id="92502" points="392" fee="20" /> <!-- Ring of Ages Gemstone -->
+		<item id="92503" points="786" fee="40" /> <!-- Necklace of Mermaid Teardrop -->
+		<item id="92504" points="1757" fee="90" /> <!-- Sage's Necklace Chain -->
+		<item id="92505" points="848" fee="40" /> <!-- Nassen's Earring Gemstone -->
+		<item id="92506" points="880" fee="40" /> <!-- Sage's Ring Gemstone -->
+		<item id="92507" points="1130" fee="60" /> <!-- Necklace of Seal Chain -->
+		<item id="92508" points="27" fee="0" /> <!-- Leather Shoes Texture -->
+		<item id="92509" points="80" fee="0" /> <!-- Leather Tunic Pattern -->
+		<item id="92510" points="50" fee="0" /> <!-- Leather Stockings Pattern -->
+		<item id="92511" points="102" fee="10" /> <!-- Leather Helmet Design -->
+		<item id="92512" points="68" fee="0" /> <!-- Leather Gloves Lining -->
+		<item id="92513" points="318" fee="20" /> <!-- Piece Bone Breastplate Fragment -->
+		<item id="92514" points="369" fee="20" /> <!-- Durable Leather Shirt Pattern -->
+		<item id="92515" points="199" fee="10" /> <!-- Piece Bone Gaiters Fragment -->
+		<item id="92516" points="230" fee="10" /> <!-- Durable Leather Gaiters Material -->
+		<item id="92517" points="123" fee="10" /> <!-- Boots Lining -->
+		<item id="92518" points="70" fee="0" /> <!-- Leather Boots Lining -->
+		<item id="92519" points="104" fee="10" /> <!-- Bone Helmet Design -->
+		<item id="92520" points="208" fee="10" /> <!-- Dark Stocking Fabric -->
+		<item id="92521" points="70" fee="0" /> <!-- Quality Leather Glove Lining -->
+		<item id="92522" points="443" fee="20" /> <!-- Scale Mail Fragment -->
+		<item id="92523" points="333" fee="20" /> <!-- White Tunic Pattern -->
+		<item id="92524" points="278" fee="10" /> <!-- Scale Gaiters Fragment -->
+		<item id="92525" points="507" fee="30" /> <!-- Mithril Banded Mail Material -->
+		<item id="92526" points="317" fee="20" /> <!-- Mithril Banded Gaiters Material -->
+		<item id="92527" points="169" fee="10" /> <!-- Iron Boots Design -->
+		<item id="92528" points="997" fee="50" /> <!-- Brigandine Temper -->
+		<item id="92529" points="747" fee="40" /> <!-- Manticore Skin Shirt Texture -->
+		<item id="92530" points="467" fee="20" /> <!-- Manticore Skin Gaiter Pattern -->
+		<item id="92531" points="747" fee="40" /> <!-- Mithril Tunic Fabric -->
+		<item id="92532" points="467" fee="20" /> <!-- Mithril Stockings Design -->
+		<item id="92533" points="249" fee="10" /> <!-- Rip Gauntlet Pattern -->
+		<item id="92534" points="261" fee="10" /> <!-- Kite Shield Fragment -->
+		<item id="92535" points="249" fee="10" /> <!-- Boots of Strength Pattern -->
+		<item id="92536" points="326" fee="20" /> <!-- Mithril Glove Design -->
+		<item id="92537" points="1303" fee="70" /> <!-- Half Plate Armor Temper -->
+		<item id="92538" points="813" fee="40" /> <!-- Plate Gaiters Fragment -->
+		<item id="92539" points="1430" fee="70" /> <!-- Salamander Skin Mail Texture -->
+		<item id="92540" points="1430" fee="70" /> <!-- Sage's Rag Lining -->
+		<item id="92541" points="474" fee="20" /> <!-- Karmian Stockings Design -->
+		<item id="92542" points="294" fee="10" /> <!-- Chain Helmet Design -->
+		<item id="92543" points="343" fee="20" /> <!-- Square Shield Fragment -->
+		<item id="92544" points="326" fee="20" /> <!-- Assault Boots Fragment -->
+		<item id="92545" points="252" fee="10" /> <!-- Reinforced Mithril Boot Design -->
+		<item id="92546" points="1010" fee="50" /> <!-- Chain Mail Shirt Material -->
+		<item id="92547" points="632" fee="30" /> <!-- Chain Gaiters Fragment -->
+		<item id="92548" points="758" fee="40" /> <!-- Reinforced Mithril Shirt Fabric -->
+		<item id="92549" points="758" fee="40" /> <!-- Karmian Tunic Pattern -->
+		<item id="92550" points="326" fee="20" /> <!-- Ogre Power Gauntlet Fragment -->
+		<item id="92551" points="266" fee="10" /> <!-- Eldarake Temper -->
+		<item id="92552" points="412" fee="20" /> <!-- Steel Plate Helmet Material -->
+		<item id="92553" points="892" fee="40" /> <!-- Plated Leather Armor Fragment -->
+		<item id="92554" points="558" fee="30" /> <!-- Plated Leather Gaiters Material -->
+		<item id="92555" points="1288" fee="60" /> <!-- Dwarven Chain Mail Shirt Material -->
+		<item id="92556" points="806" fee="40" /> <!-- Dwarven Chain Gaiter Material -->
+		<item id="92557" points="1414" fee="70" /> <!-- Robe of Seal Fabric -->
+		<item id="92558" points="484" fee="20" /> <!-- Great Helmet Material -->
+		<item id="92559" points="338" fee="20" /> <!-- Knight's Shield Fragment -->
+		<item id="92560" points="248" fee="10" /> <!-- Pa'agrio Hand Design -->
+		<item id="92561" points="322" fee="20" /> <!-- Crimson Boots Fabric -->
+		<item id="92562" points="966" fee="50" /> <!-- Rind Leather Armor Design -->
+		<item id="92563" points="604" fee="30" /> <!-- Rind Leather Gaiter Material -->
+		<item id="92564" points="2880" fee="140" /> <!-- Compound Armor Temper -->
+		<item id="92565" points="516" fee="30" /> <!-- Tower Shield Fragment -->
+		<item id="92566" points="1472" fee="70" /> <!-- Demon's Tunic Fabric -->
+		<item id="92567" points="920" fee="50" /> <!-- Demon's Stocking Pattern -->
+		<item id="92568" points="490" fee="20" /> <!-- Mithril Gauntlet Design -->
+		<item id="92569" points="490" fee="20" /> <!-- Forgotten Boots Pattern -->
+		<item id="92570" points="736" fee="40" /> <!-- Shining Circlet Pattern -->
+		<item id="92571" points="1650" fee="80" /> <!-- Theca Leather Armor Pattern -->
+		<item id="92572" points="1032" fee="50" /> <!-- Theca Leather Gaiter Fragment -->
+		<item id="92573" points="4180" fee="210" /> <!-- Full Plate Armor Temper -->
+		<item id="92574" points="3140" fee="160" /> <!-- Drake Leather Armor Texture -->
+		<item id="92575" points="2140" fee="110" /> <!-- Divine Tunic Fabric -->
+		<item id="92576" points="1342" fee="70" /> <!-- Divine Stocking Pattern -->
+		<item id="92577" points="1072" fee="50" /> <!-- Mithril Helmet Design -->
+		<item id="92578" points="550" fee="30" /> <!-- Gauntlet of Ghost Pattern -->
+		<item id="92579" points="716" fee="40" /> <!-- Adamantite Boot Design -->
+		<item id="92580" points="125" fee="10" /> <!-- Broadsword Blade -->
+		<item id="92581" points="125" fee="10" /> <!-- Willow Staff Head -->
+		<item id="92582" points="125" fee="10" /> <!-- Bow Shaft -->
+		<item id="92583" points="541" fee="30" /> <!-- Cedar Staff Head -->
+		<item id="92584" points="541" fee="30" /> <!-- Dirk Blade -->
+		<item id="92585" points="541" fee="30" /> <!-- Brandish Blade -->
+		<item id="92586" points="1360" fee="70" /> <!-- Short Spear Edge -->
+		<item id="92587" points="1360" fee="70" /> <!-- Sword of Reflection Blade -->
+		<item id="92588" points="1360" fee="70" /> <!-- Forest Bow Shaft -->
+		<item id="92589" points="2440" fee="120" /> <!-- Iron Hammer Head -->
+		<item id="92590" points="2440" fee="120" /> <!-- Sword Breaker Edge -->
+		<item id="92591" points="2440" fee="120" /> <!-- Compound Bow Shaft -->
+		<item id="92592" points="1363" fee="70" /> <!-- Saber Blade -->
+		<item id="92593" points="1363" fee="70" /> <!-- Assassin Knife Edge -->
+		<item id="92594" points="1363" fee="70" /> <!-- Trident Edge -->
+		<item id="92595" points="1363" fee="70" /> <!-- Temptation of Abyss Piece -->
+		<item id="92596" points="2147" fee="110" /> <!-- Spinebone Sword Blade -->
+		<item id="92597" points="2147" fee="110" /> <!-- Mace of Judgment Head -->
+		<item id="92598" points="2147" fee="110" /> <!-- Conjuror's Staff Head -->
+		<item id="92599" points="2147" fee="110" /> <!-- Elven Bow Shaft -->
+		<item id="92600" points="2147" fee="110" /> <!-- Dwarven Trident Edge -->
+		<item id="92601" points="3223" fee="160" /> <!-- Two-handed Sword Blade -->
+		<item id="92602" points="3223" fee="160" /> <!-- Spiked Club Head -->
+		<item id="92603" points="3223" fee="160" /> <!-- Shillien Knife Edge -->
+		<item id="92604" points="3223" fee="160" /> <!-- Gastraphetes Shaft -->
+		<item id="92605" points="3223" fee="160" /> <!-- Tome of Blood Page -->
+		<item id="92606" points="4667" fee="230" /> <!-- Morning Star Head -->
+		<item id="92607" points="4667" fee="230" /> <!-- Goat Head Staff Head -->
+		<item id="92608" points="4667" fee="230" /> <!-- Winged Spear Blade -->
+		<item id="92609" points="4667" fee="230" /> <!-- Sword of Revolution Blade -->
+		<item id="92610" points="4667" fee="230" /> <!-- Tarbar Head -->
+		<item id="92611" points="4667" fee="230" /> <!-- Skull Breaker Head -->
+		<item id="92612" points="4667" fee="230" /> <!-- Heavy Bone Club Head -->
+		<item id="92613" points="4667" fee="230" /> <!-- Maingauche Edge -->
+		<item id="92614" points="4667" fee="230" /> <!-- Bich'Hwa Edge -->
+		<item id="92615" points="4667" fee="230" /> <!-- Reinforced Longbow Shaft -->
+		<item id="92616" points="4667" fee="230" /> <!-- War Pick Head -->
+		<item id="92617" points="4667" fee="230" /> <!-- Crucifix of Blood Piece -->
+		<item id="92618" points="4667" fee="230" /> <!-- Eye of Infinity Stone -->
+		<item id="92619" points="4667" fee="230" /> <!-- Cursed Maingauche Edge -->
+		<item id="92620" points="5067" fee="250" /> <!-- Blue Crystal Skull Part -->
+		<item id="92621" points="5067" fee="250" /> <!-- Demon's Fangs Fragment -->
+		<item id="92622" points="6000" fee="300" /> <!-- Claymore Blade -->
+		<item id="92623" points="6000" fee="300" /> <!-- Bonebreaker Head -->
+		<item id="92624" points="6000" fee="300" /> <!-- Atuba Hammer Head -->
+		<item id="92625" points="6000" fee="300" /> <!-- Ghost Staff Head -->
+		<item id="92626" points="6000" fee="300" /> <!-- Staff of Life Shaft -->
+		<item id="92627" points="6000" fee="300" /> <!-- Mithril Dagger Blade -->
+		<item id="92628" points="6000" fee="300" /> <!-- Scallop Jamadhr Edge -->
+		<item id="92629" points="6000" fee="300" /> <!-- Light Bow Shaft -->
+		<item id="92630" points="6000" fee="300" /> <!-- Glaive Edge -->
+		<item id="92631" points="6000" fee="300" /> <!-- Vajra Wand Frame -->
+		<item id="92632" points="6000" fee="300" /> <!-- Ancient Reagent Remnant -->
+		<item id="92633" points="6000" fee="300" /> <!-- Atuba Mace Head -->
+		<item id="92634" points="4580" fee="230" /> <!-- Flamberge Blade -->
+		<item id="92635" points="4580" fee="230" /> <!-- Stormbringer Blade -->
+		<item id="92636" points="4580" fee="230" /> <!-- Big Hammer Head -->
+		<item id="92637" points="4580" fee="230" /> <!-- Scythe Edge -->
+		<item id="92638" points="4580" fee="230" /> <!-- Battle Axe Head -->
+		<item id="92639" points="4580" fee="230" /> <!-- Silver Axe Head -->
+		<item id="92640" points="4580" fee="230" /> <!-- Skull Graver Head -->
+		<item id="92641" points="4580" fee="230" /> <!-- Heavy Doom Hammer Head -->
+		<item id="92642" points="4580" fee="230" /> <!-- Crystal Staff Head -->
+		<item id="92643" points="4580" fee="230" /> <!-- Stick of Faith Shaft -->
+		<item id="92644" points="4580" fee="230" /> <!-- Heavy Doom Axe Blade -->
+		<item id="92645" points="4580" fee="230" /> <!-- Cursed Dagger Blade -->
+		<item id="92646" points="4580" fee="230" /> <!-- Wolverine Fang Edge -->
+		<item id="92647" points="4580" fee="230" /> <!-- Dark Elven Dagger Edge -->
+		<item id="92648" points="4580" fee="230" /> <!-- Chakram Edge -->
+		<item id="92649" points="4580" fee="230" /> <!-- Frozen Bow Shaft -->
+		<item id="92650" points="4580" fee="230" /> <!-- Orcish Glaive Blade -->
+		<item id="92651" points="4580" fee="230" /> <!-- Body Slasher Blade -->
+		<item id="92652" points="5740" fee="290" /> <!-- Shamshir Blade -->
+		<item id="92653" points="5740" fee="290" /> <!-- Katana Blade -->
+		<item id="92654" points="5740" fee="290" /> <!-- Bec de Corbin Blade -->
+		<item id="92655" points="5740" fee="290" /> <!-- Spirit Sword Blade -->
+		<item id="92656" points="5740" fee="290" /> <!-- Raid Sword Blade -->
+		<item id="92657" points="5740" fee="290" /> <!-- Cursed Staff Head -->
+		<item id="92658" points="5740" fee="290" /> <!-- Stiletto Edge -->
+		<item id="92659" points="5740" fee="290" /> <!-- Soulfire Dirk Blade -->
+		<item id="92660" points="5740" fee="290" /> <!-- Elemental Bow Shaft -->
+		<item id="92661" points="5740" fee="290" /> <!-- Noble Elven Bow Shaft -->
+		<item id="92662" points="5740" fee="290" /> <!-- Horn of Glory Fragment -->
+		<item id="92663" points="8600" fee="430" /> <!-- Caliburs Edge -->
+		<item id="92664" points="8600" fee="430" /> <!-- Delusional Blade -->
+		<item id="92665" points="8600" fee="430" /> <!-- Tsurugi Blade -->
+		<item id="92666" points="8600" fee="430" /> <!-- Homunkulus' Sword Blade -->
+		<item id="92667" points="8600" fee="430" /> <!-- Poleaxe Blade -->
+		<item id="92668" points="8600" fee="430" /> <!-- Ultimate Sword Blade -->
+		<item id="92669" points="8600" fee="430" /> <!-- Sword of Nightmare Blade -->
+		<item id="92670" points="8600" fee="430" /> <!-- Sword of Whispering Death Blade -->
+		<item id="92671" points="8600" fee="430" /> <!-- War Axe Blade -->
+		<item id="92672" points="8600" fee="430" /> <!-- Nirvana Axe Blade -->
+		<item id="92673" points="8600" fee="430" /> <!-- Stick of Eternity Shaft -->
+		<item id="92674" points="8600" fee="430" /> <!-- Paradia Staff Head -->
+		<item id="92675" points="8600" fee="430" /> <!-- Inferno Staff Head -->
+		<item id="92676" points="8600" fee="430" /> <!-- Pa'agrio Hammer Head -->
+		<item id="92677" points="8600" fee="430" /> <!-- Sage's Staff Head -->
+		<item id="92678" points="8600" fee="430" /> <!-- Club of Nature Head -->
+		<item id="92679" points="8600" fee="430" /> <!-- Mace of Underworld Head -->
+		<item id="92680" points="8600" fee="430" /> <!-- Grace Dagger Edge -->
+		<item id="92681" points="8600" fee="430" /> <!-- Dark Screamer Edge -->
+		<item id="92682" points="8600" fee="430" /> <!-- Fisted Blade Piece -->
+		<item id="92683" points="8600" fee="430" /> <!-- Akat Longbow Shaft -->
+		<item id="92684" points="9560" fee="480" /> <!-- Pa'agrio Axe Blade -->
+		<item id="92685" points="9560" fee="480" /> <!-- Scorpion Blade -->
+		<item id="92686" points="9560" fee="480" /> <!-- Widow Maker Head -->
+		<item id="92687" points="12260" fee="610" /> <!-- Samurai Long Sword Blade -->
+		<item id="92688" points="12260" fee="610" /> <!-- Deadman's Staff Head -->
+		<item id="92689" points="12260" fee="610" /> <!-- Ghoul's Staff Head -->
+		<item id="92690" points="12260" fee="610" /> <!-- Demon's Staff Head -->
+		<item id="92691" points="12260" fee="610" /> <!-- Crystal Dagger Blade -->
+		<item id="92692" points="12260" fee="610" /> <!-- Great Pata Blade -->
+		<item id="92693" points="12260" fee="610" /> <!-- Eminence Bow Shaft -->
+		<item id="92694" points="12260" fee="610" /> <!-- Orcish Poleaxe Blade -->
+		<item id="92695" points="564" fee="30" /> <!-- Ring of Seal Gemstone -->
+		<item id="92696" points="623" fee="30" /> <!-- Mithril Scale Gaiters Material -->
+		<item id="92697" points="623" fee="30" /> <!-- Brigandine Gaiter Material -->
+		<item id="92698" points="747" fee="40" /> <!-- Elven Mithril Tunic Pattern -->
+		<item id="92699" points="467" fee="20" /> <!-- Elven Mithril Stockings Pattern -->
+		<item id="92700" points="373" fee="20" /> <!-- Brigandine Helmet Design -->
+		<item id="92701" points="249" fee="10" /> <!-- Manticore Skin Boot Lining -->
+		<item id="92702" points="249" fee="10" /> <!-- Brigandine Boot Design -->
+		<item id="92703" points="249" fee="10" /> <!-- Elven Mithril Boot Design -->
+		<item id="92704" points="249" fee="10" /> <!-- Manticore Skin Glove Lining -->
+		<item id="92705" points="249" fee="10" /> <!-- Brigandine Gauntlet Pattern -->
+		<item id="92706" points="249" fee="10" /> <!-- Elven Mithril Glove Design -->
+		<item id="92707" points="261" fee="10" /> <!-- Brigandine Shield Fragment -->
+		<item id="92708" points="490" fee="20" /> <!-- Plate Helmet Design -->
+		<item id="92709" points="326" fee="20" /> <!-- Salamander Skin Boot Lining -->
+		<item id="92710" points="326" fee="20" /> <!-- Plate Boot Design -->
+		<item id="92711" points="326" fee="20" /> <!-- Sage's Worn Glove Lining -->
+		<item id="92712" points="343" fee="20" /> <!-- Plate Shield Fragment -->
+		<item id="92713" points="474" fee="20" /> <!-- Reinforced Mithril Gaiter Fragment -->
+		<item id="92714" points="378" fee="20" /> <!-- Chain Hood Pattern -->
+		<item id="92715" points="252" fee="10" /> <!-- Chain Boot Fragment -->
+		<item id="92716" points="252" fee="10" /> <!-- Karmian Boot Fabric -->
+		<item id="92717" points="252" fee="10" /> <!-- Plated Leather Boots Lining -->
+		<item id="92718" points="252" fee="10" /> <!-- Dwarven Chain Boot Fragment -->
+		<item id="92719" points="252" fee="10" /> <!-- Boots of Seal Pattern -->
+		<item id="92720" points="252" fee="10" /> <!-- Reinforced Mithril Glove Design -->
+		<item id="92721" points="252" fee="10" /> <!-- Chain Glove Design -->
+		<item id="92722" points="252" fee="10" /> <!-- Karmian Glove Fabric -->
+		<item id="92723" points="266" fee="10" /> <!-- Chain Shield Fragment -->
+		<item id="92724" points="298" fee="10" /> <!-- Plated Leather Gloves Design -->
+		<item id="92725" points="312" fee="20" /> <!-- Dwarven Chain Shield Fragment -->
+		<item id="92726" points="322" fee="20" /> <!-- Rind Leather Boot Lining -->
+		<item id="92727" points="322" fee="20" /> <!-- Dwarven Chain Glove Design -->
+		<item id="92728" points="322" fee="20" /> <!-- Gloves of Seal Pattern -->
+		<item id="92729" points="322" fee="20" /> <!-- Rind Leather Glove Design -->
+		<item id="92730" points="490" fee="20" /> <!-- Demon's Boot Fabric -->
+		<item id="92731" points="490" fee="20" /> <!-- Demon's Glove Fabric -->
+		<item id="92732" points="550" fee="30" /> <!-- Theca Leather Boots Texture -->
+		<item id="92733" points="550" fee="30" /> <!-- Theca Leather Gloves Texture -->
+		<item id="92734" points="490" fee="20" /> <!-- Compound Boot Fragment -->
+		<item id="92735" points="736" fee="40" /> <!-- Compound Helmet Design -->
+		<item id="92736" points="716" fee="40" /> <!-- Divine Boot Fabric -->
+		<item id="92737" points="1072" fee="50" /> <!-- Full Plate Helmet Design -->
+		<item id="92738" points="716" fee="40" /> <!-- Drake Leather Boots Design -->
+		<item id="92739" points="716" fee="40" /> <!-- Full Plate Boot Fragment -->
+		<item id="92740" points="716" fee="40" /> <!-- Drake Leather Gloves Design -->
+		<item id="92741" points="716" fee="40" /> <!-- Full Plate Gauntlet Fragment -->
+		<item id="92742" points="716" fee="40" /> <!-- Divine Glove Pattern -->
+		<item id="92743" points="716" fee="40" /> <!-- Blessed Glove Design -->
+		<item id="92744" points="750" fee="40" /> <!-- Full Plate Shield Fragment -->
+		<item id="92745" points="6000" fee="300" /> <!-- Elven Long Sword Blade -->
+		<item id="92746" points="5740" fee="290" /> <!-- Dwarven War Hammer Head -->
+		<item id="92747" points="12260" fee="610" /> <!-- Yaksa Mace Head -->
+		<item id="92748" points="866" fee="40" /> <!-- Adamantite Earring Gemstone -->
+		<item id="92749" points="577" fee="30" /> <!-- Adamantite Ring Wire -->
+		<item id="92750" points="1154" fee="60" /> <!-- Adamantite Necklace Chain -->
+		<item id="92751" points="1320" fee="70" /> <!-- Black Ore Earring Piece -->
+		<item id="92752" points="880" fee="40" /> <!-- Black Ore Ring Gemstone -->
+		<item id="92753" points="1757" fee="90" /> <!-- Black Ore Necklace Beads -->
+		<item id="92754" points="516" fee="30" /> <!-- Compound Shield Fragment -->
+		<item id="92755" points="2971" fee="150" /> <!-- Zubei's Breastplate Part -->
+		<item id="92756" points="1857" fee="90" /> <!-- Zubei's Gaiters Material -->
+		<item id="92757" points="2971" fee="150" /> <!-- Avadon Breastplate Part -->
+		<item id="92758" points="1857" fee="90" /> <!-- Avadon Gaiters Material -->
+		<item id="92759" points="2229" fee="110" /> <!-- Zubei's Leather Shirt Fabric -->
+		<item id="92760" points="1390" fee="70" /> <!-- Zubei's Leather Gaiters Texture -->
+		<item id="92761" points="3257" fee="160" /> <!-- Avadon Leather Armor Lining -->
+		<item id="92762" points="2229" fee="110" /> <!-- Zubei's Tunic Fabric -->
+		<item id="92763" points="1390" fee="70" /> <!-- Zubei's Stockings Fabric -->
+		<item id="92764" points="3257" fee="160" /> <!-- Avadon Robe Fabric -->
+		<item id="92765" points="1111" fee="60" /> <!-- Sealed Avadon Circlet Pattern -->
+		<item id="92766" points="741" fee="40" /> <!-- Sealed Avadon Glove Fragment -->
+		<item id="92767" points="1207" fee="60" /> <!-- Doom Shield Fragment -->
+		<item id="92768" points="4600" fee="230" /> <!-- Blue Wolf Breastplate Part -->
+		<item id="92769" points="2871" fee="140" /> <!-- Blue Wolf Gaiter Material -->
+		<item id="92770" points="6729" fee="340" /> <!-- Doom Plate Armor Temper -->
+		<item id="92771" points="5043" fee="250" /> <!-- Blue Wolf Leather Armor Texture -->
+		<item id="92772" points="5043" fee="250" /> <!-- Doom Leather Armor Design -->
+		<item id="92773" points="3443" fee="170" /> <!-- Blue Wolf Tunic Fabric -->
+		<item id="92774" points="3443" fee="170" /> <!-- Doom Tunic Pattern -->
+		<item id="92775" points="2157" fee="110" /> <!-- Blue Wolf Stocking Pattern -->
+		<item id="92776" points="2157" fee="110" /> <!-- Doom Stockings Pattern -->
+		<item id="92777" points="1729" fee="90" /> <!-- Sealed Blue Wolf Helmet Design -->
+		<item id="92778" points="1729" fee="90" /> <!-- Sealed Doom Helmet Pattern -->
+		<item id="92779" points="1149" fee="60" /> <!-- Sealed Blue Wolf Boot Design -->
+		<item id="92780" points="1149" fee="60" /> <!-- Sealed Doom Glove Fragment -->
+		<item id="92781" points="1149" fee="60" /> <!-- Sealed Blue Wolf Glove Fabric -->
+		<item id="92782" points="741" fee="40" /> <!-- Sealed Zubei's Boot Design -->
+		<item id="92783" points="741" fee="40" /> <!-- Sealed Avadon Boots Design -->
+		<item id="92784" points="1149" fee="60" /> <!-- Sealed Doom Boot Fragment -->
+		<item id="92785" points="741" fee="40" /> <!-- Sealed Zubei's Gauntlet Fragment -->
+		<item id="92786" points="779" fee="40" /> <!-- Zubei's Shield Fragment -->
+		<item id="92787" points="1111" fee="60" /> <!-- Sealed Zubei's Helmet Design -->
+		<item id="92788" points="11186" fee="560" /> <!-- Pata Blade -->
+		<item id="92789" points="12400" fee="620" /> <!-- Great Sword Blade -->
+		<item id="92790" points="12400" fee="620" /> <!-- Heavy War Axe Head -->
+		<item id="92791" points="12400" fee="620" /> <!-- Spirit's Staff Head -->
+		<item id="92792" points="12400" fee="620" /> <!-- Keshanberk Blade -->
+		<item id="92793" points="12400" fee="620" /> <!-- Sword of Valhalla Blade -->
+		<item id="92794" points="12400" fee="620" /> <!-- Kris Edge -->
+		<item id="92795" points="12400" fee="620" /> <!-- Twilight Knife Edge -->
+		<item id="92796" points="12400" fee="620" /> <!-- Arthro Claw Blade -->
+		<item id="92797" points="12400" fee="620" /> <!-- Dark Elven Longbow Shaft -->
+		<item id="92798" points="12400" fee="620" /> <!-- Great Axe Head -->
+		<item id="92799" points="18714" fee="940" /> <!-- Damascus Sword Blade -->
+		<item id="92800" points="18714" fee="940" /> <!-- Lance Blade -->
+		<item id="92801" points="18714" fee="940" /> <!-- Deadman's Glory Stone -->
+		<item id="92802" points="18714" fee="940" /> <!-- Art of Battle Axe Blade -->
+		<item id="92803" points="18714" fee="940" /> <!-- Staff of Evil Spirits Head -->
+		<item id="92804" points="18714" fee="940" /> <!-- Demon's Dagger Edge -->
+		<item id="92805" points="18714" fee="940" /> <!-- Bellion Cestus Edge -->
+		<item id="92806" points="18714" fee="940" /> <!-- Bow of Peril Shaft -->
+		<item id="92807" points="5740" fee="290" /> <!-- Knuckle Duster Edge -->
+		<item id="92808" points="779" fee="40" /> <!-- Avadon Shield Fragment -->
+		<item id="92809" points="2671" fee="130" /> <!-- Sealed Dark Crystal Leather Armor Pattern -->
+		<item id="92810" points="4341" fee="220" /> <!-- Sealed Tallum Leather Armor Pattern -->
+		<item id="92811" points="6603" fee="330" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
+		<item id="92812" points="6603" fee="330" /> <!-- Sealed Majestic Leather Armor Fabric -->
+		<item id="92813" points="1670" fee="80" /> <!-- Sealed Dark Crystal Legging Design -->
+		<item id="92814" points="2671" fee="130" /> <!-- Sealed Tallum Tunic Texture -->
+		<item id="92815" points="4341" fee="220" /> <!-- Sealed Dark Crystal Robe Fabric -->
+		<item id="92816" points="6603" fee="330" /> <!-- Sealed Robe of Nightmare Fabric -->
+		<item id="92817" points="6603" fee="330" /> <!-- Sealed Majestic Robe Fabric -->
+		<item id="92818" points="1670" fee="80" /> <!-- Sealed Tallum Stocking Fabric -->
+		<item id="92819" points="935" fee="50" /> <!-- Sealed Dark Crystal Shield Fragment -->
+		<item id="92820" points="1422" fee="70" /> <!-- Sealed Shield of Nightmare Fragment -->
+		<item id="92821" points="890" fee="40" /> <!-- Sealed Dark Crystal Boot Lining -->
+		<item id="92822" points="890" fee="40" /> <!-- Sealed Tallum Boot Lining -->
+		<item id="92823" points="1355" fee="70" /> <!-- Sealed Boots of Nightmare Lining -->
+		<item id="92824" points="1355" fee="70" /> <!-- Sealed Majestic Boot Lining -->
+		<item id="92825" points="890" fee="40" /> <!-- Sealed Dark Crystal Glove Design -->
+		<item id="92826" points="890" fee="40" /> <!-- Sealed Tallum Glove Design -->
+		<item id="92827" points="1355" fee="70" /> <!-- Sealed Gauntlets of Nightmare Design -->
+		<item id="92828" points="1355" fee="70" /> <!-- Sealed Majestic Gauntlet Design -->
+		<item id="92829" points="3562" fee="180" /> <!-- Sealed Dark Crystal Breastplate Pattern -->
+		<item id="92830" points="5788" fee="290" /> <!-- Sealed Tallum Plate Armor Pattern -->
+		<item id="92831" points="8804" fee="440" /> <!-- Sealed Armor of Nightmare Pattern -->
+		<item id="92832" points="8804" fee="440" /> <!-- Sealed Majestic Plate Armor Pattern -->
+		<item id="92833" points="2226" fee="110" /> <!-- Sealed Dark Crystal Gaiter Pattern -->
+		<item id="92834" points="1336" fee="70" /> <!-- Sealed Dark Crystal Helmet Design -->
+		<item id="92835" points="1336" fee="70" /> <!-- Sealed Tallum Helmet Design -->
+		<item id="92836" points="2032" fee="100" /> <!-- Sealed Helm of Nightmare Design -->
+		<item id="92837" points="2032" fee="100" /> <!-- Sealed Majestic Circlet Design -->
+		<item id="92838" points="20741" fee="1040" /> <!-- Dragon Slayer Edge -->
+		<item id="92839" points="12260" fee="610" /> <!-- Berserker Blade Edge -->
+		<item id="92840" points="1363" fee="70" /> <!-- Heavy Sword Edge -->
+		<item id="92841" points="14098" fee="700" /> <!-- Meteor Shower Head -->
+		<item id="92842" points="20741" fee="1040" /> <!-- Elysian Head -->
+		<item id="92843" points="20741" fee="1040" /> <!-- Soul Bow Shaft -->
+		<item id="92844" points="14098" fee="700" /> <!-- Carnage Bow Shaft -->
+		<item id="92845" points="14098" fee="700" /> <!-- Bloody Orchid Head -->
+		<item id="92846" points="20741" fee="1040" /> <!-- Soul Separator Head -->
+		<item id="92847" points="20741" fee="1040" /> <!-- Dragon Grinder Edge -->
+		<item id="92848" points="14098" fee="700" /> <!-- Blood Tornado Edge -->
+		<item id="92849" points="20741" fee="1040" /> <!-- Tallum Glaive Edge -->
+		<item id="92850" points="14098" fee="700" /> <!-- Halberd Edge -->
+		<item id="92851" points="14098" fee="700" /> <!-- Dasparion's Staff Head -->
+		<item id="92852" points="20741" fee="1040" /> <!-- Branch of the Mother Tree Head -->
+		<item id="92853" points="20741" fee="1040" /> <!-- Dark Legion's Edge Blade -->
+		<item id="92854" points="20741" fee="1040" /> <!-- Sword of Miracles Edge -->
+		<item id="92855" points="14098" fee="700" /> <!-- Elemental Sword Edge -->
+		<item id="92856" points="14098" fee="700" /> <!-- Tallum Blade Edge -->
+		<item id="92857" points="1005" fee="50" /> <!-- Sealed Phoenix Earring Gemstone -->
+		<item id="92858" points="1498" fee="70" /> <!-- Sealed Majestic Earring Gemstone -->
+		<item id="92859" points="1340" fee="70" /> <!-- Sealed Phoenix Necklace Beads -->
+		<item id="92860" points="1998" fee="100" /> <!-- Sealed Majestic Necklace Beads -->
+		<item id="92861" points="670" fee="30" /> <!-- Sealed Phoenix Ring Gemstone -->
+		<item id="92862" points="999" fee="50" /> <!-- Sealed Majestic Ring Gemstone -->
+		<item id="92863" points="42759" fee="2140" /> <!-- Forgotten Blade Edge -->
+		<item id="92864" points="42759" fee="2140" /> <!-- Basalt Battlehammer Head -->
+		<item id="92865" points="42759" fee="2140" /> <!-- Imperial Staff Head -->
+		<item id="92866" points="42759" fee="2140" /> <!-- Angel Slayer Blade -->
+		<item id="92867" points="42759" fee="2140" /> <!-- Dragon Hunter Axe Blade -->
+		<item id="92868" points="42759" fee="2140" /> <!-- Saint Spear Blade -->
+		<item id="92869" points="42759" fee="2140" /> <!-- Demon Splinter Blade -->
+		<item id="92870" points="42759" fee="2140" /> <!-- Heaven's Divider Edge -->
+		<item id="92871" points="42759" fee="2140" /> <!-- Arcana Mace Head -->
+		<item id="92872" points="3270" fee="160" /> <!-- Sealed Tateossian Earring Part -->
+		<item id="92873" points="2180" fee="110" /> <!-- Sealed Tateossian Ring Gem -->
+		<item id="92874" points="4361" fee="220" /> <!-- Sealed Tateossian Necklace Chain -->
+		<item id="92875" points="12781" fee="640" /> <!-- Sealed Imperial Crusader Breastplate Part -->
+		<item id="92876" points="7988" fee="400" /> <!-- Sealed Imperial Crusader Gaiters Pattern -->
+		<item id="92877" points="3195" fee="160" /> <!-- Sealed Imperial Crusader Gauntlet Design -->
+		<item id="92878" points="3195" fee="160" /> <!-- Sealed Imperial Crusader Boot Design -->
+		<item id="92879" points="3355" fee="170" /> <!-- Sealed Imperial Crusader Shield Fragment -->
+		<item id="92880" points="4793" fee="240" /> <!-- Sealed Imperial Crusader Helmet Pattern -->
+		<item id="92881" points="15577" fee="780" /> <!-- Sealed Draconic Leather Armor Part -->
+		<item id="92882" points="3195" fee="160" /> <!-- Sealed Draconic Leather Glove Fabric -->
+		<item id="92883" points="3195" fee="160" /> <!-- Sealed Draconic Leather Boots Design -->
+		<item id="92884" points="4793" fee="240" /> <!-- Sealed Draconic Leather Helmet Pattern -->
+		<item id="92885" points="15577" fee="780" /> <!-- Sealed Major Arcana Robe Part -->
+		<item id="92886" points="3195" fee="160" /> <!-- Sealed Major Arcana Gloves Fabric -->
+		<item id="92887" points="3195" fee="160" /> <!-- Sealed Major Arcana Boots Design -->
+		<item id="92888" points="4793" fee="240" /> <!-- Sealed Major Arcana Circlet Pattern -->
+		<item id="92889" points="42759" fee="2140" /> <!-- Draconic Bow Shaft -->
+		<item id="92890" points="1363" fee="70" /> <!-- Steel Sword Blade -->
+		<item id="92891" points="14098" fee="700" /> <!-- Infernal Master Blade -->
+		<item id="92892" points="14098" fee="700" /> <!-- Spiritual Eye Piece -->
+		<item id="92893" points="20741" fee="1040" /> <!-- Flaming Dragon Skull Piece -->
+		<item id="92894" points="4667" fee="230" /> <!-- Lesser Giant's Hammer Piece -->
+		<item id="92895" points="14098" fee="700" /> <!-- Destroyer Hammer Piece -->
+		<item id="92896" points="20741" fee="1040" /> <!-- Doom Crusher Head -->
+		<item id="92897" points="26968" fee="1350" /> <!-- Sirra's Blade Edge -->
+		<item id="92898" points="26968" fee="1350" /> <!-- Sword of Ipos Blade -->
+		<item id="92899" points="26968" fee="1350" /> <!-- Barakiel's Axe Piece -->
+		<item id="92900" points="26968" fee="1350" /> <!-- Behemoth' Tuning Fork Piece -->
+		<item id="92901" points="26968" fee="1350" /> <!-- Naga's Storm Piece -->
+		<item id="92902" points="26968" fee="1350" /> <!-- Tiphon's Spear Edge -->
+		<item id="92903" points="26968" fee="1350" /> <!-- Shyeed's Bow Shaft -->
+		<item id="92904" points="26968" fee="1350" /> <!-- Sobekk's Hurricane Edge -->
+		<item id="92905" points="26968" fee="1350" /> <!-- Themis' Tongue Piece -->
+		<item id="92906" points="26968" fee="1350" /> <!-- Cabrio's Hand Head -->
+		<item id="92907" points="26968" fee="1350" /> <!-- Daimon Crystal Fragment -->
+		<item id="92930" points="704900" fee="35250" /> <!-- Tallum Blade - Sealed -->
+		<item id="92931" points="1037050" fee="51850" /> <!-- Dragon Slayer - Sealed -->
+		<item id="92932" points="704900" fee="35250" /> <!-- Halberd - Sealed -->
+		<item id="92933" points="704900" fee="35250" /> <!-- Elemental Sword - Sealed -->
+		<item id="92934" points="1037050" fee="51850" /> <!-- Sword of Miracles - Sealed -->
+		<item id="92935" points="1037050" fee="51850" /> <!-- Elysian - Sealed -->
+		<item id="92936" points="704900" fee="35250" /> <!-- Dasparion's Staff - Sealed -->
+		<item id="92937" points="1037050" fee="51850" /> <!-- Branch of the Mother Tree - Sealed -->
+		<item id="92938" points="704900" fee="35250" /> <!-- Bloody Orchid - Sealed -->
+		<item id="92939" points="1037050" fee="51850" /> <!-- Soul Separator - Sealed -->
+		<item id="92940" points="704900" fee="35250" /> <!-- Bloody Tornado - Sealed -->
+		<item id="92941" points="1037050" fee="51850" /> <!-- Dragon Grinder - Sealed -->
+		<item id="92942" points="704900" fee="35250" /> <!-- Carnage Bow - Sealed -->
+		<item id="92943" points="1037050" fee="51850" /> <!-- Soul Bow - Sealed -->
+		<item id="92944" points="1037050" fee="51850" /> <!-- Tallum Glaive - Sealed -->
+		<item id="92945" points="1037050" fee="51850" /> <!-- Dark Legion's Edge - Sealed -->
+		<item id="92946" points="704900" fee="35250" /> <!-- Meteor Shower - Sealed -->
+		<item id="92947" points="704900" fee="35250" /> <!-- Keshanberk*Keshanberk - Sealed -->
+		<item id="92948" points="928370" fee="46420" /> <!-- Keshanberk*Damascus - Sealed -->
+		<item id="92949" points="1037050" fee="51850" /> <!-- Damascus Sword*Damascus Sword - Sealed -->
+		<item id="92950" points="704900" fee="35250" /> <!-- Infernal Master - Sealed -->
+		<item id="92951" points="704900" fee="35250" /> <!-- Spiritual Eye - Sealed -->
+		<item id="92952" points="1037050" fee="51850" /> <!-- Flaming Dragon Skull - Sealed -->
+		<item id="92953" points="704900" fee="35250" /> <!-- Destroyer Hammer - Sealed -->
+		<item id="92954" points="1037050" fee="51850" /> <!-- Doom Crusher - Sealed -->
+		<item id="92955" points="1348420" fee="67420" /> <!-- Sirra's Blade - Sealed -->
+		<item id="92956" points="1348420" fee="67420" /> <!-- Sword of Ipos - Sealed -->
+		<item id="92957" points="1348420" fee="67420" /> <!-- Barakiel's Axe - Sealed -->
+		<item id="92958" points="1348420" fee="67420" /> <!-- Behemoth' Tuning Fork - Sealed -->
+		<item id="92959" points="1348420" fee="67420" /> <!-- Naga's Storm - Sealed -->
+		<item id="92960" points="1348420" fee="67420" /> <!-- Tiphon's Spear - Sealed -->
+		<item id="92961" points="1348420" fee="67420" /> <!-- Shyeed's Bow - Sealed -->
+		<item id="92962" points="1348420" fee="67420" /> <!-- Sobekk's Hurricane - Sealed -->
+		<item id="92963" points="1348420" fee="67420" /> <!-- Themis' Tongue - Sealed -->
+		<item id="92964" points="1348420" fee="67420" /> <!-- Cabrio's Hand - Sealed -->
+		<item id="92965" points="1348420" fee="67420" /> <!-- Daimon Crystal - Sealed -->
+		<item id="92966" points="1348420" fee="67420" /> <!-- Tallum Blade*Damascus Sword - Sealed -->
+		<item id="92967" points="1348420" fee="67420" /> <!-- Durendal - Sealed -->
+		<item id="92968" points="1037050" fee="51850" /> <!-- Undertaker - Sealed -->
+		<item id="92969" points="704900" fee="35250" /> <!-- Divine Pain - Sealed -->
+		<item id="92970" points="1348420" fee="67420" /> <!-- Éclair Bijou - Sealed -->
+		<item id="92971" points="1037050" fee="51850" /> <!-- Lacerator - Sealed -->
+		<item id="92972" points="704900" fee="35250" /> <!-- White Lightning - Sealed -->
+		<item id="92974" points="100000" fee="2000" /> <!-- Drained Stone of Purity - Sealed -->
+		<item id="92993" points="50000" fee="1000" /> <!-- Drained Enria - Sealed -->
+		<item id="92994" points="10000" fee="200" /> <!-- Weakened Asofe - Sealed -->
+		<item id="92995" points="1000" fee="20" /> <!-- Drained Thons - Sealed -->
+		<item id="92996" points="10" fee="0" /> <!-- Ancient Resources - Sealed -->
+		<item id="92997" points="50" fee="1" /> <!-- Old Unknown Resources - Sealed -->
+		<item id="92998" points="100" fee="2" /> <!-- Old Shining Resources - Sealed -->
+		<item id="92999" points="500" fee="10" /> <!-- Old High-grade Resources - Sealed -->
+		<item id="93047" points="306500" fee="15330" /> <!-- Samurai Long Sword - Sealed -->
+		<item id="93048" points="306500" fee="15330" /> <!-- Demon's Staff - Sealed -->
+		<item id="93049" points="306500" fee="15330" /> <!-- Ecliptic Axe - Sealed -->
+		<item id="93050" points="306500" fee="15330" /> <!-- Crystal Dagger - Sealed -->
+		<item id="93051" points="306500" fee="15330" /> <!-- Eminence Bow - Sealed -->
+		<item id="93052" points="306500" fee="15330" /> <!-- Orcish Poleaxe - Sealed -->
+		<item id="93053" points="306500" fee="15330" /> <!-- Katana*Katana - Sealed -->
+		<item id="93054" points="306500" fee="15330" /> <!-- Yaksa Mace - Sealed -->
+		<item id="93055" points="306500" fee="15330" /> <!-- Berserker Blade - Sealed -->
+		<item id="93056" points="306500" fee="15330" /> <!-- Great Pata - Sealed -->
+		<item id="93057" points="306500" fee="15330" /> <!-- Admiral's Estoc - Sealed -->
+		<item id="93058" points="306500" fee="15330" /> <!-- Saber Tooth - Sealed -->
+		<item id="93080" points="5000050" fee="250000" /> <!-- Charging Stone of Regular Craft - 1 Charge - Sealed -->
+		<item id="93082" points="100000" fee="2000" /> <!-- Drained Stone of Purity - Sealed -->
+		<item id="93099" points="57500" fee="2875" /> <!-- Dim Life Stone Lv. 1 - Shield/ Sigil -->
+		<item id="93109" points="968" fee="50" /> <!-- Wooden Sigil - Sealed -->
+		<item id="93110" points="1750" fee="90" /> <!-- Elven Sigil - Sealed -->
+		<item id="93111" points="18750" fee="940" /> <!-- Chain Sigil - Sealed -->
+		<item id="93112" points="7800" fee="390" /> <!-- Sigil of Demon - Sealed -->
+		<item id="93113" points="27250" fee="1360" /> <!-- Sigil of Blue Wolf - Sealed -->
+		<item id="93114" points="27250" fee="1360" /> <!-- Avadon Sigil - Sealed -->
+		<item id="93115" points="42250" fee="2110" /> <!-- Doom Sigil - Sealed -->
+		<item id="93116" points="27250" fee="1360" /> <!-- Zubei's Sigil - Sealed -->
+		<item id="93117" points="46750" fee="2340" /> <!-- Dark Crystal Sigil - Sealed -->
+		<item id="93118" points="46750" fee="2340" /> <!-- Tallum Sigil - Sealed -->
+		<item id="93119" points="71100" fee="3560" /> <!-- Sigil of Nightmare - Sealed -->
+		<item id="93120" points="71100" fee="3560" /> <!-- Majestic Sigil - Sealed -->
+		<item id="93121" points="57500" fee="2875" /> <!-- Dim Life Stone Lv. 1 - Shield/ Sigil - Sealed -->
+		<item id="93422" points="655000" fee="32750" /> <!-- Damascus Sword - Sealed -->
+		<item id="93423" points="655000" fee="32750" /> <!-- Lance - Sealed -->
+		<item id="93424" points="655000" fee="32750" /> <!-- Deadman's Glory - Sealed -->
+		<item id="93425" points="655000" fee="32750" /> <!-- Art of Battle Axe - Sealed -->
+		<item id="93426" points="655000" fee="32750" /> <!-- Staff of Evil Spirits - Sealed -->
+		<item id="93427" points="655000" fee="32750" /> <!-- Demon's Dagger - Sealed -->
+		<item id="93428" points="655000" fee="32750" /> <!-- Bellion Cestus - Sealed -->
+		<item id="93429" points="655000" fee="32750" /> <!-- Bow of Peril - Sealed -->
+		<item id="93430" points="655000" fee="32750" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+		<item id="93431" points="655000" fee="32750" /> <!-- Guardian's Sword - Sealed -->
+		<item id="93432" points="655000" fee="32750" /> <!-- Wizard's Tear - Sealed -->
+		<item id="93433" points="655000" fee="32750" /> <!-- Star Buster - Sealed -->
+		<item id="93434" points="655000" fee="32750" /> <!-- Dismantler - Sealed -->
+		<item id="93435" points="655000" fee="32750" /> <!-- Colichemarde - Sealed -->
+		<item id="93501" points="104000" fee="5200" /> <!-- Zubei's Breastplate - Sealed -->
+		<item id="93502" points="161000" fee="8050" /> <!-- Blue Wolf Breastplate - Sealed -->
+		<item id="93503" points="65000" fee="3250" /> <!-- Zubei's Gaiters - Sealed -->
+		<item id="93504" points="104000" fee="5200" /> <!-- Avadon Breastplate - Sealed -->
+		<item id="93505" points="65000" fee="3250" /> <!-- Avadon Gaiters - Sealed -->
+		<item id="93506" points="100500" fee="5030" /> <!-- Blue Wolf Gaiters - Sealed -->
+		<item id="93507" points="235500" fee="11780" /> <!-- Doom Plate Armor - Sealed -->
+		<item id="93508" points="78000" fee="3900" /> <!-- Zubei's Leather Shirt - Sealed -->
+		<item id="93509" points="48650" fee="2430" /> <!-- Zubei's Leather Gaiters - Sealed -->
+		<item id="93510" points="114000" fee="5700" /> <!-- Avadon Leather Armor - Sealed -->
+		<item id="93511" points="176500" fee="8830" /> <!-- Blue Wolf Leather Armor - Sealed -->
+		<item id="93512" points="176500" fee="8830" /> <!-- Doom Leather Armor - Sealed -->
+		<item id="93513" points="78000" fee="3900" /> <!-- Zubei's Tunic - Sealed -->
+		<item id="93514" points="120500" fee="6030" /> <!-- Blue Wolf Tunic - Sealed -->
+		<item id="93515" points="120500" fee="6030" /> <!-- Doom Tunic - Sealed -->
+		<item id="93516" points="48650" fee="2430" /> <!-- Zubei's Stockings - Sealed -->
+		<item id="93517" points="75500" fee="3780" /> <!-- Blue Wolf Stockings - Sealed -->
+		<item id="93518" points="75500" fee="3780" /> <!-- Doom Stockings - Sealed -->
+		<item id="93519" points="114000" fee="5700" /> <!-- Avadon Robe - Sealed -->
+		<item id="93520" points="25950" fee="1300" /> <!-- Zubei's Gauntlets (Heavy) - Sealed -->
+		<item id="93521" points="25950" fee="1300" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+		<item id="93522" points="25950" fee="1300" /> <!-- Zubei's Gauntlets (Robe) - Sealed -->
+		<item id="93523" points="25950" fee="1300" /> <!-- Avadon Gloves (Heavy) - Sealed -->
+		<item id="93524" points="25950" fee="1300" /> <!-- Avadon Gloves (Light) - Sealed -->
+		<item id="93525" points="25950" fee="1300" /> <!-- Avadon Gloves (Robe) - Sealed -->
+		<item id="93526" points="40200" fee="2010" /> <!-- Blue Wolf Gloves (Heavy) - Sealed -->
+		<item id="93527" points="40200" fee="2010" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+		<item id="93528" points="40200" fee="2010" /> <!-- Blue Wolf Gloves (Robe) - Sealed -->
+		<item id="93529" points="40200" fee="2010" /> <!-- Doom Gloves (Heavy) - Sealed -->
+		<item id="93530" points="40200" fee="2010" /> <!-- Doom Gloves (Light) - Sealed -->
+		<item id="93531" points="40200" fee="2010" /> <!-- Doom Gloves (Robe) - Sealed -->
+		<item id="93532" points="25950" fee="1300" /> <!-- Zubei's Boots (Heavy) - Sealed -->
+		<item id="93533" points="25950" fee="1300" /> <!-- Zubei's Boots (Light) - Sealed -->
+		<item id="93534" points="25950" fee="1300" /> <!-- Zubei's Boots (Robe) - Sealed -->
+		<item id="93535" points="25950" fee="1300" /> <!-- Avadon Boots (Heavy) - Sealed -->
+		<item id="93536" points="25950" fee="1300" /> <!-- Avadon Boots (Light) - Sealed -->
+		<item id="93537" points="25950" fee="1300" /> <!-- Avadon Boots (Robe) - Sealed -->
+		<item id="93538" points="40200" fee="2010" /> <!-- Blue Wolf Boots (Heavy) - Sealed -->
+		<item id="93539" points="40200" fee="2010" /> <!-- Blue Wolf Boots (Light) - Sealed -->
+		<item id="93540" points="40200" fee="2010" /> <!-- Blue Wolf Boots (Robe) - Sealed -->
+		<item id="93541" points="40200" fee="2010" /> <!-- Doom Boots (Heavy) - Sealed -->
+		<item id="93542" points="40200" fee="2010" /> <!-- Doom Boots (Light) - Sealed -->
+		<item id="93543" points="40200" fee="2010" /> <!-- Doom Boots (Robe) - Sealed -->
+		<item id="93544" points="38900" fee="1950" /> <!-- Avadon Circlet (Heavy) - Sealed -->
+		<item id="93545" points="38900" fee="1950" /> <!-- Avadon Circlet (Light) - Sealed -->
+		<item id="93546" points="38900" fee="1950" /> <!-- Avadon Circlet (Robe) - Sealed -->
+		<item id="93547" points="38900" fee="1950" /> <!-- Zubei's Helmet (Heavy) - Sealed -->
+		<item id="93548" points="38900" fee="1950" /> <!-- Zubei's Helmet (Light) - Sealed -->
+		<item id="93549" points="38900" fee="1950" /> <!-- Zubei's Helmet (Robe) - Sealed -->
+		<item id="93550" points="60500" fee="3030" /> <!-- Blue Wolf Helmet (Heavy) - Sealed -->
+		<item id="93551" points="60500" fee="3030" /> <!-- Blue Wolf Helmet (Light) - Sealed -->
+		<item id="93552" points="60500" fee="3030" /> <!-- Blue Wolf Helmet (Robe) - Sealed -->
+		<item id="93553" points="60500" fee="3030" /> <!-- Doom Helmet (Heavy) - Sealed -->
+		<item id="93554" points="60500" fee="3030" /> <!-- Doom Helmet (Light) - Sealed -->
+		<item id="93555" points="60500" fee="3030" /> <!-- Doom Helmet (Robe) - Sealed -->
+		<item id="93639" points="26800" fee="1340" /> <!-- Full Plate Helmet - Sealed -->
+		<item id="93640" points="17900" fee="900" /> <!-- Full Plate Boots - Sealed -->
+		<item id="93641" points="17900" fee="900" /> <!-- Full Plate Gauntlets - Sealed -->
+		<item id="93642" points="104500" fee="5230" /> <!-- Full Plate Armor - Sealed -->
+		<item id="93643" points="78500" fee="3930" /> <!-- Drake Leather Armor - Sealed -->
+		<item id="93644" points="17900" fee="900" /> <!-- Drake Leather Boots - Sealed -->
+		<item id="93645" points="17900" fee="900" /> <!-- Drake Leather Gloves - Sealed -->
+		<item id="93646" points="18950" fee="950" /> <!-- Karmian Tunic - Sealed -->
+		<item id="93647" points="11850" fee="590" /> <!-- Karmian Stockings - Sealed -->
+		<item id="93648" points="6300" fee="320" /> <!-- Karmian Boots - Sealed -->
+		<item id="93649" points="6300" fee="320" /> <!-- Karmian Gloves - Sealed -->
+		<item id="93701" points="5000050" fee="250000" /> <!-- Charging Stone of Regular Craft - 1 Charge (Time-limited) - Sealed -->
+		<item id="94185" points="100000" fee="5000" /> <!-- Dim Life Stone Lv. 1 - Weapon -->
+		<item id="94187" points="45000" fee="2250" /> <!-- Dim Life Stone Lv. 1 - Armor -->
+		<item id="94189" points="100000" fee="5000" /> <!-- Dim Life Stone Lv. 1 - Head Accessory -->
+		<item id="94190" points="300000" fee="15000" /> <!-- Dim Life Stone Lv. 2 - Head Accessory -->
+		<item id="94209" points="50000" fee="2500" /> <!-- Dim Life Stone Lv. 1 - Weapon - Sealed -->
+		<item id="94211" points="15000" fee="750" /> <!-- Dim Life Stone Lv. 1 - Armor - Sealed -->
+		<item id="94898" points="1045" fee="50" /> <!-- Leather Boots - Sealed -->
+		<item id="94899" points="1565" fee="80" /> <!-- Bone Helmet - Sealed -->
+		<item id="94900" points="2500" fee="130" /> <!-- Bronze Helmet - Sealed -->
+		<item id="94901" points="3810" fee="190" /> <!-- Helmet - Sealed -->
+		<item id="94902" points="9150" fee="460" /> <!-- Mithril Breastplate - Sealed -->
+		<item id="94903" points="6350" fee="320" /> <!-- Mithril Gaiters - Sealed -->
+		<item id="94904" points="72000" fee="3600" /> <!-- Compound Armor - Sealed -->
+		<item id="94905" points="4890" fee="240" /> <!-- Mithril Gloves - Sealed -->
+		<item id="94906" points="6300" fee="320" /> <!-- Reinforced Mithril Boots - Sealed -->
+		<item id="94907" points="2540" fee="130" /> <!-- Gauntlets - Sealed -->
+		<item id="94908" points="12250" fee="610" /> <!-- Compound Boots - Sealed -->
+		<item id="94909" points="32200" fee="1610" /> <!-- Bastard Sword - Sealed -->
+		<item id="94910" points="90000" fee="4500" /> <!-- Claymore - Sealed -->
+		<item id="94911" points="114500" fee="5730" /> <!-- Flamberge - Sealed -->
+		<item id="94912" points="114500" fee="5730" /> <!-- Stormbringer - Sealed -->
+		<item id="94913" points="143500" fee="7180" /> <!-- Shamshir - Sealed -->
+		<item id="94914" points="143500" fee="7180" /> <!-- Katana - Sealed -->
+		<item id="94915" points="215000" fee="10750" /> <!-- Caliburs - Sealed -->
+		<item id="94916" points="215000" fee="10750" /> <!-- Sword of Delusion - Sealed -->
+		<item id="94917" points="215000" fee="10750" /> <!-- Tsurugi - Sealed -->
+		<item id="94918" points="434000" fee="21700" /> <!-- Great Sword - Sealed -->
+		<item id="94919" points="35800" fee="1790" /> <!-- Sword of Magic - Sealed -->
+		<item id="94920" points="215000" fee="10750" /> <!-- Homunkulus' Sword - Sealed -->
+		<item id="94921" points="32200" fee="1610" /> <!-- Tomahawk - Sealed -->
+		<item id="94922" points="70000" fee="3500" /> <!-- Morning Star - Sealed -->
+		<item id="94923" points="114500" fee="5730" /> <!-- Big Hammer - Sealed -->
+		<item id="94924" points="70000" fee="3500" /> <!-- Goat Head Staff - Sealed -->
+		<item id="94925" points="434000" fee="21700" /> <!-- Heavy War Axe - Sealed -->
+		<item id="94926" points="434000" fee="21700" /> <!-- Spirit's Staff - Sealed -->
+		<item id="94927" points="70000" fee="3500" /> <!-- Winged Spear - Sealed -->
+		<item id="94928" points="143500" fee="7180" /> <!-- Bec de Corbin - Sealed -->
+		<item id="94929" points="215000" fee="10750" /> <!-- Poleaxe - Sealed -->
+		<item id="94930" points="114500" fee="5730" /> <!-- Scythe - Sealed -->
+		<item id="94931" points="20450" fee="1020" /> <!-- Scroll of Wisdom - Sealed -->
+		<item id="94932" points="12900" fee="650" /> <!-- Tower Shield - Sealed -->
+		<item id="94933" points="12900" fee="650" /> <!-- Compound Shield - Sealed -->
+		<item id="94934" points="42250" fee="2110" /> <!-- Doom Shield - Sealed -->
+		<item id="94935" points="20450" fee="1020" /> <!-- Saber - Sealed -->
+		<item id="94936" points="48350" fee="2420" /> <!-- Two-handed Sword - Sealed -->
+		<item id="94937" points="32200" fee="1610" /> <!-- Spinebone Sword - Sealed -->
+		<item id="94938" points="32200" fee="1610" /> <!-- Artisan's Sword - Sealed -->
+		<item id="94939" points="48350" fee="2420" /> <!-- Crimson Sword - Sealed -->
+		<item id="94940" points="32200" fee="1610" /> <!-- Knight's Sword - Sealed -->
+		<item id="94941" points="70000" fee="3500" /> <!-- Sword of Revolution - Sealed -->
+		<item id="94942" points="48350" fee="2420" /> <!-- Elven Sword - Sealed -->
+		<item id="94943" points="143500" fee="7180" /> <!-- Spirit Sword - Sealed -->
+		<item id="94944" points="215000" fee="10750" /> <!-- Ultimate Sword - Sealed -->
+		<item id="94945" points="143500" fee="7180" /> <!-- Raid Sword - Sealed -->
+		<item id="94946" points="215000" fee="10750" /> <!-- Sword of Nightmare - Sealed -->
+		<item id="94947" points="434000" fee="21700" /> <!-- Keshanberk - Sealed -->
+		<item id="94948" points="35800" fee="1790" /> <!-- Mystic Sword - Sealed -->
+		<item id="94949" points="35800" fee="1790" /> <!-- Sword of Occult - Sealed -->
+		<item id="94950" points="215000" fee="10750" /> <!-- Sword of Whispering Death - Sealed -->
+		<item id="94951" points="434000" fee="21700" /> <!-- Sword of Valhalla - Sealed -->
+		<item id="94952" points="20450" fee="1020" /> <!-- Hand Axe - Sealed -->
+		<item id="94953" points="48350" fee="2420" /> <!-- Spiked Club - Sealed -->
+		<item id="94954" points="70000" fee="3500" /> <!-- Tarbar - Sealed -->
+		<item id="94955" points="90000" fee="4500" /> <!-- Bonebreaker - Sealed -->
+		<item id="94956" points="114500" fee="5730" /> <!-- Battle Axe - Sealed -->
+		<item id="94957" points="114500" fee="5730" /> <!-- Silver Axe - Sealed -->
+		<item id="94958" points="215000" fee="10750" /> <!-- War Axe - Sealed -->
+		<item id="94959" points="20450" fee="1020" /> <!-- Heavy Mace - Sealed -->
+		<item id="94960" points="20450" fee="1020" /> <!-- Scalpel - Sealed -->
+		<item id="94961" points="20450" fee="1020" /> <!-- Work Hammer - Sealed -->
+		<item id="94962" points="70000" fee="3500" /> <!-- Skull Breaker - Sealed -->
+		<item id="94963" points="70000" fee="3500" /> <!-- Heavy Bone Club - Sealed -->
+		<item id="94964" points="114500" fee="5730" /> <!-- Skull Graver - Sealed -->
+		<item id="94965" points="215000" fee="10750" /> <!-- Nirvana Axe - Sealed -->
+		<item id="94966" points="20450" fee="1020" /> <!-- Bone Staff - Sealed -->
+		<item id="94967" points="32200" fee="1610" /> <!-- Mace of Prayer - Sealed -->
+		<item id="94968" points="32200" fee="1610" /> <!-- Mace of Judgment - Sealed -->
+		<item id="94969" points="32200" fee="1610" /> <!-- Mace of Miracle - Sealed -->
+		<item id="94970" points="32200" fee="1610" /> <!-- Doom Hammer - Sealed -->
+		<item id="94971" points="32200" fee="1610" /> <!-- Mystic Staff - Sealed -->
+		<item id="94972" points="32200" fee="1610" /> <!-- Conjuror's Staff - Sealed -->
+		<item id="94973" points="32200" fee="1610" /> <!-- Staff of Mana - Sealed -->
+		<item id="94974" points="48350" fee="2420" /> <!-- Staff of Magic - Sealed -->
+		<item id="94975" points="90000" fee="4500" /> <!-- Atuba Hammer - Sealed -->
+		<item id="94976" points="90000" fee="4500" /> <!-- Ghost Staff - Sealed -->
+		<item id="94977" points="90000" fee="4500" /> <!-- Staff of Life - Sealed -->
+		<item id="94978" points="90000" fee="4500" /> <!-- Atuba Mace - Sealed -->
+		<item id="94979" points="114500" fee="5730" /> <!-- Heavy Doom Hammer - Sealed -->
+		<item id="94980" points="114500" fee="5730" /> <!-- Crystal Staff - Sealed -->
+		<item id="94981" points="114500" fee="5730" /> <!-- Stick of Faith - Sealed -->
+		<item id="94982" points="114500" fee="5730" /> <!-- Heavy Doom Axe - Sealed -->
+		<item id="94983" points="143500" fee="7180" /> <!-- Cursed Staff - Sealed -->
+		<item id="94984" points="215000" fee="10750" /> <!-- Stick of Eternity - Sealed -->
+		<item id="94985" points="215000" fee="10750" /> <!-- Paradia Staff - Sealed -->
+		<item id="94986" points="215000" fee="10750" /> <!-- Inferno Staff - Sealed -->
+		<item id="94987" points="215000" fee="10750" /> <!-- Pa'agrio Hammer - Sealed -->
+		<item id="94988" points="215000" fee="10750" /> <!-- Sage's Staff - Sealed -->
+		<item id="94989" points="215000" fee="10750" /> <!-- Club of Nature - Sealed -->
+		<item id="94990" points="215000" fee="10750" /> <!-- Mace of Underworld - Sealed -->
+		<item id="94991" points="239000" fee="11950" /> <!-- Pa'agrio Axe - Sealed -->
+		<item id="94992" points="306500" fee="15330" /> <!-- Deadman's Staff - Sealed -->
+		<item id="94993" points="306500" fee="15330" /> <!-- Ghoul's Staff - Sealed -->
+		<item id="94994" points="20450" fee="1020" /> <!-- Crafted Dagger - Sealed -->
+		<item id="94995" points="20450" fee="1020" /> <!-- Assassin Knife - Sealed -->
+		<item id="94996" points="32200" fee="1610" /> <!-- Poniard Dagger - Sealed -->
+		<item id="94997" points="48350" fee="2420" /> <!-- Kukuri - Sealed -->
+		<item id="94998" points="70000" fee="3500" /> <!-- Maingauche - Sealed -->
+		<item id="94999" points="90000" fee="4500" /> <!-- Mithril Dagger - Sealed -->
+		<item id="95000" points="114500" fee="5730" /> <!-- Cursed Dagger - Sealed -->
+		<item id="95001" points="143500" fee="7180" /> <!-- Stiletto - Sealed -->
+		<item id="95002" points="434000" fee="21700" /> <!-- Kris - Sealed -->
+		<item id="95003" points="114500" fee="5730" /> <!-- Wolverine Fang - Sealed -->
+		<item id="95004" points="215000" fee="10750" /> <!-- Grace Dagger - Sealed -->
+		<item id="95005" points="114500" fee="5730" /> <!-- Dark Elven Dagger - Sealed -->
+		<item id="95006" points="215000" fee="10750" /> <!-- Dark Screamer - Sealed -->
+		<item id="95007" points="48350" fee="2420" /> <!-- Dagger of Mana - Sealed -->
+		<item id="95008" points="48350" fee="2420" /> <!-- Mystic Knife - Sealed -->
+		<item id="95009" points="48350" fee="2420" /> <!-- Conjurer's Knife - Sealed -->
+		<item id="95010" points="48350" fee="2420" /> <!-- Shillien Knife - Sealed -->
+		<item id="95011" points="143500" fee="7180" /> <!-- Soulfire Dirk - Sealed -->
+		<item id="95012" points="434000" fee="21700" /> <!-- Twilight Knife - Sealed -->
+		<item id="95013" points="20450" fee="1020" /> <!-- Bagh-Nakh - Sealed -->
+		<item id="95014" points="32200" fee="1610" /> <!-- Jamadhr - Sealed -->
+		<item id="95015" points="48350" fee="2420" /> <!-- Triple-edged Jamadhr - Sealed -->
+		<item id="95016" points="70000" fee="3500" /> <!-- Bich'Hwa - Sealed -->
+		<item id="95017" points="90000" fee="4500" /> <!-- Scallop Jamadhr - Sealed -->
+		<item id="95018" points="114500" fee="5730" /> <!-- Chakram - Sealed -->
+		<item id="95019" points="391500" fee="19580" /> <!-- Pata - Sealed -->
+		<item id="95020" points="215000" fee="10750" /> <!-- Fisted Blade - Sealed -->
+		<item id="95021" points="434000" fee="21700" /> <!-- Arthro Claw - Sealed -->
+		<item id="95022" points="20450" fee="1020" /> <!-- Reinforced Bow - Sealed -->
+		<item id="95023" points="32200" fee="1610" /> <!-- Longbow - Sealed -->
+		<item id="95024" points="32200" fee="1610" /> <!-- Elven Bow - Sealed -->
+		<item id="95025" points="32200" fee="1610" /> <!-- Dark Elven Bow - Sealed -->
+		<item id="95026" points="48350" fee="2420" /> <!-- Gastraphetes - Sealed -->
+		<item id="95027" points="70000" fee="3500" /> <!-- Reinforced Longbow - Sealed -->
+		<item id="95028" points="90000" fee="4500" /> <!-- Light Bow - Sealed -->
+		<item id="95029" points="114500" fee="5730" /> <!-- Frozen Bow - Sealed -->
+		<item id="95030" points="143500" fee="7180" /> <!-- Elemental Bow - Sealed -->
+		<item id="95031" points="215000" fee="10750" /> <!-- Akat Longbow - Sealed -->
+		<item id="95032" points="434000" fee="21700" /> <!-- Dark Elven Longbow - Sealed -->
+		<item id="95033" points="143500" fee="7180" /> <!-- Noble Elven Bow - Sealed -->
+		<item id="95034" points="20450" fee="1020" /> <!-- Trident - Sealed -->
+		<item id="95035" points="32200" fee="1610" /> <!-- Pike - Sealed -->
+		<item id="95036" points="48350" fee="2420" /> <!-- Battle Hammer - Sealed -->
+		<item id="95037" points="70000" fee="3500" /> <!-- War Pick - Sealed -->
+		<item id="95038" points="32200" fee="1610" /> <!-- Dwarven Trident - Sealed -->
+		<item id="95039" points="48350" fee="2420" /> <!-- Dwarven Pike - Sealed -->
+		<item id="95040" points="90000" fee="4500" /> <!-- Glaive - Sealed -->
+		<item id="95041" points="114500" fee="5730" /> <!-- Orcish Glaive - Sealed -->
+		<item id="95042" points="434000" fee="21700" /> <!-- Great Axe - Sealed -->
+		<item id="95043" points="239000" fee="11950" /> <!-- scorpion - Sealed -->
+		<item id="95044" points="114500" fee="5730" /> <!-- Body Slasher - Sealed -->
+		<item id="95045" points="239000" fee="11950" /> <!-- Widow Maker - Sealed -->
+		<item id="95046" points="20450" fee="1020" /> <!-- Branch of Life - Sealed -->
+		<item id="95047" points="20450" fee="1020" /> <!-- Temptation of Abyss - Sealed -->
+		<item id="95048" points="20450" fee="1020" /> <!-- Proof of Revenge - Sealed -->
+		<item id="95049" points="32200" fee="1610" /> <!-- Divine Rod - Sealed -->
+		<item id="95050" points="48350" fee="2420" /> <!-- Sage's Blood - Sealed -->
+		<item id="95051" points="48350" fee="2420" /> <!-- Tome of Blood - Sealed -->
+		<item id="95052" points="70000" fee="3500" /> <!-- Crucifix of Blood - Sealed -->
+		<item id="95053" points="70000" fee="3500" /> <!-- Eye of Infinity - Sealed -->
+		<item id="95054" points="76000" fee="3800" /> <!-- Blue Crystal Skull - Sealed -->
+		<item id="95055" points="76000" fee="3800" /> <!-- Demon's Fangs - Sealed -->
+		<item id="95056" points="90000" fee="4500" /> <!-- Vajra Wand - Sealed -->
+		<item id="95057" points="90000" fee="4500" /> <!-- Ancient Reagent - Sealed -->
+		<item id="95058" points="143500" fee="7180" /> <!-- Horn of Glory - Sealed -->
+		<item id="95059" points="4175" fee="210" /> <!-- Ring Breastplate - Sealed -->
+		<item id="95060" points="6650" fee="330" /> <!-- Scale Mail - Sealed -->
+		<item id="95061" points="9150" fee="460" /> <!-- Compound Scale Mail - Sealed -->
+		<item id="95062" points="9150" fee="460" /> <!-- Dwarven Scale Mail - Sealed -->
+		<item id="95063" points="10150" fee="510" /> <!-- Breastplate - Sealed -->
+		<item id="95064" points="14950" fee="750" /> <!-- Brigandine - Sealed -->
+		<item id="95065" points="19550" fee="980" /> <!-- Half Plate Armor - Sealed -->
+		<item id="95066" points="25250" fee="1260" /> <!-- Chain Mail Shirt - Sealed -->
+		<item id="95067" points="32200" fee="1610" /> <!-- Dwarven Chain Mail Shirt - Sealed -->
+		<item id="95068" points="2610" fee="130" /> <!-- Iron Plate Gaiters - Sealed -->
+		<item id="95069" points="4165" fee="210" /> <!-- Scale Gaiters - Sealed -->
+		<item id="95070" points="6350" fee="320" /> <!-- Compound Scale Gaiters - Sealed -->
+		<item id="95071" points="6350" fee="320" /> <!-- Dwarven Scale Gaiters - Sealed -->
+		<item id="95072" points="12200" fee="610" /> <!-- Plate Gaiters - Sealed -->
+		<item id="95073" points="15800" fee="790" /> <!-- Chain Gaiters - Sealed -->
+		<item id="95074" points="20150" fee="1010" /> <!-- Dwarven Chain Gaiters - Sealed -->
+		<item id="95075" points="3130" fee="160" /> <!-- Puma Skin Shirt - Sealed -->
+		<item id="95076" points="4995" fee="250" /> <!-- Lion Skin Shirt - Sealed -->
+		<item id="95077" points="7600" fee="380" /> <!-- Mithril Banded Mail - Sealed -->
+		<item id="95078" points="7600" fee="380" /> <!-- Reinforced Leather Shirt - Sealed -->
+		<item id="95079" points="11200" fee="560" /> <!-- Manticore Skin Shirt - Sealed -->
+		<item id="95080" points="21450" fee="1070" /> <!-- Salamander Skin Mail - Sealed -->
+		<item id="95081" points="18950" fee="950" /> <!-- Reinforced Mithril Shirt - Sealed -->
+		<item id="95082" points="22300" fee="1120" /> <!-- Plated Leather Armor - Sealed -->
+		<item id="95083" points="24150" fee="1210" /> <!-- Rind Leather Armor - Sealed -->
+		<item id="95084" points="41250" fee="2060" /> <!-- Theca Leather Armor - Sealed -->
+		<item id="95085" points="1955" fee="100" /> <!-- Puma Skin Gaiters - Sealed -->
+		<item id="95086" points="3125" fee="160" /> <!-- Lion Skin Gaiters - Sealed -->
+		<item id="95087" points="4760" fee="240" /> <!-- Mithril Banded Gaiters - Sealed -->
+		<item id="95088" points="4760" fee="240" /> <!-- Reinforced Leather Gaiters - Sealed -->
+		<item id="95089" points="7000" fee="350" /> <!-- Manticore Skin Gaiters - Sealed -->
+		<item id="95090" points="13950" fee="700" /> <!-- Plated Leather Gaiters - Sealed -->
+		<item id="95091" points="15100" fee="760" /> <!-- Rind Leather Gaiters - Sealed -->
+		<item id="95092" points="25800" fee="1290" /> <!-- Theca Leather Gaiters - Sealed -->
+		<item id="95093" points="3130" fee="160" /> <!-- Cursed Tunic - Sealed -->
+		<item id="95094" points="4995" fee="250" /> <!-- Elven Tunic - Sealed -->
+		<item id="95095" points="4995" fee="250" /> <!-- White Tunic - Sealed -->
+		<item id="95096" points="4995" fee="250" /> <!-- Wizard Tunic - Sealed -->
+		<item id="95097" points="7600" fee="380" /> <!-- Tunic of Knowledge - Sealed -->
+		<item id="95098" points="11200" fee="560" /> <!-- Mithril Tunic - Sealed -->
+		<item id="95099" points="21450" fee="1070" /> <!-- Sage's Rags - Sealed -->
+		<item id="95100" points="35350" fee="1770" /> <!-- Robe of Seal - Sealed -->
+		<item id="95101" points="36800" fee="1840" /> <!-- Demon's Tunic - Sealed -->
+		<item id="95102" points="53500" fee="2680" /> <!-- Divine Tunic - Sealed -->
+		<item id="95103" points="1955" fee="100" /> <!-- Cursed Stockings - Sealed -->
+		<item id="95104" points="3125" fee="160" /> <!-- Elven Stockings - Sealed -->
+		<item id="95105" points="3125" fee="160" /> <!-- Dark Stockings - Sealed -->
+		<item id="95106" points="3125" fee="160" /> <!-- Wizard Stockings - Sealed -->
+		<item id="95107" points="4760" fee="240" /> <!-- Stockings of Knowledge - Sealed -->
+		<item id="95108" points="7000" fee="350" /> <!-- Mithril Stockings - Sealed -->
+		<item id="95109" points="23000" fee="1150" /> <!-- Demon's Stockings - Sealed -->
+		<item id="95110" points="33550" fee="1680" /> <!-- Divine Stockings - Sealed -->
+		<item id="95111" points="7350" fee="370" /> <!-- Chain Helmet - Sealed -->
+		<item id="95112" points="10300" fee="520" /> <!-- Steel Plate Helmet - Sealed -->
+		<item id="95113" points="26800" fee="1340" /> <!-- Mithril Helmet - Sealed -->
+		<item id="95114" points="12100" fee="610" /> <!-- Great Helmet - Sealed -->
+		<item id="95115" points="18400" fee="920" /> <!-- Compound Helmet - Sealed -->
+		<item id="95116" points="2540" fee="130" /> <!-- Iron Boots - Sealed -->
+		<item id="95117" points="17900" fee="900" /> <!-- Divine Boots - Sealed -->
+		<item id="95118" points="1045" fee="50" /> <!-- Quality Leather Gloves - Sealed -->
+		<item id="95119" points="1665" fee="80" /> <!-- Leather Gauntlets - Sealed -->
+		<item id="95120" points="3735" fee="190" /> <!-- Rip Gauntlets - Sealed -->
+		<item id="95121" points="4890" fee="240" /> <!-- Ogre Power Gauntlets - Sealed -->
+		<item id="95122" points="12250" fee="610" /> <!-- Mithril Gauntlets - Sealed -->
+		<item id="95123" points="13755" fee="690" /> <!-- Gauntlets of Ghost - Sealed -->
+		<item id="95124" points="1095" fee="50" /> <!-- Bronze Shield - Sealed -->
+		<item id="95125" points="1750" fee="90" /> <!-- Aspis - Sealed -->
+		<item id="95126" points="2665" fee="130" /> <!-- Hoplon - Sealed -->
+		<item id="95127" points="3920" fee="200" /> <!-- Kite Shield - Sealed -->
+		<item id="95128" points="5150" fee="260" /> <!-- Square Shield - Sealed -->
+		<item id="95129" points="6650" fee="330" /> <!-- Eldarake - Sealed -->
+		<item id="95130" points="8450" fee="420" /> <!-- Knight's Shield - Sealed -->
+		<item id="95131" points="27250" fee="1360" /> <!-- Zubei's Shield - Sealed -->
+		<item id="95132" points="27250" fee="1360" /> <!-- Avadon Shield - Sealed -->
+		<item id="95133" points="6195" fee="310" /> <!-- Pa'agrio Hand - Sealed -->
+		<item id="95134" points="1665" fee="80" /> <!-- Blue Buckskin Boots - Sealed -->
+		<item id="95135" points="3735" fee="190" /> <!-- Boots of Strength - Sealed -->
+		<item id="95136" points="4890" fee="240" /> <!-- Assault Boots - Sealed -->
+		<item id="95137" points="8050" fee="400" /> <!-- Crimson Boots - Sealed -->
+		<item id="95138" points="12250" fee="610" /> <!-- Forgotten Boots - Sealed -->
+		<item id="95139" points="17900" fee="900" /> <!-- Adamantite Boots - Sealed -->
+		<item id="95140" points="18400" fee="920" /> <!-- Shining Circlet - Sealed -->
+		<item id="95141" points="70000" fee="3500" /> <!-- Cursed Maingauche - Sealed -->
+		<item id="95142" points="9350" fee="470" /> <!-- Mithril Scale Gaiters - Sealed -->
+		<item id="95143" points="9350" fee="470" /> <!-- Brigandine Gaiters - Sealed -->
+		<item id="95144" points="11850" fee="590" /> <!-- Reinforced Mithril Gaiters - Sealed -->
+		<item id="95145" points="11200" fee="560" /> <!-- Elven Mithril Tunic - Sealed -->
+		<item id="95146" points="7000" fee="350" /> <!-- Elven Mithril Stockings - Sealed -->
+		<item id="95147" points="5600" fee="280" /> <!-- Brigandine Helmet - Sealed -->
+		<item id="95148" points="7350" fee="370" /> <!-- Plate Helmet - Sealed -->
+		<item id="95149" points="9450" fee="470" /> <!-- Chain Hood - Sealed -->
+		<item id="95150" points="2540" fee="130" /> <!-- Reinforced Leather Boots - Sealed -->
+		<item id="95151" points="2540" fee="130" /> <!-- Boots of Knowledge - Sealed -->
+		<item id="95152" points="3735" fee="190" /> <!-- Manticore Skin Boots - Sealed -->
+		<item id="95153" points="3735" fee="190" /> <!-- Brigandine Boots - Sealed -->
+		<item id="95154" points="3735" fee="190" /> <!-- Elven Mithril Boots - Sealed -->
+		<item id="95155" points="4890" fee="240" /> <!-- Salamander Skin Boots - Sealed -->
+		<item id="95156" points="4890" fee="240" /> <!-- Plate Boots - Sealed -->
+		<item id="95157" points="6300" fee="320" /> <!-- Chain Boots - Sealed -->
+		<item id="95158" points="6300" fee="320" /> <!-- Plated Leather Boots - Sealed -->
+		<item id="95159" points="6300" fee="320" /> <!-- Dwarven Chain Boots - Sealed -->
+		<item id="95160" points="6300" fee="320" /> <!-- Boots of Seal - Sealed -->
+		<item id="95161" points="8050" fee="400" /> <!-- Rind Leather Boots - Sealed -->
+		<item id="95162" points="12250" fee="610" /> <!-- Demon's Boots - Sealed -->
+		<item id="95163" points="13750" fee="690" /> <!-- Theca Leather Boots - Sealed -->
+		<item id="95164" points="2540" fee="130" /> <!-- Reinforced Leather Gloves - Sealed -->
+		<item id="95165" points="2540" fee="130" /> <!-- Gloves of Knowledge - Sealed -->
+		<item id="95166" points="3735" fee="190" /> <!-- Manticore Skin Gloves - Sealed -->
+		<item id="95167" points="3735" fee="190" /> <!-- Brigandine Gauntlets - Sealed -->
+		<item id="95168" points="3735" fee="190" /> <!-- Elven Mithril Gloves - Sealed -->
+		<item id="95169" points="4890" fee="240" /> <!-- Sage's Worn Gloves - Sealed -->
+		<item id="95170" points="6300" fee="320" /> <!-- Reinforced Mithril Gloves - Sealed -->
+		<item id="95171" points="6300" fee="320" /> <!-- Chain Gloves - Sealed -->
+		<item id="95172" points="7450" fee="370" /> <!-- Plated Leather Gloves - Sealed -->
+		<item id="95173" points="8050" fee="400" /> <!-- Dwarven Chain Gloves - Sealed -->
+		<item id="95174" points="8050" fee="400" /> <!-- Gloves of Seal - Sealed -->
+		<item id="95175" points="8050" fee="400" /> <!-- Rind Leather Gloves - Sealed -->
+		<item id="95176" points="12250" fee="610" /> <!-- Demon's Gloves - Sealed -->
+		<item id="95177" points="13750" fee="690" /> <!-- Theca Leather Gloves - Sealed -->
+		<item id="95178" points="17900" fee="900" /> <!-- Divine Gloves - Sealed -->
+		<item id="95179" points="17900" fee="900" /> <!-- Blessed Gloves - Sealed -->
+		<item id="95180" points="3920" fee="200" /> <!-- Brigandine Shield - Sealed -->
+		<item id="95181" points="5150" fee="260" /> <!-- Plate Shield - Sealed -->
+		<item id="95182" points="6650" fee="330" /> <!-- Chain Shield - Sealed -->
+		<item id="95183" points="7800" fee="390" /> <!-- Dwarven Chain Shield - Sealed -->
+		<item id="95184" points="18750" fee="940" /> <!-- Full Plate Shield - Sealed -->
+		<item id="95185" points="90000" fee="4500" /> <!-- Elven Long Sword - Sealed -->
+		<item id="95186" points="143500" fee="7180" /> <!-- Dwarven War Hammer - Sealed -->
+		<item id="95187" points="43850" fee="2190" /> <!-- Saber*Saber - Sealed -->
+		<item id="95188" points="53000" fee="2650" /> <!-- Saber*Bastard Sword - Sealed -->
+		<item id="95189" points="53000" fee="2650" /> <!-- Saber*Spinebone Sword - Sealed -->
+		<item id="95190" points="53000" fee="2650" /> <!-- Saber*Artisan's Sword - Sealed -->
+		<item id="95191" points="53000" fee="2650" /> <!-- Saber*Knight's Sword - Sealed -->
+		<item id="95192" points="70000" fee="3500" /> <!-- Saber*Crimson Sword - Sealed -->
+		<item id="95193" points="70000" fee="3500" /> <!-- Saber*Elven Sword - Sealed -->
+		<item id="95194" points="98000" fee="4900" /> <!-- Saber*Sword of Revolution - Sealed -->
+		<item id="95195" points="114500" fee="5730" /> <!-- Saber*Elven Long Sword - Sealed -->
+		<item id="95196" points="70000" fee="3500" /> <!-- Bastard Sword*Bastard Sword - Sealed -->
+		<item id="95197" points="70000" fee="3500" /> <!-- Bastard Sword*Spinebone Sword - Sealed -->
+		<item id="95198" points="70000" fee="3500" /> <!-- Bastard Sword*Artisan's Sword - Sealed -->
+		<item id="95199" points="70000" fee="3500" /> <!-- Bastard Sword*Knight's Sword - Sealed -->
+		<item id="95200" points="83000" fee="4150" /> <!-- Bastard Sword*Crimson Sword - Sealed -->
+		<item id="95201" points="83000" fee="4150" /> <!-- Bastard Sword*Elven Sword - Sealed -->
+		<item id="95202" points="106000" fee="5300" /> <!-- Bastard Sword*Sword of Revolution - Sealed -->
+		<item id="95203" points="123500" fee="6180" /> <!-- Bastard Sword*Elven Long Sword - Sealed -->
+		<item id="95204" points="70000" fee="3500" /> <!-- Spinebone Sword*Spinebone Sword - Sealed -->
+		<item id="95205" points="70000" fee="3500" /> <!-- Spinebone Sword*Artisan's Sword - Sealed -->
+		<item id="95206" points="70000" fee="3500" /> <!-- Spinebone Sword*Knight's Sword - Sealed -->
+		<item id="95207" points="83000" fee="4150" /> <!-- Spinebone Sword*Crimson Sword - Sealed -->
+		<item id="95208" points="83000" fee="4150" /> <!-- Spinebone Sword*Elven Sword - Sealed -->
+		<item id="95209" points="106000" fee="5300" /> <!-- Spinebone Sword*Sword of Revolution - Sealed -->
+		<item id="95210" points="123500" fee="6180" /> <!-- Spinebone Sword*Elven Long Sword - Sealed -->
+		<item id="95211" points="70000" fee="3500" /> <!-- Artisan's Sword*Artisan's Sword - Sealed -->
+		<item id="95212" points="70000" fee="3500" /> <!-- Artisan's Sword*Knight's Sword - Sealed -->
+		<item id="95213" points="83000" fee="4150" /> <!-- Artisan's Sword*Crimson Sword - Sealed -->
+		<item id="95214" points="83000" fee="4150" /> <!-- Artisan's Sword*Elven Sword - Sealed -->
+		<item id="95215" points="106000" fee="5300" /> <!-- Artisan's Sword*Sword of Revolution - Sealed -->
+		<item id="95216" points="123500" fee="6180" /> <!-- Artisan's Sword*Elven Long Sword - Sealed -->
+		<item id="95217" points="70000" fee="3500" /> <!-- Knight's Sword*Knight's Sword - Sealed -->
+		<item id="95218" points="83000" fee="4150" /> <!-- Knight's Sword*Crimson Sword - Sealed -->
+		<item id="95219" points="83000" fee="4150" /> <!-- Knight's Sword*Elven Sword - Sealed -->
+		<item id="95220" points="106000" fee="5300" /> <!-- Knight's Sword*Sword of Revolution - Sealed -->
+		<item id="95221" points="123500" fee="6180" /> <!-- Knight's Sword*Elven Long Sword - Sealed -->
+		<item id="95222" points="98000" fee="4900" /> <!-- Crimson Sword*Crimson Sword - Sealed -->
+		<item id="95223" points="98000" fee="4900" /> <!-- Crimson Sword*Elven Sword - Sealed -->
+		<item id="95224" points="123500" fee="6180" /> <!-- Crimson Sword*Sword of Revolution - Sealed -->
+		<item id="95225" points="143500" fee="7180" /> <!-- Crimson Sword*Elven Long Sword - Sealed -->
+		<item id="95226" points="98000" fee="4900" /> <!-- Elven Sword*Elven Sword - Sealed -->
+		<item id="95227" points="123500" fee="6180" /> <!-- Elven Sword*Sword of Revolution - Sealed -->
+		<item id="95228" points="143500" fee="7180" /> <!-- Elven Sword*Elven Long Sword - Sealed -->
+		<item id="95229" points="143500" fee="7180" /> <!-- Sword of Revolution*Sword of Revolution - Sealed -->
+		<item id="95230" points="167000" fee="8350" /> <!-- Sword of Revolution*Elven Long Sword - Sealed -->
+		<item id="95231" points="191000" fee="9550" /> <!-- Elven Long Sword*Elven Long Sword - Sealed -->
+		<item id="95232" points="239000" fee="11950" /> <!-- Stormbringer*Stormbringer - Sealed -->
+		<item id="95233" points="264000" fee="13200" /> <!-- Stormbringer*Shamshir - Sealed -->
+		<item id="95234" points="264000" fee="13200" /> <!-- Stormbringer*Katana - Sealed -->
+		<item id="95235" points="264000" fee="13200" /> <!-- Stormbringer*Spirit Sword - Sealed -->
+		<item id="95236" points="264000" fee="13200" /> <!-- Stormbringer*Raid Sword - Sealed -->
+		<item id="95237" points="349000" fee="17450" /> <!-- Stormbringer*Caliburs - Sealed -->
+		<item id="95238" points="349000" fee="17450" /> <!-- Stormbringer*Ultimate Sword - Sealed -->
+		<item id="95239" points="349000" fee="17450" /> <!-- Stormbringer*Sword of Delusion - Sealed -->
+		<item id="95240" points="349000" fee="17450" /> <!-- Stormbringer*Sword of Nightmare - Sealed -->
+		<item id="95241" points="349000" fee="17450" /> <!-- Stormbringer*Tsurugi - Sealed -->
+		<item id="95242" points="434000" fee="21700" /> <!-- Stormbringer*Samurai Long sword - Sealed -->
+		<item id="95243" points="306500" fee="15330" /> <!-- Shamshir*Shamshir - Sealed -->
+		<item id="95244" points="306500" fee="15330" /> <!-- Shamshir*Katana - Sealed -->
+		<item id="95245" points="306500" fee="15330" /> <!-- Shamshir*Spirit Sword - Sealed -->
+		<item id="95246" points="306500" fee="15330" /> <!-- Shamshir*Raid Sword - Sealed -->
+		<item id="95247" points="391500" fee="19580" /> <!-- Shamshir*Caliburs - Sealed -->
+		<item id="95248" points="391500" fee="19580" /> <!-- Shamshir*Ultimate Sword - Sealed -->
+		<item id="95249" points="391500" fee="19580" /> <!-- Shamshir*Sword of Delusion - Sealed -->
+		<item id="95250" points="391500" fee="19580" /> <!-- Shamshir*Sword of Nightmare - Sealed -->
+		<item id="95251" points="391500" fee="19580" /> <!-- Shamshir*Tsurugi - Sealed -->
+		<item id="95252" points="477500" fee="23880" /> <!-- Shamshir*Samurai Long Sword - Sealed -->
+		<item id="95253" points="306500" fee="15330" /> <!-- Katana*Spirit Sword - Sealed -->
+		<item id="95254" points="306500" fee="15330" /> <!-- Katana*Raid Sword - Sealed -->
+		<item id="95255" points="391500" fee="19580" /> <!-- Katana*Caliburs - Sealed -->
+		<item id="95256" points="391500" fee="19580" /> <!-- Katana*Ultimate Sword - Sealed -->
+		<item id="95257" points="391500" fee="19580" /> <!-- Katana*Sword of Delusion - Sealed -->
+		<item id="95258" points="391500" fee="19580" /> <!-- Katana*Sword of Nightmare - Sealed -->
+		<item id="95259" points="391500" fee="19580" /> <!-- Katana*Tsurugi - Sealed -->
+		<item id="95260" points="477500" fee="23880" /> <!-- Katana*Samurai Long Sword - Sealed -->
+		<item id="95261" points="306500" fee="15330" /> <!-- Spirit Sword*Spirit Sword - Sealed -->
+		<item id="95262" points="306500" fee="15330" /> <!-- Spirit Sword*Raid Sword - Sealed -->
+		<item id="95263" points="391500" fee="19580" /> <!-- Spirit Sword*Caliburs - Sealed -->
+		<item id="95264" points="391500" fee="19580" /> <!-- Spirit Sword*Ultimate Sword - Sealed -->
+		<item id="95265" points="391500" fee="19580" /> <!-- Spirit Sword*Sword of Delusion - Sealed -->
+		<item id="95266" points="391500" fee="19580" /> <!-- Spirit Sword*Sword of Nightmare - Sealed -->
+		<item id="95267" points="391500" fee="19580" /> <!-- Spirit Sword*Tsurugi - Sealed -->
+		<item id="95268" points="477500" fee="23880" /> <!-- Spirit Sword*Samurai Long Sword - Sealed -->
+		<item id="95269" points="306500" fee="15330" /> <!-- Raid Sword*Raid Sword - Sealed -->
+		<item id="95270" points="391500" fee="19580" /> <!-- Raid Sword*Caliburs - Sealed -->
+		<item id="95271" points="391500" fee="19580" /> <!-- Raid Sword*Ultimate Sword - Sealed -->
+		<item id="95272" points="391500" fee="19580" /> <!-- Raid Sword*Sword of Delusion - Sealed -->
+		<item id="95273" points="391500" fee="19580" /> <!-- Raid Sword*Sword of Nightmare - Sealed -->
+		<item id="95274" points="391500" fee="19580" /> <!-- Raid Sword*Tsurugi - Sealed -->
+		<item id="95275" points="477500" fee="23880" /> <!-- Raid Sword*Samurai Long Sword - Sealed -->
+		<item id="95276" points="434000" fee="21700" /> <!-- Caliburs*Caliburs - Sealed -->
+		<item id="95277" points="434000" fee="21700" /> <!-- Caliburs*Ultimate Sword - Sealed -->
+		<item id="95278" points="434000" fee="21700" /> <!-- Caliburs*Sword of Delusion - Sealed -->
+		<item id="95279" points="434000" fee="21700" /> <!-- Caliburs*Sword of Nightmare - Sealed -->
+		<item id="95280" points="434000" fee="21700" /> <!-- Caliburs*Tsurugi - Sealed -->
+		<item id="95281" points="565000" fee="28250" /> <!-- Caliburs*Samurai Long Sword - Sealed -->
+		<item id="95282" points="434000" fee="21700" /> <!-- Ultimate Sword*Ultimate Sword - Sealed -->
+		<item id="95283" points="434000" fee="21700" /> <!-- Ultimate Sword*Sword of Delusion - Sealed -->
+		<item id="95284" points="434000" fee="21700" /> <!-- Ultimate Sword*Sword of Nightmare - Sealed -->
+		<item id="95285" points="434000" fee="21700" /> <!-- Ultimate Sword*Tsurugi - Sealed -->
+		<item id="95286" points="565000" fee="28250" /> <!-- Ultimate Sword*Samurai Long Sword - Sealed -->
+		<item id="95287" points="434000" fee="21700" /> <!-- Sword of Delusion*Sword of Delusion - Sealed -->
+		<item id="95288" points="434000" fee="21700" /> <!-- Sword of Delusion*Sword of Nightmare - Sealed -->
+		<item id="95289" points="434000" fee="21700" /> <!-- Sword of Delusion*Tsurugi - Sealed -->
+		<item id="95290" points="565000" fee="28250" /> <!-- Sword of Delusion*Samurai Long Sword - Sealed -->
+		<item id="95291" points="434000" fee="21700" /> <!-- Sword of Nightmare*Sword of Nightmare - Sealed -->
+		<item id="95292" points="434000" fee="21700" /> <!-- Sword of Nightmare*Tsurugi - Sealed -->
+		<item id="95293" points="565000" fee="28250" /> <!-- Sword of Nightmare*Samurai Long Sword - Sealed -->
+		<item id="95294" points="434000" fee="21700" /> <!-- Tsurugi*Tsurugi - Sealed -->
+		<item id="95295" points="565000" fee="28250" /> <!-- Tsurugi*Samurai Long Sword - Sealed -->
+		<item id="95296" points="143500" fee="7180" /> <!-- Knuckle Duster - Sealed -->
+		<item id="95297" points="20450" fee="1020" /> <!-- Heavy Sword - Sealed -->
+		<item id="95298" points="20450" fee="1020" /> <!-- Steel Sword - Sealed -->
+		<item id="95299" points="70000" fee="3500" /> <!-- Lesser Giant's Sword - Sealed -->
+		<item id="95300" points="215000" fee="10750" /> <!-- Pa'agrio Sword - Sealed -->
+		<item id="95301" points="20450" fee="1020" /> <!-- Priest Sword - Sealed -->
+		<item id="95302" points="70000" fee="3500" /> <!-- Sword of Magic Fog - Sealed -->
+		<item id="95303" points="114500" fee="5730" /> <!-- Mysterious Sword - Sealed -->
+		<item id="95304" points="306500" fee="15330" /> <!-- Ecliptic Sword - Sealed -->
+		<item id="95305" points="70000" fee="3500" /> <!-- Priest Mace - Sealed -->
+		<item id="95306" points="434000" fee="21700" /> <!-- Spell Breaker - Sealed -->
+		<item id="95307" points="655000" fee="32750" /> <!-- Kaim Vanul's Bones - Sealed -->
+		<item id="95308" points="70000" fee="3500" /> <!-- Lesser Giant's Hammer - Sealed -->
+		<item id="95309" points="306500" fee="15330" /> <!-- Dwarven Hammer - Sealed -->
+		<item id="95310" points="215000" fee="10750" /> <!-- Karik Horn - Sealed -->
+		<item id="95311" points="434000" fee="21700" /> <!-- Ice Storm Hammer - Sealed -->
+		<item id="95312" points="70000" fee="3500" /> <!-- Katzbalger - Sealed -->
+		<item id="95313" points="48350" fee="2420" /> <!-- Field Sword - Sealed -->
+		<item id="95314" points="32200" fee="1610" /> <!-- Military Talwar - Sealed -->
+		<item id="95315" points="20450" fee="1020" /> <!-- Talwar - Sealed -->
+		<item id="95316" points="215000" fee="10750" /> <!-- Immortal Edge - Sealed -->
+		<item id="95317" points="114500" fee="5730" /> <!-- Schlager - Sealed -->
+		<item id="95318" points="434000" fee="21700" /> <!-- Innominate Victory - Sealed -->
+		<item id="95319" points="90000" fee="4500" /> <!-- Grand Épée - Sealed -->
+		<item id="95320" points="70000" fee="3500" /> <!-- Épée - Sealed -->
+		<item id="95321" points="48350" fee="2420" /> <!-- Estoc - Sealed -->
+		<item id="95322" points="32200" fee="1610" /> <!-- Fleuret - Sealed -->
+		<item id="95323" points="215000" fee="10750" /> <!-- Blinzlasher - Sealed -->
+		<item id="95324" points="143500" fee="7180" /> <!-- Chevalier Rapier - Sealed -->
+		<item id="95325" points="114500" fee="5730" /> <!-- Soldat Estoc - Sealed -->
+		<item id="95326" points="434000" fee="21700" /> <!-- Military Fleuret - Sealed -->
+		<item id="95368" points="28250" fee="1410" /> <!-- Necklace of Seal - Sealed -->
+		<item id="95369" points="1345" fee="70" /> <!-- Red Crescent - Sealed -->
+		<item id="95370" points="2130" fee="110" /> <!-- Earring of Magic - Sealed -->
+		<item id="95371" points="3215" fee="160" /> <!-- Tiger's Eye - Sealed -->
+		<item id="95372" points="4670" fee="230" /> <!-- Elven Earring - Sealed -->
+		<item id="95373" points="6050" fee="300" /> <!-- Onyx Beast's Eye Earring - Sealed -->
+		<item id="95374" points="9800" fee="490" /> <!-- Earring of Protection - Sealed -->
+		<item id="95375" points="14750" fee="740" /> <!-- Earring of Seal - Sealed -->
+		<item id="95376" points="21200" fee="1060" /> <!-- Nassen's Earring - Sealed -->
+		<item id="95377" points="30300" fee="1520" /> <!-- Adamantite Earring - Sealed -->
+		<item id="95378" points="21200" fee="1060" /> <!-- Divine Earring - Sealed -->
+		<item id="95379" points="163500" fee="8180" /> <!-- Tateossian Earring - Sealed -->
+		<item id="95380" points="46200" fee="2310" /> <!-- Black Ore Earring - Sealed -->
+		<item id="95381" points="50250" fee="2510" /> <!-- Phoenix Earring - Sealed -->
+		<item id="95382" points="1420" fee="70" /> <!-- Ring of Magic - Sealed -->
+		<item id="95383" points="2140" fee="110" /> <!-- Black Pearl Ring - Sealed -->
+		<item id="95384" points="3115" fee="160" /> <!-- Elven Ring - Sealed -->
+		<item id="95385" points="4040" fee="200" /> <!-- Mithril Ring - Sealed -->
+		<item id="95386" points="5150" fee="260" /> <!-- Aquastone Ring - Sealed -->
+		<item id="95387" points="6500" fee="330" /> <!-- Ring of Protection - Sealed -->
+		<item id="95388" points="9800" fee="490" /> <!-- Ring of Ages - Sealed -->
+		<item id="95389" points="14100" fee="710" /> <!-- Ring of Seal - Sealed -->
+		<item id="95390" points="20200" fee="1010" /> <!-- Adamantite Ring - Sealed -->
+		<item id="95391" points="14100" fee="710" /> <!-- Divine Ring - Sealed -->
+		<item id="95392" points="109000" fee="5450" /> <!-- Tateossian Ring - Sealed -->
+		<item id="95393" points="900" fee="50" /> <!-- Ring of Devotion - Sealed -->
+		<item id="95394" points="49950" fee="2500" /> <!-- Majestic Ring - Sealed -->
+		<item id="95395" points="30800" fee="1540" /> <!-- Black Ore Ring - Sealed -->
+		<item id="95396" points="33500" fee="1680" /> <!-- Phoenix Ring - Sealed -->
+		<item id="95397" points="1795" fee="90" /> <!-- Necklace of Devotion - Sealed -->
+		<item id="95398" points="2840" fee="140" /> <!-- Necklace of Magic - Sealed -->
+		<item id="95399" points="4285" fee="210" /> <!-- Necklace of Old Forest - Sealed -->
+		<item id="95400" points="6250" fee="310" /> <!-- Elven Necklace - Sealed -->
+		<item id="95401" points="8100" fee="410" /> <!-- Dark Necklace - Sealed -->
+		<item id="95402" points="10350" fee="520" /> <!-- Aquastone Necklace - Sealed -->
+		<item id="95403" points="13050" fee="650" /> <!-- Necklace of Protection - Sealed -->
+		<item id="95404" points="19650" fee="980" /> <!-- Necklace of Mermaid - Sealed -->
+		<item id="95405" points="40400" fee="2020" /> <!-- Adamantite Necklace - Sealed -->
+		<item id="95406" points="28250" fee="1410" /> <!-- Divine Necklace - Sealed -->
+		<item id="95407" points="218050" fee="10900" /> <!-- Tateossian Necklace - Sealed -->
+		<item id="95408" points="61500" fee="3080" /> <!-- Black Ore Necklace - Sealed -->
+		<item id="95409" points="67000" fee="3350" /> <!-- Phoenix Necklace - Sealed -->
+		<item id="95414" points="12200" fee="610" /> <!-- Wooden Pistols - Sealed -->
+		<item id="95415" points="90000" fee="4500" /> <!-- Brass Pistols - Sealed -->
+		<item id="95416" points="306500" fee="15330" /> <!-- Flint Pistols - Sealed -->
+		<item id="95417" points="90000" fee="4500" /> <!-- B-Class Firearms (Low-/ Mid-grade) - Not Available -->
+		<item id="95418" points="655000" fee="32750" /> <!-- Volcano - Sealed -->
+		<item id="95419" points="1037050" fee="51850" /> <!-- Scofield - Sealed -->
+		<item id="95420" points="1348420" fee="67420" /> <!-- Zephyrus - Sealed -->
+		<item id="95421" points="1348420" fee="67420" /> <!-- Boss' Firearms - Not Available -->
+		<item id="95425" points="74900" fee="3750" /> <!-- Majestic Earring - Sealed -->
+		<item id="95429" points="99900" fee="5000" /> <!-- Majestic Necklace - Sealed -->
+		<item id="95446" points="289500" fee="14480" /> <!-- Excuro's Staff - Sealed -->
+		<item id="95447" points="289500" fee="14480" /> <!-- Torfe's Claw - Sealed -->
+		<item id="95448" points="289500" fee="14480" /> <!-- Giants' Club - Sealed -->
+		<item id="95449" points="289500" fee="14480" /> <!-- Ancient Rapier - Sealed -->
+		<item id="95450" points="289500" fee="14480" /> <!-- Guardian Messenger's Spear - Sealed -->
+		<item id="95451" points="289500" fee="14480" /> <!-- Sealed Angel's Hammer - Sealed -->
+		<item id="95452" points="289500" fee="14480" /> <!-- Lizardman Shaman's Staff - Sealed -->
+		<item id="95453" points="289500" fee="14480" /> <!-- Lizard Slayer - Sealed -->
+		<item id="95454" points="289500" fee="14480" /> <!-- Deadman's Dagger - Sealed -->
+		<item id="95455" points="289500" fee="14480" /> <!-- Dragon Bone Blade - Sealed -->
+		<item id="95456" points="289500" fee="14480" /> <!-- Berserker's Sword - Sealed -->
+		<item id="95457" points="289500" fee="14480" /> <!-- Sel Mahum Sniper - Sealed -->
+		<item id="95458" points="289500" fee="14480" /> <!-- Turek Orc Prefect's Dual Swords - Sealed -->
+		<item id="95459" points="289500" fee="14480" /> <!-- Butcher's Long Sword - Sealed -->
+		<item id="96722" points="289500" fee="14480" /> <!-- Giant's One-handed Axe - Sealed -->
+		<item id="96723" points="289500" fee="14480" /> <!-- Giant's Two-handed Staff - Sealed -->
+		<item id="97237" points="289500" fee="14480" /> <!-- Spear of Xilenos - Sealed -->
+		<item id="97239" points="27250" fee="1360" /> <!-- Shield of Xilenos - Sealed -->
+		<item id="97245" points="5000000" fee="100000" /> <!-- Stone of Purity -->
+		<item id="97246" points="500000" fee="10000" /> <!-- Enria - Sealed -->
+		<item id="97247" points="100000" fee="2000" /> <!-- Asofe - Sealed -->
+		<item id="97248" points="10000" fee="200" /> <!-- Thons - Sealed -->
+		<item id="97249" points="100" fee="2" /> <!-- Old Resources - Sealed -->
+		<item id="97250" points="500" fee="10" /> <!-- Unknown Resources - Sealed -->
+		<item id="97251" points="1000" fee="20" /> <!-- Shining Resources - Sealed -->
+		<item id="97252" points="5000" fee="100" /> <!-- High-grade Resources - Sealed -->
+		<item id="97653" points="306500" fee="15330" /> <!-- Collector's Weapon C - Sealed -->
+		<item id="97654" points="104500" fee="5230" /> <!-- Collector's Armor C - Sealed -->
+		<item id="98089" points="655000" fee="32750" /> <!-- Collector's Weapon B - Sealed -->
+		<item id="98090" points="235500" fee="11780" /> <!-- Collector's Armor B - Sealed -->
+		<item id="98474" points="176" fee="9" /> <!-- Earring of Strength - Sealed -->
+		<item id="98475" points="176" fee="9" /> <!-- Earring of Wisdom - Sealed -->
+		<item id="98476" points="296" fee="15" /> <!-- Ring of Wisdom - Sealed -->
+		<item id="98477" points="535" fee="27" /> <!-- Blue Coral Ring - Sealed -->
+		<item id="98478" points="1065" fee="53" /> <!-- Blue Diamond Necklace - Sealed -->
+	</extract>
+</list>

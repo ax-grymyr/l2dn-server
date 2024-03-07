@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<npcs>
+		<npc>30207</npc> <!-- Arodin -->
+	</npcs>
+	<item id="2" price="136000" /> <!-- Long Sword -->
+	<item id="218" price="136000" /> <!-- Throwing Knife -->
+	<item id="272" price="136000" /> <!-- Forest Bow -->
+	<item id="15" price="136000" /> <!-- Short Spear -->
+	<item id="256" price="136000" /> <!-- Cestus -->
+	<item id="68" price="244000" /> <!-- Falchion -->
+	<item id="219" price="244000" /> <!-- Sword Breaker -->
+	<item id="273" price="244000" /> <!-- Compound Bow -->
+	<item id="155" price="244000" /> <!-- Flanged Mace -->
+	<item id="87" price="244000" /> <!-- Iron Hammer -->
+	<item id="16" price="244000" /> <!-- Great Spear -->
+	<item id="257" price="244000" /> <!-- Viper Fang -->
+	<item id="123" price="409000" /> <!-- Saber -->
+	<item id="7880" price="409000" /> <!-- Steel Sword -->
+	<item id="220" price="409000" /> <!-- Crafted Dagger -->
+	<item id="221" price="409000" /> <!-- Assassin Knife -->
+	<item id="274" price="409000" /> <!-- Reinforced Bow -->
+	<item id="156" price="409000" /> <!-- Hand Axe -->
+	<item id="166" price="409000" /> <!-- Heavy Mace -->
+	<item id="168" price="409000" /> <!-- Work Hammer -->
+	<item id="291" price="409000" /> <!-- Trident -->
+	<item id="258" price="409000" /> <!-- Bagh-Nakh -->
+	<item id="69" price="644000" /> <!-- Bastard Sword -->
+	<item id="222" price="644000" /> <!-- Poniard Dagger -->
+	<item id="275" price="644000" /> <!-- Longbow -->
+	<item id="277" price="644000" /> <!-- Dark Elven Bow -->
+	<item id="292" price="644000" /> <!-- Pike -->
+	<item id="295" price="644000" /> <!-- Dwarven Trident -->
+	<item id="259" price="644000" /> <!-- Single-Edged Jamadhr -->
+	<item id="88" price="1400000" /> <!-- Mornign Star -->
+</list>

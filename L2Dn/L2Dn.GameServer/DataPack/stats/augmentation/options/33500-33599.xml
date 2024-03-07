@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33500" name="p_def">
+		<!-- P. Def. +12.5 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33501" name="p_def">
+		<!-- P. Def. +15 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33502" name="p_def">
+		<!-- P. Def. +20 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33503" name="p_def">
+		<!-- P. Def. +25 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33504" name="p_def">
+		<!-- P. Def. +30 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33505" name="p_def">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33506" name="p_def">
+		<!-- P. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33507" name="m_def">
+		<!-- M. Def. +5 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33508" name="m_def">
+		<!-- M. Def. +6 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33509" name="m_def">
+		<!-- M. Def. +7 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33510" name="m_def">
+		<!-- M. Def. +8 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33511" name="m_def">
+		<!-- M. Def. +9 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33512" name="m_def">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33513" name="m_def">
+		<!-- M. Def. +12.5 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33514" name="m_def">
+		<!-- M. Def. +15 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33515" name="m_def">
+		<!-- M. Def. +20 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33516" name="m_def">
+		<!-- M. Def. +25 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33517" name="m_def">
+		<!-- M. Def. +30 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33518" name="m_def">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33519" name="m_def">
+		<!-- M. Def. +50 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33520" name="max_hp">
+		<!-- Max HP +250 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33521" name="max_hp">
+		<!-- Max HP +350 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>350</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33522" name="max_hp">
+		<!-- Max HP +450 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>450</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33523" name="max_hp">
+		<!-- Max HP +600 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>600</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33524" name="max_hp">
+		<!-- Max HP +750 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>750</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33525" name="max_hp">
+		<!-- Max HP +1000 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33526" name="max_hp">
+		<!-- Max HP +1250 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>1250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33527" name="max_hp">
+		<!-- Max HP +1500 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33528" name="max_hp">
+		<!-- Max HP +2000 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33529" name="max_mp">
+		<!-- Max MP +50 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33530" name="max_mp">
+		<!-- Max MP +70 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33531" name="max_mp">
+		<!-- Max MP +90 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33532" name="max_mp">
+		<!-- Max MP +120 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33533" name="max_mp">
+		<!-- Max MP +150 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33534" name="max_mp">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33535" name="max_mp">
+		<!-- Max MP +250 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33536" name="max_mp">
+		<!-- Max MP +300 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33537" name="max_mp">
+		<!-- Max MP +400 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33538" name="max_cp">
+		<!-- Max CP +100 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33539" name="max_cp">
+		<!-- Max CP +140 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33540" name="max_cp">
+		<!-- Max CP +180. -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33541" name="max_cp">
+		<!-- Max CP +240 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33542" name="max_cp">
+		<!-- Max CP +300 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33543" name="max_cp">
+		<!-- Max CP +400 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33544" name="max_cp">
+		<!-- Max CP +500 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33545" name="max_cp">
+		<!-- Max CP +600 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>600</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33546" name="max_cp">
+		<!-- Max CP +800 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>800</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33547" name="hp_regen">
+		<!-- HP Recovery Rate +0.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33548" name="hp_regen">
+		<!-- HP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33549" name="hp_regen">
+		<!-- HP Recovery Rate +1.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33550" name="hp_regen">
+		<!-- HP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33551" name="hp_regen">
+		<!-- HP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33552" name="mp_regen">
+		<!-- MP Recovery Rate +0.5 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>0.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33553" name="mp_regen">
+		<!-- MP Recovery Rate +1 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33554" name="mp_regen">
+		<!-- MP Recovery Rate +1.5 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33555" name="mp_regen">
+		<!-- MP Recovery Rate +2 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33556" name="mp_regen">
+		<!-- MP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>2.</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33557" name="cp_regen">
+		<!-- CP Recovery Rate +0.5 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>0.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33558" name="cp_regen">
+		<!-- CP Recovery Rate +1 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33559" name="cp_regen">
+		<!-- CP Recovery Rate +1.5 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33560" name="cp_regen">
+		<!-- CP Recovery Rate +2 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33561" name="cp_regen">
+		<!-- CP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33562" name="receive_heal">
+		<!-- Received Healing +2.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33563" name="receive_heal">
+		<!-- Received Healing +3.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33564" name="receive_heal">
+		<!-- Received Healing +4.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33565" name="receive_heal">
+		<!-- Received Healing +5.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33566" name="receive_heal">
+		<!-- Received Healing +6.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33567" name="receive_heal">
+		<!-- Received Healing +7.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33568" name="stun">
+		<!-- Shock Atk. Rate +0.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33569" name="stun">
+		<!-- Shock Atk. Rate +1% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33570" name="stun">
+		<!-- Shock Atk. Rate +1.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>1.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33571" name="stun">
+		<!-- Shock Atk. Rate +3% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33572" name="stun">
+		<!-- Shock Atk. Rate +3.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33573" name="stun">
+		<!-- Shock Atk. Rate +5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33574" name="paralyze">
+		<!-- Paralysis Atk. Rate +0.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33575" name="paralyze">
+		<!-- Paralysis Atk. Rate +1% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33576" name="paralyze">
+		<!-- Paralysis Atk. Rate +1.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>1.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33577" name="paralyze">
+		<!-- Paralysis Atk. Rate +3%. -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33578" name="paralyze">
+		<!-- Paralysis Atk. Rate +3.5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33579" name="paralyze">
+		<!-- Paralysis Atk. Rate +5% -->
+		<effects>
+			<effect name="BlockActions">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33580" name="sleep">
+		<!-- Sleep Atk. Rate +0.5% -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33581" name="sleep">
+		<!-- Sleep Atk. Rate +1% -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33582" name="sleep">
+		<!-- Sleep Atk. Rate +1.5% -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33583" name="sleep">
+		<!-- Sleep Atk. Rate +3% -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33584" name="sleep">
+		<!-- Sleep Atk. Rate +3.5% -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33585" name="sleep">
+		<!-- Sleep Atk. Rate +5%. -->
+		<magic_skill id="3100" level="1" chance="20" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="33586" name="hold">
+		<!-- Hold Atk. Rate +0.5% -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33587" name="hold">
+		<!-- Hold Atk. Rate +1% -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33588" name="hold">
+		<!-- Hold Atk. Rate +1.5% -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33589" name="hold">
+		<!-- Hold Atk. Rate +3%. -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33590" name="hold">
+		<!-- Hold Atk. Rate +3.5% -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33591" name="hold">
+		<!-- Hold Atk. Rate +5% -->
+		<active_skill id="3190" level="1" /> <!-- Item Skill: Hold -->
+	</option>
+	<option id="33592" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -1% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33593" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -2% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33594" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -3% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33595" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -4% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33596" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -5% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33597" name="crit_dmg">
+		<!-- Item skill: All received Critical Damage -7% -->
+		<active_skill id="3135" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="33598" name="bow_res">
+		<!-- Bow Resistance +0.5% -->
+		<passive_skill id="112" level="1" /> <!-- Deflect Arrow -->
+	</option>
+	<option id="33599" name="bow_res">
+		<!-- Bow Resistance +1% -->
+		<passive_skill id="112" level="1" /> <!-- Deflect Arrow -->
+	</option>
+</list>

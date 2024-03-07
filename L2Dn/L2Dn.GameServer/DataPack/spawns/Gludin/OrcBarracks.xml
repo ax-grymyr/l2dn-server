@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="OrcBarracks">
+		<group>
+			<npc id="34134" x="-91576" y="107304" z="-3701" heading="56098" respawnTime="60sec" /> <!-- Tarba -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34319"> <!-- Grill -->
+		<teleport type="OTHER">
+			<location x="155200" y="-107954" z="-2624" feeCount="10000" /> <!-- Right Area -->
+			<location x="142800" y="-106693" z="-3432" feeCount="10000" /> <!-- Left Area -->
+		</teleport>
+	</npc>
+	<npc id="34321"> <!-- Crigon -->
+		<teleport type="OTHER">
+			<location x="178035" y="-50119" z="-3352" feeCount="10000" /> <!-- The Central Altair -->
+			<location x="178460" y="-62905" z="-2968" feeCount="20000" /> <!-- The Path to the Cave -->
+			<location x="189427" y="-46009" z="-2880" feeCount="30000" /> <!-- The Eastern Crossing -->
+			<location x="180512" y="-37704" z="-3088" feeCount="20000" /> <!-- The Southern Passage -->
+		</teleport>
+	</npc>
+	<npc id="34322"> <!-- Ashin -->
+		<teleport type="OTHER">
+			<location x="117026" y="-51884" z="-2568" feeCount="50000" /> <!-- The Inner Way -->
+			<location x="110829" y="-43685" z="-2560" feeCount="70000" /> <!-- The Crossroads -->
+			<location x="102579" y="-39559" z="-1680" feeCount="100000" /> <!-- The Depths -->
+		</teleport>
+	</npc>
+	<npc id="34320"> <!-- Muss -->
+		<teleport type="OTHER">
+			<location x="151752" y="-81875" z="-5256" feeCount="100000" /> <!-- The training hall entrance -->
+			<location x="147512" y="-82665" z="-5152" feeCount="100000" /> <!-- The central barracks -->
+			<location x="133064" y="-72580" z="-3488" feeCount="70000" /> <!-- The Western Outpost -->
+			<location x="136794" y="-92660" z="-3568" feeCount="50000" /> <!-- The Northern Entrance -->
+		</teleport>
+	</npc>
+</list>

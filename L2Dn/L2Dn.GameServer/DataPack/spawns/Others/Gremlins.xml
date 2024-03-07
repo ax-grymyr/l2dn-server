@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="gludio32_qm1725_00" minZ="-3148" maxZ="-2948">
+				<node x="-71944" y="258332" />
+				<node x="-71316" y="257772" />
+				<node x="-70728" y="258468" />
+				<node x="-71364" y="259000" />
+			</territory>
+		</territories>
+		<npc id="18342" count="15" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_qm1725_02" minZ="-3200" maxZ="-3000">
+				<node x="-72719" y="257491" />
+				<node x="-72031" y="256897" />
+				<node x="-71480" y="257518" />
+				<node x="-72234" y="258119" />
+			</territory>
+		</territories>
+		<npc id="18342" count="15" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_qm1725_01" minZ="-3200" maxZ="-3000">
+				<node x="-72719" y="257491" />
+				<node x="-72031" y="256897" />
+				<node x="-71480" y="257518" />
+				<node x="-72234" y="258119" />
+			</territory>
+		</territories>
+		<npc id="18342" count="15" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_qm1725_03" minZ="-3635" maxZ="-3435">
+				<node x="-89391" y="248321" />
+				<node x="-88885" y="248663" />
+				<node x="-89711" y="249726" />
+				<node x="-90199" y="249377" />
+			</territory>
+		</territories>
+		<npc id="18342" count="15" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren02_qm2119_00" minZ="-3552" maxZ="-3352">
+				<node x="44656" y="40896" />
+				<node x="47488" y="41148" />
+				<node x="46476" y="41884" />
+				<node x="45904" y="41904" />
+			</territory>
+		</territories>
+		<npc id="18342" count="25" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren23_qm2018_00" minZ="-4268" maxZ="-4068">
+				<node x="27820" y="10364" />
+				<node x="29036" y="10356" />
+				<node x="29032" y="11724" />
+				<node x="27856" y="11720" />
+			</territory>
+		</territories>
+		<npc id="18342" count="25" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_qm2312_00" minZ="-604" maxZ="-304">
+				<node x="108756" y="-175200" />
+				<node x="109716" y="-174268" />
+				<node x="108768" y="-172744" />
+				<node x="107540" y="-173300" />
+			</territory>
+		</territories>
+		<npc id="18342" count="20" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden48_qm1619_00" minZ="1132" maxZ="1432">
+				<node x="-124654" y="37332" />
+				<node x="-124260" y="37349" />
+				<node x="-124184" y="37581" />
+				<node x="-124191" y="37773" />
+				<node x="-124090" y="37881" />
+				<node x="-124089" y="38345" />
+				<node x="-124184" y="38581" />
+				<node x="-124142" y="38852" />
+				<node x="-124415" y="38957" />
+				<node x="-124639" y="38937" />
+			</territory>
+		</territories>
+		<npc id="18342" count="20" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+</list>

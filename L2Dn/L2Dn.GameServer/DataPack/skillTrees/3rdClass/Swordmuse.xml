@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="100" parentClassId="21">
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Music Mastery" skillId="87119" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<item id="97847,97833" count="1" /> <!-- Spellbook: Music Mastery -->
+		</skill>
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="11" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="12" getLevel="77" levelUpSp="1020000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="13" getLevel="78" levelUpSp="2380000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="14" getLevel="79" levelUpSp="2380000" />
+		<skill skillName="Shackle" skillId="402" skillLevel="15" getLevel="80" levelUpSp="2380000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="16" getLevel="81" levelUpSp="16000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="17" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="18" getLevel="83" levelUpSp="24000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="19" getLevel="84" levelUpSp="24000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="20" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="21" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="22" getLevel="87" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="23" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="24" getLevel="89" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shackle" skillId="402" skillLevel="25" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Wild Beat" skillId="45400" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<item id="95526,94321" count="1" /> <!-- Spellbook: Wild Beat -->
+		</skill>
+		<skill skillName="Wild Beat" skillId="45400" skillLevel="2" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Sounds of Muse" skillId="45273" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<item id="98276,98258" count="1" /> <!-- Spellbook: Sounds of Muse -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<removeSkill id="3" onlyReplaceByLearn="true" /> <!-- Power Strike -->
+			<removeSkill id="16" onlyReplaceByLearn="true" /> <!-- Mortal Blow -->
+			<removeSkill id="56" onlyReplaceByLearn="true" /> <!-- Power Shot -->
+			<removeSkill id="45187" onlyReplaceByLearn="true" /> <!-- Guard Crush -->
+			<item id="95528,94323" count="1" /> <!-- Spellbook: Frantic Pace -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="2" getLevel="84" levelUpSp="24000000">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="3" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="3500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="4" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="4000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="5" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="6" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="7" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Frantic Pace" skillId="45402" skillLevel="8" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="6" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="7" getLevel="80" levelUpSp="2380000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Bard's Armor Mastery" skillId="87131" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="6" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="7" getLevel="80" levelUpSp="2380000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Bard's Weapon Mastery" skillId="87130" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="3" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="4" getLevel="80" levelUpSp="2380000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="5" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="6" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="7" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Additional Strain" skillId="87133" skillLevel="8" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="9" getLevel="78" levelUpSp="2380000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="10" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="11" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Bard's Recovery Mastery" skillId="87132" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="1" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="2" getLevel="77" levelUpSp="1020000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="3" getLevel="78" levelUpSp="2380000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="4" getLevel="80" levelUpSp="2380000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="5" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="6" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="7" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Deadly Strike" skillId="1632" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="6" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="7" getLevel="80" levelUpSp="2380000" />
+		<skill skillName="Symphony" skillId="98" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mount Pegasus" skillId="1834" skillLevel="1" getLevel="76" levelUpSp="1020000" />
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Song of Silence" skillId="437" skillLevel="1" getLevel="79" levelUpSp="2380000" />
+		<skill skillName="Song of Silence" skillId="437" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Song of Silence" skillId="437" skillLevel="3" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Song of Silence" skillId="437" skillLevel="4" getLevel="85" levelUpSp="84000000">
+			<item id="97849,97835" count="1" /> <!-- Spellbook: Song of Silence Lv. 4 -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Amadeus" skillId="87101" skillLevel="1" getLevel="76" levelUpSp="1020000">
+			<item id="97845,97831" count="1" /> <!-- Spellbook: Amadeus -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="1020000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="1020000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+	</skillTree>
+</list>

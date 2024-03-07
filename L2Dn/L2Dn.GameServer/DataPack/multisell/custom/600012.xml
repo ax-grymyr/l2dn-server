@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<!-- Adena -->
+		<ingredient count="500" id="57" />
+		<!-- Scroll of Escape -->
+		<production count="1" id="736" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2500" id="57" />
+		<!-- Scroll of Resurrection -->
+		<production count="1" id="737" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="400000" id="57" />
+		<!-- Blessed Scroll of Resurrection -->
+		<production count="1" id="3936" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="5000" id="57" />
+		<!-- HP Replenishing Potion (Exchangeable)) -->
+		<production count="1" id="1060" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1000" id="57" />
+		<!-- Soulstone -->
+		<production count="1" id="1785" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="500" id="57" />
+		<!-- Scroll: Spirit Ore -->
+		<production count="1" id="3031" />
+	</item>
+</list>

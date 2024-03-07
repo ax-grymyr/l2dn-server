@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange C-grade Magic Weapon Coupon -->
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="93048" count="1" /> <!-- Demon's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94983" count="1" /> <!-- Cursed Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94985" count="1" /> <!-- Paradia Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94986" count="1" /> <!-- Inferno Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94987" count="1" /> <!-- Pa'agrio Hammer - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94988" count="1" /> <!-- Sage's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94992" count="1" /> <!-- Deadman's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient id="98523" count="1" /> <!-- C-grade Magic Weapon Coupon - Sealed -->
+		<production id="94993" count="1" /> <!-- Ghoul's Staff - Sealed -->
+	</item>
+</list>

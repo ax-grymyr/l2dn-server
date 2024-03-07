@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="KEBER_MINIONS" spawnByDefault="false">
+		<group name="KISHAN" spawnByDefault="false">
+			<territories>
+				<territory shape="NPoly" rad="1" minZ="-4200" maxZ="-3900">
+					<node x="132014" y="8285" />
+					<node x="131835" y="7488" />
+					<node x="133928" y="6075" />
+					<node x="134502" y="6557" />
+					<node x="134451" y="7720" />
+					<node x="133914" y="8721" />
+				</territory>
+			</territories>
+			<npc id="18539" count="100" respawnTime="10sec" respawnRandom="0sec" /> <!-- Kishan's Minion -->
+		</group>
+		<group name="NOMA" spawnByDefault="false">
+			<territories>
+				<territory shape="NPoly" rad="1" minZ="-3740" maxZ="-3700">
+					<node x="160635" y="21541" />
+					<node x="161147" y="20888" />
+					<node x="162234" y="20084" />
+					<node x="161978" y="23005" />
+					<node x="162910" y="23084" />
+					<node x="163398" y="22379" />
+					<node x="163727" y="23411" />
+					<node x="162218" y="23713" />
+					<node x="161268" y="23180" />
+				</territory>
+			</territories>
+			<npc id="18543" count="120" respawnTime="10sec" respawnRandom="0sec" /> <!-- Noma's Minion -->
+		</group>
+		<group name="SPALL" spawnByDefault="false">
+			<territories>
+				<territory shape="Cylinder" rad="700" minZ="-6100" maxZ="-6000">
+					<node x="180942" y="52673" />
+				</territory>
+			</territories>
+			<npc id="18547" count="80" respawnTime="10sec" respawnRandom="0sec" /> <!-- Spall's Minion -->
+		</group>
+	</spawn>
+</list>

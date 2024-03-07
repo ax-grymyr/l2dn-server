@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GludioCastle">
+		<group>
+			<npc id="35063" x="-18113" y="107972" z="-2480" heading="16384" respawnTime="60sec" /> <!-- Gludio Holy Artifact -->
+			<npc id="35095" x="-16532" y="109387" z="-1784" heading="32768" respawnTime="60sec" /> <!-- Mass Gatekeeper - Gludio -->
+			<npc id="35096" x="-18452" y="113261" z="-2750" heading="16384" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Gludio -->
+			<npc id="35096" x="-18506" y="112913" z="-2750" heading="32768" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Gludio -->
+			<npc id="35097" x="-18279" y="110702" z="-2460" heading="16384" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Gludio -->
+			<npc id="35097" x="-18345" y="110347" z="-2500" heading="32768" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Gludio -->
+			<npc id="35098" x="-17680" y="109519" z="-2656" heading="29609" respawnTime="60sec" /> <!-- Blacksmith - Gludio -->
+			<npc id="35099" x="-18113" y="109956" z="-2683" heading="48351" respawnTime="60sec" /> <!-- Warehouse Keeper - Gludio -->
+			<npc id="35101" x="-17952" y="108142" z="-2032" heading="-16384" respawnTime="60sec" /> <!-- Grad - Wyvern Manager -->
+			<npc id="35102" x="-17876" y="108944" z="-2485" heading="16384" respawnTime="60sec" /> <!-- Greenspan - Mercenary Manager -->
+			<!-- <npc id="35104" x="-15172" y="116723" z="-3216" heading="16384" respawnTime="60sec" /> Tyron - Herald from Gludio -->
+		</group>
+	</spawn>
+</list>

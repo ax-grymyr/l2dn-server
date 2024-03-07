@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="213" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Sel Mahum Base (85-99) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-57378" y="142032" z="-2592" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="85" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34123" x="-57468" y="142149" z="-2568" heading="48103" /> <!-- Manager Ayan -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22275" x="-56934" y="140909" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56806" y="140781" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56694" y="140653" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56822" y="141005" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56694" y="140877" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56406" y="141341" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56278" y="141213" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56166" y="141085" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56294" y="141437" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-56166" y="141309" z="-2588" heading="23500" /> <!-- Sel Mahum Raider -->
+			<npc id="22276" x="-57542" y="141549" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57414" y="141421" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57302" y="141293" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57430" y="141645" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57302" y="141517" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57190" y="141389" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-57302" y="141741" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-56934" y="140909" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-56806" y="140781" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-56694" y="140653" z="-2588" heading="23500" /> <!-- Sel Mahum Footman -->
+			<npc id="22277" x="-57014" y="141981" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56886" y="141853" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56774" y="141725" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56902" y="142077" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56774" y="141949" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56662" y="141821" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56774" y="142173" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56406" y="141341" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56278" y="141213" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+			<npc id="22277" x="-56166" y="141085" z="-2588" heading="23500" /> <!-- Sel Mahum Knight -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22278" x="-56791" y="140446" z="-2588" heading="23500" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-56331" y="140831" z="-2588" heading="23500" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-57353" y="141920" z="-2588" heading="23500" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-57820" y="141535" z="-2588" heading="23500" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22292" x="-56549" y="141221" z="-2641" heading="24517" /> <!-- Beast Guardian -->
+		</group>
+	</spawnlist>
+</instance>

@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="1800" name="Recipe: Piece Bone Breastplate" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Piece Bone Breastplate. Requires Create Item Lv. 1. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="636" />
+		<set name="recipe_id" val="16" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1801" name="Recipe: Piece Bone Gaiters" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Bone Gaiters. Requires Create Item Lv. 1. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="397" />
+		<set name="recipe_id" val="17" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1802" name="Recipe: Necklace of Anguish (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Necklace of Anguish. Requires Create Item Lv. 1. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="93" />
+		<set name="recipe_id" val="18" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1803" name="Recipe: Necklace of Wisdom" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Necklace of Wisdom. Requires Create Item Lv. 1. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="238" />
+		<set name="recipe_id" val="19" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1804" name="Recipe: D-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for D-grade Soulshots. Not used. Take it to Cat Guild's Trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="5000" />
+		<set name="recipe_id" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1805" name="Recipe: C-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for C-grade Soulshots. Not used. Take it to Cat Guild's Trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="60000" />
+		<set name="recipe_id" val="21" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1806" name="Recipe: B-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for B-grade Soulshots. Not used. Take it to Cat Guild's Trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100000" />
+		<set name="recipe_id" val="22" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1807" name="Recipe: A-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for A-grade Soulshots. Not used. Take it to Cat Guild's Trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="150000" />
+		<set name="recipe_id" val="23" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+		<set name="commissionItemType" val="RECIPE" />
+	</item>
+	<item id="1808" name="Recipe: S-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for S-grade Soulshots. Not used. Take it to Cat Guild's Trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="450000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="24" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1814" name="Recipe: Leather" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for Leather. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="380" />
+		<set name="recipe_id" val="25" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1817" name="Recipe: Cord" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for Cord. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="recipe_id" val="26" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1825" name="Recipe: Oriharukon" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. A recipe for Oriharukon. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="2800" />
+		<set name="recipe_id" val="27" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1829" name="Scroll of Escape: Clan Hall" type="EtcItem">
+		<!-- A magic scroll for teleporting to a clan hall. If your clan don't own a clan hall, you will be relocated to the nearest village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_agit_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="price" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2040" level="1" /> <!-- Scroll of Escape: Clan Hall -->
+		</skills>
+	</item>
+	<item id="1830" name="Scroll of Escape: Castle" type="EtcItem">
+		<!-- A magic scroll for teleporting to a castle. If your clan don't own a castle, you will be relocated to the nearest village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="price" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2041" level="1" /> <!-- Scroll of Escape: Castle -->
+		</skills>
+	</item>
+	<item id="1831" name="Antidote" type="EtcItem">
+		<!-- A reagent that neutralizes poison. -->
+		<set name="icon" val="icon.etc_herb_green_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="20" />
+		<set name="price" val="75" />
+		<set name="reuse_delay" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2042" level="1" /> <!-- Antidote -->
+		</skills>
+	</item>
+	<item id="1832" name="Greater Antidote" type="EtcItem">
+		<!-- A high-quality reagent that neutralizes powerful poison. -->
+		<set name="icon" val="icon.etc_reagent_green_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="20" />
+		<set name="price" val="180" />
+		<set name="reuse_delay" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2043" level="1" /> <!-- Greater Antidote -->
+		</skills>
+	</item>
+	<item id="1833" name="Bandage" type="EtcItem">
+		<!-- Medical bandage that stops Bleeding when injured. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="20" />
+		<set name="price" val="75" />
+		<set name="reuse_delay" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2044" level="1" /> <!-- Bandage -->
+		</skills>
+	</item>
+	<item id="1834" name="Emergency Dressing" type="EtcItem">
+		<!-- Medical bandage that stops Bleeding fast when severely injured. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="20" />
+		<set name="price" val="180" />
+		<set name="reuse_delay" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2045" level="1" /> <!-- Emergency Dressing -->
+		</skills>
+	</item>
+	<item id="1835" name="No-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="3" />
+		<set name="price" val="7" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2039" level="1" /> <!-- Soulshot (No-grade) -->
+		</skills>
+	</item>
+	<item id="1836" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Uoph. He should be somewhere around the ruins over the hill, west of the Elven Village. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1837" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Kracha. He should be somewhere around the Nine obelisk, southwest of the Elven Village. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1838" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Batoh. He should be somewhere around the entrance of the underground fortress of the Elves. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1839" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Tanukia. He should be somewhere around the open-air theatre ruins, southwest of the Elven Village. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1840" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Turel. He should be somewhere around the seashore ruins, northwest of Lake Iris. -->
+		<set name="icon" val="icon.etc_recipe_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1841" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Roko. He should be somewhere around the seashore ruins, west of Lake Iris. -->
+		<set name="icon" val="icon.etc_recipe_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1842" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Kamut. He should be somewhere around the seashore ruins, south of Lake Iris. -->
+		<set name="icon" val="icon.etc_recipe_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1843" name="Kendell's 1st Order" type="EtcItem">
+		<!-- Punish Kaboo Chief Murtika. He should be somewhere around the seashore ruins, east of Lake Iris. -->
+		<set name="icon" val="icon.etc_recipe_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1844" name="Kaboo Chief's Necklace" type="EtcItem">
+		<!-- Necklace taken by killing the chief of Kaboo orcs. Take this to Sentinel Kendell. -->
+		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1845" name="Kaboo Chief's Necklace" type="EtcItem">
+		<!-- Necklace taken by killing the chief of Kaboo orcs. Take this to Sentinel Kendell. -->
+		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1846" name="Turek Dog Tag" type="EtcItem">
+		<!-- Military identification necklace of Turek orc fighters. Collect these and take them to Piotur for a reward. -->
+		<set name="icon" val="icon.etc_totem_necklace_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1847" name="Turek Medallion" type="EtcItem">
+		<!-- Military identification necklace of Turek orc officers. Collect these and take them to Piotur for a reward. -->
+		<set name="icon" val="icon.etc_totem_necklace_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1848" name="Clay Urn Fragment" type="EtcItem">
+		<!-- A piece of a clay urn from the Elmoreden Empire. -->
+		<set name="icon" val="icon.etc_broken_crystal_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="200" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1849" name="Brass Tiara Piece" type="EtcItem">
+		<!-- A piece of a brass decoration from the Elmoreden Empire. -->
+		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="240" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1850" name="Bronze Mirror Piece" type="EtcItem">
+		<!-- A bronze mirror piece from the Elmoreden Empire. -->
+		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="240" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1851" name="Jade Necklace Bead" type="EtcItem">
+		<!-- A jade necklace bead from the Elmoreden Empire. -->
+		<set name="icon" val="icon.etc_debris_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="280" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1852" name="Ancient Clay Urn" type="EtcItem">
+		<!-- A clay urn from the Elmoreden Empire. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="1800" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1853" name="Ancient Brass Tiara" type="EtcItem">
+		<!-- A brass tiara from the Elmoreden Empire. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_ancient_crown_i03" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="2100" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1854" name="Ancient Bronze Mirror" type="EtcItem">
+		<!-- A bronze mirror from the Elmoreden Empire. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_mirror_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="2100" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1855" name="Ancient Jade Necklace" type="EtcItem">
+		<!-- A jade necklace from the Elmoreden Empire. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_leash_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="price" val="2550" />
+		<set name="is_questitem" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="1856" name="Amulet: Chant of Life" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Chant of Life skill. Used by Orc Shamans. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1857" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1858" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1859" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1860" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1861" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1862" name="Keltir Fang" type="EtcItem">
+		<!-- Fang taken by killing Keltirs. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1863" name="Map: Elmore" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An ancient map. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="handler" val="Maps" />
+	</item>
+	<item id="1864" name="Stem" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1865" name="Varnish" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="200" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1866" name="Suede" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="300" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1867" name="Animal Skin" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="150" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1868" name="Thread" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1869" name="Iron Ore" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="200" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1870" name="Coal" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="200" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1871" name="Charcoal" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="200" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1872" name="Animal Bone" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="150" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1873" name="Silver Nugget" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1874" name="Oriharukon Ore" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="3000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1875" name="Stone of Purity" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="3000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1876" name="Mithril Ore" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1877" name="Adamantite Nugget" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="5000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1878" name="Durable Braid" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1879" name="Cokes" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="1200" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1880" name="Steel" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="2000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1881" name="Coarse Bone Powder" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="1500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1882" name="Leather" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="900" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1883" name="Steel Mold" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="4500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1884" name="Cord" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="325" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1885" name="High-grade Suede" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="2400" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1886" name="Silver Mold" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="13500" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1887" name="Varnish of Purity" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="8100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1888" name="Synthetic Cokes" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="6600" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1889" name="Synthetic Braid" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="3000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1890" name="Mithril Alloy" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="13100" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1891" name="Artisan's Frame" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="95000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1892" name="Blacksmith's Frame" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="64000" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1893" name="Oriharukon" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1894" name="Quality Leather" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="5700" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1895" name="Metallic Fiber" type="EtcItem">
+		<!-- The item is not available. Material used by Dwarves for crafting items. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="price" val="700" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1896" name="Necklace of Anguish Chain" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Necklace of Anguish. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="472" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1897" name="Necklace of Wisdom Chain" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Necklace of Wisdom. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="840" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1898" name="Blue Diamond Necklace Gem" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Blue Diamond Necklace. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="1947" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1899" name="Necklace of Devotion Chain" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Necklace of Devotion. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="1280" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

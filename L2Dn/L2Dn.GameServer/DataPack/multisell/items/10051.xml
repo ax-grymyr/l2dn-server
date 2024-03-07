@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange +5 Boss Weapon Coupon -->
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="93291" /> <!-- Zaken's Blood Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="93292" /> <!-- Core's Plasmic Bow - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="93293" /> <!-- Orfen's Venom Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="93294" /> <!-- Baium's Thunder Breaker - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="93295" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="95422" /> <!-- Anakim's Divine Pistols - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="96269" /> <!-- Beleth' Soul Eater - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="97302" /> <!-- Gorde's Flame Spear - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="97957" /> <!-- Galaxia's Ancient Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="97959" /> <!-- Phiriel's Rapier - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="97961" /> <!-- Anais' Fists - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98421" /> <!-- +5 Boss Weapon Coupon (Exchangeable) (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="5" id="97963" /> <!-- Juriel's Dual Swords - Sealed -->
+	</item>
+</list>

@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61100" toLevel="1" name="Test P. Skill Evasion 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61101" toLevel="1" name="Test M. Skill Evasion 10%">
+		<!-- M. Skill Evasion 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61102" toLevel="1" name="Test M. Skill Evasion 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61103" toLevel="1" name="Test M. Skill Evasion 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61104" toLevel="1" name="Test M. Skill Evasion 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61105" toLevel="1" name="Test M. Skill Evasion 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61106" toLevel="1" name="Test M. Skill Evasion 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61107" toLevel="1" name="Test M. Skill Evasion 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61108" toLevel="1" name="Test M. Skill Evasion 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61109" toLevel="1" name="Test M. Skill Evasion 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61110" toLevel="1" name="Test M. Skill Evasion 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61111" toLevel="1" name="Test P. Skill Counterattack 10%">
+		<!-- P. Skill Counterattack 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61112" toLevel="1" name="Test P. Skill Counterattack 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61113" toLevel="1" name="Test P. Skill Counterattack 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61114" toLevel="1" name="Test P. Skill Counterattack 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61115" toLevel="1" name="Test P. Skill Counterattack 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61116" toLevel="1" name="Test P. Skill Counterattack 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61117" toLevel="1" name="Test P. Skill Counterattack 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61118" toLevel="1" name="Test P. Skill Counterattack 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61119" toLevel="1" name="Test P. Skill Counterattack 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61120" toLevel="1" name="Test P. Skill Counterattack 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61121" toLevel="1" name="Test M. Skill Counterattack 10%">
+		<!-- M. Skill Counterattack 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61122" toLevel="1" name="Test M. Skill Counterattack 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61123" toLevel="1" name="Test M. Skill Counterattack 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61124" toLevel="1" name="Test M. Skill Counterattack 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61125" toLevel="1" name="Test M. Skill Counterattack 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61126" toLevel="1" name="Test M. Skill Counterattack 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61127" toLevel="1" name="Test M. Skill Counterattack 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61128" toLevel="1" name="Test M. Skill Counterattack 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61129" toLevel="1" name="Test M. Skill Counterattack 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61130" toLevel="1" name="Test M. Skill Counterattack 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61131" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 10%">
+		<!-- P. Skill Evasion/ P. Skill Counterattack 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61132" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61133" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61134" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61135" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61136" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61137" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61138" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61139" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61140" toLevel="1" name="Test P. Skill Evasion/ P. Skill Counterattack 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61141" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 10%">
+		<!-- M. Skill Evasion/ M. Skill Counterattack 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61142" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61143" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61144" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61145" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61146" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61147" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61148" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61149" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61150" toLevel="1" name="Test M. Skill Evasion/ M. Skill Counterattack 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61151" toLevel="1" name="Test M. Damage Reflection 10%">
+		<!-- M. Damage Reflection 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61152" toLevel="1" name="Test M. Damage Reflection 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61153" toLevel="1" name="Test M. Damage Reflection 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61154" toLevel="1" name="Test M. Damage Reflection 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61155" toLevel="1" name="Test M. Damage Reflection 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61156" toLevel="1" name="Test M. Damage Reflection 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61157" toLevel="1" name="Test M. Damage Reflection 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61158" toLevel="1" name="Test M. Damage Reflection 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61159" toLevel="1" name="Test M. Damage Reflection 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61160" toLevel="1" name="Test M. Damage Reflection 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61161" toLevel="1" name="Sword Resistance 10%">
+		<!-- Sword Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61162" toLevel="1" name="Sword Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61163" toLevel="1" name="Sword Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61164" toLevel="1" name="Sword Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61165" toLevel="1" name="Sword Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61166" toLevel="1" name="Sword Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61167" toLevel="1" name="Sword Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61168" toLevel="1" name="Sword Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61169" toLevel="1" name="Sword Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61170" toLevel="1" name="Sword Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61171" toLevel="1" name="Ancient Sword Resistance 10%">
+		<!-- Ancient Sword Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61172" toLevel="1" name="Ancient Sword Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61173" toLevel="1" name="Ancient Sword Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61174" toLevel="1" name="Ancient Sword Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61175" toLevel="1" name="Ancient Sword Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61176" toLevel="1" name="Ancient Sword Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61177" toLevel="1" name="Ancient Sword Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61178" toLevel="1" name="Ancient Sword Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61179" toLevel="1" name="Ancient Sword Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61180" toLevel="1" name="Ancient Sword Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61181" toLevel="1" name="Dagger Resistance 10%">
+		<!-- Dagger Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61182" toLevel="1" name="Dagger Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61183" toLevel="1" name="Dagger Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61184" toLevel="1" name="Dagger Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61185" toLevel="1" name="Dagger Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61186" toLevel="1" name="Dagger Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61187" toLevel="1" name="Dagger Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61188" toLevel="1" name="Dagger Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61189" toLevel="1" name="Dagger Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61190" toLevel="1" name="Dagger Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61191" toLevel="1" name="Rapier Resistance 10%">
+		<!-- Rapier Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61192" toLevel="1" name="Rapier Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61193" toLevel="1" name="Rapier Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61194" toLevel="1" name="Rapier Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61195" toLevel="1" name="Rapier Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61196" toLevel="1" name="Rapier Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61197" toLevel="1" name="Rapier Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61198" toLevel="1" name="Rapier Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61199" toLevel="1" name="Rapier Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

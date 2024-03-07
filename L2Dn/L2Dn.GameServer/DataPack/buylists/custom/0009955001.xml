@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90471" price="0" /> <!-- Dark Crystal Helmet - Light Armor -->
+	<item id="92305" price="0" /> <!-- Dark Crystal Helmet - Light Armor - Sealed -->
+	<item id="2385" price="0" /> <!-- Dark Crystal Leather Armor - Light Armor -->
+	<item id="92263" price="0" /> <!-- Dark Crystal Leather Armor - Light Armor - Sealed -->
+	<item id="2389" price="0" /> <!-- Dark Crystal Leggings - Light Armor -->
+	<item id="92264" price="0" /> <!-- Dark Crystal Leggings - Light Armor - Sealed -->
+	<item id="5766" price="0" /> <!-- Dark Crystal Gloves - Light Armor -->
+	<item id="92278" price="0" /> <!-- Dark Crystal Gloves - Light Armor - Sealed -->
+	<item id="5778" price="0" /> <!-- Dark Crystal Boots - Light Armor -->
+	<item id="92290" price="0" /> <!-- Dark Crystal Boots - Light - Sealed -->
+	<item id="90468" price="0" /> <!-- Tallum Helm - Light Armor -->
+	<item id="92302" price="0" /> <!-- Tallum Helmet - Light - Sealed -->
+	<item id="2393" price="0" /> <!-- Tallum Leather Armor - Light Armor -->
+	<item id="92265" price="0" /> <!-- Tallum Leather Armor - Light Armor - Sealed -->
+	<item id="5769" price="0" /> <!-- Tallum Gloves - Light Armor -->
+	<item id="92281" price="0" /> <!-- Tallum Gloves - Light - Sealed -->
+	<item id="5781" price="0" /> <!-- Tallum Boots - Light Armor -->
+	<item id="92293" price="0" /> <!-- Tallum Boots - Light - Sealed -->
+	<item id="90474" price="0" /> <!-- Helm of Nightmare - Light Armor -->
+	<item id="92308" price="0" /> <!-- Helm of Nightmare - Light - Sealed -->
+	<item id="2394" price="0" /> <!-- Leather Armor of Nightmare - Light Armor -->
+	<item id="92266" price="0" /> <!-- Leather Armor of Nightmare - Light Armor - Sealed -->
+	<item id="5772" price="0" /> <!-- Gauntlets of Nightmare - Light Armor -->
+	<item id="92284" price="0" /> <!-- Gauntlets of Nightmare - Light - Sealed -->
+	<item id="5784" price="0" /> <!-- Boots of Nightmare - Light Armor -->
+	<item id="92287" price="0" /> <!-- Boots of Nightmare - Light - Sealed -->
+	<item id="90477" price="0" /> <!-- Majestic Circlet - Light Armor -->
+	<item id="92311" price="0" /> <!-- Majestic Circlet - Light Armor - Sealed -->
+	<item id="2395" price="0" /> <!-- Majestic Leather Armor - Light Armor -->
+	<item id="92267" price="0" /> <!-- Majestic Leather Armor - Sealed -->
+	<item id="5775" price="0" /> <!-- Majestic Gauntlets - Light Armor -->
+	<item id="92287" price="0" /> <!-- Majestic Gauntlets - Light - Sealed -->
+	<item id="5787" price="0" /> <!-- Majestic Boots - Light Armor -->
+	<item id="92299" price="0" /> <!-- Majestic Boots - Light - Sealed -->
+	<item id="93315" price="0" /> <!-- Leather Armor of Lightning -->
+	<item id="93317" price="0" /> <!-- Leather Armor of Lightning - Sealed -->
+	<item id="93316" price="0" /> <!-- Leather Leggings of Lightning -->
+	<item id="93318" price="0" /> <!-- Leather Leggings of Lightning - Sealed -->
+</list>

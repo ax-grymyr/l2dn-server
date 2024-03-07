@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="40300" name="option_id_40300">
+		<!-- P. Def. +21.64. -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40301" name="option_id_40301">
+		<!-- P. Def. +21.64. -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40302" name="option_id_40302">
+		<!-- M. Def. +18.35. -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40303" name="option_id_40303">
+		<!-- M. Def. +18.35. -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40304" name="option_id_40304">
+		<!-- M. Def. +18.35. -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40305" name="option_id_40305">
+		<!-- M. Def. +18.35. -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40306" name="option_id_40306">
+		<!-- M. Def. +18.35. -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40307" name="option_id_40307">
+		<!-- Max HP +79.67 -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40308" name="option_id_40308">
+		<!-- Max HP +79.67 -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40309" name="option_id_40309">
+		<!-- Max HP +79.67 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40310" name="option_id_40310">
+		<!-- Max HP +79.67 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40311" name="option_id_40311">
+		<!-- Max HP +79.67 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40312" name="option_id_40312">
+		<!-- Max MP +26.16 -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40313" name="option_id_40313">
+		<!-- Max MP +26.16 -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40314" name="option_id_40314">
+		<!-- Max MP +26.16 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40315" name="option_id_40315">
+		<!-- Max MP +26.16 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40316" name="option_id_40316">
+		<!-- Max MP +26.16 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40317" name="option_id_40317">
+		<!-- Max CP +143.4. -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40318" name="option_id_40318">
+		<!-- Max CP +143.4. -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40319" name="option_id_40319">
+		<!-- Max CP +143.4. -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40320" name="option_id_40320">
+		<!-- Max CP +143.4. -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40321" name="option_id_40321">
+		<!-- Max CP +143.4. -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40322" name="option_id_40322">
+		<!-- P. Atk. +14.76. -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40323" name="option_id_40323">
+		<!-- P. Atk. +14.76. -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40324" name="option_id_40324">
+		<!-- P. Atk. +14.76. -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40325" name="option_id_40325">
+		<!-- P. Atk. +14.76. -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40326" name="option_id_40326">
+		<!-- P. Atk. +14.76. -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40327" name="option_id_40327">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40328" name="option_id_40328">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- HP Recovery Rate +0.32 -->
+	</option>
+	<option id="40329" name="option_id_40329">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- MP Recovery Rate +0.14 -->
+	</option>
+	<option id="40330" name="option_id_40330">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- CP Recovery Rate +0.32 -->
+	</option>
+	<option id="40331" name="option_id_40331">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- P. Evasion +1.64 -->
+	</option>
+	<option id="40332" name="option_id_40332">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- P. Accuracy +1.64 -->
+	</option>
+	<option id="40333" name="option_id_40333">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- P. Critical Rate +12.3 -->
+	</option>
+	<option id="40334" name="option_id_40334">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40335" name="option_id_40335">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40336" name="option_id_40336">
+		<!-- P. Critical Damage +20.66 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40337" name="option_id_40337">
+		<!-- M. Atk. +18.56. -->
+		<!-- P. Critical Damage +20.66 -->
+	</option>
+	<option id="40338" name="option_id_40338">
+		<!-- M. Atk. +18.56. -->
+		<!-- M. Skill Critical Damage +24.24 -->
+	</option>
+	<option id="40339" name="option_id_40339">
+		<!-- M. Atk. +18.56. -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40340" name="option_id_40340">
+		<!-- M. Atk. +18.56. -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40341" name="option_id_40341">
+		<!-- M. Atk. +18.56. -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40342" name="option_id_40342">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- HP Recovery Rate +0.14 -->
+	</option>
+	<option id="40343" name="option_id_40343">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- MP Recovery Rate +0.32 -->
+	</option>
+	<option id="40344" name="option_id_40344">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- CP Recovery Rate +1.64 -->
+	</option>
+	<option id="40345" name="option_id_40345">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- P. Evasion +1.64 -->
+	</option>
+	<option id="40346" name="option_id_40346">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- P. Accuracy +1.23 -->
+	</option>
+	<option id="40347" name="option_id_40347">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- P. Critical Rate +16.4 -->
+	</option>
+	<option id="40348" name="option_id_40348">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40349" name="option_id_40349">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40350" name="option_id_40350">
+		<!-- M. Skill Critical Damage +24.24 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40351" name="option_id_40351">
+		<!-- HP Recovery Rate +0.35 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40352" name="option_id_40352">
+		<!-- HP Recovery Rate +0.35 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40353" name="option_id_40353">
+		<!-- HP Recovery Rate +0.35 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40354" name="option_id_40354">
+		<!-- MP Recovery Rate +0.15 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40355" name="option_id_40355">
+		<!-- MP Recovery Rate +0.15 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40356" name="option_id_40356">
+		<!-- MP Recovery Rate +0.15 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40357" name="option_id_40357">
+		<!-- CP Recovery Rate +0.35 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40358" name="option_id_40358">
+		<!-- CP Recovery Rate +0.35 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40359" name="option_id_40359">
+		<!-- CP Recovery Rate +0.35 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40360" name="option_id_40360">
+		<!-- P. Evasion +1.75 -->
+		<!-- M. Evasion +1.64 -->
+	</option>
+	<option id="40361" name="option_id_40361">
+		<!-- P. Evasion +1.75 -->
+		<!-- M. Accuracy +1.64 -->
+	</option>
+	<option id="40362" name="option_id_40362">
+		<!-- P. Evasion +1.75 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40363" name="option_id_40363">
+		<!-- P. Accuracy +1.75 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40364" name="option_id_40364">
+		<!-- M. Accuracy +1.75 -->
+		<!-- M. Skill Critical Rate +13.5 -->
+	</option>
+	<option id="40365" name="option_id_40365">
+		<!-- P. Critical Damage +8.75 -->
+	</option>
+	<option id="40366" name="option_id_40366">
+		<!-- M. Skill Critical Damage +10.21 -->
+	</option>
+	<option id="40367" name="option_id_40367">
+		<!-- M. Evasion +1.04 -->
+	</option>
+	<option id="40368" name="option_id_40368">
+		<!-- M. Accuracy +1.04 -->
+	</option>
+	<option id="40369" name="option_id_40369">
+		<!-- M. Skill Critical Rate +11.6 -->
+	</option>
+	<option id="40370" name="option_id_40370">
+		<!-- P. Def. +6.07. -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40371" name="option_id_40371">
+		<!-- P. Def. +6.07. -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40372" name="option_id_40372">
+		<!-- P. Def. +6.07. -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40373" name="option_id_40373">
+		<!-- P. Def. +6.07. -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40374" name="option_id_40374">
+		<!-- P. Def. +6.07. -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+	<option id="40375" name="option_id_40375">
+		<!-- M. Def. +4.83. -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40376" name="option_id_40376">
+		<!-- M. Def. +4.83. -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40377" name="option_id_40377">
+		<!-- M. Def. +4.83. -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40378" name="option_id_40378">
+		<!-- M. Def. +4.83. -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40379" name="option_id_40379">
+		<!-- M. Def. +4.83. -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+	<option id="40380" name="option_id_40380">
+		<!-- Max HP +24.26 -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40381" name="option_id_40381">
+		<!-- Max HP +24.26 -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40382" name="option_id_40382">
+		<!-- Max HP +24.26 -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40383" name="option_id_40383">
+		<!-- Max HP +24.26 -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40384" name="option_id_40384">
+		<!-- Max HP +24.26 -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+	<option id="40385" name="option_id_40385">
+		<!-- Max MP +7.7. -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40386" name="option_id_40386">
+		<!-- Max MP +7.7. -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40387" name="option_id_40387">
+		<!-- Max MP +7.7. -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40388" name="option_id_40388">
+		<!-- Max MP +7.7. -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40389" name="option_id_40389">
+		<!-- Max MP +7.7. -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+	<option id="40390" name="option_id_40390">
+		<!-- Max CP +33.51. -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40391" name="option_id_40391">
+		<!-- Max CP +33.51. -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40392" name="option_id_40392">
+		<!-- Max CP +33.51. -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40393" name="option_id_40393">
+		<!-- Max CP +33.51. -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40394" name="option_id_40394">
+		<!-- Max CP +33.51. -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+	<option id="40395" name="option_id_40395">
+		<!-- P. Atk. +3.09. -->
+		<!-- P. Critical Damage +4.12 -->
+	</option>
+	<option id="40396" name="option_id_40396">
+		<!-- P. Atk. +3.09. -->
+		<!-- M. Skill Critical Damage +4.73 -->
+	</option>
+	<option id="40397" name="option_id_40397">
+		<!-- P. Atk. +3.09. -->
+		<!-- M. Evasion +0.49 -->
+	</option>
+	<option id="40398" name="option_id_40398">
+		<!-- P. Atk. +3.09. -->
+		<!-- M. Accuracy +0.49 -->
+	</option>
+	<option id="40399" name="option_id_40399">
+		<!-- P. Atk. +3.09. -->
+		<!-- M. Skill Critical Rate +0.5 -->
+	</option>
+</list>

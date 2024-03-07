@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 3 -->
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Special HP Recovery Potion -->
+		<production count="200" id="94382" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Venir's Talisman Fragment -->
+		<production count="8" id="91076" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Talisman of Aden Enchant Pack -->
+		<production count="2" id="91767" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Talisman of Eva Pack -->
+		<production count="2" id="92020" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Dragon Belt Pack -->
+		<production count="2" id="91864" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Reinforced Jewel Box -->
+		<production count="2" id="92034" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 3 -->
+		<ingredient count="1" id="94491" />
+		<!-- Package: Cloak of Protection -->
+		<production count="2" id="93303" />
+	</item>
+</list>

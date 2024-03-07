@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="100100" name="Manager’s Key Card (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect> acquired XP/ SP +10% Adena drop rate +3% Sustains Sayha's Grace. Duration: 2 h. The effect remains after death. Add to a collection to boost your stats. -->
+		<set name="icon" val="icon.cardkey_man_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100101" name="Manager's +7 Talisman Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose Talisman of Aden/ Speed/ Eva/ Authority enchanted to +8. -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100102" name="Appearance - Assassin's Sword" additionalName="Not Available" type="Weapon">
+		<set name="icon" val="icon.assassin_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1300" />
+		<set name="price" val="26968400" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">137</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="100103" name="Appearance - Assassin's Bow" additionalName="Not Available" type="Weapon">
+		<set name="icon" val="icon.assassin_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1640" />
+		<set name="price" val="26968400" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="5" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="100104" name="Teleportation Scroll Pack (Sealed) (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain Teleportation Scroll (1-5 pcs.) <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.freya_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100105" name="Pagan's Badge (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Required for creating various items through the special craft. -->
+		<set name="icon" val="icon.etc_wind_mantra_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100106" name="Jewel Coupon Lv. 6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the Lv. 6 jewels of your choice. <Coupons required> Ruby Jewelry Box Lv. 6 - 8 coupons Diamond Jewelry Box Lv. 6 - 6 coupons Beryl Jewelry Box Lv. 6 - 5 coupons Onyx Jewelry Box Lv. 6 - 3 coupons Spinel Jewelry Box Lv. 6 - 3 coupons Zircon Jewelry Box Lv. 6 - 3 coupons Opal Jewelry Box Lv. 6 - 2 coupons Coral Jewelry Box Lv. 6 - 2 coupons Moonstone Jewelry Box Lv. 6 - 1 coupon Amber Jewelry Box Lv. 6 - 1 coupon -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100107" name="Andreas van Halter Doll Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 2> P. Atk. +1500 M. Atk. +1500 Received Skill Critical Rate -5% Received Skill Critical Damage -5% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Andreas van Halter Doll Lv. 2 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100108" name="Andreas van Halter Doll Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 3> P. Atk. +2000 M. Atk. +2000 Received Skill Critical Rate -7% Received Skill Critical Damage -7% Received AoE Skill Damage -1% Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Andreas van Halter Doll Lv. 3 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100109" name="Andreas van Halter Doll Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 4> P. Atk. +2500 M. Atk. +2500 Received Skill Critical Rate -9% Received Skill Critical Damage -9% Received AoE Skill Damage -2% Received AoE Skill Damage -300 Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Andreas van Halter Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100110" name="Andreas van Halter Doll Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 5> P. Atk. +3000 M. Atk. +3000 Received Skill Critical Rate -10% Received Skill Critical Damage -10% Received AoE Skill Damage -3% Received AoE Skill Damage -800 Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Andreas van Halter Doll Lv. 4 In case of failure, the doll's level remains the same, but materials disappear. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i02" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100111" name="Frost Lord's Weapon Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain a Frost Lord's weapon <font color=ff6666>(unexchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100112" name="Package: Andreas van Halter Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100113" name="Package: Andreas van Halter Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100114" name="Package: Andreas van Halter Doll Lv. 4 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100115" name="Package: Andreas van Halter Doll Lv. 5 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100116" name="Package: Queen Ant Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100117" name="Package: Queen Ant Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100118" name="Package: Orfen Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100119" name="Package: Orfen Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100120" name="Package: Zaken Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100121" name="Package: Zaken Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100122" name="Package: Baium Doll Lv. 2 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100123" name="Package: Baium Doll Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100124" name="Pagan's Treasure Chest (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100125" name="Kit: Pagan's Treasure Chest (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100126" name="Weapon of Immortality Material Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.present_of_destination_event" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100127" name="Baium's Treasure Chest (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.freya_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100128" name="Assassin's Weapon Appearance" type="Weapon">
+		<!-- Assassin's Weapon Appearance Icon -->
+		<set name="icon" val="icon.assassin_dagger" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="CROSSBOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
+		</stats>
+	</item>
+	<item id="100129" name="Package: Aztacan's Oracle Scepter" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Aztacan's Oracle Scepter <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.aztakan_oracle_wand_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100130" name="Package: Aztacan's Oracle Scepter (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Aztacan's Oracle Scepter <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.aztakan_oracle_wand_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100131" name="Armor of Protection Fragment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Armor of Protection Coupon (Sealed) or Giran Seal (125 pcs.) through the special craft. -->
+		<set name="icon" val="icon.armor_t502_u_i00_piece" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100132" name="Package: +8 Breastplate of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Breastplate of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100133" name="Package: +8 Gaiters of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Gaiters of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100134" name="Package: +8 Leather Armor of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Leather Armor of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100135" name="Package: +8 Leather Leggings of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Leather Leggings of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100136" name="Package: +8 Tunic of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Tunic of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100137" name="Package: +8 Stockings of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Stockings of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100138" name="Package: +8 Gauntlets of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Gauntlets of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100139" name="Package: +8 Helmet of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Helmet of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100140" name="Package: +8 Boots of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Boots of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100141" name="Package: +8 Sigil of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Sigil of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.sigil_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100142" name="Package: +8 Shield of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Shield of Protection <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.shield_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100143" name="+8 Armor of Protection Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 +8 Armor of Protection <font color=00FF00>(exchangeable)</font>. <Items for exchange> Package: +8 Breastplate of Protection Package: +8 Gaiters of Protection Package: +8 Leather Armor of Protection Package: +8 Leather Leggings of Protection Package: +8 Tunic of Protection Package: +8 Stockings of Protection Package: +8 Helmet of Protection Package: +8 Gauntlets of Protection Package: +8 Boots of Protection -->
+		<set name="icon" val="icon.protection_armor_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100144" name="Package: +8 Breastplate of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Breastplate of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100145" name="Package: +8 Gaiters of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Gaiters of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100146" name="Package: +8 Leather Armor of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Leather Armor of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100147" name="Package: +8 Leather Leggings of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Leather Leggings of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100148" name="Package: +8 Tunic of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Tunic of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100149" name="Package: +8 Stockings of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Stockings of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100150" name="Package: +8 Gauntlets of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Gauntlets of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100151" name="Package: +8 Helmet of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Helmet of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100152" name="Package: +8 Boots of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Boots of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100153" name="Package: +8 Sigil of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Sigil of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.sigil_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100154" name="Package: +8 Shield of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Shield of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.shield_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100155" name="+8 Armor of Protection Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 +8 Armor of Protection <font color=ff6666>(unexchangeable)</font>. <Items for exchange> Package: +8 Breastplate of Protection (Sealed) Package: +8 Gaiters of Protection (Sealed) Package: +8 Leather Armor of Protection (Sealed) Package: +8 Leather Leggings of Protection (Sealed) Package: +8 Tunic of Protection (Sealed) Package: +8 Stockings of Protection (Sealed) Package: +8 Helmet of Protection (Sealed) Package: +8 Gauntlets of Protection (Sealed) Package: +8 Boots of Protection (Sealed) -->
+		<set name="icon" val="icon.protection_armor_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100156" name="+2 ~ +4 Talisman of Eva Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100157" name="Package: Core Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100158" name="Package: Frintezza Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100159" name="Package: Antharas Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100160" name="Package: Glakias Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_glacies_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100161" name="Package: Behemoth Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_behemoth_doll" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100162" name="Package: Andreas van Halter Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100163" name="Package: Queen Ant Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100164" name="Package: Orfen Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100165" name="Package: Zaken Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100166" name="Package: Baium Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100167" name="Package: Boss Doll Lv. 3 (Sealed)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_charge_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100168" name="Doll Coupon Lv. 3 (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 of the items for exchange. <font color=EEAA22><Items for exchange></font> Glakias Doll Lv. 3 (Sealed) - 10 coupons Behemoth Doll Lv. 3 (Sealed) - 10 coupons Antharas Doll Lv. 3 (Sealed) - 6 coupons Baium Doll Lv. 3 (Sealed) - 3 coupons Frintezza Doll Lv. 3 (Sealed) - 3 coupons Zaken Doll Lv. 3 (Sealed) - 3 coupons Core Doll Lv. 3 (Sealed) - 2 coupons Queen Ant Doll Lv. 3 (Sealed) - 1 coupon Orfen Doll Lv. 3 (Sealed) - 1 coupon -->
+		<set name="icon" val="icon.bm_boss_doll_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100169" name="Shining Doll Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100170" name="Kit: Shining Doll Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100171" name="Doll Coupon Fragment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to obtain Sealed Doll Coupon Lv. 2 through the special craft. -->
+		<set name="icon" val="icon.bm_boss_doll_ticket_piece_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100172" name="+6 Agathion Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one of the +6 Agathions. <font color=EEAA22><Items for exchange></font> Package: +6 Agathion Ignis - 1 pc. required Package: +6 Agathion Nebula - 1 pc. required Package: +6 Agathion Petram - 1 pc. required Package: +6 Agathion Procella - 1 pc. required Package: +6 Agathion Joy - 1 pc. required Package: +6 Agathion Dragon Egg - 5 pcs. required -->
+		<set name="icon" val="icon.bm_agathion_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100173" name="+7 Agathion Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one of the +7 Agathions. <font color=EEAA22><Items for exchange></font> Package: +7 Agathion Ignis - 1 pc. required Package: +7 Agathion Nebula - 1 pc. required Package: +7 Agathion Petram - 1 pc. required Package: +7 Agathion Procella - 1 pc. required Package: +7 Agathion Joy - 1 pc. required Package: +7 Agathion Dragon Egg - 5 pcs. required -->
+		<set name="icon" val="icon.bm_agathion_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100174" name="+8 Agathion Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one of the +8 Agathions. <font color=EEAA22><Items for exchange></font> Package: +8 Agathion Ignis - 1 pc. required Package: +8 Agathion Nebula - 1 pc. required Package: +8 Agathion Petram - 1 pc. required Package: +8 Agathion Procella - 1 pc. required Package: +8 Agathion Joy - 1 pc. required Package: +8 Agathion Dragon Egg - 5 pcs. required -->
+		<set name="icon" val="icon.bm_agathion_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100175" name="+9 Agathion Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one of the +9 Agathions. <font color=EEAA22><Items for exchange></font> Package: +9 Agathion Ignis - 1 pc. required Package: +9 Agathion Nebula - 1 pc. required Package: +9 Agathion Petram - 1 pc. required Package: +9 Agathion Procella - 1 pc. required Package: +9 Agathion Joy - 1 pc. required Package: +9 Agathion Dragon Egg - 5 pcs. required -->
+		<set name="icon" val="icon.bm_agathion_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100176" name="Jewel Coupon Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the Lv. 4 jewels of your choice. <font color=EEAA22><Items for exchange></font> Beryl Jewelry Box Lv. 4 - 5 pcs. required Onyx Jewelry Box Lv. 4 - 3 pcs. required Spinel Jewelry Box Lv. 4 - 3 pcs. required Zircon Jewelry Box Lv. 4 - 3 pcs. required Coral Jewelry Box Lv. 4 - 2 pcs. required Opal Jewelry Box Lv. 4 - 2 pcs. required Amber Jewelry Box Lv. 4 - 1 pc. required Moonstone Jewelry Box Lv. 4 - 1 pc. required -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100177" name="Jewel Coupon Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the Lv. 5 jewels of your choice. <font color=EEAA22><Items for exchange></font> Beryl Jewelry Box Lv. 5 - 5 pcs. required Onyx Jewelry Box Lv. 5 - 3 pcs. required Spinel Jewelry Box Lv. 5 - 3 pcs. required Zircon Jewelry Box Lv. 5 - 3 pcs. required Coral Jewelry Box Lv. 5 - 2 pcs. required Opal Jewelry Box Lv. 5 - 2 pcs. required Amber Jewelry Box Lv. 5 - 1 pc. required Moonstone Jewelry Box Lv. 5 - 1 pc. required -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100178" name="Jewel Coupon Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the Lv. 6 jewels of your choice. <font color=EEAA22><Items for exchange></font> Beryl Jewelry Box Lv. 6 - 5 pcs. required Onyx Jewelry Box Lv. 6 - 3 pcs. required Spinel Jewelry Box Lv. 6 - 3 pcs. required Zircon Jewelry Box Lv. 6 - 3 pcs. required Coral Jewelry Box Lv. 6 - 2 pcs. required Opal Jewelry Box Lv. 6 - 2 pcs. required Amber Jewelry Box Lv. 6 - 1 pc. required Moonstone Jewelry Box Lv. 6 - 1 pc. required -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100179" name="Jewel Coupon Lv. 7" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the Lv. 7 jewels of your choice. <font color=EEAA22><Items for exchange></font> Beryl Jewelry Box Lv. 7 - 5 pcs. required Onyx Jewelry Box Lv. 7 - 3 pcs. required Spinel Jewelry Box Lv. 7 - 3 pcs. required Zircon Jewelry Box Lv. 7 - 3 pcs. required Coral Jewelry Box Lv. 7 - 2 pcs. required Opal Jewelry Box Lv. 7 - 2 pcs. required Amber Jewelry Box Lv. 7 - 1 pc. required Moonstone Jewelry Box Lv. 7 - 1 pc. required -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100180" name="+5 Talisman Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the +5 talismans of your choice. <font color=EEAA22><Items for exchange></font> +5 Talisman of Aden Pack - 1 pc. required +5 Talisman of Eva Pack - 1 pc. required +5 Talisman of Speed Pack - 1 pc. required +5 Talisman of Authority Pack - 2 pcs. required -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100181" name="+6 Talisman Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the +6 talismans of your choice. <font color=EEAA22><Items for exchange></font> +6 Talisman of Aden Pack - 1 pc. required +6 Talisman of Eva Pack - 1 pc. required +6 Talisman of Speed Pack - 1 pc. required +6 Talisman of Authority Pack - 2 pcs. required -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100182" name="+7 Talisman Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the +7 talismans of your choice. <font color=EEAA22><Items for exchange></font> +7 Talisman of Aden Pack - 1 pc. required +7 Talisman of Eva Pack - 1 pc. required +7 Talisman of Speed Pack - 1 pc. required +7 Talisman of Authority Pack - 2 pcs. required -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100183" name="+8 Talisman Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for one of the +8 talismans of your choice. <font color=EEAA22><Items for exchange></font> +8 Talisman of Aden Pack - 1 pc. required +8 Talisman of Eva Pack - 1 pc. required +8 Talisman of Speed Pack - 1 pc. required +8 Talisman of Authority Pack - 2 pcs. required -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100184" name="Weekly Chest Ticket" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 of the available items. <font color=EEAA22><Items for exchange></font> +6 ~ +9 Agathion Coupon Pack - 1 pc. required Lv. 4-7 Jewel Coupon Pack - 2 pcs. required Elixir Powder Pack (5-50 pcs.) - 3 pcs. required +5 ~ +8 Talisman Coupon Pack - 5 pcs. required Sealed Doll Coupon Pack Lv. 2-3 - 6 pcs. required -->
+		<set name="icon" val="icon.week_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100185" name="Kit: Weekly Chest Ticket" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_green_box_03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100186" name="+6 ~ +9 Agathion Coupon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100187" name="Lv. 4-7 Jewel Coupon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100188" name="+6 ~ +9 Talisman Coupon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100189" name="Elixir Powder Pack (5-50 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100190" name="Sealed Doll Coupon Pack Lv. 2-3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100191" name="Augmenting Stone Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.renewal_mineral_r" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100192" name="Spellbook Coupon Pack - 3-4 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayha2017_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100193" name="+2 Rare Accessory Pack (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earthworm_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100194" name="Aden's Transcendent Soul Crystal Lv. 1 - Weapon" type="EtcItem">
+		<!-- Double-click to imbue a <font color=eeaa22>weapon</font> with one soul crystal property of your choice. <font color=bbaa88><Compound></font> Materials: Transcendent Upgrade Stone In case of failure, the <font color=ff6666>soul crystal and materials disappear</font>. -->
+		<set name="icon" val="icon.aden_rune_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100195" name="Aden's Transcendent Soul Crystal Lv. 2 - Weapon" type="EtcItem">
+		<!-- Double-click to imbue a <font color=eeaa22>weapon</font> with one soul crystal property of your choice. <font color=bbaa88><Compound></font> Materials: Transcendent Upgrade Stone In case of failure, the <font color=ff6666>soul crystal and materials disappear</font>. -->
+		<set name="icon" val="icon.aden_rune_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100196" name="Aden's Transcendent Soul Crystal Lv. 3 - Weapon" type="EtcItem">
+		<!-- Double-click to imbue a <font color=eeaa22>weapon</font> with one soul crystal property of your choice. <font color=bbaa88><Compound></font> Materials: Transcendent Upgrade Stone In case of failure, the <font color=ff6666>soul crystal and materials disappear</font>. -->
+		<set name="icon" val="icon.aden_rune_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100197" name="Aden's Transcendent Soul Crystal Lv. 4 - Weapon" type="EtcItem">
+		<!-- Double-click to imbue a <font color=eeaa22>weapon</font> with one soul crystal property of your choice. <font color=bbaa88><Compound></font> Materials: Transcendent Upgrade Stone In case of failure, the <font color=ff6666>soul crystal and materials disappear</font>. -->
+		<set name="icon" val="icon.aden_rune_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100198" name="Aden's Transcendent Soul Crystal Lv. 5 - Weapon" type="EtcItem">
+		<!-- Double-click to imbue a <font color=eeaa22>weapon</font> with a soul crystal property of your choice. -->
+		<set name="icon" val="icon.aden_rune_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100199" name="Aden's Transcendent Soul Crystal Lv. 1 - Armor" type="EtcItem">
+		<!-- Double-click to imbue <font color=eeaa22>armor</font> with one soul crystal property of your choice. <font color=bbaa88><Compound></font> Materials: Transcendent Upgrade Stone In case of failure, the <font color=ff6666>soul crystal and materials disappear</font>. <font color=ff6666>Cannot be used for enhancing sigils/ shields/ sealed equipment.</font> -->
+		<set name="icon" val="icon.aden_rune_am_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="30" parentClassId="29">
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="1" getLevel="40" levelUpSp="8300">
+			<removeSkill id="1147" onlyReplaceByLearn="true" /> <!-- Fireball -->
+		</skill>
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="3" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="4" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="5" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="6" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="7" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="8" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="9" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="10" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="11" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="12" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="13" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="14" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="15" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="16" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="17" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="18" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="19" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="20" getLevel="75" levelUpSp="240000" />
+		<skill skillName="Pirate Transformation" skillId="1800" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Dark Assassin Transformation" skillId="1801" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="White Assassin Transformation" skillId="1802" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="Mental Shield" skillId="1035" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Mental Shield" skillId="1035" skillLevel="3" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Mental Shield" skillId="1035" skillLevel="4" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="6" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="7" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="8" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="9" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="10" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="11" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="12" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="13" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="14" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="15" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="16" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="17" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="18" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="19" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Wild Magic" skillId="1303" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Advanced Block" skillId="1304" skillLevel="1" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Advanced Block" skillId="1304" skillLevel="2" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Advanced Block" skillId="1304" skillLevel="3" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Advanced Block" skillId="1304" skillLevel="4" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Advanced Block" skillId="1304" skillLevel="5" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Return" skillId="1050" skillLevel="1" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Return" skillId="1050" skillLevel="2" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Favorable Cover" skillId="47266" skillLevel="1" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Favorable Cover" skillId="47266" skillLevel="2" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Favorable Cover" skillId="47266" skillLevel="3" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="3" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="4" getLevel="53" levelUpSp="30000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="5" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="6" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="7" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Quick Recovery" skillId="164" skillLevel="3" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="3" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="4" getLevel="53" levelUpSp="30000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="5" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="6" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="7" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="3" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="4" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="5" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Spell Master" skillId="1830" skillLevel="1" getLevel="40" levelUpSp="0" autoGet="true" />
+		<skill skillName="Spell Master" skillId="1830" skillLevel="2" getLevel="60" levelUpSp="58000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Spell Master" skillId="1830" skillLevel="3" getLevel="70" levelUpSp="170000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="2" getLevel="41" levelUpSp="12000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="3" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="4" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="2" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="3" getLevel="53" levelUpSp="30000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="4" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="5" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Might" skillId="1068" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="11" getLevel="41" levelUpSp="12000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="12" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="13" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="14" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="15" getLevel="45" levelUpSp="12000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="16" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="17" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="18" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="19" getLevel="49" levelUpSp="19000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="20" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="21" getLevel="51" levelUpSp="30000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="22" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="23" getLevel="53" levelUpSp="30000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="24" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="25" getLevel="55" levelUpSp="47000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="26" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="27" getLevel="57" levelUpSp="48000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="28" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="29" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="30" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="31" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="32" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="33" getLevel="63" levelUpSp="88000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="34" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="35" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="36" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="37" getLevel="67" levelUpSp="140000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="38" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="39" getLevel="69" levelUpSp="170000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="40" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="41" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="42" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="43" getLevel="73" levelUpSp="240000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="44" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="45" getLevel="75" levelUpSp="240000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Empower" skillId="45105" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="32" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="11" getLevel="41" levelUpSp="12000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="12" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="13" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="14" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="15" getLevel="45" levelUpSp="12000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="16" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="17" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="18" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="19" getLevel="49" levelUpSp="19000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="20" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="21" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="22" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="23" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="24" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="25" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="26" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="27" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="28" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="29" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="30" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="31" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Increased Power of Magic" skillId="1073" skillLevel="2" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Focus" skillId="45109" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="6" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="7" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="8" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="9" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="10" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="11" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="12" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="13" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="14" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="15" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="16" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="17" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="18" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="19" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="3" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="4" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="5" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="6" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Physical Evasion" skillId="1087" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Physical Evasion" skillId="1087" skillLevel="3" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="1" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="4" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="5" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="6" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="7" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="8" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="9" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="10" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="11" getLevel="51" levelUpSp="30000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="12" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="13" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="14" getLevel="55" levelUpSp="47000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="15" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="16" getLevel="57" levelUpSp="48000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="17" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="18" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="19" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="20" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="21" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="22" getLevel="63" levelUpSp="88000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="23" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="24" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="25" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="26" getLevel="67" levelUpSp="140000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="27" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="28" getLevel="69" levelUpSp="170000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="29" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="30" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="31" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="32" getLevel="73" levelUpSp="240000" />
+		<skill skillName="Greater Heal" skillId="1217" skillLevel="33" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="1" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="4" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="5" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="6" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="7" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="8" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="9" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="10" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="11" getLevel="51" levelUpSp="30000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="12" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="13" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="14" getLevel="55" levelUpSp="47000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="15" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="16" getLevel="57" levelUpSp="48000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="17" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="18" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="19" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="20" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="21" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="22" getLevel="63" levelUpSp="88000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="23" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="24" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="25" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="26" getLevel="67" levelUpSp="140000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="27" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="28" getLevel="69" levelUpSp="170000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="29" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="30" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="31" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="32" getLevel="73" levelUpSp="240000" />
+		<skill skillName="Greater Battle Heal" skillId="1218" skillLevel="33" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="1" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="4" getLevel="42" levelUpSp="12000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="5" getLevel="43" levelUpSp="12000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="6" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="7" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="8" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="9" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="10" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="11" getLevel="51" levelUpSp="30000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="12" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="13" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="14" getLevel="55" levelUpSp="47000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="15" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="16" getLevel="57" levelUpSp="48000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="17" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="18" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="19" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="20" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="21" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="22" getLevel="63" levelUpSp="88000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="23" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="24" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="25" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="26" getLevel="67" levelUpSp="140000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="27" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="28" getLevel="69" levelUpSp="170000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="29" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="30" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="31" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="32" getLevel="73" levelUpSp="240000" />
+		<skill skillName="Greater Group Heal" skillId="1219" skillLevel="33" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="4" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="5" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="6" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="7" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="8" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="1" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="2" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="3" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="4" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="5" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Blessed Shield" skillId="1243" skillLevel="6" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Fast Spellcasting" skillId="228" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Fast Spellcasting" skillId="228" skillLevel="3" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Party Return" skillId="1255" skillLevel="1" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Party Return" skillId="1255" skillLevel="2" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Decrease Weight" skillId="1257" skillLevel="2" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Decrease Weight" skillId="1257" skillLevel="3" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Resilience" skillId="1259" skillLevel="1" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Resilience" skillId="1259" skillLevel="2" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Resilience" skillId="1259" skillLevel="3" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Resilience" skillId="1259" skillLevel="4" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Cure" skillId="1012" skillLevel="3" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Clarity" skillId="1397" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="8300">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Resurrection" skillId="1016" skillLevel="3" getLevel="40" levelUpSp="8300" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="4" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="5" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="6" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="7" getLevel="74" levelUpSp="240000" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="8300">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="58000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="1" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="2" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="3" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="4" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="5" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="6" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="7" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="8" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="9" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="10" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="11" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="12" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="13" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Purify" skillId="1018" skillLevel="1" getLevel="44" levelUpSp="12000">
+			<item id="98423,90045" count="3" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Purify" skillId="1018" skillLevel="2" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Purify" skillId="1018" skillLevel="3" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="1" getLevel="46" levelUpSp="19000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="2" getLevel="47" levelUpSp="19000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="3" getLevel="48" levelUpSp="19000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="4" getLevel="49" levelUpSp="19000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="5" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="6" getLevel="51" levelUpSp="30000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="7" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="8" getLevel="53" levelUpSp="30000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="9" getLevel="54" levelUpSp="47000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="10" getLevel="55" levelUpSp="47000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="11" getLevel="56" levelUpSp="47000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="12" getLevel="57" levelUpSp="48000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="13" getLevel="58" levelUpSp="48000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="14" getLevel="59" levelUpSp="58000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="15" getLevel="60" levelUpSp="58000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="16" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="17" getLevel="62" levelUpSp="70000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="18" getLevel="63" levelUpSp="88000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="19" getLevel="64" levelUpSp="88000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="20" getLevel="65" levelUpSp="110000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="21" getLevel="66" levelUpSp="110000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="22" getLevel="67" levelUpSp="140000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="23" getLevel="68" levelUpSp="140000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="24" getLevel="69" levelUpSp="170000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="25" getLevel="70" levelUpSp="170000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="26" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="27" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="28" getLevel="73" levelUpSp="240000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="29" getLevel="74" levelUpSp="240000" />
+		<skill skillName="Vitalize" skillId="1020" skillLevel="30" getLevel="75" levelUpSp="240000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="30000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="70000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+	</skillTree>
+</list>

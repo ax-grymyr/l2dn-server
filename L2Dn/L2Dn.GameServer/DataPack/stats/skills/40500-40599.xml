@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="40500" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-999</effectPoint>
+	</skill>
+	<skill id="40501" toLevel="1" name="Hellfire - Demonstration">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="40502" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-999</effectPoint>
+	</skill>
+	<skill id="40503" toLevel="1" name="Hellfire Scheme">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<effectPoint>-999</effectPoint>
+	</skill>
+	<skill id="40504" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>900</castRange>
+		<effectPoint>-999</effectPoint>
+	</skill>
+	<skill id="40505" toLevel="1" name="Throw Capture Rope">
+		<!-- A great way of capturing a mole. -->
+		<icon>icon.etc_braided_hemp_i00</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40594" toLevel="1" name="Pet's Green Lantern (Time-limited)">
+		<!-- Pet XP +1,000,000. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+</list>

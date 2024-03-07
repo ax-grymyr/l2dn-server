@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="1047402" toLevel="3" name="Chain Arrest">
+		<!-- <font color="C270F6">P. Atk. -1000. M. Atk. -1000</font> -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.s_flame_arrow</value>
+			<value level="3">icon.skill0000</value>
+		</icon>
+		<effectPoint>-800</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>
+			<value level="1">82</value>
+			<value level="2">85</value>
+			<value level="3">88</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>40</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="3" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk" fromLevel="1" toLevel="3" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047403" toLevel="3" name="Chain Arrest">
+		<!-- The body is bound and unable to move. -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.s_deflect_shot</value>
+			<value level="3">icon.skill0000</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="1047404" toLevel="2" name="Flame Arrow">
+		<!-- Constantly drains HP. -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.s_flame_arrow</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="1047405" toLevel="2" name="Flame Arrow">
+		<!-- <font color="C270F6">P. Atk. -1000. M. Atk. -1000</font> -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.s_flame_arrow</value>
+		</icon>
+		<effectPoint>-800</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">89</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>40</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047406" toLevel="2" name="Arrow Shower">
+		<!-- <font color="C270F6">P. Atk. -1000. M. Atk. -1000</font> -->
+		<icon>icon.s_arrow_shower</icon>
+		<effectPoint>-800</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">89</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<attributeValue>20</attributeValue>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>40</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>-1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047407" toLevel="2" name="Arrow Shower">
+		<!-- Atk. Spd. -10%. Casting Spd. -10%. Speed -10%. <font color="C270F6">. <Enchant effect>. Applies a debuff that decreases P./ M. Atk.</font> -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.s_arrow_shower</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="1047409" toLevel="2" name="Piercing Arrow">
+		<!-- P. Atk. <font color="C270F6">-11%</font>. M. Atk. n<font color="C270F6">-11%</font>. P. Def. -11%. M. Def. -11%. <font color="C270F6"><Enchant effect>. Enhances a debuff that decreases P./ M. Atk. Enhances a debuff that decreases P./ M. Def.</font> -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.skill10760</value>
+		</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>
+			<value level="1">-1220</value>
+			<value level="2">-1220</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<trait>ANOMALY</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack" toLevel="1" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>
+					<value toLevel="1" fromLevel="1" fromSubLevel="1001" toSubLevel="1001">11</value>
+					<value toLevel="2" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack" toLevel="1" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>
+					<value toLevel="1" fromLevel="1" fromSubLevel="1001" toSubLevel="1001">11</value>
+					<value toLevel="2" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence" toLevel="1" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>
+					<value toLevel="1" fromLevel="1" fromSubLevel="1001" toSubLevel="1001">11</value>
+					<value toLevel="2" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence" toLevel="1" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">
+				<amount>
+					<value toLevel="1" fromLevel="1" fromSubLevel="1001" toSubLevel="1001">11</value>
+					<value toLevel="2" fromLevel="2" fromSubLevel="1001" toSubLevel="1001">16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047418" toLevel="1" name="Dexterous Body">
+		<!-- Gives additional effects according to DEX. <DEX 65 - 74>. - When using a bow, P. Atk. <font color="C270F6">+7%</font>. <DEX 75 - 84>. - When using a bow, P. Atk. <font color="C270F6">+13%</font>. - When using the Stun Shot and Mental Panic Shot skills, with a 50% chance, increases attack rate and power. <DEX 85+>. - When using a bow, P. Atk. <font color="C270F6">+23%</font>. - Received P. Skill Critical Rate <font color="C270F6">-6%</font>. - Received P. Skill Critical Damage <font color="C270F6">-6%</font>. - When using the Stun Shot and Mental Panic Shot skills, with a certain chance, increases attack rate and power. <font color="C270F6"><Enchant effect>. Increases the effect according to DEX.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>
+			<value toSubLevel="1001" toLevel="1" fromSubLevel="1001" fromLevel="1">-1</value>
+		</abnormalTime>
+		<abnormalType>POWER_STAT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47419</skillId><!-- Dexterous Body Lv. 1 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047419</skillId><!-- Dexterous Body Lv. 1 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047419</skillId><!-- Dexterous Body Lv. 1 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047419</skillId><!-- Dexterous Body Lv. 1 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="1047419" toLevel="1" name="Dexterous Body Lv. 1">
+		<!-- <DEX 65 - 74>. - When using a bow, P. Atk. <font color="C270F6">+7%. <Enchant effect>. Increases P. Atk. when using a bow.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>POWER_STAT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047420</skillId><!-- Dexterous Body Lv. 2 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">
+				<baseStat>DEX</baseStat>
+				<min>65</min>
+				<max>74</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047420" toLevel="1" name="Dexterous Body Lv. 2">
+		<!-- <DEX 75 - 84>. - When using a bow, P. Atk. <font color="C270F6">+13%</font>. - When using the Stun Shot and Mental Panic Shot skills, with a 50% chance, increases attack rate and power. <font color="C270F6"><Enchant effect>. Increases P. Atk. when using a bow.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>POWER_STAT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>47421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>1047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>2047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>3047421</skillId><!-- Dexterous Body Lv. 3 -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">
+				<baseStat>DEX</baseStat>
+				<min>75</min>
+				<max>84</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>13</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047421" toLevel="1" name="Dexterous Body Lv. 3">
+		<!-- <DEX 85+>. - When using a bow, P. Atk. <font color="C270F6">+23%</font>. - Received P. Skill Critical Rate <font color="C270F6">-6%</font>. - Received P. Skill Critical Damage <font color="C270F6">-6%</font>. - When using the Stun Shot and Mental Panic Shot skills, with a certain chance, increases attack rate and power. <font color="C270F6"><Enchant effect>. Increases P. Atk. when using a bow. Increases received P. Skill Critical Rate/ received P. Skill Critical Damage.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>POWER_STAT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">
+				<baseStat>DEX</baseStat>
+				<min>85</min>
+				<max>999</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate" toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">
+				<amount>-6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage" toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">
+				<amount>-6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047444" displayId="47444" toLevel="3" name="Fire Spiral">
+		<!-- For 5 sec., CON/ MEN <font color="C270F6">-4. <Enchant effect>. Enhances a debuff that decreases CON/ MEN.</font> -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.s_fire_spiral</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>FIRE_SPIRAL</abnormalType>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047447" displayId="47447" toLevel="3" name="Dark Spiral">
+		<!-- For 5 sec., STR/ MEN <font color="C270F6">-4. <Enchant effect>. Enhances a debuff that decreases STR/ MEN.</font> -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.s_dark_spiral</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>DARK_SPIRAL</abnormalType>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047450" displayId="47450" toLevel="3" name="Ice Spiral">
+		<!-- For 5 sec., INT/ CON <font color="C270F6">-4. <Enchant effect>. Enhances a debuff that decreases INT/ CON.</font> -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.s_water_spiral</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>WATER_SPIRAL</abnormalType>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047453" displayId="47453" toLevel="3" name="Wind Spiral">
+		<!-- For 5 sec., DEX/ WIT <font color="C270F6">-4. <Enchant effect>. Enhances a debuff that decreases DEX/ WIT.</font> -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.s_wind_spiral</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>WIND_SPIRAL</abnormalType>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047456" toLevel="2" name="Magic Circle Cancel">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="1047457" toLevel="2" name="Magic Circle Attack">
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<basicProperty>MAGIC</basicProperty>
+		<isMagic>1</isMagic>
+		<effectPoint>-210</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<selfEffects>
+			<effect name="DispelBySlotMyself">
+				<dispel>MAGIC_CIRCLE</dispel>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">50</value>
+					<value level="2">145</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047458" displayId="47458" toLevel="4" name="Magic Circle Lv. 1">
+		<!-- Magic Circle Lv. 1 is complete. When using magic skills (attack/ anomaly/ debuff):. Magic Circle's level will increase. -->
+		<icon>
+			<value level="1">icon.s_magic_circle1</value>
+			<value level="2">icon.s_magic_circle2</value>
+			<value level="3">icon.s_magic_circle3</value>
+			<value level="4">icon.s_magic_circle4</value>
+		</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>MAGIC_CIRCLE</abnormalType>
+		<abnormalLevel>3</abnormalLevel>
+		<isMagic>5</isMagic>
+		<reuseDelay>1000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>1230</attackSkillId><!-- Prominence -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>1148</attackSkillId><!-- Death Spike -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>1235</attackSkillId><!-- Hydro Blast -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>1239</attackSkillId><!-- Hurricane -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>45378</attackSkillId><!-- Flame Explosion -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>45379</attackSkillId><!-- Water Explosion -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>45380</attackSkillId><!-- Thunder Explosion -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="4" toLevel="4">
+				<attackSkillId>45381</attackSkillId><!-- Void Explosion -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>1047457</skillId><!-- Magic Circle Attack -->
+				<skillLevel>2</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+</list>

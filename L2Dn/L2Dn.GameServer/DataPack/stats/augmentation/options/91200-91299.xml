@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="91200" name="M. Accuracy +1.2">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91201" name="M. Accuracy +1.3">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91202" name="M. Accuracy +1.3">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91203" name="M. Accuracy +1.3">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91204" name="M. Accuracy +1.4">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91205" name="M. Accuracy +1.4">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91206" name="M. Accuracy +1.4">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91207" name="M. Accuracy +1.4">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91208" name="M. Accuracy +1.4">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91209" name="M. Accuracy +1.5">
+		<!-- M. Accuracy +1.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91210" name="M. Accuracy +1.5">
+		<!-- M. Accuracy +1.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91211" name="M. Accuracy +1.5">
+		<!-- M. Accuracy +1.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91212" name="M. Accuracy +1.8">
+		<!-- M. Accuracy +1.8 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91213" name="M. Accuracy +2">
+		<!-- M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91214" name="M. Accuracy +2.1">
+		<!-- M. Accuracy +2.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91215" name="M. Accuracy +2.2">
+		<!-- M. Accuracy +2.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91216" name="M. Accuracy +2.3">
+		<!-- M. Accuracy +2.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91217" name="M. Accuracy +2.4">
+		<!-- M. Accuracy +2.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91218" name="M. Accuracy +3">
+		<!-- M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91219" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91220" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91221" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91222" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91223" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91224" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91225" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91226" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91227" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91228" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91229" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91230" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91231" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91232" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91233" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91234" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91235" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91236" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91237" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91238" name="M. Damage Resistance +5%">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91239" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91240" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91241" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91242" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91243" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91244" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91245" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91246" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91247" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91248" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91249" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91250" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91251" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91252" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91253" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91254" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91255" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91256" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91257" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91258" name="M. Damage Resistance +5%">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91259" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91260" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91261" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91262" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91263" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91264" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91265" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91266" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91267" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91268" name="M. Damage Resistance +2%">
+		<!-- M. Damage Resistance +2% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>2.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91269" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91270" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91271" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91272" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91273" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91274" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91275" name="M. Damage Resistance +3%">
+		<!-- M. Damage Resistance +3% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91276" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91277" name="M. Damage Resistance +4%">
+		<!-- M. Damage Resistance +4% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>4.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91278" name="M. Damage Resistance +5%">
+		<!-- M. Damage Resistance +5% -->
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91279" name="Max HP +12">
+		<!-- Max HP +12 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91280" name="Max HP +13">
+		<!-- Max HP +13 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91281" name="Max HP +14">
+		<!-- Max HP +14 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91282" name="Max HP +15">
+		<!-- Max HP +15 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91283" name="Max HP +16">
+		<!-- Max HP +16 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91284" name="Max HP +17">
+		<!-- Max HP +17 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91285" name="Max HP +18">
+		<!-- Max HP +18 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91286" name="Max HP +19">
+		<!-- Max HP +19 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>19</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91287" name="Max HP +20">
+		<!-- Max HP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91288" name="Max HP +22">
+		<!-- Max HP +22 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91289" name="Max HP +24">
+		<!-- Max HP +24 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>24</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91290" name="Max HP +26">
+		<!-- Max HP +26 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91291" name="Max HP +28">
+		<!-- Max HP +28 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91292" name="Max HP +35">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91293" name="Max HP +37">
+		<!-- Max HP +37 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>37</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91294" name="Max HP +39">
+		<!-- Max HP +39 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91295" name="Max HP +41">
+		<!-- Max HP +41 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91296" name="Max HP +44">
+		<!-- Max HP +44 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91297" name="Max HP +47">
+		<!-- Max HP +47 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91298" name="Max HP +50">
+		<!-- Max HP +50 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91299" name="Max HP +12">
+		<!-- Max HP +12 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

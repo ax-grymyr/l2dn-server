@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Agathion and Bracelet -->
+	<item>
+		<!-- Adena -->
+		<ingredient count="1500000" id="57" />
+		<!-- Agathion Bracelet - Lv. 1 -->
+		<production count="1" id="90888" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Enchant Scroll -->
+		<production count="4" id="48046" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Virgo -->
+		<production count="1" id="48048" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Capricorn -->
+		<production count="1" id="48049" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Libra -->
+		<production count="1" id="48050" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Taurus -->
+		<production count="1" id="48052" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Leo -->
+		<production count="1" id="48053" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Gemini -->
+		<production count="1" id="48054" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Scorpio -->
+		<production count="1" id="48055" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Aquarius -->
+		<production count="1" id="48056" />
+	</item>
+	<item>
+		<!-- Agathion Exchange Coupon -->
+		<ingredient count="1" id="91159" />
+		<!-- Agathion Sagittarius -->
+		<production count="1" id="48058" />
+	</item>
+</list>

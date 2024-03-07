@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/EquipmentUpgradeNormalData.xsd">
+	<!--
+	Commission in params its Adena multiplier, which apply to commission from upgrade.
+	Commission in upgrade its adena, which request for change item type.
+	Upgrade commission value 5 000 000:
+		* commission   100 - upgrade commission will be  5 000 000 // default value
+		* commission 1 000 - upgrade commission will be 50 000 000
+	Calculation formula -> (Upgrade commission / 100) * (params commission)
+	-->
+	<params commission="100" />
+	<discount>
+	<!--
+	Working only for material items in upgrade.
+	For change adena tax - use commission in params.
+		<item id="57" count="0" />
+		<item id="57" count="0" />
+		<item id="57" count="0" />
+	-->
+	</discount>
+	<upgrade id="1" type="1" chance="50" commission="5000000">
+		<upgradeItem id="6660" count="1" enchantLevel="0" /> <!-- Queen Ant's Ring -->
+		<successItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94208" count="1" enchantLevel="0" /> <!-- Scroll of Blessing (Sealed) -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="2" type="1" chance="50" commission="5000000">
+		<upgradeItem id="6661" count="1" enchantLevel="0" /> <!-- Orfen's Earring -->
+		<successItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94208" count="1" enchantLevel="0" /> <!-- Scroll of Blessing (Sealed) -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="3" type="1" chance="20" commission="2000000">
+		<upgradeItem id="6662" count="1" enchantLevel="0" /> <!-- Ring of Core -->
+		<successItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94208" count="1" enchantLevel="0" /> <!-- Scroll of Blessing (Sealed) -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="4" type="1" chance="23" commission="7500000">
+		<upgradeItem id="49580" count="1" enchantLevel="0" /> <!-- Baium's Ring -->
+		<successItems>
+			<item id="94385" count="1" enchantLevel="0" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="5" type="1" chance="80" commission="7500000">
+		<upgradeItem id="90763" count="1" enchantLevel="0" /> <!-- Zaken's Earring -->
+		<successItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94208" count="1" enchantLevel="0" /> <!-- Scroll of Blessing (Sealed) -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="6" type="1" chance="40" commission="10000000">
+		<upgradeItem id="90992" count="1" enchantLevel="0" /> <!-- Antharas' Earring -->
+		<successItems>
+			<item id="94385" count="1" enchantLevel="0" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94383" count="2" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="7" type="1" chance="40" commission="10000000">
+		<upgradeItem id="91550" count="1" enchantLevel="0" /> <!-- Frintezza's Necklace -->
+		<successItems>
+			<item id="94385" count="1" enchantLevel="0" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</failureItems>
+	</upgrade>
+	<upgrade id="8" type="1" chance="100" commission="50000">
+		<upgradeItem id="91046" count="1" enchantLevel="0" /> <!-- Ignis' Old Necklace Lv. 1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="9" type="1" chance="100" commission="50000">
+		<upgradeItem id="91047" count="1" enchantLevel="0" /> <!-- Ignis' Old Necklace Lv. 2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="10" type="1" chance="100" commission="50000">
+		<upgradeItem id="91048" count="1" enchantLevel="0" /> <!-- Ignis' Old Necklace Lv. 3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="11" type="1" chance="100" commission="100000">
+		<upgradeItem id="91118" count="1" enchantLevel="0" /> <!-- Ignis' Old Necklace Lv. 4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="1" /> <!-- Necklace of Spirits +1 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="12" type="1" chance="100" commission="200000">
+		<upgradeItem id="91119" count="1" enchantLevel="0" /> <!-- Ignis' Necklace -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="2" /> <!-- Necklace of Spirits +2 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="13" type="1" chance="100" commission="300000">
+		<upgradeItem id="91119" count="1" enchantLevel="1" /> <!-- Ignis' Necklace +1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="3" /> <!-- Necklace of Spirits +3 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="14" type="1" chance="100" commission="500000">
+		<upgradeItem id="91119" count="1" enchantLevel="2" /> <!-- Ignis' Necklace +2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="4" /> <!-- Necklace of Spirits +4 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="15" type="1" chance="100" commission="700000">
+		<upgradeItem id="91119" count="1" enchantLevel="3" /> <!-- Ignis' Necklace +3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="5" /> <!-- Necklace of Spirits +5 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="16" type="1" chance="100" commission="1000000">
+		<upgradeItem id="91119" count="1" enchantLevel="4" /> <!-- Ignis' Necklace +4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="6" /> <!-- Necklace of Spirits +6 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="17" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91119" count="1" enchantLevel="5" /> <!-- Ignis' Necklace +5 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="18" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91119" count="1" enchantLevel="6" /> <!-- Ignis' Necklace +6 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="19" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91119" count="1" enchantLevel="7" /> <!-- Ignis' Necklace +7 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="20" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91119" count="1" enchantLevel="8" /> <!-- Ignis' Necklace +8 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="21" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91119" count="1" enchantLevel="9" /> <!-- Ignis' Necklace +9 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="22" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91119" count="1" enchantLevel="10" /> <!-- Ignis' Necklace +10 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="23" type="1" chance="100" commission="50000">
+		<upgradeItem id="91043" count="1" enchantLevel="0" /> <!-- Nebula's Old Necklace Lv. 1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="24" type="1" chance="100" commission="50000">
+		<upgradeItem id="91044" count="1" enchantLevel="0" /> <!-- Nebula's Old Necklace Lv. 2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="25" type="1" chance="100" commission="50000">
+		<upgradeItem id="91045" count="1" enchantLevel="0" /> <!-- Nebula's Old Necklace Lv. 3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="26" type="1" chance="100" commission="100000">
+		<upgradeItem id="91116" count="1" enchantLevel="0" /> <!-- Nebula's Old Necklace Lv. 4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="1" /> <!-- Necklace of Spirits +1 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="27" type="1" chance="100" commission="200000">
+		<upgradeItem id="91117" count="1" enchantLevel="0" /> <!-- Nebula's Necklace -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="2" /> <!-- Necklace of Spirits +2 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="28" type="1" chance="100" commission="300000">
+		<upgradeItem id="91117" count="1" enchantLevel="1" /> <!-- Nebula's Necklace +1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="3" /> <!-- Necklace of Spirits +3 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="29" type="1" chance="100" commission="500000">
+		<upgradeItem id="91117" count="1" enchantLevel="2" /> <!-- Nebula's Necklace +2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="4" /> <!-- Necklace of Spirits +4 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="30" type="1" chance="100" commission="700000">
+		<upgradeItem id="91117" count="1" enchantLevel="3" /> <!-- Nebula's Necklace +3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="5" /> <!-- Necklace of Spirits +5 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="31" type="1" chance="100" commission="1000000">
+		<upgradeItem id="91117" count="1" enchantLevel="4" /> <!-- Nebula's Necklace +4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="6" /> <!-- Necklace of Spirits +6 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="32" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91117" count="1" enchantLevel="5" /> <!-- Nebula's Necklace +5 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="33" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91117" count="1" enchantLevel="6" /> <!-- Nebula's Necklace +6 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="34" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91117" count="1" enchantLevel="7" /> <!-- Nebula's Necklace +7 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="35" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91117" count="1" enchantLevel="8" /> <!-- Nebula's Necklace +8 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="36" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91117" count="1" enchantLevel="9" /> <!-- Nebula's Necklace +9 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="37" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91117" count="1" enchantLevel="10" /> <!-- Nebula's Necklace +10 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="38" type="1" chance="100" commission="50000">
+		<upgradeItem id="91049" count="1" enchantLevel="0" /> <!-- Procella's Old Necklace Lv. 1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="39" type="1" chance="100" commission="50000">
+		<upgradeItem id="91050" count="1" enchantLevel="0" /> <!-- Procella's Old Necklace Lv. 2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="40" type="1" chance="100" commission="50000">
+		<upgradeItem id="91051" count="1" enchantLevel="0" /> <!-- Procella's Old Necklace Lv. 3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="41" type="1" chance="100" commission="100000">
+		<upgradeItem id="91120" count="1" enchantLevel="0" /> <!-- Procella's Old Necklace Lv. 4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="1" /> <!-- Necklace of Spirits +1 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="42" type="1" chance="100" commission="200000">
+		<upgradeItem id="91121" count="1" enchantLevel="0" /> <!-- Procella's Necklace -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="2" /> <!-- Necklace of Spirits +2 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="43" type="1" chance="100" commission="300000">
+		<upgradeItem id="91121" count="1" enchantLevel="1" /> <!-- Procella's Necklace +1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="3" /> <!-- Necklace of Spirits +3 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="44" type="1" chance="100" commission="500000">
+		<upgradeItem id="91121" count="1" enchantLevel="2" /> <!-- Procella's Necklace +2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="4" /> <!-- Necklace of Spirits +4 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="45" type="1" chance="100" commission="700000">
+		<upgradeItem id="91121" count="1" enchantLevel="3" /> <!-- Procella's Necklace +3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="5" /> <!-- Necklace of Spirits +5 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="46" type="1" chance="100" commission="1000000">
+		<upgradeItem id="91121" count="1" enchantLevel="4" /> <!-- Procella's Necklace +4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="6" /> <!-- Necklace of Spirits +6 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="47" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91121" count="1" enchantLevel="5" /> <!-- Procella's Necklace +5 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="48" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91121" count="1" enchantLevel="6" /> <!-- Procella's Necklace +6 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="49" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91121" count="1" enchantLevel="7" /> <!-- Procella's Necklace +7 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="50" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91121" count="1" enchantLevel="8" /> <!-- Procella's Necklace +8 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="51" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91121" count="1" enchantLevel="9" /> <!-- Procella's Necklace +9 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="52" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91121" count="1" enchantLevel="10" /> <!-- Procella's Necklace +10 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="53" type="1" chance="100" commission="50000">
+		<upgradeItem id="91052" count="1" enchantLevel="0" /> <!-- Petram's Old Necklace Lv. 1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="54" type="1" chance="100" commission="50000">
+		<upgradeItem id="91053" count="1" enchantLevel="0" /> <!-- Petram's Old Necklace Lv. 2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="55" type="1" chance="100" commission="50000">
+		<upgradeItem id="91054" count="1" enchantLevel="0" /> <!-- Petram's Old Necklace Lv. 3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="0" /> <!-- Necklace of Spirits -->
+		</successItems>
+	</upgrade>
+	<upgrade id="56" type="1" chance="100" commission="100000">
+		<upgradeItem id="91122" count="1" enchantLevel="0" /> <!-- Petram's Old Necklace Lv. 4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="1" /> <!-- Necklace of Spirits +1 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="57" type="1" chance="100" commission="200000">
+		<upgradeItem id="91123" count="1" enchantLevel="0" /> <!-- Petram's Necklace -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="2" /> <!-- Necklace of Spirits +2 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="58" type="1" chance="100" commission="300000">
+		<upgradeItem id="91123" count="1" enchantLevel="1" /> <!-- Petram's Necklace +1 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="3" /> <!-- Necklace of Spirits +3 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="59" type="1" chance="100" commission="500000">
+		<upgradeItem id="91123" count="1" enchantLevel="2" /> <!-- Petram's Necklace +2 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="4" /> <!-- Necklace of Spirits +4 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="60" type="1" chance="100" commission="700000">
+		<upgradeItem id="91123" count="1" enchantLevel="3" /> <!-- Petram's Necklace +3 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="5" /> <!-- Necklace of Spirits +5 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="61" type="1" chance="100" commission="1000000">
+		<upgradeItem id="91123" count="1" enchantLevel="4" /> <!-- Petram's Necklace +4 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="6" /> <!-- Necklace of Spirits +6 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="62" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91123" count="1" enchantLevel="5" /> <!-- Petram's Necklace +5 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="63" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91123" count="1" enchantLevel="6" /> <!-- Petram's Necklace +6 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="64" type="1" chance="100" commission="2000000">
+		<upgradeItem id="91123" count="1" enchantLevel="7" /> <!-- Petram's Necklace +7 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="7" /> <!-- Necklace of Spirits +7 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="65" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91123" count="1" enchantLevel="8" /> <!-- Petram's Necklace +8 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="66" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91123" count="1" enchantLevel="9" /> <!-- Petram's Necklace +9 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="67" type="1" chance="100" commission="5000000">
+		<upgradeItem id="91123" count="1" enchantLevel="10" /> <!-- Petram's Necklace +10 -->
+		<successItems>
+			<item id="94682" count="1" enchantLevel="8" /> <!-- Necklace of Spirits +8 -->
+		</successItems>
+	</upgrade>
+	<upgrade id="68" type="1" chance="23" commission="7500000">
+		<upgradeItem id="96600" count="1" enchantLevel="0" /> <!-- Beleth' Ring -->
+		<successItems>
+			<item id="94385" count="1" enchantLevel="0" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+		</successItems>
+		<failureItems>
+			<item id="94383" count="1" enchantLevel="0" /> <!-- Scroll: Enchant Rare Accessories -->
+		</failureItems>
+	</upgrade>
+</list>

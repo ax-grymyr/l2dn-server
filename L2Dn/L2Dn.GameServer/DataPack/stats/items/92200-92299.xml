@@ -1,0 +1,1861 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="92200" name="Coral Jewelry Box Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_coral_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92060" min="1" max="1" chance="100" /> <!-- Coral Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92201" name="Coral Jewelry Box Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_coral_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92061" min="1" max="1" chance="100" /> <!-- Coral Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92202" name="Coral Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_coral_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92062" min="1" max="1" chance="100" /> <!-- Coral Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92203" name="Coral Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92062" min="1" max="1" chance="100" /> <!-- Coral Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92204" name="Coral Jewelry Box Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92064" min="1" max="1" chance="100" /> <!-- Coral Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92205" name="Coral Jewelry Box Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92065" min="1" max="1" chance="100" /> <!-- Coral Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92206" name="Onyx Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92066" min="1" max="1" chance="100" /> <!-- Onyx Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92207" name="Onyx Jewelry Box Lv. 2" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92067" min="1" max="1" chance="100" /> <!-- Onyx Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92208" name="Onyx Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92068" min="1" max="1" chance="100" /> <!-- Onyx Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92209" name="Onyx Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92069" min="1" max="1" chance="100" /> <!-- Onyx Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92210" name="Onyx Jewelry Box Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92070" min="1" max="1" chance="100" /> <!-- Onyx Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92211" name="Onyx Jewelry Box Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92071" min="1" max="1" chance="100" /> <!-- Onyx Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92212" name="Onyx Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92072" min="1" max="1" chance="100" /> <!-- Onyx Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92213" name="Onyx Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92072" min="1" max="1" chance="100" /> <!-- Onyx Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92214" name="Onyx Jewelry Box Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92074" min="1" max="1" chance="100" /> <!-- Onyx Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92215" name="Onyx Jewelry Box Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92075" min="1" max="1" chance="100" /> <!-- Onyx Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92216" name="Spinel Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92076" min="1" max="1" chance="100" /> <!-- Spinel Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92217" name="Spinel Jewelry Box Lv. 2" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92077" min="1" max="1" chance="100" /> <!-- Spinel Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92218" name="Spinel Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92078" min="1" max="1" chance="100" /> <!-- Spinel Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92219" name="Spinel Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92079" min="1" max="1" chance="100" /> <!-- Spinel Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92220" name="Spinel Jewelry Box Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92080" min="1" max="1" chance="100" /> <!-- Spinel Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92221" name="Spinel Jewelry Box Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92081" min="1" max="1" chance="100" /> <!-- Spinel Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92222" name="Spinel Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92082" min="1" max="1" chance="100" /> <!-- Spinel Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92223" name="Spinel Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92082" min="1" max="1" chance="100" /> <!-- Spinel Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92224" name="Spinel Jewelry Box Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92084" min="1" max="1" chance="100" /> <!-- Spinel Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92225" name="Spinel Jewelry Box Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92085" min="1" max="1" chance="100" /> <!-- Spinel Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92226" name="Zircon Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92086" min="1" max="1" chance="100" /> <!-- Zircon Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92227" name="Zircon Jewelry Box Lv. 2" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92087" min="1" max="1" chance="100" /> <!-- Zircon Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92228" name="Zircon Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92088" min="1" max="1" chance="100" /> <!-- Zircon Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92229" name="Zircon Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92089" min="1" max="1" chance="100" /> <!-- Zircon Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92230" name="Zircon Jewelry Box Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92090" min="1" max="1" chance="100" /> <!-- Zircon Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92231" name="Zircon Jewelry Box Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92091" min="1" max="1" chance="100" /> <!-- Zircon Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92232" name="Zircon Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_bloodstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92092" min="1" max="1" chance="100" /> <!-- Zircon Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92233" name="Zircon Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92092" min="1" max="1" chance="100" /> <!-- Zircon Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92234" name="Zircon Jewelry Box Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92094" min="1" max="1" chance="100" /> <!-- Zircon Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92235" name="Zircon Jewelry Box Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92095" min="1" max="1" chance="100" /> <!-- Zircon Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92236" name="Moonstone Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92096" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92237" name="Moonstone Jewelry Box Lv. 2" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92097" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92238" name="Moonstone Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92098" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92239" name="Moonstone Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92099" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92240" name="Moonstone Jewelry Box Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92100" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92241" name="Moonstone Jewelry Box Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92101" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92242" name="Moonstone Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_moonstone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92102" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92243" name="Moonstone Jewelry Box Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92102" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92244" name="Moonstone Jewelry Box Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92104" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92245" name="Moonstone Jewelry Box Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92105" min="1" max="1" chance="100" /> <!-- Moonstone Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="92246" name="Jewel Box Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92180" min="1" max="1" chance="14.28571" /> <!-- Amber Jewelry Box Lv. 6 -->
+			<item id="92190" min="1" max="1" chance="14.28571" /> <!-- Opal Jewelry Box Lv. 6 -->
+			<item id="92200" min="1" max="1" chance="14.28571" /> <!-- Coral Jewelry Box Lv. 6 -->
+			<item id="92210" min="1" max="1" chance="14.28571" /> <!-- Onyx Jewelry Box Lv. 6 -->
+			<item id="92220" min="1" max="1" chance="14.28571" /> <!-- Spinel Jewelry Box Lv. 6 -->
+			<item id="92230" min="1" max="1" chance="14.28571" /> <!-- Zircon Jewelry Box Lv. 6 -->
+			<item id="92240" min="1" max="1" chance="14.28571" /> <!-- Moonstone Jewelry Box Lv. 6 -->
+		</capsuled_items>
+	</item>
+	<item id="92247" name="Amber Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 days. Interrupts the target's skill casting. Inflicts 1357 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92248" name="Opal Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. Shock/ Pull/ Silence/ Paralysis/ Fear Resistance +11%. Enables a skill that grants immunity to debuffs and anomaly states for 5 sec. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92249" name="Coral Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. Atk. Spd./ Casting Spd. +7%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92250" name="Onyx Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 days. Soulshot/ Blessed Soulshot/ Beast Soulshot/ Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +8%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92251" name="Spinel Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 days. P. Def. +100, M. Def. +60, CON/ MEN/ DEX/ WIT +1, Received P. Critical Damage/ M. Skill Critical Damage -4%. With a certain chance, MP +30 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92252" name="Zircon Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. When equipped, P. Critical Damage/ M. Skill Critical Damage +8%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92253" name="Moonstone Lv. 4" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +8%, Sayha's Grace Consumption -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="92254" name="Jewel Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92250" min="1" max="1" chance="100" /> <!-- Onyx Lv. 4 - 3-day -->
+			<item id="92252" min="1" max="1" chance="100" /> <!-- Zircon Lv. 4 - 3-day -->
+			<item id="92249" min="1" max="1" chance="100" /> <!-- Coral Lv. 4 - 3-day -->
+			<item id="92251" min="1" max="1" chance="100" /> <!-- Spinel Lv. 4 - 3-day -->
+			<item id="91760" min="1" max="1" chance="100" /> <!-- Brooch Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="92255" name="Dark Crystal Breastplate" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +15. Paralysis Resistance +50%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="7700" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
+		<skills>
+			<skill id="50221" level="1" /> <!-- A-grade: Dark Crystal Breastplate -->
+			<skill id="50261" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top Armor -->
+		</skills>
+	</item>
+	<item id="92256" name="Armor of Nightmare" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Sleep Resistance +70%. Hold Resistance +70%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="9580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
+		<skills>
+			<skill id="50231" level="1" /> <!-- A-grade: Armor of Nightmare -->
+			<skill id="50261" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top Armor -->
+		</skills>
+	</item>
+	<item id="92257" name="Dark Crystal Gaiters" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1000. M. Def. +10. Max HP +200. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="3320" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">107</stat>
+		</stats>
+		<skills>
+			<skill id="50224" level="1" /> <!-- A-grade: Dark Crystal Gaiters -->
+			<skill id="50262" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92258" name="Dark Crystal Helmet" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="92259" name="Tallum Helmet" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="92260" name="Dark Crystal Shield" additionalName="Sealed" type="Armor">
+		<!-- Can't be sealed by a blacksmith of any town. -->
+		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1190" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<set name="bodypart" val="lhand" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">256</stat>
+		</stats>
+	</item>
+	<item id="92261" name="Tallum Plate Armor" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Silence Resistance +50%. Fear Resistance +50%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="9780" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">278</stat>
+		</stats>
+		<skills>
+			<skill id="50234" level="1" /> <!-- A-grade: Tallum Plate Armor -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92262" name="Majestic Plate Armor" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Shock Resistance +50%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="9200" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
+		<skills>
+			<skill id="50228" level="1" /> <!-- A-grade: Majestic Plate Armor -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92263" name="Dark Crystal Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +1. Overweight limit +1500. M. Def. +15. Paralysis Resistance +50%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="4300" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
+		<skills>
+			<skill id="50222" level="1" /> <!-- A-grade: Dark Crystal Leather Armor -->
+			<skill id="50261" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top Armor -->
+		</skills>
+	</item>
+	<item id="92264" name="Dark Crystal Leggings" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +1. Overweight limit +1000. M. Def. +10. Max HP +150. Max MP +80. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1480" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
+		<skills>
+			<skill id="50225" level="1" /> <!-- A-grade: Dark Crystal Leggings -->
+			<skill id="50262" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92265" name="Tallum Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Silence Resistance +50%. Fear Resistance +50%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">209</stat>
+		</stats>
+		<skills>
+			<skill id="50235" level="1" /> <!-- A-grade: Tallum Leather Armor -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92266" name="Leather Armor of Nightmare" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Sleep Resistance +70%. Hold Resistance +70%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5300" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
+		<skills>
+			<skill id="50233" level="1" /> <!-- A-grade: Leather Armor of Nightmare -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92267" name="Majestic Leather Armor" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Shock Resistance +50%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5350" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
+		<skills>
+			<skill id="50230" level="1" /> <!-- A-grade: Majestic Leather Armor -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92268" name="Tallum Tunic" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +1. Overweight limit +1500. M. Def. +15. Silence Resistance +50%. Fear Resistance +50%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1860" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">86</stat>
+			<stat type="maxMp">409</stat>
+		</stats>
+		<skills>
+			<skill id="50223" level="1" /> <!-- A-grade: Tallum Tunic -->
+			<skill id="50261" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top Armor -->
+		</skills>
+	</item>
+	<item id="92269" name="Tallum Stockings" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +1. Overweight limit +1000. M. Def. +10. Max HP +100. Max MP +120. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="920" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">53</stat>
+			<stat type="maxMp">256</stat>
+		</stats>
+		<skills>
+			<skill id="50226" level="1" /> <!-- A-grade: Tallum Stockings -->
+			<skill id="50262" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92270" name="Dark Crystal Robe" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Paralysis Resistance +50%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2450" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">139</stat>
+			<stat type="maxMp">665</stat>
+		</stats>
+		<skills>
+			<skill id="50227" level="1" /> <!-- A-grade: Dark Crystal Robe -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92271" name="Robe of Nightmare" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Sleep Resistance +70%. Hold Resistance +70%. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2300" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
+		<skills>
+			<skill id="50232" level="1" /> <!-- A-grade: Robe of Nightmare -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92272" name="Majestic Robe" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Shock Resistance +50%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2330" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
+		<skills>
+			<skill id="50229" level="1" /> <!-- A-grade: Majestic Robe -->
+			<skill id="50260" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Top/ Bottom Armor -->
+		</skills>
+	</item>
+	<item id="92273" name="Helm of Nightmare" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="92274" name="Majestic Circlet" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="92275" name="Dark Crystal Gloves" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t15_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">45</stat>
+		</stats>
+	</item>
+	<item id="92276" name="Shield of Nightmare" additionalName="Sealed" type="Armor">
+		<!-- Can't be sealed by a blacksmith of any town. -->
+		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="lhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">282</stat>
+		</stats>
+	</item>
+	<item id="92277" name="Dark Crystal Gloves (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +200. Atk. Spd. +8%. Received Healing +2%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50236" level="1" type="ON_ENCHANT" type_value="5" /> <!-- A-grade: Dark Crystal Gloves -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92278" name="Dark Crystal Gloves (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Evasion +2. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50238" level="1" /> <!-- A-grade: Dark Crystal Gloves -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92279" name="Dark Crystal Gloves (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Interruption Rate -25. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50237" level="1" /> <!-- A-grade: Dark Crystal Gloves -->
+			<skill id="50264" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92280" name="Tallum Gloves (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Def. +10. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50245" level="1" /> <!-- A-grade: Tallum Gloves -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92281" name="Tallum Gloves (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Max MP +120. Casting Spd. +15%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50247" level="1" /> <!-- A-grade: Tallum Gloves -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92282" name="Tallum Gloves (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +20. Max HP +50. Casting Spd. +15%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50246" level="1" /> <!-- A-grade: Tallum Gloves -->
+			<skill id="50264" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92283" name="Gauntlets of Nightmare (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Atk. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50242" level="1" /> <!-- A-grade: Gauntlets of Nightmare -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92284" name="Gauntlets of Nightmare (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. Absorbs 2% of the inflicted damage as HP. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50244" level="1" /> <!-- A-grade: Gauntlets of Nightmare -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92285" name="Gauntlets of Nightmare (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. M. Atk. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50243" level="1" /> <!-- A-grade: Gauntlets of Nightmare -->
+			<skill id="50264" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92286" name="Majestic Gauntlets (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. Atk. Spd. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50239" level="1" /> <!-- A-grade: Majestic Gauntlets -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92287" name="Majestic Gauntlets (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Skill Critical Damage +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50241" level="1" /> <!-- A-grade: Majestic Gauntlets -->
+			<skill id="50263" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="50263" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Physical) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92288" name="Majestic Gauntlets (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Spd. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t85_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50240" level="1" /> <!-- A-grade: Majestic Gauntlets -->
+			<skill id="50264" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="50264" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: A-grade Gloves (Magic) -->
+			<skill id="83222" level="2" type="ON_BLESSING" /> <!-- Gloves Blessing Effect -->
+			<skill id="83191" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83192" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83193" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="92289" name="Dark Crystal Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +200. Speed +4. Received Healing +2%. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50248" level="1" /> <!-- A-grade: Dark Crystal Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92290" name="Dark Crystal Boots (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Evasion +2. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50250" level="1" /> <!-- A-grade: Dark Crystal Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92291" name="Dark Crystal Boots (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +7. Casting Interruption Rate -25. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50249" level="1" /> <!-- A-grade: Dark Crystal Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Magic) -->
+		</skills>
+	</item>
+	<item id="92292" name="Tallum Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Def. +10. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50257" level="1" /> <!-- A-grade: Tallum Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92293" name="Tallum Boots (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Max MP +120. Speed +4. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50259" level="1" /> <!-- A-grade: Tallum Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92294" name="Tallum Boots (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +20. Max HP +50. Speed +4. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+		<skills>
+			<skill id="50258" level="1" /> <!-- A-grade: Tallum Boots -->
+			<skill id="50266" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Magic) -->
+		</skills>
+	</item>
+	<item id="92295" name="Boots of Nightmare (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Atk. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50254" level="1" /> <!-- A-grade: Boots of Nightmare -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92296" name="Boots of Nightmare (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. Absorbs 2% of the inflicted damage as HP. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50256" level="1" /> <!-- A-grade: Boots of Nightmare -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92297" name="Boots of Nightmare (Robe)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. INT +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. M. Atk. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50255" level="1" /> <!-- A-grade: Boots of Nightmare -->
+			<skill id="50266" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Magic) -->
+		</skills>
+	</item>
+	<item id="92298" name="Majestic Boots (Heavy)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +7. Atk. Spd. +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50251" level="1" /> <!-- A-grade: Majestic Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+	<item id="92299" name="Majestic Boots (Light)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Skill Critical Damage +50. Can't be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1110" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50253" level="1" /> <!-- A-grade: Majestic Boots -->
+			<skill id="50265" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Boots (Physical) -->
+		</skills>
+	</item>
+</list>

@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60100" toLevel="1" name="M. Damage Resistance Bonus +15">
+		<!-- M. Damage Resistance Bonus +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60101" toLevel="1" name="M. Damage Reflection 5%">
+		<!-- M. Damage Reflection 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60102" toLevel="1" name="M. Damage Reflection 10%">
+		<!-- M. Damage Reflection 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60103" toLevel="1" name="M. Damage Reflection 15%">
+		<!-- M. Damage Reflection 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60104" toLevel="1" name="M. Damage Reflection Resistance 5%">
+		<!-- M. Damage Reflection Resistance 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60105" toLevel="1" name="M. Damage Reflection Resistance 10%">
+		<!-- M. Damage Reflection Resistance 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60106" toLevel="1" name="M. Damage Reflection Resistance 15%">
+		<!-- M. Damage Reflection Resistance 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60107" toLevel="1" name="Fixed Damage Resistance Decrease +5%">
+		<!-- Fixed Damage Resistance Decrease +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60108" toLevel="1" name="Fixed Damage Resistance Decrease +10%">
+		<!-- Fixed Damage Resistance Decrease +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60109" toLevel="1" name="Fixed Damage Resistance Decrease +15%">
+		<!-- Fixed Damage Resistance Decrease +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60110" toLevel="1" name="Casting Interruption Rate -5%">
+		<!-- Casting Interruption Rate -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60111" toLevel="1" name="Casting Interruption Rate -10%">
+		<!-- Casting Interruption Rate -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60112" toLevel="1" name="Casting Interruption Rate -15%">
+		<!-- Casting Interruption Rate -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60113" toLevel="1" name="Casting Interruption Rate -5">
+		<!-- Casting Interruption Rate -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60114" toLevel="1" name="Casting Interruption Rate -10">
+		<!-- Casting Interruption Rate -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60115" toLevel="1" name="Casting Interruption Rate -15">
+		<!-- Casting Interruption Rate -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60116" toLevel="1" name="Vital Point Attack Rate 5%">
+		<!-- Vital Point Attack Rate +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60117" toLevel="1" name="Vital Point Attack Rate +10%">
+		<!-- Vital Point Attack Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60118" toLevel="1" name="Vital Point Attack Rate +15%">
+		<!-- Vital Point Attack Rate +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60119" toLevel="1" name="Vital Point Attack Bonus +5">
+		<!-- Vital Point Attack Bonus +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60120" toLevel="1" name="Vital Point Attack Bonus +10">
+		<!-- Vital Point Attack Bonus +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60121" toLevel="1" name="Vital Point Attack Bonus +15">
+		<!-- Vital Point Attack Bonus +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60122" toLevel="1" name="Received Vital Point Attack Rate 5%">
+		<!-- Received Vital Point Attack Rate 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60123" toLevel="1" name="Received Vital Point Attack Rate 10%">
+		<!-- Received Vital Point Attack Rate 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60124" toLevel="1" name="Received Vital Point Attack Rate 15%">
+		<!-- Received Vital Point Attack Rate 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60125" toLevel="1" name="Received Vital Point Attack Bonus -5">
+		<!-- Received Vital Point Attack Bonus -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60126" toLevel="1" name="Received Vital Point Attack Bonus -10">
+		<!-- Received Vital Point Attack Bonus -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60127" toLevel="1" name="Received Vital Point Attack Bonus -15">
+		<!-- Received Vital Point Attack Bonus -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60128" toLevel="1" name="P. Skill Evasion 5%">
+		<!-- P. Skill Evasion 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60129" toLevel="1" name="P. Skill Evasion 10%">
+		<!-- P. Skill Evasion 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60130" toLevel="1" name="P. Skill Evasion 15%">
+		<!-- P. Skill Evasion 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60131" toLevel="1" name="M. Skill Evasion 5%">
+		<!-- M. Skill Evasion 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60132" toLevel="1" name="M. Skill Evasion 10%">
+		<!-- M. Skill Evasion 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60133" toLevel="1" name="M. Skill Evasion 15%">
+		<!-- M. Skill Evasion 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60134" toLevel="1" name="Received P. Critical Rate -5%">
+		<!-- Received P. Critical Rate -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60135" toLevel="1" name="Received P. Critical Rate -10%">
+		<!-- Received P. Critical Rate -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60136" toLevel="1" name="Received P. Critical Rate -15%">
+		<!-- Received P. Critical Rate -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60137" toLevel="1" name="Received P. Critical Bonus -5">
+		<!-- Received P. Critical Bonus -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60138" toLevel="1" name="Received P. Critical Bonus -10">
+		<!-- Received P. Critical Bonus -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60139" toLevel="1" name="Received P. Critical Bonus -15">
+		<!-- Received P. Critical Bonus -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60140" toLevel="1" name="Received P. Skill Critical Rate -5%">
+		<!-- Received P. Skill Critical Rate -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60141" toLevel="1" name="Received P. Skill Critical Rate -10%">
+		<!-- Received P. Skill Critical Rate -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60142" toLevel="1" name="Received P. Skill Critical Rate -15%">
+		<!-- Received P. Skill Critical Rate -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60143" toLevel="1" name="Received P. Skill Critical Bonus -5">
+		<!-- Received P. Skill Critical Bonus -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60144" toLevel="1" name="Received P. Skill Critical Bonus -10">
+		<!-- Received P. Skill Critical Bonus -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60145" toLevel="1" name="Received P. Skill Critical Bonus -15">
+		<!-- Received P. Skill Critical Bonus -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60146" toLevel="1" name="Received P. Skill Critical Rate -5%">
+		<!-- Received P. Skill Critical Rate -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60147" toLevel="1" name="Received P. Skill Critical Rate -10%">
+		<!-- Received P. Skill Critical Rate -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60148" toLevel="1" name="Received P. Skill Critical Rate -15%">
+		<!-- Received P. Skill Critical Rate -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60149" toLevel="1" name="Received P. Skill Critical Bonus -5">
+		<!-- Received P. Skill Critical Bonus -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60150" toLevel="1" name="Received P. Skill Critical Bonus -10">
+		<!-- Received P. Skill Critical Bonus -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60151" toLevel="1" name="Received P. Skill Critical Bonus -15">
+		<!-- Received P. Skill Critical Bonus -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60152" toLevel="1" name="P. Critical Rate +5%">
+		<!-- P. Critical Rate +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60153" toLevel="1" name="P. Critical Rate +10%">
+		<!-- P. Critical Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60154" toLevel="1" name="P. Critical Rate +15%">
+		<!-- P. Critical Rate +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60155" toLevel="1" name="P. Critical Rate +5">
+		<!-- P. Critical Rate +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60156" toLevel="1" name="P. Critical Rate +10">
+		<!-- P. Critical Rate +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60157" toLevel="1" name="P. Critical Rate +15">
+		<!-- P. Critical Rate +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60158" toLevel="1" name="P. Skill Critical Rate +5%">
+		<!-- P. Skill Critical Rate +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60159" toLevel="1" name="P. Skill Critical Rate +10%">
+		<!-- P. Skill Critical Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60160" toLevel="1" name="P. Skill Critical Rate +15%">
+		<!-- P. Skill Critical Rate +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60161" toLevel="1" name="P. Skill Critical Rate +5">
+		<!-- P. Skill Critical Rate +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60162" toLevel="1" name="P. Skill Critical Rate +10">
+		<!-- P. Skill Critical Rate +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60163" toLevel="1" name="P. Skill Critical Rate +15">
+		<!-- P. Skill Critical Rate +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60164" toLevel="1" name="M. Skill Critical Rate +5%">
+		<!-- M. Skill Critical Rate +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60165" toLevel="1" name="M. Skill Critical Rate +10%">
+		<!-- M. Skill Critical Rate +10%. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60166" toLevel="1" name="M. Skill Critical Rate +15%">
+		<!-- M. Skill Critical Rate +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60167" toLevel="1" name="M. Skill Critical Rate +5">
+		<!-- M. Skill Critical Rate +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60168" toLevel="1" name="M. Skill Critical Rate +10">
+		<!-- M. Skill Critical Rate +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60169" toLevel="1" name="M. Skill Critical Rate +15">
+		<!-- M. Skill Critical Rate +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60170" toLevel="1" name="P. Critical Damage +5%">
+		<!-- P. Critical Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60171" toLevel="1" name="P. Critical Damage +10%">
+		<!-- P. Critical Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60172" toLevel="1" name="P. Critical Damage +15%">
+		<!-- P. Critical Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60173" toLevel="1" name="P. Critical Damage +5">
+		<!-- P. Critical Damage +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60174" toLevel="1" name="P. Critical Damage +10">
+		<!-- P. Critical Damage +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60175" toLevel="1" name="P. Critical Damage +15">
+		<!-- P. Critical Damage +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60176" toLevel="1" name="P. Skill Critical Damage +5%">
+		<!-- P. Skill Critical Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60177" toLevel="1" name="P. Skill Critical Damage +10%">
+		<!-- P. Skill Critical Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60178" toLevel="1" name="P. Skill Critical Damage +15%">
+		<!-- P. Skill Critical Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60179" toLevel="1" name="P. Skill Critical Damage +5">
+		<!-- P. Skill Critical Damage +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60180" toLevel="1" name="P. Skill Critical Damage +10">
+		<!-- P. Skill Critical Damage +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60181" toLevel="1" name="P. Skill Critical Damage +15">
+		<!-- P. Skill Critical Damage +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60182" toLevel="1" name="M. Skill Critical Damage +5%">
+		<!-- M. Skill Critical Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60183" toLevel="1" name="M. Skill Critical Damage +10%">
+		<!-- M. Skill Critical Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60184" toLevel="1" name="M. Skill Critical Damage +15%">
+		<!-- M. Skill Critical Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60185" toLevel="1" name="M. Skill Critical Damage +5">
+		<!-- M. Skill Critical Damage +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60186" toLevel="1" name="M. Skill Critical Damage +10">
+		<!-- M. Skill Critical Damage +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60187" toLevel="1" name="M. Skill Critical Damage +15">
+		<!-- M. Skill Critical Damage +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60188" toLevel="1" name="HP Recovery Potions' Effect +5%">
+		<!-- HP Recovery Potions' Effect +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60189" toLevel="1" name="HP Recovery Potions' Effect +10%">
+		<!-- HP Recovery Potions' Effect +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60190" toLevel="1" name="HP Recovery Potions' Effect +15%">
+		<!-- HP Recovery Potions' Effect +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60191" toLevel="1" name="HP Recovery Potions' Effect +5">
+		<!-- HP Recovery Potions' Effect +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60192" toLevel="1" name="HP Recovery Potions' Effect +10">
+		<!-- HP Recovery Potions' Effect +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60193" toLevel="1" name="HP Recovery Potions' Effect +15">
+		<!-- HP Recovery Potions' Effect +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60194" toLevel="1" name="MP Recovery Potions' Effect +5%">
+		<!-- MP Recovery Potions' Effect +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60195" toLevel="1" name="MP Recovery Potions' Effect +10%">
+		<!-- MP Recovery Potions' Effect +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60196" toLevel="1" name="MP Recovery Potions' Effect +15%">
+		<!-- MP Recovery Potions' Effect +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60197" toLevel="1" name="MP Recovery Potions' Effect +5">
+		<!-- MP Recovery Potions' Effect +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60198" toLevel="1" name="MP Recovery Potions' Effect +10">
+		<!-- MP Recovery Potions' Effect +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60199" toLevel="1" name="MP Recovery Potions' Effect +15">
+		<!-- MP Recovery Potions' Effect +15 -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

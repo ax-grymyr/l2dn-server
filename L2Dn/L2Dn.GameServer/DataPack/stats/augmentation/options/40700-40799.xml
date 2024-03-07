@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="40700" name="option_id_40700">
+		<!-- P. Critical Damage +14.75 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40701" name="option_id_40701">
+		<!-- P. Critical Damage +14.75 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40702" name="option_id_40702">
+		<!-- M. Atk. +12.37. -->
+		<!-- P. Critical Damage +14.75 -->
+	</option>
+	<option id="40703" name="option_id_40703">
+		<!-- M. Atk. +12.37. -->
+		<!-- M. Skill Critical Damage +16.97 -->
+	</option>
+	<option id="40704" name="option_id_40704">
+		<!-- M. Atk. +12.37. -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40705" name="option_id_40705">
+		<!-- M. Atk. +12.37. -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40706" name="option_id_40706">
+		<!-- M. Atk. +12.37. -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40707" name="option_id_40707">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- HP Recovery Rate +0.23 -->
+	</option>
+	<option id="40708" name="option_id_40708">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- MP Recovery Rate +0.1 -->
+	</option>
+	<option id="40709" name="option_id_40709">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- CP Recovery Rate +0.23 -->
+	</option>
+	<option id="40710" name="option_id_40710">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- P. Evasion +0.1 -->
+	</option>
+	<option id="40711" name="option_id_40711">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- P. Accuracy +0.23 -->
+	</option>
+	<option id="40712" name="option_id_40712">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- P. Critical Rate +11.7 -->
+	</option>
+	<option id="40713" name="option_id_40713">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40714" name="option_id_40714">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40715" name="option_id_40715">
+		<!-- M. Skill Critical Damage +16.97 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40716" name="option_id_40716">
+		<!-- HP Recovery Rate +0.23 -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40717" name="option_id_40717">
+		<!-- HP Recovery Rate +0.23 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40718" name="option_id_40718">
+		<!-- HP Recovery Rate +0.23 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40719" name="option_id_40719">
+		<!-- MP Recovery Rate +0.1 -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40720" name="option_id_40720">
+		<!-- MP Recovery Rate +0.1 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40721" name="option_id_40721">
+		<!-- MP Recovery Rate +0.1 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40722" name="option_id_40722">
+		<!-- CP Recovery Rate +0.23 -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40723" name="option_id_40723">
+		<!-- CP Recovery Rate +0.23 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40724" name="option_id_40724">
+		<!-- CP Recovery Rate +0.23 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40725" name="option_id_40725">
+		<!-- P. Evasion +1.17 -->
+		<!-- M. Evasion +1.17 -->
+	</option>
+	<option id="40726" name="option_id_40726">
+		<!-- P. Evasion +1.17 -->
+		<!-- M. Accuracy +1.17 -->
+	</option>
+	<option id="40727" name="option_id_40727">
+		<!-- P. Evasion +1.17 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40728" name="option_id_40728">
+		<!-- P. Accuracy +1.17 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40729" name="option_id_40729">
+		<!-- M. Accuracy +1.17 -->
+		<!-- M. Skill Critical Rate +7 -->
+	</option>
+	<option id="40730" name="option_id_40730">
+		<!-- Item skill: P. Atk. in PvE +3%. -->
+	</option>
+	<option id="40731" name="option_id_40731">
+		<!-- Item skill: P. Atk. in PvE +3%. -->
+	</option>
+	<option id="40732" name="option_id_40732">
+		<!-- Item skill: P. Atk. in PvE +3%. -->
+	</option>
+	<option id="40733" name="option_id_40733">
+		<!-- Item skill: P. Atk. in PvE +3%. -->
+	</option>
+	<option id="40734" name="option_id_40734">
+		<!-- Item skill: P. Atk. in PvE +3%. -->
+	</option>
+	<option id="40735" name="option_id_40735">
+		<!-- Item skill: P. Def. in PvP +3% -->
+	</option>
+	<option id="40736" name="option_id_40736">
+		<!-- Item skill: P. Def. in PvP +3% -->
+	</option>
+	<option id="40737" name="option_id_40737">
+		<!-- Item skill: P. Def. in PvP +3% -->
+	</option>
+	<option id="40738" name="option_id_40738">
+		<!-- Item skill: P. Def. in PvP +3% -->
+	</option>
+	<option id="40739" name="option_id_40739">
+		<!-- Item skill: P. Def. in PvP +3% -->
+	</option>
+	<option id="40740" name="option_id_40740">
+		<!-- Item skill: P. Def. in PvE +3% -->
+	</option>
+	<option id="40741" name="option_id_40741">
+		<!-- Item skill: P. Def. in PvE +3% -->
+	</option>
+	<option id="40742" name="option_id_40742">
+		<!-- Item skill: P. Def. in PvE +3% -->
+	</option>
+	<option id="40743" name="option_id_40743">
+		<!-- Item skill: P. Def. in PvE +3% -->
+	</option>
+	<option id="40744" name="option_id_40744">
+		<!-- Item skill: P. Def. in PvE +3% -->
+	</option>
+	<option id="40745" name="option_id_40745">
+		<!-- Item skill: Acquired XP/ SP while hunting +3% -->
+	</option>
+	<option id="40746" name="option_id_40746">
+		<!-- Item skill: Acquired XP/ SP while hunting +3% -->
+	</option>
+	<option id="40747" name="option_id_40747">
+		<!-- Item skill: Acquired XP/ SP while hunting +5% -->
+	</option>
+	<option id="40748" name="option_id_40748">
+		<!-- Item skill: Acquired XP/ SP while hunting +5% -->
+	</option>
+	<option id="40749" name="option_id_40749">
+		<!-- Item skill: Acquired XP/ SP while hunting +10%. -->
+	</option>
+	<option id="40750" name="option_id_40750">
+		<!-- Active skill: Temporarily increases Atk. Spd. -->
+	</option>
+	<option id="40751" name="option_id_40751">
+		<!-- Active skill: Temporarily increases Atk. Spd. -->
+	</option>
+	<option id="40752" name="option_id_40752">
+		<!-- Active skill: Temporarily increases Atk. Spd. -->
+	</option>
+	<option id="40753" name="option_id_40753">
+		<!-- Active skill: Temporarily increases Casting Spd. -->
+	</option>
+	<option id="40754" name="option_id_40754">
+		<!-- Active skill: Temporarily increases Casting Spd. -->
+	</option>
+	<option id="40755" name="option_id_40755">
+		<!-- Active skill: Temporarily increases Casting Spd. -->
+	</option>
+	<option id="40756" name="option_id_40756">
+		<!-- Active skill: Removes all debuffs. -->
+	</option>
+</list>

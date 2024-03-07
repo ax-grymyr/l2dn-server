@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="736" price="0" /> <!-- Scroll of Escape -->
+	<item id="1538" price="0" /> <!-- Blessed Scroll of Escape -->
+	<item id="49087" price="0" /> <!-- Blessed Scroll of Escape (Exchangeable) -->
+	<item id="93452" price="0" /> <!-- Scroll of Escape: Fortress -->
+	<item id="93453" price="0" /> <!-- Blessed Scroll of Escape: Fortress -->
+	<item id="1829" price="0" /> <!-- Scroll of Escape: Clan Hall -->
+	<item id="1830" price="0" /> <!-- Scroll of Escape: Castle -->
+	<item id="5858" price="0" /> <!-- Blessed Scroll of Escape: Clan Hall -->
+	<item id="5859" price="0" /> <!-- Blessed Scroll of Escape: Castle -->
+	<item id="7117" price="0" /> <!-- Scroll of Escape: Talking Island Village -->
+	<item id="7118" price="0" /> <!-- Scroll of Escape: Elven Village -->
+	<item id="7119" price="0" /> <!-- Scroll of Escape: Dark Elven Village -->
+	<item id="7120" price="0" /> <!-- Scroll of Escape: Orc Village -->
+	<item id="7121" price="0" /> <!-- Scroll of Escape: Dwarven Village -->
+	<item id="7122" price="0" /> <!-- Scroll of Escape: Gludin Village -->
+	<item id="7123" price="0" /> <!-- Scroll of Escape: Town of Gludio -->
+	<item id="7124" price="0" /> <!-- Scroll of Escape: Town of Dion -->
+	<item id="7125" price="0" /> <!-- Scroll of Escape: Floran Village -->
+	<item id="7126" price="0" /> <!-- Scroll of Escape: Town of Giran -->
+	<item id="7127" price="0" /> <!-- Scroll of Escape: Hardin's Academy -->
+	<item id="7129" price="0" /> <!-- Scroll of Escape: Town of Oren -->
+	<item id="7130" price="0" /> <!-- Scroll of Escape: Ivory Tower -->
+	<item id="7131" price="0" /> <!-- Scroll of Escape: Hunters Village -->
+	<item id="10650" price="0" /> <!-- Adventurer's Scroll of Escape -->
+	<item id="49089" price="0" /> <!-- Scroll of Escape Entrance to Cruma Tower -->
+	<item id="49090" price="0" /> <!-- Scroll of Escape Entrance to Dragon Valley -->
+	<item id="49091" price="0" /> <!-- Scroll of Escape Dragon Valley Bridge -->
+	<item id="49537" price="0" /> <!-- Scroll of Escape Dragon Valley Bridge (Exchangeable) -->
+	<item id="49092" price="0" /> <!-- Scroll of Escape: Talking Island Village -->
+	<item id="49093" price="0" /> <!-- Scroll of Escape: Elven Village -->
+	<item id="49094" price="0" /> <!-- Scroll of Escape: Dark Elven Village -->
+	<item id="49095" price="0" /> <!-- Scroll of Escape: Orc Village -->
+	<item id="49096" price="0" /> <!-- Scroll of Escape: Dwarven Village -->
+	<item id="49097" price="0" /> <!-- Scroll of Escape: Gludin Village -->
+	<item id="49098" price="0" /> <!-- Scroll of Escape: Town of Gludio -->
+	<item id="49099" price="0" /> <!-- Scroll of Escape: Town of Dion -->
+	<item id="49100" price="0" /> <!-- Scroll of Escape: Floran Village -->
+	<item id="49101" price="0" /> <!-- Scroll of Escape: Town of Giran -->
+	<item id="49102" price="0" /> <!-- Scroll of Escape: Town of Oren -->
+	<item id="49103" price="0" /> <!-- Scroll of Escape: Ivory Tower -->
+	<item id="49104" price="0" /> <!-- Scroll of Escape: Hunters Village -->
+	<item id="49106" price="0" /> <!-- Scroll of Escape Entrance to Dragon Valley -->
+	<item id="49502" price="0" /> <!-- Scroll of Escape: Giran Harbor -->
+	<item id="49538" price="0" /> <!-- Scroll of Escape: Antharas' Lair -->
+	<item id="49540" price="0" /> <!-- Scroll of Escape: Entrance Orc Barracks -->
+	<item id="90766" price="0" /> <!-- Scroll of Escape: Entrance to the Evil's Isle -->
+	<item id="91197" price="0" /> <!-- Scroll of Escape: Forge of the Gods -->
+	<item id="91198" price="0" /> <!-- Scroll of Escape: Garden of Eva -->
+	<item id="91199" price="0" /> <!-- Scroll of Escape: Land of Winds -->
+	<item id="91200" price="0" /> <!-- Scroll of Escape: Wall of Argos -->
+	<item id="91646" price="0" /> <!-- Scroll of Escape: Unbearable Wolves'Howli -->
+	<item id="91647" price="0" /> <!-- Scroll of Escape: Troubled Forest -->
+	<item id="91648" price="0" /> <!-- Scroll of Escape: Cleaning-up The Grounds -->
+	<item id="91649" price="0" /> <!-- Scroll of Escape: Plundered Graves -->
+	<item id="91650" price="0" /> <!-- Scroll of Escape: Dangerous Predators -->
+	<item id="91651" price="0" /> <!-- Scroll of Escape: Captain Bathis -->
+	<item id="91725" price="0" /> <!-- Scroll of Escape: Abandoned Camp -->
+	<item id="91726" price="0" /> <!-- Scroll of Escape: Windmill Hill -->
+	<item id="91727" price="0" /> <!-- Scroll of Escape: Ruins of Agony -->
+	<item id="91736" price="0" /> <!-- Scroll of Escape: High Priest Raymond -->
+	<item id="91768" price="0" /> <!-- Scroll of Escape: High Priest Orven -->
+	<item id="91954" price="0" /> <!-- Scroll of Escape: Tower of Insolence (1st Floor) -->
+	<item id="91955" price="0" /> <!-- Scroll of Escape: Tower of Insolence (2nd Floor) -->
+	<item id="91956" price="0" /> <!-- Scroll of Escape: Tower of Insolence (3rd Floor) -->
+	<item id="91957" price="0" /> <!-- Scroll of Escape: Tower of Insolence (4th Floor) -->
+	<item id="91958" price="0" /> <!-- Scroll of Escape: Tower of Insolence (5th Floor) -->
+	<item id="91959" price="0" /> <!-- Scroll of Escape: Tower of Insolence (6th Floor) -->
+	<item id="91960" price="0" /> <!-- Scroll of Escape: Tower of Insolence (7th Floor) -->
+	<item id="91961" price="0" /> <!-- Scroll of Escape: Tower of Insolence (8th Floor) -->
+	<item id="91962" price="0" /> <!-- Scroll of Escape: Tower of Insolence (9th Floor) -->
+	<item id="91963" price="0" /> <!-- Scroll of Escape: Tower of Insolence (10th Floor) -->
+	<item id="91964" price="0" /> <!-- Scroll of Escape: Tower of Insolence (11th Floor) -->
+	<item id="91965" price="0" /> <!-- Scroll of Escape: Tower of Insolence (12th Floor) -->
+	<item id="93319" price="0" /> <!-- Scroll of Escape: Quatermaster Mathorn -->
+	<item id="93336" price="0" /> <!-- Scroll of Escape: Antharas's Lair Interior -->
+	<item id="93950" price="0" /> <!-- Scroll of Escape: Antharas's Lair -->
+	<item id="737" price="0" /> <!-- Scroll of Resurrection -->
+	<item id="3936" price="0" /> <!-- Blessed Scroll of Resurrection -->
+	<item id="93617" price="0" /> <!-- SP Scroll (High Grade) -->
+	<item id="93618" price="0" /> <!-- 2000 SP -->
+	<item id="49595" price="0" /> <!-- 2000 SP (Exchangeable) -->
+	<item id="49596" price="0" /> <!-- 10000 SP (Exchangeable) -->
+	<item id="91644" price="0" /> <!-- 10000 SP -->
+	<item id="49764" price="0" /> <!-- 20000 SP -->
+	<item id="91644" price="0" /> <!-- 100000 SP -->
+</list>

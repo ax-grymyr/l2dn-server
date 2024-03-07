@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 2 -->
+	<item>
+		<!-- Mysterious Pack Lv. 2 -->
+		<ingredient count="1" id="94490" />
+		<!-- Sayha's Blessing -->
+		<production count="20" id="91641" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 2 -->
+		<ingredient count="1" id="94490" />
+		<!-- Soulshot Ticket -->
+		<production count="100" id="90907" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 2 -->
+		<ingredient count="1" id="94490" />
+		<!-- Scroll: Enchant Attack -->
+		<production count="20" id="94269" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 2 -->
+		<ingredient count="1" id="94490" />
+		<!-- Scroll: Enchant Defense -->
+		<production count="20" id="94271" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 2 -->
+		<ingredient count="1" id="94490" />
+		<!-- Sayha's Storm Lv. 3 -->
+		<production count="20" id="91712" />
+	</item>
+</list>

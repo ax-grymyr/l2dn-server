@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="81254" name="option_id_81254">
+		<!-- STR/ DEX/ CON/ INT/ WIT/ MEN +1 -->
+	</option>
+</list>

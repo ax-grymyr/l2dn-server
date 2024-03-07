@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="89" price="0" /> <!-- Big Hammer -->
+	<item id="160" price="0" /> <!-- Battle Axe -->
+	<item id="161" price="0" /> <!-- Silver Axe -->
+	<item id="162" price="0" /> <!-- War Axe -->
+	<item id="173" price="0" /> <!-- Skull Graver -->
+	<item id="2502" price="0" /> <!-- Dwarven War Hammer -->
+	<item id="2503" price="0" /> <!-- Yaksa Mace -->
+	<item id="93054" price="0" /> <!-- Yaksa Mace - Sealed -->
+</list>

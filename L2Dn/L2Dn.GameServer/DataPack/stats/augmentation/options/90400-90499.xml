@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="90400" name="Soulshot/ Spiritshot damage +2.1%">
+		<!-- Soulshot/ Spiritshot damage +2.1% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90401" name="Soulshot/ Spiritshot damage +2.2%">
+		<!-- Soulshot/ Spiritshot damage +2.2% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90402" name="Soulshot/ Spiritshot damage +2.3%">
+		<!-- Soulshot/ Spiritshot damage +2.3% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90403" name="Soulshot/ Spiritshot damage +2.4%">
+		<!-- Soulshot/ Spiritshot damage +2.4% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90404" name="Soulshot/ Spiritshot damage +2.5%">
+		<!-- Soulshot/ Spiritshot damage +2.5% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90405" name="Soulshot/ Spiritshot damage +2.6%">
+		<!-- Soulshot/ Spiritshot damage +2.6% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90406" name="Soulshot/ Spiritshot damage +2.7%">
+		<!-- Soulshot/ Spiritshot damage +2.7% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90407" name="Soulshot/ Spiritshot damage +2.8%">
+		<!-- Soulshot/ Spiritshot damage +2.8% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90408" name="Soulshot/ Spiritshot damage +2.9%">
+		<!-- Soulshot/ Spiritshot damage +2.9% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>2.9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90409" name="Soulshot/ Spiritshot damage +3%">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90410" name="Soulshot/ Spiritshot damage +3.1%">
+		<!-- Soulshot/ Spiritshot damage +3.1% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90411" name="Soulshot/ Spiritshot damage +3.2%">
+		<!-- Soulshot/ Spiritshot damage +3.2% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90412" name="Soulshot/ Spiritshot damage +3.3%">
+		<!-- Soulshot/ Spiritshot damage +3.3% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90413" name="Soulshot/ Spiritshot damage +3.5%">
+		<!-- Soulshot/ Spiritshot damage +3.5% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90414" name="Soulshot/ Spiritshot damage +3.7%">
+		<!-- Soulshot/ Spiritshot damage +3.7% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90415" name="Soulshot/ Spiritshot damage +3.9%">
+		<!-- Soulshot/ Spiritshot damage +3.9% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>3.9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90416" name="Soulshot/ Spiritshot damage +4.1%">
+		<!-- Soulshot/ Spiritshot damage +4.1% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>4.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90417" name="Soulshot/ Spiritshot damage +4.3%">
+		<!-- Soulshot/ Spiritshot damage +4.3% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>4.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90418" name="Soulshot/ Spiritshot damage +5%">
+		<!-- Soulshot/ Spiritshot damage +5% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90419" name="Max HP +125">
+		<!-- Max HP +125 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90420" name="Max HP +135">
+		<!-- Max HP +135 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90421" name="Max HP +146">
+		<!-- Max HP +146 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90422" name="Max HP +158">
+		<!-- Max HP +158 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90423" name="Max HP +171">
+		<!-- Max HP +171 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90424" name="Max HP +185">
+		<!-- Max HP +185 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90425" name="Max HP +200">
+		<!-- Max HP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90426" name="Max HP +216">
+		<!-- Max HP +216 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90427" name="Max HP +234">
+		<!-- Max HP +234 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90428" name="Max HP +253">
+		<!-- Max HP +253 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90429" name="Max HP +274">
+		<!-- Max HP +274 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90430" name="Max HP +296">
+		<!-- Max HP +296 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90431" name="Max HP +320">
+		<!-- Max HP +320 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90432" name="Max HP +360">
+		<!-- Max HP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90433" name="Max HP +377">
+		<!-- Max HP +377 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>377</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90434" name="Max HP +394">
+		<!-- Max HP +394 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>394</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90435" name="Max HP +412">
+		<!-- Max HP +412 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>412</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90436" name="Max HP +431">
+		<!-- Max HP +431 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>431</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90437" name="Max HP +451">
+		<!-- Max HP +451 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>451</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90438" name="Max HP +480">
+		<!-- Max HP +480 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90439" name="Max MP +125">
+		<!-- Max MP +125 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90440" name="Max MP +135">
+		<!-- Max MP +135 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90441" name="Max MP +146">
+		<!-- Max MP +146 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90442" name="Max MP +158">
+		<!-- Max MP +158 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90443" name="Max MP +171">
+		<!-- Max MP +171 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90444" name="Max MP +185">
+		<!-- Max MP +185 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90445" name="Max MP +200">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90446" name="Max MP +216">
+		<!-- Max MP +216 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90447" name="Max MP +234">
+		<!-- Max MP +234 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90448" name="Max MP +253">
+		<!-- Max MP +253 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90449" name="Max MP +274">
+		<!-- Max MP +274 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90450" name="Max MP +296">
+		<!-- Max MP +296 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90451" name="Max MP +320">
+		<!-- Max MP +320 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90452" name="Max MP +360">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90453" name="Max MP +377">
+		<!-- Max MP +377 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>377</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90454" name="Max MP +394">
+		<!-- Max MP +394 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>394</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90455" name="Max MP +412">
+		<!-- Max MP +412 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>412</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90456" name="Max MP +431">
+		<!-- Max MP +431 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>431</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90457" name="Max MP +451">
+		<!-- Max MP +451 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>451</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90458" name="Max MP +480">
+		<!-- Max MP +480 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90459" name="option_id_90459">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90460" name="option_id_90460">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90461" name="option_id_90461">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90462" name="option_id_90462">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90463" name="option_id_90463">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90464" name="option_id_90464">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90465" name="option_id_90465">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90466" name="option_id_90466">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90467" name="option_id_90467">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90468" name="option_id_90468">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90469" name="option_id_90469">
+		<!-- M. Damage/ Bow Resistance +2% -->
+	</option>
+	<option id="90470" name="option_id_90470">
+		<!-- M. Damage/ Bow Resistance +3% -->
+	</option>
+	<option id="90471" name="option_id_90471">
+		<!-- M. Damage/ Bow Resistance +3% -->
+	</option>
+	<option id="90472" name="option_id_90472">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90473" name="option_id_90473">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90474" name="option_id_90474">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90475" name="option_id_90475">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90476" name="option_id_90476">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90477" name="option_id_90477">
+		<!-- M. Damage/ Bow Resistance +4% -->
+	</option>
+	<option id="90478" name="option_id_90478">
+		<!-- M. Damage/ Bow Resistance +5% -->
+	</option>
+	<option id="90479" name="option_id_90479">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="90480" name="option_id_90480">
+		<!-- Received damage -2.1% -->
+	</option>
+	<option id="90481" name="option_id_90481">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="90482" name="option_id_90482">
+		<!-- Received damage -2.3% -->
+	</option>
+	<option id="90483" name="option_id_90483">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="90484" name="option_id_90484">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="90485" name="option_id_90485">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="90486" name="option_id_90486">
+		<!-- Received damage -2.7% -->
+	</option>
+	<option id="90487" name="option_id_90487">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="90488" name="option_id_90488">
+		<!-- Received damage -2.9% -->
+	</option>
+	<option id="90489" name="option_id_90489">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="90490" name="option_id_90490">
+		<!-- Received damage -3.2% -->
+	</option>
+	<option id="90491" name="option_id_90491">
+		<!-- Received damage -3.5% -->
+	</option>
+	<option id="90492" name="option_id_90492">
+		<!-- Received damage -4% -->
+	</option>
+	<option id="90493" name="option_id_90493">
+		<!-- Received damage -4.1% -->
+	</option>
+	<option id="90494" name="option_id_90494">
+		<!-- Received damage -4.2% -->
+	</option>
+	<option id="90495" name="option_id_90495">
+		<!-- Received damage -4.3% -->
+	</option>
+	<option id="90496" name="option_id_90496">
+		<!-- Received damage -4.5% -->
+	</option>
+	<option id="90497" name="option_id_90497">
+		<!-- Received damage -4.7% -->
+	</option>
+	<option id="90498" name="option_id_90498">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="90499" name="option_id_90499">
+		<!-- Melee Weapon Resistance +2% -->
+	</option>
+</list>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36000" name="option_id_36000">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="36001" name="option_id_36001">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="36002" name="option_id_36002">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="36003" name="option_id_36003">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="36004" name="option_id_36004">
+		<!-- Received P. Skill Critical Damage -5 -->
+	</option>
+	<option id="36005" name="option_id_36005">
+		<!-- Received P. Skill Critical Damage -8 -->
+	</option>
+	<option id="36006" name="option_id_36006">
+		<!-- Received P. Skill Critical Damage -11 -->
+	</option>
+	<option id="36007" name="option_id_36007">
+		<!-- Received P. Skill Critical Damage -14 -->
+	</option>
+	<option id="36008" name="option_id_36008">
+		<!-- Received P. Skill Critical Damage -17 -->
+	</option>
+	<option id="36009" name="option_id_36009">
+		<!-- Received P. Skill Critical Damage -20 -->
+	</option>
+	<option id="36010" name="option_id_36010">
+		<!-- Received P. Skill Critical Damage -23 -->
+	</option>
+	<option id="36011" name="option_id_36011">
+		<!-- Received P. Skill Critical Damage -26 -->
+	</option>
+	<option id="36012" name="option_id_36012">
+		<!-- Received P. Skill Critical Damage -30 -->
+	</option>
+	<option id="36013" name="option_id_36013">
+		<!-- Received P. Skill Critical Damage -33 -->
+	</option>
+	<option id="36014" name="option_id_36014">
+		<!-- Received P. Skill Critical Damage -36 -->
+	</option>
+	<option id="36015" name="option_id_36015">
+		<!-- Received P. Skill Critical Damage -39 -->
+	</option>
+	<option id="36016" name="option_id_36016">
+		<!-- Received P. Skill Critical Damage -42 -->
+	</option>
+	<option id="36017" name="option_id_36017">
+		<!-- Received P. Skill Critical Damage -45 -->
+	</option>
+	<option id="36018" name="option_id_36018">
+		<!-- Received P. Skill Critical Damage -48 -->
+	</option>
+	<option id="36019" name="option_id_36019">
+		<!-- Received P. Skill Critical Damage -55 -->
+	</option>
+	<option id="36020" name="option_id_36020">
+		<!-- Received P. Skill Critical Damage -60 -->
+	</option>
+	<option id="36021" name="option_id_36021">
+		<!-- Received P. Skill Critical Damage -65 -->
+	</option>
+	<option id="36022" name="option_id_36022">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="36023" name="option_id_36023">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="36024" name="option_id_36024">
+		<!-- Received P. Skill Critical Damage -5 -->
+	</option>
+	<option id="36025" name="option_id_36025">
+		<!-- Received P. Skill Critical Damage -8 -->
+	</option>
+	<option id="36026" name="option_id_36026">
+		<!-- Received P. Skill Critical Damage -11 -->
+	</option>
+	<option id="36027" name="option_id_36027">
+		<!-- Received P. Skill Critical Damage -14 -->
+	</option>
+	<option id="36028" name="option_id_36028">
+		<!-- Received P. Skill Critical Damage -17 -->
+	</option>
+	<option id="36029" name="option_id_36029">
+		<!-- Received P. Skill Critical Damage -20 -->
+	</option>
+	<option id="36030" name="option_id_36030">
+		<!-- Received P. Skill Critical Damage -23 -->
+	</option>
+	<option id="36031" name="option_id_36031">
+		<!-- Received P. Skill Critical Damage -26 -->
+	</option>
+	<option id="36032" name="option_id_36032">
+		<!-- Received P. Skill Critical Damage -30 -->
+	</option>
+	<option id="36033" name="option_id_36033">
+		<!-- Received P. Skill Critical Damage -33 -->
+	</option>
+	<option id="36034" name="option_id_36034">
+		<!-- Received P. Skill Critical Damage -36 -->
+	</option>
+	<option id="36035" name="option_id_36035">
+		<!-- Received P. Skill Critical Damage -39 -->
+	</option>
+	<option id="36036" name="option_id_36036">
+		<!-- Received P. Skill Critical Damage -42 -->
+	</option>
+	<option id="36037" name="option_id_36037">
+		<!-- Received P. Skill Critical Damage -45 -->
+	</option>
+	<option id="36038" name="option_id_36038">
+		<!-- Received P. Skill Critical Damage -48 -->
+	</option>
+	<option id="36039" name="option_id_36039">
+		<!-- Received P. Skill Critical Damage -55 -->
+	</option>
+	<option id="36040" name="option_id_36040">
+		<!-- Received P. Skill Critical Damage -60 -->
+	</option>
+	<option id="36041" name="option_id_36041">
+		<!-- Received P. Skill Critical Damage -65 -->
+	</option>
+	<option id="36042" name="option_id_36042">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="36043" name="option_id_36043">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="36044" name="option_id_36044">
+		<!-- Received P. Skill Critical Damage -5 -->
+	</option>
+	<option id="36045" name="option_id_36045">
+		<!-- Received P. Skill Critical Damage -8 -->
+	</option>
+	<option id="36046" name="option_id_36046">
+		<!-- Received P. Skill Critical Damage -11 -->
+	</option>
+	<option id="36047" name="option_id_36047">
+		<!-- Received P. Skill Critical Damage -14 -->
+	</option>
+	<option id="36048" name="option_id_36048">
+		<!-- Received P. Skill Critical Damage -17 -->
+	</option>
+	<option id="36049" name="option_id_36049">
+		<!-- Received P. Skill Critical Damage -20 -->
+	</option>
+	<option id="36050" name="option_id_36050">
+		<!-- Received P. Skill Critical Damage -23 -->
+	</option>
+	<option id="36051" name="option_id_36051">
+		<!-- Received P. Skill Critical Damage -26 -->
+	</option>
+	<option id="36052" name="option_id_36052">
+		<!-- Received P. Skill Critical Damage -30 -->
+	</option>
+	<option id="36053" name="option_id_36053">
+		<!-- Received P. Skill Critical Damage -33 -->
+	</option>
+	<option id="36054" name="option_id_36054">
+		<!-- Received P. Skill Critical Damage -36 -->
+	</option>
+	<option id="36055" name="option_id_36055">
+		<!-- Received P. Skill Critical Damage -39 -->
+	</option>
+	<option id="36056" name="option_id_36056">
+		<!-- Received P. Skill Critical Damage -42 -->
+	</option>
+	<option id="36057" name="option_id_36057">
+		<!-- Received P. Skill Critical Damage -45 -->
+	</option>
+	<option id="36058" name="option_id_36058">
+		<!-- Received P. Skill Critical Damage -48 -->
+	</option>
+	<option id="36059" name="option_id_36059">
+		<!-- Received P. Skill Critical Damage -55 -->
+	</option>
+	<option id="36060" name="option_id_36060">
+		<!-- Received P. Skill Critical Damage -60 -->
+	</option>
+	<option id="36061" name="option_id_36061">
+		<!-- Received P. Skill Critical Damage -65 -->
+	</option>
+	<option id="36062" name="option_id_36062">
+		<!-- Received P. Skill Critical Damage -70 -->
+	</option>
+	<option id="36063" name="option_id_36063">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="36064" name="option_id_36064">
+		<!-- Received M. Skill Critical Damage -5 -->
+	</option>
+	<option id="36065" name="option_id_36065">
+		<!-- Received M. Skill Critical Damage -8 -->
+	</option>
+	<option id="36066" name="option_id_36066">
+		<!-- Received M. Skill Critical Damage -11 -->
+	</option>
+	<option id="36067" name="option_id_36067">
+		<!-- Received M. Skill Critical Damage -14 -->
+	</option>
+	<option id="36068" name="option_id_36068">
+		<!-- Received M. Skill Critical Damage -17 -->
+	</option>
+	<option id="36069" name="option_id_36069">
+		<!-- Received M. Skill Critical Damage -20 -->
+	</option>
+	<option id="36070" name="option_id_36070">
+		<!-- Received M. Skill Critical Damage -23 -->
+	</option>
+	<option id="36071" name="option_id_36071">
+		<!-- Received M. Skill Critical Damage -26 -->
+	</option>
+	<option id="36072" name="option_id_36072">
+		<!-- Received M. Skill Critical Damage -30 -->
+	</option>
+	<option id="36073" name="option_id_36073">
+		<!-- Received M. Skill Critical Damage -33 -->
+	</option>
+	<option id="36074" name="option_id_36074">
+		<!-- Received M. Skill Critical Damage -36 -->
+	</option>
+	<option id="36075" name="option_id_36075">
+		<!-- Received M. Skill Critical Damage -39 -->
+	</option>
+	<option id="36076" name="option_id_36076">
+		<!-- Received M. Skill Critical Damage -42 -->
+	</option>
+	<option id="36077" name="option_id_36077">
+		<!-- Received M. Skill Critical Damage -45 -->
+	</option>
+	<option id="36078" name="option_id_36078">
+		<!-- Received M. Skill Critical Damage -48 -->
+	</option>
+	<option id="36079" name="option_id_36079">
+		<!-- Received M. Skill Critical Damage -55 -->
+	</option>
+	<option id="36080" name="option_id_36080">
+		<!-- Received M. Skill Critical Damage -60 -->
+	</option>
+	<option id="36081" name="option_id_36081">
+		<!-- Received M. Skill Critical Damage -65 -->
+	</option>
+	<option id="36082" name="option_id_36082">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="36083" name="option_id_36083">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="36084" name="option_id_36084">
+		<!-- Received M. Skill Critical Damage -5 -->
+	</option>
+	<option id="36085" name="option_id_36085">
+		<!-- Received M. Skill Critical Damage -8 -->
+	</option>
+	<option id="36086" name="option_id_36086">
+		<!-- Received M. Skill Critical Damage -11 -->
+	</option>
+	<option id="36087" name="option_id_36087">
+		<!-- Received M. Skill Critical Damage -14 -->
+	</option>
+	<option id="36088" name="option_id_36088">
+		<!-- Received M. Skill Critical Damage -17 -->
+	</option>
+	<option id="36089" name="option_id_36089">
+		<!-- Received M. Skill Critical Damage -20 -->
+	</option>
+	<option id="36090" name="option_id_36090">
+		<!-- Received M. Skill Critical Damage -23 -->
+	</option>
+	<option id="36091" name="option_id_36091">
+		<!-- Received M. Skill Critical Damage -26 -->
+	</option>
+	<option id="36092" name="option_id_36092">
+		<!-- Received M. Skill Critical Damage -30 -->
+	</option>
+	<option id="36093" name="option_id_36093">
+		<!-- Received M. Skill Critical Damage -33 -->
+	</option>
+	<option id="36094" name="option_id_36094">
+		<!-- Received M. Skill Critical Damage -36 -->
+	</option>
+	<option id="36095" name="option_id_36095">
+		<!-- Received M. Skill Critical Damage -39 -->
+	</option>
+	<option id="36096" name="option_id_36096">
+		<!-- Received M. Skill Critical Damage -42 -->
+	</option>
+	<option id="36097" name="option_id_36097">
+		<!-- Received M. Skill Critical Damage -45 -->
+	</option>
+	<option id="36098" name="option_id_36098">
+		<!-- Received M. Skill Critical Damage -48 -->
+	</option>
+	<option id="36099" name="option_id_36099">
+		<!-- Received M. Skill Critical Damage -55 -->
+	</option>
+</list>

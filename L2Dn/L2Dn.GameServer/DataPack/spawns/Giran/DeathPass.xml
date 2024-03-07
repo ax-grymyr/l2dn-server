@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_001" minZ="-3888" maxZ="-3488">
+				<node x="65689" y="131232" />
+				<node x="70017" y="131200" />
+				<node x="70285" y="133172" />
+				<node x="69161" y="133608" />
+				<node x="65693" y="132844" />
+			</territory>
+		</territories>
+		<npc id="20176" count="5" respawnTime="60sec" /> <!-- Wyrm -->
+		<npc id="20550" count="4" respawnTime="60sec" /> <!-- Guardian Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_002" minZ="-3757" maxZ="-2757">
+				<node x="70840" y="131233" />
+				<node x="78424" y="131257" />
+				<node x="76744" y="133405" />
+				<node x="72988" y="134097" />
+			</territory>
+		</territories>
+		<npc id="20176" count="5" respawnTime="60sec" /> <!-- Wyrm -->
+		<npc id="20550" count="5" respawnTime="60sec" /> <!-- Guardian Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_028" minZ="-3711" maxZ="-3111">
+				<node x="72362" y="131529" />
+				<node x="76550" y="131573" />
+				<node x="75070" y="132945" />
+				<node x="73102" y="132721" />
+			</territory>
+		</territories>
+		<npc id="20551" count="4" respawnTime="60sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_039" minZ="-3767" maxZ="-3167">
+				<node x="95483" y="148332" />
+				<node x="97547" y="147012" />
+				<node x="97551" y="149976" />
+				<node x="95587" y="150732" />
+			</territory>
+		</territories>
+		<npc id="20199" count="5" respawnTime="60sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_040" minZ="-3734" maxZ="-3334">
+				<node x="95349" y="134485" />
+				<node x="97445" y="133497" />
+				<node x="97273" y="136309" />
+				<node x="95933" y="136705" />
+			</territory>
+		</territories>
+		<npc id="20199" count="5" respawnTime="60sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_041" minZ="-3742" maxZ="-3342">
+				<node x="88840" y="131531" />
+				<node x="92412" y="131567" />
+				<node x="92824" y="132595" />
+				<node x="89588" y="132879" />
+			</territory>
+		</territories>
+		<npc id="20199" count="4" respawnTime="60sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_001" minZ="-3792" maxZ="-2892">
+				<node x="98452" y="98468" />
+				<node x="102768" y="98364" />
+				<node x="106036" y="102044" />
+				<node x="102576" y="104760" />
+				<node x="98416" y="103876" />
+			</territory>
+		</territories>
+		<npc id="20551" count="8" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="10" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="10" respawnTime="60sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_002" minZ="-3468" maxZ="-2568">
+				<node x="98468" y="103936" />
+				<node x="102604" y="104820" />
+				<node x="103348" y="107740" />
+				<node x="100532" y="106436" />
+			</territory>
+		</territories>
+		<npc id="20551" count="4" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="4" respawnTime="60sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_003" minZ="-3752" maxZ="-2252">
+				<node x="106124" y="102020" />
+				<node x="107960" y="102040" />
+				<node x="109540" y="103428" />
+				<node x="107276" y="105240" />
+				<node x="104996" y="102864" />
+			</territory>
+		</territories>
+		<npc id="20551" count="2" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="4" respawnTime="60sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_004" minZ="-3400" maxZ="-1900">
+				<node x="109656" y="103472" />
+				<node x="114572" y="101168" />
+				<node x="115620" y="106576" />
+				<node x="109368" y="106956" />
+				<node x="108940" y="105352" />
+			</territory>
+		</territories>
+		<npc id="20551" count="4" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="7" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="6" respawnTime="60sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_005" minZ="-3628" maxZ="-2328">
+				<node x="115888" y="101800" />
+				<node x="117172" y="100792" />
+				<node x="119656" y="102840" />
+				<node x="117252" y="106676" />
+				<node x="115696" y="106676" />
+				<node x="115136" y="103752" />
+			</territory>
+		</territories>
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="5" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="5" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_006" minZ="-2924" maxZ="-1924">
+				<node x="114416" y="107032" />
+				<node x="119208" y="106740" />
+				<node x="116796" y="108320" />
+				<node x="115636" y="108128" />
+			</territory>
+		</territories>
+		<npc id="20552" count="2" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="3" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="3" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_007" minZ="-2640" maxZ="-1840">
+				<node x="119476" y="105260" />
+				<node x="122928" y="104652" />
+				<node x="126056" y="105900" />
+				<node x="125928" y="106416" />
+				<node x="119132" y="106172" />
+			</territory>
+		</territories>
+		<npc id="20552" count="3" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="3" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="3" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_008" minZ="-3452" maxZ="-2652">
+				<node x="123960" y="100868" />
+				<node x="125824" y="100976" />
+				<node x="126536" y="104544" />
+				<node x="122464" y="103716" />
+			</territory>
+		</territories>
+		<npc id="20552" count="3" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="4" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_009" minZ="-3340" maxZ="-1640">
+				<node x="126752" y="104060" />
+				<node x="130868" y="104012" />
+				<node x="130732" y="110116" />
+				<node x="128676" y="110144" />
+				<node x="126828" y="108588" />
+			</territory>
+		</territories>
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="6" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="6" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_010" minZ="-2836" maxZ="-1836">
+				<node x="127264" y="98416" />
+				<node x="130792" y="98492" />
+				<node x="130752" y="103908" />
+				<node x="129712" y="103876" />
+			</territory>
+		</territories>
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="5" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_011" minZ="-2864" maxZ="-1864">
+				<node x="119880" y="98428" />
+				<node x="127152" y="98444" />
+				<node x="127960" y="100140" />
+				<node x="125712" y="100764" />
+				<node x="123672" y="100524" />
+			</territory>
+		</territories>
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="5" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="5" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_012" minZ="-3252" maxZ="-1752">
+				<node x="111976" y="98416" />
+				<node x="116864" y="98492" />
+				<node x="117116" y="100612" />
+				<node x="115676" y="101596" />
+			</territory>
+		</territories>
+		<npc id="20552" count="4" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="4" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_013" minZ="-2748" maxZ="-1348">
+				<node x="106684" y="98504" />
+				<node x="111720" y="98520" />
+				<node x="113804" y="100240" />
+				<node x="111332" y="102252" />
+			</territory>
+		</territories>
+		<npc id="20551" count="4" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="5" respawnTime="60sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="4" respawnTime="60sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_014" minZ="-3768" maxZ="-3368">
+				<node x="99208" y="98912" />
+				<node x="102288" y="98820" />
+				<node x="103248" y="100684" />
+				<node x="99632" y="101376" />
+			</territory>
+		</territories>
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_015" minZ="-3288" maxZ="-1988">
+				<node x="110372" y="103680" />
+				<node x="113684" y="102688" />
+				<node x="114296" y="105436" />
+				<node x="110572" y="105180" />
+			</territory>
+		</territories>
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_016" minZ="-3300" maxZ="-2400">
+				<node x="127460" y="104872" />
+				<node x="130472" y="104952" />
+				<node x="129952" y="107700" />
+				<node x="128112" y="108212" />
+			</territory>
+		</territories>
+		<npc id="20554" count="4" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_017" minZ="-2208" maxZ="-708">
+				<node x="103692" y="127088" />
+				<node x="105244" y="126988" />
+				<node x="106612" y="128744" />
+				<node x="101684" y="129404" />
+				<node x="101180" y="128800" />
+			</territory>
+		</territories>
+		<npc id="20176" count="4" respawnTime="60sec" /> <!-- Wyrm -->
+		<npc id="20158" count="4" respawnTime="60sec" /> <!-- Medusa -->
+		<npc id="20145" count="3" respawnTime="60sec" /> <!-- Harpy -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_018" minZ="-3640" maxZ="-1840">
+				<node x="115908" y="126036" />
+				<node x="118848" y="126412" />
+				<node x="120344" y="127988" />
+				<node x="120256" y="130788" />
+				<node x="110888" y="130776" />
+			</territory>
+		</territories>
+		<npc id="20176" count="4" respawnTime="60sec" /> <!-- Wyrm -->
+		<npc id="20158" count="9" respawnTime="60sec" /> <!-- Medusa -->
+		<npc id="20145" count="9" respawnTime="60sec" /> <!-- Harpy -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_001" minZ="-3801" maxZ="-3351">
+				<node x="65705" y="98441" />
+				<node x="67297" y="98461" />
+				<node x="68501" y="102329" />
+				<node x="65633" y="103109" />
+			</territory>
+		</territories>
+		<npc id="20550" count="2" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="2" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_002" minZ="-3769" maxZ="-3319">
+				<node x="67972" y="98480" />
+				<node x="72148" y="98480" />
+				<node x="71984" y="103092" />
+				<node x="69052" y="101912" />
+				<node x="68044" y="99840" />
+			</territory>
+		</territories>
+		<npc id="20550" count="2" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="2" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_003" minZ="-3755" maxZ="-3305">
+				<node x="65656" y="103135" />
+				<node x="67144" y="102679" />
+				<node x="67676" y="105859" />
+				<node x="67248" y="107055" />
+				<node x="65660" y="106551" />
+			</territory>
+		</territories>
+		<npc id="20550" count="2" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="16" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="2" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio_t22_21_004" minZ="-3800" maxZ="-3350">
+				<node x="70142" y="102378" />
+				<node x="71430" y="102906" />
+				<node x="71290" y="105682" />
+				<node x="69978" y="105042" />
+			</territory>
+		</territories>
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="14" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_005" minZ="-3771" maxZ="-3321">
+				<node x="71274" y="105820" />
+				<node x="71862" y="107572" />
+				<node x="71714" y="111584" />
+				<node x="70538" y="111400" />
+				<node x="70138" y="109668" />
+				<node x="70214" y="108284" />
+			</territory>
+		</territories>
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="14" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_006" minZ="-3783" maxZ="-3333">
+				<node x="69820" y="105041" />
+				<node x="71216" y="105753" />
+				<node x="70352" y="107693" />
+				<node x="67904" y="106813" />
+				<node x="68060" y="106085" />
+			</territory>
+		</territories>
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="14" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_007" minZ="-3793" maxZ="-3343">
+				<node x="67857" y="106843" />
+				<node x="68529" y="107087" />
+				<node x="68605" y="112075" />
+				<node x="67073" y="109203" />
+			</territory>
+		</territories>
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="14" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_008" minZ="-3797" maxZ="-2997">
+				<node x="65714" y="109155" />
+				<node x="66162" y="108775" />
+				<node x="67538" y="110619" />
+				<node x="68306" y="112563" />
+				<node x="65654" y="112675" />
+			</territory>
+		</territories>
+		<npc id="20550" count="2" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="14" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_009" minZ="-3779" maxZ="-3329">
+				<node x="70534" y="111635" />
+				<node x="71530" y="111839" />
+				<node x="71414" y="115727" />
+				<node x="69874" y="116751" />
+				<node x="68398" y="114699" />
+				<node x="68734" y="113339" />
+			</territory>
+		</territories>
+		<npc id="20176" count="2" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_010" minZ="-3797" maxZ="-3347">
+				<node x="67090" y="112544" />
+				<node x="68250" y="112520" />
+				<node x="67970" y="114776" />
+				<node x="65634" y="114776" />
+			</territory>
+		</territories>
+		<npc id="20176" count="2" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_011" minZ="-3768" maxZ="-3318">
+				<node x="65682" y="114866" />
+				<node x="67978" y="114842" />
+				<node x="69602" y="116942" />
+				<node x="70134" y="118222" />
+				<node x="66946" y="118534" />
+				<node x="65650" y="117478" />
+			</territory>
+		</territories>
+		<npc id="20176" count="2" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_012" minZ="-3754" maxZ="-3304">
+				<node x="69914" y="116750" />
+				<node x="71642" y="115550" />
+				<node x="73122" y="116870" />
+				<node x="70442" y="117694" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_013" minZ="-3786" maxZ="-3286">
+				<node x="66988" y="118637" />
+				<node x="70184" y="118301" />
+				<node x="70340" y="119929" />
+				<node x="69528" y="121993" />
+				<node x="65700" y="122297" />
+				<node x="65728" y="119693" />
+			</territory>
+		</territories>
+		<npc id="20176" count="24" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="2" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_014" minZ="-3715" maxZ="-3265">
+				<node x="70832" y="118524" />
+				<node x="72252" y="118344" />
+				<node x="71904" y="122708" />
+				<node x="70832" y="122628" />
+				<node x="70480" y="121324" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="10" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_015" minZ="-3818" maxZ="-3368">
+				<node x="70898" y="124643" />
+				<node x="71906" y="124539" />
+				<node x="72658" y="125283" />
+				<node x="71550" y="128179" />
+				<node x="70810" y="128119" />
+				<node x="70070" y="126215" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="14" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_016" minZ="-3834" maxZ="-3384">
+				<node x="65802" y="122257" />
+				<node x="66662" y="122197" />
+				<node x="66886" y="128953" />
+				<node x="65638" y="126785" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="10" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_017" minZ="-3827" maxZ="-3377">
+				<node x="65660" y="130212" />
+				<node x="67032" y="128996" />
+				<node x="68904" y="130892" />
+				<node x="65676" y="130840" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="10" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_018" minZ="-3809" maxZ="-3209">
+				<node x="70830" y="129021" />
+				<node x="72214" y="129373" />
+				<node x="72162" y="130821" />
+				<node x="70398" y="130801" />
+			</territory>
+		</territories>
+		<npc id="20176" count="14" respawnTime="3sec" /> <!-- Wyrm -->
+		<npc id="20550" count="10" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="14" respawnTime="3sec" /> <!-- Road Scavenger -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_019" minZ="-3723" maxZ="-2623">
+				<node x="72418" y="98496" />
+				<node x="83374" y="98492" />
+				<node x="83322" y="99936" />
+				<node x="76586" y="103888" />
+				<node x="72330" y="100660" />
+			</territory>
+		</territories>
+		<npc id="20550" count="3" respawnTime="3sec" /> <!-- Guardian Basilisk -->
+		<npc id="20551" count="34" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="4" respawnTime="3sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_020" minZ="-3028" maxZ="-1928">
+				<node x="76528" y="106423" />
+				<node x="78356" y="107943" />
+				<node x="77128" y="111279" />
+				<node x="75244" y="113587" />
+				<node x="74128" y="110479" />
+			</territory>
+		</territories>
+		<npc id="20552" count="24" respawnTime="3sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="3" respawnTime="3sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_021" minZ="-3632" maxZ="-2532">
+				<node x="76619" y="103981" />
+				<node x="79479" y="102317" />
+				<node x="82167" y="106633" />
+				<node x="78367" y="107569" />
+				<node x="76467" y="106281" />
+			</territory>
+		</territories>
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="2" respawnTime="3sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="3" respawnTime="3sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_022" minZ="-3701" maxZ="-2201">
+				<node x="79721" y="102334" />
+				<node x="83565" y="99958" />
+				<node x="88589" y="101742" />
+				<node x="82093" y="106238" />
+			</territory>
+		</territories>
+		<npc id="20551" count="24" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="3" respawnTime="3sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="2" respawnTime="3sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_023" minZ="-3683" maxZ="-2983">
+				<node x="83445" y="98536" />
+				<node x="90721" y="98476" />
+				<node x="90221" y="101376" />
+				<node x="88553" y="101756" />
+				<node x="83393" y="99900" />
+			</territory>
+		</territories>
+		<npc id="20551" count="2" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="24" respawnTime="3sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="2" respawnTime="3sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_024" minZ="-3784" maxZ="-2284">
+				<node x="90882" y="98515" />
+				<node x="97914" y="98555" />
+				<node x="97966" y="105507" />
+				<node x="93322" y="105467" />
+				<node x="92170" y="104391" />
+				<node x="90662" y="100743" />
+			</territory>
+		</territories>
+		<npc id="20551" count="34" respawnTime="3sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="5" respawnTime="3sec" /> <!-- Fettered Soul -->
+		<npc id="20553" count="34" respawnTime="3sec" /> <!-- Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_037" minZ="-3612" maxZ="-2812">
+				<node x="93476" y="99768" />
+				<node x="96388" y="100700" />
+				<node x="96228" y="103236" />
+				<node x="93680" y="103496" />
+				<node x="92096" y="101172" />
+			</territory>
+		</territories>
+		<npc id="20553" count="10" respawnTime="60sec" /> <!-- Windsus -->
+		<npc id="20554" count="12" respawnTime="60sec" /> <!-- Grandis -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_21_038" minZ="-3656" maxZ="-2856">
+				<node x="75232" y="98956" />
+				<node x="78424" y="99120" />
+				<node x="79880" y="101080" />
+				<node x="77016" y="102888" />
+				<node x="74580" y="100716" />
+			</territory>
+		</territories>
+		<npc id="20551" count="10" respawnTime="60sec" /> <!-- Road Scavenger -->
+		<npc id="20552" count="12" respawnTime="60sec" /> <!-- Fettered Soul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_001" minZ="-3710" maxZ="-3110">
+				<node x="98568" y="131285" />
+				<node x="105704" y="131257" />
+				<node x="101544" y="136277" />
+				<node x="98580" y="136645" />
+			</territory>
+		</territories>
+		<npc id="20199" count="58" respawnTime="3sec" /> <!-- Amber Basilisk -->
+		<npc id="20248" count="58" respawnTime="3sec" /> <!-- Turak Bugbear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_002" minZ="-3702" maxZ="-3102">
+				<node x="108656" y="133410" />
+				<node x="111336" y="134830" />
+				<node x="110404" y="137474" />
+				<node x="104064" y="139002" />
+				<node x="101940" y="136322" />
+				<node x="104604" y="132874" />
+			</territory>
+		</territories>
+		<npc id="20145" count="58" respawnTime="3sec" /> <!-- Harpy -->
+		<npc id="20249" count="58" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+		<npc id="20158" count="58" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_003" minZ="-3695" maxZ="-3295">
+				<node x="114170" y="134557" />
+				<node x="115286" y="135489" />
+				<node x="114142" y="138361" />
+				<node x="111762" y="138781" />
+				<node x="110450" y="137501" />
+				<node x="111418" y="134737" />
+			</territory>
+		</territories>
+		<npc id="20145" count="58" respawnTime="3sec" /> <!-- Harpy -->
+		<npc id="20158" count="58" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_004" minZ="-3695" maxZ="-2695">
+				<node x="105900" y="131240" />
+				<node x="115576" y="131244" />
+				<node x="114304" y="133808" />
+				<node x="111184" y="134520" />
+				<node x="104752" y="132720" />
+			</territory>
+		</territories>
+		<npc id="20248" count="48" respawnTime="3sec" /> <!-- Turak Bugbear -->
+		<npc id="20249" count="48" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+		<npc id="20158" count="48" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_005" minZ="-3661" maxZ="-2861">
+				<node x="115707" y="131281" />
+				<node x="123119" y="131241" />
+				<node x="123587" y="132421" />
+				<node x="114923" y="134173" />
+			</territory>
+		</territories>
+		<npc id="20248" count="4" respawnTime="3sec" /> <!-- Turak Bugbear -->
+		<npc id="20249" count="4" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+		<npc id="20158" count="4" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_006" minZ="-3628" maxZ="-3228">
+				<node x="115333" y="135579" />
+				<node x="117481" y="134227" />
+				<node x="119213" y="136751" />
+				<node x="116845" y="138411" />
+				<node x="115649" y="138407" />
+				<node x="114593" y="137567" />
+			</territory>
+			<banned_territory name="giran_t23_22_006b" minZ="-3560" maxZ="-2560">
+				<node x="116542" y="135738" />
+				<node x="116835" y="135738" />
+				<node x="116835" y="136004" />
+				<node x="116546" y="136004" />
+			</banned_territory>
+		</territories>
+		<npc id="20145" count="28" respawnTime="3sec" /> <!-- Harpy -->
+		<npc id="20249" count="28" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+		<npc id="20158" count="34" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_008" minZ="-3746" maxZ="-2946">
+				<node x="126509" y="135214" />
+				<node x="128513" y="138706" />
+				<node x="126013" y="139638" />
+				<node x="122021" y="138090" />
+			</territory>
+		</territories>
+		<npc id="20145" count="34" respawnTime="3sec" /> <!-- Harpy -->
+		<npc id="20158" count="34" respawnTime="3sec" /> <!-- Medusa -->
+		<npc id="20176" count="34" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_009" minZ="-3727" maxZ="-2727">
+				<node x="126609" y="135200" />
+				<node x="130761" y="132872" />
+				<node x="130729" y="137436" />
+				<node x="128533" y="138524" />
+			</territory>
+		</territories>
+		<npc id="20145" count="34" respawnTime="3sec" /> <!-- Harpy -->
+		<npc id="20158" count="34" respawnTime="3sec" /> <!-- Medusa -->
+		<npc id="20176" count="34" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_012" minZ="-3614" maxZ="-3014">
+				<node x="98534" y="137614" />
+				<node x="100414" y="137018" />
+				<node x="102406" y="138386" />
+				<node x="102150" y="140358" />
+				<node x="98430" y="139234" />
+			</territory>
+			<banned_territory name="giran_t23_22_012b" minZ="-3544" maxZ="-2544">
+				<node x="100127" y="138149" />
+				<node x="100471" y="138144" />
+				<node x="100481" y="138490" />
+				<node x="100140" y="138494" />
+			</banned_territory>
+		</territories>
+		<npc id="20199" count="34" respawnTime="3sec" /> <!-- Amber Basilisk -->
+		<npc id="20248" count="28" respawnTime="3sec" /> <!-- Turak Bugbear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_013" minZ="-3769" maxZ="-3169">
+				<node x="102108" y="140406" />
+				<node x="103400" y="141834" />
+				<node x="103880" y="143818" />
+				<node x="102488" y="147410" />
+				<node x="100596" y="145302" />
+				<node x="100508" y="139890" />
+			</territory>
+		</territories>
+		<npc id="20199" count="38" respawnTime="3sec" /> <!-- Amber Basilisk -->
+		<npc id="20248" count="34" respawnTime="3sec" /> <!-- Turak Bugbear -->
+		<npc id="20249" count="38" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_014" minZ="-3838" maxZ="-2838">
+				<node x="100435" y="145385" />
+				<node x="101571" y="146661" />
+				<node x="102767" y="151713" />
+				<node x="98599" y="152713" />
+				<node x="98551" y="145261" />
+			</territory>
+		</territories>
+		<npc id="20199" count="44" respawnTime="3sec" /> <!-- Amber Basilisk -->
+		<npc id="20248" count="38" respawnTime="3sec" /> <!-- Turak Bugbear -->
+		<npc id="20249" count="38" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_020" minZ="-3648" maxZ="-3248">
+				<node x="99260" y="131834" />
+				<node x="102548" y="132310" />
+				<node x="101096" y="134430" />
+				<node x="98976" y="133934" />
+			</territory>
+		</territories>
+		<npc id="20249" count="34" respawnTime="3sec" /> <!-- Turak Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_021" minZ="-3685" maxZ="-3285">
+				<node x="103010" y="136290" />
+				<node x="104614" y="134422" />
+				<node x="106534" y="137434" />
+				<node x="104314" y="137610" />
+			</territory>
+		</territories>
+		<npc id="20158" count="34" respawnTime="3sec" /> <!-- Medusa -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_022" minZ="-3427" maxZ="-3027">
+				<node x="108971" y="134343" />
+				<node x="110355" y="135147" />
+				<node x="109611" y="136455" />
+				<node x="106811" y="135347" />
+			</territory>
+		</territories>
+		<npc id="20176" count="28" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_023" minZ="-3687" maxZ="-3287">
+				<node x="113699" y="135118" />
+				<node x="114375" y="135770" />
+				<node x="113459" y="137370" />
+				<node x="111423" y="137014" />
+				<node x="111979" y="135406" />
+			</territory>
+		</territories>
+		<npc id="20176" count="34" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_024" minZ="-3741" maxZ="-3141">
+				<node x="120034" y="134368" />
+				<node x="123102" y="133248" />
+				<node x="124806" y="135560" />
+				<node x="121918" y="136436" />
+			</territory>
+		</territories>
+		<npc id="20176" count="38" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_025" minZ="-3793" maxZ="-3193">
+				<node x="124399" y="137888" />
+				<node x="126711" y="136368" />
+				<node x="127651" y="138368" />
+				<node x="126099" y="138992" />
+			</territory>
+		</territories>
+		<npc id="20176" count="28" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_22_026" minZ="-3386" maxZ="-2986">
+				<node x="128054" y="134646" />
+				<node x="130370" y="133610" />
+				<node x="130430" y="135518" />
+				<node x="128666" y="136166" />
+			</territory>
+		</territories>
+		<npc id="20176" count="28" respawnTime="3sec" /> <!-- Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran01_qm2322_01" minZ="-3531" maxZ="-3331">
+				<node x="106252" y="135416" />
+				<node x="106452" y="135416" />
+				<node x="106452" y="135616" />
+				<node x="106252" y="135616" />
+			</territory>
+		</territories>
+		<npc id="27107" count="1" respawnTime="3min" /> <!-- Silhouette Tilfo - Quest Monster -->
+	</spawn>
+</list>

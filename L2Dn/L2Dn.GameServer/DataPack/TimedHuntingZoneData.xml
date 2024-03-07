@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/TimedHuntingZoneData.xsd">
+	<zone id="1" name="Primeval Isle">
+		<enterLocation>6025,-2274,-2990</enterLocation>
+		<initialTime>7200</initialTime> <!-- 2 hours -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>50400</maxAddedTime> <!-- 14 hours -->
+		<remainRefillTime>43200</remainRefillTime> <!-- 12 hours -->
+		<refillTimeMax>43200</refillTimeMax>
+		<entryFee>10000</entryFee>
+		<minLevel>76</minLevel>
+		<maxLevel>999</maxLevel>
+	</zone>
+	<zone id="4" name="Forgotten Garden">
+		<enterLocation>90375,234775,-12592</enterLocation>
+		<subEnterLocation1>82800,251690,-10600</subEnterLocation1>
+		<subEnterLocation2>-114918,216290,-13216</subEnterLocation2>
+		<subEnterLocation3>-55358,5255,-4480</subEnterLocation3>
+		<initialTime>25200</initialTime> <!-- 7 hours -->
+		<resetDelay>604800</resetDelay> <!-- 7 days -->
+		<maxAddedTime>72000</maxAddedTime> <!-- 20 hours -->
+		<remainRefillTime>46800</remainRefillTime> <!-- 13 hours -->
+		<refillTimeMax>46800</refillTimeMax>
+		<entryFee>200000</entryFee>
+		<minLevel>76</minLevel>
+		<maxLevel>999</maxLevel>
+		<weekly>true</weekly>
+		<useWorldPrefix>true</useWorldPrefix>
+	</zone>
+	<zone id="11" name="Alligator Island">
+		<enterLocation>115528,191580,-3371</enterLocation>
+		<initialTime>3600</initialTime> <!-- 1 hour -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>10800</maxAddedTime> <!-- 3 hours -->
+		<remainRefillTime>7200</remainRefillTime> <!-- 2 hours -->
+		<refillTimeMax>7200</refillTimeMax>
+		<entryFee>10000</entryFee>
+		<minLevel>70</minLevel>
+		<maxLevel>999</maxLevel>
+	</zone>
+	<zone id="12" name="Antharas Lair">
+		<enterLocation>133247,114445,-3724</enterLocation>
+		<initialTime>18000</initialTime> <!-- 5 hours -->
+		<resetDelay>604800</resetDelay> <!-- 7 days -->
+		<maxAddedTime>64800</maxAddedTime> <!-- 18 hours -->
+		<remainRefillTime>46800</remainRefillTime> <!-- 13 hours -->
+		<refillTimeMax>46800</refillTimeMax>
+		<entryFee>1000000</entryFee>
+		<minLevel>80</minLevel>
+		<maxLevel>999</maxLevel>
+		<weekly>true</weekly>
+		<useWorldPrefix>true</useWorldPrefix>
+	</zone>
+	<zone id="18" name="Frost Lord's Castle">
+		<enterLocation>144640,147451,-12094</enterLocation>
+		<subEnterLocation1>113479,-114804,-11076</subEnterLocation1>
+		<initialTime>18000</initialTime> <!-- 5 hour -->
+		<resetDelay>604800</resetDelay> <!-- 7 days -->
+		<maxAddedTime>64800</maxAddedTime> <!-- 18 hours -->
+		<remainRefillTime>46800</remainRefillTime> <!-- 13 hours -->
+		<refillTimeMax>46800</refillTimeMax>
+		<entryFee>1000000</entryFee>
+		<minLevel>85</minLevel>
+		<maxLevel>999</maxLevel>
+		<weekly>true</weekly>
+	</zone>
+	<zone id="23" name="Tower of Elmoreden">
+		<enterLocation>-82010,20540,-15427</enterLocation>
+		<initialTime>3600</initialTime> <!-- 1 hour -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>10800</maxAddedTime> <!-- 3 hours -->
+		<remainRefillTime>7200</remainRefillTime> <!-- 2 hours -->
+		<refillTimeMax>7200</refillTimeMax>
+		<entryFee>10000</entryFee>
+		<minLevel>55</minLevel>
+		<maxLevel>999</maxLevel>
+		<useWorldPrefix>true</useWorldPrefix>
+	</zone>
+	<zone id="26" name="Tower of Insolence">
+		<enterLocation>112312,16040,-5104</enterLocation>
+		<initialTime>50400</initialTime> <!-- 14 hours -->
+		<resetDelay>604800</resetDelay> <!-- 7 days -->
+		<maxAddedTime>604800</maxAddedTime> <!-- 168 hours -->
+		<remainRefillTime>554400</remainRefillTime> <!-- 154 hours -->
+		<refillTimeMax>554400</refillTimeMax>
+		<entryFee>50000</entryFee>
+		<minLevel>80</minLevel>
+		<maxLevel>999</maxLevel>
+		<weekly>true</weekly>
+		<useWorldPrefix>true</useWorldPrefix>
+	</zone>
+	<zone id="30" name="Aztacan Temple">
+		<enterLocation>18070,225022,-14760</enterLocation>
+		<initialTime>3600</initialTime> <!-- 1 hour -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>10800</maxAddedTime> <!-- 3 hours -->
+		<remainRefillTime>7200</remainRefillTime> <!-- 2 hours -->
+		<refillTimeMax>7200</refillTimeMax>
+		<entryFee>10000</entryFee>
+		<minLevel>60</minLevel>
+		<maxLevel>999</maxLevel>
+	</zone>
+	<zone id="101" name="Transcendent Instance Zone 1"> <!-- Sea of Spores (40-49) -->
+		<enterLocation>63443,26304,-3755</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>100</entryFee>
+		<minLevel>40</minLevel>
+		<maxLevel>49</maxLevel>
+		<instanceId>208</instanceId>
+	</zone>
+	<zone id="102" name="Transcendent Instance Zone 2"> <!-- Cemetery (50-59) -->
+		<enterLocation>125277,70262,-4408</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>1000</entryFee>
+		<minLevel>50</minLevel>
+		<maxLevel>59</maxLevel>
+		<instanceId>209</instanceId>
+	</zone>
+	<zone id="103" name="Transcendent Instance Zone 3"> <!-- Plains of Glory (60-69) -->
+		<enterLocation>148724,-22366,-3436</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>10000</entryFee>
+		<minLevel>60</minLevel>
+		<maxLevel>69</maxLevel>
+		<instanceId>210</instanceId>
+	</zone>
+	<zone id="104" name="Transcendent Instance Zone 4"> <!-- War-Torn Plains (70-79) -->
+		<enterLocation>167965,28800,-3606</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>100000</entryFee>
+		<minLevel>70</minLevel>
+		<maxLevel>79</maxLevel>
+		<instanceId>211</instanceId>
+	</zone>
+	<zone id="106" name="Transcendent Instance Zone 5"> <!-- Dragon Valley (80-99) -->
+		<enterLocation>99797,110524,-3702</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>200000</entryFee>
+		<minLevel>80</minLevel>
+		<maxLevel>99</maxLevel>
+		<instanceId>212</instanceId>
+	</zone>
+	<zone id="107" name="Transcendent Instance Zone 6"> <!-- Sel Mahum Base (85-99) -->
+		<enterLocation>-50416,145363,-2825</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>500000</entryFee>
+		<minLevel>85</minLevel>
+		<maxLevel>99</maxLevel>
+		<instanceId>213</instanceId>
+	</zone>
+	<zone id="109" name="Transcendent Instance Zone 7"> <!-- Giant's Cave (90+) -->
+		<enterLocation>-50416,145363,-2825</enterLocation>
+		<initialTime>900</initialTime> <!-- 15 min -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>3000000</entryFee>
+		<minLevel>90</minLevel>
+		<maxLevel>999</maxLevel>
+		<instanceId>215</instanceId>
+	</zone>
+	<zone id="108" name="Training Zone">
+		<enterLocation>-49550,17189,-3016</enterLocation>
+		<initialTime>3600</initialTime> <!-- 1 hour -->
+		<resetDelay>86400</resetDelay> <!-- 1 day -->
+		<maxAddedTime>0</maxAddedTime>
+		<entryFee>100000</entryFee>
+		<minLevel>76</minLevel>
+		<maxLevel>999</maxLevel>
+		<instanceId>228</instanceId>
+	</zone>
+</list>

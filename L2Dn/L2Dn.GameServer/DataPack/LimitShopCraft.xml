@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LimitShop.xsd">
+	<product id="3546" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="93864" count="1" chance="100.0" /> <!-- Death Knight's Flame Sword -->
+	</product>
+	<product id="3547" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="97088" count="1" chance="100.0" /> <!-- Sword of Immortality -->
+	</product>
+	<product id="3548" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96938" count="1" chance="100.0" /> <!-- Two-handed Sword of Immortality -->
+	</product>
+	<product id="3549" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96927" count="1" chance="100.0" /> <!-- Axe of Immortality -->
+	</product>
+	<product id="3550" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96935" count="1" chance="100.0" /> <!-- Dagger of Immortality -->
+	</product>
+	<product id="3551" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96939" count="1" chance="100.0" /> <!-- Spear of Immortality -->
+	</product>
+	<product id="3552" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96940" count="1" chance="100.0" /> <!-- Bow of Immortality -->
+	</product>
+	<product id="3553" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96930" count="1" chance="100.0" /> <!-- Flame Fists of Immortality -->
+	</product>
+	<product id="3554" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96929" count="1" chance="100.0" /> <!-- Magic Blunt Weapon of Immortality -->
+	</product>
+	<product id="3555" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96933" count="1" chance="100.0" /> <!-- Staff of Immortality -->
+	</product>
+	<product id="3556" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96928" count="1" chance="100.0" /> <!-- Ancient Sword of Immortality -->
+	</product>
+	<product id="3557" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96932" count="1" chance="100.0" /> <!-- Rapier of Immortality -->
+	</product>
+	<product id="3558" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="96931" count="1" chance="100.0" /> <!-- Pistols of Immortality -->
+	</product>
+	<product id="3559" category="0">
+		<ingredient id="98151" count="1" /> <!-- Weapon Fragment of Immortality -->
+		<ingredient id="98139" count="1" /> <!-- Cursed Holy Grail -->
+		<ingredient id="98150" count="1" /> <!-- Tobald's Prophesy -->
+		<production id="97089" count="1" chance="100.0" /> <!-- Dual Swords of Immortality -->
+	</product>
+	<product id="3560" category="0">
+		<ingredient id="98141" count="10" /> <!-- Tobald's Prophesy - 1st Page -->
+		<ingredient id="98142" count="10" /> <!-- Tobald's Prophesy - 2nd Page -->
+		<ingredient id="98143" count="10" /> <!-- Tobald's Prophesy - 3rd Page -->
+		<ingredient id="98144" count="10" /> <!-- Tobald's Prophesy - 4th Page -->
+		<ingredient id="98145" count="10" /> <!-- Tobald's Prophesy - 5th Page -->
+		<production id="98150" count="1" chance="100.0" /> <!-- Tobald's Prophesy -->
+	</product>
+	<product id="3561" category="0">
+		<ingredient id="98146" count="100" /> <!-- Tobald's Prophesy - 1st Page Fragment (Sealed) -->
+		<production id="98141" count="1" chance="100.0" /> <!-- Tobald's Prophesy - 1st Page -->
+	</product>
+	<product id="3562" category="0">
+		<ingredient id="98147" count="100" /> <!-- Tobald's Prophesy - 2nd Page Fragment (Sealed) -->
+		<production id="98142" count="1" chance="100.0" /> <!-- Tobald's Prophesy - 2nd Page -->
+	</product>
+	<product id="3563" category="0">
+		<ingredient id="98148" count="100" /> <!-- Tobald's Prophesy - 3rd Page Fragment (Sealed) -->
+		<production id="98143" count="1" chance="100.0" /> <!-- Tobald's Prophesy - 3rd Page -->
+	</product>
+	<product id="3564" category="0">
+		<ingredient id="98149" count="100" /> <!-- Tobald's Prophesy - 5th Page Fragment (Sealed) -->
+		<production id="98145" count="1" chance="100.0" /> <!-- Tobald's Prophesy - 5th Page -->
+	</product>
+	<product id="3565" category="0">
+		<ingredient id="98141" count="4" /> <!-- Tobald's Prophesy - 1st Page -->
+		<ingredient id="57" count="70000000" /> <!-- Adena -->
+		<production id="98144" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 4th Page -->
+	</product>
+	<product id="3566" category="0">
+		<ingredient id="98142" count="4" /> <!-- Tobald's Prophesy - 2nd Page -->
+		<ingredient id="57" count="70000000" /> <!-- Adena -->
+		<production id="98144" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 4th Page -->
+	</product>
+	<product id="3567" category="0">
+		<ingredient id="98143" count="4" /> <!-- Tobald's Prophesy - 3rd Page -->
+		<ingredient id="57" count="70000000" /> <!-- Adena -->
+		<production id="98144" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 4th Page -->
+	</product>
+	<product id="3568" category="0">
+		<ingredient id="98145" count="4" /> <!-- Tobald's Prophesy - 5th Page -->
+		<ingredient id="57" count="70000000" /> <!-- Adena -->
+		<production id="98144" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 4th Page -->
+	</product>
+	<product id="3569" category="0">
+		<ingredient id="98142" count="2" /> <!-- Tobald's Prophesy - 2nd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98141" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 1st Page -->
+	</product>
+	<product id="3570" category="0">
+		<ingredient id="98143" count="2" /> <!-- Tobald's Prophesy - 3rd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98141" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 1st Page -->
+	</product>
+	<product id="3571" category="0">
+		<ingredient id="98145" count="2" /> <!-- Tobald's Prophesy - 5th Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98141" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 1st Page -->
+	</product>
+	<product id="3572" category="0">
+		<ingredient id="98141" count="2" /> <!-- Tobald's Prophesy - 1st Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98142" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 2nd Page -->
+	</product>
+	<product id="3573" category="0">
+		<ingredient id="98143" count="2" /> <!-- Tobald's Prophesy - 3rd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98142" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 2nd Page -->
+	</product>
+	<product id="3574" category="0">
+		<ingredient id="98145" count="2" /> <!-- Tobald's Prophesy - 5th Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98142" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 2nd Page -->
+	</product>
+	<product id="3575" category="0">
+		<ingredient id="98141" count="2" /> <!-- Tobald's Prophesy - 1st Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98143" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 3rd Page -->
+	</product>
+	<product id="3576" category="0">
+		<ingredient id="98142" count="2" /> <!-- Tobald's Prophesy - 2nd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98143" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 3rd Page -->
+	</product>
+	<product id="3577" category="0">
+		<ingredient id="98145" count="2" /> <!-- Tobald's Prophesy - 5th Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98143" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 3rd Page -->
+	</product>
+	<product id="3578" category="0">
+		<ingredient id="98141" count="2" /> <!-- Tobald's Prophesy - 1st Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98145" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 5th Page -->
+	</product>
+	<product id="3579" category="0">
+		<ingredient id="98142" count="2" /> <!-- Tobald's Prophesy - 2nd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98145" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 5th Page -->
+	</product>
+	<product id="3580" category="0">
+		<ingredient id="98143" count="2" /> <!-- Tobald's Prophesy - 3rd Page -->
+		<ingredient id="57" count="30000000" /> <!-- Adena -->
+		<production id="98145" count="1" chance="20.0" id2="98197" count2="1" chance2="80.0" /> <!-- Tobald's Prophesy - 5th Page -->
+	</product>
+	<product id="3581" category="0">
+		<ingredient id="92476" count="20000" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3582" category="0">
+		<ingredient id="92477" count="20000" /> <!-- Wood -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3583" category="0">
+		<ingredient id="92478" count="20000" /> <!-- Varnish -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3584" category="0">
+		<ingredient id="92479" count="20000" /> <!-- Metallograph -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3585" category="0">
+		<ingredient id="92480" count="20000" /> <!-- Leather -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3586" category="0">
+		<ingredient id="92481" count="20000" /> <!-- Cloth -->
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="98136" count="1" chance="5.0" id2="90907" count2="200" chance2="95.0" /> <!-- Aden Essence -->
+	</product>
+	<product id="3587" category="0">
+		<ingredient id="93914" count="1500" /> <!-- Dragon Blood -->
+		<ingredient id="57" count="9000000" /> <!-- Adena -->
+		<production id="98137" count="1" chance="100.0" /> <!-- Evil Energy -->
+	</product>
+	<product id="3588" category="0">
+		<ingredient id="95782" count="15000" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="9000000" /> <!-- Adena -->
+		<production id="98137" count="1" chance="100.0" /> <!-- Evil Energy -->
+	</product>
+	<product id="3589" category="0">
+		<ingredient id="98196" count="300" /> <!-- Knights' Merit Badge -->
+		<ingredient id="57" count="9000000" /> <!-- Adena -->
+		<production id="98137" count="1" chance="100.0" /> <!-- Evil Energy -->
+	</product>
+	<product id="3780" category="0">
+		<ingredient id="98325" count="300" /> <!-- Triol's Brand -->
+		<ingredient id="57" count="9000000" /> <!-- Adena -->
+		<production id="98137" count="1" chance="100.0" /> <!-- Evil Energy -->
+	</product>
+	<product id="3591" category="0">
+		<ingredient id="93906" count="1" /> <!-- Zaken's Crystal -->
+		<ingredient id="93907" count="1" /> <!-- Orfen's Crystal -->
+		<ingredient id="93908" count="1" /> <!-- Core's Crystal -->
+		<ingredient id="93909" count="1" /> <!-- Baium's Crystal -->
+		<ingredient id="93910" count="1" /> <!-- Queen Ant's Crystal -->
+		<production id="98138" count="1" chance="10.0" id2="98197" count2="1" chance2="90.0" /> <!-- Ruler's Crystal -->
+	</product>
+	<product id="3592" category="0">
+		<ingredient id="98136" count="100" /> <!-- Aden Essence (Sealed) -->
+		<ingredient id="98137" count="700" /> <!-- Evil Energy -->
+		<ingredient id="98138" count="1" /> <!-- Ruler's Crystal -->
+		<ingredient id="98140" count="1" /> <!-- Cursed Holy Grail's Diagram -->
+		<ingredient id="57" count="200000000" /> <!-- Adena -->
+		<production id="98139" count="1" chance="100.0" /> <!-- Cursed Holy Grail -->
+	</product>
+	<product id="3593" category="0">
+		<ingredient id="95725" enchant="5" count="1" /> <!-- +5 Frost Lord's Sword -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3594" category="0">
+		<ingredient id="95726" enchant="5" count="1" /> <!-- +5 Frost Lord's Two-handed Sword -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3595" category="0">
+		<ingredient id="95727" enchant="5" count="1" /> <!-- +5 Frost Lord's Axe -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3596" category="0">
+		<ingredient id="95728" enchant="5" count="1" /> <!-- +5 Frost Lord's Dagger -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3597" category="0">
+		<ingredient id="95729" enchant="5" count="1" /> <!-- +5 Frost Lord's Spear -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3598" category="0">
+		<ingredient id="95730" enchant="5" count="1" /> <!-- +5 Frost Lord's Bow -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3599" category="0">
+		<ingredient id="95731" enchant="5" count="1" /> <!-- +5 Frost Lord's Blade Fists -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3600" category="0">
+		<ingredient id="95732" enchant="5" count="1" /> <!-- +5 Frost Lord's Magic Blunt Weapon -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3601" category="0">
+		<ingredient id="95733" enchant="5" count="1" /> <!-- +5 Frost Lord's Staff -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3602" category="0">
+		<ingredient id="95734" enchant="5" count="1" /> <!-- +5 Frost Lord's Ancient Sword -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3603" category="0">
+		<ingredient id="95735" enchant="5" count="1" /> <!-- +5 Frost Lord's Rapier -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3604" category="0">
+		<ingredient id="95736" enchant="5" count="1" /> <!-- +5 Frost Lord's Pistols -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3605" category="0">
+		<ingredient id="95737" enchant="5" count="1" /> <!-- +5 Frost Lord's Dual Swords -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3606" category="0">
+		<ingredient id="96751" enchant="5" count="1" /> <!-- +5 Frost Lord's Sword (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3607" category="0">
+		<ingredient id="96752" enchant="5" count="1" /> <!-- +5 Frost Lord's Two-handed Sword (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3608" category="0">
+		<ingredient id="96753" enchant="5" count="1" /> <!-- +5 Frost Lord's Axe (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3609" category="0">
+		<ingredient id="96754" enchant="5" count="1" /> <!-- +5 Frost Lord's Dagger (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3610" category="0">
+		<ingredient id="96755" enchant="5" count="1" /> <!-- +5 Frost Lord's Spear (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3611" category="0">
+		<ingredient id="96756" enchant="5" count="1" /> <!-- +5 Frost Lord's Bow (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3612" category="0">
+		<ingredient id="96757" enchant="5" count="1" /> <!-- +5 Frost Lord's Blade Fists (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3613" category="0">
+		<ingredient id="96758" enchant="5" count="1" /> <!-- +5 Frost Lord's Magic Blunt Weapon (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3614" category="0">
+		<ingredient id="96759" enchant="5" count="1" /> <!-- +5 Frost Lord's Staff (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3615" category="0">
+		<ingredient id="96760" enchant="5" count="1" /> <!-- +5 Frost Lord's Ancient Sword (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3616" category="0">
+		<ingredient id="96761" enchant="5" count="1" /> <!-- +5 Frost Lord's Rapier (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3617" category="0">
+		<ingredient id="96762" enchant="5" count="1" /> <!-- +5 Frost Lord's Pistols (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3618" category="0">
+		<ingredient id="96763" enchant="5" count="1" /> <!-- +5 Frost Lord's Dual Swords (Sealed) -->
+		<production id="98151" count="1" chance="1.0" id2="98197" count2="5" chance2="99.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3619" category="0">
+		<ingredient id="95725" enchant="6" count="1" /> <!-- +6 Frost Lord's Sword -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3620" category="0">
+		<ingredient id="95726" enchant="6" count="1" /> <!-- +6 Frost Lord's Two-handed Sword -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3621" category="0">
+		<ingredient id="95727" enchant="6" count="1" /> <!-- +6 Frost Lord's Axe -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3622" category="0">
+		<ingredient id="95728" enchant="6" count="1" /> <!-- +6 Frost Lord's Dagger -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3623" category="0">
+		<ingredient id="95729" enchant="6" count="1" /> <!-- +6 Frost Lord's Spear -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3624" category="0">
+		<ingredient id="95730" enchant="6" count="1" /> <!-- +6 Frost Lord's Bow -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3625" category="0">
+		<ingredient id="95731" enchant="6" count="1" /> <!-- +6 Frost Lord's Blade Fists -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3626" category="0">
+		<ingredient id="95732" enchant="6" count="1" /> <!-- +6 Frost Lord's Magic Blunt Weapon -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3627" category="0">
+		<ingredient id="95733" enchant="6" count="1" /> <!-- +6 Frost Lord's Staff -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3628" category="0">
+		<ingredient id="95734" enchant="6" count="1" /> <!-- +6 Frost Lord's Ancient Sword -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3629" category="0">
+		<ingredient id="95735" enchant="6" count="1" /> <!-- +6 Frost Lord's Rapier -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3630" category="0">
+		<ingredient id="95736" enchant="6" count="1" /> <!-- +6 Frost Lord's Pistols -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3631" category="0">
+		<ingredient id="95737" enchant="6" count="1" /> <!-- +6 Frost Lord's Dual Swords -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3632" category="0">
+		<ingredient id="96751" enchant="6" count="1" /> <!-- +6 Frost Lord's Sword (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3633" category="0">
+		<ingredient id="96752" enchant="6" count="1" /> <!-- +6 Frost Lord's Two-handed Sword (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3634" category="0">
+		<ingredient id="96753" enchant="6" count="1" /> <!-- +6 Frost Lord's Axe (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3635" category="0">
+		<ingredient id="96754" enchant="6" count="1" /> <!-- +6 Frost Lord's Dagger (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3636" category="0">
+		<ingredient id="96755" enchant="6" count="1" /> <!-- +6 Frost Lord's Spear (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3637" category="0">
+		<ingredient id="96756" enchant="6" count="1" /> <!-- +6 Frost Lord's Bow (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3638" category="0">
+		<ingredient id="96757" enchant="6" count="1" /> <!-- +6 Frost Lord's Blade Fists (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3639" category="0">
+		<ingredient id="96758" enchant="6" count="1" /> <!-- +6 Frost Lord's Magic Blunt Weapon (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3640" category="0">
+		<ingredient id="96759" enchant="6" count="1" /> <!-- +6 Frost Lord's Staff (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3641" category="0">
+		<ingredient id="96760" enchant="6" count="1" /> <!-- +6 Frost Lord's Ancient Sword (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3642" category="0">
+		<ingredient id="96761" enchant="6" count="1" /> <!-- +6 Frost Lord's Rapier (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3643" category="0">
+		<ingredient id="96762" enchant="6" count="1" /> <!-- +6 Frost Lord's Pistols (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3644" category="0">
+		<ingredient id="96763" enchant="6" count="1" /> <!-- +6 Frost Lord's Dual Swords (Sealed) -->
+		<production id="98151" count="1" chance="5.0" id2="98197" count2="10" chance2="95.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3645" category="0">
+		<ingredient id="95725" enchant="7" count="1" /> <!-- +7 Frost Lord's Sword -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3646" category="0">
+		<ingredient id="95726" enchant="7" count="1" /> <!-- +7 Frost Lord's Two-handed Sword -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3647" category="0">
+		<ingredient id="95727" enchant="7" count="1" /> <!-- +7 Frost Lord's Axe -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3648" category="0">
+		<ingredient id="95728" enchant="7" count="1" /> <!-- +7 Frost Lord's Dagger -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3649" category="0">
+		<ingredient id="95729" enchant="7" count="1" /> <!-- +7 Frost Lord's Spear -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3650" category="0">
+		<ingredient id="95730" enchant="7" count="1" /> <!-- +7 Frost Lord's Bow -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3651" category="0">
+		<ingredient id="95731" enchant="7" count="1" /> <!-- +7 Frost Lord's Blade Fists -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3652" category="0">
+		<ingredient id="95732" enchant="7" count="1" /> <!-- +7 Frost Lord's Magic Blunt Weapon -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3653" category="0">
+		<ingredient id="95733" enchant="7" count="1" /> <!-- +7 Frost Lord's Staff -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3654" category="0">
+		<ingredient id="95734" enchant="7" count="1" /> <!-- +7 Frost Lord's Ancient Sword -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3655" category="0">
+		<ingredient id="95735" enchant="7" count="1" /> <!-- +7 Frost Lord's Rapier -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3656" category="0">
+		<ingredient id="95736" enchant="7" count="1" /> <!-- +7 Frost Lord's Pistols -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3657" category="0">
+		<ingredient id="95737" enchant="7" count="1" /> <!-- +7 Frost Lord's Dual Swords -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3658" category="0">
+		<ingredient id="96751" enchant="7" count="1" /> <!-- +7 Frost Lord's Sword (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3659" category="0">
+		<ingredient id="96752" enchant="7" count="1" /> <!-- +7 Frost Lord's Two-handed Sword (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3660" category="0">
+		<ingredient id="96753" enchant="7" count="1" /> <!-- +7 Frost Lord's Axe (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3661" category="0">
+		<ingredient id="96754" enchant="7" count="1" /> <!-- +7 Frost Lord's Dagger (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3662" category="0">
+		<ingredient id="96755" enchant="7" count="1" /> <!-- +7 Frost Lord's Spear (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3663" category="0">
+		<ingredient id="96756" enchant="7" count="1" /> <!-- +7 Frost Lord's Bow (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3664" category="0">
+		<ingredient id="96757" enchant="7" count="1" /> <!-- +7 Frost Lord's Blade Fists (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3665" category="0">
+		<ingredient id="96758" enchant="7" count="1" /> <!-- +7 Frost Lord's Magic Blunt Weapon (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3666" category="0">
+		<ingredient id="96759" enchant="7" count="1" /> <!-- +7 Frost Lord's Staff (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3667" category="0">
+		<ingredient id="96760" enchant="7" count="1" /> <!-- +7 Frost Lord's Ancient Sword (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3668" category="0">
+		<ingredient id="96761" enchant="7" count="1" /> <!-- +7 Frost Lord's Rapier (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3669" category="0">
+		<ingredient id="96762" enchant="7" count="1" /> <!-- +7 Frost Lord's Pistols (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="3670" category="0">
+		<ingredient id="96763" enchant="7" count="1" /> <!-- +7 Frost Lord's Dual Swords (Sealed) -->
+		<production id="98151" count="1" chance="8.0" id2="98197" count2="15" chance2="92.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4353" category="0">
+		<ingredient id="95725" enchant="8" count="1" /> <!-- +8 Frost Lord's Sword -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4354" category="0">
+		<ingredient id="95726" enchant="8" count="1" /> <!-- +8 Frost Lord's Two-handed Sword -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4355" category="0">
+		<ingredient id="95727" enchant="8" count="1" /> <!-- +8 Frost Lord's Axe -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4356" category="0">
+		<ingredient id="95728" enchant="8" count="1" /> <!-- +8 Frost Lord's Dagger -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4357" category="0">
+		<ingredient id="95729" enchant="8" count="1" /> <!-- +8 Frost Lord's Spear -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4358" category="0">
+		<ingredient id="95730" enchant="8" count="1" /> <!-- +8 Frost Lord's Bow -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4359" category="0">
+		<ingredient id="95731" enchant="8" count="1" /> <!-- +8 Frost Lord's Blade Fists -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4360" category="0">
+		<ingredient id="95732" enchant="8" count="1" /> <!-- +8 Frost Lord's Magic Blunt Weapon -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4361" category="0">
+		<ingredient id="95733" enchant="8" count="1" /> <!-- +8 Frost Lord's Staff -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4362" category="0">
+		<ingredient id="95734" enchant="8" count="1" /> <!-- +8 Frost Lord's Ancient Sword -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4363" category="0">
+		<ingredient id="95735" enchant="8" count="1" /> <!-- +8 Frost Lord's Rapier -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4364" category="0">
+		<ingredient id="95736" enchant="8" count="1" /> <!-- +8 Frost Lord's Pistols -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4365" category="0">
+		<ingredient id="95737" enchant="8" count="1" /> <!-- +8 Frost Lord's Dual Swords -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4366" category="0">
+		<ingredient id="96751" enchant="8" count="1" /> <!-- +8 Frost Lord's Sword (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4367" category="0">
+		<ingredient id="96752" enchant="8" count="1" /> <!-- +8 Frost Lord's Two-handed Sword (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4368" category="0">
+		<ingredient id="96753" enchant="8" count="1" /> <!-- +8 Frost Lord's Axe (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4369" category="0">
+		<ingredient id="96754" enchant="8" count="1" /> <!-- +8 Frost Lord's Dagger (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4370" category="0">
+		<ingredient id="96755" enchant="8" count="1" /> <!-- +8 Frost Lord's Spear (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4371" category="0">
+		<ingredient id="96756" enchant="8" count="1" /> <!-- +8 Frost Lord's Bow (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4372" category="0">
+		<ingredient id="96757" enchant="8" count="1" /> <!-- +8 Frost Lord's Blade Fists (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4373" category="0">
+		<ingredient id="96758" enchant="8" count="1" /> <!-- +8 Frost Lord's Magic Blunt Weapon (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4374" category="0">
+		<ingredient id="96759" enchant="8" count="1" /> <!-- +8 Frost Lord's Staff (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4375" category="0">
+		<ingredient id="96760" enchant="8" count="1" /> <!-- +8 Frost Lord's Ancient Sword (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4376" category="0">
+		<ingredient id="96761" enchant="8" count="1" /> <!-- +8 Frost Lord's Rapier (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4377" category="0">
+		<ingredient id="96762" enchant="8" count="1" /> <!-- +8 Frost Lord's Pistols (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4378" category="0">
+		<ingredient id="96763" enchant="8" count="1" /> <!-- +8 Frost Lord's Dual Swords (Sealed) -->
+		<production id="98151" count="1" chance="40.0" id2="98197" count2="20" chance2="60.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4381" category="0">
+		<ingredient id="95725" enchant="9" count="1" /> <!-- +9 Frost Lord's Sword -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4382" category="0">
+		<ingredient id="95726" enchant="9" count="1" /> <!-- +9 Frost Lord's Two-handed Sword -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4383" category="0">
+		<ingredient id="95727" enchant="9" count="1" /> <!-- +9 Frost Lord's Axe -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4384" category="0">
+		<ingredient id="95728" enchant="9" count="1" /> <!-- +9 Frost Lord's Dagger -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4385" category="0">
+		<ingredient id="95729" enchant="9" count="1" /> <!-- +9 Frost Lord's Spear -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4386" category="0">
+		<ingredient id="95730" enchant="9" count="1" /> <!-- +9 Frost Lord's Bow -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4387" category="0">
+		<ingredient id="95731" enchant="9" count="1" /> <!-- +9 Frost Lord's Blade Fists -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4388" category="0">
+		<ingredient id="95732" enchant="9" count="1" /> <!-- +9 Frost Lord's Magic Blunt Weapon -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4389" category="0">
+		<ingredient id="95733" enchant="9" count="1" /> <!-- +9 Frost Lord's Staff -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4390" category="0">
+		<ingredient id="95734" enchant="9" count="1" /> <!-- +9 Frost Lord's Ancient Sword -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4391" category="0">
+		<ingredient id="95735" enchant="9" count="1" /> <!-- +9 Frost Lord's Rapier -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4392" category="0">
+		<ingredient id="95736" enchant="9" count="1" /> <!-- +9 Frost Lord's Pistols -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4393" category="0">
+		<ingredient id="95737" enchant="9" count="1" /> <!-- +9 Frost Lord's Dual Swords -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4394" category="0">
+		<ingredient id="96751" enchant="9" count="1" /> <!-- +9 Frost Lord's Sword (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4395" category="0">
+		<ingredient id="96752" enchant="9" count="1" /> <!-- +9 Frost Lord's Two-handed Sword (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4396" category="0">
+		<ingredient id="96753" enchant="9" count="1" /> <!-- +9 Frost Lord's Axe (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4397" category="0">
+		<ingredient id="96754" enchant="9" count="1" /> <!-- +9 Frost Lord's Dagger (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4398" category="0">
+		<ingredient id="96755" enchant="9" count="1" /> <!-- +9 Frost Lord's Spear (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4399" category="0">
+		<ingredient id="96756" enchant="9" count="1" /> <!-- +9 Frost Lord's Bow (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4400" category="0">
+		<ingredient id="96757" enchant="9" count="1" /> <!-- +9 Frost Lord's Blade Fists (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4401" category="0">
+		<ingredient id="96758" enchant="9" count="1" /> <!-- +9 Frost Lord's Magic Blunt Weapon (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4402" category="0">
+		<ingredient id="96759" enchant="9" count="1" /> <!-- +9 Frost Lord's Staff (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4403" category="0">
+		<ingredient id="96760" enchant="9" count="1" /> <!-- +9 Frost Lord's Ancient Sword (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4404" category="0">
+		<ingredient id="96761" enchant="9" count="1" /> <!-- +9 Frost Lord's Rapier (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4405" category="0">
+		<ingredient id="96762" enchant="9" count="1" /> <!-- +9 Frost Lord's Pistols (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="4406" category="0">
+		<ingredient id="96763" enchant="9" count="1" /> <!-- +9 Frost Lord's Dual Swords (Sealed) -->
+		<production id="98151" count="1" chance="75.0" id2="98197" count2="30" chance2="25.0" /> <!-- Weapon Fragment of Immortality -->
+	</product>
+	<product id="1542" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95823" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Sword (Sealed) -->
+	</product>
+	<product id="1543" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95824" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Two-handed Sword (Sealed) -->
+	</product>
+	<product id="1544" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95825" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Axe (Sealed) -->
+	</product>
+	<product id="1545" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95826" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Dagger (Sealed) -->
+	</product>
+	<product id="1546" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95827" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Spear (Sealed) -->
+	</product>
+	<product id="1547" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95828" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Bow (Sealed) -->
+	</product>
+	<product id="1548" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95829" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Blade Fists (Sealed) -->
+	</product>
+	<product id="1549" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95830" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Magic Blunt Weapon (Sealed) -->
+	</product>
+	<product id="1550" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95831" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Staff (Sealed) -->
+	</product>
+	<product id="1551" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95832" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Ancient Sword (Sealed) -->
+	</product>
+	<product id="1552" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95833" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Rapier (Sealed) -->
+	</product>
+	<product id="1553" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95834" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Pistols (Sealed) -->
+	</product>
+	<product id="1554" category="0">
+		<ingredient id="95781" count="1" /> <!-- Black Frozen Core -->
+		<ingredient id="95782" count="1700" /> <!-- Frost Lord's Weapon Crystal -->
+		<ingredient id="57" count="60000000" /> <!-- Adena -->
+		<production id="95835" count="1" chance="5.5" id2="95782" count2="85" chance2="94.5" /> <!-- Package: Frost Lord's Dual Swords (Sealed) -->
+	</product>
+	<product id="1555" category="0">
+		<ingredient id="93906" count="1" /> <!-- Zaken's Crystal -->
+		<ingredient id="57" count="13000000" /> <!-- Adena -->
+		<production id="95781" count="1" chance="3.5" id2="95782" count2="85" chance2="96.5" /> <!-- Black Frozen Core -->
+	</product>
+	<product id="1556" category="0">
+		<ingredient id="93907" count="1" /> <!-- Orfen's Crystal -->
+		<ingredient id="57" count="13000000" /> <!-- Adena -->
+		<production id="95781" count="1" chance="3.5" id2="95782" count2="85" chance2="96.5" /> <!-- Black Frozen Core -->
+	</product>
+	<product id="1557" category="0">
+		<ingredient id="93908" count="1" /> <!-- Core's Crystal -->
+		<ingredient id="57" count="13000000" /> <!-- Adena -->
+		<production id="95781" count="1" chance="3.5" id2="95782" count2="85" chance2="96.5" /> <!-- Black Frozen Core -->
+	</product>
+	<product id="1558" category="0">
+		<ingredient id="93909" count="1" /> <!-- Baium's Crystal -->
+		<ingredient id="57" count="13000000" /> <!-- Adena -->
+		<production id="95781" count="1" chance="3.5" id2="95782" count2="85" chance2="96.5" /> <!-- Black Frozen Core -->
+	</product>
+	<product id="1559" category="0">
+		<ingredient id="93910" count="1" /> <!-- Queen Ant's Crystal -->
+		<ingredient id="57" count="13000000" /> <!-- Adena -->
+		<production id="95781" count="1" chance="3.5" id2="95782" count2="85" chance2="96.5" /> <!-- Black Frozen Core -->
+	</product>
+	<product id="1373" category="0">
+		<ingredient id="95482" count="1" /> <!-- Recipe: Cruma Tower Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96735" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Excuro's Staff (Sealed) -->
+	</product>
+	<product id="1374" category="0">
+		<ingredient id="95482" count="1" /> <!-- Recipe: Cruma Tower Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92479" count="174" /> <!-- Metallograph -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96736" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Torfe's Claw (Sealed) -->
+	</product>
+	<product id="1375" category="0">
+		<ingredient id="95483" count="1" /> <!-- Recipe: Silent Valley Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96737" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Giants' Club (Sealed) -->
+	</product>
+	<product id="1376" category="0">
+		<ingredient id="95483" count="1" /> <!-- Recipe: Silent Valley Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96738" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Ancient Rapier (Sealed) -->
+	</product>
+	<product id="1377" category="0">
+		<ingredient id="95484" count="1" /> <!-- Recipe: Tower of Insolence Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96739" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Guardian Messenger's Spear (Sealed) -->
+	</product>
+	<product id="1378" category="0">
+		<ingredient id="95484" count="1" /> <!-- Recipe: Tower of Insolence Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96740" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Sealed Angel's Hammer (Sealed) -->
+	</product>
+	<product id="1379" category="0">
+		<ingredient id="95485" count="1" /> <!-- Recipe: Plains of the Lizardmen Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96741" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Lizardman Shaman's Staff (Sealed) -->
+	</product>
+	<product id="1380" category="0">
+		<ingredient id="95485" count="1" /> <!-- Recipe: Plains of the Lizardmen Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92479" count="174" /> <!-- Metallograph -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96742" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Lizard Slayer (Sealed) -->
+	</product>
+	<product id="1381" category="0">
+		<ingredient id="95486" count="1" /> <!-- Recipe: Dragon Valley Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96743" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Deadman's Dagger (Sealed) -->
+	</product>
+	<product id="1382" category="0">
+		<ingredient id="95486" count="1" /> <!-- Recipe: Dragon Valley Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92479" count="174" /> <!-- Metallograph -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96744" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Dragon Bone Blade (Sealed) -->
+	</product>
+	<product id="1383" category="0">
+		<ingredient id="95487" count="1" /> <!-- Recipe: Sel Mahum Base Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96745" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Berserker's Sword (Sealed) -->
+	</product>
+	<product id="1384" category="0">
+		<ingredient id="95487" count="1" /> <!-- Recipe: Sel Mahum Base Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96746" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Sel Mahum Sniper (Sealed) -->
+	</product>
+	<product id="1385" category="0">
+		<ingredient id="95488" count="1" /> <!-- Recipe: Orc Barracks Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96747" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Turek Orc Prefect's Dual Swords (Sealed) -->
+	</product>
+	<product id="1386" category="0">
+		<ingredient id="95488" count="1" /> <!-- Recipe: Orc Barracks Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92479" count="174" /> <!-- Metallograph -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96748" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Butcher's Long Sword (Sealed) -->
+	</product>
+	<product id="1969" category="0">
+		<ingredient id="96727" count="1" /> <!-- Recipe: Giant's Cave Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96749" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Giant's One-handed Axe (Sealed) -->
+	</product>
+	<product id="1970" category="0">
+		<ingredient id="96727" count="1" /> <!-- Recipe: Giant's Cave Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92477" count="174" /> <!-- Wood -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="96750" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Giant's Two-handed Staff (Sealed) -->
+	</product>
+	<product id="2348" category="0">
+		<ingredient id="97228" count="1" /> <!-- Recipe: Goddard Territory Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92476" count="174" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="97240" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Spear of Xilenos (Sealed) -->
+	</product>
+	<product id="2349" category="0">
+		<ingredient id="97228" count="1" /> <!-- Recipe: Goddard Territory Purge Equipment -->
+		<ingredient id="95481" count="1" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="92479" count="174" /> <!-- Metallograph -->
+		<ingredient id="57" count="1100000" /> <!-- Adena -->
+		<production id="97241" count="1" chance="20.0" id2="90907" count2="44" chance2="80.0" /> <!-- Package: Shield of Xilenos (Sealed) -->
+	</product>
+	<product id="4238" category="2">
+		<ingredient id="92314" count="49" /> <!-- Giran Seal -->
+		<production id="97175" count="1" chance="50.0" id2="92314" count2="5" chance2="50.0" /> <!-- Spellbook Coupon - 1 Star -->
+	</product>
+	<product id="4239" category="2">
+		<ingredient id="92314" count="60" /> <!-- Giran Seal -->
+		<production id="97176" count="1" chance="30.0" id2="92314" count2="6" chance2="70.0" /> <!-- Spellbook Coupon - 2 Stars -->
+	</product>
+	<product id="4240" category="2">
+		<ingredient id="92314" count="137" /> <!-- Giran Seal -->
+		<production id="97177" count="1" chance="10.0" id2="92314" count2="13" chance2="90.0" /> <!-- Spellbook Coupon - 3 Stars -->
+	</product>
+	<product id="4241" category="2">
+		<ingredient id="92314" count="1208" /> <!-- Giran Seal -->
+		<production id="97178" count="1" chance="5.0" id2="92314" count2="120" chance2="95.0" /> <!-- Spellbook Coupon - 4 Stars -->
+	</product>
+	<product id="4242" category="2">
+		<ingredient id="95583" count="1" /> <!-- Hardin's Notes - Page 1 (Sealed) -->
+		<ingredient id="92480" count="100" /> <!-- Leather -->
+		<ingredient id="95481" count="4" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="57" count="2900000" /> <!-- Adena -->
+		<production id="97175" count="1" chance="30.0" id2="90045" count2="2" chance2="70.0" /> <!-- Spellbook Coupon - 1 Star -->
+	</product>
+	<product id="4243" category="2">
+		<ingredient id="95584" count="1" /> <!-- Hardin's Notes - Page 2 (Sealed) -->
+		<ingredient id="92481" count="100" /> <!-- Cloth -->
+		<ingredient id="90045" count="10" /> <!-- Magic Tablet -->
+		<ingredient id="95481" count="12" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="97176" count="1" chance="25.0" id2="90045" count2="8" chance2="75.0" /> <!-- Spellbook Coupon - 2 Stars -->
+	</product>
+	<product id="4244" category="2">
+		<ingredient id="95585" count="1" /> <!-- Hardin's Notes - Page 3 (Sealed) -->
+		<ingredient id="92478" count="100" /> <!-- Varnish -->
+		<ingredient id="90045" count="80" /> <!-- Magic Tablet -->
+		<ingredient id="95481" count="36" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="57" count="82000000" /> <!-- Adena -->
+		<production id="97177" count="1" chance="8.0" id2="90045" count2="32" chance2="92.0" /> <!-- Spellbook Coupon - 3 Stars -->
+	</product>
+	<product id="4245" category="2">
+		<ingredient id="98854" count="1" /> <!-- Hardin's Notes - Page 4 (Sealed) -->
+		<ingredient id="92481" count="100" /> <!-- Cloth -->
+		<ingredient id="90045" count="90" /> <!-- Magic Tablet -->
+		<ingredient id="95481" count="19" /> <!-- Aden Purge Crystal (Sealed) -->
+		<ingredient id="57" count="255380700" /> <!-- Adena -->
+		<production id="97178" count="1" chance="2.5" id2="90045" count2="38" chance2="97.5" /> <!-- Spellbook Coupon - 4 Stars -->
+	</product>
+	<product id="4521" category="2">
+		<ingredient id="93387" count="1" /> <!-- -->
+		<ingredient id="92314" count="13000" /> <!-- Giran Seal -->
+		<production id="99908" count="1" chance="100.0" /> <!-- Spellbook: Ultimate Death Knight: Master -->
+	</product>
+	<product id="4522" category="2">
+		<ingredient id="95507" count="1" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+		<ingredient id="92314" count="13000" /> <!-- Giran Seal -->
+		<production id="99898" count="1" chance="100.0" /> <!-- Spellbook: Ultimate Death Knight: Master (Sealed) -->
+	</product>
+	<product id="4523" category="2">
+		<ingredient id="98481" count="1" /> <!-- Spellbook: Time Distortion -->
+		<ingredient id="92314" count="13000" /> <!-- Giran Seal -->
+		<production id="99907" count="1" chance="100.0" /> <!-- Spellbook: Time Distortion: Master -->
+	</product>
+	<product id="4524" category="2">
+		<ingredient id="98492" count="1" /> <!-- Spellbook: Time Distortion (Sealed) -->
+		<ingredient id="92314" count="13000" /> <!-- Giran Seal -->
+		<production id="99897" count="1" chance="100.0" /> <!-- Spellbook: Time Distortion: Master (Sealed) -->
+	</product>
+	<product id="4557" category="3">
+		<ingredient id="98941" count="28" /> <!-- Package: Hunter's Earring (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="100015" count="1" chance="100.0" /> <!-- Package: +6 Hunter's Earring -->
+	</product>
+	<product id="4217" category="3">
+		<ingredient id="97266" count="285" /> <!-- Enchant Kit: Piercing Mask (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="98030" count="1" chance="100.0" /> <!-- Package: +6 Piercing Mask -->
+	</product>
+	<product id="2020" category="3">
+		<ingredient id="94168" count="285" /> <!-- Enchant Kit: Circlet of Hero (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96926" count="1" chance="100.0" /> <!-- Package: +6 Circlet of Hero -->
+	</product>
+	<product id="1971" category="3">
+		<ingredient id="93330" count="1" /> <!-- Enchant Kit: Talisman of Authority (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="97954" count="1" chance="100.0" /> <!-- +6 Talisman of Authority Pack -->
+	</product>
+	<product id="2021" category="3">
+		<ingredient id="92020" count="285" /> <!-- Enchant Kit: Talisman of Eva (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="92456" count="1" chance="100.0" /> <!-- +6 Talisman of Eva Pack -->
+	</product>
+	<product id="2022" category="3">
+		<ingredient id="93685" count="180" /> <!-- Enchant Kit: Talisman of Speed (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="92465" count="1" chance="100.0" /> <!-- +6 Talisman of Speed Pack -->
+	</product>
+	<product id="2023" category="3">
+		<ingredient id="91864" count="285" /> <!-- Dragon Belt Pack (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="93728" count="1" chance="100.0" /> <!-- +6 Dragon Belt Pack -->
+	</product>
+	<product id="2024" category="3">
+		<ingredient id="93303" count="17" /> <!-- Package: Cloak of Protection (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="97229" count="1" chance="100.0" /> <!-- Package: +6 Cloak of Protection -->
+	</product>
+	<product id="4218" category="3">
+		<ingredient id="98240" count="9" /> <!-- Package: Agathion Dragon Egg (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="98852" count="1" chance="100.0" /> <!-- Package: +6 Agathion Dragon Egg -->
+	</product>
+	<product id="2025" category="3">
+		<ingredient id="93134" count="9" /> <!-- Package: Agathion Ignis (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="98184" count="1" chance="100.0" /> <!-- Package: +6 Agathion Ignis -->
+	</product>
+	<product id="2026" category="3">
+		<ingredient id="93135" count="9" /> <!-- Package: Agathion Nebula (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="98185" count="1" chance="100.0" /> <!-- Package: +6 Agathion Nebula -->
+	</product>
+	<product id="2027" category="3">
+		<ingredient id="93136" count="9" /> <!-- Package: Agathion Procella (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="98186" count="1" chance="100.0" /> <!-- Package: +6 Agathion Procella -->
+	</product>
+	<product id="2028" category="3">
+		<ingredient id="93137" count="9" /> <!-- Package: Agathion Petram (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="98187" count="1" chance="100.0" /> <!-- Package: +6 Agathion Petram -->
+	</product>
+	<product id="2029" category="3">
+		<ingredient id="93138" count="9" /> <!-- Package: Agathion Joy (Sealed) -->
+		<ingredient id="57" count="300000" /> <!-- Adena -->
+		<production id="98853" count="1" chance="100.0" /> <!-- Package: +6 Agathion Joy -->
+	</product>
+	<product id="4322" category="3">
+		<ingredient id="98934" count="10" /> <!-- Tantar Crystal (Time-limited) (Sealed) -->
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production id="98941" count="1" chance="10.0" id2="98934" count2="1" chance2="90.0" /> <!-- Package: Hunter's Earring (Sealed) -->
+	</product>
+	<product id="1276" category="3">
+		<ingredient id="94717" count="20" /> <!-- Hellbound Energy (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="94716" count="1" chance="20.0" id2="94717" count2="10" chance2="80.0" /> <!-- Talisman of Hellbound Fragment - Hellbound Energy -->
+	</product>
+	<product id="1275" category="3">
+		<ingredient id="94717" count="100" /> <!-- Hellbound Energy (Sealed) -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="94706" count="1" chance="30.0" id2="94717" count2="20" chance2="70.0" /> <!-- Talisman of Hellbound Lv. 1 -->
+	</product>
+	<product id="1342" category="3">
+		<ingredient id="94706" count="1" /> <!-- Talisman of Hellbound Lv. 1 -->
+		<production id="94716" count="2" chance="100.0" /> <!-- Talisman of Hellbound Fragment - Talisman Lv. 1 -->
+	</product>
+	<product id="1345" category="3">
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="91077" count="1" chance="100.0" /> <!-- Venir's Talisman Lv. 1 (Sealed) -->
+	</product>
+	<product id="2936" category="3">
+		<ingredient id="97597" count="5" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97602" count="1" chance="0.1" id2="97601" count2="1" chance2="0.5" id3="97600" count3="1" chance3="1.5" id4="97599" count4="1" chance4="5.5" id5="97598" count5="1" /> <!-- Beryl Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2937" category="3">
+		<ingredient id="97597" count="3" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97607" count="1" chance="0.1" id2="97606" count2="1" chance2="0.5" id3="97605" count3="1" chance3="1.5" id4="97604" count4="1" chance4="5.5" id5="97603" count5="1" /> <!-- Onyx Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2938" category="3">
+		<ingredient id="97597" count="3" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97612" count="1" chance="0.1" id2="97611" count2="1" chance2="0.5" id3="97610" count3="1" chance3="1.5" id4="97609" count4="1" chance4="5.5" id5="97608" count5="1" /> <!-- Spinel Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2939" category="3">
+		<ingredient id="97597" count="3" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97617" count="1" chance="0.1" id2="97616" count2="1" chance2="0.5" id3="97615" count3="1" chance3="1.5" id4="97614" count4="1" chance4="5.5" id5="97613" count5="1" /> <!-- Zircon Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2940" category="3">
+		<ingredient id="97597" count="2" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97622" count="1" chance="0.1" id2="97621" count2="1" chance2="0.5" id3="97620" count3="1" chance3="1.5" id4="97619" count4="1" chance4="5.5" id5="97618" count5="1" /> <!-- Coral Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2941" category="3">
+		<ingredient id="97597" count="2" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97627" count="1" chance="0.1" id2="97626" count2="1" chance2="0.5" id3="97625" count3="1" chance3="1.5" id4="97624" count4="1" chance4="5.5" id5="97623" count5="1" /> <!-- Opal Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2942" category="3">
+		<ingredient id="97597" count="1" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97632" count="1" chance="0.1" id2="97631" count2="1" chance2="0.5" id3="97630" count3="1" chance3="1.5" id4="97629" count4="1" chance4="5.5" id5="97628" count5="1" /> <!-- Amber Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="2943" category="3">
+		<ingredient id="97597" count="1" /> <!-- Jewel Craft Coupon (Sealed) -->
+		<production id="97637" count="1" chance="0.1" id2="97636" count2="1" chance2="0.5" id3="97635" count3="1" chance3="1.5" id4="97634" count4="1" chance4="5.5" id5="97633" count5="1" /> <!-- Moonstone Jewelry Box Lv. 5 (Sealed) -->
+	</product>
+	<product id="4267" category="4">
+		<ingredient id="92314" count="70" /> <!-- Giran Seal -->
+		<production id="97860" count="1" chance="100.0" /> <!-- Stable Scroll: Enchant Rare Accessories (Sealed) -->
+	</product>
+	<product id="4268" category="4">
+		<ingredient id="92314" count="281" /> <!-- Giran Seal -->
+		<production id="98040" count="1" chance="100.0" /> <!-- Incredible Upgrade Stone (Sealed) -->
+	</product>
+	<product id="3677" category="4">
+		<ingredient id="57" count="100000000" /> <!-- Adena -->
+		<production id="93932" count="1" chance="100.0" /> <!-- Scroll: Enchant Special Weapon (Sealed) -->
+	</product>
+	<product id="1344" category="4">
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="98611" count="1" chance="100.0" /> <!-- Scroll: Enchant Accessories (Sealed) -->
+	</product>
+	<product id="4006" category="4">
+		<ingredient id="94303" count="1" /> <!-- Augmenting Stone: Circlet -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="97787" count="1" chance="100.0" /> <!-- Augmenting Stone: Special Equipment -->
+	</product>
+	<product id="4007" category="4">
+		<ingredient id="94304" count="1" /> <!-- Augmenting Stone: Circlet (Sealed) -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="97788" count="1" chance="100.0" /> <!-- Augmenting Stone: Special Equipment (Sealed) -->
+	</product>
+	<product id="3350" category="4">
+		<ingredient id="97787" count="2" /> <!-- Augmenting Stone: Special Equipment -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97789" count="1" chance="15.0" id2="97787" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Special Equipment -->
+	</product>
+	<product id="3351" category="4">
+		<ingredient id="97788" count="2" /> <!-- Augmenting Stone: Special Equipment -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97790" count="1" chance="15.0" id2="97788" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Special Equipment (Sealed) -->
+	</product>
+	<product id="3352" category="4">
+		<ingredient id="94186" count="2" /> <!-- Augmenting Stone: Weapon -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97439" count="1" chance="15.0" id2="94186" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Weapon -->
+	</product>
+	<product id="3353" category="4">
+		<ingredient id="94210" count="2" /> <!-- Augmenting Stone: Weapon (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97444" count="1" chance="15.0" id2="94210" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Weapon (Sealed) -->
+	</product>
+	<product id="3354" category="4">
+		<ingredient id="94188" count="2" /> <!-- Augmenting Stone: Armor -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97440" count="1" chance="15.0" id2="94188" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Armor -->
+	</product>
+	<product id="3355" category="4">
+		<ingredient id="94212" count="2" /> <!-- Augmenting Stone: Armor (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97445" count="1" chance="15.0" id2="94212" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Armor (Sealed) -->
+	</product>
+	<product id="3356" category="4">
+		<ingredient id="94423" count="2" /> <!-- Augmenting Stone: Accessory -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97442" count="1" chance="15.0" id2="94423" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Accessory -->
+	</product>
+	<product id="3357" category="4">
+		<ingredient id="94424" count="2" /> <!-- Augmenting Stone: Accessory (Sealed) -->
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="97447" count="1" chance="15.0" id2="94424" count2="1" chance2="85.0" /> <!-- Blessed Augmenting Stone: Accessory (Sealed) -->
+	</product>
+	<product id="4350" category="4">
+		<ingredient id="92314" count="33" /> <!-- Giran Seal -->
+		<production id="98994" count="1" chance="50.0" id2="92314" count2="3" chance2="50.0" /> <!-- Pet Book Coupon - 1 Star -->
+	</product>
+	<product id="4351" category="4">
+		<ingredient id="92314" count="66" /> <!-- Giran Seal -->
+		<production id="98995" count="1" chance="40.0" id2="92314" count2="6" chance2="60.0" /> <!-- Pet Book Coupon - 2 Stars -->
+	</product>
+	<product id="4352" category="4">
+		<ingredient id="92314" count="101" /> <!-- Giran Seal -->
+		<production id="98996" count="1" chance="30.0" id2="92314" count2="10" chance2="70.0" /> <!-- Pet Book Coupon - 3 Stars -->
+	</product>
+	<product id="1291" category="4">
+		<ingredient id="92314" count="44" /> <!-- Giran Seal -->
+		<production id="94658" count="1" chance="6.0" id2="92314" count2="8" chance2="94.0" /> <!-- Package: Pet Earring (Sealed) -->
+	</product>
+	<product id="1292" category="4">
+		<ingredient id="92314" count="44" /> <!-- Giran Seal -->
+		<production id="94659" count="1" chance="6.0" id2="92314" count2="8" chance2="94.0" /> <!-- Package: Pet Ring (Sealed) -->
+	</product>
+	<product id="1112" category="4">
+		<ingredient id="94328" count="10" /> <!-- Elixir Powder (Sealed) -->
+		<production id="94314" count="1" chance="5.0" id2="94328" count2="7" chance2="95.0" /> <!-- Elixir (Sealed) -->
+	</product>
+	<product id="1878" category="4">
+		<ingredient id="96623" count="5" /> <!-- Dye Booster -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96630" count="3" chance="8.0" id2="96630" count2="1" chance2="67.0" id3="96623" count3="2" chance3="25.0" /> <!-- Enhanced Dye Booster -->
+	</product>
+	<product id="3779" category="4">
+		<ingredient id="92314" count="20" /> <!-- Giran Seal -->
+		<production id="92007" count="1" chance="100.0" /> <!-- High-grade Inventory Expansion Coupon (Sealed) -->
+	</product>
+	<product id="3467" category="4">
+		<ingredient id="92314" count="10" /> <!-- Giran Seal -->
+		<production id="98085" count="1" chance="100.0" /> <!-- Private Warehouse Coupon (Sealed) -->
+	</product>
+	<product id="3468" category="4">
+		<ingredient id="92314" count="10" /> <!-- Giran Seal -->
+		<production id="98086" count="1" chance="100.0" /> <!-- Private Store Coupon (Sealed) -->
+	</product>
+	<product id="1859" category="4">
+		<ingredient id="96350" count="2" /> <!-- Antharas Expedition Mark (Sealed) -->
+		<ingredient id="57" count="20000000" /> <!-- Adena -->
+		<production id="96300" count="1" chance="0.5" id2="95773" count2="1" chance2="5.0" id3="93904" count3="1" chance3="41.5" id4="94208" count4="1" chance4="33.0" id5="94328" count5="1" /> <!-- Spellbook: Dragon Slayer -->
+	</product>
+	<product id="2131" category="4">
+		<ingredient id="96925" count="1" /> <!-- Dream Orb (Sealed) -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="93296" count="1" chance="5.0" id2="94168" count2="1" chance2="5.0" id3="91864" count3="1" chance3="20.0" id4="93303" count4="1" chance4="20.0" id5="96901" count5="1" /> <!-- Einhasad's Pendant Lv. 1 -->
+	</product>
+	<product id="4999" category="4">
+		<ingredient id="72382" count="1" /> <!-- Boss Expedition Mark (Sealed) -->
+		<production id="94337" count="1" chance="0.01" id2="94384" count2="1" chance2="0.5" id3="91663" count3="8000" chance3="1.0" id4="93268" count4="1" chance4="29.0" id5="93269" count5="1" /> <!-- Package: Giran Seal (200 pcs.) (Sealed) -->
+	</product>
+	<product id="4175" category="5">
+		<ingredient id="91745" enchant="4" count="1" /> <!-- +4 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="1" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98723" count="1" chance="30.0" id2="91745" count2="1" chance2="70.0" /> <!-- Package: +4 Blessed Talisman of Aden -->
+	</product>
+	<product id="4176" category="5">
+		<ingredient id="91745" enchant="5" count="1" /> <!-- +5 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="2" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98724" count="1" chance="30.0" id2="91745" count2="1" chance2="70.0" /> <!-- Package: +5 Blessed Talisman of Aden -->
+	</product>
+	<product id="4177" category="5">
+		<ingredient id="91745" enchant="6" count="1" /> <!-- +6 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="8" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98725" count="1" chance="30.0" id2="91745" count2="1" chance2="70.0" /> <!-- Package: +6 Blessed Talisman of Aden -->
+	</product>
+	<product id="4178" category="5">
+		<ingredient id="91745" enchant="7" count="1" /> <!-- +7 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="25" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98726" count="1" chance="20.0" id2="91745" count2="1" chance2="80.0" /> <!-- Package: +7 Blessed Talisman of Aden -->
+	</product>
+	<product id="4179" category="5">
+		<ingredient id="91745" enchant="8" count="1" /> <!-- +8 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="140" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98727" count="1" chance="20.0" id2="91745" count2="1" chance2="80.0" /> <!-- Package: +8 Blessed Talisman of Aden -->
+	</product>
+	<product id="4180" category="5">
+		<ingredient id="91745" enchant="9" count="1" /> <!-- +9 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="1420" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98728" count="1" chance="10.0" id2="91745" count2="1" chance2="90.0" /> <!-- Package: +9 Blessed Talisman of Aden -->
+	</product>
+	<product id="4181" category="5">
+		<ingredient id="91745" enchant="10" count="1" /> <!-- +10 Talisman of Aden (Sealed) -->
+		<ingredient id="91767" count="10000" /> <!-- Enchant Kit: Talisman of Aden (Sealed) -->
+		<production id="98729" count="1" chance="10.0" id2="91745" count2="1" chance2="90.0" /> <!-- Package: +10 Blessed Talisman of Aden -->
+	</product>
+	<product id="4182" category="5">
+		<ingredient id="91745" enchant="4" count="1" /> <!-- +4 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="4" count="1" /> <!-- +4 Talisman of Aden (Sealed) -->
+		<production id="98723" count="1" chance="100.0" /> <!-- Package: +4 Blessed Talisman of Aden -->
+	</product>
+	<product id="4183" category="5">
+		<ingredient id="91745" enchant="5" count="1" /> <!-- +5 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="5" count="1" /> <!-- +5 Talisman of Aden (Sealed) -->
+		<production id="98724" count="1" chance="100.0" /> <!-- Package: +5 Blessed Talisman of Aden -->
+	</product>
+	<product id="4184" category="5">
+		<ingredient id="91745" enchant="6" count="1" /> <!-- +6 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="6" count="1" /> <!-- +6 Talisman of Aden (Sealed) -->
+		<production id="98725" count="1" chance="100.0" /> <!-- Package: +6 Blessed Talisman of Aden -->
+	</product>
+	<product id="4185" category="5">
+		<ingredient id="91745" enchant="7" count="1" /> <!-- +7 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="7" count="1" /> <!-- +7 Talisman of Aden (Sealed) -->
+		<production id="98726" count="1" chance="100.0" /> <!-- Package: +7 Blessed Talisman of Aden -->
+	</product>
+	<product id="4186" category="5">
+		<ingredient id="91745" enchant="8" count="1" /> <!-- +8 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="8" count="1" /> <!-- +8 Talisman of Aden (Sealed) -->
+		<production id="98727" count="1" chance="100.0" /> <!-- Package: +8 Blessed Talisman of Aden -->
+	</product>
+	<product id="4187" category="5">
+		<ingredient id="91745" enchant="9" count="1" /> <!-- +9 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="9" count="1" /> <!-- +9 Talisman of Aden (Sealed) -->
+		<production id="98728" count="1" chance="100.0" /> <!-- Package: +9 Blessed Talisman of Aden -->
+	</product>
+	<product id="4188" category="5">
+		<ingredient id="91745" enchant="10" count="1" /> <!-- +10 Talisman of Aden (Sealed) -->
+		<ingredient id="91745" enchant="10" count="1" /> <!-- +10 Talisman of Aden (Sealed) -->
+		<production id="98729" count="1" chance="100.0" /> <!-- Package: +10 Blessed Talisman of Aden -->
+	</product>
+	<product id="4009" category="5">
+		<ingredient id="91061" enchant="4" count="1" /> <!-- +4 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="4" count="1" /> <!-- +4 Talisman of Authority (Sealed) -->
+		<production id="98713" count="1" chance="100.0" /> <!-- Package: +4 Blessed Talisman of Authority -->
+	</product>
+	<product id="4010" category="5">
+		<ingredient id="91061" enchant="5" count="1" /> <!-- +5 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="5" count="1" /> <!-- +5 Talisman of Authority (Sealed) -->
+		<production id="98714" count="1" chance="100.0" /> <!-- Package: +5 Blessed Talisman of Authority -->
+	</product>
+	<product id="4011" category="5">
+		<ingredient id="91061" enchant="6" count="1" /> <!-- +6 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="6" count="1" /> <!-- +6 Talisman of Authority (Sealed) -->
+		<production id="98715" count="1" chance="100.0" /> <!-- Package: +6 Blessed Talisman of Authority -->
+	</product>
+	<product id="4012" category="5">
+		<ingredient id="91061" enchant="7" count="1" /> <!-- +7 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="7" count="1" /> <!-- +7 Talisman of Authority (Sealed) -->
+		<production id="98716" count="1" chance="100.0" /> <!-- Package: +7 Blessed Talisman of Authority -->
+	</product>
+	<product id="4013" category="5">
+		<ingredient id="91061" enchant="8" count="1" /> <!-- +8 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="8" count="1" /> <!-- +8 Talisman of Authority (Sealed) -->
+		<production id="98717" count="1" chance="100.0" /> <!-- Package: +8 Blessed Talisman of Authority -->
+	</product>
+	<product id="4014" category="5">
+		<ingredient id="91061" enchant="9" count="1" /> <!-- +9 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="9" count="1" /> <!-- +9 Talisman of Authority (Sealed) -->
+		<production id="98718" count="1" chance="100.0" /> <!-- Package: +9 Blessed Talisman of Authority -->
+	</product>
+	<product id="4015" category="5">
+		<ingredient id="91061" enchant="10" count="1" /> <!-- +10 Talisman of Authority (Sealed) -->
+		<ingredient id="91061" enchant="10" count="1" /> <!-- +10 Talisman of Authority (Sealed) -->
+		<production id="98719" count="1" chance="100.0" /> <!-- Package: +10 Blessed Talisman of Authority -->
+	</product>
+	<product id="3701" category="5">
+		<ingredient id="94166" enchant="4" count="1" /> <!-- +4 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="4" count="1" /> <!-- +4 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="4" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +4 -->
+	</product>
+	<product id="3702" category="5">
+		<ingredient id="94166" enchant="5" count="1" /> <!-- +5 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="5" count="1" /> <!-- +5 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="5" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +5 -->
+	</product>
+	<product id="3703" category="5">
+		<ingredient id="94166" enchant="6" count="1" /> <!-- +6 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="6" count="1" /> <!-- +6 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="6" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +6 -->
+	</product>
+	<product id="3704" category="5">
+		<ingredient id="94166" enchant="7" count="1" /> <!-- +7 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="7" count="1" /> <!-- +7 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="7" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +7 -->
+	</product>
+	<product id="3705" category="5">
+		<ingredient id="94166" enchant="8" count="1" /> <!-- +8 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="8" count="1" /> <!-- +8 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="8" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +8 -->
+	</product>
+	<product id="3706" category="5">
+		<ingredient id="94166" enchant="9" count="1" /> <!-- +9 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="9" count="1" /> <!-- +9 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="9" count="1" chance="100.0" /> <!-- Blessed Circlet of Hero +9 -->
+	</product>
+	<product id="3707" category="5">
+		<ingredient id="94166" enchant="10" count="1" /> <!-- +10 Circlet of Hero (Sealed) -->
+		<ingredient id="94166" enchant="10" count="1" /> <!-- +10 Circlet of Hero (Sealed) -->
+		<production id="98205" enchant="10" count="1" chance="100.0" /> <!-- +10 Blessed Circlet of Hero -->
+	</product>
+	<product id="1203" category="5">
+		<ingredient id="91862" enchant="4" count="1" /> <!-- +4 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="4" count="1" /> <!-- +4 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="4" count="1" chance="100.0" /> <!-- +4 Blessed Dragon Belt -->
+	</product>
+	<product id="1204" category="5">
+		<ingredient id="91862" enchant="5" count="1" /> <!-- +5 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="5" count="1" /> <!-- +5 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="5" count="1" chance="100.0" /> <!-- +5 Blessed Dragon Belt -->
+	</product>
+	<product id="1205" category="5">
+		<ingredient id="91862" enchant="6" count="1" /> <!-- +6 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="6" count="1" /> <!-- +6 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="6" count="1" chance="100.0" /> <!-- +6 Blessed Dragon Belt -->
+	</product>
+	<product id="1206" category="5">
+		<ingredient id="91862" enchant="7" count="1" /> <!-- +7 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="7" count="1" /> <!-- +7 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="7" count="1" chance="100.0" /> <!-- +7 Blessed Dragon Belt -->
+	</product>
+	<product id="1207" category="5">
+		<ingredient id="91862" enchant="8" count="1" /> <!-- +8 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="8" count="1" /> <!-- +8 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="8" count="1" chance="100.0" /> <!-- +8 Blessed Dragon Belt -->
+	</product>
+	<product id="1208" category="5">
+		<ingredient id="91862" enchant="9" count="1" /> <!-- +9 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="9" count="1" /> <!-- +9 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="9" count="1" chance="100.0" /> <!-- +9 Blessed Dragon Belt -->
+	</product>
+	<product id="1209" category="5">
+		<ingredient id="91862" enchant="10" count="1" /> <!-- +10 Dragon Belt (Sealed) -->
+		<ingredient id="91862" enchant="10" count="1" /> <!-- +10 Dragon Belt (Sealed) -->
+		<production id="94621" enchant="10" count="1" chance="100.0" /> <!-- +10 Blessed Dragon Belt -->
+	</product>
+	<product id="2879" category="5">
+		<ingredient id="92403" enchant="4" count="1" /> <!-- +4 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="4" count="1" /> <!-- +4 Talisman of Speed (Sealed) -->
+		<production id="97563" count="1" chance="100.0" /> <!-- Package: +4 Blessed Talisman of Speed -->
+	</product>
+	<product id="2880" category="5">
+		<ingredient id="92403" enchant="5" count="1" /> <!-- +5 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="5" count="1" /> <!-- +5 Talisman of Speed (Sealed) -->
+		<production id="97564" count="1" chance="100.0" /> <!-- Package: +5 Blessed Talisman of Speed -->
+	</product>
+	<product id="2881" category="5">
+		<ingredient id="92403" enchant="6" count="1" /> <!-- +6 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="6" count="1" /> <!-- +6 Talisman of Speed (Sealed) -->
+		<production id="97565" count="1" chance="100.0" /> <!-- Package: +6 Blessed Talisman of Speed -->
+	</product>
+	<product id="2882" category="5">
+		<ingredient id="92403" enchant="7" count="1" /> <!-- +7 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="7" count="1" /> <!-- +7 Talisman of Speed (Sealed) -->
+		<production id="97566" count="1" chance="100.0" /> <!-- Package: +7 Blessed Talisman of Speed -->
+	</product>
+	<product id="2883" category="5">
+		<ingredient id="92403" enchant="8" count="1" /> <!-- +8 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="8" count="1" /> <!-- +8 Talisman of Speed (Sealed) -->
+		<production id="97567" count="1" chance="100.0" /> <!-- Package: +8 Blessed Talisman of Speed -->
+	</product>
+	<product id="2884" category="5">
+		<ingredient id="92403" enchant="9" count="1" /> <!-- +9 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="9" count="1" /> <!-- +9 Talisman of Speed (Sealed) -->
+		<production id="97568" count="1" chance="100.0" /> <!-- Package: +9 Blessed Talisman of Speed -->
+	</product>
+	<product id="2885" category="5">
+		<ingredient id="92403" enchant="10" count="1" /> <!-- +10 Talisman of Speed (Sealed) -->
+		<ingredient id="92403" enchant="10" count="1" /> <!-- +10 Talisman of Speed (Sealed) -->
+		<production id="97569" count="1" chance="100.0" /> <!-- Package: +10 Blessed Talisman of Speed -->
+	</product>
+	<product id="2886" category="5">
+		<ingredient id="92018" enchant="4" count="1" /> <!-- +4 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="4" count="1" /> <!-- +4 Talisman of Eva (Sealed) -->
+		<production id="97573" count="1" chance="100.0" /> <!-- Package: +4 Blessed Talisman of Eva -->
+	</product>
+	<product id="2887" category="5">
+		<ingredient id="92018" enchant="5" count="1" /> <!-- +5 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="5" count="1" /> <!-- +5 Talisman of Eva (Sealed) -->
+		<production id="97574" count="1" chance="100.0" /> <!-- Package: +5 Blessed Talisman of Eva -->
+	</product>
+	<product id="2888" category="5">
+		<ingredient id="92018" enchant="6" count="1" /> <!-- +6 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="6" count="1" /> <!-- +6 Talisman of Eva (Sealed) -->
+		<production id="97575" count="1" chance="100.0" /> <!-- Package: +6 Blessed Talisman of Eva -->
+	</product>
+	<product id="2889" category="5">
+		<ingredient id="92018" enchant="7" count="1" /> <!-- +7 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="7" count="1" /> <!-- +7 Talisman of Eva (Sealed) -->
+		<production id="97576" count="1" chance="100.0" /> <!-- Package: +7 Blessed Talisman of Eva -->
+	</product>
+	<product id="2890" category="5">
+		<ingredient id="92018" enchant="8" count="1" /> <!-- +8 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="8" count="1" /> <!-- +8 Talisman of Eva (Sealed) -->
+		<production id="97577" count="1" chance="100.0" /> <!-- Package: +8 Blessed Talisman of Eva -->
+	</product>
+	<product id="2891" category="5">
+		<ingredient id="92018" enchant="9" count="1" /> <!-- +9 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="9" count="1" /> <!-- +9 Talisman of Eva (Sealed) -->
+		<production id="97578" count="1" chance="100.0" /> <!-- Package: +9 Blessed Talisman of Eva -->
+	</product>
+	<product id="2892" category="5">
+		<ingredient id="92018" enchant="10" count="1" /> <!-- +10 Talisman of Eva (Sealed) -->
+		<ingredient id="92018" enchant="10" count="1" /> <!-- +10 Talisman of Eva (Sealed) -->
+		<production id="97579" count="1" chance="100.0" /> <!-- Package: +10 Blessed Talisman of Eva -->
+	</product>
+	<product id="11030" category="6">
+		<ingredient id="93096" count="90" /> <!-- Red Libra Coin (Time-limited) (Sealed) -->
+		<production id="98697" count="100" chance="100.0" /> <!-- Soulshot Ticket (Time-limited) -->
+	</product>
+	<product id="11031" category="6">
+		<ingredient id="93096" count="60" /> <!-- Red Libra Coin (Time-limited) (Sealed) -->
+		<production id="3031" count="2000" chance="100.0" /> <!-- Spirit Ore -->
+	</product>
+	<product id="11032" category="6">
+		<ingredient id="93096" count="1000" /> <!-- Red Libra Coin (Time-limited) (Sealed) -->
+		<ingredient id="57" count="100000000" /> <!-- Adena -->
+		<production id="97121" count="1" chance="100.0" /> <!-- Spellbook Coupon - 1 Star -->
+	</product>
+	<product id="11033" category="6">
+		<ingredient id="93096" count="2000" /> <!-- Red Libra Coin (Time-limited) (Sealed) -->
+		<ingredient id="57" count="300000000" /> <!-- Adena -->
+		<production id="97122" count="1" chance="100.0" /> <!-- Spellbook Coupon - 2 Stars -->
+	</product>
+	<product id="11034" category="6">
+		<ingredient id="93096" count="5000" /> <!-- Red Libra Coin (Time-limited) (Sealed) -->
+		<ingredient id="57" count="700000000" /> <!-- Adena -->
+		<production id="97123" count="1" chance="100.0" /> <!-- Spellbook Coupon - 3 Stars -->
+	</product>
+	<product id="11038" category="6">
+		<ingredient id="99818" count="1" /> <!-- Craft Coupon: Zaken's Blood Sword (Time-limited) (Sealed) -->
+		<production id="97810" count="1" chance="0.025" id2="98680" count2="1" chance2="0.075" id3="97677" count3="1" chance3="1.9" id4="94210" count4="1" chance4="98.0" /> <!-- Package: +7 Zaken's Blood Sword -->
+	</product>
+	<product id="11039" category="6">
+		<ingredient id="99817" count="1" /> <!-- Craft Coupon: Kit: Ice Crystal Armor (Upper/ Lower) (Time-limited) (Sealed) -->
+		<production id="99807" count="1" chance="0.025" id2="99809" count2="1" chance2="0.075" id3="99808" count3="1" chance3="1.9" id4="94212" count4="1" chance4="98.0" /> <!-- Kit: +7 Ice Crystal Armor (Upper/ Lower) -->
+	</product>
+	<product id="11040" category="6">
+		<ingredient id="99816" count="1" /> <!-- Craft Coupon: Spellbook: Ultimate Death Knight (Time-limited) (Sealed) -->
+		<production id="93387" count="1" chance="0.1" id2="95507" count2="1" chance2="0.3" id3="99813" count3="1" chance3="1.6" id4="92314" count4="4" chance4="98.0" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+	</product>
+	<product id="11041" category="6">
+		<ingredient id="92314" count="965" /> <!-- Giran Seal -->
+		<production id="99955" count="1" chance="1.0" id2="92314" count2="25" chance2="99.0" /> <!-- Package: Heavenly Cloak -->
+	</product>
+	<product id="11042" category="6">
+		<ingredient id="92314" count="279" /> <!-- Giran Seal -->
+		<production id="97924" count="1" chance="0.1" id2="99844" count2="1" chance2="0.9" id3="94210" count3="5" chance3="99.0" /> <!-- +7 Frozen Weapon Coupon (Time-limited) -->
+	</product>
+	<product id="11043" category="6">
+		<ingredient id="92314" count="272" /> <!-- Giran Seal -->
+		<production id="98114" count="1" chance="0.1" id2="99843" count2="1" chance2="0.9" id3="94212" count3="5" chance3="99.0" /> <!-- +7 Armor of Protection Coupon (Time-limited) -->
+	</product>
+	<product id="11044" category="6">
+		<ingredient id="92314" count="56" /> <!-- Giran Seal -->
+		<production id="97808" count="1" chance="0.2" id2="98679" count2="1" chance2="1.8" id3="94210" count3="1" chance3="98.0" /> <!-- +7 Boss Weapon Coupon (Time-limited) -->
+	</product>
+	<product id="11045" category="6">
+		<ingredient id="92314" count="54" /> <!-- Giran Seal -->
+		<production id="97807" count="1" chance="0.2" id2="98767" count2="1" chance2="1.8" id3="94212" count3="1" chance3="98.0" /> <!-- +7 Special Armor Coupon (Time-limited) -->
+	</product>
+	<product id="11046" category="6">
+		<ingredient id="92314" count="313" /> <!-- Giran Seal -->
+		<production id="97494" count="1" chance="100.0" /> <!-- Package: Glakias Doll Lv. 1 -->
+	</product>
+	<product id="11047" category="6">
+		<ingredient id="92314" count="313" /> <!-- Giran Seal -->
+		<production id="97489" count="1" chance="100.0" /> <!-- Package: Behemoth Doll Lv. 1 -->
+	</product>
+	<product id="11048" category="6">
+		<ingredient id="92314" count="38" /> <!-- Giran Seal -->
+		<production id="94716" count="1" chance="100.0" /> <!-- Talisman of Hellbound Fragment -->
+	</product>
+	<product id="11049" category="6">
+		<ingredient id="92314" count="3" /> <!-- Giran Seal -->
+		<production id="94212" count="1" chance="100.0" /> <!-- Augmenting Stone: Armor -->
+	</product>
+	<product id="11050" category="6">
+		<ingredient id="92314" count="3" /> <!-- Giran Seal -->
+		<production id="94424" count="1" chance="100.0" /> <!-- Augmenting Stone: Accessory -->
+	</product>
+	<product id="11051" category="6">
+		<ingredient id="92314" count="4" /> <!-- Giran Seal -->
+		<production id="94210" count="1" chance="100.0" /> <!-- Augmenting Stone: Weapon -->
+	</product>
+	<product id="11052" category="6">
+		<ingredient id="92314" count="6" /> <!-- Giran Seal -->
+		<production id="97788" count="1" chance="100.0" /> <!-- Augmenting Stone: Special Equipment -->
+	</product>
+	<product id="11053" category="6">
+		<ingredient id="91076" count="3" /> <!-- Venir's Talisman Fragment -->
+		<production id="94780" count="1" chance="100.0" /> <!-- Growth Rune Fragment -->
+	</product>
+	<product id="11054" category="6">
+		<ingredient id="92314" count="21" /> <!-- Giran Seal -->
+		<production id="96614" count="1" chance="1.0" id2="92314" count2="2" chance2="99.0" /> <!-- Spellbook: Expanded Potential of Dyes -->
+	</product>
+	<product id="11055" category="6">
+		<ingredient id="92314" count="61" /> <!-- Giran Seal -->
+		<production id="98206" count="1" chance="10.0" id2="92314" count2="6" chance2="90.0" /> <!-- Chosen Dye Coupon Lv. 11 (Time-limited) -->
+	</product>
+	<product id="11056" category="6">
+		<ingredient id="92314" count="31" /> <!-- Giran Seal -->
+		<production id="95813" count="1" chance="3.0" id2="95803" count2="1" chance2="97.0" /> <!-- Hardin's Soul Crystal Lv. 11 -->
+	</product>
+	<product id="11057" category="6">
+		<ingredient id="92314" count="53" /> <!-- Giran Seal -->
+		<production id="95818" count="1" chance="1.0" id2="95803" count2="2" chance2="99.0" /> <!-- Hardin's Soul Crystal Lv. 16 -->
+	</product>
+	<product id="11058" category="6">
+		<ingredient id="92314" count="50" /> <!-- Giran Seal -->
+		<production id="98555" count="1" chance="20.0" id2="100014" count2="1" chance2="80.0" /> <!-- +2 Rare Accessory Coupon (Time-limited) -->
+	</product>
+	<product id="11059" category="6">
+		<ingredient id="92314" count="18" /> <!-- Giran Seal -->
+		<production id="96630" count="1" chance="100.0" /> <!-- Enhanced Dye Booster -->
+	</product>
+</list>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Soulshot -->
+	<item>
+		<!-- Soulshot Ticket -->
+		<ingredient count="1" id="90907" />
+		<!-- Soulshot -->
+		<production count="500" id="91927" />
+	</item>
+	<item>
+		<!-- Soulshot Ticket -->
+		<ingredient count="1" id="90907" />
+		<!-- Blessed Spiritshot -->
+		<production count="167" id="91930" />
+	</item>
+	<item>
+		<!-- Soulshot Ticket -->
+		<ingredient count="1" id="90907" />
+		<!-- Beast Soulshot -->
+		<production count="500" id="6645" />
+	</item>
+	<item>
+		<!-- Soulshot Ticket -->
+		<ingredient count="1" id="90907" />
+		<!-- Beast Spiritshot -->
+		<production count="200" id="6646" />
+	</item>
+	<item>
+		<!-- Soulshots Coupon (Can be transferred by account) -->
+		<ingredient count="1" id="49487" />
+		<!-- Soulshot -->
+		<production count="500" id="91927" />
+	</item>
+	<item>
+		<!-- Soulshots Coupon (Can be transferred by account) -->
+		<ingredient count="1" id="49487" />
+		<!-- Blessed Spiritshot -->
+		<production count="167" id="91930" />
+	</item>
+	<item>
+		<!-- Soulshots Coupon (Can be transferred by account) -->
+		<ingredient count="1" id="49487" />
+		<!-- Beast Soulshot -->
+		<production count="500" id="6645" />
+	</item>
+	<item>
+		<!-- Soulshots Coupon (Can be transferred by account) -->
+		<ingredient count="1" id="49487" />
+		<!-- Beast Spiritshot -->
+		<production count="200" id="6646" />
+	</item>
+	<item>
+		<!-- Blessed Spiritshots -->
+		<ingredient count="1" id="91930" />
+		<!-- Soulshot -->
+		<production count="3" id="91927" />
+	</item>
+	<item>
+		<!-- Soulshot -->
+		<ingredient count="3" id="91927" />
+		<!-- Blessed Spiritshots -->
+		<production count="1" id="91930" />
+	</item>
+	<item>
+		<!-- Beast Spiritshot -->
+		<ingredient count="2" id="6646" />
+		<!-- Beast Soulshot -->
+		<production count="5" id="6645" />
+	</item>
+	<item>
+		<!-- Beast Soulshot -->
+		<ingredient count="5" id="6645" />
+		<!-- Beast Spiritshot -->
+		<production count="2" id="6646" />
+	</item>
+</list>

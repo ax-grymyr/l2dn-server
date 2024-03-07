@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="3047911" toLevel="4" name="Attack of Secrets">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047913" toLevel="4" name="Attribute Attack">
+		<icon>icon.skill0000</icon>
+		<effectPoint>-500</effectPoint>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">85</value>
+			<value level="3">88</value>
+			<value level="4">91</value>
+		</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<reuseDelay>
+			<value level="1">15000</value>
+			<value level="2">8000</value>
+			<value level="3">8000</value>
+			<value toLevel="2" fromLevel="3" toSubLevel="1001" fromSubLevel="1001">5000</value>
+			<value level="4">7000</value>
+			<value toLevel="4" fromLevel="4" toSubLevel="1001" fromSubLevel="1001">4000</value>
+		</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">245</value>
+					<value level="2">262</value>
+					<value level="3">279</value>
+					<value level="4">304</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3047915" toLevel="4" name="Phantom Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047937" toLevel="4" name="Sword Spirit Lv. 1">
+		<!-- Sword Spirit charge has reached Lv. 1. Use basic attacks and attack skills. to charge Sword Spirit to the next level. -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.skill0000</value>
+			<value level="3">icon.skill0000</value>
+			<value level="4">icon.s_sword_art1</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047938" toLevel="1" name="Sword Spirit's Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047941" toLevel="3" name="Spear Cage">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047957" toLevel="1" name="Cancel Sword Spirit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047963" toLevel="3" name="Spear Cage">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047967" toLevel="3" name="Spear Cage">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047969" toLevel="1" name="Sword Spirit Lv. 5">
+		<!-- Sword Spirit charge has reached Lv. 5. An <font color="FFBB00">additional attack</font> is triggered upon a single target hit. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047990" toLevel="11" name="Lightning Squall">
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.skill0000</value>
+			<value level="3">icon.skill0000</value>
+			<value level="4">icon.s_lightning</value>
+			<value level="5">icon.skill0000</value>
+			<value level="6">icon.skill0000</value>
+			<value level="7">icon.skill0000</value>
+			<value level="8">icon.s_lightning</value>
+			<value level="9">icon.skill0000</value>
+			<value level="10">icon.skill0000</value>
+			<value level="11">icon.skill0000</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047991" toLevel="11" name="Lightning Squall">
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.skill0000</value>
+			<value level="3">icon.skill0000</value>
+			<value level="4">icon.s_lightning</value>
+			<value level="5">icon.skill0000</value>
+			<value level="6">icon.skill0000</value>
+			<value level="7">icon.skill0000</value>
+			<value level="8">icon.s_lightning</value>
+			<value level="9">icon.skill0000</value>
+			<value level="10">icon.skill0000</value>
+			<value level="11">icon.skill0000</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="3047996" toLevel="1" name="Shock Impact">
+		<!-- Stuns making unable to move. -->
+		<icon>icon.skill30526</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

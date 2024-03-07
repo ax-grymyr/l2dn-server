@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="4500" name="Greater INT Dye (INT +1 WIT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4501" name="Greater MEN Dye (MEN +1 INT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4502" name="Greater MEN Dye (MEN +1 WIT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4503" name="Greater WIT Dye (WIT +1 INT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4504" name="Greater WIT Dye (WIT +1 MEN -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4505" name="Greater STR Dye (STR +2 CON -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4506" name="Greater STR Dye (STR +2 DEX -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4507" name="Greater CON Dye (CON +2 STR -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4508" name="Greater CON Dye (CON +2 DEX -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4509" name="Greater DEX Dye (DEX +2 STR -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4510" name="Greater DEX Dye (DEX +2 CON -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4511" name="Greater INT Dye (INT +2 MEN -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4512" name="Greater INT Dye (INT +2 WIT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4513" name="Greater MEN Dye (MEN +2 INT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4514" name="Greater MEN Dye (MEN +2 WIT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4515" name="Greater WIT Dye (WIT +2 INT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4516" name="Greater WIT Dye (WIT +2 MEN -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4517" name="Greater STR Dye (STR +2 CON -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4518" name="Greater STR Dye (STR +2 DEX -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4519" name="Greater CON Dye (CON +2 STR -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4520" name="Greater CON Dye (CON +2 DEX -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4521" name="Greater DEX Dye (DEX +2 STR -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4522" name="Greater DEX Dye (DEX +2 CON -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4523" name="Greater INT Dye (INT +2 MEN -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4524" name="Greater INT Dye (INT +2 WIT -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4525" name="Greater MEN Dye (MEN +2 INT -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4526" name="Greater MEN Dye (MEN +2 WIT -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4527" name="Greater WIT Dye (WIT +2 INT -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4528" name="Greater WIT Dye (WIT +2 MEN -3)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4529" name="Greater STR Dye (STR +3 CON -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4530" name="Greater STR Dye (STR +3 DEX -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4531" name="Greater CON Dye (CON +3 STR -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4532" name="Greater CON Dye (CON +3 DEX -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4533" name="Greater DEX Dye (DEX +3 STR -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4534" name="Greater DEX Dye (DEX +3 CON -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4535" name="Greater INT Dye (INT +3 MEN -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4536" name="Greater INT Dye (INT +3 WIT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4537" name="Greater MEN Dye (MEN +3 INT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4538" name="Greater MEN Dye (MEN +3 WIT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4539" name="Greater WIT Dye (WIT +3 INT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4540" name="Greater WIT Dye (WIT +3 MEN -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4541" name="Greater STR Dye (STR +3 CON -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4542" name="Greater STR Dye (STR +3 DEX -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4543" name="Greater CON Dye (CON +3 STR -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4544" name="Greater CON Dye (CON +3 DEX -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4545" name="Greater DEX Dye (DEX +3 STR -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4546" name="Greater DEX Dye (DEX +3 CON -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4547" name="Greater INT Dye (INT +3 MEN -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4548" name="Greater INT Dye (INT +3 WIT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4549" name="Greater MEN Dye (MEN +3 INT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4550" name="Greater MEN Dye (MEN +3 WIT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4551" name="Greater WIT Dye (WIT +3 INT -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4552" name="Greater WIT Dye (WIT +3 MEN -4)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4553" name="Greater STR Dye (STR +1 CON -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4554" name="Greater STR Dye (STR +1 DEX -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4555" name="Greater CON Dye (CON +1 STR -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4556" name="Greater CON Dye (CON +1 DEX -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4557" name="Greater DEX Dye (DEX +1 STR -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4558" name="Greater DEX Dye (DEX +1 CON -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4559" name="Greater INT Dye (INT +1 MEN -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4560" name="Greater INT Dye (INT +1 WIT -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4561" name="Greater MEN Dye (MEN +1 INT -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4562" name="Greater MEN Dye (MEN +1 WIT -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4563" name="Greater WIT Dye (WIT +1 INT -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4564" name="Greater WIT Dye (WIT +1 MEN -1)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4565" name="Greater STR Dye (STR +4 CON -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4566" name="Greater STR Dye (STR +4 DEX -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4567" name="Greater CON Dye (CON +4 STR -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4568" name="Greater CON Dye (CON +4 DEX -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4569" name="Greater DEX Dye (DEX +4 STR -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4570" name="Greater DEX Dye (DEX +4 CON -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4571" name="Greater INT Dye (INT +4 MEN -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4572" name="Greater INT Dye (INT +4 WIT -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4573" name="Greater MEN Dye (MEN +4 INT -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4574" name="Greater MEN Dye (MEN +4 WIT -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4575" name="Greater WIT Dye (WIT +4 INT -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4576" name="Greater WIT Dye (WIT +4 MEN -6)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4577" name="Greater STR Dye (STR +4 CON -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4578" name="Greater STR Dye (STR +4 DEX -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4579" name="Greater CON Dye (CON +4 STR -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4580" name="Greater CON Dye (CON +4 DEX -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4581" name="Greater DEX Dye (DEX +4 STR -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4582" name="Greater DEX Dye (DEX +4 CON -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4583" name="Greater INT Dye (INT +4 MEN -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4584" name="Greater INT Dye (INT +4 WIT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4585" name="Greater MEN Dye (MEN +4 INT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4586" name="Greater MEN Dye (MEN +4 WIT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4587" name="Greater WIT Dye (WIT +4 INT -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4588" name="Greater WIT Dye (WIT +4 MEN -5)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4589" name="Greater STR Dye (STR +2 CON -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4590" name="Greater STR Dye (STR +2 DEX -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4591" name="Greater CON Dye (CON +2 STR -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4592" name="Greater CON Dye (CON +2 DEX -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4593" name="Greater DEX Dye (DEX +2 STR -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4594" name="Greater DEX Dye (DEX +2 CON -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4595" name="Greater INT Dye (INT +2 MEN -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4596" name="Greater INT Dye (INT +2 WIT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4597" name="Greater MEN Dye (MEN +2 INT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4598" name="Greater MEN Dye (MEN +2 WIT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="4599" name="Greater WIT Dye (WIT +2 INT -2)" additionalName="2nd Class" type="EtcItem">
+		<!-- A faded dye that is not used anymore. Can be sold to a shop or used to acquire regular craft points. -->
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

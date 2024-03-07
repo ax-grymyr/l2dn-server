@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange Heavy Armor B-Grade -->
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93556" /> <!-- +0 ~ +5 Armor Pack - Zubei's Breastplate - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93557" /> <!-- +0 ~ +5 Armor Pack - Blue Wolf Breastplate - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93558" /> <!-- +0 ~ +5 Armor Pack - Zubei's Gaiters - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93559" /> <!-- +0 ~ +5 Armor Pack - Avadon Breastplate - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93560" /> <!-- +0 ~ +5 Armor Pack - Avadon Gaiters - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93561" /> <!-- +0 ~ +5 Armor Pack - Blue Wolf Gaiters - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93562" /> <!-- +0 ~ +5 Armor Pack - Doom Plate Armor - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93575" /> <!-- +0 ~ +5 Armor Pack - Zubei's Gauntlets (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93578" /> <!-- +0 ~ +5 Armor Pack - Avadon Gloves (Heavy) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93581" /> <!-- +0 ~ +5 Armor Pack - Blue Wolf Gloves (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93584" /> <!-- +0 ~ +5 Armor Pack - Doom Gloves (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93587" /> <!-- +0 ~ +5 Armor Pack - Zubei's Boots (Heavy) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93590" /> <!-- +0 ~ +5 Armor Pack - Avadon Boots (Heavy) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93593" /> <!-- +0 ~ +5 Armor Pack - Blue Wolf Boots (Heavy) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93596" /> <!-- +0 ~ +5 Armor Pack - Doom Boots (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93599" /> <!-- +0~+5 Armor Pack - Avadon Circlet (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93602" /> <!-- +0 ~ +5 Armor Pack - Zubei's Helmet (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93605" /> <!-- +0 ~ +5 Armor Pack - Blue Wolf Helmet (Heavy Armor) - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93500" /> <!-- Enchanted B-grade Armor Coupon - Sealed -->
+		<production count="1" id="93608" /> <!-- +0 ~ +5 Armor Pack - Doom Helmet (Heavy Armor) - Sealed -->
+	</item>
+</list>

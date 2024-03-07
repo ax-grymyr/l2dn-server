@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="83200" toLevel="1" name="Gloves of Protection - 6 Item Effect">
+		<!-- P. Def. +300, M. Def. +300 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83201" toLevel="1" name="Gloves of Protection - 7 Item Effect">
+		<!-- Debuff Resistance +3%, Anomaly Resistance +3% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-3</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>3</ANOMALY>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83202" toLevel="1" name="Gloves of Protection - 8 Item Effect">
+		<!-- Received damage -3% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83203" toLevel="1" name="Common A-grade Boots - 6 Item Effect">
+		<!-- P. Def. +100, M. Def. +100 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83204" toLevel="1" name="Common A-grade Boots - 7 Item Effect">
+		<!-- HP Recovery Potions' Effect +10 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83205" toLevel="1" name="Common A-grade Boots - 8 Item Effect">
+		<!-- HP Recovery Potions' Effect +2% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83206" toLevel="1" name="High-grade A-grade Boots - 6 Item Effect">
+		<!-- P. Def. +100, M. Def. +100 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83207" toLevel="1" name="High-grade A-grade Boots - 7 Item Effect">
+		<!-- HP Recovery Potions' Effect +10 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83208" toLevel="1" name="High-grade A-grade Boots - 8 Item Effect">
+		<!-- HP Recovery Potions' Effect +2% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83209" toLevel="1" name="Awoken A-grade Boots - 6 Item Effect">
+		<!-- P. Def. +200, M. Def. +200 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83210" toLevel="1" name="Awoken A-grade Boots - 7 Item Effect">
+		<!-- HP Recovery Potions' Effect +15 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83211" toLevel="1" name="Awoken A-grade Boots - 8 Item Effect">
+		<!-- HP Recovery Potions' Effect +4% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83212" toLevel="1" name="Boots of Protection - 6 Item Effect">
+		<!-- P. Def. +300, M. Def. +300 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83213" toLevel="1" name="Boots of Protection - 7 Item Effect">
+		<!-- HP Recovery Potions' Effect +30 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83214" toLevel="1" name="Boots of Protection - 8 Item Effect">
+		<!-- HP Recovery Potions' Effect +6% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83215" toLevel="4" name="Helmet Blessing Effect">
+		<!-- Resistance to All Weapons +0.5% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<BLUNT>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">1</value>
+					<value level="4">3</value>
+				</BLUNT>
+				<SWORD>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</SWORD>
+				<DUAL>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</DUAL>
+				<ANCIENTSWORD>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</ANCIENTSWORD>
+				<DAGGER>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</DAGGER>
+				<RAPIER>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</RAPIER>
+				<DUALFIST>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</DUALFIST>
+				<DUALDAGGER>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</DUALDAGGER>
+				<BOW>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</BOW>
+				<CROSSBOW>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</CROSSBOW>
+				<PISTOLS>
+					<value level="1">0.5</value>
+					<value level="2">0.5</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</PISTOLS>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83216" toLevel="4" name="Upper Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -5 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83217" toLevel="4" name="Upper Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -15 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83218" toLevel="4" name="Lower Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -5 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83219" toLevel="4" name="Lower Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -15 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83220" toLevel="4" name="Upper/ Lower Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -10 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83221" toLevel="4" name="Upper/ Lower Armor Blessing Effect">
+		<!-- Received Skill Critical Damage -20 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83222" toLevel="4" name="Glove Blessing Effect">
+		<!-- Debuff Resistance +1%, Anomaly Resistance +1% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ResistAbnormalByCategory">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-1</value>
+					<value level="3">-2</value>
+					<value level="4">-4</value>
+				</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">4</value>
+				</ANOMALY>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="83223" toLevel="4" name="Boot Blessing Effect">
+		<!-- HP Recovery Potions' Effect +5 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83224" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83225" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83226" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83227" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83228" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83229" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83230" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83231" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83232" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83233" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83234" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83235" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83236" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83237" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83238" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83239" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83240" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83241" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83242" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83243" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83244" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83245" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83246" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83247" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83248" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83249" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83250" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83251" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83252" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83253" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83254" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83255" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83256" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83257" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83258" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83259" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83260" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83261" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83262" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83263" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83264" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83265" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83266" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83267" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83268" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83269" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83270" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83271" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83272" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83273" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83274" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83275" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83276" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83277" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83278" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83279" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83280" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83281" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83282" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83283" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83284" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83285" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83286" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83287" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83288" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83289" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83290" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83291" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83292" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83293" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83294" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83295" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83296" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83297" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83298" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="83299" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

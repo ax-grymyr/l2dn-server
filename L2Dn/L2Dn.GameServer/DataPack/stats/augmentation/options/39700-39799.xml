@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39700" name="option_id_39700">
+		<!-- Max HP +400 -->
+	</option>
+	<option id="39701" name="option_id_39701">
+		<!-- Max HP +500 -->
+	</option>
+	<option id="39702" name="option_id_39702">
+		<!-- Max MP +25 -->
+	</option>
+	<option id="39703" name="option_id_39703">
+		<!-- Max MP +38 -->
+	</option>
+	<option id="39704" name="option_id_39704">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="39705" name="option_id_39705">
+		<!-- Max MP +63 -->
+	</option>
+	<option id="39706" name="option_id_39706">
+		<!-- Max MP +75 -->
+	</option>
+	<option id="39707" name="option_id_39707">
+		<!-- Max MP +88 -->
+	</option>
+	<option id="39708" name="option_id_39708">
+		<!-- Max MP +100 -->
+	</option>
+	<option id="39709" name="option_id_39709">
+		<!-- Max MP +113 -->
+	</option>
+	<option id="39710" name="option_id_39710">
+		<!-- Max MP +125 -->
+	</option>
+	<option id="39711" name="option_id_39711">
+		<!-- Max MP +138 -->
+	</option>
+	<option id="39712" name="option_id_39712">
+		<!-- Max MP +150 -->
+	</option>
+	<option id="39713" name="option_id_39713">
+		<!-- Max MP +163 -->
+	</option>
+	<option id="39714" name="option_id_39714">
+		<!-- Max MP +175 -->
+	</option>
+	<option id="39715" name="option_id_39715">
+		<!-- Max MP +188 -->
+	</option>
+	<option id="39716" name="option_id_39716">
+		<!-- Max MP +200 -->
+	</option>
+	<option id="39717" name="option_id_39717">
+		<!-- Max MP +300 -->
+	</option>
+	<option id="39718" name="option_id_39718">
+		<!-- Max MP +330 -->
+	</option>
+	<option id="39719" name="option_id_39719">
+		<!-- Max MP +360 -->
+	</option>
+	<option id="39720" name="option_id_39720">
+		<!-- Max MP +400 -->
+	</option>
+	<option id="39721" name="option_id_39721">
+		<!-- Max MP +500 -->
+	</option>
+	<option id="39722" name="option_id_39722">
+		<!-- Max CP +25 -->
+	</option>
+	<option id="39723" name="option_id_39723">
+		<!-- Max CP +38 -->
+	</option>
+	<option id="39724" name="option_id_39724">
+		<!-- Max CP +50 -->
+	</option>
+	<option id="39725" name="option_id_39725">
+		<!-- Max CP +63 -->
+	</option>
+	<option id="39726" name="option_id_39726">
+		<!-- Max CP +75 -->
+	</option>
+	<option id="39727" name="option_id_39727">
+		<!-- Max CP +88 -->
+	</option>
+	<option id="39728" name="option_id_39728">
+		<!-- Max CP +100 -->
+	</option>
+	<option id="39729" name="option_id_39729">
+		<!-- Max CP +113 -->
+	</option>
+	<option id="39730" name="option_id_39730">
+		<!-- Max CP +125 -->
+	</option>
+	<option id="39731" name="option_id_39731">
+		<!-- Max CP +138 -->
+	</option>
+	<option id="39732" name="option_id_39732">
+		<!-- Max CP +150 -->
+	</option>
+	<option id="39733" name="option_id_39733">
+		<!-- Max CP +163 -->
+	</option>
+	<option id="39734" name="option_id_39734">
+		<!-- Max CP +175 -->
+	</option>
+	<option id="39735" name="option_id_39735">
+		<!-- Max CP +188 -->
+	</option>
+	<option id="39736" name="option_id_39736">
+		<!-- Max CP +200 -->
+	</option>
+	<option id="39737" name="option_id_39737">
+		<!-- Max CP +300 -->
+	</option>
+	<option id="39738" name="option_id_39738">
+		<!-- Max CP +330 -->
+	</option>
+	<option id="39739" name="option_id_39739">
+		<!-- Max CP +360 -->
+	</option>
+	<option id="39740" name="option_id_39740">
+		<!-- Max CP +400 -->
+	</option>
+	<option id="39741" name="option_id_39741">
+		<!-- Max CP +500 -->
+	</option>
+	<option id="39742" name="option_id_39742">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39743" name="option_id_39743">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39744" name="option_id_39744">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39745" name="option_id_39745">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39746" name="option_id_39746">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39747" name="option_id_39747">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39748" name="option_id_39748">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39749" name="option_id_39749">
+		<!-- P./ M. Accuracy +1 -->
+	</option>
+	<option id="39750" name="option_id_39750">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39751" name="option_id_39751">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39752" name="option_id_39752">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39753" name="option_id_39753">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39754" name="option_id_39754">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39755" name="option_id_39755">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39756" name="option_id_39756">
+		<!-- P./ M. Accuracy +2 -->
+	</option>
+	<option id="39757" name="option_id_39757">
+		<!-- P./ M. Accuracy +3 -->
+	</option>
+	<option id="39758" name="option_id_39758">
+		<!-- P./ M. Accuracy +3 -->
+	</option>
+	<option id="39759" name="option_id_39759">
+		<!-- P./ M. Accuracy +3 -->
+	</option>
+	<option id="39760" name="option_id_39760">
+		<!-- P./ M. Accuracy +4 -->
+	</option>
+	<option id="39761" name="option_id_39761">
+		<!-- P./ M. Accuracy +5 -->
+	</option>
+	<option id="39762" name="option_id_39762">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39763" name="option_id_39763">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39764" name="option_id_39764">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39765" name="option_id_39765">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39766" name="option_id_39766">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39767" name="option_id_39767">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39768" name="option_id_39768">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39769" name="option_id_39769">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+	</option>
+	<option id="39770" name="option_id_39770">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39771" name="option_id_39771">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39772" name="option_id_39772">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39773" name="option_id_39773">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39774" name="option_id_39774">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39775" name="option_id_39775">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39776" name="option_id_39776">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="39777" name="option_id_39777">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+	</option>
+	<option id="39778" name="option_id_39778">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+	</option>
+	<option id="39779" name="option_id_39779">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+	</option>
+	<option id="39780" name="option_id_39780">
+		<!-- Soulshot/ Spiritshot damage +4% -->
+	</option>
+	<option id="39781" name="option_id_39781">
+		<!-- Soulshot/ Spiritshot damage +5% -->
+	</option>
+	<option id="39782" name="option_id_39782">
+		<!-- Skill Critical Damage +15 -->
+	</option>
+	<option id="39783" name="option_id_39783">
+		<!-- Skill Critical Damage +21 -->
+	</option>
+	<option id="39784" name="option_id_39784">
+		<!-- Skill Critical Damage +27 -->
+	</option>
+	<option id="39785" name="option_id_39785">
+		<!-- Skill Critical Damage +33 -->
+	</option>
+	<option id="39786" name="option_id_39786">
+		<!-- Skill Critical Damage +40 -->
+	</option>
+	<option id="39787" name="option_id_39787">
+		<!-- Skill Critical Damage +47 -->
+	</option>
+	<option id="39788" name="option_id_39788">
+		<!-- Skill Critical Damage +54 -->
+	</option>
+	<option id="39789" name="option_id_39789">
+		<!-- Skill Critical Damage +61 -->
+	</option>
+	<option id="39790" name="option_id_39790">
+		<!-- Skill Critical Damage +69 -->
+	</option>
+	<option id="39791" name="option_id_39791">
+		<!-- Skill Critical Damage +77 -->
+	</option>
+	<option id="39792" name="option_id_39792">
+		<!-- Skill Critical Damage +85 -->
+	</option>
+	<option id="39793" name="option_id_39793">
+		<!-- Skill Critical Damage +94 -->
+	</option>
+	<option id="39794" name="option_id_39794">
+		<!-- Skill Critical Damage +103 -->
+	</option>
+	<option id="39795" name="option_id_39795">
+		<!-- Skill Critical Damage +112 -->
+	</option>
+	<option id="39796" name="option_id_39796">
+		<!-- Skill Critical Damage +122 -->
+	</option>
+	<option id="39797" name="option_id_39797">
+		<!-- Skill Critical Damage +149 -->
+	</option>
+	<option id="39798" name="option_id_39798">
+		<!-- Skill Critical Damage +203 -->
+	</option>
+	<option id="39799" name="option_id_39799">
+		<!-- Skill Critical Damage +233 -->
+	</option>
+</list>

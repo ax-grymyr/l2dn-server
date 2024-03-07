@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/initialEquipment.xsd">
+	<!-- Human Fighter -->
+	<equipment classId="0">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="10" count="1" /> <!-- Dagger -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Human Mystic -->
+	<equipment classId="10">
+		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Elven Fighter -->
+	<equipment classId="18">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="10" count="1" /> <!-- Dagger -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Elven Mystic -->
+	<equipment classId="25">
+		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Dark Fighter -->
+	<equipment classId="31">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="10" count="1" /> <!-- Dagger -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Dark Mystic -->
+	<equipment classId="38">
+		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Orc Fighter -->
+	<equipment classId="44">
+		<item id="981" count="1" /> <!-- Red Sunset Sword -->
+		<item id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Orc Mystic -->
+	<equipment classId="49">
+		<item id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
+		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Dwarf Fighter -->
+	<equipment classId="53">
+		<item id="2370" count="1" equipped="true" /> <!-- Guild Member's Club -->
+		<item id="10" count="1" /> <!-- Dagger -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Jin Kamael Soldier -->
+	<equipment classId="192">
+		<item id="91950" count="1" equipped="true" /> <!-- Novice Warrior's Ancient Sword -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="91949" count="1" /> <!-- Novice Warrior's Rapier -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Human Death Knight -->
+	<equipment classId="196">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Elf Death Knight -->
+	<equipment classId="200">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Dark Elf Death Knight -->
+	<equipment classId="204">
+		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Sylph Gunner -->
+	<equipment classId="208">
+		<item id="95410" count="1" equipped="true" /> <!-- Young Knight's Pistols -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="94891" count="1" /> <!-- No-grade Elemental Orb -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Orc Lancer -->
+	<equipment classId="217">
+		<item id="97100" count="1" equipped="true" /> <!-- Squire's Spear -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Assassin Male -->
+	<equipment classId="221">
+		<item id="218" count="1" equipped="true" /> <!-- Throwing Knife -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+	<!-- Assassin Female -->
+	<equipment classId="225">
+		<item id="218" count="1" equipped="true" /> <!-- Throwing Knife -->
+		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+		<item id="29510" count="1" /> <!-- Newbie Kit - Lvl 1 -->
+		<item id="49031" count="1" equipped="true" /> <!-- Ring of Heir -->
+		<item id="20662" count="1" equipped="true" /> <!-- Agathion Uthanka -->
+		<item id="10650" count="3" /> <!-- Newbie Scroll of Escape -->
+	</equipment>
+</list>

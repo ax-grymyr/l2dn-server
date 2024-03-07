@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34161"> <!-- Tarr -->
+		<teleport type="OTHER">
+			<location x="146500" y="112200" z="-3650" /> <!-- Circle -->
+			<location x="152085" y="113980" z="-5520" /> <!-- Crossroads of the Lair -->
+		</teleport>
+	</npc>
+</list>

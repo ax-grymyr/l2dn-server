@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Sayha Blessing Packages -->
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- XP Growth Scroll -->
+		<production count="2" id="49674" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- Sayha's Storm Lv. 3 -->
+		<production count="2" id="91712" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- Special HP Recovery Potion -->
+		<production count="10" id="94382" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- Scroll: Enchant Attack -->
+		<production count="2" id="94269" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- Scroll: Enchant Defense -->
+		<production count="2" id="94271" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="1" id="92016" />
+		<!-- Gemstone (A-grade) -->
+		<production count="4" id="2133" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="5" id="92016" />
+		<!-- Sayha's Blessing (Event) -->
+		<production count="2" id="92398" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="20" id="92016" />
+		<!-- Reinforced Jewel Box -->
+		<production count="1" id="92034" />
+	</item>
+	<item>
+		<!-- Sayha's Blessing Pack -->
+		<ingredient count="25" id="92016" />
+		<!-- Magic Lamp Charging Potion -->
+		<production count="1" id="91757" />
+	</item>
+</list>

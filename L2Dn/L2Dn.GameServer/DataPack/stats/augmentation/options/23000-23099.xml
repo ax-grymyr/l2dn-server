@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="23000" name="o_s_82_2r_101">
+		<!-- Item skill: Increases Received Healing. -->
+		<passive_skill id="3238" level="10" /> <!-- Item Skill: Prayer -->
+	</option>
+	<option id="23001" name="o_s_82_2r_102">
+		<!-- Item skill: Increases M. Atk. -->
+		<passive_skill id="3241" level="10" /> <!-- Item Skill: Empower -->
+	</option>
+	<option id="23002" name="o_s_82_2r_103">
+		<!-- Item skill: Increases M. Def. -->
+		<passive_skill id="3245" level="10" /> <!-- Item Skill: Magic Barrier -->
+	</option>
+	<option id="23003" name="o_s_82_2r_104">
+		<!-- Item skill: Increases P. Atk. -->
+		<passive_skill id="3240" level="10" /> <!-- Item Skill: Might -->
+	</option>
+	<option id="23004" name="o_s_82_2r_105">
+		<!-- Item skill: Increases P. Def. -->
+		<passive_skill id="3244" level="10" /> <!-- Item Skill: Shield -->
+	</option>
+	<option id="23005" name="o_s_82_2r_106">
+		<!-- Item skill: Increases P. Atk. in PvP. -->
+		<passive_skill id="3243" level="10" /> <!-- Item Skill: Might in Duel - PvP -->
+	</option>
+	<option id="23006" name="o_s_82_2r_107">
+		<!-- Item skill: Increases weight limit by 2 times. -->
+		<passive_skill id="3251" level="10" /> <!-- Item Skill: Weight Limit -->
+	</option>
+	<option id="23007" name="o_s_82_2u_1">
+		<!-- Active skill: Temporarily decreases Skill Cooldown. -->
+		<active_skill id="3202" level="3" /> <!-- Item Skill: Refresh -->
+	</option>
+	<option id="23008" name="o_s_82_2u_2">
+		<!-- Active skill: Temporarily decreases Skill MP Consumption. -->
+		<active_skill id="3164" level="3" /> <!-- Item Skill: Clarity -->
+	</option>
+	<option id="23009" name="o_s_82_2u_3">
+		<!-- Active skill: Temporarily increases P. Critical Rate. -->
+		<active_skill id="3141" level="10" /> <!-- Item Skill: Focus -->
+	</option>
+	<option id="23010" name="o_s_82_2u_4">
+		<!-- Active skill: Damage Reflection -->
+		<active_skill id="3204" level="3" /> <!-- Item Skill: Damage Reflection -->
+	</option>
+	<option id="23011" name="o_s_82_2u_5">
+		<!-- Active skill: Momentarily blocks the target's P./ M. skills. -->
+		<active_skill id="3198" level="10" /> <!-- Item Skill: Doom -->
+	</option>
+	<option id="23012" name="o_s_82_2u_6">
+		<!-- Active skill: Return -->
+		<active_skill id="3147" level="1" /> <!-- Item Skill: Quick Return -->
+	</option>
+	<option id="23013" name="o_s_82_2u_7">
+		<!-- Active skill: Celestial Shield -->
+		<active_skill id="3158" level="1" /> <!-- Item Skill: Celestial Shield -->
+	</option>
+	<option id="23014" name="o_s_82_2u_8">
+		<!-- Active skill: Temporarily increases M. Critical Rate. -->
+		<active_skill id="3142" level="10" /> <!-- Item Skill: Wild Magic -->
+	</option>
+	<option id="23015" name="o_s_82_2u_9">
+		<!-- Active skill: Party Return -->
+		<active_skill id="3205" level="2" /> <!-- Item Skill: Party Return -->
+	</option>
+	<option id="23016" name="o_s_82_2u_10">
+		<!-- Active skill: Momentarily blocks the target's M. skills. -->
+		<active_skill id="3197" level="10" /> <!-- Item Skill: Silence -->
+	</option>
+	<option id="23017" name="o_s_82_2u_11">
+		<!-- Active skill: Temporarily decreases P. Skill Cooldown. -->
+		<active_skill id="3199" level="3" /> <!-- Item Skill: Skill Refresh -->
+	</option>
+	<option id="23018" name="o_s_82_2u_12">
+		<!-- Active skill: Temporarily decreases Skill MP Consumption. -->
+		<active_skill id="3161" level="3" /> <!-- Item Skill: Skill Clarity -->
+	</option>
+	<option id="23019" name="o_s_82_2u_13">
+		<!-- Active skill: Temporarily decreases Song/ Dance Cooldown. -->
+		<active_skill id="3201" level="3" /> <!-- Item Skill: Music Refresh -->
+	</option>
+	<option id="23020" name="o_s_82_2u_14">
+		<!-- Active skill: Temporarily decreases Song/ Dance MP Consumption. -->
+		<active_skill id="3163" level="3" /> <!-- Item Skill: Music Clarity -->
+	</option>
+	<option id="23021" name="o_s_82_2u_15">
+		<!-- Active skill: Temporarily decreases M. Skill Cooldown. -->
+		<active_skill id="3200" level="3" /> <!-- Item Skill: Spell Refresh -->
+	</option>
+	<option id="23022" name="o_s_82_2u_16">
+		<!-- Active skill: Temporarily decreases M. Skill MP Consumption. -->
+		<active_skill id="3162" level="3" /> <!-- Item Skill: Spell Clarity -->
+	</option>
+	<option id="23023" name="o_s_82_2u_17">
+		<!-- Active skill: Stealth -->
+		<active_skill id="3159" level="3" /> <!-- Item Skill: Stealth -->
+	</option>
+	<option id="23024" name="o_s_82_2u_18">
+		<!-- Active skill: Vampiric Rage (physical/ short-ranged) -->
+		<active_skill id="3148" level="10" /> <!-- Item Skill: Vampiric Rage -->
+	</option>
+	<option id="23025" name="o_s_82_2u_19">
+		<!-- When triggered: Momentarily blocks the target's P./ M. skills after an attack. -->
+		<attack_skill id="3094" level="10" chance="1.0" /> <!-- Item Skill: Doom -->
+	</option>
+	<option id="23026" name="o_s_82_2u_20">
+		<!-- When triggered: Mana Burn (when using magic) -->
+		<attack_skill id="3082" level="10" chance="1.0" /> <!-- Item Skill: Mana Burn -->
+	</option>
+	<option id="23027" name="o_s_82_2u_21">
+		<!-- When triggered: Paralysis (when using magic) -->
+		<attack_skill id="3088" level="10" chance="1.0" /> <!-- Item Skill: Paralysis -->
+	</option>
+	<option id="23028" name="o_s_82_2u_22">
+		<!-- When triggered: Momentarily blocks the target's M. skills after an attack. -->
+		<attack_skill id="3093" level="10" chance="1.0" /> <!-- Item Skill: Silence -->
+	</option>
+	<option id="23029" name="o_s_82_2u_23">
+		<!-- When triggered: Sleep (after a physical attack) -->
+		<attack_skill id="3087" level="10" chance="1.0" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="23030" name="o_s_82_2u_24">
+		<!-- When triggered: Stun (after a physical attack) -->
+		<attack_skill id="3085" level="10" chance="1.0" /> <!-- Item Skill: Stun -->
+	</option>
+	<option id="23031" name="o_s_82_2u_25">
+		<!-- When triggered: Momentarily blocks the target's P./ M. skills after a critical attack. -->
+		<critical_skill id="3122" level="10" chance="5.0" /> <!-- Item Skill: Doom -->
+	</option>
+	<option id="23032" name="o_s_82_2u_26">
+		<!-- When triggered: Mana Burn (after a critical attack) -->
+		<critical_skill id="3110" level="10" chance="5.0" /> <!-- Item Skill: Mana Burn -->
+	</option>
+	<option id="23033" name="o_s_82_2u_27">
+		<!-- When triggered: Paralysis (after a critical attack) -->
+		<critical_skill id="3116" level="10" chance="5.0" /> <!-- Item Skill: Paralysis -->
+	</option>
+	<option id="23034" name="o_s_82_2u_28">
+		<!-- When triggered: Momentarily blocks the target's M. skills after a critical attack. -->
+		<critical_skill id="3121" level="10" chance="5.0" /> <!-- Item Skill: Silence -->
+	</option>
+	<option id="23035" name="o_s_82_2u_29">
+		<!-- When triggered: Sleep (after a critical attack) -->
+		<critical_skill id="3115" level="10" chance="5.0" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="23036" name="o_s_82_2u_30">
+		<!-- When triggered: Stun (after a critical attack) -->
+		<critical_skill id="3113" level="10" chance="5.0" /> <!-- Item Skill: Stun -->
+	</option>
+	<option id="23037" name="o_s_82_2u_31">
+		<!-- When triggered: A chance to block the target's P./ M. skills when hit. -->
+		<passive_skill id="3237" level="10" /> <!-- Item Skill: Doom -->
+	</option>
+	<option id="23038" name="o_s_82_2u_32">
+		<!-- When triggered: Fear (when hit) -->
+		<passive_skill id="3233" level="10" /> <!-- Item Skill: Fear -->
+	</option>
+	<option id="23039" name="o_s_82_2u_33">
+		<!-- When triggered: Increases MP Recovery Rate. -->
+		<passive_skill id="3212" level="10" /> <!-- Item Skill: Mana Gain -->
+	</option>
+	<option id="23040" name="o_s_82_2u_34">
+		<!-- When triggered: A chance to recover MP when hit. -->
+		<passive_skill id="3210" level="10" /> <!-- Item Skill: Recharge -->
+	</option>
+	<option id="23041" name="o_s_82_2u_35">
+		<!-- When triggered: Paralysis (when hit) -->
+		<passive_skill id="3231" level="10" /> <!-- Item Skill: Paralysis -->
+	</option>
+	<option id="23042" name="o_s_82_2u_36">
+		<!-- When triggered: A chance to block the target's M. skills when hit. -->
+		<passive_skill id="3236" level="10" /> <!-- Item Skill: Silence -->
+	</option>
+	<option id="23043" name="o_s_82_2u_37">
+		<!-- When triggered: Stun (when hit) -->
+		<passive_skill id="3228" level="10" /> <!-- Item Skill: Stun -->
+	</option>
+	<option id="23044" name="o_s_82_2u_38">
+		<!-- When triggered: Medusa (when hit) -->
+		<passive_skill id="3232" level="10" /> <!-- Item Skill: Medusa -->
+	</option>
+	<option id="23045" name="o_s_82_2u_39">
+		<!-- When triggered: Momentarily blocks the target's P./ M. skills when using magic. -->
+		<magic_skill id="3107" level="10" chance="2.0" /> <!-- Item Skill: Doom -->
+	</option>
+	<option id="23046" name="o_s_82_2u_40">
+		<!-- When triggered: Mana Burn (when using magic) -->
+		<magic_skill id="3095" level="10" chance="2.0" /> <!-- Item Skill: Mana Burn -->
+	</option>
+	<option id="23047" name="o_s_82_2u_41">
+		<!-- When triggered: Paralysis (when using magic) -->
+		<magic_skill id="3101" level="10" chance="2.0" /> <!-- Item Skill: Paralysis -->
+	</option>
+	<option id="23048" name="o_s_82_2u_42">
+		<!-- When triggered: Momentarily blocks the target's M. skills when using magic. -->
+		<magic_skill id="3106" level="10" chance="2.0" /> <!-- Item Skill: Silence -->
+	</option>
+	<option id="23049" name="o_s_82_2u_43">
+		<!-- When triggered: Sleep (when using magic) -->
+		<magic_skill id="3100" level="10" chance="2.0" /> <!-- Item Skill: Sleep -->
+	</option>
+	<option id="23050" name="o_s_82_2u_44">
+		<!-- When triggered: Stun (when using magic) -->
+		<magic_skill id="3098" level="10" chance="2.0" /> <!-- Item Skill: Stun -->
+	</option>
+	<option id="23051" name="o_s_82_2u_45">
+		<!-- Item skill: Decreases Skill MP Consumption. -->
+		<passive_skill id="3258" level="3" /> <!-- Item Skill: Clarity -->
+	</option>
+	<option id="23052" name="o_s_82_2u_46">
+		<!-- Item skill: Increases P. Evasion. -->
+		<passive_skill id="3247" level="10" /> <!-- Item Skill: Agility -->
+	</option>
+	<option id="23053" name="o_s_82_2u_47">
+		<!-- Item skill: Increases P. Critical Rate. -->
+		<passive_skill id="3249" level="10" /> <!-- Item Skill: Focus -->
+	</option>
+	<option id="23054" name="o_s_82_2u_48">
+		<!-- Item skill: Damage Reflection. -->
+		<passive_skill id="3259" level="3" /> <!-- Item Skill: Damage Reflection -->
+	</option>
+	<option id="23055" name="o_s_82_2u_49">
+		<!-- Item skill: Increases P. Accuracy. -->
+		<passive_skill id="3248" level="10" /> <!-- Item Skill: Guidance -->
+	</option>
+	<option id="23056" name="o_s_82_2u_50">
+		<!-- Item skill: Increases M. Critical Rate. -->
+		<passive_skill id="3250" level="10" /> <!-- Item Skill: Wild Magic -->
+	</option>
+	<option id="23057" name="o_s_82_2u_51">
+		<!-- Item skill: Increases MP Recovery Rate. -->
+		<passive_skill id="3239" level="10" /> <!-- Item Skill: Mana Gain -->
+	</option>
+	<option id="23058" name="o_s_82_2u_52">
+		<!-- Item skill: Decreases Skill MP Consumption. -->
+		<passive_skill id="3255" level="3" /> <!-- Item Skill: Skill Clarity -->
+	</option>
+	<option id="23059" name="o_s_82_2u_53">
+		<!-- Item Skill: Decreases MP Consumption for song/dance. -->
+		<passive_skill id="3257" level="3" /> <!-- Item Skill: Music Clarity -->
+	</option>
+	<option id="23060" name="o_s_82_2u_54">
+		<!-- Item skill: Decreases M. Skill MP Consumption. -->
+		<passive_skill id="3256" level="3" /> <!-- Item Skill: Spell Clarity -->
+	</option>
+	<option id="23061" name="o_f_82_1u_92">
+		<!-- STR +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>STR</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="23062" name="o_f_82_1u_93">
+		<!-- CON +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>CON</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="23063" name="o_f_82_1u_94">
+		<!-- INT +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="23064" name="o_f_82_1u_95">
+		<!-- MEN +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</option>
+</list>

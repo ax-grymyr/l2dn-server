@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="KreiaCamp">
+		<group>
+			<npc id="34330" x="-16767" y="173518" z="-4021" heading="25774" respawnTime="60sec" /> <!-- Kreia - Grand Magister -->
+			<npc id="34191" x="-16746" y="173412" z="-4024" heading="24415" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-16665" y="173541" z="-4024" heading="24415" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17267" y="174621" z="-4080" heading="26233" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17324" y="174576" z="-4064" heading="26233" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17776" y="174356" z="-4072" heading="16036" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17841" y="174359" z="-4080" heading="16036" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17774" y="173402" z="-4024" heading="8343" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17698" y="173345" z="-4024" heading="7437" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17344" y="173203" z="-4024" heading="6809" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34191" x="-17260" y="173156" z="-4024" heading="6809" respawnTime="60sec" /> <!-- Elite Wizard -->
+		</group>
+	</spawn>
+</list>

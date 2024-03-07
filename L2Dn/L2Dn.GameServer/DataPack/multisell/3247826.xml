@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Heavy Armor B-Grade -->
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Zubei's Breastplate -->
+		<production count="1" id="93556" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Blue Wolf Breastplate -->
+		<production count="1" id="93557" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Zubei's Gaiters -->
+		<production count="1" id="93558" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0~+5 Armor Pack - Avadon Breastplate -->
+		<production count="1" id="93559" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0~+5 Armor Pack - Avadon Gaiters -->
+		<production count="1" id="93560" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Blue Wolf Gaiters -->
+		<production count="1" id="93561" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Doom Plate Armor -->
+		<production count="1" id="93562" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Zubei's Gauntlets (Heavy Armor) -->
+		<production count="1" id="93575" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0~+5 Armor Pack - Avadon Gloves (Heavy Armor) -->
+		<production count="1" id="93578" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Blue Wolf Gloves (Heavy Armor) -->
+		<production count="1" id="93581" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Doom Gloves (Heavy Armor) -->
+		<production count="1" id="93584" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Zubei's Boots (Heavy Armor) -->
+		<production count="1" id="93587" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0~+5 Armor Pack - Avadon Boots (Heavy Armor) -->
+		<production count="1" id="93590" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Blue Wolf Boots (Heavy Armor) -->
+		<production count="1" id="93593" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Doom Boots (Heavy Armor) -->
+		<production count="1" id="93596" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0~+5 Armor Pack - Avadon Circlet (Heavy Armor) -->
+		<production count="1" id="93599" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Zubei's Helmet (Heavy Armor) -->
+		<production count="1" id="93602" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Blue Wolf Helmet (Heavy Armor) -->
+		<production count="1" id="93605" />
+	</item>
+	<item>
+		<!-- Enchanted B-grade Armor Coupon -->
+		<ingredient count="1" id="93500" />
+		<!-- +0 ~ +5 Armor Pack - Doom Helmet (Heavy Armor) -->
+		<production count="1" id="93608" />
+	</item>
+</list>

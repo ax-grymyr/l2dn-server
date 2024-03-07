@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="209" parentClassId="208">
+		<skill skillName="Elemental Connection" skillId="47104" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Firearm Mastery" skillId="47081" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Critical Rate" skillId="137" skillLevel="1" getLevel="27" levelUpSp="550" />
+		<skill skillName="Light Armor Mastery" skillId="47082" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Long Range Attack" skillId="47084" skillLevel="1" getLevel="35" levelUpSp="2000" />
+		<skill skillName="Elemental Focus" skillId="47021" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Focus" skillId="47021" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Ability to Attack" skillId="77" skillLevel="2" getLevel="25" levelUpSp="550" />
+		<skill skillName="Elemental Death Whisper" skillId="47022" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Death Whisper" skillId="47022" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Haste" skillId="47023" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Wind Walk" skillId="47024" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Wind Walk" skillId="47024" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Magic Barrier" skillId="47025" skillLevel="1" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Might" skillId="47026" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Shield" skillId="47027" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Acumen" skillId="47028" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Acumen" skillId="47028" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Empower" skillId="47029" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Empower" skillId="47029" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Wild Magic" skillId="47030" skillLevel="1" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Berserker Spirit" skillId="47031" skillLevel="1" getLevel="30" levelUpSp="1200" />
+		<skill skillName="Elemental Clarity" skillId="47032" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Elemental Clarity" skillId="47032" skillLevel="2" getLevel="30" levelUpSp="1200" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Dual Blow" skillId="47002" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Dual Blow" skillId="47002" skillLevel="2" getLevel="24" levelUpSp="250" />
+		<skill skillName="Dual Blow" skillId="47002" skillLevel="3" getLevel="28" levelUpSp="550" />
+		<skill skillName="Dual Blow" skillId="47002" skillLevel="4" getLevel="32" levelUpSp="1800" />
+		<skill skillName="Dual Blow" skillId="47002" skillLevel="5" getLevel="36" levelUpSp="2000" />
+		<skill skillName="Ability to Protect" skillId="91" skillLevel="2" getLevel="20" levelUpSp="100" />
+	</skillTree>
+</list>

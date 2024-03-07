@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
+	<zone name="hellbound_tp_1" type="TeleportZone" shape="Cylinder" minZ="-3600" maxZ="-3300" rad="200">
+		<stat name="oustX" val="6736" />
+		<stat name="oustY" val="251024" />
+		<stat name="oustZ" val="-1795" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="85" />
+		<node X="82809" Y="14717" />
+	</zone>
+	<zone name="hellbound_tp_2" type="TeleportZone" shape="Cylinder" minZ="-3600" maxZ="-3300" rad="200">
+		<stat name="oustX" val="7225" />
+		<stat name="oustY" val="251510" />
+		<stat name="oustZ" val="-1785" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="85" />
+		<node X="82803" Y="17647" />
+	</zone>
+	<zone name="hellbound_tp_3" type="TeleportZone" shape="Cylinder" minZ="-3600" maxZ="-3300" rad="200">
+		<stat name="oustX" val="8161" />
+		<stat name="oustY" val="251555" />
+		<stat name="oustZ" val="-1787" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="85" />
+		<node X="87875" Y="-1783" />
+	</zone>
+	<zone name="hellbound_tp_4" type="TeleportZone" shape="Cylinder" minZ="-3600" maxZ="-3300" rad="200">
+		<stat name="oustX" val="8126" />
+		<stat name="oustY" val="249640" />
+		<stat name="oustZ" val="-1795" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="85" />
+		<node X="87863" Y="14712" />
+	</zone>
+	<zone name="garden_eva_tp" maxZ="-12540" minZ="-12650" shape="Cylinder" type="TeleportZone" rad="360">
+		<stat name="oustX" val="82820" />
+		<stat name="oustY" val="251519" />
+		<stat name="oustZ" val="-10601" />
+		<stat name="default_enabled" val="true" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="75" />
+		<node X="90577" Y="236141" />
+	</zone>
+	<zone name="garden_primeval_tp" maxZ="-12500" minZ="-12590" shape="Cylinder" type="TeleportZone" rad="360">
+		<stat name="oustX" val="-114918" />
+		<stat name="oustY" val="216290" />
+		<stat name="oustZ" val="-13216" />
+		<stat name="default_enabled" val="true" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="75" />
+		<node X="90243" Y="232925" />
+	</zone>
+	<zone name="garden_authority_tp" maxZ="-12500" minZ="-12600" shape="Cylinder" type="TeleportZone" rad="360">
+		<stat name="oustX" val="-55358" />
+		<stat name="oustY" val="85255" />
+		<stat name="oustZ" val="-4480" />
+		<stat name="default_enabled" val="true" />
+		<stat name="targetClass" val="Player" />
+		<stat name="affectedLvlMin" val="75" />
+		<node X="91531" Y="234779" />
+	</zone>
+</list>

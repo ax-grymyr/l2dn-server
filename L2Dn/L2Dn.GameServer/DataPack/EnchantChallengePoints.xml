@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/EnchantChallengePoints.xsd">
+	<maxPoints>150</maxPoints>
+	<maxTicketCharge>3</maxTicketCharge>
+	<fees>
+		<option index="0" fee="15" />
+		<option index="1" fee="25" />
+		<option index="2" fee="50" />
+		<option index="3" fee="30" />
+		<option index="4" fee="100" />
+		<option index="5" fee="100" />
+	</fees>
+	<groups>
+		<group id="1">
+			<option index="0" chance="4" minEnchant="1" maxEnchant="2" />
+			<option index="1" chance="8" minEnchant="1" maxEnchant="2" />
+			<option index="3" chance="100" minEnchant="1" maxEnchant="3" />
+			<option index="4" chance="100" minEnchant="1" maxEnchant="3" />
+			<option index="5" chance="30" minEnchant="1" maxEnchant="3" />
+			<item id="6662;95329"> <!-- Ring of Core -->
+				<enchant level="2" points="1" />
+				<enchant level="3" points="2" />
+				<enchant level="4" points="4" />
+			</item>
+			<item id="6660;95327"> <!-- Queen Ant's Ring -->
+				<enchant level="2" points="2" />
+				<enchant level="3" points="3" />
+				<enchant level="4" points="8" />
+			</item>
+			<item id="6661;95328"> <!-- Orfen's Earring -->
+				<enchant level="2" points="2" />
+				<enchant level="3" points="3" />
+				<enchant level="4" points="8" />
+			</item>
+			<item id="90763;95331"> <!-- Zaken's Earring -->
+				<enchant level="1" points="1" />
+				<enchant level="2" points="2" />
+				<enchant level="3" points="4" />
+				<enchant level="4" points="10" />
+			</item>
+			<item id="49580;95330"> <!-- Baium's Ring -->
+				<enchant level="1" points="2" />
+				<enchant level="2" points="3" />
+				<enchant level="3" points="8" />
+				<enchant level="4" points="14" />
+			</item>
+			<item id="91550;95333"> <!-- Frintezza's Necklace -->
+				<enchant level="1" points="2" />
+				<enchant level="2" points="3" />
+				<enchant level="3" points="8" />
+				<enchant level="4" points="14" />
+			</item>
+			<item id="90992;95332"> <!-- Antharas' Earring -->
+				<enchant level="1" points="3" />
+				<enchant level="2" points="5" />
+				<enchant level="3" points="10" />
+				<enchant level="4" points="18" />
+			</item>
+			<item id="96600;97074"> <!-- Beleth' Ring -->
+				<enchant level="1" points="3" />
+				<enchant level="2" points="5" />
+				<enchant level="3" points="10" />
+				<enchant level="4" points="18" />
+			</item>
+		</group>
+		<group id="2">
+			<option index="0" chance="4" minEnchant="1" maxEnchant="7" />
+			<option index="1" chance="8" minEnchant="1" maxEnchant="7" />
+			<option index="2" chance="20" minEnchant="1" maxEnchant="6" />
+			<option index="4" chance="100" minEnchant="1" maxEnchant="7" />
+			<option index="5" chance="30" minEnchant="1" maxEnchant="7" />
+			<item id="91745"> <!-- Talisman of Aden -->
+				<enchant level="6" points="1" />
+				<enchant level="7" points="2" />
+				<enchant level="8" points="4" />
+				<enchant level="9" points="6" />
+			</item>
+			<item id="91061"> <!-- Talisman of Authority -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+			<item id="92018"> <!-- Talisman of Eva -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+			<item id="92403"> <!-- Talisman of Speed -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+		</group>
+		<group id="3">
+			<option index="0" chance="4" minEnchant="1" maxEnchant="7" />
+			<option index="1" chance="8" minEnchant="1" maxEnchant="7" />
+			<option index="2" chance="20" minEnchant="1" maxEnchant="6" />
+			<option index="4" chance="100" minEnchant="1" maxEnchant="7" />
+			<option index="5" chance="30" minEnchant="1" maxEnchant="7" />
+			<item id="93301"> <!-- Cloak of Protection -->
+				<enchant level="7" points="1" />
+				<enchant level="8" points="3" />
+				<enchant level="9" points="8" />
+			</item>
+			<item id="94166"> <!-- Circlet of Hero -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+			<item id="97259"> <!-- Ignore Decrease Mask -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+			<item id="91862"> <!-- Dragon Belt -->
+				<enchant level="5" points="1" />
+				<enchant level="6" points="3" />
+				<enchant level="7" points="5" />
+				<enchant level="8" points="7" />
+				<enchant level="9" points="10" />
+			</item>
+			<item id="94261"> <!-- Blessed Dragon Belt -->
+				<enchant level="5" points="2" />
+				<enchant level="6" points="6" />
+				<enchant level="7" points="10" />
+				<enchant level="8" points="14" />
+				<enchant level="9" points="20" />
+			</item>
+		</group>
+	</groups>
+</list>

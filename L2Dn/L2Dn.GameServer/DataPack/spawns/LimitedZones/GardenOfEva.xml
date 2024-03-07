@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GardenofEva_npcs">
+		<group>
+			<npc id="34355" x="82795" y="251970" z="-10600" heading="49000" /> <!-- Kugin -->
+		</group>
+	</spawn>
+	<spawn name="ID_225(18-23)">
+		<group>
+			<npc id="22519" x="83202" y="254226" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="83255" y="254528" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83331" y="254485" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="83444" y="254307" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="83712" y="254173" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="83644" y="254009" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="83529" y="253775" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83544" y="253565" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="83908" y="253675" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="84043" y="253839" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="84245" y="253720" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="84327" y="253903" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84095" y="254029" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="84338" y="254210" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84084" y="254334" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="83938" y="254696" z="-10867" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="83726" y="254709" z="-10868" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83518" y="254688" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22519" x="83537" y="254873" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="83204" y="254997" z="-10866" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22522" x="83240" y="254839" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22519" x="84877" y="254229" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84881" y="253974" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="85119" y="253991" z="-10868" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="85245" y="253699" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="85026" y="253718" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="84777" y="253639" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="84786" y="253348" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84542" y="253301" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22519" x="84478" y="252968" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="84726" y="252734" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="84924" y="253023" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22519" x="85153" y="253266" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="85263" y="253013" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="85408" y="252780" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="85220" y="252542" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="85323" y="252151" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="85539" y="252314" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="85746" y="252534" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="85768" y="252152" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="85686" y="251779" z="-10872" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="85470" y="251802" z="-10872" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="85089" y="251854" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84962" y="252085" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="84769" y="251974" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="84563" y="252047" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84752" y="252417" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22519" x="84903" y="251743" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84931" y="251608" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="85178" y="251555" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="85520" y="251474" z="-10868" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22519" x="85241" y="251115" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="85044" y="251166" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="84934" y="250936" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84683" y="250693" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="84413" y="250924" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="84585" y="251186" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84617" y="251425" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="84755" y="251739" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22523" x="85470" y="252984" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22523" x="84605" y="253160" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22523" x="84585" y="254372" z="-10866" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22521" x="85209" y="250825" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22519" x="85333" y="250656" z="-10870" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="85257" y="250320" z="-10865" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22522" x="84954" y="250313" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="84702" y="250390" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="84525" y="250131" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84820" y="250053" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="84888" y="249796" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84585" y="249769" z="-10865" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="84466" y="249479" z="-10865" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="84296" y="249791" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="84172" y="250064" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83882" y="250143" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="84255" y="250464" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="83869" y="250719" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="83618" y="250951" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="83561" y="250579" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="83707" y="250374" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83521" y="250132" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="83601" y="249927" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="83978" y="249779" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="83781" y="249561" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="84081" y="249392" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="83756" y="249283" z="-10872" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="83794" y="249030" z="-10867" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="83474" y="248901" z="-10867" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="83418" y="249189" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="83418" y="249523" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="83258" y="249786" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="83196" y="250144" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="82935" y="250307" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="82916" y="250134" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="82860" y="249923" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="82642" y="250013" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="82498" y="250320" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="82236" y="250347" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="82195" y="250042" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="82432" y="249787" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="82121" y="249669" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="82161" y="249408" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="82330" y="249299" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="82349" y="248972" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="82045" y="248924" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="81965" y="249263" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22519" x="81691" y="249059" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="81407" y="249172" z="-10866" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="81667" y="249448" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="81474" y="249628" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="81611" y="249967" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="81785" y="250208" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="81621" y="250516" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="81948" y="250744" z="-10873" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="82117" y="251057" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="81454" y="250707" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22520" x="81130" y="250862" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22522" x="80759" y="250803" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="81100" y="250415" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="81076" y="250015" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="81051" y="249536" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="80727" y="249824" z="-10870" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22519" x="80444" y="249788" z="-10867" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="80459" y="250164" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="80113" y="250285" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22521" x="80394" y="250545" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22520" x="80431" y="250999" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="80132" y="250948" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22522" x="79852" y="251233" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="80338" y="251306" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="80864" y="251180" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="81157" y="251100" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="80883" y="251494" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="80528" y="251603" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="80396" y="251819" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22521" x="80001" y="251848" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="79850" y="251566" z="-10874" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="79520" y="251663" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="79514" y="252013" z="-10870" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="79763" y="252225" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22520" x="80157" y="252162" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="79905" y="252480" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="79584" y="252534" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="79771" y="253015" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="80039" y="252834" z="-10872" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="80235" y="252597" z="-10872" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="80509" y="252616" z="-10872" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="80593" y="252287" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="80762" y="251959" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="81262" y="252108" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="80968" y="252246" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22519" x="80866" y="252579" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="80953" y="253005" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="80553" y="253053" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="80274" y="253296" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22520" x="79987" y="253472" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="80088" y="253805" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="80415" y="253629" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="80526" y="253956" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="80650" y="254326" z="-10866" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="80749" y="253959" z="-10871" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="80766" y="253628" z="-10872" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="80811" y="253218" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="81251" y="253442" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="81142" y="253775" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22522" x="81103" y="254120" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22521" x="80989" y="254451" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="81159" y="254682" z="-10867" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="81290" y="254570" z="-10870" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="81474" y="254271" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="81412" y="254014" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22522" x="81598" y="253681" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22523" x="81842" y="253912" z="-10873" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22519" x="82057" y="253634" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="81991" y="253518" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="82198" y="254096" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="82339" y="254315" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="82324" y="254702" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="82433" y="254924" z="-10869" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22522" x="82262" y="255019" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Wizard -->
+			<npc id="22521" x="82045" y="255032" z="-10866" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="82053" y="254658" z="-10872" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="81821" y="254529" z="-10873" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="81922" y="254242" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22521" x="81580" y="254893" z="-10865" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22520" x="82733" y="254166" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22519" x="82530" y="254033" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22519" x="82981" y="254076" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22523" x="84648" y="250200" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22523" x="81815" y="249888" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22520" x="80673" y="250448" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22523" x="80512" y="251966" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+			<npc id="22521" x="80301" y="252963" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22519" x="80932" y="252829" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman -->
+			<npc id="22520" x="81001" y="253502" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22520" x="81954" y="250392" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Rogue -->
+			<npc id="22521" x="81448" y="250236" z="-10875" respawnTime="60sec" /> <!-- Delh Lizardman Soldier -->
+			<npc id="22523" x="80953" y="249837" z="-10875" respawnTime="60sec" /> <!-- Delh Giant -->
+		</group>
+	</spawn>
+	<spawn name="ID_225(25-28)">
+		<group>
+			<npc id="22524" x="80249" y="257503" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="80305" y="257322" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="80241" y="257044" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="80002" y="257260" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="80002" y="257054" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="79763" y="256738" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="79536" y="256871" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="79151" y="256769" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79288" y="256498" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79122" y="256281" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="78898" y="256421" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78601" y="256332" z="-9337" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78664" y="256123" z="-9337" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78552" y="255898" z="-9337" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="78378" y="255955" z="-9337" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="78110" y="255854" z="-9337" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77945" y="255467" z="-9339" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="77663" y="255341" z="-9339" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="77774" y="255171" z="-9339" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77826" y="254919" z="-9339" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="77577" y="254838" z="-9339" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="77393" y="254653" z="-9339" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="77565" y="254452" z="-9339" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77528" y="254068" z="-9339" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77131" y="253989" z="-9339" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="77262" y="253727" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22525" x="77306" y="253604" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="77061" y="253383" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="77145" y="253078" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76914" y="252983" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="76714" y="252695" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76965" y="252563" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22525" x="76749" y="252186" z="-9337" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22527" x="76877" y="251955" z="-9338" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76675" y="251796" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="76696" y="251415" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="76930" y="251399" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77159" y="251206" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77261" y="250829" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77142" y="250769" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="77041" y="250491" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77266" y="250363" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77480" y="250085" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22524" x="77273" y="249864" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22528" x="77256" y="249572" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="77500" y="249537" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77736" y="249302" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77642" y="249149" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77578" y="248883" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77869" y="248696" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78036" y="248390" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78215" y="248082" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78370" y="248257" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="78729" y="248003" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="78636" y="247757" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="78845" y="247529" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="78912" y="247621" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79056" y="247650" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79212" y="247402" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="79629" y="247299" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="79685" y="247112" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79835" y="246842" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79933" y="246926" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="80181" y="246910" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="80246" y="246705" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="80352" y="246457" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="84813" y="246625" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="84976" y="246493" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="85143" y="246532" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85069" y="246810" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85321" y="246908" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="85511" y="246854" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="85738" y="246979" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="85621" y="247185" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85831" y="247325" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86059" y="247271" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="86281" y="247409" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="86268" y="247556" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="86436" y="247753" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86595" y="247773" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86867" y="248061" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87156" y="248095" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87445" y="248288" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87510" y="248495" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="87748" y="248745" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87719" y="249134" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="87956" y="249300" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87790" y="249597" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="88116" y="249721" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="87984" y="249979" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88210" y="250219" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88133" y="250615" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88390" y="250697" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88465" y="250875" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88400" y="251119" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88573" y="251372" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88498" y="251578" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88688" y="251845" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88653" y="252150" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88644" y="252543" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88444" y="252631" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88457" y="252967" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88490" y="253228" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88201" y="253310" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88131" y="253605" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88210" y="253977" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87924" y="254180" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87814" y="254465" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87964" y="254622" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="87830" y="254769" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87569" y="255198" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87594" y="255442" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87416" y="255773" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87112" y="255770" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86788" y="255997" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86939" y="256116" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="86630" y="256425" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="86343" y="256348" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="86074" y="256633" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85660" y="256789" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85822" y="256994" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="85553" y="257060" z="-9340" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="85208" y="257123" z="-9340" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="85188" y="257251" z="-9340" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="84968" y="257523" z="-9340" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="84871" y="257362" z="-9340" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="82734" y="258459" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="83000" y="258596" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="83050" y="258479" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="83410" y="258241" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="83428" y="258542" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="83738" y="258782" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="83885" y="258563" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="84142" y="258288" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="84268" y="258562" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="84566" y="258728" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="84754" y="258511" z="-8825" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="84895" y="258239" z="-8825" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="85146" y="258479" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85231" y="258204" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85082" y="257819" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="84926" y="257506" z="-8833" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="85061" y="257277" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="85313" y="257428" z="-8831" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85366" y="257756" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85581" y="258007" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="85698" y="257714" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="85678" y="257452" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="85603" y="257251" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85221" y="257110" z="-8835" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85620" y="256864" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="85832" y="257061" z="-8833" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="85992" y="257316" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="85957" y="257684" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86337" y="257532" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86266" y="257186" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="86167" y="256941" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="86080" y="256839" z="-8829" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="86045" y="256585" z="-8831" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86343" y="256591" z="-8832" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86416" y="256302" z="-8832" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="86629" y="256548" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="86665" y="257000" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="87035" y="257089" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="87083" y="256748" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87064" y="256348" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87013" y="256043" z="-8832" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87298" y="255777" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87403" y="256170" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="87497" y="256551" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87821" y="256455" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87941" y="256143" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="88252" y="256022" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88210" y="255728" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88036" y="255534" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87558" y="255476" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="87674" y="255222" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87922" y="254917" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="87747" y="254728" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88009" y="254567" z="-8830" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88230" y="254992" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="88419" y="255438" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="88543" y="255204" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88651" y="254871" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88739" y="254483" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88519" y="254013" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="88346" y="254044" z="-8829" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87974" y="254159" z="-8831" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88329" y="254401" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88935" y="253910" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88853" y="253689" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88658" y="253535" z="-8825" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88470" y="253649" z="-8825" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="88171" y="253682" z="-8831" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="88163" y="253377" z="-8833" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="88499" y="253120" z="-8830" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88624" y="253157" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88918" y="253206" z="-8829" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="89184" y="253062" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="89411" y="252737" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="89113" y="252581" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88959" y="252656" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="88530" y="252749" z="-8829" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="88564" y="252416" z="-8830" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="88717" y="252126" z="-8834" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22527" x="89390" y="252169" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="89439" y="252000" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="89366" y="251546" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22528" x="89198" y="251522" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22528" x="88929" y="251631" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88546" y="251629" z="-8831" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88688" y="251403" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88419" y="251252" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88321" y="251017" z="-8835" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="88149" y="250714" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88499" y="250693" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88637" y="251027" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88902" y="250939" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="89207" y="251020" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="89041" y="250692" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="89045" y="250384" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="88832" y="250275" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88630" y="250192" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88322" y="250180" z="-8829" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88117" y="250176" z="-8830" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88102" y="249855" z="-8832" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88346" y="249766" z="-8831" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88688" y="249696" z="-8829" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88757" y="249340" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88377" y="249274" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88092" y="249388" z="-8833" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="87788" y="249229" z="-8833" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88132" y="248993" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88114" y="248668" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88297" y="248712" z="-8825" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="88602" y="248937" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="88424" y="248438" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="88326" y="248191" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="88087" y="248097" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="88027" y="247747" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="87666" y="247493" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="87697" y="247797" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="87417" y="248076" z="-8829" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87478" y="248514" z="-8834" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="87747" y="248912" z="-8834" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="87153" y="248262" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="87082" y="248017" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="86864" y="247997" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86682" y="247765" z="-8835" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="87124" y="247624" z="-8830" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="87302" y="247297" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="87097" y="246941" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="86915" y="247119" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86645" y="247265" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86414" y="247459" z="-8831" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="86085" y="247606" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="86097" y="247387" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="86228" y="247111" z="-8830" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="86425" y="246955" z="-8829" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="86741" y="246805" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="86477" y="246643" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="86299" y="246393" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="86093" y="246468" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="85840" y="246619" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85603" y="246802" z="-8830" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="85388" y="246946" z="-8831" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="85209" y="246742" z="-8831" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="85342" y="246451" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="84975" y="246453" z="-8831" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85126" y="246100" z="-8824" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="85447" y="246227" z="-8825" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="85795" y="246249" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="85712" y="245938" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="85373" y="245840" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="85181" y="245610" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="84787" y="245652" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="84605" y="245404" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="84347" y="245452" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="84211" y="245216" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="84058" y="245455" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="84281" y="245785" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="83882" y="245691" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22528" x="83393" y="245801" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="83474" y="245438" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="83296" y="245237" z="-8825" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="83045" y="245504" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="82863" y="245768" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="82608" y="245824" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="82615" y="245542" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="82453" y="245317" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="82174" y="245243" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="82094" y="245460" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="81970" y="245752" z="-8825" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="81578" y="245796" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="81754" y="245448" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="81727" y="245229" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="81494" y="245351" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="81202" y="245259" z="-8825" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="81181" y="245686" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="80937" y="245652" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="80803" y="245376" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="80571" y="245346" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="80218" y="245647" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="80263" y="246020" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="80524" y="246410" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="80502" y="246678" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="80174" y="246574" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79862" y="246776" z="-8835" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79888" y="246919" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="79797" y="247195" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="79673" y="247152" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22528" x="79335" y="247239" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="79122" y="247564" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78986" y="247837" z="-8835" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="78717" y="247683" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="78406" y="247820" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78334" y="248104" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78046" y="248129" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="78094" y="247585" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78104" y="247331" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22528" x="78414" y="247291" z="-8829" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="78785" y="247189" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="79153" y="246952" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79117" y="246706" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79064" y="246447" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="79233" y="245995" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="79520" y="246101" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="79655" y="246372" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79937" y="246219" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79769" y="245628" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="78808" y="246308" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78564" y="246606" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78614" y="246811" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78010" y="246958" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="77641" y="247180" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22528" x="77600" y="247549" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77713" y="247841" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77364" y="247743" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76958" y="247869" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76759" y="248099" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76998" y="248245" z="-8827" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77136" y="248517" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77404" y="248724" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77758" y="248523" z="-8830" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22528" x="77893" y="248619" z="-8831" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77780" y="248982" z="-8831" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="77603" y="248930" z="-8832" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="77289" y="249272" z="-8831" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77558" y="249560" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="77682" y="249787" z="-8816" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="77295" y="249926" z="-8832" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76989" y="249599" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="76756" y="249332" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="76945" y="248918" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="76701" y="248813" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76595" y="248447" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="76340" y="249230" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="76152" y="249627" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22528" x="76309" y="249913" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="76512" y="250196" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76803" y="250436" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="77070" y="250609" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="77259" y="250959" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="76871" y="250965" z="-8835" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76623" y="251050" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76842" y="251320" z="-8830" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="76955" y="251645" z="-8831" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="76605" y="251694" z="-8832" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76385" y="251383" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76161" y="251183" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76384" y="250712" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="76126" y="250546" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22525" x="75816" y="250653" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="75683" y="251070" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22528" x="75831" y="251431" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="75530" y="251611" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="75532" y="252037" z="-8825" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="75894" y="251944" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="76017" y="252277" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="76338" y="252359" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76686" y="252182" z="-8831" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76886" y="252337" z="-8831" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76726" y="252720" z="-8830" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="76107" y="252610" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="75937" y="252650" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="75810" y="252944" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76137" y="253107" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76509" y="253233" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="76833" y="253045" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77118" y="253153" z="-8830" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76971" y="253446" z="-8832" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76921" y="253732" z="-8830" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77320" y="253945" z="-8830" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="77579" y="254148" z="-8835" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="77340" y="254419" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="77087" y="254594" z="-8830" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76846" y="254705" z="-8829" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76429" y="254809" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="76294" y="254437" z="-8828" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="76580" y="254329" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76763" y="254089" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76447" y="253644" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="75916" y="253803" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="76406" y="255140" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="76631" y="255333" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="76600" y="255593" z="-8825" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="76722" y="255812" z="-8825" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="76941" y="255465" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77080" y="255094" z="-8825" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77346" y="255222" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77691" y="255254" z="-8830" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77482" y="254893" z="-8832" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="77798" y="255010" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="77940" y="255420" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77790" y="255755" z="-8834" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78139" y="255938" z="-8834" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78266" y="255914" z="-8834" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="78447" y="256285" z="-8834" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="78036" y="256432" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="77845" y="256166" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="77439" y="256328" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="77185" y="255947" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="76972" y="256248" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="77435" y="256714" z="-8825" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22528" x="77782" y="256721" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="77951" y="257053" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="78189" y="256969" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="78375" y="257307" z="-8827" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="78504" y="256890" z="-8828" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="78702" y="256591" z="-8828" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22525" x="78800" y="256093" z="-8829" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22528" x="79225" y="256320" z="-8835" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="79135" y="256567" z="-8835" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22526" x="79298" y="256887" z="-8829" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79510" y="256858" z="-8829" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22524" x="79856" y="256858" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="79761" y="257133" z="-8831" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="80026" y="257358" z="-8831" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="80268" y="257286" z="-8832" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="80628" y="257419" z="-8833" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="80520" y="257794" z="-8830" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="80137" y="257736" z="-8825" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="79823" y="258028" z="-8825" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="79507" y="257960" z="-8826" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="79167" y="257867" z="-8824" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="79207" y="257655" z="-8824" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="79463" y="257509" z="-8824" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="79376" y="257207" z="-8824" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="78777" y="257462" z="-8824" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22528" x="79035" y="257183" z="-8825" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="80116" y="258111" z="-8826" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="80053" y="258336" z="-8826" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22528" x="80169" y="258620" z="-8826" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22526" x="80414" y="258527" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22524" x="80681" y="258375" z="-8827" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22527" x="80743" y="258618" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="81295" y="258654" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22524" x="81175" y="258368" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+			<npc id="22525" x="81662" y="258337" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22526" x="81671" y="258627" z="-8827" respawnTime="60sec" /> <!-- Garden Patrol -->
+			<npc id="22527" x="82013" y="258821" z="-8827" respawnTime="60sec" /> <!-- Garden Guard Captain -->
+			<npc id="22528" x="82227" y="258575" z="-8828" respawnTime="60sec" /> <!-- Garden Apostle -->
+			<npc id="22525" x="82126" y="258301" z="-8828" respawnTime="60sec" /> <!-- Garden Archer -->
+			<npc id="22524" x="82568" y="258657" z="-8826" respawnTime="60sec" /> <!-- Garden Priest -->
+		</group>
+	</spawn>
+</list>

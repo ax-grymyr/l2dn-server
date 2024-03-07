@@ -1,0 +1,441 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AssassinHideout">
+		<group>
+			<npc id="20853" x="75959" y="-86400" z="-3552" heading="42066" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77737" y="-85979" z="-3608" heading="12994" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77610" y="-86105" z="-3608" heading="1050" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76221" y="-86251" z="-3568" heading="11329" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="75914" y="-86658" z="-3536" heading="32558" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77354" y="-86476" z="-3608" heading="52266" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76238" y="-86398" z="-3576" heading="7995" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77404" y="-86709" z="-3600" heading="15183" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76270" y="-86085" z="-3560" heading="65117" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76448" y="-86779" z="-3576" heading="10872" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77111" y="-85824" z="-3600" heading="18054" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76062" y="-86954" z="-3544" heading="16466" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76753" y="-86487" z="-3600" heading="8856" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76793" y="-86291" z="-3600" heading="19065" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76443" y="-86462" z="-3584" heading="30195" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76488" y="-86821" z="-3568" heading="35829" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76383" y="-86746" z="-3568" heading="59255" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77011" y="-86043" z="-3608" heading="15862" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77432" y="-86237" z="-3608" heading="47155" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76285" y="-86937" z="-3560" heading="29945" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="75946" y="-86973" z="-3536" heading="8598" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76433" y="-86354" z="-3592" heading="20987" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76426" y="-86597" z="-3584" heading="62346" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77240" y="-86598" z="-3608" heading="60583" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76041" y="-86761" z="-3552" heading="23178" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76860" y="-86319" z="-3600" heading="19476" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76915" y="-86545" z="-3600" heading="42538" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76061" y="-86112" z="-3560" heading="44277" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76980" y="-86359" z="-3608" heading="70" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77555" y="-86609" z="-3592" heading="27344" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77564" y="-86270" z="-3608" heading="36026" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76457" y="-84251" z="-3584" heading="3289" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77574" y="-84301" z="-3608" heading="65072" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76157" y="-85870" z="-3560" heading="40024" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76901" y="-84167" z="-3576" heading="7751" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76989" y="-84406" z="-3608" heading="57975" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76672" y="-84789" z="-3600" heading="62547" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77652" y="-84549" z="-3608" heading="44504" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77056" y="-84168" z="-3608" heading="50148" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77108" y="-83967" z="-3600" heading="2632" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="77148" y="-84546" z="-3608" heading="1465" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76904" y="-83966" z="-3576" heading="27925" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76250" y="-83960" z="-3584" heading="57640" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76782" y="-84569" z="-3608" heading="5887" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76851" y="-84593" z="-3608" heading="25376" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="77484" y="-85382" z="-3608" heading="46385" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76426" y="-85641" z="-3568" heading="65017" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76401" y="-84904" z="-3600" heading="29411" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77777" y="-84586" z="-3608" heading="43693" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76957" y="-84985" z="-3592" heading="47525" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76681" y="-84828" z="-3600" heading="18817" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76635" y="-84811" z="-3600" heading="58344" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76695" y="-84380" z="-3592" heading="14815" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76742" y="-84585" z="-3608" heading="55549" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76486" y="-83968" z="-3568" heading="46435" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76179" y="-84580" z="-3592" heading="14215" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76325" y="-84528" z="-3592" heading="1044" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="75966" y="-85920" z="-3560" heading="43005" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76040" y="-86003" z="-3560" heading="47791" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77069" y="-85650" z="-3600" heading="22154" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76673" y="-85302" z="-3576" heading="2909" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76673" y="-86042" z="-3600" heading="40548" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77613" y="-85580" z="-3608" heading="12179" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="18905" x="76898" y="-85145" z="-3584" heading="47094" respawnTime="60sec" /> <!-- Farm Bandit -->
+			<npc id="20853" x="76341" y="-83352" z="-3616" heading="24502" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="76385" y="-83377" z="-3616" heading="45893" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="77363" y="-83978" z="-3608" heading="53514" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76472" y="-83729" z="-3576" heading="39032" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76516" y="-83456" z="-3600" heading="8776" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="77152" y="-83628" z="-3600" heading="7969" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77063" y="-83515" z="-3592" heading="15551" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="75995" y="-83823" z="-3608" heading="49843" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="76631" y="-83459" z="-3584" heading="17008" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="76015" y="-83905" z="-3600" heading="37582" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77715" y="-83952" z="-3608" heading="63711" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77492" y="-83577" z="-3608" heading="49694" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="77586" y="-84022" z="-3608" heading="49467" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="76469" y="-83899" z="-3568" heading="29707" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77495" y="-83640" z="-3608" heading="19980" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77659" y="-83508" z="-3608" heading="888" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="77186" y="-83415" z="-3608" heading="56568" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79351" y="-86309" z="-3600" heading="9955" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79101" y="-86298" z="-3592" heading="12844" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79588" y="-86393" z="-3608" heading="8930" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78649" y="-86147" z="-3584" heading="7379" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78250" y="-86712" z="-3544" heading="42594" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79413" y="-86403" z="-3616" heading="43600" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79928" y="-85986" z="-3600" heading="4648" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78655" y="-86195" z="-3584" heading="37163" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78315" y="-86732" z="-3544" heading="64382" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79945" y="-86679" z="-3616" heading="56703" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="78153" y="-86431" z="-3560" heading="17952" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79498" y="-86401" z="-3608" heading="8709" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79930" y="-86127" z="-3608" heading="65187" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79379" y="-86154" z="-3600" heading="29165" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79379" y="-86384" z="-3608" heading="40371" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79888" y="-86320" z="-3608" heading="18888" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="78624" y="-86273" z="-3584" heading="12879" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78558" y="-86329" z="-3576" heading="9834" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="78172" y="-86561" z="-3552" heading="708" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79910" y="-86251" z="-3608" heading="18120" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79920" y="-86584" z="-3608" heading="6784" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79213" y="-86504" z="-3608" heading="59189" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79504" y="-86126" z="-3608" heading="18106" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79196" y="-86119" z="-3592" heading="14638" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78445" y="-85600" z="-3576" heading="4859" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79004" y="-85628" z="-3576" heading="63491" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79527" y="-85286" z="-3592" heading="34514" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79408" y="-85162" z="-3600" heading="7860" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78424" y="-85078" z="-3568" heading="5116" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79339" y="-85375" z="-3600" heading="4845" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78084" y="-85967" z="-3600" heading="47895" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78975" y="-86100" z="-3584" heading="6824" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79129" y="-86123" z="-3592" heading="28163" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79711" y="-85488" z="-3576" heading="12598" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79585" y="-86134" z="-3608" heading="59197" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79453" y="-85871" z="-3600" heading="8781" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79213" y="-86176" z="-3592" heading="4773" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79553" y="-85630" z="-3592" heading="60248" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="78695" y="-86025" z="-3584" heading="36654" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79326" y="-85560" z="-3600" heading="3074" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="34401" x="76053" y="-80961" z="-3640" heading="3272" respawnTime="10sec" /> <!-- Aijul -->
+			<npc id="34402" x="80441" y="-84123" z="-3648" heading="21728" respawnTime="60sec" /> <!-- Shikilro -->
+			<npc id="34403" x="80310" y="-84122" z="-3624" heading="14945" respawnTime="60sec" /> <!-- Lanina -->
+			<npc id="34404" x="80688" y="-82855" z="-3624" heading="30297" respawnTime="60sec" /> <!-- Frichee -->
+			<npc id="32478" x="80560" y="-82640" z="-3640" heading="30297" respawnTime="60sec" /> <!-- Dimensional Merchant -->
+			<npc id="34384" x="80829" y="-83510" z="-3640" heading="29411" respawnTime="60sec" /> <!-- Frost -->
+			<npc id="22183" x="76768" y="-80711" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76743" y="-80653" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76791" y="-80629" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76720" y="-80590" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76796" y="-80768" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76770" y="-80567" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76697" y="-80530" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76649" y="-80415" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77027" y="-80645" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76911" y="-80638" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76954" y="-80614" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76765" y="-80429" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76789" y="-80352" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76625" y="-80352" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76989" y="-80387" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76862" y="-80382" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76811" y="-80406" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76845" y="-80460" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76959" y="-80471" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76863" y="-80521" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76812" y="-80542" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76979" y="-80532" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76816" y="-80687" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76841" y="-80745" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76936" y="-80697" z="-3616" heading="144" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76836" y="-80603" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76862" y="-80661" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77122" y="-80584" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76672" y="-80471" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76717" y="-80448" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76961" y="-80195" z="-3640" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76960" y="-80332" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76793" y="-80488" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76745" y="-80509" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76935" y="-80558" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76669" y="-80336" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76645" y="-80276" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76598" y="-80295" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77215" y="-80944" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77243" y="-80989" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77185" y="-80901" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77254" y="-80866" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77346" y="-81153" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77373" y="-81192" z="-3600" heading="16" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77269" y="-81027" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76884" y="-80580" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77338" y="-80992" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77319" y="-81108" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77293" y="-81068" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76837" y="-80328" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77440" y="-81156" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76926" y="-80136" z="-3640" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77665" y="-81084" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76695" y="-80395" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77284" y="-80909" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76889" y="-80720" z="-3608" heading="88" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77311" y="-80953" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76691" y="-80254" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76716" y="-80315" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76743" y="-80373" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76760" y="-80295" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76913" y="-80359" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76907" y="-80496" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77538" y="-80879" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76914" y="-80218" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77000" y="-80589" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77053" y="-80559" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77100" y="-80532" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77454" y="-80753" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77386" y="-80796" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77321" y="-80833" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77396" y="-81233" z="-3600" heading="272" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77418" y="-80840" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76877" y="-80162" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76833" y="-80184" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76893" y="-80439" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76735" y="-80234" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76857" y="-80247" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76984" y="-80245" z="-3640" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77033" y="-80356" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76941" y="-80415" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76810" y="-80271" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76784" y="-80213" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76885" y="-80302" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76931" y="-80272" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77009" y="-80307" z="-3640" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77054" y="-80418" z="-3632" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77076" y="-80476" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77011" y="-80445" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77031" y="-80504" z="-3624" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="76983" y="-80670" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77070" y="-80618" z="-3616" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77549" y="-81049" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77455" y="-81040" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77428" y="-81000" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77532" y="-81164" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77575" y="-81088" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77378" y="-80921" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77521" y="-81005" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77361" y="-81033" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77484" y="-80796" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77386" y="-81073" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77351" y="-80876" z="-3608" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77463" y="-81197" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77405" y="-80959" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77471" y="-80924" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77598" y="-81129" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77413" y="-81118" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77482" y="-81085" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77508" y="-81124" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77495" y="-80964" z="-3600" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77512" y="-80840" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77588" y="-80960" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77562" y="-80920" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77642" y="-81043" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77615" y="-81005" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="77445" y="-80885" z="-3592" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="20854" x="79696" y="-80377" z="-4032" heading="11409" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80382" y="-80597" z="-4032" heading="16036" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79895" y="-80402" z="-4032" heading="1687" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80050" y="-80573" z="-4024" heading="52063" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80081" y="-80551" z="-4024" heading="19922" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80277" y="-79763" z="-4040" heading="11571" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79916" y="-80368" z="-4032" heading="349" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80513" y="-80651" z="-4024" heading="45962" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80949" y="-79757" z="-4040" heading="33238" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="81370" y="-80699" z="-4032" heading="62892" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80313" y="-80187" z="-4040" heading="16279" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80012" y="-80665" z="-4016" heading="6668" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="81051" y="-79808" z="-4040" heading="20709" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80870" y="-80400" z="-4032" heading="14672" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80231" y="-79828" z="-4040" heading="27442" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80464" y="-79845" z="-4040" heading="12787" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79960" y="-79871" z="-4040" heading="14433" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80188" y="-80603" z="-4032" heading="3905" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80490" y="-80425" z="-4040" heading="52826" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80820" y="-79847" z="-4032" heading="6784" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80439" y="-80126" z="-4040" heading="50794" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80586" y="-80680" z="-4024" heading="54269" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79893" y="-79928" z="-4040" heading="14345" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20855" x="84050" y="-84012" z="-3512" heading="3774" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="83930" y="-84684" z="-3504" heading="5959" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="84127" y="-84723" z="-3536" heading="419" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="82608" y="-84859" z="-3568" heading="40850" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="83117" y="-84993" z="-3504" heading="41799" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="82926" y="-84641" z="-3552" heading="52132" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84025" y="-84910" z="-3536" heading="6481" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="83575" y="-85477" z="-3504" heading="29963" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84019" y="-85305" z="-3552" heading="5258" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="83798" y="-84889" z="-3512" heading="30855" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="82794" y="-84428" z="-3576" heading="65136" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="83048" y="-84206" z="-3568" heading="40125" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="83857" y="-84306" z="-3488" heading="31652" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="82838" y="-85936" z="-3520" heading="32767" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84055" y="-85540" z="-3552" heading="64205" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="84019" y="-84008" z="-3512" heading="7600" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="83997" y="-84310" z="-3504" heading="68" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="82818" y="-84385" z="-3560" heading="40409" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="84009" y="-84979" z="-3536" heading="419" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="84013" y="-84525" z="-3504" heading="58384" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84099" y="-84492" z="-3520" heading="6858" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="84035" y="-84487" z="-3504" heading="2223" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="83970" y="-84028" z="-3512" heading="65013" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84169" y="-84278" z="-3520" heading="49433" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="83270" y="-84160" z="-3528" heading="55373" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="84010" y="-85446" z="-3560" heading="4680" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="82928" y="-85826" z="-3520" heading="56928" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="83305" y="-84991" z="-3496" heading="48384" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="82635" y="-85076" z="-3576" heading="44067" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20854" x="78830" y="-77774" z="-3992" heading="19695" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79541" y="-78346" z="-4040" heading="36875" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78917" y="-78445" z="-4008" heading="22154" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="78946" y="-77695" z="-3984" heading="46462" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="78924" y="-78410" z="-4008" heading="27174" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79933" y="-79787" z="-4040" heading="64056" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79917" y="-79657" z="-4032" heading="9324" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78801" y="-78176" z="-4008" heading="2989" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79905" y="-77960" z="-4032" heading="9443" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79359" y="-78503" z="-4032" heading="27861" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78852" y="-78105" z="-4008" heading="60982" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79905" y="-78028" z="-4032" heading="58982" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="78716" y="-78375" z="-4000" heading="51833" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78869" y="-77995" z="-4008" heading="9958" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79833" y="-77749" z="-4032" heading="9484" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80229" y="-79824" z="-4040" heading="36093" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80158" y="-79806" z="-4040" heading="37822" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80595" y="-79850" z="-4040" heading="8993" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80635" y="-79154" z="-4032" heading="59374" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="81374" y="-79494" z="-4024" heading="22732" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="81436" y="-79377" z="-4000" heading="21057" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79883" y="-79329" z="-4040" heading="3900" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80019" y="-79329" z="-4040" heading="45994" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="81434" y="-79194" z="-3992" heading="31044" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="81069" y="-79086" z="-4008" heading="65010" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79960" y="-79415" z="-4040" heading="15714" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80728" y="-79504" z="-4040" heading="836" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80963" y="-79302" z="-4040" heading="44971" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80738" y="-79410" z="-4032" heading="10256" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80755" y="-79537" z="-4040" heading="20987" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="81378" y="-78037" z="-3992" heading="349" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80266" y="-77989" z="-4032" heading="4696" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="81078" y="-78086" z="-4000" heading="53504" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80046" y="-77903" z="-4040" heading="4298" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="81934" y="-77754" z="-3992" heading="3700" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82733" y="-78237" z="-4008" heading="19615" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82766" y="-77914" z="-3992" heading="51624" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82261" y="-78212" z="-3992" heading="43049" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82133" y="-77898" z="-3992" heading="48037" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79190" y="-77616" z="-4000" heading="44875" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79162" y="-77494" z="-3992" heading="51385" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79652" y="-77384" z="-4000" heading="18964" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="78846" y="-77592" z="-3976" heading="14903" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79929" y="-77752" z="-4040" heading="23583" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79639" y="-77005" z="-3960" heading="42513" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78748" y="-77540" z="-3960" heading="27807" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78979" y="-77343" z="-3976" heading="45019" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79518" y="-77775" z="-4024" heading="11640" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79228" y="-77622" z="-4000" heading="55300" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79517" y="-77031" z="-3952" heading="5350" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="79405" y="-77241" z="-3968" heading="46810" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78799" y="-77341" z="-3944" heading="27326" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="79751" y="-77058" z="-3992" heading="36573" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="79783" y="-77471" z="-4016" heading="2182" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79582" y="-77427" z="-3984" heading="51810" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="78598" y="-77513" z="-3952" heading="59475" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="78669" y="-77580" z="-3968" heading="27791" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="78740" y="-76993" z="-3888" heading="26201" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="79133" y="-77263" z="-3968" heading="62423" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80330" y="-77446" z="-4040" heading="29026" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80161" y="-77599" z="-4040" heading="33805" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="80201" y="-77394" z="-4032" heading="31180" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="81935" y="-77108" z="-3992" heading="20893" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80939" y="-77349" z="-3976" heading="50183" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80374" y="-77754" z="-4040" heading="29183" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="81689" y="-76862" z="-3960" heading="22601" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="81643" y="-77030" z="-3960" heading="45534" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="80168" y="-78053" z="-4040" heading="47791" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="81348" y="-77482" z="-3976" heading="54106" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="81148" y="-77760" z="-3976" heading="29378" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="80971" y="-77312" z="-3992" heading="42441" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="81389" y="-77227" z="-3968" heading="37977" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="81057" y="-76714" z="-3968" heading="38901" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="81512" y="-76788" z="-3952" heading="33832" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="80965" y="-77135" z="-3992" heading="25016" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82288" y="-77231" z="-3992" heading="47471" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82219" y="-77245" z="-3992" heading="1367" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82023" y="-77348" z="-3992" heading="14661" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82658" y="-77120" z="-3992" heading="25972" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="82305" y="-77944" z="-3992" heading="62710" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82255" y="-77167" z="-3992" heading="5764" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82371" y="-77178" z="-3992" heading="63313" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="82765" y="-77149" z="-3976" heading="44879" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82577" y="-77340" z="-3992" heading="3258" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="82399" y="-76837" z="-3976" heading="48837" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="81770" y="-76836" z="-3960" heading="13552" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82648" y="-77039" z="-3984" heading="16401" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82234" y="-77087" z="-3992" heading="0" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82684" y="-77578" z="-3992" heading="48891" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20853" x="82367" y="-77036" z="-3984" heading="7266" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="82293" y="-76897" z="-3976" heading="12106" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82228" y="-77120" z="-3992" heading="13709" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82005" y="-77812" z="-3992" heading="32767" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20853" x="82663" y="-77463" z="-3984" heading="51479" respawnTime="60sec" /> <!-- Kel Mahum -->
+			<npc id="20854" x="82447" y="-77252" z="-3992" heading="30667" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82371" y="-76800" z="-3968" heading="52346" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20854" x="82548" y="-76694" z="-3976" heading="22708" respawnTime="60sec" /> <!-- Kel Mahum Warrior -->
+			<npc id="20857" x="85459" y="-81640" z="-3552" heading="28257" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85941" y="-79874" z="-3688" heading="4788" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="86066" y="-81782" z="-3624" heading="56862" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85365" y="-81666" z="-3552" heading="65117" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="84737" y="-81673" z="-3552" heading="62778" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85855" y="-81385" z="-3600" heading="1963" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85360" y="-81560" z="-3552" heading="56453" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85383" y="-81557" z="-3552" heading="60249" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85296" y="-82126" z="-3560" heading="59520" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85899" y="-81316" z="-3624" heading="18003" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85314" y="-81272" z="-3576" heading="61334" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="84459" y="-81782" z="-3520" heading="43444" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="84958" y="-81721" z="-3552" heading="36786" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85780" y="-81785" z="-3584" heading="41996" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85207" y="-81564" z="-3552" heading="42664" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85076" y="-81754" z="-3552" heading="52420" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85163" y="-81295" z="-3560" heading="52509" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85062" y="-81487" z="-3552" heading="7451" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="86125" y="-80010" z="-3688" heading="23660" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="84430" y="-81945" z="-3528" heading="62778" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85225" y="-81675" z="-3552" heading="5241" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85972" y="-81657" z="-3600" heading="59900" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85397" y="-81619" z="-3552" heading="51170" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="84423" y="-81174" z="-3504" heading="21219" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="84404" y="-81378" z="-3504" heading="63866" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="84657" y="-81860" z="-3544" heading="17954" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85629" y="-81350" z="-3576" heading="32908" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85417" y="-81870" z="-3552" heading="39481" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="84460" y="-81408" z="-3504" heading="53942" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85522" y="-81426" z="-3568" heading="54177" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85078" y="-81233" z="-3568" heading="33785" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85786" y="-79530" z="-3704" heading="13357" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85954" y="-79490" z="-3704" heading="30854" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85795" y="-78905" z="-3704" heading="5999" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="85726" y="-79678" z="-3688" heading="53770" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85924" y="-79200" z="-3704" heading="63642" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20855" x="86061" y="-79301" z="-3704" heading="32350" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85872" y="-79737" z="-3696" heading="19739" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85861" y="-79258" z="-3704" heading="47020" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20855" x="85586" y="-79031" z="-3688" heading="15447" respawnTime="60sec" /> <!-- Kel Mahum Archer -->
+			<npc id="20857" x="85621" y="-79979" z="-3664" heading="47407" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+			<npc id="20857" x="85945" y="-79435" z="-3704" heading="4875" respawnTime="60sec" /> <!-- Kel Mahum Champion -->
+		</group>
+	</spawn>
+</list>

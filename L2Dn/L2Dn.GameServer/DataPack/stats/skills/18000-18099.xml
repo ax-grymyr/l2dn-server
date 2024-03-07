@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="18024" toLevel="30" name="Venir's Talisman">
+		<!-- The talisman's mysterious power boosts your abilities. <Effect>. CON +1 -->
+		<icon>
+			<value level="1">icon.benir_talisman_i00</value>
+			<value level="2">icon.benir_talisman_i00</value>
+			<value level="3">icon.benir_talisman_i00</value>
+			<value level="4">icon.benir_talisman_i00</value>
+			<value level="5">icon.benir_talisman_i00</value>
+			<value level="6">icon.benir_talisman_i00</value>
+			<value level="7">icon.benir_talisman_i00</value>
+			<value level="8">icon.benir_talisman_i00</value>
+			<value level="9">icon.benir_talisman_i00</value>
+			<value level="10">icon.benir_talisman_i00</value>
+			<value level="11">icon.benir_talisman_i00</value>
+			<value level="12">icon.benir_talisman_i00</value>
+			<value level="13">icon.benir_talisman_i01</value>
+			<value level="14">icon.benir_talisman_i01</value>
+			<value level="15">icon.benir_talisman_i01</value>
+			<value level="16">icon.benir_talisman_i01</value>
+			<value level="17">icon.benir_talisman_i01</value>
+			<value level="18">icon.benir_talisman_i01</value>
+			<value level="19">icon.benir_talisman_i01</value>
+			<value level="20">icon.benir_talisman_i01</value>
+			<value level="21">icon.benir_talisman_i01</value>
+			<value level="22">icon.benir_talisman_i01</value>
+			<value level="23">icon.benir_talisman_i01</value>
+			<value level="24">icon.benir_talisman_i01</value>
+			<value level="25">icon.benir_talisman_i01</value>
+			<value level="26">icon.benir_talisman_i01</value>
+			<value level="27">icon.benir_talisman_i01</value>
+			<value level="28">icon.benir_talisman_i01</value>
+			<value level="29">icon.benir_talisman_i01</value>
+			<value level="30">icon.benir_talisman_i01</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="6">1</value>
+					<value fromLevel="7" toLevel="12">2</value>
+					<value fromLevel="13" toLevel="18">3</value>
+					<value fromLevel="19" toLevel="21">4</value>
+					<value fromLevel="22" toLevel="24">5</value>
+					<value level="25">6</value>
+					<value fromLevel="26" toLevel="30">7</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="2" toLevel="7">1</value>
+					<value fromLevel="8" toLevel="13">2</value>
+					<value fromLevel="14" toLevel="18">3</value>
+					<value fromLevel="19" toLevel="21">4</value>
+					<value fromLevel="22" toLevel="24">5</value>
+					<value fromLevel="25" toLevel="26">6</value>
+					<value fromLevel="27" toLevel="30">7</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="3" toLevel="8">1</value>
+					<value fromLevel="9" toLevel="14">2</value>
+					<value fromLevel="15" toLevel="19">3</value>
+					<value fromLevel="20" toLevel="22">4</value>
+					<value fromLevel="23" toLevel="24">5</value>
+					<value fromLevel="25" toLevel="27">6</value>
+					<value fromLevel="28" toLevel="30">7</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="4" toLevel="9">1</value>
+					<value fromLevel="10" toLevel="15">2</value>
+					<value fromLevel="16" toLevel="19">3</value>
+					<value fromLevel="20" toLevel="22">4</value>
+					<value fromLevel="23" toLevel="24">5</value>
+					<value fromLevel="25" toLevel="28">6</value>
+					<value fromLevel="29" toLevel="30">7</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="5" toLevel="10">1</value>
+					<value fromLevel="11" toLevel="16">2</value>
+					<value fromLevel="17" toLevel="20">3</value>
+					<value fromLevel="21" toLevel="23">4</value>
+					<value level="24">5</value>
+					<value fromLevel="25" toLevel="29">6</value>
+					<value level="30">7</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="6" toLevel="11">1</value>
+					<value fromLevel="12" toLevel="17">2</value>
+					<value fromLevel="18" toLevel="20">3</value>
+					<value fromLevel="21" toLevel="23">4</value>
+					<value level="24">5</value>
+					<value fromLevel="25" toLevel="29">6</value>
+					<value level="30">7</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="12">-2</value>
+					<value level="13">-4</value>
+					<value level="14">-6</value>
+					<value level="15">-8</value>
+					<value level="16">-10</value>
+					<value level="17">-10</value>
+					<value level="18">-12</value>
+					<value level="19">-12</value>
+					<value level="20">-14</value>
+					<value level="21">-14</value>
+					<value level="22">-16</value>
+					<value level="23">-16</value>
+					<value fromLevel="24" toLevel="30">-18</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>
+					<value level="12">-2</value>
+					<value level="13">-4</value>
+					<value level="14">-6</value>
+					<value level="15">-8</value>
+					<value level="16">-10</value>
+					<value level="17">-10</value>
+					<value level="18">-12</value>
+					<value level="19">-12</value>
+					<value level="20">-14</value>
+					<value level="21">-14</value>
+					<value level="22">-16</value>
+					<value level="23">-16</value>
+					<value fromLevel="24" toLevel="30">-18</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>
+					<value level="12">-2</value>
+					<value level="13">-4</value>
+					<value level="14">-6</value>
+					<value level="15">-8</value>
+					<value level="16">-10</value>
+					<value level="17">-10</value>
+					<value level="18">-12</value>
+					<value level="19">-12</value>
+					<value level="20">-14</value>
+					<value level="21">-14</value>
+					<value level="22">-16</value>
+					<value level="23">-16</value>
+					<value fromLevel="24" toLevel="30">-18</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="12">-1</value>
+					<value level="13">-3</value>
+					<value level="14">-5</value>
+					<value level="15">-7</value>
+					<value level="16">-7</value>
+					<value level="17">-9</value>
+					<value level="18">-9</value>
+					<value level="19">-11</value>
+					<value level="20">-11</value>
+					<value level="21">-13</value>
+					<value level="22">-13</value>
+					<value level="23">-15</value>
+					<value level="24">-15</value>
+					<value level="25">-15</value>
+					<value level="26">-17</value>
+					<value level="27">-17</value>
+					<value level="28">-18</value>
+					<value level="29">-18</value>
+					<value level="30">-18</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="12">-1</value>
+					<value level="13">-3</value>
+					<value level="14">-5</value>
+					<value level="15">-7</value>
+					<value level="16">-7</value>
+					<value level="17">-9</value>
+					<value level="18">-9</value>
+					<value level="19">-11</value>
+					<value level="21">-13</value>
+					<value level="22">-15</value>
+					<value level="23">-15</value>
+					<value level="24">-17</value>
+					<value level="25">-17</value>
+					<value level="26">-17</value>
+					<value level="27">-17</value>
+					<value level="28">-18</value>
+					<value level="29">-18</value>
+					<value level="30">-18</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value fromLevel="1" toLevel="15">0</value>
+					<value level="16">100</value>
+					<value level="17">200</value>
+					<value level="18">300</value>
+					<value level="19">400</value>
+					<value level="20">500</value>
+					<value level="21">600</value>
+					<value level="22">700</value>
+					<value level="23">800</value>
+					<value level="24">900</value>
+					<value level="25">1000</value>
+					<value level="26">1200</value>
+					<value level="27">1400</value>
+					<value level="28">1600</value>
+					<value level="29">1800</value>
+					<value level="30">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value fromLevel="1" toLevel="15">0</value>
+					<value level="16">100</value>
+					<value level="17">200</value>
+					<value level="18">300</value>
+					<value level="19">400</value>
+					<value level="20">500</value>
+					<value level="21">600</value>
+					<value level="22">700</value>
+					<value level="23">800</value>
+					<value level="24">900</value>
+					<value level="25">1000</value>
+					<value level="26">1200</value>
+					<value level="27">1400</value>
+					<value level="28">1600</value>
+					<value level="29">1800</value>
+					<value level="30">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value fromLevel="1" toLevel="15">0</value>
+					<value level="16">100</value>
+					<value level="17">200</value>
+					<value level="18">300</value>
+					<value level="19">400</value>
+					<value level="20">500</value>
+					<value level="21">600</value>
+					<value level="22">700</value>
+					<value level="23">800</value>
+					<value level="24">900</value>
+					<value level="25">1000</value>
+					<value level="26">1200</value>
+					<value level="27">1400</value>
+					<value level="28">1600</value>
+					<value level="29">1800</value>
+					<value level="30">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value fromLevel="1" toLevel="25">0</value>
+					<value level="26">1</value>
+					<value level="27">2</value>
+					<value level="28">3</value>
+					<value level="29">4</value>
+					<value level="30">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value fromLevel="1" toLevel="25">0</value>
+					<value level="26">1</value>
+					<value level="27">2</value>
+					<value level="28">3</value>
+					<value level="29">4</value>
+					<value level="30">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

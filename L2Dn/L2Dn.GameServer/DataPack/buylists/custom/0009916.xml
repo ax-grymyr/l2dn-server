@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="57" price="0" /> <!-- Adena -->
+	<item id="4037" price="0" /> <!-- Coin of Luck -->
+	<item id="72041" price="0" /> <!-- Festival Coin -->
+	<item id="71950" price="0" /> <!-- Dragon Coin -->
+	<item id="94343" price="0" /> <!-- Ancient Adena -->
+	<item id="49129" price="0" /> <!-- Anniversary Coin -->
+	<item id="91663" price="0" /> <!-- L-Coin -->
+</list>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 7 -->
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="1" id="94495" />
+		<!-- Brooch Lv. 5 -->
+		<production count="1" id="91304" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="1" id="94495" />
+		<!-- Agathion Bracelet - Stage 5 -->
+		<production count="1" id="91161" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="1" id="94495" />
+		<!-- Talisman Bracelet Lv. 5 -->
+		<production count="1" id="92031" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="5" id="94495" />
+		<!-- Spellbook: Sword Symphony -->
+		<production count="1" id="94319" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="5" id="94495" />
+		<!-- Spellbook: Intoxicating Dance -->
+		<production count="1" id="94320" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="3" id="94495" />
+		<!-- Queen Ant Doll Lv. 1 -->
+		<production count="1" id="94154" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="3" id="94495" />
+		<!-- Orfen Doll Lv. 1 -->
+		<production count="1" id="94155" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="5" id="94495" />
+		<!-- Baium Doll Lv. 1 -->
+		<production count="1" id="94153" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="4" id="94495" />
+		<!-- Queen Ant Ring -->
+		<production count="1" id="6660" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="4" id="94495" />
+		<!-- Orfen Earring -->
+		<production count="1" id="6661" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 7 -->
+		<ingredient count="15" id="94495" />
+		<!-- Boss Weapon Pack -->
+		<production count="1" id="92990" />
+	</item>
+</list>

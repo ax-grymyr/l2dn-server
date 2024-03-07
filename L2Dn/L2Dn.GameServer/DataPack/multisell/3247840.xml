@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Weapon +7 B-Grade -->
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Damascus -->
+		<production count="1" id="94739" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Wizard's Tear -->
+		<production count="1" id="94740" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Guardian's Sword -->
+		<production count="1" id="94741" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Bellion Cestus -->
+		<production count="1" id="94742" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Bow of Peril -->
+		<production count="1" id="94743" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Lance -->
+		<production count="1" id="94744" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Staff of Evil Spirits -->
+		<production count="1" id="94745" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Deadman's Glory -->
+		<production count="1" id="94746" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Art of Battle Axe -->
+		<production count="1" id="94747" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Samurai Long Sword*Samurai Long Sword -->
+		<production count="1" id="94748" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Demon's Dagger -->
+		<production count="1" id="94749" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Colichemarde -->
+		<production count="1" id="94750" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Dismantler -->
+		<production count="1" id="94751" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Star Buster -->
+		<production count="1" id="94752" />
+	</item>
+	<item>
+		<!-- +7 B-grade Weapon Coupon -->
+		<ingredient count="1" id="94733" />
+		<!-- +7 Volcano -->
+		<production count="1" id="95657" />
+	</item>
+</list>

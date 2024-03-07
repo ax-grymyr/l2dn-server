@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="91877" price="0" /> <!-- Ancient Warrior's Sword -->
+	<item id="91915" price="0" /> <!-- Enhanced Ancient Warrior's Sword -->
+	<item id="91950" price="0" /> <!-- Novice Warrior's Ancient Sword -->
+</list>

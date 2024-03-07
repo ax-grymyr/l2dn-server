@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="72100" name="Devoted Hero's Doll - Baium" additionalName="1-day" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 3>. Skill Cooldown -4%. P. Def. +15%. M. Def. +15%. Silence Resistance +45%. Fear Resistance +45%. Paralysis Resistance +25%. Knockback Resistance +25%. Pull Resistance +25%. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="72101" name="Devoted Hero's Doll - Orfen" additionalName="1-day" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 3>. M. Atk. +15%. M. Skill Critical Damage +10%. Max MP +15%. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="72102" name="Devoted Hero's Doll - Frintezza" additionalName="1-day" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 3>. STR/ INT +2. DEX/ WIT +2. CON/ MEN +2. Skill Power +5%. Atk. Spd. +100. Casting Spd. +100. Speed +5. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="72111" name="New Year Gift (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Atk. Spd./ Casting Spd. +5%. HP/ MP Recovery Rate +5%. Speed +10. Duration: 30 min. Changes the armor appearance to that of Santa Outfit. -->
+		<set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="72114" name="Christmas Kit" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.Br_santa_gift_click_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3031" min="1000" max="1000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="90835" min="3" max="3" chance="100" /> <!-- Life Control Tower's Scroll of Blessing - Sealed -->
+			<item id="91641" min="30" max="30" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+			<item id="93145" min="1" max="1" chance="100" /> <!-- Extra Pass: Transcendent Instance Zone - Sealed -->
+			<item id="94306" min="3" max="3" chance="100" /> <!-- Scroll: Enchant Stats - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72115" name="Match Girls' Gift (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pouch_red_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93273" min="1" max="1" chance="7.142857" /> <!-- Rare Accessory Pack - Sealed -->
+			<item id="92401" min="1" max="1" chance="7.142857" /> <!-- Spellbook: White Guardian -->
+			<item id="93103" min="1" max="1" chance="7.142857" /> <!-- Spellbook: Divine Beam -->
+			<item id="93631" min="1" max="1" chance="7.142857" /> <!-- Spellbook: Hellfire -->
+			<item id="94380" min="1" max="1" chance="7.142857" /> <!-- Scroll: Boost Attack (Time-limited) - Sealed -->
+			<item id="94381" min="1" max="1" chance="7.142857" /> <!-- Scroll: Boost Defense (Time-limited) - Sealed -->
+			<item id="91838" min="1" max="1" chance="7.142857" /> <!-- My Teleport Scroll (Time-limited) - Sealed -->
+			<item id="90907" min="5" max="5" chance="7.142857" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="94382" min="1" max="1" chance="7.142857" /> <!-- Special HP Recovery Potion (Time-limited) - Sealed -->
+			<item id="91840" min="1" max="1" chance="7.142857" /> <!-- XP Growth Scroll (Time-limited) - Sealed -->
+			<item id="93848" min="1" max="1" chance="7.142857" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="3031" min="10" max="10" chance="7.142857" /> <!-- Spirit Ore - Sealed -->
+			<item id="71031" min="1" max="1" chance="7.142857" /> <!-- Regular Dish (Time-limited) - Sealed -->
+			<item id="72111" min="1" max="1" chance="7.142857" /> <!-- New Year Gift (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72179" name="Top-grade A-grade Weapon Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" chance="7.14" /> <!-- Sirra's Blade -->
+			<item id="8679" min="1" max="1" chance="7.14" /> <!-- Sword of Ipos -->
+			<item id="8680" min="1" max="1" chance="7.14" /> <!-- Barakiel's Axe -->
+			<item id="8681" min="1" max="1" chance="7.14" /> <!-- Behemoth' Tuning Fork -->
+			<item id="8682" min="1" max="1" chance="7.14" /> <!-- Naga's Storm -->
+			<item id="8683" min="1" max="1" chance="7.14" /> <!-- Tiphon's Spear -->
+			<item id="8684" min="1" max="1" chance="7.14" /> <!-- Shyeed's Bow -->
+			<item id="8685" min="1" max="1" chance="7.14" /> <!-- Sobekk's Hurricane -->
+			<item id="8686" min="1" max="1" chance="7.14" /> <!-- Themis' Tongue -->
+			<item id="8687" min="1" max="1" chance="7.14" /> <!-- Cabrio's Hand -->
+			<item id="8688" min="1" max="1" chance="7.14" /> <!-- Daimon Crystal -->
+			<item id="91887" min="1" max="1" chance="7.14" /> <!-- Durendal -->
+			<item id="14339" min="1" max="1" chance="7.14" /> <!-- Éclair Bijou - Not Available -->
+			<item id="8938" min="1" max="1" chance="7.14" /> <!-- Tallum Blade*Damascus Sword -->
+		</capsuled_items>
+	</item>
+	<item id="72186" name="Special Kit" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayha2017_box_i03" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91690" min="200" max="200" chance="100" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="91712" min="20" max="20" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="94269" min="25" max="25" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="25" max="25" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72190" name="Lucky Kit" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_goblin_pocket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91641" min="66" max="66" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+			<item id="94210" min="1" max="1" chance="100" /> <!-- Augmenting Stone: Weapon - Sealed -->
+			<item id="94212" min="2" max="2" chance="100" /> <!-- Augmenting Stone: Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72191" name="L-Coins (1000 pcs.)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_lcoin_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="1000" max="1000" chance="100" /> <!-- L-Coin -->
+		</capsuled_items>
+	</item>
+	<item id="72192" name="L-Coins (8000 pcs.)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_lcoin_box_i03" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="8000" max="8000" chance="100" /> <!-- L-Coin -->
+		</capsuled_items>
+	</item>
+</list>

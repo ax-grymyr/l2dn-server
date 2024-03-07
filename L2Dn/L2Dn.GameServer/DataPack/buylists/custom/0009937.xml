@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92476" price="0" /> <!-- Metal Ingot -->
+	<item id="92477" price="0" /> <!-- Wood -->
+	<item id="92479" price="0" /> <!-- Metallograph -->
+	<item id="92480" price="0" /> <!-- Leather -->
+	<item id="92481" price="0" /> <!-- Cloth -->
+</list>

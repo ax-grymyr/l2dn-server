@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="94800" name="option_id_94800">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="94801" name="option_id_94801">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="94802" name="option_id_94802">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="94803" name="option_id_94803">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="94804" name="option_id_94804">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="94805" name="option_id_94805">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="94806" name="option_id_94806">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="94807" name="option_id_94807">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="94808" name="option_id_94808">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="94809" name="option_id_94809">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="94810" name="option_id_94810">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="94811" name="option_id_94811">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="94812" name="option_id_94812">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="94813" name="option_id_94813">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="94814" name="option_id_94814">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="94815" name="option_id_94815">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="94816" name="option_id_94816">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="94817" name="option_id_94817">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+	</option>
+	<option id="94818" name="option_id_94818">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+	</option>
+	<option id="94819" name="P./ M. Evasion +2">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94820" name="P./ M. Evasion +2">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94821" name="P./ M. Evasion +2">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94822" name="P./ M. Evasion +2">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94823" name="P./ M. Evasion +2.1">
+		<!-- P./ M. Evasion +2.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94824" name="P./ M. Evasion +2.2">
+		<!-- P./ M. Evasion +2.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94825" name="P./ M. Evasion +2.3">
+		<!-- P./ M. Evasion +2.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94826" name="P./ M. Evasion +2.4">
+		<!-- P./ M. Evasion +2.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94827" name="P./ M. Evasion +2.5">
+		<!-- P./ M. Evasion +2.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94828" name="P./ M. Evasion +2.6">
+		<!-- P./ M. Evasion +2.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94829" name="P./ M. Evasion +2.7">
+		<!-- P./ M. Evasion +2.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94830" name="P./ M. Evasion +2.8">
+		<!-- P./ M. Evasion +2.8 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94831" name="P./ M. Evasion +2.9">
+		<!-- P./ M. Evasion +2.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94832" name="P./ M. Evasion +3">
+		<!-- P./ M. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94833" name="P./ M. Evasion +3.2">
+		<!-- P./ M. Evasion +3.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94834" name="P./ M. Evasion +3.4">
+		<!-- P./ M. Evasion +3.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94835" name="P./ M. Evasion +3.6">
+		<!-- P./ M. Evasion +3.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94836" name="P./ M. Evasion +3.9">
+		<!-- P./ M. Evasion +3.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94837" name="P./ M. Evasion +4.3">
+		<!-- P./ M. Evasion +4.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94838" name="P./ M. Evasion +5">
+		<!-- P./ M. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94839" name="option_id_94839">
+		<!-- Skill Critical Damage +70 -->
+	</option>
+	<option id="94840" name="option_id_94840">
+		<!-- Skill Critical Damage +77 -->
+	</option>
+	<option id="94841" name="option_id_94841">
+		<!-- Skill Critical Damage +84 -->
+	</option>
+	<option id="94842" name="option_id_94842">
+		<!-- Skill Critical Damage +92 -->
+	</option>
+	<option id="94843" name="option_id_94843">
+		<!-- Skill Critical Damage +101 -->
+	</option>
+	<option id="94844" name="option_id_94844">
+		<!-- Skill Critical Damage +111 -->
+	</option>
+	<option id="94845" name="option_id_94845">
+		<!-- Skill Critical Damage +121 -->
+	</option>
+	<option id="94846" name="option_id_94846">
+		<!-- Skill Critical Damage +132 -->
+	</option>
+	<option id="94847" name="option_id_94847">
+		<!-- Skill Critical Damage +144 -->
+	</option>
+	<option id="94848" name="option_id_94848">
+		<!-- Skill Critical Damage +157 -->
+	</option>
+	<option id="94849" name="option_id_94849">
+		<!-- Skill Critical Damage +172 -->
+	</option>
+	<option id="94850" name="option_id_94850">
+		<!-- Skill Critical Damage +188 -->
+	</option>
+	<option id="94851" name="option_id_94851">
+		<!-- Skill Critical Damage +205 -->
+	</option>
+	<option id="94852" name="option_id_94852">
+		<!-- Skill Critical Damage +233 -->
+	</option>
+	<option id="94853" name="option_id_94853">
+		<!-- Skill Critical Damage +243 -->
+	</option>
+	<option id="94854" name="option_id_94854">
+		<!-- Skill Critical Damage +253 -->
+	</option>
+	<option id="94855" name="option_id_94855">
+		<!-- Skill Critical Damage +264 -->
+	</option>
+	<option id="94856" name="option_id_94856">
+		<!-- Skill Critical Damage +275 -->
+	</option>
+	<option id="94857" name="option_id_94857">
+		<!-- Skill Critical Damage +286 -->
+	</option>
+	<option id="94858" name="option_id_94858">
+		<!-- Skill Critical Damage +300 -->
+	</option>
+	<option id="94859" name="option_id_94859">
+		<!-- Received damage -3.5% -->
+	</option>
+	<option id="94860" name="option_id_94860">
+		<!-- Received damage -3.7% -->
+	</option>
+	<option id="94861" name="option_id_94861">
+		<!-- Received damage -3.9% -->
+	</option>
+	<option id="94862" name="option_id_94862">
+		<!-- Received damage -4.1% -->
+	</option>
+	<option id="94863" name="option_id_94863">
+		<!-- Received damage -4.4% -->
+	</option>
+	<option id="94864" name="option_id_94864">
+		<!-- Received damage -4.7% -->
+	</option>
+	<option id="94865" name="option_id_94865">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="94866" name="option_id_94866">
+		<!-- Received damage -5.3% -->
+	</option>
+	<option id="94867" name="option_id_94867">
+		<!-- Received damage -5.6% -->
+	</option>
+	<option id="94868" name="option_id_94868">
+		<!-- Received damage -6% -->
+	</option>
+	<option id="94869" name="option_id_94869">
+		<!-- Received damage -6.4% -->
+	</option>
+	<option id="94870" name="option_id_94870">
+		<!-- Received damage -6.8% -->
+	</option>
+	<option id="94871" name="option_id_94871">
+		<!-- Received damage -7.2% -->
+	</option>
+	<option id="94872" name="option_id_94872">
+		<!-- Received damage -8% -->
+	</option>
+	<option id="94873" name="option_id_94873">
+		<!-- Received damage -8.2% -->
+	</option>
+	<option id="94874" name="option_id_94874">
+		<!-- Received damage -8.4% -->
+	</option>
+	<option id="94875" name="option_id_94875">
+		<!-- Received damage -8.6% -->
+	</option>
+	<option id="94876" name="option_id_94876">
+		<!-- Received damage -8.8% -->
+	</option>
+	<option id="94877" name="option_id_94877">
+		<!-- Received damage -9.2% -->
+	</option>
+	<option id="94878" name="option_id_94878">
+		<!-- Received damage -10% -->
+	</option>
+	<option id="94879" name="P./ M. Atk. +50, P./ M. Def. +70, acquired XP/ SP +5%, Skill MP Consumption -1%">
+		<!-- P./ M. Atk. +50, P./ M. Def. +70, acquired XP/ SP +5%, Skill MP Consumption -1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>2</magicType>
+			</effect>
+		</effects>
+	</option>
+	<option id="94880" name="P./ M. Atk. +100, P./ M. Def. +130, acquired XP/ SP +10%, Skill MP Consumption -2%">
+		<!-- P./ M. Atk. +100, P./ M. Def. +130, acquired XP/ SP +10%, Skill MP Consumption -2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>2</magicType>
+			</effect>
+		</effects>
+	</option>
+	<option id="94881" name="Relevant Defense">
+		<!-- P. Def. +13 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94882" name="A Pile of Blunt Weapons">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94883" name="Undertaker's First Collection">
+		<!-- P. Def. +14 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94884" name="Adamant Will">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94885" name="Robe of Seal Acquisition">
+		<!-- Max HP +10 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94886" name="Traditional Mage's Weapon">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94887" name="HP/MP/CP Refill">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94888" name="Wolf and Scorpion">
+		<!-- Max HP +25 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94889" name="+9 Battle Axes">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94890" name="Sealed Boots I">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94891" name="Sealed Boots II">
+		<!-- P. Def. +9 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94892" name="P. Def. +15">
+		<!-- P. Def. +15 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94893" name="P. Def. +12">
+		<!-- P. Def. +12 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94894" name="All Too Easy">
+		<!-- P. Def. +11 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94895" name="Accessories of Insolence, Dragon Valley and Protection">
+		<!-- Received P. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94896" name="Path of the Rogue">
+		<!-- Ancient Sword Resistance +0.5% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<ANCIENTSWORD>0.5</ANCIENTSWORD>
+			</effect>
+		</effects>
+	</option>
+	<option id="94897" name="Archer's Dexterity">
+		<!-- Ancient Sword Resistance +0.5% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<ANCIENTSWORD>0.5</ANCIENTSWORD>
+			</effect>
+		</effects>
+	</option>
+	<option id="94898" name="Humans' Magic Books">
+		<!-- Ancient Sword Resistance +0.5% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<ANCIENTSWORD>0.5</ANCIENTSWORD>
+			</effect>
+		</effects>
+	</option>
+	<option id="94899" name="Beast Neighbor">
+		<!-- Received P. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

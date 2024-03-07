@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="91500" name="M. Evasion +1.2">
+		<!-- M. Evasion +1.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91501" name="M. Evasion +1.3">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91502" name="M. Evasion +1.3">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91503" name="M. Evasion +1.3">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91504" name="M. Evasion +1.4">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91505" name="M. Evasion +1.4">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91506" name="M. Evasion +1.4">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91507" name="M. Evasion +1.4">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91508" name="M. Evasion +1.4">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91509" name="M. Evasion +1.5">
+		<!-- M. Evasion +1.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91510" name="M. Evasion +1.5">
+		<!-- M. Evasion +1.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91511" name="M. Evasion +1.5">
+		<!-- M. Evasion +1.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91512" name="M. Evasion +1.8">
+		<!-- M. Evasion +1.8 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91513" name="M. Evasion +2">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91514" name="M. Evasion +2.1">
+		<!-- M. Evasion +2.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91515" name="M. Evasion +2.2">
+		<!-- M. Evasion +2.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91516" name="M. Evasion +2.3">
+		<!-- M. Evasion +2.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91517" name="M. Evasion +2.4">
+		<!-- M. Evasion +2.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91518" name="M. Evasion +3">
+		<!-- M. Evasion +3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91519" name="Received P. Skill Critical Damage -30">
+		<!-- Received P. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91520" name="Received P. Skill Critical Damage -32">
+		<!-- Received P. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91521" name="Received P. Skill Critical Damage -34">
+		<!-- Received P. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91522" name="Received P. Skill Critical Damage -36">
+		<!-- Received P. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91523" name="Received P. Skill Critical Damage -38">
+		<!-- Received P. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91524" name="Received P. Skill Critical Damage -40">
+		<!-- Received P. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91525" name="Received P. Skill Critical Damage -43">
+		<!-- Received P. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91526" name="Received P. Skill Critical Damage -46">
+		<!-- Received P. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91527" name="Received P. Skill Critical Damage -49">
+		<!-- Received P. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91528" name="Received P. Skill Critical Damage -52">
+		<!-- Received P. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91529" name="Received P. Skill Critical Damage -55">
+		<!-- Received P. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91530" name="Received P. Skill Critical Damage -58">
+		<!-- Received P. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91531" name="Received P. Skill Critical Damage -62">
+		<!-- Received P. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91532" name="Received P. Skill Critical Damage -65">
+		<!-- Received P. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91533" name="Received P. Skill Critical Damage -70">
+		<!-- Received P. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91534" name="Received P. Skill Critical Damage -75">
+		<!-- Received P. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91535" name="Received P. Skill Critical Damage -81">
+		<!-- Received P. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91536" name="Received P. Skill Critical Damage -87">
+		<!-- Received P. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91537" name="Received P. Skill Critical Damage -94">
+		<!-- Received P. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91538" name="Received P. Skill Critical Damage -100">
+		<!-- Received P. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91539" name="Received P. Skill Critical Damage -30">
+		<!-- Received P. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91540" name="Received P. Skill Critical Damage -32">
+		<!-- Received P. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91541" name="Received P. Skill Critical Damage -34">
+		<!-- Received P. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91542" name="Received P. Skill Critical Damage -36">
+		<!-- Received P. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91543" name="Received P. Skill Critical Damage -38">
+		<!-- Received P. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91544" name="Received P. Skill Critical Damage -40">
+		<!-- Received P. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91545" name="Received P. Skill Critical Damage -43">
+		<!-- Received P. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91546" name="Received P. Skill Critical Damage -46">
+		<!-- Received P. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91547" name="Received P. Skill Critical Damage -49">
+		<!-- Received P. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91548" name="Received P. Skill Critical Damage -52">
+		<!-- Received P. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91549" name="Received P. Skill Critical Damage -55">
+		<!-- Received P. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91550" name="Received P. Skill Critical Damage -58">
+		<!-- Received P. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91551" name="Received P. Skill Critical Damage -62">
+		<!-- Received P. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91552" name="Received P. Skill Critical Damage -65">
+		<!-- Received P. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91553" name="Received P. Skill Critical Damage -70">
+		<!-- Received P. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91554" name="Received P. Skill Critical Damage -75">
+		<!-- Received P. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91555" name="Received P. Skill Critical Damage -81">
+		<!-- Received P. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91556" name="Received P. Skill Critical Damage -87">
+		<!-- Received P. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91557" name="Received P. Skill Critical Damage -94">
+		<!-- Received P. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91558" name="Received P. Skill Critical Damage -100">
+		<!-- Received P. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91559" name="Received P. Skill Critical Damage -30">
+		<!-- Received P. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91560" name="Received P. Skill Critical Damage -32">
+		<!-- Received P. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91561" name="Received P. Skill Critical Damage -34">
+		<!-- Received P. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91562" name="Received P. Skill Critical Damage -36">
+		<!-- Received P. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91563" name="Received P. Skill Critical Damage -38">
+		<!-- Received P. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91564" name="Received P. Skill Critical Damage -40">
+		<!-- Received P. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91565" name="Received P. Skill Critical Damage -43">
+		<!-- Received P. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91566" name="Received P. Skill Critical Damage -46">
+		<!-- Received P. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91567" name="Received P. Skill Critical Damage -49">
+		<!-- Received P. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91568" name="Received P. Skill Critical Damage -52">
+		<!-- Received P. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91569" name="Received P. Skill Critical Damage -55">
+		<!-- Received P. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91570" name="Received P. Skill Critical Damage -58">
+		<!-- Received P. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91571" name="Received P. Skill Critical Damage -62">
+		<!-- Received P. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91572" name="Received P. Skill Critical Damage -65">
+		<!-- Received P. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91573" name="Received P. Skill Critical Damage -70">
+		<!-- Received P. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91574" name="Received P. Skill Critical Damage -75">
+		<!-- Received P. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91575" name="Received P. Skill Critical Damage -81">
+		<!-- Received P. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91576" name="Received P. Skill Critical Damage -87">
+		<!-- Received P. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91577" name="Received P. Skill Critical Damage -94">
+		<!-- Received P. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91578" name="Received P. Skill Critical Damage -100">
+		<!-- Received P. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91579" name="Received M. Skill Critical Damage -30">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91580" name="Received M. Skill Critical Damage -32">
+		<!-- Received M. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91581" name="Received M. Skill Critical Damage -34">
+		<!-- Received M. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91582" name="Received M. Skill Critical Damage -36">
+		<!-- Received M. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91583" name="Received M. Skill Critical Damage -38">
+		<!-- Received M. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91584" name="Received M. Skill Critical Damage -40">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91585" name="Received M. Skill Critical Damage -43">
+		<!-- Received M. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91586" name="Received M. Skill Critical Damage -46">
+		<!-- Received M. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91587" name="Received M. Skill Critical Damage -49">
+		<!-- Received M. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91588" name="Received M. Skill Critical Damage -52">
+		<!-- Received M. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91589" name="Received M. Skill Critical Damage -55">
+		<!-- Received M. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91590" name="Received M. Skill Critical Damage -58">
+		<!-- Received M. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91591" name="Received M. Skill Critical Damage -62">
+		<!-- Received M. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91592" name="Received M. Skill Critical Damage -65">
+		<!-- Received M. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91593" name="Received M. Skill Critical Damage -70">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91594" name="Received M. Skill Critical Damage -75">
+		<!-- Received M. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91595" name="Received M. Skill Critical Damage -81">
+		<!-- Received M. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91596" name="Received M. Skill Critical Damage -87">
+		<!-- Received M. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91597" name="Received M. Skill Critical Damage -94">
+		<!-- Received M. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91598" name="Received M. Skill Critical Damage -100">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91599" name="Received M. Skill Critical Damage -30">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

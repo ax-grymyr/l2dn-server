@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48978" toLevel="1" name="Ferion's Presentation 1">
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48979" toLevel="1" name="Ferion's Presentation 2">
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48980" toLevel="1" name="Ferion's Presentation 3">
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48981" toLevel="2" name="Worship to Ferion">
+		<!-- <Worship skill>\nYou sit in awe of Ferion and cannot move. -->
+		<icon>icon.temple_sit_skill</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<reuseDelay>20000</reuseDelay>
+	</skill>
+	<skill id="48982" toLevel="1" name="Boss Effect">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48983" toLevel="1" name="Ferion's Chain">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<hitTime>1500</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48984" toLevel="1" name="Petrification">
+		<!-- Immobilizes you for 5 sec. -->
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48985" toLevel="1" name="Ferion's Missile">
+		<!-- Deals heavy damage to surrounding enemies. -->
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>800</castRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-1200</effectPoint>
+	</skill>
+	<skill id="48986" toLevel="1" name="Knockback">
+		<!-- Knocked back. -->
+		<icon>icon.skill1285</icon>
+		<operateType>A1</operateType>
+		<isMagic>7</isMagic>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1200</effectPoint>
+	</skill>
+	<skill id="48987" toLevel="1" name="Ferion's Hurricane">
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48988" toLevel="1" name="Bleed">
+		<!-- Inflicts Bleed on the target and decreases HP. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48989" toLevel="1" name="Ferion's Lightning">
+		<!-- Deals heavy damage to surrounding enemies. -->
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>1200</castRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-1500</effectPoint>
+	</skill>
+	<skill id="48990" toLevel="1" name="Paralysis">
+		<!-- Temporarily paralyzes preventing any action. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1500</effectPoint>
+	</skill>
+	<skill id="48991" toLevel="1" name="Boss Waiting">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48992" toLevel="1" name="Toros' Attack">
+		<!-- Deals heavy damage to surrounding enemies. -->
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-1200</effectPoint>
+	</skill>
+	<skill id="48993" toLevel="1" name="Toros' Magic Attack">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="48994" toLevel="1" name="Toros' Wave">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48995" toLevel="1" name="Fear">
+		<!-- Frightens the target making it move against own will. -->
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48996" toLevel="1" name="Toros' Reinforcements">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>2000</hitTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48997" toLevel="1" name="Summon Toros' Follower">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>2000</hitTime>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48998" toLevel="1" name="Celestial Trial">
+		<!-- Attacks on monsters are limited. You do not belong to any of the warring factions and do not participate in the Emperor's Battle. -->
+		<icon>icon.skill1540</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48999" toLevel="9" name="Toros' P./ M. Atk. Effect">
+		<!-- P./ M. Atk. +30% -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="104" parentClassId="28">
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<item id="95514,93870" count="1" /> <!-- Spellbook: Ethereal Strike -->
+		</skill>
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="2" getLevel="77" levelUpSp="810000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="3" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="4" getLevel="79" levelUpSp="1790000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="5" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Ethereal Strike" skillId="45377" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Wizard Servitor" skillId="1347" skillLevel="1" getLevel="78" levelUpSp="1790000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Wizard Servitor" skillId="1347" skillLevel="2" getLevel="80" levelUpSp="1790000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="1" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="2" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="3" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="7" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Warrior Bane" skillId="1350" skillLevel="8" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="1" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="2" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="3" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="6" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="7" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Mage Bane" skillId="1351" skillLevel="8" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="5" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="6" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="20" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="21" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="22" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="23" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="24" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="25" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="26" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Test - Servitor Ultimate Defense" skillId="1299" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="97199,97190" count="1" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 -->
+		</skill>
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="Servitor Share" skillId="1557" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Servitor Share" skillId="1557" skillLevel="2" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Servitor Share" skillId="1557" skillLevel="3" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Servitor Share" skillId="1557" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Servitor Share" skillId="1557" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="32" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="33" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="34" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="35" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="36" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="37" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="38" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="39" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="40" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="27" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="28" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="29" getLevel="79" levelUpSp="1790000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="30" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Aqua Swirl" skillId="1175" skillLevel="31" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Summon Unicorn Guard" skillId="47904" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<item id="97192,97183" count="1" /> <!-- Spellbook: Unicorn Guard -->
+		</skill>
+		<skill skillName="Eva's Summoner" skillId="45284" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<removeSkill id="53008" onlyReplaceByLearn="true" /> <!-- Children of Eva -->
+			<item id="98288,98270" count="1" /> <!-- Spellbook: Eva's Summoner -->
+		</skill>
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="35" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="36" getLevel="77" levelUpSp="810000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="37" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="38" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="39" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="40" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="41" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="42" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="48" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="49" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="50" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="51" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="52" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="53" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="46" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="47" getLevel="77" levelUpSp="810000" />
+		<skill skillName="Summon Elemental Cubic" skillId="47912" skillLevel="1" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Summon Elemental Cubic" skillId="47912" skillLevel="2" getLevel="78" levelUpSp="1790000">
+			<item id="97195,97186" count="1" /> <!-- Spellbook: Elemental Cubic Lv. 2 -->
+		</skill>
+		<skill skillName="Summon Elemental Cubic" skillId="47912" skillLevel="3" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Summon Elemental Cubic" skillId="47912" skillLevel="4" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Mount Pegasus" skillId="1834" skillLevel="1" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="4" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="5" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="6" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="7" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Chains of Pain" skillId="47916" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<removeSkill id="1262" onlyReplaceByLearn="true" /> <!-- Transfer Pain -->
+			<item id="97198,97189" count="1" /> <!-- Spellbook: Chains of Pain -->
+		</skill>
+		<skill skillName="Chains of Pain" skillId="47916" skillLevel="2" getLevel="90" levelUpSp="84000000">
+			<item id="97198,97189" count="1" /> <!-- Spellbook: Chains of Pain -->
+		</skill>
+		<skill skillName="Ray of Light" skillId="47917" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<item id="97197,97188" count="1" /> <!-- Spellbook: Ray of Light -->
+		</skill>
+		<skill skillName="Ray of Light" skillId="47917" skillLevel="2" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Ray of Light" skillId="47917" skillLevel="3" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Ray of Light" skillId="47917" skillLevel="4" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Ray of Light" skillId="47917" skillLevel="5" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="5" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="6" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="7" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="12" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="13" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="5" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="6" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="7" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="12" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="13" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="5" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="6" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="7" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="8" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="48" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="49" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="50" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="51" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="52" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="53" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="46" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="47" getLevel="77" levelUpSp="810000" />
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="1" getLevel="77" levelUpSp="810000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="2" getLevel="79" levelUpSp="1790000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="3" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="4" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="6" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="8" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Summon Seraphim the Unicorn" skillId="1332" skillLevel="9" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="20" getLevel="76" levelUpSp="810000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="21" getLevel="78" levelUpSp="1790000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="22" getLevel="79" levelUpSp="1790000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="23" getLevel="80" levelUpSp="1790000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="24" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="25" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="26" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="27" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="810000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="810000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+		<skill skillName="Powerful Servitor Share" skillId="45054" skillLevel="1" getLevel="76" levelUpSp="810000">
+			<removeSkill id="1557" onlyReplaceByLearn="true" /> <!-- Servitor Share -->
+			<item id="98447,98446" count="1" /> <!-- Spellbook: Powerful Servitor Share -->
+		</skill>
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="1" getLevel="77" levelUpSp="810000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="4" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="6" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="7" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="8" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Summon Magnus the Unicorn" skillId="1407" skillLevel="9" getLevel="90" levelUpSp="84000000" />
+	</skillTree>
+</list>

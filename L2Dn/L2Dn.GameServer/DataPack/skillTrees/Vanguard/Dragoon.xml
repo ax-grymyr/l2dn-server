@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="219" parentClassId="218">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="3" getLevel="60" levelUpSp="0">
+			<item id="57" count="6000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Chant of Focus" skillId="45121" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Death Whisper" skillId="45122" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Haste" skillId="45123" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Magic Barrier" skillId="45125" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Might" skillId="45126" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Shield" skillId="45127" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Berserker Spirit" skillId="45128" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Pirate Transformation" skillId="1800" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Chant of Clarity" skillId="45129" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Dark Assassin Transformation" skillId="1801" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="White Assassin Transformation" skillId="1802" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="Weapon Mastery" skillId="141" skillLevel="4" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Ability to Attack" skillId="77" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Wild Assault" skillId="47821" skillLevel="1" getLevel="40" levelUpSp="8000">
+			<item id="97118,97110" count="1" /> <!-- Spellbook: Wild Assault -->
+		</skill>
+		<skill skillName="Wild Rush" skillId="47822" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Acumen" skillId="45135" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Empower" skillId="45136" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Chant of Wild Magic" skillId="45137" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Bandage" skillId="34" skillLevel="2" getLevel="45" levelUpSp="12000" />
+		<skill skillName="Bandage" skillId="34" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="3" getLevel="48" levelUpSp="20000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="4" getLevel="54" levelUpSp="40000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="5" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="6" getLevel="66" levelUpSp="120000" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="7" getLevel="72" levelUpSp="220000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="3" getLevel="48" levelUpSp="20000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="4" getLevel="54" levelUpSp="40000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="5" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="6" getLevel="66" levelUpSp="120000" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="7" getLevel="72" levelUpSp="220000" />
+		<skill skillName="Wild Instinct" skillId="47863" skillLevel="2" getLevel="1" levelUpSp="0" autoGet="true" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="70000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Piercing" skillId="47801" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="4" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="5" getLevel="55" levelUpSp="40000" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="6" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="7" getLevel="65" levelUpSp="100000" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="8" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="2" getLevel="44" levelUpSp="12000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="3" getLevel="48" levelUpSp="20000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="4" getLevel="52" levelUpSp="30000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="5" getLevel="56" levelUpSp="50000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="6" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="7" getLevel="64" levelUpSp="100000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="8" getLevel="68" levelUpSp="160000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="9" getLevel="71" levelUpSp="200000" />
+		<skill skillName="Threatening Swing" skillId="47803" skillLevel="10" getLevel="74" levelUpSp="220000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="30000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="70000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+		<skill skillName="Wild Scratch" skillId="47805" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Wild Scratch" skillId="47805" skillLevel="2" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Wild Scratch" skillId="47805" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Wild Scratch" skillId="47805" skillLevel="4" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Wild Scratch" skillId="47805" skillLevel="5" getLevel="75" levelUpSp="220000" />
+	</skillTree>
+</list>

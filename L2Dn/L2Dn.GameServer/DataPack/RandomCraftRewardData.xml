@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/RandomCraftRewardData.xsd">
+	<!-- The default chance of an item to be added to the player random craft rewards is 100%. -->
+	<!-- If you want to reduce the change for an item to be shown, you can add a lower chance value. -->
+	<!-- You can also add an announce value if you want the craft to be announced on the server. -->
+	<rewards>
+		<!-- Raidboss Weapons -->
+		<item id="92408" chance="3" announce="true" /> <!-- Baium's Thunder Breaker -->
+		<item id="93294" chance="3" announce="true" /> <!-- Baium's Thunder Breaker - Sealed -->
+		<item id="92421" chance="3" announce="true" /> <!-- Queen Ant's Stone Breaker -->
+		<item id="93295" chance="3" announce="true" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+		<item id="92404" chance="3" announce="true" /> <!-- Zaken's Blood Sword -->
+		<item id="93291" chance="3" announce="true" /> <!-- Zaken's Blood Sword - Sealed -->
+		<item id="96268" chance="3" announce="true" /> <!-- Beleth' Soul Eater -->
+		<item id="96269" chance="3" announce="true" /> <!-- Beleth' Soul Eater - Sealed -->
+		<item id="92405" chance="3" announce="true" /> <!-- Core's Plasmic Bow -->
+		<item id="93292" chance="3" announce="true" /> <!-- Core's Plasmic Bow - Sealed -->
+		<item id="92407" chance="3" announce="true" /> <!-- Orfen's Venom Sword -->
+		<item id="93293" chance="3" announce="true" /> <!-- Orfen's Venom Sword - Sealed -->
+		<item id="94888" chance="3" announce="true" /> <!-- Anakim's Divine Pistols -->
+		<item id="95422" chance="3" announce="true" /> <!-- Anakim's Divine Pistols - Sealed -->
+
+		<!-- Frost Lord Weapons (Vanguard Update) -->
+		<item id="97133" chance="3" announce="true" /> <!-- Frost Lord's Weapon Coupon -->
+		<item id="95725" chance="3" announce="true" /> <!-- Frost Lord's Sword -->
+		<item id="95726" chance="3" announce="true" /> <!-- Frost Lord's Two-handed Sword -->
+		<item id="95727" chance="3" announce="true" /> <!-- Frost Lord's Axe -->
+		<item id="95728" chance="3" announce="true" /> <!-- Frost Lord's Dagger -->
+		<item id="95729" chance="3" announce="true" /> <!-- Frost Lord's Spear -->
+		<item id="95730" chance="3" announce="true" /> <!-- Frost Lord's Bow -->
+		<item id="95731" chance="3" announce="true" /> <!-- Frost Lord's Blade Fists -->
+		<item id="95732" chance="3" announce="true" /> <!-- Frost Lord's Magic Blunt Weapon -->
+		<item id="95733" chance="3" announce="true" /> <!-- Frost Lord's Staff -->
+		<item id="95734" chance="3" announce="true" /> <!-- Frost Lord's Ancient Sword -->
+		<item id="95735" chance="3" announce="true" /> <!-- Frost Lord's Rapier -->
+		<item id="95736" chance="3" announce="true" /> <!-- Frost Lord's Pistols -->
+		<item id="95737" chance="3" announce="true" /> <!-- Frost Lord's Dual Swords -->
+		<item id="96751" chance="3" announce="true" /> <!-- Frost Lord's Sword - Sealed -->
+		<item id="96752" chance="3" announce="true" /> <!-- Frost Lord's Two-handed Sword - Sealed -->
+		<item id="96753" chance="3" announce="true" /> <!-- Frost Lord's Axe - Sealed -->
+		<item id="96754" chance="3" announce="true" /> <!-- Frost Lord's Dagger - Sealed -->
+		<item id="96755" chance="3" announce="true" /> <!-- Frost Lord's Spear - Sealed -->
+		<item id="96756" chance="3" announce="true" /> <!-- Frost Lord's Bow - Sealed -->
+		<item id="96757" chance="3" announce="true" /> <!-- Frost Lord's Blade Fists - Sealed -->
+		<item id="96758" chance="3" announce="true" /> <!-- Frost Lord's Magic Blunt - Sealed -->
+		<item id="96759" chance="3" announce="true" /> <!-- Frost Lord's Staff - Sealed -->
+		<item id="96760" chance="3" announce="true" /> <!-- Frost Lord's Ancient Sword - Sealed -->
+		<item id="96761" chance="3" announce="true" /> <!-- Frost Lord's Rapier - Sealed -->
+		<item id="96762" chance="3" announce="true" /> <!-- Frost Lord's Pistols - Sealed -->
+		<item id="96763" chance="3" announce="true" /> <!-- Frost Lord's Dual Swords - Sealed -->
+
+		<!-- Weapons A Grade Top -->
+		<item id="91887" chance="25" announce="true" /> <!-- Durendal -->
+		<item id="92967" chance="25" announce="true" /> <!-- Durendal - Sealed -->
+		<item id="8682" chance="25" announce="true" /> <!-- Naga's Storm -->
+		<item id="92959" chance="25" announce="true" /> <!-- Naga's Storm - Sealed -->
+		<item id="91902" chance="25" announce="true" /> <!-- Èclair Bijou -->
+		<item id="92970" chance="25" announce="true" /> <!-- Èclair Bijou - Sealed -->
+		<item id="5705" chance="25" announce="true" /> <!-- Keshanberk*Damascus -->
+		<item id="92948" chance="25" announce="true" /> <!-- Keshanberk*Damascus - Sealed -->
+		<item id="8678" chance="25" announce="true" /> <!-- Sirra's Blade -->
+		<item id="92955" chance="25" announce="true" /> <!-- Sirra's Blade - Sealed -->
+		<item id="8938" chance="25" announce="true" /> <!-- Tallum Blade*Damascus Sword -->
+		<item id="92966" chance="25" announce="true" /> <!-- Tallum Blade*Damascus Sword - Sealed -->
+		<item id="8683" chance="25" announce="true" /> <!-- Tiphon's Spear -->
+		<item id="92960" chance="25" announce="true" /> <!-- Tiphon's Spear - Sealed -->
+		<item id="8688" chance="25" announce="true" /> <!-- Daimon Crystal -->
+		<item id="92965" chance="25" announce="true" /> <!-- Daimon Crystal - Sealed -->
+		<item id="8684" chance="25" announce="true" /> <!-- Shyeed's Bow -->
+		<item id="92961" chance="25" announce="true" /> <!-- Shyeed's Bow - Sealed -->
+		<item id="8679" chance="25" announce="true" /> <!-- Sword of Ipos -->
+		<item id="92956" chance="25" announce="true" /> <!-- Sword of Ipos - Sealed -->
+		<item id="8681" chance="25" announce="true" /> <!-- Behemoth' Tuning Fork -->
+		<item id="92958" chance="25" announce="true" /> <!-- Behemoth' Tuning Fork - Sealed -->
+		<item id="8685" chance="25" announce="true" /> <!-- Sobekk's Hurricane -->
+		<item id="92962" chance="25" announce="true" /> <!-- Sobekk's Hurricane - Sealed -->
+		<item id="8680" chance="25" announce="true" /> <!-- Barakiel's Axe -->
+		<item id="92957" chance="25" announce="true" /> <!-- Barakiel's Axe - Sealed -->
+		<item id="8686" chance="25" announce="true" /> <!-- Themis' Tongue -->
+		<item id="92963" chance="25" announce="true" /> <!-- Themis' Tongue - Sealed -->
+		<item id="8687" chance="25" announce="true" /> <!-- Cabrio's Hand -->
+		<item id="92963" chance="25" announce="true" /> <!-- Cabrio's Hand - Sealed -->
+		<item id="94886" chance="25" announce="true" /> <!-- Zephyrus -->
+		<item id="95420" chance="25" announce="true" /> <!-- Zephyrus - Sealed -->
+
+		<!-- Weapons A Grade Low/Mid -->
+		<item id="92932" chance="25" announce="true" /> <!-- Halberd -->
+		<item id="92972" chance="25" announce="true" /> <!-- White Lightning -->
+		<item id="213" chance="25" announce="true" /> <!-- Branch of Mother Tree -->
+		<item id="7894" chance="25" announce="true" /> <!-- Spiritual Eye -->
+		<item id="305" chance="25" announce="true" /> <!-- Tallum Glaive -->
+		<item id="91888" chance="25" announce="true" /> <!-- Undertaker -->
+		<item id="236" chance="25" announce="true" /> <!-- Soul Separator -->
+		<item id="5233" chance="25" announce="true" /> <!-- Keshanberk*Keshanberk -->
+		<item id="80" chance="25" announce="true" /> <!-- Tallum Blade -->
+		<item id="235" chance="25" announce="true" /> <!-- Bloody Orchid -->
+		<item id="288" chance="25" announce="true" /> <!-- Carnage Bow -->
+		<item id="269" chance="25" announce="true" /> <!-- Bloody Tornado -->
+		<item id="7902" chance="25" announce="true" /> <!-- Doom Crusher -->
+		<item id="7884" chance="25" announce="true" /> <!-- Infernal Master -->
+		<item id="2504" chance="25" announce="true" /> <!-- Meteor Shower -->
+		<item id="150" chance="25" announce="true" /> <!-- Elemental Sword -->
+		<item id="7883" chance="25" announce="true" /> <!-- Guardian's Sword -->
+		<item id="7899" chance="25" announce="true" /> <!-- Destroyer Hammer -->
+		<item id="270" chance="25" announce="true" /> <!-- Dragon Grinder -->
+		<item id="212" chance="25" announce="true" /> <!-- Dasparions Staff -->
+		<item id="298" chance="25" announce="true" /> <!-- Soul Bow -->
+		<item id="91903" chance="25" announce="true" /> <!-- Lacerator -->
+		<item id="7895" chance="25" announce="true" /> <!-- Flaming Dragon Skull -->
+		<item id="91889" chance="25" announce="true" /> <!-- Divine Pain -->
+		<item id="2500" chance="25" announce="true" /> <!-- Dark Legion's Edge -->
+		<item id="81" chance="25" announce="true" /> <!-- Dragon Salyer -->
+		<item id="164" chance="25" announce="true" /> <!-- Elysian -->
+		<item id="151" chance="25" announce="true" /> <!-- Sword of Miracles -->
+		<item id="94885" chance="25" announce="true" /> <!-- Scofield -->
+
+		<!-- Weapons B Grade -->
+		<item id="91886" chance="50" /> <!-- Innominate Victory -->
+		<item id="91901" chance="50" /> <!-- Military Fleuret -->
+		<item id="78" chance="50" /> <!-- Great Sword -->
+		<item id="79" chance="50" /> <!-- Damascus Sword -->
+		<item id="300" chance="50" /> <!-- Great Axe -->
+		<item id="284" chance="50" /> <!-- Dark Elven Longbow -->
+		<item id="2626" chance="50" /> <!-- Samurai Long Sword*Samurai Long Sword -->
+		<item id="7901" chance="50" /> <!-- Star Buster -->
+		<item id="142" chance="50" /> <!-- Keshanberk -->
+		<item id="234" chance="50" /> <!-- Demon`s Dagger -->
+		<item id="267" chance="50" /> <!-- Arthro Nail -->
+		<item id="91900" chance="50" /> <!-- Colichemarde -->
+		<item id="95307" chance="50" /> <!-- Kaim Vanul's Bones -->
+		<item id="229" chance="50" /> <!-- Kris -->
+		<item id="287" chance="50" /> <!-- Bow of Peril -->
+		<item id="148" chance="50" /> <!-- Sword of Valhalla -->
+		<item id="7900" chance="50" /> <!-- Ice Storm Hammer -->
+		<item id="243" chance="50" /> <!-- Twilight Knife -->
+		<item id="264" chance="50" /> <!-- Pata -->
+		<item id="94" chance="50" /> <!-- Lance -->
+		<item id="210" chance="50" /> <!-- Staff of Evil Spirit -->
+		<item id="7892" chance="50" /> <!-- Spell Breaker -->
+		<item id="91885" chance="50" /> <!-- Dismantler -->
+		<item id="7889" chance="50" /> <!-- Wizard's Tears -->
+		<item id="175" chance="50" /> <!-- Art of Battle Axe -->
+		<item id="171" chance="50" /> <!-- Deadmans Glory -->
+		<item id="91" chance="50" /> <!-- Heavy War Axe -->
+		<item id="268" chance="50" /> <!-- Bellion Cestus -->
+		<item id="94884" chance="50" /> <!-- Volcano -->
+
+		<!-- Weapons D and C Grade -->
+		<item id="93057" /> <!-- Admiral's Estoc(Sealed) -->
+		<item id="91896" /> <!-- Admiral's Estoc -->
+		<item id="276" /> <!-- Elven Bow -->
+		<item id="285" /> <!-- Noble Elven Bow -->
+		<item id="75" /> <!-- Caliburs -->
+		<item id="91884" /> <!-- Schlager -->
+		<item id="262" /> <!-- Scallop Jamadhr -->
+		<item id="157" /> <!-- Spiked Club -->
+		<item id="73" /> <!-- Shamshir -->
+		<item id="169" /> <!-- Skull Breaker -->
+		<item id="173" /> <!-- Skull Graver -->
+		<item id="263" /> <!-- Chakram -->
+		<item id="77" /> <!-- Tsurugi -->
+		<item id="125" /> <!-- Spinebone Sword -->
+		<item id="71" /> <!-- Flamberge -->
+		<item id="274" /> <!-- Reinfoced Bow -->
+		<item id="279" /> <!-- Reinfoced Longbow -->
+		<item id="194" /> <!-- Heavy Doom Axe -->
+		<item id="191" /> <!-- Heavy Doom Hammer -->
+		<item id="172" /> <!-- Heavy Bone Club -->
+		<item id="166" /> <!-- Heavy Mace -->
+		<item id="222" /> <!-- Poniard Dagger -->
+		<item id="260" /> <!-- Triple-Edged Jamadhr -->
+		<item id="295" /> <!-- Dwarven Trident -->
+		<item id="291" /> <!-- Trident -->
+		<item id="203" /> <!-- Pa'agrio Axe -->
+		<item id="174" /> <!-- Nirvana Axe -->
+		<item id="93049" /> <!-- Ecliptic Axe (Sealed) -->
+		<item id="162" /> <!-- War Axe -->
+		<item id="86" /> <!-- Thomahawk -->
+		<item id="156" /> <!-- Hand Axe -->
+		<item id="185" /> <!-- Tarbar -->
+		<item id="91881" /> <!-- Talwar -->
+		<item id="277" /> <!-- Stiletto -->
+		<item id="301" /> <!-- Scorpion -->
+		<item id="322" /> <!-- Vajra Wand -->
+		<item id="320" /> <!-- Blue Crystal Skull -->
+		<item id="161" /> <!-- Silver Axe -->
+		<item id="303" /> <!-- Widow Maker -->
+		<item id="93052" /> <!-- Orcish Poleaxe(Sealed) -->
+		<item id="299" /> <!-- Orcish Poleaxe -->
+		<item id="95" /> <!-- Poleaxe -->
+		<item id="101" /> <!-- Scroll of Wisdom -->
+		<item id="123" /> <!-- Saber -->
+		<item id="90" /> <!-- Goat Head Staff -->
+		<item id="325" /> <!-- Horn of Glory -->
+		<item id="91898" /> <!-- Chevalier Rapier -->
+		<item id="195" /> <!-- Cursed Staff -->
+		<item id="1660" /> <!-- Cursed Mingauche -->
+		<item id="184" /> <!-- Conjourors Staff -->
+		<item id="189" /> <!-- Staff of Life -->
+		<item id="69" /> <!-- Bastard Sword -->
+		<item id="91895" /> <!-- Fleuret -->
+		<item id="239" /> <!-- Mystic Knife -->
+		<item id="240" /> <!-- Conjoure´s Knife -->
+		<item id="241" /> <!-- Shillien Knife -->
+		<item id="221" /> <!-- Assassin Knife -->
+		<item id="182" /> <!-- Doom Hammer -->
+		<item id="277" /> <!-- Dark Elven Bow -->
+		<item id="280" /> <!-- Light Bow -->
+		<item id="223" /> <!-- Kukuri -->
+		<item id="168" /> <!-- Work Hammer -->
+		<item id="93" /> <!-- Winged Spear -->
+		<item id="316" /> <!-- Sage's Blood -->
+		<item id="318" /> <!-- Crucifix of Blood -->
+		<item id="178" /> <!-- Bone Staff -->
+		<item id="159" /> <!-- Bonebreaker -->
+		<item id="238" /> <!-- Dagger of Mana -->
+		<item id="91878" /> <!-- Katzbalger -->
+		<item id="313" /> <!-- Temptation of Abyss -->
+		<item id="323" /> <!-- Ancient Reagent -->
+		<item id="314" /> <!-- Proof of Revenge -->
+		<item id="2499" /> <!-- Elven Long Sword -->
+		<item id="91894" /> <!-- Estoc -->
+		<item id="91893" /> <!-- Épée -->
+		<item id="259" /> <!-- Single-edged Jamadhr -->
+		<item id="124" /> <!-- Two-handed Sword -->
+		<item id="224" /> <!-- Maingauche -->
+		<item id="127" /> <!-- Crimson Sword -->
+		<item id="261" /> <!-- Bich'Hwa -->
+		<item id="293" /> <!-- Battle Hammer -->
+		<item id="315" /> <!-- Divine Rod -->
+		<item id="190" /> <!-- Atuba Mace -->
+		<item id="181" /> <!-- Mace of Miracle -->
+		<item id="179" /> <!-- Mace of Prayer -->
+		<item id="180" /> <!-- Mace of Judgment -->
+		<item id="312" /> <!-- Branch of Life -->
+		<item id="91880" /> <!-- Military Talwar -->
+		<item id="278" /> <!-- Gastraphetes -->
+		<item id="292" /> <!-- Pike -->
+		<item id="296" /> <!-- Dwarven Pike -->
+		<item id="319" /> <!-- Eye of Infinity -->
+		<item id="297" /> <!-- Glaive -->
+		<item id="275" /> <!-- Longbow -->
+		<item id="167" /> <!-- Scalpel -->
+		<item id="70" /> <!-- Claymore -->
+		<item id="321" /> <!-- Demon's Fangs -->
+		<item id="317" /> <!-- Tome of Blood -->
+		<item id="220" /> <!-- Crafted Dagger -->
+		<item id="258" /> <!-- Bagh-Nakh -->
+		<item id="83" /> <!-- Sword of Magic -->
+		<item id="143" /> <!-- Sword of Mystic -->
+		<item id="144" /> <!-- Sword of Occult -->
+		<item id="91879" /> <!-- Field Sword -->
+		<item id="129" /> <!-- Sword of Revolution -->
+		<item id="126" /> <!-- Artisan's Sword -->
+		<item id="132" /> <!-- Ultimate Sword -->
+		<item id="128" /> <!-- Knight's Sword -->
+		<item id="130" /> <!-- Elven Sword -->
+		<item id="225" /> <!-- Mithril Dagger -->
+		<item id="187" /> <!-- Atuba Hammer -->
+		<item id="294" /> <!-- War Pick -->
+		<item id="88" /> <!-- Morning Star -->
+		<item id="183" /> <!-- Mystic Staff -->
+		<item id="188" /> <!-- Ghost Staff -->
+		<item id="266" /> <!-- Cused Dagger -->
+		<item id="197" /> <!-- Paradia Staff -->
+		<item id="200" /> <!-- Sage's Staff -->
+		<item id="204" /> <!-- Deadman's Staff -->
+		<item id="185" /> <!-- Staff of Mana -->
+		<item id="186" /> <!-- Staff of Magic -->
+		<item id="198" /> <!-- Inferno Staff -->
+		<item id="93048" /> <!-- Demon`s Staff(Sealed) -->
+		<item id="206" /> <!-- Demon`s Staff -->
+		<item id="205" /> <!-- Ghoul`s Staff -->
+		<item id="199" /> <!-- Pa'agrio Hammer -->
+		<item id="145" /> <!-- Sword of Whispering Death -->
+		<item id="133" /> <!-- Raid Sword -->
+		<item id="134" /> <!-- Sword of Nighmare -->
+		<item id="76" /> <!-- Sword of Delusion -->
+		<item id="131" /> <!-- Spirit Sword -->
+		<item id="84" /> <!-- Homunkulus' Sword -->
+		<item id="282" /> <!-- Elemental Bow -->
+		<item id="93051" /> <!-- Eminence Bow -->
+		<item id="286" /> <!-- Eminence Bow -->
+		<item id="281" /> <!-- Frozen Bow -->
+		<item id="302" /> <!-- Body Slasher -->
+		<item id="192" /> <!-- Crystal Staff -->
+		<item id="93050" /> <!-- Crystal Dagger(Sealed) -->
+		<item id="228" /> <!-- Crystal Dagger -->
+		<item id="230" /> <!-- Wolverine Fang -->
+		<item id="93058" /> <!-- Sabber Tooth(Sealed) -->
+		<item id="91882" /> <!-- Sabber Tooth -->
+		<item id="93055" /> <!-- Berserker Blade (Sealed) -->
+		<item id="233" /> <!-- Dark Screamer -->
+		<item id="232" /> <!-- Dark Elven Dagger -->
+		<item id="92334" /> <!-- Katana*Katana (Sealed) -->
+		<item id="2582" /> <!-- Katana*Katana -->
+		<item id="74" /> <!-- Katana -->
+		<item id="265" /> <!-- Fisted Blade -->
+		<item id="91897" /> <!-- Blinzlasher -->
+		<item id="231" /> <!-- Grace Dagger -->
+		<item id="196" /> <!-- Stick of Eternity -->
+		<item id="193" /> <!-- Stick of Faith -->
+		<item id="201" /> <!-- Club of Nature -->
+		<item id="93047" /> <!-- Samurai Long Sword(Sealed) -->
+		<item id="135" /> <!-- Samurai Long Sword -->
+		<item id="283" /> <!-- Akat Longbow -->
+		<item id="91899" /> <!-- Soldat Estoc -->
+		<item id="298" /> <!-- Orcish Glaive -->
+		<item id="94" /> <!-- Bec de Corbin -->
+		<item id="96" /> <!-- Scythe -->
+		<item id="2502" /> <!-- Dwarven War Hammer -->
+		<item id="160" /> <!-- Batle Axe -->
+		<item id="266" /> <!-- Great Pata -->
+		<item id="93056" /> <!-- Great Pata (Sealed) -->
+		<item id="89" /> <!-- Big Hammer -->
+		<item id="202" /> <!-- Mace of Underworld -->
+		<item id="2503" /> <!-- Yaksa Mace -->
+		<item id="93054" /> <!-- Yaksa Mace (Sealed) -->
+		<item id="91883" /> <!-- Immortal Edge -->
+		<item id="242" /> <!-- Soulfire Dirk -->
+		<item id="94881" /> <!-- Brass Pistols -->
+		<item id="94882" /> <!-- Flint Pistols -->
+
+		<!-- Armor Packs -->
+		<item id="92976" chance="25" /> <!-- Armor Crafting (B-grade and higher) -->
+		<item id="92977" chance="25" /> <!-- Full Armor Crafting (B-grade and higher) -->
+		<item id="92978" chance="25" /> <!-- Gloves Crafting (B-grade and higher) -->
+		<item id="92979" chance="25" /> <!-- Gloves Crafting (B-grade and higher) -->
+		<item id="92975" chance="25" /> <!-- Helmet Crafting (B-grade and higher) -->
+		<item id="93242" chance="12.5" announce="true" /> <!-- Random Enhanced Helm of Nightmare Crafting (Heavy) -->
+		<item id="93243" chance="12.5" announce="true" /> <!-- Random Enhanced Helm of Nightmare Crafting (Light) -->
+		<item id="93244" chance="12.5" announce="true" /> <!-- Random Enhanced Helm of Nightmare Crafting (Robe) -->
+		<item id="93239" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Helmet Crafting (Heavy) -->
+		<item id="93240" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Helmet Crafting (Light) -->
+		<item id="93241" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Helmet Crafting (Robe) -->
+		<item id="93236" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Helmet Crafting (Heavy) -->
+		<item id="93237" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Helmet Crafting (Light) -->
+		<item id="93238" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Helmet Crafting (Robe) -->
+
+		<!-- Boss Weapons Packs -->
+		<item id="92990" chance="5" announce="true" /> <!-- Boss' Weapon Pack -->
+
+		<!-- Weapons Packs -->
+		<item id="93252" chance="15" announce="true" /> <!-- +7 B-grade Weapon Crafting -->
+		<item id="93168" chance="12.5" announce="true" /> <!-- Random Enhanced Spiritual Eye Crafting -->
+		<item id="93185" chance="12.5" announce="true" /> <!-- Random Enhanced Undertaker Crafting -->
+		<item id="93156" chance="12.5" announce="true" /> <!-- Random Enhanced Soul Separator Crafting -->
+		<item id="93165" chance="12.5" announce="true" /> <!-- Random Enhanced Keshanberk*Damascus Crafting -->
+		<item id="93147" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Blade Crafting -->
+		<item id="93159" chance="12.5" announce="true" /> <!-- Random Enhanced Carnage Bow Crafting -->
+		<item id="93157" chance="12.5" announce="true" /> <!-- Random Enhanced Blood Tornado Crafting -->
+		<item id="93171" chance="12.5" announce="true" /> <!-- Random Enhanced Doom Crusher Crafting -->
+		<item id="93151" chance="12.5" announce="true" /> <!-- Random Enhanced Sword of Miracles Crafting -->
+		<item id="93167" chance="12.5" announce="true" /> <!-- Random Enhanced Infernal Master Crafting -->
+		<item id="93163" chance="12.5" announce="true" /> <!-- Random Enhanced Meteor Shower Crafting -->
+		<item id="93150" chance="12.5" announce="true" /> <!-- Random Enhanced Elemental Sword Crafting -->
+		<item id="93170" chance="12.5" announce="true" /> <!-- Random Enhanced Destroyer Hammer Crafting -->
+		<item id="93153" chance="12.5" announce="true" /> <!-- Random Enhanced Dasparion's Staff Crafting -->
+		<item id="93160" chance="12.5" announce="true" /> <!-- Random Enhanced Soul Bow Crafting -->
+		<item id="93188" chance="12.5" announce="true" /> <!-- Random Enhanced Lacerator Crafting -->
+		<item id="93169" chance="12.5" announce="true" /> <!-- Random Enhanced Flaming Dragon Skull Crafting -->
+		<item id="93162" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Legion's Edge Crafting -->
+		<item id="93148" chance="12.5" announce="true" /> <!-- Random Enhanced Dragon Slayer Crafting -->
+		<item id="93152" chance="12.5" announce="true" /> <!-- Random Enhanced Elysian Crafting -->
+		<item id="93149" chance="12.5" announce="true" /> <!-- Random Enhanced Halberd Crafting -->
+		<item id="93189" chance="12.5" announce="true" /> <!-- Random Enhanced White Lightning Crafting -->
+		<item id="93154" chance="12.5" announce="true" /> <!-- Random Enhanced Branch of the Mother Tree Crafting -->
+		<item id="93161" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Glaive Crafting -->
+		<item id="93155" chance="12.5" announce="true" /> <!-- Random Enhanced Bloody Orchid Crafting -->
+		<item id="93158" chance="12.5" announce="true" /> <!-- Random Enhanced Dragon Grinder Crafting -->
+		<item id="93186" chance="12.5" announce="true" /> <!-- Random Enhanced Divine Pain Crafting -->
+
+		<!-- Armor Special -->
+		<item id="93139" chance="7" announce="true" /> <!-- Ice Crystal Breastplate -->
+		<item id="93141" chance="7" announce="true" /> <!-- Ice Crystal Breastplate - Sealed -->
+		<item id="93140" chance="7" announce="true" /> <!-- Ice Crystal Gaiters -->
+		<item id="93142" chance="7" announce="true" /> <!-- Ice Crystal Gaiters - Sealed -->
+		<item id="93315" chance="7" announce="true" /> <!-- Leather Armor of Lightning -->
+		<item id="93317" chance="7" announce="true" /> <!-- Leather Armor of Lightning - Sealed -->
+		<item id="93316" chance="7" announce="true" /> <!-- Leather Leggings of Lightning -->
+		<item id="93318" chance="7" announce="true" /> <!-- Leather Leggings of Lightning - Sealed -->
+		<item id="93733" chance="7" announce="true" /> <!-- Flaming Tunic -->
+		<item id="93735" chance="7" announce="true" /> <!-- Flaming Tunic - Sealed -->
+		<item id="93734" chance="7" announce="true" /> <!-- Flaming Stockings -->
+		<item id="93736" chance="7" announce="true" /> <!-- Flaming Stockings - Sealed -->
+		<item id="93075" chance="7" announce="true" /> <!-- Gloves of Silence -->
+		<item id="93076" chance="7" announce="true" /> <!-- Gloves of Silence - Sealed -->
+		<item id="94085" chance="7" announce="true" /> <!-- Boots of Evasion -->
+		<item id="94086" chance="7" announce="true" /> <!-- Boots of Evasion - Sealed -->
+		<item id="94083" chance="7" announce="true" /> <!-- Helmet of Mana -->
+		<item id="94086" chance="7" announce="true" /> <!-- Helmet of Mana - Sealed -->
+		<item id="94263" chance="7" announce="true" /> <!-- Stun Gauntlets -->
+		<item id="93734" chance="7" announce="true" /> <!-- Stun Gauntlets - Sealed -->
+		<item id="94301" chance="7" announce="true" /> <!-- Shield of Vengeance -->
+		<item id="94302" chance="7" announce="true" /> <!-- Shield of Vengeance - Sealed -->
+		<item id="94299" chance="7" announce="true" /> <!-- Sigil of Inevitability -->
+		<item id="94300" chance="7" announce="true" /> <!-- Sigil of Inevitability - Sealed -->
+
+		<!-- Protection Armor (Vanguard Update) -->
+		<item id="97132" chance="3" announce="true" /> <!-- Armor of Protection Coupon -->
+		<item id="94842" chance="7" announce="true" /> <!-- Breastplate of Protection - Sealed -->
+		<item id="94840" chance="7" announce="true" /> <!-- Breastplate of Protection -->
+		<item id="94843" chance="7" announce="true" /> <!-- Gaiters of Protection - Sealed -->
+		<item id="94841" chance="7" announce="true" /> <!-- Gaiters of Protection -->
+		<item id="94846" chance="7" announce="true" /> <!-- Leather Armor of Protection - Sealed -->
+		<item id="94844" chance="7" announce="true" /> <!-- Leather Armor of Protection -->
+		<item id="94847" chance="7" announce="true" /> <!-- Leather Leggings of Protection - Sealed -->
+		<item id="94845" chance="7" announce="true" /> <!-- Leather Leggings of Protection -->
+		<item id="94850" chance="7" announce="true" /> <!-- Tunic of Protection - Sealed -->
+		<item id="94848" chance="7" announce="true" /> <!-- Tunic of Protection -->
+		<item id="94851" chance="7" announce="true" /> <!-- Stockings of Protection - Sealed -->
+		<item id="94847" chance="7" announce="true" /> <!-- Stockings of Protection -->
+		<item id="95664" chance="7" announce="true" /> <!-- Sigil of Protection - Sealed -->
+		<item id="95663" chance="7" announce="true" /> <!-- Sigil of Protection -->
+		<item id="95935" chance="7" announce="true" /> <!-- Helmet of Protection - Sealed -->
+		<item id="95932" chance="7" announce="true" /> <!-- Helmet of Protection -->
+		<item id="95936" chance="7" announce="true" /> <!-- Gauntlets of Protection - Sealed -->
+		<item id="95933" chance="7" announce="true" /> <!-- Gauntlets of Protection -->
+		<item id="95937" chance="7" announce="true" /> <!-- Boots of Protection - Sealed -->
+		<item id="95934" chance="7" announce="true" /> <!-- Boots of Protection -->
+		<item id="95666" chance="7" announce="true" /> <!-- Shield of Protection - Sealed -->
+		<item id="95665" chance="7" announce="true" /> <!-- Shield of Protection -->
+
+		<!-- Armor A Grade -->
+		<item id="93193" chance="12.5" announce="true" /> <!-- Random Enhanced Armor of Nightmare Crafting -->
+		<item id="93202" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Leather Armor Crafting -->
+		<item id="93201" chance="12.5" announce="true" /> <!-- Random Enhanced Leather Armor of Nightmare Crafting -->
+		<item id="93198" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Leather Armor Crafting -->
+		<item id="93200" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Leather Armor Crafting -->
+		<item id="93197" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Plate Armor Crafting -->
+		<item id="93196" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Plate Armor Crafting -->
+		<item id="93245" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Circlet Crafting (Heavy) -->
+		<item id="93246" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Circlet Crafting (Light) -->
+		<item id="93247" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Circlet Crafting (Robe) -->
+		<item id="93190" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Breastplate Crafting -->
+		<item id="93207" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Robe Crafting -->
+		<item id="93206" chance="12.5" announce="true" /> <!-- Random Enhanced Robe of Nightmare Crafting -->
+		<item id="93205" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Robe Crafting -->
+		<item id="93203" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Tunic Crafting -->
+		<item id="93192" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Gaiters Crafting -->
+		<item id="93212" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Gloves Crafting (Heavy) -->
+		<item id="93213" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Gloves Crafting (Light) -->
+		<item id="93214" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Gloves Crafting (Robe) -->
+		<item id="93215" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Gloves Crafting (Heavy) -->
+		<item id="93216" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Gloves Crafting (Light) -->
+		<item id="93217" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Gloves Crafting (Robe) -->
+		<item id="93199" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Leggings Crafting -->
+		<item id="93221" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Gauntlets Crafting (Heavy) -->
+		<item id="93222" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Gauntlets Crafting (Light) -->
+		<item id="93223" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Gauntlets Crafting (Robe) -->
+		<item id="93218" chance="12.5" announce="true" /> <!-- Random Enhanced Gauntlets of Nightmare Crafting (Heavy) -->
+		<item id="93219" chance="12.5" announce="true" /> <!-- Random Enhanced Gauntlets of Nightmare Crafting (Light) -->
+		<item id="93220" chance="12.5" announce="true" /> <!-- Random Enhanced Gauntlets of Nightmare Crafting (Robe) -->
+		<item id="93233" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Boots Crafting (Heavy) -->
+		<item id="93234" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Boots Crafting (Light) -->
+		<item id="93235" chance="12.5" announce="true" /> <!-- Random Enhanced Majestic Boots Crafting (Robe) -->
+		<item id="93230" chance="12.5" announce="true" /> <!-- Random Enhanced Boots of Nightmare Crafting (Heavy) -->
+		<item id="93231" chance="12.5" announce="true" /> <!-- Random Enhanced Boots of Nightmare Crafting (Light) -->
+		<item id="93232" chance="12.5" announce="true" /> <!-- Random Enhanced Boots of Nightmare Crafting (Robe) -->
+		<item id="93224" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Boots Crafting (Heavy) -->
+		<item id="93225" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Boots Crafting (Light) -->
+		<item id="93226" chance="12.5" announce="true" /> <!-- Random Enhanced Dark Crystal Boots Crafting (Robe) -->
+		<item id="93228" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Boots Crafting (Light) -->
+		<item id="93229" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Boots Crafting (Robe) -->
+		<item id="93227" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Boots Crafting (Heavy) -->
+		<item id="93204" chance="12.5" announce="true" /> <!-- Random Enhanced Tallum Stockings Crafting -->
+		<item id="90477" chance="25" announce="true" /> <!-- Majestic Circlet (Light Armor) -->
+		<item id="90478" chance="25" announce="true" /> <!-- Majestic Circlet (Robe) -->
+		<item id="90476" chance="25" announce="true" /> <!-- Majestic Circlet (Heavy) -->
+		<item id="374" chance="25" announce="true" /> <!-- Majestic Circlet (Heavy) -->
+		<item id="2395" chance="25" announce="true" /> <!-- Majestic Leather Armor -->
+		<item id="2383" chance="25" announce="true" /> <!-- Majestic Plate Armor -->
+		<item id="93544" chance="25" announce="true" /> <!-- Armor of Nightmare -->
+		<item id="2394" chance="25" announce="true" /> <!-- Leather Armor of Nightmare -->
+		<item id="365" chance="25" announce="true" /> <!-- Dark Crystal Breastplate -->
+		<item id="2385" chance="25" announce="true" /> <!-- Dark Crystal Leather Armor -->
+		<item id="2393" chance="25" announce="true" /> <!-- Tallum Leather Armor -->
+		<item id="2382" chance="25" announce="true" /> <!-- Tallum Plate Armor -->
+		<item id="2409" chance="25" announce="true" /> <!-- Majestic Robe -->
+		<item id="2408" chance="25" announce="true" /> <!-- Robe of Nightmare -->
+		<item id="2407" chance="25" announce="true" /> <!-- Dark Crystal Robe -->
+		<item id="388" chance="25" announce="true" /> <!-- Dark Crystal Gaiters -->
+		<item id="5766" chance="25" announce="true" /> <!-- Dark Crystal Gloves (Ligth Armor) -->
+		<item id="5767" chance="25" announce="true" /> <!-- Dark Crystal Gloves (Robe) -->
+		<item id="5765" chance="25" announce="true" /> <!-- Dark Crystal Gloves (Heavy Armor) -->
+		<item id="5769" chance="25" announce="true" /> <!-- Tallum Gloves (Light Armor) -->
+		<item id="5770" chance="25" announce="true" /> <!-- Tallum Gloves (Robe) -->
+		<item id="5768" chance="25" announce="true" /> <!-- Tallum Gloves (Heavy Armor) -->
+		<item id="2389" chance="25" announce="true" /> <!-- Dark Crystal Leggings -->
+		<item id="5775" chance="25" announce="true" /> <!-- Majestic Gauntlets (Light Armor) -->
+		<item id="5776" chance="25" announce="true" /> <!-- Majestic Gauntlets (Robe) -->
+		<item id="5774" chance="25" announce="true" /> <!-- Majestic Gauntlets (Heavy) -->
+		<item id="5771" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Heavy) -->
+		<item id="5772" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Light) -->
+		<item id="5773" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Robe) -->
+		<item id="5786" chance="25" announce="true" /> <!-- Majestic Boots - Heavy -->
+		<item id="5788" chance="25" announce="true" /> <!-- Majestic Boots - Robe -->
+		<item id="5787" chance="25" announce="true" /> <!-- Majestic Boots - Light -->
+		<item id="5784" chance="25" announce="true" /> <!-- Boots of Nightmare (Light Armor) -->
+		<item id="5785" chance="25" announce="true" /> <!-- Boots of Nightmare (Robe) -->
+		<item id="5783" chance="25" announce="true" /> <!-- Boots of Nightmare (Heavy Armor) -->
+		<item id="5777" chance="25" announce="true" /> <!-- Dark Crystal Boots (Heavy Armor) -->
+		<item id="5779" chance="25" announce="true" /> <!-- Dark Crystal Boots (Robe) -->
+		<item id="5778" chance="25" announce="true" /> <!-- Dark Crystal Boots (Light Armor) -->
+		<item id="5781" chance="25" announce="true" /> <!-- Tallum Boots (Light Armor) -->
+		<item id="5780" chance="25" announce="true" /> <!-- Tallum Boots (Heavy Armor) -->
+		<item id="5782" chance="25" announce="true" /> <!-- Tallum Boots (Robe Armor) -->
+		<item id="93094" chance="25" announce="true" /> <!-- Majestic Sigil -->
+		<item id="93120" chance="25" announce="true" /> <!-- Majestic Sigil (Sealed) -->
+		<item id="2400" chance="25" announce="true" /> <!-- Tallum Tunic -->
+		<item id="90473" chance="25" announce="true" /> <!-- Helm of Nightmare (Light Armor) -->
+		<item id="90474" chance="25" announce="true" /> <!-- Helm of Nightmare (Robe) -->
+		<item id="90475" chance="25" announce="true" /> <!-- Helm of Nightmare (Heavy Armor) -->
+		<item id="90470" chance="25" announce="true" /> <!-- Dark Crystal Helmet (Heavy Armor) -->
+		<item id="90471" chance="25" announce="true" /> <!-- Dark Crystal Helmet (Light) -->
+		<item id="90472" chance="25" announce="true" /> <!-- Dark Crystal Helmet (Robe) -->
+		<item id="90467" chance="25" announce="true" /> <!-- Tallum Helmet (Heavy) -->
+		<item id="90468" chance="25" announce="true" /> <!-- Tallum Helmet (Ligth) -->
+		<item id="90469" chance="25" announce="true" /> <!-- Tallum Helmet (Robe) -->
+		<item id="2405" chance="25" announce="true" /> <!-- Tallum Stockings -->
+		<item id="2498" chance="25" announce="true" /> <!-- Shield of Nightmare -->
+		<item id="641" chance="25" announce="true" /> <!-- Dark Crystal Shield -->
+		<item id="92262" chance="25" announce="true" /> <!-- Majestic Plate (Heavy Armor) - Sealed -->
+		<item id="92267" chance="25" announce="true" /> <!-- Majestic Leather (Light Armor) - Sealed -->
+		<item id="92272" chance="25" announce="true" /> <!-- Majestic Robe (Robe) - Sealed -->
+		<item id="92274" chance="25" announce="true" /> <!-- Majestic Circlet (Robe) - Sealed -->
+		<item id="92286" chance="25" announce="true" /> <!-- Majestic Gauntelts (Heavy) - Sealed -->
+		<item id="92287" chance="25" announce="true" /> <!-- Majestic Gauntelts (Ligth) - Sealed -->
+		<item id="92288" chance="25" announce="true" /> <!-- Majestic Gauntelts (Robe) - Sealed -->
+		<item id="92298" chance="25" announce="true" /> <!-- Majestic Boots (Heavy) - Sealed -->
+		<item id="92299" chance="25" announce="true" /> <!-- Majestic Boots (Light) - Sealed -->
+		<item id="92300" chance="25" announce="true" /> <!-- Majestic Boots (Robe) - Sealed -->
+		<item id="92310" chance="25" announce="true" /> <!-- Majestic Circlet (Heavy) - Sealed -->
+		<item id="92311" chance="25" announce="true" /> <!-- Majestic Circlet (Light) - Sealed -->
+		<item id="92312" chance="25" announce="true" /> <!-- Majestic Circlet (Robe) - Sealed -->
+		<item id="92256" chance="25" announce="true" /> <!-- Armor of Nightmare (Heavy) - Sealed -->
+		<item id="92266" chance="25" announce="true" /> <!-- Leather Armor of Nightmare (Light) - Sealed -->
+		<item id="92271" chance="25" announce="true" /> <!-- Robe Armor of Nightmare (Robe) - Sealed -->
+		<item id="92283" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Heavy) - Sealed -->
+		<item id="92284" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Ligth) - Sealed -->
+		<item id="92285" chance="25" announce="true" /> <!-- Gauntlets of Nightmare (Robe) - Sealed -->
+		<item id="92295" chance="25" announce="true" /> <!-- Boots of Nightmare (Heavy) - Sealed -->
+		<item id="92296" chance="25" announce="true" /> <!-- Boots of Nightmare (Light) - Sealed -->
+		<item id="92297" chance="25" announce="true" /> <!-- Boots of Nightmare (Robe) - Sealed -->
+		<item id="92307" chance="25" announce="true" /> <!-- Helm of Nightmare (Heavy) - Sealed -->
+		<item id="92308" chance="25" announce="true" /> <!-- Helm of Nightmare (Light) - Sealed -->
+		<item id="92309" chance="25" announce="true" /> <!-- Helm of Nightmare (Robe) - Sealed -->
+		<item id="92276" chance="25" announce="true" /> <!-- Shield of Nightmare - Sealed -->
+			
+		<!-- Armor B Grade -->
+		<item id="93545" chance="50" /> <!-- Avadon Circlet (Light Armor) -->
+		<item id="93546" chance="50" /> <!-- Avadon Circlet (Robe) -->
+		<item id="2376" chance="50" /> <!-- Avadon Breastplate -->
+		<item id="357" chance="50" /> <!-- Zubei's Breastplate -->
+		<item id="358" chance="50" /> <!-- Blue Wolf Breastplate -->
+		<item id="2384" chance="50" /> <!-- Zubei's Leather Shirt -->
+		<item id="2388" chance="50" /> <!-- Zubei's Leather Gaiters -->
+		<item id="2390" chance="50" /> <!-- Avadon Leather Armor -->
+		<item id="2392" chance="50" /> <!-- Doom Leather Armor -->
+		<item id="2391" chance="50" /> <!-- Blue Wolf Leather Armor -->
+		<item id="2381" chance="50" /> <!-- Doom Plate Armor -->
+		<item id="2406" chance="50" /> <!-- Avadon Robe -->
+		<item id="2379" chance="50" /> <!-- Avadon Gaiters -->
+		<item id="383" chance="50" /> <!-- Zubei's Gaiters -->
+		<item id="2380" chance="50" /> <!-- Blue Wolf Gaiters -->
+		<item id="5715" chance="50" /> <!-- Avadon Gloves (Light Armor) -->
+		<item id="5716" chance="50" /> <!-- Avadon Gloves (Robe) -->
+		<item id="5714" chance="50" /> <!-- Avadon Gloves (Heavy Armor) -->
+		<item id="5723" chance="50" /> <!-- Doom Gloves (Light Armor) -->
+		<item id="5723" chance="50" /> <!-- Doom Gloves (Robe) -->
+		<item id="5722" chance="50" /> <!-- Doom Gloves (Heavy Armor) -->
+		<item id="5719" chance="50" /> <!-- Blue Wolf Gloves (Light Armor) -->
+		<item id="5720" chance="50" /> <!-- Blue Wolf Gloves (Robe) -->
+		<item id="5718" chance="50" /> <!-- Blue Wolf Gloves (Heavy) -->
+		<item id="5711" chance="50" /> <!-- Zubei's Gauntlets (Light Armor) -->
+		<item id="5712" chance="50" /> <!-- Zubei's Gauntlets (Robe) -->
+		<item id="5731" chance="50" /> <!-- Avadon Boots - Ligth -->
+		<item id="5732" chance="50" /> <!-- Avadon Boots - Robe -->
+		<item id="5730" chance="50" /> <!-- Avadon Boots - Heavy -->
+		<item id="5726" chance="50" /> <!-- Zubei's Boots - Heavy -->
+		<item id="5727" chance="50" /> <!-- Zubei's Boots - Light -->
+		<item id="5728" chance="50" /> <!-- Zubei's Boots - Robe -->
+		<item id="5740" chance="50" /> <!-- Doom Boots - Robe -->
+		<item id="5739" chance="50" /> <!-- Doom Boots - Light -->
+		<item id="5738" chance="50" /> <!-- Doom Boots - Heavy Armor -->
+		<item id="5734" chance="50" /> <!-- Blue Wolf Boots - Heavy Armor -->
+		<item id="5735" chance="50" /> <!-- Blue Wolf Boots - Light Armor -->
+		<item id="5736" chance="50" /> <!-- Blue Wolf Boots - Robe Armor -->
+		<item id="2397" chance="50" /> <!-- Tunic of Zubei -->
+		<item id="2399" chance="50" /> <!-- Doom Tunic -->
+		<item id="2398" chance="50" /> <!-- Blue Wolf Tunic -->
+		<item id="90459" chance="50" /> <!-- Zubei's Helmet - Light -->
+		<item id="90460" chance="50" /> <!-- Zubei's Helmet - Robe -->
+		<item id="90458" chance="50" /> <!-- Zubei's Helmet - Heavy -->
+		<item id="90464" chance="50" /> <!-- Doom Helmet - Heavy -->
+		<item id="90465" chance="50" /> <!-- Doom Helmet - Light -->
+		<item id="90466" chance="50" /> <!-- Doom Helmet - Robe -->
+		<item id="90461" chance="50" /> <!-- Blue Wolf Helmet - Heavy -->
+		<item id="90462" chance="50" /> <!-- Blue Wolf Helmet - Light -->
+		<item id="90463" chance="50" /> <!-- Blue Wolf Helmet - Robe -->
+		<item id="2402" chance="50" /> <!-- Stockings of Zubei -->
+		<item id="2404" chance="50" /> <!-- Doom Stockings -->
+		<item id="2403" chance="50" /> <!-- Blue Wolf Stockings -->
+		<item id="673" chance="50" /> <!-- Avadon Shield -->
+		<item id="633" chance="50" /> <!-- Zubei's Shield -->
+		<item id="110" chance="50" /> <!-- Doom Shield -->
+
+		<!-- Armor C/D Grade -->
+		<item id="1128" /> <!-- Adamantite Boots -->
+		<item id="627" /> <!-- Aspis -->
+		<item id="1126" /> <!-- Crimson Boots -->
+		<item id="103" /> <!-- Tower Shield -->
+		<item id="434" /> <!-- White Tunic -->
+		<item id="2468" /> <!-- Blessed Gloves -->
+		<item id="500" /> <!-- Great Helmet -->
+		<item id="46" /> <!-- Bronze Helmet -->
+		<item id="626" /> <!-- Bronze Shield -->
+		<item id="1123" /> <!-- Blue Buckskin Boots -->
+		<item id="399" /> <!-- Rind Leather Armor -->
+		<item id="376" /> <!-- Iron Plate Gaiters -->
+		<item id="553" /> <!-- Iron Boots -->
+		<item id="351" /> <!-- Breastplate -->
+		<item id="420" /> <!-- Theca Leather Gaiters -->
+		<item id="2461" /> <!-- Drake Leather Gloves -->
+		<item id="93645" /> <!-- Drake Leather Gloves Sealed -->
+		<item id="2460" /> <!-- Theca Leather Gloves -->
+		<item id="605" /> <!-- Leather Gauntlets -->
+		<item id="2437" /> <!-- Drake Leather Boots -->
+		<item id="93644" /> <!-- Drake Leather Boots (Sealed) -->
+		<item id="2436" /> <!-- Theca Leather Boots -->
+		<item id="401" /> <!-- Drake Leather Armor -->
+		<item id="93643" /> <!-- Drake Leather Armor (Sealed) -->
+		<item id="400" /> <!-- Theca Leather Armor -->
+		<item id="347" /> <!-- Ring Breastplate -->
+		<item id="354" /> <!-- Chain Mail Shirt -->
+		<item id="92555" /> <!-- Dwarven Chain Mail Shirt -->
+		<item id="381" /> <!-- Chain Gaiters -->
+		<item id="382" /> <!-- Dwarven Chain Gaiters -->
+		<item id="2453" /> <!-- Chain Gloves -->
+		<item id="2456" /> <!-- Dwarven Chain Gloves -->
+		<item id="2432" /> <!-- Dwarven Chain Boots -->
+		<item id="2429" /> <!-- Chain Boots -->
+		<item id="2413" /> <!-- Chain Hood -->
+		<item id="93111" /> <!-- Chain Sigil (Sealed) -->
+		<item id="497" /> <!-- Chain Helmet -->
+		<item id="2495" /> <!-- Chain Shield -->
+		<item id="2496" /> <!-- Dwarven Chain Shield -->
+		<item id="64" /> <!-- Compound Boots -->
+		<item id="60" /> <!-- Compound Armor -->
+		<item id="517" /> <!-- Compund Helmet -->
+		<item id="107" /> <!-- Compound Shield -->
+		<item id="45" /> <!-- Bone Helmet -->
+		<item id="418" /> <!-- Plated Leather Gaiters -->
+		<item id="2455" /> <!-- Plated Leather Gloves -->
+		<item id="2431" /> <!-- Plated Leather Boots -->
+		<item id="380" /> <!-- Plate Gaiters -->
+		<item id="2428" /> <!-- Plate Boots -->
+		<item id="398" /> <!-- Plated Leather Armor -->
+		<item id="2412" /> <!-- Plated Shield -->
+		<item id="2494" /> <!-- Plated Helmet -->
+		<item id="440" /> <!-- Robe of Seal -->
+		<item id="58" /> <!-- Mithril Breastplate -->
+		<item id="437" /> <!-- Mithril Tunic -->
+		<item id="2396" /> <!-- Elven Mithril Tunic -->
+		<item id="59" /> <!-- Mithril Gaiters -->
+		<item id="2450" /> <!-- Elven Mithril Gloves -->
+		<item id="608" /> <!-- Mithril Gauntlets -->
+		<item id="2426" /> <!-- Elven Mithril Boots -->
+		<item id="2377" /> <!-- Mithril Scale Gaiters -->
+		<item id="470" /> <!-- Mithril Stockings -->
+		<item id="2401" /> <!-- Mithril Stockings Elf -->
+		<item id="499" /> <!-- Mithril Helmet -->
+		<item id="419" /> <!-- Rind Leather Gaiters -->
+		<item id="414" /> <!-- Lion Skin Gaiters -->
+		<item id="417" /> <!-- Manticore Skin Gaiters -->
+		<item id="413" /> <!-- Puma Skin Gaiters -->
+		<item id="438" /> <!-- Sage's Rags -->
+		<item id="2378" /> <!-- Brigandine Gaiters -->
+		<item id="2449" /> <!-- Brigandine Gauntlets -->
+		<item id="2425" /> <!-- Brigandine Boots -->
+		<item id="2411" /> <!-- Brigandine Helmet -->
+		<item id="2493" /> <!-- Brigandine Shield -->
+		<item id="352" /> <!-- Brigandine -->
+		<item id="604" /> <!-- Quality Leather Gloves -->
+		<item id="2459" /> <!-- Demon's Gloves -->
+		<item id="2459" /> <!-- Gloves of Knowledge -->
+		<item id="2458" /> <!-- Rind Leather Gloves -->
+		<item id="2448" /> <!-- Manticore Skin Gloves -->
+		<item id="2454" /> <!-- Karmian Gloves -->
+		<item id="93649" /> <!-- Karmian Gloves (Sealed) -->
+		<item id="2457" /> <!-- Gloves of Seal -->
+		<item id="2463" /> <!-- Divine Gloves -->
+		<item id="2462" /> <!-- Full Plate Gauntlets -->
+		<item id="93641" /> <!-- Full Plate Gauntlets (Sealed) -->
+		<item id="2438" /> <!-- Full Plate Boots -->
+		<item id="93640" /> <!-- Full Plate Boots (Sealed) -->
+		<item id="356" /> <!-- Full Plate Armor -->
+		<item id="2414" /> <!-- Full Plate Helmet -->
+		<item id="93639" /> <!-- Full Plate Helmet (Sealed) -->
+		<item id="2497" /> <!-- Full Plate Shield -->
+		<item id="353" /> <!-- Half Plate Armor -->
+		<item id="2451" /> <!-- Sage's Worn Gloves -->
+		<item id="432" /> <!-- Cursed Tunic -->
+		<item id="465" /> <!-- Cursed Stockings -->
+		<item id="630" /> <!-- Square Shield -->
+		<item id="606" /> <!-- Rip Gauntlets -->
+		<item id="392" /> <!-- Lion Skin Shirt -->
+		<item id="395" /> <!-- Manticore Skin Shirt -->
+		<item id="391" /> <!-- Puma Skin Shirt -->
+		<item id="63" /> <!-- Gauntlets -->
+		<item id="607" /> <!-- Ogre Power Gauntlets -->
+		<item id="609" /> <!-- Gauntlets of Ghost -->
+		<item id="603" /> <!-- Divine Boots -->
+		<item id="2435" /> <!-- Demon's Boots -->
+		<item id="2423" /> <!-- Boots of Knowledge -->
+		<item id="2434" /> <!-- Rind Leather Boots -->
+		<item id="2427" /> <!-- Salamander Skin Boots -->
+		<item id="2424" /> <!-- Manticore Skin Boots -->
+		<item id="2430" /> <!-- Karmian Boots -->
+		<item id="93648" /> <!-- Karmian Boots (Sealed) -->
+		<item id="2433" /> <!-- Boots of Seal -->
+		<item id="1124" /> <!-- Boots of Strength -->
+		<item id="1149" /> <!-- Shining Circlet -->
+		<item id="349" /> <!-- Compound Scale Mail -->
+		<item id="378" /> <!-- Compound Scale Gaiters -->
+		<item id="498" /> <!-- Steel Plate Helmet -->
+		<item id="467" /> <!-- Dark Stockings -->
+		<item id="629" /> <!-- Kite Shield -->
+		<item id="441" /> <!-- Demon's Tunic -->
+		<item id="436" /> <!-- Tunic of Knowledge -->
+		<item id="439" /> <!-- Karmian Tunic -->
+		<item id="93646" /> <!-- Karmian Tunic - Sealed -->
+		<item id="435" /> <!-- Wizard Tunic -->
+		<item id="442" /> <!-- Divine Tunic -->
+		<item id="433" /> <!-- Elven Tunic -->
+		<item id="394" /> <!-- Reinforced Leather Shirt -->
+		<item id="397" /> <!-- Reinforced Mithril Shirt -->
+		<item id="416" /> <!-- Reinforced Leather Gaiters -->
+		<item id="2446" /> <!-- Reinforced Leather Gloves -->
+		<item id="2387" /> <!-- Reinforced Mithril Gaiters -->
+		<item id="2452" /> <!-- Reinforced Mithril Gloves -->
+		<item id="62" /> <!-- Reinforced Mithril Boots -->
+		<item id="393" /> <!-- Mithril Banded Mail -->
+		<item id="415" /> <!-- Mithril Banded Gaiters -->
+		<item id="628" /> <!-- Hoplon -->
+		<item id="348" /> <!-- Scale Mail -->
+		<item id="350" /> <!-- Dwarven Scale Mail -->
+		<item id="377" /> <!-- Scale Gaiters -->
+		<item id="379" /> <!-- Dwarven Scale Gaiters -->
+		<item id="47" /> <!-- Helmet -->
+		<item id="472" /> <!-- Demon's Stockings -->
+		<item id="469" /> <!-- Stockings of Knowledge -->
+		<item id="471" /> <!-- Karmian Stockings -->
+		<item id="93647" /> <!-- Karmian Stockings (Sealed) -->
+		<item id="468" /> <!-- Wizard Stockings -->
+		<item id="473" /> <!-- Divine Stockings -->
+		<item id="466" /> <!-- Elven Stockings -->
+		<item id="1125" /> <!-- Assault Boots -->
+		<item id="632" /> <!-- Knight's Shield -->
+		<item id="631" /> <!-- Eldarake -->
+
+		<!-- Accessories Top -->
+		<item id="6662" chance="7" announce="true" /> <!-- Ring of Core -->
+		<item id="49580" chance="7" announce="true" /> <!-- Baium's Ring -->
+		<item id="6660" chance="7" announce="true" /> <!-- Queen Ant's Ring -->
+		<item id="90763" chance="7" announce="true" /> <!-- Zaken's Earring -->
+		<item id="6661" chance="7" announce="true" /> <!-- Orfen's Earring -->
+		<item id="49683" chance="3" announce="true" /> <!-- Talisman of Baium -->
+		<item id="96600" chance="3" announce="true" /> <!-- Beleth' Ring -->
+		<item id="90992" chance="3" announce="true" /> <!-- Antharas' Earring -->
+		<item id="91550" chance="3" announce="true" /> <!-- Frintezza's Necklace -->
+		<item id="93254" chance="5" announce="true" /> <!-- Rare Accessory Lv. 1 Crafting -->
+		<item id="90934" chance="33.3" /> <!-- Brooch Lv.3 -->
+		<item id="9591" chance="33.3" /> <!-- Talsiman Bracelet Lv.3 -->
+		<item id="90890" chance="33.3" /> <!-- Talsiman Bracelet Lv.3 -->
+		<item id="93253" chance="33.3" /> <!-- +4 Talisman Crafting -->
+		<item id="95718" chance="33.3" /> <!-- Ring of Insolence - Sealed -->
+		<item id="95719" chance="33.3" /> <!-- Dragon Valley's Earring - Sealed -->
+
+		<!-- Accessories A Grade -->
+		<item id="862" chance="25" /> <!-- Majestic Earing -->
+		<item id="95425" chance="25" /> <!-- Majestic Earing - Sealed -->
+		<item id="893" chance="25" /> <!-- Majestic Ring -->
+		<item id="95394" chance="25" /> <!-- Majestic Ring - Sealed -->
+		<item id="924" chance="25" /> <!-- Majestic Necklace -->
+		<item id="95429" chance="25" /> <!-- Majestic Necklace - Sealed -->
+		<item id="871" chance="25" /> <!-- Phoenix Earring -->
+		<item id="902" chance="25" /> <!-- Phoenix Ring -->
+		<item id="933" chance="25" /> <!-- Phoenix Necklace -->
+
+		<!-- Accessories B Grade -->
+		<item id="918" chance="50" /> <!-- Adamantite Necklace -->
+		<item id="887" chance="50" /> <!-- Adamantite Ring -->
+		<item id="856" chance="50" /> <!-- Adamantite Earring -->
+		<item id="864" chance="50" /> <!-- Black Ore Earring -->
+		<item id="895" chance="50" /> <!-- Black Ore Ring -->
+		<item id="926" chance="50" /> <!-- Black Ore Necklace -->
+
+		<!-- Accessories C/D Grade -->
+		<item id="880" /> <!-- Black Pearl Ring -->
+		<item id="853" /> <!-- Earing of Protection -->
+		<item id="884" /> <!-- Ring of Protection -->
+		<item id="916" /> <!-- Necklace of Protection -->
+		<item id="883" /> <!-- Aquastone Earring -->
+		<item id="915" /> <!-- Aquastone Necklace -->
+		<item id="848" /> <!-- Earing of Magic -->
+		<item id="879" /> <!-- Ring of Magic -->
+		<item id="911" /> <!-- Magic Necklace -->
+		<item id="886" /> <!-- Ring of Seal -->
+		<item id="854" /> <!-- Earring of Seal -->
+		<item id="119" /> <!-- Necklace of Seal -->
+		<item id="886" /> <!-- Ring of Seal -->
+		<item id="888" /> <!-- Divine Ring -->
+		<item id="857" /> <!-- Divine Earring -->
+		<item id="919" /> <!-- Divine Necklace -->
+		<item id="881" /> <!-- Elven Ring -->
+		<item id="850" /> <!-- Elven Earring -->
+		<item id="885" /> <!-- Ring of Ages -->
+		<item id="882" /> <!-- Mithril Ring -->
+		<item id="917" /> <!-- Necklace of Mermaid -->
+		<item id="912" /> <!-- Necklace of Old Forest -->
+		<item id="890" /> <!-- Ring of Devotion -->
+		<item id="910" /> <!-- Necklace of Devotion -->
+		<item id="914" /> <!-- Dark Necklace -->
+		<item id="913" /> <!-- Elven Necklace -->
+		<item id="847" /> <!-- Red Crescent -->
+		<item id="852" /> <!-- Moonstone Earring -->
+		<item id="855" /> <!-- Nassen's Earring -->
+		<item id="851" /> <!-- Onyx Beast's Eye Earring -->
+		<item id="849" /> <!-- Tiger's Eye -->
+
+		<!-- DV/Toi Ring/Earring -->
+		<item id="95718" chance="50" /> <!-- Ring of Insolence - Sealed -->
+		<item id="95719" chance="50" /> <!-- Dragon Valley's Earring - Sealed -->
+
+		<!-- Buff Books -->
+		<item id="94135" chance="5" announce="true" /> <!-- Master's Book: Might -->
+		<item id="94361" chance="5" announce="true" /> <!-- Master's Book: Empower -->
+		<item id="94136" chance="5" announce="true" /> <!-- Master's Book: Shield -->
+		<item id="94362" chance="5" announce="true" /> <!-- Master's Book: Magic Barrier -->
+		<item id="94363" chance="5" announce="true" /> <!-- Master's Book: Focus -->
+		<item id="94364" chance="5" announce="true" /> <!-- Master's Book: Death Whisper -->
+		<item id="94370" chance="5" announce="true" /> <!-- Master's Book: Acumen -->
+		<item id="94369" chance="5" announce="true" /> <!-- Master's Book: Haste -->
+		<item id="94365" chance="5" announce="true" /> <!-- Master's Book: Wind Walk -->
+		<item id="94367" chance="5" announce="true" /> <!-- Master's Book: Clarity -->
+		<item id="94368" chance="5" announce="true" /> <!-- Master's Book: Wild Magic -->
+		<item id="95769" chance="5" announce="true" /> <!-- Master's Book: Berseker Spirit -->
+
+		<!-- Buff Star 1 Books -->
+		<item id="93871" chance="4.5" announce="true" /> <!-- Spellbook: Knight's Help -->
+		<item id="96273" chance="4.5" announce="true" /> <!-- Spellbook: Masterpiece Shield -->
+		<item id="94134" chance="4.5" announce="true" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+		<item id="96661" chance="4.5" announce="true" /> <!-- Spellbook: Fast Run Lv. 3 -->
+		<item id="94141" chance="4.5" announce="true" /> <!-- Spellbook: Buff Thief -->
+		<item id="94140" chance="4.5" announce="true" /> <!-- Spellbook: Dark Sense -->
+		<item id="94139" chance="4.5" announce="true" /> <!-- Spellbook: Esprit -->
+		<item id="94138" chance="4.5" announce="true" /> <!-- Spellbook: Pain of Sagittarius -->
+		<item id="94321" chance="4.5" announce="true" /> <!-- Spellbook: Wild Beat -->
+		<item id="94322" chance="4.5" announce="true" /> <!-- Spellbook: Crazy Waltz -->
+		<item id="94323" chance="4.5" announce="true" /> <!-- Spellbook: Frantic Pace -->
+		<item id="93388" chance="4.5" announce="true" /> <!-- Spellbook: Death Guard -->
+		<item id="93633" chance="4.5" announce="true" /> <!-- Spellbook: Drain Magic Energy -->
+		<item id="93392" chance="4.5" announce="true" /> <!-- Spellbook: Bone Cage -->
+		<item id="94669" chance="4.5" announce="true" /> <!-- Spellbook: Pa'agrio's Medicine -->
+		<item id="94676" chance="4.5" announce="true" /> <!-- Spellbook: Chant of Healing -->
+
+		<!-- Buff Star 2 Books -->
+		<item id="96277" chance="3.33" announce="true" /> <!-- Spellbook: Knight Assault -->
+		<item id="96275" chance="3.33" announce="true" /> <!-- Spellbook: Knight's Power -->
+		<item id="96281" chance="3.33" announce="true" /> <!-- Spellbook: Shield Throwing -->
+		<item id="96279" chance="3.33" announce="true" /> <!-- Spellbook: Chain Strike (Shock) -->
+		<item id="95857" chance="3.33" announce="true" /> <!-- Spellbook: Golden Stone -->
+		<item id="95860" chance="3.33" announce="true" /> <!-- Spellbook: Life Gain -->
+		<item id="95858" chance="3.33" announce="true" /> <!-- Spellbook: Crushing Leap -->
+		<item id="95859" chance="3.33" announce="true" /> <!-- Spellbook: Adena Stun -->
+		<item id="96039" chance="3.33" announce="true" /> <!-- Spellbook: Advanced Cleanse -->
+		<item id="91944" chance="3.33" announce="true" /> <!-- Book of Light -->
+		<item id="91945" chance="3.33" announce="true" /> <!-- Book of Shadows -->
+		<item id="91942" chance="3.33" announce="true" /> <!-- Crystal of Light -->
+		<item id="91943" chance="3.33" announce="true" /> <!-- Crystal of Shadows -->
+		<item id="96664" chance="3.33" announce="true" /> <!-- Spellbook: Rogue Mastery -->
+		<item id="96663" chance="3.33" announce="true" /> <!-- Spellbook: Shadow Assault -->
+		<item id="96662" chance="3.33" announce="true" /> <!-- Spellbook: Fatal Accuracy -->
+		<item id="94806" chance="3.33" announce="true" /> <!-- Spellbook: Flying Dagger -->
+		<item id="94319" chance="3.33" announce="true" /> <!-- Spellbook: Sword Symphony -->
+		<item id="95357" chance="3.33" announce="true" /> <!-- Spellbook: Time Burst Lv. 2 -->
+		<item id="95363" chance="3.33" announce="true" /> <!-- Spellbook: Elemental Spirit Lv. 3 -->
+		<item id="95654" chance="3.33" announce="true" /> <!-- Spellbook: Elemental Care Lv. 2 -->
+		<item id="95359" chance="3.33" announce="true" /> <!-- Spellbook: Elemental Wind Lv. 2 -->
+		<item id="96047" chance="3.33" announce="true" /> <!-- Spellbook: Sacred Power -->
+		<item id="96046" chance="3.33" announce="true" /> <!-- Spellbook: Divine Recovery -->
+		<item id="96050" chance="3.33" announce="true" /> <!-- Spellbook: Unleashing -->
+		<item id="96042" chance="3.33" announce="true" /> <!-- Spellbook: Eva's Power -->
+		<item id="96045" chance="3.33" announce="true" /> <!-- Spellbook: Shillien's Power -->
+		<item id="96048" chance="3.33" announce="true" /> <!-- Spellbook: Improved Resilience -->
+		<item id="96049" chance="3.33" announce="true" /> <!-- Spellbook: Holy Buster -->
+		<item id="94506" chance="3.33" announce="true" /> <!-- Spellbook: Burning Assault -->
+		<item id="94672" chance="3.33" announce="true" /> <!-- Spellbook: Seal of Infection -->
+		<item id="94675" chance="3.33" announce="true" /> <!-- Spellbook: Cold Flames -->
+		<item id="96607" chance="3.33" announce="true" /> <!-- Spellbook: Lunatic Crusher -->
+		<item id="96605" chance="3.33" announce="true" /> <!-- Spellbook: Shield of Security -->
+
+		<!-- Buff Star 3 Books -->
+		<item id="96287" chance="1.5" announce="true" /> <!-- Spellbook: Ultimate Defense Lv. 3 -->
+		<item id="96611" chance="1.5" announce="true" /> <!-- Spellbook: Shillien's Curse -->
+		<item id="96609" chance="1.5" announce="true" /> <!-- Spellbook: Eva's Care -->
+		<item id="94500" chance="1.5" announce="true" /> <!-- Spellbook: Titanic Sweep -->
+		<item id="94501" chance="1.5" announce="true" /> <!-- Spellbook: Titanic Break -->
+		<item id="94497" chance="1.5" announce="true" /> <!-- Spellbook: Life Force Harmony -->
+		<item id="94505" chance="1.5" announce="true" /> <!-- Spellbook: Burning Strike -->
+		<item id="94507" chance="1.5" announce="true" /> <!-- Spellbook: Armor Break -->
+		<item id="94503" chance="1.5" announce="true" /> <!-- Spellbook: Rabbit Spirit Totem -->
+		<item id="94502" chance="1.5" announce="true" /> <!-- Spellbook: Ogre Spirit Totem -->
+		<item id="94504" chance="1.5" announce="true" /> <!-- Spellbook: Puma Spirit Totem -->
+		<item id="95862" chance="1.5" announce="true" /> <!-- Spellbook: Mechanical Masterpiece -->
+		<item id="96038" chance="1.5" announce="true" /> <!-- Spellbook: Balanced Body -->
+		<item id="95863" chance="1.5" announce="true" /> <!-- Spellbook: Blacksmith's Attack -->
+		<item id="95856" chance="1.5" announce="true" /> <!-- Spellbook: Fortune Time -->
+		<item id="93386" chance="1.5" announce="true" /> <!-- Spellbook: Lightning Storm -->
+		<item id="93384" chance="1.5" announce="true" /> <!-- Spellbook: Burning Field -->
+		<item id="96666" chance="1.5" announce="true" /> <!-- Spellbook: Dark Blow -->
+		<item id="96667" chance="1.5" announce="true" /> <!-- Spellbook: Reversed Pull -->
+		<item id="96668" chance="1.5" announce="true" /> <!-- Spellbook: Synchro Freedom -->
+		<item id="96669" chance="1.5" announce="true" /> <!-- Spellbook: Ethereal Blood -->
+		<item id="93385" chance="1.5" announce="true" /> <!-- Spellbook: Frozen Field -->
+		<item id="94137" chance="1.5" announce="true" /> <!-- Spellbook: Devour -->
+		<item id="93631" chance="1.5" announce="true" /> <!-- Spellbook: Hellfire -->
+		<item id="95356" chance="1.5" announce="true" /> <!-- Spellbook: Extra Hit -->
+		<item id="95365" chance="1.5" announce="true" /> <!-- Spellbook: Elemental Spirit Lv. 4 -->
+		<item id="95352" chance="1.5" announce="true" /> <!-- Spellbook: Elemental Changing -->
+		<item id="93869" chance="1.5" announce="true" /> <!-- Spellbook: Elemental Burst -->
+		<item id="93870" chance="1.5" announce="true" /> <!-- Spellbook: Ethereal Strike -->
+		<item id="96044" chance="1.5" announce="true" /> <!-- Spellbook: Nemesis -->
+		<item id="96041" chance="1.5" announce="true" /> <!-- Spellbook: Eva's Nocturne -->
+		<item id="94670" chance="1.5" announce="true" /> <!-- Spellbook: Debuff Master -->
+		<item id="94674" chance="1.5" announce="true" /> <!-- Spellbook: Blood Bond -->
+		<item id="94671" chance="1.5" announce="true" /> <!-- Spellbook: Flame Burst -->
+		<item id="96283" chance="1.5" announce="true" /> <!-- Spellbook: Power of Life -->
+		<item id="96285" chance="1.5" announce="true" /> <!-- Spellbook: Toughness -->
+		<item id="94499" chance="1.5" announce="true" /> <!-- Spellbook: Titanic Weapon -->
+		<item id="96665" chance="1.5" announce="true" /> <!-- Spellbook: Seclusion -->
+		<item id="94326" chance="1.5" announce="true" /> <!-- Spellbook: Dance of Warrior -->
+		<item id="94327" chance="1.5" announce="true" /> <!-- Spellbook: Dance of Fire -->
+		<item id="95349" chance="1.5" announce="true" /> <!-- Spellbook: Dance of Fury -->
+		<item id="94324" chance="1.5" announce="true" /> <!-- Spellbook: Song of Earth -->
+		<item id="95348" chance="1.5" announce="true" /> <!-- Spellbook: Song of Wind -->
+		<item id="94325" chance="1.5" announce="true" /> <!-- Spellbook: Song of Hunter -->
+		<item id="95350" chance="1.5" announce="true" /> <!-- Spellbook: Goring Charge -->
+		<item id="96040" chance="1.5" announce="true" /> <!-- Spellbook: Treatment -->
+		<item id="96037" chance="1.5" announce="true" /> <!-- Spellbook: Sensation -->
+		<item id="96043" chance="1.5" announce="true" /> <!-- Spellbook: Duress -->
+		<item id="93103" chance="1.5" announce="true" /> <!-- Spellbook: Divine Beam -->
+
+		<!-- Top -->
+		<item id="93449" chance="25" /> <!-- A-grade Armor Coupon -->
+		<item id="93448" chance="25" /> <!-- A-grade Weapon Coupon -->
+		<item id="93930" chance="7" /> <!-- Special Armor Coupon -->
+
+		<!-- Enchant -->
+		<item id="94383" chance="7" announce="true" /> <!-- Scroll: Enchant Rare accessories -->
+		<item id="94384" chance="7" announce="true" /> <!-- Scroll: Enchant Rare accessories (Event) -->
+		<item id="94385" chance="7" announce="true" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+		<item id="94386" chance="7" announce="true" /> <!-- Improved Scroll: Enchant Rare Accessories (Event) -->
+		<item id="93257" chance="12.5" /> <!-- Cursed Scroll: Enchant A-grade Weapon (Exchangeable) -->
+		<item id="93258" chance="12.5" /> <!-- Cursed Scroll: Enchant A-grade Armor (Exchangeable) -->
+		<item id="33809" chance="12.5" /> <!-- Improved Scroll: Enchant A-grade Weapon (Exchangeable) -->
+		<item id="33814" chance="12.5" /> <!-- Improved Scroll: Enchant A-grade Armor (Exchangeable) -->
+		<item id="729" chance="25" /> <!-- Scroll: Enchant A-grade Weapon (Exchangeable) -->
+		<item id="730" chance="25" /> <!-- Scroll: Enchant A-grade Armor (Exchangeable) -->
+		<item id="947" chance="50" /> <!-- Scroll: Enchant B-grade Weapon (Exchangeable) -->
+		<item id="948" chance="50" /> <!-- Scroll: Enchant B-grade Armor (Exchangeable) -->
+		<item id="951" /> <!-- Scroll: Enchant C-grade Weapon (Exchangeable) -->
+		<item id="948" /> <!-- Scroll: Enchant C-grade Armor (Exchangeable) -->
+		<item id="955" /> <!-- Scroll: Enchant D-grade Weapon (Exchangeable) -->
+		<item id="956" /> <!-- Scroll: Enchant D-grade Armor (Exchangeable) -->
+
+		<!-- Default -->
+		<item id="91033" chance="50" /> <!-- Wind Spirit Evolution Stone -->
+		<item id="91031" chance="50" /> <!-- Water Spirit Evolution Stone -->
+		<item id="91034" chance="50" /> <!-- Earth Spirit Evolution Stone -->
+		<item id="91032" chance="50" /> <!-- Fire Spirit Evolution Stone -->
+		<item id="97147" chance="50" /> <!-- Dye Powder - Sealed -->
+		<item id="93499" chance="50" /> <!-- Enchanted B-grade Weapon Coupon -->
+		<item id="93500" chance="50" /> <!-- Enchanted B-grade Armor Coupon -->
+		<item id="93498" chance="70" /> <!-- Enchanted C-grade Weapon Coupon -->
+		<item id="91912" count="10000" /> <!-- HP Potion (Exchangeable) - 10000 pcs -->
+		<item id="90907" count="100" /> <!-- Soulshot Tickets - 100 pcs -->
+		<item id="5126" /> <!-- Dual Sword Crafting Stamp -->
+		<item id="3031" count="1500" /> <!-- HP Potion (Exchangeable) - 10000 pcs -->
+		<item id="49674" count="10" /> <!-- XP Growth Scroll - 10 pcs. -->
+		<item id="94380" count="3" /> <!-- Scroll: Boost Attack -->
+		<item id="94381" count="3" /> <!-- Scroll: Boost Defense -->
+		<item id="3031" count="300" /> <!-- Spirit Ore 300 pcs. -->
+		<item id="97246" count="300" /> <!-- Enria (Sealed) -->
+	</rewards>
+</list>

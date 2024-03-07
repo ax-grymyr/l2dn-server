@@ -1,0 +1,173 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Xilenos_npcs">
+		<group>
+			<npc id="34322" x="127407" y="-40922" z="-3581" heading="28576" respawnTime="60sec" /> <!-- Ashin - Assistant -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_01" minZ="-2652" maxZ="-2352">
+				<node x="104929" y="-43195" />
+				<node x="106965" y="-41280" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_02" minZ="-2652" maxZ="-600">
+				<node x="110238" y="-38253" />
+				<node x="108382" y="-35491" />
+			</territory>
+		</territories>
+		<npc id="22479" count="5" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="6" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_03" minZ="-2552" maxZ="-2252">
+				<node x="123552" y="-53628" />
+				<node x="124492" y="-53504" />
+				<node x="125296" y="-52960" />
+				<node x="125616" y="-51960" />
+				<node x="123216" y="-50932" />
+				<node x="122408" y="-51396" />
+				<node x="121880" y="-52816" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_04" minZ="-2832" maxZ="-2532">
+				<node x="113344" y="-43440" />
+				<node x="114316" y="-43544" />
+				<node x="115416" y="-41764" />
+				<node x="113772" y="-40800" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_05" minZ="-2636" maxZ="-2136">
+				<node x="113832" y="-40736" />
+				<node x="114403" y="-45176" />
+				<node x="115280" y="-41604" />
+				<node x="116476" y="-39672" />
+				<node x="116604" y="-38472" />
+				<node x="115064" y="-37860" />
+				<node x="114451" y="-45031" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="5" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+		<npc id="22479" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+						
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_06" minZ="-2744" maxZ="-2244">
+				<node x="114616" y="-56004" />
+				<node x="117044" y="-56132" />
+				<node x="117016" y="-55648" />
+				<node x="114732" y="-55580" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_07" minZ="-2884" maxZ="-2584">
+				<node x="109892" y="-56348" />
+				<node x="111880" y="-58016" />
+				<node x="112276" y="-57280" />
+				<node x="112380" y="-54016" />
+				<node x="110816" y="-52704" />
+				<node x="109856" y="-53576" />
+			</territory>
+		</territories>
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_08" minZ="-2300" maxZ="-1800">
+				<node x="107008" y="-49228" />
+				<node x="107888" y="-49692" />
+				<node x="108652" y="-49516" />
+				<node x="109368" y="-47032" />
+				<node x="108052" y="-45708" />
+				<node x="106732" y="-46076" />
+				<node x="106596" y="-48252" />
+			</territory>
+		</territories>
+		<npc id="22479" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22481" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+		<npc id="22479" count="4" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_09" minZ="-3408" maxZ="-3008">
+				<node x="113184" y="-37460" />
+				<node x="113400" y="-37316" />
+				<node x="113520" y="-36912" />
+				<node x="112408" y="-36592" />
+			</territory>
+		</territories>
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+		<npc id="22479" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_10" minZ="-3464" maxZ="-3164">
+				<node x="111528" y="-39584" />
+				<node x="111948" y="-40192" />
+				<node x="112340" y="-38348" />
+				<node x="111612" y="-39068" />
+			</territory>
+		</territories>
+		<npc id="22481" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+		<npc id="22479" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="xilenos_spot_11" minZ="-3492" maxZ="-3192">
+				<node x="111544" y="-42400" />
+				<node x="112324" y="-42568" />
+				<node x="112260" y="-40700" />
+				<node x="111792" y="-40592" />
+			</territory>
+		</territories>
+		<npc id="22481" count="1" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Shooter -->
+		<npc id="22485" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Scout -->
+		<npc id="22483" count="2" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Elder -->
+		<npc id="22479" count="3" respawnTime="109sec" respawnRandom="70sec" /> <!-- Xilenos Warrior -->
+	</spawn>
+</list>

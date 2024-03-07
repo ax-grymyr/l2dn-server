@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="164" price="0" /> <!-- Elysian -->
+	<item id="2504" price="0" /> <!-- Meteor Shower -->
+	<item id="8680" price="0" /> <!-- Barakiel's Axe -->
+	<item id="92421" price="0" /> <!-- Queen Ant's Stone Breaker -->
+	<item id="92935" price="0" /> <!-- Elysian - Sealed -->
+	<item id="92946" price="0" /> <!-- Meteor Shower - Sealed -->
+	<item id="92957" price="0" /> <!-- Barakiel's Axe - Sealed -->
+	<item id="93295" price="0" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+</list>

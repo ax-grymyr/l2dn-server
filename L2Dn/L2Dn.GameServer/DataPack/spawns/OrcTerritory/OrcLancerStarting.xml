@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="OrcLancerStarting">
+		<group>
+			<npc id="32478" x="-43728" y="-113472" z="-240" heading="32599" respawnTime="60sec" /> <!-- Game Assistant - Special -->
+			<npc id="22183" x="-58009" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57949" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58069" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57889" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58009" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57949" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58069" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57889" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57829" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57829" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57769" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57769" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57709" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57709" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113733" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113668" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113603" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57649" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58009" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57949" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58069" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57649" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57889" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113538" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57829" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113733" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113668" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113473" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113798" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113603" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58009" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57949" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57769" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113858" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58069" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57889" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113538" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113408" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57829" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57709" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113473" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57769" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57649" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113408" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57709" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57709" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113346" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58330" y="-113285" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-57649" y="-113286" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113285" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-58395" y="-113285" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56140" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56140" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56140" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56140" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56090" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56090" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56090" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56090" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56040" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56040" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56040" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-56040" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55990" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55990" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55990" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55990" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55940" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55940" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55940" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55940" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55890" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55890" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55890" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55890" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55840" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55840" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55840" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55840" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55790" y="-113822" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55790" y="-113872" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55790" y="-113358" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+			<npc id="22183" x="-55790" y="-113308" z="-672" heading="0" respawnTime="10sec" /> <!-- Training Dummy -->
+		</group>
+	</spawn>
+</list>

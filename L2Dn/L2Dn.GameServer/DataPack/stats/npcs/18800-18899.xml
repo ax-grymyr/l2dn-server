@@ -1,0 +1,3396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="18800" level="82" type="Monster" name="Ream's High Priest">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="50430" sp="504" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="143036.70886" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="31.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+	</npc>
+	<npc id="18801" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3038" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18802" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3038" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18803" level="85" type="Monster" name="Blackhide Sniper" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="284" /> <!-- Dark Elven Longbow -->
+		<acquire exp="72250" sp="723" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7000" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.6" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18804" level="85" type="Monster" name="Blackhide Raider" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="66" /> <!-- Gladius -->
+		<acquire exp="72250" sp="723" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7000" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.6" />
+			<height normal="31.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18805" level="85" type="Monster" name="Blackhide Warrior" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="95430" /> <!-- Monster Only: Dragon Infantryman Sword - Not Available -->
+		<acquire exp="72250" sp="723" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7000" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="38" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18806" level="85" type="Monster" name="Blackhide Wizard" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="5798" /> <!-- Tomb Savant B - Not Available -->
+		<acquire exp="72250" sp="723" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7000" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="34" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18807" level="85" type="Monster" name="Blackhide Cook" title="Brewing Dumpling Soup" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7000" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="35" />
+			<height normal="32.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18808" level="85" type="Monster" name="Tiger" title="Enslaved">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="18062500" sp="180625" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2764253.16456" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="95" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="56" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+	</npc>
+	<npc id="18809" level="85" type="Monster" name="Tiger" title="Training">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="36125000" sp="361250" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2764253.16456" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="95" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="56" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+	</npc>
+	<npc id="18810" level="85" type="RaidBoss" name="Black Tiger" title="Trained">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="72250000" sp="722500" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="2426400" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="8905.0086" magical="6080.96658" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3992.40732" magical="2921.47044" />
+			<speed>
+				<walk ground="95" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="56" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+	</npc>
+	<npc id="18811" level="85" type="Monster" name="Black Tiger" title="Year of the Golden Pig" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="949367600" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="28" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.2" />
+			<height normal="19.44" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beasts -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18812" level="85" type="Monster" name="Dumpling Soup" title="Black Tiger's Favorite Dish">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5543.85675" hpRegen="10.2" mp="40" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="29" />
+			<height normal="30.5" />
+		</collision>
+	</npc>
+	<npc id="18813" level="85" type="RaidBoss" name="Apherus" title="Magic Slave" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="24000000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="8905.0086" magical="6080.96658" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3992.40732" magical="2921.47044" />
+			<speed>
+				<walk ground="40" />
+				<run ground="230" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="91.8" />
+		</collision>
+		<dropLists>
+			<drop>
+				<item id="93255" min="1" max="1" chance="25" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="25" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="93257" min="1" max="1" chance="25" /> <!-- Cursed Scroll: Enchant A-grade Weapon -->
+				<item id="93258" min="1" max="1" chance="25" /> <!-- Cursed Scroll: Enchant A-grade Armor -->
+				<item id="93933" min="1" max="1" chance="8.75" /> <!-- Rare Accessory Pack - Sealed -->
+				<item id="96006" min="1" max="1" chance="30" /> <!-- +5 Top-grade A-grade Weapon Pack - Sealed -->
+				<item id="96007" min="1" max="1" chance="2.38" /> <!-- Package: +5 Armor of Nightmare - Sealed -->
+				<item id="96008" min="1" max="1" chance="2.38" /> <!-- Package: +5 Helm of Nightmare (Heavy) - Sealed -->
+				<item id="96009" min="1" max="1" chance="2.38" /> <!-- Package: +5 Gauntlets of Nightmare (Heavy) - Sealed -->
+				<item id="96010" min="1" max="1" chance="2.38" /> <!-- Package: +5 Boots of Nightmare (Heavy) - Sealed -->
+				<item id="96011" min="1" max="1" chance="2.38" /> <!-- Package: +5 Majestic Plate Armor - Sealed -->
+				<item id="96012" min="1" max="1" chance="2.38" /> <!-- Package: +5 Majestic Circlet (Heavy) - Sealed -->
+				<item id="96013" min="1" max="1" chance="2.38" /> <!-- Package: +5 Majestic Gauntlets (Heavy) - Sealed -->
+				<item id="96014" min="1" max="1" chance="2.38" /> <!-- Package: +5 Majestic Boots (Heavy) - Sealed -->
+				<item id="96015" min="1" max="1" chance="2.38" /> <!-- Package: +5 Leather Armor of Nightmare - Sealed -->
+				<item id="96016" min="1" max="1" chance="2.38" /> <!-- Package: +5 Helm of Nightmare (Light) - Sealed -->
+				<item id="96017" min="1" max="1" chance="2.38" /> <!-- Package: +5 Gauntlets of Nightmare (Light) - Sealed -->
+				<item id="96018" min="1" max="1" chance="2.38" /> <!-- Package: +5 Boots of Nightmare (Light) - Sealed -->
+				<item id="96019" min="1" max="1" chance="2.385" /> <!-- Package: +5 Majestic Leather Armor - Sealed -->
+				<item id="96020" min="1" max="1" chance="2.385" /> <!-- Package: +5 Majestic Circlet (Light) - Sealed -->
+				<item id="96021" min="1" max="1" chance="2.385" /> <!-- Package: +5 Majestic Gauntlets (Light) - Sealed -->
+				<item id="96022" min="1" max="1" chance="2.385" /> <!-- Package: +5 Majestic Boots (Light) - Sealed -->
+				<item id="96023" min="1" max="1" chance="2.38" /> <!-- Package: +5 Robe of Nightmare - Sealed -->
+				<item id="96024" min="1" max="1" chance="2.38" /> <!-- Package: +5 Helm of Nightmare (Robe) - Sealed -->
+				<item id="96025" min="1" max="1" chance="2.38" /> <!-- Package: +5 Gauntlets of Nightmare (Robe) - Sealed -->
+				<item id="96026" min="1" max="1" chance="2.38" /> <!-- Package: +5 Boots of Nightmare (Robe) - Sealed -->
+				<item id="96027" min="1" max="1" chance="2.38" /> <!-- Package: +5 Majestic Robe - Sealed -->
+				<item id="96031" min="1" max="1" chance="3.15" /> <!-- Package: +5 Leather Armor of Lightning - Sealed -->
+				<item id="96032" min="1" max="1" chance="3.15" /> <!-- Package: +5 Leather Leggings of Lightning - Sealed -->
+				<item id="96033" min="1" max="1" chance="3.15" /> <!-- Package: +5 Ice Crystal Breastplate - Sealed -->
+				<item id="96034" min="1" max="1" chance="3.15" /> <!-- Package: +5 Ice Crystal Gaiters - Sealed -->
+				<item id="96035" min="1" max="1" chance="3.15" /> <!-- Package: +5 Flaming Tunic - Sealed -->
+				<item id="96036" min="1" max="1" chance="3.15" /> <!-- Package: +5 Flaming Stockings - Sealed -->
+				<item id="97439" min="1" max="1" chance="12.5" /> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97440" min="1" max="1" chance="12.5" /> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97442" min="1" max="1" chance="12.5" /> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97789" min="1" max="1" chance="12.5" /> <!-- Blessed Augmenting Stone: Special Equipment -->
+				<item id="98039" min="1" max="1" chance="100" /> <!-- Incredible Upgrade Stone -->
+				<item id="98063" min="1" max="1" chance="4.2" /> <!-- Boss' Weapon Pack - Sealed -->
+				<item id="91256" min="1" max="1" chance="0.525" /> <!-- Baium Doll Lv. 2 -->
+				<item id="91257" min="1" max="1" chance="0.525" /> <!-- Queen Ant Doll Lv. 2 -->
+				<item id="91258" min="1" max="1" chance="0.525" /> <!-- Orfen Doll Lv. 2 -->
+				<item id="91604" min="1" max="1" chance="0.525" /> <!-- Frintezza Doll Lv. 2 -->
+				<item id="94646" min="1" max="1" chance="0.525" /> <!-- Zaken Doll Lv. 2 -->
+				<item id="94649" min="1" max="1" chance="0.525" /> <!-- Core Doll Lv. 2 -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18814" level="85" type="Monster" name="Serola's Chest" title="Full of Treasures">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="722500" sp="7225" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="143036.70886" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="54" />
+			<height normal="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="93255" min="1" max="1" chance="12.5" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12.5" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="93257" min="1" max="1" chance="12.5" /> <!-- Cursed Scroll: Enchant A-grade Weapon -->
+				<item id="93258" min="1" max="1" chance="12.5" /> <!-- Cursed Scroll: Enchant A-grade Armor -->
+				<item id="93933" min="1" max="1" chance="0.1" /> <!-- Rare Accessory Pack - Sealed -->
+				<item id="96031" min="1" max="1" chance="0.036" /> <!-- Package: +5 Leather Armor of Lightning - Sealed -->
+				<item id="96032" min="1" max="1" chance="0.036" /> <!-- Package: +5 Leather Leggings of Lightning - Sealed -->
+				<item id="96033" min="1" max="1" chance="0.036" /> <!-- Package: +5 Ice Crystal Breastplate - Sealed -->
+				<item id="96034" min="1" max="1" chance="0.036" /> <!-- Package: +5 Ice Crystal Gaiters - Sealed -->
+				<item id="96035" min="1" max="1" chance="0.036" /> <!-- Package: +5 Flaming Tunic - Sealed -->
+				<item id="96036" min="1" max="1" chance="0.036" /> <!-- Package: +5 Flaming Stockings - Sealed -->
+				<item id="97439" min="1" max="1" chance="2.5" /> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97440" min="1" max="1" chance="2.5" /> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97442" min="1" max="1" chance="2.5" /> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97789" min="1" max="1" chance="2.5" /> <!-- Blessed Augmenting Stone: Special Equipment -->
+				<item id="98063" min="1" max="1" chance="0.048" /> <!-- Boss' Weapon Pack - Sealed -->
+				<item id="91256" min="1" max="1" chance="0.006" /> <!-- Baium Doll Lv. 2 -->
+				<item id="91257" min="1" max="1" chance="0.006" /> <!-- Queen Ant Doll Lv. 2 -->
+				<item id="91258" min="1" max="1" chance="0.006" /> <!-- Orfen Doll Lv. 2 -->
+				<item id="91604" min="1" max="1" chance="0.006" /> <!-- Frintezza Doll Lv. 2 -->
+				<item id="94646" min="1" max="1" chance="0.006" /> <!-- Zaken Doll Lv. 2 -->
+				<item id="94649" min="1" max="1" chance="0.006" /> <!-- Core Doll Lv. 2 -->
+				<item id="374" min="1" max="1" chance="3.75" /> <!-- Armor of Nightmare -->
+				<item id="2383" min="1" max="1" chance="3.75" /> <!-- Majestic Plate Armor -->
+				<item id="2394" min="1" max="1" chance="3.75" /> <!-- Leather Armor of Nightmare -->
+				<item id="2395" min="1" max="1" chance="3.75" /> <!-- Majestic Leather Armor -->
+				<item id="2408" min="1" max="1" chance="3.75" /> <!-- Robe of Nightmare -->
+				<item id="2409" min="1" max="1" chance="3.75" /> <!-- Majestic Robe -->
+				<item id="5771" min="1" max="1" chance="3.75" /> <!-- Gauntlets of Nightmare (Heavy) -->
+				<item id="5772" min="1" max="1" chance="3.75" /> <!-- Gauntlets of Nightmare (Light) -->
+				<item id="5773" min="1" max="1" chance="3.75" /> <!-- Gauntlets of Nightmare (Robe) -->
+				<item id="5774" min="1" max="1" chance="3.75" /> <!-- Majestic Gauntlets (Heavy) -->
+				<item id="5775" min="1" max="1" chance="3.75" /> <!-- Majestic Gauntlets (Light) -->
+				<item id="5776" min="1" max="1" chance="3.75" /> <!-- Majestic Gauntlets (Robe) -->
+				<item id="5783" min="1" max="1" chance="3.75" /> <!-- Boots of Nightmare (Heavy) -->
+				<item id="5784" min="1" max="1" chance="3.75" /> <!-- Boots of Nightmare (Light) -->
+				<item id="5785" min="1" max="1" chance="3.75" /> <!-- Boots of Nightmare (Robe) -->
+				<item id="5786" min="1" max="1" chance="3.75" /> <!-- Majestic Boots (Heavy) -->
+				<item id="5787" min="1" max="1" chance="3.75" /> <!-- Majestic Boots (Light) -->
+				<item id="5788" min="1" max="1" chance="3.75" /> <!-- Majestic Boots (Robe) -->
+				<item id="8678" min="1" max="1" chance="0.66" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="0.66" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="0.66" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="0.66" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="0.66" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="0.67" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="0.67" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="0.67" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="0.67" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="0.67" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="0.67" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="0.67" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="90473" min="1" max="1" chance="3.75" /> <!-- Helm of Nightmare (Heavy) -->
+				<item id="90474" min="1" max="1" chance="3.75" /> <!-- Helm of Nightmare (Light) -->
+				<item id="90475" min="1" max="1" chance="3.75" /> <!-- Helm of Nightmare (Robe) -->
+				<item id="90476" min="1" max="1" chance="3.75" /> <!-- Majestic Circlet (Heavy) -->
+				<item id="90477" min="1" max="1" chance="3.75" /> <!-- Majestic Circlet (Light) -->
+				<item id="90478" min="1" max="1" chance="3.75" /> <!-- Majestic Circlet (Robe) -->
+				<item id="91887" min="1" max="1" chance="0.67" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="0.67" /> <!-- Éclair Bijou -->
+				<item id="94886" min="1" max="1" chance="0.67" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18815" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18816" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="38" />
+			<height normal="120.5" />
+		</collision>
+	</npc>
+	<npc id="18817" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18818" level="80" type="RaidBoss" name="Giant Orc Deraka" title="Filled with Strange Magic">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="38425" /> <!-- Monster Only: Amden Blunt Weapon - Not Available -->
+		<acquire exp="640000" sp="6400" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="12640000" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
+			<attack physical="6211.456" magical="3181.216" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1638.6" magical="1034.1996" />
+			<speed>
+				<walk ground="110" />
+				<run ground="300" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="52.5" />
+			<height normal="123" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18819" level="80" type="Monster" name="Orc Filled With Red Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
+		<acquire exp="128000" sp="1280" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="24" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="16" />
+			<height normal="38.5" grown="46.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18820" level="80" type="Monster" name="Orc Filled With Yellow Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
+		<acquire exp="128000" sp="1280" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="24" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="16" />
+			<height normal="38.5" grown="46.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18821" level="80" type="Monster" name="Orc Filled With Blue Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
+		<acquire exp="128000" sp="1280" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="24" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="16" />
+			<height normal="38.5" grown="46.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18822" level="85" type="Monster" name="Orc Filled With Red Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="57800" sp="578" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1674.8" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="54.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18823" level="85" type="Monster" name="Orc Filled With Yellow Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="57800" sp="578" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1674.8" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="54.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18824" level="85" type="Monster" name="Orc Filled With Blue Energy" title="Event Monster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="57800" sp="578" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35000" hpRegen="10.2" mp="1674.8" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="54.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="18825" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2823" hpRegen="10.5" mp="1507" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18826" level="85" type="RaidBoss" name="Behemoth" title="Antharas' Avatar">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="44444444.4" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="8905.0086" magical="6080.96658" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3992.40732" magical="2921.47044" />
+			<speed>
+				<walk ground="200" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="29.7" />
+			<height normal="80.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="91951" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Talisman of Baium -->
+				<item id="93103" min="1" max="1" chance="0.093" /> <!-- Spellbook: Divine Beam -->
+				<item id="93387" min="1" max="1" chance="0.097" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+				<item id="93933" min="1" max="1" chance="10" /> <!-- Rare Accessory Pack - Sealed -->
+				<item id="94498" min="1" max="1" chance="0.092" /> <!-- Spellbook: Titan Champion -->
+				<item id="94508" min="1" max="1" chance="0.089" /> <!-- Spellbook: Cacophony of War -->
+				<item id="94668" min="1" max="1" chance="0.091" /> <!-- Spellbook: Pa'agrio's Touch -->
+				<item id="94673" min="1" max="1" chance="0.089" /> <!-- Spellbook: Team Building -->
+				<item id="94861" min="1" max="1" chance="0.09" /> <!-- Spellbook: Tranquility -->
+				<item id="94862" min="1" max="1" chance="0.088" /> <!-- Spellbook: Exclusion -->
+				<item id="94863" min="1" max="1" chance="0.089" /> <!-- Spellbook: Dark Disruption -->
+				<item id="95346" min="1" max="1" chance="0.092" /> <!-- Spellbook: Meteor -->
+				<item id="95347" min="1" max="1" chance="0.09" /> <!-- Spellbook: Rolling Dice -->
+				<item id="96616" min="1" max="1" chance="10" /> <!-- Boss' Weapon Pack - Sealed -->
+				<item id="97480" min="1" max="1" chance="0.225" /> <!-- Behemoth Doll Lv. 2 -->
+				<item id="98140" min="1" max="1" chance="0.01" /> <!-- Cursed Holy Grail's Diagram -->
+				<item id="49683" min="1" max="1" chance="1.5" /> <!-- Talisman of Baium -->
+				<item id="5311" min="1" max="1" chance="14.2" /> <!-- Sealed Armor of Nightmare -->
+				<item id="5312" min="1" max="1" chance="14.3" /> <!-- Sealed Helm of Nightmare -->
+				<item id="5313" min="1" max="1" chance="14.3" /> <!-- Sealed Gauntlets of Nightmare -->
+				<item id="5314" min="1" max="1" chance="14.3" /> <!-- Sealed Boots of Nightmare -->
+				<item id="5315" min="1" max="1" chance="14.3" /> <!-- Sealed Shield of Nightmare -->
+				<item id="5316" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Boots -->
+				<item id="5320" min="1" max="1" chance="14.3" /> <!-- Sealed Leather Armor of Nightmare -->
+				<item id="5323" min="1" max="1" chance="16.6" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5326" min="1" max="1" chance="14.3" /> <!-- Sealed Robe of Nightmare -->
+				<item id="5329" min="1" max="1" chance="16.6" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="4.662" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="4.662" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="4.662" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="4.662" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="4.662" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="4.669" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="4.669" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="4.669" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="4.669" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="4.669" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="4.669" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="4.669" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="91887" min="1" max="1" chance="4.669" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="4.669" /> <!-- Éclair Bijou -->
+				<item id="93139" min="1" max="1" chance="0.167" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="0.167" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="0.167" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="0.167" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="0.166" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="0.166" /> <!-- Flaming Stockings -->
+				<item id="94886" min="1" max="1" chance="4.669" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18827" level="90" type="RaidBoss" name="Glakias" title="Frost Lord" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="95840" /> <!-- For monsters_+5 Frost Lord's Sword_Not Available -->
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="44444444.4" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="9532" magical="418" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="102.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="93103" min="1" max="1" chance="0.121" /> <!-- Spellbook: Divine Beam -->
+				<item id="93387" min="1" max="1" chance="0.122" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+				<item id="94498" min="1" max="1" chance="0.121" /> <!-- Spellbook: Titan Champion -->
+				<item id="94508" min="1" max="1" chance="0.121" /> <!-- Spellbook: Cacophony of War -->
+				<item id="94668" min="1" max="1" chance="0.121" /> <!-- Spellbook: Pa'agrio's Touch -->
+				<item id="94673" min="1" max="1" chance="0.121" /> <!-- Spellbook: Team Building -->
+				<item id="94861" min="1" max="1" chance="0.121" /> <!-- Spellbook: Tranquility -->
+				<item id="94862" min="1" max="1" chance="0.121" /> <!-- Spellbook: Exclusion -->
+				<item id="94863" min="1" max="1" chance="0.121" /> <!-- Spellbook: Dark Disruption -->
+				<item id="95346" min="1" max="1" chance="0.121" /> <!-- Spellbook: Meteor -->
+				<item id="95347" min="1" max="1" chance="0.121" /> <!-- Spellbook: Rolling Dice -->
+				<item id="95354" min="1" max="1" chance="0.121" /> <!-- Spellbook: Dragon Strike -->
+				<item id="95861" min="1" max="1" chance="0.121" /> <!-- Spellbook: Prime Master Transformation -->
+				<item id="96007" min="1" max="1" chance="8.33" /> <!-- Package: +5 Armor of Nightmare - Sealed -->
+				<item id="96008" min="1" max="1" chance="8.33" /> <!-- Package: +5 Helm of Nightmare (Heavy) - Sealed -->
+				<item id="96009" min="1" max="1" chance="8.33" /> <!-- Package: +5 Gauntlets of Nightmare (Heavy) - Sealed -->
+				<item id="96010" min="1" max="1" chance="8.33" /> <!-- Package: +5 Boots of Nightmare (Heavy) - Sealed -->
+				<item id="96011" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Plate Armor - Sealed -->
+				<item id="96012" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Circlet (Heavy) - Sealed -->
+				<item id="96013" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Gauntlets (Heavy) - Sealed -->
+				<item id="96014" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Boots (Heavy) - Sealed -->
+				<item id="96015" min="1" max="1" chance="8.33" /> <!-- Package: +5 Leather Armor of Nightmare - Sealed -->
+				<item id="96016" min="1" max="1" chance="8.33" /> <!-- Package: +5 Helm of Nightmare (Light) - Sealed -->
+				<item id="96017" min="1" max="1" chance="8.33" /> <!-- Package: +5 Gauntlets of Nightmare (Light) - Sealed -->
+				<item id="96018" min="1" max="1" chance="8.33" /> <!-- Package: +5 Boots of Nightmare (Light) - Sealed -->
+				<item id="96019" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Leather Armor - Sealed -->
+				<item id="96020" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Circlet (Light) - Sealed -->
+				<item id="96021" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Gauntlets (Light) - Sealed -->
+				<item id="96022" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Boots (Light) - Sealed -->
+				<item id="96023" min="1" max="1" chance="8.34" /> <!-- Package: +5 Robe of Nightmare - Sealed -->
+				<item id="96024" min="1" max="1" chance="8.34" /> <!-- Package: +5 Helm of Nightmare (Robe) - Sealed -->
+				<item id="96025" min="1" max="1" chance="8.34" /> <!-- Package: +5 Gauntlets of Nightmare (Robe) - Sealed -->
+				<item id="96026" min="1" max="1" chance="8.34" /> <!-- Package: +5 Boots of Nightmare (Robe) - Sealed -->
+				<item id="96027" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Robe - Sealed -->
+				<item id="96028" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Circlet (Robe) - Sealed -->
+				<item id="96029" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Gauntlets (Robe) - Sealed -->
+				<item id="96030" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Boots (Robe) - Sealed -->
+				<item id="96289" min="1" max="1" chance="0.121" /> <!-- Spellbook: Phoenix Shield -->
+				<item id="96291" min="1" max="1" chance="0.121" /> <!-- Spellbook: Hell -->
+				<item id="96293" min="1" max="1" chance="0.121" /> <!-- Spellbook: Shelter -->
+				<item id="96295" min="1" max="1" chance="0.121" /> <!-- Spellbook: Condemnation -->
+				<item id="96670" min="1" max="1" chance="0.121" /> <!-- Spellbook: Critical Assault -->
+				<item id="96671" min="1" max="1" chance="0.121" /> <!-- Spellbook: Fury Blade -->
+				<item id="96672" min="1" max="1" chance="0.121" /> <!-- Spellbook: Mortal Piercing -->
+				<item id="96873" min="1" max="1" chance="0.121" /> <!-- Spellbook: Legendary Archer -->
+				<item id="97111" min="1" max="1" chance="0.121" /> <!-- Spellbook: Wild Evolution -->
+				<item id="97182" min="1" max="1" chance="0.121" /> <!-- Spellbook: Cat Emperor -->
+				<item id="97183" min="1" max="1" chance="0.121" /> <!-- Spellbook: Unicorn Guard -->
+				<item id="97184" min="1" max="1" chance="0.121" /> <!-- Spellbook: Lord Raise -->
+				<item id="97318" min="1" max="1" chance="0.121" /> <!-- Spellbook: Challenger -->
+				<item id="97323" min="1" max="1" chance="0.121" /> <!-- Spellbook: Great Sweep -->
+				<item id="97453" min="1" max="1" chance="0.121" /> <!-- Spellbook: Overwhelming Power -->
+				<item id="97465" min="1" max="1" chance="0.121" /> <!-- Spellbook: Leopold -->
+				<item id="97831" min="1" max="1" chance="0.121" /> <!-- Spellbook: Amadeus -->
+				<item id="97832" min="1" max="1" chance="0.121" /> <!-- Spellbook: Flamenco -->
+				<item id="97837" min="1" max="1" chance="0.121" /> <!-- Spellbook: Crusader Transformation -->
+				<item id="98481" min="1" max="1" chance="0.121" /> <!-- Spellbook: Time Distortion -->
+				<item id="95781" min="1" max="1" chance="15" /> <!-- Black Frozen Core -->
+				<item id="97485" min="1" max="1" chance="0.225" /> <!-- Glakias Doll Lv. 2 -->
+				<item id="8678" min="1" max="1" chance="6.66" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="6.66" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="6.66" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="6.66" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="6.66" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="6.67" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="6.67" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="6.67" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="6.67" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="6.67" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="6.67" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="6.67" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="91887" min="1" max="1" chance="6.67" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="6.67" /> <!-- Éclair Bijou -->
+				<item id="93139" min="1" max="1" chance="8.35" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="8.35" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="8.35" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="8.35" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="8.3" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="8.3" /> <!-- Flaming Stockings -->
+				<item id="94886" min="1" max="1" chance="6.67" /> <!-- Zephyrus -->
+				<item id="95725" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Sword -->
+				<item id="95726" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Two-handed Sword -->
+				<item id="95727" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Axe -->
+				<item id="95728" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Dagger -->
+				<item id="95729" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Spear -->
+				<item id="95730" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Bow -->
+				<item id="95731" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Blade Fists -->
+				<item id="95732" min="1" max="1" chance="0.616" /> <!-- Frost Lord's Magic Blunt Weapon -->
+				<item id="95733" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Staff -->
+				<item id="95734" min="1" max="1" chance="0.616" /> <!-- Frost Lord's Ancient Sword -->
+				<item id="95735" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Rapier -->
+				<item id="95736" min="1" max="1" chance="0.616" /> <!-- Frost Lord's Pistols -->
+				<item id="95737" min="1" max="1" chance="0.615" /> <!-- Frost Lord's Dual Swords -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18828" level="88" type="Folk" name="Castle Teleport Device">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3296" hpRegen="10.2" mp="1952" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="65" />
+			<height normal="140" />
+		</collision>
+	</npc>
+	<npc id="18829" level="88" type="Folk" name="Castle Teleport Device">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3296" hpRegen="10.2" mp="1952" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="65" />
+			<height normal="140" />
+		</collision>
+	</npc>
+	<npc id="18830" level="88" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3296" hpRegen="10.2" mp="1952" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18831" level="88" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3296" hpRegen="10.2" mp="1952" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="34.5" />
+		</collision>
+	</npc>
+	<npc id="18832" level="88" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3296" hpRegen="10.2" mp="1952" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18833" level="85" type="RaidBoss" name="Karim" title="Antharas' Follower">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="2017400" hpRegen="10.2" mp="3693.6" mpRegen="3.6" />
+			<attack physical="8905.0086" magical="6080.96658" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3992.40732" magical="2921.47044" />
+			<speed>
+				<walk ground="60" />
+				<run ground="300" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="48" />
+			<height normal="83" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="90045" min="24" max="36" chance="39.75" /> <!-- Magic Tablet -->
+				<item id="91942" min="1" max="1" chance="0.025" /> <!-- Spellbook: Collect Light Souls Lv. 2 -->
+				<item id="91943" min="1" max="1" chance="0.025" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 -->
+				<item id="91944" min="1" max="1" chance="0.02" /> <!-- Spellbook: Light Master Lv. 2 -->
+				<item id="91945" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+				<item id="92401" min="1" max="1" chance="0.01" /> <!-- Spellbook: White Guardian -->
+				<item id="93388" min="1" max="1" chance="0.32" /> <!-- Spellbook: Death Guard -->
+				<item id="93392" min="1" max="1" chance="0.32" /> <!-- Spellbook: Bone Cage -->
+				<item id="93631" min="1" max="1" chance="0.005" /> <!-- Spellbook: Hellfire -->
+				<item id="93633" min="1" max="1" chance="0.32" /> <!-- Spellbook: Drain Magic Energy -->
+				<item id="93867" min="1" max="1" chance="0.32" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+				<item id="93869" min="1" max="1" chance="0.01" /> <!-- Spellbook: Elemental Burst -->
+				<item id="93870" min="1" max="1" chance="0.01" /> <!-- Spellbook: Ethereal Strike -->
+				<item id="93871" min="1" max="1" chance="0.32" /> <!-- Spellbook: Knight's Help -->
+				<item id="94134" min="1" max="1" chance="0.32" /> <!-- Spellbook: Amazing Spike Thrust Mastery -->
+				<item id="94137" min="1" max="1" chance="0.01" /> <!-- Spellbook: Devour -->
+				<item id="94138" min="1" max="1" chance="0.32" /> <!-- Spellbook: Pain of Sagittarius -->
+				<item id="94139" min="1" max="1" chance="0.32" /> <!-- Spellbook: Esprit -->
+				<item id="94140" min="1" max="1" chance="0.32" /> <!-- Spellbook: Dark Sense -->
+				<item id="94141" min="1" max="1" chance="0.32" /> <!-- Spellbook: Buff Thief -->
+				<item id="94319" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sword Symphony -->
+				<item id="94320" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance of Blood -->
+				<item id="94321" min="1" max="1" chance="0.32" /> <!-- Spellbook: Wild Beat -->
+				<item id="94322" min="1" max="1" chance="0.32" /> <!-- Spellbook: Crazy Waltz -->
+				<item id="94323" min="1" max="1" chance="0.32" /> <!-- Spellbook: Frantic Pace -->
+				<item id="94324" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Earth Lv. 2 -->
+				<item id="94325" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Hunter Lv. 2 -->
+				<item id="94326" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Warrior Lv. 2 -->
+				<item id="94327" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Fire Lv. 2 -->
+				<item id="94497" min="1" max="1" chance="0.32" /> <!-- Spellbook: Life Force Harmony -->
+				<item id="94499" min="1" max="1" chance="0.02" /> <!-- Spellbook: Titanic Weapon -->
+				<item id="94500" min="1" max="1" chance="0.005" /> <!-- Spellbook: Titanic Sweep -->
+				<item id="94501" min="1" max="1" chance="0.005" /> <!-- Spellbook: Titanic Break -->
+				<item id="94502" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ogre Spirit Totem Lv. 2 -->
+				<item id="94503" min="1" max="1" chance="0.02" /> <!-- Spellbook: Rabbit Spirit Totem Lv. 2 -->
+				<item id="94504" min="1" max="1" chance="0.02" /> <!-- Spellbook: Puma Spirit Totem Lv. 2 -->
+				<item id="94505" min="1" max="1" chance="0.005" /> <!-- Spellbook: Burning Strike -->
+				<item id="94506" min="1" max="1" chance="0.025" /> <!-- Spellbook: Burning Assault -->
+				<item id="94507" min="1" max="1" chance="0.005" /> <!-- Spellbook: Armor Break -->
+				<item id="94669" min="1" max="1" chance="0.32" /> <!-- Spellbook: Pa'agrio's Cure -->
+				<item id="94670" min="1" max="1" chance="0.005" /> <!-- Spellbook: Debuff Master -->
+				<item id="94671" min="1" max="1" chance="0.02" /> <!-- Spellbook: Flame Burst -->
+				<item id="94672" min="1" max="1" chance="0.025" /> <!-- Spellbook: Seal of Infection -->
+				<item id="94674" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blood Bond -->
+				<item id="94675" min="1" max="1" chance="0.025" /> <!-- Spellbook: Cold Flames -->
+				<item id="94676" min="1" max="1" chance="0.32" /> <!-- Spellbook: Chant of Healing -->
+				<item id="94806" min="1" max="1" chance="0.025" /> <!-- Spellbook: Flying Dagger -->
+				<item id="95348" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Wind Lv. 2 -->
+				<item id="95349" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Fury Lv. 2 -->
+				<item id="95350" min="1" max="1" chance="0.005" /> <!-- Spellbook: Goring Charge -->
+				<item id="95352" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Change -->
+				<item id="95356" min="1" max="1" chance="0.02" /> <!-- Spellbook: Extra Hit -->
+				<item id="95357" min="1" max="1" chance="0.025" /> <!-- Spellbook: Time Burst Lv. 2 -->
+				<item id="95359" min="1" max="1" chance="0.025" /> <!-- Spellbook: Elemental Wind Lv. 2 -->
+				<item id="95363" min="1" max="1" chance="0.02" /> <!-- Spellbook: Elemental Spirit Lv. 3 -->
+				<item id="95365" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Spirit Lv. 4 -->
+				<item id="95654" min="1" max="1" chance="0.02" /> <!-- Spellbook: Elemental Care Lv. 2 -->
+				<item id="95856" min="1" max="1" chance="0.005" /> <!-- Spellbook: Fortune Time -->
+				<item id="95857" min="1" max="1" chance="0.02" /> <!-- Spellbook: Golden Stone -->
+				<item id="95858" min="1" max="1" chance="0.02" /> <!-- Spellbook: Crushing Leap -->
+				<item id="95859" min="1" max="1" chance="0.02" /> <!-- Spellbook: Adena Stun -->
+				<item id="95860" min="1" max="1" chance="0.02" /> <!-- Spellbook: Life Gain -->
+				<item id="95862" min="1" max="1" chance="0.005" /> <!-- Spellbook: Mechanical Masterpiece -->
+				<item id="95863" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blacksmith' Attack -->
+				<item id="96037" min="1" max="1" chance="0.005" /> <!-- Spellbook: Sensation -->
+				<item id="96038" min="1" max="1" chance="0.02" /> <!-- Spellbook: Balanced Body -->
+				<item id="96039" min="1" max="1" chance="0.02" /> <!-- Spellbook: Advanced Cleanse -->
+				<item id="96040" min="1" max="1" chance="0.005" /> <!-- Spellbook: Treatment -->
+				<item id="96041" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Nocturne -->
+				<item id="96042" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Power -->
+				<item id="96043" min="1" max="1" chance="0.005" /> <!-- Spellbook: Duress -->
+				<item id="96044" min="1" max="1" chance="0.02" /> <!-- Spellbook: Nemesis -->
+				<item id="96045" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shillien's Power -->
+				<item id="96046" min="1" max="1" chance="0.02" /> <!-- Spellbook: Divine Recovery -->
+				<item id="96047" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sacred Power -->
+				<item id="96048" min="1" max="1" chance="0.02" /> <!-- Spellbook: Improved Resilience -->
+				<item id="96049" min="1" max="1" chance="0.02" /> <!-- Spellbook: Holy Buster -->
+				<item id="96050" min="1" max="1" chance="0.02" /> <!-- Spellbook: Unleashing -->
+				<item id="96273" min="1" max="1" chance="0.32" /> <!-- Spellbook: Masterpiece Shield -->
+				<item id="96275" min="1" max="1" chance="0.02" /> <!-- Spellbook: Knight's Power -->
+				<item id="96277" min="1" max="1" chance="0.02" /> <!-- Spellbook: Knight's Assault -->
+				<item id="96279" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chain Strike (Shock) -->
+				<item id="96281" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shield Throwing -->
+				<item id="96283" min="1" max="1" chance="0.005" /> <!-- Spellbook: Power of Life -->
+				<item id="96285" min="1" max="1" chance="0.005" /> <!-- Spellbook: Toughness -->
+				<item id="96287" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ultimate Defense Lv. 3 -->
+				<item id="96605" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shield of Security -->
+				<item id="96607" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lunatic Crusher -->
+				<item id="96609" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Care -->
+				<item id="96611" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shillien's Curse -->
+				<item id="96661" min="1" max="1" chance="0.32" /> <!-- Spellbook: Fast Run Lv. 3 -->
+				<item id="96662" min="1" max="1" chance="0.02" /> <!-- Spellbook: Fatal Accuracy -->
+				<item id="96663" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shadow Assault -->
+				<item id="96664" min="1" max="1" chance="0.02" /> <!-- Spellbook: Rogue Mastery -->
+				<item id="96665" min="1" max="1" chance="0.005" /> <!-- Spellbook: Seclusion -->
+				<item id="96666" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dark Blow -->
+				<item id="96667" min="1" max="1" chance="0.005" /> <!-- Spellbook: Reversed Pull -->
+				<item id="96668" min="1" max="1" chance="0.005" /> <!-- Spellbook: Synchro Freedom -->
+				<item id="96669" min="1" max="1" chance="0.005" /> <!-- Spellbook: Ethereal Blood -->
+				<item id="96874" min="1" max="1" chance="0.005" /> <!-- Spellbook: True Aim -->
+				<item id="96875" min="1" max="1" chance="0.005" /> <!-- Spellbook: Deadly Shooter -->
+				<item id="96876" min="1" max="1" chance="0.02" /> <!-- Spellbook: Thorn Shot -->
+				<item id="96877" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chain Arrest -->
+				<item id="96878" min="1" max="1" chance="0.02" /> <!-- Spellbook: Flame Arrow -->
+				<item id="96879" min="1" max="1" chance="0.02" /> <!-- Spellbook: Arrow Shower -->
+				<item id="96880" min="1" max="1" chance="0.02" /> <!-- Spellbook: Piercing Arrow -->
+				<item id="96881" min="1" max="1" chance="0.02" /> <!-- Spellbook: Devious Shot -->
+				<item id="96882" min="1" max="1" chance="0.02" /> <!-- Spellbook: Steady Aim -->
+				<item id="96883" min="1" max="1" chance="0.02" /> <!-- Spellbook: Alacrity -->
+				<item id="96884" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eagle Eye -->
+				<item id="96885" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dexterous Body -->
+				<item id="96886" min="1" max="1" chance="0.32" /> <!-- Spellbook: Perfect Mastery -->
+				<item id="97037" min="1" max="1" chance="0.005" /> <!-- Spellbook: Faery Shield -->
+				<item id="97038" min="1" max="1" chance="0.005" /> <!-- Spellbook: Soul Guardian -->
+				<item id="97039" min="1" max="1" chance="0.02" /> <!-- Spellbook: Spiral -->
+				<item id="97040" min="1" max="1" chance="0.02" /> <!-- Spellbook: Magic Circle -->
+				<item id="97041" min="1" max="1" chance="0.02" /> <!-- Spellbook: Heavy Sleep -->
+				<item id="97102" min="1" max="1" chance="0.005" /> <!-- Spellbook: Giant's Stomp -->
+				<item id="97104" min="1" max="1" chance="0.02" /> <!-- Spellbook: Master of Combat Lv. 3 -->
+				<item id="97105" min="1" max="1" chance="0.02" /> <!-- Spellbook: Final Secret Lv. 2 -->
+				<item id="97106" min="1" max="1" chance="0.32" /> <!-- Spellbook: Wild Charge -->
+				<item id="97107" min="1" max="1" chance="0.02" /> <!-- Spellbook: Threatening Swing -->
+				<item id="97108" min="1" max="1" chance="0.02" /> <!-- Spellbook: Wild Growl Lv. 2 -->
+				<item id="97109" min="1" max="1" chance="0.02" /> <!-- Spellbook: Darkness Unleashing -->
+				<item id="97110" min="1" max="1" chance="0.02" /> <!-- Spellbook: Wild Assault -->
+				<item id="97185" min="1" max="1" chance="0.005" /> <!-- Spellbook: Cubic of Secrets Lv. 2 -->
+				<item id="97186" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Cubic Lv. 2 -->
+				<item id="97187" min="1" max="1" chance="0.005" /> <!-- Spellbook: Phantom Cubic Lv. 2 -->
+				<item id="97188" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ray of Light -->
+				<item id="97189" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chains of Pain -->
+				<item id="97190" min="1" max="1" chance="0.02" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 -->
+				<item id="97319" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blade Wave -->
+				<item id="97320" min="1" max="1" chance="0.02" /> <!-- Spellbook: Slashing Blades -->
+				<item id="97321" min="1" max="1" chance="0.02" /> <!-- Spellbook: Blade Throw -->
+				<item id="97322" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sword Spirit Lv. 2 -->
+				<item id="97324" min="1" max="1" chance="0.005" /> <!-- Spellbook: Spear Cage -->
+				<item id="97325" min="1" max="1" chance="0.02" /> <!-- Spellbook: Spear Rumble -->
+				<item id="97326" min="1" max="1" chance="0.02" /> <!-- Spellbook: Unleashed Power -->
+				<item id="97327" min="1" max="1" chance="0.02" /> <!-- Spellbook: Anger Lv. 2 -->
+				<item id="97455" min="1" max="1" chance="0.005" /> <!-- Spellbook: Soul Mark -->
+				<item id="97457" min="1" max="1" chance="0.02" /> <!-- Spellbook: Powerful Disarm -->
+				<item id="97459" min="1" max="1" chance="0.02" /> <!-- Spellbook: Soul Guard Lv. 3 -->
+				<item id="97461" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shock Impact -->
+				<item id="97463" min="1" max="1" chance="0.02" /> <!-- Spellbook: Death Pain -->
+				<item id="97467" min="1" max="1" chance="0.02" /> <!-- Spellbook: Resonance -->
+				<item id="97469" min="1" max="1" chance="0.02" /> <!-- Spellbook: Fragarach -->
+				<item id="97471" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lightning Tornado -->
+				<item id="97473" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lightning Mastery -->
+				<item id="97745" min="1" max="1" chance="0.02" /> <!-- Spellbook: Master of Aggression -->
+				<item id="97833" min="1" max="1" chance="0.02" /> <!-- Spellbook: Music Mastery -->
+				<item id="97834" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance Mastery -->
+				<item id="97835" min="1" max="1" chance="0.02" /> <!-- Spellbook: Song of Silence Lv. 4 -->
+				<item id="97836" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance of Medusa Lv. 4 -->
+				<item id="97838" min="1" max="1" chance="0.005" /> <!-- Spellbook: Unique Seal of Damage -->
+				<item id="97840" min="1" max="1" chance="0.02" /> <!-- Spellbook: Essential Energy -->
+				<item id="97842" min="1" max="1" chance="0.02" /> <!-- Spellbook: Great Attack Lv. 3 -->
+				<item id="97844" min="0" max="0" chance="0.32" /> <!-- Spellbook: Improved Sleep -->
+				<item id="98273" min="1" max="1" chance="0.02" /> <!-- Spellbook: Trophy Thief -->
+				<item id="98274" min="1" max="1" chance="0.02" /> <!-- Spellbook: Hammer Rumble -->
+				<item id="98323" min="1" max="1" chance="0.02" /> <!-- Spellbook: Bloody Strike -->
+				<item id="98446" min="1" max="1" chance="0.005" /> <!-- Spellbook: Powerful Servitor Share -->
+				<item id="98482" min="1" max="1" chance="0.02" /> <!-- Spellbook: Clone Dance -->
+				<item id="98483" min="1" max="1" chance="0.005" /> <!-- Spellbook: Assassination -->
+				<item id="98484" min="1" max="1" chance="0.02" /> <!-- Spellbook: Constraint -->
+				<item id="98485" min="1" max="1" chance="0.02" /> <!-- Spellbook: Resolve to Kill -->
+				<item id="98486" min="0" max="0" chance="0.32" /> <!-- Spellbook: Erosion Lv. 2 -->
+				<item id="98487" min="0" max="0" chance="0.32" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+				<item id="98491" min="0" max="0" chance="0.32" /> <!-- Spellbook: Blow Boost -->
+				<item id="98538" min="0" max="0" chance="0.32" /> <!-- Spellbook: Forward Move Lv. 2 -->
+				<item id="98558" min="1" max="1" chance="0.02" /> <!-- Spellbook: Healing Lv. 4 -->
+				<item id="374" min="1" max="1" chance="3.85" /> <!-- Armor of Nightmare -->
+				<item id="2383" min="1" max="1" chance="3.85" /> <!-- Majestic Plate Armor -->
+				<item id="2394" min="1" max="1" chance="3.84" /> <!-- Leather Armor of Nightmare -->
+				<item id="2395" min="1" max="1" chance="3.85" /> <!-- Majestic Leather Armor -->
+				<item id="2408" min="1" max="1" chance="3.84" /> <!-- Robe of Nightmare -->
+				<item id="2409" min="1" max="1" chance="3.85" /> <!-- Majestic Robe -->
+				<item id="2498" min="1" max="1" chance="3.84" /> <!-- Shield of Nightmare -->
+				<item id="5771" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Heavy) -->
+				<item id="5772" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Light) -->
+				<item id="5773" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Robe) -->
+				<item id="5774" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Heavy) -->
+				<item id="5775" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Light) -->
+				<item id="5776" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Robe) -->
+				<item id="5783" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Heavy) -->
+				<item id="5784" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Light) -->
+				<item id="5785" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Robe) -->
+				<item id="5786" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Heavy) -->
+				<item id="5787" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Light) -->
+				<item id="5788" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Robe) -->
+				<item id="8678" min="1" max="1" chance="6.66" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="6.66" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="6.66" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="6.66" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="6.66" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="6.67" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="6.67" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="6.67" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="6.67" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="6.67" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="6.67" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="6.67" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="90473" min="1" max="1" chance="3.85" /> <!-- Helm of Nightmare (Heavy) -->
+				<item id="90474" min="1" max="1" chance="3.85" /> <!-- Helm of Nightmare (Light) -->
+				<item id="90475" min="1" max="1" chance="3.84" /> <!-- Helm of Nightmare (Robe) -->
+				<item id="90476" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Heavy) -->
+				<item id="90477" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Light) -->
+				<item id="90478" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Robe) -->
+				<item id="91887" min="1" max="1" chance="6.67" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="6.67" /> <!-- Éclair Bijou -->
+				<item id="93094" min="1" max="1" chance="3.85" /> <!-- Majestic Sigil -->
+				<item id="94886" min="1" max="1" chance="6.67" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18834" level="90" type="RaidBoss" name="Tiron" title="Royal Counsellor" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="44444444.4" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="9532" magical="418" />
+			<speed>
+				<walk ground="30" />
+				<run ground="250" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="32" />
+			<height normal="74.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18835" level="87" type="RaidBoss" name="Reggiesys" title="Counsellor's Servitor" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="12302930" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="100" />
+			<height normal="98" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="90045" min="24" max="36" chance="39.75" /> <!-- Magic Tablet -->
+				<item id="91942" min="1" max="1" chance="0.025" /> <!-- Spellbook: Collect Light Souls Lv. 2 -->
+				<item id="91943" min="1" max="1" chance="0.025" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 -->
+				<item id="91944" min="1" max="1" chance="0.02" /> <!-- Spellbook: Light Master Lv. 2 -->
+				<item id="91945" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+				<item id="92401" min="1" max="1" chance="0.01" /> <!-- Spellbook: White Guardian -->
+				<item id="93388" min="1" max="1" chance="0.32" /> <!-- Spellbook: Death Guard -->
+				<item id="93392" min="1" max="1" chance="0.32" /> <!-- Spellbook: Bone Cage -->
+				<item id="93631" min="1" max="1" chance="0.005" /> <!-- Spellbook: Hellfire -->
+				<item id="93633" min="1" max="1" chance="0.32" /> <!-- Spellbook: Drain Magic Energy -->
+				<item id="93867" min="1" max="1" chance="0.32" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+				<item id="93869" min="1" max="1" chance="0.01" /> <!-- Spellbook: Elemental Burst -->
+				<item id="93870" min="1" max="1" chance="0.01" /> <!-- Spellbook: Ethereal Strike -->
+				<item id="93871" min="1" max="1" chance="0.32" /> <!-- Spellbook: Knight's Help -->
+				<item id="94134" min="1" max="1" chance="0.32" /> <!-- Spellbook: Amazing Spike Thrust Mastery -->
+				<item id="94137" min="1" max="1" chance="0.01" /> <!-- Spellbook: Devour -->
+				<item id="94138" min="1" max="1" chance="0.32" /> <!-- Spellbook: Pain of Sagittarius -->
+				<item id="94139" min="1" max="1" chance="0.32" /> <!-- Spellbook: Esprit -->
+				<item id="94140" min="1" max="1" chance="0.32" /> <!-- Spellbook: Dark Sense -->
+				<item id="94141" min="1" max="1" chance="0.32" /> <!-- Spellbook: Buff Thief -->
+				<item id="94319" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sword Symphony -->
+				<item id="94320" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance of Blood -->
+				<item id="94321" min="1" max="1" chance="0.32" /> <!-- Spellbook: Wild Beat -->
+				<item id="94322" min="1" max="1" chance="0.32" /> <!-- Spellbook: Crazy Waltz -->
+				<item id="94323" min="1" max="1" chance="0.32" /> <!-- Spellbook: Frantic Pace -->
+				<item id="94324" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Earth Lv. 2 -->
+				<item id="94325" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Hunter Lv. 2 -->
+				<item id="94326" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Warrior Lv. 2 -->
+				<item id="94327" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Fire Lv. 2 -->
+				<item id="94497" min="1" max="1" chance="0.32" /> <!-- Spellbook: Life Force Harmony -->
+				<item id="94499" min="1" max="1" chance="0.02" /> <!-- Spellbook: Titanic Weapon -->
+				<item id="94500" min="1" max="1" chance="0.005" /> <!-- Spellbook: Titanic Sweep -->
+				<item id="94501" min="1" max="1" chance="0.005" /> <!-- Spellbook: Titanic Break -->
+				<item id="94502" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ogre Spirit Totem Lv. 2 -->
+				<item id="94503" min="1" max="1" chance="0.02" /> <!-- Spellbook: Rabbit Spirit Totem Lv. 2 -->
+				<item id="94504" min="1" max="1" chance="0.02" /> <!-- Spellbook: Puma Spirit Totem Lv. 2 -->
+				<item id="94505" min="1" max="1" chance="0.005" /> <!-- Spellbook: Burning Strike -->
+				<item id="94506" min="1" max="1" chance="0.025" /> <!-- Spellbook: Burning Assault -->
+				<item id="94507" min="1" max="1" chance="0.005" /> <!-- Spellbook: Armor Break -->
+				<item id="94669" min="1" max="1" chance="0.32" /> <!-- Spellbook: Pa'agrio's Cure -->
+				<item id="94670" min="1" max="1" chance="0.005" /> <!-- Spellbook: Debuff Master -->
+				<item id="94671" min="1" max="1" chance="0.02" /> <!-- Spellbook: Flame Burst -->
+				<item id="94672" min="1" max="1" chance="0.025" /> <!-- Spellbook: Seal of Infection -->
+				<item id="94674" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blood Bond -->
+				<item id="94675" min="1" max="1" chance="0.025" /> <!-- Spellbook: Cold Flames -->
+				<item id="94676" min="1" max="1" chance="0.32" /> <!-- Spellbook: Chant of Healing -->
+				<item id="94806" min="1" max="1" chance="0.025" /> <!-- Spellbook: Flying Dagger -->
+				<item id="95348" min="1" max="1" chance="0.005" /> <!-- Spellbook: Song of Wind Lv. 2 -->
+				<item id="95349" min="1" max="1" chance="0.005" /> <!-- Spellbook: Dance of Fury Lv. 2 -->
+				<item id="95350" min="1" max="1" chance="0.005" /> <!-- Spellbook: Goring Charge -->
+				<item id="95352" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Change -->
+				<item id="95356" min="1" max="1" chance="0.02" /> <!-- Spellbook: Extra Hit -->
+				<item id="95357" min="1" max="1" chance="0.025" /> <!-- Spellbook: Time Burst Lv. 2 -->
+				<item id="95359" min="1" max="1" chance="0.025" /> <!-- Spellbook: Elemental Wind Lv. 2 -->
+				<item id="95363" min="1" max="1" chance="0.02" /> <!-- Spellbook: Elemental Spirit Lv. 3 -->
+				<item id="95365" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Spirit Lv. 4 -->
+				<item id="95654" min="1" max="1" chance="0.02" /> <!-- Spellbook: Elemental Care Lv. 2 -->
+				<item id="95856" min="1" max="1" chance="0.005" /> <!-- Spellbook: Fortune Time -->
+				<item id="95857" min="1" max="1" chance="0.02" /> <!-- Spellbook: Golden Stone -->
+				<item id="95858" min="1" max="1" chance="0.02" /> <!-- Spellbook: Crushing Leap -->
+				<item id="95859" min="1" max="1" chance="0.02" /> <!-- Spellbook: Adena Stun -->
+				<item id="95860" min="1" max="1" chance="0.02" /> <!-- Spellbook: Life Gain -->
+				<item id="95862" min="1" max="1" chance="0.005" /> <!-- Spellbook: Mechanical Masterpiece -->
+				<item id="95863" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blacksmith' Attack -->
+				<item id="96007" min="1" max="1" chance="4.17" /> <!-- Package: +5 Armor of Nightmare - Sealed -->
+				<item id="96008" min="1" max="1" chance="4.17" /> <!-- Package: +5 Helm of Nightmare (Heavy) - Sealed -->
+				<item id="96009" min="1" max="1" chance="4.17" /> <!-- Package: +5 Gauntlets of Nightmare (Heavy) - Sealed -->
+				<item id="96010" min="1" max="1" chance="4.17" /> <!-- Package: +5 Boots of Nightmare (Heavy) - Sealed -->
+				<item id="96011" min="1" max="1" chance="4.17" /> <!-- Package: +5 Majestic Plate Armor - Sealed -->
+				<item id="96012" min="1" max="1" chance="4.17" /> <!-- Package: +5 Majestic Circlet (Heavy) - Sealed -->
+				<item id="96013" min="1" max="1" chance="4.17" /> <!-- Package: +5 Majestic Gauntlets (Heavy) - Sealed -->
+				<item id="96014" min="1" max="1" chance="4.17" /> <!-- Package: +5 Majestic Boots (Heavy) - Sealed -->
+				<item id="96015" min="1" max="1" chance="4.17" /> <!-- Package: +5 Leather Armor of Nightmare - Sealed -->
+				<item id="96016" min="1" max="1" chance="4.17" /> <!-- Package: +5 Helm of Nightmare (Light) - Sealed -->
+				<item id="96017" min="1" max="1" chance="4.17" /> <!-- Package: +5 Gauntlets of Nightmare (Light) - Sealed -->
+				<item id="96018" min="1" max="1" chance="4.17" /> <!-- Package: +5 Boots of Nightmare (Light) - Sealed -->
+				<item id="96019" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Leather Armor - Sealed -->
+				<item id="96020" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Circlet (Light) - Sealed -->
+				<item id="96021" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Gauntlets (Light) - Sealed -->
+				<item id="96022" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Boots (Light) - Sealed -->
+				<item id="96023" min="1" max="1" chance="4.17" /> <!-- Package: +5 Robe of Nightmare - Sealed -->
+				<item id="96024" min="1" max="1" chance="4.17" /> <!-- Package: +5 Helm of Nightmare (Robe) - Sealed -->
+				<item id="96025" min="1" max="1" chance="4.17" /> <!-- Package: +5 Gauntlets of Nightmare (Robe) - Sealed -->
+				<item id="96026" min="1" max="1" chance="4.17" /> <!-- Package: +5 Boots of Nightmare (Robe) - Sealed -->
+				<item id="96027" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Robe - Sealed -->
+				<item id="96028" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Circlet (Robe) - Sealed -->
+				<item id="96029" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Gauntlets (Robe) - Sealed -->
+				<item id="96030" min="1" max="1" chance="4.16" /> <!-- Package: +5 Majestic Boots (Robe) - Sealed -->
+				<item id="96037" min="1" max="1" chance="0.005" /> <!-- Spellbook: Sensation -->
+				<item id="96038" min="1" max="1" chance="0.02" /> <!-- Spellbook: Balanced Body -->
+				<item id="96039" min="1" max="1" chance="0.02" /> <!-- Spellbook: Advanced Cleanse -->
+				<item id="96040" min="1" max="1" chance="0.005" /> <!-- Spellbook: Treatment -->
+				<item id="96041" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Nocturne -->
+				<item id="96042" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Power -->
+				<item id="96043" min="1" max="1" chance="0.005" /> <!-- Spellbook: Duress -->
+				<item id="96044" min="1" max="1" chance="0.02" /> <!-- Spellbook: Nemesis -->
+				<item id="96045" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shillien's Power -->
+				<item id="96046" min="1" max="1" chance="0.02" /> <!-- Spellbook: Divine Recovery -->
+				<item id="96047" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sacred Power -->
+				<item id="96048" min="1" max="1" chance="0.02" /> <!-- Spellbook: Improved Resilience -->
+				<item id="96049" min="1" max="1" chance="0.02" /> <!-- Spellbook: Holy Buster -->
+				<item id="96050" min="1" max="1" chance="0.02" /> <!-- Spellbook: Unleashing -->
+				<item id="96273" min="1" max="1" chance="0.32" /> <!-- Spellbook: Masterpiece Shield -->
+				<item id="96275" min="1" max="1" chance="0.02" /> <!-- Spellbook: Knight's Power -->
+				<item id="96277" min="1" max="1" chance="0.02" /> <!-- Spellbook: Knight's Assault -->
+				<item id="96279" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chain Strike (Shock) -->
+				<item id="96281" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shield Throwing -->
+				<item id="96283" min="1" max="1" chance="0.005" /> <!-- Spellbook: Power of Life -->
+				<item id="96285" min="1" max="1" chance="0.005" /> <!-- Spellbook: Toughness -->
+				<item id="96287" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ultimate Defense Lv. 3 -->
+				<item id="96605" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shield of Security -->
+				<item id="96607" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lunatic Crusher -->
+				<item id="96609" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eva's Care -->
+				<item id="96611" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shillien's Curse -->
+				<item id="96661" min="1" max="1" chance="0.32" /> <!-- Spellbook: Fast Run Lv. 3 -->
+				<item id="96662" min="1" max="1" chance="0.02" /> <!-- Spellbook: Fatal Accuracy -->
+				<item id="96663" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shadow Assault -->
+				<item id="96664" min="1" max="1" chance="0.02" /> <!-- Spellbook: Rogue Mastery -->
+				<item id="96665" min="1" max="1" chance="0.005" /> <!-- Spellbook: Seclusion -->
+				<item id="96666" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dark Blow -->
+				<item id="96667" min="1" max="1" chance="0.005" /> <!-- Spellbook: Reversed Pull -->
+				<item id="96668" min="1" max="1" chance="0.005" /> <!-- Spellbook: Synchro Freedom -->
+				<item id="96669" min="1" max="1" chance="0.005" /> <!-- Spellbook: Ethereal Blood -->
+				<item id="96874" min="1" max="1" chance="0.005" /> <!-- Spellbook: True Aim -->
+				<item id="96875" min="1" max="1" chance="0.005" /> <!-- Spellbook: Deadly Shooter -->
+				<item id="96876" min="1" max="1" chance="0.02" /> <!-- Spellbook: Thorn Shot -->
+				<item id="96877" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chain Arrest -->
+				<item id="96878" min="1" max="1" chance="0.02" /> <!-- Spellbook: Flame Arrow -->
+				<item id="96879" min="1" max="1" chance="0.02" /> <!-- Spellbook: Arrow Shower -->
+				<item id="96880" min="1" max="1" chance="0.02" /> <!-- Spellbook: Piercing Arrow -->
+				<item id="96881" min="1" max="1" chance="0.02" /> <!-- Spellbook: Devious Shot -->
+				<item id="96882" min="1" max="1" chance="0.02" /> <!-- Spellbook: Steady Aim -->
+				<item id="96883" min="1" max="1" chance="0.02" /> <!-- Spellbook: Alacrity -->
+				<item id="96884" min="1" max="1" chance="0.02" /> <!-- Spellbook: Eagle Eye -->
+				<item id="96885" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dexterous Body -->
+				<item id="96886" min="1" max="1" chance="0.32" /> <!-- Spellbook: Perfect Mastery -->
+				<item id="97037" min="1" max="1" chance="0.005" /> <!-- Spellbook: Faery Shield -->
+				<item id="97038" min="1" max="1" chance="0.005" /> <!-- Spellbook: Soul Guardian -->
+				<item id="97039" min="1" max="1" chance="0.02" /> <!-- Spellbook: Spiral -->
+				<item id="97040" min="1" max="1" chance="0.02" /> <!-- Spellbook: Magic Circle -->
+				<item id="97041" min="1" max="1" chance="0.02" /> <!-- Spellbook: Heavy Sleep -->
+				<item id="97102" min="1" max="1" chance="0.005" /> <!-- Spellbook: Giant's Stomp -->
+				<item id="97104" min="1" max="1" chance="0.02" /> <!-- Spellbook: Master of Combat Lv. 3 -->
+				<item id="97105" min="1" max="1" chance="0.02" /> <!-- Spellbook: Final Secret Lv. 2 -->
+				<item id="97106" min="1" max="1" chance="0.32" /> <!-- Spellbook: Wild Charge -->
+				<item id="97107" min="1" max="1" chance="0.02" /> <!-- Spellbook: Threatening Swing -->
+				<item id="97108" min="1" max="1" chance="0.02" /> <!-- Spellbook: Wild Growl Lv. 2 -->
+				<item id="97109" min="1" max="1" chance="0.02" /> <!-- Spellbook: Darkness Unleashing -->
+				<item id="97110" min="1" max="1" chance="0.02" /> <!-- Spellbook: Wild Assault -->
+				<item id="97185" min="1" max="1" chance="0.005" /> <!-- Spellbook: Cubic of Secrets Lv. 2 -->
+				<item id="97186" min="1" max="1" chance="0.005" /> <!-- Spellbook: Elemental Cubic Lv. 2 -->
+				<item id="97187" min="1" max="1" chance="0.005" /> <!-- Spellbook: Phantom Cubic Lv. 2 -->
+				<item id="97188" min="1" max="1" chance="0.02" /> <!-- Spellbook: Ray of Light -->
+				<item id="97189" min="1" max="1" chance="0.02" /> <!-- Spellbook: Chains of Pain -->
+				<item id="97190" min="1" max="1" chance="0.02" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 -->
+				<item id="97319" min="1" max="1" chance="0.005" /> <!-- Spellbook: Blade Wave -->
+				<item id="97320" min="1" max="1" chance="0.02" /> <!-- Spellbook: Slashing Blades -->
+				<item id="97321" min="1" max="1" chance="0.02" /> <!-- Spellbook: Blade Throw -->
+				<item id="97322" min="1" max="1" chance="0.02" /> <!-- Spellbook: Sword Spirit Lv. 2 -->
+				<item id="97324" min="1" max="1" chance="0.005" /> <!-- Spellbook: Spear Cage -->
+				<item id="97325" min="1" max="1" chance="0.02" /> <!-- Spellbook: Spear Rumble -->
+				<item id="97326" min="1" max="1" chance="0.02" /> <!-- Spellbook: Unleashed Power -->
+				<item id="97327" min="1" max="1" chance="0.02" /> <!-- Spellbook: Anger Lv. 2 -->
+				<item id="97455" min="1" max="1" chance="0.005" /> <!-- Spellbook: Soul Mark -->
+				<item id="97457" min="1" max="1" chance="0.02" /> <!-- Spellbook: Powerful Disarm -->
+				<item id="97459" min="1" max="1" chance="0.02" /> <!-- Spellbook: Soul Guard Lv. 3 -->
+				<item id="97461" min="1" max="1" chance="0.02" /> <!-- Spellbook: Shock Impact -->
+				<item id="97463" min="1" max="1" chance="0.02" /> <!-- Spellbook: Death Pain -->
+				<item id="97467" min="1" max="1" chance="0.02" /> <!-- Spellbook: Resonance -->
+				<item id="97469" min="1" max="1" chance="0.02" /> <!-- Spellbook: Fragarach -->
+				<item id="97471" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lightning Tornado -->
+				<item id="97473" min="1" max="1" chance="0.02" /> <!-- Spellbook: Lightning Mastery -->
+				<item id="97745" min="1" max="1" chance="0.02" /> <!-- Spellbook: Master of Aggression -->
+				<item id="97833" min="1" max="1" chance="0.02" /> <!-- Spellbook: Music Mastery -->
+				<item id="97834" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance Mastery -->
+				<item id="97835" min="1" max="1" chance="0.02" /> <!-- Spellbook: Song of Silence Lv. 4 -->
+				<item id="97836" min="1" max="1" chance="0.02" /> <!-- Spellbook: Dance of Medusa Lv. 4 -->
+				<item id="97838" min="1" max="1" chance="0.005" /> <!-- Spellbook: Unique Seal of Damage -->
+				<item id="97840" min="1" max="1" chance="0.02" /> <!-- Spellbook: Essential Energy -->
+				<item id="97842" min="1" max="1" chance="0.02" /> <!-- Spellbook: Great Attack Lv. 3 -->
+				<item id="97844" min="0" max="0" chance="0.32" /> <!-- Spellbook: Improved Sleep -->
+				<item id="98273" min="1" max="1" chance="0.02" /> <!-- Spellbook: Trophy Thief -->
+				<item id="98274" min="1" max="1" chance="0.02" /> <!-- Spellbook: Hammer Rumble -->
+				<item id="98323" min="1" max="1" chance="0.02" /> <!-- Spellbook: Bloody Strike -->
+				<item id="98446" min="1" max="1" chance="0.005" /> <!-- Spellbook: Powerful Servitor Share -->
+				<item id="98482" min="1" max="1" chance="0.02" /> <!-- Spellbook: Clone Dance -->
+				<item id="98483" min="1" max="1" chance="0.005" /> <!-- Spellbook: Assassination -->
+				<item id="98484" min="1" max="1" chance="0.02" /> <!-- Spellbook: Constraint -->
+				<item id="98485" min="1" max="1" chance="0.02" /> <!-- Spellbook: Resolve to Kill -->
+				<item id="98486" min="0" max="0" chance="0.32" /> <!-- Spellbook: Erosion Lv. 2 -->
+				<item id="98487" min="0" max="0" chance="0.32" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+				<item id="98491" min="0" max="0" chance="0.32" /> <!-- Spellbook: Blow Boost -->
+				<item id="98538" min="0" max="0" chance="0.32" /> <!-- Spellbook: Forward Move Lv. 2 -->
+				<item id="98558" min="1" max="1" chance="0.02" /> <!-- Spellbook: Healing Lv. 4 -->
+				<item id="8678" min="1" max="1" chance="6.66" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="6.66" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="6.66" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="6.66" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="6.66" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="6.67" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="6.67" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="6.67" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="6.67" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="6.67" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="6.67" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="6.67" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="91887" min="1" max="1" chance="6.67" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="6.67" /> <!-- Éclair Bijou -->
+				<item id="94886" min="1" max="1" chance="6.67" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18836" level="87" type="RaidBoss" name="Slicing" title="Counsellor's Servitor" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="12302930" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="30" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="103" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="18837" level="90" type="RaidBoss" name="Ultimate Behemoth" title="Antharas' Avatar" element="EARTH">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="44444444.4" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="9532" magical="418" />
+			<speed>
+				<walk ground="200" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="29.7" />
+			<height normal="80.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48047" level="1" /> <!-- Earth Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="93933" min="1" max="1" chance="15" /> <!-- Rare Accessory Pack - Sealed -->
+				<item id="95354" min="1" max="1" chance="0.049" /> <!-- Spellbook: Dragon Strike -->
+				<item id="95861" min="1" max="1" chance="0.047" /> <!-- Spellbook: Prime Master Transformation -->
+				<item id="96289" min="1" max="1" chance="0.044" /> <!-- Spellbook: Phoenix Shield -->
+				<item id="96291" min="1" max="1" chance="0.044" /> <!-- Spellbook: Hell -->
+				<item id="96293" min="1" max="1" chance="0.044" /> <!-- Spellbook: Shelter -->
+				<item id="96295" min="1" max="1" chance="0.044" /> <!-- Spellbook: Condemnation -->
+				<item id="96616" min="1" max="1" chance="15" /> <!-- Boss' Weapon Pack - Sealed -->
+				<item id="96670" min="1" max="1" chance="0.044" /> <!-- Spellbook: Critical Assault -->
+				<item id="96671" min="1" max="1" chance="0.044" /> <!-- Spellbook: Fury Blade -->
+				<item id="96672" min="1" max="1" chance="0.045" /> <!-- Spellbook: Mortal Piercing -->
+				<item id="96873" min="1" max="1" chance="0.051" /> <!-- Spellbook: Legendary Archer -->
+				<item id="97111" min="1" max="1" chance="0.049" /> <!-- Spellbook: Wild Evolution -->
+				<item id="97182" min="1" max="1" chance="0.044" /> <!-- Spellbook: Cat Emperor -->
+				<item id="97183" min="1" max="1" chance="0.044" /> <!-- Spellbook: Unicorn Guard -->
+				<item id="97184" min="1" max="1" chance="0.043" /> <!-- Spellbook: Lord Raise -->
+				<item id="97318" min="1" max="1" chance="0.044" /> <!-- Spellbook: Challenger -->
+				<item id="97323" min="1" max="1" chance="0.044" /> <!-- Spellbook: Great Sweep -->
+				<item id="97453" min="1" max="1" chance="0.044" /> <!-- Spellbook: Overwhelming Power -->
+				<item id="97465" min="1" max="1" chance="0.045" /> <!-- Spellbook: Leopold -->
+				<item id="97831" min="1" max="1" chance="0.046" /> <!-- Spellbook: Amadeus -->
+				<item id="97832" min="1" max="1" chance="0.05" /> <!-- Spellbook: Flamenco -->
+				<item id="97837" min="1" max="1" chance="0.044" /> <!-- Spellbook: Crusader Transformation -->
+				<item id="98481" min="1" max="1" chance="0.049" /> <!-- Spellbook: Time Distortion -->
+				<item id="97480" min="1" max="1" chance="1.125" /> <!-- Behemoth Doll Lv. 2 -->
+				<item id="98140" min="1" max="1" chance="0.02" /> <!-- Cursed Holy Grail's Diagram -->
+				<item id="49683" min="1" max="1" chance="1.5" /> <!-- Talisman of Baium -->
+				<item id="5311" min="1" max="1" chance="14.2" /> <!-- Sealed Armor of Nightmare -->
+				<item id="5312" min="1" max="1" chance="14.3" /> <!-- Sealed Helm of Nightmare -->
+				<item id="5313" min="1" max="1" chance="14.3" /> <!-- Sealed Gauntlets of Nightmare -->
+				<item id="5314" min="1" max="1" chance="14.3" /> <!-- Sealed Boots of Nightmare -->
+				<item id="5315" min="1" max="1" chance="14.3" /> <!-- Sealed Shield of Nightmare -->
+				<item id="5316" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="16.7" /> <!-- Sealed Majestic Boots -->
+				<item id="5320" min="1" max="1" chance="14.3" /> <!-- Sealed Leather Armor of Nightmare -->
+				<item id="5323" min="1" max="1" chance="16.6" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5326" min="1" max="1" chance="14.3" /> <!-- Sealed Robe of Nightmare -->
+				<item id="5329" min="1" max="1" chance="16.6" /> <!-- Sealed Majestic Robe -->
+				<item id="8678" min="1" max="1" chance="4.662" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="4.662" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="4.662" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="4.662" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="4.662" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="4.669" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="4.669" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="4.669" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="4.669" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="4.669" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="4.669" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="4.669" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="91887" min="1" max="1" chance="4.669" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="4.669" /> <!-- Éclair Bijou -->
+				<item id="94840" min="1" max="1" chance="1.111" /> <!-- Breastplate of Protection -->
+				<item id="94841" min="1" max="1" chance="1.111" /> <!-- Gaiters of Protection -->
+				<item id="94844" min="1" max="1" chance="1.111" /> <!-- Leather Armor of Protection -->
+				<item id="94845" min="1" max="1" chance="1.111" /> <!-- Leather Leggings of Protection -->
+				<item id="94848" min="1" max="1" chance="1.111" /> <!-- Tunic of Protection -->
+				<item id="94849" min="1" max="1" chance="1.111" /> <!-- Stockings of Protection -->
+				<item id="94886" min="1" max="1" chance="4.669" /> <!-- Zephyrus -->
+				<item id="95932" min="1" max="1" chance="1.111" /> <!-- Helmet of Protection -->
+				<item id="95933" min="1" max="1" chance="1.111" /> <!-- Gauntlets of Protection -->
+				<item id="95934" min="1" max="1" chance="1.112" /> <!-- Boots of Protection -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18838" level="90" type="RaidBoss" name="Glakias" title="Dreadful Frost Lord" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="95842" /> <!-- For monsters_+10 Frost Lord's Sword_Not Available -->
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="53777720" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="9532" magical="418" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="102.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="4086" level="1" /> <!-- Critical Rate -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="93103" min="1" max="1" chance="0.121" /> <!-- Spellbook: Divine Beam -->
+				<item id="93387" min="1" max="1" chance="0.122" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+				<item id="94498" min="1" max="1" chance="0.121" /> <!-- Spellbook: Titan Champion -->
+				<item id="94508" min="1" max="1" chance="0.121" /> <!-- Spellbook: Cacophony of War -->
+				<item id="94668" min="1" max="1" chance="0.121" /> <!-- Spellbook: Pa'agrio's Touch -->
+				<item id="94673" min="1" max="1" chance="0.121" /> <!-- Spellbook: Team Building -->
+				<item id="94861" min="1" max="1" chance="0.121" /> <!-- Spellbook: Tranquility -->
+				<item id="94862" min="1" max="1" chance="0.121" /> <!-- Spellbook: Exclusion -->
+				<item id="94863" min="1" max="1" chance="0.121" /> <!-- Spellbook: Dark Disruption -->
+				<item id="95346" min="1" max="1" chance="0.121" /> <!-- Spellbook: Meteor -->
+				<item id="95347" min="1" max="1" chance="0.121" /> <!-- Spellbook: Rolling Dice -->
+				<item id="95354" min="1" max="1" chance="0.121" /> <!-- Spellbook: Dragon Strike -->
+				<item id="95861" min="1" max="1" chance="0.121" /> <!-- Spellbook: Prime Master Transformation -->
+				<item id="96006" min="1" max="1" chance="100" /> <!-- +5 Top-grade A-grade Weapon Pack - Sealed -->
+				<item id="96031" min="1" max="1" chance="16.7" /> <!-- Package: +5 Leather Armor of Lightning - Sealed -->
+				<item id="96032" min="1" max="1" chance="16.7" /> <!-- Package: +5 Leather Leggings of Lightning - Sealed -->
+				<item id="96033" min="1" max="1" chance="16.7" /> <!-- Package: +5 Ice Crystal Breastplate - Sealed -->
+				<item id="96034" min="1" max="1" chance="16.7" /> <!-- Package: +5 Ice Crystal Gaiters - Sealed -->
+				<item id="96035" min="1" max="1" chance="16.6" /> <!-- Package: +5 Flaming Tunic - Sealed -->
+				<item id="96036" min="1" max="1" chance="16.6" /> <!-- Package: +5 Flaming Stockings - Sealed -->
+				<item id="96289" min="1" max="1" chance="0.121" /> <!-- Spellbook: Phoenix Shield -->
+				<item id="96291" min="1" max="1" chance="0.121" /> <!-- Spellbook: Hell -->
+				<item id="96293" min="1" max="1" chance="0.121" /> <!-- Spellbook: Shelter -->
+				<item id="96295" min="1" max="1" chance="0.121" /> <!-- Spellbook: Condemnation -->
+				<item id="96670" min="1" max="1" chance="0.121" /> <!-- Spellbook: Critical Assault -->
+				<item id="96671" min="1" max="1" chance="0.121" /> <!-- Spellbook: Fury Blade -->
+				<item id="96672" min="1" max="1" chance="0.121" /> <!-- Spellbook: Mortal Piercing -->
+				<item id="96873" min="1" max="1" chance="0.121" /> <!-- Spellbook: Legendary Archer -->
+				<item id="97111" min="1" max="1" chance="0.121" /> <!-- Spellbook: Wild Evolution -->
+				<item id="97182" min="1" max="1" chance="0.121" /> <!-- Spellbook: Cat Emperor -->
+				<item id="97183" min="1" max="1" chance="0.121" /> <!-- Spellbook: Unicorn Guard -->
+				<item id="97184" min="1" max="1" chance="0.121" /> <!-- Spellbook: Lord Raise -->
+				<item id="97318" min="1" max="1" chance="0.121" /> <!-- Spellbook: Challenger -->
+				<item id="97323" min="1" max="1" chance="0.121" /> <!-- Spellbook: Great Sweep -->
+				<item id="97453" min="1" max="1" chance="0.121" /> <!-- Spellbook: Overwhelming Power -->
+				<item id="97465" min="1" max="1" chance="0.121" /> <!-- Spellbook: Leopold -->
+				<item id="97831" min="1" max="1" chance="0.121" /> <!-- Spellbook: Amadeus -->
+				<item id="97832" min="1" max="1" chance="0.121" /> <!-- Spellbook: Flamenco -->
+				<item id="97837" min="1" max="1" chance="0.121" /> <!-- Spellbook: Crusader Transformation -->
+				<item id="98481" min="1" max="1" chance="0.121" /> <!-- Spellbook: Time Distortion -->
+				<item id="95781" min="1" max="1" chance="100" /> <!-- Black Frozen Core -->
+				<item id="97485" min="1" max="1" chance="1.125" /> <!-- Glakias Doll Lv. 2 -->
+				<item id="94840" min="1" max="1" chance="0.556" /> <!-- Breastplate of Protection -->
+				<item id="94841" min="1" max="1" chance="0.556" /> <!-- Gaiters of Protection -->
+				<item id="94844" min="1" max="1" chance="0.556" /> <!-- Leather Armor of Protection -->
+				<item id="94845" min="1" max="1" chance="0.556" /> <!-- Leather Leggings of Protection -->
+				<item id="94848" min="1" max="1" chance="0.556" /> <!-- Tunic of Protection -->
+				<item id="94849" min="1" max="1" chance="0.556" /> <!-- Stockings of Protection -->
+				<item id="95725" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Sword -->
+				<item id="95726" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Two-handed Sword -->
+				<item id="95727" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Axe -->
+				<item id="95728" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Dagger -->
+				<item id="95729" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Spear -->
+				<item id="95730" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Bow -->
+				<item id="95731" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Blade Fists -->
+				<item id="95732" min="1" max="1" chance="1.155" /> <!-- Frost Lord's Magic Blunt Weapon -->
+				<item id="95733" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Staff -->
+				<item id="95734" min="1" max="1" chance="1.155" /> <!-- Frost Lord's Ancient Sword -->
+				<item id="95735" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Rapier -->
+				<item id="95736" min="1" max="1" chance="1.155" /> <!-- Frost Lord's Pistols -->
+				<item id="95737" min="1" max="1" chance="1.154" /> <!-- Frost Lord's Dual Swords -->
+				<item id="95932" min="1" max="1" chance="0.556" /> <!-- Helmet of Protection -->
+				<item id="95933" min="1" max="1" chance="0.556" /> <!-- Gauntlets of Protection -->
+				<item id="95934" min="1" max="1" chance="0.556" /> <!-- Boots of Protection -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18839" level="90" type="RaidBoss" name="Immortal Baium" title="Lord" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="44444444.4" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="9532" magical="418" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="65" />
+			<height normal="174" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="91951" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Talisman of Baium -->
+				<item id="93103" min="1" max="1" chance="0.047" /> <!-- Spellbook: Divine Beam -->
+				<item id="93255" min="1" max="1" chance="20" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="80" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="93387" min="1" max="1" chance="0.048" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+				<item id="94498" min="1" max="1" chance="0.046" /> <!-- Spellbook: Titan Champion -->
+				<item id="94508" min="1" max="1" chance="0.045" /> <!-- Spellbook: Cacophony of War -->
+				<item id="94668" min="1" max="1" chance="0.045" /> <!-- Spellbook: Pa'agrio's Touch -->
+				<item id="94673" min="1" max="1" chance="0.044" /> <!-- Spellbook: Team Building -->
+				<item id="94861" min="1" max="1" chance="0.045" /> <!-- Spellbook: Tranquility -->
+				<item id="94862" min="1" max="1" chance="0.044" /> <!-- Spellbook: Exclusion -->
+				<item id="94863" min="1" max="1" chance="0.045" /> <!-- Spellbook: Dark Disruption -->
+				<item id="95346" min="1" max="1" chance="0.046" /> <!-- Spellbook: Meteor -->
+				<item id="95347" min="1" max="1" chance="0.045" /> <!-- Spellbook: Rolling Dice -->
+				<item id="96007" min="1" max="1" chance="8.33" /> <!-- Package: +5 Armor of Nightmare - Sealed -->
+				<item id="96008" min="1" max="1" chance="8.33" /> <!-- Package: +5 Helm of Nightmare (Heavy) - Sealed -->
+				<item id="96009" min="1" max="1" chance="8.33" /> <!-- Package: +5 Gauntlets of Nightmare (Heavy) - Sealed -->
+				<item id="96010" min="1" max="1" chance="8.33" /> <!-- Package: +5 Boots of Nightmare (Heavy) - Sealed -->
+				<item id="96011" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Plate Armor - Sealed -->
+				<item id="96012" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Circlet (Heavy) - Sealed -->
+				<item id="96013" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Gauntlets (Heavy) - Sealed -->
+				<item id="96014" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Boots (Heavy) - Sealed -->
+				<item id="96015" min="1" max="1" chance="8.33" /> <!-- Package: +5 Leather Armor of Nightmare - Sealed -->
+				<item id="96016" min="1" max="1" chance="8.33" /> <!-- Package: +5 Helm of Nightmare (Light) - Sealed -->
+				<item id="96017" min="1" max="1" chance="8.33" /> <!-- Package: +5 Gauntlets of Nightmare (Light) - Sealed -->
+				<item id="96018" min="1" max="1" chance="8.33" /> <!-- Package: +5 Boots of Nightmare (Light) - Sealed -->
+				<item id="96019" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Leather Armor - Sealed -->
+				<item id="96020" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Circlet (Light) - Sealed -->
+				<item id="96021" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Gauntlets (Light) - Sealed -->
+				<item id="96022" min="1" max="1" chance="8.33" /> <!-- Package: +5 Majestic Boots (Light) - Sealed -->
+				<item id="96023" min="1" max="1" chance="8.34" /> <!-- Package: +5 Robe of Nightmare - Sealed -->
+				<item id="96024" min="1" max="1" chance="8.34" /> <!-- Package: +5 Helm of Nightmare (Robe) - Sealed -->
+				<item id="96025" min="1" max="1" chance="8.34" /> <!-- Package: +5 Gauntlets of Nightmare (Robe) - Sealed -->
+				<item id="96026" min="1" max="1" chance="8.34" /> <!-- Package: +5 Boots of Nightmare (Robe) - Sealed -->
+				<item id="96027" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Robe - Sealed -->
+				<item id="96028" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Circlet (Robe) - Sealed -->
+				<item id="96029" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Gauntlets (Robe) - Sealed -->
+				<item id="96030" min="1" max="1" chance="8.34" /> <!-- Package: +5 Majestic Boots (Robe) - Sealed -->
+				<item id="97439" min="1" max="1" chance="16.65" /> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97440" min="1" max="1" chance="16.65" /> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97442" min="1" max="1" chance="16.7" /> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97859" min="1" max="1" chance="25" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+				<item id="91256" min="1" max="1" chance="2" /> <!-- Baium Doll Lv. 2 -->
+				<item id="94469" min="1" max="1" chance="0.833" /> <!-- Pet Book: Blocked Target Change -->
+				<item id="94471" min="1" max="1" chance="0.833" /> <!-- Pet Book: Strong Bite -->
+				<item id="94472" min="1" max="1" chance="0.833" /> <!-- Pet Book: Last Dire Claw -->
+				<item id="94475" min="1" max="1" chance="0.833" /> <!-- Pet Book: Exploding Feather -->
+				<item id="94476" min="1" max="1" chance="0.834" /> <!-- Pet Book: Pulling Body -->
+				<item id="94477" min="1" max="1" chance="0.834" /> <!-- Pet Book: Back Explosion -->
+				<item id="94478" min="1" max="1" chance="5" /> <!-- Pet Book: Steel Skin -->
+				<item id="96613" min="1" max="1" chance="0.01" /> <!-- Spellbook: Expanded Potential of Dyes -->
+				<item id="49580" min="1" max="1" chance="3" /> <!-- Baium's Ring -->
+				<item id="49683" min="1" max="1" chance="2" /> <!-- Talisman of Baium -->
+				<item id="8678" min="1" max="1" chance="6.66" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="6.66" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="6.66" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="6.66" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="6.66" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="6.67" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="6.67" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="6.67" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="6.67" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="6.67" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="6.67" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="6.67" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="91887" min="1" max="1" chance="6.67" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="6.67" /> <!-- Éclair Bijou -->
+				<item id="92408" min="1" max="1" chance="2" /> <!-- Baium's Thunder Breaker -->
+				<item id="93139" min="1" max="1" chance="8.35" /> <!-- Ice Crystal Breastplate -->
+				<item id="93140" min="1" max="1" chance="8.35" /> <!-- Ice Crystal Gaiters -->
+				<item id="93315" min="1" max="1" chance="8.35" /> <!-- Leather Armor of Lightning -->
+				<item id="93316" min="1" max="1" chance="8.35" /> <!-- Leather Leggings of Lightning -->
+				<item id="93733" min="1" max="1" chance="8.3" /> <!-- Flaming Tunic -->
+				<item id="93734" min="1" max="1" chance="8.3" /> <!-- Flaming Stockings -->
+				<item id="94886" min="1" max="1" chance="6.67" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18840" level="87" type="RaidBoss" name="Baium" title="Lord">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="8000000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="65" />
+			<height normal="174" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="91944" min="1" max="1" chance="0.01" /> <!-- Spellbook: Light Master Lv. 2 -->
+				<item id="91945" min="1" max="1" chance="0.01" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+				<item id="91951" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Talisman of Baium -->
+				<item id="92401" min="1" max="1" chance="0.014" /> <!-- Spellbook: White Guardian -->
+				<item id="93103" min="1" max="1" chance="0.004" /> <!-- Spellbook: Divine Beam -->
+				<item id="93255" min="1" max="1" chance="20" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="80" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="93387" min="1" max="1" chance="0.004" /> <!-- Spellbook: Ultimate Death Knight Transformation -->
+				<item id="93631" min="1" max="1" chance="0.009" /> <!-- Spellbook: Hellfire -->
+				<item id="93869" min="1" max="1" chance="0.009" /> <!-- Spellbook: Elemental Burst -->
+				<item id="93870" min="1" max="1" chance="0.009" /> <!-- Spellbook: Ethereal Strike -->
+				<item id="94137" min="1" max="1" chance="0.009" /> <!-- Spellbook: Devour -->
+				<item id="94186" min="1" max="3" chance="25" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="3" chance="25" /> <!-- Augmenting Stone: Armor -->
+				<item id="94324" min="1" max="1" chance="0.009" /> <!-- Spellbook: Song of Earth Lv. 2 -->
+				<item id="94325" min="1" max="1" chance="0.009" /> <!-- Spellbook: Song of Hunter Lv. 2 -->
+				<item id="94326" min="1" max="1" chance="0.01" /> <!-- Spellbook: Dance of Warrior Lv. 2 -->
+				<item id="94327" min="1" max="1" chance="0.01" /> <!-- Spellbook: Dance of Fire Lv. 2 -->
+				<item id="94423" min="1" max="3" chance="25" /> <!-- Augmenting Stone: Accessory -->
+				<item id="94498" min="1" max="1" chance="0.004" /> <!-- Spellbook: Titan Champion -->
+				<item id="94500" min="1" max="1" chance="0.009" /> <!-- Spellbook: Titanic Sweep -->
+				<item id="94501" min="1" max="1" chance="0.009" /> <!-- Spellbook: Titanic Break -->
+				<item id="94505" min="1" max="1" chance="0.009" /> <!-- Spellbook: Burning Strike -->
+				<item id="94507" min="1" max="1" chance="0.009" /> <!-- Spellbook: Armor Break -->
+				<item id="94508" min="1" max="1" chance="0.004" /> <!-- Spellbook: Cacophony of War -->
+				<item id="94668" min="1" max="1" chance="0.004" /> <!-- Spellbook: Pa'agrio's Touch -->
+				<item id="94670" min="1" max="1" chance="0.009" /> <!-- Spellbook: Debuff Master -->
+				<item id="94673" min="1" max="1" chance="0.004" /> <!-- Spellbook: Team Building -->
+				<item id="94674" min="1" max="1" chance="0.009" /> <!-- Spellbook: Blood Bond -->
+				<item id="94861" min="1" max="1" chance="0.004" /> <!-- Spellbook: Tranquility -->
+				<item id="94862" min="1" max="1" chance="0.004" /> <!-- Spellbook: Exclusion -->
+				<item id="94863" min="1" max="1" chance="0.004" /> <!-- Spellbook: Dark Disruption -->
+				<item id="95346" min="1" max="1" chance="0.004" /> <!-- Spellbook: Meteor -->
+				<item id="95347" min="1" max="1" chance="0.004" /> <!-- Spellbook: Rolling Dice -->
+				<item id="95348" min="1" max="1" chance="0.009" /> <!-- Spellbook: Song of Wind Lv. 2 -->
+				<item id="95349" min="1" max="1" chance="0.01" /> <!-- Spellbook: Dance of Fury Lv. 2 -->
+				<item id="95350" min="1" max="1" chance="0.009" /> <!-- Spellbook: Goring Charge -->
+				<item id="95352" min="1" max="1" chance="0.009" /> <!-- Spellbook: Elemental Change -->
+				<item id="95365" min="1" max="1" chance="0.009" /> <!-- Spellbook: Elemental Spirit Lv. 4 -->
+				<item id="95856" min="1" max="1" chance="0.009" /> <!-- Spellbook: Fortune Time -->
+				<item id="95862" min="1" max="1" chance="0.009" /> <!-- Spellbook: Mechanical Masterpiece -->
+				<item id="95863" min="1" max="1" chance="0.009" /> <!-- Spellbook: Blacksmith' Attack -->
+				<item id="96037" min="1" max="1" chance="0.009" /> <!-- Spellbook: Sensation -->
+				<item id="96040" min="1" max="1" chance="0.009" /> <!-- Spellbook: Treatment -->
+				<item id="96043" min="1" max="1" chance="0.009" /> <!-- Spellbook: Duress -->
+				<item id="96283" min="1" max="1" chance="0.009" /> <!-- Spellbook: Power of Life -->
+				<item id="96285" min="1" max="1" chance="0.009" /> <!-- Spellbook: Toughness -->
+				<item id="96665" min="1" max="1" chance="0.009" /> <!-- Spellbook: Seclusion -->
+				<item id="96667" min="1" max="1" chance="0.009" /> <!-- Spellbook: Reversed Pull -->
+				<item id="96668" min="1" max="1" chance="0.009" /> <!-- Spellbook: Synchro Freedom -->
+				<item id="96669" min="1" max="1" chance="0.009" /> <!-- Spellbook: Ethereal Blood -->
+				<item id="96874" min="1" max="1" chance="0.009" /> <!-- Spellbook: True Aim -->
+				<item id="96875" min="1" max="1" chance="0.009" /> <!-- Spellbook: Deadly Shooter -->
+				<item id="97037" min="1" max="1" chance="0.009" /> <!-- Spellbook: Faery Shield -->
+				<item id="97038" min="1" max="1" chance="0.009" /> <!-- Spellbook: Soul Guardian -->
+				<item id="97102" min="1" max="1" chance="0.009" /> <!-- Spellbook: Giant's Stomp -->
+				<item id="97185" min="1" max="1" chance="0.009" /> <!-- Spellbook: Cubic of Secrets Lv. 2 -->
+				<item id="97186" min="1" max="1" chance="0.009" /> <!-- Spellbook: Elemental Cubic Lv. 2 -->
+				<item id="97187" min="1" max="1" chance="0.009" /> <!-- Spellbook: Phantom Cubic Lv. 2 -->
+				<item id="97319" min="1" max="1" chance="0.009" /> <!-- Spellbook: Blade Wave -->
+				<item id="97324" min="1" max="1" chance="0.009" /> <!-- Spellbook: Spear Cage -->
+				<item id="97439" min="1" max="1" chance="9.99" /> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97440" min="1" max="1" chance="9.99" /> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97442" min="1" max="1" chance="10.02" /> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97455" min="1" max="1" chance="0.009" /> <!-- Spellbook: Soul Mark -->
+				<item id="97787" min="1" max="3" chance="25" /> <!-- Augmenting Stone: Special Equipment -->
+				<item id="97838" min="1" max="1" chance="0.009" /> <!-- Spellbook: Unique Seal of Damage -->
+				<item id="97859" min="1" max="1" chance="10" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+				<item id="98446" min="1" max="1" chance="0.009" /> <!-- Spellbook: Powerful Servitor Share -->
+				<item id="98483" min="1" max="1" chance="0.009" /> <!-- Spellbook: Assassination -->
+				<item id="49756" min="2" max="4" chance="100" /> <!-- Cloth Piece -->
+				<item id="91256" min="1" max="1" chance="0.06" /> <!-- Baium Doll Lv. 2 -->
+				<item id="97375" min="1" max="1" chance="0.125" /> <!-- Pet Book: Magic Flare -->
+				<item id="97376" min="1" max="1" chance="0.125" /> <!-- Pet Book: Sharp Senses -->
+				<item id="97377" min="1" max="1" chance="0.125" /> <!-- Pet Book: Sound Body -->
+				<item id="97378" min="1" max="1" chance="0.125" /> <!-- Pet Book: Swift Feather -->
+				<item id="97379" min="1" max="1" chance="0.125" /> <!-- Pet Book: Pulling Defense -->
+				<item id="97380" min="1" max="1" chance="0.125" /> <!-- Pet Book: Perfect Bite -->
+				<item id="97381" min="1" max="1" chance="0.75" /> <!-- Pet Book: Physical Training Lv. 1 -->
+				<item id="97382" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Recharge -->
+				<item id="97383" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Evasion -->
+				<item id="97384" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Power -->
+				<item id="97385" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Chance -->
+				<item id="97386" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Health -->
+				<item id="97387" min="1" max="1" chance="0.25" /> <!-- Pet Book: Master Speed -->
+				<item id="49580" min="1" max="1" chance="1" /> <!-- Baium's Ring -->
+				<item id="49683" min="1" max="1" chance="0.6" /> <!-- Talisman of Baium -->
+				<item id="374" min="1" max="1" chance="3.85" /> <!-- Armor of Nightmare -->
+				<item id="2383" min="1" max="1" chance="3.85" /> <!-- Majestic Plate Armor -->
+				<item id="2394" min="1" max="1" chance="3.84" /> <!-- Leather Armor of Nightmare -->
+				<item id="2395" min="1" max="1" chance="3.85" /> <!-- Majestic Leather Armor -->
+				<item id="2408" min="1" max="1" chance="3.84" /> <!-- Robe of Nightmare -->
+				<item id="2409" min="1" max="1" chance="3.85" /> <!-- Majestic Robe -->
+				<item id="2498" min="1" max="1" chance="3.84" /> <!-- Shield of Nightmare -->
+				<item id="5771" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Heavy) -->
+				<item id="5772" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Light) -->
+				<item id="5773" min="1" max="1" chance="3.84" /> <!-- Gauntlets of Nightmare (Robe) -->
+				<item id="5774" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Heavy) -->
+				<item id="5775" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Light) -->
+				<item id="5776" min="1" max="1" chance="3.85" /> <!-- Majestic Gauntlets (Robe) -->
+				<item id="5783" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Heavy) -->
+				<item id="5784" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Light) -->
+				<item id="5785" min="1" max="1" chance="3.84" /> <!-- Boots of Nightmare (Robe) -->
+				<item id="5786" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Heavy) -->
+				<item id="5787" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Light) -->
+				<item id="5788" min="1" max="1" chance="3.85" /> <!-- Majestic Boots (Robe) -->
+				<item id="8678" min="1" max="1" chance="4.662" /> <!-- Sirra's Blade -->
+				<item id="8679" min="1" max="1" chance="4.662" /> <!-- Sword of Ipos -->
+				<item id="8680" min="1" max="1" chance="4.662" /> <!-- Barakiel's Axe -->
+				<item id="8681" min="1" max="1" chance="4.662" /> <!-- Behemoth' Tuning Fork -->
+				<item id="8682" min="1" max="1" chance="4.662" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="4.669" /> <!-- Tiphon's Spear -->
+				<item id="8684" min="1" max="1" chance="4.669" /> <!-- Shyeed's Bow -->
+				<item id="8685" min="1" max="1" chance="4.669" /> <!-- Sobekk's Hurricane -->
+				<item id="8686" min="1" max="1" chance="4.669" /> <!-- Themis' Tongue -->
+				<item id="8687" min="1" max="1" chance="4.669" /> <!-- Cabrio's Hand -->
+				<item id="8688" min="1" max="1" chance="4.669" /> <!-- Daimon Crystal -->
+				<item id="8938" min="1" max="1" chance="4.669" /> <!-- Tallum Blade*Damascus Sword -->
+				<item id="90473" min="1" max="1" chance="3.85" /> <!-- Helm of Nightmare (Heavy) -->
+				<item id="90474" min="1" max="1" chance="3.85" /> <!-- Helm of Nightmare (Light) -->
+				<item id="90475" min="1" max="1" chance="3.84" /> <!-- Helm of Nightmare (Robe) -->
+				<item id="90476" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Heavy) -->
+				<item id="90477" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Light) -->
+				<item id="90478" min="1" max="1" chance="3.85" /> <!-- Majestic Circlet (Robe) -->
+				<item id="91887" min="1" max="1" chance="4.669" /> <!-- Durendal -->
+				<item id="91902" min="1" max="1" chance="4.669" /> <!-- Éclair Bijou -->
+				<item id="92408" min="1" max="1" chance="0.12" /> <!-- Baium's Thunder Breaker -->
+				<item id="93094" min="1" max="1" chance="3.85" /> <!-- Majestic Sigil -->
+				<item id="94886" min="1" max="1" chance="4.669" /> <!-- Zephyrus -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18841" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18842" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="4041" hpRegen="10.5" mp="2227" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="1" />
+		</collision>
+	</npc>
+	<npc id="18843" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="4041" hpRegen="10.5" mp="2227" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18844" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="4041" hpRegen="10.5" mp="2227" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="1" />
+		</collision>
+	</npc>
+	<npc id="18845" level="85" type="Monster" name="Sword Apostle" title="Burning">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="72250" sp="723" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="11087.7135" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="37" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="41.5" />
+		</collision>
+	</npc>
+	<npc id="18846" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18847" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="4041" hpRegen="10.5" mp="2227" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="1" />
+		</collision>
+	</npc>
+	<npc id="18848" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3038" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18849" level="84" type="Monster" name="Triol's Drone">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6036.77776769214" hpRegen="10.2" mp="1812" mpRegen="3.6" />
+			<attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="405.66735" magical="296.84976" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="11.5" />
+		</collision>
+	</npc>
+	<npc id="18850" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="60" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="50" />
+			<height normal="350" />
+		</collision>
+	</npc>
+	<npc id="18851" level="88" type="Monster" name="Atelia">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6593.67089" hpRegen="10.2" mp="1952.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="173.5" />
+		</collision>
+	</npc>
+	<npc id="18852" level="94" type="Monster" name="Kelbim" title="Castle Master">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="142405100" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="72" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="18853" level="86" type="RaidBoss" name="Vanguard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18854" level="86" type="RaidBoss" name="Summoner Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="59.5" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18855" level="86" type="RaidBoss" name="Wizard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="108" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18856" level="86" type="RaidBoss" name="Assaulter Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.2" />
+			<height normal="87" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18857" level="86" type="RaidBoss" name="Shooter Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18858" level="86" type="RaidBoss" name="Warrior Commmander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18859" level="86" type="RaidBoss" name="Healer Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="37372.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="10012" magical="6836" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="51" magical="3172" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="729" min="2" max="4" chance="20" /> <!-- Scroll: Enchant A-grade Weapon -->
+				<item id="730" min="2" max="4" chance="80" /> <!-- Scroll: Enchant A-grade Armor -->
+				<item id="93255" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="12" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94186" min="1" max="1" chance="6" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="15" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="9" /> <!-- Augmenting Stone: Accessory -->
+				<item id="95783" min="1" max="1" chance="20" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+				<item id="96901" min="1" max="1" chance="80" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+				<item id="96623" min="1" max="1" chance="50" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18860" level="92" type="RaidBoss" name="Vanguard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18861" level="92" type="RaidBoss" name="Summoner Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="59.5" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18862" level="92" type="RaidBoss" name="Wizard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="108" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18863" level="92" type="RaidBoss" name="Assaulter Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.2" />
+			<height normal="87" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18864" level="92" type="RaidBoss" name="Shooter Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18865" level="92" type="RaidBoss" name="Warrior Commmander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18866" level="92" type="RaidBoss" name="Healer Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="167392.88889" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="1666" magical="11372" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="11748" magical="4684" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="96623" min="1" max="1" chance="100" /> <!-- Dye Booster -->
+				<item id="98155" min="1" max="1" chance="5" /> <!-- Fortress Exploration Log - 3 (Time-limited) -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18867" level="86" type="Monster" name="Servitors" title="Summoner Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="79831.64557" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="80" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="63" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="18868" level="92" type="Monster" name="Servitors" title="Summoner Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="238375.94937" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="80" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="63" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="18869" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="60" />
+			<height normal="39.2" />
+		</collision>
+	</npc>
+	<npc id="18870" level="85" type="Folk" name="Orc Seer" title="Wishing for Abundance">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="7" /> <!-- Apprentice's Rod -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="35738" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="45" />
+				<run ground="150" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="27" />
+			<height normal="72" />
+		</collision>
+	</npc>
+	<npc id="18871" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="9" /> <!-- Cedar Staff -->
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="35738" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="10" />
+				<run ground="150" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="36" />
+		</collision>
+	</npc>
+	<npc id="18872" level="83" type="RaidBoss" name="Kron" title="Revolutionary of Darkness">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="67200000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7036.32" magical="3603.68" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1698.52" magical="932.184" />
+			<speed>
+				<walk ground="63" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="97" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> <!-- Raid Boss -->
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+	</npc>
+	<npc id="18873" level="80" type="Monster" name="Warrior of Darkness">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="667767" sp="6675" attributeExp="1040" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12931.01266" hpRegen="10.2" mp="2227.484" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="33.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="18874" level="80" type="Monster" name="Archer of Darkness">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="667767" sp="6675" attributeExp="1040" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12931.01266" hpRegen="10.2" mp="2227.484" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="32.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+	</npc>
+	<npc id="18875" level="80" type="Monster" name="Beast of Darkness">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="667767" sp="6675" attributeExp="1040" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12931.01266" hpRegen="10.2" mp="2227.484" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="145" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.5" />
+			<height normal="43.15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="18876" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18877" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2916" hpRegen="10.5" mp="2512" mpRegen="3.6" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18878" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2916" hpRegen="10.5" mp="2512" mpRegen="3.6" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18879" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="2916" hpRegen="10.5" mp="2512" mpRegen="3.6" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18880" level="80" type="Monster" name="Large Yellow Sky Lantern">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5833.5443" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18881" level="80" type="Monster" name="Red Sky Lantern">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5833.5443" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18882" level="80" type="Monster" name="Blue Sky Lantern">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5833.5443" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="18883" level="85" type="Monster" name="Stupefied Count">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="98252" /> <!-- Monster Weapon_Monsters Only_Blood Sword Akamanah - Not Available -->
+		<acquire exp="136204" sp="1362" attributeExp="1105" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5543.85675" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="36.30245" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="372" max="411" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18884" level="85" type="Monster" name="Brainwashed Baron">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="98251" /> <!-- Monster Weapon_Monsters Only_Demonic Sword Zariche - Not Available -->
+		<acquire exp="136204" sp="1362" attributeExp="1105" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5543.85675" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.2" />
+			<height normal="35.02975" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="372" max="411" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="18885" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3038" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18886" level="85" type="Folk" name="Happy Bora" title="GM Helper">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5063" hpRegen="10.2" mp="2227" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="35.07" />
+			<height normal="110.226" />
+		</collision>
+	</npc>
+	<npc id="18887" level="85" type="Folk" name="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="18888" level="85" type="Folk" name="Kukuru">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="41" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="18889" level="85" type="Folk" name="Giants' Stone">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3296" hpRegen="10.5" mp="1952" mpRegen="3.6" />
+			<speed>
+				<walk ground="41" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="18890" level="85" type="Folk" name="Hoot">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3038" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="30" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="19.5" />
+		</collision>
+	</npc>
+	<npc id="18891" level="86" type="Monster" name="Support Commander" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="30.6" />
+		</collision>
+	</npc>
+	<npc id="18892" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="30.6" />
+		</collision>
+	</npc>
+	<npc id="18893" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="28.8" />
+		</collision>
+	</npc>
+	<npc id="18894" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.8" />
+			<height normal="28.8" />
+		</collision>
+	</npc>
+	<npc id="18895" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="50" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="28.2" />
+		</collision>
+	</npc>
+	<npc id="18896" level="86" type="Monster" name="Giran Relic of Protection" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="43037.97468" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="290" />
+			<height normal="162" />
+		</collision>
+	</npc>
+	<npc id="18897" level="86" type="Monster" name="Support Commander" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="30.6" />
+		</collision>
+	</npc>
+	<npc id="18898" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="30.6" />
+		</collision>
+	</npc>
+	<npc id="18899" level="86" type="Monster" name="Giran Volunteer" title="Relic Keeper" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="28.8" />
+		</collision>
+	</npc>
+</list>

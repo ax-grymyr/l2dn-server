@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f03" minZ="-2989" maxZ="-2389">
+				<node x="-55680" y="136162" />
+				<node x="-54649" y="136166" />
+				<node x="-54645" y="137194" />
+				<node x="-55676" y="137189" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f04" minZ="-2989" maxZ="-2389">
+				<node x="-54639" y="136170" />
+				<node x="-53608" y="136174" />
+				<node x="-53604" y="137202" />
+				<node x="-54635" y="137197" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f06" minZ="-3165" maxZ="-2565">
+				<node x="-56318" y="137209" />
+				<node x="-55287" y="137214" />
+				<node x="-55283" y="138241" />
+				<node x="-56314" y="138236" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f07" minZ="-3165" maxZ="-2565">
+				<node x="-55274" y="137211" />
+				<node x="-54243" y="137215" />
+				<node x="-54238" y="138242" />
+				<node x="-55270" y="138238" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f09" minZ="-3165" maxZ="-2565">
+				<node x="-53274" y="137198" />
+				<node x="-52243" y="137202" />
+				<node x="-52239" y="138229" />
+				<node x="-53270" y="138225" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f08" minZ="-3165" maxZ="-2565">
+				<node x="-54261" y="137217" />
+				<node x="-53230" y="137222" />
+				<node x="-53226" y="138249" />
+				<node x="-54257" y="138244" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f10" minZ="-3165" maxZ="-2565">
+				<node x="-52257" y="137198" />
+				<node x="-51226" y="137202" />
+				<node x="-51222" y="138229" />
+				<node x="-52253" y="138225" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f11" minZ="-3165" maxZ="-2565">
+				<node x="-51237" y="137211" />
+				<node x="-50206" y="137215" />
+				<node x="-50202" y="138242" />
+				<node x="-51233" y="138238" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f13" minZ="-3165" maxZ="-2565">
+				<node x="-54280" y="138262" />
+				<node x="-53249" y="138266" />
+				<node x="-53245" y="139293" />
+				<node x="-54276" y="139289" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f14" minZ="-3165" maxZ="-2565">
+				<node x="-53285" y="138237" />
+				<node x="-52254" y="138241" />
+				<node x="-52249" y="139268" />
+				<node x="-53281" y="139264" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f15" minZ="-3165" maxZ="-2565">
+				<node x="-52261" y="138237" />
+				<node x="-51229" y="138241" />
+				<node x="-51225" y="139268" />
+				<node x="-52256" y="139264" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f16" minZ="-3165" maxZ="-2565">
+				<node x="-51232" y="138243" />
+				<node x="-50200" y="138248" />
+				<node x="-50196" y="139275" />
+				<node x="-51227" y="139270" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f17" minZ="-3165" maxZ="-2565">
+				<node x="-53281" y="139216" />
+				<node x="-52249" y="139220" />
+				<node x="-52245" y="140247" />
+				<node x="-53276" y="140243" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f18" minZ="-3165" maxZ="-2565">
+				<node x="-52236" y="139217" />
+				<node x="-51205" y="139222" />
+				<node x="-51201" y="140249" />
+				<node x="-52232" y="140245" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f19" minZ="-3165" maxZ="-2565">
+				<node x="-51192" y="139219" />
+				<node x="-50160" y="139223" />
+				<node x="-50156" y="140250" />
+				<node x="-51187" y="140246" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f20" minZ="-3133" maxZ="-2533">
+				<node x="-53252" y="140074" />
+				<node x="-52221" y="140078" />
+				<node x="-52217" y="141106" />
+				<node x="-53248" y="141101" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f21" minZ="-3165" maxZ="-2565">
+				<node x="-52255" y="140213" />
+				<node x="-51224" y="140217" />
+				<node x="-51220" y="141244" />
+				<node x="-52251" y="141240" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f22" minZ="-3165" maxZ="-2565">
+				<node x="-51211" y="140214" />
+				<node x="-50180" y="140219" />
+				<node x="-50175" y="141246" />
+				<node x="-51207" y="141241" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f23" minZ="-3165" maxZ="-2565">
+				<node x="-50184" y="139822" />
+				<node x="-49152" y="139826" />
+				<node x="-49148" y="140853" />
+				<node x="-50179" y="140849" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f24" minZ="-3165" maxZ="-2565">
+				<node x="-50388" y="138683" />
+				<node x="-49356" y="138687" />
+				<node x="-49352" y="139714" />
+				<node x="-50383" y="139710" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f25" minZ="-3165" maxZ="-2565">
+				<node x="-50627" y="137091" />
+				<node x="-49595" y="137095" />
+				<node x="-49591" y="138122" />
+				<node x="-50622" y="138118" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_f26" minZ="-3165" maxZ="-2565">
+				<node x="-51868" y="136489" />
+				<node x="-50836" y="136493" />
+				<node x="-50832" y="137520" />
+				<node x="-51863" y="137516" />
+			</territory>
+		</territories>
+		<npc id="22237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Sniper -->
+		<npc id="22238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Raider -->
+		<npc id="22239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Mage -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n01" minZ="-3165" maxZ="-2565">
+				<node x="-57801" y="140333" />
+				<node x="-56964" y="141060" />
+				<node x="-57714" y="141893" />
+				<node x="-58577" y="141167" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n02" minZ="-3165" maxZ="-2565">
+				<node x="-57023" y="139496" />
+				<node x="-56185" y="140223" />
+				<node x="-56935" y="141056" />
+				<node x="-57798" y="140330" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n03" minZ="-3165" maxZ="-2565">
+				<node x="-56073" y="139083" />
+				<node x="-55235" y="139810" />
+				<node x="-55985" y="140643" />
+				<node x="-56848" y="139917" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n04" minZ="-3165" maxZ="-2565">
+				<node x="-56707" y="140474" />
+				<node x="-55869" y="141201" />
+				<node x="-56620" y="142034" />
+				<node x="-57482" y="141308" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n05" minZ="-3165" maxZ="-2565">
+				<node x="-56436" y="141604" />
+				<node x="-55598" y="142331" />
+				<node x="-56349" y="143164" />
+				<node x="-57211" y="142438" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n06" minZ="-3165" maxZ="-2565">
+				<node x="-55631" y="140761" />
+				<node x="-54794" y="141489" />
+				<node x="-55544" y="142321" />
+				<node x="-56406" y="141595" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_n07" minZ="-3165" maxZ="-2565">
+				<node x="-55318" y="139717" />
+				<node x="-54480" y="140445" />
+				<node x="-55231" y="141277" />
+				<node x="-56093" y="140551" />
+			</territory>
+		</territories>
+		<npc id="22242" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Bowman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r01" minZ="-2581" maxZ="-1981">
+				<node x="-60509" y="136291" />
+				<node x="-59478" y="136295" />
+				<node x="-59474" y="137323" />
+				<node x="-60505" y="137318" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r02" minZ="-2581" maxZ="-1981">
+				<node x="-59546" y="135618" />
+				<node x="-58515" y="135622" />
+				<node x="-58511" y="136650" />
+				<node x="-59542" y="136645" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r03" minZ="-2581" maxZ="-1981">
+				<node x="-58504" y="135249" />
+				<node x="-57473" y="135253" />
+				<node x="-57469" y="136281" />
+				<node x="-58500" y="136276" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r04" minZ="-2581" maxZ="-1981">
+				<node x="-60401" y="137122" />
+				<node x="-59370" y="137126" />
+				<node x="-59366" y="138154" />
+				<node x="-60397" y="138149" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r05" minZ="-2581" maxZ="-1981">
+				<node x="-59503" y="136763" />
+				<node x="-58472" y="136767" />
+				<node x="-58468" y="137795" />
+				<node x="-59499" y="137790" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_r06" minZ="-2581" maxZ="-1981">
+				<node x="-58506" y="136340" />
+				<node x="-57475" y="136344" />
+				<node x="-57471" y="137372" />
+				<node x="-58502" y="137367" />
+			</territory>
+		</territories>
+		<npc id="22253" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Elder - Jisra's Escort -->
+		<npc id="22254" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22255" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Escort Captain - Jisra's Escort -->
+		<npc id="22256" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Archer - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_rf10" minZ="-3165" maxZ="-2565">
+				<node x="-53285" y="138237" />
+				<node x="-52254" y="138241" />
+				<node x="-52249" y="139268" />
+				<node x="-53281" y="139264" />
+			</territory>
+		</territories>
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_rf20" minZ="-3165" maxZ="-2565">
+				<node x="-50388" y="138683" />
+				<node x="-49356" y="138687" />
+				<node x="-49352" y="139714" />
+				<node x="-50383" y="139710" />
+			</territory>
+		</territories>
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_rf22" minZ="-3165" maxZ="-2565">
+				<node x="-51868" y="136489" />
+				<node x="-50836" y="136493" />
+				<node x="-50832" y="137520" />
+				<node x="-51863" y="137516" />
+			</territory>
+		</territories>
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+		<npc id="22254" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Sel Mahum Knight Captain - Jisra's Escort -->
+	</spawn>
+</list>

@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34300" name="max_hp">
+		<!-- Max MP +163 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>163</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34301" name="max_hp">
+		<!-- Max MP +175 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>175</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34302" name="max_hp">
+		<!-- Max MP +188 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34303" name="max_hp">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34304" name="max_hp">
+		<!-- Max MP +300 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34305" name="max_hp">
+		<!-- Max MP +330 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34306" name="max_hp">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34307" name="max_hp">
+		<!-- Max MP +390 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>390</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34308" name="max_hp">
+		<!-- Max MP +480 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34309" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="1" /> <!-- Horror -->
+	</option>
+	<option id="34310" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="2" /> <!-- Horror -->
+	</option>
+	<option id="34311" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="3" /> <!-- Horror -->
+	</option>
+	<option id="34312" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="4" /> <!-- Horror -->
+	</option>
+	<option id="34313" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="5" /> <!-- Horror -->
+	</option>
+	<option id="34314" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="6" /> <!-- Horror -->
+	</option>
+	<option id="34315" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="17" /> <!-- Horror -->
+	</option>
+	<option id="34316" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="8" /> <!-- Horror -->
+	</option>
+	<option id="34317" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="9" /> <!-- Horror -->
+	</option>
+	<option id="34318" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +1% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="10" /> <!-- Horror -->
+	</option>
+	<option id="34319" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +2% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="11" /> <!-- Horror -->
+	</option>
+	<option id="34320" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +2% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="12" /> <!-- Horror -->
+	</option>
+	<option id="34321" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +2% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="13" /> <!-- Horror -->
+	</option>
+	<option id="34322" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +2% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="14" /> <!-- Horror -->
+	</option>
+	<option id="34323" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +2% -->
+		<passive_skill id="51280" level="1" /> <!-- unknown skill -->
+		<passive_skill id="65" level="15" /> <!-- Horror -->
+	</option>
+	<option id="34324" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +3% -->
+		<passive_skill id="51280" level="2" /> <!-- unknown skill -->
+		<passive_skill id="65" level="16" /> <!-- Horror -->
+	</option>
+	<option id="34325" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +3% -->
+		<passive_skill id="51280" level="2" /> <!-- unknown skill -->
+		<passive_skill id="65" level="17" /> <!-- Horror -->
+	</option>
+	<option id="34326" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +4% -->
+		<passive_skill id="51280" level="2" /> <!-- unknown skill -->
+		<passive_skill id="65" level="18" /> <!-- Horror -->
+	</option>
+	<option id="34327" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +4% -->
+		<passive_skill id="51280" level="3" /> <!-- unknown skill -->
+		<passive_skill id="65" level="18" /> <!-- Horror -->
+	</option>
+	<option id="34328" name="bow_magic_res">
+		<!-- M. Damage/ Bow Resistance +5% -->
+		<passive_skill id="51280" level="3" /> <!-- unknown skill -->
+		<passive_skill id="65" level="18" /> <!-- Horror -->
+	</option>
+	<option id="34329" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34330" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34331" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34332" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34333" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34334" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34335" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34336" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34337" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34338" name="received_damage">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34339" name="received_damage">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34340" name="received_damage">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34341" name="received_damage">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34342" name="received_damage">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34343" name="received_damage">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34344" name="received_damage">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34345" name="received_damage">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34346" name="received_damage">
+		<!-- Received damage -4% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34347" name="received_damage">
+		<!-- Received damage -4% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34348" name="received_damage">
+		<!-- Received damage -5% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34349" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34350" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34351" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34352" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34353" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34354" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34355" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34356" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34357" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34358" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +1% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34359" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +2% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34360" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +2% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34361" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +2% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34362" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +2% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34363" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +2% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34364" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +3% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34365" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +3% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34366" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +4% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34367" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +4% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34368" name="melee_weapon_res">
+		<!-- Melee Weapon Resistance +5% -->
+		<passive_skill id="5601" level="1" /> <!-- Melee Attack Resistance -->
+	</option>
+	<option id="34369" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34370" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34371" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34372" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34373" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34374" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34375" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34376" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34377" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34378" name="skill_evasion">
+		<!-- Skill Evasion +1% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34379" name="skill_evasion">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34380" name="skill_evasion">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34381" name="skill_evasion">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34382" name="skill_evasion">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34383" name="skill_evasion">
+		<!-- Skill Evasion +2% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34384" name="skill_evasion">
+		<!-- Skill Evasion +3% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34385" name="skill_evasion">
+		<!-- Skill Evasion +3% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34386" name="skill_evasion">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34387" name="skill_evasion">
+		<!-- Skill Evasion +4% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34388" name="skill_evasion">
+		<!-- Skill Evasion +5% -->
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34389" name="p_def">
+		<!-- P. Def. +4 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34390" name="p_def">
+		<!-- P. Def. +7 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34391" name="p_def">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34392" name="p_def">
+		<!-- P. Def. +13 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34393" name="p_def">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34394" name="p_def">
+		<!-- P. Def. +19 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>19</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34395" name="p_def">
+		<!-- P. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34396" name="p_def">
+		<!-- P. Def. +25 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34397" name="p_def">
+		<!-- P. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34398" name="p_def">
+		<!-- P. Def. +31 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34399" name="p_def">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

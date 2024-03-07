@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="SelMahumBase">
+		<group>
+			<npc id="34173" x="-48564" y="140535" z="-2912" heading="46600" respawnTime="60sec" /> <!-- Khamin - Undercover Agent -->
+			<npc id="34175" x="-52026" y="136510" z="-2880" heading="52423" respawnTime="60sec" /> <!-- Undercover Agent -->
+			<npc id="34175" x="-56137" y="135790" z="-2712" heading="29995" respawnTime="60sec" /> <!-- Undercover Agent -->
+			<npc id="34175" x="-57658" y="138553" z="-2760" heading="45386" respawnTime="60sec" /> <!-- Undercover Agent -->
+			<npc id="34175" x="-57444" y="139936" z="-2560" heading="4627" respawnTime="60sec" /> <!-- Undercover Agent -->
+			<npc id="18475" x="-57260" y="142176" z="-2592" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Base -->
+		</group>
+	</spawn>
+</list>

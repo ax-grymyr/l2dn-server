@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="130" parentClassId="126">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Absorb Shadow Souls" skillId="394" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="4" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="5" getLevel="60" levelUpSp="80000" />
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="6" getLevel="70" levelUpSp="180000" />
+		<skill skillName="Light Armor Mastery" skillId="465" skillLevel="7" getLevel="75" levelUpSp="230000" />
+		<skill skillName="Magic Immunity" skillId="466" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Magic Immunity" skillId="466" skillLevel="3" getLevel="55" levelUpSp="45000" />
+		<skill skillName="Soul Focus" skillId="45139" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Death Whisper" skillId="45140" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Haste" skillId="45141" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Critical Shot" skillId="790" skillLevel="1" getLevel="52" levelUpSp="20000" />
+		<skill skillName="Critical Shot" skillId="790" skillLevel="2" getLevel="66" levelUpSp="140000" />
+		<skill skillName="Soul Magic Barrier" skillId="45143" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Might" skillId="45144" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Shield" skillId="45145" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Acumen" skillId="45146" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Empower" skillId="45147" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Death Mark" skillId="1435" skillLevel="3" getLevel="56" levelUpSp="50000" />
+		<skill skillName="Soul Wild Magic" skillId="45148" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Berserker Spirit" skillId="45149" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Soul Clarity" skillId="45150" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Collect Light Souls" skillId="45151" skillLevel="1" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Collect Shadow Souls" skillId="45152" skillLevel="1" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Ultimate Escape" skillId="622" skillLevel="2" getLevel="52" levelUpSp="20000" />
+		<skill skillName="Twin Shot" skillId="45168" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Twin Shot" skillId="45168" skillLevel="4" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Twin Shot" skillId="45168" skillLevel="5" getLevel="60" levelUpSp="80000" />
+		<skill skillName="Twin Shot" skillId="45168" skillLevel="6" getLevel="70" levelUpSp="180000" />
+		<skill skillName="Twin Shot" skillId="45168" skillLevel="7" getLevel="75" levelUpSp="230000" />
+		<skill skillName="Critical Sense" skillId="626" skillLevel="1" getLevel="45" levelUpSp="12000" />
+		<skill skillName="Critical Sense" skillId="626" skillLevel="2" getLevel="55" levelUpSp="45000" />
+		<skill skillName="Critical Sense" skillId="626" skillLevel="3" getLevel="67" levelUpSp="150000" />
+		<skill skillName="Multishot" skillId="45170" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Multishot" skillId="45170" skillLevel="2" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Multishot" skillId="45170" skillLevel="3" getLevel="60" levelUpSp="80000" />
+		<skill skillName="Multishot" skillId="45170" skillLevel="4" getLevel="70" levelUpSp="180000" />
+		<skill skillName="Multishot" skillId="45170" skillLevel="5" getLevel="75" levelUpSp="230000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="1" getLevel="60" levelUpSp="80000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="2" getLevel="62" levelUpSp="100000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="3" getLevel="64" levelUpSp="120000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="4" getLevel="66" levelUpSp="140000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="5" getLevel="68" levelUpSp="160000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="6" getLevel="70" levelUpSp="180000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="7" getLevel="72" levelUpSp="200000" />
+		<skill skillName="Sharp Aiming" skillId="45172" skillLevel="8" getLevel="74" levelUpSp="220000" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="80000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Light Master" skillId="45178" skillLevel="2" getLevel="60" levelUpSp="80000">
+			<item id="95500,91944" count="1" /> <!-- Spellbook: Light Master Lv. 2 -->
+		</skill>
+		<skill skillName="Shadow Master" skillId="45179" skillLevel="1" getLevel="40" levelUpSp="0" autoGet="true" />
+		<skill skillName="Shadow Master" skillId="45179" skillLevel="2" getLevel="70" levelUpSp="180000">
+			<item id="95501,91945" count="1" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="20000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="90000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+		<skill skillName="Bow Mastery" skillId="767" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Bow Mastery" skillId="767" skillLevel="4" getLevel="50" levelUpSp="20000" />
+		<skill skillName="Bow Mastery" skillId="767" skillLevel="5" getLevel="60" levelUpSp="80000" />
+		<skill skillName="Bow Mastery" skillId="767" skillLevel="6" getLevel="70" levelUpSp="180000" />
+		<skill skillName="Bow Mastery" skillId="767" skillLevel="7" getLevel="75" levelUpSp="230000" />
+	</skillTree>
+</list>

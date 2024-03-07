@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="228" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="60" empty="600" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-49550" y="17189" z="-3016" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="GroupMin">
+			<param name="limit" value="1" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="1" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34305" x="-56631" y="13571" z="-3353" heading="63943" /> <!-- Toka -->
+			<npc id="34310" x="-56690" y="13480" z="-3356" heading="3781" /> <!-- Mercenary -->
+			<npc id="34310" x="-56723" y="13578" z="-3357" heading="63334" /> <!-- Mercenary -->
+			<npc id="34310" x="-56730" y="13671" z="-3357" heading="62980" /> <!-- Mercenary -->
+			<npc id="34308" x="-56206" y="13641" z="-3345" heading="33758" /> <!-- Tind -->
+			<npc id="34310" x="-56114" y="13777" z="-3369" heading="31613" /> <!-- Mercenary -->
+			<npc id="34310" x="-56103" y="13649" z="-3357" heading="34065" /> <!-- Mercenary -->
+			<npc id="34310" x="-56096" y="13541" z="-3360" heading="32767" /> <!-- Mercenary -->
+			<npc id="34306" x="-56307" y="13223" z="-3357" heading="19286" /> <!-- Eri -->
+			<npc id="34310" x="-56214" y="13178" z="-3357" heading="16058" /> <!-- Mercenary -->
+			<npc id="34310" x="-56328" y="13167" z="-3357" heading="11873" /> <!-- Mercenary -->
+			<npc id="34310" x="-56409" y="13185" z="-3357" heading="9672" /> <!-- Mercenary -->
+			<npc id="34307" x="-49336" y="17526" z="-2987" heading="48951" /> <!-- Grown -->
+			<npc id="34308" x="-49423" y="17520" z="-2987" heading="48678" /> <!-- Tind -->
+			<npc id="34305" x="-49855" y="17632" z="-3021" heading="49151" /> <!-- Toka -->
+			<npc id="34306" x="-49969" y="17633" z="-3021" heading="47916" /> <!-- Eri -->
+			<npc id="34309" x="-50080" y="17633" z="-3021" heading="49406" /> <!-- Arbana -->
+			<npc id="34310" x="-49810" y="17465" z="-3021" heading="14903" /> <!-- Mercenary -->
+			<npc id="34310" x="-49821" y="17364" z="-3021" heading="16383" /> <!-- Mercenary -->
+			<npc id="34310" x="-49824" y="17282" z="-3021" heading="8191" /> <!-- Mercenary -->
+			<npc id="34310" x="-49875" y="17473" z="-3021" heading="15562" /> <!-- Mercenary -->
+			<npc id="34310" x="-49894" y="17287" z="-3021" heading="18939" /> <!-- Mercenary -->
+			<npc id="34310" x="-49880" y="17370" z="-3021" heading="13758" /> <!-- Mercenary -->
+			<npc id="34310" x="-49954" y="17472" z="-3021" heading="16770" /> <!-- Mercenary -->
+			<npc id="34310" x="-49959" y="17374" z="-3021" heading="14325" /> <!-- Mercenary -->
+			<npc id="34310" x="-49967" y="17286" z="-3021" heading="15409" /> <!-- Mercenary -->
+			<npc id="34310" x="-50029" y="17472" z="-3021" heading="15544" /> <!-- Mercenary -->
+			<npc id="34310" x="-50037" y="17374" z="-3021" heading="14562" /> <!-- Mercenary -->
+			<npc id="34310" x="-50047" y="17285" z="-3021" heading="15229" /> <!-- Mercenary -->
+			<npc id="34310" x="-50110" y="17476" z="-3021" heading="14080" /> <!-- Mercenary -->
+			<npc id="34310" x="-50119" y="17378" z="-3021" heading="14811" /> <!-- Mercenary -->
+			<npc id="34310" x="-50128" y="17292" z="-3021" heading="18442" /> <!-- Mercenary -->
+			<npc id="34310" x="-49215" y="16541" z="-3201" heading="32767" /> <!-- Mercenary -->
+			<npc id="34310" x="-49114" y="16536" z="-3201" heading="31134" /> <!-- Mercenary -->
+			<npc id="34310" x="-49007" y="16530" z="-3201" heading="32333" /> <!-- Mercenary -->
+			<npc id="34310" x="-48905" y="16524" z="-3201" heading="31613" /> <!-- Mercenary -->
+			<npc id="34310" x="-48786" y="16517" z="-3201" heading="31385" /> <!-- Mercenary -->
+			<npc id="34310" x="-48654" y="16510" z="-3201" heading="31415" /> <!-- Mercenary -->
+			<npc id="34310" x="-48645" y="16602" z="-3201" heading="37604" /> <!-- Mercenary -->
+			<npc id="34310" x="-48770" y="16622" z="-3201" heading="35048" /> <!-- Mercenary -->
+			<npc id="34310" x="-49211" y="16650" z="-3201" heading="33289" /> <!-- Mercenary -->
+			<npc id="34310" x="-49101" y="16645" z="-3201" heading="31569" /> <!-- Mercenary -->
+			<npc id="34310" x="-49012" y="16640" z="-3201" heading="30024" /> <!-- Mercenary -->
+			<npc id="34310" x="-48897" y="16630" z="-3201" heading="31822" /> <!-- Mercenary -->
+			<npc id="34310" x="-49224" y="16755" z="-3201" heading="34490" /> <!-- Mercenary -->
+			<npc id="34310" x="-48890" y="16732" z="-3201" heading="38901" /> <!-- Mercenary -->
+			<npc id="34310" x="-48767" y="16720" z="-3201" heading="31900" /> <!-- Mercenary -->
+			<npc id="34310" x="-48638" y="16698" z="-3201" heading="32767" /> <!-- Mercenary -->
+			<npc id="34310" x="-49109" y="16747" z="-3201" heading="32767" /> <!-- Mercenary -->
+			<npc id="34310" x="-49014" y="16736" z="-3201" heading="31900" /> <!-- Mercenary -->
+			<npc id="34310" x="-49374" y="16660" z="-3201" heading="64668" /> <!-- Mercenary -->
+			<npc id="34310" x="-48760" y="16946" z="-3201" heading="32271" /> <!-- Mercenary -->
+			<npc id="34310" x="-48681" y="16938" z="-3201" heading="34360" /> <!-- Mercenary -->
+			<npc id="34310" x="-48600" y="16930" z="-3201" heading="32073" /> <!-- Mercenary -->
+			<npc id="34310" x="-48513" y="16923" z="-3201" heading="31692" /> <!-- Mercenary -->
+			<npc id="34310" x="-48398" y="16905" z="-3201" heading="31863" /> <!-- Mercenary -->
+			<npc id="34310" x="-48300" y="16896" z="-3201" heading="31546" /> <!-- Mercenary -->
+			<npc id="34310" x="-48759" y="17042" z="-3201" heading="32767" /> <!-- Mercenary -->
+			<npc id="34310" x="-48686" y="17038" z="-3201" heading="31287" /> <!-- Mercenary -->
+			<npc id="34310" x="-48602" y="17026" z="-3201" heading="32219" /> <!-- Mercenary -->
+			<npc id="34310" x="-48511" y="17020" z="-3201" heading="30402" /> <!-- Mercenary -->
+			<npc id="34310" x="-48400" y="17000" z="-3201" heading="31134" /> <!-- Mercenary -->
+			<npc id="34310" x="-48293" y="16986" z="-3201" heading="28693" /> <!-- Mercenary -->
+			<npc id="34310" x="-48764" y="17124" z="-3201" heading="31546" /> <!-- Mercenary -->
+			<npc id="34310" x="-48689" y="17118" z="-3201" heading="31470" /> <!-- Mercenary -->
+			<npc id="34310" x="-48601" y="17111" z="-3201" heading="31385" /> <!-- Mercenary -->
+			<npc id="34310" x="-48505" y="17103" z="-3201" heading="26056" /> <!-- Mercenary -->
+			<npc id="34310" x="-48395" y="17085" z="-3201" heading="27931" /> <!-- Mercenary -->
+			<npc id="34310" x="-48284" y="17070" z="-3201" heading="32767" /> <!-- Mercenary -->
+			<npc id="34310" x="-48911" y="17055" z="-3201" heading="63813" /> <!-- Mercenary -->
+			<npc id="34306" x="-53110" y="5440" z="-246" /> <!-- Eri -->
+			<npc id="34310" x="-53021" y="5615" z="-249" heading="63755" /> <!-- Mercenary -->
+			<npc id="34310" x="-52950" y="5543" z="-249" heading="11273" /> <!-- Mercenary -->
+			<npc id="34310" x="-53002" y="5385" z="-249" heading="57112" /> <!-- Mercenary -->
+			<npc id="34310" x="-53063" y="5334" z="-249" heading="57167" /> <!-- Mercenary -->
+			<npc id="34308" x="-52641" y="5170" z="-244" heading="8856" /> <!-- Tind -->
+			<npc id="34310" x="-52745" y="5236" z="-244" heading="7979" /> <!-- Mercenary -->
+			<npc id="34310" x="-52545" y="5086" z="-244" heading="9198" /> <!-- Mercenary -->
+			<npc id="34310" x="-52748" y="5141" z="-243" heading="9383" /> <!-- Mercenary -->
+			<npc id="34310" x="-52651" y="5066" z="-243" heading="9346" /> <!-- Mercenary -->
+			<npc id="34305" x="-52349" y="4793" z="-246" heading="14661" /> <!-- Toka -->
+			<npc id="34310" x="-52453" y="4829" z="-249" heading="20458" /> <!-- Mercenary -->
+			<npc id="34310" x="-52407" y="4874" z="-249" heading="18939" /> <!-- Mercenary -->
+			<npc id="34310" x="-52309" y="4860" z="-249" heading="6316" /> <!-- Mercenary -->
+			<npc id="34310" x="-52265" y="4818" z="-249" heading="8191" /> <!-- Mercenary -->
+		</group>
+		<group name="PlainsOfTheLizardmen" spawnByDefault="false">
+			<npc id="22154" x="-56776" y="12532" z="-3384" heading="33897" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22152" x="-57296" y="13024" z="-3363" heading="36820" respawnTime="60sec" /> <!-- Tanta Lizardman Warrior -->
+			<npc id="22154" x="-57384" y="12989" z="-3367" heading="36820" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22154" x="-57601" y="12728" z="-3374" heading="47335" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22152" x="-57980" y="12347" z="-3361" heading="38064" respawnTime="60sec" /> <!-- Tanta Lizardman Warrior -->
+			<npc id="22154" x="-57959" y="12312" z="-3361" heading="54505" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22152" x="-57714" y="12144" z="-3366" heading="1710" respawnTime="60sec" /> <!-- Tanta Lizardman Warrior -->
+			<npc id="22154" x="-57602" y="12122" z="-3370" heading="62046" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22152" x="-57307" y="12050" z="-3373" heading="63748" respawnTime="60sec" /> <!-- Tanta Lizardman Warrior -->
+			<npc id="22154" x="-57178" y="12052" z="-3373" heading="1697" respawnTime="60sec" /> <!-- Tanta Lizardman Archer -->
+			<npc id="22155" x="-57526" y="12561" z="-3391" heading="61250" respawnTime="60sec" /> <!-- Tanta Lizardman Summoner -->
+			<npc id="22153" x="-57419" y="12491" z="-3395" heading="56790" respawnTime="60sec" /> <!-- Tanta Lizardman Berserker -->
+			<npc id="22155" x="-57113" y="12356" z="-3385" heading="62575" respawnTime="60sec" /> <!-- Tanta Lizardman Summoner -->
+			<npc id="22153" x="-56986" y="12345" z="-3377" heading="1449" respawnTime="60sec" /> <!-- Tanta Lizardman Berserker -->
+			<npc id="22155" x="-57367" y="12015" z="-3371" heading="28271" respawnTime="60sec" /> <!-- Tanta Lizardman Summoner -->
+			<npc id="22153" x="-57591" y="12006" z="-3370" heading="65156" respawnTime="60sec" /> <!-- Tanta Lizardman Berserker -->
+			<npc id="22152" x="-57642" y="12976" z="-3363" heading="42158" respawnTime="60sec" /> <!-- Tanta Lizardman Warrior -->
+		</group>
+		<group name="SelMahumBase" spawnByDefault="false">
+			<npc id="22245" x="-57296" y="13024" z="-3363" heading="36820" respawnTime="60sec" /> <!-- bowman -->
+			<npc id="22276" x="-57384" y="12989" z="-3367" heading="36820" respawnTime="60sec" /> <!-- footman -->
+			<npc id="22243" x="-57601" y="12728" z="-3374" heading="47335" respawnTime="60sec" /> <!-- knight -->
+			<npc id="22276" x="-57980" y="12347" z="-3361" heading="38064" respawnTime="60sec" />
+			<npc id="22276" x="-57959" y="12312" z="-3361" heading="54505" respawnTime="60sec" />
+			<npc id="22276" x="-57714" y="12144" z="-3366" heading="1710" respawnTime="60sec" />
+			<npc id="22245" x="-57602" y="12122" z="-3370" heading="62046" respawnTime="60sec" />
+			<npc id="22245" x="-57307" y="12050" z="-3373" heading="63748" respawnTime="60sec" />
+			<npc id="22276" x="-57178" y="12052" z="-3373" heading="1697" respawnTime="60sec" />
+			<npc id="22245" x="-57526" y="12561" z="-3391" heading="61250" respawnTime="60sec" />
+			<npc id="22276" x="-57419" y="12491" z="-3395" heading="56790" respawnTime="60sec" />
+			<npc id="22242" x="-57113" y="12356" z="-3385" heading="62575" respawnTime="60sec" />
+			<npc id="22243" x="-56986" y="12345" z="-3377" heading="1449" respawnTime="60sec" />
+			<npc id="22276" x="-57367" y="12015" z="-3371" heading="28271" respawnTime="60sec" />
+			<npc id="22245" x="-57591" y="12006" z="-3370" heading="65156" respawnTime="60sec" />
+			<npc id="22242" x="-57642" y="12976" z="-3363" heading="42158" respawnTime="60sec" />
+		</group>
+		<group name="OrcBarracksKerrs" spawnByDefault="false">
+			<npc id="22135" x="-56776" y="12532" z="-3384" heading="33897" respawnTime="60sec" />
+			<npc id="22135" x="-57296" y="13024" z="-3363" heading="36820" respawnTime="60sec" />
+			<npc id="22135" x="-57384" y="12989" z="-3367" heading="36820" respawnTime="60sec" />
+			<npc id="22139" x="-57601" y="12728" z="-3374" heading="47335" respawnTime="60sec" />
+			<npc id="22139" x="-57980" y="12347" z="-3361" heading="38064" respawnTime="60sec" />
+			<npc id="22139" x="-57959" y="12312" z="-3361" heading="54505" respawnTime="60sec" />
+			<npc id="22139" x="-57714" y="12144" z="-3366" heading="1710" respawnTime="60sec" />
+			<npc id="22138" x="-57602" y="12122" z="-3370" heading="62046" respawnTime="60sec" />
+			<npc id="22138" x="-57307" y="12050" z="-3373" heading="63748" respawnTime="60sec" />
+			<npc id="22138" x="-57178" y="12052" z="-3373" heading="1697" respawnTime="60sec" />
+			<npc id="22135" x="-57526" y="12561" z="-3391" heading="61250" respawnTime="60sec" />
+			<npc id="22135" x="-57419" y="12491" z="-3395" heading="56790" respawnTime="60sec" />
+			<npc id="22135" x="-57113" y="12356" z="-3385" heading="62575" respawnTime="60sec" />
+			<npc id="22139" x="-56986" y="12345" z="-3377" heading="1449" respawnTime="60sec" />
+			<npc id="22139" x="-57367" y="12015" z="-3371" heading="28271" respawnTime="60sec" />
+			<npc id="22138" x="-57591" y="12006" z="-3370" heading="65156" respawnTime="60sec" />
+			<npc id="22135" x="-57642" y="12976" z="-3363" heading="42158" respawnTime="60sec" />
+		</group>
+		<group name="OrcBarracksTureks" spawnByDefault="false">
+			<npc id="22141" x="-56776" y="12532" z="-3384" heading="33897" respawnTime="60sec" />
+			<npc id="22145" x="-57296" y="13024" z="-3363" heading="36820" respawnTime="60sec" />
+			<npc id="22145" x="-57384" y="12989" z="-3367" heading="36820" respawnTime="60sec" />
+			<npc id="22145" x="-57601" y="12728" z="-3374" heading="47335" respawnTime="60sec" />
+			<npc id="22144" x="-57980" y="12347" z="-3361" heading="38064" respawnTime="60sec" />
+			<npc id="22141" x="-57959" y="12312" z="-3361" heading="54505" respawnTime="60sec" />
+			<npc id="22141" x="-57714" y="12144" z="-3366" heading="1710" respawnTime="60sec" />
+			<npc id="22141" x="-57602" y="12122" z="-3370" heading="62046" respawnTime="60sec" />
+			<npc id="22141" x="-57307" y="12050" z="-3373" heading="63748" respawnTime="60sec" />
+			<npc id="22144" x="-57178" y="12052" z="-3373" heading="1697" respawnTime="60sec" />
+			<npc id="22143" x="-57526" y="12561" z="-3391" heading="61250" respawnTime="60sec" />
+			<npc id="22143" x="-57419" y="12491" z="-3395" heading="56790" respawnTime="60sec" />
+			<npc id="22143" x="-57113" y="12356" z="-3385" heading="62575" respawnTime="60sec" />
+			<npc id="22145" x="-56986" y="12345" z="-3377" heading="1449" respawnTime="60sec" />
+			<npc id="22141" x="-57367" y="12015" z="-3371" heading="28271" respawnTime="60sec" />
+			<npc id="22141" x="-57591" y="12006" z="-3370" heading="65156" respawnTime="60sec" />
+			<npc id="22141" x="-57642" y="12976" z="-3363" heading="42158" respawnTime="60sec" />
+		</group>
+		<group name="TowerOfInsolence1" spawnByDefault="false">
+			<npc id="22560" x="-51788" y="5439" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51698" y="5576" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51537" y="5546" z="-248" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51530" y="5675" z="-248" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-51752" y="5658" z="-249" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22560" x="-51802" y="5826" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51596" y="5797" z="-248" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51384" y="5740" z="-247" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51333" y="5647" z="-247" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-51248" y="5719" z="-247" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51266" y="5826" z="-247" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22561" x="-51426" y="5951" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51643" y="5977" z="-249" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22560" x="-51837" y="5921" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51916" y="5754" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51894" y="5574" z="-249" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-52050" y="5654" z="-249" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22561" x="-52088" y="5753" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22560" x="-52258" y="5813" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22562" x="-52049" y="5917" z="-251" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-52208" y="5966" z="-251" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-52344" y="6055" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-52239" y="6176" z="-248" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-52119" y="6085" z="-246" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51899" y="6119" z="-245" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22561" x="-52019" y="6252" z="-245" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22560" x="-51801" y="6397" z="-244" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22562" x="-51738" y="6261" z="-244" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51660" y="6184" z="-245" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-51529" y="6119" z="-248" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22560" x="-51355" y="6052" z="-248" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51201" y="5948" z="-248" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51094" y="5849" z="-248" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51028" y="6025" z="-249" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22561" x="-51111" y="6096" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22560" x="-51129" y="6223" z="-249" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22562" x="-51250" y="6370" z="-249" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22561" x="-51328" y="6305" z="-249" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51482" y="6320" z="-247" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-51481" y="6503" z="-246" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22561" x="-51348" y="6606" z="-248" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22560" x="-51200" y="6700" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51203" y="6476" z="-251" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22563" x="-51293" y="6169" z="-249" respawnTime="11sec" respawnRandom="4sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-52038" y="6007" z="-247" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+			<npc id="22561" x="-51797" y="6077" z="-247" respawnTime="60sec" /> <!-- Resurrected Scout -->
+			<npc id="22562" x="-51485" y="6221" z="-248" respawnTime="60sec" /> <!-- Resurrected Recruit -->
+			<npc id="22563" x="-52398" y="5933" z="-250" respawnTime="60sec" /> <!-- Resurrected Archer -->
+			<npc id="22560" x="-52542" y="6013" z="-251" respawnTime="60sec" /> <!-- Resurrected Spirit -->
+		</group>
+		<group name="TowerOfInsolence2" spawnByDefault="false">
+			<npc id="22565" x="-51627" y="5983" z="-249" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51549" y="6098" z="-251" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51470" y="6029" z="-251" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22568" x="-51555" y="5840" z="-248" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22566" x="-51769" y="5791" z="-249" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-51798" y="5934" z="-251" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51389" y="5900" z="-249" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51306" y="6065" z="-249" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22568" x="-51428" y="6211" z="-249" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22565" x="-51572" y="6234" z="-247" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51500" y="6411" z="-247" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51391" y="6379" z="-247" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-51235" y="6280" z="-247" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51219" y="6441" z="-248" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22568" x="-51194" y="6697" z="-249" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22568" x="-51283" y="6682" z="-251" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22567" x="-51333" y="6629" z="-250" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22565" x="-51612" y="6470" z="-246" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51690" y="6351" z="-246" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51775" y="6314" z="-246" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22568" x="-51825" y="6131" z="-246" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22568" x="-51966" y="6131" z="-246" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22565" x="-52145" y="6105" z="-246" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-52364" y="6070" z="-246" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-52457" y="5862" z="-251" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22568" x="-52279" y="5810" z="-251" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22567" x="-52194" y="5927" z="-251" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-52051" y="5890" z="-251" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-52006" y="5805" z="-250" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-52002" y="5624" z="-250" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22568" x="-51844" y="5427" z="-249" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22568" x="-51633" y="5501" z="-247" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22567" x="-51706" y="5628" z="-247" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51463" y="5708" z="-247" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-51389" y="5623" z="-247" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51299" y="5731" z="-247" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51189" y="5881" z="-247" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22567" x="-51098" y="6081" z="-247" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22565" x="-51032" y="5859" z="-249" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51115" y="5769" z="-251" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22566" x="-51842" y="5580" z="-249" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22566" x="-51669" y="5760" z="-249" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-51290" y="5856" z="-249" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-51265" y="6581" z="-251" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-51765" y="6095" z="-247" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-51938" y="6310" z="-247" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22565" x="-51809" y="5527" z="-249" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22567" x="-51921" y="5952" z="-247" respawnTime="60sec" /> <!-- Decayed Royal Guard -->
+			<npc id="22568" x="-51682" y="5899" z="-248" respawnTime="60sec" /> <!-- Decayed Archer -->
+			<npc id="22566" x="-51971" y="6230" z="-246" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+			<npc id="22565" x="-51437" y="6295" z="-251" respawnTime="60sec" /> <!-- Decayed Warrior -->
+			<npc id="22566" x="-51568" y="5724" z="-248" respawnTime="60sec" /> <!-- Decayed Evil Hound -->
+		</group>
+		<group name="TowerOfInsolence3" spawnByDefault="false">
+			<npc id="22570" x="-51695" y="5972" z="-251" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51591" y="6078" z="-251" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51477" y="5996" z="-249" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22573" x="-51605" y="5800" z="-248" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22572" x="-51913" y="5922" z="-251" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-51821" y="6031" z="-248" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51603" y="6233" z="-247" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22570" x="-51391" y="6214" z="-251" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51330" y="6046" z="-250" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51050" y="5974" z="-249" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22572" x="-51306" y="5825" z="-249" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22573" x="-51363" y="5694" z="-249" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22571" x="-51512" y="5704" z="-247" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51645" y="5522" z="-247" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-51762" y="5643" z="-248" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51971" y="5679" z="-249" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51917" y="5508" z="-249" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22573" x="-51793" y="5466" z="-251" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22570" x="-51884" y="5706" z="-249" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22570" x="-52029" y="5872" z="-249" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-52113" y="5801" z="-249" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-52291" y="5823" z="-249" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22571" x="-52280" y="5896" z="-249" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22570" x="-52424" y="6045" z="-249" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22572" x="-52480" y="5956" z="-251" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22571" x="-52204" y="6066" z="-247" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-52091" y="6212" z="-246" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22571" x="-52001" y="6144" z="-246" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51987" y="6003" z="-248" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-51773" y="6199" z="-248" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22570" x="-51697" y="6405" z="-246" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22573" x="-51484" y="6397" z="-246" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22573" x="-51339" y="6367" z="-247" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22571" x="-51346" y="6553" z="-251" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51321" y="6691" z="-251" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-51174" y="6618" z="-251" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22573" x="-51187" y="6476" z="-251" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22570" x="-51130" y="6338" z="-251" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51189" y="6243" z="-251" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51189" y="6099" z="-250" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22573" x="-51127" y="5808" z="-249" respawnTime="60sec" /> <!-- Brainwashed Archer -->
+			<npc id="22571" x="-51030" y="5852" z="-251" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22572" x="-51454" y="5855" z="-248" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-52094" y="5996" z="-251" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22571" x="-51836" y="6314" z="-247" respawnTime="60sec" /> <!-- Brainwashed Elder -->
+			<npc id="22570" x="-51826" y="5807" z="-249" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22572" x="-51469" y="5554" z="-248" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22572" x="-51573" y="5890" z="-248" respawnTime="60sec" /> <!-- Brainwashed Warrior -->
+			<npc id="22570" x="-51509" y="6189" z="-248" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+			<npc id="22570" x="-51569" y="6467" z="-247" respawnTime="60sec" /> <!-- Brainwashed Maid -->
+		</group>
+		<group name="TowerOfInsolence4" spawnByDefault="false">
+			<npc id="22575" x="-51681" y="6013" z="-251" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51606" y="6092" z="-249" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-51711" y="6116" z="-247" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51636" y="6195" z="-246" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22575" x="-51399" y="6076" z="-251" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22578" x="-51561" y="5958" z="-248" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22577" x="-51505" y="5843" z="-248" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22576" x="-51311" y="6009" z="-249" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22578" x="-51182" y="5857" z="-249" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22576" x="-51112" y="5919" z="-249" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22575" x="-51246" y="6206" z="-250" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51393" y="6229" z="-251" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-51287" y="6348" z="-251" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51285" y="6433" z="-251" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22578" x="-51477" y="6397" z="-247" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22575" x="-51673" y="6335" z="-247" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22577" x="-51864" y="6161" z="-245" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51967" y="6153" z="-245" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22578" x="-52137" y="6101" z="-245" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22575" x="-52146" y="6013" z="-245" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22575" x="-52260" y="5858" z="-246" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-52388" y="5986" z="-247" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-52554" y="6027" z="-251" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22575" x="-52091" y="5897" z="-251" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51875" y="5940" z="-251" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-51882" y="5839" z="-250" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-52030" y="5741" z="-250" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22578" x="-52076" y="5614" z="-251" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22577" x="-51867" y="5522" z="-249" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22575" x="-51766" y="5704" z="-249" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51676" y="5793" z="-248" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22576" x="-51597" y="5644" z="-248" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22575" x="-51422" y="5605" z="-248" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51355" y="5777" z="-248" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22575" x="-51085" y="5769" z="-248" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22577" x="-51119" y="6135" z="-248" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22575" x="-51092" y="6315" z="-250" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51159" y="6447" z="-250" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-51148" y="6553" z="-250" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51284" y="6624" z="-250" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22577" x="-51509" y="6553" z="-247" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22577" x="-51480" y="6179" z="-248" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51864" y="6316" z="-244" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22578" x="-52128" y="6250" z="-245" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22575" x="-52369" y="5877" z="-251" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-52161" y="5730" z="-251" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+			<npc id="22577" x="-51953" y="5645" z="-251" respawnTime="60sec" /> <!-- Hallate's Knight -->
+			<npc id="22578" x="-51825" y="5372" z="-251" respawnTime="60sec" /> <!-- Hallate's Shaman -->
+			<npc id="22575" x="-51770" y="5850" z="-249" respawnTime="60sec" /> <!-- Hallate's Warrior -->
+			<npc id="22576" x="-51315" y="5873" z="-249" respawnTime="60sec" /> <!-- Hallate's Watchman -->
+		</group>
+		<group name="TowerOfInsolence5" spawnByDefault="false">
+			<npc id="22580" x="-51668" y="6004" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51589" y="6130" z="-246" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51688" y="6097" z="-246" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22583" x="-51743" y="6007" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22580" x="-51677" y="5945" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51566" y="6030" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22580" x="-51461" y="5939" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22582" x="-51390" y="6053" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22583" x="-51463" y="6169" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22581" x="-51493" y="6287" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51730" y="6245" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22581" x="-51731" y="6209" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22583" x="-51893" y="6157" z="-246" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22583" x="-51879" y="6015" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22582" x="-51822" y="5847" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22581" x="-51720" y="5829" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22580" x="-51689" y="5722" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51501" y="5774" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22580" x="-51436" y="5739" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22582" x="-51298" y="5878" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22583" x="-51191" y="5881" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22580" x="-51072" y="6039" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51241" y="6112" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51180" y="6203" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-51195" y="6329" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22582" x="-51300" y="6375" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-51375" y="6509" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22583" x="-51333" y="6568" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22580" x="-51231" y="6740" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51165" y="6565" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51018" y="5866" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-51226" y="5711" z="-250" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51421" y="5604" z="-249" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51597" y="5585" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22583" x="-51752" y="5449" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22580" x="-51812" y="5489" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22580" x="-52010" y="5579" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51972" y="5719" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-52097" y="5743" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-52168" y="5752" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-52298" y="5811" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22581" x="-52549" y="5972" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-52401" y="5943" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-52333" y="6084" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-52239" y="6046" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22580" x="-52135" y="5938" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22582" x="-52061" y="6189" z="-248" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22580" x="-51990" y="6324" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+			<npc id="22581" x="-51848" y="6352" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22582" x="-51692" y="6492" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Guard -->
+			<npc id="22583" x="-51508" y="6422" z="-247" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Knight -->
+			<npc id="22581" x="-51407" y="6645" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Shaman -->
+			<npc id="22580" x="-51095" y="6310" z="-251" respawnTime="60sec" /> <!-- Supreme Platinum Tribe Soldier -->
+		</group>
+		<group name="TowerOfInsolence6" spawnByDefault="false">
+			<npc id="22585" x="-51640" y="6024" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51521" y="6160" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22587" x="-51702" y="6145" z="-246" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22588" x="-51637" y="6267" z="-246" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Gladiator -->
+			<npc id="22585" x="-51491" y="6271" z="-246" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51438" y="6220" z="-246" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-51413" y="6118" z="-247" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22585" x="-51431" y="5920" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51519" y="5952" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22587" x="-51649" y="5882" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22586" x="-51848" y="5963" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22586" x="-51850" y="6132" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-51990" y="6139" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22587" x="-51883" y="6311" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-51750" y="6364" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51619" y="6489" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22588" x="-51551" y="6456" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Gladiator -->
+			<npc id="22587" x="-51480" y="6434" z="-245" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-51338" y="6518" z="-246" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51244" y="6752" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22587" x="-51176" y="6503" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-51242" y="6370" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-51194" y="6290" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22588" x="-51073" y="6166" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Gladiator -->
+			<npc id="22586" x="-51107" y="6106" z="-250" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-51254" y="6025" z="-250" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22587" x="-51225" y="5891" z="-250" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-51104" y="5899" z="-250" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22585" x="-51180" y="5726" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22587" x="-51392" y="5696" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22586" x="-51477" y="5767" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-51679" y="5697" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22587" x="-51613" y="5522" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22588" x="-51713" y="5487" z="-247" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Gladiator -->
+			<npc id="22586" x="-51999" y="5530" z="-247" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22586" x="-51947" y="5694" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-52048" y="5859" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-52180" y="5707" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22585" x="-52217" y="5888" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22587" x="-52398" y="5850" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22587" x="-52384" y="5959" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-52491" y="6013" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22586" x="-52382" y="6133" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Elite Soldier -->
+			<npc id="22587" x="-52222" y="6093" z="-248" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Archer -->
+			<npc id="22585" x="-52123" y="6202" z="-247" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+			<npc id="22588" x="-51842" y="5691" z="-249" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Gladiator -->
+			<npc id="22585" x="-51852" y="5427" z="-251" respawnTime="60sec" /> <!-- Evolved Platinum Tribe Warrior -->
+		</group>
+		<group name="TowerOfInsolence7" spawnByDefault="false">
+			<npc id="22590" x="-51653" y="6006" z="-250" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51497" y="6103" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-51566" y="6126" z="-248" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51459" y="6313" z="-247" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22592" x="-51246" y="5970" z="-249" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22591" x="-51222" y="6152" z="-249" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51198" y="6252" z="-249" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51440" y="5967" z="-249" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-51432" y="5855" z="-248" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51602" y="5794" z="-248" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51630" y="5653" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51756" y="5591" z="-248" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51861" y="5608" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22591" x="-52082" y="5733" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-52013" y="5825" z="-249" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51836" y="5962" z="-251" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-52038" y="6047" z="-246" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-52034" y="6169" z="-246" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22591" x="-51842" y="6188" z="-246" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51699" y="6222" z="-246" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51686" y="6331" z="-246" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22591" x="-51659" y="6394" z="-246" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51453" y="6454" z="-246" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22592" x="-51342" y="6444" z="-246" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51201" y="6525" z="-246" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51300" y="6629" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-51164" y="6749" z="-250" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51087" y="6125" z="-251" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51041" y="5985" z="-250" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-51116" y="5882" z="-250" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51078" y="5757" z="-250" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22592" x="-51304" y="5721" z="-248" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22591" x="-51436" y="5591" z="-248" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51615" y="5967" z="-248" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51789" y="6029" z="-245" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-52155" y="5897" z="-249" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-52272" y="5806" z="-249" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22592" x="-52294" y="5912" z="-249" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22592" x="-52231" y="6046" z="-249" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-52341" y="6155" z="-251" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-52482" y="5995" z="-251" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22591" x="-52061" y="5612" z="-251" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+			<npc id="22590" x="-51930" y="5481" z="-250" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22592" x="-51706" y="5413" z="-251" respawnTime="60sec" /> <!-- Heavenly Royal Knight -->
+			<npc id="22590" x="-51861" y="5845" z="-250" respawnTime="60sec" /> <!-- Heavenly Warrior -->
+			<npc id="22591" x="-51146" y="6368" z="-251" respawnTime="60sec" /> <!-- Heavenly Hierarch -->
+		</group>
+		<group name="TowerOfInsolence8" spawnByDefault="false">
+			<npc id="22594" x="-51668" y="5992" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51633" y="6166" z="-247" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51718" y="6095" z="-246" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-51819" y="6268" z="-247" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51663" y="6325" z="-246" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51549" y="6471" z="-246" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-51406" y="6428" z="-246" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51317" y="6138" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51177" y="6067" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51326" y="5950" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51389" y="5846" z="-248" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22596" x="-51158" y="5839" z="-248" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22595" x="-51359" y="5682" z="-248" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51534" y="5656" z="-248" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22596" x="-51651" y="5547" z="-248" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-51823" y="5667" z="-248" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51982" y="5745" z="-248" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-52055" y="5737" z="-248" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-52195" y="5891" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22596" x="-52257" y="6055" z="-249" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-52436" y="6010" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-52363" y="5873" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-52293" y="5786" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22596" x="-52189" y="5679" z="-249" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22595" x="-52010" y="5545" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51873" y="5483" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22594" x="-51741" y="5625" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51765" y="5792" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51879" y="5884" z="-249" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-51928" y="5936" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22594" x="-52051" y="6071" z="-248" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-52016" y="6275" z="-244" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51499" y="6289" z="-244" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51277" y="6324" z="-246" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51094" y="6432" z="-251" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22595" x="-51137" y="6657" z="-251" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51266" y="6725" z="-251" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51315" y="6545" z="-251" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22594" x="-51093" y="6147" z="-251" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51028" y="5973" z="-250" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+			<npc id="22596" x="-51023" y="5792" z="-250" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22596" x="-51493" y="6077" z="-251" respawnTime="60sec" /> <!-- Mutated Archer Messenger -->
+			<npc id="22594" x="-51566" y="5867" z="-249" respawnTime="60sec" /> <!-- Mutated Messenger Angel -->
+			<npc id="22595" x="-51792" y="5453" z="-249" respawnTime="60sec" /> <!-- Mutated Prime Messenger -->
+		</group>
+		<group name="TowerOfInsolence9" spawnByDefault="false">
+			<npc id="22598" x="-51591" y="6015" z="-248" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51653" y="6087" z="-246" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51734" y="5980" z="-249" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-51864" y="6010" z="-246" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51770" y="6164" z="-246" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51608" y="6248" z="-246" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-51561" y="6367" z="-246" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22599" x="-51381" y="6415" z="-247" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-51287" y="6308" z="-249" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22600" x="-51264" y="6236" z="-249" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-51206" y="6139" z="-249" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51166" y="5958" z="-249" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-51316" y="5890" z="-249" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51484" y="5839" z="-248" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51474" y="5666" z="-248" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-51298" y="5696" z="-246" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51055" y="5791" z="-249" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-51597" y="5710" z="-250" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22600" x="-51636" y="5646" z="-250" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-51774" y="5533" z="-250" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-51852" y="5601" z="-250" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22600" x="-52033" y="5773" z="-250" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-52239" y="5723" z="-250" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22599" x="-52230" y="5904" z="-250" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-52358" y="5966" z="-250" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22600" x="-52555" y="6026" z="-250" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-52243" y="6144" z="-248" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-52076" y="6104" z="-247" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51969" y="6297" z="-247" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-51778" y="6413" z="-247" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51523" y="6567" z="-247" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-51325" y="6671" z="-247" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51154" y="6649" z="-250" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51200" y="6461" z="-251" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22598" x="-51080" y="6251" z="-251" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22600" x="-51807" y="5788" z="-249" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-51702" y="5790" z="-248" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-52044" y="5644" z="-249" respawnTime="60sec" /> <!-- Dark Warrior -->
+			<npc id="22599" x="-51770" y="5394" z="-249" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22600" x="-51578" y="5509" z="-249" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22600" x="-51450" y="6114" z="-248" respawnTime="60sec" /> <!-- Dark Dragontroop Berserker -->
+			<npc id="22599" x="-51404" y="6078" z="-251" respawnTime="60sec" /> <!-- Dark Magus -->
+			<npc id="22598" x="-52002" y="5931" z="-251" respawnTime="60sec" /> <!-- Dark Warrior -->
+		</group>
+		<group name="TowerOfInsolence10" spawnByDefault="false">
+			<npc id="22602" x="-51730" y="5916" z="-251" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51602" y="6085" z="-247" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51458" y="5959" z="-248" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51361" y="6221" z="-251" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51644" y="6308" z="-247" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22602" x="-51803" y="6152" z="-247" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22604" x="-51999" y="6177" z="-245" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-52121" y="6094" z="-245" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-52014" y="5992" z="-245" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51981" y="5897" z="-245" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51918" y="5727" z="-245" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51738" y="5784" z="-246" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51727" y="5710" z="-246" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51592" y="5656" z="-246" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51537" y="5752" z="-246" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51370" y="5702" z="-246" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51231" y="5751" z="-246" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51236" y="5857" z="-246" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51208" y="6034" z="-246" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51194" y="6219" z="-246" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51214" y="6401" z="-246" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51351" y="6549" z="-247" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51485" y="6373" z="-247" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51513" y="6113" z="-247" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51672" y="5578" z="-247" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51761" y="5373" z="-248" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51857" y="5569" z="-248" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-52035" y="5524" z="-248" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-52122" y="5711" z="-249" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-52270" y="5708" z="-249" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-52253" y="5800" z="-249" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-52291" y="5939" z="-249" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-52433" y="5922" z="-249" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-52492" y="6081" z="-249" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-52302" y="6139" z="-247" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-52206" y="6196" z="-247" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-52004" y="6292" z="-246" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51868" y="6355" z="-246" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51640" y="6482" z="-245" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51237" y="6749" z="-248" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51143" y="6589" z="-250" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51009" y="6084" z="-251" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22604" x="-51015" y="5861" z="-251" respawnTime="60sec" /> <!-- Divine Archer -->
+			<npc id="22602" x="-51387" y="6364" z="-251" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+			<npc id="22603" x="-51547" y="5540" z="-248" respawnTime="60sec" /> <!-- Divine Watcher -->
+			<npc id="22602" x="-51104" y="5736" z="-249" respawnTime="60sec" /> <!-- Divine Pilgrim -->
+		</group>
+		<group name="TowerOfInsolence11" spawnByDefault="false">
+			<npc id="22606" x="-51660" y="5960" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51671" y="6097" z="-247" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51455" y="6122" z="-250" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22607" x="-51488" y="6287" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22606" x="-51652" y="6302" z="-247" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22608" x="-51832" y="6193" z="-247" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51835" y="6015" z="-249" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51919" y="5904" z="-250" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-52019" y="5979" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-52048" y="6159" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51796" y="6414" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51591" y="6501" z="-247" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51409" y="6507" z="-247" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51314" y="6666" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51173" y="6616" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51214" y="6511" z="-249" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51274" y="6297" z="-249" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51136" y="6237" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22607" x="-51116" y="6165" z="-249" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22606" x="-51033" y="5918" z="-249" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22608" x="-51152" y="5933" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22607" x="-51293" y="6041" z="-249" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22606" x="-51443" y="5834" z="-249" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22608" x="-51376" y="5811" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51253" y="5735" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51415" y="5592" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51551" y="5646" z="-248" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51653" y="5569" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51752" y="5423" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51824" y="5577" z="-248" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51772" y="5753" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51937" y="5768" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22606" x="-52055" y="5634" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22608" x="-52192" y="5726" z="-248" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-52179" y="5910" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-52278" y="5976" z="-249" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-52399" y="5847" z="-249" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-52599" y="5979" z="-251" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-52468" y="6050" z="-251" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-52313" y="6153" z="-250" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-52011" y="6299" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22606" x="-51404" y="5990" z="-248" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22608" x="-52404" y="5962" z="-251" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51950" y="5485" z="-251" respawnTime="60sec" /> <!-- Celestial Warrior -->
+			<npc id="22607" x="-51549" y="5824" z="-248" respawnTime="60sec" /> <!-- Celestial Witch -->
+			<npc id="22608" x="-51149" y="6347" z="-251" respawnTime="60sec" /> <!-- Celestial Archer -->
+			<npc id="22606" x="-51820" y="5327" z="-251" respawnTime="60sec" /> <!-- Celestial Warrior -->
+		</group>
+		<group name="TowerOfInsolence12" spawnByDefault="false">
+			<npc id="22610" x="-51680" y="5942" z="-248" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51575" y="5911" z="-248" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51558" y="5982" z="-248" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51418" y="6022" z="-248" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51403" y="5955" z="-248" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51498" y="5849" z="-248" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51667" y="5809" z="-248" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51711" y="5706" z="-248" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51645" y="5619" z="-248" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51484" y="5641" z="-247" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51387" y="5683" z="-247" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51299" y="5753" z="-247" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51161" y="5795" z="-247" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-50997" y="5954" z="-248" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51237" y="6000" z="-249" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51159" y="6202" z="-249" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51124" y="6411" z="-249" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51319" y="6370" z="-251" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51328" y="6477" z="-251" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51205" y="6597" z="-251" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51186" y="6777" z="-251" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51420" y="6650" z="-251" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51499" y="6526" z="-247" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51573" y="6529" z="-247" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51580" y="6383" z="-247" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51497" y="6305" z="-247" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51614" y="6160" z="-245" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51703" y="6218" z="-245" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51941" y="6287" z="-245" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-52097" y="6260" z="-245" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-52039" y="6121" z="-245" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51953" y="6053" z="-245" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51924" y="5868" z="-245" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-52095" y="5862" z="-246" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-52183" y="5972" z="-247" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-52333" y="6130" z="-251" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-52501" y="6030" z="-251" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-52335" y="5893" z="-251" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-52169" y="5692" z="-251" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51899" y="5686" z="-250" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51987" y="5519" z="-249" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51798" y="5340" z="-249" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51738" y="5511" z="-250" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22610" x="-51365" y="5818" z="-248" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51360" y="6103" z="-248" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22610" x="-51699" y="6066" z="-247" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22612" x="-51910" y="5976" z="-250" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22612" x="-51748" y="6389" z="-247" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-51337" y="6213" z="-248" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-51054" y="5812" z="-250" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+			<npc id="22612" x="-51124" y="6144" z="-251" respawnTime="60sec" /> <!-- Immortal Ruler -->
+			<npc id="22610" x="-52301" y="5804" z="-251" respawnTime="60sec" /> <!-- Immortal Elder -->
+			<npc id="22611" x="-52235" y="6060" z="-251" respawnTime="60sec" /> <!-- Immortal Bodyguard -->
+		</group>
+	</spawnlist>
+</instance>
+

@@ -1,0 +1,3304 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AlligatorIsland_NPC">
+		<group>
+			<npc id="34202" x="115628" y="191591" z="-3372" heading="32767" respawnTime="20sec" /> <!-- Deton - Archaeologist -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_001" minZ="-3860" maxZ="-2960">
+				<node x="107120" y="185812" />
+				<node x="108151" y="185817" />
+				<node x="108156" y="186844" />
+				<node x="107124" y="186839" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_002" minZ="-3860" maxZ="-2960">
+				<node x="107124" y="186842" />
+				<node x="108155" y="186846" />
+				<node x="108160" y="187873" />
+				<node x="107128" y="187869" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_003" minZ="-3860" maxZ="-2960">
+				<node x="107130" y="187890" />
+				<node x="108161" y="187894" />
+				<node x="108165" y="188921" />
+				<node x="107134" y="188917" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_004" minZ="-3860" maxZ="-2960">
+				<node x="108157" y="185373" />
+				<node x="109188" y="185377" />
+				<node x="109192" y="186404" />
+				<node x="108161" y="186400" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_005" minZ="-3860" maxZ="-2960">
+				<node x="108161" y="186402" />
+				<node x="109192" y="186406" />
+				<node x="109196" y="187434" />
+				<node x="108165" y="187429" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_006" minZ="-3860" maxZ="-2960">
+				<node x="108166" y="187450" />
+				<node x="109198" y="187455" />
+				<node x="109202" y="188482" />
+				<node x="108171" y="188478" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_007" minZ="-3860" maxZ="-2960">
+				<node x="108167" y="188482" />
+				<node x="109199" y="188487" />
+				<node x="109203" y="189514" />
+				<node x="108172" y="189510" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_008" minZ="-3860" maxZ="-2960">
+				<node x="109192" y="185106" />
+				<node x="110223" y="185111" />
+				<node x="110227" y="186138" />
+				<node x="109196" y="186133" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_009" minZ="-3860" maxZ="-2960">
+				<node x="109196" y="186136" />
+				<node x="110227" y="186140" />
+				<node x="110231" y="187167" />
+				<node x="109200" y="187163" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_010" minZ="-3860" maxZ="-2960">
+				<node x="109201" y="187184" />
+				<node x="110232" y="187188" />
+				<node x="110237" y="188215" />
+				<node x="109205" y="188211" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_011" minZ="-3860" maxZ="-2960">
+				<node x="109202" y="188216" />
+				<node x="110233" y="188220" />
+				<node x="110238" y="189247" />
+				<node x="109206" y="189243" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_012" minZ="-3860" maxZ="-2960">
+				<node x="110222" y="183810" />
+				<node x="111253" y="183815" />
+				<node x="111257" y="184842" />
+				<node x="110226" y="184837" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_013" minZ="-3860" maxZ="-2960">
+				<node x="110226" y="184840" />
+				<node x="111257" y="184844" />
+				<node x="111261" y="185871" />
+				<node x="110230" y="185867" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_014" minZ="-3860" maxZ="-2960">
+				<node x="110231" y="185888" />
+				<node x="111262" y="185892" />
+				<node x="111267" y="186919" />
+				<node x="110235" y="186915" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_015" minZ="-3860" maxZ="-2960">
+				<node x="110232" y="186920" />
+				<node x="111263" y="186924" />
+				<node x="111268" y="187951" />
+				<node x="110236" y="187947" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_016" minZ="-3860" maxZ="-2960">
+				<node x="110237" y="187952" />
+				<node x="111268" y="187956" />
+				<node x="111272" y="188983" />
+				<node x="110241" y="188979" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_017" minZ="-3860" maxZ="-2960">
+				<node x="111128" y="180337" />
+				<node x="112159" y="180342" />
+				<node x="112164" y="181369" />
+				<node x="111132" y="181365" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_018" minZ="-3860" maxZ="-2960">
+				<node x="111127" y="181377" />
+				<node x="112158" y="181381" />
+				<node x="112163" y="182408" />
+				<node x="111131" y="182404" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_019" minZ="-3860" maxZ="-2960">
+				<node x="111131" y="182406" />
+				<node x="112162" y="182410" />
+				<node x="112167" y="183437" />
+				<node x="111135" y="183433" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_020" minZ="-3860" maxZ="-2960">
+				<node x="111136" y="183454" />
+				<node x="112168" y="183459" />
+				<node x="112172" y="184486" />
+				<node x="111141" y="184481" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_021" minZ="-3860" maxZ="-2960">
+				<node x="111272" y="186283" />
+				<node x="112303" y="186287" />
+				<node x="112308" y="187314" />
+				<node x="111276" y="187310" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_022" minZ="-3860" maxZ="-2960">
+				<node x="111271" y="187322" />
+				<node x="112302" y="187326" />
+				<node x="112307" y="188354" />
+				<node x="111275" y="188349" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_023" minZ="-3860" maxZ="-2960">
+				<node x="111275" y="188352" />
+				<node x="112306" y="188356" />
+				<node x="112310" y="189383" />
+				<node x="111279" y="189379" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_024" minZ="-3860" maxZ="-2960">
+				<node x="112164" y="180603" />
+				<node x="113195" y="180607" />
+				<node x="113199" y="181634" />
+				<node x="112168" y="181630" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_025" minZ="-3860" maxZ="-2960">
+				<node x="112163" y="181642" />
+				<node x="113194" y="181646" />
+				<node x="113198" y="182674" />
+				<node x="112167" y="182669" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_026" minZ="-3860" maxZ="-2960">
+				<node x="112167" y="182672" />
+				<node x="113198" y="182676" />
+				<node x="113202" y="183703" />
+				<node x="112171" y="183699" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_027" minZ="-3860" maxZ="-2960">
+				<node x="112311" y="186614" />
+				<node x="113343" y="186618" />
+				<node x="113347" y="187645" />
+				<node x="112316" y="187641" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_028" minZ="-3860" maxZ="-2960">
+				<node x="112315" y="187644" />
+				<node x="113347" y="187648" />
+				<node x="113351" y="188675" />
+				<node x="112320" y="188671" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_029" minZ="-3860" maxZ="-2960">
+				<node x="113208" y="181129" />
+				<node x="114239" y="181133" />
+				<node x="114243" y="182160" />
+				<node x="113212" y="182156" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_030" minZ="-3860" maxZ="-2960">
+				<node x="113207" y="182168" />
+				<node x="114238" y="182172" />
+				<node x="114242" y="183200" />
+				<node x="113211" y="183195" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_031" minZ="-3860" maxZ="-2960">
+				<node x="113211" y="183198" />
+				<node x="114242" y="183202" />
+				<node x="114246" y="184229" />
+				<node x="113215" y="184225" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_032" minZ="-3860" maxZ="-2960">
+				<node x="113352" y="186401" />
+				<node x="114383" y="186405" />
+				<node x="114387" y="187432" />
+				<node x="113356" y="187428" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_033" minZ="-3860" maxZ="-2960">
+				<node x="113356" y="187430" />
+				<node x="114387" y="187434" />
+				<node x="114391" y="188462" />
+				<node x="113360" y="188457" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_034" minZ="-3860" maxZ="-2960">
+				<node x="114248" y="182678" />
+				<node x="115279" y="182682" />
+				<node x="115283" y="183709" />
+				<node x="114252" y="183705" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_035" minZ="-3860" maxZ="-2960">
+				<node x="114252" y="183707" />
+				<node x="115283" y="183712" />
+				<node x="115287" y="184739" />
+				<node x="114256" y="184735" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_036" minZ="-3860" maxZ="-2960">
+				<node x="114392" y="186567" />
+				<node x="115424" y="186571" />
+				<node x="115428" y="187598" />
+				<node x="114397" y="187594" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_037" minZ="-3860" maxZ="-2960">
+				<node x="114396" y="187596" />
+				<node x="115428" y="187601" />
+				<node x="115432" y="188628" />
+				<node x="114401" y="188623" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_038" minZ="-3860" maxZ="-2960">
+				<node x="114403" y="188643" />
+				<node x="115435" y="188647" />
+				<node x="115439" y="189675" />
+				<node x="114408" y="189670" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_039" minZ="-3860" maxZ="-2960">
+				<node x="115287" y="182550" />
+				<node x="116319" y="182555" />
+				<node x="116323" y="183582" />
+				<node x="115292" y="183577" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_040" minZ="-3860" maxZ="-2960">
+				<node x="115291" y="183580" />
+				<node x="116323" y="183584" />
+				<node x="116327" y="184611" />
+				<node x="115296" y="184607" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_041" minZ="-3860" maxZ="-2960">
+				<node x="115436" y="188053" />
+				<node x="116467" y="188057" />
+				<node x="116471" y="189084" />
+				<node x="115440" y="189080" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_042" minZ="-3860" maxZ="-2960">
+				<node x="115440" y="189082" />
+				<node x="116471" y="189087" />
+				<node x="116475" y="190114" />
+				<node x="115444" y="190110" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_044" minZ="-3860" maxZ="-2960">
+				<node x="115624" y="180020" />
+				<node x="116655" y="180024" />
+				<node x="116659" y="181051" />
+				<node x="115628" y="181047" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_045" minZ="-3860" maxZ="-2960">
+				<node x="116335" y="180936" />
+				<node x="117367" y="180940" />
+				<node x="117371" y="181967" />
+				<node x="116340" y="181963" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_046" minZ="-3860" maxZ="-2960">
+				<node x="116339" y="181966" />
+				<node x="117371" y="181970" />
+				<node x="117375" y="182997" />
+				<node x="116344" y="182993" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_047" minZ="-3860" maxZ="-2960">
+				<node x="116336" y="183004" />
+				<node x="117367" y="183008" />
+				<node x="117372" y="184035" />
+				<node x="116340" y="184031" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_048" minZ="-3860" maxZ="-2960">
+				<node x="116340" y="184033" />
+				<node x="117371" y="184037" />
+				<node x="117376" y="185064" />
+				<node x="116344" y="185060" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_049" minZ="-3860" maxZ="-2960">
+				<node x="116841" y="186092" />
+				<node x="117872" y="186097" />
+				<node x="117876" y="187124" />
+				<node x="116845" y="187119" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_050" minZ="-3860" maxZ="-2960">
+				<node x="116479" y="188480" />
+				<node x="117510" y="188484" />
+				<node x="117514" y="189512" />
+				<node x="116483" y="189507" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_051" minZ="-3860" maxZ="-2960">
+				<node x="116483" y="189510" />
+				<node x="117514" y="189514" />
+				<node x="117518" y="190541" />
+				<node x="116487" y="190537" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_052" minZ="-3860" maxZ="-2960">
+				<node x="117382" y="182903" />
+				<node x="118413" y="182907" />
+				<node x="118418" y="183934" />
+				<node x="117386" y="183930" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_053" minZ="-3860" maxZ="-2960">
+				<node x="117379" y="183941" />
+				<node x="118410" y="183945" />
+				<node x="118414" y="184972" />
+				<node x="117383" y="184968" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_054" minZ="-3860" maxZ="-2960">
+				<node x="117383" y="184971" />
+				<node x="118414" y="184975" />
+				<node x="118418" y="186002" />
+				<node x="117387" y="185998" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_055" minZ="-3860" maxZ="-2960">
+				<node x="117618" y="186553" />
+				<node x="118649" y="186557" />
+				<node x="118654" y="187584" />
+				<node x="117622" y="187580" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_056" minZ="-3860" maxZ="-2960">
+				<node x="117622" y="187583" />
+				<node x="118653" y="187587" />
+				<node x="118658" y="188614" />
+				<node x="117626" y="188610" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_057" minZ="-3860" maxZ="-2960">
+				<node x="118223" y="183901" />
+				<node x="119254" y="183905" />
+				<node x="119258" y="184932" />
+				<node x="118227" y="184928" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_058" minZ="-3860" maxZ="-2960">
+				<node x="118227" y="184930" />
+				<node x="119258" y="184934" />
+				<node x="119262" y="185961" />
+				<node x="118231" y="185957" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_059" minZ="-3860" maxZ="-2960">
+				<node x="118662" y="186548" />
+				<node x="119693" y="186552" />
+				<node x="119698" y="187579" />
+				<node x="118666" y="187575" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_060" minZ="-3860" maxZ="-2960">
+				<node x="118666" y="187577" />
+				<node x="119697" y="187581" />
+				<node x="119701" y="188608" />
+				<node x="118670" y="188604" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_061" minZ="-3860" maxZ="-2960">
+				<node x="118566" y="189113" />
+				<node x="119597" y="189117" />
+				<node x="119601" y="190144" />
+				<node x="118570" y="190140" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_062" minZ="-3860" maxZ="-2960">
+				<node x="118570" y="190142" />
+				<node x="119601" y="190146" />
+				<node x="119605" y="191174" />
+				<node x="118574" y="191169" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_063" minZ="-3860" maxZ="-2960">
+				<node x="119267" y="186211" />
+				<node x="120298" y="186215" />
+				<node x="120302" y="187242" />
+				<node x="119271" y="187238" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_064" minZ="-3860" maxZ="-2960">
+				<node x="119271" y="187240" />
+				<node x="120302" y="187245" />
+				<node x="120306" y="188272" />
+				<node x="119275" y="188267" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_065" minZ="-3860" maxZ="-2960">
+				<node x="119610" y="189119" />
+				<node x="120641" y="189123" />
+				<node x="120646" y="190150" />
+				<node x="119614" y="190146" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_066" minZ="-3860" maxZ="-2960">
+				<node x="119614" y="190148" />
+				<node x="120645" y="190152" />
+				<node x="120650" y="191179" />
+				<node x="119618" y="191175" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_067" minZ="-3860" maxZ="-2960">
+				<node x="120206" y="189458" />
+				<node x="121237" y="189462" />
+				<node x="121241" y="190490" />
+				<node x="120210" y="190485" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_068" minZ="-3860" maxZ="-2960">
+				<node x="120484" y="189998" />
+				<node x="121515" y="190002" />
+				<node x="121519" y="191029" />
+				<node x="120488" y="191025" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_069" minZ="-3860" maxZ="-2960">
+				<node x="119915" y="180674" />
+				<node x="120946" y="180679" />
+				<node x="120950" y="181706" />
+				<node x="119919" y="181702" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_070" minZ="-3860" maxZ="-2960">
+				<node x="120076" y="181547" />
+				<node x="121107" y="181551" />
+				<node x="121111" y="182578" />
+				<node x="120080" y="182574" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_071" minZ="-3860" maxZ="-2960">
+				<node x="120243" y="182450" />
+				<node x="121274" y="182454" />
+				<node x="121279" y="183481" />
+				<node x="120247" y="183477" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_072" minZ="-3860" maxZ="-2960">
+				<node x="120954" y="180679" />
+				<node x="121985" y="180683" />
+				<node x="121989" y="181710" />
+				<node x="120958" y="181706" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_073" minZ="-3860" maxZ="-2960">
+				<node x="121115" y="181551" />
+				<node x="122146" y="181555" />
+				<node x="122150" y="182582" />
+				<node x="121119" y="182578" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_074" minZ="-3860" maxZ="-2960">
+				<node x="121131" y="182589" />
+				<node x="122162" y="182593" />
+				<node x="122166" y="183620" />
+				<node x="121135" y="183616" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_075" minZ="-3860" maxZ="-2960">
+				<node x="121989" y="180683" />
+				<node x="123021" y="180688" />
+				<node x="123025" y="181715" />
+				<node x="121994" y="181710" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_076" minZ="-3860" maxZ="-2960">
+				<node x="122150" y="181556" />
+				<node x="123182" y="181560" />
+				<node x="123186" y="182587" />
+				<node x="122155" y="182583" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_077" minZ="-3860" maxZ="-2960">
+				<node x="122166" y="182594" />
+				<node x="123198" y="182598" />
+				<node x="123202" y="183625" />
+				<node x="122171" y="183621" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_078" minZ="-3860" maxZ="-2960">
+				<node x="122723" y="181788" />
+				<node x="123754" y="181793" />
+				<node x="123758" y="182820" />
+				<node x="122727" y="182815" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_079" minZ="-3860" maxZ="-2960">
+				<node x="123133" y="182475" />
+				<node x="124164" y="182479" />
+				<node x="124169" y="183506" />
+				<node x="123137" y="183502" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_080" minZ="-3860" maxZ="-2960">
+				<node x="114094" y="184890" />
+				<node x="115125" y="184895" />
+				<node x="115129" y="185922" />
+				<node x="114098" y="185918" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_081" minZ="-3860" maxZ="-2960">
+				<node x="111797" y="185103" />
+				<node x="112828" y="185108" />
+				<node x="112832" y="186135" />
+				<node x="111801" y="186130" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_082" minZ="-3860" maxZ="-2960">
+				<node x="116345" y="185055" />
+				<node x="117376" y="185060" />
+				<node x="117380" y="186087" />
+				<node x="116349" y="186082" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_083" minZ="-3860" maxZ="-2960">
+				<node x="113362" y="188458" />
+				<node x="114394" y="188463" />
+				<node x="114398" y="189490" />
+				<node x="113367" y="189486" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_084" minZ="-3860" maxZ="-2960">
+				<node x="118993" y="191182" />
+				<node x="120024" y="191187" />
+				<node x="120028" y="192214" />
+				<node x="118997" y="192210" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_085" minZ="-3860" maxZ="-2960">
+				<node x="121739" y="183626" />
+				<node x="122771" y="183630" />
+				<node x="122775" y="184657" />
+				<node x="121744" y="184653" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_086" minZ="-3860" maxZ="-2960">
+				<node x="103904" y="188141" />
+				<node x="104935" y="188146" />
+				<node x="104939" y="189173" />
+				<node x="103908" y="189168" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_087" minZ="-3860" maxZ="-2960">
+				<node x="104965" y="188157" />
+				<node x="105996" y="188162" />
+				<node x="106000" y="189189" />
+				<node x="104969" y="189184" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_086_01" minZ="-3860" maxZ="-2960">
+				<node x="104965" y="189203" />
+				<node x="105997" y="189207" />
+				<node x="106001" y="190234" />
+				<node x="104970" y="190230" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_087_01" minZ="-3860" maxZ="-2960">
+				<node x="106070" y="186681" />
+				<node x="107101" y="186685" />
+				<node x="107106" y="187712" />
+				<node x="106074" y="187708" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_088" minZ="-3860" maxZ="-2960">
+				<node x="106010" y="189219" />
+				<node x="107041" y="189223" />
+				<node x="107045" y="190250" />
+				<node x="106014" y="190246" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_089" minZ="-3860" maxZ="-2960">
+				<node x="106976" y="188878" />
+				<node x="108007" y="188882" />
+				<node x="108012" y="189909" />
+				<node x="106980" y="189905" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_090" minZ="-3860" maxZ="-2960">
+				<node x="102421" y="180483" />
+				<node x="103453" y="180487" />
+				<node x="103457" y="181514" />
+				<node x="102426" y="181510" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_091" minZ="-3860" maxZ="-2960">
+				<node x="102957" y="181221" />
+				<node x="103988" y="181225" />
+				<node x="103993" y="182252" />
+				<node x="102961" y="182248" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_092" minZ="-3860" maxZ="-2960">
+				<node x="104005" y="181237" />
+				<node x="105036" y="181241" />
+				<node x="105040" y="182268" />
+				<node x="104009" y="182264" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_093" minZ="-3860" maxZ="-2960">
+				<node x="105052" y="181253" />
+				<node x="106083" y="181257" />
+				<node x="106088" y="182284" />
+				<node x="105056" y="182280" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_094" minZ="-3860" maxZ="-2960">
+				<node x="106117" y="181326" />
+				<node x="107149" y="181330" />
+				<node x="107153" y="182358" />
+				<node x="106122" y="182353" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_095" minZ="-3860" maxZ="-2960">
+				<node x="107195" y="181342" />
+				<node x="108227" y="181346" />
+				<node x="108231" y="182374" />
+				<node x="107200" y="182369" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_096" minZ="-3860" maxZ="-2960">
+				<node x="102975" y="182270" />
+				<node x="104006" y="182274" />
+				<node x="104010" y="183301" />
+				<node x="102979" y="183297" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_097" minZ="-3860" maxZ="-2960">
+				<node x="104022" y="182286" />
+				<node x="105054" y="182290" />
+				<node x="105058" y="183317" />
+				<node x="104027" y="183313" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_098" minZ="-3860" maxZ="-2960">
+				<node x="105070" y="182302" />
+				<node x="106101" y="182306" />
+				<node x="106105" y="183333" />
+				<node x="105074" y="183329" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_099" minZ="-3860" maxZ="-2960">
+				<node x="106133" y="182374" />
+				<node x="107165" y="182378" />
+				<node x="107169" y="183405" />
+				<node x="106138" y="183401" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_100" minZ="-3860" maxZ="-2960">
+				<node x="107190" y="182390" />
+				<node x="108222" y="182394" />
+				<node x="108226" y="183421" />
+				<node x="107195" y="183417" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_101" minZ="-3860" maxZ="-2960">
+				<node x="108178" y="182109" />
+				<node x="109209" y="182113" />
+				<node x="109213" y="183140" />
+				<node x="108182" y="183136" />
+			</territory>
+		</territories>
+		<npc id="22189" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Alligator -->
+		<npc id="22190" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian -->
+		<npc id="22191" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos -->
+		<npc id="22192" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crokian Warrior - Evolved -->
+		<npc id="22193" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h001" minZ="-3860" maxZ="-2960">
+				<node x="108335" y="167459" />
+				<node x="109366" y="167463" />
+				<node x="109371" y="168490" />
+				<node x="108339" y="168486" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h002" minZ="-3860" maxZ="-2960">
+				<node x="108341" y="168507" />
+				<node x="109372" y="168511" />
+				<node x="109376" y="169538" />
+				<node x="108345" y="169534" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h003" minZ="-3860" maxZ="-2960">
+				<node x="109353" y="167459" />
+				<node x="110385" y="167463" />
+				<node x="110389" y="168490" />
+				<node x="109358" y="168486" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h004" minZ="-3860" maxZ="-2960">
+				<node x="109359" y="168507" />
+				<node x="110390" y="168511" />
+				<node x="110395" y="169538" />
+				<node x="109363" y="169534" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h005" minZ="-3860" maxZ="-2960">
+				<node x="110378" y="167459" />
+				<node x="111409" y="167463" />
+				<node x="111413" y="168490" />
+				<node x="110382" y="168486" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h006" minZ="-3860" maxZ="-2960">
+				<node x="110383" y="168507" />
+				<node x="111415" y="168511" />
+				<node x="111419" y="169538" />
+				<node x="110388" y="169534" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h007" minZ="-3860" maxZ="-2960">
+				<node x="111407" y="167239" />
+				<node x="112438" y="167243" />
+				<node x="112442" y="168270" />
+				<node x="111411" y="168266" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h008" minZ="-3860" maxZ="-2960">
+				<node x="111393" y="168042" />
+				<node x="112425" y="168047" />
+				<node x="112429" y="169074" />
+				<node x="111398" y="169069" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h009" minZ="-3860" maxZ="-2960">
+				<node x="112418" y="167087" />
+				<node x="113449" y="167091" />
+				<node x="113453" y="168118" />
+				<node x="112422" y="168114" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h010" minZ="-3860" maxZ="-2960">
+				<node x="112423" y="167935" />
+				<node x="113455" y="167940" />
+				<node x="113459" y="168967" />
+				<node x="112427" y="168962" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h011" minZ="-3860" maxZ="-2960">
+				<node x="113466" y="167336" />
+				<node x="114498" y="167341" />
+				<node x="114502" y="168368" />
+				<node x="113471" y="168364" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h012" minZ="-3860" maxZ="-2960">
+				<node x="113472" y="168221" />
+				<node x="114503" y="168226" />
+				<node x="114508" y="169253" />
+				<node x="113476" y="169248" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h013" minZ="-3860" maxZ="-2960">
+				<node x="114435" y="167507" />
+				<node x="115466" y="167511" />
+				<node x="115471" y="168538" />
+				<node x="114439" y="168534" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h014" minZ="-3860" maxZ="-2960">
+				<node x="114511" y="168462" />
+				<node x="115542" y="168466" />
+				<node x="115546" y="169493" />
+				<node x="114515" y="169489" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h015" minZ="-3860" maxZ="-2960">
+				<node x="115540" y="168468" />
+				<node x="116571" y="168473" />
+				<node x="116575" y="169500" />
+				<node x="115544" y="169495" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h016" minZ="-3860" maxZ="-2960">
+				<node x="116792" y="167200" />
+				<node x="117823" y="167204" />
+				<node x="117828" y="168231" />
+				<node x="116796" y="168227" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h017" minZ="-3860" maxZ="-2960">
+				<node x="116584" y="168248" />
+				<node x="117616" y="168253" />
+				<node x="117620" y="169280" />
+				<node x="116589" y="169275" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h018" minZ="-3860" maxZ="-2960">
+				<node x="116876" y="169074" />
+				<node x="117908" y="169078" />
+				<node x="117912" y="170105" />
+				<node x="116881" y="170101" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h019" minZ="-3860" maxZ="-2960">
+				<node x="117608" y="167207" />
+				<node x="118639" y="167211" />
+				<node x="118643" y="168238" />
+				<node x="117612" y="168234" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h020" minZ="-3860" maxZ="-2960">
+				<node x="117613" y="168255" />
+				<node x="118645" y="168259" />
+				<node x="118649" y="169286" />
+				<node x="117617" y="169282" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h021" minZ="-3860" maxZ="-2960">
+				<node x="118652" y="167287" />
+				<node x="119684" y="167291" />
+				<node x="119688" y="168318" />
+				<node x="118657" y="168314" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h022" minZ="-3860" maxZ="-2960">
+				<node x="118345" y="168126" />
+				<node x="119376" y="168131" />
+				<node x="119380" y="169158" />
+				<node x="118349" y="169153" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h023" minZ="-3860" maxZ="-2960">
+				<node x="119681" y="167363" />
+				<node x="120713" y="167368" />
+				<node x="120717" y="168395" />
+				<node x="119685" y="168391" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h024" minZ="-3860" maxZ="-2960">
+				<node x="120729" y="167616" />
+				<node x="121760" y="167620" />
+				<node x="121764" y="168647" />
+				<node x="120733" y="168643" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h025" minZ="-3860" maxZ="-2960">
+				<node x="121758" y="167622" />
+				<node x="122789" y="167627" />
+				<node x="122793" y="168654" />
+				<node x="121762" y="168650" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h026" minZ="-3860" maxZ="-2960">
+				<node x="121413" y="168266" />
+				<node x="122444" y="168270" />
+				<node x="122448" y="169297" />
+				<node x="121417" y="169293" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h027" minZ="-3860" maxZ="-2960">
+				<node x="122781" y="167862" />
+				<node x="123813" y="167867" />
+				<node x="123817" y="168894" />
+				<node x="122786" y="168890" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h028" minZ="-3860" maxZ="-2960">
+				<node x="122636" y="168525" />
+				<node x="123667" y="168530" />
+				<node x="123672" y="169557" />
+				<node x="122640" y="169553" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h029" minZ="-3860" maxZ="-2960">
+				<node x="123693" y="168288" />
+				<node x="124724" y="168292" />
+				<node x="124729" y="169319" />
+				<node x="123697" y="169315" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h030" minZ="-3860" maxZ="-2960">
+				<node x="124469" y="168683" />
+				<node x="125500" y="168687" />
+				<node x="125505" y="169714" />
+				<node x="124473" y="169710" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h031" minZ="-3860" maxZ="-2960">
+				<node x="102730" y="176605" />
+				<node x="103761" y="176609" />
+				<node x="103765" y="177636" />
+				<node x="102734" y="177632" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h032" minZ="-3860" maxZ="-2960">
+				<node x="102735" y="177653" />
+				<node x="103767" y="177657" />
+				<node x="103771" y="178684" />
+				<node x="102740" y="178680" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h033" minZ="-3860" maxZ="-2960">
+				<node x="103759" y="176611" />
+				<node x="104790" y="176616" />
+				<node x="104794" y="177643" />
+				<node x="103763" y="177638" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h034" minZ="-3860" maxZ="-2960">
+				<node x="103764" y="177660" />
+				<node x="104795" y="177664" />
+				<node x="104800" y="178691" />
+				<node x="103768" y="178687" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h035" minZ="-3860" maxZ="-2960">
+				<node x="104805" y="174514" />
+				<node x="105837" y="174519" />
+				<node x="105841" y="175546" />
+				<node x="104810" y="175541" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h036" minZ="-3860" maxZ="-2960">
+				<node x="104811" y="175563" />
+				<node x="105842" y="175567" />
+				<node x="105846" y="176594" />
+				<node x="104815" y="176590" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h037" minZ="-3860" maxZ="-2960">
+				<node x="104811" y="176587" />
+				<node x="105842" y="176591" />
+				<node x="105846" y="177618" />
+				<node x="104815" y="177614" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h038" minZ="-3860" maxZ="-2960">
+				<node x="105834" y="174521" />
+				<node x="106866" y="174525" />
+				<node x="106870" y="175552" />
+				<node x="105838" y="175548" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h039" minZ="-3860" maxZ="-2960">
+				<node x="105840" y="175569" />
+				<node x="106871" y="175574" />
+				<node x="106875" y="176601" />
+				<node x="105844" y="176596" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h040" minZ="-3860" maxZ="-2960">
+				<node x="105840" y="176593" />
+				<node x="106871" y="176598" />
+				<node x="106875" y="177625" />
+				<node x="105844" y="177620" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h041" minZ="-3860" maxZ="-2960">
+				<node x="106863" y="173470" />
+				<node x="107895" y="173474" />
+				<node x="107899" y="174501" />
+				<node x="106868" y="174497" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h042" minZ="-3860" maxZ="-2960">
+				<node x="106869" y="174518" />
+				<node x="107900" y="174523" />
+				<node x="107905" y="175550" />
+				<node x="106873" y="175545" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h043" minZ="-3860" maxZ="-2960">
+				<node x="106880" y="175552" />
+				<node x="107912" y="175556" />
+				<node x="107916" y="176583" />
+				<node x="106884" y="176579" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h044" minZ="-3860" maxZ="-2960">
+				<node x="106886" y="176600" />
+				<node x="107917" y="176604" />
+				<node x="107921" y="177631" />
+				<node x="106890" y="177627" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h045" minZ="-3860" maxZ="-2960">
+				<node x="106680" y="177624" />
+				<node x="107711" y="177628" />
+				<node x="107716" y="178655" />
+				<node x="106684" y="178651" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h046" minZ="-3860" maxZ="-2960">
+				<node x="107822" y="171603" />
+				<node x="108854" y="171607" />
+				<node x="108858" y="172634" />
+				<node x="107827" y="172630" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h047" minZ="-3860" maxZ="-2960">
+				<node x="107570" y="172440" />
+				<node x="108601" y="172444" />
+				<node x="108605" y="173471" />
+				<node x="107574" y="173467" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h048" minZ="-3860" maxZ="-2960">
+				<node x="107892" y="173477" />
+				<node x="108924" y="173481" />
+				<node x="108928" y="174508" />
+				<node x="107897" y="174504" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h049" minZ="-3860" maxZ="-2960">
+				<node x="107898" y="174525" />
+				<node x="108929" y="174529" />
+				<node x="108933" y="175556" />
+				<node x="107902" y="175552" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h050" minZ="-3860" maxZ="-2960">
+				<node x="107909" y="175558" />
+				<node x="108940" y="175563" />
+				<node x="108945" y="176590" />
+				<node x="107913" y="176585" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h051" minZ="-3860" maxZ="-2960">
+				<node x="107915" y="176607" />
+				<node x="108946" y="176611" />
+				<node x="108950" y="177638" />
+				<node x="107919" y="177634" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h052" minZ="-3860" maxZ="-2960">
+				<node x="108593" y="171398" />
+				<node x="109624" y="171403" />
+				<node x="109629" y="172430" />
+				<node x="108597" y="172425" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h053" minZ="-3860" maxZ="-2960">
+				<node x="108599" y="172447" />
+				<node x="109630" y="172451" />
+				<node x="109634" y="173478" />
+				<node x="108603" y="173474" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h054" minZ="-3860" maxZ="-2960">
+				<node x="108617" y="175757" />
+				<node x="109649" y="175761" />
+				<node x="109653" y="176788" />
+				<node x="108622" y="176784" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h055" minZ="-3860" maxZ="-2960">
+				<node x="109632" y="170934" />
+				<node x="110664" y="170939" />
+				<node x="110668" y="171966" />
+				<node x="109637" y="171962" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h056" minZ="-3860" maxZ="-2960">
+				<node x="110661" y="170941" />
+				<node x="111693" y="170945" />
+				<node x="111697" y="171973" />
+				<node x="110666" y="171968" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h057" minZ="-3860" maxZ="-2960">
+				<node x="110665" y="171971" />
+				<node x="111697" y="171975" />
+				<node x="111701" y="173002" />
+				<node x="110669" y="172998" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h058" minZ="-3860" maxZ="-2960">
+				<node x="110671" y="173019" />
+				<node x="111702" y="173023" />
+				<node x="111706" y="174050" />
+				<node x="110675" y="174046" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h059" minZ="-3860" maxZ="-2960">
+				<node x="111706" y="170968" />
+				<node x="112737" y="170972" />
+				<node x="112741" y="171999" />
+				<node x="111710" y="171995" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h060" minZ="-3860" maxZ="-2960">
+				<node x="111710" y="171997" />
+				<node x="112741" y="172001" />
+				<node x="112745" y="173029" />
+				<node x="111714" y="173024" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h061" minZ="-3860" maxZ="-2960">
+				<node x="111715" y="173045" />
+				<node x="112746" y="173050" />
+				<node x="112751" y="174077" />
+				<node x="111719" y="174072" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h062" minZ="-3860" maxZ="-2960">
+				<node x="112750" y="172114" />
+				<node x="113781" y="172118" />
+				<node x="113786" y="173145" />
+				<node x="112754" y="173141" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h063" minZ="-3860" maxZ="-2960">
+				<node x="112754" y="173143" />
+				<node x="113785" y="173148" />
+				<node x="113789" y="174175" />
+				<node x="112758" y="174170" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h064" minZ="-3860" maxZ="-2960">
+				<node x="112759" y="174192" />
+				<node x="113791" y="174196" />
+				<node x="113795" y="175223" />
+				<node x="112764" y="175219" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h065" minZ="-3860" maxZ="-2960">
+				<node x="113787" y="171092" />
+				<node x="114818" y="171096" />
+				<node x="114822" y="172123" />
+				<node x="113791" y="172119" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h066" minZ="-3860" maxZ="-2960">
+				<node x="113791" y="172122" />
+				<node x="114822" y="172126" />
+				<node x="114826" y="173153" />
+				<node x="113795" y="173149" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h067" minZ="-3860" maxZ="-2960">
+				<node x="113796" y="173170" />
+				<node x="114828" y="173174" />
+				<node x="114832" y="174201" />
+				<node x="113801" y="174197" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h068" minZ="-3860" maxZ="-2960">
+				<node x="113797" y="174188" />
+				<node x="114829" y="174192" />
+				<node x="114833" y="175219" />
+				<node x="113802" y="175215" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h069" minZ="-3860" maxZ="-2960">
+				<node x="114824" y="171462" />
+				<node x="115855" y="171466" />
+				<node x="115859" y="172493" />
+				<node x="114828" y="172489" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h070" minZ="-3860" maxZ="-2960">
+				<node x="114828" y="172491" />
+				<node x="115859" y="172496" />
+				<node x="115863" y="173523" />
+				<node x="114832" y="173518" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h071" minZ="-3860" maxZ="-2960">
+				<node x="114833" y="173540" />
+				<node x="115864" y="173544" />
+				<node x="115869" y="174571" />
+				<node x="114837" y="174567" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h072" minZ="-3860" maxZ="-2960">
+				<node x="114834" y="174557" />
+				<node x="115865" y="174562" />
+				<node x="115870" y="175589" />
+				<node x="114838" y="175584" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h073" minZ="-3860" maxZ="-2960">
+				<node x="114837" y="175615" />
+				<node x="115869" y="175620" />
+				<node x="115873" y="176647" />
+				<node x="114842" y="176643" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h074" minZ="-3860" maxZ="-2960">
+				<node x="115877" y="172094" />
+				<node x="116909" y="172099" />
+				<node x="116913" y="173126" />
+				<node x="115881" y="173122" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h075" minZ="-3860" maxZ="-2960">
+				<node x="115881" y="173124" />
+				<node x="116912" y="173128" />
+				<node x="116917" y="174155" />
+				<node x="115885" y="174151" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h076" minZ="-3860" maxZ="-2960">
+				<node x="115887" y="174172" />
+				<node x="116918" y="174176" />
+				<node x="116922" y="175204" />
+				<node x="115891" y="175199" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h077" minZ="-3860" maxZ="-2960">
+				<node x="115889" y="175191" />
+				<node x="116920" y="175195" />
+				<node x="116924" y="176222" />
+				<node x="115893" y="176218" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h078" minZ="-3860" maxZ="-2960">
+				<node x="115890" y="176216" />
+				<node x="116921" y="176220" />
+				<node x="116925" y="177247" />
+				<node x="115894" y="177243" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h079" minZ="-3860" maxZ="-2960">
+				<node x="116925" y="174173" />
+				<node x="117956" y="174177" />
+				<node x="117961" y="175205" />
+				<node x="116929" y="175200" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h080" minZ="-3860" maxZ="-2960">
+				<node x="116927" y="175204" />
+				<node x="117958" y="175208" />
+				<node x="117963" y="176235" />
+				<node x="116931" y="176231" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h081" minZ="-3860" maxZ="-2960">
+				<node x="116931" y="176233" />
+				<node x="117962" y="176237" />
+				<node x="117967" y="177264" />
+				<node x="116935" y="177260" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h082" minZ="-3860" maxZ="-2960">
+				<node x="116937" y="177281" />
+				<node x="117968" y="177286" />
+				<node x="117972" y="178313" />
+				<node x="116941" y="178308" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h083" minZ="-3860" maxZ="-2960">
+				<node x="118141" y="171659" />
+				<node x="119172" y="171663" />
+				<node x="119177" y="172690" />
+				<node x="118145" y="172686" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h084" minZ="-3860" maxZ="-2960">
+				<node x="117949" y="172688" />
+				<node x="118981" y="172693" />
+				<node x="118985" y="173720" />
+				<node x="117954" y="173716" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h085" minZ="-3860" maxZ="-2960">
+				<node x="117955" y="173737" />
+				<node x="118986" y="173741" />
+				<node x="118990" y="174768" />
+				<node x="117959" y="174764" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h086" minZ="-3860" maxZ="-2960">
+				<node x="117957" y="174767" />
+				<node x="118988" y="174771" />
+				<node x="118992" y="175799" />
+				<node x="117961" y="175794" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h087" minZ="-3860" maxZ="-2960">
+				<node x="117961" y="175797" />
+				<node x="118992" y="175801" />
+				<node x="118996" y="176828" />
+				<node x="117965" y="176824" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h088" minZ="-3860" maxZ="-2960">
+				<node x="117966" y="176845" />
+				<node x="118998" y="176849" />
+				<node x="119002" y="177876" />
+				<node x="117971" y="177872" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h089" minZ="-3860" maxZ="-2960">
+				<node x="117967" y="177876" />
+				<node x="118998" y="177880" />
+				<node x="119003" y="178908" />
+				<node x="117971" y="178903" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h091" minZ="-3860" maxZ="-2960">
+				<node x="119095" y="170844" />
+				<node x="120126" y="170849" />
+				<node x="120130" y="171876" />
+				<node x="119099" y="171871" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h092" minZ="-3860" maxZ="-2960">
+				<node x="118987" y="171845" />
+				<node x="120018" y="171849" />
+				<node x="120022" y="172877" />
+				<node x="118991" y="172872" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h093" minZ="-3860" maxZ="-2960">
+				<node x="118992" y="172893" />
+				<node x="120023" y="172898" />
+				<node x="120028" y="173925" />
+				<node x="118996" y="173921" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h094" minZ="-3860" maxZ="-2960">
+				<node x="118994" y="173924" />
+				<node x="120025" y="173928" />
+				<node x="120030" y="174955" />
+				<node x="118998" y="174951" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h095" minZ="-3860" maxZ="-2960">
+				<node x="119004" y="176002" />
+				<node x="120035" y="176006" />
+				<node x="120039" y="177033" />
+				<node x="119008" y="177029" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h096" minZ="-3860" maxZ="-2960">
+				<node x="119009" y="177031" />
+				<node x="120040" y="177035" />
+				<node x="120045" y="178063" />
+				<node x="119013" y="178058" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h097" minZ="-3860" maxZ="-2960">
+				<node x="119010" y="178063" />
+				<node x="120041" y="178067" />
+				<node x="120045" y="179094" />
+				<node x="119014" y="179090" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h098" minZ="-3860" maxZ="-2960">
+				<node x="120205" y="170396" />
+				<node x="121236" y="170400" />
+				<node x="121240" y="171427" />
+				<node x="120209" y="171423" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h099" minZ="-3860" maxZ="-2960">
+				<node x="120023" y="171325" />
+				<node x="121055" y="171330" />
+				<node x="121059" y="172357" />
+				<node x="120028" y="172352" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h100" minZ="-3860" maxZ="-2960">
+				<node x="120029" y="172374" />
+				<node x="121060" y="172378" />
+				<node x="121065" y="173405" />
+				<node x="120033" y="173401" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h101" minZ="-3860" maxZ="-2960">
+				<node x="120031" y="173404" />
+				<node x="121062" y="173408" />
+				<node x="121066" y="174435" />
+				<node x="120035" y="174431" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h102" minZ="-3860" maxZ="-2960">
+				<node x="120032" y="174442" />
+				<node x="121063" y="174446" />
+				<node x="121067" y="175473" />
+				<node x="120036" y="175469" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h103" minZ="-3860" maxZ="-2960">
+				<node x="120044" y="175938" />
+				<node x="121075" y="175942" />
+				<node x="121079" y="176969" />
+				<node x="120048" y="176965" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h104" minZ="-3860" maxZ="-2960">
+				<node x="120049" y="176967" />
+				<node x="121081" y="176971" />
+				<node x="121085" y="177999" />
+				<node x="120054" y="177994" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h105" minZ="-3860" maxZ="-2960">
+				<node x="120050" y="177999" />
+				<node x="121081" y="178003" />
+				<node x="121086" y="179030" />
+				<node x="120054" y="179026" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h106" minZ="-3860" maxZ="-2960">
+				<node x="121086" y="174445" />
+				<node x="122117" y="174449" />
+				<node x="122121" y="175476" />
+				<node x="121090" y="175472" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h107" minZ="-3860" maxZ="-2960">
+				<node x="121084" y="175502" />
+				<node x="122115" y="175506" />
+				<node x="122120" y="176533" />
+				<node x="121088" y="176529" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h108" minZ="-3860" maxZ="-2960">
+				<node x="120723" y="176627" />
+				<node x="121754" y="176632" />
+				<node x="121758" y="177659" />
+				<node x="120727" y="177654" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h109" minZ="-3860" maxZ="-2960">
+				<node x="120723" y="177659" />
+				<node x="121755" y="177663" />
+				<node x="121759" y="178690" />
+				<node x="120727" y="178686" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_h110" minZ="-3860" maxZ="-2960">
+				<node x="122117" y="175105" />
+				<node x="123148" y="175109" />
+				<node x="123152" y="176137" />
+				<node x="122121" y="176132" />
+			</territory>
+		</territories>
+		<npc id="22194" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Krotania -->
+		<npc id="22195" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Farhite Lad -->
+		<npc id="22196" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Nos Lad -->
+		<npc id="22197" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Crotian Leader - Evolved -->
+		<npc id="22198" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Kropiora -->
+		<npc id="22199" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_box_a003" minZ="-3860" maxZ="-2960">
+				<node x="114252" y="183707" />
+				<node x="115283" y="183712" />
+				<node x="115287" y="184739" />
+				<node x="114256" y="184735" />
+			</territory>
+		</territories>
+		<npc id="18406" count="2" respawnTime="1hour" /> <!-- Shining Treasure Chest - Crokians' Property -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran23_2323_box_b003" minZ="-3860" maxZ="-2960">
+				<node x="118345" y="168126" />
+				<node x="119376" y="168131" />
+				<node x="119380" y="169158" />
+				<node x="118349" y="169153" />
+			</territory>
+		</territories>
+		<npc id="18406" count="2" respawnTime="1hour" /> <!-- Shining Treasure Chest - Crokians' Property -->
+	</spawn>
+</list>

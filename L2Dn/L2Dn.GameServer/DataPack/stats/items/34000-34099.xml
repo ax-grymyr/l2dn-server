@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="34070" name="Scroll: Enchant C-grade Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="34072" name="Scroll: Enchant D-grade Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

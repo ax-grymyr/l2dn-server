@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39211" name="option_id_39211">
+	</option>
+	<option id="39212" name="option_id_39212">
+	</option>
+	<option id="39213" name="option_id_39213">
+	</option>
+	<option id="39214" name="option_id_39214">
+	</option>
+	<option id="39215" name="option_id_39215">
+	</option>
+	<option id="39216" name="option_id_39216">
+	</option>
+	<option id="39217" name="option_id_39217">
+	</option>
+	<option id="39218" name="option_id_39218">
+	</option>
+	<option id="39219" name="option_id_39219">
+	</option>
+	<option id="39220" name="option_id_39220">
+	</option>
+	<option id="39221" name="option_id_39221">
+	</option>
+	<option id="39222" name="Clan Cloak">
+		<passive_skill id="50504" level="1" /> <!-- Clan Cloak -->
+	</option>
+	<option id="39223" name="Clan Cloak_lvl_01">
+		<passive_skill id="50504" level="2" /> <!-- +1 Clan Cloak -->
+	</option>
+	<option id="39224" name="Clan Cloak_lvl_02">
+		<passive_skill id="50504" level="3" /> <!-- +2 Clan Cloak -->
+	</option>
+	<option id="39225" name="Clan Cloak_lvl_03">
+		<passive_skill id="50504" level="4" /> <!-- +3 Clan Cloak -->
+	</option>
+	<option id="39226" name="Clan Cloak_lvl_04">
+		<passive_skill id="50504" level="5" /> <!-- +4 Clan Cloak -->
+	</option>
+	<option id="39227" name="Clan Cloak_lvl_05">
+		<passive_skill id="50504" level="6" /> <!-- +5 Clan Cloak -->
+	</option>
+	<option id="39228" name="Clan Cloak_lvl_06">
+		<passive_skill id="50504" level="7" /> <!-- +6 Clan Cloak -->
+	</option>
+	<option id="39229" name="Clan Cloak_lvl_07">
+		<passive_skill id="50504" level="8" /> <!-- +7 Clan Cloak -->
+	</option>
+	<option id="39230" name="Clan Cloak_lvl_08">
+		<active_skill id="50505" level="1" /> <!-- Clan Cloak Growth Support -->
+		<passive_skill id="50504" level="9" /> <!-- +8 Clan Cloak -->
+	</option>
+	<option id="39231" name="Clan Cloak_lvl_09">
+		<active_skill id="50505" level="2" /> <!-- Clan Cloak Growth Support -->
+		<passive_skill id="50504" level="10" /> <!-- +9 Clan Cloak -->
+	</option>
+	<option id="39232" name="Clan Cloak_lvl_10">
+		<active_skill id="50505" level="3" /> <!-- Clan Cloak Growth Support -->
+		<passive_skill id="50504" level="11" /> <!-- +10 Clan Cloak -->
+	</option>
+	<option id="39247" name="option_id_39247">
+	</option>
+	<option id="39248" name="option_id_39248">
+	</option>
+	<option id="39249" name="option_id_39249">
+	</option>
+	<option id="39250" name="option_id_39250">
+	</option>
+	<option id="39251" name="option_id_39251">
+	</option>
+	<option id="39252" name="option_id_39252">
+	</option>
+	<option id="39253" name="option_id_39253">
+	</option>
+	<option id="39254" name="option_id_39254">
+	</option>
+	<option id="39255" name="option_id_39255">
+	</option>
+	<option id="39256" name="option_id_39256">
+	</option>
+	<option id="39257" name="option_id_39257">
+	</option>
+	<option id="39258" name="option_id_39258">
+	</option>
+	<option id="39259" name="option_id_39259">
+	</option>
+	<option id="39260" name="option_id_39260">
+	</option>
+	<option id="39261" name="option_id_39261">
+	</option>
+	<option id="39262" name="option_id_39262">
+	</option>
+	<option id="39263" name="option_id_39263">
+	</option>
+	<option id="39264" name="option_id_39264">
+	</option>
+	<option id="39265" name="option_id_39265">
+	</option>
+	<option id="39266" name="option_id_39266">
+	</option>
+	<option id="39267" name="option_id_39267">
+	</option>
+	<option id="39268" name="option_id_39268">
+	</option>
+	<option id="39269" name="Col_167">
+		<!-- P. Skill Critical Rate +1% -->
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39270" name="Col_168">
+		<!-- P./ M. Atk. +70 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39271" name="Col_169">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39272" name="Col_170">
+		<!-- P./ M. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39273" name="Col_171">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39274" name="Col_172">
+		<!-- M. Skill Critical Rate +1% -->
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39275" name="Col_173">
+		<!-- M. Skill Critical Damage +55 -->
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39276" name="Col_174">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39277" name="Col_175">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39278" name="Adventurers Talisman">
+		<passive_skill id="50188" level="1" /> <!-- Adventurer's Talisman -->
+	</option>
+	<option id="39279" name="Adventurers Talisman">
+		<!-- P. Def. +5\nM. Def. +5\nAtk. Spd. +10\nCasting Spd. +10\nMax HP +100\nMax MP +30 -->
+		<passive_skill id="50188" level="2" /> <!-- +1 Adventurer's Talisman -->
+	</option>
+	<option id="39280" name="Col_177">
+	</option>
+	<option id="39281" name="Col_178">
+		<!-- P. Def. +6 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39282" name="Col_179">
+		<!-- M. Def. +6 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39283" name="Col_180">
+		<!-- P. Atk. +5 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39284" name="Col_181">
+		<!-- M. Atk. +5 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39285" name="Col_182">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39286" name="Col_183">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39287" name="Col_184">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39288" name="Col_185">
+		<!-- Max CP +25 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39289" name="Col_186">
+		<!-- Max MP +25 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39290" name="Col_187">
+		<!-- Max HP +25 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39291" name="Col_188">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39292" name="Col_189">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39293" name="Col_190">
+		<!-- Max CP +35 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39294" name="Col_191">
+		<!-- Max MP +35 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39295" name="Col_192">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39296" name="Col_193">
+		<!-- Weight limit +250 -->
+		<effects>
+			<effect name="WeightLimit">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39297" name="Col_194">
+		<!-- Acquired XP/ SP +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39298" name="Col_195">
+		<!-- P. Atk. +15 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39299" name="Col_196">
+		<!-- M. Atk. +15 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

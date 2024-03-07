@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="40400" toLevel="1" name="Special Equipment Challenge Point Efficiency Boost - 2 Charges">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40401" toLevel="1" name="Special Equipment Challenge Points' Enhanced Charge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40402" toLevel="1" name="Special Equipment Challenge Points' Charge Protection">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40403" toLevel="1" name="Special Equipment Challenge Points' Charge Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40404" toLevel="1" name="Special Equipment Challenge Points' Charge Stabilization">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40405" toLevel="1" name="Five-colored Sweets - Reward">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40406" toLevel="1" name="Test_Appearance Stone: Emerald Weapon (Time-limited)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40407" toLevel="1" name="Anniversary Complimentary Buff">
+		<!-- Max HP +180. Max MP +180. Success rate with weapon/ armor enchant scrolls +1%. Acquired XP/ SP +20% -->
+		<icon>icon.ev_18th_anniversary_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40408" toLevel="2" name="Anniversary Cake">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. HP Recovery Rate +5. MP Recovery Rate +5. The buff is renewed every hour. Anniversary Box is given upon the buff renewal. Note!. You cannot get the buff and the gift if you are dead. You cannot get the buff and the gift while teleporting. You cannot get the gift if your inventory is full. -->
+		<icon>BranchSys.icon.br_birthday_cake_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40409" toLevel="1" name="Anniversary Cake - Reward">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40410" toLevel="1" name="Comic Buff">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. HP Recovery Rate +5. MP Recovery Rate +5 -->
+		<icon>icon.s_bufftoon_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40411" toLevel="1" name="Spellbook: Mount Red Wyvern">
+		<!-- Double-click to learn how to ride Red Wyvern. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97203</itemConsumeId> <!-- Spellbook: Mount Red Wyvern -->
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SetSkill">
+				<skillId>54240</skillId> <!-- Mount Red Wyvern -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40412" toLevel="1" name="Scroll of Escape: Guardian Tanai">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97230</itemConsumeId> <!-- Scroll of Escape: Guardian Tanai -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-45079</x>
+				<y>-113511</y>
+				<z>-208</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40413" toLevel="1" name="Scroll of Escape: Gantaki Zu Urutu">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97231</itemConsumeId> <!-- Scroll of Escape: Gantaki Zu Urutu -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-44718</x>
+				<y>-111969</y>
+				<z>-240</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40414" toLevel="1" name="Rare Accessory Challenge Points +50">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40415" toLevel="1" name="Talisman Challenge Points +50">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40416" toLevel="1" name="Special Equipment Challenge Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40417" toLevel="1" name="Scroll: Enchant Piercing Mask">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40418" toLevel="1" name="Scroll: Enchant Ancient Weapon">
+		<icon>icon.yogi_scroll_of_enchant_weapon_grade_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40419" toLevel="1" name="Rare Accessory Challenge Points +20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40420" toLevel="1" name="Talisman Challenge Points +20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40421" toLevel="1" name="Special Equipment Challenge Points +20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40422" toLevel="1" name="Lineage 2 Reward - Overstuffed Wardrobe">
+		<!-- Given to the character who has completed the most collections in 2021. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Acquired XP/ SP +10%. HP Recovery Potions' Effect +5 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40423" toLevel="1" name="Lineage 2 Reward - Mission Champion">
+		<!-- Given to the character who has completed the most missions in 2021. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Acquired XP/ SP +10%. HP Recovery Potions' Effect +5 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40424" toLevel="1" name="Lineage 2 Reward - Natural Born Hunter">
+		<!-- Given to the character who has become the best fighter of transcendent instance zones in 2021. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Acquired XP/ SP +10%. HP Recovery Potions' Effect +5 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40425" toLevel="1" name="Lineage 2 Reward - Luck Challenger">
+		<!-- Given to the character who has obtained the most Red Lanterns of the Magic Lamp in 2021. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Acquired XP/ SP +10%. HP Recovery Potions' Effect +5 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40426" toLevel="1" name="Lineage 2 Reward - Ace of Aces">
+		<!-- Given to the character who has obtained the most 'Olympiad Hero' titles in 2021. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. Acquired XP/ SP +10%. HP Recovery Potions' Effect +5 -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40427" toLevel="1" name="Lineage 2 Reward - Winner's Gift">
+		<!-- Lineage 2 Reward - Winner's Gift of 2021. Sustains Sayha's Grace. Acquired XP/ SP +10%. Acquired Magic Lamp XP +1%. Enchant success rate +1%. MP Consumption -1%. HP Recovery Potions' Effect +5. <font color=ff6666>Note!</font>. If there is an enemy nearby, the character's name becomes purple. -->
+		<icon>icon.ev_211215_gold_trophy</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40428" toLevel="1" name="Scroll of Blessing: Armor">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="40429" toLevel="1" name="Scroll of Blessing: Armor">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="40430" toLevel="1" name="Scroll of Blessing (Test)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40431" toLevel="1" name="Extra Pass: Dawn Lady's Sanctuary (Time-limited)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40432" toLevel="1" name="Christmas Card">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40433" toLevel="1" name="Elmoreden Tower's Time Stone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40434" toLevel="1" name="Extra Pass: Transcendent Instance Zone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40435" toLevel="1" name="Red Lantern (Time-limited)">
+		<!-- A Magic Lamp given as a reward for the 1st place. Prize: XP +100,000,000, SP +270,000. Cannot be exchanged, dropped or sold in the private store. Can be stored in the private warehouse. -->
+		<icon>icon.etc_holy_grail_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40436" toLevel="1" name="Purple Lantern (Time-limited)">
+		<!-- A Magic Lamp given as a reward for the 2nd place. Prize: XP +30,000,000, SP +81,000. Cannot be exchanged, dropped or sold in the private store. Can be stored in the private warehouse. -->
+		<icon>icon.etc_holy_grail_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40437" toLevel="1" name="Blue Lantern (Time-limited)">
+		<!-- A Magic Lamp given as a reward for the 3rd place. Prize: XP +10,000,000, SP +27,000. Cannot be exchanged, dropped or sold in the private store. Can be stored in the private warehouse. -->
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40438" toLevel="1" name="Green Lantern (Time-limited)">
+		<!-- A Magic Lamp given as a reward for the 4th place. Prize +5,000,000, SP +13,500. Cannot be exchanged, dropped or sold in the private store. Can be stored in the private warehouse. -->
+		<icon>icon.etc_holy_grail_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40439" toLevel="1" name="Harnak Underground Labyrinth' Time Stone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40440" toLevel="1" name="Einhasad's Protection">
+		<!-- Acquired XP +100%. Acquired SP +100%. The effect remains after death. -->
+		<icon>icon.etc_dragons_blood_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40441" toLevel="1" name="Extra Pass: Leona's Dungeon - Event">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40442" toLevel="1" name="Carnation">
+		<!-- Acquired XP +10%. Acquired SP +10% -->
+		<icon>icon.carnation_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40443" toLevel="1" name="Extra Pass: Raid Boss Battle - Event">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40444" toLevel="1" name="Mid-grade HP Recovery Potion">
+		<!-- Instantly restores 200 HP. If HP is full, CP is restored. -->
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpCpHeal">
+				<power>200</power>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40445" toLevel="1" name="Scroll: 1,000,000 SP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40446" toLevel="1" name="Scroll: 10,000,000 SP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40447" toLevel="1" name="Tower of Insolence's Time Stone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40448" toLevel="1" name="Stable Scroll: Enchant Rare Accessories">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40449" toLevel="1" name="Summon Genie">
+		<!-- Summons Genie from the Magic Lamp. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40450" toLevel="1" name="Facelifting Potion D">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97944</itemConsumeId> <!-- Facelifting Potion D -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeFace">
+				<value>3</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40451" toLevel="1" name="Facelifting Potion E">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97945</itemConsumeId> <!-- Facelifting Potion E -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeFace">
+				<value>4</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40452" toLevel="1" name="Hairstyle Change Potion H">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97946</itemConsumeId> <!-- Hair Style Change Potion H -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>7</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40453" toLevel="1" name="Hairstyle Change Potion I">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97948</itemConsumeId> <!-- Hair Style Change Potion I -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>8</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40454" toLevel="1" name="Hairstyle Change Potion J">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97948</itemConsumeId> <!-- Hair Style Change Potion J -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>9</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40455" toLevel="1" name="Hairstyle Change Potion K">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97949</itemConsumeId> <!-- Hair Style Change Potion K -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>10</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40456" toLevel="1" name="Hairstyle Change Potion L">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97950</itemConsumeId> <!-- Hair Style Change Potion L -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>11</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40457" toLevel="1" name="Appearance Stone: Graduation Cap">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40458" toLevel="1" name="Tower of Insolence's Time Stone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40459" toLevel="1" name="Crystal of Insolence">
+		<!-- Acquired Magic Lamp XP +5%. P. Atk. +50. M. Atk. +50. Note!. Cannot be used with items that let you acquire Magic Lamp XP. -->
+		<icon>icon.etc_holy_crystal_1_i00</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97981</itemConsumeId> <!-- Crystal of Insolence (Time-limited) -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicLampExpRate">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40460" toLevel="1" name="MP Recovery Elixir">
+		<icon>icon.etc_lesser_potion_blue_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<itemConsumeId>98033</itemConsumeId> <!-- MP Recovery Elixir -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40461" toLevel="1" name="Tower of Insolence's Time Stone - Sealed">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40462" toLevel="1" name="Incredible Upgrade Stone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40463" toLevel="25" name="Secret Shop Scroll Lv. 1">
+		<!-- Max HP +100. Max MP +100. Once per 60 min. the effect levels up and grants Secret Shop Ticket (Time-limited). <Received Items>. Lv. 1-3: Secret Shop Ticket (Time-limited) 1 pc. Lv. 4: Secret Shop Ticket (Time-limited) 2 pcs. Lv. 5-7: Secret Shop Ticket (Time-limited) 1 pc. Lv. 8: Secret Shop Ticket (Time-limited) 2 pcs. Lv. 9-11: Secret Shop Ticket (Time-limited) 1 pc. Lv. 12: Secret Shop Ticket (Time-limited) 2 pcs. Lv. 13-15: Secret Shop Ticket (Time-limited) 1 pc. Lv. 16: Secret Shop Ticket (Time-limited) 2 pcs. Lv. 17-19: Secret Shop Ticket (Time-limited) 1 pc. Lv. 20-22: Secret Shop Ticket (Time-limited) 2 pcs. Lv. 23-24: Secret Shop Ticket (Time-limited) 3 pcs. Note!. You cannot level up the buff and get the reward if you are dead. You cannot level up the buff and get the reward while teleporting. You cannot get the reward if your inventory is full. -->
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40464" toLevel="5" name="Secret Shop Scroll - Reward">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40465" toLevel="1" name="Hairstyle Change Potion F">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98087</itemConsumeId> <!-- Hair Style Change Potion - F -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>5</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40466" toLevel="1" name="Hairstyle Change Potion G">
+		<icon>icon.skill0000</icon>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98088</itemConsumeId> <!-- Hair Style Change Potion - G -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>6</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40467" toLevel="1" name="Kelbim's Fortress' Time Stone">
+		<icon>icon.citadel_of_kelbim</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40468" toLevel="1" name="Kelbim's Fortress' Time Stone (Sealed)">
+		<icon>icon.citadel_of_kelbim</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40469" toLevel="4" name="Sky Lantern Summoning Kit">
+		<icon>
+			<value level="1">icon.ev_2022_chuseok_lampbox</value>
+			<value level="2">icon.ev_2022_chuseok_yellow_lamp</value>
+			<value level="3">icon.ev_2022_chuseok_red_lamp</value>
+			<value level="4">icon.ev_2022_chuseok_blue_lamp</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>
+			<value level="1">3000</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">0</value>
+		</hitTime>
+		<coolTime>
+			<value level="1">500</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">0</value>
+		</coolTime>
+		<reuseDelay>
+			<value level="1">5000</value>
+			<value level="2">0</value>
+			<value level="3">0</value>
+			<value level="4">0</value>
+		</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40470" toLevel="1" name="Large Yellow Sky Lantern">
+		<icon>icon.ev_2022_chuseok_yellow_lamp</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40471" toLevel="1" name="Pagan Temple's Time Stone">
+		<icon>icon.temple_of_heresy</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40472" toLevel="1" name="Pagan Temple's Time Stone (Sealed)">
+		<icon>icon.temple_of_heresy</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40473" toLevel="1" name="Extra Pass: Temple's Underground Passage">
+		<icon>icon.etc_ticket_red_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40474" toLevel="1" name="Summon Hoot">
+		<!-- Summons Hoot. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40475" toLevel="1" name="Scroll: PK">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40476" toLevel="1" name="Extra Pass: Training Zone">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40477" toLevel="1" name="Scroll: Enchant Sealed Collection Book">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="40478" toLevel="1" name="Sayha's Gust - Event">
+		<!-- Sayha's Grace Consumption +100%. Acquired attribute XP +300%. Acquired SP +300%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.ev_magic_flame_game_wind2</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="40479" toLevel="1" name="Magic Fire - Event">
+		<!-- Acquired Magic Lamp XP +100% -->
+		<icon>icon.bm_soul_of_shilen</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="40494" toLevel="1" name="Scroll: Enchant Pet Accessories">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+</list>

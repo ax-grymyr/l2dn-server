@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30857</npc> <!-- Orven -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="90768" /> <!-- Hair Accessory Coupon -->
+		<production count="1" id="90769" /> <!-- Teddy Bear Hat -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="90768" /> <!-- Hair Accessory Coupon -->
+		<production count="1" id="90770" /> <!-- Piggy Hat -->
+	</item>
+	<item>
+		<ingredient count="1" id="90768" /> <!-- Hair Accessory Coupon -->
+		<production count="1" id="90771" /> <!-- Frog Hat -->
+	</item>
+	<item>
+		<ingredient count="1" id="90768" /> <!-- Hair Accessory Coupon -->
+		<production count="1" id="90772" /> <!-- Fish Hat -->
+	</item>
+	<item>
+		<ingredient count="1" id="90768" /> <!-- Hair Accessory Coupon -->
+		<production count="1" id="90773" /> <!-- Chicken Hat -->
+	</item>
+</list>

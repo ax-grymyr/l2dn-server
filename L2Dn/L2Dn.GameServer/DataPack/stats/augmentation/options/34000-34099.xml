@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34000" name="atk_speed">
+		<!-- Casting Spd. +65 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34001" name="atk_speed">
+		<!-- Casting Spd. +70 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34002" name="atk_speed">
+		<!-- Casting Spd. +75 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34003" name="atk_speed">
+		<!-- Casting Spd. +80 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34004" name="atk_speed">
+		<!-- Casting Spd. +90 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34005" name="atk_speed">
+		<!-- Casting Spd. +100 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34006" name="atk_speed">
+		<!-- Casting Spd. +110 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34007" name="atk_speed">
+		<!-- Casting Spd. +120 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34008" name="atk_speed">
+		<!-- Casting Spd. +150 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34009" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34010" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34011" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34012" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34013" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34014" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34015" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34016" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34017" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34018" name="p_skill_power">
+		<!-- P. Skill Power +1% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34019" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34020" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34021" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34022" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34023" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34024" name="p_skill_power">
+		<!-- P. Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34025" name="p_skill_power">
+		<!-- P. Skill Power +3% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34026" name="p_skill_power">
+		<!-- P. Skill Power +3% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34027" name="p_skill_power">
+		<!-- P. Skill Power +4% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34028" name="p_skill_power">
+		<!-- P. Skill Power +5% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34029" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34030" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34031" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34032" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34033" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34034" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34035" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34036" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34037" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34038" name="m_skill_power">
+		<!-- M. Skill Power +1% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34039" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34040" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34041" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34042" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34043" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34044" name="m_skill_power">
+		<!-- M. Skill Power +2% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34045" name="m_skill_power">
+		<!-- M. Skill Power +3% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34046" name="m_skill_power">
+		<!-- M. Skill Power +3% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34047" name="m_skill_power">
+		<!-- M. Skill Power +4% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34048" name="m_skill_power">
+		<!-- M. Skill Power +5% -->
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+
+
+
+	<option id="34049" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34050" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34051" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34052" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34053" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34054" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34055" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34056" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34057" name="mp_consumption">
+		<!-- MP Consumption -1% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34058" name="mp_consumption">
+		<!-- MP Consumption -2% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34059" name="mp_consumption">
+		<!-- MP Consumption -2% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34060" name="mp_consumption">
+		<!-- MP Consumption -2% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34061" name="mp_consumption">
+		<!-- MP Consumption -2% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34062" name="mp_consumption">
+		<!-- MP Consumption -2% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34063" name="mp_consumption">
+		<!-- MP Consumption -3% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34064" name="mp_consumption">
+		<!-- MP Consumption -3% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34065" name="mp_consumption">
+		<!-- MP Consumption -3% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34066" name="mp_consumption">
+		<!-- MP Consumption -4% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34067" name="mp_consumption">
+		<!-- MP Consumption -4% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34068" name="mp_consumption">
+		<!-- MP Consumption -5% -->
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+
+
+	<option id="34069" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34070" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34071" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34072" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34073" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34074" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34075" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34076" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34077" name="skill_power">
+		<!-- Skill Power +1% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34078" name="skill_power">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34079" name="skill_power">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34080" name="skill_power">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34081" name="skill_power">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34082" name="skill_power">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34083" name="skill_power">
+		<!-- Skill Power +3% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34084" name="skill_power">
+		<!-- Skill Power +3% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34085" name="skill_power">
+		<!-- Skill Power +3% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34086" name="skill_power">
+		<!-- Skill Power +4% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34087" name="skill_power">
+		<!-- Skill Power +4% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34088" name="skill_power">
+		<!-- Skill Power +5% -->
+		<effects>
+			<effect name="SkillPowerAdd">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+
+
+
+
+
+	<option id="34089" name="p_atk">
+		<!-- P. Atk. +10 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34090" name="p_atk">
+		<!-- P. Atk. +16 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34091" name="p_atk">
+		<!-- P. Atk. +22 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34092" name="p_atk">
+		<!-- P. Atk. +28 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34093" name="p_atk">
+		<!-- P. Atk. +34 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34094" name="p_atk">
+		<!-- P. Atk. +40 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34095" name="p_atk">
+		<!-- P. Atk. +46 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34096" name="p_atk">
+		<!-- P. Atk. +52 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34097" name="p_atk">
+		<!-- P. Atk. +58 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34098" name="p_atk">
+		<!-- P. Atk. +64 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34099" name="p_atk">
+		<!-- P. Atk. +70 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

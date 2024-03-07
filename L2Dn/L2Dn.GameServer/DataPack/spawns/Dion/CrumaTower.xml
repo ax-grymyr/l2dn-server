@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="CrumaTower">
+		<group>
+			<npc id="34156" x="14562" y="117276" z="-12088" heading="22517" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="20851" y="117298" z="-12088" heading="12995" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="20871" y="111005" z="-12088" heading="63162" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="14569" y="111074" z="-12088" heading="57456" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="12821" y="109976" z="-9064" heading="12293" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="12568" y="118313" z="-9064" heading="43746" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="34156" x="22680" y="114122" z="-9064" heading="54696" respawnTime="15sec" /> <!-- Clan Stronghold Device -->
+			<npc id="30483" x="17289" y="114112" z="-3440" heading="32768" respawnTime="60sec" /> <!-- Carsus - Ivory Tower Wizard -->
+			<npc id="30484" x="17636" y="114744" z="-11680" heading="6843" respawnTime="60sec" /> <!-- Janssen - Ivory Tower Wizard -->
+			<npc id="30487" x="17811" y="114750" z="-11680" heading="25785" respawnTime="60sec" /> <!-- Rombel - Ivory Tower Wizard -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Weapon A-Grade -->
+	<!-- Best A-grade -->
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Shyeed's Bow Sealed -->
+		<production count="1" id="92961" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Naga's Storm Sealed -->
+		<production count="1" id="92959" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Daimon Crystal Sealed -->
+		<production count="1" id="92965" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Sirra's Blade Sealed -->
+		<production count="1" id="92955" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Barakiel's Axe Sealed -->
+		<production count="1" id="92957" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Sword of Ipos Sealed -->
+		<production count="1" id="92956" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Behemoth' Tuning Fork Sealed -->
+		<production count="1" id="92958" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Themis' Tongue Sealed -->
+		<production count="1" id="92963" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Tiphon's Spear Sealed -->
+		<production count="1" id="92960" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Sobekk's Hurricane Sealed -->
+		<production count="1" id="92962" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Cabrio's Hand Sealed -->
+		<production count="1" id="92964" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Durendal Sealed -->
+		<production count="1" id="92967" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Éclair Bijou Sealed -->
+		<production count="1" id="92970" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Damascus*Damascus Sealed -->
+		<production count="1" id="92949" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Zephyrus Sealed -->
+		<production count="1" id="95420" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Dragon Slayer Sealed -->
+		<production count="1" id="92931" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="3" id="93448" />
+		<!-- Sword of Miracles Sealed -->
+		<production count="1" id="92934" />
+	</item>
+	<!-- Mid A-grade -->
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Elysian Sealed -->
+		<production count="1" id="92935" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Branch of the Mother Tree Sealed -->
+		<production count="1" id="92937" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Soul Separator Sealed -->
+		<production count="1" id="92939" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Dragon Grinder Sealed -->
+		<production count="1" id="92941" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Soul Bow Sealed -->
+		<production count="1" id="92943" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Tallum Glaive Sealed -->
+		<production count="1" id="92944" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Dark Legion's Edge Sealed -->
+		<production count="1" id="92945" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Flaming Dragon Skull Sealed -->
+		<production count="1" id="92952" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Doom Crusher Sealed -->
+		<production count="1" id="92954" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Undertaker Sealed -->
+		<production count="1" id="92968" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Lacerator Sealed -->
+		<production count="1" id="92971" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Keshanberk*Damascus Sealed -->
+		<production count="1" id="92948" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="2" id="93448" />
+		<!-- Scofield Sealed -->
+		<production count="1" id="95419" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Tallum Blade Sealed -->
+		<production count="1" id="92930" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Halberd Sealed -->
+		<production count="1" id="92932" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Elemental Sword Sealed -->
+		<production count="1" id="92933" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Dasparion's Staff Sealed -->
+		<production count="1" id="92936" />
+	</item>
+	<!-- A-grade -->
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Bloody Orchid Sealed -->
+		<production count="1" id="92938" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Blood Tornado Sealed -->
+		<production count="1" id="92940" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Carnage Bow Sealed -->
+		<production count="1" id="92942" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Meteor Shower Sealed -->
+		<production count="1" id="92946" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Infernal Master Sealed -->
+		<production count="1" id="92950" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Spiritual Eye Sealed -->
+		<production count="1" id="92951" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Destroyer Hammer Sealed -->
+		<production count="1" id="92953" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Divine Pain Sealed -->
+		<production count="1" id="92969" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- White Lightning Sealed -->
+		<production count="1" id="92972" />
+	</item>
+	<item>
+		<!-- A-grade Weapon Coupon -->
+		<ingredient count="1" id="93448" />
+		<!-- Keshanberk*Keshanberk Sealed -->
+		<production count="1" id="92947" />
+	</item>
+</list>

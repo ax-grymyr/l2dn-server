@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33300" name="option_id_33300">
+	</option>
+	<option id="33301" name="option_id_33301">
+	</option>
+	<option id="33302" name="option_id_33302">
+	</option>
+	<option id="33303" name="option_id_33303">
+	</option>
+	<option id="33304" name="option_id_33304">
+	</option>
+	<option id="33305" name="option_id_33305">
+	</option>
+	<option id="33306" name="option_id_33306">
+	</option>
+	<option id="33307" name="option_id_33307">
+	</option>
+	<option id="33308" name="option_id_33308">
+	</option>
+	<option id="33309" name="option_id_33309">
+	</option>
+	<option id="33310" name="option_id_33310">
+	</option>
+	<option id="33311" name="option_id_33311">
+	</option>
+	<option id="33312" name="option_id_33312">
+	</option>
+	<option id="33313" name="option_id_33313">
+	</option>
+	<option id="33314" name="option_id_33314">
+	</option>
+	<option id="33315" name="option_id_33315">
+	</option>
+	<option id="33316" name="option_id_33316">
+	</option>
+	<option id="33317" name="option_id_33317">
+	</option>
+	<option id="33318" name="option_id_33318">
+	</option>
+	<option id="33319" name="option_id_33319">
+	</option>
+	<option id="33320" name="option_id_33320">
+	</option>
+	<option id="33321" name="option_id_33321">
+	</option>
+	<option id="33322" name="option_id_33322">
+	</option>
+	<option id="33323" name="option_id_33323">
+	</option>
+	<option id="33324" name="option_id_33324">
+	</option>
+	<option id="33325" name="Special Sayha's Cloak">
+		<passive_skill id="54044" level="1" /> <!-- Sayha's Special Cloak -->
+	</option>
+	<option id="33326" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="1" /> <!-- +1 Sayha's Special Cloak -->
+	</option>
+	<option id="33327" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="2" /> <!-- +2 Sayha's Special Cloak -->
+	</option>
+	<option id="33328" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="3" /> <!-- +3 Sayha's Special Cloak -->
+	</option>
+	<option id="33329" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="4" /> <!-- +4 Sayha's Special Cloak -->
+	</option>
+	<option id="33330" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="5" /> <!-- +5 Sayha's Special Cloak -->
+	</option>
+	<option id="33331" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="6" /> <!-- +6 Sayha's Special Cloak -->
+	</option>
+	<option id="33332" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="7" /> <!-- +7 Sayha's Special Cloak -->
+	</option>
+	<option id="33333" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="8" /> <!-- +8 Sayha's Special Cloak -->
+	</option>
+	<option id="33334" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="9" /> <!-- +9 Sayha's Special Cloak -->
+	</option>
+	<option id="33335" name="Special Sayha's Cloak">
+		<passive_skill id="54045" level="10" /> <!-- +10 Sayha's Special Cloak -->
+	</option>
+	<option id="33336" name="Special Sayha's Cloak">
+		<passive_skill id="54040" level="1" /> <!-- Sayha's Blink -->
+	</option>
+	<option id="33337" name="Rapid Wind">
+		<active_skill id="54043" level="1" /> <!-- Rapid Wind -->
+	</option>
+	<option id="33338" name="Talisman of Aden">
+		<passive_skill id="54047" level="1" /> <!-- Talisman of Aden -->
+	</option>
+	<option id="33339" name="Talisman of Aden">
+		<passive_skill id="54047" level="2" /> <!-- Blessed Talisman of Aden -->
+	</option>
+	<option id="33340" name="Talisman of Aden">
+		<passive_skill id="54047" level="3" /> <!-- +1 Talisman of Aden -->
+	</option>
+	<option id="33341" name="Talisman of Aden">
+		<passive_skill id="54047" level="4" /> <!-- +1 Blessed Talisman of Aden -->
+	</option>
+	<option id="33342" name="Talisman of Aden">
+		<passive_skill id="54047" level="5" /> <!-- +2 Talisman of Aden -->
+	</option>
+	<option id="33343" name="Talisman of Aden">
+		<passive_skill id="54047" level="6" /> <!-- +2 Blessed Talisman of Aden -->
+	</option>
+	<option id="33344" name="Talisman of Aden">
+		<passive_skill id="54047" level="7" /> <!-- +3 Talisman of Aden -->
+	</option>
+	<option id="33345" name="Talisman of Aden">
+		<passive_skill id="54047" level="8" /> <!-- +3 Blessed Talisman of Aden -->
+	</option>
+	<option id="33346" name="Talisman of Aden">
+		<passive_skill id="54047" level="9" /> <!-- +4 Talisman of Aden -->
+	</option>
+	<option id="33347" name="Talisman of Aden">
+		<passive_skill id="54047" level="10" /> <!-- +4 Blessed Talisman of Aden -->
+	</option>
+	<option id="33348" name="Talisman of Aden">
+		<passive_skill id="54047" level="11" /> <!-- +5 Talisman of Aden -->
+	</option>
+	<option id="33349" name="option_id_33349">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33350" name="option_id_33350">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33351" name="option_id_33351">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33352" name="option_id_33352">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33353" name="option_id_33353">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33354" name="option_id_33354">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33355" name="option_id_33355">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33356" name="option_id_33356">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33357" name="option_id_33357">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33358" name="option_id_33358">
+		<!-- Sayha's Grace is recovered when using skills. -->
+	</option>
+	<option id="33359" name="Dragon_Belt">
+		<passive_skill id="54082" level="1" /> <!-- Dragon Belt -->
+	</option>
+	<option id="33360" name="Dragon_Belt">
+		<passive_skill id="54082" level="2" /> <!-- +1 Dragon Belt -->
+	</option>
+	<option id="33361" name="Dragon_Belt">
+		<passive_skill id="54082" level="3" /> <!-- +2 Dragon Belt -->
+	</option>
+	<option id="33362" name="Dragon_Belt">
+		<passive_skill id="54082" level="4" /> <!-- +3 Dragon Belt -->
+	</option>
+	<option id="33363" name="Dragon_Belt">
+		<passive_skill id="54082" level="5" /> <!-- +4 Dragon Belt -->
+	</option>
+	<option id="33364" name="Dragon_Belt">
+		<passive_skill id="54082" level="6" /> <!-- +5 Dragon Belt -->
+	</option>
+	<option id="33365" name="Dragon_Belt">
+		<passive_skill id="54082" level="7" /> <!-- +6 Dragon Belt -->
+	</option>
+	<option id="33366" name="Dragon_Belt">
+		<passive_skill id="54082" level="8" /> <!-- +7 Dragon Belt -->
+	</option>
+	<option id="33367" name="Dragon_Belt">
+		<passive_skill id="54082" level="9" /> <!-- +8 Dragon Belt -->
+	</option>
+	<option id="33368" name="Dragon_Belt">
+		<passive_skill id="54082" level="10" /> <!-- +9 Dragon Belt -->
+	</option>
+	<option id="33369" name="Dragon_Belt">
+		<passive_skill id="54082" level="11" /> <!-- +10 Dragon Belt -->
+	</option>
+	<option id="33376" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="1" /> <!-- Ring of Insolence -->
+	</option>
+	<option id="33377" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="2" /> <!-- +1 Ring of Insolence -->
+	</option>
+	<option id="33378" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="3" /> <!-- +2 Ring of Insolence -->
+	</option>
+	<option id="33379" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="4" /> <!-- +3 Ring of Insolence -->
+	</option>
+	<option id="33380" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="5" /> <!-- +4 Ring of Insolence -->
+	</option>
+	<option id="33381" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="6" /> <!-- +5 Ring of Insolence -->
+	</option>
+	<option id="33382" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="7" /> <!-- +6 Ring of Insolence -->
+	</option>
+	<option id="33383" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="8" /> <!-- +7 Ring of Insolence -->
+	</option>
+	<option id="33384" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="9" /> <!-- +8 Ring of Insolence -->
+	</option>
+	<option id="33385" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="10" /> <!-- +9 Ring of Insolence -->
+	</option>
+	<option id="33386" name="Ring_of_Insolence">
+		<passive_skill id="50189" level="11" /> <!-- +10 Ring of Insolence -->
+	</option>
+	<option id="33387" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="1" /> <!-- Dragon Valley's Earring -->
+	</option>
+	<option id="33388" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="2" /> <!-- +1 Dragon Valley's Earring -->
+	</option>
+	<option id="33389" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="3" /> <!-- +2 Dragon Valley's Earring -->
+	</option>
+	<option id="33390" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="4" /> <!-- +3 Dragon Valley's Earring -->
+	</option>
+	<option id="33391" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="5" /> <!-- +4 Dragon Valley's Earring -->
+	</option>
+	<option id="33392" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="6" /> <!-- +5 Dragon Valley's Earring -->
+	</option>
+	<option id="33393" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="7" /> <!-- +6 Dragon Valley's Earring -->
+	</option>
+	<option id="33394" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="8" /> <!-- +7 Dragon Valley's Earring -->
+	</option>
+	<option id="33395" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="9" /> <!-- +8 Dragon Valley's Earring -->
+	</option>
+	<option id="33396" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="10" /> <!-- +9 Dragon Valley's Earring -->
+	</option>
+	<option id="33397" name="Dragon_Valley_Earring">
+		<passive_skill id="50190" level="11" /> <!-- +10 Dragon Valley's Earring -->
+	</option>
+</list>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="230" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="60" empty="5" eject="5" />
+	<locations>
+		<enter type="FIXED">
+			<location x="142598" y="-151085" z="-7598" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="100" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+		</condition>
+		<condition type="Distance" />
+		<condition type="Reenter" />
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+	</reenter>
+	<doorlist>
+		<door id="24130002" />
+	</doorlist>
+	<spawnlist>
+		<group name="hermit_01" spawnByDefault="true">
+			<npc id="34337" x="143863" y="-148901" z="-8080" heading="36738" /> <!-- Hermit -->
+		</group>
+		<group name="hermit_02" spawnByDefault="false">
+			<npc id="34337" x="152500" y="-149559" z="-11560" heading="13714" /> <!-- Hermit -->
+		</group>
+		<group name="hermit_03" spawnByDefault="false">
+			<npc id="34337" x="153192" y="-145656" z="-11384" /> <!-- Hermit - Valakas' Researcher -->
+		</group>
+		<group name="hermit_attackers_01" spawnByDefault="true">
+			<territories>
+				<territory minZ="-8100" maxZ="-8020" shape="Cylinder" rad="300">
+					<node x="143960" y="-148904" />
+				</territory>
+			</territories>
+			<npc id="22490" count="1" /> <!-- Flame Golem -->
+			<npc id="22491" count="1" /> <!-- Flame Stakato -->
+			<npc id="22492" count="1" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="1" /> <!-- Flame Scarab -->
+			<npc id="22494" count="1" /> <!-- Flame Salamander -->
+		</group>
+		<group name="spectator_center" spawnByDefault="false">
+			<npc id="18730" x="146952" y="-148856" z="-8760" /> <!-- Observation Device -->
+		</group>
+		<group name="gate_of_legion_center" spawnByDefault="false">
+			<npc id="18729" x="146952" y="-148856" z="-8760" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="monsters_from_gate_center" spawnByDefault="false">
+			<npc id="22490" count="4" x="146952" y="-148856" z="-8760" /> <!-- Flame Golem -->
+			<npc id="22491" count="4" x="146952" y="-148856" z="-8760" /> <!-- Flame Stakato -->
+			<npc id="22492" count="4" x="146952" y="-148856" z="-8760" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="4" x="146952" y="-148856" z="-8760" /> <!-- Flame Scarab -->
+			<npc id="22494" count="4" x="146952" y="-148856" z="-8760" /> <!-- Flame Salamander -->
+		</group>
+		<group name="gate_of_legion_center" spawnByDefault="false">
+			<npc id="18729" x="146728" y="-151048" z="-8776" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="monsters_from_gate_center_02" spawnByDefault="false">
+			<npc id="22490" count="4" x="146728" y="-151048" z="-8776" /> <!-- Flame Golem -->
+			<npc id="22491" count="4" x="146728" y="-151048" z="-8776" /> <!-- Flame Stakato -->
+			<npc id="22492" count="4" x="146728" y="-151048" z="-8776" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="4" x="146728" y="-151048" z="-8776" /> <!-- Flame Scarab -->
+			<npc id="22494" count="4" x="146728" y="-151048" z="-8776" /> <!-- Flame Salamander -->
+		</group>
+		<group name="raid_boss_center" spawnByDefault="false">
+			<npc id="25964" x="146952" y="-148856" z="-8760" /> <!-- Ifrit - Valakas' Follower -->
+		</group>
+		<group name="spectator_left" spawnByDefault="false">
+			<npc id="18730" x="148843" y="-153129" z="-9080" /> <!-- Observation Device -->
+		</group>
+		<group name="gate_of_legion_left" spawnByDefault="false">
+			<npc id="18729" x="148843" y="-153129" z="-9080" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="monsters_from_gate_left" spawnByDefault="false">
+			<npc id="22490" count="5" x="148843" y="-153129" z="-9080" /> <!-- Flame Golem -->
+			<npc id="22491" count="5" x="148843" y="-153129" z="-9080" /> <!-- Flame Stakato -->
+			<npc id="22492" count="5" x="148843" y="-153129" z="-9080" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="5" x="148843" y="-153129" z="-9080" /> <!-- Flame Scarab -->
+			<npc id="22494" count="5" x="148843" y="-153129" z="-9080" /> <!-- Flame Salamander -->
+		</group>
+		<group name="spectator_right" spawnByDefault="false">
+			<npc id="18730" x="150744" y="-148728" z="-9072" /> <!-- Observation Device -->
+		</group>
+		<group name="gate_of_legion_right" spawnByDefault="false">
+			<npc id="18729" x="150744" y="-148728" z="-9072" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="monsters_from_gate_right" spawnByDefault="false">
+			<npc id="22490" count="5" x="150744" y="-148904" z="-8760" /> <!-- Flame Golem -->
+			<npc id="22491" count="5" x="150744" y="-148904" z="-8760" /> <!-- Flame Stakato -->
+			<npc id="22492" count="5" x="150744" y="-148904" z="-8760" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="5" x="150744" y="-148904" z="-8760" /> <!-- Flame Scarab -->
+			<npc id="22494" count="5" x="150744" y="-148904" z="-8760" /> <!-- Flame Salamander -->
+		</group>
+		<group name="spectator_tomb" spawnByDefault="false">
+			<npc id="18730" x="150936" y="-152408" z="-9072" /> <!-- Observation Device -->
+		</group>
+		<group name="gate_of_legion_tomb" spawnByDefault="false">
+			<npc id="18729" x="150936" y="-152408" z="-9072" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="monsters_from_gate_tomb" spawnByDefault="false">
+			<npc id="22490" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Golem -->
+			<npc id="22491" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Stakato -->
+			<npc id="22492" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Scarab -->
+			<npc id="22494" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Salamander -->
+		</group>
+		<group name="raid_boss_tomb" spawnByDefault="false">
+			<npc id="25965" x="150936" y="-152408" z="-9072" /> <!-- Ifrit - Valakas' Follower -->
+		</group>
+		<group name="tomb" spawnByDefault="false">
+			<npc id="18727" x="151341" y="-152655" z="-9072" heading="31470" /> <!-- Seal Tombstone -->
+			<npc id="18728" x="151700" y="-153000" z="-9064" heading="9000" /> <!-- Seal Device -->
+		</group>
+		<group name="dummy_ifrit" spawnByDefault="false">
+			<npc id="25966" x="153267" y="-148441" z="-11560" heading="49199" /> <!-- Iff - Valakas' Follower -->
+		</group>
+		<group name="clones" spawnByDefault="false">
+			<npc id="18732" x="153712" y="-148226" z="-11560" heading="34643" />
+			<npc id="18732" x="153378" y="-147959" z="-11560" heading="45409" />
+			<npc id="18732" x="152972" y="-148061" z="-11560" heading="59040" />
+			<npc id="18732" x="152783" y="-148437" z="-11560" heading="544" />
+			<npc id="18732" x="152966" y="-148816" z="-11560" heading="10447" />
+			<npc id="18732" x="153382" y="-148915" z="-11560" heading="21643" />
+			<npc id="18732" x="153710" y="-148649" z="-11560" heading="31159" />
+		</group>
+		<group name="monsters_from_gate_last" spawnByDefault="false">
+			<npc id="22490" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Golem -->
+			<npc id="22491" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Stakato -->
+			<npc id="22492" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Scorpion -->
+			<npc id="22493" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Scarab -->
+			<npc id="22494" count="7" x="150936" y="-152408" z="-9072" /> <!-- Flame Salamander -->
+		</group>
+		<group name="raid_boss_last" spawnByDefault="false">
+			<npc id="25966" x="153192" y="-145480" z="-11384" /> <!-- Iff - Valakas' Follower -->
+		</group>
+		<group name="gate_of_legion_last" spawnByDefault="true">
+			<npc id="18729" x="153192" y="-145480" z="-11384" /> <!-- Noname NPC - Teleport Gate of Legion 3 -->
+		</group>
+		<group name="dummy_valakas" spawnByDefault="true">
+			<npc id="18731" x="153192" y="-145480" z="-11384" heading="49151" /> <!-- Dummy Valakas -->
+		</group>
+		<group name="blazzing_dragon" spawnByDefault="false">
+			<npc id="25967" x="153192" y="-145480" z="-11384" heading="49151" /> <!-- Blazing Dragon - Fire Dragon -->
+		</group>
+	</spawnlist>
+</instance>

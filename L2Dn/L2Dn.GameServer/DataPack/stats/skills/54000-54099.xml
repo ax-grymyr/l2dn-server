@@ -1,0 +1,3316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="54000" toLevel="22" name="Agathion Taurus">
+		<!-- P. Def. +1% -->
+		<icon>icon.agathion_tau_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1.5</value>
+					<value level="3">2</value>
+					<value level="4">2.5</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">6</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+					<value level="11">12</value>
+					<value level="12">13</value>
+					<value level="13">14</value>
+					<value level="14">15</value>
+					<value level="15">16</value>
+					<value level="16">17</value>
+					<value level="17">18</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+					<value level="21">22</value>
+					<value level="22">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<SHOCK>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">15</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">39</value>
+					<value level="16">42</value>
+					<value level="17">45</value>
+					<value level="18">48</value>
+					<value level="19">51</value>
+					<value level="20">55</value>
+					<value level="21">60</value>
+					<value level="22">65</value>
+				</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54001" toLevel="22" name="Agathion Leo">
+		<!-- P. Atk. +1%. -->
+		<icon>icon.agathion_leo_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1.5</value>
+					<value level="3">2</value>
+					<value level="4">2.5</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">7</value>
+					<value level="11">10</value>
+					<value level="12">10</value>
+					<value level="13">10</value>
+					<value level="14">10</value>
+					<value level="15">11</value>
+					<value level="16">11</value>
+					<value level="17">11</value>
+					<value level="18">11</value>
+					<value level="19">12</value>
+					<value level="20">12</value>
+					<value level="21">13</value>
+					<value level="22">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<PARALYZE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">14</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">38</value>
+					<value level="16">40</value>
+					<value level="17">42</value>
+					<value level="18">44</value>
+					<value level="19">46</value>
+					<value level="20">49</value>
+					<value level="21">52</value>
+					<value level="22">55</value>
+				</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54002" toLevel="22" name="Agathion Scorpio">
+		<!-- P. Critical Rate +1% -->
+		<icon>icon.agathion_sco_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">7</value>
+					<value level="7">7</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">12</value>
+					<value level="11">18</value>
+					<value level="12">18</value>
+					<value level="13">18</value>
+					<value level="14">19</value>
+					<value level="15">19</value>
+					<value level="16">20</value>
+					<value level="17">20</value>
+					<value level="18">20</value>
+					<value level="19">21</value>
+					<value level="20">21</value>
+					<value level="21">22</value>
+					<value level="22">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-11</value>
+					<value level="14">-11</value>
+					<value level="15">-12</value>
+					<value level="16">-12</value>
+					<value level="17">-13</value>
+					<value level="18">-14</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-17</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-11</value>
+					<value level="14">-11</value>
+					<value level="15">-12</value>
+					<value level="16">-12</value>
+					<value level="17">-13</value>
+					<value level="18">-14</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-17</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54003" toLevel="22" name="Agathion Sagittarius">
+		<!-- Atk. Spd. +2 -->
+		<icon>icon.agathion_sag_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value>
+					<value level="8">30</value>
+					<value level="9">40</value>
+					<value level="10">50</value>
+					<value level="11">70</value>
+					<value level="12">75</value>
+					<value level="13">80</value>
+					<value level="14">85</value>
+					<value level="15">90</value>
+					<value level="16">95</value>
+					<value level="17">100</value>
+					<value level="18">100</value>
+					<value level="19">105</value>
+					<value level="20">110</value>
+					<value level="21">115</value>
+					<value level="22">120</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-12</value>
+					<value level="13">-13</value>
+					<value level="14">-13</value>
+					<value level="15">-14</value>
+					<value level="16">-14</value>
+					<value level="17">-15</value>
+					<value level="18">-15</value>
+					<value level="19">-16</value>
+					<value level="20">-16</value>
+					<value level="21">-18</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-12</value>
+					<value level="13">-13</value>
+					<value level="14">-13</value>
+					<value level="15">-14</value>
+					<value level="16">-14</value>
+					<value level="17">-15</value>
+					<value level="18">-15</value>
+					<value level="19">-16</value>
+					<value level="20">-16</value>
+					<value level="21">-18</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54004" toLevel="22" name="Agathion Virgo">
+		<!-- M. Def. +1% -->
+		<icon>icon.agathion_virgo_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1.5</value>
+					<value level="3">2</value>
+					<value level="4">2.5</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">6</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+					<value level="11">12</value>
+					<value level="12">13</value>
+					<value level="13">14</value>
+					<value level="14">15</value>
+					<value level="15">16</value>
+					<value level="16">17</value>
+					<value level="17">18</value>
+					<value level="18">18</value>
+					<value level="19">20</value>
+					<value level="20">22</value>
+					<value level="21">25</value>
+					<value level="22">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<SILENCE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">15</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">39</value>
+					<value level="16">42</value>
+					<value level="17">45</value>
+					<value level="18">48</value>
+					<value level="19">51</value>
+					<value level="20">55</value>
+					<value level="21">60</value>
+					<value level="22">65</value>
+				</SILENCE>
+				<FEAR>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">15</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">39</value>
+					<value level="16">42</value>
+					<value level="17">45</value>
+					<value level="18">48</value>
+					<value level="19">51</value>
+					<value level="20">55</value>
+					<value level="21">60</value>
+					<value level="22">65</value>
+				</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54005" toLevel="22" name="Agathion Aquarius">
+		<!-- M. Atk. +1%. -->
+		<icon>icon.agathion_aqu_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1.5</value>
+					<value level="3">2</value>
+					<value level="4">2.5</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">7</value>
+					<value level="11">10</value>
+					<value level="12">10</value>
+					<value level="13">12</value>
+					<value level="14">14</value>
+					<value level="15">16</value>
+					<value level="16">18</value>
+					<value level="17">20</value>
+					<value level="18">20</value>
+					<value level="19">22</value>
+					<value level="20">24</value>
+					<value level="21">28</value>
+					<value level="22">35</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<HOLD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">14</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">38</value>
+					<value level="16">40</value>
+					<value level="17">42</value>
+					<value level="18">45</value>
+					<value level="19">48</value>
+					<value level="20">51</value>
+					<value level="21">55</value>
+					<value level="22">60</value>
+				</HOLD>
+			</effect>
+			<effect name="AttackTrait">
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">5</value>
+					<value level="8">8</value>
+					<value level="9">14</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+					<value level="12">32</value>
+					<value level="13">34</value>
+					<value level="14">36</value>
+					<value level="15">38</value>
+					<value level="16">40</value>
+					<value level="17">42</value>
+					<value level="18">45</value>
+					<value level="19">48</value>
+					<value level="20">51</value>
+					<value level="21">55</value>
+					<value level="22">60</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54006" toLevel="22" name="Agathion Capricorn">
+		<!-- M. Skill Critical Rate +1% -->
+		<icon>icon.agathion_capr_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">7</value>
+					<value level="7">7</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">12</value>
+					<value level="11">18</value>
+					<value level="12">19</value>
+					<value level="13">19</value>
+					<value level="14">20</value>
+					<value level="15">20</value>
+					<value level="16">21</value>
+					<value level="17">21</value>
+					<value level="18">22</value>
+					<value level="19">24</value>
+					<value level="20">26</value>
+					<value level="21">30</value>
+					<value level="22">35</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-11</value>
+					<value level="14">-11</value>
+					<value level="15">-12</value>
+					<value level="16">-12</value>
+					<value level="17">-13</value>
+					<value level="18">-14</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-17</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-1</value>
+					<value level="8">-3</value>
+					<value level="9">-5</value>
+					<value level="10">-7</value>
+					<value level="11">-10</value>
+					<value level="12">-10</value>
+					<value level="13">-11</value>
+					<value level="14">-11</value>
+					<value level="15">-12</value>
+					<value level="16">-12</value>
+					<value level="17">-13</value>
+					<value level="18">-14</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-17</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54007" toLevel="22" name="Agathion Libra">
+		<!-- Casting Spd. +2. -->
+		<icon>icon.agathion_lib_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value>
+					<value level="8">25</value>
+					<value level="9">35</value>
+					<value level="10">45</value>
+					<value level="11">60</value>
+					<value level="12">65</value>
+					<value level="13">70</value>
+					<value level="14">75</value>
+					<value level="15">80</value>
+					<value level="16">85</value>
+					<value level="17">90</value>
+					<value level="18">90</value>
+					<value level="19">100</value>
+					<value level="20">110</value>
+					<value level="21">130</value>
+					<value level="22">160</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-2</value>
+					<value level="8">-4</value>
+					<value level="9">-6</value>
+					<value level="10">-8</value>
+					<value level="11">-12</value>
+					<value level="12">-12</value>
+					<value level="13">-12</value>
+					<value level="14">-13</value>
+					<value level="15">-13</value>
+					<value level="16">-14</value>
+					<value level="17">-14</value>
+					<value level="18">-15</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-18</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="7">-2</value>
+					<value level="8">-4</value>
+					<value level="9">-6</value>
+					<value level="10">-8</value>
+					<value level="11">-12</value>
+					<value level="12">-12</value>
+					<value level="13">-12</value>
+					<value level="14">-13</value>
+					<value level="15">-13</value>
+					<value level="16">-14</value>
+					<value level="17">-14</value>
+					<value level="18">-15</value>
+					<value level="19">-15</value>
+					<value level="20">-16</value>
+					<value level="21">-18</value>
+					<value level="22">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54008" toLevel="22" name="Agathion Gemini">
+		<!-- With Sayha's Grace, acquired XP +1%. With Sayha's Grace, acquired SP +1% -->
+		<icon>icon.agathion_gem_star_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">9</value>
+					<value level="7">9</value>
+					<value level="8">12</value>
+					<value level="9">16</value>
+					<value level="10">20</value>
+					<value level="11">30</value>
+					<value level="12">31</value>
+					<value level="13">31</value>
+					<value level="14">32</value>
+					<value level="15">32</value>
+					<value level="16">33</value>
+					<value level="17">33</value>
+					<value level="18">34</value>
+					<value level="19">35</value>
+					<value level="20">36</value>
+					<value level="21">37</value>
+					<value level="22">40</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">9</value>
+					<value level="7">9</value>
+					<value level="8">12</value>
+					<value level="9">16</value>
+					<value level="10">20</value>
+					<value level="11">30</value>
+					<value level="12">31</value>
+					<value level="13">31</value>
+					<value level="14">32</value>
+					<value level="15">32</value>
+					<value level="16">33</value>
+					<value level="17">33</value>
+					<value level="18">34</value>
+					<value level="19">35</value>
+					<value level="20">36</value>
+					<value level="21">37</value>
+					<value level="22">40</value>
+				</amount>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="7">2</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">7</value>
+					<value level="11">10</value>
+					<value level="12">11</value>
+					<value level="13">12</value>
+					<value level="14">13</value>
+					<value level="15">14</value>
+					<value level="16">15</value>
+					<value level="17">16</value>
+					<value level="18">18</value>
+					<value level="19">18</value>
+					<value level="20">20</value>
+					<value level="21">22</value>
+					<value level="22">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="7">2</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">7</value>
+					<value level="11">10</value>
+					<value level="12">11</value>
+					<value level="13">12</value>
+					<value level="14">13</value>
+					<value level="15">14</value>
+					<value level="16">15</value>
+					<value level="17">16</value>
+					<value level="18">18</value>
+					<value level="19">18</value>
+					<value level="20">20</value>
+					<value level="21">25</value>
+					<value level="22">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="18">2</value>
+					<value level="19">5</value>
+					<value level="20">7</value>
+					<value level="21">10</value>
+					<value level="22">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54009" toLevel="1" name="Summon Agathion Taurus">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13557</npcId> <!-- Agathion Taurus -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54010" toLevel="1" name="Summon Agathion Leo">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13558</npcId> <!-- Agathion Leo -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54011" toLevel="1" name="Summon Agathion Scorpio">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13519</npcId> <!-- Scorpio -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54012" toLevel="1" name="Summon Agathion Sagittarius">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13601</npcId> <!-- Earth Dragon's Agathion Libra -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54013" toLevel="1" name="Summon Agathion Virgo">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13553</npcId> <!-- Agathion Virgo -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54014" toLevel="1" name="Summon Agathion Aquarius">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13599</npcId> <!-- Earth Dragon's Agathion Virgo -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54015" toLevel="1" name="Summon Agathion Capricorn">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13554</npcId> <!-- Agathion Capricorn -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54016" toLevel="1" name="Summon Agathion Libra">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13555</npcId> <!-- Agathion Libra -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54017" toLevel="1" name="Summon Agathion Gemini">
+		<!-- Summons an agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>85</magicLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>13597</npcId> <!-- Fire Dragon's Agathion Aquarius -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54018" toLevel="1" name="Seal Agathion">
+		<!-- Releases the summoned agathion. -->
+		<icon>icon.etc_unsummon_aga_agit_i01</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="54019" toLevel="2" name="Savior's Earring">
+		<!-- Acquired XP/ SP +2%, Max MP +20. -->
+		<icon>
+			<value level="1">icon.r2_earring_i00</value>
+			<value level="2">icon.r2_earring_i01</value>
+		</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="54020" toLevel="1" name="Bracelet of Authority">
+		<!-- HP/ MP Recovery Rate +15%, P. Accuracy +2, M. Accuracy +2, weight limit +10,000. -->
+		<icon>icon.ertheia_bracelet_i01</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+			<effect name="MpRegen">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>10000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54021" toLevel="15" name="Talisman of Authority">
+		<!-- By the energy of Power P./ M. Def. +13, Max HP +6%, Max MP +2%, P./ M. Atk. +2%. -->
+		<icon>
+			<value level="1">icon.sayhas_talisman_new_i01</value>
+			<value level="2">icon.sayhas_talisman_g_Lv2</value>
+			<value level="3">icon.sayhas_talisman_g_Lv3</value>
+			<value level="4">icon.sayhas_talisman_g_Lv4</value>
+			<value level="5">icon.sayhas_talisman_new_i05</value>
+			<value level="6">icon.sayhas_talisman_pve_Lv1</value>
+			<value level="7">icon.sayhas_talisman_pve_Lv2</value>
+			<value level="8">icon.sayhas_talisman_pve_Lv3</value>
+			<value level="9">icon.sayhas_talisman_pve_Lv4</value>
+			<value level="10">icon.sayhas_talisman_pve_lv5</value>
+			<value level="11">icon.sayhas_talisman_pvp_Lv1</value>
+			<value level="12">icon.sayhas_talisman_pvp_Lv2</value>
+			<value level="13">icon.sayhas_talisman_pvp_Lv3</value>
+			<value level="14">icon.sayhas_talisman_pvp_Lv4</value>
+			<value level="15">icon.sayhas_talisman_pvp_lv5</value>
+		</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="54022" toLevel="2" name="Power of Shunaiman">
+		<!-- By the power of Shunaiman, Stun/ Silence/ Fear Atk. Rate +5%, Damage Reflection Resistance +10%. -->
+		<icon>
+			<value level="1">icon.sayhas_talisman_pvp_Lv1</value>
+			<value level="2">icon.sayhas_talisman_pvp_Lv2</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="54023" toLevel="5" name="Water Attack Defense">
+		<!-- <Effect>. Water Resistance +20 -->
+		<icon>icon.elemental_necklace_water_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ElementalSpiritDefense">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<type>WATER</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54024" toLevel="5" name="Fire Attack Defense">
+		<!-- <Effect>. Fire Resistance +20 -->
+		<icon>icon.elemental_necklace_fire_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ElementalSpiritDefense">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<type>FIRE</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54025" toLevel="5" name="Wind Attack Defense">
+		<!-- <Effect>. Wind Resistance +20 -->
+		<icon>icon.elemental_necklace_wind_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ElementalSpiritDefense">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<type>WIND</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54026" toLevel="5" name="Earth Attack Defense">
+		<!-- <Effect>. Earth Resistance +20 -->
+		<icon>icon.elemental_necklace_earth_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ElementalSpiritDefense">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+				</amount>
+				<type>EARTH</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54027" toLevel="5" name="Attribute XP Increase">
+		<!-- <Effect>. Acquired attribute XP +3% -->
+		<icon>icon.skill_transform_s_attack</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="SpiritExpModify">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54028" toLevel="1" name="Blessed Soul">
+		<!-- For 20 min., acquired attribute XP while hunting +20%. -->
+		<icon>icon.elemental_bless_scrl_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SpiritExpModify">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54029" toLevel="4" name="Venir's Blessing">
+		<!-- CON/ MEN/ DEX/ WIT/ STR/ INT +1, when equipped. -->
+		<icon>
+			<value level="1">icon.etc_all_stat_talisman_i00</value>
+			<value level="2">icon.etc_all_stat_talisman_i01</value>
+			<value level="3">icon.etc_all_stat_talisman_i02</value>
+			<value level="4">icon.etc_all_stat_talisman_i02</value>
+		</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="54030" toLevel="11" name="Ignis' Necklace">
+		<!-- A necklace imbued with Fire Spirit. <Effect>. Max HP +50 -->
+		<icon>icon.elemental_necklace_fire_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">200</value>
+					<value level="9">300</value>
+					<value level="10">300</value>
+					<value level="11">500</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54031" toLevel="11" name="Nebula's Necklace">
+		<!-- A necklace imbued with Water Spirit. <Effect>. Max HP +50 -->
+		<icon>icon.elemental_necklace_water_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">200</value>
+					<value level="9">300</value>
+					<value level="10">300</value>
+					<value level="11">500</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54032" toLevel="11" name="Procella's Necklace">
+		<!-- A necklace imbued with Wind Spirit. <Effect>. Max HP +50 -->
+		<icon>icon.elemental_necklace_wind_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">200</value>
+					<value level="9">300</value>
+					<value level="10">300</value>
+					<value level="11">500</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54033" toLevel="11" name="Petram's Necklace">
+		<!-- A necklace imbued with Earth Spirit. <Effect>. Max HP +50 -->
+		<icon>icon.elemental_necklace_earth_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">200</value>
+					<value level="9">300</value>
+					<value level="10">300</value>
+					<value level="11">500</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+					<value level="11">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54034" toLevel="15" name="Anakim's Power">
+		<!-- <Effect>. MP Recovery Rate +1. M. Atk. +1% -->
+		<icon>icon.etc_water_rune_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">6</value>
+					<value level="7">6</value>
+					<value level="8">7</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+					<value level="11">11</value>
+					<value level="12">11</value>
+					<value level="13">12</value>
+					<value level="14">12</value>
+					<value level="15">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">1</value>
+					<value level="14">2</value>
+					<value level="15">3</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<!-- Recover MP -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>30</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>54036</skillId> <!-- Anakim Recovery -->
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">5</value>
+					<value level="14">5</value>
+					<value level="15">5</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByMagicType" fromLevel="6" toLevel="15">
+				<!-- Recover MP -->
+				<magicTypes>0;1</magicTypes>
+				<skillId>54036</skillId> <!-- Anakim Recovery -->
+				<chance>10</chance>
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">5</value>
+					<value level="14">5</value>
+					<value level="15">5</value>
+				</skillLevel>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54035" toLevel="15" name="Lilith' Power">
+		<!-- <Effect>. HP Recovery Rate +1. P. Atk. +1%. -->
+		<icon>icon.etc_fire_rune_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">6</value>
+					<value level="7">6</value>
+					<value level="8">7</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+					<value level="11">11</value>
+					<value level="12">11</value>
+					<value level="13">12</value>
+					<value level="14">12</value>
+					<value level="15">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">1</value>
+					<value level="14">2</value>
+					<value level="15">3</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<!-- Recover HP -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>30</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>54037</skillId> <!-- Lilith Recovery -->
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+					<value level="12">6</value>
+					<value level="13">6</value>
+					<value level="14">6</value>
+					<value level="15">6</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByMagicType" fromLevel="6" toLevel="15">
+				<!-- Recover HP -->
+				<magicTypes>0;1</magicTypes>
+				<skillId>54037</skillId> <!-- Lilith Recovery -->
+				<chance>10</chance>
+				<skillLevel>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+					<value level="12">6</value>
+					<value level="13">6</value>
+					<value level="14">6</value>
+					<value level="15">6</value>
+				</skillLevel>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54036" toLevel="6" name="Anakim Recovery">
+		<!-- <Effect>. Recovers 75 MP -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1000</effectPoint>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>
+					<value level="1">75</value>
+					<value level="2">150</value>
+					<value level="3">225</value>
+					<value level="4">300</value>
+					<value level="5">600</value>
+					<value level="6">600</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54037" toLevel="6" name="Lilith Recovery">
+		<!-- <Effect>. Restores 100 HP -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1000</effectPoint>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">900</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54038" toLevel="1" name="Sayha's Cloak">
+		<!-- Max HP +3%. Max MP +3% -->
+		<icon>BranchSys2.br_wing_of_sylphide_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54039" toLevel="10" name="+1 Sayha's Cloak">
+		<!-- Max HP +4%. Max MP +4% -->
+		<icon>BranchSys2.br_wing_of_sylphide_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="2">5</value>
+					<value level="3">6</value>
+					<value level="4">7</value>
+					<value level="5">8</value>
+					<value level="6">9</value>
+					<value level="7">10</value>
+					<value level="8">11</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="2">5</value>
+					<value level="3">6</value>
+					<value level="4">7</value>
+					<value level="5">8</value>
+					<value level="6">9</value>
+					<value level="7">10</value>
+					<value level="8">11</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="8">2</value>
+					<value level="9">4</value>
+					<value level="10">6</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="7">5</value>
+					<value level="8">7</value>
+					<value level="9">10</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="7">5</value>
+					<value level="8">7</value>
+					<value level="9">10</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="9">5</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="9">5</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="9">5</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54040" toLevel="2" name="Sayha's Blink">
+		<!-- Cancels the enemy's target and teleports you backwards. -->
+		<icon>icon.sayha2017_blink</icon>
+		<operateType>A1</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>CONFUSION</abnormalType>
+		<isDebuff>true</isDebuff>
+		<hitTime>100</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>
+			<value level="1">120000</value>
+			<value level="2">60000</value>
+		</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="TeleportToTarget" />
+			<effect name="TargetCancel" />
+		</effects>
+	</skill>
+	<skill id="54041" toLevel="4" name="Frintezza's Necklace">
+		<!-- Sleep Atk. Rate and Resistance +10%, Paralysis Atk. Rate and Resistance +5%, Damage Reflection Resistance +2%, P./ M. Skill Power +5%, Skill Cooldown -2%. -->
+		<icon>
+			<value level="1">icon.accessory_necklace_of_frintessa_i00</value>
+			<value level="2">icon.accessory_necklace_of_frintessa_i03</value>
+			<value level="3">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="4">icon.accessory_necklace_of_frintessa_i05</value>
+		</icon>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SLEEP>
+				<PARALYZE>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</PARALYZE>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SLEEP>
+				<PARALYZE>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</PARALYZE>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-5</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-5</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-5</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-2</value>
+					<value level="4">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageShieldResist">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">10</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54042" toLevel="1" name="Frintezza's Necklace - Special Property">
+		<!-- Nearby enemies' P./ M. Skill Cooldown -100% for 2 min. -->
+		<icon>icon.accessory_necklace_of_frintessa_i05</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>4000</hitTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>-666</effectPoint>
+	</skill>
+	<skill id="54043" toLevel="1" name="Rapid Wind">
+		<!-- For 5 sec., P. Def. +1000, M. Def. +1000, Speed +50. -->
+		<icon>icon.skill30008</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>800</hitTime>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="54044" toLevel="1" name="Sayha's Special Cloak">
+		<!-- Max HP/ MP +15%, acquired XP/ SP +30%, P. Def. +11%, M. Def. +6%, P. Critical Damage/ M. Skill Critical Damage +15%, received P. Critical Damage/ received M. Skill Critical Damage -10%. -->
+		<icon>icon.bm_2018_sayha_cloak_back_i01</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54045" toLevel="10" name="+1 Sayha's Special Cloak">
+		<!-- Max HP/ MP +15%, acquired XP/ SP +30%, P. Def. +12%, M. Def. +8%, P. Critical Damage +15%, M. Skill Critical Damage +16%, received P. Critical Damage/ received M. Skill Critical Damage -10%. -->
+		<icon>icon.bm_2018_sayha_cloak_back_i01</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">17</value>
+					<value level="4">17</value>
+					<value level="5">17</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">21</value>
+					<value level="9">22</value>
+					<value level="10">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">17</value>
+					<value level="4">17</value>
+					<value level="5">17</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">21</value>
+					<value level="9">22</value>
+					<value level="10">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">13</value>
+					<value level="3">14</value>
+					<value level="4">15</value>
+					<value level="5">16</value>
+					<value level="6">17</value>
+					<value level="7">18</value>
+					<value level="8">19</value>
+					<value level="9">20</value>
+					<value level="10">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">10</value>
+					<value level="3">12</value>
+					<value level="4">14</value>
+					<value level="5">16</value>
+					<value level="6">17</value>
+					<value level="7">18</value>
+					<value level="8">19</value>
+					<value level="9">20</value>
+					<value level="10">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
+					<value level="4">16</value>
+					<value level="5">16</value>
+					<value level="6">16</value>
+					<value level="7">17</value>
+					<value level="8">17</value>
+					<value level="9">18</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">16</value>
+					<value level="2">16</value>
+					<value level="3">17</value>
+					<value level="4">18</value>
+					<value level="5">18</value>
+					<value level="6">18</value>
+					<value level="7">19</value>
+					<value level="8">20</value>
+					<value level="9">21</value>
+					<value level="10">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value toLevel="1" fromLevel="4">10</value>
+					<value toLevel="5" fromLevel="7">11</value>
+					<value level="8">12</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value toLevel="1" fromLevel="4">10</value>
+					<value toLevel="5" fromLevel="7">11</value>
+					<value level="8">12</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value toLevel="1" fromLevel="4">10</value>
+					<value toLevel="5" fromLevel="7">11</value>
+					<value level="8">12</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value toLevel="1" fromLevel="5">0</value>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54046" toLevel="1" name="Talisman of Aden">
+		<!-- A talisman for the warriors of Aden. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="54047" toLevel="22" name="Talisman of Aden">
+		<!-- A talisman for the warriors of Aden. -->
+		<icon>
+			<value level="1">icon.bm_aden_talisman</value>
+			<value level="2">icon.bm_aden_talisman_01</value>
+			<value level="3">icon.bm_aden_talisman</value>
+			<value level="4">icon.bm_aden_talisman_01</value>
+			<value level="5">icon.bm_aden_talisman</value>
+			<value level="6">icon.bm_aden_talisman_01</value>
+			<value level="7">icon.bm_aden_talisman</value>
+			<value level="8">icon.bm_aden_talisman_01</value>
+			<value level="9">icon.bm_aden_talisman</value>
+			<value level="10">icon.bm_aden_talisman_01</value>
+			<value level="11">icon.bm_aden_talisman</value>
+			<value level="12">icon.bm_aden_talisman_01</value>
+			<value level="13">icon.bm_aden_talisman</value>
+			<value level="14">icon.bm_aden_talisman_01</value>
+			<value level="15">icon.bm_aden_talisman</value>
+			<value level="16">icon.bm_aden_talisman_01</value>
+			<value level="17">icon.bm_aden_talisman</value>
+			<value level="18">icon.bm_aden_talisman_01</value>
+			<value level="19">icon.bm_aden_talisman</value>
+			<value level="20">icon.bm_aden_talisman_01</value>
+			<value level="21">icon.bm_aden_talisman</value>
+			<value level="22">icon.bm_aden_talisman_01</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="11">50</value>
+					<value level="12">65</value>
+					<value level="13">80</value>
+					<value level="14">110</value>
+					<value level="15">135</value>
+					<value level="16">160</value>
+					<value level="17">180</value>
+					<value level="18">200</value>
+					<value level="19">225</value>
+					<value level="20">250</value>
+					<value level="21">270</value>
+					<value level="22">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="11">100</value>
+					<value level="12">125</value>
+					<value level="13">150</value>
+					<value level="14">200</value>
+					<value level="15">250</value>
+					<value level="16">320</value>
+					<value level="17">360</value>
+					<value level="18">390</value>
+					<value level="19">420</value>
+					<value level="20">455</value>
+					<value level="21">490</value>
+					<value level="22">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="3">5</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">20</value>
+					<value level="10">25</value>
+					<value level="11">30</value>
+					<value level="12">35</value>
+					<value level="13">40</value>
+					<value level="14">50</value>
+					<value level="15">60</value>
+					<value level="16">70</value>
+					<value level="17">80</value>
+					<value level="18">100</value>
+					<value level="19">120</value>
+					<value level="20">140</value>
+					<value level="21">160</value>
+					<value level="22">250</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="3">5</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">35</value>
+					<value level="11">40</value>
+					<value level="12">50</value>
+					<value level="13">60</value>
+					<value level="14">70</value>
+					<value level="15">80</value>
+					<value level="16">100</value>
+					<value level="17">120</value>
+					<value level="18">140</value>
+					<value level="19">160</value>
+					<value level="20">180</value>
+					<value level="21">200</value>
+					<value level="22">250</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">12</value>
+					<value level="6">12</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">20</value>
+					<value level="10">22</value>
+					<value level="11">25</value>
+					<value level="12">35</value>
+					<value level="13">40</value>
+					<value level="14">55</value>
+					<value level="15">70</value>
+					<value level="16">75</value>
+					<value level="17">80</value>
+					<value level="18">85</value>
+					<value level="19">90</value>
+					<value level="20">95</value>
+					<value level="21">100</value>
+					<value level="22">130</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">12</value>
+					<value level="6">12</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">20</value>
+					<value level="10">22</value>
+					<value level="11">25</value>
+					<value level="12">35</value>
+					<value level="13">45</value>
+					<value level="14">60</value>
+					<value level="15">75</value>
+					<value level="16">85</value>
+					<value level="17">95</value>
+					<value level="18">105</value>
+					<value level="19">110</value>
+					<value level="20">120</value>
+					<value level="21">125</value>
+					<value level="22">130</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="3">100</value>
+					<value level="4">100</value>
+					<value level="5">120</value>
+					<value level="6">120</value>
+					<value level="7">150</value>
+					<value level="8">150</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+					<value level="11">220</value>
+					<value level="12">240</value>
+					<value level="13">260</value>
+					<value level="14">390</value>
+					<value level="15">520</value>
+					<value level="16">580</value>
+					<value level="17">640</value>
+					<value level="18">775</value>
+					<value level="19">910</value>
+					<value level="20">1015</value>
+					<value level="21">1120</value>
+					<value level="22">1200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="3">30</value>
+					<value level="4">30</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">70</value>
+					<value level="8">70</value>
+					<value level="9">100</value>
+					<value level="10">115</value>
+					<value level="11">130</value>
+					<value level="12">145</value>
+					<value level="13">160</value>
+					<value level="14">240</value>
+					<value level="15">320</value>
+					<value level="16">340</value>
+					<value level="17">360</value>
+					<value level="18">395</value>
+					<value level="19">910</value>
+					<value level="20">410</value>
+					<value level="21">530</value>
+					<value level="22">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="9">10</value>
+					<value level="10">12</value>
+					<value level="11">12</value>
+					<value level="12">15</value>
+					<value level="13">20</value>
+					<value level="14">40</value>
+					<value level="15">50</value>
+					<value level="16">50</value>
+					<value level="17">50</value>
+					<value level="18">50</value>
+					<value level="19">50</value>
+					<value level="20">50</value>
+					<value level="21">50</value>
+					<value level="22">60</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="9">10</value>
+					<value level="10">12</value>
+					<value level="11">12</value>
+					<value level="12">15</value>
+					<value level="13">20</value>
+					<value level="14">40</value>
+					<value level="15">50</value>
+					<value level="16">50</value>
+					<value level="17">50</value>
+					<value level="18">50</value>
+					<value level="19">50</value>
+					<value level="20">50</value>
+					<value level="21">50</value>
+					<value level="22">60</value>
+				</amount>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="22">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="22">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="22">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54048" toLevel="10" name="Aden's Blessing">
+		<!-- Restores Sayha's Grace bar to the full. -->
+		<icon>icon.skill19222</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<reuseDelay>86400000</reuseDelay>
+	</skill>
+	<skill id="54049" toLevel="1" name="Scroll: Enchant Talisman of Aden">
+		<icon>icon.talisman_of_aden_fire</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54050" toLevel="1" name="Scroll of Escape: High Priest Orven">
+		<!-- A magical scroll that relocates you to High Priest Orven in Aden. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>200</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<itemConsumeId>91768</itemConsumeId> <!-- Scroll of Escape: High Priest Orven -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>147465</x>
+				<y>22668</y>
+				<z>-1984</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54051" toLevel="1" name="Magic Lamp Charging Potion (1-hour)">
+		<!-- Acquired Magic Lamp XP +20% -->
+		<icon>icon.etc_recall_potion2</icon>
+		<operateType>A2</operateType>
+		<abnormalType>MAGIC_LAMP_RATE</abnormalType>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54052" toLevel="1" name="Scroll: PK - Event">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="54053" toLevel="1" name="PA Treasure Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91761</itemConsumeId> <!-- PA Treasure Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="19.9994">
+						<item id="46254" count="1" /> <!-- Dandy's Home Run Ball - Sealed -->
+					</item>
+					<item chance="19.9994">
+						<item id="49674" count="1" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="0.001">
+						<item id="49683" count="1" /> <!-- Talisman of Baium -->
+					</item>
+					<item chance="19.9994">
+						<item id="90405" count="1" /> <!-- My Teleport Scroll - Sealed -->
+					</item>
+					<item chance="19.9994">
+						<item id="90508" count="1" /> <!-- Old Special Dragon Fruit Lv. 1 - Sealed -->
+					</item>
+					<item chance="19.9994">
+						<item id="91763" count="1" /> <!-- PA Coin - Sealed -->
+					</item>
+					<item chance="0.001">
+						<item id="90496" count="1" /> <!-- Earth Dragon Belt -->
+					</item>
+					<item chance="0.001">
+						<item id="90497" count="1" /> <!-- Fire Dragon Belt -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54054" toLevel="1" name="PA Treasure Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91762</itemConsumeId> <!-- PA Treasure Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="19.9992">
+						<item id="46254" count="1" /> <!-- Dandy's Home Run Ball - Sealed -->
+					</item>
+					<item chance="19.9992">
+						<item id="49674" count="1" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="0.001">
+						<item id="49683" count="1" /> <!-- Talisman of Baium -->
+					</item>
+					<item chance="19.9992">
+						<item id="90405" count="1" /> <!-- My Teleport Scroll - Sealed -->
+					</item>
+					<item chance="19.9992">
+						<item id="90508" count="1" /> <!-- Old Special Dragon Fruit Lv. 1 - Sealed -->
+					</item>
+					<item chance="19.9992">
+						<item id="91763" count="1" /> <!-- PA Coin - Sealed -->
+					</item>
+					<item chance="0.001">
+						<item id="90496" count="1" /> <!-- Earth Dragon Belt -->
+					</item>
+					<item chance="0.001">
+						<item id="90497" count="1" /> <!-- Fire Dragon Belt -->
+					</item>
+					<item chance="0.001">
+						<item id="91012" count="1" /> <!-- Top-grade A-grade Weapon Pack -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54055" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54056" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54057" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54058" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54059" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54060" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54061" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54062" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54063" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54064" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54065" toLevel="1" name="Sayha's Grace Kit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54066" toLevel="1" name="Rudolph the Red Nose Blessing">
+		<!-- For 5 min., P./ M. Atk. +150, P./ M. Def. +100, Atk. Spd./ Casting Spd. +100, Speed +10, HP/ MP Recovery Rate +30%. Changes the appearance to that of Rudolph. The effect remains after death and logout. -->
+		<icon>BranchSys2.icon.event_lbracelet_rudolph</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54067" toLevel="1" name="Sayha's Storm Lv. 3 - 1 h.">
+		<!-- Sayha's Grace Consumption +100%. Acquired attribute XP +200%. Acquired SP +200%. Duration: 1 h. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<abnormalTime>3600</abnormalTime>
+		<stayAfterDeath>true</stayAfterDeath>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91778</itemConsumeId> <!-- Sayha's Storm Lv. 3 - 1-hours -->
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54068" toLevel="1" name="Sayha's Gust - Event">
+		<!-- Sayha's Grace Consumption +100%. Acquired attribute XP +300%. Acquired SP +300%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.ev_magic_flame_game_wind2</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91776</itemConsumeId> <!-- Sayha's Gust - Event -->
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>300</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>300</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54069" toLevel="1" name="Magic Fire - Event">
+		<!-- Acquired Magic Lamp XP +100% -->
+		<icon>icon.bm_soul_of_shilen</icon>
+		<operateType>A2</operateType>
+		<abnormalType>MAGIC_LAMP_RATE</abnormalType>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54070" toLevel="1" name="Sayha's Buff Scroll - Event">
+		<!-- A magic scroll which allows getting various buffs. -->
+		<icon>icon.etc_ssq_i00</icon>
+		<operateType>A2</operateType>
+		<hitTime>4000</hitTime>
+		<abnormalTime>1200</abnormalTime>
+		<itemConsumeId>91781</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalLevel>1</abnormalLevel>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>1</magicLevel>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>54100</skillId> <!-- Sayha's Shield -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54101</skillId> <!-- Sayha's Magic Barrier -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54103</skillId> <!-- Sayha's Decrease Weight -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54112</skillId> <!-- Sayha's Clarity -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54104</skillId> <!-- Sayha's Berserker Spirit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54105</skillId> <!-- Sayha's Wind Walk -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54106</skillId> <!-- Sayha's Might -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54108</skillId> <!-- Sayha's Focus -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54109</skillId> <!-- Sayha's Haste -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54110</skillId> <!-- Sayha's Death Whisper -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54111</skillId> <!-- Sayha's Empower -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54113</skillId> <!-- Sayha's Wild Magic -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54114</skillId> <!-- Sayha's Acumen -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54115</skillId> <!-- Sayha's Concentration -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54116</skillId> <!-- Sayha's Victory -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54117</skillId> <!-- Sayha's Recover HP -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>54118</skillId> <!-- Sayha's MP Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="54071" toLevel="1" name="Battle Scroll">
+		<!-- For 20 min., P. Atk. +200, M. Atk. +350, P. Critical Rate/ M. Skill Critical Rate +30, Atk./ Casting Spd. +50, P./ M. Def. +200, Max HP/ MP/ CP +500. -->
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<hitTime>4000</hitTime>
+		<abnormalTime>1200</abnormalTime>
+		<itemConsumeId>93098</itemConsumeId> <!-- Battle Scroll (Event) -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalLevel>1</abnormalLevel>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>350</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54072" toLevel="1" name="Aden Supply Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54073" toLevel="1" name="Nuia's Gift">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91782</itemConsumeId> <!-- Nuia's Gift -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="19.9778">
+						<item id="46254" count="1" /> <!-- Dandy's Home Run Ball - Sealed -->
+					</item>
+					<item chance="19.9778">
+						<item id="49674" count="1" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="19.9778">
+						<item id="91763" count="1" /> <!-- PA Coin - Sealed -->
+					</item>
+					<item chance="19.9778">
+						<item id="90508" count="1" /> <!-- Old Special Dragon Fruit Lv. 1 - Sealed -->
+					</item>
+					<item chance="19.9778">
+						<item id="90405" count="1" /> <!-- My Teleport Scroll - Sealed -->
+					</item>
+					<item chance="0.1">
+						<item id="91626" count="1" /> <!-- S-grade Armor Pack -->
+					</item>
+					<item chance="0.01">
+						<item id="91625" count="1" /> <!-- S-grade Weapon Pack -->
+					</item>
+					<item chance="0.001">
+						<item id="49683" count="1" /> <!-- Talisman of Baium -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54074" toLevel="1" name="Einhasad's Spellbook Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91783</itemConsumeId> <!-- Einhasad's Spellbook Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="54075" toLevel="1" name="Eva's Spellbook Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91784</itemConsumeId> <!-- Eva's Spellbook Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="54076" toLevel="1" name="Shillien's Spellbook Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91785</itemConsumeId> <!-- Shillien's Spellbook Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="54077" toLevel="1" name="Pa'agrio's Spellbook Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91786</itemConsumeId> <!-- Pa'agrio's Spellbook Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="54078" toLevel="1" name="Maphr's Spellbook Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91787</itemConsumeId> <!-- Maphr's Spellbook Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="54079" toLevel="1" name="Dragon Belt Pack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54080" toLevel="1" name="Dragon Belt's Decoration">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54081" toLevel="1" name="Dragon Belt">
+		<!-- Weight Limit +1000, DEX +1, WIT +1. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="54082" toLevel="11" name="Dragon Belt">
+		<!-- Imbued with dragon power. <Effect>. Weight limit +1000. DEX +1. WIT +1 -->
+		<icon>icon.r2_belt_i01</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">2000</value>
+					<value level="3">3000</value>
+					<value level="4">4000</value>
+					<value level="5">5000</value>
+					<value level="6">6000</value>
+					<value level="7">7000</value>
+					<value level="8">8000</value>
+					<value level="9">9000</value>
+					<value level="10">10000</value>
+					<value level="11">12000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">6</value>
+					<value level="6">6</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+					<value level="11">12</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="5">100</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">300</value>
+					<value level="9">400</value>
+					<value level="10">600</value>
+					<value level="11">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="5">50</value>
+					<value level="6">100</value>
+					<value level="7">150</value>
+					<value level="8">200</value>
+					<value level="9">250</value>
+					<value level="10">300</value>
+					<value level="11">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">500</value>
+					<value level="9">700</value>
+					<value level="10">1000</value>
+					<value level="11">1500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionCp">
+				<amount>
+					<value level="6">80</value>
+					<value level="7">100</value>
+					<value level="8">120</value>
+					<value level="9">150</value>
+					<value level="10">200</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>
+					<value level="6">80</value>
+					<value level="7">100</value>
+					<value level="8">120</value>
+					<value level="9">150</value>
+					<value level="10">200</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionMp">
+				<amount>
+					<value level="6">80</value>
+					<value level="7">100</value>
+					<value level="8">120</value>
+					<value level="9">150</value>
+					<value level="10">200</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="6">30</value>
+					<value level="7">40</value>
+					<value level="8">50</value>
+					<value level="9">80</value>
+					<value level="10">100</value>
+					<value level="11">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">50</value>
+					<value level="10">80</value>
+					<value level="11">120</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">50</value>
+					<value level="11">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="8">10</value>
+					<value level="9">20</value>
+					<value level="10">30</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="8">10</value>
+					<value level="9">20</value>
+					<value level="10">30</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="9">5</value>
+					<value level="10">10</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">4</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54083" toLevel="1" name="Lucky Pouch">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54084" toLevel="1" name="Lucky Pouch">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54085" toLevel="1" name="Golden Lucky Pouch">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54086" toLevel="1" name="Golden Lucky Pouch">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54087" toLevel="1" name="Rare Accessory Pack of Immortals (15-day)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="54088" toLevel="1" name="Lakfi-Lakfi's Fortune Box">
+		<icon>icon.special_cube_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91793</itemConsumeId> <!-- Lakfi-Lakfi's Fortune Box -->
+		<magicLevel>1</magicLevel>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100.0">
+						<item id="91794" count="1" /> <!-- Lakfi-Lakfi's Oink - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54089" toLevel="1" name="Lakfi-Lakfi's Oink">
+		<!-- For 1 h., Atk. Spd./ Casting Spd. +100, Speed +20, Acquired XP/ SP +10%. The effect remains after death and logout. -->
+		<icon>icon.accessory_pig_cap_i00</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91794</itemConsumeId> <!-- Lakfi-Lakfi's Oink -->
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54090" toLevel="1" name="Star Candy">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>500</reuseDelay>
+		<magicLevel>1</magicLevel>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SayhaGraceSupport" />
+			<effect name="VitalityPointUp">
+				<value>10000</value>
+			</effect>
+			<effect name="ModifyMagicLampPoints">
+				<amount>50000</amount>
+			</effect>
+			<effect name="ModifyCraftPoints">
+				<amount>3250</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54091" toLevel="5" name="Lakfi-Lakfi's Energy">
+		<!-- STR +1, INT +1, CON +1, MEN +1, DEX +1, WIT +1. When the buff is cancelled, you obtain a gift from Lakfi-Lakfi. Note!. The gift can't be obtained if your character is dead or if there is no free space in your inventory. You can't get the next level buff if your character is dead. -->
+		<icon>icon.skill11540</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54092" toLevel="1" name="Lakfi-Lakfi's Common Reward">
+		<icon>icon.special_cube_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="54093" toLevel="1" name="Lakfi-Lakfi's Golden Reward">
+		<icon>icon.special_cube_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

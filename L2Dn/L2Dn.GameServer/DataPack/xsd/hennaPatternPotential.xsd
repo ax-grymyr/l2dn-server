@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element name="enchantFees">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="fee" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence minOccurs="1" maxOccurs="1">
+										<xs:element name="requiredItem" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:positiveInteger" />
+												<xs:attribute name="count" type="xs:long" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dailyCount" minOccurs="1" maxOccurs="1" />
+										<xs:element name="enchantExp" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="count" type="xs:int" />
+												<xs:attribute name="chance" type="xs:double" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="step" type="xs:positiveInteger" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="resetCount">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="reset" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute type="xs:int" name="itemid" use="required"/>
+									<xs:attribute type="xs:int" name="count" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="experiencePoints">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="hiddenPower" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="level" type="xs:positiveInteger" />
+									<xs:attribute name="exp" type="xs:positiveInteger" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hiddenPotentials">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="poten" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:int" />
+									<xs:attribute name="slotId" type="xs:int" />
+									<xs:attribute name="maxSkillLevel" type="xs:positiveInteger" />
+									<xs:attribute name="skillId" type="xs:positiveInteger" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

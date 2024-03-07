@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="96100" name="option_id_96100">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="96101" name="option_id_96101">
+		<!-- Received Healing +4% -->
+	</option>
+	<option id="96102" name="option_id_96102">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="96103" name="option_id_96103">
+		<!-- Received Healing +6% -->
+	</option>
+	<option id="96104" name="option_id_96104">
+		<!-- Received Healing +7% -->
+	</option>
+	<option id="96105" name="option_id_96105">
+		<!-- Received Healing +10% -->
+	</option>
+	<option id="96106" name="option_id_96106">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96107" name="option_id_96107">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96108" name="option_id_96108">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96109" name="option_id_96109">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96110" name="option_id_96110">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96111" name="option_id_96111">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96112" name="option_id_96112">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96113" name="option_id_96113">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96114" name="option_id_96114">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96115" name="option_id_96115">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96116" name="option_id_96116">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96117" name="option_id_96117">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96118" name="option_id_96118">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96119" name="option_id_96119">
+		<!-- HP/ MP Recovery Rate +1 -->
+	</option>
+	<option id="96120" name="option_id_96120">
+		<!-- HP/ MP Recovery Rate +2 -->
+	</option>
+	<option id="96121" name="option_id_96121">
+		<!-- HP/ MP Recovery Rate +2 -->
+	</option>
+	<option id="96122" name="option_id_96122">
+		<!-- HP/ MP Recovery Rate +3 -->
+	</option>
+	<option id="96123" name="option_id_96123">
+		<!-- HP/ MP Recovery Rate +3 -->
+	</option>
+	<option id="96124" name="option_id_96124">
+		<!-- HP/ MP Recovery Rate +4 -->
+	</option>
+	<option id="96125" name="option_id_96125">
+		<!-- HP/ MP Recovery Rate +5 -->
+	</option>
+	<option id="96126" name="option_id_96126">
+		<!-- P. Atk. +60 -->
+	</option>
+	<option id="96127" name="option_id_96127">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="96128" name="option_id_96128">
+		<!-- P. Atk. +68 -->
+	</option>
+	<option id="96129" name="option_id_96129">
+		<!-- P. Atk. +72 -->
+	</option>
+	<option id="96130" name="option_id_96130">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="96131" name="option_id_96131">
+		<!-- P. Atk. +80 -->
+	</option>
+	<option id="96132" name="option_id_96132">
+		<!-- P. Atk. +85 -->
+	</option>
+	<option id="96133" name="option_id_96133">
+		<!-- P. Atk. +90 -->
+	</option>
+	<option id="96134" name="option_id_96134">
+		<!-- P. Atk. +95 -->
+	</option>
+	<option id="96135" name="option_id_96135">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="96136" name="option_id_96136">
+		<!-- P. Atk. +106 -->
+	</option>
+	<option id="96137" name="option_id_96137">
+		<!-- P. Atk. +112 -->
+	</option>
+	<option id="96138" name="option_id_96138">
+		<!-- P. Atk. +118 -->
+	</option>
+	<option id="96139" name="option_id_96139">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="96140" name="option_id_96140">
+		<!-- P. Atk. +130 -->
+	</option>
+	<option id="96141" name="option_id_96141">
+		<!-- P. Atk. +141 -->
+	</option>
+	<option id="96142" name="option_id_96142">
+		<!-- P. Atk. +153 -->
+	</option>
+	<option id="96143" name="option_id_96143">
+		<!-- P. Atk. +166 -->
+	</option>
+	<option id="96144" name="option_id_96144">
+		<!-- P. Atk. +180 -->
+	</option>
+	<option id="96145" name="option_id_96145">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="96146" name="option_id_96146">
+		<!-- M. Atk. +60 -->
+	</option>
+	<option id="96147" name="option_id_96147">
+		<!-- M. Atk. +64 -->
+	</option>
+	<option id="96148" name="option_id_96148">
+		<!-- M. Atk. +68 -->
+	</option>
+	<option id="96149" name="option_id_96149">
+		<!-- M. Atk. +72 -->
+	</option>
+	<option id="96150" name="option_id_96150">
+		<!-- M. Atk. +76 -->
+	</option>
+	<option id="96151" name="option_id_96151">
+		<!-- M. Atk. +80 -->
+	</option>
+	<option id="96152" name="option_id_96152">
+		<!-- M. Atk. +85 -->
+	</option>
+	<option id="96153" name="option_id_96153">
+		<!-- M. Atk. +90 -->
+	</option>
+	<option id="96154" name="option_id_96154">
+		<!-- M. Atk. +95 -->
+	</option>
+	<option id="96155" name="option_id_96155">
+		<!-- M. Atk. +100 -->
+	</option>
+	<option id="96156" name="option_id_96156">
+		<!-- M. Atk. +106 -->
+	</option>
+	<option id="96157" name="option_id_96157">
+		<!-- M. Atk. +112 -->
+	</option>
+	<option id="96158" name="option_id_96158">
+		<!-- M. Atk. +118 -->
+	</option>
+	<option id="96159" name="option_id_96159">
+		<!-- M. Atk. +120 -->
+	</option>
+	<option id="96160" name="option_id_96160">
+		<!-- M. Atk. +130 -->
+	</option>
+	<option id="96161" name="option_id_96161">
+		<!-- M. Atk. +141 -->
+	</option>
+	<option id="96162" name="option_id_96162">
+		<!-- M. Atk. +153 -->
+	</option>
+	<option id="96163" name="option_id_96163">
+		<!-- M. Atk. +166 -->
+	</option>
+	<option id="96164" name="option_id_96164">
+		<!-- M. Atk. +180 -->
+	</option>
+	<option id="96165" name="option_id_96165">
+		<!-- M. Atk. +200 -->
+	</option>
+	<option id="96166" name="option_id_96166">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="96167" name="option_id_96167">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="96168" name="option_id_96168">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="96169" name="option_id_96169">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="96170" name="option_id_96170">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="96171" name="option_id_96171">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="96172" name="option_id_96172">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="96173" name="option_id_96173">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="96174" name="option_id_96174">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="96175" name="option_id_96175">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="96176" name="option_id_96176">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="96177" name="option_id_96177">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="96178" name="option_id_96178">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="96179" name="option_id_96179">
+		<!-- P. Accuracy +1.8 -->
+	</option>
+	<option id="96180" name="option_id_96180">
+		<!-- P. Accuracy +2 -->
+	</option>
+	<option id="96181" name="option_id_96181">
+		<!-- P. Accuracy +2.1 -->
+	</option>
+	<option id="96182" name="option_id_96182">
+		<!-- P. Accuracy +2.2 -->
+	</option>
+	<option id="96183" name="option_id_96183">
+		<!-- P. Accuracy +2.3 -->
+	</option>
+	<option id="96184" name="option_id_96184">
+		<!-- P. Accuracy +2.4 -->
+	</option>
+	<option id="96185" name="option_id_96185">
+		<!-- P. Accuracy +3 -->
+	</option>
+	<option id="96186" name="option_id_96186">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="96187" name="option_id_96187">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="96188" name="option_id_96188">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="96189" name="option_id_96189">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="96190" name="option_id_96190">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="96191" name="option_id_96191">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="96192" name="option_id_96192">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="96193" name="option_id_96193">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="96194" name="option_id_96194">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="96195" name="option_id_96195">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="96196" name="option_id_96196">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="96197" name="option_id_96197">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="96198" name="option_id_96198">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="96199" name="option_id_96199">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+</list>

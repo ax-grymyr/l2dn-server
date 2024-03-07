@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>34053</npc> <!-- Attribute Master Svein -->
+	</npcs>
+	<item>
+		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+	</item>
+	
+	<item>
+		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+	</item>
+	
+	<item>
+		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+	</item>
+	
+	<item>
+		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+	</item>
+	<item>
+		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+	</item>
+</list>

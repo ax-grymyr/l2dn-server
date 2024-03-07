@@ -1,0 +1,787 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="PrimevalIsle_NPC">
+		<group>
+			<npc id="34106" x="6115" y="-2415" z="-2960" heading="29085" respawnTime="20sec" /> <!-- Gariachin -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_001" minZ="-3672" maxZ="-3172">
+				<node x="6467" y="-21764" />
+				<node x="5871" y="-20095" />
+				<node x="5082" y="-20172" />
+				<node x="3871" y="-21006" />
+				<node x="5080" y="-22068" />
+			</territory>
+		</territories>
+		<npc id="21964" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_0011" minZ="-3672" maxZ="-3172">
+				<node x="7956" y="-21444" />
+				<node x="8044" y="-19900" />
+				<node x="5886" y="-20093" />
+				<node x="6482" y="-21761" />
+			</territory>
+		</territories>
+		<npc id="21964" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_002" minZ="-3852" maxZ="-3152">
+				<node x="3859" y="-20978" />
+				<node x="5068" y="-20146" />
+				<node x="5881" y="-20064" />
+				<node x="5607" y="-18072" />
+				<node x="2961" y="-18932" />
+			</territory>
+		</territories>
+		<npc id="21964" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_003" minZ="-3812" maxZ="-3312">
+				<node x="5616" y="-18067" />
+				<node x="5902" y="-20048" />
+				<node x="8035" y="-19853" />
+				<node x="8300" y="-17744" />
+				<node x="5939" y="-17894" />
+			</territory>
+		</territories>
+		<npc id="21964" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_004" minZ="-3812" maxZ="-2912">
+				<node x="4270" y="-18409" />
+				<node x="3849" y="-17102" />
+				<node x="3213" y="-16960" />
+				<node x="2107" y="-17237" />
+				<node x="2941" y="-18880" />
+			</territory>
+		</territories>
+		<npc id="21964" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_005" minZ="-3812" maxZ="-3412">
+				<node x="6529" y="-17657" />
+				<node x="6269" y="-16955" />
+				<node x="5854" y="-15902" />
+				<node x="3905" y="-17105" />
+				<node x="4327" y="-18395" />
+				<node x="5599" y="-17990" />
+			</territory>
+			<banned_territory name="aden61_2017_005b" minZ="-3736" maxZ="-3236">
+				<node x="6528" y="-17608" />
+				<node x="6265" y="-16907" />
+				<node x="5568" y="-17243" />
+				<node x="5867" y="-17788" />
+			</banned_territory>
+		</territories>
+		<npc id="21964" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_006" minZ="-3836" maxZ="-3136">
+				<node x="6644" y="-17804" />
+				<node x="8020" y="-17724" />
+				<node x="7906" y="-17048" />
+				<node x="8421" y="-16793" />
+				<node x="8269" y="-15214" />
+				<node x="6662" y="-14895" />
+				<node x="5897" y="-15890" />
+			</territory>
+		</territories>
+		<npc id="21964" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21962" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Wild Strider -->
+		<npc id="21964" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21966" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21968" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_007" minZ="-3736" maxZ="-2836">
+				<node x="3137" y="-15018" />
+				<node x="3257" y="-12888" />
+				<node x="1922" y="-12839" />
+				<node x="1701" y="-15311" />
+			</territory>
+		</territories>
+		<npc id="22056" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_008" minZ="-3804" maxZ="-3404">
+				<node x="3155" y="-15009" />
+				<node x="5166" y="-14611" />
+				<node x="5784" y="-13082" />
+				<node x="3261" y="-12890" />
+			</territory>
+		</territories>
+		<npc id="22056" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_009" minZ="-3876" maxZ="-3676">
+				<node x="6749" y="-14888" />
+				<node x="6961" y="-13437" />
+				<node x="5832" y="-13112" />
+				<node x="5470" y="-13940" />
+				<node x="5227" y="-14591" />
+			</territory>
+		</territories>
+		<npc id="22056" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_010" minZ="-3812" maxZ="-3612">
+				<node x="8304" y="-15172" />
+				<node x="8820" y="-15200" />
+				<node x="8828" y="-14628" />
+				<node x="8428" y="-13792" />
+				<node x="7584" y="-13464" />
+				<node x="7002" y="-13464" />
+				<node x="6799" y="-14873" />
+			</territory>
+		</territories>
+		<npc id="22056" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="5" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_0116" minZ="-3812" maxZ="-3312">
+				<node x="5824" y="-13065" />
+				<node x="7080" y="-13413" />
+				<node x="6998" y="-10989" />
+				<node x="5950" y="-10784" />
+				<node x="4651" y="-10485" />
+				<node x="4024" y="-12928" />
+			</territory>
+			<banned_territory name="aden61_2017_0116b" minZ="-3728" maxZ="-3028">
+				<node x="6997" y="-12574" />
+				<node x="7206" y="-12585" />
+				<node x="7291" y="-12437" />
+				<node x="7094" y="-12320" />
+				<node x="6981" y="-12404" />
+			</banned_territory>
+		</territories>
+		<npc id="22056" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_01166" minZ="-3812" maxZ="-3312">
+				<node x="2222" y="-12838" />
+				<node x="4010" y="-12914" />
+				<node x="4644" y="-10480" />
+				<node x="1933" y="-9889" />
+				<node x="1971" y="-11413" />
+			</territory>
+		</territories>
+		<npc id="22056" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_012" minZ="-3849" maxZ="-3149">
+				<node x="1924" y="-9877" />
+				<node x="4639" y="-10465" />
+				<node x="4977" y="-8917" />
+				<node x="2425" y="-7839" />
+			</territory>
+			<banned_territory name="aden61_2017_012b" minZ="-3747" maxZ="-3047">
+				<node x="3744" y="-10239" />
+				<node x="3953" y="-10250" />
+				<node x="4069" y="-10045" />
+				<node x="3919" y="-9985" />
+				<node x="3728" y="-10069" />
+			</banned_territory>
+		</territories>
+		<npc id="22056" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_0122" minZ="-3836" maxZ="-3336">
+				<node x="4661" y="-10473" />
+				<node x="7098" y="-10991" />
+				<node x="7748" y="-9806" />
+				<node x="5601" y="-8876" />
+				<node x="4997" y="-8930" />
+			</territory>
+		</territories>
+		<npc id="22056" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_013" minZ="-3796" maxZ="-2996">
+				<node x="3741" y="-5764" />
+				<node x="5685" y="-6168" />
+				<node x="5612" y="-8850" />
+				<node x="4978" y="-8901" />
+				<node x="2431" y="-7828" />
+			</territory>
+		</territories>
+		<npc id="22056" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_014" minZ="-3800" maxZ="-3100">
+				<node x="5626" y="-8848" />
+				<node x="7548" y="-9699" />
+				<node x="8122" y="-8008" />
+				<node x="7736" y="-5603" />
+				<node x="7003" y="-5773" />
+				<node x="6302" y="-6032" />
+				<node x="5702" y="-6133" />
+			</territory>
+		</territories>
+		<npc id="22056" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="13" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="11" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_015" minZ="-3764" maxZ="-3164">
+				<node x="2408" y="-17048" />
+				<node x="5726" y="-15738" />
+				<node x="6113" y="-14786" />
+				<node x="5228" y="-14622" />
+				<node x="1616" y="-15358" />
+			</territory>
+		</territories>
+		<npc id="22056" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Pachycephalosaurus -->
+		<npc id="21963" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Elroki -->
+		<npc id="22058" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21969" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21969" count="10" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="22057" count="8" respawnTime="3sec" chaseRange="2500" /> <!-- Strider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_1" minZ="-3242" maxZ="-2742">
+				<node x="13564" y="-18256" />
+				<node x="14372" y="-19508" />
+				<node x="16259" y="-19327" />
+				<node x="14258" y="-17357" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_2" minZ="-3364" maxZ="-2664">
+				<node x="16060" y="-19087" />
+				<node x="17647" y="-16180" />
+				<node x="15521" y="-15590" />
+				<node x="14271" y="-17332" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_3" minZ="-3424" maxZ="-2924">
+				<node x="18076" y="-19850" />
+				<node x="20064" y="-20361" />
+				<node x="20248" y="-19296" />
+				<node x="18475" y="-18424" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_4" minZ="-3448" maxZ="-2948">
+				<node x="17024" y="-17521" />
+				<node x="20237" y="-19226" />
+				<node x="20540" y="-17384" />
+				<node x="17739" y="-16141" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_5" minZ="-3376" maxZ="-2776">
+				<node x="20044" y="-20668" />
+				<node x="20868" y="-21120" />
+				<node x="21700" y="-21088" />
+				<node x="22199" y="-18130" />
+				<node x="20559" y="-17421" />
+			</territory>
+			<banned_territory name="aden61_2017_5b" minZ="-3376" maxZ="-2576">
+				<node x="20337" y="-18979" />
+				<node x="20216" y="-19756" />
+				<node x="20657" y="-19844" />
+				<node x="20781" y="-19176" />
+			</banned_territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_6" minZ="-2900" maxZ="-2200">
+				<node x="22710" y="-20915" />
+				<node x="22994" y="-21791" />
+				<node x="23676" y="-21797" />
+				<node x="24754" y="-20655" />
+				<node x="22946" y="-19984" />
+			</territory>
+		</territories>
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_7" minZ="-2884" maxZ="-1984">
+				<node x="23846" y="-19606" />
+				<node x="24783" y="-20646" />
+				<node x="25795" y="-19540" />
+				<node x="26384" y="-18168" />
+				<node x="24476" y="-18059" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_8" minZ="-2764" maxZ="-1864">
+				<node x="26159" y="-18798" />
+				<node x="26682" y="-19636" />
+				<node x="27531" y="-19522" />
+				<node x="28047" y="-18280" />
+				<node x="26423" y="-18169" />
+			</territory>
+		</territories>
+		<npc id="21971" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_9" minZ="-3272" maxZ="-2772">
+				<node x="13588" y="-14980" />
+				<node x="17652" y="-16164" />
+				<node x="18132" y="-14564" />
+				<node x="13120" y="-13196" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_10" minZ="-3224" maxZ="-2824">
+				<node x="17700" y="-16088" />
+				<node x="22427" y="-18197" />
+				<node x="23685" y="-15936" />
+				<node x="18148" y="-14636" />
+			</territory>
+			<banned_territory name="aden61_2017_10b" minZ="-3224" maxZ="-2524">
+				<node x="20429" y="-16971" />
+				<node x="21509" y="-17390" />
+				<node x="22102" y="-16107" />
+				<node x="20668" y="-15826" />
+			</banned_territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_11" minZ="-2864" maxZ="-2164">
+				<node x="23496" y="-18000" />
+				<node x="26155" y="-18129" />
+				<node x="27607" y="-17336" />
+				<node x="28328" y="-16218" />
+				<node x="24208" y="-16120" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_12" minZ="-2908" maxZ="-2308">
+				<node x="24312" y="-16116" />
+				<node x="28074" y="-16170" />
+				<node x="28430" y="-15363" />
+				<node x="28116" y="-14398" />
+				<node x="26601" y="-13897" />
+				<node x="24900" y="-14928" />
+			</territory>
+			<banned_territory name="aden61_2017_12b" minZ="-2789" maxZ="-2089">
+				<node x="25445" y="-15424" />
+				<node x="27174" y="-15758" />
+				<node x="27828" y="-14464" />
+				<node x="26598" y="-13978" />
+				<node x="25545" y="-14592" />
+			</banned_territory>
+		</territories>
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_13" minZ="-3260" maxZ="-2860">
+				<node x="13281" y="-13224" />
+				<node x="17583" y="-14391" />
+				<node x="18039" y="-11817" />
+				<node x="14380" y="-11528" />
+			</territory>
+			<banned_territory name="aden61_2017_13b" minZ="-3224" maxZ="-2824">
+				<node x="14937" y="-12673" />
+				<node x="15945" y="-12995" />
+				<node x="16544" y="-11843" />
+				<node x="15317" y="-12107" />
+			</banned_territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_14" minZ="-3172" maxZ="-2857">
+				<node x="23575" y="-15889" />
+				<node x="24589" y="-14622" />
+				<node x="22283" y="-13110" />
+				<node x="19656" y="-14032" />
+				<node x="18208" y="-12704" />
+				<node x="18206" y="-14607" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_15" minZ="-3376" maxZ="-3026">
+				<node x="17840" y="-11764" />
+				<node x="17096" y="-10404" />
+				<node x="17008" y="-7697" />
+				<node x="15551" y="-7334" />
+				<node x="14179" y="-8625" />
+				<node x="14371" y="-11507" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_16" minZ="-3184" maxZ="-2184">
+				<node x="20225" y="-12372" />
+				<node x="21666" y="-8953" />
+				<node x="20519" y="-8447" />
+				<node x="19460" y="-8492" />
+				<node x="18773" y="-8992" />
+				<node x="19274" y="-10209" />
+				<node x="18871" y="-11037" />
+				<node x="18843" y="-11801" />
+			</territory>
+		</territories>
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_17" minZ="-2992" maxZ="-2492">
+				<node x="21470" y="-12061" />
+				<node x="22210" y="-12674" />
+				<node x="24224" y="-9800" />
+				<node x="21728" y="-8952" />
+				<node x="20127" y="-12955" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_18" minZ="-2764" maxZ="-2164">
+				<node x="23472" y="-10957" />
+				<node x="24691" y="-13360" />
+				<node x="26852" y="-10256" />
+				<node x="24359" y="-9681" />
+			</territory>
+		</territories>
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_19" minZ="-2916" maxZ="-2116">
+				<node x="27053" y="-13425" />
+				<node x="28052" y="-12430" />
+				<node x="26901" y="-10231" />
+				<node x="24725" y="-13401" />
+				<node x="25619" y="-13877" />
+			</territory>
+		</territories>
+		<npc id="21971" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="7" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+		<npc id="21971" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Velociraptor -->
+		<npc id="22059" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Pterosaur -->
+		<npc id="21974" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Ornithomimus -->
+		<npc id="21976" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Deinonychus -->
+		<npc id="21978" count="6" respawnTime="3sec" chaseRange="2500" /> <!-- Tyrannosaurus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_1002" minZ="-3812" maxZ="-3312">
+				<node x="5616" y="-18067" />
+				<node x="5902" y="-20048" />
+				<node x="8035" y="-19853" />
+				<node x="8300" y="-17744" />
+				<node x="5939" y="-17894" />
+			</territory>
+		</territories>
+		<npc id="18395" count="1" respawnTime="1hour" /> <!-- Golden Pig - Treasury -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden61_2017_1004" minZ="-3968" maxZ="-2368">
+				<node x="15284" y="-8130" />
+				<node x="16884" y="-8130" />
+				<node x="16884" y="-6530" />
+				<node x="15284" y="-6530" />
+			</territory>
+		</territories>
+		<npc id="18395" count="1" respawnTime="1hour" /> <!-- Golden Pig - Treasury -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden68_1723_gp004" minZ="-13347" maxZ="-12847">
+				<node x="-81284" y="184026" />
+				<node x="-81702" y="183209" />
+				<node x="-80915" y="183110" />
+				<node x="-79743" y="183851" />
+				<node x="-80240" y="184881" />
+			</territory>
+		</territories>
+		<npc id="18395" count="1" respawnTime="1hour" /> <!-- Golden Pig - Treasury -->
+	</spawn>
+</list>

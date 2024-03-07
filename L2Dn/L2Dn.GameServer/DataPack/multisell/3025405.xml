@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30254</npc> <!-- Harmony -->
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91485" count="1" chance="100" /> <!-- Scroll - Reduce Critical Vulnerability -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90053" count="1" chance="100" /> <!-- Scroll - Mass Lightning Strike -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91484" count="1" chance="100" /> <!-- Scroll - Mass Chain Strike -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90046" count="1" chance="100" /> <!-- Scroll - Vengeance -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90050" count="1" chance="100" /> <!-- Scroll - Shield of Sacrifice -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90049" count="1" chance="100" /> <!-- Scroll - Shield of Faith -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90051" count="1" chance="100" /> <!-- Scroll: Mad Crusher -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90048" count="1" chance="100" /> <!-- Scroll - Touch of Death -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90047" count="1" chance="100" /> <!-- Scroll - Touch of Life -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90052" count="1" chance="100" /> <!-- Scroll: Eve's Protection -->
+	</item>
+</list>

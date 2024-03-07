@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="38750" name="Uldie's Card Key" additionalName="Sealed" type="EtcItem">
+		<!-- A keycard from Team Captain Rarra the Cat. Contains professional photoes. Keep it in your inventory to disguise as a Lineage 2 team member. Required for receiving a buff from Rarra. -->
+		<set name="icon" val="icon.cardkey_raracat" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="38751" name="Uldie's Business Card" additionalName="Sealed" type="EtcItem">
+		<!-- A business card from Team Captain Rarra the Cat. Collect 15 of these to participate in a prize giveaway. It can come in handy at any moment, so always keep it in your inventory. -->
+		<set name="icon" val="icon.namecard_raracat" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="38753" name="Uldie's Elite Gift" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.icon.br_ghost_magicalbox_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49487" min="1" max="1" chance="7.142857" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49489" min="1" max="1" chance="7.142857" /> <!-- Chest of Enchant Scroll's Parts - Not Available -->
+			<item id="49673" min="1" max="1" chance="7.142857" /> <!-- C-grade Armor/ Accessory Ingredient Pack -->
+			<item id="49671" min="1" max="1" chance="7.142857" /> <!-- B-grade Armor/ Accessory Ingredient Pack -->
+			<item id="49672" min="1" max="1" chance="7.142857" /> <!-- C-grade Weapon Ingredient Pack -->
+			<item id="49670" min="1" max="1" chance="7.142857" /> <!-- B-grade Weapon Ingredient Pack -->
+			<item id="49526" min="1" max="1" chance="7.142857" /> <!-- Improved Scroll of Resurrection -->
+			<item id="49668" min="1" max="1" chance="7.142857" /> <!-- C-grade Armor Pack -->
+			<item id="49520" min="1" max="1" chance="7.142857" /> <!-- Agation box: Aries - 60-day -->
+			<item id="49665" min="1" max="1" chance="7.142857" /> <!-- B-grade Armor Pack -->
+			<item id="49667" min="1" max="1" chance="7.142857" /> <!-- C-grade Weapon Pack -->
+			<item id="49664" min="1" max="1" chance="7.142857" /> <!-- B-grade Weapon Pack -->
+			<item id="49588" min="1" max="1" chance="7.142857" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="49513" min="1" max="1" chance="7.142857" /> <!-- Shining Pendant Polish box -->
+		</capsuled_items>
+	</item>
+</list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34202">
+		<teleport type="OTHER">
+			<location x="121387" y="185522" z="-3584" /> <!-- East of Alligator Island (Lv. 70) -->
+			<location x="107794" y="184489" z="-3528" /> <!-- West of Alligator Island (Lv. 70) -->
+			<location x="122805" y="171389" z="-3460" /> <!-- East of Alligator Island (Lv. 80) -->
+			<location x="111187" y="166550" z="-3296" /> <!-- North of Alligator Island (Lv. 80) -->
+		</teleport>
+	</npc>
+</list>

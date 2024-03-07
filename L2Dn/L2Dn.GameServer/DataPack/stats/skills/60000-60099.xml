@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60001" toLevel="1" name="Siege Spectator Mode">
+		<!-- Turn on Siege Spectator Mode -->
+		<icon>icon.skill0922</icon>
+		<operateType>P</operateType>
+		<effectPoint>5000</effectPoint>
+	</skill>
+	<skill id="60002" toLevel="15" name="Einhasad Overseeing">
+		<!-- If attacking a character with the Counterattack setting active, a counterattack is triggered. After death in PvP/ PK:. The chance of dropping items is increased. Up to 2 items can be dropped. -->
+		<icon>icon.karma</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+	</skill>
+	<skill id="60003" toLevel="1" name="Server Level Ranking I">
+		<!-- A buff for the 1st place in the server level ranking. STR +1. INT +1. CON +1. MEN +1. DEX +1. WIT +1. Recovery Potions' Effect +50. Weight limit +100,000. P. Evasion +20 -->
+		<icon>icon.server_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>100000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>50</amount>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60004" toLevel="1" name="Server Level Ranking II">
+		<!-- A buff for the 2nd~30th places in the server level ranking. CON +1. MEN +1. DEX +1. WIT +1. Weight limit +10,000 -->
+		<icon>icon.server_ranking_2</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>10000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60005" toLevel="1" name="Server Level Ranking III">
+		<!-- A buff for the 31st~100th places in the server level ranking. CON +1. MEN +1. Weight limit +5000 -->
+		<icon>icon.server_ranking_3</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60006" toLevel="1" name="Human Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Humans. All Critical Damage +300 -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60007" toLevel="1" name="Elf Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Elves. Max HP +500. Max MP +400. Max CP +300 -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60008" toLevel="1" name="Dark Elf Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Dark Elves. Received skill damage -1.8% -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60009" toLevel="1" name="Orc Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Orcs. All Critical Rate +2% -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60010" toLevel="1" name="Dwarf Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Dwarves. Enchant success rate +1% when using weapon enchant scrolls. Enchant success rate +1% when using armor enchant scrolls. P. Atk. +300. Max HP +500 -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="EnchantRate">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60011" toLevel="1" name="Kamael Level Ranking - 1st Place">
+		<!-- A buff for the 1st place in the level ranking among Kamaels. Debuff Resistance +2%. Anomaly Resistance +2% -->
+		<icon>icon.race_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60012" toLevel="1" name="Server Level Ranking Effect I">
+		<!-- CON +1. MEN +1. Weight limit +5000 -->
+		<icon>icon.UI_server_ranking_1</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60013" toLevel="1" name="Server Level Ranking Effect II">
+		<!-- DEX +1. WIT +1. Weight limit +5000 -->
+		<icon>icon.UI_server_ranking_2</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60014" toLevel="1" name="Server Level Ranking Effect III">
+		<!-- STR +1. INT +1. Weight limit +90,000. P. Evasion +20. HP Recovery Potions' Effect +50 -->
+		<icon>icon.UI_server_ranking_3</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>90000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>50</amount>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60015" toLevel="1" name="Race Ranking Effect">
+		<!-- For adventurers who have taken the 1st place in rankings among their race. Humans: Skill Critical Damage increased. Elves: Max HP/ MP/ CP increased. Dark Elves: Received skill damage decreased. Orcs: All Critical Rate increased. Dwarves: Weapon/ armor enchant success rate/ P. Atk./ Max HP increased. Kamaels: Debuff/ Anomaly Resistance increased. Sylphs: Soulshot damage increased. For those who placed 1st-3rd:. All races: Worthy Warrior Transformation with unique appearance available. Death Knights: Unique cloak appearance (only for the 1st place) and Worthy Warrior Bonus available. Sylphs: Unique transformation and appearance modification via the Elemental Spirit Lv. 5 skill. -->
+		<icon>icon.UI_race_ranking_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="60016" toLevel="1" name="Effect of Holy Relic 1">
+		<!-- Activate the effect of Holy Relic -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>3500</hitTime>
+	</skill>
+	<skill id="60017" toLevel="1" name="Effect of Holy Relic 2">
+		<!-- Activate the effect of Holy Relic -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>3500</hitTime>
+	</skill>
+	<skill id="60018" toLevel="2" name="Teleport">
+		<!-- Teleport -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<effects>
+			<effect name="TeleportToTeleportLocation" />
+		</effects>
+	</skill>
+	<skill id="60019" toLevel="5" name="Jaban's Blessing">
+		<!-- Jaban's blessing. Max HP +3000. Received PvP damage -10% -->
+		<icon>icon.skill30518</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<castRange>900</castRange>
+		<hitTime>0</hitTime>
+		<abnormalTime>60</abnormalTime>
+		<attributeType>EARTH</attributeType>
+		<attributeValue>20</attributeValue>
+		<!-- TODO -->
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="2">1000</value>
+					<value level="3">2500</value>
+					<value level="4">4000</value>
+					<value level="5">8000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="2">500</value>
+					<value level="3">1200</value>
+					<value level="4">2000</value>
+					<value level="5">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="3">2000</value>
+					<value level="4">3500</value>
+					<value level="5">6000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="3">1500</value>
+					<value level="4">2500</value>
+					<value level="5">4000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="3">2</value>
+					<value level="4">20</value>
+					<value level="5">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">3000</value>
+					<value level="2">5000</value>
+					<value level="3">8000</value>
+					<value level="4">12000</value>
+					<value level="5">20000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="60020" toLevel="2" name="Glorious Warrior: Quick Escape">
+		<!-- Teleport -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60021" toLevel="1" name="Soulshot Damage 10%">
+		<!-- Soulshot Damage 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60022" toLevel="1" name="Soulshot Damage 15%">
+		<!-- Soulshot Damage 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60023" toLevel="1" name="Spiritshot Damage 5%">
+		<!-- Spiritshot Damage 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60024" toLevel="1" name="Spiritshot Damage 10%">
+		<!-- Spiritshot Damage 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60025" toLevel="1" name="Spiritshot Damage 15%">
+		<!-- Spiritshot Damage 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60026" toLevel="1" name="P. Skill Power 5%">
+		<!-- P. Skill Power 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60027" toLevel="1" name="P. Skill Power 10%">
+		<!-- P. Skill Power 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60028" toLevel="1" name="P. Skill Power 15%">
+		<!-- P. Skill Power 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60029" toLevel="1" name="M. Skill Power 5%">
+		<!-- M. Skill Power 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60030" toLevel="1" name="M. Skill Power 10%">
+		<!-- M. Skill Power 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60031" toLevel="1" name="M. Skill Power 15%">
+		<!-- M. Skill Power 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60032" toLevel="1" name="Basic PvP Damage +5%">
+		<!-- Basic PvP Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60033" toLevel="1" name="Basic PvP Damage +10%">
+		<!-- Basic PvP Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60034" toLevel="1" name="Basic PvP Damage +15%">
+		<!-- Basic PvP Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60035" toLevel="1" name="PvP P. Damage +5%">
+		<!-- PvE P. Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60036" toLevel="1" name="PvE P. Damage +10%">
+		<!-- PvE P. Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60037" toLevel="1" name="PvE P. Damage +15%">
+		<!-- PvE P. Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60038" toLevel="1" name="PvE M. Damage +5%">
+		<!-- PvE M. Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60039" toLevel="1" name="PvE M. Damage +10%">
+		<!-- PvE M. Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60040" toLevel="1" name="PvE M. Damage +15%">
+		<!-- PvE M. Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60041" toLevel="1" name="Basic PvE Damage +5%">
+		<!-- Basic PvE Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60042" toLevel="1" name="Basic PvE Damage +10%">
+		<!-- Basic PvE Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60043" toLevel="1" name="Basic PvE Damage +15%">
+		<!-- Basic PvE Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60044" toLevel="1" name="PvE P. Damage +5%">
+		<!-- PvE P. Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60045" toLevel="1" name="PvE P. Damage +10%">
+		<!-- PvE P. Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60046" toLevel="1" name="PvE P. Damage +15%">
+		<!-- PvE P. Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60047" toLevel="1" name="PvE M. Damage +5%">
+		<!-- PvE M. Damage +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60048" toLevel="1" name="PvE M. Damage +10%">
+		<!-- PvE M. Damage +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60049" toLevel="1" name="PvE M. Damage +15%">
+		<!-- PvE M. Damage +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60050" toLevel="1" name="Basic P. Def. in PvP +5%">
+		<!-- Basic P. Def. in PvP +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60051" toLevel="1" name="Basic P. Def. in PvP +10%">
+		<!-- Basic P. Def. in PvP +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60052" toLevel="1" name="Basic P. Def. in PvP +15%">
+		<!-- Basic P. Def. in PvP +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60053" toLevel="1" name="P. P. Def. in PvP +5%">
+		<!-- P. P. Def. in PvP +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60054" toLevel="1" name="P. P. Def. in PvP +10%">
+		<!-- P. P. Def. in PvP +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60055" toLevel="1" name="P. P. Def. in PvP +15%">
+		<!-- P. P. Def. in PvP +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60056" toLevel="1" name="M. P. Def. in PvP +5%">
+		<!-- M. P. Def. in PvP +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60057" toLevel="1" name="M. P. Def. in PvP +10%">
+		<!-- M. P. Def. in PvP +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60058" toLevel="1" name="M. P. Def. in PvP +15%">
+		<!-- M. P. Def. in PvP +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60059" toLevel="1" name="Basic P. Def. in PvE +5%">
+		<!-- Basic P. Def. in PvE +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60060" toLevel="1" name="Basic P. Def. in PvE +10%">
+		<!-- Basic P. Def. in PvE +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60061" toLevel="1" name="Basic P. Def. in PvE +15%">
+		<!-- Basic P. Def. in PvE +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60062" toLevel="1" name="P. P. Def. in PvE +5%">
+		<!-- P. P. Def. in PvE +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60063" toLevel="1" name="P. P. Def. in PvE +10%">
+		<!-- P. P. Def. in PvE +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60064" toLevel="1" name="P. P. Def. in PvE +15%">
+		<!-- P. P. Def. in PvE +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60065" toLevel="1" name="M. P. Def. in PvE +5%">
+		<!-- M. P. Def. in PvE +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60066" toLevel="1" name="M. P. Def. in PvE +10%">
+		<!-- M. P. Def. in PvE +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60067" toLevel="1" name="M. P. Def. in PvE +15%">
+		<!-- M. P. Def. in PvE +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60068" toLevel="1" name="Received Critical Damage from standard attacks -5%">
+		<!-- Received Critical Damage from standard attacks -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60069" toLevel="1" name="Received Critical Damage from standard attacks -10%">
+		<!-- Received Critical Damage from standard attacks -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60070" toLevel="1" name="Received Critical Damage from standard attacks -15%">
+		<!-- Received Critical Damage from standard attacks -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60071" toLevel="1" name="All received Critical Damage -5">
+		<!-- All received Critical Damage -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60072" toLevel="1" name="All received Critical Damage -10">
+		<!-- All received Critical Damage -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60073" toLevel="1" name="All received Critical Damage -15">
+		<!-- All received Critical Damage -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60074" toLevel="1" name="Received P. Critical Damage -5%">
+		<!-- Received P. Critical Damage -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60075" toLevel="1" name="Received P. Critical Damage -10%">
+		<!-- Received P. Critical Damage -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60076" toLevel="1" name="Received P. Critical Damage -15%">
+		<!-- Received P. Critical Damage -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60077" toLevel="1" name="Received P. Critical Damage -5">
+		<!-- Received P. Critical Damage -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60078" toLevel="1" name="Received P. Critical Damage -10">
+		<!-- Received P. Critical Damage -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60079" toLevel="1" name="Received P. Critical Damage -15">
+		<!-- Received P. Critical Damage -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60080" toLevel="1" name="Received M. Critical Damage -5%">
+		<!-- Received M. Critical Damage -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60081" toLevel="1" name="Received M. Critical Damage -10%">
+		<!-- Received M. Critical Damage -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60082" toLevel="1" name="Received M. Critical Damage -15%">
+		<!-- Received M. Critical Damage -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60083" toLevel="1" name="Received M. Critical Damage -5">
+		<!-- Received M. Critical Damage -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60084" toLevel="1" name="Received M. Critical Damage -10">
+		<!-- Received M. Critical Damage -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60085" toLevel="1" name="Received M. Critical Damage -15">
+		<!-- Received M. Critical Damage -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60086" toLevel="1" name="Shield Defense +5%">
+		<!-- Shield Defense +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60087" toLevel="1" name="Shield Defense +10%">
+		<!-- Shield Defense +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60088" toLevel="1" name="Shield Defense +15%">
+		<!-- Shield Defense +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60089" toLevel="1" name="Shield Defense Bonus +5">
+		<!-- Shield Defense Bonus +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60090" toLevel="1" name="Shield Defense Bonus +10">
+		<!-- Shield Defense Bonus +10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60091" toLevel="1" name="Shield Defense Bonus +15">
+		<!-- Shield Defense Bonus +15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60092" toLevel="1" name="Shield Defense Rate 5%">
+		<!-- Shield Defense Rate 5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60093" toLevel="1" name="Shield Defense Rate 10%">
+		<!-- Shield Defense Rate 10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60094" toLevel="1" name="Shield Defense Rate 15%">
+		<!-- Shield Defense Rate 15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60095" toLevel="1" name="M. Damage Resistance +5%">
+		<!-- M. Damage Resistance +5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60096" toLevel="1" name="M. Damage Resistance +10%">
+		<!-- M. Damage Resistance +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60097" toLevel="1" name="M. Damage Resistance +15%">
+		<!-- M. Damage Resistance +15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60098" toLevel="1" name="M. Damage Resistance Bonus +5">
+		<!-- M. Damage Resistance Bonus +5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60099" toLevel="1" name="M. Damage Resistance Bonus +10">
+		<!-- M. Damage Resistance Bonus +10 -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="7100" name="Importance of Strain" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat an ancient Giant. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_spellbook_blue_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7101" name="Danger of Ice Spirit" additionalName="Sealed" type="EtcItem">
+		<!-- Contains spells that can be used to surround and defeat a Spirit. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_spellbook_blue_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7102" name="Guardian of Forbidden Knowledge - Part 1" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_spellbook_gray_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7103" name="Guardian of Forbidden Knowledge - Part 1" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_spellbook_gray_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7104" name="Guardian of Forbidden Knowledge - Part 1" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_spellbook_gray_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7105" name="Guardian of Forbidden Knowledge - Part 2" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7106" name="Guardian of Forbidden Knowledge - Part 2" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7107" name="Guardian of Forbidden Knowledge - Part 2" additionalName="Sealed" type="EtcItem">
+		<!-- Contains information on how to defeat a Watchman of Tablet of Vision. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7108" name="Guild's Secret Report" additionalName="Sealed" type="EtcItem">
+		<!-- A document containing information about Grand Guardian Angel. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7109" name="Guild's Secret Report" additionalName="Sealed" type="EtcItem">
+		<!-- A document containing information about Grand Guardian Angel. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7110" name="Research Report" additionalName="Sealed" type="EtcItem">
+		<!-- A document containing information about Vision Guardian Shakiel. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7111" name="Research Report" additionalName="Sealed" type="EtcItem">
+		<!-- A document containing information about Vision Guardian Shakiel. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7112" name="Research Report" additionalName="Sealed" type="EtcItem">
+		<!-- A document containing information about Vision Guardian Shakiel. Double-click to view the contents. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="Book" />
+	</item>
+	<item id="7117" name="Scroll of Escape: Talking Island Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Talking Island Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
+		</skills>
+	</item>
+	<item id="7118" name="Scroll of Escape: Elven Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Elven Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="2" /> <!-- Scroll of Escape: Elven Village -->
+		</skills>
+	</item>
+	<item id="7119" name="Scroll of Escape: Dark Elf Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Dark Elf Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
+		</skills>
+	</item>
+	<item id="7120" name="Scroll of Escape: Orc Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Orc Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="4" /> <!-- Scroll of Escape: Orc Village -->
+		</skills>
+	</item>
+	<item id="7121" name="Scroll of Escape: Dwarven Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Dwarven Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
+		</skills>
+	</item>
+	<item id="7122" name="Scroll of Escape: Gludin Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Gludin. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="6" /> <!-- Scroll of Escape: Gludin Village -->
+		</skills>
+	</item>
+	<item id="7123" name="Scroll of Escape: Gludio" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Gludio. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="7" /> <!-- Scroll of Escape: Town of Gludio -->
+		</skills>
+	</item>
+	<item id="7124" name="Scroll of Escape: Dion" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Dion. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="8" /> <!-- Scroll of Escape: Town of Dion -->
+		</skills>
+	</item>
+	<item id="7125" name="Scroll of Escape: Floran Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Floran Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="9" /> <!-- Scroll of Escape: Floran Village -->
+		</skills>
+	</item>
+	<item id="7126" name="Scroll of Escape: Giran" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Giran. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="10" /> <!-- Scroll of Escape: Town of Giran -->
+		</skills>
+	</item>
+	<item id="7127" name="Scroll of Escape: Hardin's Academy" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Hardin's Academy. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="11" /> <!-- Scroll of Escape: Hardin's Academy -->
+		</skills>
+	</item>
+	<item id="7129" name="Scroll of Escape: Oren" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to Oren. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="13" /> <!-- Scroll of Escape: Town of Oren -->
+		</skills>
+	</item>
+	<item id="7130" name="Scroll of Escape: Ivory Tower" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Ivory Tower. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="14" /> <!-- Scroll of Escape: Ivory Tower -->
+		</skills>
+	</item>
+	<item id="7131" name="Scroll of Escape: Hunter's Village" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Hunters' Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2213" level="15" /> <!-- Scroll of Escape: Hunter's Village -->
+		</skills>
+	</item>
+	<item id="7139" name="Lizardman Bracelet" type="EtcItem">
+		<!-- A bracelet from a Leto Lizardman. Take it to Guard Rath in Giran. -->
+		<set name="icon" val="icon.etc_leash_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

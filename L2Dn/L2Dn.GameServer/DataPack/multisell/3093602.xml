@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30936</npc> <!-- Pona -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="48053" /> <!-- Agathion Leo -->
+		<production count="1" id="93128" /> <!-- Agathion Ignis Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48056" /> <!-- Agathion Aquarius -->
+		<production count="1" id="93128" /> <!-- Agathion Ignis Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48055" /> <!-- Agathion Scorpio -->
+		<production count="1" id="93129" /> <!-- Agathion Nebula Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48049" /> <!-- Agathion Capricorn -->
+		<production count="1" id="93129" /> <!-- Agathion Nebula Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48058" /> <!-- Agathion Sagittarius -->
+		<production count="1" id="93130" /> <!-- Agathion Procella Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48050" /> <!-- Agathion Libra -->
+		<production count="1" id="93130" /> <!-- Agathion Procella Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48052" /> <!-- Agathion Taurus -->
+		<production count="1" id="93131" /> <!-- Agathion Petram Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48048" /> <!-- Agathion Virgo -->
+		<production count="1" id="93131" /> <!-- Agathion Petram Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="48054" /> <!-- Agathion Gemini -->
+		<production count="1" id="93132" /> <!-- Agathion Joy Sealed -->
+	</item>
+</list>

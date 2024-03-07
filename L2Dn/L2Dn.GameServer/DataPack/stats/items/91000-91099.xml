@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="91000" name="Rash's Supplies - Baium" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90994" min="1" max="1" chance="100" /> <!-- Damaged Baium's Ring -->
+			<item id="90995" min="1" max="1" chance="100" /> <!-- Balthus Knights' Varnish -->
+			<item id="90997" min="1" max="1" chance="100" /> <!-- Balthus Knights' Shining Varnish -->
+			<item id="90998" min="1" max="1" chance="100" /> <!-- Balthus Knights' Glittering Varnish -->
+		</capsuled_items>
+	</item>
+	<item id="91001" name="Box with 3 Jewels Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_shhadai" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90863" min="1" max="1" chance="100" /> <!-- Diamond Lv. 3 - 30-day -->
+			<item id="90864" min="1" max="1" chance="100" /> <!-- Pearl Lv. 3 - 30-day -->
+			<item id="90865" min="1" max="1" chance="100" /> <!-- Jade Lv. 3 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91002" name="Box with 5 Jewels Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_shhadai" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90980" min="1" max="1" chance="100" /> <!-- Pearl Lv. 4 - 30-day -->
+			<item id="90981" min="1" max="1" chance="100" /> <!-- Diamond Lv. 4 - 30-day -->
+			<item id="90982" min="1" max="1" chance="100" /> <!-- Jade Lv. 4 - 30-day -->
+			<item id="90983" min="1" max="1" chance="100" /> <!-- Garnet Lv. 4 - 30-day -->
+			<item id="90984" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 4 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91003" name="Agathion Bracelet Lv. 1" additionalName="1-day" type="Armor">
+		<!-- Activates 2 Agathion slots. -->
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+		<skills>
+			<skill id="51025" level="1" /> <!-- Expand Agathion Slots -->
+		</skills>
+	</item>
+	<item id="91004" name="Penitent Agathion" additionalName="Sealed" type="Armor">
+		<!-- Equipping it in the main slot summons Penitent Agathion and enables its primary skills. -->
+		<set name="icon" val="icon.etc_leash_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="50" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91005" name="Crumbs of Penitence" type="EtcItem">
+		<!-- Evidence of the atonement obtained after the time of suffering for evil deeds. Take it to the Dark Judge to lower the PK count. -->
+		<set name="icon" val="icon.etc_powder_white_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="STEEL" />
+	</item>
+	<item id="91006" name="Damaged Zaken's Earring" type="Armor">
+		<!-- Can be enchanted up to +10 with Balthus Knights' Varnish, Balthus Knights' Shining Varnish, or Balthus Knights' Glittering Varnish. Starting from +4, adds various effects. After enchanting to +10, can be exchanged for Zaken's Earring Lv. 1. -->
+		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">50</stat>
+		</stats>
+	</item>
+	<item id="91007" name="Rash's Supplies - Zaken" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_king_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91006" min="1" max="1" chance="100" /> <!-- Damaged Zaken's Earring -->
+			<item id="90995" min="1" max="1" chance="100" /> <!-- Balthus Knights' Varnish -->
+			<item id="90997" min="1" max="1" chance="100" /> <!-- Balthus Knights' Shining Varnish -->
+			<item id="90998" min="1" max="1" chance="100" /> <!-- Balthus Knights' Glittering Varnish -->
+		</capsuled_items>
+	</item>
+	<item id="91008" name="Dragon Relic Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.card_event_blue_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51071" level="1" /> <!-- Dragon's Relic Chest -->
+		</skills>
+	</item>
+	<item id="91009" name="Fire Dragon Relic Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.card_event_red_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51072" level="1" /> <!-- Fire Dragon's Relic Chest -->
+		</skills>
+	</item>
+	<item id="91010" name="Earth Dragon Relic Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.card_event_black_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49081" min="1" max="1" chance="3.030303" /> <!-- XP Growth Scroll -->
+			<item id="49663" min="2" max="2" chance="3.030303" /> <!-- Special HP Recovery Potion -->
+			<item id="90182" min="120" max="120" chance="3.030303" /> <!-- Shining Golden Bait -->
+			<item id="13016" min="2" max="2" chance="3.030303" /> <!-- My Teleport Scroll -->
+			<item id="90960" min="1" max="1" chance="3.030303" /> <!-- Transformation Scroll: Teddy Bear -->
+			<item id="49765" min="1" max="1" chance="3.030303" /> <!-- Life Control Tower's Scroll of Blessing -->
+			<item id="90954" min="1" max="1" chance="3.030303" /> <!-- Master Fisherman's Blessing (2-hour) -->
+			<item id="90014" min="1" max="1" chance="3.030303" /> <!-- High-grade Life Stone - Weapon -->
+			<item id="90013" min="1" max="1" chance="3.030303" /> <!-- Mid-grade Life Stone - Weapon -->
+			<item id="90045" min="1" max="1" chance="3.030303" /> <!-- Magic Tablet -->
+			<item id="90137" min="1" max="1" chance="3.030303" /> <!-- Matte Pendant Polish -->
+			<item id="91011" min="1" max="1" chance="3.030303" /> <!-- Dragon Dye Box - 3rd Class -->
+			<item id="49853" min="1" max="1" chance="3.030303" /> <!-- Secret Book of Baggins' Enchantments - V -->
+			<item id="49862" min="1" max="1" chance="3.030303" /> <!-- Bracelet of Border Chest -->
+			<item id="90934" min="1" max="1" chance="3.030303" /> <!-- Brooch Lv. 3 -->
+			<item id="90935" min="1" max="1" chance="3.030303" /> <!-- Jewel Box Lv. 4 -->
+			<item id="49513" min="1" max="1" chance="3.030303" /> <!-- Shining Pendant Polish box -->
+			<item id="90138" min="1" max="1" chance="3.030303" /> <!-- Glittering Pendant Polish -->
+			<item id="90497" min="1" max="1" chance="3.030303" /> <!-- Fire Dragon Belt -->
+			<item id="90496" min="1" max="1" chance="3.030303" /> <!-- Earth Dragon Belt -->
+			<item id="49683" min="1" max="1" chance="3.030303" /> <!-- Talisman of Baium -->
+			<item id="90498" min="1" max="1" chance="3.030303" /> <!-- Mysterious Jewelry Box -->
+			<item id="49681" min="1" max="1" chance="3.030303" /> <!-- Talisman of Insolence Lv. 6 -->
+			<item id="6662" min="1" max="1" chance="3.030303" /> <!-- Ring of Core -->
+			<item id="6661" min="1" max="1" chance="3.030303" /> <!-- Orfen's Earring -->
+			<item id="6660" min="1" max="1" chance="3.030303" /> <!-- Queen Ant's Ring -->
+			<item id="49580" min="1" max="1" chance="3.030303" /> <!-- Baium's Ring -->
+			<item id="90763" min="1" max="1" chance="3.030303" /> <!-- Zaken's Earring -->
+			<item id="90532" min="1" max="1" chance="3.030303" /> <!-- +2 Rare Accessory Pack -->
+			<item id="49738" min="1" max="1" chance="3.030303" /> <!-- Sealed Blessed Talisman of Border -->
+			<item id="49849" min="1" max="1" chance="3.030303" /> <!-- +10 Earth Dragon Pendant -->
+			<item id="49848" min="1" max="1" chance="3.030303" /> <!-- +10 Fire Dragon Pendant Pack -->
+			<item id="90992" min="1" max="1" chance="3.030303" /> <!-- Antharas' Earring -->
+		</capsuled_items>
+	</item>
+	<item id="91011" name="Dragon Dye Box" additionalName="3rd Class" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.card_event_gold_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51074" level="1" /> <!-- Dragon's Dye Box -->
+		</skills>
+	</item>
+	<item id="91012" name="Top-grade A-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51075" level="1" /> <!-- Weapon Pack (Best A-grade) -->
+		</skills>
+	</item>
+	<item id="91013" name="Top A-grade Weapon Ingredient/ Recipe Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91025" min="1" max="1" chance="9.090909" /> <!-- Daimon Crystal Ingredient/Recipe Box -->
+			<item id="91024" min="1" max="1" chance="9.090909" /> <!-- Cabrio's Hand Ingredient/Recipe Box -->
+			<item id="91023" min="1" max="1" chance="9.090909" /> <!-- Themis' Tongue Ingredient/Recipe Box -->
+			<item id="91022" min="1" max="1" chance="9.090909" /> <!-- Sobekk's Hurricane Ingredient/Recipe Box -->
+			<item id="91021" min="1" max="1" chance="9.090909" /> <!-- Shyeed's Bow Ingredient/Recipe Box -->
+			<item id="91020" min="1" max="1" chance="9.090909" /> <!-- Tiphon's Spear Ingredient/Recipe Box -->
+			<item id="91019" min="1" max="1" chance="9.090909" /> <!-- Naga Storm Ingredient/Recipe Box -->
+			<item id="91018" min="1" max="1" chance="9.090909" /> <!-- Behemoth' Tuning Fork Ingredient/Recipe Box -->
+			<item id="91017" min="1" max="1" chance="9.090909" /> <!-- Barakiel's Axe Ingredient/Recipe Box -->
+			<item id="91016" min="1" max="1" chance="9.090909" /> <!-- Sword of Ipos Ingredient/Recipe Box -->
+			<item id="91015" min="1" max="1" chance="9.090909" /> <!-- Sirra's Blade Ingredient/Recipe Box -->
+		</capsuled_items>
+	</item>
+	<item id="91014" name="Weapon Recipe Box (Best A-grade)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51077" level="1" /> <!-- Dragon's Dye Box -->
+		</skills>
+	</item>
+	<item id="91015" name="Sirra's Blade Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8690" min="1" max="1" chance="100" /> <!-- Recipe: Sirra's Blade (60%) -->
+			<item id="8712" min="20" max="20" chance="100" /> <!-- Sirra's Blade Edge -->
+		</capsuled_items>
+	</item>
+	<item id="91016" name="Sword of Ipos Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8692" min="1" max="1" chance="100" /> <!-- Recipe: Sword of Ipos (60%) -->
+			<item id="8713" min="20" max="20" chance="100" /> <!-- Sword of Ipos Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91017" name="Barakiel's Axe Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8694" min="1" max="1" chance="100" /> <!-- Recipe: Barakiel's Axe (60%) -->
+			<item id="8714" min="20" max="20" chance="100" /> <!-- Barakiel's Axe Piece -->
+		</capsuled_items>
+	</item>
+	<item id="91018" name="Behemoth' Tuning Fork Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8696" min="1" max="1" chance="100" /> <!-- Recipe: Behemoth' Tuning Fork (60%) -->
+			<item id="8715" min="20" max="20" chance="100" /> <!-- Behemoth' Tuning Fork Piece -->
+		</capsuled_items>
+	</item>
+	<item id="91019" name="Naga Storm Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8698" min="1" max="1" chance="100" /> <!-- Recipe: Naga's Storm (60%) -->
+			<item id="8716" min="20" max="20" chance="100" /> <!-- Naga's Storm Piece -->
+		</capsuled_items>
+	</item>
+	<item id="91020" name="Tiphon's Spear Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8700" min="1" max="1" chance="100" /> <!-- Recipe: Tiphon's Spear (60%) -->
+			<item id="8717" min="20" max="20" chance="100" /> <!-- Tiphon's Spear Edge -->
+		</capsuled_items>
+	</item>
+	<item id="91021" name="Shyeed's Bow Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8702" min="1" max="1" chance="100" /> <!-- Recipe: Shyeed's Bow (60%) -->
+			<item id="8718" min="20" max="20" chance="100" /> <!-- Shyeed's Bow Shaft -->
+		</capsuled_items>
+	</item>
+	<item id="91022" name="Sobekk's Hurricane Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8704" min="1" max="1" chance="100" /> <!-- Recipe: Sobekk's Hurricane (60%) -->
+			<item id="8719" min="20" max="20" chance="100" /> <!-- Sobekk's Hurricane Edge -->
+		</capsuled_items>
+	</item>
+	<item id="91023" name="Themis' Tongue Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8706" min="1" max="1" chance="100" /> <!-- Recipe: Themis' Tongue (60%) -->
+			<item id="8720" min="20" max="20" chance="100" /> <!-- Themis' Tongue Piece -->
+		</capsuled_items>
+	</item>
+	<item id="91024" name="Cabrio's Hand Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8708" min="1" max="1" chance="100" /> <!-- Recipe: Cabrio's Hand (60%) -->
+			<item id="8721" min="20" max="20" chance="100" /> <!-- Cabrio's Hand Head -->
+		</capsuled_items>
+	</item>
+	<item id="91025" name="Daimon Crystal Ingredient/Recipe Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="8710" min="1" max="1" chance="100" /> <!-- Recipe: Daimon Crystal (60%) -->
+			<item id="8722" min="20" max="20" chance="100" /> <!-- Daimon Crystal Fragment -->
+		</capsuled_items>
+	</item>
+	<item id="91026" name="Dragon's Heart" type="EtcItem">
+		<!-- An ingredient for Dragon Miracle Potion. Can be exchanged for various items at a certain time. -->
+		<set name="icon" val="icon.etc_heart_gragon" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="91027" name="Dragon's Miracle Potion" type="EtcItem">
+		<!-- Sayha's Grace points +5000. For 20 min., acquired XP/ SP +20%, P./ M. Atk. +12%, P./ M. Def. +15%, P. Critical Rate/ M. Skill Critical Rate +20, P. Critical Damage/ M. Skill Critical Damage +5%, HP/ MP/ CP +25%, HP/ MP Recovery Rate +30%, Sayha's Grace Consumption -10%. With a certain chance, absorbs 5% of the inflicted damage as HP. Stacks up to 3 times. Does not stack with the Special Dragon Fruit's effect. -->
+		<set name="icon" val="icon.bm_dragon_posion_brave" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="51070" level="1" /> <!-- Dragon's Miracle Potion -->
+		</skills>
+	</item>
+	<item id="91028" name="High-grade Maliss' HP Recovery Potion" type="EtcItem">
+		<!-- Momentarily recovers 1000 HP. If HP is full, CP is recovered. -->
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39123" level="1" /> <!-- Maliss' HP Recovery Potion -->
+		</skills>
+	</item>
+	<item id="91029" name="Hidden Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51079" level="1" /> <!-- Hidden Box -->
+		</skills>
+	</item>
+	<item id="91030" name="Blessed Soul" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. While hunting attribute monsters, acquired attribute XP +20%. Duration: 20 min. -->
+		<set name="icon" val="icon.elemental_bless_scrl_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="54028" level="1" /> <!-- Spirit's Blessing -->
+		</skills>
+	</item>
+	<item id="91031" name="Water Spirit Evolution Stone" type="EtcItem">
+		<!-- Filled with the power of Water Attribute. Use it to evolve Water Spirit. -->
+		<set name="icon" val="icon.elemental_evol_stone_water_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91032" name="Fire Spirit Evolution Stone" type="EtcItem">
+		<!-- Filled with the power of Fire Attribute. Use it to evolve Fire Spirit. -->
+		<set name="icon" val="icon.elemental_evol_stone_fire_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91033" name="Wind Spirit Evolution Stone" type="EtcItem">
+		<!-- Filled with the power of Wind Attribute. Use it to evolve Wind Spirit. -->
+		<set name="icon" val="icon.elemental_evol_stone_wind_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91034" name="Earth Spirit Evolution Stone" type="EtcItem">
+		<!-- Filled with the power of Earth Attribute. Use it to evolve Earth Spirit. -->
+		<set name="icon" val="icon.elemental_evol_stone_earth_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91035" name="Water Spirit Ore" type="EtcItem">
+		<!-- Contains the power of Water. Double-click to acquire 9300 Water Attribute XP points. -->
+		<set name="icon" val="icon.elemental_water_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91036" name="Fire Spirit Ore" type="EtcItem">
+		<!-- Contains the power of Fire. Double-click to acquire 9300 Fire Attribute XP points. -->
+		<set name="icon" val="icon.elemental_fire_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91037" name="Wind Spirit Ore" type="EtcItem">
+		<!-- Contains the power of Wind. Double-click to acquire 9300 Wind Attribute XP points. -->
+		<set name="icon" val="icon.elemental_wind_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91038" name="Earth Spirit Ore" type="EtcItem">
+		<!-- Contains the power of Earth. Double-click to acquire 9300 Earth Attribute XP points. -->
+		<set name="icon" val="icon.elemental_earth_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91039" name="Water Attribute Fragment" additionalName="Sealed" type="EtcItem">
+		<!-- A material filled with the power of Water Attribute. Can be used to create equipment with the power of Water Attribute. -->
+		<set name="icon" val="icon.elemental_star_water_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91040" name="Fire Attribute Fragment" additionalName="Sealed" type="EtcItem">
+		<!-- A material filled with the power of Fire Attribute. Can be used to create equipment with the power of Fire Attribute. -->
+		<set name="icon" val="icon.elemental_star_fire_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91041" name="Wind Attribute Fragment" additionalName="Sealed" type="EtcItem">
+		<!-- A material filled with the power of Wind Attribute. Can be used to create equipment with the power of Wind Attribute. -->
+		<set name="icon" val="icon.elemental_star_wind_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91042" name="Earth Attribute Fragment" additionalName="Sealed" type="EtcItem">
+		<!-- A material filled with the power of Earth Attribute. Can be used to create equipment with the power of Earth Attribute. -->
+		<set name="icon" val="icon.elemental_star_earth_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="91043" name="Nebula's Old Necklace Lv. 1" type="Armor">
+		<!-- MP +35, Water Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_water_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54023" level="1" /> <!-- Water Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91044" name="Nebula's Old Necklace Lv. 2" type="Armor">
+		<!-- MP +37, Water Resistance +40, acquired Attribute XP +6%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_water_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="2" /> <!-- Attribute XP +6% -->
+			<skill id="54023" level="2" /> <!-- Water Attack Defense +40 -->
+		</skills>
+		<stats>
+			<stat type="mDef">90</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
+	</item>
+	<item id="91045" name="Nebula's Old Necklace Lv. 3" type="Armor">
+		<!-- MP +40, Water Resistance +60, acquired Attribute XP +10%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_water_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="3" /> <!-- Attribute XP +10% -->
+			<skill id="54023" level="3" /> <!-- Water Attack Defense +60 -->
+		</skills>
+		<stats>
+			<stat type="mDef">93</stat>
+			<stat type="maxMp">40</stat>
+		</stats>
+	</item>
+	<item id="91046" name="Ignis' Old Necklace Lv. 1" type="Armor">
+		<!-- MP +35, Fire Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_fire_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54024" level="1" /> <!-- Fire Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91047" name="Ignis' Old Necklace Lv. 2" type="Armor">
+		<!-- MP +37, Fire Resistance +40, acquired Attribute XP +6%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_fire_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="2" /> <!-- Attribute XP +6% -->
+			<skill id="54024" level="2" /> <!-- Fire Attack Defense +40 -->
+		</skills>
+		<stats>
+			<stat type="mDef">90</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
+	</item>
+	<item id="91048" name="Ignis' Old Necklace Lv. 3" type="Armor">
+		<!-- MP +40, Fire Resistance +60, acquired Attribute XP +10%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_fire_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="3" /> <!-- Attribute XP +10% -->
+			<skill id="54024" level="3" /> <!-- Fire Attack Defense +60 -->
+		</skills>
+		<stats>
+			<stat type="mDef">93</stat>
+			<stat type="maxMp">40</stat>
+		</stats>
+	</item>
+	<item id="91049" name="Procella's Old Necklace Lv. 1" type="Armor">
+		<!-- MP +35, Wind Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_wind_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3 -->
+			<skill id="54025" level="1" /> <!-- Earth Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+			<stat type="windRes">20</stat>
+		</stats>
+	</item>
+	<item id="91050" name="Procella's Old Necklace Lv. 2" type="Armor">
+		<!-- MP +37, Wind Resistance +40, acquired Attribute XP +6%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_wind_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="2" /> <!-- Attribute XP +6% -->
+			<skill id="54025" level="2" /> <!-- Earth Attack Defense +40 -->
+		</skills>
+		<stats>
+			<stat type="mDef">90</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
+	</item>
+	<item id="91051" name="Procella's Old Necklace Lv. 3" type="Armor">
+		<!-- MP +40, Wind Resistance +60, acquired Attribute XP +10%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_wind_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="3" /> <!-- Attribute XP +10% -->
+			<skill id="54025" level="3" /> <!-- Wind Attack Defense +60 -->
+		</skills>
+		<stats>
+			<stat type="mDef">93</stat>
+			<stat type="maxMp">40</stat>
+		</stats>
+	</item>
+	<item id="91052" name="Petram's Old Necklace Lv. 1" type="Armor">
+		<!-- MP +35, Earth Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_earth_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54026" level="1" /> <!-- Earth Attack Defense +60 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91053" name="Petram's Old Necklace Lv. 2" type="Armor">
+		<!-- MP +37, Earth Resistance +40, acquired Attribute XP +6%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_earth_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="2" /> <!-- Attribute XP +6% -->
+			<skill id="54026" level="2" /> <!-- Earth Attack Defense +40 -->
+		</skills>
+		<stats>
+			<stat type="mDef">90</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
+	</item>
+	<item id="91054" name="Petram's Old Necklace Lv. 3" type="Armor">
+		<!-- MP +40, Earth Resistance +60, acquired Attribute XP +10%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_earth_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<skills>
+			<skill id="54027" level="3" /> <!-- Attribute XP +10% -->
+			<skill id="54026" level="3" /> <!-- Earth Attack Defense +60 -->
+		</skills>
+		<stats>
+			<stat type="mDef">93</stat>
+			<stat type="maxMp">40</stat>
+		</stats>
+	</item>
+	<item id="91055" name="Nebula's Old Necklace Lv. 1" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. MP +35, Water Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_water_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="time" val="10080" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54023" level="1" /> <!-- Earth Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91056" name="Ignis' Old Necklace Lv. 1" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. MP +35, Fire Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_fire_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="time" val="10080" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54024" level="1" /> <!-- Fire Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91057" name="Procella's Old Necklace Lv. 1" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. MP +35, Wind Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_wind_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="time" val="10080" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54025" level="1" /> <!-- Earth Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91058" name="Petram's Old Necklace Lv. 1" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. MP +35, Earth Resistance +20, acquired Attribute XP +3%. Cannot be enchanted. -->
+		<set name="icon" val="icon.elemental_necklace_earth_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="commissionItemType" val="NECKLACE" />
+		<set name="time" val="10080" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="54027" level="1" /> <!-- Attribute XP +3% -->
+			<skill id="54026" level="1" /> <!-- Earth Attack Defense +20 -->
+		</skills>
+		<stats>
+			<stat type="mDef">87</stat>
+			<stat type="maxMp">35</stat>
+		</stats>
+	</item>
+	<item id="91059" name="Talisman of Authority Fragment" type="EtcItem">
+		<!-- Required for upgrading Talisman of Authority. In case of failure the talisman level value drops to 1. Talisman of Authority can be purchased from Pona in Giran. -->
+		<set name="icon" val="icon.bm_ensoul_stone_PvE_empty" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="91060" name="Bracelet of Authority" type="Armor">
+		<!-- Unlocks 5 talisman slots. HP/ MP Recovery Rate +15%, P. Accuracy +2, M. Accuracy +2, weight limit +10,000. -->
+		<set name="icon" val="icon.ertheia_bracelet_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91061" name="Talisman of Authority" additionalName="Sealed" type="Armor">
+		<!-- A talisman that contains the energy of a ruler. Can be enchanted up to +10 with Scroll: Enchant Talisman of Authority. Activates special effects depending on the enchant value. The enchanting isn't safe even to +1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="bodypart" val="talisman" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<!-- skills handled by option data -->
+	</item>
+	<item id="91062" name="Talisman of Authority Lv. 2" type="Armor">
+		<!-- <Properties>. P. Atk. +2%. M. Atk. +2%. Max HP +8%. Max MP +4%. P. Def. +15. M. Def. +15. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_g_Lv2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91063" name="Talisman of Authority Lv. 3" type="Armor">
+		<!-- <Properties>. P. Atk. +3%. M. Atk. +3%. Max HP +10%. Max MP +6%. P. Def. +18. M. Def. +18. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_g_Lv3" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91064" name="Talisman of Authority Lv. 4" type="Armor">
+		<!-- <Properties>. P. Atk. +3%. M. Atk. +3%. Max HP +12%. Max MP +8%. P. Def. +20. M. Def. +20. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_g_Lv4" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91065" name="Talisman of Authority Lv. 5" type="Armor">
+		<!-- <Properties>. P. Atk. +5%. M. Atk. +5%. Max HP +12%. Max MP +8%. P. Def. +24. M. Def. +24. Can be upgraded to Noble Talisman of Authority by Blacksmith Baggins in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_g_lv5" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91066" name="Noble Talisman of Authority Lv. 1" type="Armor">
+		<!-- <Properties>. P. Atk. +5%. M. Atk. +5%. Atk. Spd. +3%. Casting Spd. +2%. Max HP +12%. Max MP +8%. P. Def. +26. M. Def. +26. Can be upgraded with Talisman of Authority Fragment. In case of failure the item doesn't disappear. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pve_Lv1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91067" name="Noble Talisman of Authority Lv. 2" type="Armor">
+		<!-- <Properties>. P. Atk. +6%. M. Atk. +6%. Atk. Spd. +3%. Casting Spd. +2%. Max HP +14%. Max MP +10%. P. Def. +31. M. Def. +31. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pve_Lv2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91068" name="Noble Talisman of Authority Lv. 3" type="Armor">
+		<!-- <Properties>. P. Atk. +7%. M. Atk. +7%. Atk. Spd. +4%. Casting Spd. +3%. Max HP +16%. Max MP +12%. P. Def. +36. M. Def. +36. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pve_Lv3" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91069" name="Noble Talisman of Authority Lv. 4" type="Armor">
+		<!-- <Properties>. P. Atk. +8%. M. Atk. +8%. Atk. Spd. +4%. Casting Spd. +3%. Max HP +18%. Max MP +14%. P. Def. +41. M. Def. +41. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pve_Lv4" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91070" name="Noble Talisman of Authority Lv. 5" type="Armor">
+		<!-- <Properties>. P. Atk. +10%. M. Atk. +10%. Atk. Spd. +5%. Casting Spd. +3%. Max HP +18%. Max MP +14%. P. Def. +46. M. Def. +46. Can be upgraded to Noble Talisman of Authority by Blacksmith Baggins in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pve_lv5" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91071" name="Radiant Talisman of Authority Lv. 1" type="Armor">
+		<!-- <Properties>. P. Atk. +10%. M. Atk. +10%. Atk. Spd. +6%. Casting Spd. +4%. P. Critical Rate +10. M. Skill Critical Rate +20. P. Skill Power +5%. M. Skill Power +10%. Max HP +18%. Max MP +14%. P. Def. +51. M. Def. +51. <Power of Shunaiman Lv. 1>. Increases Silence/ Fear/ Stun Atk. Rate and Damage Reflection Resistance. Can be upgraded with Talisman of Authority Fragment. In case of failure the item doesn't disappear. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pvp_Lv1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91072" name="Radiant Talisman of Authority Lv. 2" type="Armor">
+		<!-- <Properties>. P. Atk. +11%. M. Atk. +11%. Atk. Spd. +7%. Casting Spd. +5%. P. Critical Rate +10. M. Skill Critical Rate +20. P. Skill Power +6%. M. Skill Power +11%. Max HP +20%. Max MP +16%. P. Def. +55. M. Def. +55. <Power of Shunaiman Lv. 1>. Increases Silence/ Fear/ Stun Atk. Rate and Damage Reflection Resistance. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pvp_Lv2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91073" name="Radiant Talisman of Authority Lv. 3" type="Armor">
+		<!-- <Properties>. P. Atk. +12%. M. Atk. +12%. Atk. Spd. +8%. Casting Spd. +6%. P. Critical Rate +20. M. Skill Critical Rate +30. P. Skill Power +7%. M. Skill Power +12%. Max HP +22%. Max MP +18%. P. Def. +59. M. Def. +59. <Power of Shunaiman Lv. 1>. Increases Silence/ Fear/ Stun Atk. Rate and Damage Reflection Resistance. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pvp_Lv3" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91074" name="Radiant Talisman of Authority Lv. 4" type="Armor">
+		<!-- <Properties>. P. Atk. +13%. M. Atk. +13%. Atk. Spd. +10%. Casting Spd. +7%. P. Critical Rate +20. M. Skill Critical Rate +30. P. Skill Power +8%. M. Skill Power +13%. Max HP +24%. Max MP +20%. P. Def. +63. M. Def. +63. <Power of Shunaiman Lv. 1>. Increases Silence/ Fear/ Stun Atk. Rate and Damage Reflection Resistance. Can be upgraded with Talisman of Authority Fragment. In case of failure the talisman level value drops to 1. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pvp_Lv4" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91075" name="Radiant Talisman of Authority Lv. 5" type="Armor">
+		<!-- <Properties>. P. Atk. +15%. M. Atk. +15%. Atk. Spd. +15%. Casting Spd. +10%. P. Critical Rate +30. M. Skill Critical Rate +40. P. Skill Power +15%. M. Skill Power +22%. Max HP +30%. Max MP +25%. P. Def. +70. M. Def. +70. <Power of Shunaiman Lv. 2>. Increases Silence/ Fear/ Stun Atk. Rate and Damage Reflection Resistance. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.sayhas_talisman_pvp_lv5" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91076" name="Venir's Talisman Fragment" type="EtcItem">
+		<!-- Required for compounding with Venir's Talisman to increase its level. <font color=ff6666>Note!</font>. In case of failure, you will get Venir's Talisman of a certain level specified in the talisman's description. -->
+		<set name="icon" val="icon.bm_ensoul_stone_PvP_empty" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="91077" name="Venir's Talisman Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 1</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="1" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91078" name="Venir's Talisman Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. MEN +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 1</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="2" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91079" name="Venir's Talisman Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. MEN +1. DEX +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 1</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="3" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91080" name="Venir's Talisman Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. MEN +1. DEX +1. WIT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 1</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="4" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91081" name="Venir's Talisman Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. MEN +1. DEX +1. WIT +1. STR +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 1</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="5" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91082" name="Venir's Talisman Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +1. MEN +1. DEX +1. WIT +1. STR +1. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="6" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91083" name="Venir's Talisman Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +2. MEN +1. DEX +1. WIT +1. STR +1. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="7" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91084" name="Venir's Talisman Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +2. MEN +2. DEX +1. WIT +1. STR +1. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="8" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91085" name="Venir's Talisman Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +2. MEN +2. DEX +2. WIT +1. STR +1. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="9" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91086" name="Venir's Talisman Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +2. MEN +2. DEX +2. WIT +2. STR +1. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="10" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91087" name="Venir's Talisman Lv. 11" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +2. MEN +2. DEX +2. WIT +2. STR +2. INT +1. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 6</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="11" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91088" name="Venir's Talisman Lv. 12" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties>. </font>CON +2. MEN +2. DEX +2. WIT +2. STR +2. INT +2. All received Critical Rate -2%. P./ M. Skill Cooldown -1%. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 12</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="12" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91089" name="Venir's Talisman Lv. 13" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +3. MEN +2. DEX +2. WIT +2. STR +2. INT +2. All received Critical Rate -4%. P./ M. Skill Cooldown -3%. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 12</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="13" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91090" name="Venir's Talisman Lv. 14" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +3. MEN +3. DEX +2. WIT +2. STR +2. INT +2. All received Critical Rate -6%. P./ M. Skill Cooldown -5%. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 12</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="14" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91091" name="Venir's Talisman Lv. 15" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font>. CON +3. MEN +3. DEX +3. WIT +2. STR +3. INT +2. All received Critical Rate -8%. P./ M. Skill Cooldown -7%. <font color=bbaa88><Compound></font>. Materials: Venir's Talisman Fragment. In case of failure, you will get a <font color=eeaa22>Venir's Talisman Lv. 12</font>. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="15" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91092" name="Venir's Talisman Lv. 16" additionalName="Sealed" type="Armor">
+		<!-- When equipped, CON/ MEN/ DEX/ WIT +3, STR/ INT +2. Has a certain chance to absorb 4% of inflicted damage as HP and 2% as MP. Can be upgraded to higher level with Venir's Talisman Fragment. In case of failure the talisman level value drops to 12. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="16" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91093" name="Venir's Talisman Lv. 17" additionalName="Sealed" type="Armor">
+		<!-- When equipped, CON/ MEN/ DEX/ WIT/ STR +3, INT +2. Has a certain chance to absorb 4% of inflicted damage as HP and 2% as MP. Can be upgraded to higher level with Venir's Talisman Fragment. In case of failure the talisman level value drops to 12. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="17" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91094" name="Venir's Talisman Lv. 18" additionalName="Sealed" type="Armor">
+		<!-- When equipped, CON/ MEN/ DEX/ WIT/ STR/ INT +3, P./ M. Skill Cooldown -7%. With a certain chance, absorbs 8% of the inflicted damage as HP and 4% as MP. Can be upgraded to higher level with Venir's Talisman Fragment. In case of failure the talisman level drops to 18. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.benir_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_tradable" val="false" />
+		<skills>
+			<skill id="18024" level="18" /> <!-- Venir Talisman -->
+		</skills>
+	</item>
+	<item id="91095" name="Earth Dragon Belt - Venir's Blessing Lv. 1" type="Armor">
+		<!-- When equipped, inventory slots +6, weight limit +7000, CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +15%, HP Recovery Potions' Effect +100, received damage -6%. Enables Venir's Blessing Lv. 1. -->
+		<set name="icon" val="icon.bm_antaras_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="91096" name="Earth Dragon Belt - Venir's Blessing Lv. 2" type="Armor">
+		<!-- Inventory Slots +6, Weight Limit +7000, CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +15%, HP Recovery Potions' Effect +100, Received Damage -6%. Activates Venir's Blessing Lv. 2. -->
+		<set name="icon" val="icon.bm_antaras_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="91097" name="Earth Dragon Belt - Venir's Blessing Lv. 3" type="Armor">
+		<!-- Inventory Slots +6, Weight Limit +7000, CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +15%, HP Recovery Potions' Effect +100, Received Damage -6%. Activates Venir's Blessing Lv. 3. -->
+		<set name="icon" val="icon.bm_antaras_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="91098" name="Fire Dragon Belt - Venir's Blessing Lv. 1" type="Armor">
+		<!-- Inventory Slots +6, Weight Limit +7000, STR/ INT +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, HP Recovery Potions' Effect +100, P. Critical Damage/ M. Skill Critical Damage +4%. Venir's Blessing Lv. 1 is used. -->
+		<set name="icon" val="icon.bm_vallakas_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="91099" name="Fire Dragon Belt - Venir's Blessing Lv. 2" type="Armor">
+		<!-- Inventory Slots +6, Weight Limit +7000, STR/ INT +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, HP Recovery Potions' Effect +100, P. Critical Damage/ M. Skill Critical Damage +4%. Venir's Blessing Lv. +2 is used. -->
+		<set name="icon" val="icon.bm_vallakas_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+</list>

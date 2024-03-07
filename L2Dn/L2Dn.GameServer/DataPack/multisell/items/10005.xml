@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93463" /> <!-- +4 ~ +15 Weapon Pack - Damascus Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93464" /> <!-- +4 ~ +15 Weapon Pack - Wizard's Tear - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93465" /> <!-- +4 ~ +15 Weapon Pack - Guardian's Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93466" /> <!-- +4 ~ +15 Weapon Pack - Bellion Cestus - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93467" /> <!-- +4 ~ +15 Weapon Pack - Bow of Peril - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93468" /> <!-- +4 ~ +15 Weapon Pack - Lance - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93469" /> <!-- +4 ~ +15 Weapon Pack - Staff of Evil Spirits - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93470" /> <!-- +4 ~ +15 Weapon Pack - Deadman's Glory - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93471" /> <!-- +4 ~ +15 Weapon Pack - Art of Battle Axe - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93472" /> <!-- +4 ~ +15 Weapon Pack - Samurai Long Sword*Samurai Long Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93473" /> <!-- +4 ~ +15 Weapon Pack - Demon's Dagger - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93474" /> <!-- +4 ~ +15 Weapon Pack - Colichemarde - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93475" /> <!-- +4 ~ +15 Weapon Pack - Dismantler - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="93476" /> <!-- +4 ~ +15 Weapon Pack - Star Buster - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="93499" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="95659" /> <!-- +4 ~ +15 Weapon Pack - Volcano - Sealed -->
+	</item>
+</list>

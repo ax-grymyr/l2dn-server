@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="extraction" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute type="xs:short" name="petId" />
+								<xs:attribute type="xs:int" name="petLevel" />
+								<xs:attribute type="xs:long" name="extractExp" />
+								<xs:attribute type="xs:int" name="extractItem"/>
+								<xs:attribute type="xs:int" name="defaultCostId" />
+								<xs:attribute type="xs:long" name="defaultCostCount" />
+								<xs:attribute type="xs:int" name="extractCostId" />
+								<xs:attribute type="xs:long" name="extractCostCount" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

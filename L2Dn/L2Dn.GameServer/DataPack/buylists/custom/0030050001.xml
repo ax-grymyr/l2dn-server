@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92755" price="0" /> <!-- Zubei's Breastplate Part -->
+	<item id="92756" price="0" /> <!-- Zubei's Gaiters Material -->
+	<item id="92759" price="0" /> <!-- Zubei's Leather Shirt Fabric -->
+	<item id="92760" price="0" /> <!-- Zubei's Leather Gaiter Texture -->
+	<item id="92757" price="0" /> <!-- Avadon Breastplate Part -->
+	<item id="92758" price="0" /> <!-- Avadon Gaiters Material -->
+	<item id="92761" price="0" /> <!-- Avadon Leather Armor Lining -->
+	<item id="92764" price="0" /> <!-- Avadon Robe Fabric -->
+	<item id="92765" price="0" /> <!-- Sealed Avadon Circlet Pattern -->
+	<item id="92766" price="0" /> <!-- Sealed Avadon Glove Pattern -->
+	<item id="92783" price="0" /> <!-- Sealed Avadon Boot Design -->
+	<item id="92783" price="0" /> <!-- Sealed Avadon Shield Fragment -->
+	<item id="92767" price="0" /> <!-- Doom Shield Fragment -->
+	<item id="92770" price="0" /> <!-- Doom Plate Armor Temper -->
+	<item id="92772" price="0" /> <!-- Doom Leather Armor Design -->
+	<item id="92774" price="0" /> <!-- Doom Tunic Pattern -->
+	<item id="92776" price="0" /> <!-- Doom Stockings Pattern -->
+	<item id="92778" price="0" /> <!-- Sealed Doom Helmet Pattern -->
+	<item id="92780" price="0" /> <!-- Sealed Doom Glove Fragment -->
+	<item id="92784" price="0" /> <!-- Sealed Doom Boot Fragment -->
+	<item id="92768" price="0" /> <!-- Blue Wolf Breastplate Part -->
+	<item id="92769" price="0" /> <!-- Blue Wolf Gaiter Material -->
+	<item id="92771" price="0" /> <!-- Blue Wolf Leather Armor Texture -->
+	<item id="92773" price="0" /> <!-- Blue Wolf Tunic Fabric -->
+	<item id="92775" price="0" /> <!-- Blue Wolf Stocking Pattern -->
+	<item id="92777" price="0" /> <!-- Sealed Blue Wolf Helmet Design -->
+	<item id="92779" price="0" /> <!-- Sealed Blue Wolf Boot Design -->
+	<item id="92779" price="0" /> <!-- Sealed Blue Wolf Glove Fabric -->
+</list>

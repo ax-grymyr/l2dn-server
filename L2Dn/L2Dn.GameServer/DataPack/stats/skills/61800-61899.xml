@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61800" toLevel="1" name="Damage Resistance Bonus - Fist Weapon">
+		<!-- Fist weapon resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61801" toLevel="1" name="Damage Resistance Bonus - Fist Weapon">
+		<!-- Fist weapon resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61802" toLevel="1" name="Damage Resistance Bonus - Fist Weapon">
+		<!-- Fist weapon resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61803" toLevel="1" name="Damage Resistance Bonus - Fist Weapon">
+		<!-- Fist weapon resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61804" toLevel="1" name="Damage Resistance Bonus - Dual Swords">
+		<!-- Dual swords resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61805" toLevel="1" name="Damage Resistance Bonus - Dual Swords">
+		<!-- Dual swords resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61806" toLevel="1" name="Damage Resistance Bonus - Dual Swords">
+		<!-- Dual swords resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61807" toLevel="1" name="Damage Resistance Bonus - Dual Swords">
+		<!-- Dual swords resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61808" toLevel="1" name="Damage Resistance Bonus - Dual Swords">
+		<!-- Dual swords resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61809" toLevel="1" name="Damage Resistance Bonus - Bow">
+		<!-- Bow resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61810" toLevel="1" name="Damage Resistance Bonus - Bow">
+		<!-- Bow resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61811" toLevel="1" name="Damage Resistance Bonus - Bow">
+		<!-- Bow resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61812" toLevel="1" name="Damage Resistance Bonus - Bow">
+		<!-- Bow resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61813" toLevel="1" name="Damage Resistance Bonus - Bow">
+		<!-- Bow resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61814" toLevel="1" name="Damage Resistance Bonus - Firearms">
+		<!-- Firearms resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61815" toLevel="1" name="Damage Resistance Bonus - Firearms">
+		<!-- Firearms resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61816" toLevel="1" name="Damage Resistance Bonus - Firearms">
+		<!-- Firearms resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61817" toLevel="1" name="Damage Resistance Bonus - Firearms">
+		<!-- Firearms resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61818" toLevel="1" name="Damage Resistance Bonus - Firearms">
+		<!-- Firearms resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61819" toLevel="1" name="Paralysis Resistance">
+		<!-- Paralysis Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61820" toLevel="1" name="Paralysis Resistance">
+		<!-- Paralysis Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61821" toLevel="1" name="Paralysis Resistance">
+		<!-- Paralysis Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61822" toLevel="1" name="Paralysis Resistance">
+		<!-- Paralysis Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61823" toLevel="1" name="Paralysis Resistance">
+		<!-- Paralysis Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61824" toLevel="1" name="Shock Resistance">
+		<!-- Shock Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61825" toLevel="1" name="Shock Resistance">
+		<!-- Shock Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61826" toLevel="1" name="Shock Resistance">
+		<!-- Shock Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61827" toLevel="1" name="Shock Resistance">
+		<!-- Shock Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61828" toLevel="1" name="Shock Resistance">
+		<!-- Shock Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61829" toLevel="1" name="Knockback Resistance">
+		<!-- Knockback Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61830" toLevel="1" name="Knockback Resistance">
+		<!-- Knockback Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61831" toLevel="1" name="Knockback Resistance">
+		<!-- Knockback Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61832" toLevel="1" name="Knockback Resistance">
+		<!-- Knockback Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61833" toLevel="1" name="Knockback Resistance">
+		<!-- Knockback Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61834" toLevel="1" name="Sleep Resistance">
+		<!-- Sleep Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61835" toLevel="1" name="Sleep Resistance">
+		<!-- Sleep Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61836" toLevel="1" name="Sleep Resistance">
+		<!-- Sleep Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61837" toLevel="1" name="Sleep Resistance">
+		<!-- Sleep Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61838" toLevel="1" name="Sleep Resistance">
+		<!-- Sleep Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61839" toLevel="1" name="Imprisonment Resistance">
+		<!-- Imprisonment Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61840" toLevel="1" name="Imprisonment Resistance">
+		<!-- Imprisonment Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61841" toLevel="1" name="Imprisonment Resistance">
+		<!-- Imprisonment Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61842" toLevel="1" name="Imprisonment Resistance">
+		<!-- Imprisonment Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61843" toLevel="1" name="Imprisonment Resistance">
+		<!-- Imprisonment Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61844" toLevel="1" name="Pull Resistance">
+		<!-- Pull Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61845" toLevel="1" name="Pull Resistance">
+		<!-- Pull Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61846" toLevel="1" name="Pull Resistance">
+		<!-- Pull Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61847" toLevel="1" name="Pull Resistance">
+		<!-- Pull Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61848" toLevel="1" name="Pull Resistance">
+		<!-- Pull Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61849" toLevel="1" name="Fear Resistance">
+		<!-- Fear Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61850" toLevel="1" name="Fear Resistance">
+		<!-- Fear Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61851" toLevel="1" name="Fear Resistance">
+		<!-- Fear Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61852" toLevel="1" name="Fear Resistance">
+		<!-- Fear Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61853" toLevel="1" name="Fear Resistance">
+		<!-- Fear Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61854" toLevel="1" name="Silence Resistance">
+		<!-- Silence Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61855" toLevel="1" name="Silence Resistance">
+		<!-- Silence Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61856" toLevel="1" name="Silence Resistance">
+		<!-- Silence Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61857" toLevel="1" name="Silence Resistance">
+		<!-- Silence Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61858" toLevel="1" name="Silence Resistance">
+		<!-- Silence Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61859" toLevel="1" name="Hold Resistance">
+		<!-- Hold Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61860" toLevel="1" name="Hold Resistance">
+		<!-- Hold Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61861" toLevel="1" name="Hold Resistance">
+		<!-- Hold Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61862" toLevel="1" name="Hold Resistance">
+		<!-- Hold Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61863" toLevel="1" name="Hold Resistance">
+		<!-- Hold Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61864" toLevel="1" name="Suppression Resistance">
+		<!-- Suppression Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61865" toLevel="1" name="Suppression Resistance">
+		<!-- Suppression Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61866" toLevel="1" name="Suppression Resistance">
+		<!-- Suppression Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61867" toLevel="1" name="Suppression Resistance">
+		<!-- Suppression Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61868" toLevel="1" name="Suppression Resistance">
+		<!-- Suppression Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61869" toLevel="1" name="Infection Resistance">
+		<!-- Infection Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61870" toLevel="1" name="Infection Resistance">
+		<!-- Infection Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61871" toLevel="1" name="Infection Resistance">
+		<!-- Infection Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61872" toLevel="1" name="Infection Resistance">
+		<!-- Infection Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61873" toLevel="1" name="Infection Resistance">
+		<!-- Infection Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61874" toLevel="1" name="Unequip Resistance">
+		<!-- Unequip Resistance +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61875" toLevel="1" name="Unequip Resistance">
+		<!-- Unequip Resistance +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61876" toLevel="1" name="Unequip Resistance">
+		<!-- Unequip Resistance +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61877" toLevel="1" name="Unequip Resistance">
+		<!-- Unequip Resistance +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61878" toLevel="1" name="Unequip Resistance">
+		<!-- Unequip Resistance +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61879" toLevel="1" name="Buff Activation - p_trigger_skill_by_kill">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61880" toLevel="1" name="Buff Activation - p_trigger_skill_by_attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61881" toLevel="1" name="Buff Activation - p_trigger_skill_by_avoid">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61882" toLevel="1" name="Buff Activation - p_trigger_skill_by_dmg">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61883" toLevel="1" name="Buff Activation - p_trigger_skill_by_magic_type">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61884" toLevel="1" name="Buff Activation - p_trigger_skill_by_skill">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61885" toLevel="1" name="Buff Activation - p_trigger_skill_by_getexp">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61886" toLevel="1" name="Buff Activation - p_trigger_skill_by_deadly_damage">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61887" toLevel="1" name="Buff Activation - p_trigger_skill_by_kill_abnormal_pa_up">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61888" toLevel="1" name="Buff Activation - p_trigger_skill_by_attack_abnormal_stun">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>30</abnormalTime>
+	</skill>
+	<skill id="61889" toLevel="1" name="p_trigger_skill_by_kill">
+		<!-- With a 50.5% chance, applies a buff upon killing the target. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61890" toLevel="1" name="p_trigger_skill_by_attack">
+		<!-- With a 50.5% chance, applies a buff after a basic attack at the target. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61891" toLevel="1" name="p_trigger_skill_by_avoid">
+		<!-- With a 50.5% chance, applies a buff upon evading an attack. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61892" toLevel="1" name="p_trigger_skill_by_dmg">
+		<!-- With a 50.5% chance, applies a buff upon receiving more than 1 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61893" toLevel="1" name="p_trigger_skill_by_magic_type">
+		<!-- With a 50.5% chance, applies a buff after using a magic skill (is_magic: 0,1,6,7). -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61894" toLevel="1" name="p_trigger_skill_by_skill">
+		<!-- With a 50.5% chance, applies a buff after using Power Strike (skill_id : 3). -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61895" toLevel="1" name="p_trigger_skill_by_getexp">
+		<!-- With a 50.5% chance, applies a buff upon receiving more than 1000 XP for a monster kill. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61896" toLevel="1" name="p_trigger_skill_by_deadly_damage">
+		<!-- With a 50.5% chance, applies a buff upon receiving mortal damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61897" toLevel="1" name="p_trigger_skill_by_kill_abnormal_pa_up">
+		<!-- With a 50.5% chance, applies a buff upon killing a player with the Might skill. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61898" toLevel="1" name="p_trigger_skill_by_attack_abnormal_stun">
+		<!-- With a 50.5% chance, applies a buff upon receiving damage while stunned. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61899" toLevel="1" name="Test Critical Damage Limit: 50%">
+		<!-- Max Critical Rate limit 50% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+		<!--<effects>-->
+		<!--	<effect name="Max Critical Rate limit">50%</effect>-->
+		<!--</effects>-->
+	</skill>
+</list>

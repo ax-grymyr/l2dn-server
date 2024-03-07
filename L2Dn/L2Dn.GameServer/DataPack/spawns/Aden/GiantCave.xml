@@ -1,0 +1,285 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Giant_cave_npcs">
+		<group>
+			<npc id="18017" x="178039" y="52356" z="-3994" heading="12623" respawnTime="60sec" /> <!-- Teleport - Giant's Cave -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_01">
+		<group>
+			<npc id="22370" x="179841" y="54657" z="-3983" heading="29200" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="179328" y="54840" z="-3983" heading="29200" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="178865" y="55003" z="-3984" heading="29049" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="178457" y="55158" z="-3987" heading="28969" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="178274" y="55112" z="-3994" heading="46621" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="178157" y="54636" z="-3994" heading="46621" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="178108" y="54438" z="-3994" heading="62592" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="178369" y="54362" z="-3994" heading="62592" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="178997" y="54180" z="-3994" heading="62592" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="179091" y="54153" z="-3994" heading="62592" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="179091" y="54153" z="-3994" heading="62592" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="179469" y="54368" z="-3994" heading="5397" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="179546" y="54412" z="-3994" heading="24851" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="179164" y="54801" z="-3994" heading="23461" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="178965" y="55070" z="-3992" heading="22939" respawnTime="60sec" /> <!-- Giant Mercenary -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_02">
+		<group>
+			<npc id="22376" x="179250" y="59561" z="-3994" heading="289" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="180188" y="59153" z="-3997" heading="16095" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22375" x="180055" y="59478" z="-3997" heading="17694" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="180225" y="59949" z="-3997" heading="3802" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22378" x="179274" y="60059" z="-3994" heading="481" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22377" x="179600" y="59891" z="-3997" heading="36736" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="181298" y="59842" z="-3994" heading="7544" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="181766" y="60086" z="-3994" heading="2506" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="182112" y="59890" z="-3994" heading="57766" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="182220" y="59477" z="-3994" heading="47228" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="182006" y="59268" z="-3994" heading="37759" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="181609" y="59168" z="-3997" heading="65185" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="181842" y="59601" z="-3997" heading="2734" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22377" x="181110" y="59206" z="-3994" heading="22857" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22375" x="179573" y="58991" z="-3994" heading="8663" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="180111" y="59711" z="-3997" heading="41079" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22377" x="179591" y="59318" z="-3997" heading="6765" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22377" x="180306" y="59716" z="-3994" heading="35670" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="180053" y="60224" z="-3994" heading="29043" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_03">
+		<group>
+			<npc id="22371" x="185856" y="48874" z="-4371" heading="47078" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="185846" y="48820" z="-4371" heading="47078" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="185970" y="48325" z="-4369" heading="54746" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22370" x="186133" y="48324" z="-4369" heading="65510" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="186538" y="48519" z="-4367" heading="8410" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="186295" y="48919" z="-4368" heading="21540" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="186266" y="49024" z="-4366" heading="19143" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="186252" y="49076" z="-4365" heading="19143" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="186029" y="49481" z="-4362" heading="22510" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="185763" y="49718" z="-4363" heading="22510" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="185824" y="47894" z="-4369" heading="17058" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="185633" y="48222" z="-4369" heading="21995" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="185529" y="48280" z="-4369" heading="20407" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="185362" y="48706" z="-4369" heading="48494" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="185543" y="49517" z="-4371" heading="63410" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="185399" y="49134" z="-4371" heading="31633" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22370" x="186067" y="48543" z="-4371" heading="56237" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22369" x="185034" y="49461" z="-4357" heading="3217" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22372" x="185306" y="49639" z="-4355" heading="5021" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22375" x="189844" y="51906" z="-4371" heading="8742" respawnTime="60sec" /> <!-- Giant Aggregation -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_04">
+		<group>
+			<npc id="22377" x="190025" y="52106" z="-4371" heading="8597" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="190171" y="52266" z="-4371" heading="8615" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22375" x="190919" y="52791" z="-4371" heading="48168" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="190883" y="52302" z="-4371" heading="45924" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="190766" y="51880" z="-4371" heading="46443" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="190448" y="52678" z="-4371" heading="53489" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22376" x="190318" y="51992" z="-4371" heading="10250" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22376" x="191661" y="51517" z="-4371" heading="56563" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="191776" y="51761" z="-4371" heading="11051" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="191972" y="52084" z="-4371" heading="10161" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="192282" y="52530" z="-4371" heading="10007" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="191756" y="53010" z="-4371" heading="29798" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22377" x="192070" y="52499" z="-4371" heading="54964" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="192324" y="52079" z="-4371" heading="54334" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22375" x="192377" y="51668" z="-4371" heading="2096" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="192271" y="50530" z="-4371" heading="44620" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="192142" y="50425" z="-4371" heading="39802" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="191876" y="50229" z="-4371" heading="39325" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="191449" y="49885" z="-4371" heading="40399" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="190829" y="50579" z="-4371" heading="459" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="191016" y="50471" z="-4371" heading="58999" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="191364" y="50211" z="-4371" heading="58515" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="191780" y="49859" z="-4371" heading="58065" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="190975" y="49322" z="-4371" heading="39662" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22377" x="191445" y="49479" z="-4371" heading="60280" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="191972" y="49549" z="-4371" heading="1304" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22375" x="192165" y="50000" z="-4371" heading="28100" respawnTime="60sec" /> <!-- Giant Aggregation -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_05">
+		<group>
+			<npc id="22370" x="183383" y="51315" z="-4349" heading="21426" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22370" x="182749" y="52457" z="-4353" heading="22566" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="182290" y="52735" z="-4361" heading="38514" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="181941" y="52471" z="-4358" heading="40561" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="181830" y="52369" z="-4353" heading="40561" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="182205" y="52065" z="-4351" heading="60896" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="182572" y="52036" z="-4357" heading="3664" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="182924" y="52170" z="-4359" heading="2723" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="182976" y="52184" z="-4359" heading="2714" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="183340" y="52284" z="-4357" heading="64481" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="183766" y="52202" z="-4353" heading="48398" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="183653" y="51780" z="-4353" heading="46036" respawnTime="60sec" /> <!-- Giant Mercenary -->
+			<npc id="22370" x="182301" y="53262" z="-4351" heading="18747" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="182737" y="53040" z="-4351" heading="61011" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="183196" y="52890" z="-4350" heading="59767" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="183551" y="52641" z="-4350" heading="58616" respawnTime="60sec" /> <!-- Giant Mercenary -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_06">
+		<group>
+			<npc id="22370" x="175569" y="54741" z="-4349" heading="27407" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="175094" y="55008" z="-4349" heading="27407" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="174618" y="55276" z="-4349" heading="27458" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="174333" y="55435" z="-4349" heading="27458" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="173961" y="55660" z="-4349" heading="24642" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="173969" y="56033" z="-4350" heading="7640" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="174075" y="56011" z="-4350" heading="63440" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="174506" y="55981" z="-4354" heading="1093" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="175013" y="55919" z="-4354" heading="58558" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="175141" y="55818" z="-4354" heading="58558" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="174984" y="55486" z="-4358" heading="38400" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="174479" y="55293" z="-4361" heading="37472" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22370" x="174243" y="55009" z="-4364" heading="43648" respawnTime="60sec" /> <!-- Mutated Warrior -->
+			<npc id="22372" x="174146" y="54927" z="-4364" heading="27731" respawnTime="60sec" /> <!-- Mutated Archer -->
+			<npc id="22371" x="174146" y="54927" z="-4364" heading="27731" respawnTime="60sec" /> <!-- Mutated Tracker -->
+			<npc id="22369" x="173584" y="55300" z="-4362" heading="16454" respawnTime="60sec" /> <!-- Giant Mercenary -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_07">
+		<group>
+			<npc id="22376" x="173318" y="60965" z="-4371" heading="13552" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="173508" y="61228" z="-4371" heading="10009" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="173817" y="61675" z="-4371" heading="10084" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="174003" y="61945" z="-4371" heading="10084" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="174350" y="61815" z="-4371" heading="55413" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="174212" y="61309" z="-4371" heading="45300" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="173825" y="61047" z="-4371" heading="37279" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="173497" y="61845" z="-4371" heading="20432" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="173482" y="62322" z="-4371" heading="14738" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="173709" y="62728" z="-4371" heading="6423" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="174183" y="62955" z="-4371" heading="476" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="175041" y="62899" z="-4371" heading="2347" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="175597" y="62849" z="-4371" heading="61797" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="175793" y="62692" z="-4371" heading="53444" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="175956" y="62173" z="-4371" heading="51653" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="176082" y="61642" z="-4371" heading="51475" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="176094" y="61589" z="-4371" heading="51475" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="175822" y="61119" z="-4371" heading="40984" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="175358" y="60981" z="-4371" heading="35745" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="175234" y="61313" z="-4371" heading="13969" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="175247" y="61366" z="-4371" heading="13969" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="175442" y="61798" z="-4371" heading="7794" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="175797" y="61846" z="-4371" heading="3305" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="176096" y="62175" z="-4371" heading="13858" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_08">
+		<group>
+			<npc id="22377" x="181705" y="61830" z="-3994" heading="11980" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="181831" y="62002" z="-3994" heading="7923" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="182178" y="62254" z="-3994" heading="3654" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22375" x="182123" y="61899" z="-3994" heading="41480" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22378" x="182452" y="61559" z="-3994" heading="25029" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="181873" y="61449" z="-3994" heading="6252" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22377" x="181786" y="62426" z="-3994" heading="59747" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="183557" y="62389" z="-3994" heading="57874" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="183841" y="62020" z="-3994" heading="53719" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="183934" y="61610" z="-3994" heading="45342" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="183861" y="61463" z="-3994" heading="43236" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="183767" y="60964" z="-3994" heading="57506" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="184064" y="60857" z="-3994" heading="59696" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="183937" y="60502" z="-3994" heading="47937" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22375" x="184130" y="59665" z="-3994" heading="50542" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22376" x="184162" y="59284" z="-3994" heading="48798" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="184055" y="58809" z="-3994" heading="45904" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22378" x="183488" y="58762" z="-3994" heading="15979" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22376" x="183488" y="58762" z="-3994" heading="15979" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+			<npc id="22375" x="183655" y="59056" z="-3994" heading="3458" respawnTime="60sec" /> <!-- Giant Aggregation -->
+			<npc id="22377" x="183888" y="58842" z="-3994" heading="39721" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22378" x="183757" y="58524" z="-3994" heading="54682" respawnTime="60sec" /> <!-- Lesser Giant Wizard -->
+			<npc id="22377" x="184091" y="58430" z="-3994" heading="23206" respawnTime="60sec" /> <!-- Lesser Giant Archer -->
+			<npc id="22376" x="183858" y="59465" z="-3994" heading="39526" respawnTime="60sec" /> <!-- Lesser Giant Soldier -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_09">
+		<group>
+			<npc id="22384" x="186142" y="57562" z="-4574" heading="42557" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="186518" y="57510" z="-4574" heading="29435" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="186855" y="57463" z="-4543" heading="61496" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="186956" y="57423" z="-4545" heading="61627" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="187444" y="57183" z="-4555" heading="60425" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="187655" y="56810" z="-4557" heading="51092" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="187665" y="56757" z="-4557" heading="51092" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="187749" y="56329" z="-4557" heading="51269" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="187910" y="55808" z="-4562" heading="51161" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="187910" y="55808" z="-4562" heading="51161" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="187821" y="55260" z="-4563" heading="42996" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22384" x="187482" y="55079" z="-4567" heading="32608" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="186941" y="55029" z="-4567" heading="34452" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="186405" y="55080" z="-4567" heading="29219" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="186354" y="55098" z="-4567" heading="29219" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="185980" y="55385" z="-4568" heading="23314" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22384" x="185932" y="55645" z="-4568" heading="17054" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="185835" y="56175" z="-4568" heading="20095" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22384" x="185797" y="56277" z="-4568" heading="20095" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="185844" y="56721" z="-4569" heading="7946" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="186186" y="56747" z="-4574" heading="13919" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="186114" y="57182" z="-4574" heading="25561" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_10">
+		<group>
+			<npc id="22384" x="191646" y="60629" z="-4981" heading="28792" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="191187" y="60990" z="-4981" heading="23328" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="190680" y="61024" z="-4981" heading="24248" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22383" x="190460" y="61548" z="-4981" heading="17671" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="190586" y="62128" z="-4981" heading="13418" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="191043" y="62419" z="-4981" heading="5317" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="191138" y="62472" z="-4981" heading="5317" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="191679" y="62430" z="-4981" heading="46723" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="191499" y="61984" z="-4981" heading="40091" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="191084" y="61625" z="-4981" heading="39273" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="190447" y="60933" z="-4984" heading="16692" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22384" x="192343" y="62577" z="-4984" heading="1190" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="192765" y="62661" z="-4984" heading="914" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="193223" y="62551" z="-4984" heading="60435" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="193316" y="62426" z="-4984" heading="53613" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="193534" y="61926" z="-4984" heading="53310" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="193553" y="61495" z="-4984" heading="53909" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="193668" y="61147" z="-4984" heading="47587" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="193340" y="60790" z="-4984" heading="37410" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="192887" y="60603" z="-4984" heading="24198" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="192638" y="60950" z="-4984" heading="17286" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="192645" y="61255" z="-4984" heading="11057" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="192781" y="61711" z="-4984" heading="16761" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="193020" y="61992" z="-4984" heading="2349" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="193396" y="62194" z="-4984" heading="6692" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="193891" y="59532" z="-4984" heading="50819" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="193622" y="59201" z="-4984" heading="38701" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22385" x="193276" y="59258" z="-4984" heading="12190" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22386" x="193484" y="59570" z="-4984" heading="48688" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22384" x="190196" y="59646" z="-4984" heading="46821" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="190494" y="59327" z="-4984" heading="59301" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22385" x="190685" y="59661" z="-4984" heading="47854" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22386" x="190476" y="59381" z="-4984" heading="41701" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+		</group>
+	</spawn>
+	<spawn name="Giant_cave_spot_11">
+		<group>
+			<npc id="22384" x="189717" y="62539" z="-4984" heading="32765" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="189172" y="62539" z="-4984" heading="32765" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="188627" y="62541" z="-4984" heading="32533" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="188136" y="62552" z="-4984" heading="32882" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="187481" y="62566" z="-4984" heading="32144" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22383" x="186992" y="62606" z="-4984" heading="31632" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="186611" y="62608" z="-4984" heading="35413" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="186094" y="62563" z="-4984" heading="28427" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22384" x="187890" y="60911" z="-4984" heading="50837" respawnTime="60sec" /> <!-- Evolved Lesser Giant Commander -->
+			<npc id="22386" x="187507" y="60117" z="-4984" heading="29832" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22383" x="187018" y="60522" z="-4985" heading="13414" respawnTime="60sec" /> <!-- Evolved Lesser Giant Mercenary -->
+			<npc id="22386" x="187198" y="60849" z="-4985" heading="9692" respawnTime="60sec" /> <!-- Evolved Lesser Giant Shooter -->
+			<npc id="22385" x="187533" y="61035" z="-4985" heading="62312" respawnTime="60sec" /> <!-- Evolved Lesser Giant Elder -->
+			<npc id="22412" x="187647" y="60836" z="-4984" heading="44150" respawnTime="60sec" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22412" x="187170" y="61381" z="-4984" heading="21984" respawnTime="60sec" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22412" x="187697" y="61382" z="-4984" heading="49764" respawnTime="60sec" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22412" x="187901" y="60285" z="-4987" heading="23260" respawnTime="60sec" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22412" x="187158" y="60154" z="-4984" heading="9506" respawnTime="60sec" /> <!-- Evolved Lesser Giant Lord -->
+		</group>
+	</spawn>
+</list>

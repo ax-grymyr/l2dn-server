@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="3300" name="Talisman of Kadesh" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Strange talisman obtained after slaying Kadesh. Take this to Sagittarius Hamil of the Village of Floran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3301" name="Snake Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm that is related to the serpent totem spirit worshiped by Breka Orcs. Take it to Prefect Vokian of the Orc Guild in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3302" name="Mithril Clip" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Key ingredient in restoring the Crescent Bow. Take this, along with the rest of the ingredients, to Magister Gauen of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3303" name="Stakato Chitin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Key ingredient in restoring the Crescent Bow. Take this, along with the rest of the ingredients, to Magister Gauen of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3304" name="Reinforced Bowstring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Key ingredient in restoring the Crescent Bow. Take this, along with the rest of the ingredients, to Magister Gauen of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3305" name="Manashen's Horn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Key ingredient in restoring the Crescent Bow. Take this, along with the rest of the ingredients, to Magister Gauen of the Ivory Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3306" name="Lizardman's Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The blood shed by Leto Lizardmen from the Plains of the Lizardmen. Kadesh appears when enough of this is gathered. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3307" name="Mark of Witchcraft" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Test of Witchcraft. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3308" name="Orim's Diagram" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A diagram of relics given by Orim the Shadow in the Death Pass. It depicts 6 jewels required for opening the Cube of Aklantoth. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3309" name="Alexandria's Book" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A book that contains records on buyers of Aklantoth' Gems: Magister Iker of the Mystic Guild in Giran, Magister Kaira from Giran, Grocer Lars from Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3310" name="Iker's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Procure 20 units of each of the following items: Dire Wyrm Fangs, obtained by slaying Dire Wyrm in the Sea of Spores -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3311" name="Dire Wyrm Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The fangs of a slain Dire Wyrm. Collect 20 of these and take them to Magister Iker of the Mystic Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3312" name="Leto Lizardman Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Totem obtained after slaying the Leto Lizardman. Collect 20 of these and take them to Magister Iker of the Mystic Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3313" name="Reinforced Stone Golem Heartstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Crystal found amongst the shattered fragments of a Reinforced Stone Golem. Collect 20 of these and take them to Magister Iker of the Mystic Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3314" name="Lars' Memo" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sales records of Grocer Lars from Dion. It is recorded that a man named Ismel bought the jewel from Lars. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3315" name="Nestle's Memo" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trader Lara's purchase records. It is written here that Aklantoth' Gem has been brought by Leopold of the Black Lion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3316" name="Leopold's Journal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Portion of Leopold's Diary. It is recorded that 3 deserters died and became undead while escaping to the Wastelands. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3317" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gem that can be obtained from Magister Iker. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3318" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gem that can be obtained from Magister Kaira of Giran. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3319" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The gem that can be obtained by killing a Nameless Revenant. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3320" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The gem that can be obtained by slaying a Skeleton Mercenary. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3321" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The gem that can be obtained by slaying a Skeleton Mercenary. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3322" name="Aklantoth' Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The gem that can be obtained by slaying a Skeleton Mercenary. Find all 6 of Aklantoth gems and take them to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3323" name="Brimstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Mark left behind by the Dre Vanul Prince Zeruel when escaping from his binds. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3324" name="Orim's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Set of instructions written by Shadow Orim. The instructions are to bring back the Sword of Seal and Soul Trap Crystal from Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3325" name="Orim's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Orim the Shadow from the Death Pass to Sir Klaus Vasper in Gludin, in which he asks to borrow the Sword of Seal. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3326" name="Orim's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter from Shadow Orim of Death Pass to Magister Iker of Town of Giran. The letter asks for the loan of the Bound Crystal. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3327" name="Sir Vasper's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter from Sir Klaus Vasper to Vadin of the Town of Oren. The letter gives permission for the use of the Sword of Seal. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3328" name="Vadin's Crucifix" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A crucifix given to you by Vadin. It is used for killing Tamlin Orcs in Timak Outpost. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3329" name="Tamlin Orc Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Amulets that the Tamlin Orcs carry for sorcery purposes. Gather 20 of these and take them to Vadin in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3330" name="Vadin's Sanctions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sanctions letter from Vadin allowing for the use of the Sword of Seal. Take this to Sir Klaus Vasper of the Town of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3331" name="Iker's Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Amulet given by Magister Iker. It is said to have powers of protection against evil... -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3332" name="Bound Crystal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Crystal with the power to trap and seal the soul of a monster. Use this to seal the spirit of the Dre Vanul Zeruel. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3333" name="Purgatory Key" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Key needed to close Aklantoth' Chest. Take this to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3334" name="Zeruel Bind Crystal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Crystal that contains the trapped soul of the Dre Vanul Prince Zeruel. Take this to Shadow Orim in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3335" name="Brimstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Mark left behind by the Dre Vanul Prince Zeruel while escaping from the body of Fisher Evert. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3336" name="Mark of Summoner" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Test of the Summoner. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3337" name="Leto Lizardman Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Amulet obtained after slaying the Leto Lizardman on the Plains of the Lizardmen. Collect 30 of these and take them to Trader Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3338" name="Red Spore Dust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Red spores obtained from the bodies of the Giant Fungus. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3339" name="Karul Bugbear Totem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Totem obtained after slaying the Karul Bugbear. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3340" name="Manashen Shard" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Shard of the shattered Manashen. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3341" name="Breka Orc Totem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Totem that can be obtained after slaying a Breka Orc. Collect 30 of them and take them to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3342" name="Crimson Bloodstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Soul Stone embedded in the body of a fettered soul. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3343" name="Tyrant's Talons" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The talon of a slain Tyrant. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3344" name="Noble Ant's Wings" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Wings obtained after slaying Noble Ants at the Ant Nest. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3345" name="Windsus Tusk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The tusks of a slain Windsus. Gather 30 of these and take them back to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3346" name="Wyrm's Fangs" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fangs of a Wyrm slain in the Gorgon Flower Garden. Collect 30 of these and take them to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3347" name="Lars' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 30 Leto Lizardman Amulets from the Plains of the Lizardmen and 30 units of Red Spore Dust from the Giant Fungus in the Sea of Spores. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3348" name="Lars' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 30 Karul Bugbear Totems in Hunters' Valley and 30 Manashen Shards in the Ivory Tower Crater. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3349" name="Lars' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 30 Breka Orc Totems from Breka's Stronghold and 30 Crimson Bloodstones of Fettered Soul from Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3350" name="Lars' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 30 Tyrant's Talonss from the Wastelands and 30 Windsus Tusks from Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3351" name="Lars' List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 30 Noble Ant Wings from the Ant Nest and 30 Wyrm Fangs from Gorgon's Flower Garden. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3352" name="Galatea's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Head Summoner Galatea to Grocer Lars in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3353" name="Beginner's Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Arcana card used by apprentice Summoners. You must have this in order to participate in Summoner battles. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3354" name="Almors' Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Almors' Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3355" name="Camoniell's Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Camoniell's Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3356" name="Belthus' Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Belthus' Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3357" name="Basillia's Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Basillia's Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3358" name="Celestiel's Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Celestiel's Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3359" name="Brynthea's Arcana" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Summoner Brynthea's Arcana. The proof of victory from a battle. Take this to Head Summoner Galatea at the Magic Shop of the Village of Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3360" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3361" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3362" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a Summoner battle. Take this to Summoner Almors. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3363" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in battle. Take this to Summoner Almors. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3364" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a battle. Take this to Summoner Almors. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3365" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3366" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3367" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a Summoner battle. Take this to Summoner Basillia. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3368" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in a battle. Take this to Summoner Basillia. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3369" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a battle. Take this to Summoner Basillia. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3370" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3371" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3372" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a Summoner battle. Take this to Summoner Camoniell. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3373" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in a battle. Take this to Summoner Camoniell. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3374" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a battle. Take this to Summoner Camoniell. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3375" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3376" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3377" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a Summoner battle. Take this to Summoner Celestiel. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3378" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in a battle. Take this to Summoner Celestiel. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3379" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a battle. Take this to Summoner Celestiel. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3380" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3381" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3382" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a summoner battle. Take this to Summoner Belthus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3383" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in a battle. Take this to Summoner Belthus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3384" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a battle. Take this to Summoner Belthus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3385" name="Crystal of Starting" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle Has begun. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3386" name="Crystal of Progress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that a Summoner battle is in progress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3387" name="Crystal of Foul" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that foul play was involved in a Summoner battle. Take this to Summoner Brynthea. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3388" name="Crystal of Defeat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been defeated in a Summoner battle. Take this to Summoner Brynthea. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3389" name="Crystal of Victory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Indication that the Summoner Has been victorious in a Summoner battle. Take this to Summoner Brynthea. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3390" name="Mark of Lord" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Test of the Lord. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3391" name="Ritual Necklace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Necklace given to those who are attempting the Test of the Lord. Go seek 5 Chiefs of different tribes and return with their approvals. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3392" name="Varkees's Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The Atuba Chief Varkees's charm. Return to him after completing this task. He is waiting for you near the House of the King in Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3393" name="Tantus' Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm of Neruga Chief Tantus. Return to him after fulfilling his order. He'll be waiting for you at the House of the King in the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3394" name="Hatos' Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm of Urutu Chief Hatos. Return to him after fulfilling his order. He'll be waiting for you at the House of the King in the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3395" name="Takuna's Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A charm of Duda-Mara Chief Takuna. Return to him after fulfilling his order. He'll be waiting for you in the Oren Orc Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3396" name="Chianta's Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gandi Chief Chianta's charm. Return to him after completing this task. He is waiting for you at the Orc Guild of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3397" name="Manakia's Orders" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Document containing orders of Priest Manakia of the Orc Guild of Giran. It tells you to kill Breka Orc Shamans and Breka Orc Overlords and bring back 20 Breka Orc fangs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3398" name="Breka Orc Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Breka Orc's fang. Collect 20 of them and take them to Priest Manakia at the Orc Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3399" name="Manakia's Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet received after passing Manakia's test. Take it to Atuba Chief Varkees in the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

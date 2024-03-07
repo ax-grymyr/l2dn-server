@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AdenCastle">
+		<group>
+			<npc id="35233" x="147464" y="1532" z="-368" heading="16383" respawnTime="60sec" /> <!-- Aden Holy Artifact -->
+			<npc id="35266" x="147457" y="4609" z="-2789" heading="0" respawnTime="60sec" /> <!-- Mass Gatekeeper - Aden -->
+			<npc id="35267" x="147292" y="8693" z="-480" heading="16389" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Aden -->
+			<npc id="35267" x="147293" y="8158" z="-470" heading="49152" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Aden -->
+			<npc id="35268" x="145725" y="4799" z="-425" heading="32768" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Aden -->
+			<npc id="35268" x="146275" y="4468" z="-400" heading="0" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Aden -->
+			<npc id="35269" x="147362" y="6111" z="-400" heading="49152" respawnTime="10800sec" /> <!-- Hall Gatekeeper - Aden -->
+			<npc id="35269" x="147702" y="6345" z="-400" heading="16389" respawnTime="10800sec" /> <!-- Hall Gatekeeper - Aden -->
+			<npc id="35270" x="148636" y="4756" z="-400" heading="32768" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Aden -->
+			<npc id="35270" x="149208" y="4339" z="-440" heading="0" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Aden -->
+			<npc id="35271" x="147408" y="2320" z="221" heading="16000" respawnTime="60sec" /> <!-- Gatekeeper - Aden -->
+			<npc id="35271" x="147552" y="2128" z="221" heading="48000" respawnTime="60sec" /> <!-- Gatekeeper - Aden -->
+			<npc id="35272" x="147908" y="5595" z="-884" heading="48126" respawnTime="60sec" /> <!-- Blacksmith - Aden -->
+			<npc id="35273" x="147056" y="5595" z="-884" heading="58383" respawnTime="60sec" /> <!-- Warehouse Keeper - Aden -->
+			<npc id="35275" x="147449" y="1899" z="216" heading="49000" respawnTime="60sec" /> <!-- Kruger - Wyvern Manager -->
+			<npc id="35276" x="147952" y="3742" z="-307" heading="32768" respawnTime="60sec" /> <!-- Eldon - Mercenary Manager -->
+			<!-- <npc id="35278" x="147551" y="19577" z="-1991" heading="16389" respawnTime="60sec" /> Ruford - Herald from Aden -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38800" name="option_id_38800">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="38801" name="option_id_38801">
+		<!-- P. Accuracy +1.7 -->
+	</option>
+	<option id="38802" name="option_id_38802">
+		<!-- P. Accuracy +1.8 -->
+	</option>
+	<option id="38803" name="option_id_38803">
+		<!-- P. Accuracy +2.0 -->
+	</option>
+	<option id="38804" name="option_id_38804">
+		<!-- P. Accuracy +3.0 -->
+	</option>
+	<option id="38805" name="option_id_38805">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38806" name="option_id_38806">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38807" name="option_id_38807">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38808" name="option_id_38808">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38809" name="option_id_38809">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38810" name="option_id_38810">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38811" name="option_id_38811">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="38812" name="option_id_38812">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="38813" name="option_id_38813">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="38814" name="option_id_38814">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="38815" name="option_id_38815">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="38816" name="option_id_38816">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="38817" name="option_id_38817">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="38818" name="option_id_38818">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="38819" name="option_id_38819">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="38820" name="option_id_38820">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="38821" name="option_id_38821">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="38822" name="option_id_38822">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="38823" name="option_id_38823">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="38824" name="option_id_38824">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="38825" name="option_id_38825">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38826" name="option_id_38826">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38827" name="option_id_38827">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38828" name="option_id_38828">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38829" name="option_id_38829">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38830" name="option_id_38830">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38831" name="option_id_38831">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38832" name="option_id_38832">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38833" name="option_id_38833">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38834" name="option_id_38834">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38835" name="option_id_38835">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38836" name="option_id_38836">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38837" name="option_id_38837">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38838" name="option_id_38838">
+		<!-- M. Damage Resistance +1% -->
+	</option>
+	<option id="38839" name="option_id_38839">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="38840" name="option_id_38840">
+		<!-- M. Damage Resistance +2% -->
+	</option>
+	<option id="38841" name="option_id_38841">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="38842" name="option_id_38842">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="38843" name="option_id_38843">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="38844" name="option_id_38844">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="38845" name="option_id_38845">
+		<!-- Max HP +5 -->
+	</option>
+	<option id="38846" name="option_id_38846">
+		<!-- Max HP +6 -->
+	</option>
+	<option id="38847" name="option_id_38847">
+		<!-- Max HP +7 -->
+	</option>
+	<option id="38848" name="option_id_38848">
+		<!-- Max HP +8 -->
+	</option>
+	<option id="38849" name="option_id_38849">
+		<!-- Max HP +9 -->
+	</option>
+	<option id="38850" name="option_id_38850">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="38851" name="option_id_38851">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="38852" name="option_id_38852">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="38853" name="option_id_38853">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="38854" name="option_id_38854">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="38855" name="option_id_38855">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="38856" name="option_id_38856">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="38857" name="option_id_38857">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="38858" name="option_id_38858">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="38859" name="option_id_38859">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="38860" name="option_id_38860">
+		<!-- Max HP +30 -->
+	</option>
+	<option id="38861" name="option_id_38861">
+		<!-- Max HP +32 -->
+	</option>
+	<option id="38862" name="option_id_38862">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="38863" name="option_id_38863">
+		<!-- Max HP +40 -->
+	</option>
+	<option id="38864" name="option_id_38864">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="38865" name="option_id_38865">
+		<!-- Max MP +5 -->
+	</option>
+	<option id="38866" name="option_id_38866">
+		<!-- Max MP +6 -->
+	</option>
+	<option id="38867" name="option_id_38867">
+		<!-- Max MP +7 -->
+	</option>
+	<option id="38868" name="option_id_38868">
+		<!-- Max MP +8 -->
+	</option>
+	<option id="38869" name="option_id_38869">
+		<!-- Max MP +9 -->
+	</option>
+	<option id="38870" name="option_id_38870">
+		<!-- Max MP +10 -->
+	</option>
+	<option id="38871" name="option_id_38871">
+		<!-- Max MP +12 -->
+	</option>
+	<option id="38872" name="option_id_38872">
+		<!-- Max MP +14 -->
+	</option>
+	<option id="38873" name="option_id_38873">
+		<!-- Max MP +16 -->
+	</option>
+	<option id="38874" name="option_id_38874">
+		<!-- Max MP +18 -->
+	</option>
+	<option id="38875" name="option_id_38875">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="38876" name="option_id_38876">
+		<!-- Max MP +22 -->
+	</option>
+	<option id="38877" name="option_id_38877">
+		<!-- Max MP +24 -->
+	</option>
+	<option id="38878" name="option_id_38878">
+		<!-- Max MP +26 -->
+	</option>
+	<option id="38879" name="option_id_38879">
+		<!-- Max MP +28 -->
+	</option>
+	<option id="38880" name="option_id_38880">
+		<!-- Max MP +30 -->
+	</option>
+	<option id="38881" name="option_id_38881">
+		<!-- Max MP +32 -->
+	</option>
+	<option id="38882" name="option_id_38882">
+		<!-- Max MP +35 -->
+	</option>
+	<option id="38883" name="option_id_38883">
+		<!-- Max MP +40 -->
+	</option>
+	<option id="38884" name="option_id_38884">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="38885" name="option_id_38885">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38886" name="option_id_38886">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38887" name="option_id_38887">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38888" name="option_id_38888">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38889" name="option_id_38889">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38890" name="option_id_38890">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38891" name="option_id_38891">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="38892" name="option_id_38892">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="38893" name="option_id_38893">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="38894" name="option_id_38894">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="38895" name="option_id_38895">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="38896" name="option_id_38896">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="38897" name="option_id_38897">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="38898" name="option_id_38898">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="38899" name="option_id_38899">
+		<!-- P. Evasion +1.4 -->
+	</option>
+</list>

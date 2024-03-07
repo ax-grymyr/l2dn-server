@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="15" parentClassId="10">
+		<skill skillName="Self Heal" skillId="1216" skillLevel="4" getLevel="20" levelUpSp="60" />
+		<skill skillName="Self Heal" skillId="1216" skillLevel="5" getLevel="25" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="3" getLevel="21" levelUpSp="60" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="4" getLevel="21" levelUpSp="60" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="5" getLevel="22" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="6" getLevel="22" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="7" getLevel="23" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="8" getLevel="24" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="9" getLevel="25" levelUpSp="230" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="10" getLevel="28" levelUpSp="570" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="11" getLevel="29" levelUpSp="570" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="12" getLevel="30" levelUpSp="570" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="13" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="14" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Group Heal" skillId="1027" skillLevel="15" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="1" getLevel="20" levelUpSp="60">
+			<removeSkill id="1177" onlyReplaceByLearn="true" /> <!-- Wind Strike -->
+			<removeSkill id="1184" onlyReplaceByLearn="true" /> <!-- Ice Bolt -->
+		</skill>
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="3" getLevel="22" levelUpSp="230" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="4" getLevel="24" levelUpSp="230" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="5" getLevel="26" levelUpSp="230" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="6" getLevel="28" levelUpSp="570" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="7" getLevel="30" levelUpSp="570" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="8" getLevel="32" levelUpSp="570" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="9" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Divine Strike" skillId="1031" skillLevel="10" getLevel="36" levelUpSp="1300" />
+		<skill skillName="Mental Shield" skillId="1035" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Magic Barrier" skillId="1036" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="3" getLevel="25" levelUpSp="230" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="4" getLevel="30" levelUpSp="570" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="5" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Shield" skillId="1040" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Wild Magic" skillId="1303" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Death Whisper" skillId="1242" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Death Whisper" skillId="1242" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Empower" skillId="1059" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Empower" skillId="1059" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Quick Recovery" skillId="164" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Quick Recovery" skillId="164" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Fast Spellcasting" skillId="228" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="1" getLevel="20" levelUpSp="60">
+			<removeSkill id="249" onlyReplaceByLearn="true" /> <!-- Weapon Mastery -->
+		</skill>
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Berserker Spirit" skillId="1062" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="1" getLevel="21" levelUpSp="60" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Might" skillId="1068" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="2" getLevel="22" levelUpSp="230" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="3" getLevel="24" levelUpSp="230" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="4" getLevel="26" levelUpSp="230" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="5" getLevel="28" levelUpSp="570" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="6" getLevel="30" levelUpSp="570" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="7" getLevel="32" levelUpSp="570" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="8" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="9" getLevel="36" levelUpSp="1300" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="10" getLevel="38" levelUpSp="1300" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="2" getLevel="22" levelUpSp="230" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="3" getLevel="24" levelUpSp="230" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="4" getLevel="26" levelUpSp="230" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="5" getLevel="28" levelUpSp="570" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="6" getLevel="30" levelUpSp="570" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="7" getLevel="32" levelUpSp="570" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="8" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="9" getLevel="36" levelUpSp="1300" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="10" getLevel="38" levelUpSp="1300" />
+		<skill skillName="Increased Power of Magic" skillId="1073" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="4" getLevel="21" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="5" getLevel="21" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="6" getLevel="21" levelUpSp="60" />
+		<skill skillName="Heal" skillId="1011" skillLevel="7" getLevel="22" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="8" getLevel="22" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="9" getLevel="22" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="10" getLevel="23" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="11" getLevel="24" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="12" getLevel="25" levelUpSp="230" />
+		<skill skillName="Heal" skillId="1011" skillLevel="13" getLevel="28" levelUpSp="570" />
+		<skill skillName="Heal" skillId="1011" skillLevel="14" getLevel="29" levelUpSp="570" />
+		<skill skillName="Heal" skillId="1011" skillLevel="15" getLevel="30" levelUpSp="570" />
+		<skill skillName="Heal" skillId="1011" skillLevel="16" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Heal" skillId="1011" skillLevel="17" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Heal" skillId="1011" skillLevel="18" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Peace" skillId="1075" skillLevel="1" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Wind Walk" skillId="1204" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Wind Walk" skillId="1204" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Cure" skillId="1012" skillLevel="1" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Cure" skillId="1012" skillLevel="2" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Focus" skillId="1077" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Focus" skillId="1077" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Concentration" skillId="1078" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="4" getLevel="20" levelUpSp="60" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="5" getLevel="20" levelUpSp="60" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="6" getLevel="20" levelUpSp="60" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="7" getLevel="23" levelUpSp="230" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="8" getLevel="24" levelUpSp="230" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="9" getLevel="25" levelUpSp="230" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="10" getLevel="28" levelUpSp="570" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="11" getLevel="29" levelUpSp="570" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="12" getLevel="30" levelUpSp="570" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="13" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="14" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Battle Heal" skillId="1015" skillLevel="15" getLevel="35" levelUpSp="1300" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Resurrection" skillId="1016" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Acumen" skillId="1085" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Acumen" skillId="1085" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Haste" skillId="1086" skillLevel="1" getLevel="20" levelUpSp="60" />
+	</skillTree>
+</list>

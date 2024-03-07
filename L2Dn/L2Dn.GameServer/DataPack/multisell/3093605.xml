@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30936</npc> <!-- Pona -->
+	</npcs>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="1" /> <!-- +1 White Sayha's Cloak -->
+		<production id="93301" count="1" enchantmentLevel="1" /> <!-- +1 Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="1" /> <!-- +1 White Sayha's Cloak -->
+		<production id="93303" count="1" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="2" /> <!-- +2 White Sayha's Cloak -->
+		<production id="93303" count="2" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="3" /> <!-- +3 White Sayha's Cloak -->
+		<production id="93303" count="3" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="4" /> <!-- +4 White Sayha's Cloak -->
+		<production id="93303" count="5" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="5" /> <!-- +5 White Sayha's Cloak -->
+		<production id="93303" count="10" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="6" /> <!-- +6 White Sayha's Cloak -->
+		<production id="93303" count="25" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="7" /> <!-- +7 White Sayha's Cloak -->
+		<production id="93303" count="81" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="8" /> <!-- +8 White Sayha's Cloak -->
+		<production id="93303" count="100" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="9" /> <!-- +9 White Sayha's Cloak -->
+		<production id="93303" count="200" /> <!-- Package: Cloak of Protection -->
+	</item>
+	<item>
+		<ingredient id="91211" count="1" enchantmentLevel="10" /> <!-- +10 White Sayha's Cloak -->
+		<production id="93303" count="400" /> <!-- Package: Cloak of Protection -->
+	</item>
+</list>

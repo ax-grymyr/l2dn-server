@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="84800" toLevel="1" name="Mystic Ignore Ability Lv. 5">
+		<!-- Damage Decrease Ignore +300 -->
+		<icon>icon.etc_dex_symbol_i01</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84801" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84802" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84803" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84804" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84805" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84806" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84807" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84808" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84809" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84810" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84811" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84812" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84813" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84814" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84815" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84816" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84817" toLevel="1" name="Soulshot/ Spiritshot Damage Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84818" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84819" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84820" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84821" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84822" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84823" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84824" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84825" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84826" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84827" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84828" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84829" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84830" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84831" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84832" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84833" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84834" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84835" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84836" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84837" toLevel="1" name="Debuff Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84838" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84839" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84840" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84841" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84842" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84843" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84844" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84845" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84846" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84847" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84848" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84849" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84850" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84851" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84852" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84853" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84854" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84855" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84856" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84857" toLevel="1" name="Skill Critical Damage">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84858" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84859" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84860" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84861" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84862" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84863" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84864" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84865" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84866" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84867" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84868" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84869" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84870" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84871" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84872" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84873" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84874" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84875" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84876" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84877" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84881" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84882" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84883" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84884" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84885" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84886" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84887" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84888" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84889" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84890" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84891" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84892" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84893" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84894" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84895" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84896" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84897" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84898" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84899" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+</list>

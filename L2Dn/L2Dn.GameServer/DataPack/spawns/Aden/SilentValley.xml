@@ -1,0 +1,1811 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo001" minZ="-6240" maxZ="-5340">
+				<node x="172310" y="52740" />
+				<node x="173341" y="52744" />
+				<node x="173346" y="53771" />
+				<node x="172314" y="53767" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo002" minZ="-6240" maxZ="-5340">
+				<node x="172107" y="53580" />
+				<node x="173138" y="53584" />
+				<node x="173142" y="54611" />
+				<node x="172111" y="54607" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo003" minZ="-6240" maxZ="-5340">
+				<node x="172112" y="54628" />
+				<node x="173144" y="54632" />
+				<node x="173148" y="55659" />
+				<node x="172117" y="55655" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo004" minZ="-6240" maxZ="-5340">
+				<node x="172110" y="55666" />
+				<node x="173141" y="55671" />
+				<node x="173145" y="56698" />
+				<node x="172114" y="56694" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo005" minZ="-6240" maxZ="-5340">
+				<node x="173121" y="52550" />
+				<node x="174152" y="52555" />
+				<node x="174156" y="53582" />
+				<node x="173125" y="53577" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo006" minZ="-6240" maxZ="-5340">
+				<node x="173125" y="53580" />
+				<node x="174156" y="53584" />
+				<node x="174161" y="54611" />
+				<node x="173129" y="54607" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo007" minZ="-6240" maxZ="-5340">
+				<node x="173131" y="54628" />
+				<node x="174162" y="54632" />
+				<node x="174166" y="55659" />
+				<node x="173135" y="55655" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo008" minZ="-6240" maxZ="-5340">
+				<node x="173128" y="55666" />
+				<node x="174159" y="55671" />
+				<node x="174164" y="56698" />
+				<node x="173132" y="56694" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo009" minZ="-6240" maxZ="-5340">
+				<node x="172945" y="56690" />
+				<node x="173976" y="56694" />
+				<node x="173980" y="57721" />
+				<node x="172949" y="57717" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo010" minZ="-6240" maxZ="-5340">
+				<node x="172950" y="57738" />
+				<node x="173982" y="57742" />
+				<node x="173986" y="58769" />
+				<node x="172954" y="58765" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo011" minZ="-6240" maxZ="-5340">
+				<node x="172948" y="58777" />
+				<node x="173979" y="58781" />
+				<node x="173983" y="59808" />
+				<node x="172952" y="59804" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo012" minZ="-6240" maxZ="-5340">
+				<node x="174145" y="52550" />
+				<node x="175176" y="52555" />
+				<node x="175180" y="53582" />
+				<node x="174149" y="53577" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo013" minZ="-6240" maxZ="-5340">
+				<node x="174149" y="53580" />
+				<node x="175181" y="53584" />
+				<node x="175185" y="54611" />
+				<node x="174154" y="54607" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo014" minZ="-6240" maxZ="-5340">
+				<node x="174155" y="54628" />
+				<node x="175186" y="54632" />
+				<node x="175191" y="55659" />
+				<node x="174159" y="55655" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo015" minZ="-6240" maxZ="-5340">
+				<node x="174152" y="55660" />
+				<node x="175184" y="55664" />
+				<node x="175188" y="56692" />
+				<node x="174157" y="56687" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo016" minZ="-6240" maxZ="-5340">
+				<node x="173963" y="56690" />
+				<node x="174994" y="56694" />
+				<node x="174999" y="57721" />
+				<node x="173967" y="57717" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo017" minZ="-6240" maxZ="-5340">
+				<node x="173969" y="57738" />
+				<node x="175000" y="57742" />
+				<node x="175004" y="58769" />
+				<node x="173973" y="58765" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo018" minZ="-6240" maxZ="-5340">
+				<node x="173966" y="58777" />
+				<node x="174997" y="58781" />
+				<node x="175002" y="59808" />
+				<node x="173970" y="59804" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo019" minZ="-6240" maxZ="-5340">
+				<node x="175174" y="52557" />
+				<node x="176205" y="52561" />
+				<node x="176209" y="53588" />
+				<node x="175178" y="53584" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo020" minZ="-6240" maxZ="-5340">
+				<node x="175178" y="53586" />
+				<node x="176210" y="53591" />
+				<node x="176214" y="54618" />
+				<node x="175183" y="54614" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo021" minZ="-6240" maxZ="-5340">
+				<node x="175184" y="54635" />
+				<node x="176215" y="54639" />
+				<node x="176220" y="55666" />
+				<node x="175188" y="55662" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo022" minZ="-6240" maxZ="-5340">
+				<node x="175181" y="55667" />
+				<node x="176213" y="55671" />
+				<node x="176217" y="56698" />
+				<node x="175186" y="56694" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo023" minZ="-6240" maxZ="-5340">
+				<node x="174999" y="56693" />
+				<node x="176030" y="56698" />
+				<node x="176034" y="57725" />
+				<node x="175003" y="57720" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo024" minZ="-6240" maxZ="-5340">
+				<node x="175004" y="57742" />
+				<node x="176035" y="57746" />
+				<node x="176040" y="58773" />
+				<node x="175008" y="58769" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo025" minZ="-6240" maxZ="-5340">
+				<node x="175001" y="58780" />
+				<node x="176033" y="58784" />
+				<node x="176037" y="59811" />
+				<node x="175006" y="59807" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo026" minZ="-6240" maxZ="-5340">
+				<node x="176213" y="52422" />
+				<node x="177245" y="52426" />
+				<node x="177249" y="53453" />
+				<node x="176218" y="53449" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo027" minZ="-6240" maxZ="-5340">
+				<node x="176218" y="53451" />
+				<node x="177249" y="53455" />
+				<node x="177254" y="54482" />
+				<node x="176222" y="54478" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo028" minZ="-6240" maxZ="-5340">
+				<node x="176224" y="54499" />
+				<node x="177255" y="54503" />
+				<node x="177259" y="55531" />
+				<node x="176228" y="55526" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo029" minZ="-6240" maxZ="-5340">
+				<node x="176228" y="55534" />
+				<node x="177259" y="55538" />
+				<node x="177264" y="56565" />
+				<node x="176232" y="56561" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo030" minZ="-6240" maxZ="-5340">
+				<node x="176142" y="56601" />
+				<node x="177173" y="56605" />
+				<node x="177178" y="57632" />
+				<node x="176146" y="57628" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo031" minZ="-6240" maxZ="-5340">
+				<node x="176148" y="57649" />
+				<node x="177179" y="57653" />
+				<node x="177183" y="58680" />
+				<node x="176152" y="58676" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo032" minZ="-6240" maxZ="-5340">
+				<node x="175691" y="58393" />
+				<node x="176722" y="58398" />
+				<node x="176726" y="59425" />
+				<node x="175695" y="59421" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo033" minZ="-6240" maxZ="-5340">
+				<node x="177381" y="51587" />
+				<node x="178412" y="51591" />
+				<node x="178416" y="52618" />
+				<node x="177385" y="52614" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo034" minZ="-6240" maxZ="-5340">
+				<node x="177238" y="52422" />
+				<node x="178269" y="52426" />
+				<node x="178273" y="53453" />
+				<node x="177242" y="53449" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo035" minZ="-6240" maxZ="-5340">
+				<node x="177242" y="53451" />
+				<node x="178274" y="53455" />
+				<node x="178278" y="54482" />
+				<node x="177247" y="54478" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo036" minZ="-6240" maxZ="-5340">
+				<node x="177248" y="54499" />
+				<node x="178279" y="54503" />
+				<node x="178284" y="55531" />
+				<node x="177252" y="55526" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo037" minZ="-6240" maxZ="-5340">
+				<node x="177252" y="55534" />
+				<node x="178284" y="55538" />
+				<node x="178288" y="56565" />
+				<node x="177257" y="56561" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo038" minZ="-6240" maxZ="-5340">
+				<node x="177257" y="56563" />
+				<node x="178288" y="56568" />
+				<node x="178293" y="57595" />
+				<node x="177261" y="57591" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo039" minZ="-6240" maxZ="-5340">
+				<node x="177263" y="57612" />
+				<node x="178294" y="57616" />
+				<node x="178298" y="58643" />
+				<node x="177267" y="58639" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo040" minZ="-6240" maxZ="-5340">
+				<node x="178254" y="51391" />
+				<node x="179285" y="51396" />
+				<node x="179289" y="52423" />
+				<node x="178258" y="52418" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo041" minZ="-6240" maxZ="-5340">
+				<node x="178267" y="52428" />
+				<node x="179298" y="52433" />
+				<node x="179302" y="53460" />
+				<node x="178271" y="53455" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo042" minZ="-6240" maxZ="-5340">
+				<node x="178271" y="53458" />
+				<node x="179303" y="53462" />
+				<node x="179307" y="54489" />
+				<node x="178276" y="54485" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo043" minZ="-6240" maxZ="-5340">
+				<node x="178277" y="54506" />
+				<node x="179308" y="54510" />
+				<node x="179312" y="55537" />
+				<node x="178281" y="55533" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo044" minZ="-6240" maxZ="-5340">
+				<node x="178281" y="55541" />
+				<node x="179313" y="55545" />
+				<node x="179317" y="56572" />
+				<node x="178286" y="56568" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo045" minZ="-6240" maxZ="-5340">
+				<node x="178286" y="56570" />
+				<node x="179317" y="56575" />
+				<node x="179321" y="57602" />
+				<node x="178290" y="57597" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo046" minZ="-6240" maxZ="-5340">
+				<node x="178291" y="57618" />
+				<node x="179323" y="57623" />
+				<node x="179327" y="58650" />
+				<node x="178296" y="58646" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo047" minZ="-6240" maxZ="-5340">
+				<node x="179296" y="50820" />
+				<node x="180327" y="50824" />
+				<node x="180332" y="51851" />
+				<node x="179300" y="51847" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo048" minZ="-6240" maxZ="-5340">
+				<node x="179301" y="51849" />
+				<node x="180332" y="51853" />
+				<node x="180336" y="52880" />
+				<node x="179305" y="52876" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo049" minZ="-6240" maxZ="-5340">
+				<node x="179306" y="52897" />
+				<node x="180337" y="52902" />
+				<node x="180342" y="53929" />
+				<node x="179310" y="53924" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo050" minZ="-6240" maxZ="-5340">
+				<node x="179311" y="53932" />
+				<node x="180342" y="53937" />
+				<node x="180346" y="54964" />
+				<node x="179315" y="54959" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo051" minZ="-6240" maxZ="-5340">
+				<node x="179315" y="54962" />
+				<node x="180346" y="54966" />
+				<node x="180351" y="55993" />
+				<node x="179319" y="55989" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo052" minZ="-6240" maxZ="-5340">
+				<node x="179321" y="56010" />
+				<node x="180352" y="56014" />
+				<node x="180356" y="57041" />
+				<node x="179325" y="57037" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo053" minZ="-6240" maxZ="-5340">
+				<node x="179337" y="56910" />
+				<node x="180369" y="56914" />
+				<node x="180373" y="57942" />
+				<node x="179341" y="57937" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo054" minZ="-6240" maxZ="-5340">
+				<node x="180537" y="49069" />
+				<node x="181568" y="49073" />
+				<node x="181573" y="50100" />
+				<node x="180541" y="50096" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo055" minZ="-6240" maxZ="-5340">
+				<node x="180327" y="49782" />
+				<node x="181358" y="49786" />
+				<node x="181362" y="50813" />
+				<node x="180331" y="50809" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo056" minZ="-6240" maxZ="-5340">
+				<node x="180320" y="50820" />
+				<node x="181352" y="50824" />
+				<node x="181356" y="51851" />
+				<node x="180325" y="51847" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo057" minZ="-6240" maxZ="-5340">
+				<node x="180325" y="51849" />
+				<node x="181356" y="51853" />
+				<node x="181360" y="52881" />
+				<node x="180329" y="52876" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo058" minZ="-6240" maxZ="-5340">
+				<node x="180330" y="52897" />
+				<node x="181362" y="52902" />
+				<node x="181366" y="53929" />
+				<node x="180335" y="53924" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo059" minZ="-6240" maxZ="-5340">
+				<node x="180335" y="53932" />
+				<node x="181366" y="53937" />
+				<node x="181370" y="54964" />
+				<node x="180339" y="54959" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo060" minZ="-6240" maxZ="-5340">
+				<node x="180339" y="54962" />
+				<node x="181371" y="54966" />
+				<node x="181375" y="55993" />
+				<node x="180344" y="55989" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo061" minZ="-6240" maxZ="-5340">
+				<node x="180345" y="56010" />
+				<node x="181376" y="56014" />
+				<node x="181381" y="57041" />
+				<node x="180349" y="57037" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo062" minZ="-6240" maxZ="-5340">
+				<node x="180362" y="56910" />
+				<node x="181393" y="56915" />
+				<node x="181397" y="57942" />
+				<node x="180366" y="57937" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo063" minZ="-6240" maxZ="-5340">
+				<node x="181368" y="48739" />
+				<node x="182399" y="48743" />
+				<node x="182403" y="49770" />
+				<node x="181372" y="49766" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo064" minZ="-6240" maxZ="-5340">
+				<node x="181356" y="49789" />
+				<node x="182387" y="49793" />
+				<node x="182391" y="50820" />
+				<node x="181360" y="50816" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo065" minZ="-6240" maxZ="-5340">
+				<node x="181349" y="50827" />
+				<node x="182381" y="50831" />
+				<node x="182385" y="51858" />
+				<node x="181353" y="51854" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo066" minZ="-6240" maxZ="-5340">
+				<node x="181354" y="51856" />
+				<node x="182385" y="51860" />
+				<node x="182389" y="52887" />
+				<node x="181358" y="52883" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo067" minZ="-6240" maxZ="-5340">
+				<node x="181359" y="52904" />
+				<node x="182391" y="52908" />
+				<node x="182395" y="53936" />
+				<node x="181364" y="53931" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo068" minZ="-6240" maxZ="-5340">
+				<node x="181364" y="53939" />
+				<node x="182395" y="53943" />
+				<node x="182399" y="54970" />
+				<node x="181368" y="54966" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo069" minZ="-6240" maxZ="-5340">
+				<node x="181368" y="54968" />
+				<node x="182400" y="54973" />
+				<node x="182404" y="56000" />
+				<node x="181373" y="55996" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo070" minZ="-6240" maxZ="-5340">
+				<node x="181374" y="56017" />
+				<node x="182405" y="56021" />
+				<node x="182410" y="57048" />
+				<node x="181378" y="57044" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo071" minZ="-6240" maxZ="-5340">
+				<node x="182402" y="46956" />
+				<node x="183433" y="46961" />
+				<node x="183437" y="47988" />
+				<node x="182406" y="47983" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo072" minZ="-6240" maxZ="-5340">
+				<node x="182406" y="47986" />
+				<node x="183437" y="47990" />
+				<node x="183442" y="49017" />
+				<node x="182410" y="49013" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo073" minZ="-6240" maxZ="-5340">
+				<node x="182412" y="49034" />
+				<node x="183443" y="49038" />
+				<node x="183447" y="50065" />
+				<node x="182416" y="50061" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo074" minZ="-6240" maxZ="-5340">
+				<node x="182416" y="50069" />
+				<node x="183447" y="50073" />
+				<node x="183452" y="51100" />
+				<node x="182420" y="51096" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo075" minZ="-6240" maxZ="-5340">
+				<node x="182421" y="51098" />
+				<node x="183452" y="51102" />
+				<node x="183456" y="52130" />
+				<node x="182425" y="52125" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo076" minZ="-6240" maxZ="-5340">
+				<node x="182426" y="52146" />
+				<node x="183458" y="52151" />
+				<node x="183462" y="53178" />
+				<node x="182431" y="53173" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo077" minZ="-6240" maxZ="-5340">
+				<node x="182339" y="53192" />
+				<node x="183371" y="53197" />
+				<node x="183375" y="54224" />
+				<node x="182344" y="54219" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo078" minZ="-6240" maxZ="-5340">
+				<node x="182414" y="54232" />
+				<node x="183446" y="54236" />
+				<node x="183450" y="55263" />
+				<node x="182419" y="55259" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo079" minZ="-6240" maxZ="-5340">
+				<node x="182328" y="55284" />
+				<node x="183359" y="55288" />
+				<node x="183363" y="56315" />
+				<node x="182332" y="56311" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo080" minZ="-6240" maxZ="-5340">
+				<node x="183426" y="46956" />
+				<node x="184457" y="46961" />
+				<node x="184462" y="47988" />
+				<node x="183430" y="47983" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo081" minZ="-6240" maxZ="-5340">
+				<node x="183431" y="47986" />
+				<node x="184462" y="47990" />
+				<node x="184466" y="49017" />
+				<node x="183435" y="49013" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo082" minZ="-6240" maxZ="-5340">
+				<node x="183436" y="49034" />
+				<node x="184467" y="49038" />
+				<node x="184472" y="50065" />
+				<node x="183440" y="50061" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo083" minZ="-6240" maxZ="-5340">
+				<node x="183441" y="50069" />
+				<node x="184472" y="50073" />
+				<node x="184476" y="51100" />
+				<node x="183445" y="51096" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo084" minZ="-6240" maxZ="-5340">
+				<node x="183445" y="51098" />
+				<node x="184476" y="51102" />
+				<node x="184481" y="52130" />
+				<node x="183449" y="52125" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo085" minZ="-6240" maxZ="-5340">
+				<node x="183451" y="52146" />
+				<node x="184482" y="52151" />
+				<node x="184486" y="53178" />
+				<node x="183455" y="53174" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo086" minZ="-6240" maxZ="-5340">
+				<node x="183364" y="53192" />
+				<node x="184395" y="53197" />
+				<node x="184399" y="54224" />
+				<node x="183368" y="54219" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo087" minZ="-6240" maxZ="-5340">
+				<node x="184455" y="46963" />
+				<node x="185486" y="46967" />
+				<node x="185490" y="47994" />
+				<node x="184459" y="47990" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo088" minZ="-6240" maxZ="-5340">
+				<node x="184459" y="47992" />
+				<node x="185491" y="47997" />
+				<node x="185495" y="49024" />
+				<node x="184464" y="49020" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo089" minZ="-6240" maxZ="-5340">
+				<node x="184465" y="49041" />
+				<node x="185496" y="49045" />
+				<node x="185501" y="50072" />
+				<node x="184469" y="50068" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo090" minZ="-6240" maxZ="-5340">
+				<node x="184469" y="50076" />
+				<node x="185501" y="50080" />
+				<node x="185505" y="51107" />
+				<node x="184474" y="51103" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo091" minZ="-6240" maxZ="-5340">
+				<node x="184474" y="51105" />
+				<node x="185505" y="51109" />
+				<node x="185510" y="52136" />
+				<node x="184478" y="52132" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo092" minZ="-6240" maxZ="-5340">
+				<node x="184480" y="52153" />
+				<node x="185511" y="52157" />
+				<node x="185515" y="53185" />
+				<node x="184484" y="53180" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo093" minZ="-6240" maxZ="-5340">
+				<node x="185495" y="46483" />
+				<node x="186526" y="46488" />
+				<node x="186531" y="47515" />
+				<node x="185499" y="47511" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo094" minZ="-6240" maxZ="-5340">
+				<node x="185500" y="47513" />
+				<node x="186531" y="47517" />
+				<node x="186535" y="48544" />
+				<node x="185504" y="48540" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo095" minZ="-6240" maxZ="-5340">
+				<node x="185505" y="48561" />
+				<node x="186537" y="48565" />
+				<node x="186541" y="49592" />
+				<node x="185510" y="49588" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo096" minZ="-6240" maxZ="-5340">
+				<node x="185510" y="49596" />
+				<node x="186541" y="49600" />
+				<node x="186545" y="50627" />
+				<node x="185514" y="50623" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo097" minZ="-6240" maxZ="-5340">
+				<node x="185514" y="50625" />
+				<node x="186546" y="50630" />
+				<node x="186550" y="51657" />
+				<node x="185519" y="51652" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo098" minZ="-6240" maxZ="-5340">
+				<node x="185520" y="51674" />
+				<node x="186551" y="51678" />
+				<node x="186555" y="52705" />
+				<node x="185524" y="52701" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo099" minZ="-6240" maxZ="-5340">
+				<node x="186770" y="45682" />
+				<node x="187801" y="45686" />
+				<node x="187805" y="46714" />
+				<node x="186774" y="46709" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo100" minZ="-6240" maxZ="-5340">
+				<node x="186519" y="46483" />
+				<node x="187551" y="46488" />
+				<node x="187555" y="47515" />
+				<node x="186524" y="47511" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo101" minZ="-6240" maxZ="-5340">
+				<node x="186524" y="47513" />
+				<node x="187555" y="47517" />
+				<node x="187560" y="48544" />
+				<node x="186528" y="48540" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo102" minZ="-6240" maxZ="-5340">
+				<node x="186530" y="48561" />
+				<node x="187561" y="48565" />
+				<node x="187565" y="49592" />
+				<node x="186534" y="49588" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo103" minZ="-6240" maxZ="-5340">
+				<node x="186534" y="49596" />
+				<node x="187565" y="49600" />
+				<node x="187570" y="50627" />
+				<node x="186538" y="50623" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo104" minZ="-6240" maxZ="-5340">
+				<node x="186539" y="50625" />
+				<node x="187570" y="50630" />
+				<node x="187574" y="51657" />
+				<node x="186543" y="51652" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo105" minZ="-6240" maxZ="-5340">
+				<node x="186544" y="51674" />
+				<node x="187576" y="51678" />
+				<node x="187580" y="52705" />
+				<node x="186548" y="52701" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo106" minZ="-6240" maxZ="-5340">
+				<node x="187548" y="46490" />
+				<node x="188580" y="46494" />
+				<node x="188584" y="47522" />
+				<node x="187553" y="47517" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo107" minZ="-6240" maxZ="-5340">
+				<node x="187553" y="47520" />
+				<node x="188584" y="47524" />
+				<node x="188589" y="48551" />
+				<node x="187557" y="48547" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo108" minZ="-6240" maxZ="-5340">
+				<node x="187559" y="48568" />
+				<node x="188590" y="48572" />
+				<node x="188594" y="49599" />
+				<node x="187563" y="49595" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo109" minZ="-6240" maxZ="-5340">
+				<node x="187563" y="49603" />
+				<node x="188594" y="49607" />
+				<node x="188599" y="50634" />
+				<node x="187567" y="50630" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo110" minZ="-6240" maxZ="-5340">
+				<node x="187568" y="50632" />
+				<node x="188599" y="50636" />
+				<node x="188603" y="51663" />
+				<node x="187572" y="51659" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo111" minZ="-6240" maxZ="-5340">
+				<node x="187458" y="51553" />
+				<node x="188489" y="51557" />
+				<node x="188494" y="52584" />
+				<node x="187462" y="52580" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo112" minZ="-6240" maxZ="-5340">
+				<node x="188287" y="48276" />
+				<node x="189318" y="48281" />
+				<node x="189322" y="49308" />
+				<node x="188291" y="49304" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden23_2519_goyo113" minZ="-6240" maxZ="-5340">
+				<node x="188291" y="49311" />
+				<node x="189323" y="49316" />
+				<node x="189327" y="50343" />
+				<node x="188296" y="50338" />
+			</territory>
+		</territories>
+		<npc id="20967" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Creature of the Past -->
+		<npc id="20971" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Ancient Creature -->
+		<npc id="20968" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Forgotten Face -->
+		<npc id="20969" count="1" respawnTime="3sec" chaseRange="3000" /> <!-- Giant's Shadow -->
+	</spawn>
+</list>

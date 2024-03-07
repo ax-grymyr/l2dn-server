@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<npcs>
+		<npc>35457</npc>
+	</npcs>
+	<item id="1829" price="500" count="5" restock_delay="60" /> <!-- Scroll of Escape: Clan Hall -->
+	<item id="5858" price="110000" count="1" restock_delay="60" /> <!-- Blessed Scroll of Escape: Clan Hall -->
+	<item id="735" price="2400" count="1" restock_delay="60" /> <!-- Haste Potion -->
+	<item id="6035" price="2640" count="1" restock_delay="60" /> <!-- Magic Haste Potion -->
+	<item id="6036" price="6600" count="1" restock_delay="60" /> <!-- Greater Magic Haste Potion -->
+	<item id="93662" price="22000" count="1" restock_delay="60"/> <!-- Facelifting Potion A -->
+	<item id="93663" price="22000" count="1" restock_delay="60"/> <!-- Facelifting Potion B -->
+	<item id="93664" price="22000" count="1" restock_delay="60"/> <!-- Facelifting Potion C -->
+	<item id="97944" price="22000" count="1" restock_delay="60"/> <!-- Facelifting Potion D -->
+	<item id="97945" price="22000" count="1" restock_delay="60"/> <!-- Facelifting Potion E -->
+	<item id="93665" price="22000" count="1" restock_delay="60"/> <!-- Dye Potion A -->
+	<item id="93666" price="22000" count="1" restock_delay="60"/> <!-- Dye Potion B -->
+	<item id="93667" price="22000" count="1" restock_delay="60"/> <!-- Dye Potion C -->
+	<item id="93668" price="22000" count="1" restock_delay="60"/> <!-- Dye Potion D -->
+	<item id="93669" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion A -->
+	<item id="93670" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion B -->
+	<item id="93671" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion C -->
+	<item id="93672" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion D -->
+	<item id="93673" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion E -->
+	<item id="93674" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion F -->
+	<item id="93675" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion G -->
+	<item id="98087" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion F -->
+	<item id="98088" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion G -->
+	<item id="97946" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion H -->
+	<item id="97947" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion I -->
+	<item id="97948" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion J -->
+	<item id="97949" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion K -->
+	<item id="97950" price="22000" count="1" restock_delay="60"/> <!-- Hair Style Potion L -->
+	<item id="5234" price="11000" count="1" restock_delay="60" /> <!-- Mysterious Potion -->
+	<item id="5126" price="180000" count="2" restock_delay="60" /> <!-- Dual Weapon Crafting Stamp -->
+	<item id="49684" price="200000" count="5" restock_delay="60" /> <!-- Talisman Crystal -->
+	<item id="5593" price="55000" count="10" restock_delay="60" /> <!-- SP Scroll (Low-grade) -->
+	<item id="5594" price="330000" count="10" restock_delay="60" /> <!-- SP Scroll (Mid-grade) -->
+	<item id="49030" price="540000" count="1" restock_delay="60" /> <!-- Scroll: PK (A-Grade) -->
+</list>

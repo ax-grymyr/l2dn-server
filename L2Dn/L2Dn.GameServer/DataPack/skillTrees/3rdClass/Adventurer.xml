@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="93" parentClassId="8">
+		<skill skillName="Exciting Adventure" skillId="768" skillLevel="1" getLevel="80" levelUpSp="1940000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Exciting Adventure" skillId="768" skillLevel="2" getLevel="76" levelUpSp="830000">
+			<item id="98705,98701" count="1" /> <!-- Spellbook: Exciting Adventure Lv. 2 -->
+		</skill>
+		<skill skillName="Shadow Assault" skillId="47362" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="96675,96663" count="1" /> <!-- Spellbook: Shadow Assault -->
+		</skill>
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Fast Run" skillId="4" skillLevel="3" getLevel="82" levelUpSp="17000000">
+			<item id="96673,96661" count="1" /> <!-- Spellbook: Fast Run Lv. 3 -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Fatal Accuracy" skillId="47365" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="96674,96662" count="1" /> <!-- Spellbook: Fatal Accuracy -->
+		</skill>
+		<skill skillName="Fatal Accuracy" skillId="47365" skillLevel="2" getLevel="80" levelUpSp="1940000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="41" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="42" getLevel="77" levelUpSp="830000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="43" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="44" getLevel="79" levelUpSp="1940000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="45" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="46" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="47" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="48" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="49" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="50" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="51" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="52" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="53" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="54" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="55" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Rogue Agility" skillId="47367" skillLevel="1" getLevel="76" levelUpSp="0" autoGet="true" />
+		<skill skillName="Weapon Mastery" skillId="141" skillLevel="5" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Critical Wound" skillId="531" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Critical Wound" skillId="531" skillLevel="2" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Critical Wound" skillId="531" skillLevel="3" getLevel="83" levelUpSp="24000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Critical Wound" skillId="531" skillLevel="4" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Critical Wound" skillId="531" skillLevel="5" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sand Bomb" skillId="412" skillLevel="11" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Flying Dagger" skillId="45477" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<removeSkill id="96" onlyReplaceByLearn="true" /> <!-- Bleed -->
+			<removeSkill id="1629" onlyReplaceByLearn="true" /> <!-- Throw Dagger in Wrist -->
+			<item id="95561,94806" count="1" /> <!-- Spellbook: Flying Dagger -->
+		</skill>
+		<skill skillName="Flying Dagger" skillId="45477" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Mount Golden Lion" skillId="1833" skillLevel="1" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Shadow Step" skillId="821" skillLevel="8" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Shadow Step" skillId="821" skillLevel="9" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shadow Step" skillId="821" skillLevel="10" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shadow Step" skillId="821" skillLevel="11" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shadow Step" skillId="821" skillLevel="12" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Mirage" skillId="445" skillLevel="1" getLevel="79" levelUpSp="1940000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mirage" skillId="445" skillLevel="2" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="50000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="1" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="2" getLevel="77" levelUpSp="830000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="3" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="4" getLevel="79" levelUpSp="1940000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="5" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Lethal Blow" skillId="344" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Throw Dagger in Wrist" skillId="1629" skillLevel="1" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Clear Movements" skillId="1631" skillLevel="1" getLevel="77" levelUpSp="830000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Clear Movements" skillId="1631" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bleed" skillId="96" skillLevel="7" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="8" getLevel="77" levelUpSp="830000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="9" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="10" getLevel="79" levelUpSp="1940000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="11" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="12" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="13" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="14" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Bleed" skillId="96" skillLevel="15" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Focus Death" skillId="355" skillLevel="1" getLevel="78" levelUpSp="1940000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="5" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="6" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="7" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Rogue's Weapon Mastery" skillId="47331" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Focus Chance" skillId="356" skillLevel="1" getLevel="78" levelUpSp="1940000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="5" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="6" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="7" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="16" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="17" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Rogue's Armor Mastery" skillId="47332" skillLevel="18" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Focus Power" skillId="357" skillLevel="1" getLevel="78" levelUpSp="1940000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="8" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="9" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Acrobatic Body" skillId="47333" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Bluff" skillId="358" skillLevel="2" getLevel="77" levelUpSp="830000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="3" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="4" getLevel="79" levelUpSp="1940000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="5" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Bluff" skillId="358" skillLevel="10" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bluff" skillId="358" skillLevel="11" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bluff" skillId="358" skillLevel="12" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Backstab" skillId="47334" skillLevel="5" getLevel="76" levelUpSp="830000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="6" getLevel="78" levelUpSp="1940000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="7" getLevel="80" levelUpSp="1940000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Backstab" skillId="47334" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Seclusion" skillId="47339" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="96677,96665" count="1" /> <!-- Spellbook: Seclusion -->
+		</skill>
+		<skill skillName="Dark Blow" skillId="47341" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<removeSkill id="3" onlyReplaceByLearn="true" /> <!-- Power Strike -->
+			<removeSkill id="16" onlyReplaceByLearn="true" /> <!-- Mortal Blow -->
+			<removeSkill id="56" onlyReplaceByLearn="true" /> <!-- Power Shot -->
+			<item id="96678,96666" count="1" /> <!-- Spellbook: Dark Blow -->
+		</skill>
+		<skill skillName="Dark Blow" skillId="47341" skillLevel="2" getLevel="83" levelUpSp="24000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dark Blow" skillId="47341" skillLevel="3" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dark Blow" skillId="47341" skillLevel="4" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dark Blow" skillId="47341" skillLevel="5" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bluff Mastery" skillId="47345" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="96676,96664" count="1" /> <!-- Spellbook: Rogue Mastery -->
+		</skill>
+		<skill skillName="Reversed Pull" skillId="47348" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="96679,96667" count="1" /> <!-- Spellbook: Reversed Pull -->
+		</skill>
+		<skill skillName="Critical Assault" skillId="47353" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<removeSkill id="263" onlyReplaceByLearn="true" /> <!-- Deadly Blow -->
+			<item id="96682,96670" count="1" /> <!-- Spellbook: Critical Assault -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="830000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="830000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+		<skill skillName="Hidden Dagger" skillId="45561" skillLevel="1" getLevel="76" levelUpSp="830000">
+			<item id="98708,98704" count="1" /> <!-- Spellbook: Hidden Dagger -->
+		</skill>
+	</skillTree>
+</list>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38700" name="option_id_38700">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38701" name="option_id_38701">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38702" name="option_id_38702">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="38703" name="option_id_38703">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="38704" name="option_id_38704">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="38705" name="option_id_38705">
+		<!-- Received damage -4% -->
+	</option>
+	<option id="38706" name="option_id_38706">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="38707" name="option_id_38707">
+		<!-- Received damage -6% -->
+	</option>
+	<option id="38708" name="option_id_38708">
+		<!-- Received damage -7% -->
+	</option>
+	<option id="38709" name="option_id_38709">
+		<!-- Received damage -8% -->
+	</option>
+	<option id="38710" name="option_id_38710">
+		<!-- Received damage -9% -->
+	</option>
+	<option id="38711" name="option_id_38711">
+		<!-- Received damage -10% -->
+	</option>
+	<option id="38712" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="1" /> <!-- Blessed Dragon Belt -->
+	</option>
+	<option id="38713" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="2" /> <!-- +1 Blessed Dragon Belt -->
+	</option>
+	<option id="38714" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="3" /> <!-- +2 Blessed Dragon Belt -->
+	</option>
+	<option id="38715" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="4" /> <!-- +3 Blessed Dragon Belt -->
+	</option>
+	<option id="38716" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="5" /> <!-- +4 Blessed Dragon Belt -->
+	</option>
+	<option id="38717" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="6" /> <!-- +5 Blessed Dragon Belt -->
+	</option>
+	<option id="38718" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="7" /> <!-- +6 Blessed Dragon Belt -->
+	</option>
+	<option id="38719" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="8" /> <!-- +7 Blessed Dragon Belt -->
+	</option>
+	<option id="38720" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="9" /> <!-- +8 Blessed Dragon Belt -->
+	</option>
+	<option id="38721" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="10" /> <!-- +9 Blessed Dragon Belt -->
+	</option>
+	<option id="38722" name="Blessed Dragon Belt">
+		<passive_skill id="50459" level="11" /> <!-- +10 Blessed Dragon Belt -->
+	</option>
+	<option id="38723" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="1" /> <!-- Necklace of Spirits -->
+	</option>
+	<option id="38724" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="2" /> <!-- +1 Necklace of Spirits -->
+	</option>
+	<option id="38725" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="3" /> <!-- +2 Necklace of Spirits -->
+	</option>
+	<option id="38726" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="4" /> <!-- +3 Necklace of Spirits -->
+	</option>
+	<option id="38727" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="5" /> <!-- +4 Necklace of Spirits -->
+	</option>
+	<option id="38728" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="6" /> <!-- +5 Necklace of Spirits -->
+	</option>
+	<option id="38729" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="7" /> <!-- +6 Necklace of Spirits -->
+	</option>
+	<option id="38730" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="8" /> <!-- +7 Necklace of Spirits -->
+	</option>
+	<option id="38731" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="9" /> <!-- +8 Necklace of Spirits -->
+	</option>
+	<option id="38732" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="10" /> <!-- +9 Necklace of Spirits -->
+	</option>
+	<option id="38733" name="Necklace_of_Spirits">
+		<passive_skill id="50465" level="11" /> <!-- +10 Necklace of Spirits -->
+	</option>
+	<option id="38734" name="Hellbound Ring lvl 1">
+		<passive_skill id="50468" level="1" /> <!-- Hellbound Ring -->
+	</option>
+	<option id="38735" name="Hellbound Ring lvl 2">
+		<passive_skill id="50468" level="2" /> <!-- +1 Hellbound Ring -->
+	</option>
+	<option id="38736" name="Hellbound Ring lvl 3">
+		<passive_skill id="50468" level="3" /> <!-- +2 Hellbound Ring -->
+	</option>
+	<option id="38737" name="Hellbound Ring lvl 4">
+		<passive_skill id="50468" level="4" /> <!-- +3 Hellbound Ring -->
+	</option>
+	<option id="38738" name="Hellbound Ring lvl 5">
+		<passive_skill id="50468" level="5" /> <!-- +4 Hellbound Ring -->
+	</option>
+	<option id="38739" name="Hellbound Ring lvl 6">
+		<passive_skill id="50468" level="6" /> <!-- +5 Hellbound Ring -->
+	</option>
+	<option id="38740" name="Hellbound Ring lvl 7">
+		<passive_skill id="50468" level="7" /> <!-- +6 Hellbound Ring -->
+	</option>
+	<option id="38741" name="Hellbound Ring lvl 8">
+		<passive_skill id="50468" level="8" /> <!-- +7 Hellbound Ring -->
+	</option>
+	<option id="38742" name="Hellbound Ring lvl 9">
+		<passive_skill id="50468" level="9" /> <!-- +8 Hellbound Ring -->
+	</option>
+	<option id="38743" name="Hellbound Ring lvl 10">
+		<passive_skill id="50468" level="10" /> <!-- +9 Hellbound Ring -->
+	</option>
+	<option id="38744" name="Hellbound Ring lvl 11">
+		<passive_skill id="50468" level="11" /> <!-- +10 Hellbound Ring -->
+	</option>
+	<option id="38745" name="option_id_38745">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="38746" name="option_id_38746">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="38747" name="option_id_38747">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="38748" name="option_id_38748">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="38749" name="option_id_38749">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="38750" name="option_id_38750">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="38751" name="option_id_38751">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="38752" name="option_id_38752">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="38753" name="option_id_38753">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="38754" name="option_id_38754">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="38755" name="option_id_38755">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="38756" name="option_id_38756">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="38757" name="option_id_38757">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="38758" name="option_id_38758">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="38759" name="option_id_38759">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="38760" name="option_id_38760">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="38761" name="option_id_38761">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="38762" name="option_id_38762">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="38763" name="option_id_38763">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="38764" name="option_id_38764">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="38765" name="option_id_38765">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="38766" name="option_id_38766">
+		<!-- M. Atk. +16. -->
+	</option>
+	<option id="38767" name="option_id_38767">
+		<!-- M. Atk. +22 -->
+	</option>
+	<option id="38768" name="option_id_38768">
+		<!-- M. Atk. +28 -->
+	</option>
+	<option id="38769" name="option_id_38769">
+		<!-- M. Atk. +34 -->
+	</option>
+	<option id="38770" name="option_id_38770">
+		<!-- M. Atk. +40 -->
+	</option>
+	<option id="38771" name="option_id_38771">
+		<!-- M. Atk. +46 -->
+	</option>
+	<option id="38772" name="option_id_38772">
+		<!-- M. Atk. +52 -->
+	</option>
+	<option id="38773" name="option_id_38773">
+		<!-- M. Atk. +58 -->
+	</option>
+	<option id="38774" name="option_id_38774">
+		<!-- M. Atk. +64 -->
+	</option>
+	<option id="38775" name="option_id_38775">
+		<!-- M. Atk. +70 -->
+	</option>
+	<option id="38776" name="option_id_38776">
+		<!-- M. Atk. +76 -->
+	</option>
+	<option id="38777" name="option_id_38777">
+		<!-- M. Atk. +82 -->
+	</option>
+	<option id="38778" name="option_id_38778">
+		<!-- M. Atk. +88 -->
+	</option>
+	<option id="38779" name="option_id_38779">
+		<!-- M. Atk. +94 -->
+	</option>
+	<option id="38780" name="option_id_38780">
+		<!-- M. Atk. +100 -->
+	</option>
+	<option id="38781" name="option_id_38781">
+		<!-- M. Atk. +110 -->
+	</option>
+	<option id="38782" name="option_id_38782">
+		<!-- M. Atk. +120 -->
+	</option>
+	<option id="38783" name="option_id_38783">
+		<!-- M. Atk. +150 -->
+	</option>
+	<option id="38784" name="option_id_38784">
+		<!-- M. Atk. +200 -->
+	</option>
+	<option id="38785" name="option_id_38785">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38786" name="option_id_38786">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38787" name="option_id_38787">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38788" name="option_id_38788">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38789" name="option_id_38789">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38790" name="option_id_38790">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38791" name="option_id_38791">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="38792" name="option_id_38792">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="38793" name="option_id_38793">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="38794" name="option_id_38794">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="38795" name="option_id_38795">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="38796" name="option_id_38796">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="38797" name="option_id_38797">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="38798" name="option_id_38798">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="38799" name="option_id_38799">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+</list>

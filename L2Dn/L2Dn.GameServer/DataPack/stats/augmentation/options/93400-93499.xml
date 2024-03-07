@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93400" name="P. Accuracy +2.1">
+		<!-- P. Accuracy +2.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93401" name="P. Accuracy +2.2">
+		<!-- P. Accuracy +2.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93402" name="P. Accuracy +2.3">
+		<!-- P. Accuracy +2.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93403" name="P. Accuracy +2.4">
+		<!-- P. Accuracy +2.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93404" name="P. Accuracy +2.5">
+		<!-- P. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93405" name="P. Accuracy +2.6">
+		<!-- P. Accuracy +2.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93406" name="P. Accuracy +2.7">
+		<!-- P. Accuracy +2.7 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93407" name="P. Accuracy +2.8">
+		<!-- P. Accuracy +2.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93408" name="P. Accuracy +2.9">
+		<!-- P. Accuracy +2.9 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93409" name="P. Accuracy +3">
+		<!-- P. Accuracy +3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93410" name="P. Accuracy +3.1">
+		<!-- P. Accuracy +3.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93411" name="P. Accuracy +3.2">
+		<!-- P. Accuracy +3.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93412" name="P. Accuracy +3.3">
+		<!-- P. Accuracy +3.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93413" name="P. Accuracy +3.5">
+		<!-- P. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93414" name="P. Accuracy +3.7">
+		<!-- P. Accuracy +3.7 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93415" name="P. Accuracy +3.9">
+		<!-- P. Accuracy +3.9 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93416" name="P. Accuracy +4.1">
+		<!-- P. Accuracy +4.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93417" name="P. Accuracy +4.3">
+		<!-- P. Accuracy +4.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93418" name="P. Accuracy +5">
+		<!-- P. Accuracy +5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93419" name="M. Accuracy +2">
+		<!-- M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93420" name="M. Accuracy +2.1">
+		<!-- M. Accuracy +2.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93421" name="M. Accuracy +2.2">
+		<!-- M. Accuracy +2.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93422" name="M. Accuracy +2.3">
+		<!-- M. Accuracy +2.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93423" name="M. Accuracy +2.4">
+		<!-- M. Accuracy +2.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93424" name="M. Accuracy +2.5">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93425" name="M. Accuracy +2.6">
+		<!-- M. Accuracy +2.6 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93426" name="M. Accuracy +2.7">
+		<!-- M. Accuracy +2.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93427" name="M. Accuracy +2.8">
+		<!-- M. Accuracy +2.8 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93428" name="M. Accuracy +2.9">
+		<!-- M. Accuracy +2.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93429" name="M. Accuracy +3">
+		<!-- M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93430" name="M. Accuracy +3.1">
+		<!-- M. Accuracy +3.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93431" name="M. Accuracy +3.2">
+		<!-- M. Accuracy +3.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93432" name="M. Accuracy +3.3">
+		<!-- M. Accuracy +3.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93433" name="M. Accuracy +3.5">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93434" name="M. Accuracy +3.7">
+		<!-- M. Accuracy +3.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93435" name="M. Accuracy +3.9">
+		<!-- M. Accuracy +3.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93436" name="M. Accuracy +4.1">
+		<!-- M. Accuracy +4.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93437" name="M. Accuracy +4.3">
+		<!-- M. Accuracy +4.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93438" name="M. Accuracy +5">
+		<!-- M. Accuracy +5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93439" name="M. Accuracy +2">
+		<!-- M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93440" name="M. Accuracy +2.1">
+		<!-- M. Accuracy +2.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93441" name="M. Accuracy +2.2">
+		<!-- M. Accuracy +2.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93442" name="M. Accuracy +2.3">
+		<!-- M. Accuracy +2.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93443" name="M. Accuracy +2.4">
+		<!-- M. Accuracy +2.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93444" name="M. Accuracy +2.5">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93445" name="M. Accuracy +2.6">
+		<!-- M. Accuracy +2.6 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93446" name="M. Accuracy +2.7">
+		<!-- M. Accuracy +2.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93447" name="M. Accuracy +2.8">
+		<!-- M. Accuracy +2.8 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93448" name="M. Accuracy +2.9">
+		<!-- M. Accuracy +2.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93449" name="M. Accuracy +3">
+		<!-- M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93450" name="M. Accuracy +3.1">
+		<!-- M. Accuracy +3.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93451" name="M. Accuracy +3.2">
+		<!-- M. Accuracy +3.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93452" name="M. Accuracy +3.3">
+		<!-- M. Accuracy +3.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93453" name="M. Accuracy +3.5">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93454" name="M. Accuracy +3.7">
+		<!-- M. Accuracy +3.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93455" name="M. Accuracy +3.9">
+		<!-- M. Accuracy +3.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93456" name="M. Accuracy +4.1">
+		<!-- M. Accuracy +4.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93457" name="M. Accuracy +4.3">
+		<!-- M. Accuracy +4.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93458" name="M. Accuracy +5">
+		<!-- M. Accuracy +5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93459" name="M. Accuracy +2">
+		<!-- M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93460" name="M. Accuracy +2.1">
+		<!-- M. Accuracy +2.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93461" name="M. Accuracy +2.2">
+		<!-- M. Accuracy +2.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93462" name="M. Accuracy +2.3">
+		<!-- M. Accuracy +2.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93463" name="M. Accuracy +2.4">
+		<!-- M. Accuracy +2.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93464" name="M. Accuracy +2.5">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93465" name="M. Accuracy +2.6">
+		<!-- M. Accuracy +2.6 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93466" name="M. Accuracy +2.7">
+		<!-- M. Accuracy +2.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93467" name="M. Accuracy +2.8">
+		<!-- M. Accuracy +2.8 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93468" name=" M. Accuracy +2.9">
+		<!-- M. Accuracy +2.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93469" name="M. Accuracy +3">
+		<!-- M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93470" name="M. Accuracy +3.1">
+		<!-- M. Accuracy +3.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93471" name="M. Accuracy +3.2">
+		<!-- M. Accuracy +3.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93472" name="M. Accuracy +3.3">
+		<!-- M. Accuracy +3.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93473" name="M. Accuracy +3.5">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93474" name="M. Accuracy +3.7">
+		<!-- M. Accuracy +3.7 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93475" name="M. Accuracy +3.9">
+		<!-- M. Accuracy +3.9 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93476" name="M. Accuracy +4.1">
+		<!-- M. Accuracy +4.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93477" name="M. Accuracy +4.3">
+		<!-- M. Accuracy +4.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93478" name="M. Accuracy +5">
+		<!-- M. Accuracy +5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93479" name="option_id_93479">
+		<!-- Bow Resistance +3.5% -->
+	</option>
+	<option id="93480" name="option_id_93480">
+		<!-- Bow Resistance +3.6% -->
+	</option>
+	<option id="93481" name="option_id_93481">
+		<!-- Bow Resistance +3.7% -->
+	</option>
+	<option id="93482" name="option_id_93482">
+		<!-- Bow Resistance +3.8% -->
+	</option>
+	<option id="93483" name="option_id_93483">
+		<!-- Bow Resistance +3.9% -->
+	</option>
+	<option id="93484" name="option_id_93484">
+		<!-- Bow Resistance +4.1% -->
+	</option>
+	<option id="93485" name="option_id_93485">
+		<!-- Bow Resistance +4.2% -->
+	</option>
+	<option id="93486" name="option_id_93486">
+		<!-- Bow Resistance +4.3% -->
+	</option>
+	<option id="93487" name="option_id_93487">
+		<!-- Bow Resistance +4.4% -->
+	</option>
+	<option id="93488" name="option_id_93488">
+		<!-- Bow Resistance +4.5% -->
+	</option>
+	<option id="93489" name="option_id_93489">
+		<!-- Bow Resistance +4.6% -->
+	</option>
+	<option id="93490" name="option_id_93490">
+		<!-- Bow Resistance +4.7% -->
+	</option>
+	<option id="93491" name="option_id_93491">
+		<!-- Bow Resistance +4.8% -->
+	</option>
+	<option id="93492" name="option_id_93492">
+		<!-- Bow Resistance +5% -->
+	</option>
+	<option id="93493" name="option_id_93493">
+		<!-- Bow Resistance +5.5% -->
+	</option>
+	<option id="93494" name="option_id_93494">
+		<!-- Bow Resistance +6% -->
+	</option>
+	<option id="93495" name="option_id_93495">
+		<!-- Bow Resistance +6.5% -->
+	</option>
+	<option id="93496" name="option_id_93496">
+		<!-- Bow Resistance +7% -->
+	</option>
+	<option id="93497" name="option_id_93497">
+		<!-- Bow Resistance +8% -->
+	</option>
+	<option id="93498" name="option_id_93498">
+		<!-- Bow Resistance +10% -->
+	</option>
+	<option id="93499" name="option_id_93499">
+		<!-- Bow Resistance +3.5% -->
+	</option>
+</list>

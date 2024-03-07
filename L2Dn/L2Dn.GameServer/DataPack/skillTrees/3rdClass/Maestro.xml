@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="118" parentClassId="57">
+		<skill skillName="Maphr's Shield" skillId="45120" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="2" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="3" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="4" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="5" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Earth Tremor" skillId="45249" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="8" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="9" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="10" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="11" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="12" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Dwarven Weapon Mastery" skillId="47235" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="8" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="9" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="10" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="11" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Dwarven Armor Mastery" skillId="47236" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="38" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="39" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="40" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="41" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="42" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="43" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="44" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="45" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="5" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="6" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="7" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="8" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="9" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Dwarven Recovery Mastery" skillId="47237" skillLevel="10" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Critical Creation" skillId="53001" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Critical Creation" skillId="53001" skillLevel="2" getLevel="79" levelUpSp="1840000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Critical Creation" skillId="53001" skillLevel="3" getLevel="84" levelUpSp="24000000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Maphr’s Acumen" skillId="45130" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Master of Creation" skillId="53002" skillLevel="1" getLevel="78" levelUpSp="1840000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Master of Creation" skillId="53002" skillLevel="2" getLevel="82" levelUpSp="17000000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Master of Creation" skillId="53002" skillLevel="3" getLevel="84" levelUpSp="24000000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Maphr's Empower" skillId="45131" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Maphr's Wild Magic" skillId="45132" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Maphr's Berserker Spirit" skillId="45133" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Body Crush" skillId="1613" skillLevel="10" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Body Crush" skillId="1613" skillLevel="11" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Body Crush" skillId="1613" skillLevel="12" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Weapon Mastery" skillId="141" skillLevel="5" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Maphr's Clarity" skillId="45134" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Weapon Reinforcement" skillId="1615" skillLevel="4" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Weapon Reinforcement" skillId="1615" skillLevel="5" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Tenacity" skillId="1617" skillLevel="4" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="Final Secret" skillId="917" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="4" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Summon Mechanic Golem" skillId="25" skillLevel="10" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Summon Mechanic Golem" skillId="25" skillLevel="11" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Summon Mechanic Golem" skillId="25" skillLevel="12" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Summon Mechanic Golem" skillId="25" skillLevel="13" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Summon Mechanic Golem" skillId="25" skillLevel="14" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="1" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="2" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="3" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="4" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="5" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Earthquake" skillId="347" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Provoke" skillId="286" skillLevel="8" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Provoke" skillId="286" skillLevel="9" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Provoke" skillId="286" skillLevel="10" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Provoke" skillId="286" skillLevel="11" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Rush" skillId="994" skillLevel="3" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="98292,98274" count="1" /> <!-- Spellbook: Hammer Rumble -->
+		</skill>
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="3" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="4" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="5" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Hammer Rumble" skillId="45282" skillLevel="6" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="16" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="6000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="17" getLevel="86" levelUpSp="84000000">
+			<item id="57" count="7500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="18" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Final Frenzy" skillId="290" skillLevel="15" getLevel="78" levelUpSp="1840000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Vortex" skillId="36" skillLevel="41" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Vortex" skillId="36" skillLevel="42" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Vortex" skillId="36" skillLevel="43" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Vortex" skillId="36" skillLevel="44" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Vortex" skillId="36" skillLevel="45" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="1" getLevel="77" levelUpSp="790000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Armor Crush" skillId="362" skillLevel="2" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="3" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="4" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="5" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="6" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="7" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="9" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Armor Crush" skillId="362" skillLevel="10" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Armor Crush" skillId="362" skillLevel="11" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Life Gain" skillId="47210" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="95868,95860" count="1" /> <!-- Spellbook: Life Gain -->
+		</skill>
+		<skill skillName="Mount Kukuru" skillId="1836" skillLevel="1" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Master of Combat" skillId="430" skillLevel="1" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Master of Combat" skillId="430" skillLevel="2" getLevel="80" levelUpSp="1840000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Master of Combat" skillId="430" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="97112,97104" count="1" /> <!-- Spellbook: Master of Combat Lv. 3 -->
+		</skill>
+		<skill skillName="Prime Master Transformation" skillId="47221" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<item id="95869,95861" count="1" /> <!-- Spellbook: Prime Master Transformation -->
+		</skill>
+		<skill skillName="Braveheart" skillId="440" skillLevel="1" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Maphr's Focus" skillId="45114" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<removeSkill id="994" onlyReplaceByLearn="true" /> <!-- Rush -->
+			<removeSkill id="260" onlyReplaceByLearn="true" /> <!-- Power Break -->
+			<item id="95871,95863" count="1" /> <!-- Spellbook: Blacksmith' Attack -->
+		</skill>
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="2" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="4" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="5" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="6" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blacksmith's Attack" skillId="47227" skillLevel="7" getLevel="90" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Maphr's Death Whisper" skillId="45115" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Mechanical Masterpiece" skillId="47228" skillLevel="1" getLevel="76" levelUpSp="790000">
+			<removeSkill id="45245" onlyReplaceByLearn="true" /> <!-- Machine Assistance -->
+			<removeSkill id="1613" onlyReplaceByLearn="true" /> <!-- Body Crush -->
+			<item id="95870,95862" count="1" /> <!-- Spellbook: Mechanical Masterpiece -->
+		</skill>
+		<skill skillName="Maphr's Haste" skillId="45116" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+		<skill skillName="Maphr's Wind Walk" skillId="45117" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Maphr's Magic Barrier" skillId="45118" skillLevel="3" getLevel="76" levelUpSp="790000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="41" getLevel="76" levelUpSp="790000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="42" getLevel="77" levelUpSp="790000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="43" getLevel="78" levelUpSp="1840000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="44" getLevel="79" levelUpSp="1840000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="45" getLevel="80" levelUpSp="1840000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="46" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="47" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="48" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="49" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="50" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="51" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="52" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="53" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="54" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="55" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Maphr's Might" skillId="45119" skillLevel="4" getLevel="76" levelUpSp="790000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+	</skillTree>
+</list>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="DionCastle">
+		<group>
+			<npc id="35105" x="22073" y="161778" z="-2672" heading="49152" respawnTime="60sec" /> <!-- Dion Holy Artifact -->
+			<npc id="35137" x="20492" y="160363" z="-1978" heading="0" respawnTime="60sec" /> <!-- Mass Gatekeeper - Dion -->
+			<npc id="35138" x="22412" y="156489" z="-2944" heading="49152" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Dion -->
+			<npc id="35138" x="22466" y="156837" z="-2944" heading="0" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Dion -->
+			<npc id="35139" x="22239" y="159048" z="-2654" heading="49152" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Dion -->
+			<npc id="35139" x="22305" y="159403" z="-2694" heading="0" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Dion -->
+			<npc id="35140" x="21649" y="160199" z="-2850" heading="61379" respawnTime="60sec" /> <!-- Blacksmith - Dion -->
+			<npc id="35141" x="22100" y="159781" z="-2877" heading="6134" respawnTime="60sec" /> <!-- Warehouse Keeper - Dion -->
+			<npc id="35143" x="21912" y="161608" z="-2226" heading="0" respawnTime="60sec" /> <!-- Hodler - Wyvern Manager -->
+			<npc id="35144" x="21836" y="160806" z="-2679" heading="49152" respawnTime="60sec" /> <!-- Mercenary Manager Sanford - Mercenary Manager -->
+			<!-- <npc id="35146" x="19132" y="153027" z="-3120" heading="49152" respawnTime="60sec" /> Gibbson - Herald from Dion -->
+		</group>
+	</spawn>
+</list>

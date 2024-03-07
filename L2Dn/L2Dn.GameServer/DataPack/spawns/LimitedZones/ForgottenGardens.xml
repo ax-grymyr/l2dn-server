@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="fg_entrance">
+		<group>
+			<npc id="34355" x="90595" y="234780" z="-12572" heading="31470" /> <!-- Kugin -->
+		</group>
+	</spawn>
+</list>

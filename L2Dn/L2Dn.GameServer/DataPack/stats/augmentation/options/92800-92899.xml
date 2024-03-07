@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="92800" name="option_id_92800">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="92801" name="option_id_92801">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="92802" name="option_id_92802">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="92803" name="option_id_92803">
+		<!-- M. Damage Resistance +3% -->
+	</option>
+	<option id="92804" name="option_id_92804">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92805" name="option_id_92805">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92806" name="option_id_92806">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92807" name="option_id_92807">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92808" name="option_id_92808">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92809" name="option_id_92809">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92810" name="option_id_92810">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92811" name="option_id_92811">
+		<!-- M. Damage Resistance +4% -->
+	</option>
+	<option id="92812" name="option_id_92812">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="92813" name="option_id_92813">
+		<!-- M. Damage Resistance +5% -->
+	</option>
+	<option id="92814" name="option_id_92814">
+		<!-- M. Damage Resistance +6% -->
+	</option>
+	<option id="92815" name="option_id_92815">
+		<!-- M. Damage Resistance +7% -->
+	</option>
+	<option id="92816" name="option_id_92816">
+		<!-- M. Damage Resistance +8% -->
+	</option>
+	<option id="92817" name="option_id_92817">
+		<!-- M. Damage Resistance +9% -->
+	</option>
+	<option id="92818" name="option_id_92818">
+		<!-- M. Damage Resistance +10% -->
+	</option>
+	<option id="92819" name="Max HP +30">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92820" name="Max HP +32">
+		<!-- Max HP +32 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92821" name="Max HP +35">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92822" name="Max HP +38">
+		<!-- Max HP +38 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92823" name="Max HP +41">
+		<!-- Max HP +41 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92824" name="Max HP +44">
+		<!-- Max HP +44 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92825" name="Max HP +47">
+		<!-- Max HP +47 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92826" name="Max HP +51">
+		<!-- Max HP +51 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92827" name="Max HP +55">
+		<!-- Max HP +55 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92828" name="Max HP +59">
+		<!-- Max HP +59 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92829" name="Max HP +63">
+		<!-- Max HP +63 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92830" name="Max HP +68">
+		<!-- Max HP +68 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92831" name="Max HP +73">
+		<!-- Max HP +73 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92832" name="Max HP +75">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92833" name="Max HP +78">
+		<!-- Max HP +78 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92834" name="Max HP +82">
+		<!-- Max HP +82 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92835" name="Max HP +86">
+		<!-- Max HP +86 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92836" name="Max HP +90">
+		<!-- Max HP +90 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92837" name="Max HP +94">
+		<!-- Max HP +94 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92838" name="Max HP +100">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92839" name="Max HP +30">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92840" name="Max HP +32">
+		<!-- Max HP +32 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92841" name="Max HP +35">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92842" name="Max HP +38">
+		<!-- Max HP +38 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92843" name="Max HP +41">
+		<!-- Max HP +41 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92844" name="Max HP +44">
+		<!-- Max HP +44 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92845" name="Max HP +47">
+		<!-- Max HP +47 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92846" name="Max HP +51">
+		<!-- Max HP +51 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92847" name="Max HP +55">
+		<!-- Max HP +55 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92848" name="Max HP +59">
+		<!-- Max HP +59 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92849" name="Max HP +63">
+		<!-- Max HP +63 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92850" name="Max HP +68">
+		<!-- Max HP +68 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92851" name="Max HP +73">
+		<!-- Max HP +73 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92852" name="Max HP +75">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92853" name="Max HP +78">
+		<!-- Max HP +78 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92854" name="Max HP +82">
+		<!-- Max HP +82 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92855" name="Max HP +86">
+		<!-- Max HP +86 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92856" name="Max HP +90">
+		<!-- Max HP +90 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92857" name="Max HP +94">
+		<!-- Max HP +94 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92858" name="Max HP +100">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92859" name="Max HP +30">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92860" name="Max HP +32">
+		<!-- Max HP +32 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92861" name="Max HP +35">
+		<!-- Max HP +35 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92862" name="Max HP +38">
+		<!-- Max HP +38 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92863" name="Max HP +41">
+		<!-- Max HP +41 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92864" name="Max HP +44">
+		<!-- Max HP +44 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92865" name="Max HP +47">
+		<!-- Max HP +47 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92866" name="Max HP +51">
+		<!-- Max HP +51 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92867" name="Max HP +55">
+		<!-- Max HP +55 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92868" name="Max HP +59">
+		<!-- Max HP +59 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92869" name="Max HP +63">
+		<!-- Max HP +63 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92870" name="Max HP +68">
+		<!-- Max HP +68 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92871" name="Max HP +73">
+		<!-- Max HP +73 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92872" name="Max HP +75">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92873" name="Max HP +78">
+		<!-- Max HP +78 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92874" name="Max HP +82">
+		<!-- Max HP +82 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92875" name="Max HP +86">
+		<!-- Max HP +86 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92876" name="Max HP +90">
+		<!-- Max HP +90 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92877" name="Max HP +94">
+		<!-- Max HP +94 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92878" name="Max HP +100">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92879" name="Max MP +30">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92880" name="Max MP +32">
+		<!-- Max MP +32 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92881" name="Max MP +35">
+		<!-- Max MP +35 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92882" name="Max MP +38">
+		<!-- Max MP +38 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92883" name="Max MP +41">
+		<!-- Max MP +41 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92884" name="Max MP +44">
+		<!-- Max MP +44 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92885" name="Max MP +47">
+		<!-- Max MP +47 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92886" name="Max MP +51">
+		<!-- Max MP +51 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92887" name="Max MP +55">
+		<!-- Max MP +55 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92888" name="Max MP +59">
+		<!-- Max MP +59 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92889" name="Max MP +63">
+		<!-- Max MP +63 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92890" name="Max MP +68">
+		<!-- Max MP +68 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92891" name="Max MP +73">
+		<!-- Max MP +73 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92892" name="Max MP +75">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92893" name="Max MP +78">
+		<!-- Max MP +78 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92894" name="Max MP +82">
+		<!-- Max MP +82 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92895" name="Max MP +86">
+		<!-- Max MP +86 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92896" name="Max MP +90">
+		<!-- Max MP +90 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92897" name="Max MP +94">
+		<!-- Max MP +94 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92898" name="Max MP +100">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92899" name="Max MP +30">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

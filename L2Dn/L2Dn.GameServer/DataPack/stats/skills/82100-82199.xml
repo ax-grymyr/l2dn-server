@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="82100" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82101" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82102" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82103" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82104" toLevel="1" name="Received M. Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82105" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82106" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82107" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82108" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82109" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82110" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82111" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82112" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82113" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82114" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82115" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82116" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82117" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82118" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82119" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82120" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82121" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82122" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82123" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82124" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82125" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82126" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82127" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82128" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82129" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82130" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82131" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82132" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82133" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82134" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82135" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82136" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82137" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82138" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82139" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82140" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82141" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82142" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82143" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82144" toLevel="1" name="M. Damage Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="82145" toLevel="5" name="Hold Attack">
+		<!-- <Effect>\nFor 3 sec., inflicts Hold on the target on attack.\n(Trigger rate: $s1, trigger cooldown: 30 sec.)\nHold Atk. Rate $s2 -->
+		<icon>icon.aden_rune_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82146" toLevel="5" name="Hold Attack">
+		<!-- Inflicts Hold on the enemy. -->
+		<icon>icon.skill1201</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="82147" toLevel="5" name="Knockback Attack">
+		<!-- <Effect>\nFor 3 sec., knocks the target back on attack.\n(Trigger rate: $s1, trigger cooldown: 30 sec.)\nKnockback Atk. Rate $s2 -->
+		<icon>icon.aden_rune_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82148" toLevel="5" name="Knockback Attack">
+		<!-- You are knocked back. -->
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="82149" toLevel="5" name="Incredible Defense - Upper Armor: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82150" toLevel="5" name="Incredible Defense - Upper Armor: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82151" toLevel="5" name="Incredible Defense - Upper Armor: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82152" toLevel="5" name="Incredible Defense - Lower Armor: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82153" toLevel="5" name="Incredible Defense - Lower Armor: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82154" toLevel="5" name="Incredible Defense - Lower Armor: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82155" toLevel="5" name="Incredible Defense - Helmet: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82156" toLevel="5" name="Incredible Defense - Helmet: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82157" toLevel="5" name="Incredible Defense - Helmet: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82158" toLevel="5" name="Incredible Defense - Gloves: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82159" toLevel="5" name="Incredible Defense - Gloves: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82160" toLevel="5" name="Incredible Defense - Gloves: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82161" toLevel="5" name="Incredible Defense - Boots: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82162" toLevel="5" name="Incredible Defense - Boots: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82163" toLevel="5" name="Incredible Defense - Boots: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82164" toLevel="5" name="Incredible Defense - Upper/ Lower Armor: Shock">
+		<!-- <Effect>\nP./ M. Def. $s1\nShock Atk. Rate $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82165" toLevel="5" name="Incredible Defense - Upper/ Lower Armor: Hold">
+		<!-- <Effect>\nP./ M. Def. $s1\nHold Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82166" toLevel="5" name="Incredible Defense - Upper/ Lower Armor: Knockback">
+		<!-- <Effect>\nP./ M. Def. $s1\nKnockback Resistance $s2 -->
+		<icon>icon.aden_rune_am_i05</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82167" toLevel="1" name="Wild Wind Helmet Blessing Effect">
+		<!-- Max HP +1500 -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82168" toLevel="1" name="Enchanted Wild Wind Helmet Blessing Effect">
+		<!-- Acquired XP/ SP +10% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82169" toLevel="1" name="Enchanted Wild Wind Helmet Blessing Effect">
+		<!-- Acquired XP/ SP +10% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="82170" toLevel="1" name="Enchanted Wild Wind Helmet Blessing Effect">
+		<!-- Acquired XP/ SP +20% -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A2</operateType>
+	</skill>
+</list>

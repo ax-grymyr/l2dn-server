@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_01" minZ="-3451" maxZ="-3001">
+				<node x="-75291" y="251836" />
+				<node x="-70888" y="254949" />
+				<node x="-74207" y="257108" />
+				<node x="-77148" y="253578" />
+			</territory>
+		</territories>
+		<npc id="20481" count="9" respawnTime="3sec" /> <!-- Bearded Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_02" minZ="-3821" maxZ="-3371">
+				<node x="-80564" y="243886" />
+				<node x="-80058" y="247016" />
+				<node x="-81269" y="248692" />
+				<node x="-83755" y="246659" />
+			</territory>
+		</territories>
+		<npc id="20432" count="8" respawnTime="3sec" /> <!-- Elpy -->
+		<npc id="20481" count="10" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="14" respawnTime="3sec" /> <!-- Elder Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_03" minZ="-3821" maxZ="-3371">
+				<node x="-82122" y="248159" />
+				<node x="-81298" y="248821" />
+				<node x="-82767" y="252347" />
+				<node x="-84049" y="251268" />
+			</territory>
+		</territories>
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="8" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_04" minZ="-3716" maxZ="-3316">
+				<node x="-86772" y="250493" />
+				<node x="-84559" y="251151" />
+				<node x="-87181" y="252647" />
+				<node x="-87402" y="251080" />
+			</territory>
+		</territories>
+		<npc id="20481" count="10" respawnTime="3sec" /> <!-- Bearded Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_05" minZ="-3797" maxZ="-3397">
+				<node x="-83953" y="251562" />
+				<node x="-82792" y="252475" />
+				<node x="-84748" y="254210" />
+				<node x="-85755" y="252336" />
+			</territory>
+		</territories>
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="10" respawnTime="3sec" /> <!-- Elder Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_06" minZ="-3818" maxZ="-3418">
+				<node x="-85795" y="252581" />
+				<node x="-84753" y="254363" />
+				<node x="-87254" y="255497" />
+				<node x="-87802" y="253270" />
+			</territory>
+		</territories>
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="8" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="10" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_13" minZ="-3814" maxZ="-3464">
+				<node x="-80672" y="240783" />
+				<node x="-80171" y="242876" />
+				<node x="-80457" y="243522" />
+				<node x="-83943" y="239297" />
+				<node x="-83339" y="238724" />
+			</territory>
+		</territories>
+		<npc id="20432" count="6" respawnTime="3sec" /> <!-- Elpy -->
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="10" respawnTime="3sec" /> <!-- Elder Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_14" minZ="-3794" maxZ="-3444">
+				<node x="-86398" y="237982" />
+				<node x="-83411" y="238691" />
+				<node x="-85976" y="240595" />
+				<node x="-87463" y="238775" />
+			</territory>
+		</territories>
+		<npc id="20544" count="10" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="15" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_15" minZ="-3777" maxZ="-3427">
+				<node x="-88003" y="239766" />
+				<node x="-86619" y="241267" />
+				<node x="-88045" y="242761" />
+				<node x="-89542" y="242525" />
+			</territory>
+		</territories>
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="8" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_16" minZ="-3777" maxZ="-3427">
+				<node x="-90847" y="239864" />
+				<node x="-88243" y="239780" />
+				<node x="-89678" y="242549" />
+				<node x="-91722" y="242405" />
+			</territory>
+		</territories>
+		<npc id="20481" count="8" respawnTime="3sec" /> <!-- Bearded Keltir -->
+		<npc id="20544" count="10" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="10" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_17" minZ="-3777" maxZ="-3427">
+				<node x="-91997" y="242521" />
+				<node x="-89885" y="242774" />
+				<node x="-90979" y="244840" />
+				<node x="-93848" y="245302" />
+			</territory>
+		</territories>
+		<npc id="20544" count="10" respawnTime="3sec" /> <!-- Elder Keltir -->
+		<npc id="20120" count="15" respawnTime="3sec" /> <!-- Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_18" minZ="-3653" maxZ="-3203">
+				<node x="-94851" y="241389" />
+				<node x="-92110" y="242390" />
+				<node x="-93893" y="245261" />
+				<node x="-95944" y="245024" />
+			</territory>
+		</territories>
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="10" respawnTime="3sec" /> <!-- Elder Wolf -->
+		<npc id="20130" count="8" respawnTime="3sec" /> <!-- Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_19" minZ="-3705" maxZ="-3205">
+				<node x="-98178" y="241151" />
+				<node x="-94990" y="241377" />
+				<node x="-96089" y="244984" />
+				<node x="-98187" y="243765" />
+			</territory>
+		</territories>
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="10" respawnTime="3sec" /> <!-- Elder Wolf -->
+		<npc id="20130" count="6" respawnTime="3sec" /> <!-- Orc -->
+		<npc id="20131" count="8" respawnTime="3sec" /> <!-- Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_20" minZ="-3698" maxZ="-3198">
+				<node x="-94026" y="237770" />
+				<node x="-90930" y="239772" />
+				<node x="-92256" y="242113" />
+				<node x="-94873" y="241267" />
+			</territory>
+		</territories>
+		<npc id="20120" count="10" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="10" respawnTime="3sec" /> <!-- Elder Wolf -->
+		<npc id="20130" count="12" respawnTime="3sec" /> <!-- Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_21" minZ="-3678" maxZ="-3178">
+				<node x="-98029" y="238333" />
+				<node x="-94104" y="238222" />
+				<node x="-94792" y="241237" />
+				<node x="-98002" y="241038" />
+			</territory>
+		</territories>
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="10" respawnTime="3sec" /> <!-- Elder Wolf -->
+		<npc id="20130" count="8" respawnTime="3sec" /> <!-- Orc -->
+		<npc id="20131" count="6" respawnTime="3sec" /> <!-- Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_22" minZ="-3598" maxZ="-3098">
+				<node x="-95110" y="236557" />
+				<node x="-94277" y="236970" />
+				<node x="-94417" y="238044" />
+				<node x="-96849" y="237616" />
+			</territory>
+		</territories>
+		<npc id="20130" count="6" respawnTime="3sec" /> <!-- Orc -->
+		<npc id="20131" count="6" respawnTime="3sec" /> <!-- Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_23" minZ="-3771" maxZ="-3271">
+				<node x="-90128" y="236994" />
+				<node x="-86492" y="237896" />
+				<node x="-87632" y="238723" />
+				<node x="-90950" y="238048" />
+			</territory>
+		</territories>
+		<npc id="20120" count="10" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="15" respawnTime="3sec" /> <!-- Elder Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_24" minZ="-3786" maxZ="-3286">
+				<node x="-93987" y="234732" />
+				<node x="-90189" y="236954" />
+				<node x="-91010" y="238016" />
+				<node x="-94394" y="235274" />
+			</territory>
+		</territories>
+		<npc id="20120" count="8" respawnTime="3sec" /> <!-- Wolf -->
+		<npc id="20442" count="8" respawnTime="3sec" /> <!-- Elder Wolf -->
+		<npc id="20130" count="6" respawnTime="3sec" /> <!-- Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_27" minZ="-3777" maxZ="-3427">
+				<node x="-91645" y="245161" />
+				<node x="-91633" y="245875" />
+				<node x="-92567" y="246452" />
+				<node x="-94754" y="247029" />
+				<node x="-93850" y="245413" />
+			</territory>
+		</territories>
+		<npc id="20121" count="14" respawnTime="3sec" /> <!-- Giant Toad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_28" minZ="-3777" maxZ="-3427">
+				<node x="-96060" y="245318" />
+				<node x="-94045" y="245581" />
+				<node x="-94829" y="246982" />
+				<node x="-96643" y="246176" />
+			</territory>
+		</territories>
+		<npc id="20121" count="12" respawnTime="3sec" /> <!-- Giant Toad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_29" minZ="-3777" maxZ="-3427">
+				<node x="-97812" y="244638" />
+				<node x="-95964" y="245057" />
+				<node x="-96701" y="246147" />
+				<node x="-98263" y="245623" />
+			</territory>
+		</territories>
+		<npc id="20121" count="12" respawnTime="3sec" /> <!-- Giant Toad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio32_1725_30" minZ="-3777" maxZ="-3427">
+				<node x="-98205" y="246681" />
+				<node x="-95862" y="247758" />
+				<node x="-95909" y="248507" />
+				<node x="-98176" y="248122" />
+			</territory>
+		</territories>
+		<npc id="20121" count="12" respawnTime="3sec" /> <!-- Giant Toad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_07" minZ="-3785" maxZ="-3235">
+				<node x="-88829" y="253600" />
+				<node x="-88684" y="255484" />
+				<node x="-91736" y="256098" />
+				<node x="-92021" y="254827" />
+			</territory>
+		</territories>
+		<npc id="20131" count="6" respawnTime="3sec" /> <!-- Orc Soldier -->
+		<npc id="20326" count="6" respawnTime="3sec" /> <!-- Goblin Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_08" minZ="-3635" maxZ="-3185">
+				<node x="-90125" y="252255" />
+				<node x="-89525" y="253247" />
+				<node x="-93019" y="254324" />
+				<node x="-93042" y="251920" />
+			</territory>
+		</territories>
+		<npc id="20131" count="6" respawnTime="3sec" /> <!-- Orc Soldier -->
+		<npc id="20326" count="8" respawnTime="3sec" /> <!-- Goblin Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_09" minZ="-3562" maxZ="-3162">
+				<node x="-93101" y="252768" />
+				<node x="-93123" y="254272" />
+				<node x="-95753" y="255888" />
+				<node x="-95638" y="253698" />
+				<node x="-94965" y="252334" />
+			</territory>
+		</territories>
+		<npc id="20006" count="2" respawnTime="3sec" /> <!-- Orc Archer -->
+		<npc id="20326" count="6" respawnTime="3sec" /> <!-- Goblin Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_10" minZ="-3687" maxZ="-3287">
+				<node x="-93686" y="249482" />
+				<node x="-93127" y="251504" />
+				<node x="-94728" y="252235" />
+				<node x="-95242" y="250280" />
+				<node x="-94949" y="249330" />
+			</territory>
+		</territories>
+		<npc id="20131" count="6" respawnTime="3sec" /> <!-- Orc Soldier -->
+		<npc id="20006" count="2" respawnTime="3sec" /> <!-- Orc Archer -->
+		<npc id="20326" count="6" respawnTime="3sec" /> <!-- Goblin Scout -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_11" minZ="-3686" maxZ="-3286">
+				<node x="-96437" y="253123" />
+				<node x="-96772" y="256438" />
+				<node x="-98216" y="256883" />
+				<node x="-98209" y="252352" />
+			</territory>
+		</territories>
+		<npc id="20006" count="6" respawnTime="3sec" /> <!-- Orc Archer -->
+		<npc id="20326" count="2" respawnTime="3sec" /> <!-- Goblin Scout -->
+		<npc id="20093" count="6" respawnTime="3sec" /> <!-- Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_12" minZ="-3687" maxZ="-3337">
+				<node x="-95658" y="251474" />
+				<node x="-96348" y="252767" />
+				<node x="-98218" y="252163" />
+				<node x="-98211" y="248508" />
+				<node x="-96106" y="248712" />
+			</territory>
+		</territories>
+		<npc id="20326" count="6" respawnTime="3sec" /> <!-- Goblin Scout -->
+		<npc id="20132" count="6" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="6" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20093" count="8" respawnTime="3sec" /> <!-- Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1725_25" minZ="-3780" maxZ="-3280">
+				<node x="-95068" y="233416" />
+				<node x="-95067" y="235023" />
+				<node x="-98154" y="236965" />
+				<node x="-98218" y="230359" />
+			</territory>
+		</territories>
+		<npc id="20131" count="8" respawnTime="3sec" /> <!-- Orc Soldier -->
+		<npc id="20006" count="6" respawnTime="3sec" /> <!-- Orc Archer -->
+		<npc id="20326" count="8" respawnTime="3sec" /> <!-- Goblin Scout -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_01" minZ="-3789" maxZ="-3189">
+				<node x="-106442" y="222221" />
+				<node x="-100607" y="225882" />
+				<node x="-101548" y="229015" />
+				<node x="-108902" y="228236" />
+			</territory>
+		</territories>
+		<npc id="20098" count="16" respawnTime="3sec" /> <!-- Orc Captain -->
+		<npc id="20342" count="16" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+		<npc id="20016" count="10" respawnTime="3sec" /> <!-- Stone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_02" minZ="-3730" maxZ="-3030">
+				<node x="-100997" y="220951" />
+				<node x="-100118" y="224043" />
+				<node x="-100529" y="225783" />
+				<node x="-105570" y="222170" />
+			</territory>
+		</territories>
+		<npc id="20342" count="20" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+		<npc id="20016" count="6" respawnTime="3sec" /> <!-- Stone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_03" minZ="-3435" maxZ="-2835">
+				<node x="-100147" y="212767" />
+				<node x="-99236" y="214857" />
+				<node x="-100642" y="217336" />
+				<node x="-104630" y="213491" />
+				<node x="-101820" y="212285" />
+			</territory>
+		</territories>
+		<npc id="20016" count="18" respawnTime="3sec" /> <!-- Stone Golem -->
+		<npc id="20101" count="12" respawnTime="3sec" /> <!-- Crasher -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_04" minZ="-3482" maxZ="-2782">
+				<node x="-104578" y="215090" />
+				<node x="-101716" y="217877" />
+				<node x="-104925" y="218078" />
+				<node x="-106813" y="215321" />
+			</territory>
+		</territories>
+		<npc id="20016" count="10" respawnTime="3sec" /> <!-- Stone Golem -->
+		<npc id="20101" count="8" respawnTime="3sec" /> <!-- Crasher -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_05" minZ="-3442" maxZ="-2742">
+				<node x="-106991" y="215229" />
+				<node x="-105618" y="217251" />
+				<node x="-109305" y="217518" />
+				<node x="-110197" y="216637" />
+				<node x="-109339" y="215079" />
+			</territory>
+		</territories>
+		<npc id="20101" count="10" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20103" count="10" respawnTime="3sec" /> <!-- Giant Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_06" minZ="-3299" maxZ="-2599">
+				<node x="-111461" y="215904" />
+				<node x="-109306" y="217637" />
+				<node x="-112836" y="219633" />
+				<node x="-114182" y="217830" />
+			</territory>
+		</territories>
+		<npc id="20101" count="10" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20103" count="10" respawnTime="3sec" /> <!-- Giant Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_07" minZ="-3242" maxZ="-2542">
+				<node x="-114359" y="217913" />
+				<node x="-112863" y="219836" />
+				<node x="-114072" y="221617" />
+				<node x="-116931" y="221387" />
+			</territory>
+		</territories>
+		<npc id="20101" count="8" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20103" count="10" respawnTime="3sec" /> <!-- Giant Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_08" minZ="-3242" maxZ="-2542">
+				<node x="-117051" y="221485" />
+				<node x="-115028" y="224544" />
+				<node x="-115611" y="225856" />
+				<node x="-118537" y="225708" />
+			</territory>
+		</territories>
+		<npc id="20103" count="10" respawnTime="3sec" /> <!-- Giant Spider -->
+		<npc id="20106" count="8" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_09" minZ="-3036" maxZ="-2336">
+				<node x="-118599" y="225847" />
+				<node x="-115531" y="225992" />
+				<node x="-116377" y="229099" />
+				<node x="-119616" y="229082" />
+			</territory>
+		</territories>
+		<npc id="20101" count="4" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20103" count="10" respawnTime="3sec" /> <!-- Giant Spider -->
+		<npc id="20106" count="10" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_10s" minZ="-3783" maxZ="-3283">
+				<node x="-105979" y="223357" />
+				<node x="-103968" y="223997" />
+				<node x="-104347" y="225843" />
+				<node x="-106603" y="225203" />
+			</territory>
+		</territories>
+		<npc id="20101" count="8" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20103" count="3" respawnTime="3sec" /> <!-- Giant Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1624_11s" minZ="-3814" maxZ="-3314">
+				<node x="-104681" y="226275" />
+				<node x="-102189" y="226251" />
+				<node x="-102039" y="228239" />
+				<node x="-105068" y="227850" />
+			</territory>
+		</territories>
+		<npc id="20016" count="4" respawnTime="3sec" /> <!-- Stone Golem -->
+		<npc id="20101" count="4" respawnTime="3sec" /> <!-- Crasher -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_01" minZ="-3662" maxZ="-3112">
+				<node x="-101435" y="250001" />
+				<node x="-98652" y="251678" />
+				<node x="-98625" y="254407" />
+				<node x="-100950" y="255312" />
+				<node x="-102169" y="253508" />
+			</territory>
+		</territories>
+		<npc id="20326" count="8" respawnTime="3sec" /> <!-- Goblin Scout -->
+		<npc id="20093" count="12" respawnTime="3sec" /> <!-- Orc Warrior -->
+		<npc id="20096" count="12" respawnTime="3sec" /> <!-- Orc Lieutenant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_02" minZ="-3662" maxZ="-3112">
+				<node x="-103027" y="248235" />
+				<node x="-101517" y="249972" />
+				<node x="-102267" y="253418" />
+				<node x="-105296" y="251375" />
+				<node x="-104951" y="248324" />
+			</territory>
+		</territories>
+		<npc id="20093" count="6" respawnTime="3sec" /> <!-- Orc Warrior -->
+		<npc id="20096" count="12" respawnTime="3sec" /> <!-- Orc Lieutenant -->
+		<npc id="20098" count="8" respawnTime="3sec" /> <!-- Orc Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_03" minZ="-3763" maxZ="-3213">
+				<node x="-100403" y="246290" />
+				<node x="-98572" y="247318" />
+				<node x="-98553" y="250643" />
+				<node x="-101430" y="249868" />
+				<node x="-102964" y="248193" />
+			</territory>
+		</territories>
+		<npc id="20006" count="8" respawnTime="3sec" /> <!-- Orc Archer -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20093" count="8" respawnTime="3sec" /> <!-- Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_04" minZ="-3776" maxZ="-3226">
+				<node x="-102370" y="244870" />
+				<node x="-101448" y="246892" />
+				<node x="-102974" y="248101" />
+				<node x="-104797" y="246937" />
+				<node x="-103475" y="244184" />
+			</territory>
+		</territories>
+		<npc id="20093" count="8" respawnTime="3sec" /> <!-- Orc Warrior -->
+		<npc id="20096" count="8" respawnTime="3sec" /> <!-- Orc Lieutenant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_05" minZ="-3474" maxZ="-2924">
+				<node x="-106916" y="249892" />
+				<node x="-106467" y="252406" />
+				<node x="-110087" y="254329" />
+				<node x="-111485" y="252780" />
+			</territory>
+		</territories>
+		<npc id="20096" count="12" respawnTime="3sec" /> <!-- Orc Lieutenant -->
+		<npc id="20098" count="14" respawnTime="3sec" /> <!-- Orc Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_06" minZ="-3628" maxZ="-3028">
+				<node x="-105125" y="244535" />
+				<node x="-106056" y="248544" />
+				<node x="-108132" y="249628" />
+				<node x="-107514" y="244905" />
+			</territory>
+		</territories>
+		<npc id="20096" count="14" respawnTime="3sec" /> <!-- Orc Lieutenant -->
+		<npc id="20098" count="8" respawnTime="3sec" /> <!-- Orc Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_07" minZ="-3728" maxZ="-3128">
+				<node x="-100315" y="239129" />
+				<node x="-100377" y="243125" />
+				<node x="-104945" y="240635" />
+				<node x="-103207" y="238139" />
+			</territory>
+		</territories>
+		<npc id="20326" count="6" respawnTime="3sec" /> <!-- Goblin Scout -->
+		<npc id="20132" count="12" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="12" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20343" count="8" respawnTime="3sec" /> <!-- Werewolf Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_08" minZ="-3745" maxZ="-3145">
+				<node x="-103294" y="237924" />
+				<node x="-105080" y="240574" />
+				<node x="-108540" y="237970" />
+				<node x="-106463" y="236356" />
+			</territory>
+		</territories>
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20343" count="8" respawnTime="3sec" /> <!-- Werewolf Hunter -->
+		<npc id="20342" count="8" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_09" minZ="-3632" maxZ="-3132">
+				<node x="-98526" y="231227" />
+				<node x="-98632" y="237185" />
+				<node x="-100034" y="234969" />
+				<node x="-99895" y="233301" />
+			</territory>
+		</territories>
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+		<npc id="20132" count="8" respawnTime="3sec" /> <!-- Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_10" minZ="-3714" maxZ="-3214">
+				<node x="-100945" y="235618" />
+				<node x="-101697" y="236662" />
+				<node x="-104856" y="235535" />
+				<node x="-103035" y="231953" />
+				<node x="-101247" y="233524" />
+			</territory>
+		</territories>
+		<npc id="20343" count="10" respawnTime="3sec" /> <!-- Werewolf Hunter -->
+		<npc id="20342" count="10" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_11" minZ="-3830" maxZ="-3330">
+				<node x="-103100" y="231909" />
+				<node x="-105026" y="235648" />
+				<node x="-107690" y="232837" />
+				<node x="-106302" y="231263" />
+			</territory>
+		</territories>
+		<npc id="20343" count="6" respawnTime="3sec" /> <!-- Werewolf Hunter -->
+		<npc id="20342" count="8" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+		<npc id="20016" count="12" respawnTime="3sec" /> <!-- Stone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_12" minZ="-3801" maxZ="-3301">
+				<node x="-99911" y="231385" />
+				<node x="-101157" y="233457" />
+				<node x="-103436" y="231488" />
+				<node x="-103499" y="229458" />
+				<node x="-100993" y="229477" />
+			</territory>
+		</territories>
+		<npc id="20343" count="6" respawnTime="3sec" /> <!-- Werewolf Hunter -->
+		<npc id="20342" count="8" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+		<npc id="20016" count="6" respawnTime="3sec" /> <!-- Stone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_13" minZ="-3818" maxZ="-3318">
+				<node x="-103609" y="229448" />
+				<node x="-103643" y="231628" />
+				<node x="-107288" y="230786" />
+				<node x="-107961" y="229497" />
+			</territory>
+		</territories>
+		<npc id="20342" count="8" respawnTime="3sec" /> <!-- Werewolf Chieftain -->
+		<npc id="20016" count="6" respawnTime="3sec" /> <!-- Stone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_14" minZ="-3325" maxZ="-2825">
+				<node x="-113649" y="247332" />
+				<node x="-113268" y="250975" />
+				<node x="-115528" y="251733" />
+				<node x="-117323" y="247602" />
+			</territory>
+		</territories>
+		<npc id="20106" count="10" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+		<npc id="20108" count="15" respawnTime="3sec" /> <!-- Giant Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_15" minZ="-3481" maxZ="-2981">
+				<node x="-113584" y="244563" />
+				<node x="-114737" y="247191" />
+				<node x="-117149" y="247279" />
+				<node x="-118233" y="242813" />
+				<node x="-115772" y="242891" />
+			</territory>
+		</territories>
+		<npc id="20101" count="12" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20106" count="10" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+		<npc id="20108" count="10" respawnTime="3sec" /> <!-- Giant Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_16" minZ="-3339" maxZ="-2689">
+				<node x="-117190" y="238176" />
+				<node x="-115865" y="242687" />
+				<node x="-118263" y="242622" />
+				<node x="-119941" y="237599" />
+			</territory>
+		</territories>
+		<npc id="20106" count="15" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+		<npc id="20108" count="15" respawnTime="3sec" /> <!-- Giant Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_17" minZ="-3112" maxZ="-2612">
+				<node x="-118314" y="234409" />
+				<node x="-117625" y="237929" />
+				<node x="-119938" y="237444" />
+				<node x="-120271" y="232816" />
+			</territory>
+		</territories>
+		<npc id="20101" count="6" respawnTime="3sec" /> <!-- Crasher -->
+		<npc id="20106" count="10" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+		<npc id="20108" count="8" respawnTime="3sec" /> <!-- Giant Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio31_1625_18" minZ="-3045" maxZ="-2645">
+				<node x="-117390" y="229561" />
+				<node x="-117687" y="231805" />
+				<node x="-120184" y="232674" />
+				<node x="-119579" y="229487" />
+			</territory>
+		</territories>
+		<npc id="20103" count="5" respawnTime="3sec" /> <!-- Giant Spider -->
+		<npc id="20106" count="10" respawnTime="3sec" /> <!-- Giant Fang Spider -->
+	</spawn>
+</list>

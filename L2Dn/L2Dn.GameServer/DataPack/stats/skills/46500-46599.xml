@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="46500" toLevel="1" name="P. Skill Critical Damage Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46501" toLevel="1" name="P. Skill Critical Damage Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46502" toLevel="1" name="P. Skill Critical Damage Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46503" toLevel="1" name="P. Skill Critical Damage Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46504" toLevel="1" name="P. Skill Critical Damage Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46505" toLevel="1" name="P. Skill Critical Damage Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46506" toLevel="1" name="P. Skill Critical Damage Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46507" toLevel="1" name="P. Skill Critical Damage Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46508" toLevel="1" name="Pet Accuracy Decrease 5 per">
+		<!-- Pet Accuracy $s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46509" toLevel="1" name="Pet Accuracy Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46510" toLevel="1" name="Pet Accuracy Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46511" toLevel="1" name="Pet Accuracy Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46512" toLevel="1" name="Pet Accuracy Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46513" toLevel="1" name="Pet Accuracy Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46514" toLevel="1" name="Pet Accuracy Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46515" toLevel="1" name="Pet Accuracy Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46516" toLevel="1" name="Pet Accuracy Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46517" toLevel="1" name="Pet Accuracy Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46518" toLevel="1" name="Pet Accuracy Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46519" toLevel="1" name="Pet Accuracy Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46520" toLevel="1" name="Pet Accuracy Decrease 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46521" toLevel="1" name="Pet Accuracy Decrease 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46522" toLevel="1" name="Pet Accuracy Decrease 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46523" toLevel="1" name="Pet Accuracy Decrease 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46524" toLevel="1" name="Pet Accuracy Decrease 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46525" toLevel="1" name="Pet Accuracy Decrease 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46526" toLevel="1" name="Pet Accuracy Decrease 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46527" toLevel="1" name="Pet Accuracy Decrease 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46528" toLevel="1" name="Wind Attack +20">
+		<!-- Wind Attack +$s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46529" toLevel="1" name="Wind Attack +40">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46530" toLevel="1" name="Wind Attack +60">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46531" toLevel="1" name="Wind Attack +80">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46532" toLevel="1" name="Wind Attack +100">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46533" toLevel="1" name="Wind Attack +120">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46534" toLevel="1" name="Wind Attack +140">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46535" toLevel="1" name="Wind Attack +160">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46536" toLevel="1" name="Wind Attack +180">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46537" toLevel="1" name="Wind Attack +200">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46538" toLevel="1" name="Wind Attack +220">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46539" toLevel="1" name="Wind Attack +240">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46540" toLevel="1" name="Wind Attack +260">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46541" toLevel="1" name="Wind Attack +280">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46542" toLevel="1" name="Wind Attack +300">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46543" toLevel="1" name="Wind Attack +320">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46544" toLevel="1" name="Wind Attack +340">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46545" toLevel="1" name="Wind Attack +360">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46546" toLevel="1" name="Wind Attack +380">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46547" toLevel="1" name="Wind Attack +400">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46548" toLevel="1" name="Wind Resistance +20">
+		<!-- Wind Resistance +$s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46549" toLevel="1" name="Wind Resistance +40">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46550" toLevel="1" name="Wind Resistance +60">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46551" toLevel="1" name="Wind Resistance +80">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46552" toLevel="1" name="Wind Resistance +100">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46553" toLevel="1" name="Wind Resistance +120">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46554" toLevel="1" name="Wind Resistance +140">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46555" toLevel="1" name="Wind Resistance +160">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46556" toLevel="1" name="Wind Resistance +180">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46557" toLevel="1" name="Wind Resistance +200">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46558" toLevel="1" name="Wind Resistance +220">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46559" toLevel="1" name="Wind Resistance +240">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46560" toLevel="1" name="Wind Resistance +260">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46561" toLevel="1" name="Wind Resistance +280">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46562" toLevel="1" name="Wind Resistance +300">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46563" toLevel="1" name="Wind Resistance +320">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46564" toLevel="1" name="Wind Resistance +340">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46565" toLevel="1" name="Wind Resistance +360">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46566" toLevel="1" name="Wind Resistance +380">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46567" toLevel="1" name="Wind Resistance +400">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46568" toLevel="15" name="Test - Hellfire">
+		<!-- <Skill with fixed cooldown> Sticks the sword into the ground and summons a burning flame. The flame burns nearby enemies with $s1 power. The effect lasts for 10 sec. P. Def. -40% M. Def. -40% Ignores Shield Defense. Ignores $s2 of the target's defense. Critical. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46569" toLevel="15" name="Test - Hellfire Debuff">
+		<!-- <Skill with fixed cooldown> Sticks the sword into the ground and summons a burning flame. The flame burns nearby enemies with $s1 power. The effect lasts for 10 sec. P. Def. -40% M. Def. -40% Ignores Shield Defense. Ignores $s2 of the target's defense. Critical. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46570" toLevel="1" name="Test - Absolute Shield Defense">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46571" toLevel="20" name="Test - 5% chance to remove P. Def. decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46572" toLevel="1" name="Test - 50% chance to remove P. Def. decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46573" toLevel="4" name="Test - i_p_attack">
+		<icon>icon.skill0190</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46574" toLevel="4" name="Test - i_energy_attack">
+		<icon>icon.skill0190</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46575" toLevel="4" name="Test - i_physical_attack_hp_link">
+		<icon>icon.skill0190</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46576" toLevel="20" name="Test - 5% Chance to Remove Shield Defense Debuff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46577" toLevel="1" name="Test - 50% Chance to Remove Shield Defense Debuff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

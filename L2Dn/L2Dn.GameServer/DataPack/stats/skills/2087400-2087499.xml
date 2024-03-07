@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="2087431" toLevel="1" name="Noda's Intelligence">
+		<!-- Gives additional effects according to INT. <INT <font color="C270F6">20 - 29</font>>. - When using a dagger, P. Atk. <font color="C270F6">+5%</font>. <INT <font color="C270F6">30 - 49</font>>. - When using a dagger, P. Atk. <font color="C270F6">+10%</font>. <INT <font color="C270F6">50+</font>>. - When using a dagger, P. Atk. <font color="C270F6">+15%. <Enchant effect>. Reduces required INT values. Increases P. Atk. when using a dagger.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>
+			<value toSubLevel="1002" toLevel="1" fromSubLevel="1002" fromLevel="1">-1</value>
+		</abnormalTime>
+		<abnormalType>NODA_INT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+	</skill>
+	<skill id="2087432" toLevel="1" name="Noda's Intelligence Lv. 1">
+		<!-- <INT <font color="C270F6">20 - 29</font>>. - When using a dagger, P. Atk. <font color="C270F6">+5%. <Enchant effect>. Reduces required INT values. Increases P. Atk. when using a dagger.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_INT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>INT</baseStat>
+				<min>20</min>
+				<max>29</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087433" toLevel="1" name="Noda's Intelligence Lv. 2">
+		<!-- <INT <font color="C270F6">30 - 49</font>>. - When using a dagger, P. Atk. <font color="C270F6">+10%. <Enchant effect>. Reduces required INT values. Increases P. Atk. when using a dagger.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_INT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>INT</baseStat>
+				<min>30</min>
+				<max>49</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087434" toLevel="1" name="Noda's Intelligence Lv. 3">
+		<!-- <INT <font color="C270F6">50+</font>>. - When using a dagger, P. Atk. <font color="C270F6">+15%. <Enchant effect>. Reduces required INT values. Increases P. Atk. when using a dagger.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_INT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>INT</baseStat>
+				<min>50</min>
+				<max>999</max>
+				<mulStat>PHYSICAL_ATTACK</mulStat>
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087435" toLevel="1" name="Noda's Wisdom">
+		<!-- Gives additional effects according to WIT. <WIT <font color="C270F6">15 - 24</font>>. - P. Skill Critical Rate <font color="C270F6">+3%</font>. <WIT <font color="C270F6">25 - 39</font>>. - P. Skill Critical Rate <font color="C270F6">+5%</font>. <WIT <font color="C270F6">40+</font>>. - P. Skill Critical Rate <font color="C270F6">+7%. <Enchant effect>. Reduces required WIT values. Increases P. Skill Critical Rate.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>
+			<value toSubLevel="1002" toLevel="1" fromSubLevel="1002" fromLevel="1">-1</value>
+		</abnormalTime>
+		<abnormalType>NODA_WIT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+	</skill>
+	<skill id="2087436" toLevel="1" name="Noda's Wisdom Lv. 1">
+		<!-- <WIT <font color="C270F6">15 - 24></font>>. - P. Skill Critical Rate <font color="C270F6">+3%. <Enchant effect>. Reduces required WIT values. Increases P. Skill Critical Rate.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_WIT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>WIT</baseStat>
+				<min>15</min>
+				<max>24</max>
+				<mulStat>CRITICAL_RATE_SKILL</mulStat>
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087437" toLevel="1" name="Noda's Wisdom Lv. 2">
+		<!-- <WIT <font color="C270F6">25 - 39</font>>. - P. Skill Critical Rate <font color="C270F6">+5%. <Enchant effect>. Reduces required WIT values. Increases P. Skill Critical Rate.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_WIT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>WIT</baseStat>
+				<min>25</min>
+				<max>39</max>
+				<mulStat>CRITICAL_RATE_SKILL</mulStat>
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087438" toLevel="1" name="Noda's Wisdom Lv. 3">
+		<!-- <WIT <font color="C270F6">40+</font>>. - P. Skill Critical Rate <font color="C270F6">+7%. <Enchant effect>. Reduces required WIT values. Increases P. Skill Critical Rate.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_WIT</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>WIT</baseStat>
+				<min>40</min>
+				<max>999</max>
+				<mulStat>CRITICAL_RATE_SKILL</mulStat>
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087439" toLevel="1" name="Noda's Mentality">
+		<!-- Gives additional effects according to MEN. <MEN <font color="C270F6">40 - 49</font>>. - P. Skill Power <font color="C270F6">+3%</font>. <MEN <font color="C270F6">50 - 69</font>>. - P. Skill Power <font color="C270F6">+5%</font>. <MEN <font color="C270F6">70+</font>>. - P. Skill Power <font color="C270F6">+7%. <Enchant effect>. Reduces required MEN values. Increases P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>
+			<value toSubLevel="1002" toLevel="1" fromSubLevel="1002" fromLevel="1">-1</value>
+		</abnormalTime>
+		<abnormalType>NODA_MEN</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+	</skill>
+	<skill id="2087440" toLevel="1" name="Noda's Mentality Lv. 1">
+		<!-- <MEN <font color="C270F6">40 - 49</font>>. - P. Skill Power <font color="C270F6">+3%. <Enchant effect>. Reduces required MEN values. Increases P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_MEN</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>MEN</baseStat>
+				<min>40</min>
+				<max>49</max>
+				<mulStat>PHYSICAL_SKILL_POWER</mulStat>
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087441" toLevel="1" name="Noda's Mentality Lv. 2">
+		<!-- <MEN <font color="C270F6">50 - 69</font>>. - P. Skill Power <font color="C270F6">+5%. <Enchant effect>. Reduces required MEN values. Increases P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_MEN</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>MEN</baseStat>
+				<min>50</min>
+				<max>69</max>
+				<mulStat>PHYSICAL_SKILL_POWER</mulStat>
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2087442" toLevel="1" name="Noda's Mentality Lv. 3">
+		<!-- <MEN <font color="C270F6">70+</font>>. - P. Skill Power <font color="C270F6">+7%. <Enchant effect>. Reduces required MEN values. Increases P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>NODA_MEN</abnormalType>
+		<magicLevel>80</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<operateType>A5</operateType>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="StatMulForBaseStat" toLevel="1" fromLevel="1" fromSubLevel="1002" toSubLevel="1002">
+				<baseStat>MEN</baseStat>
+				<min>70</min>
+				<max>999</max>
+				<mulStat>PHYSICAL_SKILL_POWER</mulStat>
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Pendant -->
+	<item>
+		<!-- Draogon Pendant Lv. 2 -->
+		<ingredient count="1" id="91245" />
+		<!-- Package: Einhasad's Pendant Lv. 2 -->
+		<production count="1" id="94259" />
+	</item>
+	<item>
+		<!-- Draogon Pendant Lv. 3 -->
+		<ingredient count="1" id="91246" />
+		<!-- Package: Einhasad's Pendant Lv. 3 -->
+		<production count="1" id="94260" />
+	</item>
+	<item>
+		<!-- Draogon Pendant Lv. 4 -->
+		<ingredient count="1" id="91247" />
+		<!-- Package: Einhasad's Pendant Lv. 4 -->
+		<production count="1" id="94261" />
+	</item>
+</list>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="11316" toLevel="1" name="Summon Soulshots">
+		<!-- Creates Beast Soulshots (30 pcs.). -->
+		<icon>icon.skill11316</icon>
+		<itemConsumeCount>4</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstone -->
+		<operateType>A1</operateType>
+		<mpInitialConsume>10</mpInitialConsume>
+		<hitTime>1000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>6645</itemId> <!-- Beast Soulshot -->
+				<itemCount>30</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="11317" toLevel="1" name="Mass Summon Soulshots">
+		<!-- Creates Beast Soulshots (300 pcs.). -->
+		<icon>BranchIcon.Icon.g_bm_antaras_pocket_i00</icon>
+		<itemConsumeCount>40</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId> <!-- Soulstone -->
+		<operateType>A1</operateType>
+		<mpInitialConsume>50</mpInitialConsume>
+		<hitTime>1000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>6645</itemId> <!-- Beast Soulshot -->
+				<itemCount>300</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="11318" toLevel="1" name="Summon Spiritshots">
+		<!-- Creates Beast Spiritshots (24 pcs.). -->
+		<icon>icon.skill11316</icon>
+		<itemConsumeCount>4</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<operateType>A1</operateType>
+		<mpInitialConsume>10</mpInitialConsume>
+		<hitTime>1000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>6646</itemId> <!-- Beast Spiritshot -->
+				<itemCount>24</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="11319" toLevel="1" name="Mass Summon Spiritshots">
+		<!-- Creates Beast Spiritshots (240 pcs.). -->
+		<icon>BranchIcon.Icon.g_bm_antaras_pocket_i00</icon>
+		<itemConsumeCount>40</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<operateType>A1</operateType>
+		<mpInitialConsume>50</mpInitialConsume>
+		<hitTime>1000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<isMagic>1</isMagic>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>6646</itemId> <!-- Beast Spiritshot -->
+				<itemCount>240</itemCount>
+			</effect>
+		</effects>
+	</skill>
+</list>

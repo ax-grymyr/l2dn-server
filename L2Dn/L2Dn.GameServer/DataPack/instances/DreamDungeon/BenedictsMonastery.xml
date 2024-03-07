@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="222" name="Benedicts Monastery" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="60" empty="60" eject="60" />
+	<locations>
+		<enter type="FIXED">
+			<location x="115903" y="-80918" z="-43" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="10" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+	</reenter>
+	<doorlist>
+		<door id="23150003">
+			<openStatus default="close" />
+		</door>
+		<door id="23150004">
+			<openStatus default="close" />
+		</door>
+	</doorlist>
+	<spawnlist>
+		<group name="BenedictNPC_1"> <!-- instance start -->
+			<npc id="34313" x="117370" y="-80573" z="-43" heading="49895" respawnTime="0sec" /> <!-- Holy Grail's Raider -->
+		</group>
+		<group name="BenedictNPC_2" spawnByDefault="false"> <!-- close to break bridge -->
+			<npc id="34313" x="112783" y="-79020" z="59" heading="49511" respawnTime="0sec" /> <!-- Holy Grail's Raider -->
+		</group>
+		<group name="BenedictNPC_3" spawnByDefault="false"> <!-- in gabriell room -->
+			<npc id="18674" x="112799" y="-76509" z="94" heading="15229" respawnTime="0sec" /> <!-- Holy Grail -->
+		</group>
+		<group name="CatLair_TeleporterCat" spawnByDefault="false">
+			<npc id="34316" x="112800" y="-75950" z="0" heading="49511" respawnTime="0sec" /> <!-- Teleporter Cat -->
+		</group>
+		<group name="BenedictMonsters" spawnByDefault="false">
+			<npc id="22395" x="117409" y="-77929" z="-69" heading="12067" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117310" y="-77858" z="-75" heading="41810" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117187" y="-77954" z="-75" heading="38709" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117108" y="-78059" z="-75" heading="49419" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117275" y="-78140" z="-75" heading="57117" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117356" y="-77567" z="-75" heading="7276" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117307" y="-77364" z="-75" heading="19388" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117189" y="-77552" z="-75" heading="44910" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117062" y="-77663" z="-73" heading="44086" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117247" y="-77645" z="-75" heading="7408" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117522" y="-77617" z="-61" heading="3491" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117401" y="-77688" z="-75" heading="38498" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117387" y="-76635" z="-75" heading="12333" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117308" y="-76522" z="-75" heading="37282" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117056" y="-76543" z="-75" heading="31943" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117195" y="-76445" z="-75" heading="53202" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117450" y="-76208" z="-75" heading="5208" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117310" y="-76107" z="-75" heading="34692" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117119" y="-76261" z="-75" heading="42461" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117050" y="-76364" z="-75" heading="45055" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117458" y="-76398" z="-75" heading="48069" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117298" y="-76287" z="-75" heading="40159" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117212" y="-76159" z="-75" heading="25546" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117097" y="-75975" z="-75" heading="24216" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117122" y="-75749" z="-75" heading="18470" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="117208" y="-75807" z="-75" heading="59327" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117360" y="-75989" z="-75" heading="54822" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117395" y="-75778" z="-75" heading="15538" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117344" y="-75581" z="-71" heading="21299" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="117173" y="-75636" z="-75" heading="36268" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="117355" y="-74094" z="-43" heading="13048" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="117378" y="-74501" z="-43" heading="49069" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="116903" y="-74645" z="-43" heading="33998" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="116695" y="-74121" z="-43" heading="20372" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116230" y="-74059" z="-43" heading="31496" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116033" y="-74422" z="-43" heading="40176" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115765" y="-74660" z="-43" heading="39354" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115776" y="-74067" z="-43" heading="16357" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116517" y="-74422" z="-43" heading="58702" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115729" y="-75755" z="-67" heading="43224" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115864" y="-75766" z="-75" heading="65163" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115891" y="-75612" z="-75" heading="14162" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115989" y="-75668" z="-75" heading="59277" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116224" y="-75912" z="-64" heading="55671" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115932" y="-76021" z="-72" heading="23561" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115742" y="-76004" z="-64" heading="33501" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="116011" y="-75879" z="-75" heading="4944" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116161" y="-76214" z="-75" heading="57737" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115955" y="-76179" z="-75" heading="31110" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115647" y="-76160" z="-52" heading="32450" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115838" y="-76340" z="-74" heading="58124" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116052" y="-76352" z="-75" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116112" y="-76019" z="-75" heading="11273" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115992" y="-76058" z="-75" heading="46093" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115822" y="-76043" z="-75" heading="31569" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115861" y="-76228" z="-75" heading="54476" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="116036" y="-76125" z="-75" heading="18939" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="116131" y="-75719" z="-75" heading="14402" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115777" y="-77305" z="-75" heading="14744" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116025" y="-77365" z="-75" heading="56039" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="116106" y="-77430" z="-75" heading="59402" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116142" y="-77716" z="-73" heading="48478" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="116137" y="-78059" z="-75" heading="48978" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116072" y="-78313" z="-75" heading="48188" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115857" y="-78311" z="-75" heading="32670" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115780" y="-78018" z="-75" heading="17717" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115790" y="-77827" z="-75" heading="13991" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115789" y="-77475" z="-75" heading="19705" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115918" y="-77451" z="-75" heading="64866" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="116002" y="-77562" z="-75" heading="55908" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116050" y="-77761" z="-75" heading="51620" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="115889" y="-77848" z="-75" heading="37250" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116034" y="-78025" z="-75" heading="61754" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115877" y="-78220" z="-75" heading="37776" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115984" y="-78266" z="-75" heading="11483" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="116176" y="-77869" z="-75" heading="7751" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="115720" y="-78249" z="-66" heading="40770" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115929" y="-78067" z="-75" heading="65362" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="115801" y="-77679" z="-75" heading="28583" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="115847" y="-77531" z="-75" heading="16194" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="116205" y="-77677" z="-67" heading="60569" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="114953" y="-79347" z="-43" heading="15194" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="114694" y="-79322" z="-43" heading="32127" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="114321" y="-79447" z="-43" heading="37231" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="114519" y="-79929" z="-43" heading="53217" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="114429" y="-80330" z="-43" heading="48392" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="114551" y="-80667" z="-43" heading="57617" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="114938" y="-80838" z="-43" heading="61379" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22397" x="114883" y="-80495" z="-43" heading="23251" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="114637" y="-80229" z="-43" heading="25411" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22395" x="114771" y="-79938" z="-43" heading="10535" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22396" x="114746" y="-79581" z="-43" heading="20813" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+			<npc id="22398" x="114986" y="-80115" z="-43" heading="49923" respawnTime="0sec" /> <!-- Guardian Angel of the Holy Grail -->
+		</group>
+		<group name="BenedictMonsters_Boss_Gabriel" spawnByDefault="false">
+			<npc id="18680" x="112800" y="-75950" z="0" heading="49511" respawnTime="0sec" /> <!-- Gabriel -->
+		</group>
+		<group name="BenedictMonsters_Boss_GabrielMinion" spawnByDefault="false">
+			<npc id="18681" x="112800" y="-75950" z="0" heading="49511" respawnTime="0sec" /> <!-- Gabriel Minion -->
+		</group>
+	</spawnlist>
+</instance>

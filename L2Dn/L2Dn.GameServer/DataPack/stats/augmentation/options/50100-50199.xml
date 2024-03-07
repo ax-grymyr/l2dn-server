@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="50100" name="option_id_50100">
+		<!-- P. Def. +20 -->
+	</option>
+	<option id="50101" name="option_id_50101">
+		<!-- M. Def. +15 -->
+	</option>
+	<option id="50102" name="max_hp">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50103" name="max_hp">
+		<!-- Max MP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50104" name="max_hp">
+		<!-- Max CP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50105" name="accuracy">
+		<!-- P. Accuracy +1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50106" name="mag_accuracy">
+		<!-- M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50107" name="evasion">
+		<!-- P. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50108" name="magic_evasion">
+		<!-- M. Evasion +1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50109" name="hp_regen">
+		<!-- HP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50110" name="mp_regen">
+		<!-- MP Recovery Rate +1 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50111" name="p_def">
+		<!-- P. Def. +30 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50112" name="m_def">
+		<!-- M. Def. +25 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50113" name="max_hp">
+		<!-- Max HP +120 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50114" name="max_mp">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50115" name="max_cp">
+		<!-- Max CP +100 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50116" name="accuracy">
+		<!-- P. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50117" name="mag_accuracy">
+		<!-- M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50118" name="evasion">
+		<!-- P. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50119" name="magic_evasion">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50120" name="hp_regen">
+		<!-- HP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50121" name="mp_regen">
+		<!-- MP Recovery Rate +2 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50122" name="p_def">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50123" name="m_def">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50124" name="max_hp">
+		<!-- Max HP +150 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50125" name="max_mp">
+		<!-- Max MP +120 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50126" name="max_cp">
+		<!-- Max CP +120 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50127" name="oaccuracy">
+		<!-- P. Accuracy +3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50128" name="mag_accuracy">
+		<!-- M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50129" name="evasion">
+		<!-- P. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50130" name="magic_evasion">
+		<!-- M. Evasion +3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50131" name="hp_regen">
+		<!-- HP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50132" name="mp_regen">
+		<!-- MP Recovery Rate +3 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50133" name="p_def">
+		<!-- P. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50134" name="m_def">
+		<!-- M. Def. +45 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50135" name="max_hp">
+		<!-- Max HP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50136" name="max_mp">
+		<!-- Max MP +140 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50137" name="max_cp">
+		<!-- Max CP +140 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>140</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50138" name="accuracy">
+		<!-- P. Accuracy +4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50139" name="mag_accuracy">
+		<!-- M. Accuracy +4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50140" name="evasion">
+		<!-- P. Evasion +4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50141" name="magic_evasion">
+		<!-- M. Evasion +4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50142" name="hp_regen">
+		<!-- HP Recovery Rate +4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50143" name="mp_regen">
+		<!-- MP Recovery Rate +4 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50144" name="p_def">
+		<!-- P. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50145" name="m_def">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50146" name="max_hp">
+		<!-- Max HP +320 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50147" name="max_mp">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50148" name="max_cp">
+		<!-- Max CP +200 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50149" name="accuracy">
+		<!-- P. Accuracy +5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50150" name="mag_accuracy">
+		<!-- M. Accuracy +5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50151" name="evasion">
+		<!-- P. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50152" name="magic_evasion">
+		<!-- M. Evasion +5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50153" name="hp_regen">
+		<!-- HP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50154" name="mp_regen">
+		<!-- MP Recovery Rate +5 -->
+		<effects>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="50155" name="o_s_cl_fear">
+		<!-- Item skill: Silence Resistance +5%\nFear Resistance +5% -->
+		<passive_skill id="39318" level="1" /> <!-- Item Skill: Fear Resistance -->
+	</option>
+	<option id="50156" name="o_s_cl_stun">
+		<!-- Item skill: Shock Resistance +5% -->
+		<passive_skill id="39319" level="1" /> <!-- Item Skill: Shock Resistance -->
+	</option>
+	<option id="50157" name="o_s_cl_para">
+		<!-- Item skill: Paralysis Resistance +5% -->
+		<passive_skill id="39320" level="1" /> <!-- Item Skill: Paralysis Resistance -->
+	</option>
+	<option id="50158" name="o_s_cl_bleed">
+		<!-- Item skill: Infection Resistance +5% -->
+		<passive_skill id="39321" level="1" /> <!-- Item Skill: Infection Resistance -->
+	</option>
+	<option id="50159" name="o_s_cl_poison">
+		<!-- Item skill: Infection Resistance +5% -->
+		<passive_skill id="39322" level="1" /> <!-- Item Skill: Silence Resistance -->
+	</option>
+	<option id="50160" name="o_s_cl_hold">
+		<!-- Item skill: Hold Resistance +5% -->
+		<passive_skill id="39323" level="1" /> <!-- Item Skill: Hold Resistance -->
+	</option>
+	<option id="50161" name="o_s_cl_hg_str">
+		<!-- STR +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50162" name="o_s_cl_hg_dex">
+		<!-- DEX +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50163" name="o_s_cl_hg_con">
+		<!-- CON +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50164" name="o_s_cl_hg_int">
+		<!-- INT +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50165" name="o_s_cl_hg_wit">
+		<!-- WIT +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50166" name="o_s_cl_hg_men">
+		<!-- MEN +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50167" name="o_s_cl_xp_gain">
+		<!-- Item skill: Acquired XP while hunting +5% -->
+		<passive_skill id="39324" level="1" /> <!-- Item Skill: Acquired XP -->
+	</option>
+	<option id="50168" name="o_s_cl_fear">
+		<!-- Item skill: Silence Resistance +10%\nFear Resistance +10% -->
+		<passive_skill id="39318" level="2" /> <!-- Item Skill: Fear Resistance -->
+	</option>
+	<option id="50169" name="o_s_cl_stun">
+		<!-- Item skill: Shock Resistance +10% -->
+		<passive_skill id="39319" level="2" /> <!-- Item Skill: Shock Resistance -->
+	</option>
+	<option id="50170" name="o_s_cl_para">
+		<!-- Item skill: Paralysis Resistance +10% -->
+		<passive_skill id="39320" level="2" /> <!-- Item Skill: Paralysis Resistance -->
+	</option>
+	<option id="50171" name="o_s_cl_bleed">
+		<!-- Item skill: Infection Resistance +10% -->
+		<passive_skill id="39321" level="2" /> <!-- Item Skill: Infection Resistance -->
+	</option>
+	<option id="50172" name="o_s_cl_poison">
+		<!-- Item skill: Infection Resistance +10% -->
+		<passive_skill id="39322" level="2" /> <!-- Item Skill: Silence Resistance -->
+	</option>
+	<option id="50173" name="o_s_cl_hold">
+		<!-- Item skill: Hold Resistance +10% -->
+		<passive_skill id="39323" level="2" /> <!-- Item Skill: Hold Resistance -->
+	</option>
+	<option id="50174" name="o_s_cl_hg_str">
+		<!-- STR +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50175" name="o_s_cl_hg_dex">
+		<!-- DEX +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50176" name="o_s_cl_hg_con">
+		<!-- CON +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>CON</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50177" name="o_s_cl_hg_int">
+		<!-- INT +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50178" name="o_s_cl_hg_wit">
+		<!-- WIT +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50179" name="o_s_cl_hg_men">
+		<!-- MEN +2 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="50180" name="o_s_cl_xp_gain">
+		<!-- Item skill: Acquired XP while hunting +10% -->
+		<passive_skill id="39324" level="2" /> <!-- Item Skill: Acquired XP -->
+	</option>
+	<option id="50181" name="o_s_cl_fear">
+		<!-- Item skill: Silence Resistance +20%\nFear Resistance +20% -->
+		<passive_skill id="39318" level="3" /> <!-- Item Skill: Fear Resistance -->
+	</option>
+	<option id="50182" name="o_s_cl_stun">
+		<!-- Item skill: Shock Resistance +20% -->
+		<passive_skill id="39319" level="3" /> <!-- Item Skill: Shock Resistance -->
+	</option>
+	<option id="50183" name="o_s_cl_para">
+		<!-- Item skill: Paralysis Resistance +20% -->
+		<passive_skill id="39320" level="3" /> <!-- Item Skill: Paralysis Resistance -->
+	</option>
+	<option id="50184" name="o_s_cl_bleed">
+		<!-- Item skill: Infection Resistance +20% -->
+		<passive_skill id="39321" level="3" /> <!-- Item Skill: Infection Resistance -->
+	</option>
+	<option id="50185" name="o_s_cl_poison">
+		<!-- Item skill: Infection Resistance +20% -->
+		<passive_skill id="39322" level="3" /> <!-- Item Skill: Silence Resistance -->
+	</option>
+	<option id="50186" name="o_s_cl_hold">
+		<!-- Item skill: Hold Resistance +20% -->
+		<passive_skill id="39323" level="3" /> <!-- Item Skill: Hold Resistance -->
+	</option>
+	<option id="50187" name="o_s_cl_xp_gain">
+		<!-- Item skill: Acquired XP while hunting +20% -->
+		<passive_skill id="39324" level="3" /> <!-- Item Skill: Acquired XP -->
+	</option>
+	<option id="50188" name="o_s_cl_deliverance">
+		<!-- <Arcane Deliverance>\nWhen triggered: Recovers 6000 HP, 1000 MP and 3000 CP when HP is lower than 20%. -->
+		<passive_skill id="39325" level="1" /> <!-- Arcane Deliverance -->
+	</option>
+	<option id="50189" name="o_s_cl_speed">
+		<!-- <Arcane Speed>\nWhen triggered: Atk. Spd. +100, Casting Spd. +150, Speed +10. -->
+		<passive_skill id="39326" level="1" /> <!-- Arcane Speed -->
+	</option>
+	<option id="50190" name="o_s_cl_barrier">
+		<!-- <Arcane Barrier>\nWhen triggered: Absorbs 4000 damage. -->
+		<passive_skill id="39327" level="1" /> <!-- Arcane Barrier -->
+	</option>
+	<option id="50191" name="o_s_cl_immunity">
+		<!-- <Arcane Immunity>\nWhen triggered: Grants immunity to debuffs. -->
+		<passive_skill id="39328" level="1" /> <!-- Arcane Immunity -->
+	</option>
+	<option id="50192" name="o_s_cl_protection">
+		<!-- <Arcane Protection>\nWhen triggered: P. Def. +3000, M. Def. +2100. -->
+		<passive_skill id="39329" level="1" /> <!-- Arcane Protection -->
+	</option>
+	<option id="50193" name="o_s_cl_paralysis">
+		<!-- <Arcane Paralysis>\nWhen triggered: Paralyzes the target. -->
+		<passive_skill id="39330" level="1" /> <!-- Arcane Paralysis -->
+	</option>
+	<option id="50194" name="o_s_cl_silence">
+		<!-- <Arcane Silence>\nWhen triggered: Inflicts Silence on the target. -->
+		<passive_skill id="39331" level="1" /> <!-- Arcane Silence -->
+	</option>
+	<option id="50195" name="o_s_cl_sense">
+		<!-- <Arcane Critical Sense>\nAll Critical Rate +3%, All Critical Damage +150 -->
+		<passive_skill id="39332" level="1" /> <!-- Arcane Critical Sense -->
+	</option>
+	<option id="50196" name="o_s_cl_power">
+		<!-- <Arcane Power>\nP. Atk. +350, M. Atk. +500 -->
+		<passive_skill id="39333" level="1" /> <!-- Arcane Power -->
+	</option>
+</list>

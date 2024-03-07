@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="517" price="0" /> <!-- Composite Helmet -->
+	<item id="60" price="0" /> <!-- Composite Armor -->
+	<item id="64" price="0" /> <!-- Composite Boots -->
+	<item id="354" price="0" /> <!-- Chain Mail Shirt -->
+	<item id="381" price="0" /> <!-- Chain Gaiters -->
+	<item id="2413" price="0" /> <!-- Chain Hood -->
+	<item id="2453" price="0" /> <!-- Chain Gloves -->
+	<item id="2429" price="0" /> <!-- Chain Boots -->
+	<item id="2495" price="0" /> <!-- Chain Shield -->
+	<item id="2414" price="0" /> <!-- Full Plate Helmet -->
+	<item id="93639" price="0" /> <!-- Full Plate Helmet - Sealed -->
+	<item id="356" price="0" /> <!-- Full Plate Armor -->
+	<item id="93642" price="0" /> <!-- Full Plate Armor - Sealed -->
+	<item id="2462" price="0" /> <!-- Full Plate Gauntlets -->
+	<item id="93641" price="0" /> <!-- Full Plate Gauntlets - Sealed -->
+	<item id="2438" price="0" /> <!-- Full Plate Boots -->
+	<item id="93640" price="0" /> <!-- Full Plate Boots - Sealed -->
+	<item id="107" price="0" /> <!-- Composite Shield -->
+	<item id="2497" price="0" /> <!-- Full Plate Shield -->
+</list>

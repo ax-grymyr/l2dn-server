@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/hennaCombinations.xsd">
+	<henna dyeId="337" itemTwo="96623" commission="300000" chance="50"> <!-- Potential of STR <STR+1> -->
+		<reward dyeId="338" type="ON_SUCCESS" />
+		<reward dyeId="337" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="338" itemTwo="96623" commission="300000" chance="25"> <!-- Potential of STR <STR+1> -->
+		<reward dyeId="339" type="ON_SUCCESS" />
+		<reward dyeId="338" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="339" itemTwo="96623" commission="300000" chance="20"> <!-- Potential of STR <STR+2> -->
+		<reward dyeId="340" type="ON_SUCCESS" />
+		<reward dyeId="339" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="340" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of STR <STR+4> (P. Atk. +25) -->
+		<reward dyeId="341" type="ON_SUCCESS" />
+		<reward dyeId="340" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="341" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of STR <STR+4> (P. Atk. +50) -->
+		<reward dyeId="342" type="ON_SUCCESS" />
+		<reward dyeId="341" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="342" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of STR <STR+4> (P. Atk. +75) -->
+		<reward dyeId="343" type="ON_SUCCESS" />
+		<reward dyeId="342" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="343" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of STR <STR+4> (P. Atk. +100) -->
+		<reward dyeId="344" type="ON_SUCCESS" />
+		<reward dyeId="343" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="344" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of STR <STR+4> (P. Atk. +125) -->
+		<reward dyeId="345" type="ON_SUCCESS" />
+		<reward dyeId="344" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="345" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of STR <STR+4> (P. Atk. +150) -->
+		<reward dyeId="346" type="ON_SUCCESS" />
+		<reward dyeId="345" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="346" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of STR <STR+4> (P. Atk. +175) -->
+		<reward dyeId="347" type="ON_SUCCESS" />
+		<reward dyeId="346" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="347" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of STR <STR+4> (P. Atk. +200) -->
+		<reward dyeId="348" type="ON_SUCCESS" />
+		<reward dyeId="347" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="348" itemTwo="96630" commission="300000" chance="8"> <!-- Tattoo of STR <STR+5> (P. Atk. +225) -->
+		<reward dyeId="349" type="ON_SUCCESS" />
+		<reward dyeId="348" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="349" itemTwo="96630" commission="300000" chance="6"> <!-- Tattoo of STR <STR+5> (P. Atk. +250) -->
+		<reward dyeId="350" type="ON_SUCCESS" />
+		<reward dyeId="349" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="350" itemTwo="96630" commission="300000" chance="5"> <!-- Tattoo of STR <STR+5> (P. Atk. +275) -->
+		<reward dyeId="351" type="ON_SUCCESS" />
+		<reward dyeId="350" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="351" itemTwo="96630" commission="300000" chance="4"> <!-- Tattoo of STR <STR+5> (P. Atk. +300) -->
+		<reward dyeId="352" type="ON_SUCCESS" />
+		<reward dyeId="351" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="352" itemTwo="96630" commission="300000" chance="3"> <!-- Tattoo of STR <STR+5> (P. Atk. +325) -->
+		<reward dyeId="353" type="ON_SUCCESS" />
+		<reward dyeId="352" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="353" itemTwo="96630" commission="300000" chance="2"> <!-- Tattoo of STR <STR+5> (P. Atk. +350 P. Skill Critical Rate +0.5%) -->
+		<reward dyeId="354" type="ON_SUCCESS" />
+		<reward dyeId="353" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="354" itemTwo="96630" commission="300000" chance="1.5"> <!-- Tattoo of STR <STR+5> (P. Atk. +375 P. Skill Critical Rate +1%) -->
+		<reward dyeId="355" type="ON_SUCCESS" />
+		<reward dyeId="354" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="355" itemTwo="96630" commission="300000" chance="1"> <!-- Tattoo of STR <STR+5> (P. Atk. +400 P. Skill Critical Rate +1.5%) -->
+		<reward dyeId="356" type="ON_SUCCESS" />
+		<reward dyeId="355" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="356" itemTwo="96630" commission="300000" chance="0.5"> <!-- Tattoo of STR <STR+5> (P. Atk. +425 P. Skill Critical Rate +2%) -->
+		<reward dyeId="357" type="ON_SUCCESS" />
+		<reward dyeId="356" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="358" itemTwo="96623" commission="300000" chance="50"> <!-- Tattoo of CON <CON+1> -->
+		<reward dyeId="359" type="ON_SUCCESS" />
+		<reward dyeId="358" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="359" itemTwo="96623" commission="300000" chance="25"> <!-- Tattoo of CON <CON+2> -->
+		<reward dyeId="360" type="ON_SUCCESS" />
+		<reward dyeId="359" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="360" itemTwo="96623" commission="300000" chance="20"> <!-- Tattoo of CON <CON+3> -->
+		<reward dyeId="361" type="ON_SUCCESS" />
+		<reward dyeId="360" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="361" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of CON <CON+4> (P. Def. +32) -->
+		<reward dyeId="362" type="ON_SUCCESS" />
+		<reward dyeId="361" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="362" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of CON <CON+4> (P. Def. +65) -->
+		<reward dyeId="363" type="ON_SUCCESS" />
+		<reward dyeId="362" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="363" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of CON <CON+4> (P. Def. +97) -->
+		<reward dyeId="364" type="ON_SUCCESS" />
+		<reward dyeId="363" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="364" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of CON <CON+4> (P. Def. +130) -->
+		<reward dyeId="365" type="ON_SUCCESS" />
+		<reward dyeId="364" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="365" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of CON <CON+4> (P. Def. +162) -->
+		<reward dyeId="366" type="ON_SUCCESS" />
+		<reward dyeId="365" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="366" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of CON <CON+4> (P. Def. +195) -->
+		<reward dyeId="367" type="ON_SUCCESS" />
+		<reward dyeId="366" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="367" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of CON <CON+4> (P. Def. +227) -->
+		<reward dyeId="368" type="ON_SUCCESS" />
+		<reward dyeId="367" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="368" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of CON <CON+4> (P. Def. +260) -->
+		<reward dyeId="369" type="ON_SUCCESS" />
+		<reward dyeId="368" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="369" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of CON <CON+5> (P. Def. +292) -->
+		<reward dyeId="370" type="ON_SUCCESS" />
+		<reward dyeId="369" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="370" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of CON <CON+5> (P. Def. +325) -->
+		<reward dyeId="371" type="ON_SUCCESS" />
+		<reward dyeId="370" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="371" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of CON <CON+5> (P. Def. +357) -->
+		<reward dyeId="372" type="ON_SUCCESS" />
+		<reward dyeId="371" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="372" itemTwo="96623" commission="300000" chance="4"> <!-- Tattoo of CON <CON+5> (P. Def. +390) -->
+		<reward dyeId="373" type="ON_SUCCESS" />
+		<reward dyeId="372" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="373" itemTwo="96623" commission="300000" chance="3"> <!-- Tattoo of CON <CON+5> (P. Def. +422) -->
+		<reward dyeId="374" type="ON_SUCCESS" />
+		<reward dyeId="373" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="374" itemTwo="96623" commission="300000" chance="2"> <!-- Tattoo of CON <CON+5> (P. Def. +455 P. Skill Damage Received -1%) -->
+		<reward dyeId="375" type="ON_SUCCESS" />
+		<reward dyeId="374" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="375" itemTwo="96623" commission="300000" chance="1.5"> <!-- Tattoo of CON <CON+5> (P. Def. +487 P. Skill Damage Received -1.5%) -->
+		<reward dyeId="376" type="ON_SUCCESS" />
+		<reward dyeId="375" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="376" itemTwo="96623" commission="300000" chance="1"> <!-- Tattoo of CON <CON+5> (P. Def. +520 P. Skill Damage Received -2%) -->
+		<reward dyeId="377" type="ON_SUCCESS" />
+		<reward dyeId="376" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="377" itemTwo="96623" commission="300000" chance="0.5"> <!-- Tattoo of CON <CON+5> (P. Def. +552 P. Skill Damage Received -3%) -->
+		<reward dyeId="378" type="ON_SUCCESS" />
+		<reward dyeId="377" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="379" itemTwo="96623" commission="300000" chance="50"> <!-- Tattoo of DEX <DEX+1> -->
+		<reward dyeId="380" type="ON_SUCCESS" />
+		<reward dyeId="379" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="380" itemTwo="96623" commission="300000" chance="25"> <!-- Tattoo of DEX <DEX+2> -->
+		<reward dyeId="381" type="ON_SUCCESS" />
+		<reward dyeId="380" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="381" itemTwo="96623" commission="300000" chance="20"> <!-- Tattoo of DEX <DEX+3> -->
+		<reward dyeId="382" type="ON_SUCCESS" />
+		<reward dyeId="381" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="382" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -0.4%) -->
+		<reward dyeId="383" type="ON_SUCCESS" />
+		<reward dyeId="382" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="383" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -0.8%) -->
+		<reward dyeId="384" type="ON_SUCCESS" />
+		<reward dyeId="383" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="384" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -1.2%) -->
+		<reward dyeId="385" type="ON_SUCCESS" />
+		<reward dyeId="384" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="385" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -1.6%) -->
+		<reward dyeId="386" type="ON_SUCCESS" />
+		<reward dyeId="385" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="386" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -2.0%) -->
+		<reward dyeId="387" type="ON_SUCCESS" />
+		<reward dyeId="386" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="387" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -2.4%) -->
+		<reward dyeId="388" type="ON_SUCCESS" />
+		<reward dyeId="387" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="388" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -2.8%) -->
+		<reward dyeId="389" type="ON_SUCCESS" />
+		<reward dyeId="388" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="389" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of DEX <DEX+4> (P. Skill Critical Rate Received -3.2%) -->
+		<reward dyeId="390" type="ON_SUCCESS" />
+		<reward dyeId="389" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="390" itemTwo="96630" commission="300000" chance="8"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -3.6%) -->
+		<reward dyeId="391" type="ON_SUCCESS" />
+		<reward dyeId="390" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="391" itemTwo="96630" commission="300000" chance="6"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -4.0%) -->
+		<reward dyeId="392" type="ON_SUCCESS" />
+		<reward dyeId="391" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="392" itemTwo="96630" commission="300000" chance="5"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -4.4%) -->
+		<reward dyeId="393" type="ON_SUCCESS" />
+		<reward dyeId="392" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="393" itemTwo="96630" commission="300000" chance="4"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -4.8%) -->
+		<reward dyeId="394" type="ON_SUCCESS" />
+		<reward dyeId="393" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="394" itemTwo="96630" commission="300000" chance="3"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -5.2%) -->
+		<reward dyeId="395" type="ON_SUCCESS" />
+		<reward dyeId="394" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="395" itemTwo="96630" commission="300000" chance="2"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -5.6% Soulshot Damage +1%) -->
+		<reward dyeId="396" type="ON_SUCCESS" />
+		<reward dyeId="395" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="396" itemTwo="96630" commission="300000" chance="1.5"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -6.0% Soulshot Damage +1.5%) -->
+		<reward dyeId="397" type="ON_SUCCESS" />
+		<reward dyeId="396" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="397" itemTwo="96630" commission="300000" chance="1"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -6.4% Soulshot Damage +2%) -->
+		<reward dyeId="398" type="ON_SUCCESS" />
+		<reward dyeId="397" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="398" itemTwo="96630" commission="300000" chance="0.5"> <!-- Tattoo of DEX <DEX+5> (P. Skill Critical Rate Received -6.8% Soulshot Damage +3%) -->
+		<reward dyeId="399" type="ON_SUCCESS" />
+		<reward dyeId="398" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="400" itemTwo="96623" commission="300000" chance="50"> <!-- Tattoo of INT <INT+1> -->
+		<reward dyeId="401" type="ON_SUCCESS" />
+		<reward dyeId="400" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="401" itemTwo="96623" commission="300000" chance="25"> <!-- Tattoo of INT <INT+2> -->
+		<reward dyeId="402" type="ON_SUCCESS" />
+		<reward dyeId="401" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="402" itemTwo="96623" commission="300000" chance="20"> <!-- Tattoo of INT <INT+3> -->
+		<reward dyeId="403" type="ON_SUCCESS" />
+		<reward dyeId="402" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="403" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of INT <INT+4> (M. Atk. +25) -->
+		<reward dyeId="404" type="ON_SUCCESS" />
+		<reward dyeId="403" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="404" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of INT <INT+4> (M. Atk. +50) -->
+		<reward dyeId="405" type="ON_SUCCESS" />
+		<reward dyeId="404" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="405" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of INT <INT+4> (M. Atk. +75) -->
+		<reward dyeId="406" type="ON_SUCCESS" />
+		<reward dyeId="405" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="406" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of INT <INT+4> (M. Atk. +100) -->
+		<reward dyeId="407" type="ON_SUCCESS" />
+		<reward dyeId="406" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="407" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of INT <INT+4> (M. Atk. +125) -->
+		<reward dyeId="408" type="ON_SUCCESS" />
+		<reward dyeId="407" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="408" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of INT <INT+4> (M. Atk. +150) -->
+		<reward dyeId="409" type="ON_SUCCESS" />
+		<reward dyeId="408" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="409" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of INT <INT+4> (M. Atk. +175) -->
+		<reward dyeId="410" type="ON_SUCCESS" />
+		<reward dyeId="409" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="410" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of INT <INT+4> (M. Atk. +200) -->
+		<reward dyeId="411" type="ON_SUCCESS" />
+		<reward dyeId="410" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="411" itemTwo="96630" commission="300000" chance="8"> <!-- Tattoo of INT <INT+5> (M. Atk. +225) -->
+		<reward dyeId="412" type="ON_SUCCESS" />
+		<reward dyeId="411" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="412" itemTwo="96630" commission="300000" chance="6"> <!-- Tattoo of INT <INT+5> (M. Atk. +250) -->
+		<reward dyeId="413" type="ON_SUCCESS" />
+		<reward dyeId="412" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="413" itemTwo="96630" commission="300000" chance="5"> <!-- Tattoo of INT <INT+5> (M. Atk. +275) -->
+		<reward dyeId="414" type="ON_SUCCESS" />
+		<reward dyeId="413" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="414" itemTwo="96630" commission="300000" chance="4"> <!-- Tattoo of INT <INT+5> (M. Atk. +300) -->
+		<reward dyeId="415" type="ON_SUCCESS" />
+		<reward dyeId="414" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="415" itemTwo="96630" commission="300000" chance="3"> <!-- Tattoo of INT <INT+5> (M. Atk. +325) -->
+		<reward dyeId="416" type="ON_SUCCESS" />
+		<reward dyeId="415" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="416" itemTwo="96630" commission="300000" chance="2"> <!-- Tattoo of INT <INT+5> (M. Atk. +350 M. Skill Critical Rate +0.5%) -->
+		<reward dyeId="417" type="ON_SUCCESS" />
+		<reward dyeId="416" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="417" itemTwo="96630" commission="300000" chance="1.5"> <!-- Tattoo of INT <INT+5> (M. Atk. +375 M. Skill Critical Rate +1%) -->
+		<reward dyeId="418" type="ON_SUCCESS" />
+		<reward dyeId="417" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="418" itemTwo="96630" commission="300000" chance="1"> <!-- Tattoo of INT <INT+5> (M. Atk. +400 M. Skill Critical Rate +1.5%) -->
+		<reward dyeId="419" type="ON_SUCCESS" />
+		<reward dyeId="418" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="419" itemTwo="96630" commission="300000" chance="0.5"> <!-- Tattoo of INT <INT+5> (M. Atk. +425 M. Skill Critical Rate +2%) -->
+		<reward dyeId="420" type="ON_SUCCESS" />
+		<reward dyeId="419" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="421" itemTwo="96623" commission="300000" chance="50"> <!-- Tattoo of MEN <MEN+1> -->
+		<reward dyeId="422" type="ON_SUCCESS" />
+		<reward dyeId="421" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="422" itemTwo="96623" commission="300000" chance="25"> <!-- Tattoo of MEN <MEN+2> -->
+		<reward dyeId="423" type="ON_SUCCESS" />
+		<reward dyeId="422" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="423" itemTwo="96623" commission="300000" chance="20"> <!-- Tattoo of MEN <MEN+3> -->
+		<reward dyeId="424" type="ON_SUCCESS" />
+		<reward dyeId="423" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="424" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of MEN <MEN+4> (M. Def. +37) -->
+		<reward dyeId="425" type="ON_SUCCESS" />
+		<reward dyeId="424" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="425" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of MEN <MEN+4> (M. Def. +75) -->
+		<reward dyeId="426" type="ON_SUCCESS" />
+		<reward dyeId="425" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="426" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of MEN <MEN+4> (M. Def. +112) -->
+		<reward dyeId="427" type="ON_SUCCESS" />
+		<reward dyeId="426" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="427" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of MEN <MEN+4> (M. Def. +150) -->
+		<reward dyeId="428" type="ON_SUCCESS" />
+		<reward dyeId="427" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="428" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of MEN <MEN+4> (M. Def. +187) -->
+		<reward dyeId="429" type="ON_SUCCESS" />
+		<reward dyeId="428" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="429" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of MEN <MEN+4> (M. Def. +225) -->
+		<reward dyeId="430" type="ON_SUCCESS" />
+		<reward dyeId="429" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="430" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of MEN <MEN+4> (M. Def. +262) -->
+		<reward dyeId="431" type="ON_SUCCESS" />
+		<reward dyeId="430" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="431" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of MEN <MEN+4> (M. Def. +300) -->
+		<reward dyeId="432" type="ON_SUCCESS" />
+		<reward dyeId="431" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="432" itemTwo="96630" commission="300000" chance="8"> <!-- Tattoo of MEN <MEN+5> (M. Def. +337) -->
+		<reward dyeId="433" type="ON_SUCCESS" />
+		<reward dyeId="432" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="433" itemTwo="96630" commission="300000" chance="6"> <!-- Tattoo of MEN <MEN+5> (M. Def. +375) -->
+		<reward dyeId="434" type="ON_SUCCESS" />
+		<reward dyeId="433" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="434" itemTwo="96630" commission="300000" chance="5"> <!-- Tattoo of MEN <MEN+5> (M. Def. +412) -->
+		<reward dyeId="435" type="ON_SUCCESS" />
+		<reward dyeId="434" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="435" itemTwo="96630" commission="300000" chance="4"> <!-- Tattoo of MEN <MEN+5> (M. Def. +450) -->
+		<reward dyeId="436" type="ON_SUCCESS" />
+		<reward dyeId="435" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="436" itemTwo="96630" commission="300000" chance="3"> <!-- Tattoo of MEN <MEN+5> (M. Def. +487) -->
+		<reward dyeId="437" type="ON_SUCCESS" />
+		<reward dyeId="436" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="437" itemTwo="96630" commission="300000" chance="2"> <!-- Tattoo of MEN <MEN+5> (M. Def. +525 M. Skill Damage Received -1%) -->
+		<reward dyeId="438" type="ON_SUCCESS" />
+		<reward dyeId="437" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="438" itemTwo="96630" commission="300000" chance="1.5"> <!-- Tattoo of MEN <MEN+5> (M. Def. +562 M. Skill Damage Received -1.5%) -->
+		<reward dyeId="439" type="ON_SUCCESS" />
+		<reward dyeId="438" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="439" itemTwo="96630" commission="300000" chance="1"> <!-- Tattoo of MEN <MEN+5> (M. Def. +600 M. Skill Damage Received -2%) -->
+		<reward dyeId="440" type="ON_SUCCESS" />
+		<reward dyeId="439" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="440" itemTwo="96630" commission="300000" chance="0.5"> <!-- Tattoo of MEN <MEN+5> (M. Def. +637 M. Skill Damage Received -3%) -->
+		<reward dyeId="441" type="ON_SUCCESS" />
+		<reward dyeId="440" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="442" itemTwo="96623" commission="300000" chance="50"> <!-- Tattoo of WIT <WIT+1> -->
+		<reward dyeId="443" type="ON_SUCCESS" />
+		<reward dyeId="442" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="443" itemTwo="96623" commission="300000" chance="25"> <!-- Tattoo of WIT <WIT+2> -->
+		<reward dyeId="444" type="ON_SUCCESS" />
+		<reward dyeId="443" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="444" itemTwo="96623" commission="300000" chance="20"> <!-- Tattoo of WIT <WIT+3> -->
+		<reward dyeId="445" type="ON_SUCCESS" />
+		<reward dyeId="444" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="445" itemTwo="96623" commission="300000" chance="15"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -0.4%) -->
+		<reward dyeId="446" type="ON_SUCCESS" />
+		<reward dyeId="445" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="446" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -0.8%) -->
+		<reward dyeId="447" type="ON_SUCCESS" />
+		<reward dyeId="446" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="447" itemTwo="96623" commission="300000" chance="8"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -1.2%) -->
+		<reward dyeId="448" type="ON_SUCCESS" />
+		<reward dyeId="447" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="448" itemTwo="96623" commission="300000" chance="6"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -1.6%) -->
+		<reward dyeId="449" type="ON_SUCCESS" />
+		<reward dyeId="448" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="449" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -2.0%) -->
+		<reward dyeId="450" type="ON_SUCCESS" />
+		<reward dyeId="449" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="450" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -2.4%) -->
+		<reward dyeId="451" type="ON_SUCCESS" />
+		<reward dyeId="450" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="451" itemTwo="96623" commission="300000" chance="5"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -2.8%) -->
+		<reward dyeId="452" type="ON_SUCCESS" />
+		<reward dyeId="451" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="452" itemTwo="96623" commission="300000" chance="10"> <!-- Tattoo of WIT <WIT+4> (M. Critical Rate Received -3.2%) -->
+		<reward dyeId="453" type="ON_SUCCESS" />
+		<reward dyeId="452" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="453" itemTwo="96630" commission="300000" chance="8"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -3.6%) -->
+		<reward dyeId="454" type="ON_SUCCESS" />
+		<reward dyeId="453" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="454" itemTwo="96630" commission="300000" chance="6"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -4.0%) -->
+		<reward dyeId="455" type="ON_SUCCESS" />
+		<reward dyeId="454" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="455" itemTwo="96630" commission="300000" chance="5"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -4.4%) -->
+		<reward dyeId="456" type="ON_SUCCESS" />
+		<reward dyeId="455" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="456" itemTwo="96630" commission="300000" chance="4"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -4.8%) -->
+		<reward dyeId="457" type="ON_SUCCESS" />
+		<reward dyeId="456" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="457" itemTwo="96630" commission="300000" chance="3"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -5.2%) -->
+		<reward dyeId="458" type="ON_SUCCESS" />
+		<reward dyeId="457" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="458" itemTwo="96630" commission="300000" chance="2"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -5.6% Spiritshot Damage +1%) -->
+		<reward dyeId="459" type="ON_SUCCESS" />
+		<reward dyeId="458" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="459" itemTwo="96630" commission="300000" chance="1.5"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -6.0% Spiritshot Damage +1.5%) -->
+		<reward dyeId="460" type="ON_SUCCESS" />
+		<reward dyeId="459" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="460" itemTwo="96630" commission="300000" chance="1"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -6.4% Spiritshot Damage +2%) -->
+		<reward dyeId="461" type="ON_SUCCESS" />
+		<reward dyeId="460" type="ON_FAILURE" />
+	</henna>
+	<henna dyeId="461" itemTwo="96630" commission="300000" chance="0.5"> <!-- Tattoo of WIT <WIT+5> (M. Critical Rate Received -6.8% Spiritshot Damage +3%) -->
+		<reward dyeId="462" type="ON_SUCCESS" />
+		<reward dyeId="461" type="ON_FAILURE" />
+	</henna>
+</list>

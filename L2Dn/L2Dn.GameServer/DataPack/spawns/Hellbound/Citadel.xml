@@ -1,0 +1,475 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Citadel_npcs">
+		<group name="Citadel_teleporters">
+			<npc id="34245" x="-21343" y="282630" z="-15867" heading="48058" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12469" y="282385" z="-15552" heading="44315" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12435" y="282369" z="-13504" heading="1758" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-21405" y="282671" z="-13819" heading="1758" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12714" y="272944" z="-12099" heading="1758" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12468" y="282376" z="-11456" heading="64735" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-21376" y="282658" z="-11771" heading="64735" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12471" y="282357" z="-9408" heading="50142" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-21368" y="282680" z="-9723" heading="50142" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="-12071" y="272965" z="-9027" heading="8023" respawnTime="60sec" /> <!-- Capture Device -->
+			<npc id="34245" x="16679" y="244326" z="10501" heading="8023" respawnTime="60sec" /> <!-- Capture Device -->
+		</group>
+	</spawn>
+	<spawn name="Floor_1">
+		<territories>
+			<territory name="Citadel_6" minZ="-11913" maxZ="-11919">
+				<node x="-13253" y="281229" />
+				<node x="-13613" y="281587" />
+				<node x="-14051" y="281719" />
+				<node x="-14026" y="282282" />
+				<node x="-14044" y="282965" />
+				<node x="-13804" y="283228" />
+				<node x="-13623" y="283026" />
+				<node x="-13263" y="283423" />
+				<node x="-13171" y="283867" />
+				<node x="-12649" y="283911" />
+				<node x="-11843" y="283942" />
+				<node x="-11732" y="283507" />
+				<node x="-11377" y="283145" />
+				<node x="-10955" y="283057" />
+				<node x="-10916" y="282511" />
+				<node x="-10932" y="281778" />
+				<node x="-11302" y="281642" />
+				<node x="-11677" y="281298" />
+				<node x="-12013" y="280778" />
+				<node x="-13056" y="280803" />
+			</territory>
+		</territories>
+		<npc id="22353" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Chaser -->
+		<npc id="22354" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Lord -->
+	</spawn>
+
+	<spawn name="Floor_2_1">
+		<territories>
+			<territory name="Citadel_2_1" minZ="-15878" maxZ="-15878">
+				<node x="-21472" y="283147" />
+				<node x="-21881" y="282732" />
+				<node x="-21899" y="282114" />
+				<node x="-22394" y="282010" />
+				<node x="-22631" y="281935" />
+				<node x="-22532" y="283144" />
+				<node x="-21787" y="283819" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_2_2">
+		<territories>
+			<territory name="Citadel_2_2" minZ="-15878" maxZ="-15878">
+				<node x="-21811" y="281918" />
+				<node x="-22530" y="281601" />
+				<node x="-21893" y="281006" />
+				<node x="-21388" y="280750" />
+				<node x="-20473" y="280726" />
+				<node x="-20789" y="281498" />
+				<node x="-21381" y="281484" />
+				<node x="-21629" y="281703" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_2_3">
+		<territories>
+			<territory name="Citadel_2_3" minZ="-15878" maxZ="-15878">
+				<node x="-20548" y="281604" />
+				<node x="-20279" y="280837" />
+				<node x="-19922" y="281192" />
+				<node x="-19597" y="281488" />
+				<node x="-19405" y="281966" />
+				<node x="-19400" y="282648" />
+				<node x="-19491" y="282837" />
+				<node x="-20009" y="282660" />
+				<node x="-20178" y="282556" />
+				<node x="-20137" y="282219" />
+				<node x="-20155" y="281983" />
+				<node x="-20377" y="281755" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_2_4">
+		<territories>
+			<territory name="Citadel_2_4" minZ="-15878" maxZ="-15878">
+				<node x="-20245" y="282827" />
+				<node x="-19446" y="283098" />
+				<node x="-19740" y="283361" />
+				<node x="-20117" y="283788" />
+				<node x="-20445" y="283934" />
+				<node x="-20692" y="283988" />
+				<node x="-21356" y="284006" />
+				<node x="-21547" y="283952" />
+				<node x="-21385" y="283472" />
+				<node x="-21243" y="283208" />
+				<node x="-20859" y="283261" />
+				<node x="-20634" y="283228" />
+				<node x="-20407" y="283045" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+
+	<spawn name="Floor_3">
+		<territories>
+			<territory name="Citadel_3" minZ="-13967" maxZ="-13967">
+				<node x="-13253" y="281229" />
+				<node x="-13613" y="281587" />
+				<node x="-14051" y="281719" />
+				<node x="-14026" y="282282" />
+				<node x="-14044" y="282965" />
+				<node x="-13804" y="283228" />
+				<node x="-13623" y="283026" />
+				<node x="-13263" y="283423" />
+				<node x="-13171" y="283867" />
+				<node x="-12649" y="283911" />
+				<node x="-11843" y="283942" />
+				<node x="-11732" y="283507" />
+				<node x="-11377" y="283145" />
+				<node x="-10955" y="283057" />
+				<node x="-10916" y="282511" />
+				<node x="-10932" y="281778" />
+				<node x="-11302" y="281642" />
+				<node x="-11677" y="281298" />
+				<node x="-12013" y="280778" />
+				<node x="-13056" y="280803" />
+			</territory>
+		</territories>
+		<npc id="22353" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Chaser -->
+		<npc id="22354" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Lord -->
+	</spawn>
+
+	<spawn name="Floor_4_1">
+		<territories>
+			<territory name="Citadel_4_1" minZ="-13830" maxZ="-13830">
+				<node x="-21472" y="283147" />
+				<node x="-21881" y="282732" />
+				<node x="-21899" y="282114" />
+				<node x="-22394" y="282010" />
+				<node x="-22631" y="281935" />
+				<node x="-22532" y="283144" />
+				<node x="-21787" y="283819" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_4_2">
+		<territories>
+			<territory name="Citadel_4_2" minZ="-13830" maxZ="-13830">
+				<node x="-21811" y="281918" />
+				<node x="-22530" y="281601" />
+				<node x="-21893" y="281006" />
+				<node x="-21388" y="280750" />
+				<node x="-20473" y="280726" />
+				<node x="-20789" y="281498" />
+				<node x="-21381" y="281484" />
+				<node x="-21629" y="281703" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_4_3">
+		<territories>
+			<territory name="Citadel_4_3" minZ="-13830" maxZ="-13830">
+				<node x="-20548" y="281604" />
+				<node x="-20279" y="280837" />
+				<node x="-19922" y="281192" />
+				<node x="-19597" y="281488" />
+				<node x="-19405" y="281966" />
+				<node x="-19400" y="282648" />
+				<node x="-19491" y="282837" />
+				<node x="-20009" y="282660" />
+				<node x="-20178" y="282556" />
+				<node x="-20137" y="282219" />
+				<node x="-20155" y="281983" />
+				<node x="-20377" y="281755" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_4_4">
+		<territories>
+			<territory name="Citadel_4_4" minZ="-13830" maxZ="-13830">
+				<node x="-20245" y="282827" />
+				<node x="-19446" y="283098" />
+				<node x="-19740" y="283361" />
+				<node x="-20117" y="283788" />
+				<node x="-20445" y="283934" />
+				<node x="-20692" y="283988" />
+				<node x="-21356" y="284006" />
+				<node x="-21547" y="283952" />
+				<node x="-21385" y="283472" />
+				<node x="-21243" y="283208" />
+				<node x="-20859" y="283261" />
+				<node x="-20634" y="283228" />
+				<node x="-20407" y="283045" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+
+	<spawn name="Floor_5">
+		<territories>
+			<territory name="Citadel_5" minZ="-12114" maxZ="-12095">
+				<node x="-12603" y="272865" />
+				<node x="-12070" y="272875" />
+				<node x="-11447" y="273486" />
+				<node x="-11497" y="274385" />
+				<node x="-12087" y="274996" />
+				<node x="-12980" y="275010" />
+				<node x="-13584" y="274362" />
+				<node x="-13591" y="273485" />
+				<node x="-12965" y="272879" />
+			</territory>
+		</territories>
+		<npc id="22357" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Chaser -->
+		<npc id="22358" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Ruler -->
+		<npc id="22359" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Fighter -->
+		<npc id="22360" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Berserker -->
+	</spawn>
+
+	<spawn name="Floor_6">
+		<territories>
+			<territory name="Citadel_6" minZ="-11919" maxZ="-11919">
+				<node x="-13253" y="281229" />
+				<node x="-13613" y="281587" />
+				<node x="-14051" y="281719" />
+				<node x="-14026" y="282282" />
+				<node x="-14044" y="282965" />
+				<node x="-13804" y="283228" />
+				<node x="-13623" y="283026" />
+				<node x="-13263" y="283423" />
+				<node x="-13171" y="283867" />
+				<node x="-12649" y="283911" />
+				<node x="-11843" y="283942" />
+				<node x="-11732" y="283507" />
+				<node x="-11377" y="283145" />
+				<node x="-10955" y="283057" />
+				<node x="-10916" y="282511" />
+				<node x="-10932" y="281778" />
+				<node x="-11302" y="281642" />
+				<node x="-11677" y="281298" />
+				<node x="-12013" y="280778" />
+				<node x="-13056" y="280803" />
+			</territory>
+		</territories>
+		<npc id="22353" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Chaser -->
+		<npc id="22354" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Lord -->
+	</spawn>
+
+	<spawn name="Floor_7_1">
+		<territories>
+			<territory name="Citadel_7_1" minZ="-11782" maxZ="-11782">
+				<node x="-21456" y="283128" />
+				<node x="-21834" y="284088" />
+				<node x="-22143" y="283880" />
+				<node x="-22434" y="283551" />
+				<node x="-22866" y="283119" />
+				<node x="-22835" y="282235" />
+				<node x="-22878" y="281691" />
+				<node x="-21940" y="282140" />
+				<node x="-21912" y="282705" />
+				<node x="-21709" y="282964" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_7_2">
+		<territories>
+			<territory name="Citadel_7_2" minZ="-11782" maxZ="-11782">
+				<node x="-21780" y="281929" />
+				<node x="-22662" y="281601" />
+				<node x="-22609" y="281287" />
+				<node x="-22095" y="280759" />
+				<node x="-21635" y="280541" />
+				<node x="-20832" y="280515" />
+				<node x="-20349" y="280512" />
+				<node x="-20804" y="281470" />
+				<node x="-21391" y="281449" />
+				<node x="-21672" y="281701" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_7_3">
+		<territories>
+			<territory name="Citadel_7_3" minZ="-11782" maxZ="-11782">
+				<node x="-20604" y="281577" />
+				<node x="-20247" y="280727" />
+				<node x="-19958" y="280763" />
+				<node x="-19455" y="281285" />
+				<node x="-19141" y="281829" />
+				<node x="-19180" y="282508" />
+				<node x="-19171" y="283042" />
+				<node x="-20144" y="282585" />
+				<node x="-20119" y="282002" />
+				<node x="-20375" y="281735" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_7_4">
+		<territories>
+			<territory name="Citadel_7_4" minZ="-11782" maxZ="-11782">
+				<node x="-20248" y="282796" />
+				<node x="-19324" y="283165" />
+				<node x="-19599" y="283613" />
+				<node x="-19986" y="283951" />
+				<node x="-20430" y="284191" />
+				<node x="-20952" y="284185" />
+				<node x="-21656" y="284189" />
+				<node x="-21229" y="283276" />
+				<node x="-20672" y="283257" />
+				<node x="-20419" y="283022" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+
+	<spawn name="Floor_8">
+		<territories>
+			<territory name="Citadel_8" minZ="-9871" maxZ="-9871">
+				<node x="-13253" y="281229" />
+				<node x="-13613" y="281587" />
+				<node x="-14051" y="281719" />
+				<node x="-14026" y="282282" />
+				<node x="-14044" y="282965" />
+				<node x="-13804" y="283228" />
+				<node x="-13623" y="283026" />
+				<node x="-13263" y="283423" />
+				<node x="-13171" y="283867" />
+				<node x="-12649" y="283911" />
+				<node x="-11843" y="283942" />
+				<node x="-11732" y="283507" />
+				<node x="-11377" y="283145" />
+				<node x="-10955" y="283057" />
+				<node x="-10916" y="282511" />
+				<node x="-10932" y="281778" />
+				<node x="-11302" y="281642" />
+				<node x="-11677" y="281298" />
+				<node x="-12013" y="280778" />
+				<node x="-13056" y="280803" />
+			</territory>
+		</territories>
+		<npc id="22353" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Chaser -->
+		<npc id="22354" count="50" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Lord -->
+	</spawn>
+
+	<spawn name="Floor_9_1">
+		<territories>
+			<territory name="Citadel_9_1" minZ="-9734" maxZ="-9734">
+				<node x="-21456" y="283139" />
+				<node x="-21773" y="283967" />
+				<node x="-22035" y="284032" />
+				<node x="-22279" y="283775" />
+				<node x="-22401" y="283652" />
+				<node x="-22729" y="283342" />
+				<node x="-22834" y="282973" />
+				<node x="-22898" y="282460" />
+				<node x="-22934" y="281882" />
+				<node x="-22819" y="281715" />
+				<node x="-22245" y="282000" />
+				<node x="-21914" y="282124" />
+				<node x="-21913" y="282686" />
+				<node x="-21750" y="282886" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_9_2">
+		<territories>
+			<territory name="Citadel_9_2" minZ="-9734" maxZ="-9734">
+				<node x="-21805" y="281908" />
+				<node x="-22063" y="281784" />
+				<node x="-22664" y="281559" />
+				<node x="-22624" y="281321" />
+				<node x="-22346" y="281021" />
+				<node x="-22003" y="280693" />
+				<node x="-21712" y="280518" />
+				<node x="-21022" y="280531" />
+				<node x="-20683" y="280535" />
+				<node x="-20405" y="280597" />
+				<node x="-20810" y="281411" />
+				<node x="-21350" y="281477" />
+				<node x="-21482" y="281555" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_9_3">
+		<territories>
+			<territory name="Citadel_9_3" minZ="-9734" maxZ="-9734">
+				<node x="-20570" y="281599" />
+				<node x="-20298" y="281003" />
+				<node x="-20222" y="280689" />
+				<node x="-19948" y="280828" />
+				<node x="-19740" y="281029" />
+				<node x="-19164" y="281597" />
+				<node x="-19155" y="282562" />
+				<node x="-19173" y="283004" />
+				<node x="-19864" y="282654" />
+				<node x="-20149" y="282522" />
+				<node x="-20129" y="281979" />
+				<node x="-20313" y="281751" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+	<spawn name="Floor_9_4">
+		<territories>
+			<territory name="Citadel_9_4" minZ="-9734" maxZ="-9734">
+				<node x="-20242" y="282785" />
+				<node x="-19716" y="283028" />
+				<node x="-19264" y="283183" />
+				<node x="-19547" y="283537" />
+				<node x="-20060" y="284003" />
+				<node x="-20404" y="284196" />
+				<node x="-21163" y="284214" />
+				<node x="-21692" y="284212" />
+				<node x="-21389" y="283637" />
+				<node x="-21210" y="283238" />
+				<node x="-20682" y="283267" />
+				<node x="-20427" y="283016" />
+			</territory>
+		</territories>
+		<npc id="22355" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Fighter -->
+		<npc id="22356" count="35" respawnTime="30sec" chaseRange="1500" /> <!-- Steel Berserker -->
+	</spawn>
+
+	<spawn name="Floor_10">
+		<territories>
+			<territory name="Citadel_10" minZ="-9042" maxZ="-9042">
+				<node x="-11953" y="273015" />
+				<node x="-11450" y="273491" />
+				<node x="-11459" y="274362" />
+				<node x="-12080" y="274962" />
+				<node x="-12950" y="274985" />
+				<node x="-13598" y="274373" />
+				<node x="-13554" y="273497" />
+				<node x="-12957" y="272863" />
+				<node x="-12102" y="272846" />
+			</territory>
+		</territories>
+		<npc id="22357" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Chaser -->
+		<npc id="22358" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Ruler -->
+		<npc id="22359" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Fighter -->
+		<npc id="22360" count="15" respawnTime="30sec" chaseRange="1500" /> <!-- Dark Berserker -->
+	</spawn>
+</list>

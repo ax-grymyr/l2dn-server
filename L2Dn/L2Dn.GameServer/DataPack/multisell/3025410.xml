@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30254</npc> <!-- Harmony -->
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91205" count="1" chance="100" /> <!-- Scroll: Summon Nightshade -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91204" count="1" chance="100" /> <!-- Scroll: Summon Seraphim the Unicorn -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="91203" count="1" chance="100" /> <!-- Scroll: Summon Feline Queen -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90131" count="1" chance="100" /> <!-- Scroll: Servitor Share -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90129" count="1" chance="100" /> <!-- Scroll: Assassin Servitor -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90127" count="1" chance="100" /> <!-- Scroll: Warrior Servitor -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90128" count="1" chance="100" /> <!-- Scroll: Wizard Servitor -->
+	</item>
+	<item>
+		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="90130" count="1" chance="100" /> <!-- Scroll: Final Servitor -->
+	</item>
+</list>

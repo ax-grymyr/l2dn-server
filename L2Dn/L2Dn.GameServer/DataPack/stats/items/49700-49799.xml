@@ -1,0 +1,1404 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="49700" name="Scroll Pack: Emperor Baium's Enchant" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49543" min="1" max="1" chance="1.9899" /> <!-- Elemental Stone (Time-limited) - Sealed -->
+			<item id="49684" min="1" max="1" chance="3.0" /> <!-- Talisman Crystal -->
+			<item id="49853" min="1" max="1" chance="70.0" /> <!-- Secret Book of Baggins' Enchantments - V -->
+			<item id="49852" min="1" max="1" chance="20.0" /> <!-- Secret Book of Baggins' Enchantments - IV -->
+			<item id="49543" min="1" max="1" chance="5.0" /> <!-- Elemental Stone (Time-limited) - Sealed -->
+			<item id="49682" min="1" max="1" chance="0.01" /> <!-- Baium's Soul -->
+			<item id="49683" min="1" max="1" chance="0.0001" /> <!-- Talisman of Baium -->
+		</capsuled_items>
+	</item>
+	<item id="49701" name="Steel Bracelet Fragment" type="EtcItem">
+		<!-- Required to create Steel Bracelet. Take it to Baggins along with Bronze Bracelet. -->
+		<set name="icon" val="icon.etc_vacualite_noglow_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49702" name="Bracelet of Border Fragment" type="EtcItem">
+		<!-- Required to create Bracelet of Border. Take the item to Baggins along with Steel Bracelet. -->
+		<set name="icon" val="icon.etc_vacualite_noglow_gold_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49703" name="Talisman Bracelet Lv. 4" type="Armor">
+		<!-- Talisman slots +5. P. Atk. +100. M. Atk. +100. <font color=bbaa88><Compound></font>. Materials: Talisman Bracelets and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.dimension_bracelet_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="price" val="5400000" />
+		<set name="commissionItemType" val="BRACELET" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50192" level="4" /> <!-- Talisman Bracelet Lv. 4 -->
+		</skills>
+	</item>
+	<item id="49704" name="Talisman of Border Fragment" type="EtcItem">
+		<!-- Required to create and upgrade Talisman of Border and Doll of Border. Take it to Alchemist Veruti in Giran. -->
+		<set name="icon" val="icon.etc_armor_soul_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49705" name="Forbidden Limit Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49704" min="1" max="1" chance="95.0" /> <!-- Talisman of Border Fragment -->
+			<item id="49706" min="1" max="1" chance="5.0" /> <!-- Talisman of Darkness Pack -->
+		</capsuled_items>
+	</item>
+	<item id="49706" name="Talisman of Darkness Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pirate_king_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39147" level="1" /> <!-- Talisman of Darkness Box -->
+		</skills>
+	</item>
+	<item id="49707" name="Talisman of Darkness - P. Atk." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. P. Atk. +5%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3272" level="3" /> <!-- Blue Talisman - P. Atk. -->
+		</skills>
+	</item>
+	<item id="49708" name="Talisman of Darkness - M. Atk." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. M. Atk. +5%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3276" level="3" /> <!-- Blue Talisman - M. Atk. -->
+		</skills>
+	</item>
+	<item id="49709" name="Talisman of Darkness - P. Def." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. P. Def. +6%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3273" level="3" /> <!-- Blue Talisman - P. Def. -->
+		</skills>
+	</item>
+	<item id="49710" name="Talisman of Darkness - M. Def." additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. M. Def. +6%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3277" level="3" /> <!-- Blue Talisman - M. Def. -->
+		</skills>
+	</item>
+	<item id="49711" name="Talisman of Darkness - P. Skill Evasion" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. P. Skill Evasion +18%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3274" level="3" /> <!-- Blue Talisman - Physical Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="49712" name="Talisman of Darkness - M. Skill Evasion" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. M. Skill Evasion +18%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3278" level="3" /> <!-- Blue Talisman - Magic Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="49713" name="Talisman of Darkness - Max HP" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. Max HP +7%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3279" level="3" /> <!-- Blue Talisman - Max. HP -->
+		</skills>
+	</item>
+	<item id="49714" name="Talisman of Darkness - Max MP" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. Max MP +7%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3280" level="3" /> <!-- Blue Talisman - Max. MP -->
+		</skills>
+	</item>
+	<item id="49715" name="Talisman of Darkness - Received Healing" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. Received Healing +4%. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3293" level="1" /> <!-- Talisman of Darkness - Healing Power -->
+		</skills>
+	</item>
+	<item id="49716" name="Talisman of Darkness - Healing Power" additionalName="1-hour" type="Armor">
+		<!-- Available for 1 h. Healing Power +43. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.etc_wise_man_stone_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3294" level="1" /> <!-- Talisman of Darkness - Power of Healing Magic -->
+		</skills>
+	</item>
+	<item id="49717" name="Talisman of Darkness Box - P. Atk." additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49707" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - P. Atk. - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49718" name="Talisman of Darkness Box - M. Atk." additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49708" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - M. Atk. - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49719" name="Talisman of Darkness Box - P. Def." additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49709" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - P. Def. - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49720" name="Talisman of Darkness Box - M. Def." additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49710" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - M. Def. - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49721" name="Talisman of Darkness Pack - P. Skill Evasion" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49711" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - P. Skill Evasion - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49722" name="Talisman of Darkness Pack - M. Skill Evasion" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49712" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - M. Skill Evasion - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49723" name="Talisman of Darkness Box - HP" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49713" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - Max HP - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49724" name="Talisman of Darkness Box - MP" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49714" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - MP - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49725" name="Talisman of Darkness Box - Received Healing" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49715" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - Received Healing - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49726" name="Talisman of Darkness Box - Healing Power" additionalName="1-hour" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49716" min="1" max="1" chance="100" /> <!-- Talisman of Darkness - Healing Power - 1-hour -->
+		</capsuled_items>
+	</item>
+	<item id="49727" name="Talisman of Border Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +12. M. Def. +12. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="1" /> <!-- Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49728" name="Talisman of Border Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +14. M. Def. +14. P. Evasion +1. M. Evasion +1. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="2" /> <!-- Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49729" name="Talisman of Border Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +17. M. Def. +17. P. Evasion +1. M. Evasion +1. Max HP +80. Max MP +80. Max CP +80. Speed +3. Acquired XP/ SP +3%. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="3" /> <!-- Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49730" name="Talisman of Border Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +19. M. Def. +19. P. Evasion +1. M. Evasion +1. Max HP +80. Max MP +80. Max CP +80. Speed +3. Atk. Spd. +7. Casting Spd. +7. Acquired XP/ SP +3%. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="4" /> <!-- Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49731" name="Talisman of Border Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +22. M. Def. +22. P. Evasion +1. M. Evasion +1. Max HP +120. Max MP +120. Max CP +120. Speed +5. Atk. Spd. +10. Casting Spd. +10. Acquired XP/ SP +4%. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="5" /> <!-- Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49732" name="Talisman of Border Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +24. M. Def. +24. P. Evasion +2. M. Evasion +2. Max HP +160. Max MP +160. Max CP +160. Speed +5. Atk. Spd. +15. Casting Spd. +15. Acquired XP/ SP +4%. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="6" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49733" name="Talisman of Border Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +29. M. Def. +29. P. Evasion +2. M. Evasion +2. Max HP +160. Max MP +160. Max CP +160. Speed +7. Atk. Spd. +15. Casting Spd. +15. Acquired XP/ SP +5%. <When triggered: Dimensional Border Power Lv. 1>. With a certain chance, increases attack power. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="7" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49734" name="Talisman of Border Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +34. M. Def. +34. P. Evasion +2. M. Evasion +2. Max HP +200. Max MP +200. Max CP +200. Speed +7. Atk. Spd. +15. Casting Spd. +15. Acquired XP/ SP +5%. <When triggered: Dimensional Border Power Lv. 2>. With a certain chance, increases attack power. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="8" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49735" name="Talisman of Border Lv. 9" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +38. M. Def. +38. P. Evasion +2. M. Evasion +2. Max HP +240. Max MP +240. Max CP +240. Speed +8. Atk. Spd. +15. Casting Spd. +15. Damage Reflection +4%. Acquired XP/ SP +5%. <When triggered: Dimensional Border Power Lv. 2>. With a certain chance, increases attack power. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="9" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49736" name="Talisman of Border Lv. 10" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +43. M. Def. +43. P. Evasion +2. M. Evasion +2. Max HP +280. Max MP +280. Max CP +280. Speed +8. Atk. Spd. +20. Casting Spd. +20. Damage Reflection +6%. Acquired XP/ SP +5%. <When triggered: Dimensional Border Power Lv. 3>. With a certain chance, increases attack power. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.magic_square_talisman_new" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="10" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49737" name="Blessed Talisman of Border" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Def. +48. M. Def. +48. P. Evasion +2. M. Evasion +2. Max HP +320. Max MP +320. Max CP +320. Speed +8. Atk. Spd. +30. Casting Spd. +30. Damage Reflection +8%. Acquired XP/ SP +5%. <When triggered: Dimensional Border Power Lv. 4>. With a certain chance, increases attack power. <Border Purification>. When used, removes Paralysis/ Petrification/ Poison/ Bleed debuffs. <Border Blessing>. When used, recovers 50% HP/ MP. Can be upgraded by Alchemist Veruti in Giran. Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_blessed_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35024" level="11" /> <!-- Talisman of Border -->
+			<skill id="35025" level="1" /> <!-- Border Purification -->
+		</skills>
+	</item>
+	<item id="49738" name="Sealed Blessed Talisman of Border" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_blessed_magic_square_talisman" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39148" level="1" /> <!-- Sealed Blessed Talisman of Border -->
+		</skills>
+	</item>
+	<item id="49739" name="Blessed No-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="3" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="8915" level="1" /> <!-- Blessed Soulshot (No-grade) -->
+		</skills>
+	</item>
+	<item id="49740" name="Blessed D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="8916" level="1" /> <!-- Blessed Soulshot (D-grade) -->
+		</skills>
+	</item>
+	<item id="49741" name="Blessed C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="8917" level="1" /> <!-- Blessed Soulshot (C-grade) -->
+		</skills>
+	</item>
+	<item id="49742" name="Blessed B-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="8918" level="1" /> <!-- Blessed Soulshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="49743" name="Blessed A-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with A-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="8919" level="1" /> <!-- Blessed Soulshot (A-grade) -->
+		</skills>
+	</item>
+	<item id="49744" name="Mysterious Blessed No-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSoulShots" />
+		<skills>
+			<skill id="8910" level="1" /> <!-- Player Commendation - Blessed Soulshot (No-grade) -->
+		</skills>
+	</item>
+	<item id="49745" name="Mysterious Blessed D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="PAPER" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSoulShots" />
+		<skills>
+			<skill id="8911" level="1" /> <!-- Player Commendation - Blessed Soulshot (D-grade) -->
+		</skills>
+	</item>
+	<item id="49746" name="Mysterious Blessed C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="PAPER" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSoulShots" />
+		<skills>
+			<skill id="8912" level="1" /> <!-- Player Commendation - Blessed Soulshot (C-grade) -->
+		</skills>
+	</item>
+	<item id="49747" name="Mysterious Blessed B-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="PAPER" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSoulShots" />
+		<skills>
+			<skill id="8913" level="1" /> <!-- Player Commendation - Blessed Soulshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="49748" name="Mysterious Blessed A-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with A-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="PAPER" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSoulShots" />
+		<skills>
+			<skill id="8907" level="1" /> <!-- Player Commendation - Blessed Soulshot (A-grade) -->
+		</skills>
+	</item>
+	<item id="49749" name="Mysterious B-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SpiritShot" />
+		<skills>
+			<skill id="8908" level="1" /> <!-- Player Commendation - Spiritshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="49750" name="Mysterious A-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with A-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SpiritShot" />
+		<skills>
+			<skill id="8909" level="1" /> <!-- Player Commendation - Spiritshot (A-grade) -->
+		</skills>
+	</item>
+	<item id="49751" name="Recipe: Blessed D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Blessed D-grade Soulshots. Not used. Take it to Cat Guild's trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="4000" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="49752" name="Recipe: Blessed C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Blessed C-grade Soulshots. Not used. Take it to Cat Guild's trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="4001" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="49753" name="Recipe: Blessed B-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Blessed B-grade Soulshots. Not used. Take it to Cat Guild's trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="4002" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="49754" name="Recipe: Blessed A-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Blessed A-grade Soulshots. Not used. Take it to Cat Guild's trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="4003" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="49755" name="Talisman of Baium Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i07" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49543" min="1" max="1" chance="1.9899" /> <!-- Elemental Stone (Time-limited) - Sealed -->
+			<item id="49684" min="1" max="1" chance="3.0" /> <!-- Talisman Crystal -->
+			<item id="49853" min="1" max="1" chance="70.0" /> <!-- Secret Book of Baggins' Enchantments - V -->
+			<item id="49852" min="1" max="1" chance="20.0" /> <!-- Secret Book of Baggins' Enchantments - IV -->
+			<item id="49543" min="1" max="1" chance="5.0" /> <!-- Elemental Stone (Time-limited) - Sealed -->
+			<item id="49682" min="1" max="1" chance="0.01" /> <!-- Baium's Soul -->
+			<item id="49683" min="1" max="1" chance="0.0001" /> <!-- Talisman of Baium -->
+		</capsuled_items>
+	</item>
+	<item id="49756" name="Cloth Piece" type="EtcItem">
+		<!-- Required to remove the seal from A-grade Armor. -->
+		<set name="icon" val="icon.etc_piece_shirt_green_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49757" name="Sayha's Holy Water" additionalName="Sealed" type="EtcItem">
+		<!-- Sayha's Grace points +20,000. -->
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i09" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39150" level="1" /> <!-- Sayha's Holy Water -->
+		</skills>
+	</item>
+	<item id="49758" name="Blood Crystal" type="EtcItem">
+		<!-- Consumed when using clan skills. -->
+		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49759" name="Celestial Shard" additionalName="Sealed" type="EtcItem">
+		<!-- Required to enter the Heavenly Rift. -->
+		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49760" name="A-grade Armor Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39173" level="1" /> <!-- Armor Supply Box (A-grade) -->
+		</skills>
+	</item>
+	<item id="49761" name="A-grade Accessory Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39152" level="1" /> <!-- Ornament Supply Box (A-grade) -->
+		</skills>
+	</item>
+	<item id="49762" name="A-grade Armor Ingredient Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39153" level="1" /> <!-- A-grade Armor Ingredient Pack -->
+		</skills>
+	</item>
+	<item id="49763" name="A-grade Ornament Ingredient Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="6329" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Phoenix Necklace (70%) -->
+			<item id="6331" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Phoenix Earring (70%) -->
+			<item id="6333" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Phoenix Ring (70%) -->
+			<item id="6335" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Majestic Necklace (70%) -->
+			<item id="6337" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Majestic Earring (70%) -->
+			<item id="6339" min="1" max="1" chance="8.333333" /> <!-- Recipe: Sealed Majestic Ring (70%) -->
+			<item id="92857" min="1" max="1" chance="8.333333" /> <!-- Sealed Phoenix Earring Gemstone -->
+			<item id="92858" min="1" max="1" chance="8.333333" /> <!-- Sealed Majestic Earring Gemstone -->
+			<item id="92859" min="1" max="1" chance="8.333333" /> <!-- Sealed Phoenix Necklace Beads -->
+			<item id="92860" min="1" max="1" chance="8.333333" /> <!-- Sealed Majestic Necklace Beads -->
+			<item id="92861" min="1" max="1" chance="8.333333" /> <!-- Sealed Phoenix Ring Gemstone -->
+			<item id="92862" min="1" max="1" chance="8.333333" /> <!-- Sealed Majestic Ring Gemstone -->
+		</capsuled_items>
+	</item>
+	<item id="49764" name="Scroll: 20,000 SP" type="EtcItem">
+		<!-- SP +20,000. -->
+		<set name="icon" val="icon.etc_sp_scroll3_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49765" name="Life Control Tower's Scroll of Blessing" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Max HP +5%. Max SP +5%. Acquired XP +30%. Acquired SP +30%. Silence Resistance +15%. Fear Resistance +15%. Paralysis Resistance +15%. Duration: 60 min. Cooldown: 1 min. -->
+		<set name="icon" val="icon.etc_aidcharm_cancel_valbreath_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39155" level="1" /> <!-- Life Control Tower's Scroll of Blessing -->
+		</skills>
+	</item>
+	<item id="49766" name="Unidentified Rock" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_magical_stone_i00" />
+		<set name="material" val="PAPER" />
+		<set name="default_action" val="CAPSULE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="39157" level="1" /> <!-- Unidentified Rock -->
+		</skills>
+	</item>
+	<item id="49767" name="Broken Celestial Shard" type="EtcItem">
+		<!-- A broken Celestial Shard. Take it to the Dimensional Vortex on the 1st floor of the Tower of Insolence. -->
+		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49768" name="Scroll of Heavenly Protection" type="EtcItem">
+		<!-- Increases Fear/ Paralysis/ Silence Resistance for 20 min. -->
+		<set name="icon" val="icon.scroll_of_verification_i08" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="39156" level="1" /> <!-- Scroll of Heavenly Protection -->
+		</skills>
+	</item>
+	<item id="49769" name="Improved Scroll Box: Emperor Baium's Enchant" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39158" level="1" /> <!-- Secret Scroll Box: Emperor Baium's Enchant -->
+		</skills>
+	</item>
+	<item id="49770" name="Sayha's Energy" type="EtcItem">
+		<!-- Sayha's Grace points +35,000. -->
+		<set name="icon" val="icon.etc_holy_water_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="39159" level="1" /> <!-- Sayha's Energy -->
+		</skills>
+	</item>
+	<item id="49771" name="Emperor Baium's Secret Treasures" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_shhadai" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39160" level="1" /> <!-- Emperor Baium's Secret Treasures -->
+		</skills>
+	</item>
+	<item id="49772" name="Scroll of Mood Melody" additionalName="Sealed" type="EtcItem">
+		<!-- For 20 min., Melodys' melody grants the following buffs: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk, Death Whisper, Vampiric Rage. Note!. If used simultaneously with Shining Scroll of Mood Melody, only the latter effect will be active. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.bm_magmeld" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="39164" level="1" /> <!-- Scroll of Mood Melody -->
+		</skills>
+	</item>
+	<item id="49773" name="Fighter Pirate Fruit - Attack" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +7%. M. Atk. +7%. P. Def. +10%. M. Def. +10%. Max HP +15%. Max MP +15%. Max CP +15%. HP Recovery Rate +20%. MP Recovery Rate +20%. PvP damage +5%. A chance to absorb 3% of the inflicted damage as HP. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.etc_codran_i09" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<set name="reuse_delay" val="60000" />
+		<skills>
+			<skill id="39162" level="1" /> <!-- Special Pirate Fruit -->
+		</skills>
+	</item>
+	<item id="49774" name="Fighter Pirate Fruit - Defense" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +7%. M. Atk. +7%. P. Def. +10%. M. Def. +10%. Max HP +15%. Max MP +15%. Max CP +15%. HP Recovery Rate +20%. MP Recovery Rate +20%. Received PvP damage -5%. A chance to absorb 3% of the inflicted damage as HP. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.etc_codran_i09" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<set name="reuse_delay" val="60000" />
+		<skills>
+			<skill id="39163" level="1" /> <!-- Special Pirate Fruit -->
+		</skills>
+	</item>
+	<item id="49775" name="Red Spinel" type="EtcItem">
+		<!-- Reward. Obtained from helping Grocer Pink. Can be exchanged for rare items. -->
+		<set name="icon" val="icon.ensoul_big_pp" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49776" name="Green Spinel" type="EtcItem">
+		<!-- Reward. Obtained from helping Grocer Pink. Can be exchanged for rare items. -->
+		<set name="icon" val="icon.ensoul_big_ep" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49777" name="XP Scroll: 1K" additionalName="Sealed" type="EtcItem">
+		<!-- Recovers 1000 XP. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39180" level="1" /> <!-- XP Scroll: 1,000 -->
+		</skills>
+	</item>
+	<item id="49778" name="XP Scroll: 10K" additionalName="Sealed" type="EtcItem">
+		<!-- Recovers 10,000 XP. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39181" level="1" /> <!-- XP Scroll: 10,000 -->
+		</skills>
+	</item>
+	<item id="49779" name="XP Scroll: 100K" additionalName="Sealed" type="EtcItem">
+		<!-- Recovers 100,000 XP. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39182" level="1" /> <!-- XP Scroll: 100,000 -->
+		</skills>
+	</item>
+	<item id="49780" name="XP Scroll: 500K" additionalName="Sealed" type="EtcItem">
+		<!-- Recovers 500,000 XP. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39183" level="1" /> <!-- XP Scroll: 500,000 -->
+		</skills>
+	</item>
+	<item id="49781" name="XP Scroll: 1M" additionalName="Sealed" type="EtcItem">
+		<!-- Recovers 1,000,000 XP. -->
+		<set name="icon" val="icon.etc_recall_exp_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39184" level="1" /> <!-- XP Scroll: 10,000,000 -->
+		</skills>
+	</item>
+	<item id="49782" name="Balthus Knights' Supply Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain 10 Balthus Knights' Marks. Required level: 76+. (Can be used only once a day.) -->
+		<set name="icon" val="icon.etc_ev_kalie_treasure_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="reuse_delay" val="86400000" /> <!-- 1 Day -->
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<cond msgId="113" addName="1">
+			<player level="76" />
+		</cond>
+		<skills>
+			<skill id="39170" level="1" /> <!-- Balthus Knights Supply -->
+		</skills>
+	</item>
+	<item id="49783" name="Sibi's Coin (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A coin used as a payment by the Balthus Knights. Can be exchanged for various items through the Special Craft. -->
+		<set name="icon" val="icon.ev_balthus_coin" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="49784" name="Balthus Knights' Mark (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Requirements>. Required level: 65+. <Buff effect>. Acquired XP +30%. Acquired SP +30%. P. Atk. +100. M. Atk. +100. P. Def. +100. M. Def. +100. There is a chance to obtain Special Supplies. Duration: 20 min. -->
+		<set name="icon" val="icon.ev_balthus_token" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="reuse_delay" val="60000" /> <!-- 1 minute -->
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39171" level="1" /> <!-- Member of Balthus Knights -->
+		</skills>
+	</item>
+	<item id="49785" name="A-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39172" level="1" /> <!-- Weapon Supply Box (A-grade) -->
+		</skills>
+	</item>
+	<item id="49786" name="A-grade Armor Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39173" level="1" /> <!-- Armor Supply Box (A-grade) -->
+		</skills>
+	</item>
+	<item id="49787" name="Stable Scroll: A-grade Enchant Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="22223" min="10" max="10" chance="100" /> <!-- Stable Scroll: Enchant A-grade Weapon -->
+			<item id="22224" min="10" max="10" chance="100" /> <!-- Stable Scroll: Enchant A-grade Armor -->
+		</capsuled_items>
+	</item>
+	<item id="49788" name="Greater A-grade Enchant Scroll Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="33809" min="10" max="10" chance="100" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="33815" min="10" max="10" chance="100" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+		</capsuled_items>
+	</item>
+	<item id="49789" name="+8 B-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39174" level="1" /> <!-- +8 Enchanted Weapon Supply Box (B-grade) -->
+		</skills>
+	</item>
+	<item id="49790" name="+16 C-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i06" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39175" level="1" /> <!-- +16 Enchanted Weapon Supply Box (C-grade) -->
+		</skills>
+	</item>
+	<item id="49791" name="Spirit Transformation Bracelet - Prophet" additionalName="1-day" type="Armor">
+		<!-- Available for 1 day. Transforms to Prophet Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Focus, Death Whisper, Guidance, Haste, Acumen, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="49792" name="Spirit Transformation Bracelet - Shillien Elder" additionalName="1-day" type="Armor">
+		<!-- Available for 1 day. Transforms to Shillien Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Vampiric Rage, Empower, Death Whisper, Guidance, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="49793" name="Spirit Transformation Bracelet - Elven Elder" additionalName="1-day" type="Armor">
+		<!-- Available for 1 day. Required to transform to Elven Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Clarity, Agility, Decrease Weight, Regeneration, and Greater Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+	</item>
+	<item id="49794" name="Spirit Transformation Bracelet - Prophet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Transforms to Prophet Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Focus, Death Whisper, Guidance, Haste, Acumen, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="49795" name="Spirit Transformation Bracelet - Shillien Elder" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Transforms to Shillien Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Vampiric Rage, Empower, Death Whisper, Guidance, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="49796" name="Spirit Transformation Bracelet - Elven Elder" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Required to transform to Elven Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Clarity, Agility, Decrease Weight, Regeneration, and Greater Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="49797" name="Gift of Sated Spirit" additionalName="Sealed" type="EtcItem">
+		<!-- XP +37,000,000, SP +111,000 (standard for Lv. 50 characters). Required level: 45+. -->
+		<set name="icon" val="icon.etc_ev_draco_gift_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49798" name="Anniversary Cheer Pompoms" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir for the Lineage II anniversary. -->
+		<set name="icon" val="icon.ev_12th_weapon" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="MITHRIL" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">12</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49799" name="Express Bus Pass Card" additionalName="Sealed" type="EtcItem">
+		<!-- XP +5,000,000, SP +16,000. Required level: 20+. -->
+		<set name="icon" val="icon.card_hidden" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

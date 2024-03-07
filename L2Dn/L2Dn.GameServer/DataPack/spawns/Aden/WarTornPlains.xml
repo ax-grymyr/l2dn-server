@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_17" minZ="-4500" maxZ="-3900">
+				<node x="152528" y="152" />
+				<node x="157676" y="116" />
+				<node x="157540" y="2684" />
+				<node x="154476" y="3476" />
+			</territory>
+		</territories>
+		<npc id="20664" count="35" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20665" count="35" respawnTime="3sec" /> <!-- Taik Orc Elder -->
+		<npc id="20667" count="25" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="154705" y="2594" z="-4400" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="155357" y="1356" z="-4392" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="157021" y="1421" z="-4296" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_18" minZ="-4440" maxZ="-3940">
+				<node x="158360" y="52" />
+				<node x="159364" y="72" />
+				<node x="159944" y="1352" />
+				<node x="159172" y="2960" />
+				<node x="158108" y="2056" />
+			</territory>
+		</territories>
+		<npc id="20664" count="20" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20665" count="20" respawnTime="3sec" /> <!-- Taik Orc Elder -->
+		<group>
+			<npc id="20661" x="159199" y="551" z="-3992" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="158440" y="1512" z="-4080" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_19" minZ="-4472" maxZ="-3672">
+				<node x="159760" y="1844" />
+				<node x="161768" y="3236" />
+				<node x="160912" y="3700" />
+				<node x="159264" y="2916" />
+			</territory>
+		</territories>
+		<npc id="20664" count="14" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20665" count="15" respawnTime="3sec" /> <!-- Taik Orc Elder -->
+		<group>
+			<npc id="20661" x="160400" y="2770" z="-4248" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_20" minZ="-3604" maxZ="-3204">
+				<node x="160432" y="116" />
+				<node x="161752" y="124" />
+				<node x="163180" y="1424" />
+				<node x="161960" y="2204" />
+				<node x="160820" y="1380" />
+			</territory>
+		</territories>
+		<npc id="20664" count="17" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20665" count="17" respawnTime="3sec" /> <!-- Taik Orc Elder -->
+		<group>
+			<npc id="20661" x="161910" y="1597" z="-3480" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="161102" y="828" z="-3456" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_21" minZ="-3936" maxZ="-3236">
+				<node x="162044" y="2384" />
+				<node x="163632" y="1476" />
+				<node x="163600" y="4052" />
+				<node x="161680" y="4108" />
+			</territory>
+		</territories>
+		<npc id="20664" count="24" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20665" count="21" respawnTime="3sec" /> <!-- Taik Orc Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_t21" minZ="-3936" maxZ="-3236">
+				<node x="162044" y="2384" />
+				<node x="163632" y="1476" />
+				<node x="163600" y="4052" />
+				<node x="161680" y="4108" />
+			</territory>
+		</territories>
+		<npc id="20667" count="20" respawnTime="3sec" /> <!-- Farcran -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_22" minZ="-4164" maxZ="-3464">
+				<node x="162604" y="4276" />
+				<node x="163496" y="4244" />
+				<node x="163464" y="9096" />
+				<node x="162592" y="10200" />
+				<node x="159144" y="9868" />
+			</territory>
+		</territories>
+		<npc id="20662" count="32" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="32" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="32" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="32" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="162978" y="5052" z="-3616" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="162486" y="8781" z="-3664" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_23" minZ="-4560" maxZ="-3760">
+				<node x="156936" y="3712" />
+				<node x="158128" y="2412" />
+				<node x="161092" y="4316" />
+				<node x="158348" y="8416" />
+				<node x="157116" y="8916" />
+			</territory>
+		</territories>
+		<npc id="20662" count="35" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="35" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="35" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="30" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="157826" y="8116" z="-4352" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="157886" y="5954" z="-4456" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_24" minZ="-4528" maxZ="-3928">
+				<node x="154440" y="3520" />
+				<node x="156372" y="2980" />
+				<node x="156532" y="9176" />
+				<node x="154236" y="9216" />
+			</territory>
+		</territories>
+		<npc id="20662" count="25" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="25" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="25" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="30" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="155169" y="8252" z="-4320" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="155225" y="5047" z="-4416" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_25" minZ="-4360" maxZ="-3760">
+				<node x="154140" y="9388" />
+				<node x="156408" y="9324" />
+				<node x="155884" y="11332" />
+				<node x="153860" y="13928" />
+			</territory>
+		</territories>
+		<npc id="20662" count="25" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="25" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="25" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="25" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="155081" y="10882" z="-4240" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_26" minZ="-4148" maxZ="-3548">
+				<node x="159076" y="10056" />
+				<node x="163404" y="10580" />
+				<node x="163388" y="14108" />
+				<node x="159860" y="14888" />
+				<node x="156964" y="13820" />
+			</territory>
+		</territories>
+		<npc id="20662" count="40" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="40" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="40" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="30" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="162250" y="13158" z="-3744" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="161767" y="10881" z="-3744" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_27" minZ="-3956" maxZ="-3356">
+				<node x="159132" y="15456" />
+				<node x="163460" y="14364" />
+				<node x="163512" y="18912" />
+				<node x="160060" y="19836" />
+			</territory>
+		</territories>
+		<npc id="20659" count="40" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="40" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="40" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="160900" y="17688" z="-3704" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="162219" y="15529" z="-3672" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_28" minZ="-4120" maxZ="-3520">
+				<node x="153364" y="16112" />
+				<node x="155368" y="13392" />
+				<node x="156792" y="13864" />
+				<node x="156172" y="18528" />
+				<node x="154608" y="18480" />
+			</territory>
+		</territories>
+		<npc id="20662" count="30" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="30" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="30" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="30" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="155287" y="16695" z="-3896" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_29" minZ="-3824" maxZ="-3224">
+				<node x="160540" y="20868" />
+				<node x="163512" y="20408" />
+				<node x="163540" y="26864" />
+				<node x="161236" y="25712" />
+			</territory>
+			<banned_territory name="aden27_2418_29b" minZ="-3768" maxZ="-2968">
+				<node x="161800" y="21637" />
+				<node x="162998" y="21714" />
+				<node x="163163" y="22693" />
+				<node x="162615" y="23032" />
+				<node x="161742" y="22712" />
+			</banned_territory>
+		</territories>
+		<npc id="20659" count="35" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="35" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="35" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="1" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="162472" y="25478" z="-3720" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_30" minZ="-3748" maxZ="-3148">
+				<node x="158352" y="26112" />
+				<node x="160104" y="25644" />
+				<node x="162660" y="28652" />
+				<node x="161276" y="32088" />
+				<node x="158088" y="32216" />
+			</territory>
+		</territories>
+		<npc id="20659" count="40" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="40" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="40" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="160449" y="30464" z="-3296" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="159211" y="26282" z="-3496" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2418_31" minZ="-3580" maxZ="-2780">
+				<node x="156436" y="25296" />
+				<node x="158160" y="26136" />
+				<node x="157956" y="32264" />
+				<node x="153980" y="32240" />
+				<node x="154596" y="26948" />
+			</territory>
+		</territories>
+		<npc id="20659" count="40" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="15" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="40" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="40" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="154690" y="28995" z="-2904" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="156970" y="27827" z="-3392" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2518_39" minZ="-3080" maxZ="-2480">
+				<node x="166844" y="3512" />
+				<node x="168728" y="5192" />
+				<node x="167828" y="8708" />
+				<node x="166108" y="9096" />
+				<node x="165504" y="6624" />
+			</territory>
+		</territories>
+		<npc id="20662" count="30" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="30" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="30" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="30" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="3" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="167457" y="6639" z="-2728" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="165795" y="7294" z="-2963" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2518_40" minZ="-3140" maxZ="-2340">
+				<node x="166788" y="9660" />
+				<node x="168528" y="9928" />
+				<node x="168424" y="13856" />
+				<node x="166516" y="11376" />
+				<node x="166056" y="10220" />
+			</territory>
+		</territories>
+		<npc id="20662" count="20" respawnTime="3sec" /> <!-- Hatar Ratman Boss -->
+		<npc id="20663" count="20" respawnTime="3sec" /> <!-- Hatar Hanishee -->
+		<npc id="20664" count="20" respawnTime="3sec" /> <!-- Deprive -->
+		<npc id="20667" count="20" respawnTime="3sec" /> <!-- Farcran -->
+		<npc id="20661" count="5" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<group>
+			<npc id="20661" x="167397" y="10986" z="-2704" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2518_42" minZ="-3604" maxZ="-3204">
+				<node x="166072" y="15208" />
+				<node x="166916" y="16884" />
+				<node x="166624" y="20080" />
+				<node x="165324" y="20040" />
+				<node x="164688" y="17196" />
+			</territory>
+		</territories>
+		<npc id="20659" count="25" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="8" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="25" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="25" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="166023" y="17167" z="-3360" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="166150" y="19448" z="-3320" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2518_43" minZ="-3812" maxZ="-3412">
+				<node x="164060" y="26576" />
+				<node x="170456" y="26764" />
+				<node x="170504" y="28928" />
+				<node x="167240" y="29040" />
+				<node x="164104" y="27936" />
+			</territory>
+		</territories>
+		<npc id="20659" count="25" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="25" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="25" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="168158" y="27678" z="-3648" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="169638" y="28432" z="-3672" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden27_2518_44" minZ="-3768" maxZ="-2968">
+				<node x="164120" y="20476" />
+				<node x="166488" y="20840" />
+				<node x="167104" y="25496" />
+				<node x="164140" y="26420" />
+			</territory>
+			<banned_territory name="aden27_2518_44b" minZ="-3536" maxZ="-3136">
+				<node x="166355" y="25222" />
+				<node x="166755" y="25222" />
+				<node x="166755" y="25622" />
+				<node x="166355" y="25622" />
+			</banned_territory>
+		</territories>
+		<npc id="20659" count="25" respawnTime="3sec" /> <!-- Graveyard Wanderer -->
+		<npc id="20661" count="10" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		<npc id="20660" count="25" respawnTime="3sec" /> <!-- Archer of Greed -->
+		<npc id="20667" count="25" respawnTime="3sec" /> <!-- Farcran -->
+		<group>
+			<npc id="20661" x="165006" y="21511" z="-3424" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+			<npc id="20661" x="165155" y="23580" z="-3520" respawnTime="3sec" chaseRange="2000" /> <!-- Hatar Ratman Thief -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="210" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Plains of Glory (60-69) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="132803" y="9561" z="-4216" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="60" />
+			<param name="max" value="69" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34120" x="133011" y="9596" z="-4240" heading="43018" /> <!-- Manager Panji -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22113" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22114" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor -->
+			<npc id="22114" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor -->
+			<npc id="22114" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor -->
+			<npc id="22114" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor -->
+			<npc id="22114" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor -->
+			<npc id="22115" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="133057" y="8534" z="-4270" heading="16383" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22113" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22113" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22114" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor -->
+			<npc id="22114" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Vanor -->
+			<npc id="22114" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor -->
+			<npc id="22114" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor -->
+			<npc id="22114" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor -->
+			<npc id="22115" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Vanor Silenos Shaman -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22124" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="132800" y="8789" z="-4228" heading="8191" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="133175" y="8633" z="-4260" heading="12415" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22333" x="133205" y="8570" z="-4265" heading="19324" /> <!-- Guard of Honor -->
+		</group>
+	</spawnlist>
+</instance>

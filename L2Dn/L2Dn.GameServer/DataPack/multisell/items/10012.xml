@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange Weapon +7 B-Grade -->
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94739" /> <!-- +7 Damascus Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94740" /> <!-- +7 Wizard's Tear - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94741" /> <!-- +7 Guardian's Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94742" /> <!-- +7 Bellion Cestus - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94743" /> <!-- +7 Bow of Peril - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94744" /> <!-- +7 Lance - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94745" /> <!-- +7 Staff of Evil Spirits - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94746" /> <!-- +7 Deadman's Glory - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94747" /> <!-- +7 Art of Battle Axe - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94748" /> <!-- +7 Samurai Long Sword*Samurai Long Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94749" /> <!-- +7 Demon's Dagger - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94750" /> <!-- +7 Colichemarde - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94751" /> <!-- +7 Dismantler - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="94752" /> <!-- +7 Star Buster - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="94733" /> <!-- +7 B-grade Weapon Coupon - Sealed -->
+		<production count="1" id="95657" /> <!-- +7 Volcano - Sealed -->
+	</item>
+</list>

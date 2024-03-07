@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="HellboundMessengerGiran">
+		<group>
+			<npc id="34191" x="81833" y="149724" z="-3477" heading="49151" respawnTime="60sec" /> <!-- Elite Wizard -->
+			<npc id="34196" x="81770" y="149665" z="-3477" heading="49151" respawnTime="60sec" /> <!-- Hellbound Messenger -->
+			<npc id="34199" x="81718" y="149724" z="-3477" heading="49151" respawnTime="60sec" /> <!-- Elite Wizard -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="190" name="Additional Services Lab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time empty="0" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-111378" y="-116546" z="-5768" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<spawnlist>
+		<group>
+			<npc id="34153" x="-110656" y="-116551" z="-5728" heading="32000" respawnTime="60sec" /> <!-- Hermin - Additional Services' Researcher -->
+		</group>
+	</spawnlist>
+</instance>

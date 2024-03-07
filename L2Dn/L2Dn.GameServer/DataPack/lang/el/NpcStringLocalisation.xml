@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/localisations.xsd">
+	<!-- Q00258 -->
+	<localisation id="25801" translation="Φέρε δέρματα λύκων" />
+	<localisation id="25802" translation="Φέρε δέρματα λύκων (Σε εξέλιξη)" />
+	<!-- Plains of Dion -->
+	<localisation id="99702" translation="Τι κοιτάς;" />
+	<localisation id="1000288" translation="$s1! Πώς τολμάς να διακόπτεις τον αγώνα μας! Βοήθεια παιδιά!" />
+	<localisation id="1000388" translation="$s1! Έ! Έχουμε μια μονομαχία εδώ!" />
+	<localisation id="1000389" translation="Η μονομαχία τελειώσε! Επίθεση!" />
+	<localisation id="1000390" translation="Φάουλ! Σκοτώστε το δειλό!" />
+	<localisation id="1000391" translation="Πώς τολμάς να διακόπτεις μια ιερή μονομαχία! Πρέπει να πάρεις ένα μάθημα!" />
+	<localisation id="1000392" translation="Πέθανε, δειλέ!" />
+	<localisation id="1000394" translation="Σκοτώστε το δειλό!" />
+</list>

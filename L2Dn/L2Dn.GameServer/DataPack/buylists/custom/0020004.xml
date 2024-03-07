@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90311" price="0" /> <!-- Brooch lv.1 -->
+	<item id="90226" price="0" /> <!-- Brooch lv.1 (30-Day) -->
+	<item id="91737" price="0" /> <!-- Brooch lv.1 (15-Day) -->
+	<item id="90312" price="0" /> <!-- Rare Brooch lv.2 -->
+	<item id="90862" price="0" /> <!-- Rare Brooch lv.2 (30-Day) -->
+	<item id="90934" price="0" /> <!-- Brooch lv.3 -->
+	<item id="91303" price="0" /> <!-- Brooch lv.4 -->
+	<item id="91417" price="0" /> <!-- Brooch lv.4 (30-Day) -->
+	<item id="91304" price="0" /> <!-- Brooch lv.5 -->
+	<item id="91760" price="0" /> <!-- Brooch lv.5 (30-Day) -->
+	<item id="91932" price="0" /> <!-- Adventurer's Brooch -->
+</list>

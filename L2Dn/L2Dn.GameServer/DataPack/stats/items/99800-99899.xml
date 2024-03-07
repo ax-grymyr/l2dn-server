@@ -1,0 +1,1705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99800" name="Package: Andreas van Halter Doll Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: dolls and packages of the same level In case of failure, the doll's package level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99805" min="1" max="1" chance="100" /> <!-- Package: Andreas van Halter Doll Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99801" name="Package: Andreas van Halter Doll Lv. 5" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 5> All Weapon P. Atk. +35 All Weapon M. Atk. +35 Soulshot damage +15% Spiritshot damage +15% Recovers 300 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i02" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99802" name="Package: Andreas van Halter Doll Lv. 4" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 4> All weapon P. Atk. +20 All weapon M. Atk. +20 Soulshot damage +10% Spiritshot damage +10% Recovers 200 MP after basic attacks and attack skills. (Probability: 30%/ Trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 4 and packages In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99803" name="Package: Andreas van Halter Doll Lv. 3" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 3> All weapon P. Atk. +15 All weapon M. Atk. +15 Soulshot damage +8% Spiritshot damage +8% Recovers 150 MP after basic attacks and attack skills. (Probability: 30%/ Trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 3 and packages In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99804" name="Package: Andreas van Halter Doll Lv. 2" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 2> All Weapon P. Atk. +10 All Weapon M. Atk. +10 Soulshot damage +5% Spiritshot damage +5% Recovers 100 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 2 and packages In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99805" name="Package: Andreas van Halter Doll Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 1> All Weapon P. Atk. +5 All Weapon M. Atk. +5 Soulshot damage +2% Spiritshot damage +2% Recovers 50 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=bbaa88><Compound></font> Materials: Glakias Doll Lv. 1 and packages In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99806" name="Teleportation Scroll (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll that teleports to another server groups of the Tower of Insolence. <How to use> Teleports to a selected server group where you can get through a Teleporting Portal on the 1st floor of the Tower of Insolence. <Hunting zone> Tower of Insolence - World Hunting Zone <font color=ff6666>Note!</font> Getting back to your main server group consumes the scroll. -->
+		<set name="icon" val="icon.teleport_srl_oman_servergroup" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99807" name="Kit: +7 Ice Crystal Armor (Upper/ Lower)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_u_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93139" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Breastplate -->
+			<item id="93140" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Gaiters -->
+		</capsuled_items>
+	</item>
+	<item id="99808" name="Kit: +5 Ice Crystal Armor (Upper/ Lower) (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_u_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93141" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Ice Crystal Breastplate - Sealed -->
+			<item id="93142" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Ice Crystal Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99809" name="Kit: +7 Ice Crystal Armor (Upper/ Lower) (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_u_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93141" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Breastplate - Sealed -->
+			<item id="93142" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Gaiters - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99810" name="Tricker's Rope (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Tricker gave you the rope to fight back moles who damage harvest. <How to use> Use it to pull out moles in instance zones. -->
+		<set name="icon" val="icon.etc_braided_hemp_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99811" name="Death Knight's Remaster Kit (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.dethrone_box_tier1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94828" min="1" max="1" chance="100" /> <!-- Class Change Coupon - Sealed -->
+			<item id="99818" min="5" max="5" chance="100" /> <!-- Craft Coupon: Zaken's Blood Sword (Time-limited) - Sealed -->
+			<item id="99817" min="5" max="5" chance="100" /> <!-- Craft Coupon: Kit: Ice Crystal Armor (Upper/ Lower) (Time-limited) - Sealed -->
+			<item id="99816" min="5" max="5" chance="100" /> <!-- Craft Coupon: Spellbook: Ultimate Death Knight (Time-limited) - Sealed -->
+			<item id="99815" min="1" max="1" chance="100" /> <!-- Death Knight's Spellbook Coupon - 1 Star (Time-limited) - Sealed -->
+			<item id="99814" min="1" max="1" chance="100" /> <!-- Death Knight's Spellbook Coupon - 2 Stars (Time-limited) - Sealed -->
+			<item id="99813" min="1" max="1" chance="100" /> <!-- Death Knight's Spellbook Coupon - 3 Stars (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99812" name="Pack of Seals (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="92314" min="1" max="1" chance="100" /> <!-- Giran Seal -->
+			<item id="97178" min="1" max="1" chance="2.173913" /> <!-- Spellbook Coupon - 4 Stars - Sealed -->
+			<item id="96300" min="1" max="1" chance="2.173913" /> <!-- Spellbook: Dragon Slayer -->
+			<item id="96613" min="1" max="1" chance="2.173913" /> <!-- Spellbook: Expanded Potential of Dyes -->
+			<item id="96297" min="1" max="1" chance="2.173913" /> <!-- Frost Lord's Weapon Pack - Sealed -->
+			<item id="96650" min="1" max="1" chance="2.173913" /> <!-- Armor of Protection Pack - Sealed -->
+			<item id="98063" min="1" max="1" chance="2.173913" /> <!-- Boss' Weapon Pack - Sealed -->
+			<item id="98300" min="1" max="1" chance="2.173913" /> <!-- Special Armor Pack - Sealed -->
+			<item id="90992" min="1" max="1" chance="2.173913" /> <!-- Antharas' Earring -->
+			<item id="91550" min="1" max="1" chance="2.173913" /> <!-- Frintezza's Necklace -->
+			<item id="96600" min="1" max="1" chance="2.173913" /> <!-- Beleth' Ring -->
+			<item id="49580" min="1" max="1" chance="2.173913" /> <!-- Baium's Ring -->
+			<item id="90763" min="1" max="1" chance="2.173913" /> <!-- Zaken's Earring -->
+			<item id="6660" min="1" max="1" chance="2.173913" /> <!-- Queen Ant's Ring -->
+			<item id="6661" min="1" max="1" chance="2.173913" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" chance="2.173913" /> <!-- Ring of Core -->
+			<item id="94385" min="1" max="1" chance="2.173913" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+			<item id="94383" min="1" max="1" chance="2.173913" /> <!-- Scroll: Enchant Rare Accessories -->
+			<item id="97494" min="1" max="1" chance="2.173913" /> <!-- Package: Glakias Doll Lv. 1 - Sealed -->
+			<item id="97489" min="1" max="1" chance="2.173913" /> <!-- Package: Behemoth Doll Lv. 1 - Sealed -->
+			<item id="94329" min="1" max="1" chance="2.173913" /> <!-- Package: Giran Seal (500 pcs.) - Sealed -->
+			<item id="93739" min="1" max="1" chance="2.173913" /> <!-- Package: Giran Seal (1000 pcs.) - Sealed -->
+			<item id="97795" min="1" max="1" chance="2.173913" /> <!-- Package: Hardin's Soul Crystal (100 pcs.) - Sealed -->
+			<item id="98593" min="1" max="1" chance="2.173913" /> <!-- Package: Venir's Talisman Fragment (500 pcs.) (Time-limited) - Sealed -->
+			<item id="98594" min="1" max="1" chance="2.173913" /> <!-- Package: Venir's Talisman Fragment (1000 pcs.) (Time-limited) - Sealed -->
+			<item id="96652" min="1" max="1" chance="2.173913" /> <!-- Package: Antharas Doll Lv. 1 - Sealed -->
+			<item id="94156" min="1" max="1" chance="2.173913" /> <!-- Package: Baium Doll Lv. 1 - Sealed -->
+			<item id="94513" min="1" max="1" chance="2.173913" /> <!-- Package: Frintezza Doll Lv. 1 - Sealed -->
+			<item id="94651" min="1" max="1" chance="2.173913" /> <!-- Package: Zaken Doll Lv. 1 - Sealed -->
+			<item id="94654" min="1" max="1" chance="2.173913" /> <!-- Package: Core Doll Lv. 1 - Sealed -->
+			<item id="94159" min="1" max="1" chance="2.173913" /> <!-- Package: Queen Ant Doll Lv. 1 - Sealed -->
+			<item id="94162" min="1" max="1" chance="2.173913" /> <!-- Package: Orfen Doll Lv. 1 - Sealed -->
+			<item id="96985" min="1" max="1" chance="2.173913" /> <!-- Package: Brooch Lv. 3 - Sealed -->
+			<item id="96983" min="1" max="1" chance="2.173913" /> <!-- Package: Agathion Bracelet Lv. 3 - Sealed -->
+			<item id="96984" min="1" max="1" chance="2.173913" /> <!-- Package: Talisman Bracelet Lv. 3 - Sealed -->
+			<item id="94328" min="1" max="1" chance="2.173913" /> <!-- Elixir Powder - Sealed -->
+			<item id="96623" min="1" max="1" chance="2.173913" /> <!-- Dye Booster -->
+			<item id="95783" min="1" max="1" chance="2.173913" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+			<item id="96901" min="1" max="1" chance="2.173913" /> <!-- Aden's Soul Crystal Lv. 1 - Armor -->
+			<item id="95803" min="1" max="1" chance="2.173913" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			<item id="91076" min="5" max="5" chance="2.173913" /> <!-- Venir's Talisman Fragment -->
+			<item id="91690" min="30" max="30" chance="2.173913" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="92314" min="20" max="20" chance="2.173913" /> <!-- Giran Seal -->
+			<item id="92314" min="10" max="10" chance="2.173913" /> <!-- Giran Seal -->
+			<item id="92314" min="5" max="5" chance="2.173913" /> <!-- Giran Seal -->
+			<item id="92314" min="2" max="2" chance="2.173913" /> <!-- Giran Seal -->
+			<item id="92314" min="1" max="1" chance="2.173913" /> <!-- Giran Seal -->
+		</capsuled_items>
+	</item>
+	<item id="99813" name="Death Knight's Spellbook Coupon - 3 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Death Knight's Spellbook - 3 Stars <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.hardin_sb_trade_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99814" name="Death Knight's Spellbook Coupon - 2 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Death Knight's Spellbook - 2 Stars <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.hardin_sb_trade_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99815" name="Death Knight's Spellbook Coupon - 1 Star (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Death Knight's Spellbook - 1 Star <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.hardin_sb_trade_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99816" name="Craft Coupon: Spellbook: Ultimate Death Knight (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Use it to obtain a Spellbook: Ultimate Death Knight Transformation through special craft. -->
+		<set name="icon" val="icon.etc_hs_agit_war_joining_certificate_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99817" name="Craft Coupon: Kit: Ice Crystal Armor (Upper/ Lower) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Use it to obtain a Kit: Ice Crystal Armor (Upper/ Lower) through special craft. -->
+		<set name="icon" val="icon.rare_armor_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99818" name="Craft Coupon: Zaken's Blood Sword (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Use it to obtain Zaken's Blood Sword through special craft. -->
+		<set name="icon" val="icon.boss_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99819" name="Package: +7 Shield of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Shield of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.shield_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95666" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Shield of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99820" name="Package: +7 Sigil of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Sigil of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.sigil_of_protection" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95664" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Sigil of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99821" name="Package: +7 Boots of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Boots of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95937" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Boots of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99822" name="Package: +7 Helmet of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Helmet of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95935" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Helmet of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99823" name="Package: +7 Gauntlets of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Gauntlets of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95936" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Gauntlets of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99824" name="Package: +7 Stockings of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Stockings of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94851" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Stockings of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99825" name="Package: +7 Tunic of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Tunic of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t903_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94850" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Tunic of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99826" name="Package: +7 Leather Leggings of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Leather Leggings of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94847" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Leather Leggings of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99827" name="Package: +7 Leather Armor of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Leather Armor of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t902_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94846" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Leather Armor of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99828" name="Package: +7 Gaiters of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Gaiters of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94843" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Gaiters of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99829" name="Package: +7 Breastplate of Protection (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Breastplate of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.armor_t901_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94842" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Breastplate of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99830" name="Package: +7 Frost Lord's Dual Swords (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Dual Swords <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dual_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96763" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Dual Swords - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99831" name="Package: +7 Frost Lord's Pistols (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Pistols <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_shooter" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96762" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Pistols - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99832" name="Package: +7 Frost Lord's Rapier (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Rapier <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_rapier" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96761" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Rapier - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99833" name="Package: +7 Frost Lord's Ancient Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Ancient Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_ancientsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96760" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Ancient Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99834" name="Package: +7 Frost Lord's Staff (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Staff <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96759" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Staff - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99835" name="Package: +7 Frost Lord's Magic Blunt Weapon (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Magic Blunt Weapon <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96758" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Magic Blunt Weapon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99836" name="Package: +7 Frost Lord's Blade Fists (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Blade Fists <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dualfist" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96757" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Blade Fists - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99837" name="Package: +7 Frost Lord's Bow (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Bow <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_bow" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96756" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Bow - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99838" name="Package: +7 Frost Lord's Spear (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Spear <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_pole" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96755" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Spear - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99839" name="Package: +7 Frost Lord's Dagger (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Dagger <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dagger" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96754" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Dagger - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99840" name="Package: +7 Frost Lord's Axe (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Axe <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_blunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96753" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Axe - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99841" name="Package: +7 Frost Lord's Two-handed Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Two-handed Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96752" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Two-handed Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99842" name="Package: +7 Frost Lord's Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Sword <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96751" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Frost Lord's Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99843" name="+7 Armor of Protection Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Armor of Protection enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.protection_armor_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99844" name="+7 Frozen Weapon Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +7 Frost Lord's Weapon <font color=ff6666>(unexchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99845" name="Hunter Mole's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="30" max="30" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="30" max="30" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99846" name="Assassin Mole's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="40" max="40" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="40" max="40" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99847" name="Mole Hunt Expert's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="50" max="50" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="50" max="50" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99848" name="Mole Hunt Leader's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="70" max="70" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="70" max="70" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99849" name="Mole Hunt King's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="80" max="80" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="80" max="80" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99850" name="Mole Hunt God's Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95693" min="100" max="100" chance="100" /> <!-- Berserker's Scroll (Time-limited) - Sealed -->
+			<item id="97438" min="100" max="100" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99851" name="Mole Pack of Pet's Supplies (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_grave_goods_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97432" min="2" max="2" chance="25" /> <!-- Scroll: Boost Pet's Attack - Sealed -->
+			<item id="97433" min="2" max="2" chance="25" /> <!-- Scroll: Boost Pet's Defense - Sealed -->
+			<item id="98970" min="3" max="3" chance="25" /> <!-- Pet Food - Sealed -->
+			<item id="98971" min="5" max="5" chance="25" /> <!-- Pet's HP Recovery Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99852" name="Appearance -s82 Dual Swords" additionalName="Around" type="Weapon">
+		<!-- When enchanting dual swords, two-handed swords/ blunts and fists, the P. Atk. bonus is higher than that of one-handed weapons. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_periwing_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1890" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99853" name="Appearance -s82 Firearms" additionalName="Around" type="Weapon">
+		<!-- <font color=bbaa88><Sylph-exclusive weapon></font> -->
+		<set name="icon" val="icon.weapon_rudecutter_crossbow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="PISTOLS" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">634</stat>
+			<stat type="mAtk">166</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99854" name="Appearance -s82 Rapier" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Orcs/ Sylphs/ Dwarves/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_gemtail_rapier_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">266</stat>
+			<stat type="mAtk">184</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99855" name="Appearance -s82 Ancient Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Humans/ Elves/ Dark Elves/ Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_findragon blade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">309</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99856" name="Appearance -s82 Staff" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_blackvisage_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="880" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">224</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99857" name="Appearance -s82 Magic Blunt Weapon" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_cuticle_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1510" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">222</stat>
+			<stat type="mAtk">204</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99858" name="Appearance -s82 Blade Fists" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_octoclaw_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="1330" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99859" name="Appearance -s82 Bow" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_skullgrove_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="2" />
+		<set name="mp_consume" val="5" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">634</stat>
+			<stat type="mAtk">166</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="99860" name="Appearance -s82 Spear" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_doubletopa_spear_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99861" name="Appearance -s82 Dagger" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.weapon_skulledge_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="930" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99862" name="Appearance -s82 Axe" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_vigwik_axe_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99863" name="Appearance -s82 Two-handed Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_feathereye_blade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99864" name="Appearance -s82 Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_periwing_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99865" name="Appearance -s84 Dual Swords" additionalName="Around" type="Weapon">
+		<!-- When enchanting dual swords, two-handed swords/ blunts and fists, the P. Atk. bonus is higher than that of one-handed weapons. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1890" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99866" name="Appearance -s84 Firearms" additionalName="Around" type="Weapon">
+		<!-- <font color=bbaa88><Sylph-exclusive weapon></font> -->
+		<set name="icon" val="icon.weapon_thorne_crossbow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="PISTOLS" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">634</stat>
+			<stat type="mAtk">166</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99867" name="Appearance -s84 Rapier" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Orcs/ Sylphs/ Dwarves/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_heavenstair_rapier_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">266</stat>
+			<stat type="mAtk">184</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99868" name="Appearance -s84 Ancient Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Humans/ Elves/ Dark Elves/ Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_pyseal_blade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">309</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99869" name="Appearance -s84 Staff" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_psyskilt_cane_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="880" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">224</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99870" name="Appearance -s84 Magic Blunt Weapon" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_sacredumors_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1510" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">222</stat>
+			<stat type="mAtk">204</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99871" name="Appearance -s84 Blade Fists" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_jademice_claw_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="1330" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99872" name="Appearance -s84 Bow" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="2" />
+		<set name="mp_consume" val="5" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">634</stat>
+			<stat type="mAtk">166</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="99873" name="Appearance -s84 Spear" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_ghostcleaner_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="99874" name="Appearance -s84 Dagger" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.weapon_mambaedge_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="930" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99875" name="Appearance -s84 Axe" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_expowder_mace_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99876" name="Appearance -s84 Two-handed Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_lavamond_saw_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">340</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99877" name="Appearance -s84 Sword" additionalName="Around" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99878" name="Red's Scroll of Blessing (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <font color=EEAA22><Buff effect></font> STR/ INT +1 DEX/ WIT +1 CON/ MEN +1 The buff is leveling up every hour (there are 24 levels). With each buff renewal you will receive Red Libra Coin (Time-limited) 20 pcs. <font color=ff6666>Note!</font> You cannot get the buff and the gift if you are dead. You cannot get the buff and the gift while teleporting. You cannot get the gift if your inventory is full. -->
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_attendance" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<cond>
+			<not>
+				<player active_effect_id="48400" /> <!-- Red's Blessing Lv. 1 -->
+			</not>
+		</cond>
+		<skills>
+			<skill id="48400" level="1" /> <!-- Red's Blessing Lv. 1 -->
+		</skills>
+	</item>
+	<item id="99879" name="Rare Collection Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_2023_mimic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="98665" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Baium's Crystal (Time-limited) - Sealed -->
+			<item id="99885" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Antharas' Earring (Time-limited) - Sealed -->
+			<item id="99882" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Baium's Ring (Time-limited) - Sealed -->
+			<item id="99884" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Zaken's Earring (Time-limited) - Sealed -->
+			<item id="99881" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Queen Ant's Ring (Time-limited) - Sealed -->
+			<item id="99883" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Orfen's Earring (Time-limited) - Sealed -->
+			<item id="98667" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Baium Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98668" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Queen Ant Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98669" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Orfen Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98670" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Frintezza Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98671" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Zaken Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98672" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Core Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="99880" min="1" max="1" chance="5.555555" /> <!-- Rare Collection - Ring of Core (Time-limited) - Sealed -->
+			<item id="98664" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Core's Crystal (Time-limited) - Sealed -->
+			<item id="98666" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Queen Ant's Crystal (Time-limited) - Sealed -->
+			<item id="98663" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Orfen's Crystal (Time-limited) - Sealed -->
+			<item id="98662" min="1" max="1" chance="5.555555" /> <!-- Stat Collection - Zaken's Crystal (Time-limited) - Sealed -->
+			<item id="1461" min="2400" max="2400" chance="5.555555" /> <!-- A-grade Crystal -->
+		</capsuled_items>
+	</item>
+	<item id="99880" name="Rare Collection - Ring of Core (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Ring of Core in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.ring_of_core_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99881" name="Rare Collection - Queen Ant's Ring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Queen Ant's Ring in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.queen_ant_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99882" name="Rare Collection - Baium's Ring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Baium's Ring in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.ring_of_baium_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99883" name="Rare Collection - Orfen's Earring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Orfen's Earring in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.earring_of_orfen_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99884" name="Rare Collection - Zaken's Earring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Zaken's Earring in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.earring_of_zaken_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99885" name="Rare Collection - Antharas' Earring (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Antharas' Earring in Boss' Rare Ring Collection. -->
+		<set name="icon" val="icon.earring_of_antaras_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99886" name="Extra Pass: Clan Dungeon" additionalName="Sealed" type="EtcItem">
+		<!-- Given to clans who have reached the top of clan raid ranking. <How to use> The clan leader should talk to NPC Andish who appears during clan raids, and use certain amount of extra passes to get an opportunity to enter an additional raid. -->
+		<set name="icon" val="icon.ticket_of_additional_pledge_raid" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99887" name="Tricker's Token (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A token of gratitude that's given for mole extermination assistance. <How to use> Bring to the event NPC to get a buff. <Event NPCs> Event NPC in town - Tiu -->
+		<set name="icon" val="icon.tricker_reward_token" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99888" name="Package: Spellbook Coupon - 3 Stars" additionalName="Sealed" type="EtcItem">
+		<!-- The given Spellbook Coupon - 3 Stars <font color=ff6666>cannot be transferred within account</font>. -->
+		<set name="icon" val="icon.ev_sb_3_trade_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97177" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99889" name="Kit of Returning" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ev_kalie_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93421" min="1" max="1" chance="100" /> <!-- Valakas' Necklace - Sealed -->
+			<item id="95722" min="20" max="20" chance="100" /> <!-- Enchant Package: Ring of Insolence - Sealed -->
+			<item id="95723" min="20" max="20" chance="100" /> <!-- Enchant Package: Dragon Valley's Earring - Sealed -->
+			<item id="98941" min="20" max="20" chance="100" /> <!-- Package: Hunter's Earring - Sealed -->
+			<item id="98294" min="100" max="100" chance="100" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="94328" min="20" max="20" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="97175" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 1 Star - Sealed -->
+			<item id="97176" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 2 Stars - Sealed -->
+			<item id="97177" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+			<item id="94828" min="1" max="1" chance="100" /> <!-- Class Change Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99890" name="Kit: Special HP Recovery Potion (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91690" min="100000" max="100000" chance="100" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="97145" min="2000" max="2000" chance="100" /> <!-- Ancient Adena -->
+		</capsuled_items>
+	</item>
+	<item id="99891" name="Kit: Elixir (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94328" min="30" max="30" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="97145" min="2000" max="2000" chance="100" /> <!-- Ancient Adena -->
+		</capsuled_items>
+	</item>
+	<item id="99892" name="Enchant Kit: Growth Rune (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_joy_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94780" min="2000" max="2000" chance="100" /> <!-- Growth Rune Fragment - Sealed -->
+			<item id="97145" min="2000" max="2000" chance="100" /> <!-- Ancient Adena -->
+		</capsuled_items>
+	</item>
+	<item id="99893" name="Enchant Kit: Hidden Power (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_belief_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97147" min="100" max="100" chance="100" /> <!-- Hidden Power Booster - Sealed -->
+			<item id="97145" min="2000" max="2000" chance="100" /> <!-- Ancient Adena -->
+		</capsuled_items>
+	</item>
+	<item id="99894" name="Character Growth Kit Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain one of the following kits of your choice. <font color=EEAA22><Kits to obtain></font> Enchant Kit: Hidden Power Enchant Kit: Growth Rune Kit: Elixir Kit: Special HP Recovery Potion -->
+		<set name="icon" val="icon.bm_royal_white_save_ticket" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99895" name="Equipment Certificate Pouch (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present_poket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="99896" min="1" max="1" chance="14.28571" /> <!-- Package: Special Equipment Certificate (1000 pcs.) - Sealed -->
+			<item id="98629" min="1" max="1" chance="14.28571" /> <!-- Package: Special Equipment Certificate (500 pcs.) - Sealed -->
+			<item id="98294" min="10" max="10" chance="14.28571" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="98294" min="5" max="5" chance="14.28571" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="98294" min="3" max="3" chance="14.28571" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="98294" min="2" max="2" chance="14.28571" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="98294" min="1" max="1" chance="14.28571" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99896" name="Package: Special Equipment Certificate (1000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.blue_save_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98294" min="1000" max="1000" chance="100" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99897" name="Spellbook: Time Distortion: Master" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Time Distortion: Master skill. <Class> Assassin <Skill effect> Distorts time around you, dealing damage and decreasing all types of Speed. Applies the Enhanced Time Master buff when using the skill. <Enhanced Time Master> Boosts attack abilities, grants immunity to the Time Distortion skill. -->
+		<set name="icon" val="icon.codex_of_incuse_forgetting" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99898" name="Spellbook: Ultimate Death Knight: Master" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Ultimate Death Knight: Master skill. <Class> Death Knight (all races) <Skill effect> Transforms into a Death Knight who is cursed by the Fire Dragon Valakas, but possesses great powers. Increases P. Atk./ Skill Power/ P. Skill Critical Rate/ P. Critical Damage/ P. Skill Critical Damage/ Atk. Spd./ Speed/ P. Def./ Resistance to All Weapons/ Holy Resistance. Decreases penalty of Received Healing. There is a certain chance to apply an Impending Death Whisper buff after an attack. <Impending Death Whisper> Increases Hold/ Suppression Resistance. All skills don't consume DP. -->
+		<set name="icon" val="icon.unique_skill_book01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99899" name="Spellbook: Lightning Grip" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Lightning Grip skill. <Class> Death Knight (Dark Elves) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

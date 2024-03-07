@@ -1,0 +1,2267 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="93400" name="Package: Deton's Request Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93350" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93401" name="Package: Deton's Request Lv. 6" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93351" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93402" name="Package: Deton's Request Lv. 7" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93352" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93403" name="Package: Deton's Request Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93353" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93404" name="Package: Deton's Request Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93354" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 9 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93405" name="Package: Deton's Request Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.stage_scroll_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93355" min="1" max="1" chance="100" /> <!-- Deton's Request Lv. 10 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93406" name="Scroll: Enchant B-grade Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="2015" level="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
+		</skills>
+	</item>
+	<item id="93407" name="Scroll: Enchant B-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="240000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="2016" level="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
+		</skills>
+	</item>
+	<item id="93408" name="Scroll: Enchant C-grade Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="330000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="2017" level="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+		</skills>
+	</item>
+	<item id="93409" name="Scroll: Enchant C-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="45000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="2018" level="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
+		</skills>
+	</item>
+	<item id="93410" name="Scroll: Enchant D-grade Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="150000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="2019" level="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+		</skills>
+	</item>
+	<item id="93411" name="Scroll: Enchant D-grade Armor" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="18000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="2020" level="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
+		</skills>
+	</item>
+	<item id="93412" name="Letter K" additionalName="Sealed" type="EtcItem">
+		<!-- Combine with other letters to create a special word and get a reward! -->
+		<set name="icon" val="icon.etc_alphabet_k_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93413" name="Letter U" additionalName="Sealed" type="EtcItem">
+		<!-- Combine with other letters to create a special word and get a reward! -->
+		<set name="icon" val="icon.etc_alphabet_u_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93414" name="Letter W" additionalName="Sealed" type="EtcItem">
+		<!-- Combine with other letters to create a special word and get a reward! -->
+		<set name="icon" val="icon.etc_alphabet_w_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93415" name="Formal Wear" additionalName="Sealed" type="Armor">
+		<!-- A wedding attire that looks like a tuxedo for male characters and a wedding dress for female characters. -->
+		<set name="icon" val="icon.armor_t2000_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1000" />
+		<set name="price" val="5000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="93416" name="Chrono Cithara" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir weapon in memory of 5000 day promises. -->
+		<set name="icon" val="icon.weapon_chrono_cithara_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="rhand" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93417" name="Chrono Unitus" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir weapon in memory of 5000 day promises. -->
+		<set name="icon" val="icon.weapon_chrono_tambourine_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="rEvas">8</stat>
+		</stats>
+	</item>
+	<item id="93418" name="Chrono Campana" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir weapon in memory of 5000 day promises. -->
+		<set name="icon" val="icon.weapon_chrono_campana_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93419" name="Chrono Darbuka" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir weapon in memory of 5000 day promises. -->
+		<set name="icon" val="icon.weapon_chrono_darbuka_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="rEvas">8</stat>
+			<stat type="randomDamage">19</stat>
+		</stats>
+	</item>
+	<item id="93420" name="Chrono Maracas" additionalName="Sealed" type="Weapon">
+		<!-- A souvenir weapon in memory of 5000 day promises. -->
+		<set name="icon" val="icon.weapon_chrono_maracas_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93421" name="Valakas' Necklace" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. P. Atk. +5%. M. Atk. +5%. P. Skill Power +5%. M. Skill Power +5%. Skill Cooldown -4%. Max MP +30. Paralysis Resistance/ Atk. Rate +10%. Damage Reflection Resistance +5%. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="RING" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50353" level="1" /> <!-- Rare Accessory: Valakas' Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">76</stat>
+			<stat type="maxMp">30</stat>
+		</stats>
+	</item>
+	<item id="93422" name="Damascus Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_sword_of_damascus_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="DAMASCUS" />
+		<set name="weight" val="1350" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50392" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93423" name="Lance" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_lancia_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1920" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="50405" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93424" name="Deadman's Glory" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_deadmans_glory_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1600" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50397" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93425" name="Art of Battle Axe" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1570" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50397" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93426" name="Staff of Evil Spirits" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">189</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50399" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93427" name="Demon's Dagger" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.weapon_demons_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="970" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50402" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93428" name="Bellion Cestus" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_bellion_cestus_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1390" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50403" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93429" name="Bow of Peril" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_hazard_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1700" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="4" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+		<skills>
+			<skill id="50401" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93430" name="Samurai Long Sword*Samurai Long Sword" additionalName="Sealed" type="Weapon">
+		<!-- When enchanting dual swords, two-handed swords/ blunts and fists, the P. Atk. bonus is higher than that of one-handed weapons. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50403" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93431" name="Guardian's Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_guardians_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50395" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93432" name="Wizard's Tear" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1350" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">149</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50392" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93433" name="Star Buster" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_star_buster_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50399" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93434" name="Dismantler" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Humans/ Elves/ Dark Elves/ Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_dismantler_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">214</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">5</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50395" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93435" name="Colichemarde" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Orcs/ Sylphs/ Dwarves/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_colichemarde_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="B" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">185</stat>
+			<stat type="mAtk">135</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">19</stat>
+		</stats>
+		<skills>
+			<skill id="50392" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93436" name="+4 ~ +15 Weapon Pack - Samurai Long Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_samurai_old_longsword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93047" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Samurai Long Sword - Sealed -->
+			<item id="93047" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Samurai Long Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93437" name="+4 ~ +15 Weapon Pack - Demon's Staff" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_demons_staff_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93048" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Demon's Staff - Sealed -->
+			<item id="93048" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Demon's Staff - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93438" name="+4 ~ +15 Weapon Pack - Ecliptic Axe" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93049" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Ecliptic Axe - Sealed -->
+			<item id="93049" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Ecliptic Axe - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93439" name="+4 ~ +15 Weapon Pack - Crystal Dagger" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93050" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Crystal Dagger - Sealed -->
+			<item id="93050" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Crystal Dagger - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93440" name="+4 ~ +15 Weapon Pack - Eminence Bow" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_eminence_bow_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93051" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Eminence Bow - Sealed -->
+			<item id="93051" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Eminence Bow - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93441" name="+4 ~ +15 Weapon Pack - Orcish Poleaxe" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93052" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Orcish Poleaxe - Sealed -->
+			<item id="93052" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Orcish Poleaxe - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93442" name="+4 ~ +15 Weapon Pack - Katana*Katana" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93053" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Katana*Katana - Sealed -->
+			<item id="93053" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Katana*Katana - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93443" name="+4 ~ +15 Weapon Pack - Yaksa Mace" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93054" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Yaksa Mace - Sealed -->
+			<item id="93054" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Yaksa Mace - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93444" name="+4 ~ +15 Weapon Pack - Berserker Blade" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_berserker_blade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93055" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Berserker Blade - Sealed -->
+			<item id="93055" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Berserker Blade - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93445" name="+4 ~ +15 Weapon Pack - Great Pata" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_great_pata_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93056" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Great Pata - Sealed -->
+			<item id="93056" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Great Pata - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93446" name="+4 ~ +15 Weapon Pack - Admiral's Estoc" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_blink_slasher_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93057" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Admiral's Estoc - Sealed -->
+			<item id="93057" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Admiral's Estoc - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93447" name="+4 ~ +15 Weapon Pack - Saber Tooth" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_invincible_blade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93058" min="1" max="1" minEnchant="4" maxEnchant="4" chance="80" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="5" maxEnchant="5" chance="10" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="6" maxEnchant="6" chance="4.5" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.94" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="8" maxEnchant="8" chance="1" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.5" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.4" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.3" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.2" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.1" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.05" /> <!-- Saber Tooth - Sealed -->
+			<item id="93058" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.01" /> <!-- Saber Tooth - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93448" name="A-grade Weapon Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for an A-grade weapon through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_weapon_ticket_a" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93449" name="A-grade Armor Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for an A-grade armor through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_armor_ticket_a" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93450" name="Golden Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92408" min="1" max="1" chance="3.125" /> <!-- Baium's Thunder Breaker -->
+			<item id="92407" min="1" max="1" chance="3.125" /> <!-- Orfen's Venom Sword -->
+			<item id="92421" min="1" max="1" chance="3.125" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92405" min="1" max="1" chance="3.125" /> <!-- Core's Plasmic Bow -->
+			<item id="92404" min="1" max="1" chance="3.125" /> <!-- Zaken's Blood Sword -->
+			<item id="93139" min="1" max="1" chance="3.125" /> <!-- Ice Crystal Breastplate -->
+			<item id="93140" min="1" max="1" chance="3.125" /> <!-- Ice Crystal Gaiters -->
+			<item id="93315" min="1" max="1" chance="3.125" /> <!-- Leather Armor of Lightning -->
+			<item id="93316" min="1" max="1" chance="3.125" /> <!-- Leather Leggings of Lightning -->
+			<item id="93075" min="1" max="1" chance="3.125" /> <!-- Gloves of Silence -->
+			<item id="49580" min="1" max="1" chance="3.125" /> <!-- Baium's Ring -->
+			<item id="90763" min="1" max="1" chance="3.125" /> <!-- Zaken's Earring -->
+			<item id="6660" min="1" max="1" chance="3.125" /> <!-- Queen Ant's Ring -->
+			<item id="6661" min="1" max="1" chance="3.125" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" chance="3.125" /> <!-- Ring of Core -->
+			<item id="8684" min="1" max="1" chance="3.125" /> <!-- Shyeed's Bow -->
+			<item id="8682" min="1" max="1" chance="3.125" /> <!-- Naga's Storm -->
+			<item id="8688" min="1" max="1" chance="3.125" /> <!-- Daimon Crystal -->
+			<item id="8678" min="1" max="1" chance="3.125" /> <!-- Sirra's Blade -->
+			<item id="8680" min="1" max="1" chance="3.125" /> <!-- Barakiel's Axe -->
+			<item id="8679" min="1" max="1" chance="3.125" /> <!-- Sword of Ipos -->
+			<item id="8681" min="1" max="1" chance="3.125" /> <!-- Behemoth' Tuning Fork -->
+			<item id="8686" min="1" max="1" chance="3.125" /> <!-- Themis' Tongue -->
+			<item id="8683" min="1" max="1" chance="3.125" /> <!-- Tiphon's Spear -->
+			<item id="8685" min="1" max="1" chance="3.125" /> <!-- Sobekk's Hurricane -->
+			<item id="8687" min="1" max="1" chance="3.125" /> <!-- Cabrio's Hand -->
+			<item id="93255" min="1" max="1" chance="3.125" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="93256" min="1" max="1" chance="3.125" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+			<item id="93257" min="1" max="1" chance="3.125" /> <!-- Cursed Scroll: Enchant A-grade Weapon -->
+			<item id="93258" min="1" max="1" chance="3.125" /> <!-- Cursed Scroll: Enchant A-grade Armor -->
+			<item id="93499" min="1" max="1" chance="3.125" /> <!-- Enchanted B-grade Weapon Coupon - Sealed -->
+			<item id="93498" min="1" max="1" chance="3.125" /> <!-- Enchanted C-grade Weapon Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93451" name="Boss' Weapon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.zariche_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92404" min="1" max="1" chance="16.66" /> <!-- Zaken's Blood Sword -->
+			<item id="92405" min="1" max="1" chance="16.66" /> <!-- Core's Plasmic Bow -->
+			<item id="92407" min="1" max="1" chance="16.66" /> <!-- Orfen's Venom Sword -->
+			<item id="92421" min="1" max="1" chance="16.66" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92408" min="1" max="1" chance="16.66" /> <!-- Baium's Thunder Breaker -->
+			<item id="94888" min="1" max="1" chance="16.66" /> <!-- Anakim's Divine Pistols -->
+		</capsuled_items>
+	</item>
+	<item id="93452" name="Scroll of Escape: Fortress" type="EtcItem">
+		<!-- A magic scroll for teleporting to a fortress. If your clan doesn't own a fortress, you will be relocated to the nearest village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93453" name="Improved Scroll of Escape: Fortress" type="EtcItem">
+		<!-- A magic scroll for teleporting to a fortress very quickly. If your clan doesn't own a fortress, you will be relocated to the nearest village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93454" name="+14 S-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="6364" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Forgotten Blade -->
+			<item id="6365" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Basalt Battlehammer -->
+			<item id="6366" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Imperial Staff -->
+			<item id="6367" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Angel Slayer -->
+			<item id="6369" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Dragon Hunter Axe -->
+			<item id="6370" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Saint Spear -->
+			<item id="6371" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Demon Splinter -->
+			<item id="6372" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Heaven's Divider -->
+			<item id="6579" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Arcana Mace -->
+			<item id="6580" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Tallum Blade*Dark Legion's Edge -->
+			<item id="7575" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Draconic Bow -->
+			<item id="91890" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Gram -->
+			<item id="91905" min="1" max="1" minEnchant="14" maxEnchant="14" chance="7.692307" /> <!-- Laevateinn -->
+		</capsuled_items>
+	</item>
+	<item id="93455" name="+10 S-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="6364" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Forgotten Blade -->
+			<item id="6365" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Basalt Battlehammer -->
+			<item id="6366" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Imperial Staff -->
+			<item id="6367" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Angel Slayer -->
+			<item id="6369" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Dragon Hunter Axe -->
+			<item id="6370" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Saint Spear -->
+			<item id="6371" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Demon Splinter -->
+			<item id="6372" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Heaven's Divider -->
+			<item id="6579" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Arcana Mace -->
+			<item id="6580" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Tallum Blade*Dark Legion's Edge -->
+			<item id="7575" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Draconic Bow -->
+			<item id="91890" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Gram -->
+			<item id="91905" min="1" max="1" minEnchant="10" maxEnchant="10" chance="7.692307" /> <!-- Laevateinn -->
+		</capsuled_items>
+	</item>
+	<item id="93456" name="+16 A-grade Weapon Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Sirra's Blade -->
+			<item id="8679" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Sword of Ipos -->
+			<item id="8680" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Barakiel's Axe -->
+			<item id="8681" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Behemoth' Tuning Fork -->
+			<item id="8682" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Naga's Storm -->
+			<item id="8683" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Tiphon's Spear -->
+			<item id="8684" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Shyeed's Bow -->
+			<item id="8685" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Sobekk's Hurricane -->
+			<item id="8686" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Themis' Tongue -->
+			<item id="8687" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Cabrio's Hand -->
+			<item id="8688" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Daimon Crystal -->
+			<item id="8938" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Tallum Blade*Damascus Sword -->
+			<item id="91887" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Durendal -->
+			<item id="91902" min="1" max="1" minEnchant="16" maxEnchant="16" chance="7.142857" /> <!-- Éclair Bijou -->
+		</capsuled_items>
+	</item>
+	<item id="93457" name="+8 Dragon Belt Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_bronze" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91862" min="1" max="1" minEnchant="8" maxEnchant="8" chance="100" /> <!-- Dragon Belt - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93458" name="Magic Lamp Charging Potion" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Magic Lamp charging rate +20%. Duration: 60 min. Cooldown: 1 min. -->
+		<set name="icon" val="icon.etc_recall_potion2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40138" level="1" /> <!-- Magic Lamp Charging Potion - Event -->
+		</skills>
+	</item>
+	<item id="93459" name="A-grade Armor Pack - Majestic Equipment" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92262" min="1" max="1" chance="8.333" /> <!-- Majestic Plate Armor - Sealed -->
+			<item id="92267" min="1" max="1" chance="8.333" /> <!-- Majestic Leather Armor - Sealed -->
+			<item id="92272" min="1" max="1" chance="8.333" /> <!-- Majestic Robe - Sealed -->
+			<item id="92286" min="1" max="1" chance="8.333" /> <!-- Majestic Gauntlets (Heavy) - Sealed -->
+			<item id="92287" min="1" max="1" chance="8.333" /> <!-- Majestic Gauntlets (Light) - Sealed -->
+			<item id="92288" min="1" max="1" chance="8.333" /> <!-- Majestic Gauntlets (Robe) - Sealed -->
+			<item id="92298" min="1" max="1" chance="8.333" /> <!-- Majestic Boots (Heavy) - Sealed -->
+			<item id="92299" min="1" max="1" chance="8.333" /> <!-- Majestic Boots (Light) - Sealed -->
+			<item id="92300" min="1" max="1" chance="8.333" /> <!-- Majestic Boots (Robe) - Sealed -->
+			<item id="92310" min="1" max="1" chance="8.333" /> <!-- Majestic Circlet (Heavy) - Sealed -->
+			<item id="92311" min="1" max="1" chance="8.333" /> <!-- Majestic Circlet (Light) - Sealed -->
+			<item id="92312" min="1" max="1" chance="8.333" /> <!-- Majestic Circlet (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93460" name="A-grade Armor Pack - Equipment of Nightmare" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92256" min="1" max="1" chance="8.333" /> <!-- Armor of Nightmare - Sealed -->
+			<item id="92266" min="1" max="1" chance="8.333" /> <!-- Leather Armor of Nightmare - Sealed -->
+			<item id="92271" min="1" max="1" chance="8.333" /> <!-- Robe of Nightmare - Sealed -->
+			<item id="92283" min="1" max="1" chance="8.333" /> <!-- Gauntlets of Nightmare (Heavy) - Sealed -->
+			<item id="92284" min="1" max="1" chance="8.333" /> <!-- Gauntlets of Nightmare (Light) - Sealed -->
+			<item id="92285" min="1" max="1" chance="8.333" /> <!-- Gauntlets of Nightmare (Robe) - Sealed -->
+			<item id="92295" min="1" max="1" chance="8.333" /> <!-- Boots of Nightmare (Heavy) - Sealed -->
+			<item id="92296" min="1" max="1" chance="8.333" /> <!-- Boots of Nightmare (Light) - Sealed -->
+			<item id="92297" min="1" max="1" chance="8.333" /> <!-- Boots of Nightmare (Robe) - Sealed -->
+			<item id="92307" min="1" max="1" chance="8.333" /> <!-- Helm of Nightmare (Heavy) - Sealed -->
+			<item id="92308" min="1" max="1" chance="8.333" /> <!-- Helm of Nightmare (Light) - Sealed -->
+			<item id="92309" min="1" max="1" chance="8.333" /> <!-- Helm of Nightmare (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93461" name="A-grade Armor Pack - Dark Crystal Equipment" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92255" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Breastplate - Sealed -->
+			<item id="92257" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Gaiters - Sealed -->
+			<item id="92263" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Leather Armor - Sealed -->
+			<item id="92264" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Leggings - Sealed -->
+			<item id="92270" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Robe - Sealed -->
+			<item id="92277" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Gloves (Heavy) - Sealed -->
+			<item id="92278" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Gloves (Light) - Sealed -->
+			<item id="92279" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Gloves (Robe) - Sealed -->
+			<item id="92289" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Boots (Heavy) - Sealed -->
+			<item id="92290" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Boots (Light) - Sealed -->
+			<item id="92291" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Boots (Robe) - Sealed -->
+			<item id="92304" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Helmet (Heavy) - Sealed -->
+			<item id="92305" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Helmet (Light) - Sealed -->
+			<item id="92306" min="1" max="1" chance="7.142" /> <!-- Dark Crystal Helmet (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93462" name="A-grade Armor Pack - Tallum Equipment" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92261" min="1" max="1" chance="7.692" /> <!-- Tallum Plate Armor - Sealed -->
+			<item id="92265" min="1" max="1" chance="7.692" /> <!-- Tallum Leather Armor - Sealed -->
+			<item id="92268" min="1" max="1" chance="7.692" /> <!-- Tallum Tunic - Sealed -->
+			<item id="92269" min="1" max="1" chance="7.692" /> <!-- Tallum Stockings - Sealed -->
+			<item id="92280" min="1" max="1" chance="7.692" /> <!-- Tallum Gloves (Heavy) - Sealed -->
+			<item id="92281" min="1" max="1" chance="7.692" /> <!-- Tallum Gloves (Light) - Sealed -->
+			<item id="92282" min="1" max="1" chance="7.692" /> <!-- Tallum Gloves (Robe) - Sealed -->
+			<item id="92292" min="1" max="1" chance="7.692" /> <!-- Tallum Boots (Heavy) - Sealed -->
+			<item id="92293" min="1" max="1" chance="7.692" /> <!-- Tallum Boots (Light) - Sealed -->
+			<item id="92294" min="1" max="1" chance="7.692" /> <!-- Tallum Boots (Robe) - Sealed -->
+			<item id="92301" min="1" max="1" chance="7.692" /> <!-- Tallum Helmet (Heavy) - Sealed -->
+			<item id="92302" min="1" max="1" chance="7.692" /> <!-- Tallum Helmet (Light) - Sealed -->
+			<item id="92303" min="1" max="1" chance="7.692" /> <!-- Tallum Helmet (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93463" name="+4 ~ +15 Weapon Pack - Damascus Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_sword_of_damascus_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93422" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Damascus Sword - Sealed -->
+			<item id="93422" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Damascus Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93464" name="+4 ~ +15 Weapon Pack - Wizard's Tear" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93432" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Wizard's Tear - Sealed -->
+			<item id="93432" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Wizard's Tear - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93465" name="+4 ~ +15 Weapon Pack - Guardian's Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_guardians_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93431" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Guardian's Sword - Sealed -->
+			<item id="93431" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Guardian's Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93466" name="+4 ~ +15 Weapon Pack - Bellion Cestus" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_bellion_cestus_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93428" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Bellion Cestus - Sealed -->
+			<item id="93428" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Bellion Cestus - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93467" name="+4 ~ +15 Weapon Pack - Bow of Peril" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_hazard_bow_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93429" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Bow of Peril - Sealed -->
+			<item id="93429" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Bow of Peril - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93468" name="+4 ~ +15 Weapon Pack - Lance" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_lancia_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93423" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Lance - Sealed -->
+			<item id="93423" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Lance - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93469" name="+4 ~ +15 Weapon Pack - Staff of Evil Spirits" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93426" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Staff of Evil Spirits - Sealed -->
+			<item id="93426" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Staff of Evil Spirits - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93470" name="+4 ~ +15 Weapon Pack - Deadman's Glory" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_deadmans_glory_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93424" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Deadman's Glory - Sealed -->
+			<item id="93424" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Deadman's Glory - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93471" name="+4 ~ +15 Weapon Pack - Art of Battle Axe" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93425" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Art of Battle Axe - Sealed -->
+			<item id="93425" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Art of Battle Axe - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93472" name="+4 ~ +15 Weapon Pack - Samurai Long Sword*Samurai Long Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93430" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+			<item id="93430" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Samurai Long Sword*Samurai Long Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93473" name="+4 ~ +15 Weapon Pack - Demon's Dagger" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_demons_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93427" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Demon's Dagger - Sealed -->
+			<item id="93427" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Demon's Dagger - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93474" name="+4 ~ +15 Weapon Pack - Colichemarde" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_colichemarde_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93435" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Colichemarde - Sealed -->
+			<item id="93435" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Colichemarde - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93475" name="+4 ~ +15 Weapon Pack - Dismantler" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_dismantler_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93434" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Dismantler - Sealed -->
+			<item id="93434" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Dismantler - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93476" name="+4 ~ +15 Weapon Pack - Star Buster" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_star_buster_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93433" min="1" max="1" minEnchant="4" maxEnchant="4" chance="90" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="5" maxEnchant="5" chance="4.3625" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.5" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="7" maxEnchant="7" chance="1.94" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="8" maxEnchant="8" chance="0.5" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="9" maxEnchant="9" chance="0.3" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="10" maxEnchant="10" chance="0.2" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="11" maxEnchant="11" chance="0.1" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="12" maxEnchant="12" chance="0.05" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="13" maxEnchant="13" chance="0.03" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="14" maxEnchant="14" chance="0.01" /> <!-- Star Buster - Sealed -->
+			<item id="93433" min="1" max="1" minEnchant="15" maxEnchant="15" chance="0.0075" /> <!-- Star Buster - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93477" name="L-Coins (3000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_lcoin_box_i01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="default_action" val="PEEL" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="3000" max="3000" chance="100" /> <!-- L-Coin -->
+		</capsuled_items>
+	</item>
+	<item id="93478" name="Reward Box Lv. 60" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font>. Required level: 60+. -->
+		<set name="icon" val="icon.bm_2019_cube_lv1" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<cond msgId="113" addName="1">
+			<player level="60" />
+		</cond>
+		<capsuled_items>
+			<item id="91663" min="500" max="500" chance="100" /> <!-- L-Coin -->
+			<item id="91745" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Talisman of Aden - Sealed -->
+			<item id="93479" min="1" max="1" chance="100" /> <!-- Reward Box Lv. 65 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93479" name="Reward Box Lv. 65" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font>. Required level: 65+. -->
+		<set name="icon" val="icon.bm_2019_cube_lv2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<cond msgId="113" addName="1">
+			<player level="65" />
+		</cond>
+		<capsuled_items>
+			<item id="91663" min="500" max="500" chance="100" /> <!-- L-Coin -->
+			<item id="93301" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Cloak of Protection - Sealed -->
+			<item id="93480" min="1" max="1" chance="100" /> <!-- Reward Box Lv. 70 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93480" name="Reward Box Lv. 70" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. <font color=ff6666>Note!</font>. Required level: 70+. -->
+		<set name="icon" val="icon.bm_2019_cube_lv3" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<cond msgId="113" addName="1">
+			<player level="70" />
+		</cond>
+		<capsuled_items>
+			<item id="91663" min="1000" max="1000" chance="100" /> <!-- L-Coin -->
+			<item id="91862" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Dragon Belt - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93481" name="Cube of Daily Blessing" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Sayha's Blessing (20 pcs.). Can be used only once a day. -->
+		<set name="icon" val="icon.sa_cube" />
+		<set name="etcitem_type" val="ELIXIR" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="reuse_delay" val="86400000" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91641" min="20" max="20" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93482" name="L-Coins (5000 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_lcoin_box_i02" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="default_action" val="PEEL" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="5000" max="5000" chance="100" /> <!-- L-Coin -->
+		</capsuled_items>
+	</item>
+	<item id="93483" name="Growth Kit: L-Coins" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="3000" max="3000" chance="100" /> <!-- L-Coin -->
+			<item id="93478" min="1" max="1" chance="100" /> <!-- Reward Box Lv. 60 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93484" name="L-Coin's Grace Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91663" min="5000" max="5000" chance="100" /> <!-- L-Coin -->
+			<item id="93481" min="1" max="1" chance="100" /> <!-- Cube of Daily Blessing - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93485" name="Spellbook: Mount Wyvern" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn how to ride Wyvern. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="27597" level="1" /> <!-- Spellbook: Mount Wyvern -->
+		</skills>
+	</item>
+	<item id="93486" name="Combat Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +200. M. Atk. +200. Atk. Spd. +60. Casting Spd. +60. Max HP +300. Max MP +300. Max CP +300. P. Critical Rate +20. M. Critical Rate +20. P. Critical Damage +10%. M. Critical Damage +10%. Duration: 20 min. Cooldown: 1 min. <font color=eeaa22>Can be exchanged to Scroll: Boost Attack by Pona.</font> -->
+		<set name="icon" val="icon.etc_ssq_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="50172" level="1" /> <!-- Combat Scroll -->
+		</skills>
+	</item>
+	<item id="93487" name="Character Creation Kit - Orc Shaman" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2368" min="1" max="1" chance="100" /> <!-- Training Gloves - Sealed -->
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93488" name="Character Creation Kit - Orc Warrior" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2368" min="1" max="1" chance="100" /> <!-- Training Gloves - Sealed -->
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93489" name="Character Creation Kit - Dwarf" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="10" min="1" max="1" chance="100" /> <!-- Dagger - Sealed -->
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93490" name="Character Creation Kit - Kamael" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+			<item id="91949" min="1" max="1" chance="100" /> <!-- Novice Warrior's Rapier - Sealed -->
+			<item id="91950" min="1" max="1" chance="100" /> <!-- Novice Warrior's Ancient Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93491" name="Character Creation Kit - Fighter" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="10" min="1" max="1" chance="100" /> <!-- Dagger - Sealed -->
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93492" name="Character Creation Kit - Mystic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="10650" min="3" max="3" chance="100" /> <!-- Newbie's Scroll of Escape - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93493" name="Moon Armor Set" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="7850" min="1" max="1" chance="100" /> <!-- Moon Helmet - Sealed -->
+			<item id="7851" min="1" max="1" chance="100" /> <!-- Moon Armor - Sealed -->
+			<item id="7852" min="1" max="1" chance="100" /> <!-- Moon Gauntlets (Heavy) - Sealed -->
+			<item id="7853" min="1" max="1" chance="100" /> <!-- Moon Boots (Heavy) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93494" name="Moon Shell Set" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="7850" min="1" max="1" chance="100" /> <!-- Moon Helmet - Sealed -->
+			<item id="7854" min="1" max="1" chance="100" /> <!-- Moon Shell - Sealed -->
+			<item id="7855" min="1" max="1" chance="100" /> <!-- Moon Leather Gloves (Light) - Sealed -->
+			<item id="7856" min="1" max="1" chance="100" /> <!-- Moon Shoes (Light) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93495" name="Moon Cape Set" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="7850" min="1" max="1" chance="100" /> <!-- Moon Helmet - Sealed -->
+			<item id="7857" min="1" max="1" chance="100" /> <!-- Moon Cape - Sealed -->
+			<item id="7858" min="1" max="1" chance="100" /> <!-- Moon Silk Gloves (Robe) - Sealed -->
+			<item id="7859" min="1" max="1" chance="100" /> <!-- Moon Sandals (Robe) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93496" name="1st Class Change Gift Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3031" min="250" max="250" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="91664" min="2" max="2" chance="100" /> <!-- Scroll: 10,000 SP - Sealed -->
+			<item id="90907" min="5" max="5" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93497" name="1st Class Transfer Gift Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3031" min="250" max="250" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="91664" min="2" max="2" chance="100" /> <!-- Scroll: 10,000 SP - Sealed -->
+			<item id="90907" min="5" max="5" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93498" name="Enchanted C-grade Weapon Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for a C-grade weapon through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_weapon_ticket_c" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93499" name="Enchanted B-grade Weapon Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for a B-grade weapon through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_weapon_ticket_b" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

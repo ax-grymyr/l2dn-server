@@ -1,0 +1,1338 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="96400" name="DEX Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +1.6%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96401" name="DEX Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +2.0%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 7. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96402" name="DEX Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +2.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 8. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96403" name="DEX Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +2.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 9. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96404" name="DEX Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +4. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +3.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96405" name="DEX Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +3.6%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96406" name="DEX Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +4.0%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96407" name="DEX Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +4.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96408" name="DEX Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +4.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96409" name="DEX Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +5.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96410" name="DEX Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +5.6%. Soulshot damage +1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96411" name="DEX Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +6.0%. Soulshot damage +1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96412" name="DEX Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +6.4%. Soulshot damage +2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96413" name="DEX Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying DEX Pattern. <font color=bbaa88><Effect></font>. DEX +5. <font color=bbaa88><Additional effect></font>. Received P. Skill Critical Rate +6.8%. Soulshot damage +3%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96414" name="DEX Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying DEX Pattern. Applying the pattern requires 1 dye. <Effect>. DEX +5. <Additional effect>. Received P. Skill Critical Rate -7,2%. Soulshot damage +4%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon3.g_premium_dye_attribute_holy" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96415" name="INT Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 1 -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96416" name="INT Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96417" name="INT Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +25. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 3. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96418" name="INT Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +50. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96419" name="INT Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +75. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96420" name="INT Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +100. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96421" name="INT Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +125. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 7. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96422" name="INT Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +150. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 8. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96423" name="INT Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +175. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 9. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96424" name="INT Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +4. <font color=bbaa88><Additional effect></font>. M. Atk. +200. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96425" name="INT Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +225. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96426" name="INT Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +250. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96427" name="INT Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +275. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96428" name="INT Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +300. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96429" name="INT Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +325. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96430" name="INT Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +350. M. Skill Critical Rate +0.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96431" name="INT Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +375. M. Skill Critical Rate +1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96432" name="INT Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +400. M. Skill Critical Rate +1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96433" name="INT Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying INT Pattern. <font color=bbaa88><Effect></font>. INT +5. <font color=bbaa88><Additional effect></font>. M. Atk. +425. M. Skill Critical Rate +2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96434" name="INT Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying INT Pattern. Applying the pattern requires 1 dye. <Effect>. INT +5. <Additional effect>. M. Atk. +450. M. Skill Critical Rate +3%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon2.g_premium_dye_attribute_water" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96435" name="MEN Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 1 -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96436" name="MEN Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN + 3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96437" name="MEN Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +37. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 3. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96438" name="MEN Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +75. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96439" name="MEN Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +112. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96440" name="MEN Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +150. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96441" name="MEN Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +187. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 7. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96442" name="MEN Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +225. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 8. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96443" name="MEN Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +262. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 9. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96444" name="MEN Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +4. <font color=bbaa88><Additional effect></font>. M. Def. +300. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96445" name="MEN Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +337. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96446" name="MEN Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +375. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96447" name="MEN Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +412. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96448" name="MEN Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +450. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96449" name="MEN Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +487. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96450" name="MEN Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +525. Received M. Skill Damage -1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96451" name="MEN Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +562. Received M. Skill Damage -1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96452" name="MEN Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +600. Received M. Skill Damage -2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96453" name="MEN Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying MEN Pattern. <font color=bbaa88><Effect></font>. MEN +5. <font color=bbaa88><Additional effect></font>. M. Def. +637. Received M. Skill Damage -3%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96454" name="MEN Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying MEN Pattern. Applying the pattern requires 1 dye. <Effect>. MEN +5. <Additional effect>. M. Def. +675. Received M. Skill Damage -5%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon6.g_premium_dye_attribute_wind" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96455" name="WIT Dye" additionalName="Lv. 1" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +2. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power: Lv. 1 -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96456" name="WIT Dye" additionalName="Lv. 2" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +3. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 2 -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96457" name="WIT Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -0.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 3. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96458" name="WIT Dye" additionalName="Lv. 4" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -0.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 4. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96459" name="WIT Dye" additionalName="Lv. 5" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -1.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 5. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96460" name="WIT Dye" additionalName="Lv. 6" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -1.6%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 6. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96461" name="WIT Dye" additionalName="Lv. 7" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 7. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96462" name="WIT Dye" additionalName="Lv. 8" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -2.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 8. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96463" name="WIT Dye" additionalName="Lv. 9" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -2.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 9. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96464" name="WIT Dye" additionalName="Lv. 10" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +4. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -3.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 10. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96465" name="WIT Dye" additionalName="Lv. 11" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -3.6%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 11. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96466" name="WIT Dye" additionalName="Lv. 12" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 12. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96467" name="WIT Dye" additionalName="Lv. 13" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -4.4%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 13. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96468" name="WIT Dye" additionalName="Lv. 14" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -4.8%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 14. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96469" name="WIT Dye" additionalName="Lv. 15" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -5.2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 15. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96470" name="WIT Dye" additionalName="Lv. 16" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -5.6%. Spiritshot damage +1%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 16. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96471" name="WIT Dye" additionalName="Lv. 17" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -6%. Spiritshot damage +1.5%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 17. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96472" name="WIT Dye" additionalName="Lv. 18" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -6.4%. Spiritshot damage +2%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 18. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96473" name="WIT Dye" additionalName="Lv. 19" type="EtcItem">
+		<!-- Required for applying WIT Pattern. <font color=bbaa88><Effect></font>. WIT +5. <font color=bbaa88><Additional effect></font>. Received M. Critical Rate -6.8%. Spiritshot damage +3%. <font color=ff6666><Pattern enhancement and compounding></font>. Enhancement materials: Enhanced Dye Powder. In case of failure, the current level remains the same, but materials disappear. Costs for upgrading patterns and dyes differ. <font color=bbaa88>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Hidden power limit: Lv. 19. Additional effects of identical patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96474" name="WIT Dye" additionalName="Lv. 20" type="EtcItem">
+		<!-- Required for applying WIT Pattern. Applying the pattern requires 1 dye. <Effect>. WIT +5. <Additional effect>. Received M. Critical Rate -7,2%. Spiritshot damage +4%. <font color=ff6666>Note!</font>. Applying the pattern requires 1 dye. Requirements: all classes after the 1st class change. Additional effects of similar applied patterns do not stack. -->
+		<set name="icon" val="BranchSys3.icon4.g_premium_dye_attribute_earth" />
+		<set name="etcitem_type" val="DYE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="price" val="21000" />
+		<set name="commissionItemType" val="DYES" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96475" name="Coupon: Time-limited A-grade Armor (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for time-limited A-grade armor through the Event option of the Game Assistant. -->
+		<set name="icon" val="icon.bm_armor_ticket_a" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96476" name="Coupon: Time-limited A-grade Accessories (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for time-limited A-grade accessories through the Event option of the Game Assistant. -->
+		<set name="icon" val="icon.bm_accessory_ticket_a" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="96477" name="Dark Crystal Breastplate (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +15. Paralysis Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="7700" />
+		<set name="price" val="3562000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">171</stat>
+		</stats>
+	</item>
+	<item id="96478" name="Armor of Nightmare (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Sleep Resistance +70%. Hold Resistance +70%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="9580" />
+		<set name="price" val="8804000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
+	</item>
+	<item id="96479" name="Dark Crystal Gaiters (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1000. M. Def. +10. Max HP +200. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="3320" />
+		<set name="price" val="2226000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">107</stat>
+		</stats>
+	</item>
+	<item id="96480" name="Dark Crystal Helmet (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. A sealed item can be created in the Weapons tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96481" name="Tallum Helmet (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. A sealed item can be created in the Weapons tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="price" val="1336000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+	</item>
+	<item id="96482" name="Dark Crystal Shield (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1190" />
+		<set name="price" val="935000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">256</stat>
+		</stats>
+	</item>
+	<item id="96483" name="Tallum Plate Armor (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Silence Resistance +50%. Fear Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t77_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="9780" />
+		<set name="price" val="5788000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">278</stat>
+		</stats>
+	</item>
+	<item id="96484" name="Majestic Plate Armor (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. CON +2. Overweight limit +2500. M. Def. +25. Max HP +200. Shock Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="9200" />
+		<set name="price" val="8804000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">293</stat>
+		</stats>
+	</item>
+	<item id="96485" name="Dark Crystal Leather Armor (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +1. Overweight limit +1500. M. Def. +15. Paralysis Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="4300" />
+		<set name="price" val="2671000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
+	</item>
+	<item id="96486" name="Dark Crystal Leggings (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +1. Overweight limit +1000. M. Def. +10. Max HP +150. Max MP +80. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t75_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1480" />
+		<set name="price" val="1670000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
+	</item>
+	<item id="96487" name="Tallum Leather Armor (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. MEN +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Silence Resistance +50%. Fear Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t78_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5400" />
+		<set name="price" val="4341000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">209</stat>
+		</stats>
+	</item>
+	<item id="96488" name="Leather Armor of Nightmare (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Sleep Resistance +70%. Hold Resistance +70%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t81_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5300" />
+		<set name="price" val="6603000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
+	</item>
+	<item id="96489" name="Majestic Leather Armor (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. DEX +2. Overweight limit +2500. M. Def. +25. Max HP +150. Max MP +80. Shock Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5350" />
+		<set name="price" val="6603000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">220</stat>
+		</stats>
+	</item>
+	<item id="96490" name="Tallum Tunic (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +1. Overweight limit +1500. M. Def. +15. Silence Resistance +50%. Fear Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1860" />
+		<set name="price" val="2671000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">86</stat>
+			<stat type="maxMp">409</stat>
+		</stats>
+	</item>
+	<item id="96491" name="Tallum Stockings (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +1. Overweight limit +1000. M. Def. +10. Max HP +100. Max MP +120. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t79_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="920" />
+		<set name="price" val="1670000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">53</stat>
+			<stat type="maxMp">256</stat>
+		</stats>
+	</item>
+	<item id="96492" name="Dark Crystal Robe (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Paralysis Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2450" />
+		<set name="price" val="4341000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">139</stat>
+			<stat type="maxMp">665</stat>
+		</stats>
+	</item>
+	<item id="96493" name="Robe of Nightmare (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Sleep Resistance +70%. Hold Resistance +70%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t82_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2300" />
+		<set name="price" val="6603000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
+	</item>
+	<item id="96494" name="Majestic Robe (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. WIT +2. Overweight limit +2500. M. Def. +25. Max HP +100. Max MP +120. Shock Resistance +50%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="2330" />
+		<set name="price" val="6603000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
+	</item>
+	<item id="96495" name="Helm of Nightmare (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. A sealed item can be created in the Weapons tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96496" name="Majestic Circlet (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. A sealed item can be created in the Weapons tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="price" val="2032000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+	</item>
+	<item id="96497" name="Dark Crystal Gloves (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. A sealed item can be created in the Weapons tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. -->
+		<set name="icon" val="icon.armor_t15_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">45</stat>
+		</stats>
+	</item>
+	<item id="96498" name="Shield of Nightmare (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FIST" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1180" />
+		<set name="price" val="1422000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">282</stat>
+		</stats>
+	</item>
+	<item id="96499" name="Dark Crystal Gloves (Heavy) (Time-limited)" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. Overweight limit +1000. M. Def. +10. Max HP +200. Atk. Spd. +8%. Received Healing +2%. <font color=eeaa22><Permanent item craft></font>. Can be created in the Armor tab of the Special Craft window. <font color=ff6666>Note!</font>. Cannot be enchanted or augmented. No soul crystal can be inserted. Cannot be equipped on a pet. Cannot be sealed by a town blacksmith. -->
+		<set name="icon" val="icon.armor_t74_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="price" val="890000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
+	</item>
+</list>

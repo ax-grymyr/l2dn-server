@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list" type="listType" />
+	<xs:complexType name="currentType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="season" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="expType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="level" use="optional" />
+				<xs:attribute type="xs:string" name="amount" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="expTableType">
+		<xs:sequence>
+			<xs:element type="expType" name="exp" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="baseRewardType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="level" use="optional" />
+				<xs:attribute type="xs:string" name="itemId" use="optional" />
+				<xs:attribute type="xs:string" name="itemCount" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="baseRewardsType">
+		<xs:sequence>
+			<xs:element type="baseRewardType" name="baseReward" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="keyRewardType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="level" use="optional" />
+				<xs:attribute type="xs:string" name="itemId" use="optional" />
+				<xs:attribute type="xs:string" name="itemCount" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="keyRewardsType">
+		<xs:sequence>
+			<xs:element type="keyRewardType" name="keyReward" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="specialRewardType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="itemId" use="optional" />
+				<xs:attribute type="xs:string" name="itemCount" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="bonusRewardType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="itemId" use="optional" />
+				<xs:attribute type="xs:string" name="itemCount" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="missionLevelType">
+		<xs:sequence>
+			<xs:element type="expTableType" name="expTable" />
+			<xs:element type="baseRewardsType" name="baseRewards" />
+			<xs:element type="keyRewardsType" name="keyRewards" />
+			<xs:element type="specialRewardType" name="specialReward" />
+			<xs:element type="bonusRewardType" name="bonusReward" />
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="season" use="optional" />
+		<xs:attribute type="xs:string" name="maxLevel" use="optional" />
+		<xs:attribute type="xs:string" name="bonusRewardIsAvailable" use="optional" />
+		<xs:attribute type="xs:string" name="bonusRewardByLevelUP" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="listType">
+		<xs:sequence>
+			<xs:element type="currentType" name="current" />
+			<xs:element type="missionLevelType" name="missionLevel" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

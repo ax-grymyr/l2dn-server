@@ -1,0 +1,1893 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="47801" toLevel="8" name="Piercing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks the target with a spear. Deals physical damage with 419 power. Ignores Shield Defense. Critical. -->
+		<icon>icon.s_impale</icon>
+		<castRange>120</castRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-200</value>
+			<value level="2">-300</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-550</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">30</value>
+			<value level="3">40</value>
+			<value level="4">50</value>
+			<value level="5">55</value>
+			<value level="6">60</value>
+			<value level="7">65</value>
+			<value level="8">70</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">25</value>
+			<value level="3">33</value>
+			<value level="4">40</value>
+			<value level="5">44</value>
+			<value level="6">48</value>
+			<value level="7">51</value>
+			<value level="8">55</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">419</value>
+					<value level="2">581</value>
+					<value level="3">1333</value>
+					<value level="4">2478</value>
+					<value level="5">3097</value>
+					<value level="6">4501</value>
+					<value level="7">5176</value>
+					<value level="8">6386</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47802" toLevel="12" name="Amazing Piercing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks the target with a spear. Deals physical damage with 7276 power. Ignores Shield Defense. Ignores 15% of the target's defense. Critical. -->
+		<icon>icon.s_arc_impale</icon>
+		<castRange>150</castRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-830</value>
+			<value level="4">-850</value>
+			<value level="5">-860</value>
+			<value level="6">-870</value>
+			<value level="7">-880</value>
+			<value level="8">-900</value>
+			<value level="9">-920</value>
+			<value level="10">-930</value>
+			<value level="11">-940</value>
+			<value level="12">-950</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">83</value>
+			<value level="4">85</value>
+			<value level="5">86</value>
+			<value level="6">87</value>
+			<value level="7">88</value>
+			<value level="8">90</value>
+			<value level="9">92</value>
+			<value level="10">93</value>
+			<value level="11">94</value>
+			<value level="12">95</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">62</value>
+			<value level="3">65</value>
+			<value level="4">66</value>
+			<value level="5">67</value>
+			<value level="6">68</value>
+			<value level="7">69</value>
+			<value level="8">70</value>
+			<value level="9">74</value>
+			<value level="10">76</value>
+			<value level="11">78</value>
+			<value level="12">80</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">7276</value>
+					<value level="2">7655</value>
+					<value level="3">8176</value>
+					<value level="4">8435</value>
+					<value level="5">8565</value>
+					<value level="6">8703</value>
+					<value level="7">8834</value>
+					<value level="8">9099</value>
+					<value level="9">9652</value>
+					<value level="10">9941</value>
+					<value level="11">10239</value>
+					<value level="12">10546</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47803" toLevel="10" name="Threatening Swing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks several nearby enemies with 1136 power. Ignores Shield Defense. Critical. -->
+		<icon>icon.s_brandish</icon>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-440</value>
+			<value level="3">-480</value>
+			<value level="4">-520</value>
+			<value level="5">-560</value>
+			<value level="6">-600</value>
+			<value level="7">-640</value>
+			<value level="8">-680</value>
+			<value level="9">-710</value>
+			<value level="10">-740</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">44</value>
+			<value level="3">48</value>
+			<value level="4">52</value>
+			<value level="5">56</value>
+			<value level="6">60</value>
+			<value level="7">64</value>
+			<value level="8">68</value>
+			<value level="9">71</value>
+			<value level="10">74</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">38</value>
+			<value level="2">41</value>
+			<value level="3">44</value>
+			<value level="4">48</value>
+			<value level="5">51</value>
+			<value level="6">55</value>
+			<value level="7">58</value>
+			<value level="8">61</value>
+			<value level="9">64</value>
+			<value level="10">66</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1136</value>
+					<value level="2">1512</value>
+					<value level="3">1907</value>
+					<value level="4">2320</value>
+					<value level="5">2748</value>
+					<value level="6">3835</value>
+					<value level="7">4303</value>
+					<value level="8">4781</value>
+					<value level="9">5150</value>
+					<value level="10">5524</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47804" toLevel="10" name="Threatening Swing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks several nearby enemies with 6198 power. Ignores Shield Defense. Ignores 10% of the target's defense. Critical. -->
+		<icon>icon.s_brandish_wave</icon>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-790</value>
+			<value level="4">-810</value>
+			<value level="5">-830</value>
+			<value level="6">-850</value>
+			<value level="7">-870</value>
+			<value level="8">-880</value>
+			<value level="9">-890</value>
+			<value level="10">-900</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">77</value>
+			<value level="3">79</value>
+			<value level="4">81</value>
+			<value level="5">83</value>
+			<value level="6">85</value>
+			<value level="7">87</value>
+			<value level="8">88</value>
+			<value level="9">89</value>
+			<value level="10">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">68</value>
+			<value level="2">69</value>
+			<value level="3">71</value>
+			<value level="4">72</value>
+			<value level="5">74</value>
+			<value level="6">76</value>
+			<value level="7">77</value>
+			<value level="8">78</value>
+			<value level="9">79</value>
+			<value level="10">80</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">6198</value>
+					<value level="2">6302</value>
+					<value level="3">6521</value>
+					<value level="4">6742</value>
+					<value level="5">6965</value>
+					<value level="6">7186</value>
+					<value level="7">7413</value>
+					<value level="8">7525</value>
+					<value level="9">7638</value>
+					<value level="10">7751</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.90</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47805" toLevel="15" name="Wild Scratch">
+		<!-- <<font color="FF8000">Beast skill</font>>. The beast attacks the target with its claws. Deals physical damage with 1432 power. Ignores Shield Defense. Ignores 10% of the target's defense. Critical. -->
+		<icon>icon.s_wild_scratch</icon>
+		<castRange>150</castRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-600</value>
+			<value level="4">-700</value>
+			<value level="5">-750</value>
+			<value level="6">-780</value>
+			<value level="7">-820</value>
+			<value level="8">-860</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+			<value level="11">-910</value>
+			<value level="12">-920</value>
+			<value level="13">-930</value>
+			<value level="14">-940</value>
+			<value level="15">-950</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">78</value>
+			<value level="7">82</value>
+			<value level="8">86</value>
+			<value level="9">88</value>
+			<value level="10">90</value>
+			<value level="11">91</value>
+			<value level="12">92</value>
+			<value level="13">93</value>
+			<value level="14">94</value>
+			<value level="15">95</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">33</value>
+			<value level="2">40</value>
+			<value level="3">48</value>
+			<value level="4">55</value>
+			<value level="5">59</value>
+			<value level="6">61</value>
+			<value level="7">64</value>
+			<value level="8">67</value>
+			<value level="9">69</value>
+			<value level="10">70</value>
+			<value level="11">72</value>
+			<value level="12">74</value>
+			<value level="13">76</value>
+			<value level="14">78</value>
+			<value level="15">80</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1432</value>
+					<value level="2">2661</value>
+					<value level="3">4835</value>
+					<value level="4">6337</value>
+					<value level="5">7126</value>
+					<value level="6">8087</value>
+					<value level="7">8637</value>
+					<value level="8">9199</value>
+					<value level="9">9488</value>
+					<value level="10">9773</value>
+					<value level="11">10066</value>
+					<value level="12">10367</value>
+					<value level="13">10678</value>
+					<value level="14">10998</value>
+					<value level="15">11327</value>
+				</power>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47806" toLevel="15" name="Shadow Scratch">
+		<!-- <<font color="FF8000">Beast skill</font>>. The beast attacks the target with its claws. Deals physical damage with 1629 power. With a 30% chance, deals <font color="FFBB00">an additional blow</font>. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. -->
+		<icon>icon.s_shadow_scratch</icon>
+		<castRange>150</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-600</value>
+			<value level="4">-700</value>
+			<value level="5">-750</value>
+			<value level="6">-780</value>
+			<value level="7">-820</value>
+			<value level="8">-860</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+			<value level="11">-910</value>
+			<value level="12">-920</value>
+			<value level="13">-930</value>
+			<value level="14">-940</value>
+			<value level="15">-950</value>
+		</effectPoint>
+		<effectRange>700</effectRange>
+		<hitTime>1200</hitTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">78</value>
+			<value level="7">82</value>
+			<value level="8">86</value>
+			<value level="9">88</value>
+			<value level="10">90</value>
+			<value level="11">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="12">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="13">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="14">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="15">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</magicLevel>
+		<mpConsume>
+			<value level="1">33</value>
+			<value level="2">40</value>
+			<value level="3">48</value>
+			<value level="4">55</value>
+			<value level="5">59</value>
+			<value level="6">61</value>
+			<value level="7">64</value>
+			<value level="8">67</value>
+			<value level="9">69</value>
+			<value level="10">70</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>10000</reuseDelay>
+		<reuseDelayGroup>47805</reuseDelayGroup>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1629</value>
+					<value level="2">3028</value>
+					<value level="3">5502</value>
+					<value level="4">7211</value>
+					<value level="5">8109</value>
+					<value level="6">9203</value>
+					<value level="7">9828</value>
+					<value level="8">10468</value>
+					<value level="9">10796</value>
+					<value level="10">11121</value>
+					<value level="11">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47809</skillId> <!-- Shadow Scratch -->
+				<skillLevel>1</skillLevel>
+				<chance>30</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47807" toLevel="6" name="Wild Charge">
+		<!-- <<font color="FF8000">Beast skill</font>>. The embodied beast's soul attacks the target. Attacks the target twice with 3773 power. Ignores Shield Defense. Ignores 10% of the target's defense. Critical. -->
+		<icon>icon.s_wild_charge</icon>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<affectLimit>5-10</affectLimit>
+		<affectRange>200</affectRange>
+		<castRange>400</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">80</value>
+			<value level="3">83</value>
+			<value level="4">85</value>
+			<value level="5">88</value>
+			<value level="6">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">96</value>
+			<value level="4">99</value>
+			<value level="5">102</value>
+			<value level="6">105</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>30000</reuseDelay>
+		<reuseDelayGroup>47807</reuseDelayGroup>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3773</value>
+					<value level="2">4038</value>
+					<value level="3">4240</value>
+					<value level="4">4374</value>
+					<value level="5">4581</value>
+					<value level="6">4718</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3773</value>
+					<value level="2">4038</value>
+					<value level="3">4240</value>
+					<value level="4">4374</value>
+					<value level="5">4581</value>
+					<value level="6">4718</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47808" toLevel="6" name="Spectral Charge">
+		<!-- <<font color="FF8000">Beast skill</font>>. The embodied beast's soul makes a powerful attack on the target. Attacks the target thrice with 3773 power. Ignores Shield Defense. Ignores 10% of the target's defense. Critical. -->
+		<icon>icon.s_phantom_charge</icon>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<affectLimit>5-10</affectLimit>
+		<affectRange>200</affectRange>
+		<castRange>400</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">80</value>
+			<value level="3">83</value>
+			<value level="4">85</value>
+			<value level="5">88</value>
+			<value level="6">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">88</value>
+			<value level="2">93</value>
+			<value level="3">96</value>
+			<value level="4">99</value>
+			<value level="5">102</value>
+			<value level="6">105</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>30000</reuseDelay>
+		<reuseDelayGroup>47807</reuseDelayGroup>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3773</value>
+					<value level="2">4038</value>
+					<value level="3">4240</value>
+					<value level="4">4374</value>
+					<value level="5">4581</value>
+					<value level="6">4718</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3773</value>
+					<value level="2">4038</value>
+					<value level="3">4240</value>
+					<value level="4">4374</value>
+					<value level="5">4581</value>
+					<value level="6">4718</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3773</value>
+					<value level="2">4038</value>
+					<value level="3">4240</value>
+					<value level="4">4374</value>
+					<value level="5">4581</value>
+					<value level="6">4718</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47809" toLevel="1" name="Shadow Scratch">
+		<!-- The beast's claw attack. -->
+		<icon>icon.s_shadow_scratch</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6375</power> <!-- Guessed -->
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47811" toLevel="1" name="Giant's Stomp">
+		<!-- <<font color="FF8000">Knockback skill</font>>. Hits the ground knocking nearby enemies back and down for 3 sec. -->
+		<icon>icon.skill33915</icon>
+		<coolTime>500</coolTime>
+		<effectPoint>-1600</effectPoint>
+		<affectLimit>5-10</affectLimit>
+		<affectRange>200</affectRange>
+		<hitTime>1200</hitTime>
+		<magicLevel>80</magicLevel>
+		<mpConsume>120</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>
+			<value level="1">60000</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">50000</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">40000</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">30000</value>
+		</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>
+					<value level="1">47812</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">1047812</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">2047812</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">3047812</value>
+				</skillId> <!-- Giant's Stomp -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47812" toLevel="1" name="Giant's Stomp">
+		<!-- Knocked down by a powerful blow. -->
+		<icon>icon.skill33915</icon>
+		<effectPoint>-1800</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>80</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalTime>3</abnormalTime>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<trait>KNOCKDOWN</trait>
+		<isDebuff>true</isDebuff>
+		<activateRate>50</activateRate>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="KnockBack">
+				<distance>0</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="47813" toLevel="2" name="Wild Growl">
+		<!-- <<font color="FF8000">Suppression skill</font>>. Suppresses nearby enemies for 3 sec. Speed -70% -->
+		<icon>icon.s_wild_roar</icon>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-1560</value>
+			<value level="2">-1740</value>
+		</effectPoint>
+		<affectLimit>5-10</affectLimit>
+		<affectRange>200</affectRange>
+		<hitTime>1200</hitTime>
+		<magicLevel>
+			<value level="1">78</value>
+			<value level="2">87</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">90</value>
+			<value level="2">100</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>45000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>47815</skillId> <!-- Wild Growl - Suppression -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47814" toLevel="1" name="Wild Growl - Hold">
+		<!-- Unable to move. -->
+		<icon>icon.skill10792</icon>
+		<effectPoint>-1800</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>83</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalVisualEffect>ZARICHE_PRISION2_AVE</abnormalVisualEffect>
+		<abnormalType>ROOT_PHYSICALLY</abnormalType>
+		<trait>HOLD</trait>
+		<isDebuff>true</isDebuff>
+		<activateRate>-1</activateRate>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47815" toLevel="2" name="Wild Growl - Suppression">
+		<!-- Speed -70% -->
+		<icon>icon.skill10514</icon>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1800</value>
+		</effectPoint>
+		<effectRange>1000</effectRange>
+		<magicLevel>
+			<value level="1">78</value>
+			<value level="2">87</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalTime>3</abnormalTime>
+		<abnormalLevel>30</abnormalLevel>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<trait>SUPPRESSION</trait>
+		<isDebuff>true</isDebuff>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-70</value>
+					<value level="2">-90</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CallSkill" fromLevel="2" toLevel="2">
+				<skillId>47814</skillId> <!-- Wild Growl - Hold -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47821" toLevel="1" name="Wild Assault">
+		<!-- <<font color="FF8000">Dash skill</font>>. Dashes to the specified point. Activate the skill, choose your destination within the skill area and double-click it to move there. Upon arriving, the skill deals an AoE attack. Deals 15% of damage depending on P. Atk. To cancel the skill, press ESC. The skill is cancelled automatically, if the destination is not chosen in 5 sec. <<font color="FF8000">Blazing Beast effect</font>>. While the buff is active, the skill can be used without cooldown. -->
+		<icon>icon.s_wild_assault</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<castRange>-1</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-400</effectPoint>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>250</affectRange>
+		<fanRange>0;0;250;60</fanRange>
+		<effectRange>1100</effectRange>
+		<magicLevel>40</magicLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>400</hitTime>
+		<operateType>DA1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<reuseDelayGroup>47821</reuseDelayGroup>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>15000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47822" toLevel="3" name="Wild Rush">
+		<!-- <<font color="FF8000">Rush skill</font>>. Charges at the target. The skill can be used if the distance to the target is more than 150. <<font color="FF8000">Blazing Beast effect</font>>. While the buff is active, the skill can be used without cooldown. -->
+		<icon>icon.s_wild_rush</icon>
+		<castRange>
+			<value level="1">300</value>
+			<value level="2">400</value>
+			<value level="3">500</value>
+		</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>
+			<value level="1">-200</value>
+			<value level="2">-400</value>
+			<value level="3">-760</value>
+		</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>400</hitTime>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">76</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>DA1</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>
+					<value level="1">150</value>
+					<value level="2">120</value>
+					<value level="3">100</value>
+				</distance>
+			</condition>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="47823" toLevel="1" name="Wild Assault: Burning">
+		<!-- <<font color="FF8000">Dash skill</font>>. Dashes to the specified point. Activate the skill, choose your destination within the skill area and double-click it to move there. Upon arriving, the skill deals an AoE attack. Deals 15% of damage depending on P. Atk. To cancel the skill, press ESC. The skill is cancelled automatically, if the destination is not chosen in 5 sec. <<font color="FF8000">Blazing Beast effect</font>>. No restrictions on cooldown. -->
+		<icon>icon.s_wild_assault</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<castRange>-1</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-400</effectPoint>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>250</affectRange>
+		<fanRange>0;0;250;60</fanRange>
+		<effectRange>1100</effectRange>
+		<magicLevel>40</magicLevel>
+		<mpConsume>100</mpConsume>
+		<hitTime>400</hitTime>
+		<operateType>DA1</operateType>
+		<reuseDelay>0</reuseDelay>
+		<reuseDelayGroup>47821</reuseDelayGroup>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>15000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47824" toLevel="3" name="Wild Rush: Burning">
+		<!-- <<font color="FF8000">Rush skill</font>>. Charges at the target. The skill can be used if the distance to the target is more than 150. <<font color="FF8000">Blazing Beast effect</font>>. While the buff is active, the skill can be used without cooldown. -->
+		<icon>icon.s_wild_rush</icon>
+		<castRange>
+			<value level="1">300</value>
+			<value level="2">400</value>
+			<value level="3">500</value>
+		</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>
+			<value level="1">-200</value>
+			<value level="2">-400</value>
+			<value level="3">-760</value>
+		</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>400</hitTime>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">76</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<operateType>DA1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>
+					<value level="1">150</value>
+					<value level="2">120</value>
+					<value level="3">100</value>
+				</distance>
+			</condition>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="47831" toLevel="3" name="Blazing Fury">
+		<!-- Fills your body with fury of flames. P. Atk. +10%. P. Def. +10%. Max HP +10%. P. Skill Power +5%. When learning the Wild Evolution skill:. The skill is enhanced to Blazing Fury: Evolution. -->
+		<icon>icon.skill1434</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BLAZING_FURY</abnormalType>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<magicLevel>
+			<value level="1">1</value>
+			<value level="2">76</value>
+			<value level="3">85</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47832" toLevel="3" name="Blazing Fury: Evolution">
+		<!-- Fills your body with fury of flames. P. Atk. +20%. P. Def. +20%. Max HP +20%. P. Skill Power +10% -->
+		<icon>icon.skill1434</icon>
+		<operateType>A1</operateType>
+		<abnormalLevel>
+			<value level="1">4</value>
+			<value level="2">5</value>
+			<value level="3">6</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BLAZING_FURY</abnormalType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">1</value>
+			<value level="2">76</value>
+			<value level="3">85</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<reuseDelayGroup>47831</reuseDelayGroup>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47833" toLevel="1" name="Flame of Pa'agrio">
+		<icon>icon.skill1171</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<affectLimit>5-10</affectLimit>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<effectPoint>-500</effectPoint>
+		<effectRange>1100</effectRange>
+		<affectRange>300</affectRange>
+		<isDebuff>true</isDebuff>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<trait>INFECTION</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>50</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47834" toLevel="2" name="Final Secret">
+		<!-- Duration: 30 sec. P. Skill Power +10%. Basic PvP Damage +15%. Bow Resistance +60%. M. Damage Resistance +60% -->
+		<icon>icon.skill10951</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>FINAL_SECRET</abnormalType>
+		<hitTime>1500</hitTime>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">60</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>150000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>60</BOW>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47855" toLevel="1" name="Blazing Beast">
+		<!-- <<font color="FF8000">BP skill</font>>. Available when you have <font color="FF8000">500+</font> BP. Consumes <font color="FF8000">100</font> BP. Imbues the beast with Fire God Pa'agrio's power. Received PvP damage -10%. The beast deals repeated blows to nearby enemies. Summons <font color="FF0000">Flame of Pa'agrio</font>. <<font color="FF8000">No cooldown for the following skills:</font>>. - Wild Rush. - Wild Assault. <font color="FF8000">Note!</font>. Upon activating the skill, your BP cannot decrease for 3 sec. BP is decreased for 3 sec. when hit. The skill effect is momentarily cancelled when BP reaches 0. If the Blazing Beast is manually cancelled leaving the Pa'agrio's Power Veil effect, it disappears when BP reaches 0. -->
+		<icon>icon.s_burning_beast</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>V_OR_BURNING_BEAST_FIRE_AVE</abnormalVisualEffect>
+		<coolTime>500</coolTime>
+		<effectPoint>650</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="BeastPoints">
+				<amount>500</amount> <!-- 500 -->
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ModifyBeastPoints">
+				<amount>-100</amount> <!-- -100 -->
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47822</existingSkillId>
+				<replacementSkillId>47824</replacementSkillId>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47821</existingSkillId>
+				<replacementSkillId>47823</replacementSkillId>
+			</effect>
+			<effect name="CallSkillOnActionTime">
+				<skillId>47833</skillId> <!-- Flame of Pa'agrio -->
+				<skillLevel>1</skillLevel>
+				<ticks>3</ticks>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47857</skillId> <!-- Pa'agrio's Power Veil -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47856</skillId> <!-- Pa'agrio's Grace -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47856" toLevel="1" name="Pa'agrio's Grace">
+		<!-- Due to Pa'agrio's power, your BP doesn't decrease even when hit. -->
+		<icon>icon.skill10328</icon>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalType>PAAGRIO_GRACE</abnormalType>
+		<abnormalTime>3</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>47857</skillId> <!-- Pa'agrio's Power Veil -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="47857" toLevel="1" name="Pa'agrio's Power Veil">
+		<!-- When the Pa'agrio's Grace effect expires, the Pa'agrio's Power Veil effect is enabled. BP -100 when hit. Disappears when BP reaches 0. -->
+		<icon>icon.skill10326</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>PAAGRIO_GRACE</abnormalType>
+		<abnormalTime>-1</abnormalTime>
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<skillId>47858</skillId> <!-- BP Decrease -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47858" toLevel="1" name="BP Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ModifyBeastPoints">
+				<amount>-100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47861" toLevel="15" name="Wild Weapon Mastery">
+		<!-- When using a spear:. P. Atk. +10 -->
+		<icon>icon.s_wild_weapon_mastery</icon>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">48</value>
+			<value level="4">54</value>
+			<value level="5">60</value>
+			<value level="6">66</value>
+			<value level="7">72</value>
+			<value level="8">76</value>
+			<value level="9">79</value>
+			<value level="10">82</value>
+			<value level="11">84</value>
+			<value level="12">86</value>
+			<value level="13">88</value>
+			<value level="14">89</value>
+			<value level="15">90</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">45</value>
+					<value level="4">65</value>
+					<value level="5">85</value>
+					<value level="6">110</value>
+					<value level="7">130</value>
+					<value level="8">145</value>
+					<value level="9">155</value>
+					<value level="10">165</value>
+					<value level="11">175</value>
+					<value level="12">185</value>
+					<value level="13">195</value>
+					<value level="14">205</value>
+					<value level="15">220</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">3</value>
+					<value level="15">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47862" toLevel="15" name="Wild Armor Mastery">
+		<!-- When using heavy armor:. P. Def. +10 -->
+		<icon>icon.s_wild_armor_mastery</icon>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">48</value>
+			<value level="4">54</value>
+			<value level="5">60</value>
+			<value level="6">66</value>
+			<value level="7">72</value>
+			<value level="8">76</value>
+			<value level="9">79</value>
+			<value level="10">82</value>
+			<value level="11">84</value>
+			<value level="12">86</value>
+			<value level="13">88</value>
+			<value level="14">89</value>
+			<value level="15">90</value>
+		</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">45</value>
+					<value level="4">65</value>
+					<value level="5">85</value>
+					<value level="6">110</value>
+					<value level="7">130</value>
+					<value level="8">145</value>
+					<value level="9">155</value>
+					<value level="10">165</value>
+					<value level="11">175</value>
+					<value level="12">185</value>
+					<value level="13">195</value>
+					<value level="14">205</value>
+					<value level="15">220</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="AreaOfEffectDamageDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">3</value>
+					<value level="15">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47863" toLevel="3" name="Wild Instinct">
+		<!-- Unleashes beast instincts. Knockback Resistance +10%. Imprisonment Resistance +10%. Max HP +10%. Speed +20. Max BP depends on your CON. -->
+		<icon>icon.s_wild_instinct</icon>
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+				</IMPRISON>
+				<KNOCKBACK>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+				</KNOCKBACK>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47864" toLevel="1" name="Darkness Unleashing">
+		<!-- The beast unleashes the power of darkness. P. Atk. +15%. <<font color="FF8000">Skill enhancement</font>>. Wild Scratch → Shadow Scratch. With a 30% chance, deals <font color="FFBB00">an additional blow</font>. Wild Charge → Spectral Charge. Increases the number of attacks. -->
+		<icon>icon.s_awaken_darkness</icon>
+		<magicLevel>76</magicLevel>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>47806</attackSkillId> <!-- Shadow Scratch -->
+				<attackerType>Creature</attackerType>
+				<minDamage>100</minDamage>
+				<chance>30</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>47809</skillId> <!-- Shadow Scratch -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47865" toLevel="1" name="Wild Evolution">
+		<!-- Pa'agrio's blessing makes the beast unleash its true powers. Max BP +100%. Max HP +30%. P. Atk. +30%. P. Critical Damage +30%. P. Skill Critical Damage +30%. Speed +20. <<font color="FF8000">Skill enhancement</font>>. Blazing Fury → Blazing Fury: Evolution. Increases basic stats. -->
+		<icon>icon.s_wild_evolution</icon>
+		<magicLevel>76</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47866" toLevel="1" name="Spear Focus Attack">
+		<!-- Increases stats when using a spear. When using a spear, P. Atk. +10%. When using a spear, Atk. Spd. +5%. When using a spear, attack range +40. <Low HP/ MP absorption, when using a spear> -->
+		<icon>icon.skill30932</icon>
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="HitNumber">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>5</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="MpVampiricAttack">
+				<amount>5</amount>
+				<chance>50</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47867" toLevel="1" name="Wild Health">
+		<!-- Provides some of Glorious Steed's power. Max HP +100 -->
+		<icon>icon.skill0967</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47868" toLevel="1" name="Wild Movement">
+		<!-- Provides some of Shining Lady's agility. Speed +3 -->
+		<icon>icon.winghound_vehicle</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47871" toLevel="1" name="Change Armor">
+		<!-- Changes the Vanguard Rider's armor appearance. When activated, the default appearance is shown. When deactivated, the Vanguard Rider's armor appearance is shown. If no upper armor is equipped, the Vanguard Rider's armor is not used. -->
+		<icon>icon.s_orc_armor_change</icon>
+		<operateType>T</operateType>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>VANGUARD_CHANGE_ARMOR</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="47881" toLevel="1" name="Beast Point Absorption">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47882" toLevel="1" name="Beast Point Absorption Rate">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47883" toLevel="1" name="Beast Point Cancel">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47885" toLevel="1" name="Max BP Test_diff">
+		<!-- Max BP Test_diff -->
+		<icon>icon.skill30932</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47886" toLevel="1" name="Max BP Test_per">
+		<!-- Max BP Test_per -->
+		<icon>icon.skill30932</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47887" toLevel="1" name="BP Recovery Rate Test_diff">
+		<!-- BP Recovery Rate Test_diff -->
+		<icon>icon.skill30932</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47888" toLevel="1" name="BP Recovery Rate Test_per">
+		<!-- BP Recovery Rate Test_per -->
+		<icon>icon.skill30932</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47889" toLevel="3" name="BP Test - Absorption: 0 - 1000">
+		<!-- BP Test - Absorption: 0 - 1000 -->
+		<icon>icon.skill0500</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47890" toLevel="1" name="Beast Point Absorption: -1 Point">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47891" toLevel="8" name="Transcendent Piercing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks the target with a spear. Deals physical damage with 419 power. Ignores Shield Defense. Critical. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_impale</icon>
+		<castRange>120</castRange>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>250</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-200</value>
+			<value level="2">-300</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-550</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">30</value>
+			<value level="3">40</value>
+			<value level="4">50</value>
+			<value level="5">55</value>
+			<value level="6">60</value>
+			<value level="7">65</value>
+			<value level="8">70</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">25</value>
+			<value level="3">33</value>
+			<value level="4">40</value>
+			<value level="5">44</value>
+			<value level="6">48</value>
+			<value level="7">51</value>
+			<value level="8">55</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">419</value>
+					<value level="2">581</value>
+					<value level="3">1333</value>
+					<value level="4">2478</value>
+					<value level="5">3097</value>
+					<value level="6">4501</value>
+					<value level="7">5176</value>
+					<value level="8">6386</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47892" toLevel="12" name="Transcendent Amazing Piercing">
+		<!-- <<font color="FF8000">Spear skill</font>>. Attacks the target with a spear. Deals physical damage with 7276 power. Ignores Shield Defense. Ignores 15% of the target's defense. Critical. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_arc_impale</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-830</value>
+			<value level="4">-850</value>
+			<value level="5">-860</value>
+			<value level="6">-870</value>
+			<value level="7">-880</value>
+			<value level="8">-900</value>
+			<value level="9">-920</value>
+			<value level="10">-930</value>
+			<value level="11">-940</value>
+			<value level="12">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">62</value>
+			<value level="3">65</value>
+			<value level="4">66</value>
+			<value level="5">67</value>
+			<value level="6">68</value>
+			<value level="7">69</value>
+			<value level="8">70</value>
+			<value level="9">74</value>
+			<value level="10">76</value>
+			<value level="11">78</value>
+			<value level="12">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="47893" toLevel="15" name="Transcendent Spectral Scratch">
+		<!-- <<font color="FF8000">Beast skill</font>>. The beast attacks the target with its enhanced claws. Deals physical damage with 1629 power. Ignores Shield Defense. Ignores 20% of the target's defense. Critical. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_giant_stamp</icon>
+		<castRange>150</castRange>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>250</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-600</value>
+			<value level="4">-700</value>
+			<value level="5">-750</value>
+			<value level="6">-780</value>
+			<value level="7">-820</value>
+			<value level="8">-860</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+			<value level="11">-910</value>
+			<value level="12">-920</value>
+			<value level="13">-930</value>
+			<value level="14">-940</value>
+			<value level="15">-950</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">78</value>
+			<value level="7">82</value>
+			<value level="8">86</value>
+			<value level="9">88</value>
+			<value level="10">90</value>
+			<value level="11">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="12">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="13">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="14">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="15">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</magicLevel>
+		<mpConsume>
+			<value level="1">33</value>
+			<value level="2">40</value>
+			<value level="3">48</value>
+			<value level="4">55</value>
+			<value level="5">59</value>
+			<value level="6">61</value>
+			<value level="7">64</value>
+			<value level="8">67</value>
+			<value level="9">69</value>
+			<value level="10">70</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1629</value>
+					<value level="2">3028</value>
+					<value level="3">5502</value>
+					<value level="4">7211</value>
+					<value level="5">8109</value>
+					<value level="6">9203</value>
+					<value level="7">9828</value>
+					<value level="8">10468</value>
+					<value level="9">10796</value>
+					<value level="10">11121</value>
+					<value level="11">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">11121</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</power>
+				<pDefMod>0.90</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+</list>

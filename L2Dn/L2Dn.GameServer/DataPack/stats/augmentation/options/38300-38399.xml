@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38300" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38301" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38302" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38303" name="received_damage_ls_accessory">
+		<!-- Received damage -5% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38304" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38305" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38306" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38307" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38308" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38309" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38310" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38311" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38312" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38313" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38314" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38315" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38316" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38317" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38318" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38319" name="received_damage_ls_accessory">
+		<!-- Received damage -2% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-2</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38320" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38321" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38322" name="received_damage_ls_accessory">
+		<!-- Received damage -3% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-3</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38323" name="received_damage_ls_accessory">
+		<!-- Received damage -5% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="38324" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38325" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38326" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38327" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38328" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38329" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38330" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38331" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38332" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38333" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38334" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38335" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38336" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38337" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38338" name="receive_heal_ls_accessory">
+		<!-- Received Healing +3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38339" name="receive_heal_ls_accessory">
+		<!-- Received Healing +4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38340" name="receive_heal_ls_accessory">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38341" name="receive_heal_ls_accessory">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38342" name="receive_heal_ls_accessory">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38343" name="receive_heal_ls_accessory">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38344" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38345" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38346" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38347" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38348" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38349" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38350" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38351" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38352" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38353" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38354" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38355" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38356" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38357" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38358" name="receive_heal_ls_accessory">
+		<!-- Received Healing +3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38359" name="receive_heal_ls_accessory">
+		<!-- Received Healing +4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38360" name="receive_heal_ls_accessory">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38361" name="receive_heal_ls_accessory">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38362" name="receive_heal_ls_accessory">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38363" name="receive_heal_ls_accessory">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38364" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38365" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38366" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38367" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38368" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38369" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38370" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38371" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38372" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38373" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38374" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38375" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38376" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38377" name="receive_heal_ls_accessory">
+		<!-- Received Healing +2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38378" name="receive_heal_ls_accessory">
+		<!-- Received Healing +3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38379" name="receive_heal_ls_accessory">
+		<!-- Received Healing +4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38380" name="receive_heal_ls_accessory">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38381" name="receive_heal_ls_accessory">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38382" name="receive_heal_ls_accessory">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38383" name="receive_heal_ls_accessory">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38384" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38385" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38386" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38387" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38388" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38389" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38390" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38391" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38392" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38393" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38394" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38395" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38396" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38397" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38398" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38399" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

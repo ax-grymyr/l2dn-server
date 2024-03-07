@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Armor C-Grade -->
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="94734" />
+		<!-- Highest Quality Armor Set (C-grade) Chest +4 Heavy Armor -->
+		<production count="1" id="91707" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="94734" />
+		<!-- Highest Quality Armor Set (C-grade) Chest +4 Leather Armor -->
+		<production count="1" id="91708" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="94734" />
+		<!-- Highest Quality Armor Set (C-grade) Chest +4 Robe Armor -->
+		<production count="1" id="91709" />
+	</item>
+</list>

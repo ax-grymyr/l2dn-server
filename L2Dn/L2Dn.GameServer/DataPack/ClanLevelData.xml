@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data/xsd/ClanLevelData.xsd">
+	<clan level="0" exp="0" />
+	<clan level="1" exp="100" />
+	<clan level="2" exp="1000" />
+	<clan level="3" exp="5000" />
+	<clan level="4" exp="100000" />
+	<clan level="5" exp="500000" />
+	<clan level="6" exp="1500000" />
+	<clan level="7" exp="4500000" />
+	<clan level="8" exp="7500000" />
+	<clan level="9" exp="11000000" />
+	<clan level="10" exp="14500000" />
+	<clan level="11" exp="20000000" />
+</list>

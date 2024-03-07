@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="35400" name="option_id_35400">
+		<!-- M. Def. +86 -->
+	</option>
+	<option id="35401" name="option_id_35401">
+		<!-- M. Def. +96 -->
+	</option>
+	<option id="35402" name="option_id_35402">
+		<!-- M. Def. +8 -->
+	</option>
+	<option id="35403" name="option_id_35403">
+		<!-- M. Def. +11 -->
+	</option>
+	<option id="35404" name="option_id_35404">
+		<!-- M. Def. +14 -->
+	</option>
+	<option id="35405" name="option_id_35405">
+		<!-- M. Def. +17 -->
+	</option>
+	<option id="35406" name="option_id_35406">
+		<!-- M. Def. +20 -->
+	</option>
+	<option id="35407" name="option_id_35407">
+		<!-- M. Def. +23 -->
+	</option>
+	<option id="35408" name="option_id_35408">
+		<!-- M. Def. +26 -->
+	</option>
+	<option id="35409" name="option_id_35409">
+		<!-- M. Def. +29 -->
+	</option>
+	<option id="35410" name="option_id_35410">
+		<!-- M. Def. +32 -->
+	</option>
+	<option id="35411" name="option_id_35411">
+		<!-- M. Def. +35 -->
+	</option>
+	<option id="35412" name="option_id_35412">
+		<!-- M. Def. +38 -->
+	</option>
+	<option id="35413" name="option_id_35413">
+		<!-- M. Def. +41 -->
+	</option>
+	<option id="35414" name="option_id_35414">
+		<!-- M. Def. +44 -->
+	</option>
+	<option id="35415" name="option_id_35415">
+		<!-- M. Def. +47 -->
+	</option>
+	<option id="35416" name="option_id_35416">
+		<!-- M. Def. +50 -->
+	</option>
+	<option id="35417" name="option_id_35417">
+		<!-- M. Def. +60 -->
+	</option>
+	<option id="35418" name="option_id_35418">
+		<!-- M. Def. +80 -->
+	</option>
+	<option id="35419" name="option_id_35419">
+		<!-- M. Def. +90 -->
+	</option>
+	<option id="35420" name="option_id_35420">
+		<!-- M. Def. +100 -->
+	</option>
+	<option id="35421" name="option_id_35421">
+		<!-- M. Def. +120 -->
+	</option>
+	<option id="35422" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="1" /> <!-- Queen Ant's Ring -->
+	</option>
+	<option id="35423" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="2" /> <!-- +1 Queen Ant's Ring -->
+	</option>
+	<option id="35424" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="3" /> <!-- +2 Queen Ant's Ring -->
+	</option>
+	<option id="35425" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="4" /> <!-- +3 Queen Ant's Ring -->
+	</option>
+	<option id="35426" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="5" /> <!-- +4 Queen Ant's Ring -->
+	</option>
+	<option id="35427" name="Queen Ant's Ring">
+		<passive_skill id="50444" level="6" /> <!-- +5 Queen Ant's Ring -->
+	</option>
+	<option id="35428" name="Ring of Core">
+		<passive_skill id="50445" level="1" /> <!-- Ring of Core -->
+	</option>
+	<option id="35429" name="Ring of Core">
+		<passive_skill id="50445" level="2" /> <!-- +1 Ring of Core -->
+	</option>
+	<option id="35430" name="Ring of Core">
+		<passive_skill id="50445" level="3" /> <!-- +2 Ring of Core -->
+	</option>
+	<option id="35431" name="Ring of Core">
+		<passive_skill id="50445" level="4" /> <!-- +3 Ring of Core -->
+	</option>
+	<option id="35432" name="Ring of Core">
+		<passive_skill id="50445" level="5" /> <!-- +4 Ring of Core -->
+	</option>
+	<option id="35433" name="Ring of Core">
+		<passive_skill id="50445" level="6" /> <!-- +5 Ring of Core -->
+	</option>
+	<option id="35434" name="Baium's Ring">
+		<passive_skill id="50446" level="1" /> <!-- Baium's Ring -->
+	</option>
+	<option id="35435" name="Baium's Ring">
+		<passive_skill id="50446" level="2" /> <!-- +1 Baium's Ring -->
+	</option>
+	<option id="35436" name="Baium's Ring">
+		<passive_skill id="50446" level="3" /> <!-- +2 Baium's Ring -->
+	</option>
+	<option id="35437" name="Baium's Ring">
+		<passive_skill id="50446" level="4" /> <!-- +3 Baium's Ring -->
+	</option>
+	<option id="35438" name="Baium's Ring">
+		<passive_skill id="50446" level="5" /> <!-- +4 Baium's Ring -->
+	</option>
+	<option id="35439" name="Baium's Ring">
+		<passive_skill id="50446" level="6" /> <!-- +5 Baium's Ring -->
+	</option>
+	<option id="35440" name="Orfen's Earring">
+		<passive_skill id="50447" level="1" /> <!-- Orfen's Earring -->
+	</option>
+	<option id="35441" name="Orfen's Earring">
+		<passive_skill id="50447" level="2" /> <!-- +1 Orfen's Earring -->
+	</option>
+	<option id="35442" name="Orfen's Earring">
+		<passive_skill id="50447" level="3" /> <!-- +2 Orfen's Earring -->
+	</option>
+	<option id="35443" name="Orfen's Earring">
+		<passive_skill id="50447" level="4" /> <!-- +3 Orfen's Earring -->
+	</option>
+	<option id="35444" name="Orfen's Earring">
+		<passive_skill id="50447" level="5" /> <!-- +4 Orfen's Earring -->
+	</option>
+	<option id="35445" name="Orfen's Earring">
+		<passive_skill id="50447" level="6" /> <!-- +5 Orfen's Earring -->
+	</option>
+	<option id="35446" name="Zaken's Earring">
+		<passive_skill id="50448" level="1" /> <!-- Zaken's Earring -->
+	</option>
+	<option id="35447" name="Zaken's Earring">
+		<passive_skill id="50448" level="2" /> <!-- +1 Zaken's Earring -->
+	</option>
+	<option id="35448" name="Zaken's Earring">
+		<passive_skill id="50448" level="3" /> <!-- +2 Zaken's Earring -->
+	</option>
+	<option id="35449" name="Zaken's Earring">
+		<passive_skill id="50448" level="4" /> <!-- +3 Zaken's Earring -->
+	</option>
+	<option id="35450" name="Zaken's Earring">
+		<passive_skill id="50448" level="5" /> <!-- +4 Zaken's Earring -->
+	</option>
+	<option id="35451" name="Zaken's Earring">
+		<passive_skill id="50448" level="6" /> <!-- +5 Zaken's Earring -->
+	</option>
+	<option id="35452" name="Antharas Earring">
+		<passive_skill id="50449" level="1" /> <!-- Antharas' Earring -->
+	</option>
+	<option id="35453" name="Antharas Earring">
+		<passive_skill id="50449" level="2" /> <!-- +1 Antharas' Earring -->
+	</option>
+	<option id="35454" name="Antharas Earring">
+		<passive_skill id="50449" level="3" /> <!-- +2 Antharas' Earring -->
+	</option>
+	<option id="35455" name="Antharas Earring">
+		<passive_skill id="50449" level="4" /> <!-- +3 Antharas' Earring -->
+	</option>
+	<option id="35456" name="Antharas Earring">
+		<passive_skill id="50449" level="5" /> <!-- +4 Antharas' Earring -->
+	</option>
+	<option id="35457" name="Antharas Earring">
+		<passive_skill id="50449" level="6" /> <!-- +5 Antharas' Earring -->
+	</option>
+	<option id="35458" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="1" /> <!-- Frintezza's Necklace -->
+	</option>
+	<option id="35459" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="2" /> <!-- +1 Frintezza's Necklace -->
+	</option>
+	<option id="35460" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="3" /> <!-- +2 Frintezza's Necklace -->
+	</option>
+	<option id="35461" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="4" /> <!-- +3 Frintezza's Necklace -->
+	</option>
+	<option id="35462" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="5" /> <!-- +4 Frintezza's Necklace -->
+	</option>
+	<option id="35463" name="Frintezza's Necklace">
+		<passive_skill id="50450" level="6" /> <!-- +5 Frintezza's Necklace -->
+	</option>
+	<option id="35464" name="option_id_35464">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="35465" name="option_id_35465">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="35466" name="option_id_35466">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="35467" name="option_id_35467">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="35468" name="option_id_35468">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="35469" name="option_id_35469">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="35470" name="option_id_35470">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="35471" name="option_id_35471">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="35472" name="option_id_35472">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="35473" name="option_id_35473">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="35474" name="option_id_35474">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="35475" name="option_id_35475">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="35476" name="option_id_35476">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="35477" name="option_id_35477">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="35478" name="option_id_35478">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="35479" name="option_id_35479">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="35480" name="option_id_35480">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="35481" name="option_id_35481">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="35482" name="option_id_35482">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="35483" name="option_id_35483">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="35484" name="option_id_35484">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="35485" name="option_id_35485">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="35486" name="option_id_35486">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="35487" name="option_id_35487">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="35488" name="option_id_35488">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="35489" name="option_id_35489">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="35490" name="option_id_35490">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="35491" name="option_id_35491">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="35492" name="option_id_35492">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="35493" name="option_id_35493">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="35494" name="option_id_35494">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="35495" name="option_id_35495">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="35496" name="option_id_35496">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="35497" name="option_id_35497">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="35498" name="option_id_35498">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="35499" name="option_id_35499">
+		<!-- P. Atk. +100 -->
+	</option>
+</list>

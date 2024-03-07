@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="16518" toLevel="1" name="Invincibility (event)">
+		<!-- Invincible to basic attacks, skills and debuffs. Unable to recover HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+</list>

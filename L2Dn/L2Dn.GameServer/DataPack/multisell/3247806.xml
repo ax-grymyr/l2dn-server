@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Feoh's Soul Crystal -->
+	<item>
+		<ingredient count="1" id="90614" /> <!-- Feoh's Soul Crystal Lv.1 -->
+		<ingredient count="2" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90694" /> <!-- Sealed Soul Crystal Lv.1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90615" /> <!-- Feoh's Soul Crystal Lv.2 -->
+		<ingredient count="3" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90695" /> <!-- Sealed Soul Crystal Lv.2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90616" /> <!-- Feoh's Soul Crystal Lv.3 -->
+		<ingredient count="4" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90696" /> <!-- Sealed Soul Crystal Lv.3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90617" /> <!-- Feoh's Soul Crystal Lv.4 -->
+		<ingredient count="6" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90697" /> <!-- Sealed Soul Crystal Lv.4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90618" /> <!-- Feoh's Soul Crystal Lv.5 -->
+		<ingredient count="11" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90698" /> <!-- Sealed Soul Crystal Lv.5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90619" /> <!-- Feoh's Soul Crystal Lv.6 -->
+		<ingredient count="18" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90699" /> <!-- Sealed Soul Crystal Lv.6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90620" /> <!-- Feoh's Soul Crystal Lv.7 -->
+		<ingredient count="35" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90700" /> <!-- Sealed Soul Crystal Lv.7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90621" /> <!-- Feoh's Soul Crystal Lv.8 -->
+		<ingredient count="52" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90701" /> <!-- Sealed Soul Crystal Lv.8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90622" /> <!-- Feoh's Soul Crystal Lv.9 -->
+		<ingredient count="87" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90702" /> <!-- Sealed Soul Crystal Lv.9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90623" /> <!-- Feoh's Soul Crystal Lv.10 -->
+		<ingredient count="121" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90703" /> <!-- Sealed Soul Crystal Lv.10 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90624" /> <!-- Feoh's Soul Crystal Lv.11 -->
+		<ingredient count="231" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90704" /> <!-- Sealed Soul Crystal Lv.11 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90625" /> <!-- Feoh's Soul Crystal Lv.12 -->
+		<ingredient count="256" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90705" /> <!-- Sealed Soul Crystal Lv.12 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90626" /> <!-- Feoh's Soul Crystal Lv.13 -->
+		<ingredient count="308" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90706" /> <!-- Sealed Soul Crystal Lv.13 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90627" /> <!-- Feoh's Soul Crystal Lv.14 -->
+		<ingredient count="385" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90707" /> <!-- Sealed Soul Crystal Lv.14 -->
+	</item>
+	<item>
+		<ingredient count="1" id="90628" /> <!-- Feoh's Soul Crystal Lv.15 -->
+		<ingredient count="462" id="2133" /> <!-- Gemstone (A-grade) -->
+		<production count="1" id="90708" /> <!-- Sealed Soul Crystal Lv.15 -->
+	</item>
+</list>

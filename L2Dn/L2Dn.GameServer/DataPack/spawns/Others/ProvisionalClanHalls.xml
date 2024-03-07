@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="ProvisionalClanHalls">
+		<group>
+			<npc id="33360" x="-122368" y="-122595" z="-5845" heading="16383" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-122668" y="-116440" z="-5735" heading="60699" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-121444" y="-111321" z="-5981" heading="32767" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-117093" y="-122599" z="-5845" heading="16383" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-117517" y="-116408" z="-5735" heading="60699" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-116239" y="-111343" z="-5981" heading="32767" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-111817" y="-122608" z="-5845" heading="16383" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-112199" y="-116413" z="-5735" heading="60699" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+			<npc id="33360" x="-110897" y="-111348" z="-5981" heading="32767" respawnTime="60sec" /> <!-- Maid - Provisional Clan Hall Manager -->
+		</group>
+	</spawn>
+</list>

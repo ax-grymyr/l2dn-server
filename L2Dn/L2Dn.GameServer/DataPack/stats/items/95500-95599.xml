@@ -1,0 +1,1297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="95500" name="Book of Light" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Light Master Lv. 2. <Classes>. Berserker. Soul Breaker. Soul Ranger. <Skill effect>. In Light Veil:. P. Atk. +280. Atk. Spd. +80. Casting Spd. +120. Speed +15. P. Def. +10%. M. Def. +10%. Skill Critical Damage +200. Additionally recovers HP/ MP at regular intervals. With a certain chance, recovers MP after an attack. -->
+		<set name="icon" val="icon.giant_book_i02" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95501" name="Book of Shadows" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Shadow Master Lv. 2 skill. <Classes>. Berserker. Soul Breaker. Soul Ranger. <Skill effect>. In Shadow Veil. P. Atk. +500. Atk. Spd. +200. Casting Spd. +250. Speed +20. Skill Critical Damage +200. When attacking, delivers an additional blow. (Probability: 20%). The ultimate skill is available. -->
+		<set name="icon" val="icon.giant_book_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95502" name="Spellbook: White Guardian" additionalName="Sealed" type="EtcItem">
+		<!-- Required for learning the White Guardian Transformation. <Classes>. All classes after the 3rd class change. (except Kamael classes and Death Knights). <Skill effect>. Transforms into White Guardian. Increases Max HP/ MP, P./ M. Accuracy, P./ M. Atk., P./ M. Def., Atk. Spd., P. Skill Critical Damage, M. Skill Critical Rate, Speed. -->
+		<set name="icon" val="icon.si_phanteon_book" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95503" name="Spellbook: Divine Beam" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Divine Beam skill. <Classes>. Cardinal. Eva's Saint. Shillien Saint. Hierophant. <Skill effect>. A divine beam strikes the target. Inflicts magic damage with additional power. Deals high damage to demons and the undead. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95504" name="Spellbook: Burning Field" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Burning Field skill. <Class>. Death Knight (Human). <Skill effect>. Flames cover a certain area. The amount of inflicted damage depends on your P. Atk. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95505" name="Spellbook: Frozen Field" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Frozen Field skill. <Class>. Death Knight (Elf). <Skill effect>. A cone of frost damages a certain area and freezes the enemies. The amount of inflicted damage depends on your P. Atk. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95506" name="Spellbook: Lightning Storm" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Lightning Storm skill. <Class>. Death Knight (Dark Elf). <Skill effect>. A lightning storm damages a certain area. The amount of inflicted damage depends on character's P. Atk. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95507" name="Spellbook: Ultimate Death Knight Transformation" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Ultimate Death Knight Transformation skill. <Class>. Death Knight (all races). <Skill effect>. Transforms into a Death Knight who is cursed by the Fire Dragon Valakas, but possesses great powers. Increases P. Atk., P. Critical Damage, P. Skill Critical Damage, Atk. Spd., Speed, P. Def., Resistance to All Weapons, Holy Resistance. Decreases penalty of Received Healing. -->
+		<set name="icon" val="icon.unique_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95508" name="Spellbook: Death Guard" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Death Guard skill. <Class>. Death Messenger (all races). <Skill effect>. Blocks all frontal ranged attacks. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95509" name="Spellbook: Bone Cage" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Bone Cage skill. <Class>. Death Messenger (all races). <Skill effect>. Puts the enemy into the bone cage. The imprisoned enemies cannot be attacked as well as they cannot move, attack, teleport, target, use skills, recover HP/ CP/ MP. An additional effect depends on the character's race. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95510" name="Spellbook: Hellfire" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Hellfire skill. <Class>. Death Knight (all races). <Skill effect>. Sticks the sword into the ground and summons a flame burning nearby enemies and decreasing their P./ M. Def. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95511" name="Spellbook: Drain Magic Energy" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Drain Magic Energy skill. <Class>. Death Messenger (all races). <Skill effect>. With a certain chance, recovers MP in a battle. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95512" name="Spellbook: Amazing Thunder Storm Mastery" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Amazing Thunder Storm Mastery skill. <Class>. Dreadnought. <Skill effect>. Thunder Storm is enhanced and replaced by Amazing Thunder Storm. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95513" name="Spellbook: Elemental Burst" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flame Explosion/ Water Explosion/ Thunder Explosion/ Void Explosion skill. <Classes>. Archmage. Soultaker. Mystic Muse. Storm Screamer. <Skill effect>. Explosion imbued with elemental power deals magical damage to the enemy. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95514" name="Spellbook: Ethereal Strike" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Ethereal Strike skill. <Classes>. Arcana Lord. Elemental Master. Spectral Master. <Skill effect>. Summons energy balls that cover the enemy and deal damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95515" name="Spellbook: Knight's Help" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Phoenix Help/ Help of Hatred/ Eva's Help/ Shillien's Help skill. <Classes>. Phoenix Knight. Hell Knight. Eva's Templar. Shillien Templar. <Skill effect>. When Shield Strike/ Tribunal/ Judgment/ Shield Throwing/ Knight's Assault is used, the power of your faith deals additional physical damage with a certain chance. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95516" name="Spellbook: Amazing Spike Thrust Mastery" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Amazing Spike Thrust Mastery skill. <Class>. Dreadnought. <Skill effect>. Spike Thrust is enhanced and replaced by Amazing Spike Thrust. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95517" name="Master's Book: Might" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Might Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases P. Atk. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95518" name="Master's Book: Shield" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Shield Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases P. Def. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95519" name="Spellbook: Devour" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Devour skill. <Class>. Death Knight (all races). <Skill effect>. Recovers DP. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95520" name="Spellbook: Pain of Sagittarius" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Pain of Sagittarius Lv. 8. <Class>. Sagittarius. <Skill effect>. Recovers target's MP at the cost of HP. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95521" name="Spellbook: Esprit" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Esprit Lv. 9. <Class>. Moonlight Sentinel. <Skill effect>. Increases HP/ MP Recovery Rate when running. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95522" name="Spellbook: Dark Sense" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dark Sense skill. <Class>. Ghost Sentinel. <Skill effect>. Recovers MP after Double Shot and Lethal Shot critical attacks. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95523" name="Spellbook: Buff Thief" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Buff Thief skill. <Classes>. Dreadnought, Fortune Seeker. <Skill effect>. Increases P./ M. Atk. and, with a certain chance, steals enemy's buffs. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95524" name="Spellbook: Sword Symphony" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Sword Symphony skill. <Classes>. Swordsinger. <Skill effect>. 1) Increases the attack range. 2) There is a certain chance to decrease received damage. 3) Increases Speed and Skill Evasion after a critical attack or successful evasion. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95525" name="Spellbook: Intoxicating Dance" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dance of Blood skill. <Classes>. Bladedancer. <Skill effect>. 1) Inflicts a debuff increasing received damage and decreasing Speed (stacks up to 5 times) after an attack. 2) Increases P. Atk and P. Skill Critical Damage after an attack. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95526" name="Spellbook: Wild Beat" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Wild Beat skill. <Class>. Sword Muse. <Skill effect>. Forces the enemy to move towards you. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95527" name="Spellbook: Crazy Waltz" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Crazy Waltz skill. <Class>. Spectral Dancer. <Skill effect>. A mesmerizing dance stupefies enemies making them dance on the spot. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="95528" name="Spellbook: Frantic Pace" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Frantic Pace skill. <Classes>. Sword Muse. Spectral Dancer. <Skill effect>. Sharpens character's senses and allows to make a powerful blow. Deals additional damage to enemy affected by Hold. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95529" name="Spellbook: Song of Earth" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Song of Earth Lv. 2 skill. <Class>. Swordsinger. <Skill effect>. For the caster:. P. Def. +500. M. Def. +500. For nearby allies:. P. Def. +200. M. Def. +200. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95530" name="Spellbook: Song of Hunter" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Song of Hunter Lv. 2 skill. <Class>. Swordsinger. <Skill effect>. For the caster:. All Critical Rate +150. For nearby allies:. All Critical Rate +60. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95531" name="Spellbook: Dance of Warrior" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dance of Warrior Lv. 2 skill. <Class>. Bladedancer. <Skill effect>. For the caster:. P. Atk. +600. M. Atk. +600. For nearby allies:. P. Atk. +250. M. Atk. +250. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95532" name="Spellbook: Dance of Fire" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dance of Fire Lv. 2 skill. <Class>. Bladedancer. <Skill effect>. For the caster:. P. Critical Damage +40%. P. Skill Critical Damage +10%. M. Skill Critical Damage +10%. For nearby allies:. P. Skill Critical Damage +4%. M. Skill Critical Damage +4%. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95533" name="Master's Book: Empower" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Empower Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases M. Atk. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95534" name="Master's Book: Magic Barrier" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Magic Barrier Lv. 3. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases M. Def. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95535" name="Master's Book: Focus" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Focus Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases P. Critical Rate. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95536" name="Master's Book: Death Whisper" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Death Whisper Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases P. Critical Damage. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95537" name="Master's Book: Wind Walk" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Wind Walk Lv. 3. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases Speed. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95538" name="Master's Book: Haste" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Haste Lv. 3. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases Atk. Spd. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95539" name="Master's Book: Acumen" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Acumen Lv. 4. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases Casting Spd. -->
+		<set name="icon" val="icon.rare_skill_book01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95540" name="Spellbook: Life Force Harmony" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Life Force Harmony skill. <Classes>. Titan. Grand Khavatari. <Skill effect>. Increases Max HP and other stats depending on current HP. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95541" name="Spellbook: Titan Champion" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Titan Champion skill. <Class>. Titan. <Skill effect>. Greatly increases P. Atk., P. Critical Rate, P. Critical Damage, Knockback Atk. Rate, Max HP and Speed. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95542" name="Spellbook: Titanic Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Titanic Weapon skill. <Class>. Titan. <Skill effect>. Increases P. Atk. With a certain chance, makes extra attacks, when using Demolition Impact. When using a two-handed sword or a two-handed blunt weapon:. Increases P. Atk., Atk. Spd. and attack range. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95543" name="Spellbook: Titanic Sweep" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Titanic Sweep skill. <Class>. Titan. <Skill effect>. Widely swings a sword to attack nearby enemies. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95544" name="Spellbook: Titanic Break" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Titanic Break skill. <Class>. Titan. <Skill effect>. Attacks with a sword to shock enemies. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95545" name="Spellbook: Ogre Spirit Totem" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Ogre Spirit Totem Lv. 2 skill. <Class>. Grand Khavatari. <Skill effect>. Increases Max HP and decreases received damage. When used, protects from damage once. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95546" name="Spellbook: Rabbit Spirit Totem" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Rabbit Spirit Totem Lv. 2 skill. <Classes>. Grand Khavatari. <Skill effect>. Increases Speed and Atk. Spd. When used, significantly increases Speed and Atk. Spd. for a while. Increases Debuff Resistance and Anomaly Resistance. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95547" name="Spellbook: Puma Spirit Totem" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Puma Spirit Totem Lv. 2 skill. <Class>. Grand Khavatari. <Skill effect>. Increases P. Skill Power. When used, significantly increases P. Skill Critical Rate and P. Skill Critical Damage for a while. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95548" name="Spellbook: Burning Strike" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Burning Strike skill. <Class>. Grand Khavatari. <Skill effect>. Uses Momentum to deliver a powerful blow. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95549" name="Spellbook: Burning Assault" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Burning Assault skill. <Class>. Grand Khavatari. <Skill effect>. Attacks the enemy with energy decreasing their P. Def. and consuming Momentum. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95550" name="Spellbook: Armor Break" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Armor Break skill. <Class>. Grand Khavatari. <Skill effect>. Has a certain chance to remove the target's armor defense and decrease their Speed. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95551" name="Spellbook: Cacophony of War" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Cacophony of War skill. <Class>. Grand Khavatari. <Skill effect>. Inflicts Fear on nearby enemies applying a mark on them. Attacking the marked target instantly kills them. -->
+		<set name="icon" val="icon.etc_spell_books_hfighter_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95552" name="Spellbook: Pa'agrio's Touch" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Pa'agrio's Touch skill. <Class>. Dominator. <Skill effect>. Recovers HP/ CP of surrounding clan members. Creates a shield to absorb damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95553" name="Spellbook: Pa'agrio's Medicine" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Pa'agrio's Touch skill. <Class>. Dominator. <Skill effect>. Recovers HP/ CP of surrounding clan members. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95554" name="Spellbook: Debuff Master" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Debuff Master skill. <Class>. Dominator. <Skill effect>. Temporarily enhances the following debuff skills:. - Seal of Despair. - Seal of Silence. - Seal of Infection -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95555" name="Spellbook: Flame Burst" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flame Burst skill. <Class>. Dominator. <Skill effect>. Brings down a pillar of fire on the target and surrounding enemies, causing their HP/ MP decrease continuously. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95556" name="Spellbook: Infection Seal" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Seal of Infection skill. <Class>. Dominator. <Skill effect>. Decreases Received Healing of the enemy clan members. Normal HP recovery is impossible. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95557" name="Spellbook: Team Building" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Team Building skill. <Class>. Doomcryer. <Skill effect>. The target can't do anything. Teleports the caster and their party members to the target. Protects the teleporting party members. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95558" name="Spellbook: Blood Bond" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Blood Bond skill. <Class>. Doomcryer. <Skill effect>. Attacks the target and enemies around it with a ring of blood, absorbing their HP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95559" name="Spellbook: Cold Flames" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for learning the Cold Flames skill. <Class>. Doomcryer. <Skill effect>. Sets the target on fire continuously decreasing its HP/ MP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95560" name="Spellbook: Chant of Healing" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Chant of Healing skill. <Class>. Doomcryer. <Skill effect>. Recovers surrounding party members' HP/ CP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95561" name="Spellbook: Flying Dagger" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flying Dagger skill. <Classes>. Adventurer. Wind Rider. Ghost Hunter. <Skill effect>. Throws a dagger at the target decreasing their Atk. Spd./ Casting Spd./ Speed. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95562" name="Spellbook: Tranquillity" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Tranquility skill. <Class>. Cardinal. <Skill effect>. Increases party members' max HP. Continuously recovers HP for a short period of time. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95563" name="Spellbook: Exclusion" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Exclusion skill. <Class>. Eva's Saint. <Skill effect>. Cancels a Suppression debuff applied to allies. Knocks the target and nearby enemies back. Greatly decreases Atk. Spd./ Casting Spd./ Speed. Increases P./ M. Skill Cooldown. Prevents enemies from using Speed buffs and Rush skills. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95564" name="Spellbook: Dark Disruption" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dark Disruption skill. <Class>. Shillien Saint. <Skill effect>. Greatly decreases Recovery Potions' Effect of the target and nearby enemies. Prevents enemies from using class transformation skills. - Prevents enemies from using other unique buffs. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95565" name="Spellbook: Meteor" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Meteor skill. <Classes>. Archmage. Soultaker. Mystic Muse. Storm Screamer. <Skill effect>. Decreases CP and M. Def. of the target and nearby enemies. Deals 3 powerful strikes to the target. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95566" name="Spellbook: Rolling Dice" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Rolling Dice skill. <Class>. Fortune Seeker. <Skill effect>. When used, increases P. Atk./ P. Critical Rate/ P. Critical Damage. Additionally increases Atk. Spd./ Speed/ Max HP. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95567" name="Spellbook: Song of Wind" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Song of Wind Lv. 2 skill. <Class>. Swordsinger. <Skill effect>. For you and nearby allies:. Increases Speed/ Suppression Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95568" name="Spellbook: Dance of Fury" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dance of Fury Lv. 2 skill. <Class>. Bladedancer. <Skill effect>. For you and nearby allies:. Increases Atk. Spd./ Casting Spd. Decreases Skill Cooldown. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95569" name="Adena Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_golden_spice_new_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8868" min="1" max="1" chance="0.1" /> <!-- Ziggo's Jewel -->
+			<item id="49088" min="1" max="1" chance="5" /> <!-- Gold Medal -->
+			<item id="57" min="300000" max="300000" chance="6.3266" /> <!-- Adena -->
+			<item id="57" min="100000" max="100000" chance="12.6533" /> <!-- Adena -->
+			<item id="57" min="50000" max="50000" chance="18.98" /> <!-- Adena -->
+			<item id="57" min="30000" max="30000" chance="25.3066" /> <!-- Adena -->
+			<item id="57" min="10000" max="10000" chance="31.6335" /> <!-- Adena -->
+		</capsuled_items>
+	</item>
+	<item id="95570" name="Honor Coin" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.pledge_coin_dummy" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95571" name="Enchanted C-grade Armor Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for an C-grade armor through the Game Assistant. <How to use>. Game Assistant - Items -->
+		<set name="icon" val="icon.bm_armor_ticket_c" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="95572" name="+0 ~ +5 Heavy Armor Pack - Full Plate Helmet" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93639" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Helmet -->
+			<item id="93639" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Helmet -->
+			<item id="93639" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Helmet -->
+			<item id="93639" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Helmet -->
+			<item id="93639" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Helmet -->
+			<item id="93639" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Full Plate Helmet - Sealed -->
+			<item id="2414" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Full Plate Helmet -->
+		</capsuled_items>
+	</item>
+	<item id="95573" name="+0 ~ +5 Heavy Armor Pack - Full Plate Boots" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t62_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93640" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Boots -->
+			<item id="93640" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Boots -->
+			<item id="93640" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Boots -->
+			<item id="93640" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Boots -->
+			<item id="93640" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Boots -->
+			<item id="93640" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Full Plate Boots - Sealed -->
+			<item id="2438" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Full Plate Boots -->
+		</capsuled_items>
+	</item>
+	<item id="95574" name="+0 ~ +5 Heavy Armor Pack - Full Plate Gauntlets" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t62_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93641" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Gauntlets -->
+			<item id="93641" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Gauntlets -->
+			<item id="93641" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Gauntlets -->
+			<item id="93641" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Gauntlets -->
+			<item id="93641" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Gauntlets -->
+			<item id="93641" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Full Plate Gauntlets - Sealed -->
+			<item id="2462" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Full Plate Gauntlets -->
+		</capsuled_items>
+	</item>
+	<item id="95575" name="+0 ~ +5 Heavy Armor Pack - Full Plate Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t62_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93642" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Full Plate Armor -->
+			<item id="93642" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Full Plate Armor -->
+			<item id="93642" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Full Plate Armor -->
+			<item id="93642" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Full Plate Armor -->
+			<item id="93642" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Full Plate Armor -->
+			<item id="93642" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Full Plate Armor - Sealed -->
+			<item id="356" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Full Plate Armor -->
+		</capsuled_items>
+	</item>
+	<item id="95576" name="+0 ~ +5 Light Armor Pack - Drake Leather Armor" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t45_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93643" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Armor -->
+			<item id="93643" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Armor -->
+			<item id="93643" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Armor -->
+			<item id="93643" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Armor -->
+			<item id="93643" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Armor -->
+			<item id="93643" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Drake Leather Armor - Sealed -->
+			<item id="401" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Drake Leather Armor -->
+		</capsuled_items>
+	</item>
+	<item id="95577" name="+0 ~ +5 Light Armor Pack - Drake Leather Boots" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t45_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93644" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Boots -->
+			<item id="93644" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Boots -->
+			<item id="93644" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Boots -->
+			<item id="93644" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Boots -->
+			<item id="93644" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Boots -->
+			<item id="93644" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Drake Leather Boots - Sealed -->
+			<item id="2437" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Drake Leather Boots -->
+		</capsuled_items>
+	</item>
+	<item id="95578" name="+0 ~ +5 Light Armor Pack - Drake Leather Gloves" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t45_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93645" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Drake Leather Gloves -->
+			<item id="93645" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Drake Leather Gloves -->
+			<item id="93645" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Drake Leather Gloves -->
+			<item id="93645" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Drake Leather Gloves -->
+			<item id="93645" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Drake Leather Gloves -->
+			<item id="93645" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Drake Leather Gloves - Sealed -->
+			<item id="2461" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Drake Leather Gloves -->
+		</capsuled_items>
+	</item>
+	<item id="95579" name="+0 ~ +5 Robe Pack - Karmian Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t53_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93646" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Tunic -->
+			<item id="93646" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Tunic -->
+			<item id="93646" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Tunic -->
+			<item id="93646" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Tunic -->
+			<item id="93646" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Tunic -->
+			<item id="93646" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Karmian Tunic - Sealed -->
+			<item id="439" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Karmian Tunic -->
+		</capsuled_items>
+	</item>
+	<item id="95580" name="+0 ~ +5 Robe Pack - Karmian Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t53_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93647" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Stockings -->
+			<item id="93647" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Stockings -->
+			<item id="93647" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Stockings -->
+			<item id="93647" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Stockings -->
+			<item id="93647" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Stockings -->
+			<item id="93647" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Karmian Stockings - Sealed -->
+			<item id="471" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Karmian Stockings -->
+		</capsuled_items>
+	</item>
+	<item id="95581" name="+0 ~ +5 Robe Pack - Karmian Boots" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t53_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93648" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Boots -->
+			<item id="93648" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Boots -->
+			<item id="93648" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Boots -->
+			<item id="93648" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Boots -->
+			<item id="93648" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Boots -->
+			<item id="93648" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Karmian Boots - Sealed -->
+			<item id="2430" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Karmian Boots -->
+		</capsuled_items>
+	</item>
+	<item id="95582" name="+0 ~ +5 Robe Pack - Karmian Gloves" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t53_g_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93649" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="0" maxEnchant="0" chance="8.333333" /> <!-- Karmian Gloves -->
+			<item id="93649" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="1" maxEnchant="1" chance="8.333333" /> <!-- Karmian Gloves -->
+			<item id="93649" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="2" maxEnchant="2" chance="8.333333" /> <!-- Karmian Gloves -->
+			<item id="93649" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="3" maxEnchant="3" chance="8.333333" /> <!-- Karmian Gloves -->
+			<item id="93649" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="4" maxEnchant="4" chance="8.333333" /> <!-- Karmian Gloves -->
+			<item id="93649" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333333" /> <!-- Karmian Gloves - Sealed -->
+			<item id="2454" min="1" max="1" minEnchant="5" maxEnchant="5" chance="8.333337" /> <!-- Karmian Gloves -->
+		</capsuled_items>
+	</item>
+	<item id="95583" name="Hardin's Notes - Page 1" additionalName="Sealed" type="EtcItem">
+		<!-- Required for creating Spellbook - 1 Star. -->
+		<set name="icon" val="icon.record_of_hardin_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="95584" name="Hardin's Notes - Page 2" additionalName="Sealed" type="EtcItem">
+		<!-- Required for creating Spellbook: 2 Stars. -->
+		<set name="icon" val="icon.record_of_hardin_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="95585" name="Hardin's Notes - Page 3" additionalName="Sealed" type="EtcItem">
+		<!-- Required for creating Spellbook: 3 Stars. -->
+		<set name="icon" val="icon.record_of_hardin_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="95586" name="Scroll of Escape: Master Kerkir" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to Master Kerkir in the Wind Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="price" val="35000" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40296" level="1" /> <!-- Scroll of Escape: Master Kerkir -->
+		</skills>
+	</item>
+	<item id="95587" name="Scroll of Escape: Grocer Evia" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to Grocer Evia in the Wind Village. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="price" val="35000" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40297" level="1" /> <!-- Scroll of Escape: Grocer Evia -->
+		</skills>
+	</item>
+	<item id="95588" name="Scroll of Escape: Gorgon Flower Garden" additionalName="Sealed" type="EtcItem">
+		<!-- A magic scroll for teleporting to the Gorgon Flower Garden. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="price" val="35000" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="40299" level="1" /> <!-- Scroll of Escape: Gorgon Flower Garden -->
+		</skills>
+	</item>
+	<item id="95589" name="Scroll of Escape: Death Pass" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the Death Pass. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40303" level="1" /> <!-- Scroll of Escape: Death Pass -->
+		</skills>
+	</item>
+	<item id="95590" name="Scroll of Escape: Sea of Spores" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the Sea of Spores. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40308" level="1" /> <!-- Scroll of Escape: Sea of Spores -->
+		</skills>
+	</item>
+	<item id="95591" name="Scroll of Escape: Cemetery" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the Cemetery. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40309" level="1" /> <!-- Scroll of Escape: Cemetery -->
+		</skills>
+	</item>
+	<item id="95592" name="Scroll of Escape: Fields of Massacre" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the Fields of Massacre. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40313" level="1" /> <!-- Scroll of Escape: Fields of Massacre -->
+		</skills>
+	</item>
+	<item id="95593" name="Scroll of Escape: Plains of Glory" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the Plains of Glory. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40318" level="1" /> <!-- Scroll of Escape: Plains of Glory -->
+		</skills>
+	</item>
+	<item id="95594" name="Scroll of Escape: War-Torn Plains" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to the War-Torn Plains. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40323" level="1" /> <!-- Scroll of Escape: War-Torn Plains -->
+		</skills>
+	</item>
+	<item id="95595" name="Scroll of Escape: High Priest Maximilian" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to High Priest Maximilian in Giran. -->
+		<set name="icon" val="icon.etc_scroll_of_return_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40298" level="1" /> <!-- Scroll of Escape: High Priest Maximilian -->
+		</skills>
+	</item>
+	<item id="95596" name="Scroll: Enchant Dragon Belt (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Required for enchanting Dragon Belt and Blessed Dragon Belt. <font color=eeaa22>. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Maximum enchant value: +9. Cannot be used for mass enchanting. Additional enhance effects cannot be used.</font> -->
+		<set name="icon" val="icon.bm_destruction_scrl_of_ench_dragon_belt" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40330" level="1" /> <!-- 17th Anniversary Scroll: Enchant Dragon Belt -->
+		</skills>
+	</item>
+	<item id="95597" name="Scroll: Enchant Cloak of Protection (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Required for enchanting Cloak of Protection. <font color=eeaa22>. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Maximum enchant value: +9. Cannot be used for mass enchanting. Additional enhance effects cannot be used.</font> -->
+		<set name="icon" val="icon.bm_destruction_scrl_of_ench_sayha_cloak" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40229" level="1" /> <!-- 17th Anniversary Scroll: Enchant Cloak of Protection -->
+		</skills>
+	</item>
+	<item id="95598" name="Scroll: Enchant Circlet of Hero (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Required for enchanting Circlet of Hero. <font color=eeaa22>. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Maximum enchant value: +9. Cannot be used for mass enchanting. Additional enhance effects cannot be used.</font> -->
+		<set name="icon" val="icon.bm_destruction_scrl_of_ench_hair" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40228" level="1" /> <!-- Scroll: Enchant Circlet of Hero -->
+		</skills>
+	</item>
+	<item id="95599" name="Random Craft: Create +7 Kite Shield" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shield_kite_shield_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="629" min="1" max="1" minEnchant="7" maxEnchant="7" chance="10" /> <!-- Kite Shield -->
+			<item id="95127" min="1" max="1" minEnchant="7" maxEnchant="7" chance="90" /> <!-- Kite Shield - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

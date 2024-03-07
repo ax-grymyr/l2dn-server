@@ -1,0 +1,1182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="100300" name="Package: Queen Ant Doll Lv. 1 (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100301" name="Sealed Doll Pack Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.unknown_figure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100302" name="Doll Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to obtain Sealed Doll Pack Lv. 2 (Time-limited) through the special craft. -->
+		<set name="icon" val="icon.figure_box" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100303" name="Rare Collection Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain 1 replacement item for a rare collection of your choice. <font color=EEAA22><Coupons required></font> <Stat Collection - Crystal> Baium's Crystal (20 coupons) Zaken's Crystal (4 coupons) Core's Crystal (2 coupons) Queen Ant's Crystal (2 coupons) Orfen's Crystal (2 coupons) <Stat Collection - Doll> Baium Doll Lv. 1 (4 coupons) Frintezza Doll Lv. 1 (4 coupons) Zaken Doll Lv. 1 (3 coupons) Core Doll Lv. 1 (2 coupons) Queen Ant Doll Lv. 1 (2 coupons) Orfen Doll Lv. 1 (1 coupon) <Rare collection> Antharas' Earring (10 coupons) Baium's Ring (8 coupons) Zaken's Earring (3 coupons) Orfen's Earring (2 coupons) Queen Ant's Ring (2 coupons) Ring of Core (1 coupon) -->
+		<set name="icon" val="icon.rare_collect_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100304" name="Pack of Seals (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100305" name="Supply Order (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain 1 type of supplies. -->
+		<set name="icon" val="icon.etc_level_bustup_ticket_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100306" name="+8 Enchanted Equipment Lucky Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100307" name="+7 Enchanted Equipment Lucky Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100308" name="Spellbook Lucky Box - 1-4 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayha2017_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100309" name="Rift Explorers' Supplies (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100310" name="Augmenting Stone Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.renewal_mineral_r" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100311" name="+3 ~ +6 Talisman Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100312" name="Jewelry Box Lv. 4-6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100313" name="Sealed Doll Pack Lv. 2-3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100314" name="+5 ~ +7 Sealed Frost Lord's Weapon Coupon Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present_5" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100315" name="+7 Sealed Frost Lord's Weapon Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain a +7 Frost Lord's weapon <font color=ff6666>(unexchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100316" name="+6 Sealed Frost Lord's Weapon Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain a +6 Frost Lord's weapon <font color=ff6666>(unexchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100317" name="Package: +1 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100318" name="Package: +4 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100319" name="Package: +1 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100320" name="Package: +4 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100321" name="Package: +1 ~ +4 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100322" name="Package: +1 ~ +4 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100323" name="Item Unavailable - Skill Enchant Charging Stone - 1 Star (10%) (Time-limited)" additionalName="Not Available" type="EtcItem">
+		<!-- Recovers <font color=00FF00>10%</font> of enchant points for 1-star skills. -->
+		<set name="icon" val="icon.energy_condenser_i04" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100324" name="Item Unavailable - Skill Enchant Charging Stone - 2 Stars (10%) (Time-limited)" additionalName="Not Available" type="EtcItem">
+		<!-- Recovers <font color=00FF00>10%</font> of enchant points for 2-star skills. -->
+		<set name="icon" val="icon.energy_condenser_i05" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100325" name="Item Unavailable - Skill Enchant Charging Stone - 3 Stars (10%) (Time-limited)" additionalName="Not Available" type="EtcItem">
+		<!-- Recovers <font color=00FF00>10%</font> of enchant points for 3-star skills. -->
+		<set name="icon" val="icon.energy_condenser_i06" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100326" name="First Lv. 94 Achievement Reward - Name Background" additionalName="Sealed" type="EtcItem">
+		<!-- A reward for being the first to reach Lv. 94. When used, your name in the chat window will be shown in a special background. -->
+		<set name="icon" val="icon.color_name_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100327" name="Elegia Breastplate" type="Armor">
+		<set name="icon" val="icon.armor_t97_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="7700" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">240</stat>
+		</stats>
+	</item>
+	<item id="100328" name="Elegia Gaiters" type="Armor">
+		<set name="icon" val="icon.armor_t97_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="3320" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">210</stat>
+		</stats>
+	</item>
+	<item id="100329" name="Elegia Breastplate" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t97_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="7700" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">240</stat>
+		</stats>
+	</item>
+	<item id="100330" name="Elegia Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t97_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="3320" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">210</stat>
+		</stats>
+	</item>
+	<item id="100331" name="Elegia Leather Armor" type="Armor">
+		<set name="icon" val="icon.armor_t98_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="4300" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">201</stat>
+		</stats>
+	</item>
+	<item id="100332" name="Elegia Leather Leggings" type="Armor">
+		<set name="icon" val="icon.armor_t98_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1480" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">140</stat>
+		</stats>
+	</item>
+	<item id="100333" name="Elegia Leather Armor" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t98_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="4300" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">201</stat>
+		</stats>
+	</item>
+	<item id="100334" name="Elegia Leather Leggings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t98_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1480" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">140</stat>
+		</stats>
+	</item>
+	<item id="100335" name="Elegia Tunic" type="Armor">
+		<set name="icon" val="icon.armor_t99_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="1750" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">138</stat>
+			<stat type="maxMp">650</stat>
+		</stats>
+	</item>
+	<item id="100336" name="Elegia Stockings" type="Armor">
+		<set name="icon" val="icon.armor_t99_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="SCALE_OF_DRAGON" />
+		<set name="weight" val="850" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">90</stat>
+			<stat type="maxMp">400</stat>
+		</stats>
+	</item>
+	<item id="100337" name="Elegia Tunic" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t99_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="1750" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">138</stat>
+			<stat type="maxMp">650</stat>
+		</stats>
+	</item>
+	<item id="100338" name="Elegia Stockings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t99_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="SCALE_OF_DRAGON" />
+		<set name="weight" val="850" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">90</stat>
+			<stat type="maxMp">400</stat>
+		</stats>
+	</item>
+	<item id="100339" name="Elegia Gauntlets" type="Armor">
+		<set name="icon" val="icon.armor_t97_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
+	</item>
+	<item id="100340" name="Elegia Boots" type="Armor">
+		<set name="icon" val="icon.armor_t97_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1070" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">75</stat>
+		</stats>
+	</item>
+	<item id="100341" name="Elegia Gauntlets" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t97_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">80</stat>
+		</stats>
+	</item>
+	<item id="100342" name="Elegia Boots" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t97_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1070" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">75</stat>
+		</stats>
+	</item>
+	<item id="100343" name="+8 Frost Lord's Weapon Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain a +8 Frost Lord's weapon <font color=00FF00>(exchangeable)</font> of your choice. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100344" name="Package: +8 Frost Lord's Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Sword <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100345" name="Package: +8 Frost Lord's Two-handed Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Two-handed Sword <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100346" name="Package: +8 Frost Lord's Axe" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Axe <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_blunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100347" name="Package: +8 Frost Lord's Dagger" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Dagger <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dagger" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100348" name="Package: +8 Frost Lord's Spear" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Spear <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_pole" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100349" name="Package: +8 Frost Lord's Bow" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Bow <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_bow" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100350" name="Package: +8 Frost Lord's Blade Fists" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Blade Fists <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dualfist" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100351" name="Package: +8 Frost Lord's Magic Blunt Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Magic Blunt Weapon <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100352" name="Package: +8 Frost Lord's Staff" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Staff <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_two_hand_staff" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100353" name="Package: +8 Frost Lord's Ancient Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Ancient Sword <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_ancientsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100354" name="Package: +8 Frost Lord's Rapier" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Rapier <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_rapier" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100355" name="Package: +8 Frost Lord's Pistols" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Pistols <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_shooter" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100356" name="Package: +8 Frost Lord's Dual Swords" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain +8 Frost Lord's Dual Swords <font color=00FF00>(exchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_dual_sword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100357" name="Package: +1 Aztacan's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_tantaar_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100358" name="Package: +2 Aztacan's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_tantaar_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100359" name="Package: +3 Aztacan's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_tantaar_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100360" name="Package: +4 Aztacan's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_tantaar_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100361" name="Package: +5 Aztacan's Earring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_earring_of_tantaar_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100362" name="Package: +5 Beleth' Ring" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessary_dynasty_ring_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100363" name="+0 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100364" name="+1 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100365" name="+2 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_silver_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100366" name="+3 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100367" name="+4 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100368" name="+5 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100369" name="+0 ~ +5 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100370" name="Ferion's Necklace" type="Armor">
+		<!-- Max enchant value: +6. (Requires Scroll: Enchant Rare Accessories.) Boosts the item's effects upon enchanting. Safe enchanting to +1 -->
+		<set name="icon" val="icon.accessory_necklace_of_perion_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="mDef">107</stat>
+		</stats>
+	</item>
+	<item id="100371" name="Ferion's Necklace" additionalName="Sealed" type="Armor">
+		<!-- Max enchant value: +6. (Requires Scroll: Enchant Rare Accessories.) Boosts the item's effects upon enchanting. Safe enchanting to +1 -->
+		<set name="icon" val="icon.accessory_necklace_of_perion_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="NONE" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="mDef">107</stat>
+		</stats>
+	</item>
+	<item id="100372" name="Package: Einhasad's Pendant Lv. 1 (200 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="Icon.bm_pendant_pve_white_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100373" name="Package: Heavenly Cloak (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.nobless_cloak_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100374" name="Package: Spellbook: Expanded Potential of Dyes (Time-limited)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sb_expand_dye_potential_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100375" name="Einhasad's Pendant Pouch (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present_poket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100376" name="Queen Ant Doll Lv. 6" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 6> P. Atk. +20% P. Critical Damage +20% P. Skill Critical Damage +20% Max HP +20% Boosts stats when in inventory. <font color=ff6666><Compound></font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100377" name="Baium Doll Lv. 6" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 6> Skill Cooldown -5% P. Def. +25% M. Def. +25% Silence Resistance +45% Fear Resistance +45% Paralysis Resistance +30% Knockback Resistance +30% Pull Resistance +30% Shock Resistance +20% Suppression Resistance +10% Imprisonment Resistance +10% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_baium_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100378" name="Orfen Doll Lv. 6" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 6> M. Atk. +25% M. Skill Critical Damage +25% Max MP +25% Melee Weapon Resistance +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100379" name="Zaken Doll Lv. 6" type="EtcItem">
+		<!-- <Zaken Doll's Sorcery Lv. 6> Skill Critical Rate +100 Skill Critical Damage +350 HP Recovery Potions' Effect +200 Acquired XP/ SP +5% Absorbs 3% of inflicted damage as HP (with a certain chance) Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100380" name="Core Doll Lv. 6" type="EtcItem">
+		<!-- <Core Doll's Sorcery Lv. 6> Received Skill Critical Damage -25% Received Skill Critical Rate -20% Shock Resistance +35% Sleep Resistance +35% Knockback Resistance +25% Paralysis Resistance +25% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_core_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100381" name="Frintezza Doll Lv. 6" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 6> STR +4 INT +4 DEX +4 WIT +4 CON +4 MEN +4 Skill Power +10% Atk. Spd. +130 Casting Spd. +130 Speed +6 Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100382" name="Antharas Doll Lv. 6" type="EtcItem">
+		<!-- <Antharas Doll's Sorcery Lv. 6> CON +6 MEN +6 Received damage -25% Knockback Resistance +30% Shock Resistance +30% Pull Resistance +30% Imprisonment Resistance +30% Soulshot Damage Resistance +20% Spiritshot Damage Resistance +20% Received PvP damage +2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100383" name="Behemoth Doll Lv. 6" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 6> Damage decrease ignore +700 Skill Critical Damage +25% Hold Resistance +30% Received PvP damage -2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100384" name="Glakias Doll Lv. 6" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 6> All Weapon P. Atk. +50 All Weapon M. Atk. +50 Soulshot damage +20% Spiritshot damage +20% PvP damage +2% Acquired XP/ SP +5% Recovers 500 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100385" name="Andreas van Halter Doll Lv. 6" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 6> P. Atk. +5000 M. Atk. +5000 Received Skill Critical Rate -15% Received Skill Critical Damage -15% Received AoE Skill Damage -5% Received AoE Skill Damage -1000 PvP damage +2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i02" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100386" name="Queen Ant Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 6> P. Atk. +20% P. Critical Damage +20% P. Skill Critical Damage +20% Max HP +20% Boosts stats when in inventory. <font color=ff6666><Compound></font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100387" name="Baium Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 6> Skill Cooldown -5% P. Def. +25% M. Def. +25% Silence Resistance +45% Fear Resistance +45% Paralysis Resistance +30% Knockback Resistance +30% Pull Resistance +30% Shock Resistance +20% Suppression Resistance +10% Imprisonment Resistance +10% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_baium_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100388" name="Orfen Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 6> M. Atk. +25% M. Skill Critical Damage +25% Max MP +25% Melee Weapon Resistance +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100389" name="Zaken Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Zaken Doll's Sorcery Lv. 6> Skill Critical Rate +100 Skill Critical Damage +350 HP Recovery Potions' Effect +200 Acquired XP/ SP +5% Absorbs 3% of inflicted damage as HP (with a certain chance) Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100390" name="Core Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Core Doll's Sorcery Lv. 6> Received Skill Critical Damage -25% Received Skill Critical Rate -20% Shock Resistance +35% Sleep Resistance +35% Knockback Resistance +25% Paralysis Resistance +25% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_core_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100391" name="Frintezza Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Frintezza Doll's Sorcery Lv. 6> STR +4 INT +4 DEX +4 WIT +4 CON +4 MEN +4 Skill Power +10% Atk. Spd. +130 Casting Spd. +130 Speed +6 Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100392" name="Antharas Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Antharas Doll's Sorcery Lv. 6> CON +6 MEN +6 Received damage -25% Knockback Resistance +30% Shock Resistance +30% Pull Resistance +30% Imprisonment Resistance +30% Soulshot Damage Resistance +20% Spiritshot Damage Resistance +20% Received PvP damage +2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_antaras_doll_30d_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100393" name="Behemoth Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Behemoth Doll's Sorcery Lv. 6> Damage decrease ignore +700 Skill Critical Damage +25% Hold Resistance +30% Received PvP damage -2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_behemoth_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100394" name="Glakias Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Glakias Doll's Sorcery Lv. 6> All Weapon P. Atk. +50 All Weapon M. Atk. +50 Soulshot damage +20% Spiritshot damage +20% PvP damage +2% Acquired XP/ SP +5% Recovers 500 MP on basic attacks and attack skills. (Trigger rate: 30%, trigger cooldown: 30 sec.) Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.bm_glacies_doll_01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100395" name="Andreas van Halter Doll Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <Andreas van Halter Doll's Sorcery Lv. 6> P. Atk. +5000 M. Atk. +5000 Received Skill Critical Rate -15% Received Skill Critical Damage -15% Received AoE Skill Damage -5% Received AoE Skill Damage -1000 PvP damage +2% Acquired XP/ SP +5% Boosts stats when in inventory. <font color=ff6666>Note!</font> Effects of two identical dolls do not stack, the higher-level doll takes precedence. -->
+		<set name="icon" val="icon.andreas_van_holter_doll_i02" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="100396" name="Frost Lord's Weapon Change Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used for changing the type of your Frost Lord's weapon, along with Giran Seals. <font color=ff6666>Note!</font> Upon type change, all appearance modifications disappear. -->
+		<set name="icon" val="icon.wepon_trade_ticket_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100397" name="Armor of Protection Change Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used for changing the type of your armor of Protection, along with Giran Seals. <font color=ff6666>Note!</font> Upon type change, all appearance modifications disappear. -->
+		<set name="icon" val="icon.armor_trade_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100398" name="Boss Weapon Change Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used for changing the type of your Boss weapon, along with Giran Seals. <font color=ff6666>Note!</font> Upon type change, all appearance modifications disappear. -->
+		<set name="icon" val="icon.wepon_trade_ticket_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="100399" name="Special Armor Change Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used for changing the type of your special armor, along with Giran Seals. <font color=ff6666>Note!</font> Upon type change, all appearance modifications disappear. -->
+		<set name="icon" val="icon.armor_trade_ticket_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="NONE" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

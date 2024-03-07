@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
+	<!-- No PvP Zones -->
+	<zone name="primeval_no_pvp_1" type="NoPvPZone" shape="NPoly" minZ="-3800" maxZ="-100">
+		<node X="10337" Y="-21800" />
+		<node X="5695" Y="-22468" />
+		<node X="4271" Y="-21870" />
+		<node X="2717" Y="-19828" />
+		<node X="1589" Y="-16897" />
+		<node X="1307" Y="-13449" />
+		<node X="1213" Y="-8834" />
+		<node X="1771" Y="-7742" />
+		<node X="2057" Y="-6618" />
+		<node X="3174" Y="-5815" />
+		<node X="3762" Y="-5277" />
+		<node X="7720" Y="-5092" />
+		<node X="8465" Y="-5373" />
+		<node X="11239" Y="-6041" />
+		<node X="11893" Y="-6770" />
+		<node X="10926" Y="-17908" />
+		<node X="11477" Y="-20108" />
+		<node X="10129" Y="-22459" />
+	</zone>
+	<zone name="primeval_no_pvp_2" type="NoPvPZone" shape="NPoly" minZ="-2500" maxZ="-40">
+		<node X="30846" Y="-15683" />
+		<node X="30243" Y="-12018" />
+		<node X="26134" Y="-4372" />
+		<node X="16053" Y="-3494" />
+		<node X="12105" Y="-6801" />
+		<node X="12343" Y="-20901" />
+		<node X="12857" Y="-21098" />
+		<node X="12857" Y="-21098" />
+		<node X="20607" Y="-23832" />
+		<node X="27355" Y="-22816" />
+		<node X="30819" Y="-17801" />
+	</zone>
+</list>

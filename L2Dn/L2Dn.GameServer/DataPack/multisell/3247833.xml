@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Talisman -->
+	<item>
+		<!-- Adena -->
+		<ingredient count="2000000" id="57" />
+		<!-- Talisman of Speed -->
+		<production count="1" id="92403" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2000" id="57" />
+		<!-- Scroll: Enchant Talisman of Speed -->
+		<production count="1" id="92402" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1500000" id="57" />
+		<!-- Venir's Talisman Lv. 1 -->
+		<production count="1" id="91077" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2000000" id="57" />
+		<!-- Venir's Talisman Fragment -->
+		<production count="1" id="91076" />
+	</item>
+</list>

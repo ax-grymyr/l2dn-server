@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Special Armor A-Grade -->
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Helmet of Mana Sealed -->
+		<production count="1" id="94084" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Boots of Evasion Sealed -->
+		<production count="1" id="94086" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Ice Crystal Breastplate Sealed -->
+		<production count="1" id="93141" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Ice Crystal Gaiters Sealed -->
+		<production count="1" id="93142" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Leather Armor of Lightning Sealed -->
+		<production count="1" id="93317" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Leather Leggings of Lightning Sealed -->
+		<production count="1" id="93318" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Flaming Tunic Sealed -->
+		<production count="1" id="93735" />
+	</item>
+	<item>
+		<!-- Special Armor Coupon -->
+		<ingredient count="1" id="93930" />
+		<!-- Flaming Stockings Sealed -->
+		<production count="1" id="93736" />
+	</item>
+</list>

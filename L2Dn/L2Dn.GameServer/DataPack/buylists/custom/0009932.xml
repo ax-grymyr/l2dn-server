@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="6645" price="0" /> <!-- Beast Soulshot -->
+	<item id="6646" price="0" /> <!-- Beast Spiritshot -->
+	<item id="93966" price="0" /> <!-- Pet Food -->
+	<item id="93967" price="0" /> <!-- Pet's HP Potion -->
+	<item id="94096" price="0" /> <!-- Regular Pet Training Guide -->
+	<item id="94117" price="0" /> <!-- Advanced Pet Training Guide -->
+</list>

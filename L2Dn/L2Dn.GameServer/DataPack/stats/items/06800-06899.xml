@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="6835" name="Circlet of Dion" additionalName="Sealed" type="Armor">
+		<!-- A circlet decorated with a torch. Can be worn by the lord of Dion Castle and their clan members but not by allies. Enables Residential Skills when equipped. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pledge_cap1_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="2" />
+				<player pledgeClass="2" /> <!-- Heir -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
+		</skills>
+	</item>
+	<item id="6837" name="Circlet of Oren" additionalName="Sealed" type="Armor">
+		<!-- A circlet decorated with a tower. Can be worn by the lord of Oren Castle and their clan members but not by allies. Enables Residential Skills when equipped. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pledge_cap1_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="4" />
+				<player pledgeClass="2" /> <!-- Heir -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
+		</skills>
+	</item>
+	<item id="6838" name="Circlet of Gludio" additionalName="Sealed" type="Armor">
+		<!-- A circlet decorated with three swords. Can be worn by the lord of Gludio Castle and their clan members but not by allies. Enables Residential Skills when equipped. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pledge_cap1_i05" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="1" />
+				<player pledgeClass="2" /> <!-- Heir -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
+		</skills>
+	</item>
+	<item id="6839" name="Circlet of Giran" additionalName="Sealed" type="Armor">
+		<!-- A circlet decorated with a cross. Can be worn by the lord of Giran Castle and their clan members but not by allies. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pledge_cap1_i06" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="3" />
+				<player pledgeClass="2" /> <!-- Heir -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
+		</skills>
+	</item>
+	<item id="6840" name="Circlet of Aden" additionalName="Sealed" type="Armor">
+		<!-- A circlet decorated with a lion head. Can be worn by the lord of Aden Castle and their clan members but not by allies. Enables Residential Skills when equipped. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_pledge_cap2_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="5" />
+				<player pledgeClass="2" /> <!-- Heir -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3633" level="2" /> <!-- Residential Stun Immunity -->
+		</skills>
+	</item>
+	<item id="6841" name="Lord's Crown" additionalName="Sealed" type="Armor">
+		<!-- A headdress worn by monarchs. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_crown_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_clan_leader;1}}" />
+		<cond msgId="1518">
+			<and>
+				<player castle="-1" />
+				<player pledgeClass="-1" /> <!-- Clan Leader -->
+			</and>
+		</cond>
+		<skills>
+			<skill id="3632" level="1" /> <!-- Clan Gate -->
+		</skills>
+	</item>
+	<item id="6842" name="Wings of Destiny Circlet" additionalName="Sealed" type="Armor">
+		<!-- A head accessory worn exclusively by Heroes. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_hero_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="1518">
+			<player isHero="true" />
+		</cond>
+	</item>
+	<item id="6843" name="Cat Ears" additionalName="Sealed" type="Armor">
+		<!-- A head accessory shaped like cat ears. <font color=eeaa22>Available after unlocking the right head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="6845" name="Pirate's Eyepatch" additionalName="Sealed" type="Armor">
+		<!-- An eyepatch. Can be used for teleportation to the Devil's Isle. Cooldown: 2 h. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_eye_bandage_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="6847" name="Recipe: Sealed Tateossian Earring (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Tateossian Earring. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="74000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="646" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6849" name="Recipe: Sealed Tateossian Ring (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Tateossian Ring. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="49400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="648" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6851" name="Recipe: Sealed Tateossian Necklace (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Tateossian Necklace. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="98800" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="650" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6853" name="Recipe: Sealed Imperial Crusader Breastplate (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Breastplate. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="286000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="652" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6855" name="Recipe: Sealed Imperial Crusader Gaiters (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Gaiters. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="179200" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="654" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6857" name="Recipe: Sealed Imperial Crusader Gauntlets (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Gauntlets. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="656" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6859" name="Recipe: Sealed Imperial Crusader Boots (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Boots. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="658" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6861" name="Recipe: Sealed Imperial Crusader Shield (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Shield. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="75200" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="660" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6863" name="Recipe: Sealed Imperial Crusader Helmet (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Helmet. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="662" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6865" name="Recipe: Sealed Draconic Leather Armor (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Draconic Leather Armor. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="348000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="664" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6867" name="Recipe: Sealed Draconic Leather Gloves (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Draconic Leather Gloves. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="666" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6869" name="Recipe: Sealed Draconic Leather Boots (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Draconic Leather Boots. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="668" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6871" name="Recipe: Sealed Draconic Leather Helmet (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Imperial Crusader Helmet. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="670" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6873" name="Recipe: Sealed Major Arcana Robe (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Major Arcana Robe. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="348000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="672" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6875" name="Recipe: Sealed Major Arcana Gloves (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Major Arcana Gloves. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="674" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6877" name="Recipe: Sealed Major Arcana Boots (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Major Arcana Boots. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="676" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6879" name="Recipe: Sealed Major Arcana Circlet (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Sealed Major Arcana Circlet. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="678" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6881" name="Recipe: Forgotten Blade (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Forgotten Blade. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="626" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6883" name="Recipe: Basalt Battlehammer (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Basalt Battlehammer. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="628" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6885" name="Recipe: Imperial Staff (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Imperial Staff. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="630" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6887" name="Recipe: Angel Slayer (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Angel Slayer. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="632" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6891" name="Recipe: Dragon Hunter Axe (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Dragon Hunter Axe. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="636" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6893" name="Recipe: Saint Spear (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Saint Spear. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="638" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6895" name="Recipe: Demon Splinter (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Demon Splinter. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="640" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6897" name="Recipe: Heaven's Divider (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Heaven's Divider. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="642" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6899" name="Recipe: Arcana Mace (30%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Arcana Mace. Requires Create Item Lv. 9. The success rate is 30%. -->
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="644" />
+		<set name="handler" val="Recipes" />
+	</item>
+</list>

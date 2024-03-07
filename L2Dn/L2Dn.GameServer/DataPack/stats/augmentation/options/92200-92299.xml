@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="92200" name="option_id_92200">
+		<!-- Received damage -1.2% -->
+	</option>
+	<option id="92201" name="option_id_92201">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="92202" name="option_id_92202">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="92203" name="option_id_92203">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="92204" name="option_id_92204">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="92205" name="option_id_92205">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="92206" name="option_id_92206">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="92207" name="option_id_92207">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="92208" name="option_id_92208">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="92209" name="option_id_92209">
+		<!-- Received damage -1.7% -->
+	</option>
+	<option id="92210" name="option_id_92210">
+		<!-- Received damage -1.8% -->
+	</option>
+	<option id="92211" name="option_id_92211">
+		<!-- Received damage -1.9% -->
+	</option>
+	<option id="92212" name="option_id_92212">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="92213" name="option_id_92213">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="92214" name="option_id_92214">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="92215" name="option_id_92215">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="92216" name="option_id_92216">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="92217" name="option_id_92217">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="92218" name="option_id_92218">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="92219" name="option_id_92219">
+		<!-- Received damage -1.2% -->
+	</option>
+	<option id="92220" name="option_id_92220">
+		<!-- Received damage -1.2% -->
+	</option>
+	<option id="92221" name="option_id_92221">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="92222" name="option_id_92222">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="92223" name="option_id_92223">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="92224" name="option_id_92224">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="92225" name="option_id_92225">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="92226" name="option_id_92226">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="92227" name="option_id_92227">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="92228" name="option_id_92228">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="92229" name="option_id_92229">
+		<!-- Received damage -1.7% -->
+	</option>
+	<option id="92230" name="option_id_92230">
+		<!-- Received damage -1.8% -->
+	</option>
+	<option id="92231" name="option_id_92231">
+		<!-- Received damage -1.9% -->
+	</option>
+	<option id="92232" name="option_id_92232">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="92233" name="option_id_92233">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="92234" name="option_id_92234">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="92235" name="option_id_92235">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="92236" name="option_id_92236">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="92237" name="option_id_92237">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="92238" name="option_id_92238">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="92239" name="option_id_92239">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="92240" name="option_id_92240">
+		<!-- Received Healing +2.1% -->
+	</option>
+	<option id="92241" name="option_id_92241">
+		<!-- Received Healing +2.2% -->
+	</option>
+	<option id="92242" name="option_id_92242">
+		<!-- Received Healing +2.3% -->
+	</option>
+	<option id="92243" name="option_id_92243">
+		<!-- Received Healing +2.4% -->
+	</option>
+	<option id="92244" name="option_id_92244">
+		<!-- Received Healing +2.5% -->
+	</option>
+	<option id="92245" name="option_id_92245">
+		<!-- Received Healing +2.6% -->
+	</option>
+	<option id="92246" name="option_id_92246">
+		<!-- Received Healing +2.7% -->
+	</option>
+	<option id="92247" name="option_id_92247">
+		<!-- Received Healing +2.8% -->
+	</option>
+	<option id="92248" name="option_id_92248">
+		<!-- Received Healing +2.9% -->
+	</option>
+	<option id="92249" name="option_id_92249">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="92250" name="option_id_92250">
+		<!-- Received Healing +3.1% -->
+	</option>
+	<option id="92251" name="option_id_92251">
+		<!-- Received Healing +3.2% -->
+	</option>
+	<option id="92252" name="option_id_92252">
+		<!-- Received Healing +3.3% -->
+	</option>
+	<option id="92253" name="option_id_92253">
+		<!-- Received Healing +3.5% -->
+	</option>
+	<option id="92254" name="option_id_92254">
+		<!-- Received Healing +3.7% -->
+	</option>
+	<option id="92255" name="option_id_92255">
+		<!-- Received Healing +3.9% -->
+	</option>
+	<option id="92256" name="option_id_92256">
+		<!-- Received Healing +4.1% -->
+	</option>
+	<option id="92257" name="option_id_92257">
+		<!-- Received Healing +4.3% -->
+	</option>
+	<option id="92258" name="option_id_92258">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="92259" name="option_id_92259">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="92260" name="option_id_92260">
+		<!-- Received Healing +2.1% -->
+	</option>
+	<option id="92261" name="option_id_92261">
+		<!-- Received Healing +2.2% -->
+	</option>
+	<option id="92262" name="option_id_92262">
+		<!-- Received Healing +2.3% -->
+	</option>
+	<option id="92263" name="option_id_92263">
+		<!-- Received Healing +2.4% -->
+	</option>
+	<option id="92264" name="option_id_92264">
+		<!-- Received Healing +2.5% -->
+	</option>
+	<option id="92265" name="option_id_92265">
+		<!-- Received Healing +2.6% -->
+	</option>
+	<option id="92266" name="option_id_92266">
+		<!-- Received Healing +2.7% -->
+	</option>
+	<option id="92267" name="option_id_92267">
+		<!-- Received Healing +2.8% -->
+	</option>
+	<option id="92268" name="option_id_92268">
+		<!-- Received Healing +2.9% -->
+	</option>
+	<option id="92269" name="option_id_92269">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="92270" name="option_id_92270">
+		<!-- Received Healing +3.1% -->
+	</option>
+	<option id="92271" name="option_id_92271">
+		<!-- Received Healing +3.2% -->
+	</option>
+	<option id="92272" name="option_id_92272">
+		<!-- Received Healing +3.3% -->
+	</option>
+	<option id="92273" name="option_id_92273">
+		<!-- Received Healing +3.5% -->
+	</option>
+	<option id="92274" name="option_id_92274">
+		<!-- Received Healing +3.7% -->
+	</option>
+	<option id="92275" name="option_id_92275">
+		<!-- Received Healing +3.9% -->
+	</option>
+	<option id="92276" name="option_id_92276">
+		<!-- Received Healing +4.1% -->
+	</option>
+	<option id="92277" name="option_id_92277">
+		<!-- Received Healing +4.3% -->
+	</option>
+	<option id="92278" name="option_id_92278">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="92279" name="option_id_92279">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="92280" name="option_id_92280">
+		<!-- Received Healing +2.1% -->
+	</option>
+	<option id="92281" name="option_id_92281">
+		<!-- Received Healing +2.2% -->
+	</option>
+	<option id="92282" name="option_id_92282">
+		<!-- Received Healing +2.3% -->
+	</option>
+	<option id="92283" name="option_id_92283">
+		<!-- Received Healing +2.4% -->
+	</option>
+	<option id="92284" name="option_id_92284">
+		<!-- Received Healing +2.5% -->
+	</option>
+	<option id="92285" name="option_id_92285">
+		<!-- Received Healing +2.6% -->
+	</option>
+	<option id="92286" name="option_id_92286">
+		<!-- Received Healing +2.7% -->
+	</option>
+	<option id="92287" name="option_id_92287">
+		<!-- Received Healing +2.8% -->
+	</option>
+	<option id="92288" name="option_id_92288">
+		<!-- Received Healing +2.9% -->
+	</option>
+	<option id="92289" name="option_id_92289">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="92290" name="option_id_92290">
+		<!-- Received Healing +3.1% -->
+	</option>
+	<option id="92291" name="option_id_92291">
+		<!-- Received Healing +3.2% -->
+	</option>
+	<option id="92292" name="option_id_92292">
+		<!-- Received Healing +3.3% -->
+	</option>
+	<option id="92293" name="option_id_92293">
+		<!-- Received Healing +3.5% -->
+	</option>
+	<option id="92294" name="option_id_92294">
+		<!-- Received Healing +3.7% -->
+	</option>
+	<option id="92295" name="option_id_92295">
+		<!-- Received Healing +3.9% -->
+	</option>
+	<option id="92296" name="option_id_92296">
+		<!-- Received Healing +4.1% -->
+	</option>
+	<option id="92297" name="option_id_92297">
+		<!-- Received Healing +4.3% -->
+	</option>
+	<option id="92298" name="option_id_92298">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="92299" name="P. Atk. +60">
+		<!-- P. Atk. +60 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

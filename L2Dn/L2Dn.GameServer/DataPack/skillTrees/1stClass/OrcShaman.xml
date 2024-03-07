@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="50" parentClassId="49">
+		<skill skillName="Life Drain" skillId="1090" skillLevel="6" getLevel="20" levelUpSp="60" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="7" getLevel="24" levelUpSp="230" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="8" getLevel="28" levelUpSp="570" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="9" getLevel="32" levelUpSp="570" />
+		<skill skillName="Life Drain" skillId="1090" skillLevel="10" getLevel="36" levelUpSp="1300" />
+		<skill skillName="Fear" skillId="1092" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Fear" skillId="1092" skillLevel="3" getLevel="25" levelUpSp="230" />
+		<skill skillName="Fear" skillId="1092" skillLevel="4" getLevel="30" levelUpSp="570" />
+		<skill skillName="Fear" skillId="1092" skillLevel="5" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Wild Magic" skillId="1413" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Venom" skillId="1095" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="2" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="4" getLevel="25" levelUpSp="230" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="5" getLevel="30" levelUpSp="570" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="6" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="2" getLevel="22" levelUpSp="230" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="3" getLevel="26" levelUpSp="230" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="4" getLevel="30" levelUpSp="570" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="5" getLevel="34" levelUpSp="1300" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="1" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Life" skillId="1229" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Life" skillId="1229" skillLevel="2" getLevel="25" levelUpSp="230" />
+		<skill skillName="Chant of Life" skillId="1229" skillLevel="3" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Life" skillId="1229" skillLevel="4" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Blaze Quake" skillId="1101" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Blaze Quake" skillId="1101" skillLevel="2" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Magic Barrier" skillId="1549" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Aura Sink" skillId="1102" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Aura Sink" skillId="1102" skillLevel="2" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Madness" skillId="1105" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Madness" skillId="1105" skillLevel="2" getLevel="25" levelUpSp="230" />
+		<skill skillName="Madness" skillId="1105" skillLevel="3" getLevel="30" levelUpSp="570" />
+		<skill skillName="Madness" skillId="1105" skillLevel="4" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Clarity" skillId="45138" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Clarity" skillId="45138" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Frost Flame" skillId="1107" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Frost Flame" skillId="1107" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Quick HP Recovery" skillId="212" skillLevel="1" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Mana Boost" skillId="213" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Focus" skillId="1308" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Focus" skillId="1308" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Haste" skillId="1251" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Quick Recovery" skillId="164" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Quick Recovery" skillId="164" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Fast Spellcasting" skillId="228" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="4" getLevel="20" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="5" getLevel="20" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="6" getLevel="21" levelUpSp="60" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="7" getLevel="22" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="8" getLevel="23" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="9" getLevel="24" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="10" getLevel="25" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="11" getLevel="26" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="12" getLevel="27" levelUpSp="230" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="13" getLevel="28" levelUpSp="570" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="14" getLevel="29" levelUpSp="570" />
+		<skill skillName="Shock Mastery" skillId="100" skillLevel="15" getLevel="30" levelUpSp="570" />
+		<skill skillName="Quick Mana Recovery" skillId="229" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Quick Mana Recovery" skillId="229" skillLevel="2" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Death Whisper" skillId="1253" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Death Whisper" skillId="1253" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="1" getLevel="21" levelUpSp="60" />
+		<skill skillName="Battle Cry" skillId="1001" skillLevel="3" getLevel="25" levelUpSp="230" />
+		<skill skillName="Battle Cry" skillId="1001" skillLevel="4" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Acumen" skillId="1002" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Acumen" skillId="1002" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Eagle Spirit" skillId="1003" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Eagle Spirit" skillId="1003" skillLevel="3" getLevel="30" levelUpSp="570" />
+		<skill skillName="Soul Evasion" skillId="1005" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Soul Evasion" skillId="1005" skillLevel="3" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Berserker Spirit" skillId="1261" skillLevel="1" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Empower" skillId="1006" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Empower" skillId="1006" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Chant of Might" skillId="1007" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Shield" skillId="1009" skillLevel="2" getLevel="20" levelUpSp="60" />
+		<skill skillName="Spirit Shield" skillId="1010" skillLevel="2" getLevel="25" levelUpSp="230" />
+		<skill skillName="Spirit Shield" skillId="1010" skillLevel="3" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="1" getLevel="25" levelUpSp="230" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="3" getLevel="35" levelUpSp="1300" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Venom Seal" skillId="1209" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Venom Seal" skillId="1209" skillLevel="2" getLevel="30" levelUpSp="570" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="4" getLevel="23" levelUpSp="230" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="5" getLevel="25" levelUpSp="230" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="6" getLevel="28" levelUpSp="570" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="7" getLevel="30" levelUpSp="570" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="8" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="9" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="5" getLevel="20" levelUpSp="60" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="6" getLevel="20" levelUpSp="60" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="7" getLevel="23" levelUpSp="230" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="8" getLevel="25" levelUpSp="230" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="9" getLevel="28" levelUpSp="570" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="10" getLevel="30" levelUpSp="570" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="11" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Robe Mastery" skillId="251" skillLevel="12" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="5" getLevel="20" levelUpSp="60" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="6" getLevel="20" levelUpSp="60" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="7" getLevel="23" levelUpSp="230" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="8" getLevel="25" levelUpSp="230" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="9" getLevel="28" levelUpSp="570" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="10" getLevel="30" levelUpSp="570" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="11" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Light Armor Mastery" skillId="252" skillLevel="12" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="3" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="4" getLevel="20" levelUpSp="60" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="5" getLevel="23" levelUpSp="230" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="6" getLevel="25" levelUpSp="230" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="7" getLevel="28" levelUpSp="570" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="8" getLevel="30" levelUpSp="570" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="9" getLevel="33" levelUpSp="1300" />
+		<skill skillName="Heavy Armor Mastery" skillId="253" skillLevel="10" getLevel="35" levelUpSp="1300" />
+		<skill skillName="Chant of Wind Walk" skillId="1535" skillLevel="1" getLevel="20" levelUpSp="60" />
+		<skill skillName="Chant of Wind Walk" skillId="1535" skillLevel="2" getLevel="30" levelUpSp="570" />
+	</skillTree>
+</list>

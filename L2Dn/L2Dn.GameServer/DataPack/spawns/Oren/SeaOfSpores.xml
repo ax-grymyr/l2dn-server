@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_01" minZ="-3868" maxZ="-3468">
+				<node x="59528" y="9936" />
+				<node x="61888" y="9412" />
+				<node x="63172" y="10616" />
+				<node x="62360" y="12392" />
+				<node x="60624" y="13384" />
+			</territory>
+		</territories>
+		<npc id="20555" count="36" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="36" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="36" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_02" minZ="-5172" maxZ="-3472">
+				<node x="56496" y="10896" />
+				<node x="59492" y="9944" />
+				<node x="60596" y="13416" />
+				<node x="58804" y="13868" />
+			</territory>
+		</territories>
+		<npc id="20558" count="30" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20556" count="36" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="36" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_03" minZ="-5924" maxZ="-4524">
+				<node x="53868" y="12532" />
+				<node x="56428" y="10868" />
+				<node x="58548" y="13564" />
+				<node x="54968" y="14544" />
+			</territory>
+			<banned_territory name="oren14_2118_03b" minZ="-5600" maxZ="-2600">
+				<node x="56688" y="11387" />
+				<node x="57400" y="11593" />
+				<node x="56632" y="13254" />
+				<node x="56079" y="12724" />
+				<node x="56702" y="12196" />
+			</banned_territory>
+		</territories>
+		<npc id="20558" count="36" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="36" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20561" count="36" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_04" minZ="-5916" maxZ="-5216">
+				<node x="53856" y="12508" />
+				<node x="54944" y="14568" />
+				<node x="52824" y="15256" />
+				<node x="50560" y="15236" />
+				<node x="50724" y="14280" />
+			</territory>
+		</territories>
+		<npc id="20560" count="30" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="30" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="30" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_05" minZ="-5552" maxZ="-5052">
+				<node x="48768" y="16688" />
+				<node x="52072" y="16432" />
+				<node x="52568" y="18248" />
+				<node x="48896" y="17520" />
+			</territory>
+		</territories>
+		<npc id="20560" count="21" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="30" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_06" minZ="-5588" maxZ="-5188">
+				<node x="52060" y="16388" />
+				<node x="56240" y="16508" />
+				<node x="56280" y="18740" />
+				<node x="52564" y="18276" />
+			</territory>
+		</territories>
+		<npc id="20558" count="36" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="30" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20561" count="30" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_07" minZ="-5556" maxZ="-3956">
+				<node x="56228" y="16524" />
+				<node x="60536" y="16212" />
+				<node x="61068" y="18472" />
+				<node x="56260" y="18652" />
+			</territory>
+			<banned_territory name="oren14_2118_07b" minZ="-5319" maxZ="-2319">
+				<node x="57936" y="16177" />
+				<node x="60198" y="16863" />
+				<node x="60135" y="17475" />
+				<node x="57619" y="17029" />
+			</banned_territory>
+		</territories>
+		<npc id="20556" count="36" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="36" respawnTime="3sec" /> <!-- Dire Wyrm -->
+		<npc id="20558" count="36" respawnTime="3sec" /> <!-- Rotting Tree -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_08" minZ="-4157" maxZ="-3557">
+				<node x="60100" y="13656" />
+				<node x="61080" y="13172" />
+				<node x="62012" y="17604" />
+				<node x="61136" y="18552" />
+			</territory>
+		</territories>
+		<npc id="20555" count="30" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="21" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="30" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_09" minZ="-3728" maxZ="-2928">
+				<node x="63796" y="15776" />
+				<node x="64480" y="16044" />
+				<node x="64040" y="17180" />
+				<node x="61308" y="19628" />
+				<node x="61184" y="18572" />
+			</territory>
+		</territories>
+		<npc id="20555" count="21" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="21" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="21" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_10" minZ="-4208" maxZ="-3608">
+				<node x="61248" y="19656" />
+				<node x="63116" y="19532" />
+				<node x="64212" y="20056" />
+				<node x="62832" y="23152" />
+				<node x="61972" y="23316" />
+			</territory>
+		</territories>
+		<npc id="20555" count="30" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="30" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="21" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_11" minZ="-5340" maxZ="-3740">
+				<node x="58448" y="19860" />
+				<node x="61192" y="19428" />
+				<node x="61976" y="23336" />
+				<node x="57884" y="22808" />
+			</territory>
+			<banned_territory name="oren14_2118_11b" minZ="-5032" maxZ="-3232">
+				<node x="59586" y="21873" />
+				<node x="61146" y="22335" />
+				<node x="60949" y="23054" />
+				<node x="59361" y="22451" />
+			</banned_territory>
+		</territories>
+		<npc id="20556" count="36" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="36" respawnTime="3sec" /> <!-- Dire Wyrm -->
+		<npc id="20558" count="45" respawnTime="3sec" /> <!-- Rotting Tree -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_12" minZ="-5628" maxZ="-5028">
+				<node x="53804" y="19808" />
+				<node x="58400" y="19828" />
+				<node x="57812" y="22836" />
+				<node x="52852" y="21648" />
+			</territory>
+		</territories>
+		<npc id="20558" count="51" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="36" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20561" count="45" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_13" minZ="-5600" maxZ="-5300">
+				<node x="49708" y="19600" />
+				<node x="53764" y="19784" />
+				<node x="52804" y="21624" />
+				<node x="49636" y="20300" />
+			</territory>
+		</territories>
+		<npc id="20560" count="21" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="30" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_14" minZ="-5572" maxZ="-5372">
+				<node x="48352" y="21928" />
+				<node x="51832" y="22652" />
+				<node x="51044" y="23760" />
+				<node x="48280" y="22376" />
+			</territory>
+		</territories>
+		<npc id="20560" count="15" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="21" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_15" minZ="-5576" maxZ="-5176">
+				<node x="51812" y="22672" />
+				<node x="54696" y="23820" />
+				<node x="54464" y="25180" />
+				<node x="51068" y="23732" />
+			</territory>
+		</territories>
+		<npc id="20558" count="21" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="15" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_16" minZ="-5484" maxZ="-4884">
+				<node x="54700" y="23840" />
+				<node x="57924" y="24696" />
+				<node x="56388" y="26516" />
+				<node x="54472" y="25148" />
+			</territory>
+		</territories>
+		<npc id="20558" count="21" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="21" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20556" count="21" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_17" minZ="-5188" maxZ="-3988">
+				<node x="57944" y="24672" />
+				<node x="60988" y="25328" />
+				<node x="59684" y="27540" />
+				<node x="56924" y="25960" />
+			</territory>
+			<banned_territory name="oren14_2118_17b" minZ="-5164" maxZ="-3364">
+				<node x="57354" y="25916" />
+				<node x="58722" y="25254" />
+				<node x="59148" y="25853" />
+				<node x="57297" y="26447" />
+			</banned_territory>
+		</territories>
+		<npc id="20556" count="30" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="21" respawnTime="3sec" /> <!-- Dire Wyrm -->
+		<npc id="20558" count="30" respawnTime="3sec" /> <!-- Rotting Tree -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_18" minZ="-3960" maxZ="-3760">
+				<node x="61960" y="23336" />
+				<node x="62872" y="23152" />
+				<node x="63488" y="24140" />
+				<node x="63104" y="25904" />
+				<node x="61164" y="25260" />
+			</territory>
+		</territories>
+		<npc id="20555" count="21" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="21" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="15" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_19" minZ="-3908" maxZ="-3708">
+				<node x="61436" y="25352" />
+				<node x="63112" y="25912" />
+				<node x="62568" y="27808" />
+				<node x="61608" y="29260" />
+				<node x="59860" y="28524" />
+			</territory>
+		</territories>
+		<npc id="20555" count="30" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="30" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="30" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_20" minZ="-3916" maxZ="-3716">
+				<node x="55896" y="30404" />
+				<node x="57844" y="29920" />
+				<node x="58780" y="30696" />
+				<node x="57924" y="31300" />
+				<node x="56568" y="31140" />
+			</territory>
+		</territories>
+		<npc id="20555" count="21" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="15" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="21" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_21" minZ="-3908" maxZ="-3708">
+				<node x="59884" y="28540" />
+				<node x="61616" y="29272" />
+				<node x="60628" y="30636" />
+				<node x="58792" y="30700" />
+				<node x="57824" y="29896" />
+			</territory>
+		</territories>
+		<npc id="20555" count="15" respawnTime="3sec" /> <!-- Giant Fungus -->
+		<npc id="20556" count="15" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="15" respawnTime="3sec" /> <!-- Dire Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_22" minZ="-5308" maxZ="-4408">
+				<node x="54852" y="28692" />
+				<node x="55884" y="27400" />
+				<node x="58012" y="28440" />
+				<node x="55944" y="29296" />
+			</territory>
+		</territories>
+		<npc id="20556" count="21" respawnTime="3sec" /> <!-- Giant Monster Eye -->
+		<npc id="20557" count="15" respawnTime="3sec" /> <!-- Dire Wyrm -->
+		<npc id="20558" count="15" respawnTime="3sec" /> <!-- Rotting Tree -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_23" minZ="-5296" maxZ="-4996">
+				<node x="53344" y="26608" />
+				<node x="55952" y="27268" />
+				<node x="54748" y="28772" />
+				<node x="53096" y="27504" />
+			</territory>
+		</territories>
+		<npc id="20557" count="15" respawnTime="3sec" /> <!-- Dire Wyrm -->
+		<npc id="20558" count="21" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="15" respawnTime="3sec" /> <!-- Rotting Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_24" minZ="-5268" maxZ="-4968">
+				<node x="51628" y="25932" />
+				<node x="53344" y="26620" />
+				<node x="53108" y="27492" />
+				<node x="51628" y="26564" />
+			</territory>
+		</territories>
+		<npc id="20558" count="15" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20559" count="15" respawnTime="3sec" /> <!-- Rotting Golem -->
+		<npc id="20560" count="15" respawnTime="3sec" /> <!-- Trisalim -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_25" minZ="-5148" maxZ="-4448">
+				<node x="49964" y="25308" />
+				<node x="50000" y="25708" />
+				<node x="49020" y="25880" />
+				<node x="47204" y="25156" />
+				<node x="46872" y="22660" />
+				<node x="49176" y="24460" />
+			</territory>
+		</territories>
+		<npc id="20560" count="21" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="21" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren14_2118_26" minZ="-5292" maxZ="-4592">
+				<node x="45472" y="21880" />
+				<node x="46876" y="22656" />
+				<node x="47184" y="25160" />
+				<node x="44224" y="25536" />
+				<node x="42872" y="24352" />
+			</territory>
+		</territories>
+		<npc id="20558" count="30" respawnTime="3sec" /> <!-- Rotting Tree -->
+		<npc id="20560" count="30" respawnTime="3sec" /> <!-- Trisalim -->
+		<npc id="20561" count="21" respawnTime="3sec" /> <!-- Trisalim Tarantula -->
+		<npc id="20562" count="30" respawnTime="3sec" /> <!-- Spore Zombie -->
+	</spawn>
+</list>

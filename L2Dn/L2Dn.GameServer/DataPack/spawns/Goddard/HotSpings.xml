@@ -1,0 +1,222 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="HotSprings_npcs">
+		<group>
+			<npc id="34319" x="149269" y="-112815" z="-2065" heading="4149" respawnTime="60sec" /> <!-- Grill - Assistant -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_01" minZ="-2488" maxZ="-1988">
+				<node x="146148" y="-112748" />
+				<node x="147924" y="-112696" />
+				<node x="147564" y="-111388" />
+				<node x="146972" y="-111108" />
+				<node x="145772" y="-112308" />
+			</territory>
+		</territories>
+		<npc id="22426" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_02" minZ="-2360" maxZ="-1860">
+				<node x="149640" y="-110584" />
+				<node x="147560" y="-111304" />
+			</territory>
+		</territories>
+		<npc id="22426" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_03" minZ="-2152" maxZ="-1652">
+				<node x="150500" y="-114412" />
+				<node x="150688" y="-113200" />
+				<node x="149388" y="-113392" />
+			</territory>
+		</territories>
+		<npc id="22426" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_04" minZ="-2368" maxZ="-1868">
+				<node x="150888" y="-113268" />
+				<node x="151508" y="-112100" />
+				<node x="150792" y="-111656" />
+				<node x="151360" y="-111128" />
+				<node x="149712" y="-110352" />
+			</territory>
+		</territories>
+		<npc id="22426" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_05" minZ="-1852" maxZ="-1252">
+				<node x="151344" y="-116188" />
+				<node x="151764" y="-116200" />
+				<node x="152752" y="-115520" />
+				<node x="151960" y="-114572" />
+				<node x="150932" y="-114628" />
+				<node x="150020" y="-114932" />
+				<node x="150128" y="-115316" />
+				<node x="150064" y="-116080" />
+				<node x="150764" y="-116256" />
+				<node x="151304" y="-115824" />
+			</territory>
+		</territories>
+		<npc id="22426" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="5" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_06" minZ="-1700" maxZ="-1500">
+				<node x="152764" y="-115500" />
+				<node x="153556" y="-115824" />
+				<node x="154696" y="-114488" />
+				<node x="153500" y="-113484" />
+				<node x="152984" y="-113640" />
+				<node x="152240" y="-112744" />
+				<node x="152032" y="-114452" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_07" minZ="-1976" maxZ="-1476">
+				<node x="154044" y="-117024" />
+				<node x="155684" y="-117636" />
+				<node x="158172" y="-117288" />
+				<node x="158876" y="-116500" />
+				<node x="158508" y="-115996" />
+				<node x="157408" y="-116664" />
+				<node x="156808" y="-116364" />
+				<node x="156616" y="-115328" />
+				<node x="154780" y="-114516" />
+				<node x="153620" y="-115816" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_08" minZ="-2048" maxZ="-1548">
+				<node x="154904" y="-114396" />
+				<node x="156584" y="-115220" />
+				<node x="157688" y="-114036" />
+				<node x="159012" y="-114868" />
+				<node x="159080" y="-113844" />
+				<node x="157596" y="-113064" />
+				<node x="156428" y="-112948" />
+				<node x="155552" y="-112332" />
+				<node x="154264" y="-112268" />
+				<node x="154172" y="-113752" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_09" minZ="-2872" maxZ="-2372">
+				<node x="153760" y="-110816" />
+				<node x="155792" y="-110832" />
+				<node x="156468" y="-110284" />
+				<node x="156468" y="-109152" />
+				<node x="154576" y="-107076" />
+				<node x="153092" y="-107508" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_10" minZ="-3064" maxZ="-2564">
+				<node x="154584" y="-106952" />
+				<node x="155300" y="-107552" />
+				<node x="155544" y="-106424" />
+				<node x="154572" y="-105540" />
+				<node x="155100" y="-103904" />
+				<node x="153616" y="-103080" />
+				<node x="151128" y="-103388" />
+				<node x="151496" y="-107464" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_11" minZ="-2824" maxZ="-2324">
+				<node x="156352" y="-108632" />
+				<node x="158836" y="-108988" />
+				<node x="159972" y="-107356" />
+				<node x="159124" y="-105612" />
+				<node x="157468" y="-104760" />
+				<node x="156928" y="-106276" />
+				<node x="155652" y="-106524" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_13" minZ="-3632" maxZ="-3132">
+				<node x="144404" y="-112400" />
+				<node x="145684" y="-110716" />
+				<node x="145744" y="-108632" />
+				<node x="142792" y="-108508" />
+				<node x="142496" y="-110660" />
+				<node x="143176" y="-111644" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="3" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="HotSprings_spot_14" minZ="-3868" maxZ="-3368">
+				<node x="139792" y="-108988" />
+				<node x="142692" y="-108480" />
+				<node x="142988" y="-106536" />
+				<node x="141468" y="-105676" />
+				<node x="139844" y="-106452" />
+				<node x="138704" y="-108304" />
+			</territory>
+		</territories>
+		<npc id="22426" count="1" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Warrior -->
+		<npc id="22427" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Hunter -->
+		<npc id="22428" count="4" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Berserker -->
+		<npc id="22429" count="2" respawnTime="70sec" respawnRandom="40sec" /> <!-- Tailed Wizard -->
+	</spawn>
+</list>

@@ -1,0 +1,3390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="24000" level="82" type="Monster" name="Leona Blackbird" title="Dragon Agent">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="98" />
+		<acquire exp="5480" sp="54" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="74539.8579996914" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.095476" magical="280.332636" />
+			<speed>
+				<walk ground="64" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<ai aggroRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="9.5" />
+			<height normal="22.4" />
+		</collision>
+	</npc>
+	<npc id="24001" level="82" type="Monster" name="Kain van Halter" title="Prince of the Second Dimension">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<equipment rhand="5233" />
+		<acquire exp="5480" sp="54" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="74539.8579996914" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.095476" magical="280.332636" />
+			<speed>
+				<walk ground="64" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="9" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="24002" level="83" type="Monster" name="Queen Ant" title="Ant Nest's Heir">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BUG</race>
+		<sex>FEMALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="166641.783262986" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54146" magical="284.317788" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="45" />
+			<height normal="53" />
+		</collision>
+	</npc>
+	<npc id="24003" level="83" type="Monster" name="Escort Ant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60597.0120956315" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54146" magical="284.317788" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>260</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="26" />
+			<height normal="15" />
+		</collision>
+	</npc>
+	<npc id="24004" level="83" type="Monster" name="Royal Guard Ant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60597.0120956315" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54146" magical="284.317788" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>260</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="26" />
+			<height normal="15" />
+		</collision>
+	</npc>
+	<npc id="24005" level="83" type="Monster" name="Urfen" title="Orfen Kin">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>FAIRY</race>
+		<sex>FEMALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="184605.139015794" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>710</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="13" /> <!-- Fairies -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="30" />
+			<height normal="53" />
+		</collision>
+	</npc>
+	<npc id="24006" level="83" type="Monster" name="Laikel">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69226.9271309226" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="18.5" />
+			<height normal="30.5" />
+		</collision>
+	</npc>
+	<npc id="24007" level="83" type="Monster" name="Riba">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BUG</race>
+		<sex>FEMALE</sex>
+		<acquire exp="5504" sp="48" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69226.9271309226" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="12.5" />
+			<height normal="34.5" />
+		</collision>
+	</npc>
+	<npc id="24008" level="84" type="Monster" name="Zaken" title="Unworldly Pirate King">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="207680.781392768" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="42" />
+				<run ground="180" />
+			</speed>
+			<hitTime>590</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="16" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="24009" level="84" type="Monster" name="Zaken" title="Unworldly Pirate King">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="207680.781392768" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="42" />
+				<run ground="180" />
+			</speed>
+			<hitTime>590</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="16" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="24010" level="84" type="Monster" name="Pirate Zombie Captain">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76918.8079232474" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="14" />
+				<run ground="180" />
+			</speed>
+			<hitTime>760</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="17" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="24011" level="84" type="Monster" name="Pirate Zombie">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76918.8079232474" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="856.44055895414" magical="584.837886935576" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="393.924876" magical="288.257124" />
+			<speed>
+				<walk ground="11" />
+				<run ground="180" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="24012" level="84" type="Monster" name="Saium" title="Relative of the Emperor">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="234166.319923264" hpRegen="8.5" mp="1607.4" mpRegen="3" />
+			<attack physical="890.50085998804" magical="608.096657928153" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="399.240732" magical="292.147044" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="26" />
+			<height normal="67.8" />
+		</collision>
+	</npc>
+	<npc id="24013" level="84" type="Monster" name="Traitor Angel">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" />
+		<acquire exp="5532" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="78055.4399744213" hpRegen="8.5" mp="1607.4" mpRegen="3" />
+			<attack physical="890.50085998804" magical="608.096657928153" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="399.240732" magical="292.147044" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>760</hitTime>
+			<abnormalResist physical="0" magical="0" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="37.5" />
+		</collision>
+	</npc>
+	<npc id="24014" level="62" type="Monster" name="Vanor" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="5958" sp="58" attributeExp="22" />
+		<equipment rhand="160" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5288.1763" hpRegen="7.5" mp="1517.88210582205" mpRegen="2.7" />
+			<attack physical="603.79903" magical="412.31647" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="276.72752" magical="202.49719" />
+			<speed>
+				<walk ground="36" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="4086" level="1" /> <!-- Critical Chance -->
+			<skill id="4071" level="1" /> <!-- Bow Resistance -->
+			<skill id="5620" level="3" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<collision>
+			<radius normal="15.6" />
+			<height normal="37.8" />
+		</collision>
+		<dropLists>
+			<drop>
+				<item id="57" min="127" max="140" chance="70" /> <!-- Adena -->
+				<item id="3031" min="1" max="1" chance="1.171" /> <!-- Spirit Ore - Sealed -->
+				<item id="92569" min="1" max="1" chance="0.019" /> <!-- Forgotten Boots Pattern -->
+				<item id="92573" min="1" max="1" chance="0.002" /> <!-- Full Plate Armor Temper -->
+				<item id="92682" min="1" max="1" chance="0.001" /> <!-- Fisted Blade Piece -->
+				<item id="92687" min="1" max="1" chance="0.0008" /> <!-- Samurai Long Sword Blade -->
+				<item id="92730" min="1" max="1" chance="0.019" /> <!-- Demon's Boot Fabric -->
+				<item id="135" min="1" max="1" chance="0.0002" /> <!-- Samurai Long Sword -->
+				<item id="265" min="1" max="1" chance="0.0003" /> <!-- Fisted Blade -->
+				<item id="356" min="1" max="1" chance="0.0007" /> <!-- Full Plate Armor -->
+				<item id="1127" min="1" max="1" chance="0.006" /> <!-- Forgotten Boots -->
+				<item id="2435" min="1" max="1" chance="0.006" /> <!-- Demon's Boots -->
+				<item id="91896" min="1" max="1" chance="0.0002" /> <!-- Admiral's Estoc -->
+			</drop>
+			<spoil>
+				<item id="2227" min="1" max="1" chance="0.052" /> <!-- Recipe: Forgotten Boots (100%) -->
+				<item id="2231" min="1" max="1" chance="0.006" /> <!-- Recipe: Full Plate Armor (100%) -->
+				<item id="2346" min="1" max="1" chance="0.003" /> <!-- Recipe: Fisted Blade (100%) -->
+				<item id="2353" min="1" max="1" chance="0.002" /> <!-- Recipe: Samurai Long Sword (100%) -->
+				<item id="3005" min="1" max="1" chance="0.052" /> <!-- Recipe: Demon's Boots (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="24015" level="76" type="Monster" name="Barif Camrin">
+		<race>CONSTRUCT</race>
+		<acquire exp="5187" sp="46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6312.196" hpRegen="17" mp="2311.2" mpRegen="6" />
+			<attack physical="13190.75" magical="6755.68" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="932.499504" magical="511.7720184" />
+			<speed>
+				<walk ground="80" />
+				<run ground="170" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="24016" level="78" type="Monster" name="Degraded Lesser Giant Commander">
+		<race>GIANT</race>
+		<acquire exp="5317" sp="49" />
+		<equipment rhand="3937" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6504.63" hpRegen="17" mp="2411.1" mpRegen="6" />
+			<attack physical="14248.01" magical="7297.16" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="958.1777568" magical="525.8646792" />
+			<speed>
+				<walk ground="30" />
+				<run ground="220" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="5549" level="1" /> <!-- Melee Attack Vulnerability -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="25" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="24017" level="77" type="Monster" name="Destroyer" title="Converted Giant">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5265" sp="47" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3845.9432" hpRegen="10.2" mp="2361" mpRegen="3.6" />
+			<attack physical="1370.304" magical="701.808" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="393.92" magical="216.192" />
+			<speed>
+				<walk ground="27" />
+				<run ground="150" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="42.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24018" level="78" type="Monster" name="Hekaton Prime" title="Giant's Cave Master">
+		<race>CONSTRUCT</race>
+		<acquire exp="5317" sp="49" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6504.63" hpRegen="17" mp="2411.1" mpRegen="6" />
+			<attack physical="14248.01" magical="7297.16" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="958.1777568" magical="525.8646792" />
+			<speed>
+				<walk ground="27" />
+				<run ground="140" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4085" level="1" /> <!-- Critical Damage -->
+			<skill id="4086" level="1" /> <!-- Critical Chance -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="32" />
+			<height normal="57.8" />
+		</collision>
+	</npc>
+	<npc id="24019" level="77" type="Monster" name="Hekaton Chires">
+		<race>GIANT</race>
+		<acquire exp="5265" sp="47" />
+		<equipment rhand="3937" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="30" />
+				<run ground="140" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="27.5" />
+			<height normal="48.7" />
+		</collision>
+	</npc>
+	<npc id="24020" level="77" type="Monster" name="Batur" title="Lesser Giant Soldier">
+		<race>GIANT</race>
+		<acquire exp="5265" sp="47" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="55" />
+				<run ground="140" />
+			</speed>
+			<hitTime>400</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="24" />
+			<height normal="46" />
+		</collision>
+	</npc>
+	<npc id="24021" level="77" type="Monster" name="Degraded Lesser Giant Warrior">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>GIANT</race>
+		<acquire exp="5265" sp="47" />
+		<equipment rhand="3937" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="15" />
+				<run ground="180" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="25" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="24022" level="77" type="Monster" name="Degraded Lesser Giant Wizard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>GIANT</race>
+		<acquire exp="5265" sp="47" />
+		<equipment rhand="3938" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="15" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="50" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="24023" level="77" type="Monster" name="Hunter Destroyer" title="Lesser Giant Marauder">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5265" sp="47" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3845.9432" hpRegen="10.2" mp="2361" mpRegen="3.6" />
+			<attack physical="1370.304" magical="701.808" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="393.92" magical="216.192" />
+			<speed>
+				<walk ground="27" />
+				<run ground="150" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="4389" level="3" /> <!-- Fear Resistance -->
+			<skill id="4225" level="5" /> <!-- Shock Attack Resistance -->
+			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24024" level="75" type="Monster" name="Hunter">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="5085" sp="51" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3726.9936" hpRegen="10.2" mp="2261.7" mpRegen="3.6" />
+			<attack physical="1271.536" magical="651.216" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="383.1" magical="210.252" />
+			<speed>
+				<walk ground="27" />
+				<run ground="150" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="4440" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24025" level="70" type="Monster" name="Bloody Purple" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4035" level="6" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="10" />
+				<run ground="180" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="8" /> <!-- Weak P. Def. -->
+			<skill id="4413" level="10" /> <!-- Slightly Weak M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>UNDEAD</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.6" />
+			<height normal="28.2" />
+		</collision>
+	</npc>
+	<npc id="24026" level="71" type="Monster" name="Clipher" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+			<skill id="4411" level="10" /> <!-- Slightly Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="17" />
+			<height normal="26.8" />
+		</collision>
+	</npc>
+	<npc id="24027" level="72" type="Monster" name="Sairon" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="10.4" />
+			<height normal="23.4" />
+		</collision>
+	</npc>
+	<npc id="24028" level="73" type="Monster" name="Demon Warrior" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4828" sp="48" attributeExp="37" />
+		<equipment rhand="234" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3601.6904" hpRegen="10.2" mp="2163.6" mpRegen="3.6" />
+			<attack physical="1204.384" magical="616.832" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="372.04" magical="204.18" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>170</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="13" />
+			<height normal="33.4" />
+		</collision>
+	</npc>
+	<npc id="24029" level="74" type="Monster" name="Valley Master" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<equipment rhand="78" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="12" />
+			<height normal="33.5" />
+		</collision>
+	</npc>
+	<npc id="24030" level="74" type="Monster" name="Stone Vanul" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="45" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="16.5" />
+			<height normal="29.45" />
+		</collision>
+	</npc>
+	<npc id="24031" level="75" type="Monster" name="Death Flyer" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="5085" sp="51" attributeExp="41" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3726.9936" hpRegen="10.2" mp="2261.7" mpRegen="3.6" />
+			<attack physical="1271.536" magical="651.216" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.1" magical="210.252" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="13.2" />
+			<height normal="44.3" />
+		</collision>
+	</npc>
+	<npc id="24032" level="70" type="Monster" name="Prophet" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="68" />
+				<run ground="180" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="8" /> <!-- Weak P. Def. -->
+			<skill id="4413" level="10" /> <!-- Slightly Weak M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="24" />
+			<height normal="43.8" />
+		</collision>
+		
+	</npc>
+	<npc id="24033" level="71" type="Monster" name="Guardian's Spirit" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="37" />
+				<run ground="180" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+			<skill id="4411" level="10" /> <!-- Slightly Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="19.2" />
+			<height normal="31.4" />
+		</collision>
+	</npc>
+	<npc id="24034" level="72" type="Monster" name="Midnight Sairon" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<equipment rhand="5129" lhand="5129" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="22" />
+				<run ground="180" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="8.4" />
+			<height normal="18" />
+		</collision>
+	</npc>
+	<npc id="24035" level="73" type="Monster" name="Daymen" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4828" sp="48" attributeExp="37" />
+		<equipment rhand="84" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3601.6904" hpRegen="10.2" mp="2163.6" mpRegen="3.6" />
+			<attack physical="1204.384" magical="616.832" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="372.04" magical="204.18" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>170</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="27.8" />
+		</collision>
+	</npc>
+	<npc id="24036" level="74" type="Monster" name="Dolores" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="13.2" />
+			<height normal="44.3" />
+		</collision>
+	</npc>
+	<npc id="24037" level="74" type="Monster" name="Doll" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>760</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+			<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="17" />
+			<height normal="55" />
+		</collision>
+	</npc>
+	<npc id="24038" level="75" type="Monster" name="Tor Scorpion" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>BUG</race>
+		<acquire exp="5085" sp="51" attributeExp="41" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3726.9936" hpRegen="10.2" mp="2261.7" mpRegen="3.6" />
+			<attack physical="1271.536" magical="651.216" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.1" magical="210.252" />
+			<speed>
+				<walk ground="37" />
+				<run ground="180" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="22.4" />
+			<height normal="52.2" />
+		</collision>
+	</npc>
+	<npc id="24039" level="75" type="Monster" name="Pearl Horror" title="Cursed Soul" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="5085" sp="51" attributeExp="41" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3726.9936" hpRegen="10.2" mp="2261.7" mpRegen="3.6" />
+			<attack physical="1271.536" magical="651.216" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.1" magical="210.252" />
+			<speed>
+				<walk ground="100" />
+				<run ground="180" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="20" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="24040" level="75" type="Monster" name="Midnight Nightmare" title="Zaken's Minion" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DEMONIC</race>
+		<acquire exp="5085" sp="51" attributeExp="41" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3726.9936" hpRegen="10.2" mp="2261.7" mpRegen="3.6" />
+			<attack physical="1271.536" magical="651.216" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="383.1" magical="210.252" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="23" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="24041" level="71" type="Monster" name="Bloody Mourner" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>BEAST</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="25" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beasts -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="30" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="24042" level="71" type="Monster" name="Clumsy Wimp" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>UNDEAD</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>590</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="30" />
+			<height normal="39" />
+		</collision>
+	</npc>
+	<npc id="24043" level="71" type="Monster" name="Mysterious Creature" element="FIRE">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="25" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="37" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24044" level="74" type="Monster" name="Zaken's Treasure Chest" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+	</npc>
+	<npc id="24045" level="74" type="Monster" name="Zaken's Treasure Chest" element="FIRE">
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24046" level="70" type="Monster" name="Floating Eye Seer" element="FIRE">
+		<!-- Source: www.l2wiki.com -->
+		<race>CONSTRUCT</race>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="90" />
+				<run ground="180" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="24047" level="71" type="Monster" name="Floating Eye Seer" title="Shadow Curse" element="FIRE">
+		<!-- Source: www.l2wiki.com -->
+		<race>CONSTRUCT</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="90" />
+				<run ground="180" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="24048" level="71" type="Monster" name="Immortal Spirit" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>HUMAN</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="7" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="24049" level="72" type="Monster" name="Immortal Spirit" title="Shadow Curse" element="FIRE">
+		<!-- Source: www.l2wiki.com -->
+		<race>HUMAN</race>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="7" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="24050" level="71" type="Monster" name="Starving Spirit" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DIVINE</race>
+		<acquire exp="4562" sp="45" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3470.8872" hpRegen="10.2" mp="2066.7" mpRegen="3.6" />
+			<attack physical="1136.352" magical="581.984" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="360.78" magical="198.006" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="11" />
+			<height normal="25.4" />
+		</collision>
+	</npc>
+	<npc id="24051" level="72" type="Monster" name="Starving Spirit" title="Shadow Curse" element="FIRE">
+		<race>UNDEAD</race>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="9" /> <!-- Bow -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="12" />
+			<height normal="26" />
+		</collision>
+	</npc>
+	<npc id="24052" level="72" type="Monster" name="Starving Soldier" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>DIVINE</race>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="61" />
+				<run ground="180" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="9" />
+			<height normal="23.4" />
+		</collision>
+	</npc>
+	<npc id="24053" level="73" type="Monster" name="Starving Soldier" title="Shadow Curse" element="FIRE">
+		<race>UNDEAD</race>
+		<acquire exp="4828" sp="48" attributeExp="37" />
+		<equipment rhand="47716" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3601.6904" hpRegen="10.2" mp="2163.6" mpRegen="3.6" />
+			<attack physical="1204.384" magical="616.832" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="372.04" magical="204.18" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="16" />
+			<height normal="28.5" />
+		</collision>
+	</npc>
+	<npc id="24054" level="73" type="Monster" name="Starving Warrior" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+		</parameters>
+		<race>HUMAN</race>
+		<acquire exp="4828" sp="48" attributeExp="37" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3601.6904" hpRegen="10.2" mp="2163.6" mpRegen="3.6" />
+			<attack physical="1204.384" magical="616.832" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="372.04" magical="204.18" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="24055" level="74" type="Monster" name="Starving Warrior" title="Shadow Curse" element="FIRE">
+		<!-- Source: www.l2wiki.com -->
+		<race>UNDEAD</race>
+		<acquire exp="4956" sp="49" attributeExp="39" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3665.0856" hpRegen="10.2" mp="2212.5" mpRegen="3.6" />
+			<attack physical="1238.104" magical="634.096" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="377.59" magical="207.228" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+		<collision>
+			<radius normal="12" />
+			<height normal="28.5" />
+		</collision>
+	</npc>
+	<npc id="24056" level="70" type="Monster" name="Luxurious Small Jar" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24057" level="70" type="Monster" name="Fiend's Radiant Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24058" level="70" type="Monster" name="Radiant Treasure Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24059" level="70" type="Monster" name="Radiant Jewel Box" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="9.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24060" level="70" type="Monster" name="Strong Large Wooden Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="14" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24061" level="70" type="Monster" name="Fiend's Strong Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24062" level="70" type="Monster" name="Strong Iron Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24063" level="70" type="Monster" name="Strong Treasure Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24064" level="70" type="Monster" name="Simple Large Wooden Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="14" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24065" level="70" type="Monster" name="Simple Big Jar" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="1" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24066" level="70" type="Monster" name="Simple Iron Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24067" level="70" type="Monster" name="Simple Treasure Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24068" level="70" type="Monster" name="Ancient Large Wooden Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="14" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24069" level="70" type="Monster" name="Old Big Jar" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="1" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24070" level="70" type="Monster" name="Ancient Iron Chest" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="9.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24071" level="70" type="Monster" name="Ancient Jewel Box" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="9.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24072" level="70" type="Monster" name="Small Jar of Luck" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24073" level="70" type="Monster" name="Small Jar of Hope" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24074" level="70" type="Monster" name="Small Jar of Fate" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>ETC</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24075" level="70" type="Monster" name="Large Jar of Luck" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="1" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24076" level="70" type="Monster" name="Large Jar of Hope" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="1" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24077" level="70" type="Monster" name="Large Jar of Fate" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="1" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24078" level="70" type="Monster" name="Large Treasure Chest of Luck" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24079" level="70" type="Monster" name="Large Treasure Chest of Hope" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24080" level="70" type="Monster" name="Large Treasure Chest of Fate" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24081" level="70" type="Monster" name="Small Treasure Chest of Luck" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24082" level="70" type="Monster" name="Small Treasure Chest of Hope" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24083" level="70" type="Monster" name="Small Treasure Chest of Fate" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>CONSTRUCT</race>
+		<sex>FEMALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24084" level="70" type="Monster" name="Keeper of Skeleton's Treasure" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4435" sp="44" attributeExp="30" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3403.6904" hpRegen="9" mp="2018.7" mpRegen="3.24" />
+			<attack physical="1102.184" magical="564.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="355.1" magical="194.886" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="27" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24085" level="72" type="Monster" name="Sairon's Doll" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="30" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="6.5" />
+			<height normal="13.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+	</npc>
+	<npc id="24086" level="72" type="Monster" name="Sairon's Doll" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="5129" lhand="5129" />
+		<acquire exp="4697" sp="47" attributeExp="34" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3536.9224" hpRegen="10.2" mp="2115" mpRegen="3.6" />
+			<attack physical="1170.44" magical="599.448" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="366.43" magical="201.102" />
+			<speed>
+				<walk ground="22" />
+				<run ground="180" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" passableDoor="true" />
+		<collision>
+			<radius normal="7.2" />
+			<height normal="15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="5599" level="11" /> <!-- Shock Resistance -->
+			<skill id="5554" level="11" /> <!-- Silence Resistance -->
+			<skill id="50010" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="50011" level="2" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4116" level="6" /> <!-- Magic Damage Resistance -->
+			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+		</skillList>
+	</npc>
+</list>

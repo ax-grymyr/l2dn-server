@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="96000" name="option_id_96000">
+		<!-- Max HP +48 -->
+	</option>
+	<option id="96001" name="option_id_96001">
+		<!-- Max HP +60 -->
+	</option>
+	<option id="96002" name="option_id_96002">
+		<!-- Max HP +70 -->
+	</option>
+	<option id="96003" name="option_id_96003">
+		<!-- Max HP +75 -->
+	</option>
+	<option id="96004" name="option_id_96004">
+		<!-- Max HP +80 -->
+	</option>
+	<option id="96005" name="option_id_96005">
+		<!-- Max HP +100 -->
+	</option>
+	<option id="96006" name="option_id_96006">
+		<!-- Max MP +5 -->
+	</option>
+	<option id="96007" name="option_id_96007">
+		<!-- Max MP +8 -->
+	</option>
+	<option id="96008" name="option_id_96008">
+		<!-- Max MP +11 -->
+	</option>
+	<option id="96009" name="option_id_96009">
+		<!-- Max MP +14 -->
+	</option>
+	<option id="96010" name="option_id_96010">
+		<!-- Max MP +17 -->
+	</option>
+	<option id="96011" name="option_id_96011">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="96012" name="option_id_96012">
+		<!-- Max MP +23 -->
+	</option>
+	<option id="96013" name="option_id_96013">
+		<!-- Max MP +26 -->
+	</option>
+	<option id="96014" name="option_id_96014">
+		<!-- Max MP +30 -->
+	</option>
+	<option id="96015" name="option_id_96015">
+		<!-- Max MP +33 -->
+	</option>
+	<option id="96016" name="option_id_96016">
+		<!-- Max MP +36 -->
+	</option>
+	<option id="96017" name="option_id_96017">
+		<!-- Max MP +39 -->
+	</option>
+	<option id="96018" name="option_id_96018">
+		<!-- Max MP +42 -->
+	</option>
+	<option id="96019" name="option_id_96019">
+		<!-- Max MP +45 -->
+	</option>
+	<option id="96020" name="option_id_96020">
+		<!-- Max MP +48 -->
+	</option>
+	<option id="96021" name="option_id_96021">
+		<!-- Max MP +60 -->
+	</option>
+	<option id="96022" name="option_id_96022">
+		<!-- Max MP +70 -->
+	</option>
+	<option id="96023" name="option_id_96023">
+		<!-- Max MP +75 -->
+	</option>
+	<option id="96024" name="option_id_96024">
+		<!-- Max MP +80 -->
+	</option>
+	<option id="96025" name="option_id_96025">
+		<!-- Max MP +100 -->
+	</option>
+	<option id="96026" name="option_id_96026">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="96027" name="option_id_96027">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="96028" name="option_id_96028">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="96029" name="option_id_96029">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="96030" name="option_id_96030">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="96031" name="option_id_96031">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="96032" name="option_id_96032">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="96033" name="option_id_96033">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="96034" name="option_id_96034">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96035" name="option_id_96035">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96036" name="option_id_96036">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="96037" name="option_id_96037">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96038" name="option_id_96038">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="96039" name="option_id_96039">
+		<!-- P. Evasion +1.6 -->
+	</option>
+	<option id="96040" name="option_id_96040">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="96041" name="option_id_96041">
+		<!-- P. Evasion +2.0 -->
+	</option>
+	<option id="96042" name="option_id_96042">
+		<!-- P. Evasion +2.5 -->
+	</option>
+	<option id="96043" name="option_id_96043">
+		<!-- P. Evasion +3.0 -->
+	</option>
+	<option id="96044" name="option_id_96044">
+		<!-- P. Evasion +3.5 -->
+	</option>
+	<option id="96045" name="option_id_96045">
+		<!-- P. Evasion +5.0 -->
+	</option>
+	<option id="96046" name="option_id_96046">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="96047" name="option_id_96047">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="96048" name="option_id_96048">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="96049" name="option_id_96049">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="96050" name="option_id_96050">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="96051" name="option_id_96051">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="96052" name="option_id_96052">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="96053" name="option_id_96053">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="96054" name="option_id_96054">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96055" name="option_id_96055">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96056" name="option_id_96056">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="96057" name="option_id_96057">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96058" name="option_id_96058">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="96059" name="option_id_96059">
+		<!-- M. Evasion +1.6 -->
+	</option>
+	<option id="96060" name="option_id_96060">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="96061" name="option_id_96061">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="96062" name="option_id_96062">
+		<!-- M. Evasion +2.5 -->
+	</option>
+	<option id="96063" name="option_id_96063">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="96064" name="option_id_96064">
+		<!-- M. Evasion +3.5 -->
+	</option>
+	<option id="96065" name="option_id_96065">
+		<!-- M. Evasion +5.0 -->
+	</option>
+	<option id="96066" name="option_id_96066">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96067" name="option_id_96067">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96068" name="option_id_96068">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96069" name="option_id_96069">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96070" name="option_id_96070">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96071" name="option_id_96071">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96072" name="option_id_96072">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96073" name="option_id_96073">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96074" name="option_id_96074">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96075" name="option_id_96075">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96076" name="option_id_96076">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96077" name="option_id_96077">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96078" name="option_id_96078">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96079" name="option_id_96079">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96080" name="option_id_96080">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96081" name="option_id_96081">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96082" name="option_id_96082">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="96083" name="option_id_96083">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="96084" name="option_id_96084">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="96085" name="option_id_96085">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="96086" name="option_id_96086">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96087" name="option_id_96087">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96088" name="option_id_96088">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96089" name="option_id_96089">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96090" name="option_id_96090">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96091" name="option_id_96091">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96092" name="option_id_96092">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96093" name="option_id_96093">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96094" name="option_id_96094">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96095" name="option_id_96095">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96096" name="option_id_96096">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96097" name="option_id_96097">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96098" name="option_id_96098">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96099" name="option_id_96099">
+		<!-- Received Healing +2% -->
+	</option>
+</list>

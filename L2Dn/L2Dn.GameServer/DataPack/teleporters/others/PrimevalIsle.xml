@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34106">
+		<teleport type="OTHER">
+			<location x="9306" y="-21634" z="-3621" /> <!-- Primeval Plains North -->
+			<location x="7707" y="-8896" z="-3603" /> <!-- Primeval Plains South -->
+			<location x="25308" y="-14492" z="-2700" /> <!-- Lost Nest East -->
+			<location x="13035" y="-14089" z="-3224" /> <!-- Lost Nest West -->
+		</teleport>
+	</npc>
+</list>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="94083" price="0" /> <!-- Helmet of Mana -->
+	<item id="94084" price="0" /> <!-- Helmet of Mana - Sealed -->
+	<item id="94085" price="0" /> <!-- Boots of Evasion -->
+	<item id="94086" price="0" /> <!-- Boots of Evasion - Sealed -->
+	<item id="94263" price="0" /> <!-- Stun Gauntlets -->
+	<item id="94264" price="0" /> <!-- Stun Gauntlets - Sealed -->
+	<item id="94299" price="0" /> <!-- Sigil of Inevitability -->
+	<item id="94300" price="0" /> <!-- Sigil of Inevitability - Sealed -->
+	<item id="94301" price="0" /> <!-- Shield of Vengeance -->
+	<item id="94302" price="0" /> <!-- Shield of Vengeance - Sealed -->
+</list>

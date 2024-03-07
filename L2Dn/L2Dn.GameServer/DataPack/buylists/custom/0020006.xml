@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="100" price="0" /> <!-- Voodoo Doll -->
+	<item id="91256" price="0" /> <!-- Rare Baium Doll Lv. 2 -->
+	<item id="91257" price="0" /> <!-- Rare Queen Ant Doll Lv. 2 -->
+	<item id="91258" price="0" /> <!-- Rare Orfen Doll Lv. 2 -->
+	<item id="94154" price="0" /> <!-- Queen Ant Doll Lv. 1 -->
+	<item id="91422" price="0" /> <!-- Queen Ant Doll Lv. 3 -->
+	<item id="94153" price="0" /> <!-- Baium Doll Lv. 1 -->
+	<item id="91423" price="0" /> <!-- Baium Doll Lv. 3 -->
+	<item id="94155" price="0" /> <!-- Orfen Doll Lv. 1 -->
+	<item id="91424" price="0" /> <!-- Orfen Doll Lv. 3 -->
+	<item id="91604" price="0" /> <!-- Rare Frintezza's Doll Lv. 2 -->
+	<item id="94509" price="0" /> <!-- Frintezza's Doll Lv. 1 -->
+	<item id="91605" price="0" /> <!-- Frintezza's Doll Lv. 3 -->
+</list>

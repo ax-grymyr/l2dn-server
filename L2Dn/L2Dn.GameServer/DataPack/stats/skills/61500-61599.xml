@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61500" toLevel="1" name="Armor Break">
+		<icon>icon.force_breaker</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61501" toLevel="1" name="Armor Break - Removal">
+		<icon>icon.force_breaker</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61502" toLevel="1" name="Armor Break - Slow">
+		<icon>icon.skill0516</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61503" toLevel="6" name="Pet's Satiety Recovery +500">
+		<!-- Pet's Satiety Recovery +500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61504" toLevel="5" name="Property Increase +10">
+		<!-- Weapon stats +10 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61505" toLevel="5" name="Property Decrease -10">
+		<!-- Weapon stats -10 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61506" toLevel="1" name="Property Increase +0.1">
+		<!-- Weapon stats +0.1 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61507" toLevel="1" name="Property Increase +0.2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61508" toLevel="1" name="Property Increase +0.3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61509" toLevel="1" name="Property Increase +0.4">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61510" toLevel="1" name="Property Increase +0.5">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61511" toLevel="1" name="Property Increase +0.6">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61512" toLevel="1" name="Property Increase +0.7">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61513" toLevel="1" name="Property Increase +0.8">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61514" toLevel="1" name="Property Increase +0.9">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61515" toLevel="1" name="Property Decrease -0.1">
+		<!-- Weapon stats -0.1 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61516" toLevel="1" name="Property Decrease -0.2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61517" toLevel="1" name="Property Decrease -0.3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61518" toLevel="1" name="Property Decrease -0.4">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61519" toLevel="1" name="Property Decrease -0.5">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61520" toLevel="1" name="Property Decrease -0.6">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61521" toLevel="1" name="Property Decrease -0.7">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61522" toLevel="1" name="Property Decrease -0.8">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61523" toLevel="1" name="Property Decrease -0.9">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61524" toLevel="10" name="Test - p_mp_vampiric_rate_down">
+		<!-- Target's MP Drain -10% -->
+		<icon>icon.s_soul_sign</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61525" toLevel="10" name="Test - p_mp_vampiric_rate_down (simultaneous use test)">
+		<!-- Target's MP Drain -10% -->
+		<icon>icon.skill1447</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61526" toLevel="10" name="Test - p_hp_vampiric_rate_down">
+		<!-- The target's HP Drain -10% -->
+		<icon>icon.s_soul_sign</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61527" toLevel="10" name="Test - p_hp_vampiric_rate_down (simultaneous use test)">
+		<!-- The target's HP Drain -10% -->
+		<icon>icon.skill1447</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61528" toLevel="10" name="HP Blood Siphon Resistance">
+		<!-- HP Blood Siphon Resistance 10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61529" toLevel="10" name="HP Blood Siphon Resistance (Stacks)">
+		<!-- HP Blood Siphon Resistance 10% (stacks) -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61530" toLevel="10" name="MP Blood Siphon Resistance">
+		<!-- MP Blood Siphon Resistance 10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61531" toLevel="10" name="MP Blood Siphon Resistance (Stacks)">
+		<!-- MP Blood Siphon Resistance 10% (Stacks) -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61532" toLevel="1" name="Test: Enuma Elish">
+		<!-- Test with an ancient sword/ two-handed sword equipped. -->
+		<icon>icon.skill0495</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61533" toLevel="1" name="Test: i_call_skill_range">
+		<icon>icon.skill5076_b</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61534" toLevel="1" name="Transfer Fee Increase +10">
+		<!-- Transfer Fee +10 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61535" toLevel="1" name="Transfer Fee Increase +20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61536" toLevel="1" name="Transfer Fee Increase +50">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61537" toLevel="1" name="Transfer Fee Increase +60">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61538" toLevel="1" name="Transfer Fee Increase +100">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61539" toLevel="1" name="Transfer Fee Increase +10 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61540" toLevel="1" name="Transfer Fee Increase +20 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61541" toLevel="1" name="Transfer Fee Increase +50 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61542" toLevel="1" name="Transfer Fee Increase +60 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61543" toLevel="1" name="Transfer Fee Increase +100 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61544" toLevel="1" name="Transfer Fee Decrease -10">
+		<!-- Transfer Fee -10 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61545" toLevel="1" name="Transfer Fee Decrease -20">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61546" toLevel="1" name="Transfer Fee Decrease -50">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61547" toLevel="1" name="Transfer Fee Decrease -60">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61548" toLevel="1" name="Transfer Fee Decrease -100">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61549" toLevel="1" name="Transfer Fee Decrease -10 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61550" toLevel="1" name="Transfer Fee Decrease -20 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61551" toLevel="1" name="Transfer Fee Decrease -50 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61552" toLevel="1" name="Transfer Fee Decrease -60 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61553" toLevel="1" name="Transfer Fee Decrease -100 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61554" toLevel="1" name="Transfer Fee 0 0 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61555" toLevel="1" name="Transfer Fee 0 0 diff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61556" toLevel="1" name="Transfer Fee Decrease 0 -50 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61557" toLevel="1" name="Transfer Fee Decrease -50 0 per">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61558" toLevel="1" name="Transfer Fee Decrease 0 -50 diff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61559" toLevel="1" name="Transfer Fee Decrease -50 0 diff">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61560" toLevel="1" name="Test - Dark Disruption">
+		<!-- Deals magic damage to the target and enemies around them. Power 130. Cancels the Opal effect with a 50% chance. Duration: $s1 HP Recovery Potions' Effect $s2 Removes the following buffs and blocks them for 10 sec.: - Special class transformation -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61561" toLevel="1" name="Test - Dark Disruption">
+		<!-- Removes the following buffs and blocks them for 10 sec.: - Special class transformation -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61562" toLevel="1" name="Test - Ninja Skills">
+		<!-- Ninja Skill - Instant Movement -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61563" toLevel="1" name="Ninja - Left">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61564" toLevel="1" name="Ninja - Right">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61565" toLevel="1" name="Ninja - Back">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61566" toLevel="1" name="Transcendent Lethal Shot - without_action">
+		<!-- Shoots a deadly arrow. Attacks the target with $s1 power. Ignores Shield Defense. Ignores $s2 of the target's defense. Critical. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61567" toLevel="1" name="Reputation Recovery +10%">
+		<!-- Reputation recovery +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61568" toLevel="1" name="Reputation Recovery +20%">
+		<!-- Reputation recovery +20% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61569" toLevel="1" name="Reputation Recovery +30%">
+		<!-- Reputation recovery +30% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61570" toLevel="1" name="Reputation Recovery +40%">
+		<!-- Reputation recovery +40% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61571" toLevel="1" name="Reputation Recovery +50%">
+		<!-- Reputation recovery +50% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61572" toLevel="1" name="Reputation Recovery +100%">
+		<!-- Reputation recovery +100% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61573" toLevel="1" name="Reputation Recovery +500%">
+		<!-- Reputation recovery +500% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61574" toLevel="1" name="Reputation Recovery +1000%">
+		<!-- Reputation recovery +1000% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61575" toLevel="1" name="Reputation Recovery -10%">
+		<!-- Reputation recovery -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61576" toLevel="1" name="Reputation Recovery -20%">
+		<!-- Reputation recovery -20% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61577" toLevel="1" name="Reputation Recovery -30%">
+		<!-- Reputation recovery -30% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61578" toLevel="1" name="Reputation Recovery -40%">
+		<!-- Reputation recovery -40% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61579" toLevel="1" name="Reputation Recovery -50%">
+		<!-- Reputation recovery -50% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61580" toLevel="1" name="Reputation Recovery -100%">
+		<!-- Reputation recovery -100% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61581" toLevel="1" name="Reputation Recovery -500%">
+		<!-- Reputation recovery -500% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61582" toLevel="1" name="Reputation Recovery -1000%">
+		<!-- Reputation recovery -1000% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61583" toLevel="1" name="Test - Special Imprisonment +10%">
+		<!-- Special Imprisonment +10% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61584" toLevel="1" name="Test - Special Imprisonment +20%">
+		<!-- Special Imprisonment +20% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61585" toLevel="1" name="Test - Special Imprisonment +30%">
+		<!-- Special Imprisonment +30% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61586" toLevel="1" name="Test - Special Imprisonment +40%">
+		<!-- Special Imprisonment +40% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61587" toLevel="1" name="Test - Special Imprisonment +50%">
+		<!-- Special Imprisonment +50% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61588" toLevel="1" name="Test - Special Imprisonment +60%">
+		<!-- Special Imprisonment +60% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61589" toLevel="1" name="Test - Special Imprisonment +70%">
+		<!-- Special Imprisonment +70% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61590" toLevel="1" name="Test - Special Imprisonment +80%">
+		<!-- Special Imprisonment +80% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61591" toLevel="1" name="Test - Special Imprisonment +90%">
+		<!-- Special Imprisonment +90% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61592" toLevel="1" name="Test - Special Imprisonment +100%">
+		<!-- Special Imprisonment +100% -->
+		<icon>icon.unique_silence</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61593" toLevel="20" name="Einhasad's Protection">
+		<!-- Acquired XP +100%. Acquired SP +100%. The effect remains after death. -->
+		<icon>icon.etc_dragons_blood_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61594" toLevel="1" name="Reputation Decrease - 10 per">
+		<!-- Rep. -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61595" toLevel="1" name="Reputation Decrease - 50 per">
+		<!-- Rep. -50% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61596" toLevel="1" name="Reputation Decrease - 100 per">
+		<!-- Rep. -100% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61597" toLevel="1" name="Reputation Decrease - 500 per">
+		<!-- Rep. -500% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61598" toLevel="1" name="Reputation Decrease - 1000 per">
+		<!-- Rep. -1000% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61599" toLevel="1" name="Reputation Decrease - 100 diff">
+		<!-- Rep. -100 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="33600" name="bow_res">
+		<!-- Bow Resistance +1.5% -->
+		<passive_skill id="112" level="1" /> <!-- Deflect Arrow -->
+	</option>
+	<option id="33601" name="bow_res">
+		<!-- Bow Resistance +2.5% -->
+		<passive_skill id="112" level="1" /> <!-- Deflect Arrow -->
+	</option>
+	<option id="33602" name="bow_res">
+		<!-- Bow Resistance +3% -->
+		<passive_skill id="112" level="2" /> <!-- Deflect Arrow -->
+	</option>
+	<option id="33603" name="bow_res">
+		<!-- Bow Resistance +3.5% -->
+		<passive_skill id="112" level="2" /> <!-- Deflect Arrow -->
+	</option>
+	<option id="33604" name="drain_res">
+		<!-- Drain Resistance +2.5% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33605" name="drain_res">
+		<!-- Drain Resistance +3.5% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33606" name="drain_res">
+		<!-- Drain Resistance +5% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33607" name="drain_res">
+		<!-- Drain Resistance +7.5% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>7.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33608" name="drain_res">
+		<!-- Drain Resistance +9% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33609" name="drain_res">
+		<!-- Drain Resistance +10% -->
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="33621" name="Sigil_Effect">
+		<passive_skill id="50312" level="1" /> <!-- A-grade: Equipped Sigil Effect -->
+	</option>
+	<option id="33622" name="Sigil_Effect">
+		<passive_skill id="50313" level="1" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33623" name="Sigil_Effect">
+		<passive_skill id="50313" level="2" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33624" name="Sigil_Effect">
+		<passive_skill id="50313" level="3" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33625" name="Sigil_Effect">
+		<passive_skill id="50313" level="4" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33626" name="Sigil_Effect">
+		<passive_skill id="50313" level="5" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33627" name="Sigil_Effect">
+		<passive_skill id="50313" level="6" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33628" name="Sigil_Effect">
+		<passive_skill id="50313" level="7" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33629" name="Sigil_Effect">
+		<passive_skill id="50313" level="8" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33630" name="Sigil_Effect">
+		<passive_skill id="50313" level="9" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+	<option id="33631" name="Sigil_Effect">
+		<passive_skill id="50313" level="10" /> <!-- Enchant Effect: A-grade Sigil -->
+	</option>
+</list>

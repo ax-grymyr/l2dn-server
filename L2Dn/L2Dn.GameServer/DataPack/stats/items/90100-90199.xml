@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90100" name="Scroll: Block Wind Walk" type="EtcItem">
+		<!-- A scroll for learning the Block Wind Walk skill. <Class>. Hierophant. <Skill effect>. Prevents the enemy from getting buffs that increase Speed. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90101" name="Scroll: Turn to Stone" type="EtcItem">
+		<!-- A scroll for learning the Turn to Stone skill. <Class>. Hierophant. <Skill effect>. Turns you to stone, blocking damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90102" name="Scroll: Counter Critical" type="EtcItem">
+		<!-- A scroll for learning the Counter Critical skill. <Class>. Hierophant. <Skill effect>. Decreases received P. Critical Damage. Increases P. Critical Damage when receiving a certain amount of damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90103" name="Scroll: Prophecy of Water" type="EtcItem">
+		<!-- A scroll for learning the Prophecy of Water skill. <Class>. Eva's Saint. <Skill effect>. Increases Max MP, MP Recovery Rate, P./ M. Def., Atk. Spd./ Casting Spd., damage to monsters, Debuff/ Anomaly Resistance, and decreases Skill MP consumption. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90104" name="Scroll: Mass Cure" type="EtcItem">
+		<!-- A scroll for learning the Mass Cure skill. <Classes>. Eva's Saint, Shillien Saint. <Skill effect>. Removes Infection/ Suppression from all party members. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90105" name="Scroll: Mass Vitalize" type="EtcItem">
+		<!-- A scroll for learning the Mass Vitalize skill. <Class>. Eva's Saint. <Skill effect>. Recovers HP of party members and removes debuffs that decrease P. Atk./ M. Atk./ P. Def./ M. Def./ Atk. Spd./ Casting Spd./ Speed. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90106" name="Scroll: Mana Gain" type="EtcItem">
+		<!-- A scroll for learning the Mana Gain skill. <Classes>. Cardinal, Hierophant, Eva's Saint, Shillien Saint, Dominator, Doomcryer. <Skill effect>. Increases M. Atk. and M. Accuracy in accordance with Max MP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90107" name="Scroll: Blessing of Eva" type="EtcItem">
+		<!-- A scroll for learning the Eva's Blessing skill. <Class>. Eva's Saint. <Skill effect>. Casts Eva's blessing, recovering HP/ MP/ CP and removing debuffs with a certain chance. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90108" name="Scroll: Prophecy of Wind" type="EtcItem">
+		<!-- A scroll for learning the Prophecy of Wind skill. <Class>. Shillien Saint. <Skill effect>. Increases P./ M. Accuracy, P./ M. Evasion, P. Critical Rate/ M. Skill Critical Rate, P. Critical Damage/ M. Skill Critical Damage, Debuff/ Anomaly Resistance and damage to monsters. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90109" name="Scroll: Mass Purify" type="EtcItem">
+		<!-- A scroll for learning the Mass Purify skill. <Class>. Shillien Saint. <Skill effect>. Removes the following debuffs from party members: Paralysis, Shock, Sleep, Fear, Imprisonment. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90110" name="Scroll: Spirit of Shillien" type="EtcItem">
+		<!-- A scroll for learning the Spirit of Shillien skill. <Class>. Shillien Saint. <Skill effect>. By the power of Shillien, increases M. Atk. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Shillien's Power -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90111" name="Scroll: Enlightenment" type="EtcItem">
+		<!-- A scroll for learning the Enlightenment skill. <Classes>. Cardinal, Hierophant, Eva's Saint, Shillien Saint. <Skill effect>. Increases M. Atk./ Received Healing/ Casting Spd./ M. Skill Critical Rate/ Speed, also decreases MP Consumption. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Unleashing -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90112" name="Scroll: Prophecy of Victory" type="EtcItem">
+		<!-- A scroll for learning the Prophecy of Victory skill. <Class>. Doomcryer. <Skill effect>. Increases HP/ MP Recovery Rate, P./ M. Accuracy, P./ M. Evasion, damage to monsters, Atk. Spd., Casting Spd., P. Critical Rate, M. Skill Critical Rate, P. Critical Damage, M. Skill Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90113" name="Scroll: Chant of Spirit" type="EtcItem">
+		<!-- A scroll for learning the Chant of Spirit skill. <Class>. Doomcryer. <Skill effect>. Increases Buff Cancel Resistance and Debuff/ Anomaly Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90114" name="Scroll: Chant of Gate" type="EtcItem">
+		<!-- A scroll for learning the Chant of Gate skill. <Class>. Doomcryer. <Skill effect>. Summons the caster's party members. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90115" name="Scroll: Chant of Protection" type="EtcItem">
+		<!-- A scroll for learning the Chant of Protection skill. <Class>. Doomcryer. <Skill effect>. Decreases received P. Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90116" name="Scroll: Great Fury" type="EtcItem">
+		<!-- A scroll for learning the Great Fury skill. <Class>. Doomcryer. <Skill effect>. With a certain chance grants the Great Fury effect when attacking that increases Atk. Spd. and P. Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90117" name="Scroll: Prophecy of Pa'agrio" type="EtcItem">
+		<!-- A scroll for learning the Prophecy of Pa'agrio skill. <Class>. Dominator. <Skill effect>. Increases Max CP, CP Recovery Rate, P./ M. Accuracy, P./ M. Evasion, damage to monsters, Atk. Spd., Casting Spd., P. Critical Rate, M. Skill Critical Rate, P. Critical Damage, M. Skill Critical Damage. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90118" name="Scroll: Seal of Disease" type="EtcItem">
+		<!-- A scroll for learning the Seal of Disease skill. <Class>. Dominator. <Skill effect>. Decreases the target's Received Healing. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Seal of Infection -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90119" name="Scroll: Pa'agrio's Fist" type="EtcItem">
+		<!-- A scroll for learning the Pa'agrio's Fist skill. <Class>. Dominator. <Skill effect>. Increases Max CP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90120" name="Scroll: Seal of Despair" type="EtcItem">
+		<!-- A scroll for learning the Seal of Despair skill. <Class>. Dominator. <Skill effect>. Decreases nearby enemies' P. Accuracy, P. Atk., P. Critical Rate, P. Critical Damage, Speed, M. Def., Atk. Spd. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90121" name="Scroll: Flames of Invincibility" type="EtcItem">
+		<!-- Can be exchanged for High-grade Spellbook Chest - Event through the Farmers' Representative. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90122" name="Scroll: Balance Life" type="EtcItem">
+		<!-- A scroll for learning the Balance Life skill. <Class>. Cardinal. <Skill effect>. Equalizes the entire party's HP. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Balanced Body -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90123" name="Scroll: Cleanse" type="EtcItem">
+		<!-- A scroll for learning the Cleanse skill. <Class>. Cardinal. <Skill effect>. Removes debuffs and anomalies from the target. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Advanced Cleanse -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90124" name="Scroll: Chain Heal" type="EtcItem">
+		<!-- A scroll for learning the Chain Heal skill. <Class>. Cardinal. <Skill effect>. Recovers great amount of HP to nearby allies. Heals 10 most injured allies one by one, starting from the most injured ally. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90125" name="Scroll: Salvation" type="EtcItem">
+		<!-- A scroll for learning the Salvation skill. <Class>. Cardinal. <Skill effect>. Resurrects a character fully recovered. Buffs/ debuffs remain after death. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90126" name="Scroll: Miracle" type="EtcItem">
+		<!-- A scroll for learning the Miracle skill. <Class>. Cardinal. <Skill effect>. Fully restores HP of the nearest clan members. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Sensation -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90127" name="Scroll: Warrior Servitor" type="EtcItem">
+		<!-- A scroll for learning the Warrior Servitor skill. <Class>. Arcana Lord. <Skill effect>. Makes the servitor possessed with an ancient warrior's spirit. Increases Max HP, Max MP, P. Atk./ M. Atk./ P. Def./ M. Def., Atk. Spd., Casting Spd., P. Critical Rate, M. Skill Critical Rate, P. Critical Damage, M. Skill Critical Damage, Debuff/ Anomaly Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90128" name="Scroll: Wizard Servitor" type="EtcItem">
+		<!-- A scroll for learning the Wizard Servitor skill. <Class>. Elemental Master. <Skill effect>. Makes the servitor possessed with an ancient wizard's spirit. Increases Max HP, Max MP, P. Atk./ M. Atk./ P. Def./ M. Def., Atk. Spd., Casting Spd., P. Critical Rate, M. Skill Critical Rate, P. Critical Damage, M. Skill Critical Damage, Debuff/ Anomaly Resistance, MP Recovery Rate. Decreases Skill MP Consumption. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90129" name="Scroll: Assassin Servitor" type="EtcItem">
+		<!-- A scroll for learning the Assassin Servitor skill. <Class>. Spectral Master. <Skill effect>. Makes the servitor possessed with an ancient assassin's spirit. Increases Max HP, Max MP, P. Atk./ M. Atk./ P. Def./ M. Def., Atk. Spd., Casting Spd., Speed, P. Critical Rate, M. Skill Critical Rate, P. Critical Damage, M. Skill Critical Damage, Debuff/ Anomaly Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90130" name="Scroll: Final Servitor" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90131" name="Scroll: Servitor Share" type="EtcItem">
+		<!-- A scroll for learning the Servitor Share skill. <Classes>. Arcana Lord, Elemental Master, Spectral Master. <Skill effect>. Transfers master's abilities to the servitor. Transfers P./ M. Atk., P./ M. Def., Atk. Spd., Casting Spd., Max HP/ MP to the servitor. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. -Powerful Servitor Share -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90132" name="Monster Arena Belt" additionalName="7-day" type="Armor">
+		<!-- Available for 7 d. CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, received damage -3%. -->
+		<set name="icon" val="icon.belt_of_tiat" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ItemSkills" />
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+		<skills>
+			<skill id="39206" level="1" /> <!-- Monster Arena Belt -->
+		</skills>
+	</item>
+	<item id="90133" name="Scroll: Exciting Adventure" type="EtcItem">
+		<!-- A scroll for learning the Exciting Adventure skill. <Class>. Adventurer. <Skill effect>. Grants feeling of extreme excitement in melee combat. Increases Speed, P. Evasion, Vital Point Attack Rate, P. Skill Evasion Rate, Buff Cancel Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90134" name="Scroll: Wind Riding" type="EtcItem">
+		<!-- A scroll for learning the Wind Riding skill. <Class>. Wind Rider. <Skill effect>. Storms the battleground riding the Wind. Increases Speed, P. Evasion, Vital Point Attack Rate, P. Skill Evasion Rate, Buff Cancel Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90135" name="Scroll: Ghost Walking" type="EtcItem">
+		<!-- A scroll for learning the Ghost Walking skill. <Class>. Ghost Hunter. <Skill effect>. Infiltrates the battleground like a ghost. Increases Speed, P. Evasion, Vital Point Attack Rate, P. Skill Evasion Rate, Buff Cancel Resistance. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90136" name="Dimensional Gift" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39207" level="1" /> <!-- Dimensional Gift -->
+		</skills>
+	</item>
+	<item id="90137" name="Matte Pendant Polish" type="EtcItem">
+		<!-- Enhances pendants' parameters. Can be used with Fire/ Earth Dragon Pendant up to +6. In case of failure, the pendant does not disappear, and its enchant value remains the same. Starting from +4, activates special effects depending on the item type. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.bm_pendant_varnish" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="39208" level="1" /> <!-- Matte Pendant Polish -->
+		</skills>
+	</item>
+	<item id="90138" name="Glittering Pendant Polish" type="EtcItem">
+		<!-- Enhances pendants' parameters. Can be used with Fire/ Earth Dragon Pendant up to +9. In case of failure, the pendant does not disappear, and its enchant value remains the same. Starting from +4, activates special effects depending on the item type. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.bm_pendant_varnish_premium" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="39209" level="1" /> <!-- Glittering Pendant Polish -->
+		</skills>
+	</item>
+	<item id="90139" name="Silver Bait" additionalName="Sealed" type="EtcItem">
+		<!-- Fishing Bait. Can be used for fishing Whales. -->
+		<set name="icon" val="icon.bm_silver_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="90140" name="Spirit Transformation Bracelet - Prophet" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. Transforms to Prophet Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Focus, Death Whisper, Guidance, Haste, Acumen, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="90141" name="Spirit Transformation Bracelet - Shillien Elder" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. Transforms to Shillien Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Vampiric Rage, Empower, Death Whisper, Guidance, and Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="90142" name="Spirit Transformation Bracelet - Elven Elder" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. Required to transform to Elven Elder Spirit. Can be used once a day. After the transformation for 4 h. the following skills are available: Might, Shield, Wind Walk, Return, Clarity, Agility, Decrease Weight, Regeneration, and Greater Heal. -->
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="90143" name="Einhasad's Protection" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Acquired XP +100%. Acquired SP +100%. Duration: 60 min. Cooldown: 1 min. The effect remains after death. <font color=ff6666>Note!</font>. The Einhasad's Protection effect is triggered when using the item along with the following buffs:. - Einhasad's Blessing Scroll. - Dandy's Home Run Ball. - Dandy's Golden Ball. - Giran Seal -->
+		<set name="icon" val="icon.bm_nebit_bonus_time_up" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39212" level="1" /> <!-- Einhasad's Protection -->
+		</skills>
+	</item>
+	<item id="90144" name="Transformation Scroll: White Assassin" type="EtcItem">
+		<!-- Transforms into White Assassin. <Transformation effect>. P. Atk. +3%. M. Atk. +3%. P. Def. +3%. M. Def. +3%. Max HP +7%. Max MP +7%. Atk. Spd. +5%. Speed +5. P. Accuracy +2. M. Accuracy +2. M. Critical Rate +20. Duration: 20 min. The effect remains after death. -->
+		<set name="icon" val="icon.scroll_of_verification_i06" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="material" val="LIQUID" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39210" level="1" /> <!-- White Assassin Transformation Scroll -->
+		</skills>
+	</item>
+	<item id="90145" name="Ring of Savior" additionalName="Sealed" type="Armor">
+		<!-- Stun Resistance +5%, HP Recovery Rate +1.8/ MP Recovery Rate +1.1 while running. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.event_classic_ring" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="mDef">32</stat>
+		</stats>
+	</item>
+	<item id="90146" name="Savior's Cube" additionalName="30-day" type="EtcItem">
+		<!-- Available for 30 days. Double-click to obtain 1 Savior Scroll: Enchant Weapon and 1 Savior' Growth Scroll (can be used only once a day). -->
+		<set name="icon" val="icon.crystal_cube_event_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="90147" name="Mark of Savior" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for a Savior's weapon (30-day) through the Game Assistant. -->
+		<set name="icon" val="icon.etc_ev_kalie_token" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="90148" name="Savior's Growth Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- For 2 h., acquired XP/ SP while hunting +50%. Cooldown: 2 h. The effect remains after death. -->
+		<set name="icon" val="icon.etc_kalie_hero_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="90149" name="Savior Scroll: Enchant Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- Only for Savior's weapons. In the case of failure, the item does not disappear, and its enchantment level remains the same. -->
+		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="39213" level="1" /> <!-- Radiant Sayha's Cloak Enchantment Scroll -->
+		</skills>
+	</item>
+	<item id="90150" name="Savior's Dual Sword" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 d. <Soul crystal property>. Atk. Spd. +5%. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2340" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">162</stat>
+			<stat type="mAtk">80</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90151" name="Savior's Staff" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 d. <Soul crystal property>. Casting Spd. +12%. -->
+		<set name="icon" val="icon.weapon_crystal_staff_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90152" name="Savior's Bow" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 d. <Soul crystal property>. P. Critical Rate +52. -->
+		<set name="icon" val="icon.weapon_crystallized_ice_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="HORN" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">316</stat>
+			<stat type="mAtk">92</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="90153" name="Savior's Dagger" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 d. <Soul crystal property>. P. Critical Rate +66. -->
+		<set name="icon" val="icon.weapon_dark_screamer_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90154" name="Savior's Spear" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 d. <Soul crystal property>. With a 25% chance, stuns the target after a critical attack. -->
+		<set name="icon" val="icon.weapon_scorpion_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="90155" name="Savior's Herald" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90156" min="1" max="1" chance="100" /> <!-- Talisman of Border Lv. 6 - 30-day -->
+			<item id="90158" min="1" max="1" chance="100" /> <!-- +6 Fire Dragon Pendant - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="90156" name="Talisman of Border Lv. 6" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. P./ M. Def. +24, P./ M. Evasion +2, HP/ MP/ CP +160, Speed +5, Atk. Spd./ Casting Spd. +15, Acquired XP/ SP +4%. Enables Border Purification (removes Paralysis, Petrification, Poisoning, and Bleeding). Effects of two identical talismans do not stack. -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="90157" name="Warrior's Talisman - Attack" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. PvE Damage +3%, P. Critical Damage/ M. Skill Critical Damage +20, P./ M. Skill Power +2%, P./ M. Accuracy +1. -->
+		<set name="icon" val="icon.r90_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35036" level="1" /> <!-- Warrior s Talisman - Attack -->
+		</skills>
+	</item>
+	<item id="90158" name="+6 Fire Dragon Pendant" additionalName="30-day" type="Armor">
+		<!-- M. Def. +16, acquired XP/ SP +10%, P./ M. Atk. +20. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="35007" level="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">40</stat>
+		</stats>
+	</item>
+	<item id="90159" name="Talisman of Battle - Liberate" additionalName="Sealed" type="Armor">
+		<!-- Removes all debuffs. Cooldown: 10 min. -->
+		<set name="icon" val="icon.etc_talisman_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ItemSkills" />
+		<cond addName="1" msgId="113">
+			<player insideZoneId="311,312,313,314" />
+		</cond>
+		<skills>
+			<skill id="35045" level="1" /> <!-- Talisman of Battle - Liberate -->
+		</skills>
+	</item>
+	<item id="90160" name="Warrior's Talisman - Defense" additionalName="7-day" type="Armor">
+		<!-- Available for 7 days. Received PvE Damage -3%, M. Damage Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Pull Resistance +10%. -->
+		<set name="icon" val="icon.r99_talisman_pd_up_passive" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="35037" level="1" /> <!-- Warrior s Talisman - Defense -->
+		</skills>
+	</item>
+	<item id="90161" name="Chest of Glory" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_readybox_gold" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90132" min="1" max="1" chance="100" /> <!-- Monster Arena Belt - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90162" name="Warrior's Talisman Pack - Attack" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.new_user_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90157" min="1" max="1" chance="100" /> <!-- Warrior's Talisman - Attack - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90163" name="Warrior's Talisman Pack - Defense" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.new_user_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90160" min="1" max="1" chance="100" /> <!-- Warrior's Talisman - Defense - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="90164" name="Battle Cure" additionalName="Sealed" type="EtcItem">
+		<!-- HP/ MP +1. Cooldown: 10 min. Can be used only in the Monster Arena. -->
+		<set name="icon" val="icon.super_elixir_potion" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90165" name="Ticket for Monster Arena" additionalName="Sealed" type="EtcItem">
+		<!-- An extra pass to a daily dungeon. Double-click to reset the Monster Arena timer. Can be used only once a day. -->
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90166" name="Elite Ticket for Monster Arena" additionalName="Sealed" type="EtcItem">
+		<!-- An extra pass to a daily dungeon. Double-click to reset the Elite Monster Arena timer. Can be used only once a day. -->
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90167" name="Bunch of Bananas" additionalName="Sealed" type="EtcItem">
+		<!-- For 5 min., acquired XP/ SP while hunting +10%, P./ M. Atk. +15%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +10%, Speed +10. The effect disappears after logout. -->
+		<set name="icon" val="Icon.ev_monkey_banana" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39223" level="1" /> <!-- Herb Banana Monkey Event -->
+		</skills>
+	</item>
+	<item id="90168" name="Strawberry Banana Cocktail" type="EtcItem">
+		<!-- For 5 min., activates the effect of Strawberry Banana Cocktail (Scroll: Prophecy of Fire Lv. 1). Note!. Effects of two cocktails do not stack. -->
+		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39224" level="1" /> <!-- Strawberry-Banana Cocktail -->
+		</skills>
+	</item>
+	<item id="90169" name="Mango Banana Cocktail" type="EtcItem">
+		<!-- For 5 min., activates the effect of Mango Banana Cocktail (Scroll: Prophecy of Water Lv. 1). Note!. Effects of two cocktails do not stack. -->
+		<set name="icon" val="icon.etc_fruit_cocktail_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39225" level="1" /> <!-- Mango-Banana Cocktail -->
+		</skills>
+	</item>
+	<item id="90170" name="Cherry Banana Cocktail" type="EtcItem">
+		<!-- For 5 min., activates the effect of Cherry Banana Cocktail (Scroll: Prophecy of Wind Lv. 1). Note!. Effects of two cocktails do not stack. -->
+		<set name="icon" val="icon.etc_fruit_cocktail_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39226" level="1" /> <!-- Cherry-Banana Cocktail -->
+		</skills>
+	</item>
+	<item id="90171" name="Monkey Bait" additionalName="Sealed" type="EtcItem">
+		<!-- A fishing bait for catching a Tuna. -->
+		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
+		<set name="bodypart" val="lhand" />
+		<set name="default_action" val="EQUIP" />
+		<set name="etcitem_type" val="LURE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="90172" name="Gemstone of Border" type="EtcItem">
+		<!-- For enchanting Talisman of Border above Lv. 4. Give this item, along with a low-level Talisman of Border, to Baggins, and you will get a higher-level Talisman of Border. Note!. Cannot be used to enchant Talisman of Border Lv. 10 and Blessed Talisman of Border. -->
+		<set name="icon" val="icon.ensoul_big_mm" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90173" name="Tuna" type="EtcItem">
+		<!-- Double-click to obtain some SP. Can be exchanged for SP Scroll through a Fishing Guildsman. -->
+		<set name="icon" val="icon.fish_huge_i12" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90174" name="Silver Bait Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_silver_lure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49507" min="1" max="1" chance="100" /> <!-- Fishing Rod Pack - 10-day -->
+			<item id="90139" min="1080" max="1080" chance="100" /> <!-- Silver Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90175" name="Golden Bait Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="38154" min="180" max="180" chance="100" /> <!-- Fishing Shot -->
+			<item id="49589" min="180" max="180" chance="100" /> <!-- Golden Bait -->
+		</capsuled_items>
+	</item>
+	<item id="90176" name="Golden Fishing kit Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="90139" min="2160" max="2160" chance="100" /> <!-- Silver Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90177" name="Golden Fishing kit Lv. 2" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="90139" min="2160" max="2160" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="90143" min="2" max="2" chance="100" /> <!-- Einhasad's Protection -->
+		</capsuled_items>
+	</item>
+	<item id="90178" name="Golden Fishing kit Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="90139" min="6480" max="6480" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="90143" min="4" max="4" chance="100" /> <!-- Einhasad's Protection -->
+		</capsuled_items>
+	</item>
+	<item id="90179" name="Golden Fishing kit Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49521" min="1" max="1" chance="100" /> <!-- Refined Romantic Chapeau <STR +1 INT +1> -->
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="90139" min="6480" max="6480" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="90143" min="10" max="10" chance="100" /> <!-- Einhasad's Protection -->
+		</capsuled_items>
+	</item>
+	<item id="90180" name="Golden Fishing kit Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49521" min="1" max="1" chance="100" /> <!-- Refined Romantic Chapeau <STR +1 INT +1> -->
+			<item id="49588" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Fishing Rod Chest - 30-day -->
+			<item id="49590" min="1" max="1" chance="100" /> <!-- Rare Accessory Pack Lv. 3 - 30-day -->
+			<item id="90139" min="12960" max="12960" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="90143" min="15" max="15" chance="100" /> <!-- Einhasad's Protection -->
+		</capsuled_items>
+	</item>
+	<item id="90181" name="Shiny Coin" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to the Fishing Guild to obtain one of the following items: Fishing Rod Pack (10-day), Silver Bait Box, Golden Fishing Kit Lv. 1~5, Shining Fishing Kit Lv. 1~2. The price differs for various items. -->
+		<set name="icon" val="icon.ev_festival_goldcoin" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90182" name="Shining Golden Bait" type="EtcItem">
+		<!-- A fishing bait. Can be used to catch Glowing Whale. Gives a small chance to get Shiny Coin. -->
+		<set name="icon" val="icon.bm_gold_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="90183" name="Chef's Fish Stew - Victory" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Accuracy +4. M. Accuracy +4. P. Evasion +4. M. Evasion +4. Atk. Spd. +10%. Casting Spd. +10%. HP Recovery Rate +20%. MP Recovery Rate +20%. P. Critical Rate +15%. M. Critical Rate +15%. P. Critical Damage +15%. M. Critical Damage +15%. Damage to monsters +15%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=ff6666>(The effect does not stack with other Prophecy-type buffs.)</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90184" name="Chef's Fish Stew - Fire" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Max HP +10%. HP Recovery Rate +10%. P. Def. +10%. M. Def. +10%. Atk. Spd. +10%. Casting Spd. +10%. Damage to monsters +15%. P. Critical Rate +25%. M. Critical Rate +25%. Debuff Resistance +10%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=ff6666>(The effect does not stack with other Prophecy-type buffs.)</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90185" name="Chef's Fish Stew - Water" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Max MP +15%. MP Recovery Rate +10%. P. Def. +10%. M. Def. +10%. Atk. Spd. +10%. Casting Spd. +10%. Skill MP consumption -10%. Damage to monsters +15%. Debuff Resistance +10%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=ff6666>(The effect does not stack with other Prophecy-type buffs.)</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90186" name="Chef's Fish Stew - Wind" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Accuracy +4. M. Accuracy +4. P. Evasion +4. M. Evasion +4. P. Critical Rate +15%. M. Critical Rate +15%. P. Critical Damage +25%. M. Critical Damage +25%. Speed +10%. Debuff Resistance +10%. Damage to monsters +15%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=ff6666>(The effect does not stack with other Prophecy-type buffs.)</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="90187" name="Gold Urn" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_pot" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49518" min="3" max="3" chance="3.333333" /> <!-- Special Pirate Fruit -->
+			<item id="90186" min="1" max="1" chance="3.333333" /> <!-- Chef's Fish Stew - Wind -->
+			<item id="90185" min="1" max="1" chance="3.333333" /> <!-- Chef's Fish Stew - Water -->
+			<item id="90184" min="1" max="1" chance="3.333333" /> <!-- Chef's Fish Stew - Fire -->
+			<item id="13016" min="10" max="10" chance="3.333333" /> <!-- My Teleport Scroll -->
+			<item id="10649" min="1" max="1" chance="3.333333" /> <!-- Feather of Blessing -->
+			<item id="49845" min="1" max="1" chance="3.333333" /> <!-- Sayha's Blessing -->
+			<item id="90183" min="1" max="1" chance="3.333333" /> <!-- Chef's Fish Stew - Victory -->
+			<item id="90182" min="60" max="60" chance="3.333333" /> <!-- Shining Golden Bait -->
+			<item id="49846" min="1" max="1" chance="3.333333" /> <!-- Sayha's Silver Light Blessing -->
+			<item id="49847" min="1" max="1" chance="3.333333" /> <!-- Sayha's Golden Light Blessing -->
+			<item id="90143" min="1" max="1" chance="3.333333" /> <!-- Einhasad's Protection -->
+			<item id="90020" min="1" max="1" chance="3.333333" /> <!-- Best Dye Pack - 3rd Class -->
+			<item id="49472" min="1" max="1" chance="3.333333" /> <!-- Earth Dragon Pendant Pack -->
+			<item id="49471" min="1" max="1" chance="3.333333" /> <!-- Fire Dragon Pendant Pack -->
+			<item id="90045" min="1" max="1" chance="3.333333" /> <!-- Magic Tablet -->
+			<item id="49687" min="1" max="1" chance="3.333333" /> <!-- Chic Silver Chapeau <STR +1 INT +1> -->
+			<item id="49521" min="1" max="1" chance="3.333333" /> <!-- Refined Romantic Chapeau <STR +1 INT +1> -->
+			<item id="90137" min="1" max="1" chance="3.333333" /> <!-- Matte Pendant Polish -->
+			<item id="49756" min="1" max="1" chance="3.333333" /> <!-- Cloth Piece -->
+			<item id="49513" min="1" max="1" chance="3.333333" /> <!-- Shining Pendant Polish box -->
+			<item id="49580" min="1" max="1" chance="3.333333" /> <!-- Baium's Ring -->
+			<item id="6662" min="1" max="1" chance="3.333333" /> <!-- Ring of Core -->
+			<item id="6661" min="1" max="1" chance="3.333333" /> <!-- Orfen's Earring -->
+			<item id="6660" min="1" max="1" chance="3.333333" /> <!-- Queen Ant's Ring -->
+			<item id="90138" min="1" max="1" chance="3.333333" /> <!-- Glittering Pendant Polish -->
+			<item id="94403" min="1" max="1" chance="3.333333" /> <!-- Package: +2 Baium's Ring - Sealed -->
+			<item id="94398" min="1" max="1" chance="3.333333" /> <!-- Package: +2 Ring of Core - Sealed -->
+			<item id="94393" min="1" max="1" chance="3.333333" /> <!-- Package: +2 Orfen's Earring - Sealed -->
+			<item id="94388" min="1" max="1" chance="3.333333" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90188" name="Glowing Whale" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain some SP. Can be exchanged for SP Scroll through a Fishing Guildsman. -->
+		<set name="icon" val="icon.fish_huge_i15" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90189" name="Blue Spinel" type="EtcItem">
+		<!-- Reward. Obtained from helping Grocer Pink. Can be exchanged for rare items. -->
+		<set name="icon" val="icon.ensoul_big_m" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90190" name="Dandy's Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +20, Acquired XP/ SP +30%, P./ M. Atk. +50, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon skill. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="90191" name="Dandy's Shining Pendant" additionalName="7-day" type="Armor">
+		<!-- M. Def. +21, Acquired XP/ SP +30%, P./ M. Atk. +60, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon and Fire Dragon's Protection skills. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">52</stat>
+		</stats>
+	</item>
+	<item id="90192" name="Giant's Enchant Scroll Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="947" min="2" max="2" chance="14.28571" /> <!-- Scroll: Enchant B-grade Weapon -->
+			<item id="6573" min="1" max="1" chance="14.28571" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+			<item id="6571" min="1" max="1" chance="14.28571" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
+			<item id="33807" min="1" max="1" chance="14.28571" /> <!-- Improved Scroll: Enchant C-grade Weapon -->
+			<item id="33808" min="1" max="1" chance="14.28571" /> <!-- Improved Scroll: Enchant B-grade Weapon -->
+			<item id="49484" min="1" max="1" chance="14.28571" /> <!-- Stable Scroll: Enchant C-grade Weapon -->
+			<item id="49486" min="1" max="1" chance="14.28571" /> <!-- Stable Scroll: Enchant B-grade Weapon -->
+		</capsuled_items>
+	</item>
+	<item id="90193" name="Low-grade Arena Loot" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="46254" min="1" max="1" chance="20" /> <!-- Dandy's Home Run Ball - Sealed -->
+			<item id="35669" min="1" max="1" chance="20" /> <!-- Angel Cat's Blessing - 30-day -->
+			<item id="49757" min="1" max="1" chance="20" /> <!-- Sayha's Holy Water - Sealed -->
+			<item id="49487" min="5" max="5" chance="20" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49488" min="20" max="20" chance="20" /> <!-- Hero's Top-grade HP Replenishing Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90194" name="Mid-grade Arena Loot" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90034" min="1" max="1" chance="20" /> <!-- Spellbook Chest - 3rd Class -->
+			<item id="90045" min="1" max="1" chance="20" /> <!-- Magic Tablet -->
+			<item id="49541" min="1" max="1" chance="20" /> <!-- Spellbook Chest - Not Available -->
+			<item id="90007" min="3" max="3" chance="20" /> <!-- Low-grade Life Stone - Weapon - Sealed -->
+			<item id="49772" min="5" max="5" chance="20" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90195" name="High-grade Arena Loot" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49590" min="1" max="1" chance="14.28571" /> <!-- Rare Accessory Pack Lv. 3 - 30-day -->
+			<item id="49766" min="1" max="1" chance="14.28571" /> <!-- Unidentified Rock -->
+			<item id="49525" min="1" max="1" chance="14.28571" /> <!-- Rare Accessory Pack Lv. 1 - 15-day -->
+			<item id="90191" min="1" max="1" chance="14.28571" /> <!-- Dandy's Shining Pendant - 7-day -->
+			<item id="90190" min="1" max="1" chance="14.28571" /> <!-- Dandy's Pendant - 7-day -->
+			<item id="49802" min="1" max="1" chance="14.28571" /> <!-- Dandy's Shining Pendant - 1-day -->
+			<item id="49801" min="1" max="1" chance="14.28571" /> <!-- Dandy's Pendant - 1-day -->
+		</capsuled_items>
+	</item>
+	<item id="90196" name="Dandy's Pendant" additionalName="2-hour" type="Armor">
+		<!-- M. Def. +20, Acquired XP/ SP +30%, P./ M. Atk. +50, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon skill. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="120" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+	</item>
+	<item id="90197" name="Dandy's Shining Pendant" additionalName="2-hour" type="Armor">
+		<!-- M. Def. +21, Acquired XP/ SP +30%, P./ M. Atk. +60, P. Critical Damage/ M. Skill Critical Damage +5%. Allows use of Blessing of Fire Dragon and Fire Dragon's Protection skills. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="120" />
+		<stats>
+			<stat type="pDef">52</stat>
+		</stats>
+	</item>
+	<item id="90198" name="MOPP Combat Ration" additionalName="Sealed" type="EtcItem">
+		<!-- For 5 min., acquired XP/ SP +10%, P./ M. Atk. +15%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +10%, Speed +10, Sayha's Grace Consumption -30%. The effect disappears after logout. -->
+		<set name="icon" val="icon.ev_mopp_herb" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90199" name="Hunter's Memo" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Altran asked you to kill monsters who raided tombs of his family graveyard. Slay monsters from the list. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+</list>

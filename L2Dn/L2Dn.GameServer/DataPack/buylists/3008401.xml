@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<npcs>
+		<npc>30084</npc> <!-- Graham -->
+	</npcs>
+	<item id="5284" price="244000" /> <!-- Zweihander -->
+	<item id="981" price="25500" /> <!-- Red Sunset Sword -->
+	<item id="1333" price="54100" /> <!-- Brandish -->
+	<item id="2" price="136000" /> <!-- Long Sword -->
+	<item id="68" price="244000" /> <!-- Falchion -->
+	<item id="1" price="768" /> <!-- Short Sword -->
+	<item id="3" price="12500" /> <!-- Broadsword -->
+	<item id="66" price="54100" /> <!-- Gladius -->
+	<item id="67" price="54100" /> <!-- Orcish Sword -->
+	<item id="120" price="136000" /> <!-- Sword of Reflection -->
+	<item id="121" price="136000" /> <!-- Sword of Watershadow -->
+	<item id="122" price="54100" /> <!-- Handmade Sword -->
+	<item id="738" price="18500" /> <!-- Sword of Solidarity -->
+	<item id="743" price="33600" /> <!-- Sword of Sentinel -->
+	<item id="975" price="33600" /> <!-- Blood Saber -->
+	<item id="1510" price="25500" /> <!-- Butcher's Sword -->
+	<item id="94880" price="244000" /> <!-- Wooden Pistols -->
+	<item id="91891" price="244000" /> <!-- Warrior's Rapier -->
+	<item id="15" price="136000" /> <!-- Short Spear -->
+	<item id="16" price="244000" /> <!-- Great Spear -->
+	<item id="256" price="136000" /> <!-- Cestus -->
+	<item id="257" price="244000" /> <!-- Viper Fang -->
+	<item id="253" price="768" /> <!-- Spiked Gloves -->
+	<item id="254" price="12500" /> <!-- Iron Gloves -->
+	<item id="255" price="54100" /> <!-- Fox Glow Gloves -->
+	<item id="2371" price="25500" /> <!-- Fist of Butcher -->
+	<item id="218" price="136000" /> <!-- Throwing Knife -->
+	<item id="219" price="244000" /> <!-- Sword Breaker -->
+	<item id="11" price="768" /> <!-- Bone Dagger -->
+	<item id="12" price="12500" /> <!-- Knife -->
+	<item id="215" price="12500" /> <!-- Doom Dagger -->
+	<item id="216" price="54100" /> <!-- Dirk -->
+	<item id="217" price="136000" /> <!-- Shining Knife -->
+	<item id="946" price="66600" /> <!-- Skeleton Dagger -->
+	<item id="989" price="25500" /> <!-- Eldritch Dagger -->
+	<item id="2372" price="25500" /> <!-- Dagger of Adept -->
+	<item id="2374" price="25500" /> <!-- Red Sunset Dagger -->
+	<item id="272" price="136000" /> <!-- Forest Bow -->
+	<item id="273" price="244000" /> <!-- Compound Bow -->
+	<item id="13" price="768" /> <!-- Short Bow -->
+	<item id="14" price="12500" /> <!-- Bow -->
+	<item id="271" price="54100" /> <!-- Hunting Bow -->
+	<item id="155" price="244000" /> <!-- Flanged Mace -->
+	<item id="87" price="244000" /> <!-- Iron Hammer -->
+	<item id="4" price="768" /> <!-- Club -->
+	<item id="5" price="12500" /> <!-- Mace -->
+	<item id="152" price="8070" /> <!-- Heavy Chisel -->
+	<item id="153" price="18500" /> <!-- Sickle -->
+	<item id="154" price="54100" /> <!-- Dwarven Mace -->
+	<item id="1511" price="25500" /> <!-- Silversmith Hammer -->
+	<item id="2501" price="136000" /> <!-- Bone Club -->
+	<item id="91877" price="244000" /> <!-- Ancient Warrior's Sword -->
+	<item id="7880" price="409000" /> <!-- Steel Sword -->
+	<item id="5285" price="409000" /> <!-- Heavy Sword -->
+	<item id="124" price="967000" /> <!-- Two-handed Sword -->
+	<item id="7881" price="1400000" /> <!-- Lesser Giant's Sword -->
+	<item id="70" price="1800000" /> <!-- Claymore -->
+	<item id="7896" price="1400000" /> <!-- Lesser Giant's Hammer -->
+	<item id="123" price="409000" /> <!-- Saber -->
+	<item id="69" price="644000" /> <!-- Bastard Sword -->
+	<item id="126" price="644000" /> <!-- Artisan's Sword -->
+	<item id="127" price="967000" /> <!-- Crimson Sword -->
+	<item id="130" price="967000" /> <!-- Elven Sword -->
+	<item id="129" price="1400000" /> <!-- Sword of Revolution -->
+	<item id="2499" price="1800000" /> <!-- Elven Long Sword -->
+	<item id="125" price="644000" /> <!-- Spinebone Sword -->
+	<item id="128" price="644000" /> <!-- Knight's Sword -->
+	<item id="94881" price="1800000" /> <!-- Brass Pistols -->
+	<item id="91893" price="1400000" /> <!-- Epee -->
+	<item id="91894" price="967000" /> <!-- Estoc -->
+	<item id="91895" price="644000" /> <!-- Fleuret -->
+	<item id="91892" price="1800000" /> <!-- Grand Epee -->
+	<item id="291" price="409000" /> <!-- Trident -->
+	<item id="292" price="644000" /> <!-- Pike -->
+	<item id="295" price="644000" /> <!-- Dwarven Trident -->
+	<item id="293" price="967000" /> <!-- Battle Hammer -->
+	<item id="296" price="967000" /> <!-- Dwarven Pike -->
+	<item id="294" price="1400000" /> <!-- War Pick -->
+	<item id="93" price="1400000" /> <!-- Winged Spear -->
+	<item id="297" price="1800000" /> <!-- Glaive -->
+	<item id="258" price="409000" /> <!-- Bagh-Nakh -->
+	<item id="259" price="644000" /> <!-- Single-edged Jamadhr -->
+	<item id="260" price="967000" /> <!-- Triple-edged Jamadhr -->
+	<item id="261" price="1400000" /> <!-- Bich'Hwa -->
+	<item id="262" price="1800000" /> <!-- Scallop Jamadhr -->
+	<item id="220" price="409000" /> <!-- Crafted Dagger -->
+	<item id="221" price="409000" /> <!-- Assassin Knife -->
+	<item id="222" price="644000" /> <!-- Poniard Dagger -->
+	<item id="223" price="967000" /> <!-- Kukuri -->
+	<item id="224" price="1400000" /> <!-- Maingauche -->
+	<item id="1660" price="1400000" /> <!-- Cursed Maingauche -->
+	<item id="225" price="1800000" /> <!-- Mithril Dagger -->
+	<item id="274" price="409000" /> <!-- Reinforced Bow -->
+	<item id="275" price="644000" /> <!-- Longbow -->
+	<item id="276" price="644000" /> <!-- Elven Bow -->
+	<item id="277" price="644000" /> <!-- Dark Elven Bow -->
+	<item id="278" price="967000" /> <!-- Gastraphetes -->
+	<item id="279" price="1400000" /> <!-- Reinforced Longbow -->
+	<item id="280" price="1800000" /> <!-- Light Bow -->
+	<item id="156" price="409000" /> <!-- Hand Axe -->
+	<item id="166" price="409000" /> <!-- Heavy Mace -->
+	<item id="168" price="409000" /> <!-- Work Hammer -->
+	<item id="86" price="644000" /> <!-- Tomahawk -->
+	<item id="157" price="967000" /> <!-- Spiked Club -->
+	<item id="158" price="1400000" /> <!-- Tarbar -->
+	<item id="172" price="1400000" /> <!-- Heavy Bone Club -->
+	<item id="88" price="1400000" /> <!-- Morning Star -->
+	<item id="159" price="1800000" /> <!-- Bonebreaker -->
+	<item id="169" price="1400000" /> <!-- Skull Breaker -->
+	<item id="167" price="409000" /> <!-- Scalpel -->
+	<item id="91879" price="967000" /> <!-- Field Sword -->
+	<item id="91880" price="644000" /> <!-- Military Talwar -->
+	<item id="91881" price="409000" /> <!-- Talwar -->
+	<item id="91878" price="1400000" /> <!-- Katzbalger -->
+	<item id="71" price="2290000" /> <!-- Flamberge -->
+	<item id="7882" price="4300000" /> <!-- Pa'agrio Sword -->
+	<item id="72" price="2290000" /> <!-- Stormbringer -->
+	<item id="76" price="4300000" /> <!-- Sword of Delusion -->
+	<item id="298" price="2290000" /> <!-- Orcish Glaive -->
+	<item id="95" price="4300000" /> <!-- Poleaxe -->
+	<item id="263" price="2290000" /> <!-- Chakram -->
+	<item id="265" price="4300000" /> <!-- Fisted Blade -->
+	<item id="226" price="2290000" /> <!-- Cursed Dagger -->
+	<item id="233" price="4300000" /> <!-- Dark Screamer -->
+	<item id="281" price="2290000" /> <!-- Frozen Bow -->
+	<item id="283" price="4300000" /> <!-- Akat Longbow -->
+	<item id="161" price="2290000" /> <!-- Silver Axe -->
+	<item id="162" price="4300000" /> <!-- War Axe -->
+</list>

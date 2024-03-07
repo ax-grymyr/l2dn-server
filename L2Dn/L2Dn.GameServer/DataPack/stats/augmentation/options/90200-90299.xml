@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="90200" name="option_id_90200">
+		<!-- Received Skill Critical Damage -150 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90201" name="option_id_90201">
+		<!-- Received Skill Critical Damage -200 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90202" name="option_id_90202">
+		<!-- Received Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90203" name="P./ M. Def. +30">
+		<!-- P./ M. Def. +30 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90204" name="Debuff/ Anomaly Resistance +2%">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<effects>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-2</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
+	</option>
+	<option id="90205" name="P./ M. Def. +100">
+		<!-- P./ M. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90206" name="Knockback/ Suppression/ Hold Resistance +1%">
+		<!-- Knockback/ Suppression/ Hold Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SUPPRESSION>1</SUPPRESSION>
+				<KNOCKDOWN>1</KNOCKDOWN>
+				<KNOCKBACK>1</KNOCKBACK>
+				<HOLD>1</HOLD>
+			</effect>
+		</effects>
+	</option>
+	<option id="90207" name="option_id_90207">
+		<!-- Max HP/ MP +200, acquired XP/ SP +20%, XP recovery fee -10% -->
+	</option>
+	<option id="90208" name="Knockback Resistance +1%, received P. Skill Critical Damage -0.2%">
+		<!-- Knockback Resistance +1%, received P. Skill Critical Damage -0.2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>1</KNOCKDOWN>
+				<KNOCKBACK>1</KNOCKBACK>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90209" name="Dagger Resistance +2%, received P. Skill Critical Damage -0.4%">
+		<!-- Dagger Resistance +2%, received P. Skill Critical Damage -0.4% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90210" name="Sword Resistance +2%, received P. Skill Critical Damage -0.6%">
+		<!-- Sword Resistance +2%, received P. Skill Critical Damage -0.6% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90211" name="Bow Resistance +2%, Firearms Resistance +2%, received P. Skill Critical Damage -0.8%">
+		<!-- Bow Resistance +2%, Firearms Resistance +2%, received P. Skill Critical Damage -0.8% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<BOW>2</BOW>
+				<PISTOLS>2</PISTOLS>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90212" name="P./ M. Atk. +5, P./ M. Def. +10, acquired XP/ SP +2%">
+		<!-- P./ M. Atk. +5, P./ M. Def. +10, acquired XP/ SP +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90213" name="P./ M. Atk. +10, P./ M. Def. +20, acquired XP/ SP +3%">
+		<!-- P./ M. Atk. +10, P./ M. Def. +20, acquired XP/ SP +3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90214" name="P./ M. Atk. +30, P./ M. Def. +60, acquired XP/ SP +7%">
+		<!-- P./ M. Atk. +30, P./ M. Def. +60, acquired XP/ SP +7% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90215" name="P./ M. Atk. +40, P./ M. Def. +80, PvE damage +3%, received PvE damage -3%">
+		<!-- P./ M. Atk. +40, P./ M. Def. +80, PvE damage +3%, received PvE damage -3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90216" name="P./ M. Atk. +50, P./ M. Def. +100, Debuff/ Anomaly Resistance +3%">
+		<!-- P./ M. Atk. +50, P./ M. Def. +100, Debuff/ Anomaly Resistance +3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-3</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>3</ANOMALY>
+			</effect>
+		</effects>
+	</option>
+	<option id="90217" name="P./ M. Atk. +20, P./ M. Def. +40, acquired XP/ SP +10%">
+		<!-- P./ M. Atk. +20, P./ M. Def. +40, acquired XP/ SP +10% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="90218" name="P./ M. Atk. +50, P./ M. Def. +100">
+		<!-- P./ M. Atk. +50, P./ M. Def. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90219" name="option_id_90219">
+		<!-- Damage Decrease Ignore +2 -->
+	</option>
+	<option id="90220" name="option_id_90220">
+		<!-- Damage Decrease Ignore +8 -->
+	</option>
+	<option id="90221" name="Basic Critical Damage and P./ M. Skill Critical Damage +100">
+		<!-- Basic Critical Damage and P./ M. Skill Critical Damage +100 -->
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90222" name="option_id_90222">
+		<!-- P./ M. Def. +30 -->
+	</option>
+	<option id="90223" name="option_id_90223">
+		<!-- P./ M. Def. +30 -->
+	</option>
+	<option id="90224" name="option_id_90224">
+		<!-- Hold Resistance +0.5% -->
+	</option>
+	<option id="90225" name="option_id_90225">
+		<!-- Hold Resistance +0.5% -->
+	</option>
+	<option id="90226" name="option_id_90226">
+		<!-- Hold Resistance +0.5% -->
+	</option>
+	<option id="90227" name="option_id_90227">
+		<!-- Received P. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90228" name="option_id_90228">
+		<!-- Received P. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90229" name="Received P. Skill Critical Damage -0.5%">
+		<!-- Received P. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90230" name="Received P. Skill Critical Damage -0.5%">
+		<!-- Received P. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90231" name="Received P. Skill Critical Damage -0.5%">
+		<!-- Received P. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90232" name="Received P. Skill Critical Damage -0.5%">
+		<!-- Received P. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90233" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90234" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90235" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Rate -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90236" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90237" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90238" name="Received M. Skill Critical Damage"> 
+		<!-- Received M. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-0.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90239" name="Max HP/ MP/ CP +130">
+		<!-- Max HP/ MP/ CP +130 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90240" name="option_id_90240">
+		<!-- Skill MP Consumption -1% -->
+	</option>
+	<option id="90241" name="P./ M. Def. +50">
+		<!-- P./ M. Def. +50 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90242" name="P./ M. Def. +100">
+		<!-- P./ M. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90243" name="option_id_90243">
+		<!-- Hold Resistance +0.5% -->
+	</option>
+	<option id="90244" name="option_id_90244">
+		<!-- Suppression Resistance +0.5% -->
+	</option>
+	<option id="90245" name="option_id_90245">
+		<!-- Suppression Resistance +0.5% -->
+	</option>
+	<option id="90246" name="P. Def. +10.">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10.</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90247" name="Max CP +40">
+		<!-- Max CP +40 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90248" name="M. Def. +5">
+		<!-- M. Def. +5 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90249" name="Max HP +40">
+		<!-- Max HP +40 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90250" name="Max MP +40">
+		<!-- Max MP +40 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90251" name="HP/ MP/ CP Recovery Rate +1">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90252" name="P. Def. +5">
+		<!-- P. Def. +5 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90253" name="Max HP/ MP/ CP +20">
+		<!-- Max HP/ MP/ CP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90254" name="option_id_90254">
+		<!-- Resistance to All Weapons +1% -->
+	</option>
+	<option id="90255" name="P./ M. Atk. +50, P./ M. Def. +100, acquired XP/ SP +5%">
+		<!-- P./ M. Atk. +50, P./ M. Def. +100, acquired XP/ SP +5% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="90256" name="P./ M. Atk. +50, P./ M. Def. +100">
+		<!-- P./ M. Atk. +50, P./ M. Def. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90257" name="P./ M. Atk. +50, P./ M. Def. +50, acquired XP/ SP +5%, Atk. Spd./ Casting Spd. +10">
+		<!-- P./ M. Atk. +50, P./ M. Def. +50, acquired XP/ SP +5%, Atk. Spd./ Casting Spd. +10 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90258" name="P./ M. Atk. +80, P./ M. Def. +100, acquired XP/ SP +10%, Atk. Spd./ Casting Spd. +15, Magic Lamp charging rate +5%, HP/ MP Recovery Rate +5, Sayha's Grace Consumption -50%">
+		<!-- P./ M. Atk. +80, P./ M. Def. +100, acquired XP/ SP +10%, Atk. Spd./ Casting Spd. +15, acquired Magic Lamp XP +5%, HP/ MP Recovery Rate +5, Sayha's Grace Consumption -50% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicLampExpRate">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="90259" name="Atk. Spd. +55">
+		<!-- Atk. Spd. +55 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90260" name="Atk. Spd. +58">
+		<!-- Atk. Spd. +58 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90261" name="Atk. Spd. +61">
+		<!-- Atk. Spd. +61 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>61</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90262" name="Atk. Spd. +65">
+		<!-- Atk. Spd. +65 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90263" name="Atk. Spd. +69">
+		<!-- Atk. Spd. +69 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>69</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90264" name="Atk. Spd. +73">
+		<!-- Atk. Spd. +73 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90265" name="Atk. Spd. +77">
+		<!-- Atk. Spd. +77 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>77</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90266" name="Atk. Spd. +81">
+		<!-- Atk. Spd. +81 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90267" name="Atk. Spd. +86">
+		<!-- Atk. Spd. +86 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90268" name="Atk. Spd. +91">
+		<!-- Atk. Spd. +91 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90269" name="Atk. Spd. +96">
+		<!-- Atk. Spd. +96 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90270" name="Atk. Spd. +101">
+		<!-- Atk. Spd. +101 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>101</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90271" name="Atk. Spd. +107">
+		<!-- Atk. Spd. +107 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>107</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90272" name="Atk. Spd. +110">
+		<!-- Atk. Spd. +110 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90273" name="Atk. Spd. +116">
+		<!-- Atk. Spd. +116 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>116</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90274" name="Atk. Spd. +122">
+		<!-- Atk. Spd. +122 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>122</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90275" name="Atk. Spd. +129">
+		<!-- Atk. Spd. +129 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>129</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90276" name="Atk. Spd. +136">
+		<!-- Atk. Spd. +136 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>136</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90277" name="Atk. Spd. +143">
+		<!-- Atk. Spd. +143 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>143</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90278" name="Atk. Spd. +150">
+		<!-- Atk. Spd. +150 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90279" name="Casting Spd. +55">
+		<!-- Casting Spd. +55 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90280" name="Casting Spd. +58">
+		<!-- Casting Spd. +58 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90281" name="Casting Spd. +61">
+		<!-- Casting Spd. +61 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>61</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90282" name="Casting Spd. +65">
+		<!-- Casting Spd. +65 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90283" name="Casting Spd. +69">
+		<!-- Casting Spd. +69 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>69</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90284" name="Casting Spd. +73">
+		<!-- Casting Spd. +73 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90285" name="Casting Spd. +77">
+		<!-- Casting Spd. +77 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>77</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90286" name="Casting Spd. +81">
+		<!-- Casting Spd. +81 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90287" name="Casting Spd. +86">
+		<!-- Casting Spd. +86 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90288" name="Casting Spd. +91">
+		<!-- Casting Spd. +91 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>91</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90289" name="Casting Spd. +96">
+		<!-- Casting Spd. +96 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90290" name="Casting Spd. +101">
+		<!-- Casting Spd. +101 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>101</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90291" name="Casting Spd. +107">
+		<!-- Casting Spd. +107 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>107</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90292" name="Casting Spd. +110">
+		<!-- Casting Spd. +110 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90293" name="Casting Spd. +116">
+		<!-- Casting Spd. +116 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>116</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90294" name="Casting Spd. +122">
+		<!-- Casting Spd. +122 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>122</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90295" name="Casting Spd. +129">
+		<!-- Casting Spd. +129 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>129</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90296" name="Casting Spd. +136">
+		<!-- Casting Spd. +136 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>136</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90297" name="Casting Spd. +143">
+		<!-- Casting Spd. +143 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>143</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90298" name="Casting Spd. +150">
+		<!-- Casting Spd. +150 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90299" name="option_id_90299">
+		<!-- MP Consumption -2% -->
+	</option>
+</list>

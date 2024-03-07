@@ -1,0 +1,1482 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="91500" name="Basalt Battlehammer Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6883" min="1" max="1" chance="100" /> <!-- Recipe: Basalt Battlehammer (30%) -->
+			<item id="92864" min="25" max="25" chance="100" /> <!-- Basalt Battlehammer Head -->
+		</capsuled_items>
+	</item>
+	<item id="91501" name="Imperial Staff Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6885" min="1" max="1" chance="100" /> <!-- Recipe: Imperial Staff (30%) -->
+			<item id="92865" min="25" max="25" chance="100" /> <!-- Imperial Staff Head -->
+		</capsuled_items>
+	</item>
+	<item id="91502" name="Angel Slayer Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6887" min="1" max="1" chance="100" /> <!-- Recipe: Angel Slayer (30%) -->
+			<item id="92866" min="25" max="25" chance="100" /> <!-- Angel Slayer Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91503" name="Dragon Hunter Axe Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6891" min="1" max="1" chance="100" /> <!-- Recipe: Dragon Hunter Axe (30%) -->
+			<item id="92867" min="25" max="25" chance="100" /> <!-- Dragon Hunter Axe Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91504" name="Saint Spear Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6893" min="1" max="1" chance="100" /> <!-- Recipe: Saint Spear (30%) -->
+			<item id="92868" min="25" max="25" chance="100" /> <!-- Saint Spear Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91505" name="Demon Splinter Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6895" min="1" max="1" chance="100" /> <!-- Recipe: Demon Splinter (30%) -->
+			<item id="92869" min="25" max="25" chance="100" /> <!-- Demon Splinter Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91506" name="Heaven's Divider Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6897" min="1" max="1" chance="100" /> <!-- Recipe: Heaven's Divider (30%) -->
+			<item id="92870" min="25" max="25" chance="100" /> <!-- Heaven's Divider Edge -->
+		</capsuled_items>
+	</item>
+	<item id="91507" name="Arcana Mace Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6899" min="1" max="1" chance="100" /> <!-- Recipe: Arcana Mace (30%) -->
+			<item id="92871" min="25" max="25" chance="100" /> <!-- Arcana Mace Head -->
+		</capsuled_items>
+	</item>
+	<item id="91508" name="Draconic Bow Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="7580" min="1" max="1" chance="100" /> <!-- Recipe: Draconic Bow (30%) -->
+			<item id="92889" min="25" max="25" chance="100" /> <!-- Draconic Bow Shaft -->
+		</capsuled_items>
+	</item>
+	<item id="91509" name="Sealed Imperial Crusader Breastplate Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6853" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Breastplate (30%) -->
+			<item id="92875" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Breastplate Part -->
+		</capsuled_items>
+	</item>
+	<item id="91510" name="Sealed Imperial Crusader Gaiters Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6855" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Gaiters (30%) -->
+			<item id="92876" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Gaiters Pattern -->
+		</capsuled_items>
+	</item>
+	<item id="91511" name="Sealed Imperial Crusader Gauntlets Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6857" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Gauntlets (30%) -->
+			<item id="92877" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Gauntlet Design -->
+		</capsuled_items>
+	</item>
+	<item id="91512" name="Sealed Imperial Crusader Boots Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6859" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Boots (30%) -->
+			<item id="92878" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Boot Design -->
+		</capsuled_items>
+	</item>
+	<item id="91513" name="Sealed Imperial Crusader Shield Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6861" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Shield (30%) -->
+			<item id="92879" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Shield Fragment -->
+		</capsuled_items>
+	</item>
+	<item id="91514" name="Sealed Imperial Crusader Helmet Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6863" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Imperial Crusader Helmet (30%) -->
+			<item id="92880" min="35" max="35" chance="100" /> <!-- Sealed Imperial Crusader Helmet Pattern -->
+		</capsuled_items>
+	</item>
+	<item id="91515" name="Sealed Draconic Leather Armor Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6865" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Draconic Leather Armor (30%) -->
+			<item id="92881" min="35" max="35" chance="100" /> <!-- Sealed Draconic Leather Armor Part -->
+		</capsuled_items>
+	</item>
+	<item id="91516" name="Sealed Draconic Leather Gloves Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6867" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Draconic Leather Gloves (30%) -->
+			<item id="92882" min="35" max="35" chance="100" /> <!-- Sealed Draconic Leather Glove Fabric -->
+		</capsuled_items>
+	</item>
+	<item id="91517" name="Sealed Draconic Leather Boots Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6869" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Draconic Leather Boots (30%) -->
+			<item id="92883" min="35" max="35" chance="100" /> <!-- Sealed Draconic Leather Boots Design -->
+		</capsuled_items>
+	</item>
+	<item id="91518" name="Sealed Draconic Leather Helmet Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6871" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Draconic Leather Helmet (30%) -->
+			<item id="92884" min="35" max="35" chance="100" /> <!-- Sealed Draconic Leather Helmet Pattern -->
+		</capsuled_items>
+	</item>
+	<item id="91519" name="Sealed Major Arcana Robe Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6873" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Major Arcana Robe (30%) -->
+			<item id="92885" min="35" max="35" chance="100" /> <!-- Sealed Major Arcana Robe Part -->
+		</capsuled_items>
+	</item>
+	<item id="91520" name="Sealed Major Arcana Gloves Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6875" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Major Arcana Gloves (30%) -->
+			<item id="92886" min="35" max="35" chance="100" /> <!-- Sealed Major Arcana Gloves Fabric -->
+		</capsuled_items>
+	</item>
+	<item id="91521" name="Sealed Major Arcana Boots Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6877" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Major Arcana Boots (30%) -->
+			<item id="92887" min="35" max="35" chance="100" /> <!-- Sealed Major Arcana Boots Design -->
+		</capsuled_items>
+	</item>
+	<item id="91522" name="Sealed Major Arcana Circlet Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6879" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Major Arcana Circlet (30%) -->
+			<item id="92888" min="35" max="35" chance="100" /> <!-- Sealed Major Arcana Circlet Pattern -->
+		</capsuled_items>
+	</item>
+	<item id="91523" name="Sealed Tateossian Earring Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6847" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Tateossian Earring (30%) -->
+			<item id="92872" min="35" max="35" chance="100" /> <!-- Sealed Tateossian Earring Part -->
+		</capsuled_items>
+	</item>
+	<item id="91524" name="Sealed Tateossian Ring Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6847" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Tateossian Earring (30%) -->
+			<item id="92873" min="35" max="35" chance="100" /> <!-- Sealed Tateossian Ring Gem -->
+		</capsuled_items>
+	</item>
+	<item id="91525" name="Sealed Tateossian Necklace Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6847" min="1" max="1" chance="100" /> <!-- Recipe: Sealed Tateossian Earring (30%) -->
+			<item id="92874" min="35" max="35" chance="100" /> <!-- Sealed Tateossian Necklace Chain -->
+		</capsuled_items>
+	</item>
+	<item id="91526" name="D-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91527" name="Elite D-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91528" name="C-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91529" name="Elite C-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91530" name="B-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91531" name="Elite B-grade Weapon Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91532" name="A-grade Weapon Varnish" type="EtcItem">
+		<!-- Low-quality varnish for A-grade weapons. Take it to Head Blacksmith Ferris in Aden to increase your weapon's parameters. -->
+		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91533" name="D-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_water_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91534" name="Elite D-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91535" name="C-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_water_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91536" name="Elite C-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91537" name="B-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_water_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91538" name="Elite B-grade Armor Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91539" name="A-grade Armor Varnish" type="EtcItem">
+		<!-- Low-quality varnish for A-grade armor. Take it to Head Blacksmith Ferris in Aden to increase your armor's parameters. -->
+		<set name="icon" val="icon.etc_water_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91540" name="D-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91541" name="Elite D-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_wind_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91542" name="C-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91543" name="Elite C-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_wind_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91544" name="B-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91545" name="Elite B-grade Accessory Varnish" type="EtcItem">
+		<!-- No longer used. Can be sold at any store or used to fill the scale of craft points. -->
+		<set name="icon" val="icon.etc_wind_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91546" name="A-grade Accessory Varnish" type="EtcItem">
+		<!-- Low-quality varnish for A-grade accessories. Take it to Head Blacksmith Ferris in Aden to increase your accessory's parameters. -->
+		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91547" name="Special A-grade Weapon Varnish" type="EtcItem">
+		<!-- High-quality varnish for A-grade weapons. Take it to Head Blacksmith Ferris in Aden to upgrade your weapon to grade S. -->
+		<set name="icon" val="icon.etc_crystal_cave_crystal_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91548" name="Special A-grade Armor Varnish" type="EtcItem">
+		<!-- High-quality varnish for A-grade armor. Take it to Head Blacksmith Ferris in Aden to upgrade your armor to grade S. -->
+		<set name="icon" val="icon.etc_crystal_cave_crystal_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91549" name="Special A-grade Accessory Varnish" type="EtcItem">
+		<!-- High-quality varnish for A-grade accessories. Take it to Head Blacksmith Ferris in Aden to upgrade your accessory to grade S. -->
+		<set name="icon" val="icon.etc_crystal_cave_crystal_i0" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91550" name="Frintezza's Necklace" type="Armor">
+		<!-- Max enchant value: +6. (Requires Scroll: Enchant Rare Accessories.). Boosts the item's parameters after enchanting. Safe enchanting to +1 -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="50450" level="1" /> <!-- Frintezza's Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">107</stat>
+		</stats>
+	</item>
+	<item id="91551" name="Frintezza's Necklace Lv. 2" type="Armor">
+		<!-- <Properties>. P. Skill Power +10%. M. Skill Power +10%. All Critical Rate +3%. All Critical Damage +50. Skill Cooldown -6%. Max MP +36. Sleep Resistance/ Atk. Rate +15. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="54041" level="2" /> <!-- Frintezza's Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">96</stat>
+			<stat type="maxMp">36</stat>
+		</stats>
+	</item>
+	<item id="91552" name="Frintezza's Necklace Lv. 3" type="Armor">
+		<!-- <Properties>. P. Skill Power +15%. M. Skill Power +15%. All Critical Rate +5%. All Critical Damage +100. Skill Cooldown -8%. Max MP +50. Sleep Resistance/ Atk. Rate +20. Damage Reflection +5%. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="54041" level="3" /> <!-- Frintezza's Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">109</stat>
+			<stat type="maxMp">44</stat>
+		</stats>
+	</item>
+	<item id="91553" name="Frintezza's Necklace Lv. 4" type="Armor">
+		<!-- <Properties>. P. Skill Power +20%. M. Skill Power +20%. All Critical Rate +10%. All Critical Damage +200. Skill Cooldown -10%. Max MP +65. Sleep Resistance/ Atk. Rate +30. Damage Reflection +10%. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_necklace_of_frintessa_i05" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<skills>
+			<skill id="54041" level="4" /> <!-- Frintezza's Necklace -->
+		</skills>
+		<stats>
+			<stat type="mDef">125</stat>
+			<stat type="maxMp">65</stat>
+		</stats>
+	</item>
+	<item id="91554" name="Essence of Frintezza" type="EtcItem">
+		<!-- Take it along with Majestic Necklace enchanted for +10 to +12 to Head Blacksmith Ferris in Aden to upgrade it and get Frintezza's Necklace Lv. 4. -->
+		<set name="icon" val="icon.frintessa_essence_i01" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91555" name="Special Summer Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51305" level="1" /> <!-- Special Summer Box Lv1 -->
+		</skills>
+	</item>
+	<item id="91556" name="Enhanced Hero's Shining Dual Swords" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Atk. Spd. +5%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2330" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">200</stat>
+			<stat type="mAtk">102</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="91557" name="Enhanced Hero's Shining Staff" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Casting Spd. +12%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_sages_staff_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="is_magic_weapon" val="true" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">160</stat>
+			<stat type="mAtk">138</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="91558" name="Enhanced Hero's Shining Bow" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. P. Critical +52. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_akat_long_bow_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="HORN" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">108</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="91559" name="Enhanced Hero's Shining Dagger" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. P. Critical +66. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_grace_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="bodypart" val="rhand" />
+		<stats>
+			<stat type="pAtk">142</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="91560" name="Enhanced Hero's Shining Spear" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Stun chance +25%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_poleaxe_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">159</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="91561" name="Enhanced Hero's Shining Helmet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">58</stat>
+		</stats>
+	</item>
+	<item id="91562" name="Enhanced Hero's Shining Armor" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="10480" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">239</stat>
+		</stats>
+	</item>
+	<item id="91563" name="Enhanced Hero's Shining Gauntlets" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="91564" name="Enhanced Hero's Shining Boots" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1200" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="91565" name="Enhanced Hero's Shining Helmet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="620" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">47</stat>
+		</stats>
+	</item>
+	<item id="91566" name="Enhanced Hero's Shining Leather Armor" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5800" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">179</stat>
+		</stats>
+	</item>
+	<item id="91567" name="Enhanced Hero's Shining Leather Gloves" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="91568" name="Enhanced Hero's Shining Leather Boots" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1210" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="91569" name="Enhanced Hero's Shining Circlet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">54</stat>
+		</stats>
+	</item>
+	<item id="91570" name="Enhanced Hero's Shining Tunic" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1980" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">74</stat>
+			<stat type="maxMp">314</stat>
+		</stats>
+	</item>
+	<item id="91571" name="Enhanced Hero's Shining Stockings" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="960" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">46</stat>
+			<stat type="maxMp">196</stat>
+		</stats>
+	</item>
+	<item id="91572" name="Enhanced Hero's Shining Gloves" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="610" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="91573" name="Enhanced Hero's Shining Shoes" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1210" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">34</stat>
+		</stats>
+	</item>
+	<item id="91574" name="Yogi's Weapon" additionalName="Sealed" type="Weapon">
+		<!-- A special weapon. Use a Scroll: Enchant Yogi's Weapon to enchant it, then give it to Master Yogi to get a reward. The reward depends on the enchant value of Yogi's Weapon. -->
+		<set name="icon" val="icon.weapon_pasis_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="100" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="91575" name="Scroll: Enchant Yogi's Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <How to use>. Required for enchanting a Yogi's weapon. <When enchanted to +3>. P. Atk. +5, M. Atk. +3. <When enchanted to +4>. P./ M. Atk. bonus doubled. <Safe enchanting>. Up to +4. <Max enchanting>. Up to +16 -->
+		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_WP" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="2019" level="1" /> <!-- Scroll: Enchant Weapon -->
+		</skills>
+	</item>
+	<item id="91576" name="Jewel Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="2130" min="20" max="20" chance="20" /> <!-- D-grade Gemstone -->
+			<item id="2131" min="10" max="10" chance="20" /> <!-- C-grade Gemstone -->
+			<item id="2132" min="10" max="10" chance="20" /> <!-- B-grade Gemstone -->
+			<item id="2133" min="10" max="10" chance="20" /> <!-- A-grade Gemstone -->
+			<item id="2134" min="10" max="10" chance="20" /> <!-- S-grade Gemstone -->
+		</capsuled_items>
+	</item>
+	<item id="91577" name="Life Stone Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90012" min="1" max="1" chance="20" /> <!-- Low-grade Life Stone - Weapon -->
+			<item id="90013" min="1" max="1" chance="20" /> <!-- Mid-grade Life Stone - Weapon -->
+			<item id="90014" min="1" max="1" chance="20" /> <!-- High-grade Life Stone - Weapon -->
+			<item id="90015" min="1" max="1" chance="20" /> <!-- Top-grade Life Stone - Weapon -->
+			<item id="90016" min="1" max="1" chance="20" /> <!-- Dim Shining Life Stone - Weapon -->
+		</capsuled_items>
+	</item>
+	<item id="91578" name="Stable Scroll: Enchant Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i02" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51308" level="1" /> <!-- Stable Scroll: Enchant Box -->
+		</skills>
+	</item>
+	<item id="91579" name="Greater Enchant Scroll Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i03" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51309" level="1" /> <!-- Greater Enchant Scroll Pack -->
+		</skills>
+	</item>
+	<item id="91580" name="Armor/ Accessory Varnish Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51310" level="1" /> <!-- Armor Varnish Box -->
+		</skills>
+	</item>
+	<item id="91581" name="Weapon Varnish Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51311" level="1" /> <!-- Weapon Varnish Box -->
+		</skills>
+	</item>
+	<item id="91582" name="Elite Armor/ Accessory Varnish Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i06" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51312" level="1" /> <!-- Elite Armor/ Accessories Varnish Box -->
+		</skills>
+	</item>
+	<item id="91583" name="Elite Weapon Varnish Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i07" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51313" level="1" /> <!-- Elite Weapon Varnish Box -->
+		</skills>
+	</item>
+	<item id="91584" name="Special Varnish Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i08" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51314" level="1" /> <!-- Special Varnish Box -->
+		</skills>
+	</item>
+	<item id="91585" name="Test - Fishing Rod" additionalName="Sealed" type="Weapon">
+		<!-- Test Item. Test Fishing Rod. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="91586" name="Gran Kain Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51317" level="1" /> <!-- Gran Kain Treasure Chest -->
+		</skills>
+	</item>
+	<item id="91587" name="Gran Kain's Silver Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_silver_lure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90015" min="1" max="1" chance="3.225806" /> <!-- Top-grade Life Stone - Weapon -->
+			<item id="90014" min="1" max="1" chance="3.225806" /> <!-- High-grade Life Stone - Weapon -->
+			<item id="90013" min="1" max="1" chance="3.225806" /> <!-- Mid-grade Life Stone - Weapon -->
+			<item id="90519" min="5" max="5" chance="3.225806" /> <!-- Shining Scroll of Mood Melody -->
+			<item id="49845" min="1" max="1" chance="3.225806" /> <!-- Sayha's Blessing -->
+			<item id="49846" min="1" max="1" chance="3.225806" /> <!-- Sayha's Silver Light Blessing -->
+			<item id="49847" min="1" max="1" chance="3.225806" /> <!-- Sayha's Golden Light Blessing -->
+			<item id="13016" min="10" max="10" chance="3.225806" /> <!-- My Teleport Scroll -->
+			<item id="90487" min="1" max="1" chance="3.225806" /> <!-- Stone: Enchant D-grade Armor -->
+			<item id="91105" min="1" max="1" chance="3.225806" /> <!-- Improved Stone: Enchant B-grade Armor -->
+			<item id="91104" min="1" max="1" chance="3.225806" /> <!-- Improved Stone: Enchant A-grade Armor -->
+			<item id="33814" min="1" max="1" chance="3.225806" /> <!-- Improved Scroll: Enchant B-grade Armor -->
+			<item id="33815" min="1" max="1" chance="3.225806" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+			<item id="49485" min="1" max="1" chance="3.225806" /> <!-- Stable Scroll: Enchant B-grade Armor -->
+			<item id="22224" min="1" max="1" chance="3.225806" /> <!-- Stable Scroll: Enchant A-grade Armor -->
+			<item id="49785" min="1" max="1" chance="3.225806" /> <!-- A-grade Weapon Pack -->
+			<item id="49786" min="1" max="1" chance="3.225806" /> <!-- A-grade Armor Pack -->
+			<item id="90824" min="1" max="1" chance="3.225806" /> <!-- Sealed Doll of Border - Orfen - 30-day -->
+			<item id="90823" min="1" max="1" chance="3.225806" /> <!-- Sealed Doll of Border - Queen Ant - 30-day -->
+			<item id="90822" min="1" max="1" chance="3.225806" /> <!-- Sealed Doll of Border - Baium - 30-day -->
+			<item id="91124" min="1" max="1" chance="3.225806" /> <!-- Radiant Spirit's Varnish -->
+			<item id="91121" min="1" max="1" chance="3.225806" /> <!-- Procella's Necklace -->
+			<item id="91123" min="1" max="1" chance="3.225806" /> <!-- Petram's Necklace -->
+			<item id="91117" min="1" max="1" chance="3.225806" /> <!-- Nebula's Necklace -->
+			<item id="91119" min="1" max="1" chance="3.225806" /> <!-- Ignis' Necklace -->
+			<item id="94393" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Orfen's Earring - Sealed -->
+			<item id="94398" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Ring of Core - Sealed -->
+			<item id="94388" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+			<item id="94408" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Zaken's Earring - Sealed -->
+			<item id="94403" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Baium's Ring - Sealed -->
+			<item id="94418" min="1" max="1" chance="3.225806" /> <!-- Package: +2 Antharas' Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91588" name="Gran Kain's Golden Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90358" min="10" max="10" chance="2.941176" /> <!-- Shining Ore -->
+			<item id="91356" min="3" max="3" chance="2.941176" /> <!-- Jewel Energy -->
+			<item id="90016" min="1" max="1" chance="2.941176" /> <!-- Dim Shining Life Stone - Weapon -->
+			<item id="33807" min="1" max="1" chance="2.941176" /> <!-- Improved Scroll: Enchant C-grade Weapon -->
+			<item id="33808" min="1" max="1" chance="2.941176" /> <!-- Improved Scroll: Enchant B-grade Weapon -->
+			<item id="33809" min="1" max="1" chance="2.941176" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="49484" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant C-grade Weapon -->
+			<item id="49486" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant B-grade Weapon -->
+			<item id="22223" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant A-grade Weapon -->
+			<item id="91250" min="1" max="1" chance="2.941176" /> <!-- Radiant Dragon Varnish -->
+			<item id="90138" min="1" max="1" chance="2.941176" /> <!-- Glittering Pendant Polish -->
+			<item id="90963" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant Agathion -->
+			<item id="48047" min="1" max="1" chance="2.941176" /> <!-- Scroll: Enchant High-grade Agathion -->
+			<item id="91214" min="1" max="1" chance="2.941176" /> <!-- Radiant Scroll: Enchant Sayha's Cloak -->
+			<item id="90497" min="1" max="1" chance="2.941176" /> <!-- Fire Dragon Belt -->
+			<item id="90496" min="1" max="1" chance="2.941176" /> <!-- Earth Dragon Belt -->
+			<item id="91303" min="1" max="1" chance="2.941176" /> <!-- Brooch Lv. 4 -->
+			<item id="91150" min="1" max="1" chance="2.941176" /> <!-- +10 Agathion Pack -->
+			<item id="91456" min="1" max="1" chance="2.941176" /> <!-- +10 Red Sayha's Cloak Chest -->
+			<item id="91455" min="1" max="1" chance="2.941176" /> <!-- +10 Black Sayha's Cloak Chest -->
+			<item id="91454" min="1" max="1" chance="2.941176" /> <!-- +10 White Sayha's Cloak Chest -->
+			<item id="91148" min="1" max="1" chance="2.941176" /> <!-- Jewel Box Lv. 5 -->
+			<item id="91258" min="1" max="1" chance="2.941176" /> <!-- Orfen Doll Lv. 2 -->
+			<item id="91257" min="1" max="1" chance="2.941176" /> <!-- Queen Ant Doll Lv. 2 -->
+			<item id="91256" min="1" max="1" chance="2.941176" /> <!-- Baium Doll Lv. 2 -->
+			<item id="91012" min="1" max="1" chance="2.941176" /> <!-- Top-grade A-grade Weapon Pack -->
+			<item id="49789" min="1" max="1" chance="2.941176" /> <!-- +8 B-grade Weapon Pack -->
+			<item id="91217" min="1" max="1" chance="2.941176" /> <!-- +10 Head Accessory Pack -->
+			<item id="49790" min="1" max="1" chance="2.941176" /> <!-- +16 C-grade Weapon Pack -->
+			<item id="91216" min="1" max="1" chance="2.941176" /> <!-- +16 B-grade Weapon Pack -->
+			<item id="90961" min="1" max="1" chance="2.941176" /> <!-- +15 A-grade Weapon Pack -->
+			<item id="91153" min="1" max="1" chance="2.941176" /> <!-- +15 Top-grade A-grade Weapon Pack -->
+			<item id="91590" min="1" max="1" chance="2.941176" /> <!-- Manuscript Chest -->
+			<item id="91550" min="1" max="1" chance="2.941176" /> <!-- Frintezza's Necklace -->
+		</capsuled_items>
+	</item>
+	<item id="91589" name="Gran Kain's Special Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90143" min="5" max="5" chance="4.166667" /> <!-- Einhasad's Protection -->
+			<item id="91027" min="5" max="5" chance="4.166667" /> <!-- Dragon's Miracle Potion -->
+			<item id="91250" min="1" max="1" chance="4.166667" /> <!-- Radiant Dragon Varnish -->
+			<item id="90138" min="1" max="1" chance="4.166667" /> <!-- Glittering Pendant Polish -->
+			<item id="91124" min="1" max="1" chance="4.166667" /> <!-- Radiant Spirit's Varnish -->
+			<item id="91356" min="3" max="3" chance="4.166667" /> <!-- Jewel Energy -->
+			<item id="91456" min="1" max="1" chance="4.166667" /> <!-- +10 Red Sayha's Cloak Chest -->
+			<item id="91455" min="1" max="1" chance="4.166667" /> <!-- +10 Black Sayha's Cloak Chest -->
+			<item id="91454" min="1" max="1" chance="4.166667" /> <!-- +10 White Sayha's Cloak Chest -->
+			<item id="49785" min="1" max="1" chance="4.166667" /> <!-- A-grade Weapon Pack -->
+			<item id="49786" min="1" max="1" chance="4.166667" /> <!-- A-grade Armor Pack -->
+			<item id="91258" min="1" max="1" chance="4.166667" /> <!-- Orfen Doll Lv. 2 -->
+			<item id="91257" min="1" max="1" chance="4.166667" /> <!-- Queen Ant Doll Lv. 2 -->
+			<item id="91256" min="1" max="1" chance="4.166667" /> <!-- Baium Doll Lv. 2 -->
+			<item id="94393" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Orfen's Earring - Sealed -->
+			<item id="94398" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Ring of Core - Sealed -->
+			<item id="94388" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+			<item id="94408" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Zaken's Earring - Sealed -->
+			<item id="94403" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Baium's Ring - Sealed -->
+			<item id="94418" min="1" max="1" chance="4.166667" /> <!-- Package: +2 Antharas' Earring - Sealed -->
+			<item id="91590" min="1" max="1" chance="4.166667" /> <!-- Manuscript Chest -->
+			<item id="91550" min="1" max="1" chance="4.166667" /> <!-- Frintezza's Necklace -->
+			<item id="90961" min="1" max="1" chance="4.166667" /> <!-- +15 A-grade Weapon Pack -->
+			<item id="91153" min="1" max="1" chance="4.166667" /> <!-- +15 Top-grade A-grade Weapon Pack -->
+		</capsuled_items>
+	</item>
+	<item id="91590" name="Manuscript Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_lure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91393" min="1" max="1" chance="100" /> <!-- Forgotten Manuscript - Page 1 -->
+			<item id="91394" min="1" max="1" chance="100" /> <!-- Forgotten Manuscript - Page 2 -->
+			<item id="91395" min="1" max="1" chance="100" /> <!-- Forgotten Manuscript - Page 3 -->
+			<item id="91396" min="1" max="1" chance="100" /> <!-- Forgotten Manuscript - Page 4 -->
+		</capsuled_items>
+	</item>
+	<item id="91591" name="Dimensional Spirit" type="EtcItem">
+		<!-- Required for creating and upgrading Dimensional Talisman. Take it to Alchemist Veruti in Giran. -->
+		<set name="icon" val="icon.bm_dimension_soul" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91592" name="Dimensional Talisman Lv. 1" type="Armor">
+		<!-- P./ M. Def. +25, P./ M. Evasion. +1, Max HP/ MP/ CP +150, Speed +5, Atk. Spd./ Casting Spd. +10, acquired XP/ SP +3%. Enables Dimensional Border Power Lv. 1 (increases attack power with a certain chance). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91593" name="Dimensional Talisman Lv. 2" type="Armor">
+		<!-- P./ M. Def. +30, P./ M. Evasion. +2, Max HP/ MP/ CP +200, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +5%. Enables Dimensional Border Power Lv. 1 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 2 (temporarily increases Vital Point Attack Resistance). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91594" name="Dimensional Talisman Lv. 3" type="Armor">
+		<!-- P./ M. Def. +35, P./ M. Evasion. +2, Max HP/ MP/ CP +250, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +6%. Enables Dimensional Border Power Lv. 2 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 3 (temporarily increases Vital Point Attack Resistance). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91595" name="Dimensional Talisman Lv. 4" type="Armor">
+		<!-- P./ M. Def. +40, P./ M. Evasion. +2, Max HP/ MP/ CP +300, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +7%. Enables Dimensional Border Power Lv. 3 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 4 (temporarily increases Vital Point Attack Resistance). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91596" name="Dimensional Talisman Lv. 5" type="Armor">
+		<!-- P./ M. Def. +45, P./ M. Evasion. +3, Max HP/ MP/ CP +400, Speed +8, Atk. Spd./ Casting Spd. +20, acquired XP/ SP +8%. Enables Dimensional Border Power Lv. 4 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 5 (temporarily increases Vital Point Attack Resistance and decreases received P. Critical Damage/ received M. Skill Critical Damage). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91597" name="Dimensional Talisman Lv. 6" type="Armor">
+		<!-- P./ M. Def. +50, P./ M. Evasion. +3, Max HP/ MP/ CP +500, Speed +8, Atk. Spd./ Casting Spd. +30, acquired XP/ SP +10%. Enables Dimensional Border Power Lv. 5 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 6 (temporarily increases Vital Point Attack Resistance and decreases received P. Critical Damage/ received M. Skill Critical Damage). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91598" name="Dimensional Talisman Lv. 7" type="Armor">
+		<!-- P./ M. Def. +70, P./ M. Evasion. +4, Max HP/ MP/ CP +1000, Speed +9, Atk. Spd. +40, Casting Spd. +50, acquired XP/ SP +12%. Enables Dimensional Border Power Lv. 6 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 7 (temporarily increases Vital Point Attack Resistance and decreases received P. Critical Damage/ received M. Skill Critical Damage). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91599" name="Dimensional Talisman Lv. 8" type="Armor">
+		<!-- P./ M. Def. +80, P./ M. Evasion. +4, Max HP/ MP/ CP +1300, Speed +9, Atk. Spd. +40, Casting Spd. +65, acquired XP/ SP +15%. Enables Dimensional Border Power Lv. 7 (increases attack power with a certain chance). Enables Dimensional Guard Lv. 8 (temporarily increases Vital Point Attack Resistance and decreases received P. Critical Damage/ received M. Skill Critical Damage). Can be upgraded by Alchemist Veruti in Giran. The effect doesn't stack with that of Talisman of Border, the Dimensional Talisman effect takes precedence. -->
+		<set name="icon" val="icon.bm_dimension_tallisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="deco1" />
+	</item>
+</list>

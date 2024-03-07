@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/PetTypes.xsd">
+	<pet id="1" name="Wolf's Secret 1" /> <!-- Description -->
+	<pet id="2" name="Wolf's Secret 2" /> <!-- Description -->
+	<pet id="3" name="Wolf's Secret 3" /> <!-- Description -->
+	<pet id="4" name="Wolf's Secret 4" /> <!-- Description -->
+	<pet id="5" name="Wolf's Secret 5" /> <!-- Description -->
+	<pet id="6" name="Wolf's Secret 6" /> <!-- Description -->
+	<pet id="7" name="Wolf's Secret 7" /> <!-- Description -->
+	<pet id="8" name="Wolf's Secret 8" /> <!-- Description -->
+	<pet id="9" name="Wolf's Secret 9" /> <!-- Description -->
+	<pet id="10" name="Wolf's Secret 10" /> <!-- Description -->
+	<pet id="11" name="Strong" skillId="49201" skillLvl="1" /> <!-- STR +1 -->
+	<pet id="12" name="Mighty" skillId="49201" skillLvl="2" /> <!-- STR +2 -->
+	<pet id="13" name="Powerful" skillId="49201" skillLvl="3" /> <!-- STR +3 -->
+	<pet id="14" name="Swift" skillId="49202" skillLvl="1" /> <!-- DEX +1 -->
+	<pet id="15" name="Quick" skillId="49202" skillLvl="2" /> <!-- DEX +2 -->
+	<pet id="16" name="Dexterous" skillId="49202" skillLvl="3" /> <!-- DEX +3 -->
+	<pet id="17" name="Healthy" skillId="49203" skillLvl="1" /> <!-- CON +1 -->
+	<pet id="18" name="Enduring" skillId="49203" skillLvl="2" /> <!-- CON +2 -->
+	<pet id="19" name="Tough" skillId="49203" skillLvl="3" /> <!-- CON +3 -->
+	<pet id="20" name="Clever" skillId="49204" skillLvl="1" /> <!-- INT +1 -->
+	<pet id="21" name="Smart" skillId="49204" skillLvl="2" /> <!-- INT +2 -->
+	<pet id="22" name="Intelligent" skillId="49204" skillLvl="3" /> <!-- INT +3 -->
+	<pet id="23" name="Sharp" skillId="49205" skillLvl="1" /> <!-- WIT +1 -->
+	<pet id="24" name="Wise" skillId="49205" skillLvl="2" /> <!-- WIT +2 -->
+	<pet id="25" name="Insightful" skillId="49205" skillLvl="3" /> <!-- WIT +3 -->
+	<pet id="26" name="Vigorous" skillId="49206" skillLvl="1" /> <!-- MEN +1 -->
+	<pet id="27" name="Resolute" skillId="49206" skillLvl="2" /> <!-- MEN +2 -->
+	<pet id="28" name="Strong-spirited" skillId="49206" skillLvl="3" /> <!-- MEN +3 -->
+	<pet id="29" name="Wolf" /> <!--  -->
+	<pet id="30" name="Buffalo" /> <!--  -->
+	<pet id="31" name="Tiger" /> <!--  -->
+	<pet id="32" name="Kookaburra" /> <!--  -->
+	<pet id="33" name="Dragon" /> <!--  -->
+	<pet id="34" name="Thunder Hawk" /> <!--  -->
+	<pet id="35" name="Fox Cub" /> <!--  -->
+	<pet id="101" name="Woof-woof" /> <!-- Wolf -->
+	<pet id="102" name="Silver Hide" /> <!-- Wolf -->
+	<pet id="103" name="Chun" /> <!-- Wolf -->
+	<pet id="104" name="Einhasad" /> <!-- General pet name -->
+	<pet id="105" name="Red Eye" /> <!-- Wolf -->
+	<pet id="106" name="Robo" /> <!-- Wolf -->
+	<pet id="107" name="Sheepsnatcher" /> <!-- Wolf -->
+	<pet id="108" name="Jindo" /> <!-- Wolf -->
+	<pet id="109" name="Mary" /> <!-- Wolf -->
+	<pet id="110" name="Cu Chulainn" /> <!-- Wolf -->
+	<pet id="111" name="Cu Chulainn" /> <!-- Wolf -->
+	<pet id="112" name="Robo" /> <!-- Wolf/ Tiger -->
+	<pet id="113" name="Romulus" /> <!-- Wolf -->
+	<pet id="114" name="Fenrir" /> <!-- Wolf -->
+	<pet id="115" name="Allen" /> <!-- Wolf -->
+	<pet id="116" name="Alexander" /> <!-- Wolf -->
+	<pet id="117" name="Cardiff Wolf" /> <!-- Wolf -->
+	<pet id="118" name="Marak" /> <!-- Wolf -->
+	<pet id="119" name="Garum Wolf" /> <!-- Wolf -->
+	<pet id="120" name="Kasha" /> <!-- Wolf -->
+	<pet id="121" name="Gran Kain" /> <!-- General pet name -->
+	<pet id="122" name="Chanlan" /> <!-- Wolf -->
+	<pet id="123" name="Lupine King" /> <!-- Wolf -->
+	<pet id="124" name="Forest Hunter" /> <!-- Wolf -->
+	<pet id="125" name="Blue Wolf" /> <!-- Wolf -->
+	<pet id="126" name="Limonite" /> <!-- Buffalo -->
+	<pet id="127" name="Minota" /> <!-- Buffalo -->
+	<pet id="128" name="Minota" /> <!-- Buffalo -->
+	<pet id="129" name="Ram" /> <!-- Buffalo -->
+	<pet id="130" name="Cattle King" /> <!-- Buffalo -->
+	<pet id="131" name="Bison" /> <!-- Buffalo -->
+	<pet id="132" name="Auroch" /> <!-- Buffalo -->
+	<pet id="133" name="Bison" /> <!-- Buffalo -->
+	<pet id="134" name="Apis" /> <!-- Buffalo -->
+	<pet id="135" name="Charles" /> <!-- Buffalo -->
+	<pet id="136" name="Denver" /> <!-- Buffalo -->
+	<pet id="137" name="Mathorn" /> <!-- Buffalo -->
+	<pet id="138" name="Desert Rogue" /> <!-- Buffalo -->
+	<pet id="139" name="Puss" /> <!-- Tiger -->
+	<pet id="140" name="Baby Tiger" /> <!-- Tiger -->
+	<pet id="141" name="Moggy" /> <!-- Tiger -->
+	<pet id="142" name="Kitty" /> <!-- Tiger -->
+	<pet id="143" name="Amos" /> <!-- Tiger -->
+	<pet id="144" name="Sel Mahum" /> <!-- Tiger -->
+	<pet id="145" name="Irene" /> <!-- General pet name -->
+	<pet id="146" name="Marillia" /> <!-- Tiger -->
+	<pet id="147" name="Changun" /> <!-- Tiger -->
+	<pet id="148" name="Nightmare Catcher" /> <!-- Tiger -->
+	<pet id="149" name="Ghost" /> <!-- Wolf -->
+	<pet id="150" name="Beast King" /> <!-- Tiger -->
+	<pet id="151" name="Dark Assassin" /> <!-- Tiger -->
+	<pet id="152" name="Master of the Jungle" /> <!-- Tiger -->
+	<pet id="153" name="Hatchling" /> <!-- Dragon -->
+	<pet id="154" name="Fafnir" /> <!-- Dragon -->
+	<pet id="155" name="Quetzalcoatl" /> <!-- Dragon/ Hawk -->
+	<pet id="156" name="Fafnir" /> <!-- Dragon -->
+	<pet id="157" name="Britra" /> <!-- Dragon -->
+	<pet id="158" name="Python" /> <!-- Dragon -->
+	<pet id="159" name="Baxter" /> <!-- Dragon -->
+	<pet id="160" name="Aydan" /> <!-- Dragon -->
+	<pet id="161" name="Fire Lord" /> <!-- Dragon -->
+	<pet id="162" name="Ancient Dragon" /> <!-- Dragon -->
+	<pet id="163" name="Antharas' Offspring" /> <!-- Dragon -->
+	<pet id="164" name="Eagle" /> <!-- Hawk -->
+	<pet id="165" name="Condor" /> <!-- Hawk -->
+	<pet id="166" name="Horus" /> <!-- Hawk -->
+	<pet id="167" name="Attila" /> <!-- Hawk -->
+	<pet id="168" name="Lachman" /> <!-- Hawk -->
+	<pet id="169" name="Phoenix" /> <!-- Hawk/ Kookaburra -->
+	<pet id="170" name="Arvid" /> <!-- Hawk -->
+	<pet id="171" name="Kalan" /> <!-- Hawk -->
+	<pet id="172" name="Roxxy" /> <!-- Hawk -->
+	<pet id="173" name="Condor" /> <!-- Hawk -->
+	<pet id="174" name="Falco Peregrinus" /> <!-- Hawk -->
+	<pet id="175" name="Kris" /> <!-- General pet name -->
+	<pet id="176" name="Seer" /> <!-- Hawk -->
+	<pet id="177" name="Sky Lord" /> <!-- Hawk -->
+	<pet id="178" name="Ostrich" /> <!-- Kookaburra -->
+	<pet id="179" name="Cloud" /> <!-- Hawk -->
+	<pet id="180" name="Andrew" /> <!-- Kookaburra -->
+	<pet id="181" name="Cloud" /> <!-- Kookaburra -->
+	<pet id="182" name="Hazel" /> <!-- Kookaburra -->
+	<pet id="183" name="Pepper" /> <!-- Kookaburra -->
+	<pet id="184" name="Savannah" /> <!-- Kookaburra -->
+	<pet id="185" name="Ruffian of Plains" /> <!-- Kookaburra -->
+	<pet id="186" name="King of Snow Peaks" /> <!-- Tiger -->
+	<pet id="187" name="Salamander" /> <!-- Dragon -->
+	<pet id="188" name="Hawkeye" /> <!-- Hawk -->
+	<pet id="189" name="Tanker" /> <!-- Buffalo -->
+	<pet id="190" name="Tom" /> <!-- Tiger -->
+	<pet id="191" name="Andrew" /> <!-- Kookaburra -->
+	<pet id="192" name="Bartz" /> <!-- General pet name -->
+	<pet id="193" name="Sieghardt" /> <!-- General pet name -->
+	<pet id="194" name="Kain" /> <!-- General pet name -->
+	<pet id="195" name="Liona" /> <!-- General pet name -->
+	<pet id="196" name="Erica" /> <!-- General pet name -->
+	<pet id="197" name="Gustin" /> <!-- General pet name -->
+	<pet id="198" name="Devianne" /> <!-- General pet name -->
+	<pet id="199" name="Hindemith" /> <!-- General pet name -->
+	<pet id="200" name="Teon" /> <!-- General pet name -->
+	<pet id="201" name="Franz" /> <!-- General pet name -->
+	<pet id="202" name="Lunar" /> <!-- General pet name -->
+	<pet id="203" name="Kastien" /> <!-- General pet name -->
+	<pet id="204" name="Lantern" /> <!-- General pet name -->
+	<pet id="205" name="Staris" /> <!-- General pet name -->
+	<pet id="206" name="Ceriel" /> <!-- General pet name -->
+	<pet id="207" name="Feyshar" /> <!-- General pet name -->
+	<pet id="208" name="Elwyn" /> <!-- General pet name -->
+	<pet id="209" name="Elikia" /> <!-- General pet name -->
+	<pet id="210" name="Shiken" /> <!-- General pet name -->
+	<pet id="211" name="Scryde" /> <!-- General pet name -->
+	<pet id="212" name="Frikios" /> <!-- General pet name -->
+	<pet id="213" name="Ophilia" /> <!-- General pet name -->
+	<pet id="214" name="Sake Dun" /> <!-- General pet name -->
+	<pet id="215" name="Tazyph" /> <!-- General pet name -->
+	<pet id="216" name="Arian" /> <!-- General pet name -->
+	<pet id="217" name="Asyen" /> <!-- General pet name -->
+	<pet id="218" name="Elcadia" /> <!-- General pet name -->
+	<pet id="219" name="Ian" /> <!-- General pet name -->
+	<pet id="220" name="Seresin" /> <!-- General pet name -->
+	<pet id="221" name="Tarkai" /> <!-- General pet name -->
+	<pet id="222" name="Cardia" /> <!-- General pet name -->
+	<pet id="223" name="Roien" /> <!-- General pet name -->
+	<pet id="224" name="Gallint" /> <!-- General pet name -->
+	<pet id="225" name="Tiat" /> <!-- General pet name -->
+	<pet id="226" name="Nevit" /> <!-- General pet name -->
+	<pet id="227" name="Karan" /> <!-- General pet name -->
+	<pet id="228" name="Tersi" /> <!-- General pet name -->
+	<pet id="229" name="Bremnon" /> <!-- General pet name -->
+	<pet id="230" name="Lionel" /> <!-- General pet name -->
+	<pet id="231" name="Adat" /> <!-- General pet name -->
+	<pet id="232" name="Elisa" /> <!-- General pet name -->
+	<pet id="233" name="Wunderkind" /> <!-- General pet name -->
+	<pet id="234" name="Lucky" /> <!-- General pet name -->
+	<pet id="235" name="Raoul" /> <!-- General pet name -->
+	<pet id="236" name="Sirin" /> <!-- General pet name -->
+	<pet id="237" name="Orifia" /> <!-- General pet name -->
+	<pet id="238" name="Solina" /> <!-- General pet name -->
+	<pet id="239" name="Momo" /> <!-- General pet name -->
+	<pet id="240" name="Evan" /> <!-- General pet name -->
+	<pet id="241" name="Nowel" /> <!-- General pet name -->
+	<pet id="242" name="Akein" /> <!-- General pet name -->
+	<pet id="243" name="Inferno" /> <!-- General pet name -->
+	<pet id="244" name="Kallia" /> <!-- General pet name -->
+	<pet id="245" name="Dafne" /> <!-- General pet name -->
+	<pet id="246" name="Tirien" /> <!-- General pet name -->
+	<pet id="247" name="Iris" /> <!-- General pet name -->
+	<pet id="248" name="Vulcan" /> <!-- General pet name -->
+	<pet id="249" name="Beora" /> <!-- General pet name -->
+	<pet id="250" name="Inorin" /> <!-- General pet name -->
+	<pet id="251" name="Berisona" /> <!-- General pet name -->
+	<pet id="252" name="Brisilla" /> <!-- General pet name -->
+	<pet id="253" name="Shunaiman" /> <!-- General pet name -->
+	<pet id="254" name="Mitraell" /> <!-- General pet name -->
+	<pet id="255" name="Kranvel" /> <!-- General pet name -->
+	<pet id="256" name="Einhovant" /> <!-- General pet name -->
+	<pet id="257" name="Racia" /> <!-- General pet name -->
+	<pet id="258" name="Saraph" /> <!-- General pet name -->
+	<pet id="259" name="Tenebri" /> <!-- General pet name -->
+	<pet id="260" name="Aman" /> <!-- General pet name -->
+	<pet id="261" name="Ghandi" /> <!-- General pet name -->
+	<pet id="262" name="Silyo" /> <!-- General pet name -->
+	<pet id="263" name="Temon" /> <!-- General pet name -->
+	<pet id="264" name="Regina" /> <!-- General pet name -->
+	<pet id="265" name="Ramsheart" /> <!-- General pet name -->
+	<pet id="266" name="Elgos" /> <!-- General pet name -->
+	<pet id="267" name="Mordred" /> <!-- General pet name -->
+	<pet id="268" name="Grend" /> <!-- General pet name -->
+	<pet id="269" name="Cadmus" /> <!-- General pet name -->
+	<pet id="270" name="Lucien" /> <!-- General pet name -->
+	<pet id="271" name="Frintezza" /> <!-- General pet name -->
+	<pet id="272" name="Claudia" /> <!-- General pet name -->
+	<pet id="273" name="Hunter" /> <!-- General pet name -->
+	<pet id="274" name="Chaos" /> <!-- General pet name -->
+	<pet id="275" name="Marilion" /> <!-- General pet name -->
+	<pet id="276" name="Spiron" /> <!-- General pet name -->
+	<pet id="277" name="Cema" /> <!-- General pet name -->
+	<pet id="278" name="Jena" /> <!-- General pet name -->
+	<pet id="279" name="Elias" /> <!-- General pet name -->
+	<pet id="280" name="Kumak" /> <!-- General pet name -->
+	<pet id="281" name="Filaur" /> <!-- General pet name -->
+	<pet id="282" name="Soma" /> <!-- General pet name -->
+	<pet id="283" name="Ein" /> <!-- General pet name -->
+	<pet id="284" name="Posa" /> <!-- General pet name -->
+	<pet id="285" name="Roti" /> <!-- General pet name -->
+	<pet id="286" name="Keucereus" /> <!-- General pet name -->
+	<pet id="287" name="Lisin" /> <!-- General pet name -->
+	<pet id="288" name="Agmun" /> <!-- General pet name -->
+	<pet id="289" name="Harant" /> <!-- General pet name -->
+	<pet id="290" name="Soiry" /> <!-- General pet name -->
+	<pet id="291" name="Deborah" /> <!-- General pet name -->
+	<pet id="292" name="Kuby" /> <!-- General pet name -->
+	<pet id="293" name="Balanki" /> <!-- General pet name -->
+	<pet id="294" name="Vichirid" /> <!-- General pet name -->
+	<pet id="295" name="Pamela" /> <!-- General pet name -->
+	<pet id="296" name="Grant" /> <!-- General pet name -->
+	<pet id="297" name="Faber" /> <!-- General pet name -->
+	<pet id="298" name="Kakai" /> <!-- General pet name -->
+	<pet id="299" name="Allegra" /> <!-- General pet name -->
+	<pet id="300" name="Akkan" /> <!-- General pet name -->
+	<pet id="301" name="Tidi" /> <!-- General pet name -->
+	<pet id="302" name="Takuna" /> <!-- General pet name -->
+	<pet id="303" name="Kentaron" /> <!-- General pet name -->
+	<pet id="304" name="Paris" /> <!-- General pet name -->
+	<pet id="305" name="Kanan" /> <!-- General pet name -->
+	<pet id="306" name="Gamon" /> <!-- General pet name -->
+	<pet id="307" name="Telinaus" /> <!-- General pet name -->
+	<pet id="308" name="Adeline" /> <!-- General pet name -->
+	<pet id="309" name="Raphiel" /> <!-- General pet name -->
+	<pet id="310" name="Arien" /> <!-- General pet name -->
+	<pet id="311" name="Lauron" /> <!-- General pet name -->
+	<pet id="312" name="Tor" /> <!-- General pet name -->
+	<pet id="313" name="Banamin" /> <!-- General pet name -->
+	<pet id="314" name="Castella" /> <!-- General pet name -->
+	<pet id="315" name="Ashton" /> <!-- General pet name -->
+	<pet id="316" name="Nadine" /> <!-- General pet name -->
+	<pet id="317" name="Rhien" /> <!-- General pet name -->
+	<pet id="318" name="Trishe" /> <!-- General pet name -->
+	<pet id="319" name="Bergis" /> <!-- General pet name -->
+	<pet id="320" name="Nix" /> <!-- General pet name -->
+	<pet id="321" name="Hella" /> <!-- General pet name -->
+	<pet id="322" name="Ayrina" /> <!-- General pet name -->
+	<pet id="323" name="Kaysha" /> <!-- General pet name -->
+	<pet id="324" name="Tobald" /> <!-- General pet name -->
+	<pet id="325" name="Moina" /> <!-- General pet name -->
+	<pet id="326" name="Kaspar" /> <!-- General pet name -->
+	<pet id="327" name="Terestien" /> <!-- General pet name -->
+	<pet id="328" name="Medina" /> <!-- General pet name -->
+	<pet id="329" name="Tess" /> <!-- General pet name -->
+	<pet id="330" name="Toma" /> <!-- General pet name -->
+	<pet id="331" name="Photian" /> <!-- General pet name -->
+	<pet id="332" name="Naomy" /> <!-- General pet name -->
+	<pet id="333" name="Rudbis" /> <!-- General pet name -->
+	<pet id="334" name="Biel" /> <!-- General pet name -->
+	<pet id="335" name="Varkees" /> <!-- General pet name -->
+	<pet id="336" name="Hines" /> <!-- General pet name -->
+	<pet id="337" name="Ellina" /> <!-- General pet name -->
+	<pet id="338" name="Avija" /> <!-- General pet name -->
+	<pet id="339" name="Odelia" /> <!-- General pet name -->
+	<pet id="340" name="Gubod" /> <!-- General pet name -->
+	<pet id="341" name="Rudris" /> <!-- General pet name -->
+	<pet id="342" name="Espada" /> <!-- General pet name -->
+	<pet id="343" name="Valdstone" /> <!-- General pet name -->
+	<pet id="344" name="Goldik" /> <!-- General pet name -->
+	<pet id="345" name="Eva" /> <!-- General pet name -->
+	<pet id="346" name="Shillien" /> <!-- General pet name -->
+	<pet id="347" name="Pa'agrio" /> <!-- General pet name -->
+	<pet id="348" name="Maphr" /> <!-- General pet name -->
+	<pet id="349" name="Sayha" /> <!-- General pet name -->
+	<pet id="350" name="Starfall" /> <!-- General pet name -->
+	<pet id="351" name="Moonlight" /> <!-- General pet name -->
+	<pet id="352" name="Lighty" /> <!-- General pet name -->
+	<pet id="353" name="Brightlight" /> <!-- General pet name -->
+	<pet id="354" name="Bronzy" /> <!-- General pet name -->
+	<pet id="355" name="Silvery" /> <!-- General pet name -->
+	<pet id="356" name="Goldy" /> <!-- General pet name -->
+	<pet id="357" name="Platina" /> <!-- General pet name -->
+	<pet id="358" name="Lucy" /> <!-- General pet name -->
+	<pet id="359" name="Grace" /> <!-- General pet name -->
+	<pet id="360" name="Sia" /> <!-- General pet name -->
+	<pet id="361" name="Ailith" /> <!-- General pet name -->
+	<pet id="362" name="Ribo" /> <!-- General pet name -->
+	<pet id="363" name="Stella" /> <!-- General pet name -->
+	<pet id="364" name="Lucas" /> <!-- General pet name -->
+	<pet id="365" name="Shion" /> <!-- General pet name -->
+	<pet id="366" name="Spring" /> <!-- General pet name -->
+	<pet id="367" name="Luna" /> <!-- General pet name -->
+	<pet id="368" name="Yuri" /> <!-- General pet name -->
+	<pet id="369" name="Haru" /> <!-- General pet name -->
+	<pet id="370" name="Edgy" /> <!-- General pet name -->
+	<pet id="371" name="Mocca" /> <!-- General pet name -->
+	<pet id="372" name="Night" /> <!-- General pet name -->
+	<pet id="373" name="Canny" /> <!-- Fox -->
+	<pet id="374" name="Tibet" /> <!-- Fox -->
+	<pet id="375" name="Miho" /> <!-- Fox -->
+	<pet id="376" name="Shinbi" /> <!-- Fox -->
+	<pet id="377" name="Inbi" /> <!-- Fox -->
+	<pet id="378" name="Siho" /> <!-- Fox -->
+	<pet id="379" name="Fennec" /> <!-- Fox -->
+	<pet id="380" name="Kumiho" /> <!-- Fox -->
+	<pet id="381" name="Firefox" /> <!-- Fox -->
+	<pet id="382" name="Maku" /> <!-- Fox -->
+	<pet id="383" name="Ayri" /> <!-- Fox -->
+	<pet id="384" name="Coco" /> <!-- Fox -->
+	<pet id="385" name="Lara" /> <!-- Fox -->
+</list>

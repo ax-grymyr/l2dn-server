@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30952</npc> <!-- Dimensional Vortex -->
+	</npcs>
+	<item>
+		<!-- Broken Celestial Shard -->
+		<ingredient count="1" id="49767" />
+		<!-- Scroll of Heavenly Protection -->
+		<production count="1" id="49768" />
+	</item>
+</list>

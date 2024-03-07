@@ -1,0 +1,3074 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49000" toLevel="1" name="Ferion's Zone Presentation">
+		<icon>icon.skill32656</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="49001" toLevel="8" name="Kookaburra">
+		<!-- <Features>. A pet that attacks enemies with magic. <Base stats>. Max HP +5%. Max MP +5%. P. Def. +5%. M. Def. +5%. M. Atk. +10%. Deals M. skill damage on the pet's attack. When using a rapier or a magic blunt weapon, M. Atk. +10% -->
+		<icon>icon.pet_race_kukaburo</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+					<value level="5">40</value>
+					<value level="6">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<weaponType>
+					<item>RAPIER</item>
+					<item>BLUNT</item>
+				</weaponType>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49002" toLevel="20" name="Magic Missile">
+		<!-- <Attack skill>. Attacks with magic missiles. Inflicts M. Skill Damage depending on M. Atk. Basic magic power: 55 -->
+		<icon>icon.pet_magic_missile</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<isMagic>1</isMagic>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">15</value>
+			<value level="4">19</value>
+			<value level="5">22</value>
+			<value level="6">26</value>
+			<value level="7">27</value>
+			<value level="8">28</value>
+			<value level="9">30</value>
+			<value level="10">32</value>
+			<value level="11">30</value>
+			<value level="12">28</value>
+			<value level="13">27</value>
+			<value level="14">26</value>
+			<value level="15">25</value>
+			<value level="16">24</value>
+			<value level="17">23</value>
+			<value level="18">22</value>
+			<value level="19">21</value>
+			<value level="20">20</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">55</value>
+					<value level="2">66</value>
+					<value level="3">77</value>
+					<value level="4">88</value>
+					<value level="5">99</value>
+					<value level="6">110</value>
+					<value level="7">126</value>
+					<value level="8">143</value>
+					<value level="9">159</value>
+					<value level="10">176</value>
+					<value level="11">178</value>
+					<value level="12">180</value>
+					<value level="13">182</value>
+					<value level="14">184</value>
+					<value level="15">187</value>
+					<value level="16">189</value>
+					<value level="17">191</value>
+					<value level="18">193</value>
+					<value level="19">195</value>
+					<value level="20">198</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49003" toLevel="20" name="Energy Burst">
+		<!-- <Attack skill>. Attacks with powerful energy missiles. Inflicts M. Skill Damage depending on M. Atk. Basic magic power: 55 -->
+		<icon>icon.skill1417</icon>
+		<operateType>A1</operateType>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>2000</hitTime>
+		<basicProperty>MAGIC</basicProperty>
+		<isMagic>1</isMagic>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">15</value>
+			<value level="4">19</value>
+			<value level="5">22</value>
+			<value level="6">26</value>
+			<value level="7">27</value>
+			<value level="8">28</value>
+			<value level="9">30</value>
+			<value level="10">32</value>
+			<value level="11">30</value>
+			<value level="12">28</value>
+			<value level="13">27</value>
+			<value level="14">26</value>
+			<value level="15">25</value>
+			<value level="16">24</value>
+			<value level="17">23</value>
+			<value level="18">22</value>
+			<value level="19">21</value>
+			<value level="20">20</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">55</value>
+					<value level="2">66</value>
+					<value level="3">77</value>
+					<value level="4">88</value>
+					<value level="5">99</value>
+					<value level="6">110</value>
+					<value level="7">126</value>
+					<value level="8">143</value>
+					<value level="9">159</value>
+					<value level="10">176</value>
+					<value level="11">178</value>
+					<value level="12">180</value>
+					<value level="13">182</value>
+					<value level="14">184</value>
+					<value level="15">187</value>
+					<value level="16">189</value>
+					<value level="17">191</value>
+					<value level="18">193</value>
+					<value level="19">195</value>
+					<value level="20">198</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49004" toLevel="5" name="Entrenching">
+		<!-- <Buff skill>. The pet buries itself to fire at the target. The pet cannot move or attack. The skill gets automatically cancelled if the master is too far. <Effect>. P. Def. +30%. M. Def. +15%. <Skill upgrade>. Magic Missile → Energy Burst. Changes to the attack with a large damage area. -->
+		<icon>icon.pet_siege_mode</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<reuseDelay>60000</reuseDelay>
+		<hitTime>1000</hitTime>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">70</value>
+					<value level="5">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">50</value>
+					<value level="5">70</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ImmobilePetBuff" />
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>49002</existingSkillId> <!-- Magic Missile -->
+				<replacementSkillId>49003</replacementSkillId> <!-- Energy Burst -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49005" toLevel="5" name="Chain Block">
+		<!-- <Hold skill>. Makes the enemy immobilized. <Effect>. Immobilizes. Decreases skill attack range. Unable to use magic skills. -->
+		<icon>icon.skill16856</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>CHAIN_BLOCK</abnormalType>
+		<abnormalVisualEffect>H_P_CHAIN_BLOCK_AVE</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<isDebuff>true</isDebuff>
+		<mpConsume>50</mpConsume>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>1000</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-780</value>
+			<value level="3">-800</value>
+			<value level="4">-820</value>
+			<value level="5">-850</value>
+		</effectPoint>
+		<trait>ANOMALY</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="BlockSkill">
+				<magicTypes>0;1;2;3;4;5;22</magicTypes>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49006" toLevel="5" name="Blocked Target Change">
+		<!-- <Special skill>. Kookaburra switches places with the target. Applied only on targets affected by Chain Block. -->
+		<icon>icon.pet_chain_block</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-780</value>
+			<value level="3">-800</value>
+			<value level="4">-820</value>
+			<value level="5">-850</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1500</hitTime>
+		<mpConsume>350</mpConsume>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>CHAIN_BLOCK</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
+		<effects>
+			<effect name="BlinkSwap" />
+		</effects>
+	</skill>
+	<skill id="49007" toLevel="1" name="Magic Flare">
+		<!-- Adds 1 stack when Magic Missile is used. Applies the Magic Flare effect on every 3 attacks. <Magic Flare>. Inflicts M. Skill Damage depending on M. Atk. Basic magic power: 200. Additional PvE effect: the target's speed -30 (with a certain chance). -->
+		<icon>icon.skill0467</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>49002</attackSkillId> <!-- Magic Missile -->
+				<targetType>PET</targetType>
+				<skillId>49008</skillId> <!-- Magic Flare Lv. 1 -->
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49008" toLevel="2" name="Magic Flare Lv. 1">
+		<!-- Charges with magic energy. Increases the effect level upon Magic Missile use. -->
+		<icon>
+			<value level="1">icon.skill5446_1</value>
+			<value level="2">icon.skill5446_2</value>
+		</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalType>MAGIC_FLARE</abnormalType>
+		<abnormalTime>120</abnormalTime>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="TriggerSkillBySkillAttack" fromLevel="3" toLevel="3">
+				<attackSkillId>49002</attackSkillId> <!-- Magic Missile -->
+				<targetType>ENEMY</targetType>
+				<skillId>49010</skillId> <!-- Magic Flare -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49009" toLevel="1" name="Cancel Magic Flare">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49010" toLevel="1" name="Magic Flare">
+		<icon>icon.skill30004</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<basicProperty>MAGIC</basicProperty>
+		<isMagic>1</isMagic>
+		<effectPoint>-900</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<selfEffects>
+			<effect name="DispelBySlot">
+				<dispel>MAGIC_FLARE,3</dispel>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>200</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49011" toLevel="8" name="Tiger">
+		<!-- <Features>. A pet that targets enemies' vital points. <Stats>. Max HP +5%. P. Def. +5%. M. Def. +5%. P. Atk. +10%. Vital Point Attack Rate +20%. Speed +10. All Critical Rate +2%. When using a dagger, P. Atk. +10% -->
+		<icon>icon.pet_race_tiger</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+				<mode>PER</mode>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+					<value level="5">40</value>
+					<value level="6">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">40</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>RAPIER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>RAPIER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49012" toLevel="20" name="Breaking Blaster">
+		<!-- <Attack skill>. Attacks with claws tearing the enemy to pieces. Attacks vital points inflicting Skill Damage depending on P. Atk. Additionally P. Atk.: 128 -->
+		<icon>icon.pet_tearing_blow</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">128</value>
+					<value level="2">496</value>
+					<value level="3">688</value>
+					<value level="4">1597</value>
+					<value level="5">3261</value>
+					<value level="6">5120</value>
+					<value level="7">6119</value>
+					<value level="8">7151</value>
+					<value level="9">8220</value>
+					<value level="10">9053</value>
+					<value level="11">9199</value>
+					<value level="12">9346</value>
+					<value level="13">9503</value>
+					<value level="14">9652</value>
+					<value level="15">9802</value>
+					<value level="16">9952</value>
+					<value level="17">10111</value>
+					<value level="18">10264</value>
+					<value level="19">10416</value>
+					<value level="20">10570</value>
+				</power>
+				<chanceBoost>200</chanceBoost>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49013" toLevel="5" name="Blinking Attack">
+		<!-- <Attack skill>. Attacks with claws tearing the enemy to pieces. Attacks vital points inflicting Skill Damage depending on P. Atk. Additionally P. Atk.: 890 -->
+		<icon>icon.pet_flicker_attack</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>100</distance>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="TeleportToTarget" />
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">890</value>
+					<value level="2">2350</value>
+					<value level="3">4000</value>
+					<value level="4">5500</value>
+					<value level="5">6000</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49014" toLevel="5" name="Beast Within">
+		<!-- <Buff skill>. Unleashes the power of a wild beast. <Effect>. P. Atk. +20%. Atk. Spd. +20% -->
+		<icon>icon.pet_natural_beast</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49015" toLevel="1" name="Sharp Senses">
+		<!-- Skill Evasion +20%. <Skill upgrade>. Breaking Blaster: a 70% chance to hit the target. Strong Bite: a 60% chance to hit the target -->
+		<icon>icon.skill8364</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SkillEvasion">
+				<amount>20</amount>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="SkillEvasion">
+				<amount>20</amount>
+				<magicType>1</magicType>
+			</effect>
+			<!-- TODO: <Skill upgrade> Breaking Blaster: there is a 50% chance to hit the target. Strong Bite: there is a 30% chance to hit the target. -->
+		</effects>
+	</skill>
+	<skill id="49016" toLevel="15" name="Strong Bite">
+		<!-- <Attack skill>. Bites the target. Attacks vital points inflicting Skill Damage depending on P. Atk. Additionally, P. Atk.: 9300. Ignores the target's shield effect on attack. -->
+		<icon>icon.pet_gigantic_bite</icon>
+		<operateType>A1</operateType>
+		<mpConsume>50</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">9300</value>
+					<value level="2">9449</value>
+					<value level="3">9600</value>
+					<value level="4">9754</value>
+					<value level="5">9910</value>
+					<value level="6">10069</value>
+					<value level="7">10230</value>
+					<value level="8">10394</value>
+					<value level="9">10560</value>
+					<value level="10">10729</value>
+					<value level="11">10901</value>
+					<value level="12">11075</value>
+					<value level="13">11252</value>
+					<value level="14">11432</value>
+					<value level="15">11615</value>
+				</power>
+				<chanceBoost>200</chanceBoost>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49017" toLevel="15" name="Strong Bite">
+		<!-- <Attack skill>. Bites the target. Attacks vital points inflicting Skill Damage depending on P. Atk. Additionally, P. Atk.: 9300. Ignores the target's shield effect on attack. -->
+		<icon>icon.pet_gigantic_bite</icon>
+		<operateType>A1</operateType>
+		<mpConsume>50</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">9300</value>
+					<value level="2">9449</value>
+					<value level="3">9600</value>
+					<value level="4">9754</value>
+					<value level="5">9910</value>
+					<value level="6">10069</value>
+					<value level="7">10230</value>
+					<value level="8">10394</value>
+					<value level="9">10560</value>
+					<value level="10">10729</value>
+					<value level="11">10901</value>
+					<value level="12">11075</value>
+					<value level="13">11252</value>
+					<value level="14">11432</value>
+					<value level="15">11615</value>
+				</power>
+				<chanceBoost>200</chanceBoost>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49018" toLevel="20" name="Breaking Blaster">
+		<!-- <Attack skill>. Attacks with claws tearing the enemy to pieces. Attacks vital points inflicting Skill Damage depending on P. Atk. Additionally P. Atk.: 128 -->
+		<icon>icon.pet_tearing_blow</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">128</value>
+					<value level="2">496</value>
+					<value level="3">688</value>
+					<value level="4">1597</value>
+					<value level="5">3261</value>
+					<value level="6">5120</value>
+					<value level="7">6119</value>
+					<value level="8">7151</value>
+					<value level="9">8220</value>
+					<value level="10">9053</value>
+					<value level="11">9199</value>
+					<value level="12">9346</value>
+					<value level="13">9503</value>
+					<value level="14">9652</value>
+					<value level="15">9802</value>
+					<value level="16">9952</value>
+					<value level="17">10111</value>
+					<value level="18">10264</value>
+					<value level="19">10416</value>
+					<value level="20">10570</value>
+				</power>
+				<chanceBoost>200</chanceBoost>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49019" toLevel="1" name="Pet's HP Recovery Potion - Sealed (Time-limited)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="49020" toLevel="1" name="Pet Food - Sealed (Time-limited)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="49021" toLevel="8" name="Wolf">
+		<!-- <Features>. A pet with a high P. Atk. <Basic stats>. Max HP +5%. P. Def. +5%. M. Def. +5%. P. Atk. +10%. Atk. Spd. +10%. P. Skill Power +5%. When using dual swords or a fist weapon, P. Atk. +10% -->
+		<icon>icon.pet_race_wolf</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item>FIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>FIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DAGGER</item>
+					<item>RAPIER</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49022" toLevel="20" name="Dire Claw">
+		<!-- <Attack skill>. Attacks with sharp wolf claws. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 96 -->
+		<icon>icon.pet_savage_claw</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-100</value>
+			<value level="12">-250</value>
+			<value level="13">-400</value>
+			<value level="14">-500</value>
+			<value level="15">-600</value>
+			<value level="16">-700</value>
+			<value level="17">-750</value>
+			<value level="18">-800</value>
+			<value level="19">-850</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">96</value>
+					<value level="2">372</value>
+					<value level="3">516</value>
+					<value level="4">1185</value>
+					<value level="5">2202</value>
+					<value level="6">4001</value>
+					<value level="7">4613</value>
+					<value level="8">5244</value>
+					<value level="9">5897</value>
+					<value level="10">6922</value>
+					<value level="11">7035</value>
+					<value level="12">7148</value>
+					<value level="13">7268</value>
+					<value level="14">7383</value>
+					<value level="15">7498</value>
+					<value level="16">7613</value>
+					<value level="17">7736</value>
+					<value level="18">7852</value>
+					<value level="19">7970</value>
+					<value level="20">8088</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49023" toLevel="5" name="Leap Attack">
+		<!-- <Attack skill>. Quickly jumps to the target. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 981 -->
+		<icon>icon.pet_leap_attack</icon>
+		<operateType>DA1</operateType>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>100</distance>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">981</value>
+					<value level="2">2484</value>
+					<value level="3">4461</value>
+					<value level="4">6248</value>
+					<value level="5">6740</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49024" toLevel="15" name="Last Dire Claw">
+		<!-- <Attack skill>. Inflicts a blow on the target. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 7760. When using the skill, applies the <Great Wolf Effect> for 10 sec. <Great Wolf Effect>. P. Atk. +20%. Atk. Spd. +20%. Received damage -10% -->
+		<icon>icon.pet_last_savage_claw</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>50</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-820</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+			<value level="6">-900</value>
+			<value level="7">-900</value>
+			<value level="8">-900</value>
+			<value level="9">-900</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">7760</value>
+					<value level="2">7891</value>
+					<value level="3">8032</value>
+					<value level="4">8165</value>
+					<value level="5">8306</value>
+					<value level="6">8442</value>
+					<value level="7">8578</value>
+					<value level="8">8722</value>
+					<value level="9">8860</value>
+					<value level="10">8998</value>
+					<value level="11">9136</value>
+					<value level="12">9283</value>
+					<value level="13">9422</value>
+					<value level="14">9564</value>
+					<value level="15">9706</value>
+				</power>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>49025</skillId> <!-- Giant Wolf -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="49025" toLevel="1" name="Giant Wolf">
+		<!-- <Buff skill>. Becomes large. <Effect>. P. Atk. +20%. Atk. Spd. +20%. Received damage -10% -->
+		<icon>icon.pet_giant_wolf</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>BIG_BODY</abnormalType>
+		<abnormalVisualEffect>BIG_BODY</abnormalVisualEffect>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49026" toLevel="3" name="Ferocity">
+		<!-- P. Skill Power +10% -->
+		<icon>
+			<value level="1">icon.skill10542</value>
+			<value level="2">icon.skill10542_2</value>
+			<value level="3">icon.skill10542_3</value>
+		</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>4000</reuseDelay>
+		<isMagic>5</isMagic>
+		<abnormalTime>5</abnormalTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49027" toLevel="1" name="Sound Body">
+		<!-- Max HP +1000. P. Def. +15%. M. Def. +15%. P. Skill Critical Damage +10% -->
+		<icon>icon.skill0842</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49031" toLevel="8" name="Buffalo">
+		<!-- <Features>. A tough pet with high health. <Basic stats>. Max HP +10%. P. Def. +10%. M. Def. +10%. P. Atk. +10%. Atk. Spd. +10%. HP Recovery Potions' Effect +20. When using a spear or a blunt weapon, P. Atk. +10% -->
+		<icon>icon.pet_race_buffalo</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+					<value level="5">70</value>
+					<value level="6">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+					<value level="5">70</value>
+					<value level="6">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+					<value level="5">70</value>
+					<value level="6">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<weaponType>
+					<item>BLUNT</item>
+					<item>POLE</item>
+				</weaponType>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>ANCIENTSWORD</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49032" toLevel="20" name="Horn Thrust">
+		<!-- <Attack skill>. Attacks the enemy with horns. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 88 -->
+		<icon>icon.pet_horn_pierce</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">88</value>
+					<value level="2">341</value>
+					<value level="3">473</value>
+					<value level="4">1098</value>
+					<value level="5">2242</value>
+					<value level="6">3520</value>
+					<value level="7">4207</value>
+					<value level="8">4916</value>
+					<value level="9">5651</value>
+					<value level="10">6224</value>
+					<value level="11">6324</value>
+					<value level="12">6426</value>
+					<value level="13">6533</value>
+					<value level="14">6636</value>
+					<value level="15">6739</value>
+					<value level="16">6842</value>
+					<value level="17">6951</value>
+					<value level="18">7057</value>
+					<value level="19">7161</value>
+					<value level="20">7267</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49033" toLevel="5" name="Rump Stun">
+		<!-- <Attack skill>. Rushes to the target and rams at it. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 480. Triggers the stun effect with a certain chance. -->
+		<icon>icon.pet_butt_shock</icon>
+		<operateType>DA2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<isDebuff>true</isDebuff>
+		<trait>SHOCK</trait>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>100</distance>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">480</value>
+					<value level="2">1216</value>
+					<value level="3">1780</value>
+					<value level="4">2180</value>
+					<value level="5">2580</value>
+				</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49034" toLevel="5" name="Pulling Body">
+		<!-- <Buff skill>. Makes nearby enemies move toward the pet. <Effect>. P. Def. +2400. M. Def. +2000 -->
+		<icon>icon.pet_magnetic_body</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>10</abnormalTime>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>80</mpConsume>
+		<hitTime>1000</hitTime>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>300</affectRange>
+		<reuseDelay>30000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effectPoint>
+			<value level="1">-11400</value>
+			<value level="2">-11850</value>
+			<value level="3">-12300</value>
+			<value level="4">-12750</value>
+			<value level="5">-13500</value>
+		</effectPoint>
+		<selfEffects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">2400</value>
+					<value level="2">2800</value>
+					<value level="3">3200</value>
+					<value level="4">3600</value>
+					<value level="5">4000</value>
+				</amount>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2000</value>
+					<value level="2">2300</value>
+					<value level="3">2600</value>
+					<value level="4">2900</value>
+					<value level="5">3200</value>
+				</amount>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</effects>
+	</skill>
+	<skill id="49035" toLevel="8" name="Breath of Hurricane">
+		<!-- <Provoking skill>. Provokes the target. Power 6000. -->
+		<icon>icon.pet_furious_breath</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectRange>900</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<effectPoint>
+			<value level="1">-6000</value>
+			<value level="2">-7500</value>
+			<value level="3">-9000</value>
+			<value level="4">-10500</value>
+			<value level="5">-11250</value>
+			<value level="6">-12000</value>
+			<value level="7">-12750</value>
+			<value level="8">-13500</value>
+		</effectPoint>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GetAgro" />
+			<effect name="AddHate">
+				<power>
+					<value level="1">6000</value>
+					<value level="2">7500</value>
+					<value level="3">9000</value>
+					<value level="4">10500</value>
+					<value level="5">11250</value>
+					<value level="6">12000</value>
+					<value level="7">12750</value>
+					<value level="8">13500</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49036" toLevel="1" name="Pulling Body">
+		<!-- Immobilized. -->
+		<icon>icon.pet_magnetic_body</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49037" toLevel="5" name="Pulling Body">
+		<!-- <Buff skill>. Makes nearby enemies move toward the pet. <Effect>. P. Def. +2400. M. Def. +2000. When using the skill, summons the <Pulling Defense>. <Pulling Defense>. Creates a barrier with 2000 HP for 10 sec. -->
+		<icon>icon.pet_magnetic_body</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-11400</value>
+			<value level="2">-11850</value>
+			<value level="3">-12300</value>
+			<value level="4">-12750</value>
+			<value level="5">-13500</value>
+		</effectPoint>
+		<mpConsume>80</mpConsume>
+	</skill>
+	<skill id="49038" toLevel="1" name="Pulling Defense">
+		<!-- Absorbs 2000 of the damage. -->
+		<icon>icon.skill10755</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>ABSORB</abnormalType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49039" toLevel="1" name="Pulling Defense">
+		<!-- When Pulling Body is used:. Creates a barrier with 2000 HP for 10 sec. -->
+		<icon>icon.skill10755</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillBySkill">
+				<castSkillId>49034</castSkillId> <!-- Pulling Body -->
+				<skillId>49038</skillId> <!-- Pulling Defense -->
+				<skillLevel>1</skillLevel>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49041" toLevel="8" name="Hawk">
+		<!-- <Features>. A pet that specializes in range attacks. <Stats>. Max HP +5%. P. Def. +5%. M. Def. +5%. P. Atk. +5%. When using a bow, P. Accuracy +3. When using a bow, P. Atk. +10% -->
+		<icon>icon.pet_race_hawk</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>PISTOLS</item>
+				</weaponType>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>BLUNT</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>RAPIER</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+					<item>SWORD</item>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>BLUNT</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>RAPIER</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+					<item>SWORD</item>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49042" toLevel="20" name="Arrow Feather">
+		<!-- <Attack skill>. Shoots the target with a feather. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 115. Limits the target's invisibility. -->
+		<icon>icon.pet_feather_arrow</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>HIDE,-1</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>HIDE</slot>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">115</value>
+					<value level="2">446</value>
+					<value level="3">619</value>
+					<value level="4">1422</value>
+					<value level="5">2642</value>
+					<value level="6">4801</value>
+					<value level="7">5536</value>
+					<value level="8">6293</value>
+					<value level="9">7076</value>
+					<value level="10">8306</value>
+					<value level="11">8442</value>
+					<value level="12">8578</value>
+					<value level="13">8722</value>
+					<value level="14">8860</value>
+					<value level="15">8998</value>
+					<value level="16">9136</value>
+					<value level="17">9283</value>
+					<value level="18">9422</value>
+					<value level="19">9564</value>
+					<value level="20">9706</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49043" toLevel="5" name="Quick Jump">
+		<!-- <Rush/ knockback skill>. Rushes at the target. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 960. Triggers the knockback effect with a certain chance. -->
+		<icon>icon.pet_fast_dive</icon>
+		<operateType>DA1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>100</distance>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">960</value>
+					<value level="2">3000</value>
+					<value level="3">5400</value>
+					<value level="4">6600</value>
+					<value level="5">7800</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49308</skillId> <!-- Quick Jump -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49044" toLevel="5" name="Scout's Strike">
+		<!-- <Shock skill>. Attacks the target and returns. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 2500. Triggers the stun effect with a certain chance. -->
+		<icon>icon.skill10787</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<castRange>400</castRange>
+		<effectRange>900</effectRange>
+		<mpConsume>
+			<value level="1">40</value>
+			<value level="2">45</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-780</value>
+			<value level="3">-800</value>
+			<value level="4">-820</value>
+			<value level="5">-850</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">2500</value>
+					<value level="2">2600</value>
+					<value level="3">2750</value>
+					<value level="4">3000</value>
+					<value level="5">3300</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49302</skillId> <!-- Scout's Strike -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49045" toLevel="15" name="Feather Storm">
+		<!-- <Suppression skill>. Attacks with several feathers. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 3881. With a certain chance, the target's Speed -50%. -->
+		<icon>icon.pet_feather_trap</icon>
+		<operateType>A1</operateType>
+		<mpConsume>80</mpConsume>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1540</value>
+			<value level="3">-1560</value>
+			<value level="4">-1580</value>
+			<value level="5">-1600</value>
+			<value level="6">-1620</value>
+			<value level="7">-1640</value>
+			<value level="8">-1660</value>
+			<value level="9">-1680</value>
+			<value level="10">-1700</value>
+			<value level="11">-1720</value>
+			<value level="12">-1740</value>
+			<value level="13">-1760</value>
+			<value level="14">-1780</value>
+			<value level="15">-1800</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3881</value>
+					<value level="2">3946</value>
+					<value level="3">4016</value>
+					<value level="4">4082</value>
+					<value level="5">4153</value>
+					<value level="6">4222</value>
+					<value level="7">4289</value>
+					<value level="8">4361</value>
+					<value level="9">4430</value>
+					<value level="10">4499</value>
+					<value level="11">4568</value>
+					<value level="12">4642</value>
+					<value level="13">4711</value>
+					<value level="14">4782</value>
+					<value level="15">4853</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49305</skillId> <!-- Feather Storm -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49046" toLevel="5" name="Exploding Feather">
+		<!-- <Buff skill>. Makes an explosion when Feather Storm is used. <Effect>. When using Feather Storm, an explosion attack is triggered. P. Atk. +100 -->
+		<icon>icon.skill19556</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>120</abnormalTime>
+		<mpConsume>
+			<value level="1">100</value>
+			<value level="2">90</value>
+			<value level="3">80</value>
+			<value level="4">70</value>
+			<value level="5">60</value>
+		</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>49045</existingSkillId> <!-- Feather Storm -->
+				<replacementSkillId>49048</replacementSkillId> <!-- Feather Storm - Explosion -->
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">350</value>
+					<value level="4">500</value>
+					<value level="5">800</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49047" toLevel="1" name="Exploding Feather - Effect">
+		<icon>icon.skill30007</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>250</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<effects>
+			<effect name="PhysicalAttack">
+				<pAtkMod>1.5</pAtkMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49048" toLevel="15" name="Feather Storm - Explosion">
+		<!-- <Suppression skill>. Attacks with several feathers. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 3881. With a certain chance, the target's Speed -50%. <Explosion Attack>. Deals P. skill damage corresponding to P. Atk. Additionally P. Atk.: 150% -->
+		<icon>icon.pet_feather_trap</icon>
+		<operateType>A1</operateType>
+		<mpConsume>80</mpConsume>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1540</value>
+			<value level="3">-1560</value>
+			<value level="4">-1580</value>
+			<value level="5">-1600</value>
+			<value level="6">-1620</value>
+			<value level="7">-1640</value>
+			<value level="8">-1660</value>
+			<value level="9">-1680</value>
+			<value level="10">-1700</value>
+			<value level="11">-1720</value>
+			<value level="12">-1740</value>
+			<value level="13">-1760</value>
+			<value level="14">-1780</value>
+			<value level="15">-1800</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3881</value>
+					<value level="2">3946</value>
+					<value level="3">4016</value>
+					<value level="4">4082</value>
+					<value level="5">4153</value>
+					<value level="6">4222</value>
+					<value level="7">4289</value>
+					<value level="8">4361</value>
+					<value level="9">4430</value>
+					<value level="10">4499</value>
+					<value level="11">4568</value>
+					<value level="12">4642</value>
+					<value level="13">4711</value>
+					<value level="14">4782</value>
+					<value level="15">4853</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49306</skillId> <!-- Feather Storm - Explosion -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49047</skillId> <!-- Exploding Feather - Effect -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49049" toLevel="1" name="Swift Feather">
+		<!-- When Arrow Feather is used. Applies <Quick Movements> for 30 sec. Trigger cooldown: 60 sec. <Quick Movements>. Atk. Spd. +15%. P. Skill Cooldown -15% -->
+		<icon>icon.skill11829</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillBySkill">
+				<castSkillId>49042</castSkillId> <!-- Arrow Feather -->
+				<skillId>49050</skillId> <!-- Quick Movements -->
+				<skillLevel>1</skillLevel>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49050" toLevel="1" name="Quick Movements">
+		<!-- <Buff skill>. Makes you move faster. <Effect>. Atk. Spd. +15%. P. Skill Cooldown -15% -->
+		<icon>icon.skill11829</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49051" toLevel="8" name="Dragon">
+		<!-- <Features>. A pet with high defense and good health. <Basic stats>. Max HP +10%. P. Def. +5%. M. Def. +5%. P. Atk. +10%. All Critical Damage +5%. Atk. Spd. +10%. Atk. Spd. +100. Speed +20. When using a sword or an ancient sword, P. Atk. +10% -->
+		<icon>icon.pet_race_strider</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>BLUNT</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>RAPIER</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>NONE</item>
+					<item>PISTOLS</item>
+					<item>BLUNT</item>
+					<item>DAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>BOW</item>
+					<item>ETC</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>FISHINGROD</item>
+					<item>CROSSBOW</item>
+					<item>RAPIER</item>
+					<item>FLAG</item>
+					<item>DUALDAGGER</item>
+					<item>OWNTHING</item>
+					<item>TWOHANDCROSSBOW</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49052" toLevel="20" name="Crippling Bite">
+		<!-- <Pull attack skill>. Bites the target ferociously. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 115. If the target is a character, pulls them forward. <Special effect>. After an attack, there is a certain chance to turn the skill into Double Crippling Bite and attack the target twice. -->
+		<icon>icon.pet_bite_crush</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<trait>PULL</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<pvpEffects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+		</pvpEffects>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">115</value>
+					<value level="2">446</value>
+					<value level="3">619</value>
+					<value level="4">1422</value>
+					<value level="5">2642</value>
+					<value level="6">4801</value>
+					<value level="7">5536</value>
+					<value level="8">6293</value>
+					<value level="9">7076</value>
+					<value level="10">8306</value>
+					<value level="11">8442</value>
+					<value level="12">8578</value>
+					<value level="13">8722</value>
+					<value level="14">8860</value>
+					<value level="15">8998</value>
+					<value level="16">9136</value>
+					<value level="17">9283</value>
+					<value level="18">9422</value>
+					<value level="19">9564</value>
+					<value level="20">9706</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49303</skillId> <!-- Crippling Bite -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</skillLevel>
+				<chance>30</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49053" toLevel="20" name="Double Crippling Bite">
+		<!-- <Pull attack skill>. Bites the target ferociously twice. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 115. If the target is a character, pulls them forward. -->
+		<icon>icon.pet_bite_crush</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<trait>PULL</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<pvpEffects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+		</pvpEffects>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">115</value>
+					<value level="2">446</value>
+					<value level="3">619</value>
+					<value level="4">1422</value>
+					<value level="5">2642</value>
+					<value level="6">4801</value>
+					<value level="7">5536</value>
+					<value level="8">6293</value>
+					<value level="9">7076</value>
+					<value level="10">8306</value>
+					<value level="11">8442</value>
+					<value level="12">8578</value>
+					<value level="13">8722</value>
+					<value level="14">8860</value>
+					<value level="15">8998</value>
+					<value level="16">9136</value>
+					<value level="17">9283</value>
+					<value level="18">9422</value>
+					<value level="19">9564</value>
+					<value level="20">9706</value>
+				</power>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">115</value>
+					<value level="2">446</value>
+					<value level="3">619</value>
+					<value level="4">1422</value>
+					<value level="5">2642</value>
+					<value level="6">4801</value>
+					<value level="7">5536</value>
+					<value level="8">6293</value>
+					<value level="9">7076</value>
+					<value level="10">8306</value>
+					<value level="11">8442</value>
+					<value level="12">8578</value>
+					<value level="13">8722</value>
+					<value level="14">8860</value>
+					<value level="15">8998</value>
+					<value level="16">9136</value>
+					<value level="17">9283</value>
+					<value level="18">9422</value>
+					<value level="19">9564</value>
+					<value level="20">9706</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49054" toLevel="5" name="Rushing Assault">
+		<!-- <Buff skill>. Increases the pet's speed. <Effect>. Speed +30. Atk. Spd. +15% -->
+		<icon>icon.skill1373</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>40</abnormalTime>
+		<mpConsume>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">65</value>
+			<value level="5">70</value>
+		</mpConsume>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">55</value>
+					<value level="5">60</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">40</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49055" toLevel="5" name="Back Explosion">
+		<!-- <Shock skill>. Roars loudly to make an explosion behind the target. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 4461. With a certain chance, pulls the target to the explosion area and stuns them. -->
+		<icon>icon.pet_behind_burster</icon>
+		<operateType>A1</operateType>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">75</value>
+			<value level="3">80</value>
+			<value level="4">85</value>
+			<value level="5">90</value>
+		</mpConsume>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-820</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">4461</value>
+					<value level="2">4652</value>
+					<value level="3">4843</value>
+					<value level="4">5035</value>
+					<value level="5">5356</value>
+				</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>49057</skillId> <!-- Explosion Stun -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
+				<chance>15</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49056" toLevel="3" name="Double Attack">
+		<icon>icon.skill0325</icon>
+		<operateType>T</operateType>
+	</skill>
+	<skill id="49057" toLevel="5" name="Explosion Stun">
+		<!-- Unable to move. -->
+		<icon>icon.pet_behind_burster</icon>
+		<operateType>A2</operateType>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-820</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<abnormalTime>1</abnormalTime>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<trait>SHOCK</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49058" toLevel="1" name="Perfect Bite">
+		<!-- <Skill upgrade>. Crippling Bite → Double Crippling Bite -->
+		<icon>icon.skill0325</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>49052</existingSkillId> <!-- Crippling Bite -->
+				<replacementSkillId>49053</replacementSkillId> <!-- Double Crippling Bite -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49061" toLevel="8" name="Fox">
+		<!-- <Features>. A pet that uses mysterious spells. <Basic stats>. Max HP +10%. P. Def. +10%. M. Def. +10%. P. Atk. +10%. P. Skill Power +2%. When using firearms, P. Atk. +10% -->
+		<icon>icon.pet_race_fox</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49062" toLevel="1" name="Physical Assault">
+		<!-- Summons Fox Fire and attacks the enemy. -->
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="49063" toLevel="20" name="Fox Fire">
+		<!-- <<font color="00FF00">Attack/ changing skill</font>>. Attacks the target with mysterious fox fire. Melee: Attacks with fox fire enhanced by powerful spells. Long range: Shoots with fox fire that tracks the target. Deals P. skill damage corresponding to P. Atk. Base P. Atk.: 110% -->
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49064" toLevel="20" name="Fox Fire">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49065" toLevel="20" name="Fox Fire">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49066" toLevel="5" name="Leap Rush">
+		<!-- <Rush skill>. Rushes to the target making great leaps. Deals P. skill damage corresponding to P. Atk. Base P. Atk.: 110% -->
+		<icon>icon.pet_jump_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1500</reuseDelay>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49067" toLevel="8" name="Charm">
+		<!-- <Buff skill>. The Fox' charm distracts enemies increasing the pet's evasion. An enemy that hits the Fox suffers from guilt. <Buff>. All types of Evasion +10. When hit, the Fox makes the target suffer from guilt, decreasing their attack power. <Remorse>. P. Atk. -10%. M. Atk. -10% -->
+		<icon>icon.pet_act_charming</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="49068" toLevel="5" name="Fox Call">
+		<!-- <Special skill>. Summons foxes. Summoned foxes cast <Powerful Spell> that decreases all types of speed of surrounding enemies. <Powerful Spell>. Duration: 3 sec. Atk. Spd. -200. Casting Spd. -200. Speed -200. Foxes summoned: 3 to 5 -->
+		<icon>icon.pet_fox_field</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>180000</reuseDelay>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">60</value>
+			<value level="3">70</value>
+			<value level="4">80</value>
+			<value level="5">90</value>
+		</mpConsume>
+	</skill>
+	<skill id="49069" toLevel="2" name="Pet's Protection - Master Blessing">
+		<!-- <Pet's Protection>. Increases the master's stats. <Effect>. Damage +0.5%. Note!. Does not stack with other Pet's Protection effects. While one Pet's Protection is active, you cannot get another. -->
+		<icon>icon.skill11272</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<mpConsume>100</mpConsume>
+	</skill>
+	<skill id="49070" toLevel="1" name="Magic Power Boost">
+		<!-- Increases a Fox's magic power. Number of Fox Fire attacks: 1 → 2 -->
+		<icon>icon.skill8905</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49071" toLevel="1" name="Powerful Spell">
+		<!-- All types of speed are decreased because of the Powerful Spell. Atk. Spd. -200. Casting Spd. -200. Speed -200 -->
+		<icon>icon.skill0501</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<reuseDelay>8000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49072" toLevel="3" name="Fox Call">
+		<icon>icon.pet_fox_field</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<mpConsume>50</mpConsume>
+	</skill>
+	<skill id="49073" toLevel="3" name="Fox Call">
+		<icon>icon.pet_fox_field</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<mpConsume>50</mpConsume>
+	</skill>
+	<skill id="49074" toLevel="3" name="Fox Call">
+		<icon>icon.pet_fox_field</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<mpConsume>50</mpConsume>
+	</skill>
+</list>

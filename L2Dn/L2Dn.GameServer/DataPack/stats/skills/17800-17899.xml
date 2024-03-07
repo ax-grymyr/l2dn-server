@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="17814" toLevel="4" name="Ruby">
+		<!-- Soulshot damage +2%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17815" toLevel="2" name="Ruby">
+		<!-- Soulshot damage +5%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17816" toLevel="2" name="Ruby">
+		<!-- Soulshot damage +8%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17817" toLevel="10" name="Ruby">
+		<!-- Soulshot damage +16%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="3">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="6">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">16</value>
+					<value level="2">16</value>
+					<value level="3">17</value>
+					<value level="4">17</value>
+					<value level="5">18</value>
+					<value level="6">18</value>
+					<value level="7">19</value>
+					<value level="8">19</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17818" toLevel="4" name="Sapphire">
+		<!-- Spiritshot damage +2%. -->
+		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17819" toLevel="2" name="Sapphire">
+		<!-- Spiritshot damage +5%. -->
+		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17820" toLevel="2" name="Sapphire">
+		<!-- Spiritshot damage +8%. -->
+		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">8</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17821" toLevel="10" name="Sapphire">
+		<!-- Spiritshot damage +16%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="3">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="6">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">16</value>
+					<value level="2">16</value>
+					<value level="3">17</value>
+					<value level="4">17</value>
+					<value level="5">18</value>
+					<value level="6">18</value>
+					<value level="7">19</value>
+					<value level="8">19</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17823" toLevel="10" name="Aquamarine">
+		<!-- With a 10% chance, recovers 12 MP when using skills. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="2">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="3">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="4">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="5">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="6">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="17824" toLevel="10" name="Aquamarine - Mana Steal">
+		<icon>
+			<value level="1">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="2">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="3">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="4">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="5">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="6">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="17825" toLevel="1" name="Greater Aquamarine - Special Property">
+		<!-- When using a special skill, immediately recovers 10% MP. -->
+		<icon>icon.bm_jewel_castmpup_high_lv1_lavianrose</icon>
+		<operateType>P</operateType>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="17888" toLevel="2" name="Ruby">
+		<!-- Beast Soulshot Damage +2%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17889" toLevel="1" name="Ruby">
+		<!-- Beast Soulshot Damage +5%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17890" toLevel="1" name="Ruby">
+		<!-- Beast Soulshot Damage +8%. -->
+		<icon>icon.etc_bm_jewel_ruby_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17891" toLevel="5" name="Ruby">
+		<!-- Beast Soulshot Damage +16%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="2">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="3">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">16</value>
+					<value level="2">17</value>
+					<value level="3">18</value>
+					<value level="4">19</value>
+					<value level="5">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="17896" toLevel="1" name="Orc Recovery Ban">
+		<!-- No HP recovery. -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<hitTime>2000</hitTime>
+		<reuseDelay>8000</reuseDelay>
+	</skill>
+</list>

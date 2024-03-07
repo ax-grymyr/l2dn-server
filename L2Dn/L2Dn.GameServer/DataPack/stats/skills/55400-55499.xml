@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="55400" toLevel="1" name="Commemorative Olympiad Bracelet">
+		<!-- Activates 2 Talisman slots, Max. HP/ MP/ CP +3%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>2</slots>
+			</effect>
+			<effect name="MaxCp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55401" toLevel="1" name="Olympiad Warrior's Talisman">
+		<!-- P./ M. Skill Critical Damage +7%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55402" toLevel="1" name="Olympiad Warrior's Belt">
+		<!-- P. Def. +15, weight limit +2000. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55403" toLevel="1" name="Summon Agathion Cheerleader Mae">
+		<!-- Summons Agathion. -->
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="55404" toLevel="1" name="Agathion Cute Trick - Cheerleader Mae">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="55405" toLevel="1" name="Cheerleader Mae's Support">
+		<!-- P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%, Skill MP Consumption -10%, P./ M. Critical Damage +3%. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55406" toLevel="1" name="For victory in Tryout - XP/ SP Bonus">
+		<!-- Buff, given to the server, to which belongs a warrior, gained the greatest number of victories during the Tryout. XP/ SP +30%. Cannot be stacked with Blessing of Light. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="55407" toLevel="1" name="For victory in Tryout - 2nd class transfer effect">
+		<!-- For 20 min., Shield Lv. 3, Might Lv. 3, Acumen Lv. 2, Wind Walk Lv. 2, Focus Lv. 2, Regeneration Lv. 1, Guidance Lv. 1, Death Whisper Lv. 1, Magic Barrier Lv. 1, Blessed Body Lv. 1, Blessed Soul Lv. 1, Haste Lv. 1, Agility Lv. 2, Empower Lv. 2. -->
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>200</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55408" toLevel="1" name="Expertise Rune (A-grade)">
+		<!-- When possessed, you get Expertise A skill -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55409" toLevel="1" name="Kusto's Support Box: Enhance Weapon (A-grade)">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55410" toLevel="1" name="Kusto's Support Box: Enhance Weapon (B-grade)">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55411" toLevel="1" name="Kusto's Support Box: Enhance Weapon (C-grade)">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="55412" toLevel="1" name="Transformation Scroll: Pirate">
+		<!-- Transformation to Pirate. Combat stats are increased. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55413" toLevel="1" name="Transformation Scroll: Dark Assassin">
+		<!-- Transformation to Dark Assassin. Combat stats are increased. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55414" toLevel="1" name="White Assassin Transformation Scroll">
+		<!-- Transformation to White Assassin. Combat stats are increased. Effect remains after death. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55415" toLevel="1" name="Scroll: Enchant Armor (A-grade)">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55416" toLevel="1" name="Summon Agathion One-eyed Bat Drove">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1513</npcId> <!-- Agathion One-eyed Bat Drove -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55417" toLevel="1" name="Summon Agathion Zaken's Spirit Swords">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1595</npcId> <!-- Agathion Zaken's Spirit Swords -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55418" toLevel="1" name="Summon Agathion Pegasus">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1514</npcId> <!-- Agathion Pegasus -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55419" toLevel="1" name="Summon Agathion Guangong">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1551</npcId> <!-- Agathion Guangong -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55420" toLevel="1" name="Summon Agathion God of Fortune">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1523</npcId> <!-- God of Fortune -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55421" toLevel="1" name="Summon Agathion Phoenix">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1574</npcId> <!-- Phoenix -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55422" toLevel="1" name="Summon Agathion - Saerom">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>16063</npcId> <!-- Saerom -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55423" toLevel="1" name="Summon Agathion Gwanseum Nyang">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1552</npcId> <!-- Agathion Gwanseum Nyang -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55424" toLevel="1" name="Summon Agathion Blue Opera">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1553</npcId> <!-- Agathion Blue Opera -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55425" toLevel="1" name="Summon Agathion Red Opera">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1554</npcId> <!-- Agathion Red Opera -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55426" toLevel="1" name="Summon Agathion Miss Chipao">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1556</npcId> <!-- Agathion Miss Chipao -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55427" toLevel="1" name="Summon Agathion Flower Fairy Spirit">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1586</npcId> <!-- Flower Fairy Spirit -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55428" toLevel="1" name="Summon Agathion Iken">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1539</npcId> <!-- Agathion Iken -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55429" toLevel="1" name="Summon Agathion Lanya">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1540</npcId> <!-- Agathion Lanya -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55430" toLevel="1" name="Summon Agathion Gnosian">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1541</npcId> <!-- Agathion Gnosian -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55431" toLevel="1" name="Summon Agathion Cheerleader Orodriel">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1542</npcId> <!-- Agathion Cheerleader Orodriel -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55432" toLevel="1" name="Summon Agathion Lakinos">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1543</npcId> <!-- Agathion Lakinos -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55433" toLevel="1" name="Summon Agathion Mortia">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1544</npcId> <!-- Agathion Mortia -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55434" toLevel="1" name="Summon Agathion Heintz">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1545</npcId> <!-- Agathion Heintz -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55435" toLevel="1" name="Summon Agathion Meruril">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1546</npcId> <!-- Agathion Meruril -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55436" toLevel="1" name="Summon Agathion Taman Zu Rapatui">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1547</npcId> <!-- Agathion Taman Zu Rapatui -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55437" toLevel="1" name="Summon Agathion Kaurin">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1548</npcId> <!-- Agathion Kaurin -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55438" toLevel="1" name="Summon Agathion Ahertbein">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1549</npcId> <!-- Agathion Ahertbein -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55439" toLevel="1" name="Summon Agathion Naonin">
+		<!-- Summons Agathion. -->
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>85</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>1550</npcId> <!-- Agathion Naonin -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55440" toLevel="1" name="One-eyed Bat Drove Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55441" toLevel="1" name="Zaken's Spirit Swords Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55442" toLevel="1" name="Pegasus Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55443" toLevel="1" name="Guangong Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55444" toLevel="1" name="God of Fortune Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55445" toLevel="1" name="Phoenix Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55446" toLevel="1" name="Saerom Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55447" toLevel="1" name="Gwanseum Nyang Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55448" toLevel="1" name="Blue Opera Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55449" toLevel="1" name="Red Opera Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55450" toLevel="1" name="Miss Chipao Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55451" toLevel="1" name="Flower Fairy Spirit Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55452" toLevel="1" name="Iken Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55453" toLevel="1" name="Lanya Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55454" toLevel="1" name="Gnosian Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55455" toLevel="1" name="Cheerleader Orodriel Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55456" toLevel="1" name="Lakinos Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55457" toLevel="1" name="Mortia Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55458" toLevel="1" name="Heintz Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55459" toLevel="1" name="Meruril Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55460" toLevel="1" name="Taman Zu Rapatui Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55461" toLevel="1" name="Kaurin Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55462" toLevel="1" name="Ahertbein Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55463" toLevel="1" name="Naonin Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
+		<operateType>A1</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>85</magicLevel>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+	</skill>
+	<skill id="55464" toLevel="1" name="Energy of Protection">
+		<!-- For 20 min., Max HP/ MP +5%, Paralysis Resistance +15, Mental Resistance +10, Acquired XP/ SP +30%. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55465" toLevel="1" name="Shaft with Antharas treasures">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55466" toLevel="1" name="Put on Lv. 2 Brooch">
+		<!-- Brooch radiates bright light. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="55467" toLevel="1" name="Remove Lv. 2 Brooch">
+		<!-- Bright light fades. -->
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55468" toLevel="1" name="Lv. 1 Brooch">
+		<!-- Activates 2 jewel slots. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>2</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55469" toLevel="1" name="Lv. 2 Brooch">
+		<!-- Activates 3 jewel slots. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>3</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55470" toLevel="2" name="Lv. 2 Brooch - Additional Effect">
+		<!-- Inventory Slot +5. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">9</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55471" toLevel="10" name="Topaz">
+		<!-- Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of $s1. -->
+		<operateType>A1</operateType>
+		<abnormalLevel>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+			<value level="7">8</value>
+			<value level="8">9</value>
+			<value level="9">10</value>
+			<value level="10">11</value>
+		</abnormalLevel>
+		<magicLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+		</magicLevel>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<reuseDelay>30000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<pvpEffects>
+			<effect name="BlockSkill">
+				<magicTypes>1;3</magicTypes>
+			</effect>
+			<effect name="SkillTurning">
+				<chance>100</chance>
+				<staticChance>true</staticChance>
+			</effect>
+			<effect name="RealDamage">
+				<power>
+					<value level="1">475</value>
+					<value level="2">633</value>
+					<value level="3">950</value>
+					<value level="4">1357</value>
+					<value level="5">2375</value>
+					<value level="6">2375</value>
+					<value level="7">2375</value>
+					<value level="8">2375</value>
+					<value level="9">2375</value>
+					<value level="10">2375</value>
+				</power>
+			</effect>
+		</pvpEffects>
+	</skill>
+	<skill id="55472" toLevel="10" name="Vital Stone">
+		<!-- Acquired XP/ SP from Sayha Grace +$s1 while hunting. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">15</value>
+					<value level="6">17</value>
+					<value level="7">19</value>
+					<value level="8">21</value>
+					<value level="9">23</value>
+					<value level="10">30</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">15</value>
+					<value level="6">17</value>
+					<value level="7">19</value>
+					<value level="8">21</value>
+					<value level="9">23</value>
+					<value level="10">30</value>
+				</amount>
+			</effect>
+			<effect name="SpiritExpModify">
+				<amount>
+					<value level="10">50</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55473" toLevel="6" name="Vital Stone - Special Ability">
+		<!-- For $s1, XP/ SP +$s2, while hunting. Cooldown: 20 min. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>1200000</reuseDelay>
+	</skill>
+	<skill id="55474" toLevel="10" name="Jade">
+		<!-- Atk. Spd./ Casting Spd. +$s1. -->
+		<magicLevel>1</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">7</value>
+					<value level="5">14</value>
+					<value level="6">15</value>
+					<value level="7">16</value>
+					<value level="8">17</value>
+					<value level="9">18</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">7</value>
+					<value level="5">14</value>
+					<value level="6">15</value>
+					<value level="7">16</value>
+					<value level="8">17</value>
+					<value level="9">18</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">5</value>
+					<value level="10">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55475" toLevel="10" name="Diamond">
+		<!-- P. Def. +$s1. -->
+		<!-- TODO: on level 10 add chance of receiving P. critical attack -20% -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">11</value>
+					<value level="2">25</value>
+					<value level="3">50</value>
+					<value level="4">81</value>
+					<value level="5">130</value>
+					<value level="6">150</value>
+					<value level="7">180</value>
+					<value level="8">220</value>
+					<value level="9">280</value>
+					<value level="10">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="4">-4</value>
+					<value level="5">-10</value>
+					<value level="6">-11</value>
+					<value level="7">-12</value>
+					<value level="8">-14</value>
+					<value level="9">-16</value>
+					<value level="10">-20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55476" toLevel="10" name="Pearl">
+		<!-- M. Def. +$s1. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">14</value>
+					<value level="3">28</value>
+					<value level="4">46</value>
+					<value level="5">74</value>
+					<value level="6">85</value>
+					<value level="7">100</value>
+					<value level="8">125</value>
+					<value level="9">160</value>
+					<value level="10">250</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="4">-4</value>
+					<value level="5">-10</value>
+					<value level="6">-11</value>
+					<value level="7">-12</value>
+					<value level="8">-14</value>
+					<value level="9">-16</value>
+					<value level="10">-20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55477" toLevel="10" name="Ruby">
+		<!-- Damage received from Soulshots +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55478" toLevel="10" name="Ruby">
+		<!-- Damage received from Blessed Soulshots +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55479" toLevel="10" name="Ruby">
+		<!-- Damage from Beast Soulshot +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55481" toLevel="10" name="Sapphire">
+		<!-- Damage received from Spiritshots +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55482" toLevel="10" name="Sapphire">
+		<!-- Damage received from Blessed Spiritshots +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55483" toLevel="10" name="Sapphire">
+		<!-- Damage from Beast Spiritshot +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55485" toLevel="10" name="Garnet">
+		<!-- Stun/ Pulling/ Silence/ Petrification/ Fear Resistance +$s1. -->
+		<!-- TODO: Resist to Fear and Silence -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</SHOCK>
+				<PULL>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PULL>
+				<PARALYZE>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PARALYZE>
+				<INFECTION>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">10</value>
+				</INFECTION>
+				<SLEEP>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">10</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55486" toLevel="7" name="Garnet - Special Ability">
+		<!-- Becomes invincible for debuffs for $s1 -->
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="55495" toLevel="1" name="Fortune Brooch">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55496" toLevel="1" name="Topaz Fortune Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55497" toLevel="1" name="Garnet Fortune Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55498" toLevel="1" name="Jade Fortune Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55499" toLevel="1" name="Ruby Fortune Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+</list>

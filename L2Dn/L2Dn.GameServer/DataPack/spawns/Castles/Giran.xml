@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GiranCastle">
+		<group>
+			<npc id="35147" x="117950" y="145096" z="-2544" heading="32768" respawnTime="60sec" /> <!-- Giran Holy Artifact -->
+			<npc id="35179" x="116535" y="146677" z="-1851" heading="49152" respawnTime="60sec" /> <!-- Gatekeeper - Giran -->
+			<npc id="35180" x="112661" y="144757" z="-2817" heading="32768" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Giran -->
+			<npc id="35180" x="113009" y="144703" z="-2817" heading="49152" respawnTime="10800sec" /> <!-- Outer Castle Gatekeeper - Giran -->
+			<npc id="35181" x="115220" y="144930" z="-2527" heading="32768" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Giran -->
+			<npc id="35181" x="115575" y="144864" z="-2567" heading="49152" respawnTime="10800sec" /> <!-- Inner Castle Gatekeeper - Giran -->
+			<npc id="35182" x="116494" y="145516" z="-2723" heading="58824" respawnTime="60sec" /> <!-- Blacksmith - Giran -->
+			<npc id="35183" x="115910" y="145101" z="-2723" heading="1353" respawnTime="60sec" /> <!-- Warehouse Keeper - Giran -->
+			<npc id="35185" x="117780" y="145257" z="-2099" heading="49000" respawnTime="60sec" /> <!-- Bryce - Wyvern Manager -->
+			<npc id="35186" x="116984" y="145278" z="-2555" heading="32768" respawnTime="60sec" /> <!-- Arvid - Mercenary Manager -->
+			<npc id="35188" x="107386" y="145807" z="-3300" heading="32768" respawnTime="60sec" /> <!-- Holmes - Giran Herald -->
+		</group>
+	</spawn>
+</list>

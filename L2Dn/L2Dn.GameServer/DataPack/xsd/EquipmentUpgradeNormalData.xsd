@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list" type="listType"/>
+	<xs:complexType name="paramsType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="commission"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="itemType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="id" use="optional"/>
+				<xs:attribute type="xs:string" name="count" use="optional"/>
+				<xs:attribute type="xs:string" name="enchantLevel" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="discountType">
+		<xs:sequence>
+			<xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="upgradeItemType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="id" use="optional"/>
+				<xs:attribute type="xs:string" name="count" use="optional"/>
+				<xs:attribute type="xs:string" name="enchantLevel" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="successItemsType">
+		<xs:sequence>
+			<xs:element type="itemType" name="item"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="failureItemsType">
+		<xs:sequence>
+			<xs:element type="itemType" name="item"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="upgradeType">
+		<xs:sequence>
+			<xs:element type="upgradeItemType" name="upgradeItem"/>
+			<xs:element type="successItemsType" name="successItems"/>
+			<xs:element type="failureItemsType" name="failureItems" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="id" use="optional"/>
+		<xs:attribute type="xs:string" name="type" use="optional"/>
+		<xs:attribute type="xs:string" name="chance" use="optional"/>
+		<xs:attribute type="xs:string" name="commission" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="listType">
+		<xs:sequence>
+			<xs:element type="paramsType" name="params"/>
+			<xs:element type="discountType" name="discount"/>
+			<xs:element type="upgradeType" name="upgrade" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

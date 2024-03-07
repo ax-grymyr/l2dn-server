@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="47101" toLevel="4" name="Elemental Spirit">
+		<!-- The spirit power runs through your body. An incarnated Spirit Lv. 1 can be used in combat. Max HP +100 -->
+		<icon>icon.skill30401</icon>
+		<operateType>P</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalVisualEffect>
+			<value level="1">H_SY_BOARDA_DECO</value>
+			<value level="2">H_SY_BOARDA_DECO</value>
+			<value level="3">H_SY_BOARDA_DECO</value>
+			<value level="4">H_SY_BOARDA_DECO</value>
+		</abnormalVisualEffect>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<skillId>47048</skillId> <!-- Elemental Guard -->
+				<skillLevel>1</skillLevel>
+				<minDamage>100</minDamage>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<skillId>47060</skillId> <!-- Elemental Charging -->
+				<skillLevel>1</skillLevel>
+				<minDamage>100</minDamage>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<skillId>47059</skillId> <!-- Dragon Strike -->
+				<skillLevel>1</skillLevel>
+				<minDamage>100</minDamage>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+			</effect>
+			<effect name="DefenceTrait">
+				<IMPRISON>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</IMPRISON>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47104" toLevel="5" name="Elemental Connection">
+		<!-- The character has a strong connection with the spirits. Soulshot damage +1%. All Critical Rate +1% -->
+		<icon>icon.skill30400</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47105" toLevel="10" name="Elemental Recovery">
+		<!-- The spirit power helps to regenerate faster. HP Recovery Rate +6. MP Recovery Rate +3 -->
+		<icon>icon.skill30402</icon>
+		<operateType>P</operateType>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">52</value>
+			<value level="3">64</value>
+			<value level="4">70</value>
+			<value level="5">77</value>
+			<value level="6">82</value>
+			<value level="7">84</value>
+			<value level="8">86</value>
+			<value level="9">88</value>
+			<value level="10">90</value>
+		</magicLevel>
+		<effects>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">7</value>
+					<value level="3">8</value>
+					<value level="4">9</value>
+					<value level="5">10</value>
+					<value level="6">11</value>
+					<value level="7">12</value>
+					<value level="8">13</value>
+					<value level="9">14</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
+					<value level="9">8</value>
+					<value level="10">8</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

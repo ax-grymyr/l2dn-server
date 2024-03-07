@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Heavy A-Grade Armors -->
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="2" id="93449" />
+		<!-- Tallum Plate Armor Sealed -->
+		<production count="1" id="92261" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Tallum Helmet Heavy Armor Sealed -->
+		<production count="1" id="92301" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Tallum Gloves Heavy Armor Sealed -->
+		<production count="1" id="92280" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Tallum Boots Heavy Armor Sealed -->
+		<production count="1" id="92292" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="2" id="93449" />
+		<!-- Armor of Nightmare Sealed -->
+		<production count="1" id="92256" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Helm of Nightmare Sealed -->
+		<production count="1" id="92307" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Gauntlets of Nightmare Sealed -->
+		<production count="1" id="92283" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Boots of Nightmare Sealed -->
+		<production count="1" id="92295" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Dark Crystal Breastplate Sealed -->
+		<production count="1" id="92255" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Dark Crystal Gaiters Sealed -->
+		<production count="1" id="92257" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Dark Crystal Helmet Sealed -->
+		<production count="1" id="92304" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Dark Crystal Gloves Sealed -->
+		<production count="1" id="92277" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Dark Crystal Boots 92289 -->
+		<production count="1" id="92289" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="2" id="93449" />
+		<!-- Majestic Plate Armor Sealed -->
+		<production count="1" id="92262" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Majestic Circlet Armor Sealed -->
+		<production count="1" id="92310" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Majestic Gauntlets Armor Sealed -->
+		<production count="1" id="92286" />
+	</item>
+	<item>
+		<!-- A-grade Armor Coupon -->
+		<ingredient count="1" id="93449" />
+		<!-- Majestic Boots Armor Sealed -->
+		<production count="1" id="92298" />
+	</item>
+</list>

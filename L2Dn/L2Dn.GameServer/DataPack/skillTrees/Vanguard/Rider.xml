@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="218" parentClassId="217">
+		<skill skillName="Chant of Focus" skillId="45121" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Focus" skillId="45121" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Death Whisper" skillId="45122" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Death Whisper" skillId="45122" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Bandage" skillId="34" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Haste" skillId="45123" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Wind Walk" skillId="45124" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Wind Walk" skillId="45124" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Magic Barrier" skillId="45125" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Might" skillId="45126" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Shield" skillId="45127" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Berserker Spirit" skillId="45128" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Clarity" skillId="45129" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Clarity" skillId="45129" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Ability to Attack" skillId="77" skillLevel="2" getLevel="25" levelUpSp="280" />
+		<skill skillName="Wild Rush" skillId="47822" skillLevel="1" getLevel="20" levelUpSp="0" autoGet="true" />
+		<skill skillName="Chant of Acumen" skillId="45135" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Acumen" skillId="45135" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Empower" skillId="45136" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Chant of Empower" skillId="45136" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Chant of Wild Magic" skillId="45137" skillLevel="1" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Wild Weapon Mastery" skillId="47861" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Wild Armor Mastery" skillId="47862" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Piercing" skillId="47801" skillLevel="2" getLevel="30" levelUpSp="1100" />
+		<skill skillName="Ability to Protect" skillId="91" skillLevel="2" getLevel="20" levelUpSp="100" />
+	</skillTree>
+</list>

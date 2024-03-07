@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="PrimevalGarden">
+		<group>
+			<npc id="34177" x="-114814" y="216212" z="-13208" heading="47799" respawnTime="60sec" /> <!-- Kiku -->
+			<npc id="22261" x="-114829" y="214066" z="-13256" heading="60655" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-114570" y="214170" z="-13256" heading="41760" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-115784" y="214254" z="-13248" heading="35290" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22258" x="-114601" y="214316" z="-13232" heading="23219" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22261" x="-114403" y="214406" z="-13217" heading="4475" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-114351" y="214373" z="-13222" heading="57089" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-114129" y="214140" z="-13264" heading="57089" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114255" y="214059" z="-13272" heading="38727" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22261" x="-114471" y="214133" z="-13256" heading="32767" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114293" y="214241" z="-13240" heading="656" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22258" x="-115591" y="214117" z="-13256" heading="35266" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22260" x="-115951" y="214054" z="-13265" heading="20437" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-116311" y="214113" z="-13280" heading="31958" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22259" x="-116076" y="214485" z="-13240" heading="10507" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22269" x="-116022" y="214329" z="-13240" heading="52627" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-116433" y="214289" z="-13264" heading="30804" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-117088" y="214858" z="-13256" heading="17846" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-117384" y="214602" z="-13241" heading="35527" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-117687" y="215003" z="-13233" heading="22274" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-117796" y="215560" z="-13184" heading="17019" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-117984" y="215224" z="-13216" heading="43831" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118401" y="215049" z="-13184" heading="179" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118975" y="215274" z="-13110" heading="37912" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119486" y="215148" z="-13090" heading="33571" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119402" y="214841" z="-13113" heading="52753" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118984" y="214489" z="-13176" heading="61230" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119315" y="214180" z="-13177" heading="37584" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119865" y="213833" z="-13138" heading="38968" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119750" y="213325" z="-13147" heading="55882" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119152" y="213083" z="-13156" heading="64954" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119137" y="212703" z="-13130" heading="48182" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118559" y="212400" z="-13096" heading="3295" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118565" y="212021" z="-13075" heading="48933" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118577" y="211611" z="-13064" heading="48779" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22261" x="-115293" y="213736" z="-13257" heading="35640" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115823" y="213682" z="-13256" heading="30146" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116149" y="213621" z="-13265" heading="39021" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116331" y="213810" z="-13264" heading="21756" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116684" y="214076" z="-13256" heading="32367" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116859" y="214282" z="-13249" heading="23737" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-117311" y="214846" z="-13240" heading="16383" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-117310" y="215318" z="-13241" heading="18099" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-117585" y="215132" z="-13240" heading="41200" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-117694" y="215327" z="-13232" heading="21700" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118142" y="215454" z="-13158" heading="27465" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118313" y="215216" z="-13176" heading="43834" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118702" y="215626" z="-13080" heading="23689" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118700" y="215316" z="-13120" heading="49219" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118958" y="214911" z="-13152" heading="43235" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119181" y="214659" z="-13152" heading="41596" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119483" y="214347" z="-13152" heading="41110" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119784" y="213665" z="-13152" heading="51975" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-120123" y="213567" z="-13120" heading="35703" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-120470" y="213617" z="-13056" heading="31275" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-120377" y="213914" z="-13064" heading="13218" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119214" y="213127" z="-13160" heading="55915" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118924" y="212908" z="-13155" heading="59783" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118791" y="212625" z="-13123" heading="50197" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118503" y="212156" z="-13078" heading="56309" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118411" y="211856" z="-13064" heading="50612" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118251" y="211439" z="-13061" heading="42652" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118028" y="211322" z="-13056" heading="64865" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118341" y="211242" z="-13056" heading="35378" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-118679" y="211513" z="-13068" heading="25730" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119123" y="212336" z="-13096" heading="23161" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-119659" y="213009" z="-13135" heading="21688" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22259" x="-116343" y="214021" z="-13272" heading="26969" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-116705" y="214308" z="-13264" heading="25776" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-116895" y="214636" z="-13264" heading="21874" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-117484" y="215256" z="-13242" heading="27294" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22260" x="-118250" y="214903" z="-13216" heading="38015" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-118711" y="214617" z="-13194" heading="31250" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-117133" y="214422" z="-13234" heading="62849" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-115267" y="214229" z="-13240" heading="60699" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-119179" y="214055" z="-13197" heading="38697" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-119403" y="213282" z="-13164" heading="50518" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-120111" y="213689" z="-13112" heading="61754" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-118644" y="212522" z="-13112" heading="57625" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-118366" y="211711" z="-13064" heading="47827" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-118599" y="211222" z="-13072" heading="18654" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-116724" y="214505" z="-13259" heading="33252" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-117646" y="214425" z="-13240" heading="35708" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118367" y="214759" z="-13206" heading="29186" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118999" y="215529" z="-13072" heading="45087" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22258" x="-119308" y="215224" z="-13090" heading="40871" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22262" x="-119701" y="214785" z="-13096" heading="53634" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22258" x="-118395" y="214075" z="-13256" heading="2555" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-117675" y="214596" z="-13240" heading="5508" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22262" x="-117934" y="214696" z="-13232" heading="28924" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-117506" y="214931" z="-13235" heading="5257" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22259" x="-119176" y="215051" z="-13120" heading="23768" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-119355" y="215527" z="-13056" heading="57668" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-118356" y="215413" z="-13136" heading="53769" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22266" x="-117969" y="210864" z="-13048" heading="56228" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-118001" y="210628" z="-13028" heading="46559" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-117922" y="210347" z="-13016" heading="53105" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-117947" y="210077" z="-12993" heading="48179" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22266" x="-117765" y="209952" z="-12997" heading="59618" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-117853" y="209731" z="-12984" heading="44117" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118199" y="209733" z="-12960" heading="32707" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118543" y="209891" z="-12937" heading="28260" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118681" y="209997" z="-12937" heading="20090" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118789" y="210432" z="-13020" heading="7830" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118599" y="210618" z="-13040" heading="8975" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118320" y="210846" z="-13044" heading="2608" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-118195" y="210879" z="-13040" heading="2608" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-118139" y="211086" z="-13056" heading="13628" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-118574" y="210981" z="-13062" heading="33726" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-118744" y="210760" z="-13054" heading="42625" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-118920" y="210603" z="-13042" heading="37589" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-119211" y="210538" z="-13033" heading="30097" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-119520" y="210702" z="-13043" heading="24715" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-119730" y="210949" z="-13050" heading="22742" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-119978" y="211280" z="-13056" heading="23415" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-119736" y="211363" z="-13080" heading="2498" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-120031" y="211101" z="-13048" heading="40342" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-119976" y="210725" z="-13033" heading="50653" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-119817" y="210542" z="-13020" heading="57454" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-119547" y="210370" z="-13000" heading="61749" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-119236" y="210288" z="-12989" heading="65076" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-119021" y="210325" z="-13001" heading="10538" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118886" y="210346" z="-13006" heading="56931" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118600" y="210115" z="-12961" heading="62231" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118467" y="209771" z="-12907" heading="50894" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118820" y="209882" z="-12919" heading="29084" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-119181" y="209957" z="-12934" heading="34490" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-119622" y="209871" z="-12930" heading="35263" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-119830" y="210075" z="-12957" heading="23070" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-120079" y="210326" z="-12982" heading="25480" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-120470" y="210246" z="-12974" heading="39073" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-120839" y="210233" z="-12958" heading="30454" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-121110" y="210132" z="-12952" heading="41239" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-121342" y="210453" z="-12944" heading="25358" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22265" x="-121406" y="210827" z="-12930" heading="18152" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-121421" y="211366" z="-12923" heading="15712" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22265" x="-121231" y="211704" z="-12920" heading="9351" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-120879" y="211572" z="-12973" heading="61816" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-120435" y="211381" z="-13023" heading="61133" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-120198" y="210541" z="-13008" heading="47373" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22265" x="-119888" y="210438" z="-13008" heading="62188" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22264" x="-119700" y="210308" z="-12993" heading="58006" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-119445" y="210052" z="-12952" heading="55491" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-119419" y="210219" z="-12976" heading="14773" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-119739" y="209790" z="-12917" heading="43357" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-120042" y="209744" z="-12904" heading="22628" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-120466" y="209831" z="-12928" heading="30639" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-120850" y="210025" z="-12952" heading="25958" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-120613" y="210495" z="-12984" heading="10993" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-120241" y="210847" z="-13032" heading="12527" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-120776" y="211689" z="-12992" heading="23883" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-120605" y="211633" z="-13016" heading="7037" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22264" x="-118184" y="208719" z="-12960" heading="50268" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-118089" y="208353" z="-12949" heading="52402" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118299" y="208216" z="-12920" heading="26884" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22264" x="-118439" y="207983" z="-12910" heading="43553" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-118708" y="207682" z="-12892" heading="39773" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118657" y="207805" z="-12904" heading="7066" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-118937" y="207857" z="-12898" heading="30285" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-119011" y="207721" z="-12888" heading="46125" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-119330" y="207785" z="-12881" heading="30685" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-119317" y="207949" z="-12875" heading="14154" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-119390" y="208175" z="-12872" heading="24319" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-119222" y="208379" z="-12888" heading="10084" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22269" x="-119109" y="208250" z="-12888" heading="56655" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-118940" y="208760" z="-12904" heading="56271" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-119175" y="208723" z="-12888" heading="34396" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22270" x="-119420" y="208551" z="-12880" heading="31775" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-119335" y="208500" z="-12880" heading="59899" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-118999" y="208520" z="-12896" heading="1378" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-118799" y="208334" z="-12904" heading="57433" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-119099" y="208055" z="-12888" heading="55863" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-118959" y="208113" z="-12896" heading="4096" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-118757" y="208180" z="-12904" heading="3340" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-118607" y="208208" z="-12904" heading="1924" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-118551" y="208310" z="-12912" heading="11147" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-118713" y="208848" z="-12888" heading="12429" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-118936" y="208830" z="-12896" heading="45683" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22264" x="-117877" y="207989" z="-12928" heading="34497" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-117734" y="207978" z="-12928" heading="64735" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-118217" y="207998" z="-12920" heading="39639" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-117953" y="208187" z="-12940" heading="6493" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-117659" y="208202" z="-12961" heading="65472" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-117395" y="208131" z="-12944" heading="62038" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-117199" y="208265" z="-12984" heading="8872" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22265" x="-116500" y="207684" z="-12936" heading="48682" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22264" x="-116228" y="207695" z="-12942" heading="440" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-116084" y="207523" z="-12944" heading="55940" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-116034" y="207457" z="-12944" heading="55940" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-116283" y="207432" z="-12936" heading="33811" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-116272" y="207207" z="-12916" heading="36449" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-116075" y="206991" z="-12897" heading="62029" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-115729" y="207001" z="-12907" heading="5515" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-115398" y="207186" z="-12927" heading="5214" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114993" y="207196" z="-12931" heading="62915" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114622" y="207111" z="-12920" heading="63579" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114093" y="207088" z="-12905" heading="10840" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114321" y="207495" z="-12933" heading="30533" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114410" y="207818" z="-12966" heading="18375" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114050" y="208032" z="-12965" heading="3073" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-113640" y="208797" z="-13012" heading="14706" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-113669" y="209218" z="-13036" heading="19553" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-113914" y="209695" z="-13048" heading="22511" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114422" y="209944" z="-13054" heading="29978" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-114892" y="209962" z="-13056" heading="33594" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-115243" y="209706" z="-13050" heading="39317" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-115686" y="209192" z="-13041" heading="45278" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-116035" y="209227" z="-13048" heading="31194" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-116285" y="209293" z="-13048" heading="30075" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-116446" y="208927" z="-13048" heading="44829" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-115973" y="208798" z="-13012" heading="59017" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-115237" y="209312" z="-13037" heading="8729" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-114747" y="209535" z="-13048" heading="3361" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-114462" y="209288" z="-13048" heading="53460" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-114238" y="208647" z="-12993" heading="47074" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-113310" y="208127" z="-12964" heading="39884" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-113609" y="207697" z="-12928" heading="31482" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-113831" y="207414" z="-12920" heading="24891" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-117021" y="208662" z="-13032" heading="52690" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-116714" y="208451" z="-13016" heading="57032" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-116154" y="207876" z="-12956" heading="56588" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-115969" y="207643" z="-12944" heading="55488" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-115827" y="207298" z="-12933" heading="51485" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-115487" y="207083" z="-12920" heading="61916" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22265" x="-115612" y="207536" z="-12960" heading="45359" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-115265" y="207421" z="-12952" heading="62198" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22265" x="-114915" y="207678" z="-12961" heading="6613" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22266" x="-114643" y="207877" z="-12968" heading="6601" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-114371" y="208158" z="-12968" heading="8722" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113890" y="208354" z="-12976" heading="1969" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113324" y="208724" z="-13016" heading="10364" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113446" y="208903" z="-13024" heading="22641" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113309" y="209249" z="-13052" heading="9512" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113554" y="209540" z="-13056" heading="26091" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-113771" y="209479" z="-13052" heading="36098" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-114138" y="209512" z="-13048" heading="28380" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-114308" y="210182" z="-13056" heading="24849" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-114591" y="210259" z="-13056" heading="30449" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-115081" y="209727" z="-13048" heading="47835" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-115529" y="209521" z="-13048" heading="34287" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-115862" y="209061" z="-13016" heading="33175" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-116648" y="208915" z="-13048" heading="41145" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-117041" y="208413" z="-13008" heading="42234" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-116800" y="207904" z="-12936" heading="24239" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-116579" y="208385" z="-13008" heading="22625" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22270" x="-116693" y="208742" z="-13032" heading="3113" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-116143" y="208742" z="-13024" heading="35000" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-115716" y="209493" z="-13048" heading="7941" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-115053" y="210058" z="-13048" heading="5342" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-114457" y="209677" z="-13048" heading="59796" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-114123" y="209037" z="-13008" heading="53586" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-113526" y="208488" z="-12992" heading="42682" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22267" x="-113268" y="207834" z="-12920" heading="21039" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-114090" y="207331" z="-12920" heading="28197" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22267" x="-114464" y="207023" z="-12912" heading="20717" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22263" x="-118942" y="208008" z="-12896" heading="2136" respawnTime="60sec" /> <!-- Kastia's Soldier -->
+			<npc id="22267" x="-118682" y="208032" z="-12904" heading="960" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22263" x="-118620" y="208652" z="-12896" heading="15278" respawnTime="60sec" /> <!-- Kastia's Soldier -->
+			<npc id="22263" x="-118054" y="209621" z="-12976" heading="10543" respawnTime="60sec" /> <!-- Kastia's Soldier -->
+			<npc id="22263" x="-118030" y="210514" z="-13024" heading="29292" respawnTime="60sec" /> <!-- Kastia's Soldier -->
+			<npc id="22263" x="-118420" y="208773" z="-12920" heading="20588" respawnTime="60sec" /> <!-- Kastia's Soldier -->
+			<npc id="22258" x="-117389" y="211975" z="-13104" heading="62103" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22261" x="-116842" y="212335" z="-13176" heading="2952" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-116528" y="212145" z="-13154" heading="50674" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-116316" y="212517" z="-13200" heading="11131" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22259" x="-116088" y="212171" z="-13156" heading="49552" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22269" x="-116057" y="211374" z="-13082" heading="49295" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22261" x="-117098" y="211544" z="-13096" heading="62599" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116997" y="211709" z="-13102" heading="3298" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116790" y="211812" z="-13112" heading="4878" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-116431" y="211488" z="-13081" heading="56450" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115949" y="211381" z="-13072" heading="56890" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115720" y="211611" z="-13094" heading="8227" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115339" y="211584" z="-13104" heading="62745" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115167" y="211859" z="-13124" heading="10587" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114622" y="211816" z="-13119" heading="57246" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114234" y="211807" z="-13116" heading="7816" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114524" y="212200" z="-13152" heading="22841" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-115072" y="212430" z="-13176" heading="34353" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114851" y="212656" z="-13193" heading="5062" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114355" y="212874" z="-13217" heading="3848" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114013" y="213226" z="-13252" heading="12856" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-113950" y="213684" z="-13280" heading="16753" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-114008" y="214006" z="-13280" heading="18242" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-113814" y="214283" z="-13264" heading="10011" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-113500" y="214090" z="-13272" heading="59787" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-113327" y="213958" z="-13274" heading="58755" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-114825" y="212371" z="-13177" heading="45842" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-114876" y="211859" z="-13136" heading="44885" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-115512" y="211752" z="-13121" heading="33447" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-116187" y="211760" z="-13113" heading="31331" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-114800" y="211557" z="-13090" heading="2301" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-114007" y="211539" z="-13088" heading="5167" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-113716" y="211685" z="-13094" heading="4876" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-113237" y="211852" z="-13104" heading="1048" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112880" y="211710" z="-13072" heading="1921" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-113777" y="211447" z="-13077" heading="37407" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114247" y="211400" z="-13075" heading="32012" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114786" y="211650" z="-13112" heading="27221" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115065" y="211578" z="-13096" heading="35402" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115340" y="211837" z="-13124" heading="24888" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115750" y="211789" z="-13120" heading="38800" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116036" y="211635" z="-13102" heading="37457" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116331" y="211244" z="-13080" heading="44118" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116649" y="211314" z="-13080" heading="30506" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116891" y="211559" z="-13080" heading="24025" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-117121" y="212025" z="-13128" heading="21166" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116052" y="212406" z="-13180" heading="64564" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115467" y="212592" z="-13195" heading="6166" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115156" y="212891" z="-13219" heading="8261" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114920" y="213296" z="-13245" heading="12064" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115957" y="214122" z="-13264" heading="31839" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116612" y="214144" z="-13264" heading="32417" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-117907" y="214923" z="-13220" heading="26464" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118177" y="215558" z="-13136" heading="14032" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118685" y="215251" z="-13128" heading="38437" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118641" y="214505" z="-13208" heading="49544" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118587" y="214131" z="-13252" heading="50632" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-118392" y="214419" z="-13232" heading="10514" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22259" x="-114591" y="212741" z="-13200" heading="53909" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-114409" y="212037" z="-13144" heading="56062" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-114359" y="211722" z="-13112" heading="50793" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-114501" y="211534" z="-13088" heading="42404" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-114711" y="211898" z="-13127" heading="20054" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-114922" y="212173" z="-13156" heading="25146" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-115469" y="212068" z="-13148" heading="32934" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-116155" y="211978" z="-13135" heading="34450" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-116663" y="211995" z="-13136" heading="30935" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-116555" y="211676" z="-13104" heading="52556" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22269" x="-115699" y="212086" z="-13148" heading="4787" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-114933" y="211996" z="-13144" heading="61018" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-114365" y="211887" z="-13128" heading="58780" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-113894" y="211677" z="-13096" heading="49049" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-113567" y="211979" z="-13128" heading="19999" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-113002" y="211901" z="-13104" heading="64105" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-113203" y="211540" z="-13064" heading="43852" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22259" x="-114075" y="211326" z="-13070" heading="21220" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22262" x="-114669" y="211617" z="-13104" heading="29309" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22260" x="-115095" y="211721" z="-13120" heading="31878" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-115793" y="211281" z="-13056" heading="9005" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-116607" y="211155" z="-13088" heading="12189" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-116921" y="211365" z="-13080" heading="7620" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-117568" y="212138" z="-13104" heading="31183" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114037" y="211977" z="-13136" heading="61598" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-113728" y="211806" z="-13112" heading="33270" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22258" x="-113485" y="211852" z="-13120" heading="1951" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-113674" y="212002" z="-13144" heading="15732" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-114015" y="211752" z="-13104" heading="43993" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-115379" y="212126" z="-13152" heading="64442" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-116385" y="211842" z="-13120" heading="37084" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-115346" y="212473" z="-13184" heading="9805" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-114979" y="212761" z="-13208" heading="9933" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22261" x="-115167" y="212255" z="-13168" heading="24476" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-115241" y="212364" z="-13176" heading="14534" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-115134" y="212508" z="-13184" heading="9718" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22259" x="-114515" y="212807" z="-13208" heading="13441" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22262" x="-114558" y="213087" z="-13240" heading="17973" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114345" y="213127" z="-13248" heading="1936" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-114189" y="213402" z="-13264" heading="11001" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22269" x="-114259" y="213761" z="-13280" heading="55996" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-114571" y="213228" z="-13248" heading="37235" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-114788" y="213024" z="-13232" heading="40638" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-115443" y="212649" z="-13203" heading="36571" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-116423" y="212346" z="-13184" heading="5015" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-114202" y="214441" z="-13232" heading="25521" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22259" x="-113213" y="213784" z="-13272" heading="64083" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112918" y="214185" z="-13280" heading="9768" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112277" y="214239" z="-13268" heading="65439" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111537" y="213873" z="-13216" heading="61063" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111278" y="213791" z="-13201" heading="62337" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110512" y="213662" z="-13135" heading="4605" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110010" y="213655" z="-13090" heading="62947" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110004" y="213326" z="-13072" heading="42537" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-109655" y="213660" z="-13056" heading="25029" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-109883" y="214269" z="-13074" heading="20119" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110391" y="214340" z="-13144" heading="35861" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110246" y="214862" z="-13114" heading="13561" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110774" y="214814" z="-13157" heading="34189" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-110827" y="215404" z="-13091" heading="17120" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111313" y="215454" z="-13112" heading="33593" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111328" y="215776" z="-13056" heading="16869" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111845" y="215622" z="-13106" heading="35781" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112157" y="215199" z="-13208" heading="44033" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112572" y="215141" z="-13224" heading="34216" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112464" y="214902" z="-13232" heading="53578" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-112791" y="214775" z="-13240" heading="36631" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22269" x="-112702" y="213955" z="-13272" heading="64160" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-112086" y="213809" z="-13236" heading="62931" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-111788" y="214057" z="-13240" heading="11072" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-111354" y="214073" z="-13214" heading="398" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-111201" y="213899" z="-13200" heading="52752" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-110889" y="213993" z="-13177" heading="3061" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-110821" y="213722" z="-13168" heading="46857" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-110460" y="213509" z="-13112" heading="59976" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-110153" y="213889" z="-13119" heading="9299" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-110129" y="212887" z="-13032" heading="37904" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22269" x="-111054" y="212537" z="-13048" heading="30709" respawnTime="60sec" /> <!-- Kalix - Swift Hunter -->
+			<npc id="22259" x="-111453" y="212693" z="-13104" heading="45552" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111470" y="212215" z="-13105" heading="56980" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22259" x="-111159" y="212058" z="-13064" heading="37178" respawnTime="60sec" /> <!-- Dire Guard -->
+			<npc id="22258" x="-109747" y="213465" z="-13064" heading="20479" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-109962" y="213901" z="-13099" heading="21157" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-110074" y="214375" z="-13105" heading="18131" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-110335" y="214493" z="-13130" heading="29427" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-110565" y="215030" z="-13129" heading="17869" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-110889" y="215047" z="-13152" heading="37015" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22258" x="-111162" y="215290" z="-13128" heading="25181" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22261" x="-111968" y="214160" z="-13255" heading="26592" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111986" y="214040" z="-13248" heading="32120" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-112475" y="214557" z="-13257" heading="28708" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-112797" y="215253" z="-13217" heading="61665" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-112189" y="215495" z="-13152" heading="6454" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111681" y="215778" z="-13072" heading="55863" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111500" y="215547" z="-13104" heading="56084" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111107" y="215488" z="-13088" heading="38986" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111212" y="215065" z="-13176" heading="57784" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-110771" y="214407" z="-13176" heading="50550" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-109714" y="213890" z="-13064" heading="27582" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-109869" y="213088" z="-13040" heading="19804" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-110613" y="212668" z="-13040" heading="7972" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111047" y="212522" z="-13048" heading="10759" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22261" x="-111158" y="212739" z="-13088" heading="20095" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-110941" y="212730" z="-13073" heading="65122" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-111397" y="212489" z="-13096" heading="11247" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-110505" y="212933" z="-13069" heading="8509" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110241" y="213043" z="-13072" heading="57469" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110323" y="213611" z="-13107" heading="17225" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110149" y="214025" z="-13117" heading="9756" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110015" y="214720" z="-13088" heading="15889" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110443" y="214692" z="-13147" heading="33439" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110747" y="215153" z="-13119" heading="22098" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-111502" y="215259" z="-13159" heading="32619" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112093" y="215283" z="-13184" heading="32359" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112147" y="214887" z="-13240" heading="47738" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112498" y="214808" z="-13240" heading="35077" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112763" y="214465" z="-13259" heading="42275" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-112500" y="214241" z="-13277" heading="63142" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-111781" y="215884" z="-13064" heading="55791" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-110962" y="215257" z="-13120" heading="54167" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22260" x="-111325" y="215261" z="-13152" heading="22853" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-111039" y="214978" z="-13168" heading="49730" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-110645" y="213983" z="-13152" heading="56113" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22260" x="-109845" y="214072" z="-13088" heading="43457" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22266" x="-111344" y="210496" z="-13056" heading="38182" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111557" y="210453" z="-13056" heading="34807" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111972" y="210174" z="-13057" heading="43071" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111957" y="209818" z="-13049" heading="52195" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111689" y="209378" z="-13018" heading="58945" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111739" y="208964" z="-13001" heading="45627" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111949" y="208466" z="-12971" heading="44315" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111709" y="208108" z="-12917" heading="59307" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111302" y="207994" z="-12905" heading="63092" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110920" y="207882" z="-12888" heading="62374" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110764" y="208103" z="-12897" heading="9997" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110470" y="208471" z="-12907" heading="8599" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110195" y="208705" z="-12896" heading="6933" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109988" y="209089" z="-12890" heading="16763" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109785" y="209684" z="-12898" heading="24298" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109208" y="209847" z="-12886" heading="65498" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-108745" y="210169" z="-12887" heading="8731" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-108738" y="210598" z="-12914" heading="19722" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109096" y="211116" z="-12924" heading="27852" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109092" y="211633" z="-12928" heading="14957" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109483" y="211728" z="-12944" heading="31118" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109907" y="211819" z="-12948" heading="30554" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110322" y="211528" z="-12984" heading="40305" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110173" y="211314" z="-12992" heading="55495" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110480" y="210507" z="-12998" heading="43718" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110677" y="209741" z="-12976" heading="46090" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111139" y="209207" z="-12970" heading="41931" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-110589" y="211190" z="-13008" heading="47788" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-110816" y="210828" z="-13032" heading="43310" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-110769" y="210334" z="-13013" heading="56971" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111048" y="210094" z="-13029" heading="38075" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-110520" y="210764" z="-13002" heading="14189" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22266" x="-110062" y="211029" z="-12968" heading="2744" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109522" y="211107" z="-12944" heading="1372" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109502" y="210633" z="-12941" heading="38422" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-109703" y="210348" z="-12937" heading="43074" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-109527" y="210170" z="-12920" heading="58943" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-109933" y="209898" z="-12920" heading="38921" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-110383" y="209678" z="-12941" heading="37285" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-110964" y="209463" z="-12975" heading="35933" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111342" y="209701" z="-13010" heading="24322" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111702" y="209784" z="-13032" heading="36942" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111806" y="210393" z="-13061" heading="19698" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-112055" y="210893" z="-13074" heading="21632" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111230" y="208520" z="-12941" heading="8992" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-110908" y="208555" z="-12936" heading="18364" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-110314" y="209003" z="-12912" heading="6897" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-110141" y="209212" z="-12907" heading="9213" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22270" x="-109471" y="209869" z="-12896" heading="12534" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109270" y="210118" z="-12904" heading="9300" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-108951" y="210126" z="-12896" heading="261" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-108918" y="210667" z="-12916" heading="15759" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109299" y="211021" z="-12933" heading="34814" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109869" y="211302" z="-12964" heading="27464" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110088" y="211639" z="-12961" heading="24097" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110472" y="211739" z="-12976" heading="33060" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110425" y="211223" z="-12992" heading="37389" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110568" y="209950" z="-12982" heading="1142" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109909" y="209491" z="-12904" heading="21898" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111074" y="208246" z="-12936" heading="32004" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111451" y="208806" z="-12976" heading="20536" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111004" y="208915" z="-12952" heading="27739" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110662" y="209470" z="-12953" heading="10636" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-110170" y="210341" z="-12969" heading="11664" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109841" y="211056" z="-12960" heading="22924" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109384" y="211510" z="-12939" heading="41502" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-109597" y="210725" z="-12944" heading="45434" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22266" x="-109996" y="209699" z="-12912" heading="47363" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110320" y="209410" z="-12920" heading="40342" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110561" y="209011" z="-12928" heading="44962" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-110514" y="208698" z="-12912" heading="50706" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111170" y="208358" z="-12936" heading="40271" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111520" y="208367" z="-12944" heading="32499" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-111608" y="208307" z="-12952" heading="39009" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111898" y="208233" z="-12944" heading="35287" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111880" y="208094" z="-12912" heading="50495" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111677" y="207814" z="-12888" heading="64800" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111894" y="209404" z="-13040" heading="12857" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-112160" y="210250" z="-13054" heading="10969" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22266" x="-111388" y="210741" z="-13071" heading="30567" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22266" x="-111778" y="210736" z="-13096" heading="34207" respawnTime="60sec" /> <!-- Kastia's Captain -->
+			<npc id="22264" x="-112017" y="210665" z="-13072" heading="35779" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111471" y="210617" z="-13072" heading="15203" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111378" y="210344" z="-13048" heading="52576" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22264" x="-111627" y="210197" z="-13056" heading="32008" respawnTime="60sec" /> <!-- Kastia's Warrior -->
+			<npc id="22265" x="-111337" y="209984" z="-13032" heading="58928" respawnTime="60sec" /> <!-- Kastia's Mystic -->
+			<npc id="22267" x="-111179" y="210020" z="-13032" heading="2336" respawnTime="60sec" /> <!-- Kastia's Archer -->
+			<npc id="22270" x="-111067" y="209856" z="-13016" heading="55401" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111463" y="209885" z="-13027" heading="27659" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111855" y="210247" z="-13064" heading="23897" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111903" y="210639" z="-13072" heading="17654" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22270" x="-111644" y="210941" z="-13096" heading="5271" respawnTime="60sec" /> <!-- Kastia's Elite Captain - Swift Hunter -->
+			<npc id="22258" x="-115614" y="213627" z="-13248" heading="46269" respawnTime="60sec" /> <!-- Dire Soldier -->
+			<npc id="22261" x="-115561" y="213786" z="-13272" heading="13028" respawnTime="60sec" /> <!-- Dire Warrior -->
+			<npc id="22260" x="-115663" y="213916" z="-13280" heading="31956" respawnTime="60sec" /> <!-- Dire Archer -->
+			<npc id="22262" x="-115316" y="213827" z="-13280" heading="60755" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115191" y="214053" z="-13256" heading="11451" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-115781" y="213996" z="-13269" heading="32643" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116027" y="213840" z="-13272" heading="39464" respawnTime="60sec" /> <!-- Dire Spearman -->
+			<npc id="22262" x="-116388" y="213923" z="-13264" heading="30410" respawnTime="60sec" /> <!-- Dire Spearman -->
+		</group>
+	</spawn>
+</list>

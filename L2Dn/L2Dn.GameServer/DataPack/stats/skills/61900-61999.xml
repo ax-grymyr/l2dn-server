@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61900" toLevel="1" name="Test Critical Damage Limit: 40%">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="61901" toLevel="1" name="Test Critical Damage Limit: 30%">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="61902" toLevel="1" name="Test: i_call_skill_range">
+		<!-- Applies i_call_skill_range to the target. Needs testing if several nearby target including the main one receive at least 1 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>64</mpConsume>
+		<castRange>300</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>720</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61903" toLevel="1" name="For summoning: i_call_skill_range">
+		<icon>icon.s_anger5</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61904" toLevel="1" name="Test: i_call_skill_point_blank">
+		<!-- Applies Test: i_call_skill_point_blank to the target. Needs testing if several nearby target excluding the main one receive at least 1 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>64</mpConsume>
+		<castRange>300</castRange>
+		<hitTime>100</hitTime>
+		<coolTime>720</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61905" toLevel="1" name="For summoning: i_call_skill_point_blank">
+		<icon>icon.s_anger5</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61906" toLevel="1" name="Summon Long Range Cat">
+		<!-- Long range Servitor test. -->
+		<icon>icon.skill1331</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61907" toLevel="1" name="Summon Cat Emperor - Test Projectile">
+		<!-- <Summoning skill>. Summons Cat Emperor. <Servitor skills>. - Emperor's Blessing: Increases the summoner's M. Atk./ M. Skill Power/ M. Skill Critical Rate/ M. Skill Critical Damage, decreases M. Skill Cooldown. - Outcry: Attacks the target and enemies around them with the emperor's powers. - Master Recharge: Recovers the summoner's MP. - Basic Effect: A chance to inflict Hold on the target for 5 sec. after a basic attack. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.s_emperor_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61908" toLevel="1" name="Summon Unicorn Guard- Test Projectile">
+		<!-- <Summoning skill>. Summons Unicorn Guard. <Servitor skills>. - Guard's Blessing: Increases the summoner's M. Atk./ M. Skill Power/ M. Skill Critical Rate/ M. Skill Critical Damage, decreases M. Skill Cooldown. - Trample: Attacks nearby enemies with mighty hoofs. - Master Recharge: Recovers the summoner's MP. - Basic Effect: A chance to stun the target for 3 sec. after a basic attack. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.s_unicorn_guardian</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61909" toLevel="1" name="Summon Lord Raise- Test Projectile">
+		<!-- <Summoning skill>. Summons Lord Raise. <Servitor skills>. - Emperor's Blessing: Increases the summoner's M. Atk./ M. Skill Power/ M. Skill Critical Rate/ M. Skill Critical Damage, decreases M. Skill Cooldown. - Specter's Dance: Attacks enemies around the target with Lord Raise's blade dance. - Master Recharge: Recovers the summoner's MP. - Basic Effect: A chance to decrease Sleep/ Hold/ Shock/ Paralysis/ Fear/ Silence/ Pull Resistance for 15 sec. after a basic attack. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.s_wraith_lord</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61910" toLevel="1" name="Summon Lord Raise- Test Projectile">
+		<!-- <Summoning skill>. Summons Lord Raise. <Servitor skills>. - Emperor's Blessing: Increases the summoner's M. Atk./ M. Skill Power/ M. Skill Critical Rate/ M. Skill Critical Damage, decreases M. Skill Cooldown. - Specter's Dance: Attacks enemies around the target with Lord Raise's blade dance. - Master Recharge: Recovers the summoner's MP. - Basic Effect: A chance to decrease Sleep/ Hold/ Shock/ Paralysis/ Fear/ Silence/ Pull Resistance for 15 sec. after a basic attack. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.s_wraith_lord</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61921" toLevel="3" name="Test - Magic Flare Lv. 1">
+		<!-- Magic Flare Lv. 1 is active. Increases the effect level upon Magic Missile use. -->
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>-1</abnormalTime>
+	</skill>
+	<skill id="61922" toLevel="1" name="Test - Cancel Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61923" toLevel="1" name="Test - Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61924" toLevel="1" name="Test - Magic Flare">
+		<!-- Speed -30 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>60</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="61925" toLevel="3" name="Test - Magic Flare Lv. 1">
+		<!-- Magic Flare Lv. 1 is active. Increases the effect level upon Magic Missile use. -->
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>-1</abnormalTime>
+	</skill>
+	<skill id="61926" toLevel="1" name="Test - Cancel Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61927" toLevel="1" name="Test - Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61928" toLevel="1" name="Test - Magic Flare">
+		<!-- Speed -40 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>60</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="61929" toLevel="3" name="Test - Magic Flare Lv. 1">
+		<!-- Magic Flare Lv. 1 is active. Increases the effect level upon Magic Missile use. -->
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>-1</abnormalTime>
+	</skill>
+	<skill id="61930" toLevel="1" name="Test - Cancel Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61931" toLevel="1" name="Test - Magic Flare">
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61932" toLevel="1" name="Test - Magic Flare">
+		<!-- Speed -50 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>60</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-900</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>10</abnormalTime>
+	</skill>
+	<skill id="61933" toLevel="20" name="Test - Double Crippling Bite">
+		<!-- <Pull attack skill>. Bites the target ferociously twice. If the target is a character, pulls them with a certain chance. Additionally, P. Atk.: 115 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61934" toLevel="20" name="Test - Double Crippling Bite">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1</abnormalTime>
+	</skill>
+	<skill id="61935" toLevel="20" name="Test - Double Crippling Bite">
+		<!-- <Pull attack skill>. Bites the target ferociously twice. If the target is a character, pulls them with a certain chance. Additionally, P. Atk.: 115 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61936" toLevel="20" name="Test - Double Crippling Bite">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1</abnormalTime>
+	</skill>
+	<skill id="61937" toLevel="20" name="Test - Double Crippling Bite">
+		<!-- <Pull attack skill>. Bites the target ferociously twice. If the target is a character, pulls them with a certain chance. Additionally, P. Atk.: 115 -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61938" toLevel="20" name="Test - Double Crippling Bite">
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>100</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1</abnormalTime>
+	</skill>
+	<skill id="61939" toLevel="9" name="Test - Whiplash">
+		<!-- Cannot move due to shock. -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-770</value>
+			<value level="2">-810</value>
+			<value level="3">-820</value>
+			<value level="4">-830</value>
+			<value level="5">-840</value>
+			<value level="6">-850</value>
+			<value level="7">-850</value>
+			<value level="8">-850</value>
+			<value level="9">-850</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="61940" toLevel="9" name="Test - Whiplash">
+		<!-- Cannot move due to shock. -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-770</value>
+			<value level="2">-810</value>
+			<value level="3">-820</value>
+			<value level="4">-830</value>
+			<value level="5">-840</value>
+			<value level="6">-850</value>
+			<value level="7">-850</value>
+			<value level="8">-850</value>
+			<value level="9">-850</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="61941" toLevel="9" name="Test - Whiplash">
+		<!-- Cannot move due to shock. -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>
+			<value level="1">-770</value>
+			<value level="2">-810</value>
+			<value level="3">-820</value>
+			<value level="4">-830</value>
+			<value level="5">-840</value>
+			<value level="6">-850</value>
+			<value level="7">-850</value>
+			<value level="8">-850</value>
+			<value level="9">-850</value>
+		</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="61942" toLevel="1" name="Essential Energy">
+		<!-- Enchanter's Armor Mastery -> Enchanter's Weapon Mastery -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61943" toLevel="1" name="Enchanter's Armor Mastery">
+		<!-- Skill before changes: Effect's P. Atk. +5000 -->
+		<icon/>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61944" toLevel="1" name="Enchanter's Weapon Mastery">
+		<!-- Skill after changes: Effect's P. Atk. +5000. Max HP +15% -->
+		<icon/>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61945" toLevel="1" name="Essential Energy">
+		<!-- Enchanter's Armor Mastery -> Enchanter's Weapon Mastery -->
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61947" toLevel="1" name="Powerful Servitor Share - Equipment Transfer Test">
+		<!-- Items transfer test: cannot be used with Powerful Servitor Share. -->
+		<icon>icon.skill19220</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>117</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>1200</abnormalTime>
+	</skill>
+	<skill id="61948" toLevel="3" name="Sharing Shadow Ability 1">
+		<!-- Significant Damage 4444 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-200</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="61949" toLevel="1" name="Base P. Def. Increase: Upper Armor +5">
+		<!-- Base P. Def. Increase: Upper Armor +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61950" toLevel="1" name="Base P. Def. Increase: Lower Armor +5">
+		<!-- Base P. Def. Increase: Lower Armor +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61951" toLevel="1" name="Base P. Def. Increase: Boots +5">
+		<!-- Base P. Def. Increase: Boots +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61952" toLevel="1" name="Base P. Def. Increase: Helmet +5">
+		<!-- Base P. Def. Increase: Helmet +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61953" toLevel="1" name="Base P. Def. Increase: Gloves +5">
+		<!-- Base P. Def. Increase: Gloves +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61954" toLevel="1" name="Base P. Def. Increase: Full-body Armor +5">
+		<!-- Base P. Def. Increase: Full-body Armor +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61955" toLevel="1" name="Base P. Def. Increase: Old Clothing (Formal Wear) +5">
+		<!-- Base P. Def. Increase: Old Clothing (Formal Wear) +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61956" toLevel="1" name="Base P. Def. Increase: Wig 1 +5">
+		<!-- Base P. Def. Increase: Wig 1 +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61957" toLevel="1" name="Base P. Def. Increase: Wig 2 +5">
+		<!-- Base P. Def. Increase: Wig 2 +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61958" toLevel="1" name="Base P. Def. Increase: Hair +5">
+		<!-- Base P. Def. Increase: Hair +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61959" toLevel="1" name="Base P. Def. Increase: Cloak +5">
+		<!-- Base P. Def. Increase: Cloak +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61960" toLevel="1" name="Base P. Def. Increase: Belt +5">
+		<!-- Base P. Def. Increase: Belt +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61961" toLevel="1" name="Base P. Def. Increase: Pendant +5">
+		<!-- Base P. Def. Increase: Pendant +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61962" toLevel="1" name="Base P. Def. Increase: All Armor +5">
+		<!-- Base P. Def. Increase: All Armor +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61963" toLevel="1" name="Base M. Def. Increase: Earring +5">
+		<!-- Base M. Def. Increase: Earring +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61964" toLevel="1" name="Base M. Def. Increase: Ring +5">
+		<!-- Base M. Def. Increase: Ring +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61965" toLevel="1" name="Base M. Def. Increase: Necklace +5">
+		<!-- Base M. Def. Increase: Necklace +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61966" toLevel="1" name="Base M. Def. Increase: Agathion +5">
+		<!-- Base M. Def. Increase: Agathion +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61967" toLevel="1" name="Base M. Def. Increase: Talisman +5">
+		<!-- Base M. Def. Increase: Talisman +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61968" toLevel="1" name="Base M. Def. Increase: Jewel +5">
+		<!-- Base M. Def. Increase: Jewel +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61969" toLevel="1" name="Base M. Def. Increase: All Accessories +5">
+		<!-- Base M. Def. Increase: All Accessories +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61970" toLevel="1" name="Base P. Def. Decrease: All Armor -5">
+		<!-- Base P. Def. Decrease: All Armor -5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61971" toLevel="1" name="Base P. Def. Decrease: All Armor -100">
+		<!-- Base P. Def. Decrease: All Armor -100 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61972" toLevel="1" name="Base P. Def. Decrease: All Armor -1000">
+		<!-- Base P. Def. Decrease: All Armor -1000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61973" toLevel="1" name="Base M. Def. Decrease: All Accessories -5">
+		<!-- Base M. Def. Decrease: All Accessories -5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61974" toLevel="1" name="Base M. Def. Decrease: All Accessories -100">
+		<!-- Base M. Def. Decrease: All Accessories -100 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61975" toLevel="1" name="Base M. Def. Decrease: All Accessories -1000">
+		<!-- Base M. Def. Decrease: All Accessories -1000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61976" toLevel="1" name="Test: Shadow Ally">
+		<!-- Shadow engages in combat. Summons up to 3 shadows when using certain skills. <font color="00FF00">Summoned shadow skills</font>. Return Motion - use the skill. Assassination - kill the target -->
+		<icon>icon.s_assassin_shadow_partner</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="61977" toLevel="1" name="Test: Summon Shadow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61978" toLevel="1" name="Test: Curse Disease">
+		<!-- Decreases enemy's received healing. The effect lasts for 30 sec. Received Healing -50% -->
+		<icon>icon.skill1269</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>4000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-549</effectPoint>
+		<mpConsume>54</mpConsume>
+	</skill>
+	<skill id="61979" toLevel="1" name="Test: Divine Power">
+		<!-- The effect lasts for 2 min. Healing Power +3000 -->
+		<icon>icon.skill1459</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>2000</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<mpConsume>70</mpConsume>
+	</skill>
+	<skill id="61980" toLevel="1" name="Test: Increased Speed">
+		<!-- For 10 sec., Speed +50. Constantly recovers HP. -->
+		<icon>icon.overdrive</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<mpConsume>113</mpConsume>
+	</skill>
+	<skill id="61981" toLevel="1" name="Test: Shadow Cancel">
+		<!-- Shadow Cancel -->
+		<icon>icon.overdrive</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<mpConsume>113</mpConsume>
+	</skill>
+	<skill id="61982" toLevel="1" name="Test: Eva's Nocturne">
+		<!-- Removes debuffs and anomalies from nearby party members. For 5 sec., Debuff/ Anomaly Resistance +20%. -->
+		<icon>icon.s_nocturn_of_eva</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>3000</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>440</effectPoint>
+		<mpConsume>297</mpConsume>
+	</skill>
+	<skill id="61983" toLevel="1" name="Test: Eva's Nocturne">
+		<!-- Vanishing Shadows -->
+		<icon>icon.s_nocturn_of_eva</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<effectPoint>440</effectPoint>
+		<mpConsume>297</mpConsume>
+	</skill>
+	<skill id="61984" toLevel="1" name="Test: Eva's Nocturne">
+		<!-- Vanishing Shadows -->
+		<icon>icon.s_nocturn_of_eva</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<effectPoint>440</effectPoint>
+		<mpConsume>297</mpConsume>
+	</skill>
+	<skill id="61985" toLevel="1" name="Test: Eva's Nocturne">
+		<!-- Vanishing Shadows -->
+		<icon>icon.s_nocturn_of_eva</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<effectPoint>440</effectPoint>
+		<mpConsume>297</mpConsume>
+	</skill>
+	<skill id="61986" toLevel="12" name="Test Mastery - Recovery 1 per 5 sec. after a kill">
+		<!-- P. Atk. +45%. P. Atk. +200. M. Atk. +17%. M. Atk. +900. Casting Spd. +95. P. Accuracy +5. Cooldown -20%. Shock Atk. Rate +15%. Recovers +45%1 MP on basic attacks and attack skills. (Trigger rate: +45%2, trigger cooldown: +45%3). When using a bow or a spear, P. Accuracy -8. When using a bow or a spear, Casting Spd. +45%0. -->
+		<icon>icon.skill0146</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="61987" toLevel="12" name="Recovers MP every 5 sec.">
+		<icon>icon.s_saint_recovery</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="61988" toLevel="4" name="Test - Chant of Focus">
+		<!-- P. Critical Rate +20 -->
+		<icon>icon.skill1308</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61989" toLevel="4" name="Test - Chant of Death Whisper">
+		<!-- P. Critical Damage +25% -->
+		<icon>icon.skill1253</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61990" toLevel="3" name="Test - Chant of Haste">
+		<!-- Atk. Spd. +15% -->
+		<icon>icon.skill1251</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61991" toLevel="3" name="Test - Chant of Wind Walk">
+		<!-- Speed +20 -->
+		<icon>icon.skill1535</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61992" toLevel="3" name="Test - Chant of Magic Barrier">
+		<!-- M. Def. +250 -->
+		<icon>icon.skill1549</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61993" toLevel="4" name="Test - Chant of Might">
+		<!-- P. Atk. +80 -->
+		<icon>icon.skill1007</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61994" toLevel="4" name="Test - Chant of Shield">
+		<!-- P. Def. +100 -->
+		<icon>icon.skill1009</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61995" toLevel="3" name="Test - Chant of Berserker Spirit">
+		<!-- Max HP -20%. Max MP -20%. P. Atk. +5%. M. Atk. +10%. Atk. Spd. +5%. Casting Spd. +5%. Speed +5 -->
+		<icon>icon.skill19207</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61996" toLevel="4" name="Test - Chant of Clarity">
+		<!-- Song/ Dance/ P. Skill MP Consumption -10%. M. Skill MP Consumption -4% -->
+		<icon>icon.s_chant_of_clarity</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61997" toLevel="4" name="Test - Chant of Acumen">
+		<!-- Casting Spd. +15% -->
+		<icon>icon.skill1006</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61998" toLevel="4" name="Test - Chant of Empower">
+		<!-- M. Atk. +100 -->
+		<icon>icon.skill1002</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="61999" toLevel="3" name="Test - Chant of Wild Magic">
+		<!-- M. Skill Critical Rate +10 -->
+		<icon>icon.skill1413</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<hitTime>1000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+</list>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="35741" name="Scroll: PK" type="EtcItem">
+		<!-- Double-click to decrease the PK count by 1. Can be used if the PK count is 1 or higher. -->
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="9504" level="1" /> <!-- Scroll: PK (Low-grade) -->
+		</skills>
+	</item>
+	<item id="35752" name="Mid-grade Scroll: PK" type="EtcItem">
+		<!-- Double-click to decrease the PK count by 3. Can be used if the PK count is 1 or higher and only in Floran Village. -->
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="9505" level="1" /> <!-- Scroll: PK (Mid-grade) -->
+		</skills>
+	</item>
+	<item id="35753" name="High-grade Scroll: PK" type="EtcItem">
+		<!-- Double-click to decrease the PK count by 5. Can be used if the PK count is 1 or higher and only in Floran Village. -->
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="9506" level="1" /> <!-- Scroll: PK (High-grade) -->
+		</skills>
+	</item>
+	<item id="35754" name="Top-grade Scroll: PK" type="EtcItem">
+		<!-- Double-click to decrease the PK count by 10. Can be used if the PK count is 1 or higher and only in Floran Village. -->
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="9507" level="1" /> <!-- Scroll: PK (Top-grade) -->
+		</skills>
+	</item>
+</list>

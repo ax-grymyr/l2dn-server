@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="999999" name="Cat Guild's Lair" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<locations>
+		<enter type="FIXED">
+			<location x="105464" y="55000" z="-4417" />
+		</enter>
+	</locations>
+	<spawnlist>
+		<group name="CatLair_Npc_01" spawnByDefault="true">
+		</group>
+		<group name="CatLair_Npc_02" spawnByDefault="false">
+			<npc id="18677" x="102712" y="59832" z="-3744" heading="52819" /> <!-- Elven Elder Cat -->
+		</group>
+		<group name="CatLair_Npc_03" spawnByDefault="true">
+			<npc id="34316" x="102704" y="59883" z="-3728" heading="49871" /> <!-- Teleporter Cat -->
+		</group>
+		<group name="CatLair_Monsters_01" spawnByDefault="false">
+			<territories>
+				<territory minZ="-3850" maxZ="-4000">
+					<node x="105000" y="57224" />
+					<node x="104984" y="57672" />
+					<node x="104996" y="58568" />
+					<node x="104264" y="59176" />
+					<node x="103816" y="58952" />
+					<node x="104000" y="58000" />
+					<node x="104600" y="56936" />
+				</territory>
+			</territories>
+			<npc id="22407" count="6" /> <!-- Cat Fighter -->
+			<npc id="22408" count="6" /> <!-- Cat Mage -->
+			<npc id="22409" count="6" /> <!-- Cat Warrior -->
+			<npc id="22410" count="6" /> <!-- Cat Warlock -->
+		</group>
+		<group name="CatLair_Monsters_02" spawnByDefault="false">
+			<territories>
+				<territory minZ="-3850" maxZ="-4200">
+					<node x="103704" y="57096" />
+					<node x="102408" y="56552" />
+					<node x="102936" y="55736" />
+					<node x="103960" y="56184" />
+					<node x="104200" y="56940" />
+				</territory>
+			</territories>
+			<npc id="22407" count="6" /> <!-- Cat Fighter -->
+			<npc id="22408" count="6" /> <!-- Cat Mage -->
+			<npc id="22409" count="6" /> <!-- Cat Warrior -->
+			<npc id="22410" count="6" /> <!-- Cat Warlock -->
+		</group>
+		<group name="CatLair_Monsters_03" spawnByDefault="false">
+			<npc id="22407" x="104232" y="58280" z="-3760" heading="0" /> <!-- Cat Fighter -->
+			<npc id="22408" x="104408" y="57592" z="-3760" heading="0" /> <!-- Cat Mage -->
+			<npc id="22409" x="104776" y="57656" z="-3760" heading="0" /> <!-- Cat Warrior -->
+			<npc id="22410" x="104728" y="58296" z="-3760" heading="0" /> <!-- Cat Warlock -->
+		</group>
+		<group name="CatLair_Monsters_04" spawnByDefault="false">
+			<territories>
+				<territory minZ="-3650" maxZ="-3850">
+					<node x="103413" y="59814" />
+					<node x="102248" y="59688" />
+					<node x="102200" y="59064" />
+					<node x="102712" y="58936" />
+					<node x="103272" y="59336" />
+				</territory>
+			</territories>
+			<npc id="22407" count="6" /> <!-- Cat Fighter -->
+			<npc id="22408" count="6" /> <!-- Cat Mage -->
+			<npc id="22409" count="6" /> <!-- Cat Warrior -->
+			<npc id="22410" count="6" /> <!-- Cat Warlock -->
+		</group>
+		<group name="catLair_Boss_FelineKing" spawnByDefault="false">
+			<npc id="18686" x="102704" y="59883" z="-3728" heading="49871" /> <!-- Feline King -->
+		</group>
+		<group name="catLair_Boss_FelineQueen" spawnByDefault="false">
+			<npc id="18687" x="102704" y="59883" z="-3728" heading="49871" /> <!-- Feline Queen -->
+		</group>
+	</spawnlist>
+</instance>

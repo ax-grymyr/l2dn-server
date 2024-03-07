@@ -1,0 +1,1309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="97800" name="Extra Pass: Raid Boss Battle (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to get an extra pass to Raid Boss Battle. Note!. Can be used once a day outside of instance zones. Can only be used when Raid Boss Battle is on cooldown. -->
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97801" name="Package: Dye Powder (100 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.dye_charge_meal" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96623" min="100" max="100" chance="100" /> <!-- Dye Powder -->
+		</capsuled_items>
+	</item>
+	<item id="97802" name="Spellbook: Extended Life" type="EtcItem">
+		<!-- A spellbook for learning the Extended Life skill. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases Max HP in proportion to your level. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97803" name="Spellbook: Extended Life" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Extended Life skill. <Classes>. All classes after the 3rd class change. <Skill effect>. Increases Max HP in proportion to your level. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97804" name="Hierophant's Appearance - Not Available" type="Armor">
+		<!-- Required for transformation. -->
+		<set name="icon" val="icon.dragon_slayer_suit" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97805" name="Scroll: 1,000,000 SP" additionalName="Sealed" type="EtcItem">
+		<!-- SP +1,000,000. -->
+		<set name="icon" val="icon.etc_sp_scroll2_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97806" name="Scroll: 10,000,000 SP" additionalName="Sealed" type="EtcItem">
+		<!-- SP +10,000,000. -->
+		<set name="icon" val="icon.etc_sp_scroll2_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97807" name="+7 Special Armor Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Special Armor enchanted to +7. -->
+		<set name="icon" val="icon.bm_armor_ticket_a" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97808" name="+7 Boss' Weapon Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Boss Weapon enchanted +7. -->
+		<set name="icon" val="icon.bm_weapon_ticket_a" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97809" name="+3 Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys3.icon.g_cash_fortuna_box_r" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<!-- +3 Accessory Jewel -->
+			<item id="90992" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Antharas' Earring -->
+			<item id="91550" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Frintezza's Necklace -->
+			<item id="49580" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Baium's Ring -->
+			<item id="96600" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Beleth' Ring -->
+			<item id="6660" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Queen Ant's Ring -->
+			<item id="90763" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Zaken's Earring -->
+			<item id="6661" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" minEnchant="3" maxEnchant="3" chance="12.5" /> <!-- Ring of Core -->
+		</capsuled_items>
+	</item>
+	<item id="97810" name="Package: +7 Zaken's Blood Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.special_weapon_onehandsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92404" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Zaken's Blood Sword -->
+		</capsuled_items>
+	</item>
+	<item id="97811" name="Package: +7 Core's Plasmic Bow" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_karupis_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92405" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Core's Plasmic Bow -->
+		</capsuled_items>
+	</item>
+	<item id="97812" name="Package: +7 Queen Ant's Stone Breaker" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.special_weapon_onehandblunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92421" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Queen Ant's Stone Breaker -->
+		</capsuled_items>
+	</item>
+	<item id="97813" name="Package: +7 Orfen's Venom Sword" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92407" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Orfen's Venom Sword -->
+		</capsuled_items>
+	</item>
+	<item id="97814" name="Package: +7 Baium's Thunder Breaker" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_terakan_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92408" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Baium's Thunder Breaker -->
+		</capsuled_items>
+	</item>
+	<item id="97815" name="Package: +7 Anakim's Divine Pistols" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shooter_boss_anakim" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94888" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Anakim's Divine Pistols -->
+		</capsuled_items>
+	</item>
+	<item id="97816" name="Package: +7 Beleth' Soul Eater" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.staff_of_bereth" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96268" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Beleth' Soul Eater -->
+		</capsuled_items>
+	</item>
+	<item id="97817" name="Package: +7 Gorde's Flame Spear" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_r110_spear_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Gorde's Flame Spear -->
+		</capsuled_items>
+	</item>
+	<item id="97818" name="Package: +7 Ice Crystal Breastplate" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_u_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93139" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Breastplate -->
+		</capsuled_items>
+	</item>
+	<item id="97819" name="Package: +7 Ice Crystal Gaiters" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_l_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93140" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Ice Crystal Gaiters -->
+		</capsuled_items>
+	</item>
+	<item id="97820" name="Package: +7 Leather Armor of Lightning" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t101_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93315" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Leather Armor of Lightning -->
+		</capsuled_items>
+	</item>
+	<item id="97821" name="Package: +7 Leather Leggings of Lightning" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t102_l_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93316" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Leather Leggings of Lightning -->
+		</capsuled_items>
+	</item>
+	<item id="97822" name="Package: +7 Flaming Tunic" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t96_u_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93733" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Flaming Tunic -->
+		</capsuled_items>
+	</item>
+	<item id="97823" name="Package: +7 Flaming Stockings" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t96_l_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93734" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Flaming Stockings -->
+		</capsuled_items>
+	</item>
+	<item id="97824" name="Package: +7 Helmet of Mana" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94083" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Helmet of Mana -->
+		</capsuled_items>
+	</item>
+	<item id="97825" name="Package: +7 Stun Gauntlets" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t96_g_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94263" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Stun Gauntlets -->
+		</capsuled_items>
+	</item>
+	<item id="97826" name="Package: +7 Boots of Evasion" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t100_b_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94085" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Boots of Evasion -->
+		</capsuled_items>
+	</item>
+	<item id="97827" name="Package: +7 Gloves of Silence" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_t94_g_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93075" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Gloves of Silence -->
+		</capsuled_items>
+	</item>
+	<item id="97828" name="Package: +7 Sigil of Inevitability" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94299" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Sigil of Inevitability -->
+		</capsuled_items>
+	</item>
+	<item id="97829" name="Package: +7 Shield of Vengeance" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shield_of_revenge" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Shield of Vengeance -->
+		</capsuled_items>
+	</item>
+	<item id="97830" name="Tower of Insolence's Time Stone" type="EtcItem">
+		<!-- Prolongs your session zone's raid for 60 min. <Hunting zone>. Tower of Insolence - World Hunting Zone -->
+		<set name="icon" val="Icon.tower_of_insolence" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97831" name="Spellbook: Amadeus" type="EtcItem">
+		<!-- A spellbook for learning the Amadeus skill. <Class>. Sword Muse. <Skill effect>. Applies a buff which decreases received P. Skill Critical Damage on the caster and their allies. <Upgrade effect>. Frantic Pace → Rapid Frantic Pace -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97832" name="Spellbook: Flamenco" type="EtcItem">
+		<!-- A spellbook for learning the Flamenco skill. <Class>. Spectral Dancer. <Skill effect>. Applies a buff that decreases received P. Skill Critical Rate on the caster and their allies. <Upgrade effect>. Frantic Pace → Rapid Frantic Pace -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97833" name="Spellbook: Music Mastery" type="EtcItem">
+		<!-- A spellbook for learning the Music Mastery skill. <Class>. Sword Muse. <Skill effect>. Grants the following properties according to STR:. 1) Increases P. Atk. 2) Increases Hold/ Silence/ Paralysis Atk. Rate. 3) Upgrades the following skills:. - Song of Earth. - Song of Wind. - Song of Hunter -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97834" name="Spellbook: Dance Mastery" type="EtcItem">
+		<!-- A spellbook for learning the Dance Mastery skill. <Class>. Spectral Dancer. <Skill effect>. Grants the following properties depending on your STR:. 1) Increases P. Atk. 2) Increases Hold/ Imprisonment/ Sleep Atk. Rate. 3) Upgrades the following skills:. - Dance of Warrior. - Song of Wind. - Dance of Fury -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97835" name="Spellbook: Song of Silence Lv. 4" type="EtcItem">
+		<!-- A spellbook for learning the Song of Silence Lv. 4 skill. <Class>. Sword Muse. <Skill effect>. Keeps the existing effect the same and adds a new one: gives a certain chance to cancel received damage limit of the target. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97836" name="Spellbook: Dance of Medusa Lv. 4" type="EtcItem">
+		<!-- A spellbook for learning Dance of Medusa Lv. 4. <Class>. Spectral Dancer. <Skill effect>. Applies the former buff effect and adds a new one: allows to attack the enemy petrified by a Spectral Dancer. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97837" name="Spellbook: Crusader Transformation" type="EtcItem">
+		<!-- A spellbook for learning the Crusader Transformation skill. <Class>. Hierophant. <Skill effect>. Those who have come to know the magic of light without applying strict rules wield the power that let them transform into crusaders who mastered their physical and magic skills to perfection. Increases P. Atk./ M. Atk./ Max HP/ Max MP/ Atk. Spd./ Casting Spd./ Speed/ P. Skill Critical Rate/ P. Skill Damage/ P. Skill Power/ M. Skill Critical Rate/ M. Skill Damage/ M. Skill Power. With a certain chance, applies a stat-increasing buff on party members after an attack. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97838" name="Spellbook: Unique Seal of Damage" type="EtcItem">
+		<!-- A spellbook for learning the Unique Seal of Damage skill. <Class>. Hierophant. <Skill effect>. With a certain chance, blocks damage from enemies' additional attacks at the front. Decreases HP Drain. Decreases P. Atk. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97839" name="Spellbook: Fatal Crush" type="EtcItem">
+		<!-- A spellbook for learning the Fatal Crush skill. <Class>. Hierophant. <Skill effect>. Delivers a powerful blow. If the enemy's HP is lower than a certain value, makes an additional attack. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97840" name="Spellbook: Essential Energy" type="EtcItem">
+		<!-- A spellbook for learning the Essential Energy skill. <Class>. Hierophant. <Skill effect>. Turns Fatal Crush into Essential Fatal Crush. - Increases the number of targets to 2. - Increases the skill's power. Turns Divine Beam into Essential Divine Beam. - Increases the skill's power. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97841" name="Spellbook: Tower Shield Lv. 2" type="EtcItem">
+		<!-- A spellbook for learning the Tower Shield skill. <Class>. Hierophant. <Skill effect>. Increases P. Def. With a certain chance, creates a barrier when hit. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97842" name="Spellbook: Great Attack Lv. 3" type="EtcItem">
+		<!-- A spellbook for learning the Great Attack skill. <Class>. Hierophant. <Skill effect>. When used, increases P./ M. Atk., P. Skill Power, Max HP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97843" name="Spellbook: Perfect Abilities Lv. 3" type="EtcItem">
+		<!-- A spellbook for learning the Perfect Abilities Lv. 3 skill. <Class>. Hierophant. <Skill effect>. When used, increases P. Atk./ P. Def. With a certain chance, increases P. Skill Critical Damage/ P. Skill Critical Rate/ P. Skill Power when hit. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97844" name="Spellbook: Improved Sleep" type="EtcItem">
+		<!-- A spellbook for learning the Improved Sleep skill. <Class>. Hierophant. <Skill effect>. With a high chance, inflicts Sleep on the enemy. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97845" name="Spellbook: Amadeus" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Amadeus skill. <Class>. Sword Muse. <Skill effect>. Applies a buff which decreases received P. Skill Critical Damage on the caster and their allies. <Upgrade effect>. Frantic Pace → Rapid Frantic Pace -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97846" name="Spellbook: Flamenco" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flamenco skill. <Class>. Spectral Dancer. <Skill effect>. Applies a buff that decreases received P. Skill Critical Rate on the caster and their allies. <Upgrade effect>. Frantic Pace → Rapid Frantic Pace -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97847" name="Spellbook: Music Mastery" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Music Mastery skill. <Class>. Sword Muse. <Skill effect>. Grants the following properties according to STR:. 1) Increases P. Atk. 2) Increases Hold/ Silence/ Paralysis Atk. Rate. 3) Upgrades the following skills:. - Song of Earth. - Song of Wind. - Song of Hunter -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97848" name="Spellbook: Dance Mastery" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Dance Mastery skill. <Class>. Spectral Dancer. <Skill effect>. Grants the following properties depending on your STR:. 1) Increases P. Atk. 2) Increases Hold/ Imprisonment/ Sleep Atk. Rate. 3) Upgrades the following skills:. - Dance of Warrior. - Song of Wind. - Dance of Fury -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97849" name="Spellbook: Song of Silence Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Song of Silence Lv. 4 skill. <Class>. Sword Muse. <Skill effect>. Keeps the existing effect the same and adds a new one: gives a certain chance to cancel received damage limit of the target. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97850" name="Spellbook: Dance of Medusa Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning Dance of Medusa Lv. 4. <Class>. Spectral Dancer. <Skill effect>. Applies the former buff effect and adds a new one: allows to attack the enemy petrified by a Spectral Dancer. -->
+		<set name="icon" val="icon.etc_magic_book_blue_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97851" name="Spellbook: Crusader Transformation" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Crusader Transformation skill. <Class>. Hierophant. <Skill effect>. Those who have come to know the magic of light without applying strict rules wield the power that let them transform into crusaders who mastered their physical and magic skills to perfection. Increases P. Atk./ M. Atk./ Max HP/ Max MP/ Atk. Spd./ Casting Spd./ Speed/ P. Skill Critical Rate/ P. Skill Damage/ P. Skill Power/ M. Skill Critical Rate/ M. Skill Damage/ M. Skill Power. With a certain chance, applies a stat-increasing buff on party members after an attack. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97852" name="Spellbook: Unique Seal of Damage" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Unique Seal of Damage skill. <Class>. Hierophant. <Skill effect>. With a certain chance, blocks damage from enemies' additional attacks at the front. Decreases HP Drain. Decreases P. Atk. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97853" name="Spellbook: Fatal Crush" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Fatal Crush skill. <Class>. Hierophant. <Skill effect>. Delivers a powerful blow. If the enemy's HP is lower than a certain value, makes an additional attack. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97854" name="Spellbook: Essential Energy" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Essential Energy skill. <Class>. Hierophant. <Skill effect>. Turns Fatal Crush into Essential Fatal Crush. - Increases the number of targets to 2. - Increases the skill's power. Turns Divine Beam into Essential Divine Beam. - Increases the skill's power. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97855" name="Spellbook: Tower Shield Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Tower Shield skill. <Class>. Hierophant. <Skill effect>. Increases P. Def. With a certain chance, creates a barrier when hit. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97856" name="Spellbook: Great Attack Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Great Attack skill. <Class>. Hierophant. <Skill effect>. When used, increases P./ M. Atk., P. Skill Power, Max HP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97857" name="Spellbook: Perfect Abilities Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Perfect Abilities Lv. 3 skill. <Class>. Hierophant. <Skill effect>. When used, increases P. Atk./ P. Def. With a certain chance, increases P. Skill Critical Damage/ P. Skill Critical Rate/ P. Skill Power when hit. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97858" name="Spellbook: Improved Sleep" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Improved Sleep skill. <Class>. Hierophant. <Skill effect>. With a high chance, inflicts Sleep on the enemy. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97859" name="Stable Scroll: Enchant Rare Accessories" type="EtcItem">
+		<!-- <font color=eeaa22>In case of failure the enchant value remains the same. Only +4 accessories can be enchanted.</font>. <font color=ff6666>Cannot be used for mass enchanting. Additional enhance effects cannot be used.</font> -->
+		<set name="icon" val="icon.etc_stable_scrl_of_ench_fallen_angel_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97860" name="Stable Scroll: Enchant Rare Accessories" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=eeaa22>In case of failure the enchant value remains the same. Only +4 accessories can be enchanted.</font>. <font color=ff6666>Cannot be used for mass enchanting. Additional enhance effects cannot be used.</font> -->
+		<set name="icon" val="icon.etc_stable_scrl_of_ench_fallen_angel_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97861" name="Solasol's Special Gift (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<!-- Guaranteed Item -->
+			<item id="97147" min="1" max="1" chance="99.9" /> <!-- Dye Powder - Sealed -->
+			<!-- Random Item -->
+			<item id="90992" min="1" max="1" chance="0.02002002002" /> <!-- Antharas' Earring -->
+			<item id="91550" min="1" max="1" chance="0.02002002002" /> <!-- Frintezza's Necklace -->
+			<item id="49580" min="1" max="1" chance="0.02002002002" /> <!-- Baium's Ring -->
+			<item id="96600" min="1" max="1" chance="0.02002002002" /> <!-- Beleth' Ring -->
+			<item id="90763" min="1" max="1" chance="0.07007007007" /> <!-- Zaken's Earring -->
+			<item id="6660" min="1" max="1" chance="0.07007007007" /> <!-- Queen Ant's Ring -->
+			<item id="6661" min="1" max="1" chance="0.07007007007" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" chance="0.07007007007" /> <!-- Ring of Core -->
+			<item id="93268" min="1" max="1" chance="0.05005005005 " /> <!-- Improved Scroll: Enchant A-grade Weapon - Sealed -->
+			<item id="93269" min="1" max="1" chance="0.08008008008 " /> <!-- Improved Scroll: Enchant A-grade Armor - Sealed -->
+			<item id="94208" min="1" max="1" chance="0.15015015015" /> <!-- Scroll of Blessing: Weapon - Sealed -->
+			<item id="97339" min="1" max="1" chance="0.35035035035" /> <!-- Scroll of Blessing: Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97862" name="Solasol's Gift (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93685" min="1" max="1" chance="33" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+			<item id="92020" min="1" max="1" chance="33" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+			<item id="94838" min="1" max="1" chance="34" /> <!-- Transformation Scroll (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97863" name="Solasol's Blessed Augmenting Stone Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97790" min="1" max="1" chance="25" /> <!-- Blessed Augmenting Stone: Special Equipment - Sealed -->
+			<item id="97444" min="1" max="1" chance="25" /> <!-- Blessed Augmenting Stone: Weapon - Sealed -->
+			<item id="97445" min="1" max="1" chance="25" /> <!-- Blessed Augmenting Stone: Armor - Sealed -->
+			<item id="97447" min="1" max="1" chance="25" /> <!-- Blessed Augmenting Stone: Accessory - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97864" name="+5 Solasol's Special Armor Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_blue" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="94264" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Stun Gauntlets - Sealed -->
+			<item id="93076" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Gloves of Silence - Sealed -->
+			<item id="94084" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Helmet of Mana - Sealed -->
+			<item id="94086" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Boots of Evasion - Sealed -->
+			<item id="94300" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Sigil of Inevitability - Sealed -->
+			<item id="94302" min="1" max="1" minEnchant="5" maxEnchant="5" chance="25" /> <!-- Shield of Vengeance - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97865" name="Solasol's Spellbook Chest - 2-3 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayha2017_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97177" min="1" max="1" chance="25" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+			<item id="97176" min="1" max="1" chance="75" /> <!-- Spellbook Coupon - 2 Stars - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97866" name="Solasol's Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90992" min="1" max="1" chance="1.25" /> <!-- Antharas' Earring -->
+			<item id="95332" min="1" max="1" chance="10" /> <!-- Antharas' Earring - Sealed -->
+			<item id="91550" min="1" max="1" chance="1.25" /> <!-- Frintezza's Necklace -->
+			<item id="95333" min="1" max="1" chance="10" /> <!-- Frintezza's Necklace - Sealed -->
+			<item id="49580" min="1" max="1" chance="1.25" /> <!-- Baium's Ring -->
+			<item id="95330" min="1" max="1" chance="10" /> <!-- Baium's Ring - Sealed -->
+			<item id="96600" min="1" max="1" chance="1.25" /> <!-- Beleth' Ring -->
+			<item id="97074" min="1" max="1" chance="10" /> <!-- Beleth' Ring - Sealed -->
+			<item id="6660" min="1" max="1" chance="1.25" /> <!-- Queen Ant's Ring -->
+			<item id="95327" min="1" max="1" chance="10" /> <!-- Queen Ant's Ring - Sealed -->
+			<item id="90763" min="1" max="1" chance="1.25" /> <!-- Zaken's Earring -->
+			<item id="95331" min="1" max="1" chance="10" /> <!-- Zaken's Earring - Sealed -->
+			<item id="6661" min="1" max="1" chance="1.25" /> <!-- Orfen's Earring -->
+			<item id="95328" min="1" max="1" chance="10" /> <!-- Orfen's Earring - Sealed -->
+			<item id="6662" min="1" max="1" chance="1.25" /> <!-- Ring of Core -->
+			<item id="95329" min="1" max="1" chance="10" /> <!-- Ring of Core - Sealed -->
+			<item id="94386" min="1" max="1" chance="3" /> <!-- Improved Scroll: Enchant Rare Accessories - Sealed -->
+			<item id="94384" min="1" max="1" chance="7" /> <!-- Scroll: Enchant Rare Accessories - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97867" name="1st Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97868" name="2nd Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97869" name="3rd Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97870" name="4th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97871" name="5th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97872" name="6th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97873" name="7th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97874" name="8th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97875" name="9th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><Upgrading></font>. Guessing Piero's number right lets you upgrade the candy to 10th Win Candy. <font color=bbaa88>Note!</font>. In case of failure the candy is destroyed. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97876" name="10th Win Candy (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Solasol gives it to you once you've guessed Piero's number right. <font color=bbaa88><How to use></font>. Special Craft - Solasol's Game. <font color=bbaa88><Received items></font>. 1st Win Candy: Soulshot Ticket (80 pcs.). 2nd Win Candy: Soulshot Ticket (160 pcs.). 3rd Win Candy: Soulshot Ticket (400 pcs.). 4th Win Candy: Soulshot Ticket (900 pcs.). 5th Win Candy: Soulshot Ticket (2000 pcs.). 6th Win Candy: Dye Powder (3 pcs.). 7th Win Candy: Blessed Augmenting Stone Pack (1 pc.). 8th Win Candy: +5 Special Armor Pack (1 pc.). 9th Win Candy: Spellbook Chest - 2-3 Stars (1 pc.). 10th Win Candy: Rare Accessory Pack (1 pc.) -->
+		<set name="icon" val="icon.etc_pig_candy_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97877" name="Growth Support Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_green_box_02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93073" min="100" max="100" chance="100" /> <!-- Sayha's Storm (Time-limited) - Sealed -->
+			<item id="97438" min="100" max="100" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+			<item id="97147" min="10" max="10" chance="100" /> <!-- Dye Powder - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97878" name="Adventurer's Dye" additionalName="Lv. 0" type="EtcItem">
+		<!-- Material to make a pattern. Use 'Patterns and Hidden Power' slot to apply the pattern. If you want to enhance it to <font color=EEAA22>Adventurer's Dye Lv. 3</font> and get the hidden power effect, use <font color=EEAA22>Adventurer's Dye Powder</font>. <font color=bbaa88><Upgrading></font>. Patterns can be enhanced through 'Pattern Upgrades' menu. <font color=ff6666>Note!</font>. Requirements: all classes after the 1st class change. -->
+		<set name="icon" val="icon.etc_str_hena_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97879" name="Adventurer's Dye" additionalName="Lv. 3" type="EtcItem">
+		<!-- Required for making patterns. Applying the pattern requires 1 Dye. <font color=eeaa22><Effect></font>. <font color=ff6666>Hidden power: Lv. 3.</font>. <font color=ff6666>Note!</font>. Requirements: all classes after the 1st class change. Cannot be upgraded. -->
+		<set name="icon" val="icon.etc_str_hena_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="97880" name="Prestigious Doll Box Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="96601" min="1" max="1" chance="5" /> <!-- Antharas Doll Lv. 1 - Sealed -->
+			<item id="94153" min="1" max="1" chance="10" /> <!-- Baium Doll Lv. 1 - Sealed -->
+			<item id="94509" min="1" max="1" chance="15" /> <!-- Frintezza Doll Lv. 1 - Sealed -->
+			<item id="94645" min="1" max="1" chance="20" /> <!-- Zaken Doll Lv. 1 - Sealed -->
+			<item id="94648" min="1" max="1" chance="20" /> <!-- Core Doll Lv. 1 - Sealed -->
+			<item id="94154" min="1" max="1" chance="20" /> <!-- Queen Ant Doll Lv. 1 - Sealed -->
+			<item id="94155" min="1" max="1" chance="20" /> <!-- Orfen Doll Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="97881" name="Prestigious Rune of Infinite Grace Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97882" min="1" max="1" chance="100" /> <!-- Prestigious Rune of Infinite Grace (Time-limited) - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="97882" name="Prestigious Rune of Infinite Grace (Time-limited)" additionalName="30-day" type="EtcItem">
+		<!-- When in inventory, applies the following buff:. Sayha's Grace Sustain -->
+		<set name="icon" val="icon.ev_prestige_rune" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="97883" name="Pink Orb (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- It's a shining orb emitting pink light. It came to the continent right from the moon. The orbs can be found across the whole Aden. <font color=bbaa88><How to use></font>. Compounding with Rabbit Doll. -->
+		<set name="icon" val="BranchSys2.g_illumination_pink" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="97884" name="Rabbit Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="1" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97885" name="Rabbit Doll Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="2" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97886" name="Rabbit Doll Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="3" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97887" name="Rabbit Doll Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="4" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97888" name="Rabbit Doll Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. <font color=EEAA22>Rabbit Doll Lv. 5: Dye Powder</font>. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="5" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97889" name="Rabbit Doll Lv. 6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. <font color=EEAA22>Rabbit Doll Lv. 6: Jewelry Box Lv. 2</font>. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 1></font>. PvE damage +1%, P./ M. Atk. +5, P./ M. Def. +10, acquired XP/ SP +1%, MEN +1. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="6" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97890" name="Rabbit Doll Lv. 7 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. <font color=EEAA22>Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack</font>. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 2></font>. PvE damage +1%, P./ M. Atk. +10, P./ M. Def. +20, acquired XP/ SP +2%, MEN +1. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="7" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97891" name="Rabbit Doll Lv. 8 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. <font color=EEAA22>Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack</font>. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 3></font>. PvE damage +2%, P./ M. Atk. +15, P./ M. Def. +30, acquired XP/ SP +3%, MEN +1, CON +1. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="8" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97892" name="Rabbit Doll Lv. 9 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. <font color=EEAA22>Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1</font>. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 4></font>. PvE damage +2%, P./ M. Atk. +20, P./ M. Def. +40, acquired XP/ SP +4%, MEN +1, CON +1. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="9" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97893" name="Rabbit Doll Lv. 10 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. <font color=EEAA22>Rabbit Doll Lv. 10: +5 Agathion Pack</font>. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 5></font>. PvE damage +2%, P./ M. Atk. +25, P./ M. Def. +50, acquired XP/ SP +5%, MEN +1, CON +1, WIT +1. <font color=bbaa88><Weekend Craft></font>. Only Rabbit Doll Lv. 11 and higher can be used. -->
+		<set name="icon" val="icon.ev_pink_rabbit_00" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="10" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97894" name="Rabbit Doll Lv. 11 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. <font color=EEAA22>Rabbit Doll Lv. 11: +5 Special Equipment Pack</font>. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 6></font>. PvE damage +3%, P./ M. Atk. +30, P./ M. Def. +60, acquired XP/ SP +6%, MEN +1, CON +1, WIT +1. <font color=bbaa88><Weekend Craft></font>. <font color=EEAA22>Rabbit Doll Lv. 11: +6 Special Equipment Pack</font> -->
+		<set name="icon" val="icon.ev_pink_rabbit_01" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="11" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97895" name="Rabbit Doll Lv. 12 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. <font color=EEAA22>Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars</font>. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 7></font>. PvE damage +3%, P./ M. Atk. +35, P./ M. Def. +70, acquired XP/ SP +7%, MEN +1, CON +1, WIT +1, DEX +1. <font color=bbaa88><Weekend Craft></font>. <font color=EEAA22>Rabbit Doll Lv. 12: Agathion Bracelet Lv. 6/ Talisman Bracelet Lv. 6/ Brooch Lv. 6</font> -->
+		<set name="icon" val="icon.ev_pink_rabbit_01" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="12" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97896" name="Rabbit Doll Lv. 13 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. <font color=EEAA22>Rabbit Doll Lv. 13: Doll Pack Lv. 1-2</font>. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 8></font>. Received P. Skill Critical Rate -1%, Received P. Skill Critical Damage -1%, PvE damage +3%, P./ M. Atk. +40, P./ M. Def. +80, acquired XP/ SP +8%, MEN +1, CON +1, WIT +1, DEX +1. <font color=bbaa88><Weekend Craft></font>. <font color=EEAA22>Rabbit Doll Lv. 13: Blessed Augmenting Stone Pack (50 pcs.)</font> -->
+		<set name="icon" val="icon.ev_pink_rabbit_01" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="13" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97897" name="Rabbit Doll Lv. 14 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. To enhance the doll, compound it with <font color=EEAA22>Pink Orb</font>. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. <font color=EEAA22>Rabbit Doll Lv. 14: Jewelry Box Lv. 6</font>. Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 9></font>. Received P. Skill Critical Rate -3%, Received P. Skill Critical Damage -3%, PvE damage +4%, P./ M. Atk. +45, P./ M. Def. +90, acquired XP/ SP +9%, MEN +1, CON +1, WIT +1, DEX +1, INT +1. <font color=bbaa88><Weekend Craft></font>. <font color=EEAA22>Rabbit Doll Lv. 14: Dye Pack Lv. 13</font> -->
+		<set name="icon" val="icon.ev_pink_rabbit_01" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="14" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97898" name="Rabbit Doll Lv. 15 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- This doll contains Rabbit's power that can be found across the whole Aden. <font color=bbaa88><Constant Craft></font>. Special Craft - Rabbit Doll. <font color=bbaa88><Received Items></font>. Rabbit Doll Lv. 5: Dye Powder. Rabbit Doll Lv. 6: Jewelry Box Lv. 2. Rabbit Doll Lv. 7: +0 ~ +4 Talisman Pack. Rabbit Doll Lv. 8: Blessed Enchant Scroll Pack. Rabbit Doll Lv. 9: Einhasad's Pendant Lv. 1. Rabbit Doll Lv. 10: +5 Agathion Pack. Rabbit Doll Lv. 11: +5 Special Equipment Pack. Rabbit Doll Lv. 12: Spellbook Coupon - 3 Stars. Rabbit Doll Lv. 13: Doll Pack Lv. 1-2. Rabbit Doll Lv. 14: Jewelry Box Lv. 6. <font color=EEAA22>Rabbit Doll Lv. 15: +1 ~ +3 Rare Accessory Pack</font>. <font color=bbaa88><Rabbit Doll's Sorcery Lv. 10></font>. Received P. Skill Critical Rate -5%, Received P. Skill Critical Damage -5%, PvE damage +5%, P./ M. Atk. +50, P./ M. Def. +100, acquired XP/ SP +10%, all stats +1. <font color=bbaa88><Triggered Effect: Fast Moving>. </font>There is a 2% chance after an attack to make Speed +5 for 3 sec. <font color=bbaa88><Weekend Craft></font>. <font color=EEAA22>Rabbit Doll Lv. 15:. - Spellbook: Dragon Slayer. - Spellbook Coupon - 4 Stars. - Behemoth/ Glakias Doll Pack Lv. 1-2. - +6 Frost Lord's Weapon Coupon</font> -->
+		<set name="icon" val="icon.ev_pink_rabbit_01" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50601" level="15" /> <!-- Rabbit Doll's Sorcery Lv. 1 -->
+		</skills>
+	</item>
+	<item id="97899" name="Sealed Pet Necklace Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged through the Game Assistant for one of the items: Wolf's/ Buffalo's/ Tiger's/ Kookaburra's/ Dragon's/ Hawk's Necklace. -->
+		<set name="icon" val="icon.etc_scroll_of_tiger_a" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

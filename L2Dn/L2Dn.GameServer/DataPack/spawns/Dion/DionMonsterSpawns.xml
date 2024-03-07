@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="DionMonsterSpawns">
+		<group>
+			<npc id="20213" x="12208" y="117323" z="-12134" heading="0" respawnTime="35sec" /> <!-- Porta -->
+			<npc id="21035" x="13549" y="110702" z="-12121" heading="0" respawnTime="35sec" /> <!-- Catherok -->
+			<npc id="20216" x="13449" y="110524" z="-12121" heading="0" respawnTime="35sec" /> <!-- Ricenseo -->
+			<npc id="21036" x="22672" y="108368" z="-12133" heading="0" respawnTime="35sec" /> <!-- Shindebarn -->
+			<npc id="21036" x="21866" y="108368" z="-12133" heading="0" respawnTime="35sec" /> <!-- Shindebarn -->
+			<npc id="21035" x="21883" y="116717" z="-12133" heading="0" respawnTime="35sec" /> <!-- Catherok -->
+			<npc id="20220" x="14603" y="109141" z="-9082" heading="0" respawnTime="38sec" /> <!-- Dicor -->
+			<npc id="20221" x="21161" y="109962" z="-9091" heading="0" respawnTime="38sec" /> <!-- Perum -->
+			<npc id="20222" x="21160" y="110674" z="-9091" heading="0" respawnTime="38sec" /> <!-- Torfe -->
+			<npc id="20266" x="30990" y="130725" z="-3228" heading="7858" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20265" x="31278" y="129190" z="-3050" heading="45745" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20222" x="14537" y="119215" z="-9118" heading="0" respawnTime="38sec" /> <!-- Torfe -->
+			<npc id="27139" x="9209" y="127105" z="-3640" heading="0" respawnTime="180sec" /> <!-- Secret Keeper Tree - Quest Monster -->
+			<npc id="20292" x="10257" y="135094" z="-3143" heading="63322" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="11739" y="134904" z="-3358" heading="0" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="11325" y="132670" z="-2847" heading="56273" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="7914" y="136325" z="-2733" heading="30174" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20291" x="10432" y="133761" z="-2800" heading="44696" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="11292" y="135506" z="-3123" heading="45893" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="12109" y="133786" z="-3089" heading="6106" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20292" x="13684" y="136736" z="-3388" heading="0" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="13885" y="136736" z="-3388" heading="0" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="10530" y="141148" z="-1980" heading="26496" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="12127" y="139945" z="-2243" heading="16402" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="12867" y="138279" z="-3024" heading="16492" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20291" x="13683" y="137804" z="-3388" heading="0" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="11965" y="137224" z="-3184" heading="38958" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20292" x="12323" y="131718" z="-2578" heading="43798" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="13800" y="134737" z="-3270" heading="27471" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20291" x="15176" y="134456" z="-2776" heading="31325" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="10695" y="136579" z="-3091" heading="21317" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20224" x="13275" y="132587" z="-2599" heading="56797" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20292" x="19162" y="138097" z="-3306" heading="8588" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="17080" y="136805" z="-3235" heading="44176" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20292" x="14272" y="135885" z="-3451" heading="51562" respawnTime="24sec" /> <!-- Enku Orc Shaman -->
+			<npc id="20291" x="18247" y="138008" z="-3290" heading="4917" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="17965" y="134723" z="-2808" heading="32463" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20224" x="16205" y="135852" z="-3257" heading="61404" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="16073" y="132838" z="-1803" heading="63189" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="17742" y="136262" z="-3312" heading="942" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="21322" y="136898" z="-3353" heading="59519" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20265" x="21372" y="138181" z="-3644" heading="3064" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="19370" y="137122" z="-3553" heading="41087" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="20058" y="134345" z="-2840" heading="50849" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="18327" y="141472" z="-3214" heading="16547" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="23744" y="135951" z="-2999" heading="24467" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="22316" y="135443" z="-2548" heading="43545" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="24987" y="136158" z="-3235" heading="64715" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="23960" y="133774" z="-2194" heading="52054" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20205" x="26827" y="134379" z="-2599" heading="19012" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="26834" y="136455" z="-3174" heading="25148" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="27931" y="135475" z="-3139" heading="60066" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="25641" y="134436" z="-2419" heading="45379" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="30329" y="133612" z="-3237" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="30328" y="133256" z="-3237" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29630" y="133634" z="-2797" heading="35641" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="32455" y="136108" z="-3280" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="32408" y="139677" z="-3208" heading="20653" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="31971" y="140596" z="-3335" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="31669" y="140418" z="-3335" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="31948" y="141492" z="-3200" heading="8110" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20205" x="30116" y="138965" z="-3147" heading="50630" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="28552" y="140503" z="-3335" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29358" y="140503" z="-3335" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29335" y="134917" z="-3003" heading="45354" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="28313" y="137453" z="-3335" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20291" x="23511" y="136980" z="-3210" heading="31364" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="27473" y="140528" z="-2889" heading="9109" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="22585" y="138405" z="-3486" heading="25552" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="25823" y="138221" z="-3307" heading="38481" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="24366" y="139600" z="-3435" heading="13148" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20265" x="24078" y="137953" z="-3369" heading="61281" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="24071" y="135062" z="-2764" heading="46092" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="25623" y="139004" z="-3286" heading="24874" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="26804" y="138844" z="-3144" heading="4130" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="23879" y="140452" z="-3410" heading="25279" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20224" x="25985" y="139295" z="-3188" heading="1856" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="26794" y="141142" z="-2823" heading="5482" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20203" x="21700" y="142373" z="-3442" heading="8622" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="20544" y="139791" z="-3528" heading="42276" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="22333" y="143647" z="-3376" heading="43635" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="22700" y="145499" z="-3352" heading="22249" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20291" x="23041" y="142686" z="-3466" heading="0" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="26722" y="143141" z="-2853" heading="58073" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20291" x="23445" y="143042" z="-3466" heading="0" respawnTime="24sec" /> <!-- Enku Orc Hero -->
+			<npc id="20224" x="24206" y="142218" z="-3164" heading="61567" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20203" x="21628" y="139476" z="-3544" heading="61667" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="23092" y="140431" z="-3399" heading="36350" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="23453" y="141268" z="-3349" heading="7275" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20203" x="22199" y="140706" z="-3531" heading="0" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20147" x="23168" y="139713" z="-3562" heading="38562" respawnTime="24sec" /> <!-- Hobgoblin -->
+			<npc id="20147" x="26843" y="140108" z="-3015" heading="2317" respawnTime="24sec" /> <!-- Hobgoblin -->
+			<npc id="20147" x="24477" y="140920" z="-3227" heading="29666" respawnTime="24sec" /> <!-- Hobgoblin -->
+			<npc id="20203" x="21185" y="147206" z="-3419" heading="57118" respawnTime="24sec" /> <!-- Dion Grizzly -->
+			<npc id="20147" x="18971" y="147898" z="-3404" heading="50146" respawnTime="24sec" /> <!-- Hobgoblin -->
+			<npc id="20147" x="19898" y="148082" z="-3394" heading="25028" respawnTime="24sec" /> <!-- Hobgoblin -->
+			<npc id="20224" x="18803" y="149048" z="-3379" heading="37049" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="19516" y="147261" z="-3399" heading="52802" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="25764" y="143628" z="-2992" heading="6525" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="23864" y="147263" z="-3184" heading="36045" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="23996" y="145995" z="-3450" heading="0" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20224" x="24217" y="144767" z="-3268" heading="23552" respawnTime="24sec" /> <!-- Ol Mahum Ranger -->
+			<npc id="20265" x="22926" y="144348" z="-3355" heading="49271" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="29010" y="146353" z="-2295" heading="300" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="28404" y="147325" z="-2373" heading="63345" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="24133" y="142824" z="-3175" heading="50152" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20265" x="22103" y="146901" z="-3369" heading="61907" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20205" x="19371" y="151033" z="-3197" heading="25815" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="20632" y="149074" z="-3165" heading="43103" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="25192" y="148166" z="-3030" heading="31897" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="22168" y="148551" z="-3184" heading="30731" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="20419" y="150166" z="-3226" heading="58331" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="20827" y="152239" z="-3104" heading="12147" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="22238" y="149815" z="-3298" heading="24877" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29136" y="152308" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29237" y="153198" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29640" y="153198" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="28330" y="153020" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29237" y="152842" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="29136" y="153020" z="-3246" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="28532" y="152664" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="28632" y="152842" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="28935" y="153376" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="28935" y="153020" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="29740" y="153020" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="29539" y="153020" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="28633" y="152486" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="29035" y="152486" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="29338" y="152664" z="-3246" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="21102" x="14118" y="147967" z="-3169" heading="9770" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="13227" y="144416" z="-3016" heading="58015" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21103" x="12549" y="146554" z="-2786" heading="6600" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="11700" y="145756" z="-2705" heading="56788" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="13714" y="146063" z="-3035" heading="14417" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="12550" y="145316" z="-2882" heading="38437" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21102" x="10415" y="145941" z="-2604" heading="10070" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21104" x="11684" y="146785" z="-2817" heading="59970" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21103" x="6271" y="148993" z="-3284" heading="61618" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="6748" y="150014" z="-3370" heading="11886" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="5361" y="149161" z="-3457" heading="47422" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="5907" y="150579" z="-3423" heading="26390" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="6367" y="152354" z="-3401" heading="30412" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21103" x="16541" y="150848" z="-3190" heading="7704" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="14859" y="149688" z="-3350" heading="18200" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="14604" y="151433" z="-3231" heading="23512" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="14775" y="150542" z="-3601" heading="0" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="12812" y="150229" z="-3348" heading="41760" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21102" x="7704" y="148510" z="-3031" heading="57877" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="7670" y="147571" z="-2673" heading="52167" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="11732" y="148215" z="-3074" heading="14118" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21103" x="10530" y="147789" z="-2889" heading="62443" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="8306" y="150853" z="-3330" heading="31112" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="9906" y="150516" z="-3276" heading="63342" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21102" x="8310" y="152028" z="-3256" heading="61098" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="5466" y="153801" z="-3504" heading="39521" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="6905" y="150652" z="-3396" heading="34080" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21103" x="5610" y="151473" z="-3423" heading="34681" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="8806" y="153642" z="-2981" heading="7820" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="7467" y="153915" z="-3163" heading="13151" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="7036" y="154416" z="-3659" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="7285" y="153242" z="-3238" heading="12891" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="5520" y="153132" z="-3425" heading="34478" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="5704" y="155697" z="-3508" heading="59170" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21105" x="6941" y="155159" z="-3235" heading="46434" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21102" x="14250" y="159735" z="-3421" heading="62550" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21102" x="15996" y="152686" z="-3533" heading="52686" respawnTime="30sec" /> <!-- Watchman of the Plains -->
+			<npc id="21104" x="14236" y="152782" z="-3301" heading="41664" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21103" x="8301" y="152750" z="-3140" heading="49911" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21104" x="9652" y="151532" z="-3246" heading="42286" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="9249" y="152015" z="-3222" heading="27729" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21105" x="8573" y="155828" z="-2776" heading="17994" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21105" x="12121" y="155092" z="-2729" heading="2023" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21105" x="6697" y="152084" z="-3374" heading="42648" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21105" x="9545" y="153074" z="-3013" heading="9855" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21106" x="9899" y="153730" z="-2817" heading="11223" respawnTime="30sec" /> <!-- Cursed Watchman -->
+			<npc id="21106" x="8406" y="154311" z="-3261" heading="0" respawnTime="30sec" /> <!-- Cursed Watchman -->
+			<npc id="21103" x="8543" y="161948" z="-3843" heading="0" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21103" x="8342" y="162304" z="-3843" heading="0" respawnTime="30sec" /> <!-- Black Golem -->
+			<npc id="21105" x="9081" y="162339" z="-3580" heading="51885" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="21104" x="7612" y="162392" z="-3626" heading="52182" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21106" x="6783" y="163361" z="-3578" heading="35650" respawnTime="30sec" /> <!-- Cursed Watchman -->
+			<npc id="20781" x="5131" y="155398" z="-3514" heading="51489" respawnTime="30sec" /> <!-- Delu Lizardman Shaman -->
+			<npc id="20068" x="4845" y="164655" z="-3824" heading="0" respawnTime="29sec" /> <!-- Monster Eye Destroyer -->
+			<npc id="20251" x="4442" y="164655" z="-3824" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman -->
+			<npc id="20251" x="4644" y="164655" z="-3824" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman -->
+			<npc id="20206" x="1106" y="174086" z="-2888" heading="27003" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
+			<npc id="20205" x="3978" y="176102" z="-3352" heading="62995" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="3673" y="177675" z="-3584" heading="4181" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20206" x="800" y="176554" z="-3821" heading="0" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
+			<npc id="20206" x="3530" y="183353" z="-3821" heading="0" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
+			<npc id="20206" x="4155" y="176905" z="-3540" heading="16504" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
+			<npc id="20068" x="2804" y="180600" z="-3713" heading="42753" respawnTime="29sec" /> <!-- Monster Eye Destroyer -->
+			<npc id="20068" x="2062" y="179823" z="-3707" heading="29508" respawnTime="29sec" /> <!-- Monster Eye Destroyer -->
+			<npc id="20068" x="3347" y="181418" z="-3674" heading="8913" respawnTime="29sec" /> <!-- Monster Eye Destroyer -->
+			<npc id="20250" x="4738" y="184065" z="-3821" heading="0" respawnTime="29sec" /> <!-- Glass Jaguar -->
+			<npc id="20250" x="4143" y="181529" z="-3490" heading="16325" respawnTime="29sec" /> <!-- Glass Jaguar -->
+			<npc id="20250" x="4426" y="178357" z="-3557" heading="59348" respawnTime="29sec" /> <!-- Glass Jaguar -->
+			<npc id="20252" x="10292" y="184646" z="-3793" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20252" x="9989" y="185180" z="-3793" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20252" x="11299" y="185358" z="-3793" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20190" x="6662" y="187882" z="-3788" heading="0" respawnTime="29sec" /> <!-- Skeleton Marauder -->
+			<npc id="20190" x="6965" y="188416" z="-3788" heading="0" respawnTime="29sec" /> <!-- Skeleton Marauder -->
+			<npc id="20252" x="6965" y="188772" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20252" x="6964" y="187704" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20252" x="6763" y="188416" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20252" x="7065" y="187882" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Scout -->
+			<npc id="20253" x="6864" y="188594" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Warrior -->
+			<npc id="20253" x="6864" y="187526" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Warrior -->
+			<npc id="20253" x="7367" y="187704" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Warrior -->
+			<npc id="20253" x="7066" y="188594" z="-3788" heading="0" respawnTime="29sec" /> <!-- Delu Lizardman Warrior -->
+			<npc id="20250" x="2344" y="180165" z="-3681" heading="22110" respawnTime="29sec" /> <!-- Glass Jaguar -->
+			<npc id="20251" x="1148" y="190847" z="-3718" heading="59771" respawnTime="29sec" /> <!-- Delu Lizardman -->
+			<npc id="21104" x="8366" y="164677" z="-3798" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="21104" x="7761" y="163965" z="-3798" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Supplier -->
+			<npc id="20781" x="7460" y="164143" z="-3798" heading="0" respawnTime="30sec" /> <!-- Delu Lizardman Shaman -->
+			<npc id="21105" x="17001" y="168098" z="-3485" heading="25769" respawnTime="30sec" /> <!-- Delu Lizardman Special Agent -->
+			<npc id="20930" x="17020" y="177089" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="17927" y="176911" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="19437" y="176377" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="18834" y="176733" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="17725" y="176555" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="17523" y="176911" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="19035" y="176377" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="17724" y="178335" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="18431" y="176377" z="-3779" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="15809" y="186655" z="-3751" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="15506" y="187189" z="-3751" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="16212" y="187723" z="-3751" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="15407" y="186299" z="-3751" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20930" x="16916" y="186833" z="-3751" heading="0" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="20935" x="16614" y="186655" z="-3751" heading="0" respawnTime="32sec" /> <!-- Wasp Captain -->
+			<npc id="20935" x="16715" y="187189" z="-3751" heading="0" respawnTime="32sec" /> <!-- Wasp Captain -->
+			<npc id="20935" x="17317" y="186477" z="-3751" heading="0" respawnTime="32sec" /> <!-- Wasp Captain -->
+			<npc id="20935" x="15910" y="187545" z="-3751" heading="0" respawnTime="32sec" /> <!-- Wasp Captain -->
+			<npc id="20935" x="16011" y="186655" z="-3751" heading="0" respawnTime="32sec" /> <!-- Wasp Captain -->
+			<npc id="20933" x="31421" y="181907" z="-3326" heading="56871" respawnTime="32sec" /> <!-- Hatu Windsus -->
+			<npc id="20930" x="22314" y="177384" z="-3479" heading="57109" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+			<npc id="27112" x="6317" y="184549" z="-3161" heading="25731" respawnTime="180sec" /> <!-- Gorr - Quest Monster -->
+			<npc id="27113" x="20898" y="184689" z="-3358" heading="0" respawnTime="180sec" /> <!-- Baraham - Quest Monster -->
+			<npc id="27103" x="23354" y="187991" z="-3721" heading="0" respawnTime="180sec" /> <!-- Unicorn - Quest Monster -->
+			<npc id="27093" x="28448" y="174080" z="-3408" heading="0" respawnTime="60sec" /> <!-- Delu Chief Kalkis - Quest Monster -->
+			<npc id="35372" x="44368" y="107440" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44768" y="108604" z="-2034" heading="44231" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44378" y="108474" z="-2034" heading="39438" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44772" y="108152" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="43864" y="108686" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44771" y="108864" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44671" y="108686" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44886" y="108498" z="-2034" heading="57244" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44167" y="108152" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44469" y="107618" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44973" y="108152" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="45476" y="107974" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="43965" y="108508" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44268" y="108686" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="35372" x="44671" y="107974" z="-2032" heading="0" respawnTime="60sec" /> <!-- Partisan Soldier -->
+			<npc id="20205" x="36714" y="130826" z="-3201" heading="61042" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="34538" y="130753" z="-3294" heading="34344" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20547" x="48595" y="127264" z="-3767" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="48393" y="127620" z="-3767" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="49098" y="127442" z="-3767" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50617" y="127146" z="-3768" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51321" y="127324" z="-3768" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51020" y="127502" z="-3768" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50919" y="127680" z="-3768" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50017" y="126766" z="-3716" heading="2474" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51271" y="127596" z="-3712" heading="8626" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51489" y="125691" z="-3563" heading="51929" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50839" y="126197" z="-3768" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="54302" y="123724" z="-3726" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="54723" y="124576" z="-3251" heading="1215" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="52606" y="124221" z="-3377" heading="55229" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50745" y="122810" z="-2551" heading="34009" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="53473" y="120165" z="-3417" heading="6831" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51090" y="120768" z="-2760" heading="47289" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="52947" y="119504" z="-3458" heading="49613" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="49667" y="119179" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51479" y="118467" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51378" y="119001" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="56480" y="122376" z="-3002" heading="6763" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51178" y="119357" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="54810" y="121031" z="-3360" heading="40452" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="53234" y="121865" z="-3172" heading="58519" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="54140" y="120432" z="-3388" heading="45676" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51680" y="119179" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50875" y="119891" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="52934" y="122104" z="-3110" heading="10162" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="49969" y="119713" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51148" y="118330" z="-3551" heading="26320" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50171" y="119357" z="-3624" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="52380" y="120333" z="-3326" heading="35468" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="50571" y="120280" z="-3001" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="51169" y="121984" z="-2455" heading="49870" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="53677" y="116863" z="-1405" heading="56337" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="46699" y="128699" z="-3694" heading="46478" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="46858" y="127494" z="-3717" heading="19333" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="45393" y="126134" z="-3610" heading="12566" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="46981" y="129951" z="-3690" heading="12149" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="40022" y="126168" z="-1630" heading="3427" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="49707" y="125487" z="-3526" heading="4513" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="49536" y="126657" z="-3717" heading="25136" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="47505" y="126829" z="-3717" heading="62138" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="43992" y="125393" z="-3244" heading="61344" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="39159" y="122605" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="38654" y="123495" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="37570" y="122544" z="-2019" heading="3573" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="38555" y="124029" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="39461" y="122783" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="35987" y="122047" z="-1965" heading="54367" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="39864" y="124563" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="40911" y="124028" z="-2575" heading="5245" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="37570" y="122544" z="-2019" heading="3573" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="36626" y="123272" z="-2024" heading="25113" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="40365" y="122605" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="38455" y="123851" z="-2579" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="35213" y="123106" z="-2020" heading="28351" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="37570" y="122544" z="-2019" heading="3573" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="40497" y="123385" z="-2501" heading="42173" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="36501" y="118257" z="-2257" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="37738" y="118715" z="-1825" heading="31729" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="36401" y="119147" z="-2257" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="36300" y="119325" z="-2257" heading="0" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="36635" y="117500" z="-1795" heading="45889" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="38369" y="119745" z="-1772" heading="1596" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="20547" x="37235" y="120419" z="-1525" heading="6164" respawnTime="60sec" /> <!-- Ol Mahum Support Troop -->
+			<npc id="35369" x="44545" y="108867" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Healer -->
+			<npc id="35369" x="44505" y="108867" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Healer -->
+			<npc id="35371" x="44535" y="108884" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35371" x="44515" y="108884" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35371" x="44515" y="108850" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35371" x="44535" y="108850" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44565" y="108867" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44553" y="108895" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44535" y="108895" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44497" y="108895" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44485" y="108867" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44497" y="108839" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44525" y="108827" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35370" x="44553" y="108839" z="-2020" heading="0" respawnTime="60sec" /> <!-- Partisan Royal Guard -->
+			<npc id="35374" x="44812" y="109492" z="-1705" heading="0" respawnTime="60sec" /> <!-- Partisan Archer -->
+			<npc id="35373" x="44788" y="109492" z="-1705" heading="0" respawnTime="60sec" /> <!-- Partisan Wizard -->
+			<npc id="35374" x="45236" y="108980" z="-1705" heading="0" respawnTime="60sec" /> <!-- Partisan Archer -->
+			<npc id="35373" x="45168" y="109020" z="-1705" heading="0" respawnTime="60sec" /> <!-- Partisan Wizard -->
+			<npc id="20205" x="33440" y="138010" z="-3153" heading="15248" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="33869" y="136326" z="-3108" heading="59437" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="33770" y="139756" z="-3168" heading="63735" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="33329" y="141091" z="-3198" heading="64131" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20205" x="33013" y="142774" z="-3255" heading="50640" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34011" y="134255" z="-3401" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34615" y="134611" z="-3401" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="36413" y="137032" z="-3295" heading="8902" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="34716" y="134789" z="-3401" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="33924" y="134785" z="-3078" heading="6470" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="34817" y="134967" z="-3401" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20205" x="39454" y="133128" z="-3567" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="39253" y="133484" z="-3567" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20266" x="39655" y="133128" z="-3567" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="39353" y="133662" z="-3567" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="39454" y="133840" z="-3567" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="39756" y="133306" z="-3567" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20265" x="34709" y="133380" z="-2953" heading="59577" respawnTime="24sec" /> <!-- Monster Eye Searcher -->
+			<npc id="20266" x="34157" y="135825" z="-3341" heading="0" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="33181" y="136426" z="-3113" heading="43581" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+		</group>
+	</spawn>
+</list>

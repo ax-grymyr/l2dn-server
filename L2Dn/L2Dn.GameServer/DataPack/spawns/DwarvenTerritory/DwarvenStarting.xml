@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_05" minZ="-788" maxZ="-438">
+				<node x="113960" y="-173988" />
+				<node x="115772" y="-173068" />
+				<node x="115908" y="-171992" />
+				<node x="115280" y="-172080" />
+				<node x="113908" y="-173304" />
+			</territory>
+		</territories>
+		<npc id="20533" count="5" respawnTime="3sec" /> <!-- Longtail Keltir -->
+		<npc id="20539" count="5" respawnTime="3sec" /> <!-- Elder Longtail Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_06" minZ="-1064" maxZ="-464">
+				<node x="115448" y="-176280" />
+				<node x="116552" y="-176624" />
+				<node x="117360" y="-176024" />
+				<node x="117468" y="-174448" />
+				<node x="116220" y="-173196" />
+				<node x="114680" y="-174068" />
+				<node x="114668" y="-175000" />
+			</territory>
+		</territories>
+		<npc id="20533" count="15" respawnTime="3sec" /> <!-- Longtail Keltir -->
+		<npc id="20539" count="20" respawnTime="3sec" /> <!-- Elder Longtail Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_07" minZ="-864" maxZ="36">
+				<node x="117300" y="-174168" />
+				<node x="118968" y="-173696" />
+				<node x="119112" y="-173040" />
+				<node x="118048" y="-171952" />
+				<node x="116416" y="-173184" />
+			</territory>
+		</territories>
+		<npc id="20533" count="10" respawnTime="3sec" /> <!-- Longtail Keltir -->
+		<npc id="20539" count="10" respawnTime="3sec" /> <!-- Elder Longtail Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_08" minZ="-2764" maxZ="-1664">
+				<node x="118884" y="-181248" />
+				<node x="120124" y="-180956" />
+				<node x="120664" y="-180248" />
+				<node x="118684" y="-179476" />
+				<node x="118324" y="-179912" />
+			</territory>
+		</territories>
+		<npc id="20317" count="10" respawnTime="3sec" /> <!-- Black Wolf -->
+		<npc id="20327" count="2" respawnTime="3sec" /> <!-- Goblin Snooper -->
+		<npc id="20446" count="4" respawnTime="3sec" /> <!-- Utuku Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_09" minZ="-2056" maxZ="-1656">
+				<node x="120668" y="-182308" />
+				<node x="122420" y="-181108" />
+				<node x="121768" y="-180468" />
+				<node x="120496" y="-181180" />
+			</territory>
+		</territories>
+		<npc id="20317" count="8" respawnTime="3sec" /> <!-- Black Wolf -->
+		<npc id="20327" count="2" respawnTime="3sec" /> <!-- Goblin Snooper -->
+		<npc id="20446" count="2" respawnTime="3sec" /> <!-- Utuku Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_10" minZ="-3496" maxZ="-2646">
+				<node x="119636" y="-187464" />
+				<node x="120160" y="-186752" />
+				<node x="120064" y="-183544" />
+				<node x="118372" y="-183448" />
+				<node x="118096" y="-186164" />
+			</territory>
+		</territories>
+		<npc id="20317" count="15" respawnTime="3sec" /> <!-- Black Wolf -->
+		<npc id="20327" count="6" respawnTime="3sec" /> <!-- Goblin Snooper -->
+		<npc id="20446" count="6" respawnTime="3sec" /> <!-- Utuku Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_11" minZ="-3428" maxZ="-2778">
+				<node x="118484" y="-188576" />
+				<node x="119796" y="-189708" />
+				<node x="120292" y="-187720" />
+				<node x="119076" y="-187444" />
+			</territory>
+		</territories>
+		<npc id="20317" count="8" respawnTime="3sec" /> <!-- Black Wolf -->
+		<npc id="20446" count="2" respawnTime="3sec" /> <!-- Utuku Orc -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_21" minZ="-1620" maxZ="-1020">
+				<node x="124844" y="-180344" />
+				<node x="125268" y="-179892" />
+				<node x="124736" y="-178552" />
+				<node x="123912" y="-178720" />
+				<node x="124232" y="-179684" />
+			</territory>
+		</territories>
+		<npc id="20318" count="6" respawnTime="3sec" /> <!-- Black Timber Wolf -->
+		<npc id="20448" count="6" respawnTime="3sec" /> <!-- Utuku Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_22" minZ="-1432" maxZ="-1032">
+				<node x="123848" y="-178696" />
+				<node x="125380" y="-178120" />
+				<node x="125916" y="-177116" />
+				<node x="125048" y="-175916" />
+				<node x="123752" y="-176940" />
+			</territory>
+		</territories>
+		<npc id="20318" count="8" respawnTime="3sec" /> <!-- Black Timber Wolf -->
+		<npc id="20448" count="6" respawnTime="3sec" /> <!-- Utuku Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_23" minZ="-1360" maxZ="-960">
+				<node x="125924" y="-177200" />
+				<node x="127516" y="-175956" />
+				<node x="125936" y="-174052" />
+				<node x="124424" y="-174700" />
+			</territory>
+		</territories>
+		<npc id="20318" count="8" respawnTime="3sec" /> <!-- Black Timber Wolf -->
+		<npc id="20448" count="6" respawnTime="3sec" /> <!-- Utuku Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart07_2312_24" minZ="-1952" maxZ="-1552">
+				<node x="124740" y="-181792" />
+				<node x="126356" y="-180240" />
+				<node x="126280" y="-179820" />
+				<node x="125124" y="-180556" />
+			</territory>
+		</territories>
+		<npc id="20318" count="6" respawnTime="3sec" /> <!-- Black Timber Wolf -->
+		<npc id="20448" count="6" respawnTime="3sec" /> <!-- Utuku Orc Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_12" minZ="-3668" maxZ="-3068">
+				<node x="119888" y="-194360" />
+				<node x="122312" y="-194224" />
+				<node x="122344" y="-192904" />
+				<node x="120552" y="-191348" />
+				<node x="118908" y="-191620" />
+				<node x="118088" y="-193356" />
+			</territory>
+		</territories>
+		<npc id="20322" count="8" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="6" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="8" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_13" minZ="-3668" maxZ="-3268">
+				<node x="117116" y="-194208" />
+				<node x="117800" y="-196488" />
+				<node x="119800" y="-196484" />
+				<node x="120000" y="-194544" />
+				<node x="118092" y="-193560" />
+			</territory>
+		</territories>
+		<npc id="20322" count="6" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="2" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_14" minZ="-3668" maxZ="-3018">
+				<node x="115768" y="-196432" />
+				<node x="117724" y="-196436" />
+				<node x="117100" y="-194380" />
+				<node x="115664" y="-194376" />
+			</territory>
+		</territories>
+		<npc id="20322" count="6" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="6" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="8" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_15" minZ="-3684" maxZ="-3434">
+				<node x="120452" y="-196532" />
+				<node x="122904" y="-196512" />
+				<node x="122464" y="-195124" />
+				<node x="121100" y="-194660" />
+				<node x="120448" y="-195200" />
+			</territory>
+		</territories>
+		<npc id="20322" count="2" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="6" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_16" minZ="-3656" maxZ="-3256">
+				<node x="127204" y="-196508" />
+				<node x="130792" y="-196468" />
+				<node x="130804" y="-193928" />
+				<node x="128092" y="-193376" />
+				<node x="126812" y="-194924" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_17" minZ="-3452" maxZ="-2852">
+				<node x="125416" y="-194164" />
+				<node x="126752" y="-194856" />
+				<node x="128036" y="-193360" />
+				<node x="126860" y="-192676" />
+				<node x="125428" y="-193556" />
+			</territory>
+		</territories>
+		<npc id="20521" count="2" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_18" minZ="-3552" maxZ="-3152">
+				<node x="128048" y="-193280" />
+				<node x="130808" y="-193816" />
+				<node x="130808" y="-190528" />
+				<node x="128104" y="-190396" />
+				<node x="126980" y="-192544" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2312_19" minZ="-3456" maxZ="-2856">
+				<node x="128080" y="-190324" />
+				<node x="130732" y="-190440" />
+				<node x="130716" y="-187988" />
+				<node x="128852" y="-186272" />
+				<node x="126800" y="-188820" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_01" minZ="-3792" maxZ="-2992">
+				<node x="115656" y="-199648" />
+				<node x="116700" y="-200500" />
+				<node x="118992" y="-200572" />
+				<node x="119620" y="-199872" />
+				<node x="119120" y="-198364" />
+				<node x="115324" y="-198416" />
+			</territory>
+		</territories>
+		<npc id="20322" count="8" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="6" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="6" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_02" minZ="-3708" maxZ="-3008">
+				<node x="115700" y="-198396" />
+				<node x="119204" y="-198332" />
+				<node x="119372" y="-196852" />
+				<node x="115556" y="-196800" />
+			</territory>
+		</territories>
+		<npc id="20322" count="6" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="8" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="8" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_03" minZ="-3776" maxZ="-3376">
+				<node x="120964" y="-200180" />
+				<node x="122544" y="-199856" />
+				<node x="123820" y="-198848" />
+				<node x="123908" y="-197996" />
+				<node x="123224" y="-196812" />
+				<node x="120376" y="-196832" />
+				<node x="119736" y="-197784" />
+				<node x="120096" y="-199880" />
+			</territory>
+		</territories>
+		<npc id="20322" count="8" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="8" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="8" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_04" minZ="-3752" maxZ="-3352">
+				<node x="119468" y="-200908" />
+				<node x="120636" y="-201548" />
+				<node x="120916" y="-200196" />
+				<node x="120172" y="-199956" />
+			</territory>
+		</territories>
+		<npc id="20307" count="6" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_05" minZ="-3776" maxZ="-3176">
+				<node x="119780" y="-203268" />
+				<node x="120960" y="-202700" />
+				<node x="120852" y="-201696" />
+				<node x="119376" y="-200892" />
+				<node x="118420" y="-202120" />
+			</territory>
+		</territories>
+		<npc id="20322" count="6" respawnTime="3sec" /> <!-- Goblin Brigand -->
+		<npc id="20447" count="6" respawnTime="3sec" /> <!-- Utuku Orc Archer -->
+		<npc id="20307" count="8" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_06" minZ="-3840" maxZ="-3540">
+				<node x="117172" y="-201928" />
+				<node x="118444" y="-202000" />
+				<node x="119316" y="-200932" />
+				<node x="117100" y="-201108" />
+			</territory>
+		</territories>
+		<npc id="20307" count="6" respawnTime="3sec" /> <!-- Garum Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_07" minZ="-3792" maxZ="-3492">
+				<node x="119064" y="-206596" />
+				<node x="120784" y="-206056" />
+				<node x="117960" y="-203528" />
+				<node x="117096" y="-203336" />
+				<node x="117280" y="-204820" />
+			</territory>
+		</territories>
+		<npc id="20480" count="6" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="6" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_08" minZ="-3784" maxZ="-3484">
+				<node x="119980" y="-210396" />
+				<node x="121056" y="-209920" />
+				<node x="120752" y="-206264" />
+				<node x="119412" y="-206756" />
+			</territory>
+		</territories>
+		<npc id="20324" count="2" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="6" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_09" minZ="-3788" maxZ="-3538">
+				<node x="121568" y="-211880" />
+				<node x="123220" y="-212536" />
+				<node x="123960" y="-212236" />
+				<node x="124196" y="-211920" />
+				<node x="121012" y="-210040" />
+				<node x="119908" y="-210456" />
+			</territory>
+		</territories>
+		<npc id="20480" count="6" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="8" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_10" minZ="-3804" maxZ="-3404">
+				<node x="116232" y="-209660" />
+				<node x="118052" y="-209796" />
+				<node x="118520" y="-208676" />
+				<node x="118400" y="-206920" />
+				<node x="116724" y="-205496" />
+				<node x="115712" y="-205840" />
+			</territory>
+		</territories>
+		<npc id="20480" count="6" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="8" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_11" minZ="-3608" maxZ="-3008">
+				<node x="116928" y="-212620" />
+				<node x="120460" y="-212244" />
+				<node x="118396" y="-210224" />
+				<node x="115584" y="-209756" />
+				<node x="115564" y="-211424" />
+			</territory>
+		</territories>
+		<npc id="20480" count="6" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="8" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_12" minZ="-3788" maxZ="-3188">
+				<node x="116584" y="-217008" />
+				<node x="120192" y="-217740" />
+				<node x="121436" y="-215180" />
+				<node x="119976" y="-212576" />
+				<node x="116920" y="-213480" />
+			</territory>
+		</territories>
+		<npc id="20480" count="8" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="12" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_13" minZ="-3788" maxZ="-3388">
+				<node x="121268" y="-214576" />
+				<node x="122952" y="-214580" />
+				<node x="123216" y="-213084" />
+				<node x="120776" y="-212292" />
+				<node x="120196" y="-212852" />
+			</territory>
+		</territories>
+		<npc id="20324" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="2" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_14" minZ="-3784" maxZ="-3384">
+				<node x="123884" y="-216020" />
+				<node x="126328" y="-216140" />
+				<node x="126844" y="-214844" />
+				<node x="126380" y="-213884" />
+				<node x="124056" y="-212712" />
+				<node x="123332" y="-213036" />
+				<node x="122960" y="-215244" />
+			</territory>
+		</territories>
+		<npc id="20480" count="6" respawnTime="3sec" /> <!-- Blade Bat -->
+		<npc id="20324" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Lieutenant -->
+		<npc id="20153" count="8" respawnTime="3sec" /> <!-- Magical Weaver -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_15" minZ="-3808" maxZ="-2808">
+				<node x="123484" y="-208632" />
+				<node x="125984" y="-210224" />
+				<node x="127916" y="-209260" />
+				<node x="129044" y="-206980" />
+				<node x="128756" y="-204184" />
+				<node x="126228" y="-203480" />
+				<node x="123676" y="-206980" />
+			</territory>
+		</territories>
+		<npc id="20510" count="12" respawnTime="3sec" /> <!-- Crystal Puma -->
+		<npc id="20370" count="12" respawnTime="3sec" /> <!-- Barbed Bat -->
+		<npc id="20528" count="12" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_16" minZ="-3752" maxZ="-3352">
+				<node x="125012" y="-201904" />
+				<node x="127460" y="-203176" />
+				<node x="128956" y="-202672" />
+				<node x="129532" y="-201404" />
+				<node x="129168" y="-200504" />
+				<node x="126440" y="-199616" />
+				<node x="124764" y="-199364" />
+				<node x="124180" y="-200764" />
+			</territory>
+		</territories>
+		<npc id="20510" count="8" respawnTime="3sec" /> <!-- Crystal Puma -->
+		<npc id="20370" count="6" respawnTime="3sec" /> <!-- Barbed Bat -->
+		<npc id="20528" count="8" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_17" minZ="-3772" maxZ="-2972">
+				<node x="129148" y="-206880" />
+				<node x="130780" y="-206992" />
+				<node x="130788" y="-202644" />
+				<node x="128960" y="-203816" />
+			</territory>
+		</territories>
+		<npc id="20370" count="2" respawnTime="3sec" /> <!-- Barbed Bat -->
+		<npc id="20528" count="6" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_18" minZ="-3716" maxZ="-3266">
+				<node x="127908" y="-198784" />
+				<node x="130840" y="-199616" />
+				<node x="130836" y="-196868" />
+				<node x="127176" y="-196864" />
+			</territory>
+		</territories>
+		<npc id="20521" count="6" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_19" minZ="-3692" maxZ="-3392">
+				<node x="129872" y="-210576" />
+				<node x="130804" y="-210292" />
+				<node x="130832" y="-208076" />
+				<node x="129800" y="-208252" />
+				<node x="129164" y="-209692" />
+			</territory>
+		</territories>
+		<npc id="20528" count="6" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2311_20" minZ="-3688" maxZ="-3288">
+				<node x="127480" y="-212408" />
+				<node x="128440" y="-212440" />
+				<node x="129272" y="-211820" />
+				<node x="129800" y="-210628" />
+				<node x="129120" y="-209840" />
+				<node x="126796" y="-211288" />
+			</territory>
+		</territories>
+		<npc id="20528" count="6" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_01" minZ="-3712" maxZ="-3112">
+				<node x="131244" y="-199788" />
+				<node x="132364" y="-200060" />
+				<node x="133772" y="-199960" />
+				<node x="134412" y="-196972" />
+				<node x="131312" y="-196984" />
+			</territory>
+		</territories>
+		<npc id="20521" count="6" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_02" minZ="-3748" maxZ="-3148">
+				<node x="131244" y="-207064" />
+				<node x="133204" y="-206512" />
+				<node x="134956" y="-204996" />
+				<node x="135220" y="-203776" />
+				<node x="133360" y="-201068" />
+				<node x="131204" y="-201136" />
+			</territory>
+		</territories>
+		<npc id="20510" count="8" respawnTime="3sec" /> <!-- Crystal Puma -->
+		<npc id="20370" count="8" respawnTime="3sec" /> <!-- Barbed Bat -->
+		<npc id="20528" count="8" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_03" minZ="-3784" maxZ="-3384">
+				<node x="131208" y="-210156" />
+				<node x="132644" y="-208900" />
+				<node x="132968" y="-207492" />
+				<node x="131248" y="-207992" />
+			</territory>
+		</territories>
+		<npc id="20528" count="6" respawnTime="3sec" /> <!-- Goblin Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_04" minZ="-3760" maxZ="-3360">
+				<node x="135168" y="-199972" />
+				<node x="138956" y="-201436" />
+				<node x="139132" y="-196896" />
+				<node x="135988" y="-196872" />
+			</territory>
+		</territories>
+		<npc id="20777" count="20" respawnTime="3sec" /> <!-- Hunter Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_05" minZ="-3788" maxZ="-3388">
+				<node x="136828" y="-200604" />
+				<node x="138180" y="-203568" />
+				<node x="138832" y="-202756" />
+				<node x="138908" y="-201452" />
+			</territory>
+		</territories>
+		<npc id="20777" count="8" respawnTime="3sec" /> <!-- Hunter Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_06" minZ="-3796" maxZ="-3396">
+				<node x="137360" y="-204504" />
+				<node x="137592" y="-203964" />
+				<node x="136940" y="-201716" />
+				<node x="135848" y="-201664" />
+			</territory>
+		</territories>
+		<npc id="20777" count="8" respawnTime="3sec" /> <!-- Hunter Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_07" minZ="-3700" maxZ="-2700">
+				<node x="140296" y="-202552" />
+				<node x="142732" y="-204104" />
+				<node x="144784" y="-200932" />
+				<node x="142976" y="-199312" />
+				<node x="140624" y="-199800" />
+			</territory>
+		</territories>
+		<npc id="20502" count="8" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_08" minZ="-3608" maxZ="-2608">
+				<node x="142796" y="-204224" />
+				<node x="144692" y="-205856" />
+				<node x="145776" y="-204416" />
+				<node x="143700" y="-202888" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20508" count="3" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_09" minZ="-3760" maxZ="-3260">
+				<node x="141056" y="-206992" />
+				<node x="142632" y="-207684" />
+				<node x="142848" y="-206376" />
+				<node x="140916" y="-203720" />
+				<node x="139752" y="-204540" />
+			</territory>
+		</territories>
+		<npc id="20502" count="2" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_10" minZ="-3764" maxZ="-3364">
+				<node x="137432" y="-208624" />
+				<node x="139356" y="-208660" />
+				<node x="140812" y="-206592" />
+				<node x="139692" y="-204516" />
+				<node x="135924" y="-207436" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="10" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_11" minZ="-3756" maxZ="-3156">
+				<node x="138484" y="-210908" />
+				<node x="142752" y="-211744" />
+				<node x="143860" y="-210364" />
+				<node x="139464" y="-208788" />
+				<node x="138064" y="-208788" />
+			</territory>
+		</territories>
+		<npc id="20502" count="8" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_12" minZ="-3752" maxZ="-3152">
+				<node x="141936" y="-209608" />
+				<node x="144156" y="-210404" />
+				<node x="145216" y="-209920" />
+				<node x="145420" y="-209148" />
+				<node x="144464" y="-208296" />
+				<node x="142244" y="-207976" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_13" minZ="-3788" maxZ="-3388">
+				<node x="135964" y="-211844" />
+				<node x="137432" y="-211440" />
+				<node x="137180" y="-209696" />
+				<node x="136808" y="-208824" />
+				<node x="135664" y="-208092" />
+			</territory>
+		</territories>
+		<npc id="20502" count="2" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20508" count="8" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_14" minZ="-3848" maxZ="-3398">
+				<node x="138152" y="-213716" />
+				<node x="138540" y="-212796" />
+				<node x="138180" y="-211936" />
+				<node x="137488" y="-211492" />
+				<node x="135968" y="-211880" />
+				<node x="136184" y="-212932" />
+				<node x="137096" y="-213704" />
+			</territory>
+		</territories>
+		<npc id="20403" count="3" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="8" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_15" minZ="-3840" maxZ="-3490">
+				<node x="138680" y="-212836" />
+				<node x="141248" y="-213916" />
+				<node x="141812" y="-212548" />
+				<node x="139836" y="-211924" />
+				<node x="138536" y="-212040" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_17" minZ="-3724" maxZ="-3324">
+				<node x="145100" y="-211856" />
+				<node x="147540" y="-213580" />
+				<node x="148552" y="-212608" />
+				<node x="145632" y="-211596" />
+			</territory>
+		</territories>
+		<npc id="20403" count="3" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="8" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_18" minZ="-3544" maxZ="-3144">
+				<node x="147816" y="-215268" />
+				<node x="151492" y="-215520" />
+				<node x="150272" y="-213116" />
+				<node x="148672" y="-212720" />
+				<node x="147632" y="-213632" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="10" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="8" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_19" minZ="-3604" maxZ="-2954">
+				<node x="146116" y="-217620" />
+				<node x="147992" y="-218480" />
+				<node x="153624" y="-217424" />
+				<node x="153336" y="-215692" />
+				<node x="147836" y="-215316" />
+			</territory>
+		</territories>
+		<npc id="20502" count="12" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="10" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_20" minZ="-3624" maxZ="-2624">
+				<node x="148408" y="-211400" />
+				<node x="149880" y="-211636" />
+				<node x="150248" y="-209796" />
+				<node x="150216" y="-208612" />
+				<node x="147372" y="-208720" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="10" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="8" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart08_2411_21" minZ="-3780" maxZ="-3380">
+				<node x="153008" y="-214028" />
+				<node x="153940" y="-212960" />
+				<node x="153312" y="-208984" />
+				<node x="151176" y="-209172" />
+				<node x="151276" y="-211508" />
+			</territory>
+		</territories>
+		<npc id="20502" count="6" respawnTime="3sec" /> <!-- Twink Puma -->
+		<npc id="20403" count="8" respawnTime="3sec" /> <!-- Hunter Tarantula -->
+		<npc id="20508" count="10" respawnTime="3sec" /> <!-- Plunder Tarantula -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2412_01" minZ="-3692" maxZ="-3292">
+				<node x="131200" y="-196540" />
+				<node x="134596" y="-196544" />
+				<node x="134496" y="-195808" />
+				<node x="133852" y="-195120" />
+				<node x="131168" y="-193976" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="6" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2412_02" minZ="-3660" maxZ="-2810">
+				<node x="136280" y="-196344" />
+				<node x="141644" y="-196444" />
+				<node x="139620" y="-192356" />
+				<node x="138340" y="-192320" />
+			</territory>
+		</territories>
+		<npc id="20521" count="6" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2411_03" minZ="-3696" maxZ="-2446">
+				<node x="136272" y="-195116" />
+				<node x="138420" y="-192304" />
+				<node x="137232" y="-189764" />
+				<node x="135632" y="-188612" />
+				<node x="134512" y="-188772" />
+				<node x="133588" y="-191932" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="8" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2411_04" minZ="-3068" maxZ="-1418">
+				<node x="139684" y="-192352" />
+				<node x="141332" y="-189636" />
+				<node x="140472" y="-187800" />
+				<node x="138136" y="-188316" />
+				<node x="137640" y="-189356" />
+				<node x="138448" y="-192132" />
+			</territory>
+		</territories>
+		<npc id="20521" count="8" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="8" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="6" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2412_05" minZ="-3284" maxZ="-2684">
+				<node x="134320" y="-188684" />
+				<node x="135748" y="-188472" />
+				<node x="134760" y="-186068" />
+				<node x="133840" y="-186924" />
+			</territory>
+		</territories>
+		<npc id="20521" count="6" respawnTime="3sec" /> <!-- Whinstone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2412_06" minZ="-2688" maxZ="-1488">
+				<node x="136468" y="-188148" />
+				<node x="139464" y="-186372" />
+				<node x="138836" y="-184752" />
+				<node x="135812" y="-185376" />
+			</territory>
+		</territories>
+		<npc id="20521" count="2" respawnTime="3sec" /> <!-- Whinstone Golem -->
+		<npc id="20323" count="6" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="schttgart09_2412_07" minZ="-2984" maxZ="-1484">
+				<node x="134584" y="-185140" />
+				<node x="138376" y="-184440" />
+				<node x="136544" y="-181584" />
+				<node x="134400" y="-181080" />
+			</territory>
+		</territories>
+		<npc id="20323" count="2" respawnTime="3sec" /> <!-- Goblin Brigand Leader -->
+		<npc id="20526" count="6" respawnTime="3sec" /> <!-- Obsidian Golem -->
+	</spawn>
+</list>

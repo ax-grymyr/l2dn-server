@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="197" parentClassId="196">
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="3" getLevel="20" levelUpSp="100" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="4" getLevel="25" levelUpSp="550" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="5" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="6" getLevel="32" levelUpSp="1000" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="7" getLevel="34" levelUpSp="2000" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="8" getLevel="36" levelUpSp="2000" />
+		<skill skillName="Emergency Rescue" skillId="70" skillLevel="9" getLevel="38" levelUpSp="2000" />
+		<skill skillName="Death Sword Mastery" skillId="45353" skillLevel="4" getLevel="20" levelUpSp="100" />
+		<skill skillName="Death Sword Mastery" skillId="45353" skillLevel="5" getLevel="25" levelUpSp="550" />
+		<skill skillName="Death Sword Mastery" skillId="45353" skillLevel="6" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Death Sword Mastery" skillId="45353" skillLevel="7" getLevel="35" levelUpSp="2000" />
+		<skill skillName="Death Armor Mastery" skillId="45354" skillLevel="4" getLevel="20" levelUpSp="100" />
+		<skill skillName="Death Armor Mastery" skillId="45354" skillLevel="5" getLevel="25" levelUpSp="550" />
+		<skill skillName="Death Armor Mastery" skillId="45354" skillLevel="6" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Death Armor Mastery" skillId="45354" skillLevel="7" getLevel="35" levelUpSp="2000" />
+		<skill skillName="Might" skillId="1068" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Ability to Attack" skillId="77" skillLevel="2" getLevel="25" levelUpSp="550" />
+		<skill skillName="Shield" skillId="1040" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Belief" skillId="80" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Roar of Death" skillId="45328" skillLevel="1" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Empower" skillId="45105" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Empower" skillId="45105" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="1" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="1" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Focus" skillId="45109" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Punishment" skillId="45301" skillLevel="1" getLevel="20" levelUpSp="0" autoGet="true" />
+		<skill skillName="Punishment" skillId="45301" skillLevel="2" getLevel="26" levelUpSp="550" />
+		<skill skillName="Punishment" skillId="45301" skillLevel="3" getLevel="32" levelUpSp="1000" />
+		<skill skillName="Punishment" skillId="45301" skillLevel="4" getLevel="38" levelUpSp="2000" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Struggle" skillId="87" skillLevel="1" getLevel="30" levelUpSp="1000" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="1" getLevel="30" levelUpSp="1000" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="2" getLevel="30" levelUpSp="1000" />
+		<skill skillName="Ability to Protect" skillId="91" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="1" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="2" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="3" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="4" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="5" getLevel="20" levelUpSp="100" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="6" getLevel="21" levelUpSp="250" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="7" getLevel="22" levelUpSp="250" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="8" getLevel="23" levelUpSp="250" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="9" getLevel="24" levelUpSp="250" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="10" getLevel="25" levelUpSp="550" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="11" getLevel="26" levelUpSp="550" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="12" getLevel="27" levelUpSp="550" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="13" getLevel="28" levelUpSp="550" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="14" getLevel="29" levelUpSp="1000" />
+		<skill skillName="Enhanced Weapon" skillId="255" skillLevel="15" getLevel="30" levelUpSp="1000" />
+	</skillTree>
+</list>

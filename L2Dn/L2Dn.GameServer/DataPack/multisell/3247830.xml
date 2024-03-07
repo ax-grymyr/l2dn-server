@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Armor C-Grade -->
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Full Plate Helmet -->
+		<production count="1" id="95572" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Full Plate Boots -->
+		<production count="1" id="95573" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Full Plate Gauntlets -->
+		<production count="1" id="95574" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Full Plate Armor -->
+		<production count="1" id="95575" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Drake Leather Armor -->
+		<production count="1" id="95576" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Drake Leather Boots -->
+		<production count="1" id="95577" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Drake Leather Gloves -->
+		<production count="1" id="95578" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Karmian Tunic -->
+		<production count="1" id="95579" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Karmian Stockings -->
+		<production count="1" id="95580" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Karmian Boots -->
+		<production count="1" id="95581" />
+	</item>
+	<item>
+		<!-- Enchanted C-grade Armor Coupon -->
+		<ingredient count="1" id="95571" />
+		<!-- +0~+5 Armor Pack - Karmian Gloves -->
+		<production count="1" id="95582" />
+	</item>
+</list>

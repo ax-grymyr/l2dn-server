@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="32000" toLevel="1" name="Rice Cake of Fighting Spirit">
+		<!-- For 20 min., acquired XP/ SP +20%. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.bm_rice_cake_i00</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32001" toLevel="1" name="Rice Cake of Fighting Spirit - Event">
+		<!-- For 20 min., acquired XP/ SP +20%. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.bm_rice_cake_i00</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32002" toLevel="1" name="XP Growth Scroll (Exchangeable)">
+		<!-- Acquired XP +30%. Acquired SP +30%. Cooldown: 1 min. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32003" toLevel="1" name="Rich Supplies">
+		<icon>icon.event_high_oriental_park_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49082</itemConsumeId> <!-- Get-Rich-Quick Supply Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="10.0">
+						<item id="735" count="1" /> <!-- Haste Potion -->
+					</item>
+					<item chance="10.0">
+						<item id="736" count="1" /> <!-- Scroll of Escape -->
+					</item>
+					<item chance="10.0">
+						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+					</item>
+					<item chance="10.0">
+						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+					</item>
+					<item chance="10.0">
+						<item id="955" count="1" /> <!-- Scroll: Enchant D-grade Weapon -->
+					</item>
+					<item chance="10.0">
+						<item id="956" count="1" /> <!-- Scroll: Enchant D-grade Armor -->
+					</item>
+					<item chance="10.0">
+						<item id="1375" count="1" /> <!-- Greater Haste Potion -->
+					</item>
+					<item chance="10.0">
+						<item id="6035" count="1" /> <!-- Cast Quickening Potion -->
+					</item>
+					<item chance="10.0">
+						<item id="6036" count="1" /> <!-- Greater Magic Haste Potion -->
+					</item>
+					<item chance="10.0">
+						<item id="49084" count="1" /> <!-- Improved Scroll of Resurrection -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32004" toLevel="1" name="Improved Scroll of Resurrection">
+		<icon>icon.etc_scroll_of_resurrection_i01</icon>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49084</itemConsumeId> <!-- Improved Scroll of Resurrection -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<coolTime>500</coolTime>
+		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
+		<effects>
+			<effect name="Resurrection">
+				<power>50</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32005" toLevel="1" name="Battle Support Chest">
+		<icon>icon.etc_marguene_collection_box_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49085</itemConsumeId> <!-- Battle Support Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="95.0">
+						<item id="49080" count="2" /> <!-- Rice Cake of Fighting Spirit -->
+					</item>
+					<item chance="5.0">
+						<item id="49082" count="1" /> <!-- Get-Rich-Quick Supply Pack -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32006" toLevel="1" name="Commander's Power">
+		<!-- Inflicts 50 damage. Can be used only in PvP. -->
+		<icon>icon.weapon_shining_knife_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1100</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="32007" toLevel="3" name="Scroll of Escape: Entrance to Cruma Tower">
+		<!-- Teleports to Entrance to Cruma Tower -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="32010" toLevel="1" name="Beauty Chest">
+		<icon>icon.etc_box_of_adventure_2_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32011" toLevel="1" name="Buff Scroll Pack">
+		<icon>icon.etc_box_of_adventure_3_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32012" toLevel="1" name="High-Quality Dye Chest">
+		<icon>icon.etc_box_of_adventure_4_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49110</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.3">
+						<item id="4592" count="1" /> <!-- Faded Greater CON Dye <CON +2 DEX -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4591" count="1" /> <!-- Faded Greater CON Dye <CON +2 STR -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4594" count="1" /> <!-- Faded Greater DEX Dye <DEX +2 CON -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4593" count="1" /> <!-- Faded Greater DEX Dye <DEX +2 STR -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4595" count="1" /> <!-- Faded Greater INT Dye <INT +2 MEN -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4596" count="1" /> <!-- Faded Greater INT Dye <INT +2 WIT -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4597" count="1" /> <!-- Faded Greater MEN Dye <MEN +2 INT -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4598" count="1" /> <!-- Faded Greater MEN Dye <MEN +2 WIT -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4589" count="1" /> <!-- Faded Greater STR Dye <STR +2 CON -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4590" count="1" /> <!-- Faded Greater STR Dye <STR +2 DEX -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4599" count="1" /> <!-- Faded Greater WIT Dye <WIT +2 INT -2> -->
+					</item>
+					<item chance="8.3">
+						<item id="4600" count="1" /> <!-- Faded Greater WIT Dye <WIT +2 MEN -2> -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32013" toLevel="1" name="Dye Pack">
+		<icon>icon.etc_box_of_adventure_5_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49111</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.3">
+						<item id="4469" count="1" /> <!-- Faded STR Dye <STR +1 CON -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4470" count="1" /> <!-- Faded STR Dye <STR +1 DEX -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4471" count="1" /> <!-- Faded CON Dye <CON +1 STR -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4472" count="1" /> <!-- Faded CON Dye <CON +1 DEX -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4473" count="1" /> <!-- Faded DEX Dye <DEX +1 STR -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4474" count="1" /> <!-- Faded DEX Dye <DEX +1 CON -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4475" count="1" /> <!-- Faded INT Dye <INT +1 MEN -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4476" count="1" /> <!-- Faded INT Dye <INT +1 WIT -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4477" count="1" /> <!-- Faded MEN Dye <MEN +1 INT -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4478" count="1" /> <!-- Faded MEN Dye <MEN +1 WIT -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4479" count="1" /> <!-- Faded WIT Dye <WIT +1 INT -1> -->
+					</item>
+					<item chance="8.3">
+						<item id="4480" count="1" /> <!-- Faded WIT Dye <WIT +1 MEN -1> -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32014" toLevel="1" name="Staff Pack">
+		<icon>icon.etc_treasure_box_i02</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49112</itemConsumeId> <!-- Staff Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="50.0">
+						<item id="192" count="1" /> <!-- Crystal Staff -->
+					</item>
+					<item chance="50.0">
+						<item id="195" count="1" /> <!-- Cursed Staff -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32015" toLevel="1" name="Fist Weapon Pack">
+		<icon>icon.etc_treasure_box_i03</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49113</itemConsumeId> <!-- Fist Weapon Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="263" count="1" /> <!-- Chakram -->
+					</item>
+					<item chance="25.0">
+						<item id="265" count="1" /> <!-- Fisted Blade -->
+					</item>
+					<item chance="25.0">
+						<item id="266" count="1" /> <!-- Great Pata -->
+					</item>
+					<item chance="25.0">
+						<item id="4233" count="1" /> <!-- Knuckle Duster -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32016" toLevel="1" name="Spear Weapon Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49114</itemConsumeId> <!-- Spear Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="94" count="1" /> <!-- Bec de Corbin -->
+					</item>
+					<item chance="25.0">
+						<item id="95" count="1" /> <!-- Poleaxe -->
+					</item>
+					<item chance="25.0">
+						<item id="298" count="1" /> <!-- Orcish Glaive -->
+					</item>
+					<item chance="25.0">
+						<item id="299" count="1" /> <!-- Orcish Poleaxe -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32017" toLevel="1" name="Blunt Weapon Pack">
+		<icon>icon.etc_treasure_box_i05</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49115</itemConsumeId> <!-- Blunt Weapon Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="162" count="1" /> <!-- War Axe -->
+					</item>
+					<item chance="25.0">
+						<item id="191" count="1" /> <!-- Heavy Doom Hammer -->
+					</item>
+					<item chance="25.0">
+						<item id="2502" count="1" /> <!-- Dwarven War Hammer -->
+					</item>
+					<item chance="25.0">
+						<item id="2503" count="1" /> <!-- Yaksa Mace -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32018" toLevel="1" name="Dagger Pack">
+		<icon>icon.etc_treasure_box_i06</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49116</itemConsumeId> <!-- Dagger Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="226" count="1" /> <!-- Cursed Dagger -->
+					</item>
+					<item chance="25.0">
+						<item id="227" count="1" /> <!-- Stiletto -->
+					</item>
+					<item chance="25.0">
+						<item id="228" count="1" /> <!-- Crystal Dagger -->
+					</item>
+					<item chance="25.0">
+						<item id="233" count="1" /> <!-- Dark Screamer -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32019" toLevel="1" name="One-handed Sword Pack">
+		<icon>icon.etc_treasure_box_i07</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49117</itemConsumeId> <!-- One-Handed Sword Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="72" count="1" /> <!-- Stormbringer -->
+					</item>
+					<item chance="25.0">
+						<item id="74" count="1" /> <!-- Katana -->
+					</item>
+					<item chance="25.0">
+						<item id="76" count="1" /> <!-- Sword of Delusion -->
+					</item>
+					<item chance="25.0">
+						<item id="135" count="1" /> <!-- Samurai Long Sword -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32020" toLevel="1" name="Bow Pack">
+		<icon>icon.etc_treasure_box_i08</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49118</itemConsumeId> <!-- Bow Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="281" count="1" /> <!-- Frozen Bow -->
+					</item>
+					<item chance="25.0">
+						<item id="282" count="1" /> <!-- Elemental Bow -->
+					</item>
+					<item chance="25.0">
+						<item id="283" count="1" /> <!-- Akat Longbow -->
+					</item>
+					<item chance="25.0">
+						<item id="286" count="1" /> <!-- Eminence Bow -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32021" toLevel="1" name="Gift Box">
+		<icon>icon.new_user_box</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49128</itemConsumeId> <!-- Gift Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="20">
+						<item id="49110" count="1" /> <!-- High-Quality Dye Chest -->
+					</item>
+					<item chance="20">
+						<item id="49111" count="1" /> <!-- Dye Pack -->
+					</item>
+					<item chance="20">
+						<item id="49108" count="1" /> <!-- Beauty Chest -->
+					</item>
+					<item chance="20">
+						<item id="49109" count="1" /> <!-- Buff Scroll Pack -->
+					</item>
+					<item chance="20">
+						<item id="49013" count="1" /> <!-- High-grade HP Replenishing Potion -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32022" toLevel="1" name="Venezia Rune - Low-Grade">
+		<!-- When in inventory, acquired XP/ SP while hunting +22%. Required level: 1-40. -->
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>40</maxLevel>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="ExpModify">
+				<amount>22</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>22</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32023" toLevel="1" name="Ring of Macken">
+		<!-- Increases P./ M. Atk. and Max HP. -->
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32024" toLevel="1" name="Earring of Macken">
+		<!-- Increases MP Recovery Rate and Received Healing. -->
+		<icon>icon.ev_11th_rare_acc_earing</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32025" toLevel="1" name="Necklace of Macken">
+		<!-- Increases P./ M. Def. -->
+		<icon>icon.ev_11th_rare_acc_necklace</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32026" toLevel="1" name="Ring of Macken">
+		<!-- Increases P./ M. Atk. and Max HP. -->
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32027" toLevel="1" name="Earring of Macken">
+		<!-- Increases MP Recovery Rate and Received Healing. -->
+		<icon>icon.ev_11th_rare_acc_earing</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32028" toLevel="1" name="Necklace of Macken">
+		<!-- Increases P./ M. Def. -->
+		<icon>icon.ev_11th_rare_acc_necklace</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="32029" toLevel="1" name="Venezia Rune - High-Grade">
+		<!-- When in inventory, acquired XP/ SP while hunting +11%. -->
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>11</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>11</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32030" toLevel="1" name="Dandy's Home Run Ball">
+		<!-- For 1 h., acquired XP/ SP +100%. Cannot be stacked with Fish Stew - The Guild's Gratitude. Changes the appearance of your armor into that of a Lineage II Uniform. Effect remains after death. -->
+		<icon>icon.ev_dinos_baseball</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGE_DINOS</abnormalVisualEffect>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>46254</itemConsumeId> <!-- Dandy's Home Run Ball -->
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>100</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32031" toLevel="1" name="Teleport Stone: Talking Island Village">
+		<!-- Teleports to Talking Island Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29149</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-84200</x>
+				<y>244566</y>
+				<z>-3728</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32032" toLevel="1" name="Scroll of Escape: Elven Village">
+		<!-- Teleports to Elven Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29150</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>46915</x>
+				<y>51441</y>
+				<z>-2976</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32033" toLevel="1" name="Scroll of Escape: Dark Elf Village">
+		<!-- Teleports to Dark Elf Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29151</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>9723</x>
+				<y>15576</y>
+				<z>-4568</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32034" toLevel="1" name="Scroll of Escape: Orc Village">
+		<!-- Teleports to Orc Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29152</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-45208</x>
+				<y>-112502</y>
+				<z>-240</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32035" toLevel="1" name="Scroll of Escape: Dwarven Village">
+		<!-- Teleports to Dwarven Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29153</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>115158</x>
+				<y>-178170</y>
+				<z>-880</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32036" toLevel="1" name="Scroll of Escape: Gludin">
+		<!-- Teleports to Gludin. Cooldown: 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29154</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-80831</x>
+				<y>149808</y>
+				<z>-3040</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32037" toLevel="1" name="Scroll of Escape: Gludio">
+		<!-- Teleports to Gludio. Cooldown: 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29155</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-12728</x>
+				<y>122726</y>
+				<z>-3112</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32038" toLevel="1" name="Scroll of Escape: Dion">
+		<!-- Teleports to Dion. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32039" toLevel="1" name="Scroll of Escape: Floran">
+		<!-- Teleports to Floran. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32040" toLevel="1" name="Scroll of Escape: Giran">
+		<!-- Teleports to Giran. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32041" toLevel="1" name="Scroll of Escape: Oren">
+		<!-- Teleports to Oren. Cooldown: 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32042" toLevel="1" name="Scroll of Escape: Ivory Tower">
+		<!-- Teleports to Ivory Tower. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32043" toLevel="1" name="Scroll of Escape: Hunters' Village">
+		<!-- Teleports to Hunters Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32044" toLevel="1" name="Scroll of Escape: Entrance to Cruma Tower">
+		<!-- Teleports to Entrance to Cruma Tower. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49089</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>17192</x>
+				<y>114178</y>
+				<z>-3434</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32045" toLevel="1" name="Teleport Stone: Entrance to Dragon Valley">
+		<!-- Teleports to Entrance to Dragon Valley. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49090</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>73024</x>
+				<y>118485</y>
+				<z>-3715</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32046" toLevel="1" name="Scroll of Escape: Dragon Valley Bridge">
+		<!-- Teleports to Dragon Valley Bridge. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49091</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>117368</x>
+				<y>113192</y>
+				<z>-3056</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32047" toLevel="1" name="Cube of Sayha - 30 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32048" toLevel="1" name="Cube of Sayha - 90 d.">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32049" toLevel="1" name="Storm Power">
+		<!-- Acquired XP/ SP +50% for 2 h. Cooldown: 2 h. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.power_of_storm</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="32050" toLevel="1" name="Sayha's Treasure Chest">
+		<icon>icon.etc_pi_gift_box_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49434</itemConsumeId> <!-- Sayha's Treasure Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="1">
+						<item id="57" count="50000" /> <!-- Adena -->
+					</item>
+					<item chance="20">
+						<item id="57" count="10000" /> <!-- Adena -->
+					</item>
+					<item chance="40">
+						<item id="57" count="1000" /> <!-- Adena -->
+					</item>
+					<item chance="6.5">
+						<item id="3926" count="1" /> <!-- Scroll: Guidance -->
+					</item>
+					<item chance="6.5">
+						<item id="3927" count="1" /> <!-- Scroll: Death Whisper -->
+					</item>
+					<item chance="6.5">
+						<item id="3928" count="1" /> <!-- Scroll: Focus -->
+					</item>
+					<item chance="6.5">
+						<item id="3930" count="1" /> <!-- Scroll: Haste -->
+					</item>
+					<item chance="6.5">
+						<item id="3932" count="1" /> <!-- Scroll: Empower -->
+					</item>
+					<item chance="6.5">
+						<item id="49435" count="1" /> <!-- Scroll: Berserker Spirit -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32051" toLevel="1" name="Berserker Spirit">
+		<!-- For 20 min., Max HP/ MP -30%, P. Atk. +10%, M. Atk. +20%, Atk. Spd. +8%, Casting Spd. +8%, Speed +8. -->
+		<icon>icon.etc_scroll_white_i00</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49435</itemConsumeId> <!-- Scroll: Berserker Spirit -->
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<irreplacableBuff>true</irreplacableBuff>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="91902" price="0" /> <!-- Éclair Bijou -->
+	<item id="91903" price="0" /> <!-- Lacerator -->
+	<item id="91904" price="0" /> <!-- White Lightning -->
+	<item id="92970" price="0" /> <!-- Éclair Bijou - Sealed	-->
+	<item id="92971" price="0" /> <!-- Lacerator - Sealed -->
+	<item id="92972" price="0" /> <!-- White Lightning - Sealed -->
+</list>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LimitShop.xsd">
+	<product id="300" category="100">
+		<ingredient id="-700" count="8" /> <!-- Honor Coin -->
+		<production id="91641" accountDailyLimit="15" /> <!-- Sayha's Blessing -->
+	</product>
+	<product id="400" category="100">
+		<ingredient id="-700" count="3" /> <!-- Honor Coin -->
+		<production id="91690" accountDailyLimit="200" /> <!-- Special HP Recovery Potion -->
+	</product>
+	<product id="500" category="100">
+		<ingredient id="-700" count="1012" /> <!-- Honor Coin -->
+		<production id="95583" accountDailyLimit="1" /> <!-- Hardin's Notes - Page 1 -->
+	</product>
+	<product id="501" category="100">
+		<ingredient id="-700" count="200" /> <!-- Honor Coin -->
+		<production id="95636" accountDailyLimit="4" /> <!-- Clan Cloak -->
+	</product>
+	<product id="502" category="100">
+		<ingredient id="-700" count="2" /> <!-- Honor Coin -->
+		<production id="95638" accountDailyLimit="10" /> <!-- Scroll: Enchant Clan Equipment -->
+	</product>
+	<product id="600" category="100">
+		<ingredient id="-700" count="3375" /> <!-- Honor Coin -->
+		<production id="95584" accountDailyLimit="1" /> <!-- Hardin's Notes - Page 2 -->
+	</product>
+	<product id="601" category="100">
+		<ingredient id="-700" count="200" /> <!-- Honor Coin -->
+		<production id="95637" accountDailyLimit="4" /> <!-- Clan Circlet -->
+	</product>
+	<product id="700" category="100">
+		<ingredient id="-700" count="5062" /> <!-- Honor Coin -->
+		<production id="95585" accountDailyLimit="1" /> <!-- Hardin's Notes - Page 3 -->
+	</product>
+</list>

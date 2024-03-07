@@ -1,0 +1,18 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="pcKarmaIncrease">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="increase" minOccurs="99" maxOccurs="99">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute type="xs:integer" name="lvl" use="required"/>
+								<xs:attribute type="xs:double" name="val" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

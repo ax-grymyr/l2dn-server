@@ -1,0 +1,1855 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_01" minZ="-388" maxZ="-88">
+				<node x="-51344" y="-113300" />
+				<node x="-47452" y="-113280" />
+				<node x="-47452" y="-109232" />
+				<node x="-49824" y="-107692" />
+				<node x="-52148" y="-109344" />
+			</territory>
+		</territories>
+		<npc id="20531" count="16" respawnTime="3sec" /> <!-- Young Prairie Keltir -->
+		<npc id="20535" count="16" respawnTime="3sec" /> <!-- Prairie Keltir -->
+		<npc id="20538" count="22" respawnTime="3sec" /> <!-- Elder Prairie Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_02" minZ="-844" maxZ="-144">
+				<node x="-48060" y="-108820" />
+				<node x="-45772" y="-109180" />
+				<node x="-45080" y="-107524" />
+				<node x="-46448" y="-106120" />
+				<node x="-49292" y="-108036" />
+			</territory>
+		</territories>
+		<npc id="20538" count="8" respawnTime="3sec" /> <!-- Elder Prairie Keltir -->
+		<npc id="20475" count="10" respawnTime="3sec" /> <!-- Kasha Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_03" minZ="-356" maxZ="-56">
+				<node x="-49360" y="-117304" />
+				<node x="-47552" y="-117340" />
+				<node x="-47548" y="-113956" />
+				<node x="-51276" y="-113952" />
+				<node x="-51096" y="-116048" />
+			</territory>
+		</territories>
+		<npc id="20531" count="14" respawnTime="3sec" /> <!-- Young Prairie Keltir -->
+		<npc id="20535" count="14" respawnTime="3sec" /> <!-- Prairie Keltir -->
+		<npc id="20538" count="16" respawnTime="3sec" /> <!-- Elder Prairie Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_04" minZ="-340" maxZ="-40">
+				<node x="-44912" y="-120980" />
+				<node x="-44152" y="-119864" />
+				<node x="-45008" y="-117840" />
+				<node x="-47560" y="-117400" />
+				<node x="-49224" y="-117336" />
+				<node x="-46804" y="-120552" />
+			</territory>
+		</territories>
+		<npc id="20538" count="12" respawnTime="3sec" /> <!-- Elder Prairie Keltir -->
+		<npc id="20475" count="15" respawnTime="3sec" /> <!-- Kasha Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_05" minZ="-788" maxZ="-38">
+				<node x="-44724" y="-120768" />
+				<node x="-41572" y="-123288" />
+				<node x="-38420" y="-124536" />
+				<node x="-38364" y="-124356" />
+				<node x="-44104" y="-119924" />
+			</territory>
+		</territories>
+		<npc id="20475" count="10" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_06" minZ="-2932" maxZ="-2532">
+				<node x="-41128" y="-104868" />
+				<node x="-39720" y="-104368" />
+				<node x="-39756" y="-100792" />
+				<node x="-43728" y="-101936" />
+				<node x="-43296" y="-103496" />
+			</territory>
+		</territories>
+		<npc id="20311" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+		<npc id="20477" count="10" respawnTime="3sec" /> <!-- Kasha Forest Wolf -->
+		<npc id="20312" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_07" minZ="-2860" maxZ="-2460">
+				<node x="-40628" y="-105884" />
+				<node x="-37900" y="-105876" />
+				<node x="-38308" y="-105216" />
+				<node x="-39752" y="-104468" />
+				<node x="-41100" y="-104904" />
+			</territory>
+		</territories>
+		<npc id="20475" count="3" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="8" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_08" minZ="-3724" maxZ="-2624">
+				<node x="-38992" y="-103980" />
+				<node x="-38064" y="-104896" />
+				<node x="-37232" y="-103972" />
+				<node x="-37692" y="-101816" />
+				<node x="-38704" y="-101676" />
+				<node x="-39144" y="-102924" />
+			</territory>
+		</territories>
+		<npc id="20312" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_09" minZ="-3108" maxZ="-2508">
+				<node x="-37192" y="-103796" />
+				<node x="-35076" y="-102292" />
+				<node x="-35088" y="-101536" />
+				<node x="-35972" y="-101532" />
+				<node x="-36996" y="-101976" />
+			</territory>
+		</territories>
+		<npc id="20312" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_10" minZ="-1876" maxZ="-1426">
+				<node x="-38044" y="-122996" />
+				<node x="-35900" y="-123416" />
+				<node x="-36740" y="-119868" />
+				<node x="-38972" y="-119444" />
+				<node x="-40452" y="-120852" />
+				<node x="-39252" y="-122448" />
+			</territory>
+		</territories>
+		<npc id="20475" count="10" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="15" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+		<npc id="20311" count="12" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_11" minZ="-2024" maxZ="-1424">
+				<node x="-40516" y="-120840" />
+				<node x="-39020" y="-119344" />
+				<node x="-38852" y="-116552" />
+				<node x="-40828" y="-114648" />
+				<node x="-42840" y="-118556" />
+			</territory>
+		</territories>
+		<npc id="20475" count="10" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="15" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+		<npc id="20311" count="12" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_12" minZ="-1988" maxZ="-1588">
+				<node x="-38972" y="-119336" />
+				<node x="-36768" y="-119796" />
+				<node x="-35688" y="-118092" />
+				<node x="-36288" y="-116032" />
+				<node x="-37724" y="-115116" />
+				<node x="-38816" y="-116428" />
+			</territory>
+		</territories>
+		<npc id="20319" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+		<npc id="20311" count="12" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+		<npc id="20477" count="15" respawnTime="3sec" /> <!-- Kasha Forest Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_13" minZ="-2208" maxZ="-1608">
+				<node x="-40296" y="-113976" />
+				<node x="-35624" y="-114336" />
+				<node x="-34580" y="-112472" />
+				<node x="-35296" y="-110504" />
+				<node x="-36268" y="-109328" />
+				<node x="-41388" y="-112776" />
+			</territory>
+		</territories>
+		<npc id="20319" count="18" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+		<npc id="20311" count="14" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+		<npc id="20477" count="18" respawnTime="3sec" /> <!-- Kasha Forest Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_14" minZ="-2140" maxZ="-1540">
+				<node x="-41360" y="-112740" />
+				<node x="-36324" y="-109260" />
+				<node x="-36520" y="-108044" />
+				<node x="-39848" y="-107660" />
+				<node x="-40924" y="-108052" />
+				<node x="-42028" y="-111392" />
+			</territory>
+		</territories>
+		<npc id="20475" count="18" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="18" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+		<npc id="20311" count="14" respawnTime="3sec" /> <!-- Rakeclaw Imp -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_15" minZ="-1884" maxZ="-1384">
+				<node x="-43340" y="-109932" />
+				<node x="-42080" y="-111408" />
+				<node x="-40940" y="-108212" />
+				<node x="-42904" y="-107148" />
+				<node x="-43696" y="-108380" />
+			</territory>
+		</territories>
+		<npc id="20475" count="10" respawnTime="3sec" /> <!-- Kasha Wolf -->
+		<npc id="20319" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_16" minZ="-284" maxZ="-84">
+				<node x="-50396" y="-115956" />
+				<node x="-48316" y="-116952" />
+				<node x="-48076" y="-115460" />
+				<node x="-49636" y="-115048" />
+			</territory>
+		</territories>
+		<npc id="20535" count="14" respawnTime="3sec" /> <!-- Prairie Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_17" minZ="-360" maxZ="-160">
+				<node x="-50444" y="-112240" />
+				<node x="-48956" y="-112352" />
+				<node x="-48032" y="-111572" />
+				<node x="-48080" y="-110392" />
+				<node x="-48980" y="-109384" />
+				<node x="-50064" y="-109380" />
+				<node x="-50796" y="-109948" />
+				<node x="-50996" y="-111008" />
+			</territory>
+		</territories>
+		<npc id="20535" count="14" respawnTime="3sec" /> <!-- Prairie Keltir -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_18" minZ="-2900" maxZ="-2600">
+				<node x="-42428" y="-102760" />
+				<node x="-41088" y="-103868" />
+				<node x="-40408" y="-102604" />
+				<node x="-40740" y="-101636" />
+				<node x="-42100" y="-101900" />
+			</territory>
+		</territories>
+		<npc id="20312" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_19" minZ="-1852" maxZ="-1552">
+				<node x="-39400" y="-121576" />
+				<node x="-38464" y="-121320" />
+				<node x="-38208" y="-120188" />
+				<node x="-39444" y="-120004" />
+				<node x="-39936" y="-120524" />
+				<node x="-39988" y="-121360" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_20" minZ="-1996" maxZ="-1696">
+				<node x="-41724" y="-117844" />
+				<node x="-40844" y="-119112" />
+				<node x="-39680" y="-118880" />
+				<node x="-39612" y="-116988" />
+				<node x="-40944" y="-116636" />
+			</territory>
+		</territories>
+		<npc id="20312" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_21" minZ="-1896" maxZ="-1496">
+				<node x="-38344" y="-118740" />
+				<node x="-37044" y="-119312" />
+				<node x="-36420" y="-118028" />
+				<node x="-37412" y="-116632" />
+				<node x="-38244" y="-117544" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_23" minZ="-1968" maxZ="-1668">
+				<node x="-40328" y="-110508" />
+				<node x="-38920" y="-109932" />
+				<node x="-38592" y="-109020" />
+				<node x="-39324" y="-108320" />
+				<node x="-40388" y="-108492" />
+				<node x="-40908" y="-109056" />
+				<node x="-40964" y="-109680" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn07_18_14_22" minZ="-2080" maxZ="-1680">
+				<node x="-38328" y="-113608" />
+				<node x="-36908" y="-113368" />
+				<node x="-36168" y="-112104" />
+				<node x="-37644" y="-111340" />
+				<node x="-39344" y="-111476" />
+				<node x="-40084" y="-112332" />
+				<node x="-39684" y="-113380" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_01" minZ="-1024" maxZ="-524">
+				<node x="-23344" y="-133108" />
+				<node x="-21836" y="-133164" />
+				<node x="-21484" y="-132108" />
+				<node x="-21560" y="-131320" />
+				<node x="-24184" y="-131308" />
+				<node x="-23920" y="-132484" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_02" minZ="-2244" maxZ="-1744">
+				<node x="-17660" y="-134340" />
+				<node x="-17092" y="-133428" />
+				<node x="-18256" y="-131368" />
+				<node x="-19996" y="-131356" />
+				<node x="-19048" y="-134712" />
+				<node x="-18252" y="-134752" />
+			</territory>
+		</territories>
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="10" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="6" respawnTime="3sec" /> <!-- Grizzly Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_03" minZ="-2064" maxZ="-1164">
+				<node x="-16624" y="-133320" />
+				<node x="-15320" y="-133048" />
+				<node x="-15348" y="-131392" />
+				<node x="-17700" y="-131348" />
+			</territory>
+		</territories>
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="6" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="6" respawnTime="3sec" /> <!-- Grizzly Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_04" minZ="-1708" maxZ="-608">
+				<node x="-20476" y="-137852" />
+				<node x="-18760" y="-138800" />
+				<node x="-17552" y="-137224" />
+				<node x="-17912" y="-136152" />
+				<node x="-20508" y="-136264" />
+			</territory>
+		</territories>
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="6" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_05" minZ="-1572" maxZ="-672">
+				<node x="-17724" y="-136636" />
+				<node x="-14992" y="-137828" />
+				<node x="-14564" y="-136640" />
+				<node x="-14844" y="-135484" />
+				<node x="-15728" y="-134864" />
+				<node x="-17512" y="-136084" />
+			</territory>
+		</territories>
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="6" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_06" minZ="-3024" maxZ="-2424">
+				<node x="-13352" y="-133508" />
+				<node x="-10300" y="-133132" />
+				<node x="-10384" y="-131392" />
+				<node x="-14244" y="-131340" />
+			</territory>
+		</territories>
+		<npc id="20316" count="6" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="10" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="6" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20365" count="4" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="6" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="4" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_07" minZ="-2772" maxZ="-1272">
+				<node x="-10968" y="-140160" />
+				<node x="-8972" y="-140308" />
+				<node x="-8524" y="-139016" />
+				<node x="-8856" y="-137040" />
+				<node x="-10740" y="-135176" />
+				<node x="-12800" y="-136768" />
+				<node x="-12524" y="-139136" />
+			</territory>
+		</territories>
+		<npc id="20363" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="7" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="7" respawnTime="3sec" /> <!-- Blackwing Bat -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_08" minZ="-3180" maxZ="-2380">
+				<node x="-4888" y="-136476" />
+				<node x="-396" y="-135180" />
+				<node x="-412" y="-131400" />
+				<node x="-8060" y="-131408" />
+				<node x="-7820" y="-133976" />
+				<node x="-6696" y="-135660" />
+				<node x="-5876" y="-136380" />
+			</territory>
+		</territories>
+		<npc id="20320" count="14" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20333" count="14" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="18" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_09" minZ="-2944" maxZ="-2544">
+				<node x="-5636" y="-135572" />
+				<node x="-4964" y="-133836" />
+				<node x="-5448" y="-132536" />
+				<node x="-6936" y="-133612" />
+			</territory>
+		</territories>
+		<npc id="20364" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1913_10" minZ="-2960" maxZ="-2460">
+				<node x="-4340" y="-135280" />
+				<node x="-1916" y="-135016" />
+				<node x="-2080" y="-133748" />
+				<node x="-3684" y="-133512" />
+			</territory>
+		</territories>
+		<npc id="20364" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_01" minZ="-1392" maxZ="-992">
+				<node x="-31428" y="-127472" />
+				<node x="-29104" y="-128572" />
+				<node x="-27104" y="-128344" />
+				<node x="-31364" y="-125524" />
+			</territory>
+		</territories>
+		<npc id="20312" count="3" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+		<npc id="20365" count="4" respawnTime="3sec" /> <!-- Mountain Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_02" minZ="-1180" maxZ="-480">
+				<node x="-26512" y="-130916" />
+				<node x="-21344" y="-130920" />
+				<node x="-21520" y="-130424" />
+				<node x="-24656" y="-128684" />
+				<node x="-27008" y="-128400" />
+				<node x="-27796" y="-128556" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_03" minZ="-2592" maxZ="-1842">
+				<node x="-29420" y="-125668" />
+				<node x="-27504" y="-126336" />
+				<node x="-25932" y="-123680" />
+				<node x="-29356" y="-122896" />
+				<node x="-31624" y="-124464" />
+			</territory>
+		</territories>
+		<npc id="20312" count="15" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+		<npc id="20365" count="12" respawnTime="3sec" /> <!-- Mountain Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_04" minZ="-2248" maxZ="-1448">
+				<node x="-29212" y="-122716" />
+				<node x="-25836" y="-123004" />
+				<node x="-23084" y="-120028" />
+				<node x="-23232" y="-119048" />
+				<node x="-24896" y="-117084" />
+				<node x="-28208" y="-116392" />
+				<node x="-29352" y="-119996" />
+			</territory>
+		</territories>
+		<npc id="20365" count="12" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="12" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="12" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_05" minZ="-2532" maxZ="-1682">
+				<node x="-28152" y="-116252" />
+				<node x="-24752" y="-116856" />
+				<node x="-24384" y="-112600" />
+				<node x="-26772" y="-110272" />
+			</territory>
+		</territories>
+		<npc id="20365" count="10" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="10" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_07" minZ="-3216" maxZ="-2966">
+				<node x="-29712" y="-103956" />
+				<node x="-28700" y="-104024" />
+				<node x="-27196" y="-101524" />
+				<node x="-27948" y="-100984" />
+				<node x="-28900" y="-101036" />
+				<node x="-29928" y="-102116" />
+				<node x="-30180" y="-102992" />
+			</territory>
+		</territories>
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="6" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_08" minZ="-3048" maxZ="-2348">
+				<node x="-32664" y="-102604" />
+				<node x="-31104" y="-103592" />
+				<node x="-30176" y="-101164" />
+				<node x="-31392" y="-100808" />
+				<node x="-32636" y="-101460" />
+			</territory>
+		</territories>
+		<npc id="20312" count="8" respawnTime="3sec" /> <!-- Rakeclaw Imp Hunter -->
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_09" minZ="-2796" maxZ="-2196">
+				<node x="-27724" y="-100308" />
+				<node x="-26264" y="-101608" />
+				<node x="-23440" y="-98604" />
+				<node x="-27644" y="-98624" />
+			</territory>
+		</territories>
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="6" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_10" minZ="-2900" maxZ="-2500">
+				<node x="-29760" y="-100572" />
+				<node x="-27776" y="-100316" />
+				<node x="-27756" y="-98632" />
+				<node x="-29204" y="-98616" />
+			</territory>
+		</territories>
+		<npc id="20365" count="6" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="4" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_11" minZ="-3064" maxZ="-2064">
+				<node x="-27084" y="-127172" />
+				<node x="-22316" y="-127464" />
+				<node x="-20188" y="-124508" />
+				<node x="-21536" y="-120900" />
+				<node x="-23536" y="-121256" />
+				<node x="-25572" y="-123824" />
+			</territory>
+		</territories>
+		<npc id="20365" count="14" respawnTime="3sec" /> <!-- Mountain Fungus -->
+		<npc id="20363" count="14" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="12" respawnTime="3sec" /> <!-- Eye of Seer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_12" minZ="-2412" maxZ="-1762">
+				<node x="-20188" y="-130892" />
+				<node x="-15620" y="-130892" />
+				<node x="-18668" y="-128052" />
+				<node x="-20308" y="-127648" />
+			</territory>
+		</territories>
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="10" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="6" respawnTime="3sec" /> <!-- Grizzly Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_13" minZ="-3052" maxZ="-2502">
+				<node x="-14692" y="-130916" />
+				<node x="-10292" y="-130892" />
+				<node x="-10464" y="-129804" />
+				<node x="-17500" y="-127804" />
+			</territory>
+		</territories>
+		<npc id="20316" count="10" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="10" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_14" minZ="-2232" maxZ="-1632">
+				<node x="-18640" y="-102200" />
+				<node x="-16708" y="-101868" />
+				<node x="-16580" y="-100684" />
+				<node x="-18308" y="-99944" />
+				<node x="-19620" y="-99944" />
+				<node x="-19252" y="-101548" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="10" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20313" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_15" minZ="-3076" maxZ="-2676">
+				<node x="-22556" y="-118584" />
+				<node x="-21560" y="-118612" />
+				<node x="-20328" y="-117280" />
+				<node x="-19784" y="-114864" />
+				<node x="-20428" y="-114016" />
+				<node x="-22116" y="-114004" />
+				<node x="-23496" y="-115352" />
+				<node x="-23820" y="-117020" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+		<npc id="20426" count="10" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="10" respawnTime="3sec" /> <!-- Blackwing Bat -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_16" minZ="-2340" maxZ="-1040">
+				<node x="-21376" y="-108112" />
+				<node x="-18580" y="-105412" />
+				<node x="-21480" y="-102904" />
+				<node x="-24000" y="-103524" />
+			</territory>
+		</territories>
+		<npc id="20313" count="10" respawnTime="3sec" /> <!-- Rakeclaw Imp Leader -->
+		<npc id="20143" count="10" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_17" minZ="-1704" maxZ="-404">
+				<node x="-19564" y="-104300" />
+				<node x="-15932" y="-105040" />
+				<node x="-13876" y="-103252" />
+				<node x="-15856" y="-102564" />
+			</territory>
+		</territories>
+		<npc id="20320" count="6" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="8" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_18" minZ="-2884" maxZ="-2084">
+				<node x="-5300" y="-95084" />
+				<node x="-4692" y="-94332" />
+				<node x="-4648" y="-92180" />
+				<node x="-8324" y="-94424" />
+				<node x="-6128" y="-95288" />
+			</territory>
+		</territories>
+		<npc id="20316" count="18" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="18" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="18" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_19" minZ="-2552" maxZ="-1852">
+				<node x="-15088" y="-117452" />
+				<node x="-12724" y="-117536" />
+				<node x="-10944" y="-116928" />
+				<node x="-10812" y="-115636" />
+				<node x="-13088" y="-113756" />
+				<node x="-14780" y="-115340" />
+			</territory>
+		</territories>
+		<npc id="20320" count="6" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20333" count="10" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_20" minZ="-2652" maxZ="-1952">
+				<node x="-19896" y="-118192" />
+				<node x="-15896" y="-119276" />
+				<node x="-15200" y="-117424" />
+				<node x="-14936" y="-115340" />
+				<node x="-19392" y="-115764" />
+			</territory>
+		</territories>
+		<npc id="20320" count="10" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20333" count="10" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_21" minZ="-2552" maxZ="-1952">
+				<node x="-19460" y="-123984" />
+				<node x="-13832" y="-123220" />
+				<node x="-15808" y="-119432" />
+				<node x="-20592" y="-118752" />
+				<node x="-20776" y="-120536" />
+			</territory>
+		</territories>
+		<npc id="20320" count="14" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+		<npc id="20333" count="14" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="18" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_22" minZ="-2492" maxZ="-1492">
+				<node x="-17044" y="-126540" />
+				<node x="-13328" y="-127964" />
+				<node x="-12732" y="-126488" />
+				<node x="-14080" y="-123448" />
+				<node x="-18552" y="-124076" />
+			</territory>
+		</territories>
+		<npc id="20316" count="12" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="12" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="12" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_30" minZ="-2252" maxZ="-1752">
+				<node x="-24440" y="-121172" />
+				<node x="-23420" y="-120048" />
+				<node x="-24592" y="-118656" />
+				<node x="-26444" y="-118628" />
+				<node x="-26280" y="-120676" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_31" minZ="-3036" maxZ="-2236">
+				<node x="-23980" y="-125872" />
+				<node x="-22244" y="-125880" />
+				<node x="-21332" y="-124492" />
+				<node x="-21928" y="-122688" />
+				<node x="-24208" y="-124208" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_32" minZ="-3080" maxZ="-2680">
+				<node x="-21876" y="-117392" />
+				<node x="-21084" y="-117284" />
+				<node x="-20656" y="-116660" />
+				<node x="-20500" y="-115928" />
+				<node x="-20620" y="-115300" />
+				<node x="-21484" y="-114868" />
+				<node x="-22816" y="-115608" />
+				<node x="-22996" y="-116640" />
+				<node x="-22608" y="-117092" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_33" minZ="-2100" maxZ="-1300">
+				<node x="-21240" y="-106496" />
+				<node x="-20200" y="-105428" />
+				<node x="-20808" y="-104204" />
+				<node x="-22132" y="-103864" />
+				<node x="-22412" y="-105196" />
+			</territory>
+		</territories>
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_34" minZ="-2436" maxZ="-1836">
+				<node x="-16164" y="-111300" />
+				<node x="-14532" y="-111032" />
+				<node x="-14100" y="-109488" />
+				<node x="-16052" y="-109064" />
+				<node x="-16980" y="-110004" />
+				<node x="-16996" y="-110868" />
+			</territory>
+		</territories>
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_35" minZ="-2352" maxZ="-1852">
+				<node x="-19200" y="-109516" />
+				<node x="-17364" y="-108516" />
+				<node x="-18556" y="-106612" />
+				<node x="-20896" y="-108308" />
+			</territory>
+		</territories>
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1914_36" minZ="-2412" maxZ="-1912">
+				<node x="-17660" y="-122644" />
+				<node x="-15884" y="-122448" />
+				<node x="-16568" y="-119984" />
+				<node x="-18584" y="-119224" />
+				<node x="-19144" y="-120424" />
+				<node x="-19108" y="-121664" />
+			</territory>
+		</territories>
+		<npc id="20363" count="10" respawnTime="3sec" /> <!-- Maraku Werewolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_01" minZ="-2892" maxZ="-2292">
+				<node x="-28592" y="-98156" />
+				<node x="-23260" y="-98192" />
+				<node x="-22188" y="-97148" />
+				<node x="-22520" y="-96456" />
+				<node x="-28128" y="-96476" />
+			</territory>
+		</territories>
+		<npc id="20426" count="6" respawnTime="3sec" /> <!-- Eye of Seer -->
+		<npc id="20316" count="6" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="6" respawnTime="3sec" /> <!-- Grizzly Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_02" minZ="-2952" maxZ="-2552">
+				<node x="-28044" y="-96412" />
+				<node x="-26376" y="-96452" />
+				<node x="-26464" y="-91764" />
+				<node x="-28108" y="-92592" />
+			</territory>
+		</territories>
+		<npc id="20316" count="6" respawnTime="3sec" /> <!-- Blackwing Bat -->
+		<npc id="20143" count="6" respawnTime="3sec" /> <!-- Grizzly Bear -->
+		<npc id="20320" count="6" respawnTime="3sec" /> <!-- Goblin Tomb Raider Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_03" minZ="-3780" maxZ="-2580">
+				<node x="-27744" y="-91368" />
+				<node x="-26312" y="-91044" />
+				<node x="-23308" y="-89144" />
+				<node x="-24916" y="-86908" />
+				<node x="-26908" y="-86080" />
+				<node x="-28412" y="-88592" />
+			</territory>
+		</territories>
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_04" minZ="-3728" maxZ="-3128">
+				<node x="-23200" y="-95652" />
+				<node x="-21400" y="-94228" />
+				<node x="-21160" y="-92232" />
+				<node x="-22808" y="-90264" />
+				<node x="-25416" y="-91264" />
+				<node x="-25464" y="-93784" />
+				<node x="-24652" y="-95452" />
+			</territory>
+		</territories>
+		<npc id="20333" count="12" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="15" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_07" minZ="-3480" maxZ="-2480">
+				<node x="-19812" y="-91920" />
+				<node x="-18848" y="-90880" />
+				<node x="-19752" y="-89768" />
+				<node x="-22456" y="-87808" />
+				<node x="-24448" y="-87856" />
+			</territory>
+		</territories>
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="13" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_1915_21" minZ="-3740" maxZ="-3440">
+				<node x="-24648" y="-93424" />
+				<node x="-23716" y="-93460" />
+				<node x="-23044" y="-92768" />
+				<node x="-23816" y="-91808" />
+				<node x="-24740" y="-92136" />
+				<node x="-24820" y="-92908" />
+			</territory>
+		</territories>
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_22" minZ="-3644" maxZ="-2944">
+				<node x="-27240" y="-89300" />
+				<node x="-25192" y="-89064" />
+				<node x="-25376" y="-87428" />
+				<node x="-26772" y="-87192" />
+			</territory>
+		</territories>
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_01" minZ="-3448" maxZ="-2248">
+				<node x="252" y="-133644" />
+				<node x="8360" y="-132800" />
+				<node x="9432" y="-131352" />
+				<node x="176" y="-131360" />
+			</territory>
+		</territories>
+		<npc id="20333" count="10" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="13" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_02" minZ="-1272" maxZ="-372">
+				<node x="7716" y="-138436" />
+				<node x="10452" y="-136140" />
+				<node x="8764" y="-134760" />
+				<node x="5340" y="-135256" />
+				<node x="6256" y="-137512" />
+			</territory>
+		</territories>
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="8" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_03" minZ="-1928" maxZ="-1078">
+				<node x="10992" y="-135132" />
+				<node x="12372" y="-135076" />
+				<node x="14204" y="-131388" />
+				<node x="10796" y="-131464" />
+				<node x="9276" y="-134068" />
+			</territory>
+		</territories>
+		<npc id="20428" count="8" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="8" respawnTime="3sec" /> <!-- Kasha Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_04" minZ="-1892" maxZ="-692">
+				<node x="14640" y="-138080" />
+				<node x="15816" y="-138192" />
+				<node x="18508" y="-135324" />
+				<node x="16076" y="-134756" />
+				<node x="14788" y="-135196" />
+				<node x="12892" y="-137140" />
+			</territory>
+		</territories>
+		<npc id="20364" count="8" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20479" count="6" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_05" minZ="-1888" maxZ="-1088">
+				<node x="19796" y="-132792" />
+				<node x="22504" y="-132144" />
+				<node x="22440" y="-131416" />
+				<node x="18620" y="-131452" />
+				<node x="18432" y="-132368" />
+			</territory>
+		</territories>
+		<npc id="20479" count="6" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="8" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2013_06" minZ="-1908" maxZ="-1508">
+				<node x="10096" y="-141852" />
+				<node x="10896" y="-142592" />
+				<node x="13404" y="-142056" />
+				<node x="15244" y="-140060" />
+				<node x="12020" y="-137648" />
+				<node x="10112" y="-139972" />
+			</territory>
+		</territories>
+		<npc id="20474" count="13" respawnTime="3sec" /> <!-- Kasha Spider -->
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="25" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_01" minZ="-3388" maxZ="-2388">
+				<node x="396" y="-127640" />
+				<node x="3136" y="-126500" />
+				<node x="3464" y="-120532" />
+				<node x="1040" y="-119436" />
+				<node x="364" y="-119688" />
+			</territory>
+		</territories>
+		<npc id="20474" count="13" respawnTime="3sec" /> <!-- Kasha Spider -->
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_02" minZ="-3336" maxZ="-2086">
+				<node x="3260" y="-127148" />
+				<node x="6500" y="-128716" />
+				<node x="9140" y="-125308" />
+				<node x="3532" y="-122676" />
+			</territory>
+		</territories>
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="15" respawnTime="3sec" /> <!-- Kasha Spider -->
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_03" minZ="-2820" maxZ="-1420">
+				<node x="3768" y="-122744" />
+				<node x="9164" y="-125284" />
+				<node x="11372" y="-123208" />
+				<node x="9132" y="-121264" />
+				<node x="5784" y="-119992" />
+				<node x="3812" y="-121060" />
+			</territory>
+		</territories>
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="14" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="15" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_04" minZ="-3136" maxZ="-1886">
+				<node x="6476" y="-130768" />
+				<node x="10388" y="-130972" />
+				<node x="9324" y="-125580" />
+				<node x="6416" y="-128988" />
+			</territory>
+		</territories>
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="13" respawnTime="3sec" /> <!-- Kasha Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2015_05" minZ="-2212" maxZ="-962">
+				<node x="10512" y="-130884" />
+				<node x="14492" y="-130944" />
+				<node x="15164" y="-129820" />
+				<node x="14308" y="-126832" />
+				<node x="9644" y="-126112" />
+			</territory>
+		</territories>
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="15" respawnTime="3sec" /> <!-- Kasha Spider -->
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2015_06" minZ="-2168" maxZ="-1068">
+				<node x="9684" y="-125988" />
+				<node x="14280" y="-126724" />
+				<node x="15332" y="-125616" />
+				<node x="15048" y="-124416" />
+				<node x="11956" y="-122892" />
+			</territory>
+		</territories>
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="13" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2015_07" minZ="-3528" maxZ="-2828">
+				<node x="2180" y="-130896" />
+				<node x="6468" y="-130892" />
+				<node x="6424" y="-128680" />
+				<node x="3076" y="-127080" />
+			</territory>
+		</territories>
+		<npc id="20428" count="13" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="13" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="13" respawnTime="3sec" /> <!-- Kasha Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_08" minZ="-1832" maxZ="-1432">
+				<node x="18568" y="-130976" />
+				<node x="22048" y="-130984" />
+				<node x="22664" y="-129468" />
+				<node x="21004" y="-128996" />
+				<node x="19348" y="-129676" />
+			</territory>
+		</territories>
+		<npc id="20479" count="6" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="8" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_10" minZ="-956" maxZ="-406">
+				<node x="25712" y="-128236" />
+				<node x="28256" y="-126992" />
+				<node x="29276" y="-124396" />
+				<node x="24072" y="-121376" />
+				<node x="22096" y="-123184" />
+				<node x="23316" y="-126552" />
+			</territory>
+		</territories>
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="12" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="15" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn08_2014_11" minZ="-972" maxZ="-372">
+				<node x="19028" y="-120460" />
+				<node x="22100" y="-122932" />
+				<node x="24024" y="-121356" />
+				<node x="21668" y="-120008" />
+			</territory>
+		</territories>
+		<npc id="20479" count="6" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="6" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="8" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_22" minZ="-2920" maxZ="-2370">
+				<node x="6044" y="-126916" />
+				<node x="7228" y="-125940" />
+				<node x="6492" y="-124424" />
+				<node x="4404" y="-124716" />
+			</territory>
+		</territories>
+		<npc id="20478" count="8" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_23" minZ="-1996" maxZ="-1146">
+				<node x="11340" y="-130252" />
+				<node x="13368" y="-130292" />
+				<node x="12416" y="-127672" />
+				<node x="10532" y="-127992" />
+			</territory>
+		</territories>
+		<npc id="20478" count="8" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_27" minZ="-892" maxZ="-592">
+				<node x="24384" y="-124680" />
+				<node x="25044" y="-126792" />
+				<node x="26576" y="-126544" />
+				<node x="27584" y="-125232" />
+				<node x="26704" y="-123556" />
+				<node x="24848" y="-122724" />
+			</territory>
+		</territories>
+		<npc id="20479" count="6" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="4" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="15" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_23" minZ="-3020" maxZ="-2020">
+				<node x="-4284" y="-104428" />
+				<node x="-268" y="-104080" />
+				<node x="-216" y="-98600" />
+				<node x="-4096" y="-98680" />
+				<node x="-4996" y="-101508" />
+			</territory>
+		</territories>
+		<npc id="21119" count="12" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="12" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="12" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_24" minZ="-2820" maxZ="-2320">
+				<node x="-4104" y="-111884" />
+				<node x="-292" y="-112836" />
+				<node x="-344" y="-104192" />
+				<node x="-4112" y="-104484" />
+				<node x="-4744" y="-109744" />
+			</territory>
+		</territories>
+		<npc id="21119" count="16" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="16" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="16" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_25" minZ="-3628" maxZ="-3228">
+				<node x="-4652" y="-114732" />
+				<node x="-264" y="-115416" />
+				<node x="-328" y="-114576" />
+				<node x="-2512" y="-113624" />
+			</territory>
+		</territories>
+		<npc id="21257" count="4" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="4" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_26" minZ="-2976" maxZ="-2276">
+				<node x="-2868" y="-118668" />
+				<node x="-324" y="-118600" />
+				<node x="-296" y="-117164" />
+				<node x="-4216" y="-117052" />
+			</territory>
+		</territories>
+		<npc id="21257" count="4" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="4" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_27" minZ="-3052" maxZ="-2152">
+				<node x="-4644" y="-123488" />
+				<node x="-388" y="-124068" />
+				<node x="-440" y="-119488" />
+				<node x="-3824" y="-119084" />
+			</territory>
+		</territories>
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="13" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_28" minZ="-3372" maxZ="-2472">
+				<node x="-3432" y="-129244" />
+				<node x="-416" y="-127604" />
+				<node x="-396" y="-124124" />
+				<node x="-4656" y="-123496" />
+				<node x="-5608" y="-124820" />
+				<node x="-5400" y="-127416" />
+			</territory>
+		</territories>
+		<npc id="20364" count="15" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+		<npc id="20474" count="15" respawnTime="3sec" /> <!-- Kasha Spider -->
+		<npc id="20479" count="12" respawnTime="3sec" /> <!-- Kasha Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1914_29" minZ="-3216" maxZ="-2616">
+				<node x="-7220" y="-130924" />
+				<node x="-4208" y="-130884" />
+				<node x="-3544" y="-129424" />
+				<node x="-5396" y="-127676" />
+			</territory>
+		</territories>
+		<npc id="20333" count="6" respawnTime="3sec" /> <!-- Greystone Golem -->
+		<npc id="20428" count="5" respawnTime="3sec" /> <!-- Evil Eye Patrol -->
+		<npc id="20364" count="5" respawnTime="3sec" /> <!-- Maraku Werewolf Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_05" minZ="-3620" maxZ="-2820">
+				<node x="-26880" y="-82464" />
+				<node x="-21732" y="-82524" />
+				<node x="-22480" y="-80836" />
+				<node x="-24708" y="-79208" />
+			</territory>
+		</territories>
+		<npc id="21257" count="6" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="4" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_06" minZ="-3008" maxZ="-2308">
+				<node x="-24604" y="-79092" />
+				<node x="-22068" y="-80344" />
+				<node x="-20800" y="-80196" />
+				<node x="-20268" y="-78300" />
+				<node x="-22692" y="-77432" />
+			</territory>
+		</territories>
+		<npc id="21257" count="6" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="4" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_08" minZ="-2820" maxZ="-1920">
+				<node x="-21924" y="-77512" />
+				<node x="-20240" y="-78096" />
+				<node x="-16920" y="-74336" />
+				<node x="-19092" y="-72952" />
+			</territory>
+		</territories>
+		<npc id="21257" count="6" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="4" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_09" minZ="-2276" maxZ="-1576">
+				<node x="-17460" y="-73896" />
+				<node x="-12832" y="-74564" />
+				<node x="-11968" y="-73940" />
+				<node x="-13340" y="-72000" />
+				<node x="-15092" y="-71016" />
+				<node x="-17660" y="-71396" />
+				<node x="-19080" y="-72852" />
+			</territory>
+		</territories>
+		<npc id="21119" count="6" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="6" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_10" minZ="-2592" maxZ="-1892">
+				<node x="-11672" y="-75740" />
+				<node x="-10544" y="-76336" />
+				<node x="-9996" y="-74920" />
+				<node x="-10636" y="-74396" />
+				<node x="-12088" y="-73980" />
+				<node x="-12864" y="-74528" />
+			</territory>
+		</territories>
+		<npc id="21119" count="4" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="4" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_11" minZ="-3004" maxZ="-2104">
+				<node x="-5048" y="-77864" />
+				<node x="-408" y="-78976" />
+				<node x="-424" y="-76288" />
+				<node x="-4332" y="-77372" />
+			</territory>
+		</territories>
+		<npc id="21257" count="10" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="10" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21119" count="10" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_12" minZ="-2888" maxZ="-2488">
+				<node x="-8372" y="-77520" />
+				<node x="-5952" y="-78436" />
+				<node x="-5024" y="-77748" />
+				<node x="-8928" y="-76016" />
+				<node x="-10484" y="-76248" />
+			</territory>
+		</territories>
+		<npc id="21119" count="4" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="4" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_13" minZ="-3640" maxZ="-2740">
+				<node x="-18072" y="-81624" />
+				<node x="-14384" y="-83592" />
+				<node x="-12348" y="-79588" />
+				<node x="-12268" y="-78092" />
+				<node x="-14272" y="-76248" />
+				<node x="-16420" y="-76580" />
+				<node x="-18872" y="-78980" />
+			</territory>
+		</territories>
+		<npc id="21257" count="12" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="12" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="12" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_14" minZ="-2848" maxZ="-1848">
+				<node x="-15448" y="-98172" />
+				<node x="-11004" y="-98140" />
+				<node x="-14440" y="-95656" />
+				<node x="-18612" y="-96216" />
+				<node x="-18548" y="-96800" />
+			</territory>
+		</territories>
+		<npc id="20479" count="10" respawnTime="3sec" /> <!-- Kasha Bear -->
+		<npc id="20476" count="10" respawnTime="3sec" /> <!-- Kasha Fang Spider -->
+		<npc id="20478" count="13" respawnTime="3sec" /> <!-- Kasha Blade Spider -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1913_017" minZ="-3032" maxZ="-1832">
+				<node x="-4416" y="-98144" />
+				<node x="-256" y="-98160" />
+				<node x="-248" y="-95468" />
+				<node x="-1892" y="-94736" />
+				<node x="-4024" y="-96516" />
+			</territory>
+		</territories>
+		<npc id="21119" count="6" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="8" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_18" minZ="-2884" maxZ="-2084">
+				<node x="-5300" y="-95084" />
+				<node x="-4692" y="-94332" />
+				<node x="-4648" y="-92180" />
+				<node x="-8324" y="-94424" />
+				<node x="-6128" y="-95288" />
+			</territory>
+		</territories>
+		<npc id="21257" count="4" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="6" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_19" minZ="-2468" maxZ="-1468">
+				<node x="-4456" y="-91336" />
+				<node x="-468" y="-91324" />
+				<node x="-508" y="-86684" />
+				<node x="-7228" y="-86044" />
+				<node x="-9540" y="-87832" />
+			</territory>
+		</territories>
+		<npc id="21119" count="14" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="14" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="14" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_20" minZ="-3180" maxZ="-1880">
+				<node x="-10840" y="-94164" />
+				<node x="-9156" y="-94524" />
+				<node x="-4764" y="-92120" />
+				<node x="-4512" y="-91292" />
+				<node x="-9692" y="-87600" />
+				<node x="-12672" y="-92976" />
+			</territory>
+		</territories>
+		<npc id="21257" count="14" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="14" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="14" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_23" minZ="-3580" maxZ="-3280">
+				<node x="-14492" y="-81768" />
+				<node x="-13312" y="-81120" />
+				<node x="-12912" y="-80028" />
+				<node x="-14084" y="-78688" />
+				<node x="-16108" y="-79216" />
+				<node x="-16168" y="-80680" />
+			</territory>
+		</territories>
+		<npc id="21117" count="6" respawnTime="3sec" /> <!-- Kasha Imp -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_24" minZ="-3032" maxZ="-2182">
+				<node x="-10196" y="-91524" />
+				<node x="-8844" y="-93272" />
+				<node x="-6896" y="-92004" />
+				<node x="-7452" y="-90212" />
+				<node x="-8960" y="-89904" />
+			</territory>
+		</territories>
+		<npc id="21118" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_1915_25" minZ="-2664" maxZ="-2064">
+				<node x="-6764" y="-89020" />
+				<node x="-2764" y="-89400" />
+				<node x="-1336" y="-88336" />
+				<node x="-2772" y="-86928" />
+				<node x="-6852" y="-86876" />
+				<node x="-7604" y="-87972" />
+			</territory>
+		</territories>
+		<npc id="21119" count="6" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_12" minZ="-2112" maxZ="-1462">
+				<node x="5440" y="-118744" />
+				<node x="10000" y="-120784" />
+				<node x="10892" y="-119492" />
+				<node x="8424" y="-115948" />
+			</territory>
+		</territories>
+		<npc id="21257" count="10" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="10" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="10" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+		<npc id="21121" count="8" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="8" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_13" minZ="-2800" maxZ="-1900">
+				<node x="3960" y="-119404" />
+				<node x="5296" y="-118632" />
+				<node x="6308" y="-117660" />
+				<node x="3544" y="-115664" />
+				<node x="360" y="-116448" />
+				<node x="324" y="-118324" />
+			</territory>
+		</territories>
+		<npc id="21257" count="10" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="10" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="10" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_14" minZ="-2244" maxZ="-1594">
+				<node x="6244" y="-117420" />
+				<node x="8212" y="-115348" />
+				<node x="6920" y="-113100" />
+				<node x="4028" y="-112808" />
+				<node x="4144" y="-115688" />
+			</territory>
+		</territories>
+		<npc id="21257" count="10" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="8" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="10" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_15" minZ="-2420" maxZ="-1620">
+				<node x="3036" y="-112136" />
+				<node x="6820" y="-112956" />
+				<node x="7980" y="-108752" />
+				<node x="6208" y="-106892" />
+			</territory>
+		</territories>
+		<npc id="21257" count="10" respawnTime="3sec" /> <!-- Evil Eye Seer -->
+		<npc id="21117" count="10" respawnTime="3sec" /> <!-- Kasha Imp -->
+		<npc id="21118" count="10" respawnTime="3sec" /> <!-- Baar Dre Vanul -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_16" minZ="-2812" maxZ="-2262">
+				<node x="160" y="-111692" />
+				<node x="1300" y="-111912" />
+				<node x="3060" y="-109708" />
+				<node x="208" y="-107904" />
+			</territory>
+		</territories>
+		<npc id="21119" count="6" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="6" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_17" minZ="-2904" maxZ="-2104">
+				<node x="248" y="-107680" />
+				<node x="3112" y="-109648" />
+				<node x="5788" y="-106140" />
+				<node x="3432" y="-103096" />
+				<node x="200" y="-103140" />
+			</territory>
+		</territories>
+		<npc id="21119" count="12" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+		<npc id="21120" count="12" respawnTime="3sec" /> <!-- Kasha Imp Turen -->
+		<npc id="21121" count="12" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren_t20_14_018" minZ="-2784" maxZ="-1684">
+				<node x="5792" y="-105892" />
+				<node x="8680" y="-105600" />
+				<node x="8220" y="-102876" />
+				<node x="6712" y="-100884" />
+				<node x="3580" y="-100228" />
+				<node x="3424" y="-103024" />
+			</territory>
+		</territories>
+		<npc id="21121" count="10" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="10" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="10" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_19" minZ="-2356" maxZ="-1556">
+				<node x="324" y="-102876" />
+				<node x="3308" y="-102828" />
+				<node x="3512" y="-98596" />
+				<node x="280" y="-98572" />
+			</territory>
+		</territories>
+		<npc id="21121" count="8" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="8" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="8" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_20" minZ="-2160" maxZ="-1560">
+				<node x="3528" y="-100132" />
+				<node x="6596" y="-100808" />
+				<node x="6180" y="-98504" />
+				<node x="3524" y="-98560" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_21" minZ="-2524" maxZ="-1624">
+				<node x="8660" y="-102272" />
+				<node x="10332" y="-101652" />
+				<node x="10292" y="-98612" />
+				<node x="6776" y="-98572" />
+				<node x="7036" y="-100520" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_24" minZ="-2812" maxZ="-2312">
+				<node x="1660" y="-107844" />
+				<node x="3432" y="-106452" />
+				<node x="1860" y="-104116" />
+				<node x="704" y="-105932" />
+			</territory>
+		</territories>
+		<npc id="21119" count="6" respawnTime="3sec" /> <!-- Kasha Hobgoblin -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_25" minZ="-2732" maxZ="-1982">
+				<node x="5064" y="-104412" />
+				<node x="7412" y="-104164" />
+				<node x="5524" y="-101616" />
+				<node x="3904" y="-102704" />
+			</territory>
+		</territories>
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2014_26" minZ="-2104" maxZ="-1704">
+				<node x="1004" y="-101520" />
+				<node x="2520" y="-102348" />
+				<node x="3072" y="-100176" />
+				<node x="1820" y="-99376" />
+			</territory>
+		</territories>
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_01" minZ="-3208" maxZ="-2808">
+				<node x="1716" y="-95584" />
+				<node x="3340" y="-95232" />
+				<node x="3896" y="-93496" />
+				<node x="3680" y="-92144" />
+				<node x="2248" y="-91716" />
+				<node x="164" y="-92840" />
+				<node x="188" y="-94416" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_02" minZ="-2136" maxZ="-1736">
+				<node x="176" y="-98184" />
+				<node x="3456" y="-98240" />
+				<node x="3292" y="-97196" />
+				<node x="176" y="-96260" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_03" minZ="-2064" maxZ="-1664">
+				<node x="3480" y="-98192" />
+				<node x="6012" y="-98212" />
+				<node x="5852" y="-95556" />
+				<node x="4512" y="-95688" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_04" minZ="-2256" maxZ="-1656">
+				<node x="132" y="-91464" />
+				<node x="1584" y="-90888" />
+				<node x="3856" y="-89028" />
+				<node x="2224" y="-87424" />
+				<node x="112" y="-87468" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_05" minZ="-2432" maxZ="-1732">
+				<node x="104" y="-87432" />
+				<node x="2132" y="-87404" />
+				<node x="1536" y="-84616" />
+				<node x="1212" y="-84224" />
+				<node x="128" y="-84380" />
+			</territory>
+		</territories>
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_06" minZ="-2808" maxZ="-2408">
+				<node x="144" y="-83108" />
+				<node x="1752" y="-84096" />
+				<node x="1536" y="-82792" />
+				<node x="152" y="-81664" />
+			</territory>
+		</territories>
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_07" minZ="-2792" maxZ="-2492">
+				<node x="140" y="-81596" />
+				<node x="1840" y="-82356" />
+				<node x="1448" y="-81084" />
+				<node x="588" y="-79828" />
+				<node x="124" y="-79688" />
+			</territory>
+		</territories>
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="4" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_08" minZ="-2572" maxZ="-1672">
+				<node x="1876" y="-80128" />
+				<node x="2832" y="-80016" />
+				<node x="3868" y="-79408" />
+				<node x="3920" y="-77012" />
+				<node x="2508" y="-75780" />
+				<node x="140" y="-76092" />
+				<node x="212" y="-79092" />
+			</territory>
+		</territories>
+		<npc id="21121" count="8" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="10" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="8" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_09" minZ="-2104" maxZ="-1704">
+				<node x="180" y="-75956" />
+				<node x="2492" y="-75668" />
+				<node x="2964" y="-74392" />
+				<node x="2280" y="-73340" />
+				<node x="1368" y="-73352" />
+				<node x="156" y="-74496" />
+			</territory>
+		</territories>
+		<npc id="21121" count="6" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="4" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_10" minZ="-2736" maxZ="-1936">
+				<node x="2896" y="-84964" />
+				<node x="4296" y="-84972" />
+				<node x="4608" y="-84028" />
+				<node x="3560" y="-81260" />
+				<node x="2572" y="-81188" />
+			</territory>
+		</territories>
+		<npc id="21121" count="4" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="6" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_11" minZ="-2952" maxZ="-2552">
+				<node x="15752" y="-98104" />
+				<node x="16304" y="-96572" />
+				<node x="14656" y="-94140" />
+				<node x="11096" y="-94424" />
+				<node x="12476" y="-98124" />
+			</territory>
+		</territories>
+		<npc id="21121" count="8" respawnTime="3sec" /> <!-- Kasha Dire Wolf -->
+		<npc id="21122" count="8" respawnTime="3sec" /> <!-- Kasha Bugbear -->
+		<npc id="21123" count="8" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="lyonn09_2015_13" minZ="-3296" maxZ="-2696">
+				<node x="864" y="-94328" />
+				<node x="2052" y="-94724" />
+				<node x="3064" y="-94240" />
+				<node x="3268" y="-93432" />
+				<node x="2796" y="-92184" />
+				<node x="1736" y="-92060" />
+				<node x="988" y="-92468" />
+				<node x="544" y="-93292" />
+				<node x="508" y="-93896" />
+			</territory>
+		</territories>
+		<npc id="21123" count="6" respawnTime="3sec" /> <!-- Baar Dre Vanul Destroyer -->
+	</spawn>
+</list>

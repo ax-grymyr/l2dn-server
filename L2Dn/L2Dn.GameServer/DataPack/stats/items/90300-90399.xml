@@ -1,0 +1,1394 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90300" name="Hunter Tarantula's Venom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Though lethal, Hunter Tarantula's Venom is used as glue thanks to its ability to harden instantly. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90301" name="Plunder Tarantula's Kidney Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A transparent stone that can be found in a body of Plunder Tarantula. Very smooth and shiny, used as an adornment. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90302" name="New Cleaning Tool's Supply List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Priest Gerald tries to make tools for decorating the inner parts of the Temple that is currently under repairs. This is the list of materials that he needs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90303" name="Bat Bristle" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Bristles from the neck of a Barbed Bat. Very soft, used for making brushes. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90304" name="Trimden Web" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trimden Web. When its sticky enzyme is removed, it becomes very smooth and gleaming. Used as a fiber for making expensive fabric. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90305" name="Kerope Werewolf's Twig Charm" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Kerope Werewolf Charm. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90306" name="Warrior's Armor" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t33_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="8970" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">45</stat>
+		</stats>
+	</item>
+	<item id="90307" name="Warrior's Gaiters" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t33_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="4020" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
+	</item>
+	<item id="90308" name="Medium's Tunic" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t58_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="2080" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">27</stat>
+			<stat type="maxMp">60</stat>
+		</stats>
+	</item>
+	<item id="90309" name="Medium's Stockings" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.armor_t58_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1030" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">17</stat>
+			<stat type="maxMp">38</stat>
+		</stats>
+	</item>
+	<item id="90310" name="Newbie MP Replenishing Potion" additionalName="Sealed" type="EtcItem">
+		<!-- A magic potion that recovers MP. -->
+		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="LIQUID" />
+		<skills>
+			<skill id="39257" level="1" /> <!-- Newbie MP Recovery Potion -->
+		</skills>
+	</item>
+	<item id="90311" name="Brooch Lv. 1" type="Armor">
+		<!-- Jewel slots +4. Inventory slots +5. <font color=bbaa88><Compound></font>. Materials: Brooches and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="price" val="3000000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="13656" level="1" /> <!-- Activates 4 jewel slots. -->
+			<skill id="13661" level="1" /> <!-- Inventory Slot +5. -->
+		</skills>
+	</item>
+	<item id="90312" name="Brooch Lv. 2" type="Armor">
+		<!-- Jewel slots +4. Inventory slots +9. <font color=bbaa88><Compound></font>. Materials: Brooches and packages of the same level. In case of failure, the current level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="13654" level="1" type="ON_EQUIP" /> <!-- Brooch Lv. 2 On. -->
+			<skill id="13655" level="1" type="ON_UNEQUIP" /> <!-- Brooch Lv. 2 Off. -->
+			<skill id="13657" level="1" /> <!-- Activates 4 jewel slots. -->
+			<skill id="13661" level="2" /> <!-- Inventory Slot +9. -->
+		</skills>
+	</item>
+	<item id="90313" name="Topaz Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- Interrupts the target's skill casting, when used. Inflicts 475 damage in PvP. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55471" level="1" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90314" name="Topaz Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- Disrupts the target's skill casting. Inflicts 633 PvP damage. The effect doesn't stack if two identical jewels are equipped. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55471" level="2" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90315" name="Topaz Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- Disrupts the target's skill casting. Inflicts 950 PvP damage. The effect doesn't stack if two identical jewels are equipped. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55471" level="3" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90316" name="Topaz Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- Interrupts the target's skill casting. Inflicts 1357 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55471" level="4" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90317" name="Topaz Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- Interrupts the target's skill casting. Inflicts 2375 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_topaz_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55471" level="5" /> <!-- Topaz - Spiritshot -->
+		</skills>
+	</item>
+	<item id="90318" name="Garnet Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- Stun/ Pull/ Silence/ Paralysis/ Fear Resistance +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55485" level="1" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90319" name="Garnet Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Stun/ Pull/ Silence/ Paralysis/ Fear Resistance +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55485" level="2" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90320" name="Garnet Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Stun/ Pull/ Silence/ Paralysis/ Fear Resistance +8%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55485" level="3" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90321" name="Garnet Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- Fear/ Pull/ Silence/ Paralysis/ Stun Resistance +11%. Enables a skill that grants immunity to debuffs for 5 sec. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55485" level="4" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90322" name="Garnet Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- Stun/ Pull/ Silence/ Paralysis/ Fear Resistance Resistance +20%. Grants immunity to debuffs for 15 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55485" level="5" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="90323" name="Jade Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +1%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55474" level="1" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90324" name="Jade Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55474" level="2" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90325" name="Jade Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55474" level="3" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90326" name="Jade Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +7%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55474" level="4" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90327" name="Jade Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55474" level="5" /> <!-- Jade -->
+		</skills>
+	</item>
+	<item id="90328" name="Ruby Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55477" level="1" /> <!-- Ruby -->
+		</skills>
+	</item>
+	<item id="90329" name="Ruby Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55477" level="2" /> <!-- Ruby -->
+		</skills>
+	</item>
+	<item id="90330" name="Ruby Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55477" level="3" /> <!-- Ruby -->
+		</skills>
+	</item>
+	<item id="90331" name="Ruby Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +8%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55477" level="4" /> <!-- Ruby -->
+		</skills>
+	</item>
+	<item id="90332" name="Ruby Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55477" level="5" /> <!-- Ruby -->
+		</skills>
+	</item>
+	<item id="90333" name="Sapphire Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55481" level="1" /> <!-- Sapphire -->
+		</skills>
+	</item>
+	<item id="90334" name="Sapphire Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55481" level="2" /> <!-- Sapphire -->
+		</skills>
+	</item>
+	<item id="90335" name="Sapphire Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55481" level="3" /> <!-- Sapphire -->
+		</skills>
+	</item>
+	<item id="90336" name="Sapphire Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +8%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55481" level="4" /> <!-- Sapphire -->
+		</skills>
+	</item>
+	<item id="90337" name="Sapphire Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55481" level="5" /> <!-- Sapphire -->
+		</skills>
+	</item>
+	<item id="90338" name="Diamond Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- P. Def. +11. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55475" level="1" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90339" name="Diamond Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- P. Def. +25. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55475" level="2" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90340" name="Diamond Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- P. Def. +50. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55475" level="3" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90341" name="Diamond Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- When equipped, P. Def. +81, received P. Critical Damage -4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55475" level="4" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90342" name="Diamond Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- P. Def. +130, Received P. Critical Damage -10%. The effect doesn't stack if two identical jewels are equipped. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55475" level="5" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="90343" name="Pearl Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- M. Def. +7. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55476" level="1" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90344" name="Pearl Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- M. Def. +14. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55476" level="2" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90345" name="Pearl Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- M. Def. +28. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55476" level="3" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90346" name="Pearl Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- When equipped, M. Def. +46, received M. Skill Critical Damage -4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55476" level="4" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90347" name="Pearl Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- When equipped, M. Def. +74, received M. Skill Critical Damage -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55476" level="5" /> <!-- Pearl -->
+		</skills>
+	</item>
+	<item id="90353" name="Vital Stone Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55472" level="1" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90354" name="Vital Stone Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55472" level="2" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90355" name="Vital Stone Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +6%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55472" level="3" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90356" name="Vital Stone Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +8%, Sayha's Grace Consumption -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55472" level="4" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90357" name="Vital Stone Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +15%, Sayha's Grace Consumption -30%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="55472" level="5" /> <!-- Vital Stone -->
+		</skills>
+	</item>
+	<item id="90358" name="Shining Ore" type="EtcItem">
+		<!-- Can be exchanged for Brooch Lv. 1, Jewels Lv. 3-5 or Jewelry Box by the Game Assistant. -->
+		<set name="icon" val="icon.etc_bm_jewel_piece" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90359" name="Fortune Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_shhadai" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="18588" level="1" /> <!-- Fortune Chest -->
+		</skills>
+	</item>
+	<item id="90360" name="Topaz Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39243" level="1" /> <!-- Topaz Fortune Box -->
+		</skills>
+	</item>
+	<item id="90361" name="Garnet Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39244" level="1" /> <!-- Garnet Fortune Box -->
+		</skills>
+	</item>
+	<item id="90362" name="Jade Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39245" level="1" /> <!-- Jade Fortune Box -->
+		</skills>
+	</item>
+	<item id="90363" name="Ruby Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39246" level="1" /> <!-- Ruby Fortune Box -->
+		</skills>
+	</item>
+	<item id="90364" name="Sapphire Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39247" level="1" /> <!-- Sapphire Fortune Box -->
+		</skills>
+	</item>
+	<item id="90365" name="Diamond Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39248" level="1" /> <!-- Diamond Fortune Box -->
+		</skills>
+	</item>
+	<item id="90366" name="Pearl Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39249" level="1" /> <!-- Pearl Fortune Box -->
+		</skills>
+	</item>
+	<item id="90367" name="Vital Stone Fortune Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39250" level="1" /> <!-- Vital Stone Fortune Box -->
+		</skills>
+	</item>
+	<item id="90368" name="Shiny Jewelry Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="18564" level="1" /> <!-- Shiny Jewelry Box -->
+		</skills>
+	</item>
+	<item id="90369" name="Topaz Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90313" min="1" max="1" chance="100" /> <!-- Topaz Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90370" name="Garnet Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90318" min="1" max="1" chance="100" /> <!-- Garnet Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90371" name="Jade Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90323" min="1" max="1" chance="100" /> <!-- Jade Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90372" name="Ruby Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90328" min="1" max="1" chance="100" /> <!-- Ruby Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90373" name="Sapphire Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90333" min="1" max="1" chance="100" /> <!-- Sapphire Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90374" name="Diamond Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90338" min="1" max="1" chance="100" /> <!-- Diamond Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90375" name="Pearl Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90343" min="1" max="1" chance="100" /> <!-- Pearl Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90376" name="Vital Stone Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90353" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90377" name="Topaz Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90315" min="1" max="1" chance="100" /> <!-- Topaz Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90378" name="Topaz Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90316" min="1" max="1" chance="100" /> <!-- Topaz Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90379" name="Topaz Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90317" min="1" max="1" chance="100" /> <!-- Topaz Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90380" name="Garnet Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90320" min="1" max="1" chance="100" /> <!-- Garnet Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90381" name="Garnet Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90321" min="1" max="1" chance="100" /> <!-- Garnet Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90382" name="Garnet Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90322" min="1" max="1" chance="100" /> <!-- Garnet Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90383" name="Jade Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90325" min="1" max="1" chance="100" /> <!-- Jade Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90384" name="Jade Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90326" min="1" max="1" chance="100" /> <!-- Jade Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90385" name="Jade Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90327" min="1" max="1" chance="100" /> <!-- Jade Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90386" name="Ruby Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90330" min="1" max="1" chance="100" /> <!-- Ruby Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90387" name="Ruby Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90331" min="1" max="1" chance="100" /> <!-- Ruby Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90388" name="Ruby Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90332" min="1" max="1" chance="100" /> <!-- Ruby Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90389" name="Sapphire Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90335" min="1" max="1" chance="100" /> <!-- Sapphire Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90390" name="Sapphire Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90336" min="1" max="1" chance="100" /> <!-- Sapphire Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90391" name="Sapphire Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90337" min="1" max="1" chance="100" /> <!-- Sapphire Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90392" name="Diamond Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90340" min="1" max="1" chance="100" /> <!-- Diamond Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90393" name="Diamond Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90341" min="1" max="1" chance="100" /> <!-- Diamond Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90394" name="Diamond Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90342" min="1" max="1" chance="100" /> <!-- Diamond Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90395" name="Pearl Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90340" min="1" max="1" chance="100" /> <!-- Diamond Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90396" name="Pearl Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90345" min="1" max="1" chance="100" /> <!-- Pearl Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90397" name="Pearl Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90346" min="1" max="1" chance="100" /> <!-- Pearl Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90398" name="Vital Stone Jewelry Box Lv. 3" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90355" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90399" name="Vital Stone Jewelry Box Lv. 4" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90356" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

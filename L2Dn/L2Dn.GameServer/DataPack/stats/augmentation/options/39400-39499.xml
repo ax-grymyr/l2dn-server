@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39466" name="option_id_39466">
+		<!-- Acquired XP/ SP +5%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +10 -->
+	</option>
+	<option id="39467" name="option_id_39467">
+		<!-- Acquired XP/ SP +10%, P./ M. Def. +50, Atk. Spd./ Casting Spd. +15, P./ M. Atk. +50 -->
+	</option>
+	<option id="39468" name="Dark Elven Ancestor">
+		<!-- P. Def. +33 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39469" name="Taut Bowstring">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39470" name="Piercing Gaze">
+		<!-- M. Def. +33 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39471" name="Six Equipment Pieces - Attempt I">
+		<!-- Acquired XP/ SP +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39472" name="Six Equipment Pieces - Attempt I">
+		<!-- Casting Spd. +14 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39473" name="Dances with Wolves">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39474" name="Three Zubei's Helmets">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39475" name="Study Ice Hammer">
+		<!-- Atk. Spd. +15 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39476" name="Good and Bad">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39477" name="Six Equipment Pieces - Attempt II">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39478" name="Unknown Victory I">
+		<!-- M. Def. +31 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39479" name="B-grade and Tallum Armor">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39480" name="Rich and Poor">
+		<!-- P. Def. +29 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39481" name="Path of the Greatest Thief">
+		<!-- Inventory slots +1 -->
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39482" name="Mighty Strike">
+		<!-- M. Def. +25 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39483" name="Ghoul's Embrace">
+		<!-- M. Atk. +15 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39484" name="Deadman's Embrace">
+		<!-- M. Atk. +25 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39485" name="Average P. Atk.">
+		<!-- P. Atk. +25 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39486" name="Fashion Fanatic I">
+		<!-- P. Def. +31 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>31</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39487" name="Fashion Fanatic II">
+		<!-- P. Def. +27 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39488" name="Fashion Fanatic III">
+		<!-- M. Def. +27 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39489" name="Fashion Fanatic IV">
+		<!-- Atk. Spd. +14 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39490" name="Fashion Fanatic V">
+		<!-- M. Def. +29 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>29</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39491" name="Fashion Fanatic VI">
+		<!-- Acquired XP/ SP +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39492" name="+8 Dwarven Hammer">
+		<!-- P. Atk. +15 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39493" name="+9 Ecliptic Sword">
+		<!-- P. Def. +25 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39494" name="Piece of Cake">
+		<!-- Max MP +55 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39495" name="Doom Collection">
+		<!-- Max CP +65 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39496" name="Wolf and Doom Helmet Set">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39497" name="C-grade Equipment">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39498" name="Normal Difficulty">
+		<!-- Weight limit +500 -->
+		<effects>
+			<effect name="WeightLimit">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39499" name="Unknown Victory II">
+		<!-- Casting Spd. +15 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

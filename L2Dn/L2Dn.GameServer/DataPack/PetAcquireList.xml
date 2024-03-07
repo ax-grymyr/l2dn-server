@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/PetAcquireList.xsd">
+	<pet type="12">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49022" lvl="2" reqLvl="20" evolve="0" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="3" reqLvl="30" evolve="0" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="4" reqLvl="40" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="5" reqLvl="50" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="6" reqLvl="60" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="7" reqLvl="65" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="8" reqLvl="70" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="9" reqLvl="75" evolve="1" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="10" reqLvl="80" evolve="2" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Dire Claw -->
+		<skill id="49022" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Dire Claw -->
+		<skill id="49021" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Wolf -->
+		<skill id="49021" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Wolf -->
+		<skill id="49021" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Wolf -->
+		<skill id="49021" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Wolf -->
+		<skill id="49021" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Wolf -->
+		<skill id="49023" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="1000000" /> <!-- Leap Attack -->
+		<skill id="49023" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="1500000" /> <!-- Leap Attack -->
+		<skill id="49023" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="2000000" /> <!-- Leap Attack -->
+		<skill id="49023" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="3000000" /> <!-- Leap Attack -->
+		<skill id="49024" lvl="1" reqLvl="76" evolve="2" item="94472" itemAmount="1" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="2" reqLvl="77" evolve="2" item="57" itemAmount="1000000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="3" reqLvl="78" evolve="2" item="57" itemAmount="1200000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="4" reqLvl="79" evolve="2" item="57" itemAmount="1400000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="5" reqLvl="80" evolve="2" item="57" itemAmount="1600000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="6" reqLvl="81" evolve="2" item="57" itemAmount="1800000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="7" reqLvl="82" evolve="2" item="57" itemAmount="2000000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="8" reqLvl="83" evolve="2" item="57" itemAmount="2200000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="9" reqLvl="84" evolve="2" item="57" itemAmount="2400000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="10" reqLvl="85" evolve="2" item="57" itemAmount="2600000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="11" reqLvl="86" evolve="2" item="57" itemAmount="2800000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="12" reqLvl="87" evolve="2" item="57" itemAmount="3000000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="13" reqLvl="88" evolve="2" item="57" itemAmount="3300000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="14" reqLvl="89" evolve="2" item="57" itemAmount="3700000" /> <!-- Last Dire Claw -->
+		<skill id="49024" lvl="15" reqLvl="90" evolve="2" item="57" itemAmount="4000000" /> <!-- Last Dire Claw -->
+		<skill id="49027" lvl="1" reqLvl="76" evolve="2" item="97377" itemAmount="1" /> <!-- Sound Body -->
+		<skill id="49403" lvl="1" reqLvl="40" evolve="1" item="97384" itemAmount="1" /> <!-- Pet's Protection - Master Power -->
+		<skill id="49403" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Power -->
+	</pet>
+	<pet type="13">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49032" lvl="2" reqLvl="20" evolve="0" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="3" reqLvl="30" evolve="0" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="4" reqLvl="40" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="5" reqLvl="50" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="6" reqLvl="60" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="7" reqLvl="65" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="8" reqLvl="70" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="9" reqLvl="75" evolve="1" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="10" reqLvl="80" evolve="2" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Horn Thrust -->
+		<skill id="49032" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Horn Thrust -->
+		<skill id="49031" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Buffalo -->
+		<skill id="49031" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Buffalo -->
+		<skill id="49031" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Buffalo -->
+		<skill id="49031" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Buffalo -->
+		<skill id="49031" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Buffalo -->
+		<skill id="49033" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="1000000" /> <!-- Rump Stun -->
+		<skill id="49033" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="2000000" /> <!-- Rump Stun -->
+		<skill id="49033" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Rump Stun -->
+		<skill id="49033" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="4000000" /> <!-- Rump Stun -->
+		<skill id="49034" lvl="1" reqLvl="76" evolve="2" item="94476" itemAmount="1" /> <!-- Pulling Body -->
+		<skill id="49034" lvl="2" reqLvl="79" evolve="2" item="57" itemAmount="5000000" /> <!-- Pulling Body -->
+		<skill id="49034" lvl="3" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Pulling Body -->
+		<skill id="49034" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="5000000" /> <!-- Pulling Body -->
+		<skill id="49034" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Pulling Body -->
+		<skill id="49035" lvl="2" reqLvl="50" evolve="1" item="57" itemAmount="200000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="3" reqLvl="60" evolve="1" item="57" itemAmount="300000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="4" reqLvl="70" evolve="1" item="57" itemAmount="500000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="5" reqLvl="75" evolve="1" item="57" itemAmount="1000000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="6" reqLvl="80" evolve="2" item="57" itemAmount="1500000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="7" reqLvl="85" evolve="2" item="57" itemAmount="2000000" /> <!-- Breath of Hurricane -->
+		<skill id="49035" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="2500000" /> <!-- Breath of Hurricane -->
+		<skill id="49039" lvl="1" reqLvl="76" evolve="2" item="97379" itemAmount="1" /> <!-- Pulling Defense -->
+		<skill id="49404" lvl="1" reqLvl="40" evolve="1" item="97386" itemAmount="1" /> <!-- Pet's Protection - Master Health -->
+		<skill id="49404" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Health -->
+	</pet>
+	<pet type="14">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49012" lvl="2" reqLvl="20" evolve="0" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="3" reqLvl="30" evolve="0" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="4" reqLvl="40" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="5" reqLvl="50" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="6" reqLvl="60" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="7" reqLvl="65" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="8" reqLvl="70" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="9" reqLvl="75" evolve="1" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="10" reqLvl="80" evolve="2" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Breaking Blaster -->
+		<skill id="49012" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Breaking Blaster -->
+		<skill id="49011" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Tiger -->
+		<skill id="49011" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Tiger -->
+		<skill id="49011" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Tiger -->
+		<skill id="49011" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Tiger -->
+		<skill id="49011" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Tiger -->
+		<skill id="49013" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="1000000" /> <!-- Blinking Attack -->
+		<skill id="49013" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="1500000" /> <!-- Blinking Attack -->
+		<skill id="49013" lvl="4" reqLvl="80" evolve="2" item="57" itemAmount="2000000" /> <!-- Blinking Attack -->
+		<skill id="49013" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="3000000" /> <!-- Blinking Attack -->
+		<skill id="49014" lvl="2" reqLvl="80" evolve="2" item="57" itemAmount="2000000" /> <!-- Beast Within -->
+		<skill id="49014" lvl="3" reqLvl="82" evolve="2" item="57" itemAmount="2500000" /> <!-- Beast Within -->
+		<skill id="49014" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Beast Within -->
+		<skill id="49014" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="3500000" /> <!-- Beast Within -->
+		<skill id="49016" lvl="1" reqLvl="76" evolve="2" item="94471" itemAmount="1" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="2" reqLvl="77" evolve="2" item="57" itemAmount="1000000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="3" reqLvl="78" evolve="2" item="57" itemAmount="1250000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="4" reqLvl="79" evolve="2" item="57" itemAmount="1500000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="5" reqLvl="80" evolve="2" item="57" itemAmount="1750000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="6" reqLvl="81" evolve="2" item="57" itemAmount="2000000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="7" reqLvl="82" evolve="2" item="57" itemAmount="2250000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="8" reqLvl="83" evolve="2" item="57" itemAmount="2500000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="9" reqLvl="84" evolve="2" item="57" itemAmount="2750000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="10" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="11" reqLvl="86" evolve="2" item="57" itemAmount="3250000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="12" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="13" reqLvl="88" evolve="2" item="57" itemAmount="3750000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="14" reqLvl="89" evolve="2" item="57" itemAmount="4000000" /> <!-- Strong Bite -->
+		<skill id="49016" lvl="15" reqLvl="90" evolve="2" item="57" itemAmount="4250000" /> <!-- Strong Bite -->
+		<skill id="49015" lvl="1" reqLvl="76" evolve="2" item="97376" itemAmount="1" /> <!-- Sharp Senses -->
+		<skill id="49402" lvl="1" reqLvl="40" evolve="1" item="97383" itemAmount="1" /> <!-- Pet's Protection - Master Evasion -->
+		<skill id="49402" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Evasion -->
+	</pet>
+	<pet type="15">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49002" lvl="2" reqLvl="20" evolve="0" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="3" reqLvl="30" evolve="0" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="4" reqLvl="40" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="5" reqLvl="50" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="6" reqLvl="60" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="7" reqLvl="65" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="8" reqLvl="70" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="9" reqLvl="75" evolve="1" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="10" reqLvl="80" evolve="2" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Magic Missile -->
+		<skill id="49002" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Magic Missile -->
+		<skill id="49001" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Kookaburra -->
+		<skill id="49001" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Kookaburra -->
+		<skill id="49001" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Kookaburra -->
+		<skill id="49001" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Kookaburra -->
+		<skill id="49001" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Kookaburra -->
+		<skill id="49004" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="2000000" /> <!-- Entrenching -->
+		<skill id="49004" lvl="3" reqLvl="80" evolve="2" item="57" itemAmount="2500000" /> <!-- Entrenching -->
+		<skill id="49004" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Entrenching -->
+		<skill id="49004" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="4000000" /> <!-- Entrenching -->
+		<skill id="49005" lvl="1" reqLvl="76" evolve="2" item="57" itemAmount="3000000" /> <!-- Chain Block -->
+		<skill id="49005" lvl="2" reqLvl="78" evolve="2" item="57" itemAmount="4000000" /> <!-- Chain Block -->
+		<skill id="49005" lvl="3" reqLvl="80" evolve="2" item="57" itemAmount="6000000" /> <!-- Chain Block -->
+		<skill id="49005" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="8000000" /> <!-- Chain Block -->
+		<skill id="49005" lvl="5" reqLvl="85" evolve="2" item="57" itemAmount="10000000" /> <!-- Chain Block -->
+		<skill id="49006" lvl="1" reqLvl="76" evolve="2" item="94469" itemAmount="1" /> <!-- Blocked Target Change -->
+		<skill id="49006" lvl="2" reqLvl="78" evolve="2" item="57" itemAmount="2000000" /> <!-- Blocked Target Change -->
+		<skill id="49006" lvl="3" reqLvl="80" evolve="2" item="57" itemAmount="3000000" /> <!-- Blocked Target Change -->
+		<skill id="49006" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Blocked Target Change -->
+		<skill id="49006" lvl="5" reqLvl="85" evolve="2" item="57" itemAmount="5000000" /> <!-- Blocked Target Change -->
+		<skill id="49007" lvl="1" reqLvl="76" evolve="2" item="97375" itemAmount="1" /> <!-- Magic Flare -->
+		<skill id="49401" lvl="1" reqLvl="40" evolve="1" item="97382" itemAmount="1" /> <!-- Pet's Protection - Master Recharge -->
+		<skill id="49401" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Recharge -->
+	</pet>
+	<pet type="16">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49052" lvl="2" reqLvl="20" evolve="0" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="3" reqLvl="30" evolve="0" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="4" reqLvl="40" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="5" reqLvl="50" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="6" reqLvl="60" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="7" reqLvl="65" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="8" reqLvl="70" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="9" reqLvl="75" evolve="1" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="10" reqLvl="80" evolve="2" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Crippling Bite -->
+		<skill id="49052" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Crippling Bite -->
+		<skill id="49051" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Dragon -->
+		<skill id="49051" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Dragon -->
+		<skill id="49051" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Dragon -->
+		<skill id="49051" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Dragon -->
+		<skill id="49051" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Dragon -->
+		<skill id="49054" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="2000000" /> <!-- Rushing Assault -->
+		<skill id="49054" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="2500000" /> <!-- Rushing Assault -->
+		<skill id="49054" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Rushing Assault -->
+		<skill id="49054" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="4000000" /> <!-- Rushing Assault -->
+		<skill id="49055" lvl="1" reqLvl="76" evolve="2" item="94477" itemAmount="1" /> <!-- Back Explosion -->
+		<skill id="49055" lvl="2" reqLvl="79" evolve="2" item="57" itemAmount="5000000" /> <!-- Back Explosion -->
+		<skill id="49055" lvl="3" reqLvl="82" evolve="2" item="57" itemAmount="7000000" /> <!-- Back Explosion -->
+		<skill id="49055" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="8500000" /> <!-- Back Explosion -->
+		<skill id="49055" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="10000000" /> <!-- Back Explosion -->
+		<skill id="49058" lvl="1" reqLvl="76" evolve="2" item="97380" itemAmount="1" /> <!-- Perfect Bite -->
+		<skill id="49405" lvl="1" reqLvl="40" evolve="1" item="97387" itemAmount="1" /> <!-- Pet's Protection - Master Speed -->
+		<skill id="49405" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Speed -->
+	</pet>
+	<pet type="17">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49042" lvl="2" reqLvl="20" evolve="0" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="3" reqLvl="30" evolve="0" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="4" reqLvl="40" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="5" reqLvl="50" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="6" reqLvl="60" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="7" reqLvl="65" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="8" reqLvl="70" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="9" reqLvl="75" evolve="1" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="10" reqLvl="80" evolve="2" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Arrow Feather -->
+		<skill id="49042" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Arrow Feather -->
+		<skill id="49041" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Hawk -->
+		<skill id="49041" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Hawk -->
+		<skill id="49041" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Hawk -->
+		<skill id="49041" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Hawk -->
+		<skill id="49041" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Hawk -->
+		<skill id="49043" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="1000000" /> <!-- Quick Jump -->
+		<skill id="49043" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="1500000" /> <!-- Quick Jump -->
+		<skill id="49043" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="2000000" /> <!-- Quick Jump -->
+		<skill id="49043" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="3000000" /> <!-- Quick Jump -->
+		<skill id="49044" lvl="1" reqLvl="76" evolve="2" item="57" itemAmount="1000000" /> <!-- Scout's Strike -->
+		<skill id="49044" lvl="2" reqLvl="78" evolve="2" item="57" itemAmount="2000000" /> <!-- Scout's Strike -->
+		<skill id="49044" lvl="3" reqLvl="80" evolve="2" item="57" itemAmount="3000000" /> <!-- Scout's Strike -->
+		<skill id="49044" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="4000000" /> <!-- Scout's Strike -->
+		<skill id="49044" lvl="5" reqLvl="85" evolve="2" item="57" itemAmount="5000000" /> <!-- Scout's Strike -->
+		<skill id="49045" lvl="1" reqLvl="76" evolve="2" item="57" itemAmount="1200000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="2" reqLvl="77" evolve="2" item="57" itemAmount="1400000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="3" reqLvl="78" evolve="2" item="57" itemAmount="1600000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="4" reqLvl="79" evolve="2" item="57" itemAmount="1800000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="5" reqLvl="80" evolve="2" item="57" itemAmount="2000000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="6" reqLvl="81" evolve="2" item="57" itemAmount="2200000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="7" reqLvl="82" evolve="2" item="57" itemAmount="2400000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="8" reqLvl="83" evolve="2" item="57" itemAmount="2600000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="9" reqLvl="84" evolve="2" item="57" itemAmount="2800000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="10" reqLvl="85" evolve="2" item="57" itemAmount="3000000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="11" reqLvl="86" evolve="2" item="57" itemAmount="3200000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="12" reqLvl="87" evolve="2" item="57" itemAmount="3400000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="13" reqLvl="88" evolve="2" item="57" itemAmount="3600000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="14" reqLvl="89" evolve="2" item="57" itemAmount="3800000" /> <!-- Feather Storm -->
+		<skill id="49045" lvl="15" reqLvl="90" evolve="2" item="57" itemAmount="4000000" /> <!-- Feather Storm -->
+		<skill id="49046" lvl="1" reqLvl="76" evolve="2" item="94475" itemAmount="1" /> <!-- Exploding Feather -->
+		<skill id="49046" lvl="2" reqLvl="78" evolve="2" item="57" itemAmount="2000000" /> <!-- Exploding Feather -->
+		<skill id="49046" lvl="3" reqLvl="80" evolve="2" item="57" itemAmount="2500000" /> <!-- Exploding Feather -->
+		<skill id="49046" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="3000000" /> <!-- Exploding Feather -->
+		<skill id="49046" lvl="5" reqLvl="85" evolve="2" item="57" itemAmount="3500000" /> <!-- Exploding Feather -->
+		<skill id="49049" lvl="1" reqLvl="76" evolve="2" item="97378" itemAmount="1" /> <!-- Swift Feather -->
+		<skill id="49406" lvl="1" reqLvl="40" evolve="1" item="97385" itemAmount="1" /> <!-- Pet's Protection - Master Chance -->
+		<skill id="49406" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Chance -->
+	</pet>
+	<pet type="18">
+		<skill id="49207" lvl="1" reqLvl="40" evolve="1" item="94478" itemAmount="1" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="10000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="3" reqLvl="83" evolve="2" item="57" itemAmount="15000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="4" reqLvl="87" evolve="2" item="57" itemAmount="20000000" /> <!-- Steel Skin -->
+		<skill id="49207" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="25000000" /> <!-- Steel Skin -->
+		<skill id="49208" lvl="1" reqLvl="76" evolve="2" item="97381" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="2" reqLvl="83" evolve="2" item="98929" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49208" lvl="3" reqLvl="87" evolve="2" item="98930" itemAmount="1" /> <!-- Physical Training -->
+		<skill id="49063" lvl="2" reqLvl="20" evolve="0" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="3" reqLvl="30" evolve="0" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="4" reqLvl="40" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="5" reqLvl="50" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="6" reqLvl="60" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="7" reqLvl="65" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="8" reqLvl="70" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="9" reqLvl="75" evolve="1" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="10" reqLvl="80" evolve="2" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="11" reqLvl="81" evolve="2" item="57" itemAmount="500000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="12" reqLvl="82" evolve="2" item="57" itemAmount="1000000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="13" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="14" reqLvl="84" evolve="2" item="57" itemAmount="2000000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="15" reqLvl="85" evolve="2" item="57" itemAmount="2500000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="16" reqLvl="86" evolve="2" item="57" itemAmount="3000000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="17" reqLvl="87" evolve="2" item="57" itemAmount="3500000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Fox Fire -->
+		<skill id="49063" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Fire -->
+		<skill id="49061" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox -->
+		<skill id="49061" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Fox -->
+		<skill id="49061" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Fox -->
+		<skill id="49061" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="20000000" /> <!-- Fox -->
+		<skill id="49061" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="30000000" /> <!-- Fox -->
+		<skill id="49066" lvl="2" reqLvl="60" evolve="1" item="57" itemAmount="1000000" /> <!-- Leap Rush -->
+		<skill id="49066" lvl="3" reqLvl="76" evolve="2" item="57" itemAmount="1500000" /> <!-- Leap Rush -->
+		<skill id="49066" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="2000000" /> <!-- Leap Rush -->
+		<skill id="49066" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="3000000" /> <!-- Leap Rush -->
+		<skill id="49067" lvl="2" reqLvl="40" evolve="1" item="57" itemAmount="200000" /> <!-- Charm -->
+		<skill id="49067" lvl="3" reqLvl="70" evolve="1" item="57" itemAmount="300000" /> <!-- Charm -->
+		<skill id="49067" lvl="4" reqLvl="76" evolve="2" item="57" itemAmount="500000" /> <!-- Charm -->
+		<skill id="49067" lvl="5" reqLvl="79" evolve="2" item="57" itemAmount="1000000" /> <!-- Charm -->
+		<skill id="49067" lvl="6" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Charm -->
+		<skill id="49067" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="2000000" /> <!-- Charm -->
+		<skill id="49067" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="2500000" /> <!-- Charm -->
+		<skill id="49070" lvl="1" reqLvl="76" evolve="2" item="98892" itemAmount="1" /> <!-- Magic Power Boost -->
+		<skill id="49068" lvl="1" reqLvl="76" evolve="2" item="98891" itemAmount="1" /> <!-- Fox Call -->
+		<skill id="49068" lvl="2" reqLvl="79" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->
+		<skill id="49068" lvl="3" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->
+		<skill id="49068" lvl="4" reqLvl="85" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->
+		<skill id="49068" lvl="5" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->
+		<skill id="49069" lvl="1" reqLvl="40" evolve="1" item="98893" itemAmount="1" /> <!-- Pet's Protection - Master Blessing -->
+		<skill id="49069" lvl="2" reqLvl="76" evolve="2" item="57" itemAmount="20000000" /> <!-- Pet's Protection - Master Blessing -->
+	</pet>
+</list>

@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="60200" toLevel="1" name="P. Skill Cooldown -5%">
+		<!-- P. Skill Cooldown -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60201" toLevel="1" name="P. Skill Cooldown -10%">
+		<!-- P. Skill Cooldown -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60202" toLevel="1" name="P. Skill Cooldown -15%">
+		<!-- P. Skill Cooldown -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60203" toLevel="1" name="M. Skill Cooldown -5%">
+		<!-- M. Skill Cooldown -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60204" toLevel="1" name="M. Skill Cooldown -10%">
+		<!-- M. Skill Cooldown -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60205" toLevel="1" name="M. Skill Cooldown -15%">
+		<!-- M. Skill Cooldown -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60206" toLevel="1" name="Song/ Dance Cooldown -5%">
+		<!-- Song/ Dance Cooldown -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60207" toLevel="1" name="Song/ Dance Cooldown -10%">
+		<!-- Song/ Dance Cooldown -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60208" toLevel="1" name="Song/ Dance Cooldown -15%">
+		<!-- Song/ Dance Cooldown -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60209" toLevel="1" name="P. Skill MP Consumption -5%">
+		<!-- P. Skill MP Consumption -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60210" toLevel="1" name="P. Skill MP Consumption -10%">
+		<!-- P. Skill MP Consumption -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60211" toLevel="1" name="P. Skill MP Consumption -15%">
+		<!-- P. Skill MP Consumption -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60212" toLevel="1" name="M. Skill MP Consumption -5%">
+		<!-- M. Skill MP Consumption -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60213" toLevel="1" name="M. Skill MP Consumption -10%">
+		<!-- M. Skill MP Consumption -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60214" toLevel="1" name="M. Skill MP Consumption -15%">
+		<!-- M. Skill MP Consumption -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60215" toLevel="1" name="Song/ Dance MP Consumption -5%">
+		<!-- Song/ Dance MP Consumption -5% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60216" toLevel="1" name="Song/ Dance MP Consumption -10%">
+		<!-- Song/ Dance MP Consumption -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60217" toLevel="1" name="Song/ Dance MP Consumption -15%">
+		<!-- Song/ Dance MP Consumption -15% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60218" toLevel="1" name="P. Skill MP Consumption -5">
+		<!-- P. Skill MP Consumption -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60219" toLevel="1" name="P. Skill MP Consumption -10">
+		<!-- P. Skill MP Consumption -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60220" toLevel="1" name="P. Skill MP Consumption -15">
+		<!-- P. Skill MP Consumption -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60221" toLevel="1" name="M. Skill MP Consumption -5">
+		<!-- M. Skill MP Consumption -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60222" toLevel="1" name="M. Skill MP Consumption -10">
+		<!-- M. Skill MP Consumption -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60223" toLevel="1" name="M. Skill MP Consumption -15">
+		<!-- M. Skill MP Consumption -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60224" toLevel="1" name="Song/ Dance MP Consumption -5">
+		<!-- Song/ Dance MP Consumption -5 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60225" toLevel="1" name="Song/ Dance MP Consumption -10">
+		<!-- Song/ Dance MP Consumption -10 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60226" toLevel="1" name="Song/ Dance MP Consumption -15">
+		<!-- Song/ Dance MP Consumption -15 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60227" toLevel="1" name="Paralysis Atk. Rate -30%">
+		<!-- Paralysis Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60228" toLevel="1" name="Paralysis Atk. Rate +10%">
+		<!-- Paralysis Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60229" toLevel="1" name="Paralysis Atk. Rate +25%">
+		<!-- Paralysis Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60230" toLevel="1" name="Shock Atk. Rate -30%">
+		<!-- Shock Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60231" toLevel="1" name="Shock Atk. Rate +10%">
+		<!-- Shock Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60232" toLevel="1" name="Shock Atk. Rate +25%">
+		<!-- Shock Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60233" toLevel="1" name="Knockback Atk. Rate -30%">
+		<!-- Knockback Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60234" toLevel="1" name="Knockback Atk. Rate +10%">
+		<!-- Knockback Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60235" toLevel="1" name="Knockback Atk. Rate +25%">
+		<!-- Knockback Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60236" toLevel="1" name="Sleep Atk. Rate -30%">
+		<!-- Sleep Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60237" toLevel="1" name="Sleep Atk. Rate +10%">
+		<!-- Sleep Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60238" toLevel="1" name="Sleep Atk. Rate +25%">
+		<!-- Sleep Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60239" toLevel="1" name="Imprisonment Atk. Rate -30%">
+		<!-- Imprisonment Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60240" toLevel="1" name="Imprisonment Atk. Rate +10%">
+		<!-- Imprisonment Atk. Rate -10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60241" toLevel="1" name="Imprisonment Atk. Rate +25%">
+		<!-- Imprisonment Atk. Rate -25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60242" toLevel="1" name="Pull Atk. Rate -30%">
+		<!-- Pull Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60243" toLevel="1" name="Pull Atk. Rate +10%">
+		<!-- Pull Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60244" toLevel="1" name="Pull Atk. Rate +25%">
+		<!-- Pull Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60245" toLevel="1" name="Fear Atk. Rate -30%">
+		<!-- Fear Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60246" toLevel="1" name="Fear Atk. Rate +10%">
+		<!-- Fear Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60247" toLevel="1" name="Fear Atk. Rate +25%">
+		<!-- Fear Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60248" toLevel="1" name="Silence Atk. Rate -30%">
+		<!-- Silence Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60249" toLevel="1" name="Silence Atk. Rate +10%">
+		<!-- Silence Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60250" toLevel="1" name="Silence Atk. Rate +25%">
+		<!-- Silence Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60251" toLevel="1" name="Hold Atk. Rate -30%">
+		<!-- Hold Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60252" toLevel="1" name="Hold Atk. Rate +10%">
+		<!-- Hold Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60253" toLevel="1" name="Hold Atk. Rate +25%">
+		<!-- Hold Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60254" toLevel="1" name="Suppression Atk. Rate -30%">
+		<!-- Suppression Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60255" toLevel="1" name="Suppression Atk. Rate +10%">
+		<!-- Suppression Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60256" toLevel="1" name="Suppression Atk. Rate +25%">
+		<!-- Suppression Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60257" toLevel="1" name="Infection Atk. Rate -30%">
+		<!-- Infection Atk. Rate -30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60258" toLevel="1" name="Infection Atk. Rate +10%">
+		<!-- Infection Atk. Rate +10% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60259" toLevel="1" name="Infection Atk. Rate +25%">
+		<!-- Infection Atk. Rate +25% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60260" toLevel="1" name="max test Skill">
+		<!-- Max Atk. Spd./ Casting Spd./ Speed/ P. Critical/ M. Critical. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60261" toLevel="1" name="HP Recovery - Sitting: +100%">
+		<!-- HP Recovery - Sitting: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60262" toLevel="1" name="HP Recovery - Standing: +100%">
+		<!-- HP Recovery - Standing: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60263" toLevel="1" name="HP Recovery - Walking: +100%">
+		<!-- HP Recovery - Walking: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60264" toLevel="1" name="HP Recovery - Running: +100%">
+		<!-- HP Recovery - Running: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60265" toLevel="1" name="HP Recovery - Sitting: +100">
+		<!-- HP Recovery - Sitting: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60266" toLevel="1" name="HP Recovery - Standing: +100">
+		<!-- HP Recovery - Standing: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60267" toLevel="1" name="HP Recovery - Walking: +100">
+		<!-- HP Recovery - Walking: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60268" toLevel="1" name="HP Recovery - Running: +100">
+		<!-- HP Recovery - Running: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60269" toLevel="1" name="MP Recovery - Sitting: +100%">
+		<!-- MP Recovery - Sitting: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60270" toLevel="1" name="MP Recovery - Standing: +100%">
+		<!-- MP Recovery - Standing: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60271" toLevel="1" name="MP Recovery - Walking: +100%">
+		<!-- MP Recovery - Walking: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60272" toLevel="1" name="MP Recovery - Running: +100%">
+		<!-- MP Recovery - Running: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60273" toLevel="1" name="MP Recovery - Sitting: +100">
+		<!-- MP Recovery - Sitting: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60274" toLevel="1" name="MP Recovery - Standing: +100">
+		<!-- MP Recovery - Standing: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60275" toLevel="1" name="MP Recovery - Walking: +100">
+		<!-- MP Recovery - Walking: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60276" toLevel="1" name="MP Recovery - Running: +100">
+		<!-- MP Recovery - Running: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60277" toLevel="1" name="CP Recovery - Sitting: +100%">
+		<!-- CP Recovery - Sitting: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60278" toLevel="1" name="CP Recovery - Standing: +100%">
+		<!-- CP Recovery - Standing: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60279" toLevel="1" name="CP Recovery - Walking: +100%">
+		<!-- CP Recovery - Walking: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60280" toLevel="1" name="CP Recovery - Running: +100%">
+		<!-- CP Recovery - Running: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60281" toLevel="1" name="CP Recovery - Sitting: +100">
+		<!-- CP Recovery - Sitting: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60282" toLevel="1" name="CP Recovery - Standing: +100">
+		<!-- CP Recovery - Standing: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60283" toLevel="1" name="CP Recovery - Walking: +100">
+		<!-- CP Recovery - Walking: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60284" toLevel="1" name="CP Recovery - Running: +100">
+		<!-- CP Recovery - Running: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60285" toLevel="1" name="Equipped Shield - P. Atk.: +100%">
+		<!-- Equipped Shield - P. Atk.: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60286" toLevel="1" name="Equipped Shield - P. Atk.: +100">
+		<!-- Equipped Shield - P. Atk.: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60287" toLevel="1" name="P. Atk.: 100 - Healing 60%">
+		<!-- P. Atk.: 100% - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60288" toLevel="1" name="P. Atk.: 100 - Healing 60%">
+		<!-- P. Atk.: 100 - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60289" toLevel="1" name="P. Atk.: 100 - Healing 30%">
+		<!-- P. Atk.: 100% - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60290" toLevel="1" name="P. Atk.: 100 - Healing 30%">
+		<!-- P. Atk.: 100 - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60291" toLevel="1" name="Equipped Dagger - M. Atk.: +100%">
+		<!-- Equipped Dagger - M. Atk.: +100% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60292" toLevel="1" name="Equipped Dagger - M. Atk.: +100">
+		<!-- Equipped Dagger - M. Atk.: +100 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60293" toLevel="1" name="P. Def.: 100% - Healing 60%">
+		<!-- P. Def.: 100% - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60294" toLevel="1" name="P. Def.: 100 - Healing 60%">
+		<!-- P. Def.: 100 - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60295" toLevel="1" name="P. Def.: 100% - Healing 30%">
+		<!-- P. Def.: 100% - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60296" toLevel="1" name="P. Def.: 100 - Healing 30%">
+		<!-- P. Def.: 100 - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60297" toLevel="1" name="P. Evasion: 100% - Healing 60%">
+		<!-- P. Evasion: 100% - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60298" toLevel="1" name="P. Evasion: 100 - Healing 60%">
+		<!-- P. Evasion: 100 - Healing 60% -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="60299" toLevel="1" name="P. Evasion: 100% - Healing 30%">
+		<!-- P. Evasion: 100% - Healing 30% -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

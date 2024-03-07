@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="115" parentClassId="51">
+		<skill skillName="Shaman's Attack Mastery" skillId="45056" skillLevel="5" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Shaman's Armor Mastery" skillId="45057" skillLevel="5" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Shaman's Recovery Mastery" skillId="45058" skillLevel="5" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Power Break" skillId="260" skillLevel="38" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="39" getLevel="77" levelUpSp="450000" />
+		<skill skillName="Power Break" skillId="260" skillLevel="40" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Chant of Wild Magic" skillId="1413" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Prophecy of Pa'agrio" skillId="1414" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Prophecy of Pa'agrio" skillId="1414" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Pa'agrio's Touch" skillId="45446" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<removeSkill id="1229" onlyReplaceByLearn="true" /> <!-- Chant of Life -->
+			<removeSkill id="1610" onlyReplaceByLearn="true" /> <!-- Life Rescue -->
+			<removeSkill id="1306" onlyReplaceByLearn="true" /> <!-- Ritual of Life -->
+			<item id="95552,94668" count="1" /> <!-- Spellbook: Pa'agrio's Touch -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Pa'agrio's Fist" skillId="1416" skillLevel="1" getLevel="78" levelUpSp="980000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Pa'agrio's Cure" skillId="45448" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<removeSkill id="1256" onlyReplaceByLearn="true" /> <!-- Pa'agrio's Heart -->
+			<removeSkill id="1305" onlyReplaceByLearn="true" /> <!-- Pa'agrio's Honor -->
+			<item id="95553,94669" count="1" /> <!-- Spellbook: Pa'agrio's Cure -->
+		</skill>
+		<skill skillName="Debuff Master" skillId="45449" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="95554,94670" count="1" /> <!-- Spellbook: Debuff Master -->
+		</skill>
+		<skill skillName="Chant of Magic Barrier" skillId="1549" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<removeSkill id="1100" onlyReplaceByLearn="true" /> <!-- Chill Flame -->
+			<removeSkill id="1101" onlyReplaceByLearn="true" /> <!-- Blaze Quake -->
+			<removeSkill id="1107" onlyReplaceByLearn="true" /> <!-- Frost Flame -->
+			<removeSkill id="1108" onlyReplaceByLearn="true" /> <!-- Seal of Flame -->
+			<removeSkill id="1095" onlyReplaceByLearn="true" /> <!-- Venom -->
+			<removeSkill id="1209" onlyReplaceByLearn="true" /> <!-- Venom Seal -->
+			<removeSkill id="1102" onlyReplaceByLearn="true" /> <!-- Aura Sink -->
+			<removeSkill id="1210" onlyReplaceByLearn="true" /> <!-- Seal of Gloom -->
+			<item id="95555,94671" count="1" /> <!-- Spellbook: Flame Burst -->
+		</skill>
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="3" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="4" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="5" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="6" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="7" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Flame Burst" skillId="45453" skillLevel="8" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="16" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="17" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="18" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="11" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="12" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="13" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="14" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Pa'agrio's Honor" skillId="1305" skillLevel="15" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="16" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="17" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="18" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="11" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="12" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="13" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="14" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Ritual of Life" skillId="1306" skillLevel="15" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Chant of Focus" skillId="1308" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Seal of Infection" skillId="45468" skillLevel="1" getLevel="77" levelUpSp="450000">
+			<removeSkill id="1247" onlyReplaceByLearn="true" /> <!-- Seal of Scourge -->
+			<removeSkill id="1367" onlyReplaceByLearn="true" /> <!-- Seal of Disease -->
+			<item id="95556,94672" count="1" /> <!-- Spellbook: Seal of Infection -->
+		</skill>
+		<skill skillName="Spell Master" skillId="1832" skillLevel="4" getLevel="80" levelUpSp="980000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Mount Black Bear" skillId="1837" skillLevel="1" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="2" getLevel="77" levelUpSp="450000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="3" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="4" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="5" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Seal of Blockade" skillId="1462" skillLevel="1" getLevel="79" levelUpSp="980000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Seal of Blockade" skillId="1462" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Blockade" skillId="1462" skillLevel="3" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="18" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="19" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="20" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="21" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="22" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="23" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="24" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Binding" skillId="1208" skillLevel="25" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="38" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="39" getLevel="77" levelUpSp="450000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="40" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="41" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="42" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="43" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="44" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Fatal Strike" skillId="190" skillLevel="45" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Fear" skillId="1092" skillLevel="20" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Fear" skillId="1092" skillLevel="21" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="17" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="18" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="19" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Chaos" skillId="1096" skillLevel="20" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="21" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="22" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="23" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="24" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Dreaming Spirit" skillId="1097" skillLevel="25" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="21" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="22" getLevel="77" levelUpSp="450000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="23" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="24" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="25" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="26" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="27" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="28" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Life Rescue" skillId="1610" skillLevel="29" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="16" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="17" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="18" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="19" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="20" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="21" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="22" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Slow" skillId="1099" skillLevel="23" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="16" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="17" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="18" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="19" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="20" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="21" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="22" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Seal of Winter" skillId="1104" skillLevel="15" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Chant of Clarity" skillId="45138" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="1" getLevel="79" levelUpSp="980000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="2" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="3" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="4" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="5" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Despair" skillId="1366" skillLevel="6" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Seal of Disease" skillId="1367" skillLevel="1" getLevel="77" levelUpSp="450000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Spell of Power" skillId="45275" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="98278,98260" count="1" /> <!-- Spellbook: Spell of Power -->
+		</skill>
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="15" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="16" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="17" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="18" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="19" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="20" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="21" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="22" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="23" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="24" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="25" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="26" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="27" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Steal Essence" skillId="1245" skillLevel="28" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="16" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="17" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="18" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="19" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="20" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="13" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="14" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Silence" skillId="1246" skillLevel="15" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Seal of Scourge" skillId="1247" skillLevel="16" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Scourge" skillId="1247" skillLevel="15" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="16" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="17" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="18" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="19" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="20" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="13" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="14" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Seal of Suspension" skillId="1248" skillLevel="15" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Chant of Haste" skillId="1251" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Chant of Death Whisper" skillId="1253" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Pa'agrio's Heart" skillId="1256" skillLevel="16" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Pa'agrio's Heart" skillId="1256" skillLevel="17" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Pa'agrio's Heart" skillId="1256" skillLevel="18" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Pa'agrio's Heart" skillId="1256" skillLevel="14" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Pa'agrio's Heart" skillId="1256" skillLevel="15" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="1" getLevel="76" levelUpSp="450000">
+			<item id="98324,98323" count="1" /> <!-- Spellbook: Bloody Strike -->
+		</skill>
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="2" getLevel="79" levelUpSp="980000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="4" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="5" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="6" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="7" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="8" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="9" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Bloody Strike" skillId="45288" skillLevel="10" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Chant of Acumen" skillId="1002" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Chant of Berserker Spirit" skillId="1261" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Chant of Empower" skillId="1006" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Chant of Might" skillId="1007" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Chant of Shield" skillId="1009" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="43" getLevel="76" levelUpSp="450000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="44" getLevel="77" levelUpSp="450000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="45" getLevel="78" levelUpSp="980000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="46" getLevel="80" levelUpSp="980000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="47" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="48" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="49" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="50" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="51" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="52" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="53" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="54" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="55" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Weapon Mastery" skillId="250" skillLevel="56" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="450000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+		<skill skillName="Chant of Wind Walk" skillId="1535" skillLevel="3" getLevel="76" levelUpSp="450000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+	</skillTree>
+</list>

@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="92600" name="Dwarven Trident Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Dwarven Trident. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92601" name="Two-handed Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Two-handed Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92602" name="Spiked Club Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Spiked Club. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92603" name="Shillien Knife Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Shillien Knife. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92604" name="Gastraphetes Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Gastraphetes. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92605" name="Tome of Blood Page" type="EtcItem">
+		<!-- Key material for Dwarves to make Tome of Blood. -->
+		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92606" name="Morning Star Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Morning Star. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92607" name="Goat Head Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Goat Head Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92608" name="Winged Spear Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Winged Spear. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92609" name="Sword of Revolution Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Revolution. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92610" name="Tarbar Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Tarbar. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92611" name="Skull Breaker Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Skull Breaker. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92612" name="Heavy Bone Club Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Heavy Bone Club. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92613" name="Maingauche Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Maingauche. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92614" name="Bich'Hwa Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Bich'Hwa. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92615" name="Reinforced Longbow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Reinforced Longbow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92616" name="War Pick Head" type="EtcItem">
+		<!-- Key material for Dwarves to make War Pick. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92617" name="Crucifix of Blood Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Crucifix of Blood. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92618" name="Eye of Infinity Stone" type="EtcItem">
+		<!-- Key material for Dwarves to make Eye of Infinity. -->
+		<set name="icon" val="icon.etc_crystal_ball_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92619" name="Cursed Maingauche Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Cursed Maingauche. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92620" name="Blue Crystal Skull Part" type="EtcItem">
+		<!-- Key material for Dwarves to make Blue Crystal Skull. -->
+		<set name="icon" val="icon.etc_skull_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92621" name="Demon's Fangs Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Demon's Fangs. -->
+		<set name="icon" val="icon.etc_horn_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92622" name="Claymore Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Claymore. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92623" name="Bonebreaker Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Bonebreaker. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92624" name="Atuba Hammer Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Atuba Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92625" name="Ghost Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Ghost Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92626" name="Staff of Life Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Staff of Life. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92627" name="Mithril Dagger Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Mithril Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92628" name="Scallop Jamadhr Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Scallop Jamadhr. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92629" name="Light Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Light Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92630" name="Glaive Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Glaive. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92631" name="Vajra Wand Frame" type="EtcItem">
+		<!-- Key material for Dwarves to make Vajra Wand. -->
+		<set name="icon" val="icon.etc_mold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92632" name="Ancient Reagent Remnant" type="EtcItem">
+		<!-- Key material for Dwarves to make Ancient Reagent. -->
+		<set name="icon" val="icon.etc_potion_clear_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92633" name="Atuba Mace Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Atuba Mace. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92634" name="Flamberge Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Flamberge. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92635" name="Stormbringer Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Stormbringer. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92636" name="Big Hammer Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Big Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92637" name="Scythe Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Scythe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92638" name="Battle Axe Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Battle Axe. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92639" name="Silver Axe Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Silver Axe. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92640" name="Skull Graver Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Skull Graver. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92641" name="Heavy Doom Hammer Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Heavy Doom Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92642" name="Crystal Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Crystal Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92643" name="Stick of Faith Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Stick of Faith. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92644" name="Heavy Doom Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Heavy Doom Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92645" name="Cursed Dagger Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Cursed Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92646" name="Needle Wolverine Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Needle Wolverine. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92647" name="Dark Elven Dagger Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Dark Elven Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92648" name="Chakram Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Chakram. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92649" name="Crystallized Ice Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Frozen Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92650" name="Orcish Glaive Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Orcish Glaive. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92651" name="Body Slasher Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Body Slasher. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92652" name="Shamshir Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Shamshir. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92653" name="Katana Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Katana. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92654" name="Bec de Corbin Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Bec de Corbin. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92655" name="Spirit Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Spirit Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92656" name="Raid Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Raid Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92657" name="Cursed Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Cursed Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92658" name="Stiletto Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Stiletto. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92659" name="Soulfire Dirk Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Soulfire Dirk. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92660" name="Elemental Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Elemental Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92661" name="Noble Elven Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Noble Elven Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92662" name="Horn of Glory Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Horn of Glory. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92663" name="Caliburs Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Caliburs. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92664" name="Delusional Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Delusion. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92665" name="Tsurugi Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Tsurugi. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92666" name="Homunkulus' Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Homunkulus' Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92667" name="Poleaxe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Poleaxe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92668" name="Ultimate Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Ultimate Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92669" name="Sword of Nightmare Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Nightmare. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92670" name="Sword of Whispering Death Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Whispering Death. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92671" name="War Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make War Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92672" name="Nirvana Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Nirvana Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92673" name="Stick of Eternity Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Stick of Eternity. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92674" name="Paradia Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Paradia Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92675" name="Inferno Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Inferno Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92676" name="Pa'agrio Hammer Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Pa'agrio Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92677" name="Sage's Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Sage's Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92678" name="Club of Nature Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Club of Nature. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92679" name="Mace of Underworld Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Mace of Underworld. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92680" name="Grace Dagger Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Grace Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92681" name="Dark Screamer Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Dark Screamer. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92682" name="Fisted Blade Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Fisted Blade. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92683" name="Akat Longbow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Akat Longbow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92684" name="Pa'agrio Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Pa'agrio Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92685" name="Scorpion Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Scorpion. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92686" name="Widowmaker Head" type="EtcItem">
+		<!-- Key material used by Dwarves for crafting Widowmaker. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92687" name="Samurai Long Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Samurai Long Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92688" name="Deadman's Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Deadman's Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92689" name="Ghoul's Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Ghoul's Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92690" name="Demon's Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Demon's Staff. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92691" name="Crystal Dagger Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Crystal Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92692" name="Great Pata Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Great Pata. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92693" name="Eminence Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Eminence Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92694" name="Orcish Poleaxe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Orcish Poleaxe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92695" name="Ring of Seal Gemstone" type="EtcItem">
+		<!-- Key material for Dwarves to make Ring of Seal. -->
+		<set name="icon" val="icon.etc_bead_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92696" name="Mithril Scale Gaiter Material" type="EtcItem">
+		<!-- Key material for Dwarves to make Mithril Scale Gaiters. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92697" name="Brigandine Gaiter Material" type="EtcItem">
+		<!-- Key material for Dwarves to make Brigandine Gaiters. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92698" name="Elven Mithril Tunic Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Elven Mithril Tunic. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92699" name="Elven Mithril Stocking Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Elven Mithril Stockings. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

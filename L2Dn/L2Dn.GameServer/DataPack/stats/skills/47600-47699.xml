@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="47601" toLevel="10" name="Vortex Shot">
+		<!-- Shoots a spinning arrow. Attacks the target and nearby enemies. Critical. -->
+		<icon>icon.s_spinning_shot</icon>
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<effectRange>1200</effectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<hitTime>2500</hitTime>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">75</value>
+			<value level="6">77</value>
+			<value level="7">79</value>
+			<value level="8">81</value>
+			<value level="9">83</value>
+			<value level="10">85</value>
+		</magicLevel>
+		<effectPoint>
+			<value level="1">-800</value>
+			<value level="2">-1000</value>
+			<value level="3">-1200</value>
+			<value level="4">-1400</value>
+			<value level="5">-1500</value>
+			<value level="6">-1540</value>
+			<value level="7">-1580</value>
+			<value level="8">-1620</value>
+			<value level="9">-1660</value>
+			<value level="10">-1700</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">52</value>
+			<value level="2">65</value>
+			<value level="3">78</value>
+			<value level="4">91</value>
+			<value level="5">97</value>
+			<value level="6">100</value>
+			<value level="7">102</value>
+			<value level="8">105</value>
+			<value level="9">107</value>
+			<value level="10">110</value>
+		</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+		<affectRange>250</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">916</value>
+					<value level="2">1939</value>
+					<value level="3">2707</value>
+					<value level="4">3501</value>
+					<value level="5">3906</value>
+					<value level="6">4042</value>
+					<value level="7">4174</value>
+					<value level="8">4306</value>
+					<value level="9">4440</value>
+					<value level="10">4575</value>
+				</power>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47602" toLevel="10" name="Triple Shot">
+		<!-- Shoots 3 arrows one by one.\n\nMakes 3 attacks. Power $s1.\n\nCritical. -->
+		<icon>icon.s_triple_shot</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>2800</hitTime>
+		<reuseDelay>8000</reuseDelay>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">82</value>
+			<value level="4">84</value>
+			<value level="5">85</value>
+			<value level="6">86</value>
+			<value level="7">87</value>
+			<value level="8">88</value>
+			<value level="9">89</value>
+			<value level="10">90</value>
+		</magicLevel>
+		<effectPoint>
+			<value level="1">-380</value>
+			<value level="2">-395</value>
+			<value level="3">-410</value>
+			<value level="4">-420</value>
+			<value level="5">-425</value>
+			<value level="6">-430</value>
+			<value level="7">-435</value>
+			<value level="8">-440</value>
+			<value level="9">-445</value>
+			<value level="10">-450</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">114</value>
+			<value level="2">118</value>
+			<value level="3">123</value>
+			<value level="4">126</value>
+			<value level="5">127</value>
+			<value level="6">129</value>
+			<value level="7">130</value>
+			<value level="8">132</value>
+			<value level="9">133</value>
+			<value level="10">135</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3480</value>
+					<value level="2">3652</value>
+					<value level="3">3827</value>
+					<value level="4">3944</value>
+					<value level="5">4003</value>
+					<value level="6">4062</value>
+					<value level="7">4122</value>
+					<value level="8">4181</value>
+					<value level="9">4241</value>
+					<value level="10">4301</value>
+				</power>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3480</value>
+					<value level="2">3652</value>
+					<value level="3">3827</value>
+					<value level="4">3944</value>
+					<value level="5">4003</value>
+					<value level="6">4062</value>
+					<value level="7">4122</value>
+					<value level="8">4181</value>
+					<value level="9">4241</value>
+					<value level="10">4301</value>
+				</power>
+				<criticalChance>10</criticalChance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">3480</value>
+					<value level="2">3652</value>
+					<value level="3">3827</value>
+					<value level="4">3944</value>
+					<value level="5">4003</value>
+					<value level="6">4062</value>
+					<value level="7">4122</value>
+					<value level="8">4181</value>
+					<value level="9">4241</value>
+					<value level="10">4301</value>
+				</power>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47603" toLevel="8" name="Binding Shot">
+		<!-- <Hold skill>\n\nShoots an arrow that binds an enemy.\nAttacks with $s1 power.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nFor 5 sec., inflicts Hold on the target. -->
+		<icon>icon.s_binding_shot</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">85</value>
+			<value level="3">88</value>
+			<value level="4">89</value>
+			<value level="5">90</value>
+			<value level="6">91</value>
+			<value level="7">92</value>
+			<value level="8">93</value>
+		</magicLevel>
+		<effectPoint>
+			<value level="1">-820</value>
+			<value level="2">-850</value>
+			<value level="3">-880</value>
+			<value level="4">-890</value>
+			<value level="5">-900</value>
+			<value level="6">-910</value>
+			<value level="7">-920</value>
+			<value level="8">-930</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">72</value>
+			<value level="2">75</value>
+			<value level="3">78</value>
+			<value level="4">79</value>
+			<value level="5">80</value>
+			<value level="6">81</value>
+			<value level="7">82</value>
+			<value level="8">83</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">11000</value>
+					<value level="2">11500</value>
+					<value level="3">12500</value>
+					<value level="4">13000</value>
+					<value level="5">13500</value>
+					<value level="6">14000</value>
+					<value level="7">14500</value>
+					<value level="8">15000</value>
+				</power>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47604</skillId> <!-- Binding Shot -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47604" toLevel="8" name="Binding Shot">
+		<!-- The target is immobilized. -->
+		<icon>icon.s_binding_shot</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>ROOT_PHYSICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>3</lvlBonusRate>
+		<trait>HOLD</trait>
+		<effectPoint>
+			<value level="1">-820</value>
+			<value level="2">-850</value>
+			<value level="3">-880</value>
+			<value level="4">-890</value>
+			<value level="5">-900</value>
+			<value level="6">-910</value>
+			<value level="7">-920</value>
+			<value level="8">-930</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47605" toLevel="5" name="Incendiary Shot">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with fire energy that deals damage to the target and nearby enemies.\nPower $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nApplies <font color="EFFF04">Ignite</font> to the target.\n\n<If <font color="EFFF04">Fire (Flame Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Burning Flames (damage depends on P. Atk.)</font>\n\n<If <font color="EFFF04">Flame Gust (Spiral Shot + Flame Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Explosion (damage depends on P. Atk.)</font> -->
+		<icon>icon.s_burning_shot</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1740</value>
+			<value level="3">-1780</value>
+			<value level="4">-1820</value>
+			<value level="5">-1860</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">113</value>
+			<value level="3">115</value>
+			<value level="4">118</value>
+			<value level="5">120</value>
+		</mpConsume>
+	</skill>
+	<skill id="47606" toLevel="5" name="Freezing Shot">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with cold energy that deals damage to the target and nearby enemies.\nPower $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nApplies <font color="EFFF04">Icy Air</font> to the target.\n\n<If <font color="EFFF04">Moisture (Water Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Cold Wave (damage depends on P. Atk.)</font>\n\n<If <font color="EFFF04">Water Dust (Spiral Shot + Water Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Snow Storm (damage depends on P. Atk.)</font> -->
+		<icon>icon.s_freezing_shot</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1740</value>
+			<value level="3">-1780</value>
+			<value level="4">-1820</value>
+			<value level="5">-1860</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">113</value>
+			<value level="3">115</value>
+			<value level="4">118</value>
+			<value level="5">120</value>
+		</mpConsume>
+	</skill>
+	<skill id="47607" toLevel="5" name="Wind Shot">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with wind energy that deals damage to the target and nearby enemies.\nPower $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nApplies <font color="EFFF04">Breeze</font> to the target.\n\n<If <font color="EFFF04">Flurry (Storm Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Tearing Wind (damage depends on P. Atk.)</font>\n\n<If <font color="EFFF04">Storm (Spiral Shot + Storm Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Strong Typhoon (damage depends on P. Atk.)</font> -->
+		<icon>icon.s_wind_shot</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1740</value>
+			<value level="3">-1780</value>
+			<value level="4">-1820</value>
+			<value level="5">-1860</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">113</value>
+			<value level="3">115</value>
+			<value level="4">118</value>
+			<value level="5">120</value>
+		</mpConsume>
+	</skill>
+	<skill id="47608" toLevel="8" name="Spiral Shot">
+		<!-- <<font color="FF8000">Pull/ effect combo skill</font>>\n\nShoots an arrow imbued with strong wind energy.\nAttacks the target with $s1 power.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nPulls nearby enemies to the target.\n\nApplies <font color="EFFF04">Gust</font> to the target.\n\n<If <font color="EFFF04">Fire (Flame Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Flame Gust (damage over time)</font>\n\n<If <font color="EFFF04">Moisture (Water Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Water Dust (damage over time)</font>\n\nIf <font color="EFFF04">Flurry (Storm Arrow Rain)</font> is active>\nThe following effect is applied:\n<font color="EFFF04">Storm (damage over time)</font> -->
+		<icon>icon.s_spiral_shot</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1640</value>
+			<value level="3">-1700</value>
+			<value level="4">-1760</value>
+			<value level="5">-1800</value>
+			<value level="6">-1820</value>
+			<value level="7">-1840</value>
+			<value level="8">-1860</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">224</value>
+			<value level="2">229</value>
+			<value level="3">238</value>
+			<value level="4">246</value>
+			<value level="5">252</value>
+			<value level="6">254</value>
+			<value level="7">257</value>
+			<value level="8">260</value>
+		</mpConsume>
+	</skill>
+	<skill id="47609" toLevel="8" name="Spiral Shot">
+		<icon>icon.s_spiral_shot</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1640</value>
+			<value level="3">-1700</value>
+			<value level="4">-1760</value>
+			<value level="5">-1800</value>
+			<value level="6">-1820</value>
+			<value level="7">-1840</value>
+			<value level="8">-1860</value>
+		</effectPoint>
+	</skill>
+	<skill id="47621" toLevel="1" name="Fire">
+		<!-- You are engulfed in hot flames.\n\nWhen <font color="EFFF04">Ignite (Incendiary Shot)</font> is applied, activates <font color="EFFF04">Burning Flames</font>.\n\nWhen <font color="EFFF04">Gust</font> is applied, activates <font color="EFFF04">Flame Gust</font>. -->
+		<icon>icon.s_archer_flame</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47622" toLevel="1" name="Moisture">
+		<!-- You are soaking through.\n\nWhen <font color="EFFF04">Icy Air (Freezing Shot)</font> is applied, activates <font color="EFFF04">Cold Wave</font>.\n\nWhen <font color="EFFF04">Gust</font> is applied, activates <font color="EFFF04">Water Dust</font>. -->
+		<icon>icon.skill31142</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47623" toLevel="1" name="Flurry">
+		<!-- Wind is swirling around you.\n\nWhen <font color="EFFF04">Breeze (Wind Shot)</font> is applied, activates <font color="EFFF04">Tearing Wind</font>.\n\nWhen <font color="EFFF04">Gust</font> is applied, activates <font color="EFFF04">Storm</font>. -->
+		<icon>icon.s_archer_wind_damage</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47624" toLevel="1" name="Ignite">
+		<!-- You can explode at any moment.\n\nWhen <font color="EFFF04">Fire (Flame Arrow Rain)</font> is applied, activates <font color="EFFF04">Burning Flames</font>.\n\nWhen <font color="EFFF04">Flame Gust</font> is applied, activates <font color="EFFF04">Explosion</font>. -->
+		<icon>icon.s_archer_burning</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47625" toLevel="1" name="Icy Air">
+		<!-- You are freezing cold.\n\nWhen <font color="EFFF04">Moisture Water Arrow Rain)</font> is applied, activates <font color="EFFF04">Cold Wave</font>.\n\nWhen <font color="EFFF04">Water Dust</font> is applied, activates <font color="EFFF04">Snow Storm</font>. -->
+		<icon>icon.s_archer_cold</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47626" toLevel="1" name="Breeze">
+		<!-- Wind gusts are tearing you apart.\n\nWhen <font color="EFFF04">Flurry (Storm Arrow Rain)</font> is applied, activates <font color="EFFF04">Tearing Wind</font>.\n\nWhen <font color="EFFF04">Storm</font> is applied, activates <font color="EFFF04">Strong Typhoon</font>. -->
+		<icon>icon.s_archer_wind</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47631" toLevel="1" name="Gust">
+		<!-- Strong wind is blowing all around you.\n\nWhen <font color="EFFF04">Fire (Flame Arrow Rain)</font> is applied, activates <font color="EFFF04">Flame Gust</font>.\n\nWhen <font color="EFFF04">Moisture (Water Arrow Rain)</font> is applied, activates <font color="EFFF04">Water Dust</font>.\n\nWhen <font color="EFFF04">Flurry (Storm Arrow Rain)</font> is applied, activates <font color="EFFF04">Storm</font>. -->
+		<icon>icon.s_archer_gust</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47632" toLevel="1" name="Flame Gust">
+		<!-- You are engulfed in flames.\n\nWhen <font color="EFFF04">Ignite (Incendiary Shot)</font> is applied, activates <font color="EFFF04">Explosion</font>. -->
+		<icon>icon.skill19436</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47633" toLevel="1" name="Water Dust">
+		<!-- You are surrounded by water currents.\n\nWhen <font color="EFFF04">Icy Air (Freezing Shot)</font> is applied, activates <font color="EFFF04">Snow Storm</font>. -->
+		<icon>icon.skill32708</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47634" toLevel="1" name="Storm">
+		<!-- You are surrounded by wind currents.\n\nWhen <font color="EFFF04">Breeze (Wind Shot)</font> is applied, activates <font color="EFFF04">Strong Typhoon</font>. -->
+		<icon>icon.skill11137</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47641" toLevel="1" name="Burning Flames">
+		<icon>icon.skill4279_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47642" toLevel="1" name="Explosion">
+		<icon>icon.s_archer_explosion</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47643" toLevel="1" name="Cold Wave">
+		<icon>icon.skill1236</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47644" toLevel="1" name="Snow Storm">
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47645" toLevel="1" name="Tearing Wind">
+		<icon>icon.s_archer_wind_cutter</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47646" toLevel="1" name="Strong Typhoon">
+		<icon>icon.skill1458</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47647" toLevel="1" name="Mega-impulse">
+		<icon>icon.s_mega_impact</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47648" toLevel="1" name="Fire Mark">
+		<!-- Applies <font color="EFFF04">Fire Mark</font>.\nIf <font color="EFFF04">Aqua Mark</font> and <font color="EFFF04">Storm Mark</font> are also applied, activates <font color="EFFF04">Mega-impulse</font>. -->
+		<icon>icon.skill1451</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47649" toLevel="1" name="Aqua Mark">
+		<!-- Applies <font color="EFFF04">Aqua Mark</font>.\nIf <font color="EFFF04">Fire Mark</font> and <font color="EFFF04">Storm Mark</font> are also applied, activates <font color="EFFF04">Mega-impulse</font>. -->
+		<icon>icon.skill1453</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47650" toLevel="1" name="Storm Mark">
+		<!-- Applies <font color="EFFF04">Storm Mark</font>.\nIf <font color="EFFF04">Fire Mark</font> and <font color="EFFF04">Aqua Mark</font> are also applied, activates <font color="EFFF04">Mega-impulse</font>. -->
+		<icon>icon.skill1456</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-5</effectPoint>
+	</skill>
+	<skill id="47651" toLevel="1" name="Legendary Shot">
+		<!-- <Skill with fixed cooldown>\n\n<font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Legendary Archer: Master</font>.\n\nShoots an arrow imbued with the legendary power.\nAttacks the target. Power 15,000.\n\nIgnores 15% of the target's defense.\nCritical.\n\nApplies <font color="FFBB00">Sniping Focus</font>.\n\n<font color="FFBB00">Sniping Focus effect</font>\nDuration: 13 sec.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Arrow Focus</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nNocks <font color="FFBB00">5 special arrows</font>.\nWhen using attack skills, consumes <font color="FFBB00">1 special arrow</font>.\n<font color="FFBB00">Special arrows</font> <font color="00FF00">increase</font> attack accuracy. -->
+		<icon>icon.s_legendary_shot_hu</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47652" toLevel="1" name="Legendary Shot">
+		<!-- <Skill with fixed cooldown>\n\n<font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Legendary Archer: Master</font>.\n\nShoots an arrow imbued with the legendary power.\nAttacks the target. Power 15,000.\n\nIgnores 15% of the target's defense.\nCritical.\n\nApplies <font color="FFBB00">Moonlight Hurricane</font>.\n\n<font color="FFBB00">Moonlight Hurricane effect</font>\nDuration: 5 sec.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Moonlight Arrow</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nWhile the moon is full:\nFor 5 sec., increases <font color="00FF00">Moonlight Arrow's</font> critical rate. -->
+		<icon>icon.s_legendary_shot_el</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47653" toLevel="1" name="Legendary Shot">
+		<!-- <Skill with fixed cooldown>\n\n<font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Legendary Archer: Master</font>.\n\nShoots an arrow imbued with the legendary power.\nAttacks the target. Power 15,000.\n\nIgnores 15% of the target's defense.\nCritical.\n\nApplies <font color="FFBB00">Fatal Bow</font>.\n\n<font color="FFBB00">Fatal Bow effect</font>\nDuration: 10 sec.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Fatal Break</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nWhen using attack skills, ignores the target's <font color="00FF00">barrier effects</font> and <font color="00FF00">received damage limit</font>. -->
+		<icon>icon.s_legendary_shot_da</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47654" toLevel="1" name="Blade Assault">
+		<!-- <font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Challenger: Master</font>.\n\nAttacks the target with a blade imbued with the power of destruction.\nIf the target is too far, charges to them and attacks.\n\nAttacks the target twice. Power 12,000.\nIgnores 20% of the target's defense.\nCritical.\n\nFor 10 sec., applies the following debuff to the target:\nImprisonment Resistance -20%\n\nWith a certain chance, applies the following debuff to surrounding enemies for 5 sec.:\nReceived AoE Skill Damage +10%\nFixed number of attacks: 1\n\nKilling the target with <font color="FF8000">Blade Assault</font> reduces the skill's cooldown.\nWhen the target is killed, the skill can be used consecutively for 3 sec.\n(Max 2 times) -->
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47655" toLevel="4" name="Blade Wave - Master">
+		<!-- Attacks the target <font color="FFBB00">thrice</font>. Power $s1.\nIgnores Shield Defense.\nIgnores $s4 of the target's defense.\nCritical.\nFor $s2, P. Def. $s3.\n\nPvP: Attacks up to 9 targets.\nPvE: Attacks up to 9 targets.\n\nWhen attacking 1 enemy in the skill range:\nAttacks the target <font color="FFBB00">thrice</font>. Power <font color="FF8000">$s5</font>.\nIgnores Shield Defense.\nIgnores $s4 of the target's defense.\nCritical. -->
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47657" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault_debuff1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="47658" toLevel="4" name="Blade Wave - Master">
+		<!-- P. Def. $s1 -->
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+	</skill>
+	<skill id="47659" toLevel="1" name="Blade Assault">
+		<!-- Received AoE Skill Damage +10% -->
+		<icon>icon.blade_assault_debuff1</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="47660" toLevel="1" name="Blade Assault">
+		<!-- Imprisonment Resistance -20% -->
+		<icon>icon.blade_assault_debuff2</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="47661" toLevel="13" name="Arrow Break">
+		<!-- P. Atk. $s1\nM. Atk. $s1\nP. Def. $s1\nM. Def. $s1 -->
+		<icon>
+			<value level="1">icon.skill10756</value>
+			<value level="2">icon.skill10756</value>
+			<value level="3">icon.skill10756</value>
+			<value level="4">icon.skill10756</value>
+			<value level="5">icon.skill10756</value>
+			<value level="6">icon.skill10811</value>
+			<value level="7">icon.skill10811</value>
+			<value level="8">icon.skill10811</value>
+			<value level="9">icon.skill10811</value>
+			<value level="10">icon.skill10811</value>
+			<value level="11">icon.skill10811</value>
+			<value level="12">icon.skill10811</value>
+			<value level="13">icon.skill10811</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="47662" toLevel="1" name="Arrow Focus">
+		<icon>icon.s_focus_arrow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47663" toLevel="2" name="Moonlight Arrow">
+		<!-- For demonstration - no damage. -->
+		<icon>icon.s_moonlight_arrow</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="47664" toLevel="3" name="Moonlight Arrow">
+		<!-- For demonstration - no damage. -->
+		<icon>icon.s_fullmoon_arrow</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="47665" toLevel="1" name="Fatal Break">
+		<icon>icon.s_fatal_break</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47666" toLevel="1" name="Arrow Focus">
+		<icon>icon.s_focus_arrow</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="47667" toLevel="6" name="Blade Rush">
+		<!-- <Rush skill>\n\nAttacks the target with $s1 power.\nIgnores Shield Defense.\nIgnores $s2 of the target's defense.\nCritical. -->
+		<icon>icon.sonic_rush</icon>
+		<operateType>DA1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<castRange>700</castRange>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">80</value>
+			<value level="3">83</value>
+			<value level="4">85</value>
+			<value level="5">88</value>
+			<value level="6">90</value>
+		</magicLevel>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">85</value>
+			<value level="4">90</value>
+			<value level="5">95</value>
+			<value level="6">100</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+			<condition name="NotInUnderwater" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>5000</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.95</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47668" toLevel="3" name="Indestructible Blade">
+		<!-- <Imprisonment skill>\n\nAttacks the target. Power $s1.\nCritical.\n\nFor $s2, inflicts Imprisonment.\n\nImprisoned targets cannot move, attack, teleport, use skills, recover HP/ MP/ CP.\n\nImprisoned targets can only be attacked by the Duelist; with a certain chance, removes Imprisonment on attack. -->
+		<icon>icon.unbreakable_sonic</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>2500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1760</value>
+			<value level="3">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">71</value>
+			<value level="3">72</value>
+		</mpConsume>
+	</skill>
+	<skill id="47670" toLevel="3" name="Indestructible Blade">
+		<!-- Imprisonment effect\n\nYou cannot move, attack, teleport, use skills, recover HP/ MP/ CP. -->
+		<icon>icon.unbreakable_sonic</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1760</value>
+			<value level="3">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47671" toLevel="1" name="Battle Senses">
+		<!-- On a critical attack and using Double Shot/ Triple Shot/ Lethal Shot:\nRecovers 30 MP.\nTrigger cooldown: 10 sec. -->
+		<icon>icon.s_combat_sense</icon>
+		<operateType>P</operateType>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47672</skillId> <!-- Battle Senses -->
+				<skillLevel>1</skillLevel>
+				<chance>100</chance>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>19</attackSkillId> <!-- Double Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47672</skillId> <!-- Battle Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>343</attackSkillId> <!-- Lethal Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47672</skillId> <!-- Battle Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>47602</attackSkillId> <!-- Triple Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47672</skillId> <!-- Battle Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47672" toLevel="1" name="Battle Senses">
+		<icon>icon.s_combat_sense</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47673" toLevel="1" name="Elven Senses">
+		<!-- On a critical attack and using Double Shot/ Triple Shot/ Lethal Shot:\nRecovers 30 MP.\nTrigger cooldown: 10 sec. -->
+		<icon>icon.s_elven_sense</icon>
+		<operateType>P</operateType>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47674</skillId> <!-- Elven Senses -->
+				<skillLevel>1</skillLevel>
+				<chance>100</chance>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>19</attackSkillId> <!-- Double Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47674</skillId> <!-- Elven Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>343</attackSkillId> <!-- Lethal Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47674</skillId> <!-- Elven Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>47602</attackSkillId> <!-- Triple Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<allowWeapons>BOW</allowWeapons>
+				<skillId>47674</skillId> <!-- Elven Senses -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47674" toLevel="1" name="Elven Senses">
+		<icon>icon.s_elven_sense</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47675" toLevel="1" name="Final Secret: Dual Weapons">
+		<!-- P. Skill Power +10%\nDamage +15%\nMax HP +2000\nBow Resistance +60%\nM. Damage Resistance +60%\nSpeed +20 -->
+		<icon>icon.final_secret_dualist</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>FINAL_SECRET</abnormalType>
+		<hitTime>1500</hitTime>
+		<reuseDelay>150000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<mpConsume>41</mpConsume>
+		<itemConsumeCount>5</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>60</BOW>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47676" toLevel="1" name="Tough Body: Dual Weapons">
+		<!-- P. Def. +2000\nM. Def. +2000\nDebuff/ Anomaly Resistance +30%\nBuff Cancel Resistance +30%\nSkill Evasion +30%\nReceived AoE Skill Damage -10% -->
+		<icon>icon.ultimate_body_dualist</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<hitTime>2000</hitTime>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<mpConsume>50</mpConsume>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-30</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<ANOMALY>30</ANOMALY>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-30</amount>
+				<slot>BUFF</slot>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>30</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>30</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>2</magicType>
+				<amount>30</amount>
+			</effect>
+			<effect name="AreaOfEffectDamageDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47677" toLevel="6" name="Ultimate Rising Attack">
+		<!-- <<font color="00FF00">Changing skill</font>>\nDamage depends on the distance to the target.\nFor 5 sec., the target's P. Def. -30%.\n<font color="FFBB00">Melee</font>\nAttacks the target. Power $s1.\nIgnores Shield Defense.\nIgnores $s2 of the target's defense.\nCritical.\n\n<font color="FFBB00">Mid-range</font>\nAttacks the target. Power $s3.\nIgnores Shield Defense.\nIgnores $s2 of the target's defense.\nCritical.\n\n<font color="FFBB00">Long-range</font>\nAttacks the target. Power $s4.\nIgnores Shield Defense.\nIgnores $s5 of the target's defense.\nCritical. -->
+		<icon>icon.full_rising_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">61</value>
+			<value level="3">62</value>
+			<value level="4">63</value>
+			<value level="5">64</value>
+			<value level="6">65</value>
+		</mpConsume>
+	</skill>
+	<skill id="47678" toLevel="6" name="Ultimate Rising Attack">
+		<icon>icon.full_rising_attack_short</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">61</value>
+			<value level="3">62</value>
+			<value level="4">63</value>
+			<value level="5">64</value>
+			<value level="6">65</value>
+		</mpConsume>
+	</skill>
+	<skill id="47679" toLevel="6" name="Ultimate Rising Attack">
+		<icon>icon.full_rising_attack_middle</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">61</value>
+			<value level="3">62</value>
+			<value level="4">63</value>
+			<value level="5">64</value>
+			<value level="6">65</value>
+		</mpConsume>
+	</skill>
+	<skill id="47680" toLevel="6" name="Ultimate Rising Attack">
+		<icon>icon.full_rising_attack_long</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">61</value>
+			<value level="3">62</value>
+			<value level="4">63</value>
+			<value level="5">64</value>
+			<value level="6">65</value>
+		</mpConsume>
+	</skill>
+	<skill id="47681" toLevel="1" name="Target Lock">
+		<!-- <Skill with fixed cooldown>\n\nActivates the single-target aiming mode.\nCannot be used when <font color="FFBB00">Ultimate Evasion</font> is active.\n\n<<font color="FFBB00">Base effect</font>>\nWhen using a bow, P. Atk. +10%\nReceived damage +30%\nAttack range +300\nSkill range +300\nSpeed +30\n\n<<font color="FFBB00">Special effects</font>>\nChanges the following skills making them single-target:\n\nSpiral Shot → Spiral Piercing\nVortex Shot → Vortex Piercing\nIncendiary Shot → Incendiary Piercing\nArrow Rain → Piercing\nFlame Arrow Rain → Flame Piercing -->
+		<icon>icon.skill0759</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<mpConsume>200</mpConsume>
+	</skill>
+	<skill id="47682" toLevel="1" name="Target Lock">
+		<!-- <Skill with fixed cooldown>\n\nActivates the single-target aiming mode.\nCannot be used when <font color="FFBB00">Ultimate Evasion</font> is active.\n\n<<font color="FFBB00">Base effect</font>>\nWhen using a bow, P. Atk. +10%\nReceived damage +30%\nAttack range +300\nSkill range +300\nSpeed +20\n\n<<font color="FFBB00">Special effects</font>>\nChanges the following skills making them single-target:\n\nSpiral Shot → Spiral Piercing\nVortex Shot → Vortex Piercing\nFreezing Shot → Freezing Piercing\nLight Arrow Rain → Light Piercing\nWater Arrow Rain → Water Piercing -->
+		<icon>icon.skill0759</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<mpConsume>200</mpConsume>
+	</skill>
+	<skill id="47683" toLevel="1" name="Target Lock">
+		<!-- <Skill with fixed cooldown>\n\nActivates the single-target aiming mode.\nCannot be used when <font color="FFBB00">Ultimate Evasion</font> is active.\n\n<<font color="FFBB00">Base effect</font>>\nWhen using a bow, P. Atk. +10%\nReceived damage +30%\nAttack range +500\nSkill range +500\nSpeed +20\n\n<<font color="FFBB00">Special effects</font>>\nChanges the following skills making them single-target:\n\nSpiral Shot → Spiral Piercing\nVortex Shot → Vortex Piercing\nWind Shot → Wind Piercing\nDark Arrow Rain → Dark Piercing\nStorm Arrow Rain → Storm Piercing -->
+		<icon>icon.skill0759</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<mpConsume>200</mpConsume>
+	</skill>
+	<skill id="47684" toLevel="1" name="Critical Break">
+		<!-- A skill for a effect demonstration. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47685" toLevel="1" name="Sniping Focus">
+		<!-- Maximizes your prowess with bows.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Arrow Focus</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nNocks <font color="FFBB00">5 special arrows</font>.\nWhen using attack skills, consumes <font color="FFBB00">1 special arrow</font>.\n<font color="FFBB00">Special arrows</font> <font color="00FF00">increase</font> attack accuracy. -->
+		<icon>icon.s_focus_arrow</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47686" toLevel="6" name="Arrow Focus">
+		<!-- Processing complete. -->
+		<icon>icon.s_focus_arrow</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47687" toLevel="1" name="Moonlight Hurricane">
+		<!-- Fills your body with moonlight power.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Moonlight Arrow</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nWhile the moon is full:\nFor 5 sec., increases Critical Damage from the <font color="FFBB00">additional attack</font>. -->
+		<icon>icon.s_moonlight_hurricane</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47688" toLevel="1" name="Moonlight Hurricane: Full Moon">
+		<!-- Moonlight gives you power.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Arrow Focus</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nWhen using <font color="00FF00">Moonlight Arrow</font>, <font color="00FF00">greatly increases</font> the skill's critical rate. -->
+		<icon>icon.s_moonlight_hurricane</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47689" toLevel="1" name="Fatal Bow">
+		<!-- You are armed with a large bow.\n\n<font color="FF8000">Base effect</font>\nP. Skill Power +10%\nMax HP -30%\n\n<font color="FF8000">Additional attack effect</font>\n<font color="00FF00">Fatal Break</font>\nWhen using attack skills, triggers <font color="FFBB00">1 additional attack</font>.\n\n<font color="FF8000">Special effects</font>\nWhen using attack skills, ignores the target's <font color="00FF00">barrier effects</font> and <font color="00FF00">received damage limit</font>. -->
+		<icon>icon.s_fatal_bow</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47690" toLevel="8" name="Spiral Piercing">
+		<!-- Shoots a windsquall arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_sprial_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-800</value>
+			<value level="2">-820</value>
+			<value level="3">-850</value>
+			<value level="4">-880</value>
+			<value level="5">-900</value>
+			<value level="6">-910</value>
+			<value level="7">-920</value>
+			<value level="8">-930</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">120</value>
+			<value level="2">123</value>
+			<value level="3">127</value>
+			<value level="4">132</value>
+			<value level="5">135</value>
+			<value level="6">136</value>
+			<value level="7">138</value>
+			<value level="8">139</value>
+		</mpConsume>
+	</skill>
+	<skill id="47691" toLevel="10" name="Vortex Piercing">
+		<!-- Shoots a spinning arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_spinning_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-600</value>
+			<value level="4">-700</value>
+			<value level="5">-750</value>
+			<value level="6">-770</value>
+			<value level="7">-790</value>
+			<value level="8">-810</value>
+			<value level="9">-830</value>
+			<value level="10">-850</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">75</value>
+			<value level="3">90</value>
+			<value level="4">105</value>
+			<value level="5">112</value>
+			<value level="6">115</value>
+			<value level="7">118</value>
+			<value level="8">121</value>
+			<value level="9">124</value>
+			<value level="10">127</value>
+		</mpConsume>
+	</skill>
+	<skill id="47692" toLevel="5" name="Incendiary Piercing">
+		<!-- Shoots a fire arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_burning_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-870</value>
+			<value level="3">-890</value>
+			<value level="4">-910</value>
+			<value level="5">-930</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">130</value>
+			<value level="3">133</value>
+			<value level="4">136</value>
+			<value level="5">139</value>
+		</mpConsume>
+	</skill>
+	<skill id="47693" toLevel="5" name="Freezing Piercing">
+		<!-- Shoots an ice arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_freezing_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-870</value>
+			<value level="3">-890</value>
+			<value level="4">-910</value>
+			<value level="5">-930</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">130</value>
+			<value level="3">133</value>
+			<value level="4">136</value>
+			<value level="5">139</value>
+		</mpConsume>
+	</skill>
+	<skill id="47694" toLevel="5" name="Wind Piercing">
+		<!-- Shoots a wind arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_wind_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-870</value>
+			<value level="3">-890</value>
+			<value level="4">-910</value>
+			<value level="5">-930</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">130</value>
+			<value level="3">133</value>
+			<value level="4">136</value>
+			<value level="5">139</value>
+		</mpConsume>
+	</skill>
+	<skill id="47695" toLevel="1" name="Piercing">
+		<!-- Shoots an arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power 4000.\n\nIgnores Shield Defense.\nIgnores 10% of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-800</effectPoint>
+		<mpConsume>120</mpConsume>
+	</skill>
+	<skill id="47696" toLevel="1" name="Light Piercing">
+		<!-- Shoots a light arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power 4000.\n\nIgnores Shield Defense.\nIgnores 10% of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_light_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-800</effectPoint>
+		<mpConsume>120</mpConsume>
+	</skill>
+	<skill id="47697" toLevel="1" name="Dark Piercing">
+		<!-- Shoots a dark arrow at a single target.\nAttacks the target <font color="FF8000">twice</font>. Power 4000.\n\nIgnores Shield Defense.\nIgnores 10% of the target's defense.\nCritical.\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_dark_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-800</effectPoint>
+		<mpConsume>120</mpConsume>
+	</skill>
+	<skill id="47698" toLevel="2" name="Flame Piercing">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with powerful fire energy.\nAttacks <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nWith a certain chance, applies <font color="FFBB00">Arrow Break</font> to the target.\n\n<font color="FFBB00">Arrow Break effect</font>\nDuration: 10 sec.\n\nP. Atk. $s3\nM. Atk. $s3\nP. Def. $s3\nM. Def. $s3\n\nFor 3 sec., applies <font color="EFFF04">Fire Mark</font> to the target.\n\n<If <font color="EFFF04">Aqua Mark</font> and <font color="EFFF04">Storm Mark</font> are applied>\nWhen using this skill:\nActivates <font color="EFFF04">Mega-impulse</font> (deals heavy damage).\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_flame_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">135</value>
+		</mpConsume>
+	</skill>
+	<skill id="47699" toLevel="2" name="Water Piercing">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with powerful water energy.\nAttacks <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nWith a certain chance, applies <font color="FFBB00">Arrow Break</font> to the target.\n\n<font color="FFBB00">Arrow Break effect</font>\nDuration: 10 sec.\n\nP. Atk. $s3\nM. Atk. $s3\nP. Def. $s3\nM. Def. $s3\n\nFor 3 sec., applies <font color="EFFF04">Aqua Mark</font> to the target.\n\n<If <font color="EFFF04">Fire Mark</font> and <font color="EFFF04">Storm Mark</font> are applied>\nWhen using this skill:\nActivates <font color="EFFF04">Mega-impulse</font> (deals heavy damage).\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_aqua_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">135</value>
+		</mpConsume>
+	</skill>
+</list>

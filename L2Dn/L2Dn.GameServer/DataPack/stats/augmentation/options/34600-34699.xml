@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34600" name="max_cp">
+		<!-- Max CP +163 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>163</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34601" name="max_cp">
+		<!-- Max CP +175 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>175</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34602" name="max_cp">
+		<!-- Max CP +188 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34603" name="max_cp">
+		<!-- Max CP +200 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34604" name="max_cp">
+		<!-- Max CP +300 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34605" name="max_cp">
+		<!-- Max CP +330 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34606" name="max_cp">
+		<!-- Max CP +360 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34607" name="max_cp">
+		<!-- Max CP +400 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34608" name="max_cp">
+		<!-- Max CP +500 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34609" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34610" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34611" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34612" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34613" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34614" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34615" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34616" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34617" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34618" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34619" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34620" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34621" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34622" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34623" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34624" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34625" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34626" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34627" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34628" name="p_m_accuracy">
+		<!-- P./ M. Accuracy +5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34629" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34630" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34631" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34632" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34633" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34634" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34635" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34636" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34637" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34638" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34639" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34640" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34641" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34642" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34643" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34644" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34645" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34646" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +3% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34647" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +4% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34648" name="ss_sps_atk">
+		<!-- Soulshot/ Spiritshot damage +5% -->
+		<effects>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34649" name="p_def">
+		<!-- P. Def. +15 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34650" name="p_def">
+		<!-- P. Def. +21 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34651" name="p_def">
+		<!-- P. Def. +27 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34652" name="p_def">
+		<!-- P. Def. +33 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34653" name="p_def">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34654" name="p_def">
+		<!-- P. Def. +47 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34655" name="p_def">
+		<!-- P. Def. +54 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>54</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34656" name="p_def">
+		<!-- P. Def. +61 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>61</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34657" name="p_def">
+		<!-- P. Def. +69 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>69</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34658" name="p_def">
+		<!-- P. Def. +77 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>77</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34659" name="p_def">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34660" name="p_def">
+		<!-- P. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34661" name="p_def">
+		<!-- P. Def. +103 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>103</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34662" name="p_def">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34663" name="p_def">
+		<!-- P. Def. +122 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>122</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34664" name="p_def">
+		<!-- P. Def. +149 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>149</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34665" name="p_def">
+		<!-- P. Def. +203 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>203</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34666" name="p_def">
+		<!-- P. Def. +233 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>233</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34667" name="p_def">
+		<!-- P. Def. +250 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34668" name="p_def">
+		<!-- P. Def. +300 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34669" name="m_def">
+		<!-- M. Def. +15 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34670" name="m_def">
+		<!-- M. Def. +21 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34671" name="m_def">
+		<!-- M. Def. +27 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34672" name="m_def">
+		<!-- M. Def. +33 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34673" name="m_def">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34674" name="m_def">
+		<!-- M. Def. +47 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34675" name="m_def">
+		<!-- M. Def. +54 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>54</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34676" name="m_def">
+		<!-- M. Def. +61 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>61</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34677" name="m_def">
+		<!-- M. Def. +69 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>69</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34678" name="m_def">
+		<!-- M. Def. +77 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>77</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34679" name="m_def">
+		<!-- M. Def. +85 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34680" name="m_def">
+		<!-- M. Def. +94 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34681" name="m_def">
+		<!-- M. Def. +103 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>103</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34682" name="m_def">
+		<!-- M. Def. +112 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34683" name="m_def">
+		<!-- M. Def. +122 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>122</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34684" name="m_def">
+		<!-- M. Def. +149 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>149</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34685" name="m_def">
+		<!-- M. Def. +203 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>203</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34686" name="m_def">
+		<!-- M. Def. +233 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>233</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34687" name="m_def">
+		<!-- M. Def. +250 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34688" name="m_def">
+		<!-- M. Def. +300 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34689" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34690" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34691" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34692" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34693" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34694" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34695" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34696" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34697" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34698" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>1</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34699" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>2</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+</list>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_05" minZ="-2776" maxZ="-2576">
+				<node x="177724" y="5656" />
+				<node x="178808" y="5660" />
+				<node x="179312" y="6968" />
+				<node x="179308" y="8836" />
+				<node x="179056" y="9048" />
+				<node x="177344" y="9044" />
+				<node x="177356" y="6112" />
+			</territory>
+		</territories>
+		<npc id="20670" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_06" minZ="-2776" maxZ="-2576">
+				<node x="180192" y="5712" />
+				<node x="181252" y="5704" />
+				<node x="181676" y="6208" />
+				<node x="181632" y="9020" />
+				<node x="179936" y="9036" />
+				<node x="179692" y="8768" />
+				<node x="179720" y="6960" />
+			</territory>
+		</territories>
+		<npc id="20672" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="2" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_07" minZ="-2768" maxZ="-2468">
+				<node x="177408" y="9460" />
+				<node x="179068" y="9460" />
+				<node x="179316" y="9704" />
+				<node x="179308" y="11776" />
+				<node x="178648" y="12892" />
+				<node x="177748" y="12888" />
+				<node x="177360" y="12432" />
+			</territory>
+		</territories>
+		<npc id="20670" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_08" minZ="-2768" maxZ="-2468">
+				<node x="179716" y="9752" />
+				<node x="179940" y="9444" />
+				<node x="181656" y="9448" />
+				<node x="181664" y="12432" />
+				<node x="181252" y="12896" />
+				<node x="180240" y="12868" />
+				<node x="179736" y="11756" />
+			</territory>
+		</territories>
+		<npc id="20672" count="3" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="3" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_30" minZ="-3784" maxZ="-3184">
+				<node x="187216" y="17084" />
+				<node x="188904" y="15960" />
+				<node x="190400" y="16356" />
+				<node x="191836" y="21036" />
+				<node x="188032" y="19568" />
+			</territory>
+		</territories>
+		<npc id="20672" count="6" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="7" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="7" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="7" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_31" minZ="-3768" maxZ="-3468">
+				<node x="187256" y="22280" />
+				<node x="187724" y="21144" />
+				<node x="191332" y="22760" />
+				<node x="187724" y="24400" />
+			</territory>
+		</territories>
+		<npc id="20672" count="6" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="6" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="6" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_32" minZ="-3660" maxZ="-3260">
+				<node x="183976" y="14016" />
+				<node x="186328" y="14152" />
+				<node x="187664" y="19764" />
+				<node x="185116" y="19164" />
+				<node x="184084" y="17544" />
+			</territory>
+		</territories>
+		<npc id="20670" count="9" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="8" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_33" minZ="-3764" maxZ="-3064">
+				<node x="185652" y="21252" />
+				<node x="186900" y="21204" />
+				<node x="187104" y="25460" />
+				<node x="184224" y="26016" />
+				<node x="184388" y="23060" />
+			</territory>
+		</territories>
+		<npc id="20670" count="8" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="6" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_34" minZ="-3808" maxZ="-3008">
+				<node x="181316" y="27036" />
+				<node x="187656" y="25320" />
+				<node x="188040" y="28996" />
+				<node x="186684" y="30864" />
+				<node x="181824" y="31088" />
+			</territory>
+		</territories>
+		<npc id="20670" count="10" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="10" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_36" minZ="-2848" maxZ="-2448">
+				<node x="182952" y="9880" />
+				<node x="185436" y="9756" />
+				<node x="187700" y="11588" />
+				<node x="186668" y="13256" />
+				<node x="183100" y="13004" />
+			</territory>
+		</territories>
+		<npc id="20670" count="8" respawnTime="3sec" chaseRange="5000" /> <!-- Crimson Drake -->
+		<npc id="20671" count="8" respawnTime="3sec" chaseRange="5000" /> <!-- Kadios -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_37" minZ="-2808" maxZ="-2408">
+				<node x="185944" y="7792" />
+				<node x="187400" y="6096" />
+				<node x="189028" y="8556" />
+				<node x="189152" y="11116" />
+				<node x="186288" y="9964" />
+			</territory>
+		</territories>
+		<npc id="20672" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_38" minZ="-2796" maxZ="-2396">
+				<node x="181572" y="4164" />
+				<node x="184760" y="4872" />
+				<node x="186044" y="6308" />
+				<node x="184864" y="9172" />
+				<node x="182684" y="9200" />
+			</territory>
+		</territories>
+		<npc id="20672" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="5" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_45" minZ="-3704" maxZ="-3304">
+				<node x="189612" y="20392" />
+				<node x="193644" y="22076" />
+				<node x="193212" y="23236" />
+				<node x="189120" y="21516" />
+			</territory>
+		</territories>
+		<npc id="20672" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_46" minZ="-3732" maxZ="-3532">
+				<node x="188004" y="24516" />
+				<node x="191724" y="22848" />
+				<node x="193000" y="23412" />
+				<node x="188156" y="25572" />
+			</territory>
+		</territories>
+		<npc id="20672" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden06_2518_47" minZ="-3720" maxZ="-3520">
+				<node x="190956" y="17436" />
+				<node x="191992" y="16712" />
+				<node x="193592" y="21832" />
+				<node x="192348" y="21248" />
+			</territory>
+		</territories>
+		<npc id="20672" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Trives -->
+		<npc id="20673" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Palibati -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+		<npc id="20674" count="4" respawnTime="3sec" chaseRange="5000" /> <!-- Doom Knight -->
+	</spawn>
+</list>

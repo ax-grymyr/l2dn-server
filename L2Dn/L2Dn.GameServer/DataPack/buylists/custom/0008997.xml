@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="83" price="0" /> <!-- Sword of Magic -->
+	<item id="101" price="0" /> <!-- Scroll of Wisdom -->
+	<item id="143" price="0" /> <!-- Sword of Mystic -->
+	<item id="144" price="0" /> <!-- Sword of Occult -->
+	<item id="312" price="0" /> <!-- Branch of Life -->
+	<item id="313" price="0" /> <!-- Temptation of Abyss -->
+	<item id="314" price="0" /> <!-- Proof of Revenge -->
+	<item id="315" price="0" /> <!-- Divine Tome -->
+	<item id="316" price="0" /> <!-- Sage's Blood -->
+	<item id="317" price="0" /> <!-- Tome of Blood -->
+	<item id="318" price="0" /> <!-- Crucifix of Blood -->
+	<item id="319" price="0" /> <!-- Eye of Infinity -->
+	<item id="320" price="0" /> <!-- Blue Crystall Skull -->
+	<item id="321" price="0" /> <!-- Demon's Fangs -->
+	<item id="322" price="0" /> <!-- Vajra Wang -->
+	<item id="323" price="0" /> <!-- Ancient Reagent -->
+	<item id="7885" price="0" /> <!-- Priest Sword -->
+	<item id="7886" price="0" /> <!-- Sword of Magic Fog -->
+</list>

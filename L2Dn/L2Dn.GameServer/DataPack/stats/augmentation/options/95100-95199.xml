@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95100" name="Received P. Skill Critical Damage -90">
+		<!-- Received P. Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95101" name="Received P. Skill Critical Damage -100">
+		<!-- Received P. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95102" name="Received P. Skill Critical Damage -120">
+		<!-- Received P. Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95103" name="Received P. Skill Critical Damage -130">
+		<!-- Received P. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95104" name="Received P. Skill Critical Damage -156">
+		<!-- Received P. Skill Critical Damage -156 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-156</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95105" name="Received P. Skill Critical Damage -188">
+		<!-- Received P. Skill Critical Damage -188 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95106" name="Received P. Skill Critical Damage -230">
+		<!-- Received P. Skill Critical Damage -230 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-230</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95107" name="Received P. Skill Critical Damage -300">
+		<!-- Received P. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95108" name="Received P. Skill Critical Damage -330">
+		<!-- Received P. Skill Critical Damage -330 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95109" name="Received M. Skill Critical Damage -5">
+		<!-- Received M. Skill Critical Damage -5 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95110" name="Received M. Skill Critical Damage -10">
+		<!-- Received M. Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95111" name="Received M. Skill Critical Damage -15">
+		<!-- Received M. Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95112" name="Received M. Skill Critical Damage -20">
+		<!-- Received M. Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95113" name="Received M. Skill Critical Damage -25">
+		<!-- Received M. Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95114" name="Received M. Skill Critical Damage -30">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95115" name="Received M. Skill Critical Damage -40">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95116" name="Received M. Skill Critical Damage -50">
+		<!-- Received M. Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95117" name="Received M. Skill Critical Damage -60">
+		<!-- Received M. Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95118" name="Received M. Skill Critical Damage -70">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95119" name="Received M. Skill Critical Damage -80">
+		<!-- Received M. Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95120" name="Received M. Skill Critical Damage -90">
+		<!-- Received M. Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95121" name="Received M. Skill Critical Damage -100">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95122" name="Received M. Skill Critical Damage -120">
+		<!-- Received M. Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95123" name="Received M. Skill Critical Damage -130">
+		<!-- Received M. Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95124" name="Received M. Skill Critical Damage -156">
+		<!-- Received M. Skill Critical Damage -156 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-156</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95125" name="Received M. Skill Critical Damage -188">
+		<!-- Received M. Skill Critical Damage -188 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95126" name="Received M. Skill Critical Damage -230">
+		<!-- Received M. Skill Critical Damage -230 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-230</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95127" name="Received M. Skill Critical Damage -300">
+		<!-- Received M. Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95128" name="Received M. Skill Critical Damage -330">
+		<!-- Received M. Skill Critical Damage -330 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95129" name="option_id_95129">
+		<!-- Received Skill Critical Damage -5 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95130" name="option_id_95130">
+		<!-- Received Skill Critical Damage -10 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95131" name="option_id_95131">
+		<!-- Received Skill Critical Damage -15 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95132" name="option_id_95132">
+		<!-- Received Skill Critical Damage -20 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95133" name="option_id_95133">
+		<!-- Received Skill Critical Damage -25 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95134" name="option_id_95134">
+		<!-- Received Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95135" name="option_id_95135">
+		<!-- Received Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95136" name="option_id_95136">
+		<!-- Received Skill Critical Damage -50 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95137" name="option_id_95137">
+		<!-- Received Skill Critical Damage -60 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95138" name="option_id_95138">
+		<!-- Received Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95139" name="option_id_95139">
+		<!-- Received Skill Critical Damage -80 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95140" name="option_id_95140">
+		<!-- Received Skill Critical Damage -90 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95141" name="option_id_95141">
+		<!-- Received Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95142" name="option_id_95142">
+		<!-- Received Skill Critical Damage -120 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95143" name="option_id_95143">
+		<!-- Received Skill Critical Damage -130 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95144" name="option_id_95144">
+		<!-- Received Skill Critical Damage -156 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-156</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-156</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95145" name="option_id_95145">
+		<!-- Received Skill Critical Damage -188 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-188</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95146" name="option_id_95146">
+		<!-- Received Skill Critical Damage -230 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-230</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-230</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95147" name="option_id_95147">
+		<!-- Received Skill Critical Damage -300 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95148" name="option_id_95148">
+		<!-- Received Skill Critical Damage -330 -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-330</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95149" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95150" name="P. Def. +64">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95151" name="P. Def. +68">
+		<!-- P. Def. +68 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95152" name="P. Def. +72">
+		<!-- P. Def. +72 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95153" name="P. Def. +76">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95154" name="P. Def. +80">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95155" name="P. Def. +85">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95156" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95157" name="P. Def. +95">
+		<!-- P. Def. +95 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95158" name="P. Def. +100">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95159" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95160" name="P. Def. +112">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95161" name="P. Def. +118">
+		<!-- P. Def. +118 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95162" name="P. Def. +120">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95163" name="P. Def. +130">
+		<!-- P. Def. +130 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95164" name="P. Def. +141">
+		<!-- P. Def. +141 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95165" name="P. Def. +153">
+		<!-- P. Def. +153 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95166" name="P. Def. +166">
+		<!-- P. Def. +166 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95167" name="P. Def. +180">
+		<!-- P. Def. +180 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95168" name="P. Def. +200">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95169" name="M. Def. +60">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95170" name="M. Def. +64">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95171" name="M. Def. +68">
+		<!-- M. Def. +68 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95172" name="M. Def. +72">
+		<!-- M. Def. +72 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95173" name="M. Def. +76">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95174" name="M. Def. +80">
+		<!-- M. Def. +80 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95175" name="M. Def. +85">
+		<!-- M. Def. +85 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95176" name="M. Def. +90">
+		<!-- M. Def. +90 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95177" name="M. Def. +95">
+		<!-- M. Def. +95 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95178" name="M. Def. +100">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95179" name="M. Def. +106">
+		<!-- M. Def. +106 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95180" name="M. Def. +112">
+		<!-- M. Def. +112 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95181" name="M. Def. +118">
+		<!-- M. Def. +118 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95182" name="M. Def. +120">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95183" name="M. Def. +130">
+		<!-- M. Def. +130 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95184" name="M. Def. +141">
+		<!-- M. Def. +141 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95185" name="M. Def. +153">
+		<!-- M. Def. +153 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95186" name="M. Def. +166">
+		<!-- M. Def. +166 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95187" name="M. Def. +180">
+		<!-- M. Def. +180 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95188" name="M. Def. +200">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95189" name="Max HP +100">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95190" name="Max HP +102">
+		<!-- Max HP +102 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95191" name="Max HP +104">
+		<!-- Max HP +104 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>104</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95192" name="Max HP +106">
+		<!-- Max HP +106 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95193" name="Max HP +108">
+		<!-- Max HP +108 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>108</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95194" name="Max HP +110">
+		<!-- Max HP +110 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95195" name="Max HP +112">
+		<!-- Max HP +112 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95196" name="Max HP +114">
+		<!-- Max HP +114 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>114</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95197" name="Max HP +116">
+		<!-- Max HP +116 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>116</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95198" name="Max HP +118">
+		<!-- Max HP +118 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95199" name="Max HP +126">
+		<!-- Max HP +126 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>126</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="FrostLordCastle">
+		<group>
+			<npc id="34230" x="144478" y="147802" z="-12108" heading="48457" respawnTime="60sec" /> <!-- Undercover Agent - Passage Guide -->
+			<npc id="34231" x="144399" y="147790" z="-12108" heading="48909" respawnTime="60sec" /> <!-- Sirro - Undercover Agent -->
+			<npc id="22346" x="143245" y="143295" z="-11869" heading="32479" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143033" y="143268" z="-11862" heading="13245" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22345" x="142241" y="143605" z="-11846" heading="9584" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22346" x="142247" y="143508" z="-11836" heading="65220" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="141913" y="144343" z="-11911" heading="16830" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22347" x="141956" y="144425" z="-11921" heading="11346" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142066" y="144291" z="-11909" heading="56358" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142313" y="145155" z="-12006" heading="62259" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142518" y="145035" z="-11997" heading="55649" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142431" y="145033" z="-11995" heading="32947" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142518" y="145290" z="-12008" heading="20964" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142668" y="144603" z="-11959" heading="53957" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142735" y="144401" z="-11944" heading="50316" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="143013" y="144327" z="-11955" heading="25504" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142900" y="144504" z="-11964" heading="22310" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142813" y="144722" z="-11976" heading="22962" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142758" y="144474" z="-11952" heading="46182" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142850" y="144291" z="-11940" heading="52851" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22347" x="142876" y="144304" z="-11943" heading="4836" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142383" y="143972" z="-11886" heading="21161" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142434" y="144073" z="-11898" heading="11506" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142478" y="143951" z="-11889" heading="52822" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142528" y="143631" z="-11865" heading="59880" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142281" y="143705" z="-11857" heading="25679" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142286" y="143847" z="-11869" heading="7152" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142606" y="143736" z="-11877" heading="61448" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22346" x="143496" y="143404" z="-11898" heading="61143" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143439" y="143367" z="-11890" heading="38773" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143356" y="143450" z="-11891" heading="24575" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143226" y="143456" z="-11881" heading="32286" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143230" y="143585" z="-11890" heading="16002" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22347" x="143313" y="143590" z="-11897" heading="62033" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22346" x="143545" y="143561" z="-11914" heading="13423" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22347" x="143376" y="143757" z="-11920" heading="18957" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="143112" y="143701" z="-11895" heading="631" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="143312" y="144280" z="-11968" heading="18844" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="143269" y="144459" z="-11979" heading="18840" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="143765" y="145789" z="-12007" heading="46898" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="143698" y="145809" z="-12008" heading="29742" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="142891" y="146323" z="-12009" heading="43862" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142920" y="146138" z="-12011" heading="50773" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="142789" y="146080" z="-12011" heading="37115" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="143437" y="145160" z="-12007" heading="62741" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="143453" y="145333" z="-12007" heading="19853" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="143549" y="145322" z="-12007" heading="64346" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="143532" y="145430" z="-12007" heading="18012" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="143550" y="145511" z="-12006" heading="23997" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22347" x="143408" y="145469" z="-12008" heading="35767" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22347" x="143294" y="145243" z="-12008" heading="44279" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22347" x="143451" y="144944" z="-12001" heading="51747" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22345" x="143314" y="146321" z="-12010" heading="42131" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22346" x="143261" y="143928" z="-11930" heading="32767" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143337" y="143886" z="-11931" heading="60844" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143438" y="143834" z="-11933" heading="58187" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143400" y="143979" z="-11946" heading="19057" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="143206" y="144231" z="-11956" heading="59956" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="142429" y="145618" z="-12008" heading="50056" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22346" x="142544" y="145723" z="-12009" heading="7718" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22345" x="142613" y="145834" z="-12010" heading="4703" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22346" x="142872" y="145882" z="-12011" heading="2728" respawnTime="60sec" /> <!-- Frosty Mage -->
+			<npc id="22345" x="143251" y="145959" z="-12012" heading="15523" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142952" y="145146" z="-12010" heading="53080" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22345" x="142818" y="145035" z="-11999" heading="39943" respawnTime="60sec" /> <!-- Frosty Knight -->
+			<npc id="22349" x="147847" y="143889" z="-12200" heading="59826" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22348" x="148536" y="145452" z="-12259" heading="6629" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="149314" y="146525" z="-12330" heading="8336" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="149153" y="146458" z="-12317" heading="26686" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22349" x="149008" y="146372" z="-12307" heading="38351" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22350" x="148934" y="146287" z="-12300" heading="41680" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22349" x="148968" y="146209" z="-12301" heading="53439" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="149080" y="146232" z="-12307" heading="2112" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="149059" y="146154" z="-12304" heading="46408" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148947" y="146124" z="-12297" heading="35497" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148188" y="146397" z="-12262" heading="2992" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148036" y="146359" z="-12255" heading="35323" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148171" y="146323" z="-12259" heading="62817" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="142657" y="143347" z="-11857" heading="38226" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22347" x="143700" y="143415" z="-11903" heading="56415" respawnTime="60sec" /> <!-- Frosty Sniper -->
+			<npc id="22348" x="147801" y="142775" z="-12200" heading="60449" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22349" x="148005" y="145223" z="-12204" heading="30380" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148260" y="144772" z="-12211" heading="61147" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148525" y="144614" z="-12214" heading="62706" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22350" x="148057" y="146710" z="-12263" heading="46545" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22350" x="147940" y="146171" z="-12233" heading="47225" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22350" x="148144" y="145741" z="-12229" heading="53734" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22348" x="148998" y="144476" z="-12227" heading="55191" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148889" y="144214" z="-12210" heading="40063" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148688" y="143843" z="-12202" heading="45428" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148649" y="143478" z="-12197" heading="48077" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22350" x="148204" y="143804" z="-12198" heading="62993" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22348" x="148202" y="143990" z="-12198" heading="11224" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22349" x="147790" y="143050" z="-12194" heading="42934" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22350" x="149120" y="145154" z="-12271" heading="27165" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22348" x="149232" y="145045" z="-12269" heading="57485" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148842" y="144933" z="-12257" heading="36110" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148424" y="145604" z="-12249" heading="18498" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22349" x="148651" y="144888" z="-12241" heading="50478" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="148412" y="145837" z="-12257" heading="16651" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="149504" y="145875" z="-12300" heading="64808" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22349" x="149880" y="145584" z="-12290" heading="51027" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22348" x="149679" y="145010" z="-12235" heading="38097" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22350" x="149717" y="145898" z="-12311" heading="18000" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22349" x="148040" y="145973" z="-12225" heading="10804" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22350" x="148317" y="146276" z="-12262" heading="7172" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22348" x="148503" y="146516" z="-12282" heading="9507" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="147735" y="144276" z="-12195" heading="58797" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148018" y="144561" z="-12198" heading="52708" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22350" x="148053" y="144613" z="-12198" heading="48269" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22350" x="148193" y="142965" z="-12194" heading="31252" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22350" x="148433" y="143065" z="-12194" heading="11744" respawnTime="60sec" /> <!-- Emperor's Sniper -->
+			<npc id="22349" x="148142" y="144294" z="-12198" heading="63152" respawnTime="60sec" /> <!-- Emperor's Mage -->
+			<npc id="22348" x="148252" y="143332" z="-12195" heading="56374" respawnTime="60sec" /> <!-- Emperor's Knight -->
+			<npc id="22348" x="148586" y="143734" z="-12201" heading="7308" respawnTime="60sec" /> <!-- Emperor's Knight -->
+		</group>
+	</spawn>
+	<spawn name="glakias_mobs_pretorian" spawnByDefault="false">
+		<group>
+			<npc id="29142" x="116123" y="-115766" z="-10984" heading="60900" respawnTime="30sec" />
+			<npc id="29140" x="115017" y="-115177" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29142" x="115945" y="-115953" z="-10984" heading="60532" respawnTime="30sec" />
+			<npc id="29142" x="116120" y="-113821" z="-10984" heading="13609" respawnTime="30sec" />
+			<npc id="29140" x="114852" y="-114818" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114855" y="-115011" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114842" y="-115184" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114706" y="-115013" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29142" x="115744" y="-116131" z="-10984" heading="19878" respawnTime="30sec" />
+			<npc id="29140" x="114706" y="-114632" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114693" y="-115186" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114556" y="-114831" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114559" y="-115015" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114544" y="-114642" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114554" y="-114287" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29142" x="113067" y="-115450" z="-10992" heading="22995" respawnTime="30sec" />
+			<npc id="29142" x="113080" y="-115203" z="-10992" heading="12972" respawnTime="30sec" />
+			<npc id="29140" x="114410" y="-115017" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114402" y="-114840" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114407" y="-114637" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114398" y="-115191" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114408" y="-114477" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114405" y="-114289" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114247" y="-115019" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114242" y="-114828" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114231" y="-114646" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114862" y="-114463" z="-11213" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114702" y="-114285" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114850" y="-114633" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115159" y="-115006" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115171" y="-114833" z="-11213" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115032" y="-114824" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114234" y="-115193" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114245" y="-114473" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114241" y="-114291" z="-11200" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115016" y="-115011" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="114869" y="-114287" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115033" y="-114648" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115174" y="-114634" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115181" y="-114462" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="118008" y="-114474" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115019" y="-114297" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115190" y="-114282" z="-11212" heading="54879" respawnTime="30sec" />
+			<npc id="29140" x="115036" y="-114476" z="-11210" heading="54879" respawnTime="30sec" />
+			<npc id="29141" x="115049" y="-116571" z="-11080" heading="53803" respawnTime="30sec" />
+			<npc id="29141" x="114948" y="-116573" z="-11080" heading="16914" respawnTime="30sec" />
+			<npc id="29141" x="115042" y="-116642" z="-11080" heading="45972" respawnTime="30sec" />
+			<npc id="29141" x="114949" y="-116637" z="-11080" heading="59422" respawnTime="30sec" />
+			<npc id="29141" x="115051" y="-116695" z="-11080" heading="14683" respawnTime="30sec" />
+			<npc id="29141" x="114948" y="-116698" z="-11080" heading="63040" respawnTime="30sec" />
+			<npc id="29142" x="114711" y="-113176" z="-10984" heading="17164" respawnTime="30sec" />
+			<npc id="29141" x="114478" y="-116578" z="-11080" heading="45873" respawnTime="30sec" />
+			<npc id="29142" x="114458" y="-113174" z="-10984" heading="57819" respawnTime="30sec" />
+			<npc id="29141" x="114479" y="-116638" z="-11080" heading="45312" respawnTime="30sec" />
+			<npc id="29141" x="114376" y="-116576" z="-11080" heading="6425" respawnTime="30sec" />
+			<npc id="29141" x="114477" y="-116691" z="-11080" heading="14369" respawnTime="30sec" />
+			<npc id="29141" x="114374" y="-116638" z="-11080" heading="30697" respawnTime="30sec" />
+			<npc id="29141" x="114372" y="-116690" z="-11080" heading="18896" respawnTime="30sec" />
+			<npc id="29142" x="114229" y="-113179" z="-10984" heading="10261" respawnTime="30sec" />
+			<npc id="29142" x="113609" y="-116041" z="-10984" heading="6806" respawnTime="30sec" />
+			<npc id="29142" x="113438" y="-115871" z="-10984" heading="39602" respawnTime="30sec" />
+			<npc id="29142" x="113706" y="-113357" z="-10984" heading="47206" respawnTime="30sec" />
+			<npc id="29142" x="113501" y="-113562" z="-10984" heading="37657" respawnTime="30sec" />
+			<npc id="29142" x="113281" y="-115710" z="-10984" heading="47717" respawnTime="30sec" />
+			<npc id="29142" x="113318" y="-113746" z="-10984" heading="25241" respawnTime="30sec" />
+			<npc id="29142" x="113067" y="-114861" z="-10984" heading="60004" respawnTime="30sec" />
+			<npc id="29142" x="115715" y="-113432" z="-10992" heading="49564" respawnTime="30sec" />
+			<npc id="29142" x="116363" y="-115366" z="-10992" heading="61624" respawnTime="30sec" />
+			<npc id="29142" x="116362" y="-115073" z="-10992" heading="23290" respawnTime="30sec" />
+			<npc id="29142" x="116358" y="-114798" z="-10992" heading="40768" respawnTime="30sec" />
+			<npc id="29142" x="116355" y="-114507" z="-10992" heading="30934" respawnTime="30sec" />
+			<npc id="29142" x="116359" y="-114144" z="-10992" heading="16834" respawnTime="30sec" />
+			<npc id="29142" x="115305" y="-113176" z="-10994" heading="50068" respawnTime="30sec" />
+			<npc id="29142" x="115912" y="-113612" z="-10992" heading="59197" respawnTime="30sec" />
+			<npc id="29142" x="114966" y="-113176" z="-10994" heading="32513" respawnTime="30sec" />
+		</group>
+	</spawn>
+	<spawn name="mobs_Enhanced_with_Crystal_Energy" spawnByDefault="false">
+		<group>
+			<npc id="22351" x="141979" y="144182" z="-11895" heading="16383" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142104" y="144167" z="-11895" heading="64290" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142100" y="144354" z="-11916" heading="16607" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="141942" y="144255" z="-11902" heading="32189" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142185" y="144939" z="-11977" heading="13343" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142759" y="144186" z="-11924" heading="50901" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142857" y="144099" z="-11920" heading="4722" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143074" y="144276" z="-11953" heading="8862" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142440" y="145110" z="-12004" heading="11600" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142549" y="145224" z="-12009" heading="8381" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142970" y="144134" z="-11931" heading="54420" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143099" y="144145" z="-11939" heading="945" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142453" y="143830" z="-11878" heading="19888" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143664" y="145875" z="-12009" heading="21345" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142689" y="146411" z="-12009" heading="11477" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142785" y="146267" z="-12009" heading="48247" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142842" y="146133" z="-12010" heading="57719" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142965" y="146208" z="-12010" heading="6503" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143006" y="146359" z="-12009" heading="13618" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143542" y="144141" z="-11975" heading="16789" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143792" y="145912" z="-12008" heading="35063" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143491" y="145223" z="-12007" heading="8992" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143618" y="145435" z="-12006" heading="605" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142640" y="145643" z="-12008" heading="43755" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="143220" y="145700" z="-12012" heading="47916" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22352" x="149263" y="144751" z="-12243" heading="13147" respawnTime="60sec" /> <!-- Emperor's Archer - Enhanced with Crystal Energy -->
+			<npc id="22352" x="149303" y="145559" z="-12288" heading="16175" respawnTime="60sec" /> <!-- Emperor's Archer - Enhanced with Crystal Energy -->
+			<npc id="22352" x="148237" y="146009" z="-12246" heading="28827" respawnTime="60sec" /> <!-- Emperor's Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142966" y="144400" z="-11957" heading="22310" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142797" y="144637" z="-11968" heading="47226" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142810" y="144399" z="-11949" heading="55475" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+			<npc id="22351" x="142383" y="143697" z="-11862" heading="22836" respawnTime="60sec" /> <!-- Frosty Archer - Enhanced with Crystal Energy -->
+		</group>
+	</spawn>
+</list>

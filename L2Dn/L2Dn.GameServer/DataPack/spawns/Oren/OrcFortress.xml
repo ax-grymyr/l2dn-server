@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="orc_fortress_preparation_npcs" spawnByDefault="false">
+		<group>
+			<npc id="18397" x="111074" y="-8179" z="-2349" heading="49324" respawnTime="60sec" /> <!-- Flag of Aden -->
+			<npc id="18398" x="107752" y="-7679" z="-2598" heading="8886" respawnTime="60sec" /> <!--  -->
+			<npc id="18398" x="108047" y="-7909" z="-2587" heading="9914" respawnTime="60sec" /> <!--  -->
+			<npc id="18399" x="108476" y="-7679" z="-2590" heading="16080" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108079" y="-6181" z="-2589" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108636" y="-5807" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108676" y="-6013" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108815" y="-5764" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108827" y="-5946" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="108980" y="-5733" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="109008" y="-5955" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="109205" y="-5779" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18400" x="109225" y="-5967" z="-2588" heading="58256" respawnTime="60sec" /> <!--  -->
+			<npc id="18401" x="109531" y="-6226" z="-2588" heading="49030" respawnTime="60sec" /> <!--  -->
+			<npc id="18401" x="109625" y="-6277" z="-2588" heading="48717" respawnTime="60sec" /> <!--  -->
+			<npc id="18401" x="109725" y="-6218" z="-2588" heading="49151" respawnTime="60sec" /> <!--  -->
+			<npc id="18402" x="109405" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109405" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109405" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109455" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109455" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109455" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109505" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109505" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109505" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109555" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109555" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109555" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109605" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109605" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109605" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109655" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109655" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109655" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109705" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109705" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109705" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109755" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109755" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109755" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109805" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109805" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109805" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109855" y="-6044" z="-2586" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109855" y="-6094" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18402" x="109855" y="-6144" z="-2390" heading="51387" respawnTime="60sec" /> <!-- Normal Guard -->
+			<npc id="18403" x="109405" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109405" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109455" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109505" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109555" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109605" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109655" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109705" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109755" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109805" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5694" z="-2604" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5744" z="-5744" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5794" z="-2594" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5844" z="-2593" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5894" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5944" z="-2589" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="18403" x="109855" y="-5994" z="-2588" heading="51387" respawnTime="60sec" /> <!-- Special Guard -->
+			<npc id="34136" x="111471" y="-6930" z="-2351" heading="44380" respawnTime="60sec" /> <!-- Artheo Ken Sider -->
+			<npc id="34137" x="111385" y="-6812" z="-2349" heading="43112" respawnTime="60sec" /> <!-- Eins -->
+		</group>
+	</spawn>
+	<spawn name="orc_fortress_jeras" spawnByDefault="false">
+		<group name="orc_fortress_jeras_guards">
+			<npc id="22159" x="113343" y="-13217" z="-1000" heading="16885" respawnTime="160sec" /> <!-- Jeras -->
+			<npc id="22159" x="112217" y="-13222" z="-1000" heading="16885" respawnTime="160sec" /> <!-- Jeras -->
+			<npc id="22159" x="111144" y="-13177" z="-1000" heading="16885" respawnTime="160sec" /> <!-- Jeras -->
+			<npc id="22159" x="110041" y="-13187" z="-1000" heading="16885" respawnTime="160sec" /> <!-- Jeras -->
+		</group>
+	</spawn>
+	<spawn name="Fortress_Monster" spawnByDefault="false">
+		<group name="orc_fortress">
+			<territories>
+				<territory minZ="-2050" maxZ="-1729">
+					<node x="110266" y="-10015" />
+					<node x="110642" y="-12822" />
+					<node x="112364" y="-12395" />
+					<node x="112088" y="-10442" />
+				</territory>
+				<territory minZ="-1715" maxZ="-1040">
+					<node x="112390" y="-10790" />
+					<node x="114022" y="-12675" />
+					<node x="114542" y="-12121" />
+					<node x="112847" y="-10270" />
+				</territory>
+				<territory minZ="-1550" maxZ="-967">
+					<node x="108715" y="-12931" />
+					<node x="108417" y="-12780" />
+					<node x="109354" y="-11406" />
+					<node x="109907" y="-11568" />
+				</territory>
+			</territories>
+			<npc id="22164" count="2" respawnTime="5sec" /> <!-- Laokan -->
+			<npc id="22165" count="2" respawnTime="5sec" /> <!-- Taklacan -->
+			<npc id="22166" count="2" respawnTime="5sec" /> <!-- Vulcan -->
+			<npc id="22167" count="2" respawnTime="5sec" /> <!-- Zakan -->
+			<npc id="22168" count="5" respawnTime="5sec" /> <!-- Chiliarch -->
+			<npc id="22169" count="5" respawnTime="5sec" /> <!-- Chiliarch -->
+			<npc id="22170" count="5" respawnTime="5sec" /> <!-- Chiliarch -->
+			<npc id="22171" count="5" respawnTime="5sec" /> <!-- Chiliarch -->
+			<npc id="22172" count="5" respawnTime="5sec" /> <!-- Centurion -->
+			<npc id="22173" count="5" respawnTime="5sec" /> <!-- Centurion -->
+			<npc id="22174" count="5" respawnTime="5sec" /> <!-- Centurion -->
+			<npc id="22175" count="5" respawnTime="5sec" /> <!-- Orc Soldier -->
+			<npc id="22176" count="5" respawnTime="5sec" /> <!-- Orc Warrior -->
+			<npc id="22177" count="5" respawnTime="5sec" /> <!-- Orc Prefect -->
+			<npc id="22178" count="5" respawnTime="5sec" /> <!-- Orc Shaman -->
+			<npc id="22179" count="5" respawnTime="5sec" /> <!-- Orc Shaman -->
+			<npc id="22180" count="5" respawnTime="5sec" /> <!-- Orc Archer -->
+			<npc id="22181" count="5" respawnTime="5sec" /> <!-- Orc Archer -->
+		</group>
+	</spawn>
+	<spawn name="Fortress_Runners" spawnByDefault="false">
+		<group name="orc_runners">
+			<territories>
+				<territory minZ="-2050" maxZ="-1729">
+					<node x="111784" y="-10054" />
+					<node x="111080" y="-9122" />
+					<node x="110517" y="-10360" />
+					<node x="111395" y="-11843" />
+				</territory>
+			</territories>
+			<npc id="22175" count="5" respawnTime="5sec" /> <!-- Orc Soldier -->
+			<npc id="22176" count="5" respawnTime="5sec" /> <!-- Orc Warrior -->
+			<npc id="22177" count="5" respawnTime="5sec" /> <!-- Orc Prefect -->
+			<npc id="22178" count="5" respawnTime="5sec" /> <!-- Orc Shaman -->
+			<npc id="22179" count="5" respawnTime="5sec" /> <!-- Orc Shaman -->
+			<npc id="22180" count="5" respawnTime="5sec" /> <!-- Orc Archer -->
+			<npc id="22181" count="5" respawnTime="5sec" /> <!-- Orc Archer -->
+		</group>
+		<group name="orc_fortress_greg_bottom_right" spawnByDefault="false">
+			<npc id="22156" count="1" x="112088" y="-12408" z="-1745" heading="16000" respawnTime="60sec" /> <!-- Greg -->
+		</group>
+		<group name="orc_fortress_greg_upper_right" spawnByDefault="false">
+			<npc id="22156" count="1" x="113864" y="-13240" z="-1000" heading="16000" respawnTime="60sec" /> <!-- Greg -->
+		</group>
+		<group name="orc_fortress_greg_upper_left" spawnByDefault="false">
+			<npc id="22156" count="1" x="108856" y="-13240" z="-1000" heading="16000" respawnTime="60sec" /> <!-- Greg -->
+		</group>
+		<group name="StrangeMagicStone" spawnByDefault="false">
+			<npc id="34358" count="1" x="111185" y="-12266" z="-1732" heading="16000" respawnTime="60sec" /> <!-- Strange Magic Stone -->
+		</group>
+		<group name="Giant_Orc_Deraka" spawnByDefault="false">
+			<npc id="18818" count="1" x="111430" y="-12258" z="-1741" heading="14857" /> <!-- Giant Orc Deraka -->
+		</group>
+		<group name="orc_fortress_inside" spawnByDefault="false">
+			<territories>
+				<territory minZ="-996" maxZ="-990">
+					<node x="109808" y="-14266" />
+					<node x="112084" y="-14185" />
+					<node x="111110" y="-14673" />
+					<node x="111049" y="-16168" />
+					<node x="112728" y="-16167" />
+					<node x="112686" y="-15381" />
+					<node x="114127" y="-15609" />
+					<node x="111149" y="-16943" />
+					<node x="110847" y="-15983" />
+					<node x="108905" y="-15991" />
+				</territory>
+			</territories>
+			<npc id="22157" count="2" respawnTime="3sec" /> <!-- Gilatu -->
+			<npc id="22158" count="2" respawnTime="3sec" /> <!-- Ogre -->
+			<npc id="22159" count="2" respawnTime="3sec" /> <!-- Jeras -->
+			<npc id="22160" count="2" respawnTime="3sec" /> <!-- Tebot -->
+			<npc id="22161" count="1" respawnTime="3sec" /> <!-- Tegaffe -->
+			<npc id="22162" count="2" respawnTime="3sec" /> <!-- Thesakar -->
+			<npc id="22163" count="1" respawnTime="3sec" /> <!-- Theor -->
+			<npc id="22174" count="2" respawnTime="3sec" /> <!-- Centurion -->
+			<npc id="22175" count="2" respawnTime="3sec" /> <!-- Orc Soldier -->
+			<npc id="22176" count="3" respawnTime="3sec" /> <!-- Orc Warrior -->
+			<npc id="22177" count="4" respawnTime="3sec" /> <!-- Orc Prefect -->
+			<npc id="22178" count="4" respawnTime="3sec" /> <!-- Orc Shaman -->
+			<npc id="22179" count="4" respawnTime="3sec" /> <!-- Orc Shaman -->
+			<npc id="22180" count="4" respawnTime="3sec" /> <!-- Orc Archer -->
+			<npc id="22181" count="4" respawnTime="3sec" /> <!-- Orc Archer -->
+		</group>
+	</spawn>
+	<spawn name="orc_fortress_owner" spawnByDefault="false">
+		<group name="orc_fortress_owner_npcs">
+			<npc id="34148" x="112368" y="-15922" z="-992" heading="27221" respawnTime="60sec" /> <!-- Quartermaster -->
+			<npc id="34146" x="111770" y="-14747" z="-992" heading="16880" respawnTime="60sec" /> <!-- Gatekeeper -->
+		</group>
+	</spawn>
+</list>

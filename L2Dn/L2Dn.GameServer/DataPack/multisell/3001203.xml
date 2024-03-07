@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30012</npc> <!-- Fishing Guildsman -->
+	</npcs>
+	<item>
+		<!-- Fresh Blue Mackerel -->
+		<ingredient count="7650" id="45481" />
+		<!-- Fishing Rod Chest (10 days) -->
+		<production count="1" id="49507" />
+	</item>
+	<item>
+		<!-- Blue Mackerel -->
+		<ingredient count="10384" id="45473" />
+		<!-- Fresh Blue Mackerel -->
+		<ingredient count="2250" id="45481" />
+		<!-- Adena -->
+		<ingredient count="300000" id="57" />
+		<!-- Agathion Pisces 30 days -->
+		<production count="1" id="91111" />
+	</item>
+	<item>
+		<!-- Blue Mackerel -->
+		<ingredient count="10384" id="45473" />
+		<!-- Fresh Blue Mackerel -->
+		<ingredient count="2250" id="45481" />
+		<!-- Adena -->
+		<ingredient count="300000" id="57" />
+		<!-- Agathion Cancer 30 days -->
+		<production count="1" id="91112" />
+	</item>
+	<item>
+		<!-- Scroll for 2000 SP (Exchangeable) -->
+		<ingredient count="50" id="49595" />
+		<!-- Adena -->
+		<ingredient count="200000" id="57" />
+		<!-- Large SP Scroll (Tradable) -->
+		<production count="1" id="5595" />
+	</item>
+	<item>
+		<!-- Whale -->
+		<ingredient count="80" id="49594" />
+		<!-- Adena -->
+		<ingredient count="2000" id="57" />
+		<!-- Scroll for 2000 SP (Exchangeable) -->
+		<production count="1" id="49595" />
+	</item>
+	<item>
+		<!-- Sparkling whale -->
+		<ingredient count="40" id="90188" />
+		<!-- Adena -->
+		<ingredient count="2000" id="57" />
+		<!-- Scroll for 2000 SP (Exchangeable) -->
+		<production count="1" id="49595" />
+	</item>
+	<item>
+		<!-- Tuna -->
+		<ingredient count="100" id="90173" />
+		<!-- Adena -->
+		<ingredient count="2000" id="57" />
+		<!-- Scroll for 2000 SP (Exchangeable) -->
+		<production count="1" id="49595" />
+	</item>
+	<item>
+		<!-- Blue Mackerel -->
+		<ingredient count="50" id="45473" />
+		<!-- Scroll of Escape - Giran Harbor -->
+		<production count="1" id="49502" />
+	</item>
+	<item>
+		<!-- Blue Mackerel -->
+		<ingredient count="50" id="45473" />
+		<!-- Scroll of Escape - Gludin Harbor (Tradable) -->
+		<production count="1" id="49503" />
+	</item>
+</list>

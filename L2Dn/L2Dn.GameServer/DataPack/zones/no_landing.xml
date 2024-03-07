@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
+	<!-- No Landing Zones -->
+	<zone name="boss_area_antaras" type="NoLandingZone" shape="NPoly" minZ="-4096" maxZ="-3896">
+		<node X="-58026" Y="-190958" />
+		<node X="-98030" Y="-190958" />
+		<node X="-97263" Y="-35335" />
+		<node X="-5341" Y="-34964" />
+		<node X="-5554" Y="-4207" />
+		<node X="-129444" Y="-4207" />
+	</zone>
+	<zone name="boss_area_valakas" type="NoLandingZone" shape="NPoly" minZ="-3753" maxZ="32767">
+		<node X="196710" Y="-130845" />
+		<node X="228895" Y="-130845" />
+		<node X="229126" Y="-96162" />
+		<node X="196478" Y="-98187" />
+	</zone>
+	<zone name="Tower_of_Insolence" type="NoLandingZone" shape="NPoly" minZ="-3349" maxZ="32767">
+		<node X="102382" Y="2297" />
+		<node X="100118" Y="30085" />
+		<node X="126188" Y="29775" />
+		<node X="127178" Y="3979" />
+	</zone>
+	<zone name="Hell_Bound_Island" type="NoLandingZone" shape="NPoly" minZ="-15000" maxZ="15000">
+		<node X="-47730" Y="228200" />
+		<node X="-33000" Y="287833" />
+		<node X="33000" Y="287833" />
+		<node X="33000" Y="228200" />
+		<node X="-10026" Y="228200" />
+	</zone>
+	<zone name="Rainbow_Spring" type="NoLandingZone" shape="NPoly" minZ="-2610" maxZ="15890">
+		<node X="147262" Y="-130925" />
+		<node X="159640" Y="-130952" />
+		<node X="159532" Y="-121970" />
+		<node X="147455" Y="-121883" />
+	</zone>
+	<zone name="24_21_nofly" type="NoLandingZone" shape="NPoly" minZ="-716" maxZ="15283">
+		<node X="131156" Y="98394" />
+		<node X="163755" Y="98405" />
+		<node X="163747" Y="130995" />
+		<node X="131168" Y="131006" />
+	</zone>
+	<zone name="25_21_nofly" type="NoLandingZone" shape="NPoly" minZ="-4044" maxZ="11956">
+		<node X="163907" Y="98398" />
+		<node X="196477" Y="98408" />
+		<node X="196495" Y="130990" />
+		<node X="164032" Y="130993" />
+	</zone>
+	<zone name="oren01_mb2220_ugoz01_flyno" type="NoLandingZone" shape="NPoly" minZ="-15000" maxZ="15000">
+		<node X="88417" Y="77085" />
+		<node X="105546" Y="77041" />
+		<node X="105421" Y="92728" />
+		<node X="88481" Y="92787" />
+	</zone>
+
+	<!-- High five zone -->
+	<zone name="olympiad_stadiums" type="NoLandingZone" shape="Cuboid" minZ="-8485" maxZ="1149">
+		<node X="-98296" Y="-262136" />
+		<node X="-65544" Y="-229384" />
+	</zone>
+	
+	<!-- Dwelling of Spirits zones -->
+	<zone id="202201" name="dwelling_portal_enter_fire" type="NoLandingZone" shape="Cuboid" minZ="-12209" maxZ="-10700">
+		<node X="-115236" Y="-77408" />
+		<node X="-115617" Y="-77631" />
+	</zone>
+	<zone id="202202" name="dwelling_portal_enter_earth" type="NoLandingZone" shape="Cuboid" minZ="-12209" maxZ="-10700">
+		<node X="-113417" Y="-77633" />
+		<node X="-113032" Y="-77411" />
+	</zone>
+	<zone id="202203" name="dwelling_portal_enter_water" type="NoLandingZone" shape="NPoly" minZ="-12209" maxZ="-10700">
+		<node X="-115160" Y="-79013" />
+		<node X="-115333" Y="-79182" />
+		<node X="-115216" Y="-79282" />
+		<node X="-115053" Y="-79121" />
+	</zone>
+	<zone id="202204" name="dwelling_portal_enter_wind" type="NoLandingZone" shape="NPoly" minZ="-12209" maxZ="-10700">
+		<node X="-113596" Y="-79120" />
+		<node X="-113436" Y="-79275" />
+		<node X="-113325" Y="-79176" />
+		<node X="-113490" Y="-79012" />
+	</zone>
+	<zone id="202205" name="dwelling_portal_return_fire" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
+		<node X="202349" Y="170533" />
+	</zone>
+	<zone id="202206" name="dwelling_portal_return_earth" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
+		<node X="222065" Y="192767" />
+	</zone>
+	<zone id="202207" name="dwelling_portal_return_water" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
+		<node X="222127" Y="170488" />
+	</zone>
+	<zone id="202208" name="dwelling_portal_return_wind" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
+		<node X="212855" Y="181242" />
+	</zone>
+	<zone id="21400000" name="dwelling_central" type="NoLandingZone" shape="Cylinder" minZ="-12209" maxZ="-10700" rad="1000">
+		<node X="-114339" Y="-78005" />
+	</zone>
+</list>

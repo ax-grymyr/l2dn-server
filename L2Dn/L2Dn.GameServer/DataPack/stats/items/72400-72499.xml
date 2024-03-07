@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="72405" name="Update Memento Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94775" min="1" max="1" chance="100" /> <!-- Package: +4 Circlet of Hero - Sealed -->
+			<item id="94328" min="10" max="10" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="96790" min="1" max="1" chance="100" /> <!-- Package: Red Lantern (400 pcs.) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72409" name="Surprise Supply Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.mrk_basket_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93274" min="200" max="200" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="94269" min="60" max="60" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="60" max="60" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72410" name="First Package: Black Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98454" min="2" max="2" chance="100" /> <!-- Equipment Upgrade Certificate (Time-limited) - Sealed -->
+			<item id="98022" min="1" max="1" chance="100" /> <!-- Black Coupon (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72411" name="Last Package: Black Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97123" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 3 Stars (Time-limited) - Sealed -->
+			<item id="98022" min="1" max="1" chance="100" /> <!-- Black Coupon (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72412" name="Monthly Gift Supply Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_joy_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93274" min="200" max="200" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="94269" min="100" max="100" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="100" max="100" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72413" name="May Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97147" min="10" max="10" chance="100" /> <!-- Hidden Power Booster - Sealed -->
+			<item id="94328" min="10" max="10" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="96790" min="1" max="1" chance="100" /> <!-- Package: Red Lantern (400 pcs.) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72414" name="Pre-order Anniversary Gift Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93073" min="19" max="19" chance="100" /> <!-- Sayha's Storm (Time-limited) - Sealed -->
+			<item id="97438" min="19" max="19" chance="100" /> <!-- Einhasad's Protection (Time-limited) - Sealed -->
+			<item id="93274" min="19" max="19" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="19" max="19" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="1900" max="1900" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="97147" min="2" max="2" chance="100" /> <!-- Hidden Power Booster - Sealed -->
+			<item id="94269" min="19" max="19" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="19" max="19" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72415" name="Anniversary Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98443" min="1" max="1" chance="100" /> <!-- +7 Talisman Coupon (Time-limited) - Sealed -->
+			<item id="94328" min="10" max="10" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="96790" min="1" max="1" chance="100" /> <!-- Package: Red Lantern (400 pcs.) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72416" name="Anniversary Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93274" min="200" max="200" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="94269" min="100" max="100" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="100" max="100" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="96202" min="1" max="1" chance="100" /> <!-- Package: +4 Circlet of Hero (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72417" name="Companion Pack (30-day)" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.mrk_basket_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93274" min="200" max="200" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="94269" min="100" max="100" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="100" max="100" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="90157" min="1" max="1" chance="100" /> <!-- Warrior’s Talisman - Attack - 7-day -->
+			<item id="94427" min="1" max="1" chance="100" /> <!-- +2 Zaken's Earring - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="72418" name="Pre-anniversary Daily Gift (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.br_gold_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91840" min="10" max="10" chance="100" /> <!-- XP Growth Scroll (Time-limited) - Sealed -->
+			<item id="94380" min="10" max="10" chance="100" /> <!-- Scroll: Boost Attack (Time-limited) - Sealed -->
+			<item id="94381" min="10" max="10" chance="100" /> <!-- Scroll: Boost Defense (Time-limited) - Sealed -->
+			<item id="98471" min="20" max="20" chance="100" /> <!-- Soulshot Ticket (Time-limited) - Sealed -->
+			<item id="3031" min="250" max="250" chance="100" /> <!-- Spirit Ore - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72419" name="Package: Special HP Recovery Potion (1000 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94382" min="1000" max="1000" chance="100" /> <!-- Special HP Recovery Potion (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72420" name="Ultimate Death Knight Transformation Lv. 2" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="R99" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="72421" name="August Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94328" min="10" max="10" chance="100" /> <!-- Elixir Powder - Sealed -->
+			<item id="96624" min="1" max="1" chance="100" /> <!-- Package: +5 Cloak of Protection - Sealed -->
+			<item id="96790" min="1" max="1" chance="100" /> <!-- Package: Red Lantern (400 pcs.) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72422" name="Zenith Coin (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><On adding to a collection></font> <font color=eeaa22>Zenith Coin (1 pc.)</font> received Collection effect <font color=bbaa88><Reward acquisition></font> This coin can be exchanged for a reward of your choice. -->
+		<set name="icon" val="BranchIcon.icon.g_ev_l2coin_ncw_00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="72423" name="Gorezones' Luck Rune" additionalName="Sealed" type="EtcItem">
+		<!-- A personal rune gifted on occasion of the first A-grade weapon enchantment up to +10. <font color=bbaa88><Property></font> Enchant success rate <font color=eeaa22>+1%</font> when enchanting any item with weapon enchant scrolls Enchant success rate <font color=eeaa22>+1%</font> when enchanting any item with armor enchant scrolls -->
+		<set name="icon" val="BranchSys3.icon1.g_rune_of_half_power" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="72424" name="Death Knight's Rune (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A rune given to commemorate the Death Knight update anniversary. <font color=bbaa88><Effect></font> Acquired XP/ SP +30% All stats +1 Max HP +300 P. Def. +100 M. Def. +100 <font color=eeaa22>Sayha's Grace sustention</font> Does not work on servitors. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.skill30980" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="72406" name="Update Memento Supply Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_joy_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93274" min="200" max="200" chance="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
+			<item id="94269" min="100" max="100" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="100" max="100" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72407" name="Spring Memory Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94521" min="1" max="1" chance="100" /> <!-- Onyx Lv. 5 - Sealed -->
+			<item id="94509" min="1" max="1" chance="100" /> <!-- Frintezza Doll Lv. 1 - Sealed -->
+			<item id="96699" min="1" max="1" minEnchant="8" maxEnchant="8" chance="100" /> <!-- Agathion Petram - 30-day -->
+			<item id="94269" min="50" max="50" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="50" max="50" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="72408" name="Cool Spring Wind Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain the following. -->
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94523" min="1" max="1" chance="100" /> <!-- Zircon Lv. 5 - Sealed -->
+			<item id="94153" min="1" max="1" chance="100" /> <!-- Baium Doll Lv. 1 - Sealed -->
+			<item id="49592" min="1" max="1" chance="100" /> <!-- Orfen's Earring Lv. 3 - 30-day -->
+			<item id="94269" min="50" max="50" chance="100" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="50" max="50" chance="100" /> <!-- Scroll: Boost Defense - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

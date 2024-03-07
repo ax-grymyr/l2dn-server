@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="1400" name="Spellbook: Surrender to Fire" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Surrender to Fire skill. Used by Human Wizards. Required level: 25. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1401" name="Spellbook: Acumen" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Acumen skill. <Classes>. All classes after the 1st class change, except Orcs. <Skill effect>. Increases Casting Spd. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="7461" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1402" name="Spellbook: Agility" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Agility skill. Used by Elven Oracles. Required level: 25. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1403" name="Spellbook: Summon Kat the Cat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Summon Kat the Cat skill. Used by Human Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1404" name="Spellbook: Servitor Recharge" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Servitor Recharge skill. Used by Wizards, Elven Wizards and Dark Wizards. Required level: 25. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1405" name="Spellbook: Servitor Heal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Servitor Heal skill. Used by Wizards, Elven Wizards and Dark Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1406" name="Spellbook: Servitor Wind Walk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Servitor Wind Walk skill. Used by Human Wizards. Required level: 35. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="2450" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1407" name="Spellbook: Servitor Magic Boost" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Servitor Magic Boost skill. Used by Elven Wizards. Required level: 35. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="2450" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1408" name="Spellbook: Mighty Servitor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Mighty Servitor skill. Used by Dark Wizards. Required level: 35. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="2450" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1409" name="Spellbook: Slow" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Slow skill. <Classes>. Wizard, Dark Wizard. <Skill effect>. Decreases the enemy's Speed. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="43681" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1410" name="Spellbook: Poisonous Cloud" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Poisonous Cloud skill. Used by Human Wizards and Dark Wizards. Required level: 25. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1411" name="Spellbook: Aura Burn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Aura Burn skill. Used by Wizards, Elven Wizards and Dark Wizards. Required level: 20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1412" name="Spellbook: Water Resistance" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Water Resistance skill. Used by Elven Wizards and Prophets. Required level: Elven Wizard - 20, Prophet - 58. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="2450" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1413" name="Spellbook: Wind Resistance" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Wind Resistance skill. Used by Shillien Oracles and Prophets. Required level: Shillien Oracle - 35, Prophet - 58. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="2450" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1414" name="Spellbook: Fire Resistance" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Fire Resistance skill. Used by Clerics. Required level: 30. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1800" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1415" name="Spellbook: Dryad Root" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Dryad Root skill. <Classes>. Cleric, Elven Oracle, Shillien Oracle. <Skill effect>. Holds the enemy in place. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10603" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1416" name="Spellbook: Curse Chaos" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Curse Chaos skill. <Classes>. Wizard, Dark Wizard. <Skill effect>. Decreases the enemy's P. Accuracy. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="43681" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1417" name="Spellbook: Surrender to Earth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Surrender to Earth skill. Used by Elven Wizards. Required level: 35. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1418" name="Spellbook: Surrender to Poison" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Surrender to Poison skill. Used by Dark Wizards. Required level: 25. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="1250" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1419" name="Proof of Blood (Time-limited)" type="EtcItem">
+		<!-- Can be exchanged for various items through Senior Appraiser Leo. -->
+		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+	</item>
+	<item id="1420" name="Ingredient List" type="EtcItem">
+		<!-- List of cooking ingredients from Jonas. Mandragora essence. Honey. Dionian Potato. Marsh moss. Monster Eye's Meat. -->
+		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1421" name="Sonia's Botany Book" type="EtcItem">
+		<!-- Picture that shows what a mandragora looks like. You need this to get mandragora roots. -->
+		<set name="icon" val="icon.etc_spell_books_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1422" name="Red Mandragora Root" type="EtcItem">
+		<!-- Red mandragora root. Collect these to take them to Trader Sonia. -->
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1423" name="White Mandragora Root" type="EtcItem">
+		<!-- Rare white mandragora root. Collect these to take them to Trader Sonia. -->
+		<set name="icon" val="icon.etc_pouch_gray_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1424" name="Red Mandragora Sap" type="EtcItem">
+		<!-- Red mandragora sap. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_potion_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1425" name="White Mandragora Sap" type="EtcItem">
+		<!-- Transparent mandragora sap. One of the ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_potion_clear_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1426" name="Jacob's Insect Book" type="EtcItem">
+		<!-- Diagram that depicts the drawing of a bee. You must possess this in order to obtain nectar and royal jelly from the Bloody Bee or the Weird Wasp. -->
+		<set name="icon" val="icon.etc_spell_books_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1427" name="Nectar" type="EtcItem">
+		<!-- Honey water taken from a giant bee. Collect 20 of these to take them to Guard Jacob. -->
+		<set name="icon" val="icon.etc_reagent_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1428" name="Royal Jelly" type="EtcItem">
+		<!-- Rare ingredient that can be taken only from newborn working bees. Collect these and take them to Guard Jacob. -->
+		<set name="icon" val="icon.etc_reagent_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1429" name="Honey" type="EtcItem">
+		<!-- Honey made from the nectar you collected from bees. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_potion_yellow_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1430" name="Golden Honey" type="EtcItem">
+		<!-- Golden honey made from the nectar and the royal jelly you collected from bees. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_potion_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1431" name="Pano's Contract" type="EtcItem">
+		<!-- Contract Grocer Pano gave you. It says, if you kill Hobgoblins and bring 30 pieces of proof, he will give you Sweet Potatoes as a reward. -->
+		<set name="icon" val="icon.etc_letter_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1432" name="Hobgoblin Amulet" type="EtcItem">
+		<!-- Amulet made of a feather that Hobgoblins carry on themselves. Collect 30 of these and take them to Grocer Pano. -->
+		<set name="icon" val="icon.etc_feather_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1433" name="Dionian Potato" type="EtcItem">
+		<!-- The highest-quality potatoes grown in the rich soil of southern Dion. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1434" name="Glyvka's Botany Book" type="EtcItem">
+		<!-- Picture that explains how to collect moss. You need this to collect marsh moss from grey ants or crimson ants. -->
+		<set name="icon" val="icon.etc_spell_books_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1435" name="Green Marsh Moss" type="EtcItem">
+		<!-- Green marsh moss is sometimes used in cooking. Collect this and take it to Priestess Glyvka. -->
+		<set name="icon" val="icon.etc_branch_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1436" name="Brown Marsh Moss" type="EtcItem">
+		<!-- Rare brown marsh moss. Its flavors are superior to the green ones. Collect this and take it to Priestess Glyvka. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1437" name="Green Moss Bundle" type="EtcItem">
+		<!-- Bundle of well-cared-for moss, collected from a marshy place for cooking. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_bark_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1438" name="Brown Moss Bundle" type="EtcItem">
+		<!-- Bundle of well-cared-for moss, collected from a marshy place for cooking. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_bark_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1439" name="Rollant's Creature Book" type="EtcItem">
+		<!-- Picture that shows what a monster eye looks like. You need this to collect the right monster eye searcher or the monster eye gazer. -->
+		<set name="icon" val="icon.etc_spell_books_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1440" name="Body of Monster Eye" type="EtcItem">
+		<!-- Severed Deadman's Flesh body of monster eye. Take this to Magister Rollant. -->
+		<set name="icon" val="icon.etc_leather_brown_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1441" name="Monster Eye's Meat" type="EtcItem">
+		<!-- The meat of monster eye, ready to cook. One of the five ingredients needed for Jonas' cooking. -->
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1442" name="Jonas' 1st Steak Dish" type="EtcItem">
+		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1443" name="Jonas' 1st Steak Dish" type="EtcItem">
+		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1444" name="Jonas' 1st Steak Dish" type="EtcItem">
+		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1445" name="Jonas' 1st Steak Dish" type="EtcItem">
+		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1446" name="Jonas' 1st Steak Dish" type="EtcItem">
+		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1447" name="Mirien's Review" type="EtcItem">
+		<!-- A letter from Magister Mirien about the taste of Jonas' dish. Take it to Jonas. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1452" name="Harpy's Feather" type="EtcItem">
+		<!-- Feather taken from a harpy. Collect these and take them to Guard Belton. -->
+		<set name="icon" val="icon.etc_feather_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1453" name="Medusa's Venom" type="EtcItem">
+		<!-- Poison extracted from the snake hair of a medusa. Collect these and take them to Guard Belton. -->
+		<set name="icon" val="icon.etc_potion_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1454" name="Wyrm's Tooth" type="EtcItem">
+		<!-- Sharp fang of a Wyrm. Collect these and take them to Guard Belton. -->
+		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1455" name="Jonas' Salad Recipe" type="EtcItem">
+		<!-- Jonas' recipe for making marsh moss salad. -->
+		<set name="icon" val="icon.item_canuse39" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1456" name="Jonas' Sauce Recipe" type="EtcItem">
+		<!-- Jonas' recipe for making mandragora sauce. -->
+		<set name="icon" val="icon.item_canuse39" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1457" name="Jonas' Steak Recipe" type="EtcItem">
+		<!-- Jonas' recipe for making monster eye meat steak. -->
+		<set name="icon" val="icon.item_canuse39" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1458" name="D-grade Crystal" type="EtcItem">
+		<!-- Crystal of D-grade. -->
+		<set name="icon" val="icon.etc_crystal_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="650" />
+		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="commissionItemType" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1459" name="C-grade Crystal" type="EtcItem">
+		<!-- A crystal of C-grade. -->
+		<set name="icon" val="icon.etc_crystal_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="commissionItemType" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1460" name="B-grade Crystal" type="EtcItem">
+		<!-- A crystal of B-grade. -->
+		<set name="icon" val="icon.etc_crystal_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="9000" />
+		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="commissionItemType" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1461" name="A-grade Crystal" type="EtcItem">
+		<!-- Crystal of A-grade. -->
+		<set name="icon" val="icon.etc_crystal_silver_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="12500" />
+		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="commissionItemType" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1462" name="S-grade Crystal" type="EtcItem">
+		<!-- Crystal of S-grade. -->
+		<set name="icon" val="icon.etc_crystal_gold_i00" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="15000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="1463" name="D-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with D-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="price" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="crystal_type" val="D" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<skills>
+			<skill id="2150" level="1" /> <!-- Soulshot (D-grade) -->
+		</skills>
+	</item>
+	<item id="1464" name="C-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with C-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="2" />
+		<set name="price" val="15" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="crystal_type" val="C" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<skills>
+			<skill id="2151" level="1" /> <!-- Soulshot (C-grade) -->
+		</skills>
+	</item>
+	<item id="1465" name="B-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="price" val="50" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="crystal_type" val="B" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<skills>
+			<skill id="2152" level="1" /> <!-- Soulshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="1466" name="A-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with A-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="price" val="80" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="crystal_type" val="A" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<skills>
+			<skill id="2153" level="1" /> <!-- Soulshot (A-grade) -->
+		</skills>
+	</item>
+	<item id="1467" name="S-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="price" val="100" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<set name="crystal_type" val="S" />
+		<set name="etcitem_type" val="SOULSHOT" />
+		<set name="commissionItemType" val="SOULSHOT" />
+		<skills>
+			<skill id="2154" level="1" /> <!-- Soulshot (S-grade) -->
+		</skills>
+	</item>
+	<item id="1471" name="Monsters Only (Silenos Blowgun)" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="damage_range" val="0;0;300;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="101" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="300" />
+		<set name="price" val="80" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="commissionItemType" val="DAGGER" />
+		<set name="isAppearanceable" val="true" />
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="1472" name="Dreadbane" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="101" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="300" />
+		<set name="price" val="80" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="commissionItemType" val="SPEAR" />
+		<set name="isAppearanceable" val="true" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="1473" name="Kasha Wolf Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fang obtained by killing Kasha Wolf. Collect 50 of these and take them to Praetorian Rukain. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1474" name="Grave Robber's Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A head of a goblin robber who damaged the graves of Orc ancestors. Collect 50 of these and take them to Seer Livina. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1475" name="Black Soulstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A black soulstone pulled out of the heart of Rakeclaw Imp. Collect these to take them to Atuba Chief Varkees. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1476" name="Red Soulstone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A red soulstone pulled out of the heart of Rakeclaw Imp. Collect these to take them to Atuba Chief Varkees. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1477" name="Maraku Werewolf Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The head of a dead Maraku Werewolf. Collect 40 of these and take them to Prefect Brukurse. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1478" name="Blackwing Bat Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fang of Blackwing Bat. Collect 70 of these and take them to Neruga Chief Tantus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1479" name="Varangka's Parasite" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An evil parasite that can summon Varangka's Tracker. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1480" name="Kasha's Parasitic Spirit" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A parasite-type evil spirit that comes out of the grey bear possessed by Kasha's evil spirit. Required for summoning the Kasha totem spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1481" name="Kasha's Crystal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A crystal obtained from killing the grey bear possessed by Kasha's evil spirit. Take it to Seer Tanapi. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1482" name="Black Wolf Pelt" type="EtcItem">
+		<!-- A pelt of a black wolf. Collect 40 of these and take them to Maryse Redbonnet. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1483" name="Goblin Necklace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A necklace obtained from killing a common goblin. Collect these and take them to Spiron from the Golden Wheel Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1484" name="Goblin Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A necklace obtained from killing a high-level goblin. Collect these and take them to Spiron from the Golden Wheel Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1485" name="Goblin Lord Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A necklace obtained from killing the goblin chief. Collect these and take them to Spiron from the Golden Wheel Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1486" name="Suspicious Memo" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A suspicious note found on the body of the goblin brigand leader. Take it to Spiron from the Golden Wheel Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1487" name="Suspicious Contract" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A suspicious contract put together from all Suspicious Memos. It reveals that the Silver Scale Guild hired the brigands to attack the freight wagons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1488" name="Chrysolite Ore" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Chrysolite ore from Utuku Orcs. Collect these and take them to Filaur of the Grey Pillar Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1489" name="Torn Map Piece" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A part of the map that shows the whereabouts of a hidden chrysolite vein. Collect 4 of these pieces to complete the map. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1490" name="Hidden Ore Map" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The map that shows the whereabouts of a hidden chrysolite vein. Take it to Filaur of the Grey Pillar Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1491" name="Bat Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fang obtained by killing bats. Collect 100 of these and take them to Keef from the Bronze Key Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1492" name="Floating Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A stone that is lighter than air. Can be obtained from Magical Weaver. Collect 50 of these and take them to Arin from the Black Anvil Guild. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1493" name="Tarantula's Spider Silk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Spider silk used by Tarantulas when making their nests. Collect it and take to Grocer Mion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1494" name="Tarantula Spinnerette" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A pocket-shaped organ that produces spider silk. Take it to Defender Nathan. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1495" name="Giant Spider's Skin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A husk of a Giant Spider. Collect them and take them to Edmond. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1496" name="Mark of Flame" type="EtcItem">
+		<!-- This mark represents the qualification of Orc fighters. Take this and go to the Flame Guardian Vulkus. -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1497" name="Necklace of Flame" type="EtcItem">
+		<!-- The Necklace of Flame given to you by Vulkus. Hand this to Pa'agrio Lord Kakai, king of the Orcs. -->
+		<set name="icon" val="icon.item_normal142" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1498" name="Mining License" type="EtcItem">
+		<!-- License given to Dwarves to allow them to mine. Take this and go to Foreman Laferon. -->
+		<set name="icon" val="icon.etc_letter_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1499" name="Laferon's Recommendation" type="EtcItem">
+		<!-- The recommendation of Foreman Laferon. Take this and go to First Elder Lockirin. -->
+		<set name="icon" val="icon.item_canuse15" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

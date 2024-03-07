@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="84900" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84901" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84902" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84903" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84904" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84905" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84906" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84907" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84908" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84909" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84910" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84911" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84912" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84913" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84914" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84915" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84916" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84917" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84918" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84919" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84920" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84921" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84922" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84923" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84924" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84925" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84926" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84927" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84928" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84929" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84930" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84931" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84932" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84933" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84934" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84935" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84936" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84937" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84938" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84939" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84940" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84941" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84942" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84943" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84944" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84945" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84946" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84947" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84948" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84949" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84950" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84951" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84952" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84953" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84954" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84955" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84956" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84957" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84958" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84959" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84960" toLevel="1" name="Received Damage Decrease">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84961" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84962" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84963" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84964" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84965" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84966" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84967" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84968" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84969" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84970" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84971" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84972" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84973" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84974" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84975" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84976" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84977" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84978" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84979" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84980" toLevel="1" name="Received Healing Increase">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84981" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84982" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84983" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84984" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84985" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84986" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84987" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84988" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84989" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84990" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84991" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84992" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84993" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84994" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84995" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84996" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84997" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84998" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="84999" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill3080</icon>
+		<operateType>A2</operateType>
+	</skill>
+</list>

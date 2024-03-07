@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren29_2218_29" minZ="-5436" maxZ="-5236">
+				<node x="91192" y="14192" />
+				<node x="91420" y="16760" />
+				<node x="90212" y="18308" />
+				<node x="88008" y="17488" />
+				<node x="87660" y="14836" />
+				<node x="89680" y="13016" />
+			</territory>
+		</territories>
+		<npc id="22144" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_m1_2" minZ="-3810" maxZ="-3310">
+				<node x="-92791" y="107664" />
+				<node x="-92495" y="107810" />
+				<node x="-92340" y="108094" />
+				<node x="-92363" y="108404" />
+				<node x="-92548" y="108679" />
+				<node x="-92938" y="108756" />
+				<node x="-93228" y="108682" />
+				<node x="-93445" y="108355" />
+				<node x="-93427" y="108025" />
+				<node x="-93167" y="107706" />
+			</territory>
+			<banned_territory name="gludio15_1721_m1_1" minZ="-3784" maxZ="-3584">
+				<node x="-92997" y="107986" />
+				<node x="-92767" y="107991" />
+				<node x="-92642" y="108134" />
+				<node x="-92638" y="108323" />
+				<node x="-92762" y="108443" />
+				<node x="-93006" y="108446" />
+				<node x="-93143" y="108310" />
+				<node x="-93144" y="108137" />
+			</banned_territory>
+		</territories>
+		<npc id="22141" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc Elite -->
+		<npc id="22143" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Sniper -->
+		<npc id="22145" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Elder -->
+		<npc id="22144" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_m2_2" minZ="-3810" maxZ="-3310">
+				<node x="-92038" y="109055" />
+				<node x="-91742" y="109201" />
+				<node x="-91586" y="109484" />
+				<node x="-91610" y="109794" />
+				<node x="-91794" y="110069" />
+				<node x="-92184" y="110146" />
+				<node x="-92475" y="110073" />
+				<node x="-92692" y="109745" />
+				<node x="-92673" y="109415" />
+				<node x="-92413" y="109096" />
+			</territory>
+			<banned_territory name="gludio15_1721_m2_1" minZ="-3784" maxZ="-3584">
+				<node x="-92246" y="109353" />
+				<node x="-92016" y="109358" />
+				<node x="-91891" y="109501" />
+				<node x="-91887" y="109690" />
+				<node x="-92011" y="109810" />
+				<node x="-92255" y="109813" />
+				<node x="-92392" y="109677" />
+				<node x="-92393" y="109504" />
+			</banned_territory>
+		</territories>
+		<npc id="22141" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc Elite -->
+		<npc id="22143" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Sniper -->
+		<npc id="22145" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Elder -->
+		<npc id="22138" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_h1_2" minZ="-3810" maxZ="-3310">
+				<node x="-96496" y="106330" />
+				<node x="-96199" y="106476" />
+				<node x="-96044" y="106760" />
+				<node x="-96068" y="107070" />
+				<node x="-96252" y="107345" />
+				<node x="-96642" y="107422" />
+				<node x="-96933" y="107348" />
+				<node x="-97150" y="107021" />
+				<node x="-97131" y="106691" />
+				<node x="-96871" y="106372" />
+			</territory>
+			<banned_territory name="gludio15_1721_h1_1" minZ="-3784" maxZ="-3584">
+				<node x="-96715" y="106625" />
+				<node x="-96485" y="106630" />
+				<node x="-96360" y="106774" />
+				<node x="-96356" y="106963" />
+				<node x="-96480" y="107082" />
+				<node x="-96724" y="107085" />
+				<node x="-96861" y="106949" />
+				<node x="-96862" y="106777" />
+			</banned_territory>
+		</territories>
+		<npc id="22135" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc -->
+		<npc id="22137" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Marksman -->
+		<npc id="22139" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Shaman -->
+		<npc id="22138" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_h2_2" minZ="-3810" maxZ="-3310">
+				<node x="-93508" y="105045" />
+				<node x="-93212" y="105191" />
+				<node x="-93056" y="105474" />
+				<node x="-93080" y="105784" />
+				<node x="-93265" y="106059" />
+				<node x="-93654" y="106136" />
+				<node x="-93945" y="106063" />
+				<node x="-94162" y="105735" />
+				<node x="-94144" y="105405" />
+				<node x="-93883" y="105086" />
+			</territory>
+			<banned_territory name="gludio15_1721_h2_1" minZ="-3548" maxZ="-3348">
+				<node x="-93717" y="105319" />
+				<node x="-93487" y="105324" />
+				<node x="-93361" y="105468" />
+				<node x="-93357" y="105657" />
+				<node x="-93481" y="105776" />
+				<node x="-93725" y="105780" />
+				<node x="-93862" y="105644" />
+				<node x="-93863" y="105471" />
+			</banned_territory>
+		</territories>
+		<npc id="22135" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc -->
+		<npc id="22137" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Marksman -->
+		<npc id="22139" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Shaman -->
+		<npc id="22138" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_h3_2" minZ="-3810" maxZ="-3310">
+				<node x="-89801" y="108027" />
+				<node x="-89505" y="108173" />
+				<node x="-89350" y="108456" />
+				<node x="-89373" y="108766" />
+				<node x="-89558" y="109041" />
+				<node x="-89947" y="109119" />
+				<node x="-90238" y="109045" />
+				<node x="-90455" y="108717" />
+				<node x="-90437" y="108387" />
+				<node x="-90177" y="108069" />
+			</territory>
+			<banned_territory name="gludio15_1721_h3_1" minZ="-3600" maxZ="-3400">
+				<node x="-90027" y="108334" />
+				<node x="-89797" y="108339" />
+				<node x="-89672" y="108482" />
+				<node x="-89668" y="108671" />
+				<node x="-89792" y="108791" />
+				<node x="-90036" y="108794" />
+				<node x="-90173" y="108658" />
+				<node x="-90174" y="108485" />
+			</banned_territory>
+		</territories>
+		<npc id="22135" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc -->
+		<npc id="22137" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Marksman -->
+		<npc id="22139" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Shaman -->
+		<npc id="22138" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_h4_2" minZ="-3810" maxZ="-3310">
+				<node x="-92498" y="111992" />
+				<node x="-92202" y="112138" />
+				<node x="-92047" y="112421" />
+				<node x="-92070" y="112731" />
+				<node x="-92255" y="113006" />
+				<node x="-92644" y="113083" />
+				<node x="-92935" y="113010" />
+				<node x="-93152" y="112682" />
+				<node x="-93134" y="112352" />
+				<node x="-92874" y="112033" />
+			</territory>
+			<banned_territory name="gludio15_1721_h4_1" minZ="-3832" maxZ="-3632">
+				<node x="-92717" y="112296" />
+				<node x="-92487" y="112301" />
+				<node x="-92362" y="112445" />
+				<node x="-92358" y="112634" />
+				<node x="-92482" y="112753" />
+				<node x="-92726" y="112756" />
+				<node x="-92863" y="112620" />
+				<node x="-92864" y="112448" />
+			</banned_territory>
+		</territories>
+		<npc id="22135" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc -->
+		<npc id="22137" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Marksman -->
+		<npc id="22139" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Shaman -->
+		<npc id="22138" count="4" respawnTime="1min" chaseRange="2000" /> <!-- Turek Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio15_1721_h5_2" minZ="-3810" maxZ="-3310">
+				<node x="-88836" y="111925" />
+				<node x="-88539" y="112072" />
+				<node x="-88384" y="112355" />
+				<node x="-88408" y="112665" />
+				<node x="-88592" y="112940" />
+				<node x="-88982" y="113017" />
+				<node x="-89273" y="112944" />
+				<node x="-89490" y="112616" />
+				<node x="-89471" y="112286" />
+				<node x="-89211" y="111967" />
+			</territory>
+			<banned_territory name="gludio15_1721_h5_1" minZ="-3544" maxZ="-3344">
+				<node x="-89051" y="112227" />
+				<node x="-88821" y="112231" />
+				<node x="-88696" y="112375" />
+				<node x="-88692" y="112564" />
+				<node x="-88816" y="112683" />
+				<node x="-89060" y="112687" />
+				<node x="-89197" y="112551" />
+				<node x="-89198" y="112378" />
+			</banned_territory>
+		</territories>
+		<npc id="22135" count="10" respawnTime="20sec" chaseRange="2000" /> <!-- Turek Orc -->
+		<npc id="22137" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Marksman -->
+		<npc id="22139" count="2" respawnTime="2min" chaseRange="2000" /> <!-- Turek Orc Shaman -->
+	</spawn>
+</list>

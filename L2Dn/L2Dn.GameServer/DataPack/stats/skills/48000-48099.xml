@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48000" toLevel="6" name="Force - Rush Impact">
+		<!-- Stuns making unable to move. -->
+		<icon>icon.skill11034</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-600</value>
+			<value level="2">-700</value>
+			<value level="3">-800</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+			<value level="6">-910</value>
+		</effectPoint>
+	</skill>
+	<skill id="48001" toLevel="9" name="Piggy's Good Luck - Lv. 1">
+		<!-- Changes the armor appearance to that of Hanbok for 60 min. Atk. Spd./ Casting Spd. +100, Speed +10. Additionally you can obtain items after 2 h., 5 h., and 8 h. The effect remains after death and logout. Note!. The items can't be obtained if your character is dead or if there is no free space in your inventory. You can't get the next level buff if your character is dead. -->
+		<icon>icon.skill_piggy_bless</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48002" toLevel="1" name="Piggy's Good Luck - Reward">
+		<icon>icon.skill_piggy_bless</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48003" toLevel="1" name="Baium's Prophecy">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Max HP +100. Max MP +100. acquired XP/ SP +10%. MP Recovery Rate +3. Sayha's Grace Consumption -10%. Received P. Skill Critical Rate -2%. Received P. Skill Critical Damage -2%. Skill Power +1% -->
+		<icon>icon.ev22_baium_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48004" toLevel="1" name="Behemoth' Prophecy">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Max HP +100. Max MP +100. Acquired XP/ SP +10%. PvE damage +5%. Sayha's Grace Consumption -10%. Received P. Skill Critical Rate -5%. Received P. Skill Critical Damage -5%. All Critical Damage +1% -->
+		<icon>icon.ev22_behemoth_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48005" toLevel="1" name="Glakias' Prophecy">
+		<!-- P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100. Max HP +100. Max MP +100. acquired XP/ SP +10%. PvE damage +5%. Sayha's Grace Consumption -10%. Received P. Skill Critical Rate -5%. Received P. Skill Critical Damage -5%. All weapon P. Atk. +1. All weapon M. Atk. +1 -->
+		<icon>icon.ev22_glacies_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48006" toLevel="25" name="Basic Critical Damage Increase">
+		<!-- Basic Critical Damage +200 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48007" toLevel="25" name="P. Skill Critical Damage Increase">
+		<!-- P. Skill Critical Damage +200 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48008" toLevel="25" name="M. Skill Critical Damage Increase">
+		<!-- M. Skill Critical Damage +200 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48009" toLevel="25" name="All Critical Damage Increase">
+		<!-- All Critical Damage +200. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48010" toLevel="40" name="Received Basic Critical Damage Decrease">
+		<!-- Received basic Critical Damage -500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48011" toLevel="1" name="Respectful Bow">
+		<!-- You politely offer greetings to Wild Orc. -->
+		<icon>icon.ev_greeting1</icon>
+		<operateType>A1</operateType>
+		<isMagic>6</isMagic>
+		<isDebuff>true</isDebuff>
+		<hitTime>5000</hitTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48012" toLevel="1" name="Mark of Wild Orc.">
+		<!-- Knocks back and stuns the target. -->
+		<icon>icon.skill4107</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>10000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+	</skill>
+	<skill id="48013" toLevel="1" name="Mark of Wild Orc.">
+		<!-- Knocks back and stuns the target. -->
+		<icon>icon.skill4107</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+	</skill>
+	<skill id="48014" toLevel="1" name="Typhoon of Wild Orc">
+		<!-- Knocks back and stuns the target. -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>10000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+	</skill>
+	<skill id="48015" toLevel="1" name="Typhoon of Wild Orc">
+		<!-- Knocks back and stuns the target. -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+	</skill>
+	<skill id="48016" toLevel="1" name="Dance Time">
+		<!-- Presentation skill -->
+		<icon>icon.skill5008_psycho</icon>
+		<operateType>A1</operateType>
+		<isMagic>6</isMagic>
+		<hitTime>5000</hitTime>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48017" toLevel="1" name="Dance Time">
+		<!-- Forced to dance against own will. -->
+		<icon>icon.skill5008_psycho</icon>
+		<operateType>A1</operateType>
+		<isMagic>6</isMagic>
+		<isDebuff>true</isDebuff>
+		<hitTime>1000</hitTime>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48018" toLevel="2" name="Sayha's Grace Regeneration">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="48019" toLevel="2" name="Raid Reward - Shield">
+		<!-- For 60 min., P. Def. +300. -->
+		<icon>icon.skill1040</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48020" toLevel="2" name="Raid Reward - Magic Barrier">
+		<!-- For 60 min., M. Def. +350. -->
+		<icon>icon.skill1036</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48021" toLevel="2" name="Raid Reward - Decrease Weight">
+		<!-- For 60 min., weight limit +9000. -->
+		<icon>icon.skill1257</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48022" toLevel="2" name="Raid Reward - Clarity">
+		<!-- For 60 min., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Song/ Dance MP Consumption -20%. -->
+		<icon>icon.skill1397</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48023" toLevel="2" name="Raid Reward - Berserker Spirit">
+		<!-- For 60 min., Max HP/ MP -15%, P. Atk. +10%, M. Atk. +20%, Atk. Spd. +8%, Casting Spd. +8%, Speed +8. -->
+		<icon>icon.skill1062</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48024" toLevel="2" name="Raid Reward - Wind Walk">
+		<!-- For 60 min., Speed +33. -->
+		<icon>icon.skill1204</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48025" toLevel="2" name="Raid Reward - Might">
+		<!-- For 60 min., P. Atk. +230. -->
+		<icon>icon.skill1068</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48026" toLevel="2" name="Raid Reward - Focus">
+		<!-- For 60 min., P. Critical Rate +40. -->
+		<icon>icon.skill1077</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48027" toLevel="2" name="Raid Reward - Haste">
+		<!-- For 60 min., Atk. Spd. +33%. -->
+		<icon>icon.skill1086</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48028" toLevel="2" name="Raid Reward -Death Whisper">
+		<!-- For 60 min., P. Critical Damage +35%. -->
+		<icon>icon.skill1242</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48029" toLevel="2" name="Raid Reward - Empower">
+		<!-- For 60 min., M. Atk. +300. -->
+		<icon>icon.skill1059</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48030" toLevel="2" name="Raid Reward - Wild Magic">
+		<!-- For 60 min., M. Skill Critical Rate +20. -->
+		<icon>icon.skill1303</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48031" toLevel="2" name="Raid Reward - Acumen">
+		<!-- For 60 min., Casting Spd. +30%. -->
+		<icon>icon.skill1085</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48032" toLevel="2" name="Raid Reward - Concentration">
+		<!-- For 60 min., Casting Interruption Rate -53. -->
+		<icon>icon.skill1078</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48033" toLevel="2" name="Raid Reward - Victory">
+		<!-- For 60 min., Max HP/ MP/ CP +300, P./ M. Atk. +200, Atk./ Casting Spd. +60, P. Critical Rate/ M. Skill Critical Rate +20, P. Critical Damage/ M. Skill Critical Damage +10%. -->
+		<icon>icon.skill5074</icon>
+		<operateType>A2</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48034" toLevel="2" name="Raid Reward - HP Recovery">
+		<!-- For 60 min., recovers HP. -->
+		<icon>icon.skill0211</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48035" toLevel="2" name="Raid Reward - MP Recovery">
+		<!-- For 60 min., recovers MP. The Sayha's Buff Scroll cannot be used if the buff is active. -->
+		<icon>icon.skill0213</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48036" toLevel="1" name="Einhasad's Protection">
+		<!-- For 1 h., Acquired XP/ SP +100%. The effect remains after death. -->
+		<icon>icon.etc_dragons_blood_i03</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>400</castRange>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="48037" toLevel="1" name="Lightning Strike">
+		<!-- Strikes the enemy with a lightning bolt that inflicts non-attribute damage with 2927 power. Paralyzes for 3 sec. -->
+		<icon>icon.skill0279</icon>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>400</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-4140</effectPoint>
+		<mpConsume>64</mpConsume>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<trait>PARALYZE</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>69</power>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>6090</skillId> <!-- Lightning Strike -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="48038" toLevel="1" name="Buff of Seeker - Short Distance">
+		<!-- The buff for adventurers who are going to explore the Tower of Insolence. For 5 min., P. Atk. +10%, P. Critical Rate +10, melee weapon efficiency +10. -->
+		<icon>icon.skill5076_b</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>2500</hitTime>
+	</skill>
+	<skill id="48039" toLevel="1" name="Buff of Seeker - Long Distance">
+		<!-- The buff for adventurers who are going to explore the Tower of Insolence. For 5 min., M. Atk. +10%, melee weapon efficiency +10. -->
+		<icon>icon.skill5076_c</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>2500</hitTime>
+	</skill>
+	<skill id="48040" toLevel="1" name="Heavenly Rift Seeker">
+		<!-- The buff for adventurers who are going to explore the Heavenly Rift. You can get there using Dimensional Vortex on the first floor of the Tower of Insolence. -->
+		<icon>icon.skill19222</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48041" toLevel="1" name="Cancel Blessing of Protection">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>709</effectPoint>
+	</skill>
+	<skill id="48042" toLevel="1" name="Buff of Seeker">
+		<!-- The buff for adventurers who are going to explore the Tower of Insolence. For 5 min., P./ M. Atk. +10%, P. Critical Rate/ M. Skill Critical Rate +10. -->
+		<icon>icon.skill5076_a</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>2500</hitTime>
+	</skill>
+	<skill id="48043" toLevel="1" name="Fatal Strike">
+		<icon>icon.skill0190</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1080</hitTime>
+		<coolTime>720</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-390</effectPoint>
+		<mpConsume>58</mpConsume>
+	</skill>
+	<skill id="48044" toLevel="1" name="Fire Attribute Monster">
+		<!-- Water Attacks deal additional damage. -->
+		<icon>icon.elemental_fire</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="48045" toLevel="1" name="Water Attribute Monster">
+		<!-- Wind Attacks deal additional damage. -->
+		<icon>icon.elemental_water</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="48046" toLevel="1" name="Wind Attribute Monster">
+		<!-- Earth Attacks deal additional damage. -->
+		<icon>icon.elemental_wind</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="48047" toLevel="1" name="Earth Attribute Monster">
+		<!-- Fire Attacks deal additional damage. -->
+		<icon>icon.elemental_earth</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="48048" toLevel="5" name="Sublime Self-Sacrifice">
+		<!-- When received damage exceeds a certain value, the character's HP is restored by difference between inflicted damage and this value. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hpConsume>
+			<value level="1">3000</value>
+			<value level="2">5000</value>
+			<value level="3">10000</value>
+			<value level="4">20000</value>
+			<value level="5">30000</value>
+		</hpConsume>
+	</skill>
+	<skill id="48049" toLevel="5" name="Raid Blessing Lv. 1">
+		<!-- You've dealt great damage to the Raid Boss. Your mood has improved. -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48050" toLevel="1" name="Battle Aura">
+		<!-- Creates a battle zone within 1500 range. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48051" toLevel="1" name="Battle Zone">
+		<!-- If the character is killed in the battle zone by another character, the killed one doesn't lose XP and the attacking one doesn't get reputation penalty for the killing. -->
+		<icon>icon.battlebuff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48052" toLevel="12" name="Craft Points +100">
+		<!-- Craft points +100. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48053" toLevel="1" name="PA Battle Buff">
+		<!-- For 60 min., Max CP +1000. -->
+		<icon>icon.soul_spirit2</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48054" toLevel="3" name="Burning">
+		<!-- For 30 sec., acquired XP/ SP +50%, when attacking a special monster. -->
+		<icon>icon.skill3238</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<isMagic>4</isMagic>
+		<stayAfterDeath>true</stayAfterDeath>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+				</amount>
+			</effect>
+			<effect name="MpVampiricAttack" fromLevel="3" toLevel="3">
+				<amount>3</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48055" toLevel="5" name="Yogi's Energy">
+		<!-- Even Yogi himself does not understand the nature of this energy. But for sure it is connected to Yogi's Weapon. -->
+		<icon>icon.skill10526</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48056" toLevel="1" name="Golden Pig's Teleport">
+		<!-- Teleports to Golden Pig. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48057" toLevel="1" name="Ultimate Death Knight Experience">
+		<!-- <Ultimate Death Knight Transformation>. You can experience Death Knight's destiny being cursed by the Fire Dragon Valakas, but having a great power. -->
+		<icon>icon.death_knight_transform</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>JDK_BODY_FIRE_1</abnormalVisualEffect>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>30000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<hitTime>1500</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="48058" toLevel="4" name="Good Luck Buff Lv. 1">
+		<!-- P./ M. Atk. and P./ M. Def. +100, Acquired XP/ SP +5%. When Lv. 1 effect expires, the character obtains Lucky Box and Lv. 2 buff. Note!. You cannot obtain the item if you are dead or your inventory is full when you receive it. You can't get the next level buff if your character is dead. -->
+		<icon>icon.etc_charm_of_luck_i00</icon>
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</abnormalLevel>
+		<magicLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalTime>
+			<value level="1">28800</value> <!-- 8 hours -->
+			<value level="2">28800</value> <!-- 8 hours -->
+			<value level="3">25200</value> <!-- 7 hours -->
+			<value level="4">25200</value> <!-- 7 hours --> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<abnormalType>GOOD_LUCK_BUFF</abnormalType>
+		<targetType>
+			<value level="1">TARGET</value>
+			<value level="2">SELF</value>
+			<value level="3">SELF</value>
+			<value level="4">SELF</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill" fromLevel="1" toLevel="2">
+				<skillId>48058</skillId> <!-- Good Luck Buff Lv. 1 -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>48059</skillId> <!-- Good Luck Buff - Reward Lv. 1 -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="48059" toLevel="3" name="Good Luck Buff - Reward Lv. 1">
+		<icon>icon.etc_charm_of_luck_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Restoration" fromLevel="1" toLevel="1">
+				<itemId>120000</itemId> <!-- Lucky Box Lv. 1 -->
+				<itemCount>1</itemCount>
+			</effect>
+			<effect name="Restoration" fromLevel="2" toLevel="2">
+				<itemId>120001</itemId> <!-- Lucky Box Lv. 2 -->
+				<itemCount>1</itemCount>
+			</effect>
+			<effect name="Restoration" fromLevel="3" toLevel="3">
+				<itemId>120002</itemId> <!-- Lucky Box Lv. 3 -->
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48060" toLevel="1" name="Burning Fist">
+		<icon>icon.skill0280</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48061" toLevel="1" name="Double Shot">
+		<icon>icon.skill0019</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48062" toLevel="1" name="Jeras' Fire Show">
+		<icon>icon.skill1285</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48063" toLevel="1" name="Fortress Battle - Meteor">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48064" toLevel="1" name="Fortress Battle - Flame">
+		<!-- Powerful flames burn off HP. -->
+		<icon>icon.skill1101</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48065" toLevel="1" name="Fortress Battle - Bleed">
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48066" toLevel="1" name="Fortress Battle - Sword Storm">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48067" toLevel="1" name="Fortress Battle - Theor's Range Attack Type 1">
+		<!-- An AoE physical attack on all nearby enemies. -->
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48068" toLevel="1" name="Fortress Battle - Theor's Range Attack Type 2">
+		<!-- An AoE physical attack on all nearby enemies. -->
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48069" toLevel="1" name="Fortress Battle - Theor's Range Attack Type 3">
+		<!-- An AoE physical attack on all nearby enemies. -->
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48070" toLevel="1" name="Master's Blessing">
+		<!-- For 2 h., Acquired XP/ SP +30%, MP Recovery Rate +5. -->
+		<icon>icon.macrownd_icon08</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48071" toLevel="1" name="Master's Protection">
+		<!-- For 4 h., P. Atk./ M. Atk./ P. Def./ M. Def. +250. -->
+		<icon>icon.ev_L2_soul_ore</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48072" toLevel="1" name="HP Recovery Block">
+		<!-- Natural HP recovery is deactivated. -->
+		<icon>icon.skill19186</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48073" toLevel="10" name="Prominence">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48074" toLevel="10" name="Twister">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48075" toLevel="10" name="Burning">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48076" toLevel="10" name="Aura Burn">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48077" toLevel="10" name="Blaze">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48078" toLevel="1" name="Clan Stronghold Effect">
+		<!-- A buff for the members of the clan that captured the Clan Stronghold Device in Cruma Tower. Duration: 5 min. Acquired XP +50%. Acquired SP +50% -->
+		<icon>icon.skill_exp_sp_up</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>HERB_EXP</abnormalType>
+		<castRange>900</castRange>
+		<effectRange>900</effectRange>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>99</magicLevel>
+		<mpConsume>0</mpConsume>
+		<mpInitialConsume>0</mpInitialConsume>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48079" toLevel="1" name="Triple Slash">
+		<icon>icon.skill0001</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48080" toLevel="1" name="Karim's Range Attack">
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<castRange>700</castRange>
+		<effectRange>1400</effectRange>
+		<nextAction>ATTACK</nextAction>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>10000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48081" toLevel="1" name="Beast's Range Attack">
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<castRange>700</castRange>
+		<effectRange>1400</effectRange>
+		<nextAction>ATTACK</nextAction>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>10000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48082" toLevel="1" name="Beast's Range Fear">
+		<!-- Afflicted with Fear and moving against own will. -->
+		<icon>icon.skill0036</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>140</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>DERANGEMENT</trait>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>20000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48083" toLevel="1" name="Antharas' Resistance">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48084" toLevel="3" name="Weakness">
+		<!-- Instantly P./ M. Atk. -17%. -->
+		<icon>icon.skill4037</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48085" toLevel="1" name="Speed Boost">
+		<!-- For 10 sec., increases Speed while crossing the zone borders in Antharas' Lair. -->
+		<icon>icon.skill0169</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48086" toLevel="1" name="Dimensional Door A">
+		<!-- Summons a dimensional door that teleports to the Dimensional Door B. -->
+		<icon>Icon.skill1050</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48087" toLevel="1" name="Dimensional Door B">
+		<!-- Summons a dimensional door that teleports to the Dimensional Door A. -->
+		<icon>Icon.skill1050</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48088" toLevel="1" name="Earth Shaker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48089" toLevel="1" name="Lightning">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48090" toLevel="1" name="Baium's Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48091" toLevel="2" name="Slow Evasion">
+		<!-- P./ M. Evasion decreased. -->
+		<icon>icon.skill0078</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48092" toLevel="40" name="Damage of Limit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48093" toLevel="1" name="Raid Boss (Lv. 82)">
+		<!-- He has snatched all pets in the continent and forced them to serve him to create a pet legion. He has bound them to his will by some kind of mysterious magic. Connection between Atingo and enslaved pets is so strong that they cannot be killed while he is alive. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48094" toLevel="1" name="Raid Boss (Lv. 82)">
+		<!-- He has snatched all pets in the continent and forced them to serve him to create a pet legion. He has bound them to his will by some kind of mysterious magic. Connection between Atingo and enslaved pets is so strong that they cannot be killed while he is alive. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48095" toLevel="1" name="Raid Boss (Lv. 82)">
+		<!-- He has snatched all pets in the continent and forced them to serve him to create a pet legion. He has bound them to his will by some kind of mysterious magic. Connection between Atingo and enslaved pets is so strong that they cannot be killed while he is alive. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48096" toLevel="1" name="Raid Boss (Lv. 82)">
+		<!-- He has snatched all pets in the continent and forced them to serve him to create a pet legion. He has bound them to his will by some kind of mysterious magic. Connection between Atingo and enslaved pets is so strong that they cannot be killed while he is alive. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48097" toLevel="1" name="Transformation: Small Rat">
+		<!-- NPC helps you to transform into a white rat so you can save the Year of the Rat. -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48098" toLevel="1" name="Mid Rat Transformation">
+		<!-- NPC helps you to transform into a white rat so you can save the Year of the Rat. -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48099" toLevel="1" name="Big Rat Transformation">
+		<!-- NPC helps you to transform into a white rat so you can save the Year of the Rat. -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

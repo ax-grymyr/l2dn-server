@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/ItemNameLocalisation.xsd">
+	<!-- Only used by World Trade-->
+	<blessed name="Ευλογημένο" />
+	<item id="1" name="Κοντό Ξίφος" />
+	<item id="2" name="Μακρύ Ξίφος" />
+	<item id="3" name="Ευρύ Ξίφος" />
+</list>

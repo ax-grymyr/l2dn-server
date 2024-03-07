@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/DailyMission.xsd">
+	<reward id="2001" reward_id="2001" name="Daily Hunting (Lv. 21-40)" requiredCompletion="30" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 30 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">21</param>
+			<param name="maxLevel">40</param>
+		</handler>
+		<items>
+			<item id="90907" count="3" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="10" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="3" /> <!-- HP Potion -->
+		</items>
+	</reward>
+	<reward id="2101" reward_id="2101" name="Daily Hunting (Lv. 41-50)" requiredCompletion="40" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 40 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">41</param>
+			<param name="maxLevel">50</param>
+		</handler>
+		<items>
+			<item id="90907" count="4" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="4" /> <!-- HP Potion -->
+		</items>
+	</reward>
+	<reward id="2201" reward_id="2201" name="Daily Hunting (Lv. 51-60)" requiredCompletion="50" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 50 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">51</param>
+			<param name="maxLevel">60</param>
+		</handler>
+		<items>
+			<item id="90907" count="5" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="5" /> <!-- HP Potion -->
+		</items>
+	</reward>
+	<reward id="2301" reward_id="2301" name="Daily Hunting I (Lv. 61-70)" requiredCompletion="60" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 60 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">61</param>
+			<param name="maxLevel">70</param>
+		</handler>
+		<items>
+			<item id="90907" count="6" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="6" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2302" reward_id="2302" name="Daily Hunting II (Lv. 61-70)" requiredCompletion="120" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 120 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">61</param>
+			<param name="maxLevel">70</param>
+		</handler>
+		<items>
+			<item id="90907" count="6" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="6" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2303" reward_id="2303" name="Daily Hunting III (Lv. 61-70)" requiredCompletion="180" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 180 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">61</param>
+			<param name="maxLevel">70</param>
+		</handler>
+		<items>
+			<item id="90907" count="6" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="6" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2304" reward_id="2304" name="Daily Hunting IV (Lv. 61-70)" requiredCompletion="240" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 240 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">61</param>
+			<param name="maxLevel">70</param>
+		</handler>
+		<items>
+			<item id="90907" count="6" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="6" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2305" reward_id="2305" name="Daily Hunting V (Lv. 61-70)" requiredCompletion="300" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 300 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">61</param>
+			<param name="maxLevel">70</param>
+		</handler>
+		<items>
+			<item id="90907" count="6" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="20" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="6" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2401" reward_id="2401" name="Daily Hunting I (Lv. 71-75)" requiredCompletion="80" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 80 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">71</param>
+			<param name="maxLevel">75</param>
+		</handler>
+		<items>
+			<item id="90907" count="7" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="30" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="7" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2402" reward_id="2402" name="Daily Hunting II (Lv. 71-75)" requiredCompletion="150" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 150 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">71</param>
+			<param name="maxLevel">75</param>
+		</handler>
+		<items>
+			<item id="90907" count="7" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="30" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="7" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2403" reward_id="2403" name="Daily Hunting III (Lv. 71-75)" requiredCompletion="200" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 200 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">71</param>
+			<param name="maxLevel">75</param>
+		</handler>
+		<items>
+			<item id="90907" count="7" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="30" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="7" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2404" reward_id="2404" name="Daily Hunting IV (Lv. 71-75)" requiredCompletion="300" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 300 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">71</param>
+			<param name="maxLevel">75</param>
+		</handler>
+		<items>
+			<item id="90907" count="7" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="30" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="7" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2405" reward_id="2405" name="Daily Hunting V (Lv. 71-75)" requiredCompletion="400" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 400 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">71</param>
+			<param name="maxLevel">75</param>
+		</handler>
+		<items>
+			<item id="90907" count="7" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="30" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="7" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2501" reward_id="2501" name="Daily Hunting I (Lv. 76+)" requiredCompletion="100" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 100 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="8" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="40" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="8" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2502" reward_id="2502" name="Daily Hunting II (Lv. 76+)" requiredCompletion="200" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 200 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="8" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="40" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="8" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2503" reward_id="2503" name="Daily Hunting III (Lv. 76+)" requiredCompletion="300" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 300 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="8" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="40" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="8" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="2504" reward_id="2504" name="Daily Hunting IV (Lv. 76+)" requiredCompletion="400" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 400 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="8" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="40" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="8" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+			<item id="97145" count="20" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="2505" reward_id="2505" name="Daily Hunting V (Lv. 76+)" requiredCompletion="500" isOneTime="false">
+		<!-- Daily mission. A reward is given for killing any 500 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="8" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="40" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="8" /> <!-- HP Potion -->
+			<item id="97224" count="10" /> <!-- Mission Points -->
+			<item id="97145" count="30" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="4001" reward_id="1078" name="Reach Level 20" requiredCompletion="20">
+		<!-- One-time mission. A reward is given when you reach Lv. 20. -->
+		<handler name="level">
+			<param name="level">20</param>
+		</handler>
+		<items>
+			<item id="94269" count="2" /> <!-- Scroll: Boost Attack - Sealed -->
+		</items>
+	</reward>
+	<reward id="4002" reward_id="1079" name="Reach Level 30" requiredCompletion="30">
+		<!-- One-time mission. A reward is given when you reach Lv. 30. -->
+		<handler name="level">
+			<param name="level">30</param>
+		</handler>
+		<items>
+			<item id="94269" count="3" /> <!-- Scroll: Boost Attack - Sealed -->
+		</items>
+	</reward>
+	<reward id="4003" reward_id="1080" name="Reach Level 40" requiredCompletion="40">
+		<!-- One-time mission. A reward is given when you reach Lv. 40. -->
+		<handler name="level">
+			<param name="level">40</param>
+		</handler>
+		<items>
+			<item id="94269" count="4" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="1" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4004" reward_id="1081" name="Reach Level 45" requiredCompletion="45">
+		<!-- One-time mission. A reward is given when you reach Lv. 45. -->
+		<handler name="level">
+			<param name="level">45</param>
+		</handler>
+		<items>
+			<item id="94269" count="5" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="2" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="5011" reward_id="5011" name="Reach Level 46" requiredCompletion="46">
+		<!-- One-time mission. A reward is given when you reach Lv. 46. Event. -->
+		<handler name="level">
+			<param name="level">46</param>
+		</handler>
+		<items>
+			<item id="91910" count="5" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
+		</items>
+	</reward>
+	<reward id="5012" reward_id="5012" name="Reach Level 47" requiredCompletion="47">
+		<!-- One-time mission. A reward is given when you reach Lv. 47. Event. -->
+		<handler name="level">
+			<param name="level">47</param>
+		</handler>
+		<items>
+			<item id="91910" count="5" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
+		</items>
+	</reward>
+	<reward id="5013" reward_id="5013" name="Reach Level 48" requiredCompletion="48">
+		<!-- One-time mission. A reward is given when you reach Lv. 48. Event. -->
+		<handler name="level">
+			<param name="level">48</param>
+		</handler>
+		<items>
+			<item id="91910" count="5" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
+		</items>
+	</reward>
+	<reward id="5014" reward_id="5014" name="Reach Level 49" requiredCompletion="49">
+		<!-- One-time mission. A reward is given when you reach Lv. 49. Event. -->
+		<handler name="level">
+			<param name="level">49</param>
+		</handler>
+		<items>
+			<item id="91910" count="5" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
+		</items>
+	</reward>
+	<reward id="4005" reward_id="1082" name="Reach Level 50" requiredCompletion="50">
+		<!-- One-time mission. A reward is given when you reach Lv. 50. -->
+		<handler name="level">
+			<param name="level">50</param>
+		</handler>
+		<items>
+			<item id="94269" count="6" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="3" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4006" reward_id="1083" name="Reach Level 55" requiredCompletion="55">
+		<!-- One-time mission. A reward is given when you reach Lv. 55. -->
+		<handler name="level">
+			<param name="level">55</param>
+		</handler>
+		<items>
+			<item id="94269" count="7" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="4" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4007" reward_id="1084" name="Reach Level 60" requiredCompletion="60">
+		<!-- One-time mission. A reward is given when you reach Lv. 60. -->
+		<handler name="level">
+			<param name="level">60</param>
+		</handler>
+		<items>
+			<item id="94269" count="8" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="5" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4008" reward_id="1085" name="Reach Level 65" requiredCompletion="65">
+		<!-- One-time mission. A reward is given when you reach Lv. 65. -->
+		<handler name="level">
+			<param name="level">65</param>
+		</handler>
+		<items>
+			<item id="94269" count="9" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="6" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4009" reward_id="1086" name="Reach Level 68" requiredCompletion="68">
+		<!-- One-time mission. A reward is given when you reach Lv. 68. -->
+		<handler name="level">
+			<param name="level">68</param>
+		</handler>
+		<items>
+			<item id="94269" count="10" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="7" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4010" reward_id="1087" name="Reach Level 71" requiredCompletion="71">
+		<!-- One-time mission. A reward is given when you reach Lv. 71. -->
+		<handler name="level">
+			<param name="level">71</param>
+		</handler>
+		<items>
+			<item id="94269" count="11" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="8" /> <!-- Scroll: Boost Defense - Sealed -->
+		</items>
+	</reward>
+	<reward id="4011" reward_id="1088" name="Reach Level 74" requiredCompletion="74">
+		<!-- One-time mission. A reward is given when you reach Lv. 74. -->
+		<handler name="level">
+			<param name="level">74</param>
+		</handler>
+		<items>
+			<item id="94269" count="12" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="9" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="2" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4012" reward_id="1089" name="Reach Level 76" requiredCompletion="76">
+		<!-- One-time mission. A reward is given when you reach Lv. 76. -->
+		<handler name="level">
+			<param name="level">76</param>
+		</handler>
+		<items>
+			<item id="94269" count="13" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="10" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="4" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4013" reward_id="1090" name="Reach Level 78" requiredCompletion="78">
+		<!-- One-time mission. A reward is given when you reach Lv. 78. -->
+		<handler name="level">
+			<param name="level">78</param>
+		</handler>
+		<items>
+			<item id="94269" count="14" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="11" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="6" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4014" reward_id="1091" name="Reach Level 79" requiredCompletion="79">
+		<!-- One-time mission. A reward is given when you reach Lv. 79. -->
+		<handler name="level">
+			<param name="level">79</param>
+		</handler>
+		<items>
+			<item id="94269" count="15" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="12" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="8" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4015" reward_id="1092" name="Reach Level 80" requiredCompletion="80">
+		<!-- One-time mission. A reward is given when you reach Lv. 80. -->
+		<handler name="level">
+			<param name="level">80</param>
+		</handler>
+		<items>
+			<item id="94269" count="16" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="13" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="10" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4016" reward_id="1093" name="Reach Level 81" requiredCompletion="81">
+		<!-- One-time mission. A reward is given when you reach Lv. 81. -->
+		<handler name="level">
+			<param name="level">81</param>
+		</handler>
+		<items>
+			<item id="94269" count="17" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="14" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="12" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4017" reward_id="1094" name="Reach Level 82" requiredCompletion="82">
+		<!-- One-time mission. A reward is given when you reach Lv. 82. -->
+		<handler name="level">
+			<param name="level">82</param>
+		</handler>
+		<items>
+			<item id="94269" count="18" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="15" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="14" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4018" reward_id="1095" name="Reach Level 83" requiredCompletion="83">
+		<!-- One-time mission. A reward is given when you reach Lv. 83. -->
+		<handler name="level">
+			<param name="level">83</param>
+		</handler>
+		<items>
+			<item id="94269" count="19" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="16" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="16" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4019" reward_id="1096" name="Reach Level 84" requiredCompletion="84">
+		<!-- One-time mission. A reward is given when you reach Lv. 84. -->
+		<handler name="level">
+			<param name="level">84</param>
+		</handler>
+		<items>
+			<item id="94269" count="20" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="17" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="18" /> <!-- XP Growth Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="4020" reward_id="1097" name="Reach Level 85" requiredCompletion="85">
+		<!-- One-time mission. A reward is given when you reach Lv. 85. -->
+		<handler name="level">
+			<param name="level">85</param>
+		</handler>
+		<items>
+			<item id="94269" count="21" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="18" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="20" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="94777" count="1" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="93062" count="1" /> <!-- Hat of Glory - Sealed -->
+		</items>
+	</reward>
+	<reward id="4021" reward_id="1098" name="Reach Level 86" requiredCompletion="86">
+		<!-- One-time mission. A reward is given when you reach Lv. 86. -->
+		<handler name="level">
+			<param name="level">86</param>
+		</handler>
+		<items>
+			<item id="94269" count="22" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="19" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="22" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="94777" count="2" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="93064" count="1" /> <!-- Spellbook: Glorious Warrior: Increased Weight Limit - Sealed -->
+		</items>
+	</reward>
+	<reward id="4022" reward_id="1099" name="Reach Level 87" requiredCompletion="87">
+		<!-- One-time mission. A reward is given when you reach Lv. 87. -->
+		<handler name="level">
+			<param name="level">87</param>
+		</handler>
+		<items>
+			<item id="94269" count="23" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="20" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="24" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="94777" count="3" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="93059" count="1" /> <!-- Spellbook: Mount Glorious Steed - Sealed -->
+		</items>
+	</reward>
+	<reward id="4023" reward_id="1100" name="Reach Level 88" requiredCompletion="88">
+		<!-- One-time mission. A reward is given when you reach Lv. 88. -->
+		<handler name="level">
+			<param name="level">88</param>
+		</handler>
+		<items>
+			<item id="94269" count="24" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="22" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="24" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="94777" count="4" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="93063" count="1" /> <!-- Spellbook: Glorious Warrior: Expand Inventory - Sealed -->
+			<item id="98838" count="1" /> <!-- Spellbook: Glorious Warrior: Special Teleport - Sealed -->
+		</items>
+	</reward>
+	<reward id="4024" reward_id="1101" name="Reach Level 89" requiredCompletion="89">
+		<!-- One-time mission. A reward is given when you reach Lv. 89. -->
+		<handler name="level">
+			<param name="level">89</param>
+		</handler>
+		<items>
+			<item id="94269" count="24" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" count="24" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="49674" count="24" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="94777" count="5" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="93061" count="1" /> <!-- Spellbook: Mount Shining Lady - Sealed -->
+			<item id="98839" count="1" /> <!-- Spellbook: Glorious Warrior: My Teleport - Sealed -->
+		</items>
+	</reward>
+	<reward id="4025" reward_id="1102" name="Reach Level 90" requiredCompletion="90">
+		<!-- One-time mission. A reward is given when you reach Lv. 90. -->
+		<handler name="level">
+			<param name="level">90</param>
+		</handler>
+		<items>
+			<item id="98863" count="1" /> <!-- Lv. 90 Achievement Supply Pack - Sealed -->
+			<item id="94046" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 1 - Sealed -->
+			<item id="94042" count="1" /> <!-- Appearance Stone: Emerald Weapon - Sealed -->
+			<item id="94764" count="2" /> <!-- Stylish Color Title - Sealed -->
+			<item id="94755" count="1" /> <!-- Half Mask of Glory - Sealed -->
+		</items>
+	</reward>
+	<reward id="4026" reward_id="4026" name="Reach Level 91" requiredCompletion="91">
+		<!-- One-time mission. A reward is given when you reach Lv. 91. -->
+		<handler name="level">
+			<param name="level">91</param>
+		</handler>
+		<items>
+			<item id="98864" count="1" /> <!-- Lv. 91 Achievement Supply Pack - Sealed -->
+			<item id="95890" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 2 - Sealed -->
+			<item id="98841" count="1" /> <!-- Spellbook: Glorious Warrior: Resurrection Cost Decrease - Sealed -->
+			<item id="94042" count="1" /> <!-- Appearance Stone: Emerald Weapon - Sealed -->
+			<item id="94764" count="2" /> <!-- Stylish Color Title - Sealed -->
+		</items>
+	</reward>
+	<reward id="4027" reward_id="4027" name="Reach Level 92" requiredCompletion="92">
+		<!-- One-time mission. A reward is given when you reach Lv. 92. -->
+		<handler name="level">
+			<param name="level">92</param>
+		</handler>
+		<items>
+			<item id="98865" count="1" /> <!-- Lv. 92 Achievement Supply Pack - Sealed -->
+			<item id="95891" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 3 - Sealed -->
+			<item id="95892" count="5" /> <!-- Special Color Title - Sealed -->
+		</items>
+	</reward>
+	<reward id="4028" reward_id="4028" name="Reach Level 93" requiredCompletion="93">
+		<!-- One-time mission. A reward is given when you reach Lv. 93. -->
+		<handler name="level">
+			<param name="level">93</param>
+		</handler>
+		<items>
+			<item id="98843" count="1" /> <!-- Lv. 93 Achievement Supply Pack - Sealed -->
+			<item id="98834" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 4 - Sealed -->
+			<item id="98837" count="1" /> <!-- Spellbook: Glorious Warrior: Quick Escape - Sealed -->
+		</items>
+	</reward>
+	<reward id="4029" reward_id="4029" name="Reach Level 94" requiredCompletion="94">
+		<!-- One-time mission. A reward is given when you reach Lv. 94. -->
+		<handler name="level">
+			<param name="level">94</param>
+		</handler>
+		<items>
+			<item id="98844" count="1" /> <!-- Lv. 94 Achievement Supply Pack - Sealed -->
+			<item id="98835" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 5 - Sealed -->
+		</items>
+	</reward>
+	<reward id="4030" reward_id="4030" name="Reach Level 95" requiredCompletion="95">
+		<!-- One-time mission. A reward is given when you reach Lv. 95. -->
+		<handler name="level">
+			<param name="level">95</param>
+		</handler>
+		<items>
+			<item id="98845" count="1" /> <!-- Lv. 95 Achievement Supply Pack - Sealed -->
+			<item id="98836" count="1" /> <!-- Spellbook: Glorious Warrior: Enhanced Abilities Lv. 6 - Sealed -->
+		</items>
+	</reward>
+	<reward id="4031" reward_id="4031" name="Special Gift for Reaching Lv. 90" requiredCompletion="90">
+		<!-- Congratulations! You have reached Lv. 90. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">90</param>
+		</handler>
+		<items>
+			<item id="99888" count="1" /> <!-- Package: Spellbook Coupon - 3 Stars - Sealed -->
+		</items>
+	</reward>
+	<reward id="4032" reward_id="4032" name="Special Gift for Reaching Lv. 91" requiredCompletion="91">
+		<!-- Congratulations! You have reached Lv. 91. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">91</param>
+		</handler>
+		<items>
+			<item id="100000" count="1" /> <!-- +7 Talisman Coupon - Sealed -->
+		</items>
+	</reward>
+	<reward id="4033" reward_id="4033" name="Special Gift for Reaching Lv. 92" requiredCompletion="92">
+		<!-- Congratulations! You have reached Lv. 92. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">92</param>
+		</handler>
+		<items>
+			<item id="100001" count="1" /> <!-- Lv. 7 Jewel Coupon - Sealed -->
+		</items>
+	</reward>
+	<reward id="4034" reward_id="4034" name="Special Gift for Reaching Lv. 93" requiredCompletion="93">
+		<!-- Congratulations! You have reached Lv. 93. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">93</param>
+		</handler>
+		<items>
+			<item id="98824" count="1" /> <!-- Doll Coupon Lv. 5 - Sealed -->
+		</items>
+	</reward>
+	<reward id="4035" reward_id="4035" name="Special Gift for Reaching Lv. 94" requiredCompletion="94">
+		<!-- Congratulations! You have reached Lv. 94. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">94</param>
+		</handler>
+		<items>
+			<item id="98825" count="1" /> <!-- +10 Talisman Coupon - Sealed -->
+		</items>
+	</reward>
+	<reward id="4036" reward_id="4036" name="Special Gift for Reaching Lv. 95" requiredCompletion="95">
+		<!-- Congratulations! You have reached Lv. 95. A reward is given once per account. -->
+		<handler name="level">
+			<param name="level">95</param>
+		</handler>
+		<items>
+			<item id="98828" count="1" /> <!-- Package: Immortal Ring - Sealed -->
+		</items>
+	</reward>
+	<reward id="3007" reward_id="3007" name="Sayha's Blessing" requiredCompletion="10">
+		<!-- A reward is given for using Sayha's Blessing that is not limited by level, 10 times. -->
+		<handler name="useItem">
+			<param name="maxUse">10</param>
+			<param name="id">91910</param>
+		</handler>
+		<items>
+			<item id="93274" count="10" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="90907" count="30" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="500" /> <!-- Spirit Ore - Sealed -->
+		</items>
+	</reward>
+	<reward id="1500" reward_id="1500" name="Hunt in Transcendent Instance Zones" requiredCompletion="300">
+		<!-- Daily mission (once per account). A reward is given for killing 300 monsters in transcendent instance zones. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22107,22108,22109,22122,22331,22111,22110,22112,22123,22116,22117,22118,22124,22113,22114,22115,22147,22148,22149,22275,22276,22277,22278</param>
+		</handler>
+		<items>
+			<item id="93274" count="100" /> <!-- Sayha's Cookie - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+			<item id="97145" count="50" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="3019" reward_id="3019" name="Difficult Assault on Orc Fortress" requiredCompletion="1">
+		<!-- A reward is given for killing titled monsters during the battle for the Orc Fortress. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22156</param>
+		</handler>
+		<items>
+			<item id="49674" count="3" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="93068" count="1" /> <!-- Red Lantern - 1st Place - Sealed -->
+			<item id="97145" count="50" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="3020" reward_id="3020" name="Assault on Orc Fortress" requiredCompletion="50">
+		<!-- A reward is given for killing titleless monsters during the battle for the Orc Fortress. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22164,22165,22166,22167,22168,22169,22170,22171,22172,22173,22174,22175,22176,22177,22178,22179,22180,22181</param>
+		</handler>
+		<items>
+			<item id="49674" count="2" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="93070" count="5" /> <!-- Blue Lantern - 3rd Place - Sealed -->
+		</items>
+	</reward>
+	<reward id="3021" reward_id="3021" name="Giran Relic's Defense - Hard Difficulty" requiredCompletion="20">
+		<!-- A reward is given for killing titled monsters during the Giran siege on the side of the Giran Relic defenders. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">29225</param>
+		</handler>
+		<items>
+			<item id="97415" count="5" /> <!-- Red Lantern (Time-limited) - Sealed -->
+			<item id="91712" count="10" /> <!-- Sayha's Storm - Sealed -->
+			<item id="97145" count="200" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="3022" reward_id="3022" name="Giran Relic's Defense" requiredCompletion="200">
+		<!-- A reward is given for killing titleless monsters during the Giran siege on the side of the Giran Relic defenders. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">18891,18892,18894,18895</param>
+		</handler>
+		<items>
+			<item id="97415" count="1" /> <!-- Red Lantern (Time-limited) - Sealed -->
+			<item id="91712" count="10" /> <!-- Sayha's Storm - Sealed -->
+		</items>
+	</reward>
+	<reward id="3013" reward_id="3013" name="Olympiad Winner I" requiredCompletion="1">
+		<!-- One-time mission. A reward is given for winning an Olympiad match. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="92991" count="3" /> <!-- Einhasad's Blessing Scroll - Sealed -->
+			<item id="91772" count="1" /> <!-- Scroll: PK - Sealed -->
+		</items>
+	</reward>
+	<reward id="3014" reward_id="3014" name="Olympiad Winner II" requiredCompletion="2">
+		<!-- One-time mission. A reward is given for winning 2 Olympiad matches. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="91690" count="50" /> <!-- Special HP Recovery Potion - Sealed -->
+		</items>
+	</reward>
+	<reward id="3015" reward_id="3015" name="Olympiad Winner III" requiredCompletion="3">
+		<!-- One-time mission. A reward is given for winning 3 Olympiad matches. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="92991" count="5" /> <!-- Einhasad's Blessing Scroll - Sealed -->
+		</items>
+	</reward>
+	<reward id="3016" reward_id="3016" name="Olympiad Winner IV" requiredCompletion="4">
+		<!-- One-time mission. A reward is given for winning 4 Olympiad matches. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="91690" count="100" /> <!-- Special HP Recovery Potion - Sealed -->
+		</items>
+	</reward>
+	<reward id="3017" reward_id="3017" name="Olympiad Winner V" requiredCompletion="5">
+		<!-- One-time mission. A reward is given for winning 5 Olympiad matches. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="95687" count="1" /> <!-- Olympiad Treasure Chest - Sealed -->
+		</items>
+	</reward>
+	<reward id="3018" reward_id="3018" name="Olympiad Competitor" requiredCompletion="50">
+		<!-- A reward is given for participating in 50 Olympiad matches in a month. Available from Monday till Friday. -->
+		<handler name="olympiad" />
+		<items>
+			<item id="95687" count="1" /> <!-- Olympiad Treasure Chest - Sealed -->
+			<item id="97224" count="50" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1017" reward_id="117" name="In-game Weekend" requiredCompletion="1">
+		<!-- Weekly mission. A reward is given for playing the game on Saturday or Sunday. -->
+		<handler name="loginweekend" />
+		<items>
+			<item id="94269" count="1" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="3031" count="50" /> <!-- Spirit Ore - Sealed -->
+		</items>
+	</reward>
+	<reward id="1023" reward_id="501" name="Join a Clan" requiredCompletion="1">
+		<!-- One-time mission. A reward is given for joining a clan for the first time. -->
+		<handler name="joinclan">
+			<param name="minLevel">40</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90768" count="1" /> <!-- Head Accessory Coupon - Sealed -->
+		</items>
+	</reward>
+	<reward id="9001" reward_id="9001" name="Clan Raid Attack" requiredCompletion="1">
+		<!-- Weekly mission. A reward is given for defeating 1 enemy together with your clan members in the Clan Arena. -->
+		<handler name="monster">
+			<param name="ids">25794,25795,25796,25797,25798,25799,25800,25801,25802,25803,25804,25805,25806,25807,25808,25809,25810,25811,25812,25813,25834,25835,25836,25837,25838</param>
+			<param name="minLevel">40</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="94269" count="3" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="3031" count="150" /> <!-- Spirit Ore - Sealed -->
+			<item id="94481" count="500" /> <!-- Clan XP - Sealed -->
+		</items>
+	</reward>
+	<reward id="9002" reward_id="9002" name="Entrance to Dwelling of Spirits" requiredCompletion="50">
+		<!-- Weekly mission. A reward is given for defeating monsters during a command channel raid to the Dwelling of Spirits. -->
+		<handler name="monster">
+			<param name="ids">22271,22272,22273</param>
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="91830" count="5" /> <!-- Improved Fire Attack Potion -->
+			<item id="91831" count="5" /> <!-- Improved Water Attack Potion -->
+			<item id="91832" count="5" /> <!-- Improved Wind Attack Potion -->
+			<item id="91833" count="5" /> <!-- Improved Earth Attack Potion -->
+			<item id="94481" count="250" /> <!-- Clan XP - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="9003" reward_id="9003" name="Spirit Rulers" requiredCompletion="1">
+		<!-- Weekly mission. A reward is given for defeating Ignis, Nebula, Procella or Petram during a command channel raid to the Dwelling of Spirits. -->
+		<handler name="monster">
+			<param name="ids">29105,29106,29107,29108</param>
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="91830" count="5" /> <!-- Improved Fire Attack Potion -->
+			<item id="91831" count="5" /> <!-- Improved Water Attack Potion -->
+			<item id="91832" count="5" /> <!-- Improved Wind Attack Potion -->
+			<item id="91833" count="5" /> <!-- Improved Earth Attack Potion -->
+			<item id="94481" count="500" /> <!-- Clan XP - Sealed -->
+			<item id="97145" count="20" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="9004" reward_id="9004" name="Battle with Frintezza" requiredCompletion="1">
+		<!-- Weekly mission. A reward is given for defeating Scarlet van Halisha during a command channel raid to Frintezza. -->
+		<handler name="monster">
+			<param name="ids">22271,22272,22273</param>
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="90907" count="20" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="200" /> <!-- Spirit Ore - Sealed -->
+			<item id="94481" count="500" /> <!-- Clan XP - Sealed -->
+			<item id="94879" count="300" /> <!-- Grace Potion (Time-limited) - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+			<item id="97145" count="20" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1112" reward_id="508" name="Fire Spirit Lv. 3" requiredCompletion="3">
+		<!-- A reward is given when evolving the Fire Spirit up to Lv. 3. -->
+		<handler name="spiritevolve">
+			<param name="element">FIRE</param>
+		</handler>
+		<items>
+			<item id="91185" count="30" /> <!-- Mid-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1113" reward_id="509" name="Water Spirit Lv. 3" requiredCompletion="3">
+		<!-- A reward is given when evolving the Water Spirit up to Lv. 3. -->
+		<handler name="spiritevolve">
+			<param name="element">WATER</param>
+		</handler>
+		<items>
+			<item id="91185" count="30" /> <!-- Mid-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1114" reward_id="510" name="Wind Spirit Lv. 3" requiredCompletion="3">
+		<!-- A reward is given when evolving the Wind Spirit up to Lv. 3. -->
+		<handler name="spiritevolve">
+			<param name="element">WIND</param>
+		</handler>
+		<items>
+			<item id="91185" count="30" /> <!-- Mid-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1115" reward_id="511" name="Earth Spirit Lv. 3" requiredCompletion="3">
+		<!-- A reward is given when evolving the Earth Spirit up to Lv. 3. -->
+		<handler name="spiritevolve">
+			<param name="element">EARTH</param>
+		</handler>
+		<items>
+			<item id="91185" count="30" /> <!-- Mid-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1162" reward_id="2031" name="Fire Spirit Lv. 5" requiredCompletion="5">
+		<!-- A reward is given when evolving the Fire Spirit up to Lv. 5. -->
+		<handler name="spiritevolve">
+			<param name="element">FIRE</param>
+		</handler>
+		<items>
+			<item id="91186" count="30" /> <!-- High-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1163" reward_id="2032" name="Water Spirit Lv. 5" requiredCompletion="5">
+		<!-- A reward is given when evolving the Water Spirit up to Lv. 5. -->
+		<handler name="spiritevolve">
+			<param name="element">WATER</param>
+		</handler>
+		<items>
+			<item id="91186" count="30" /> <!-- High-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1164" reward_id="2033" name="Wind Spirit Lv. 5" requiredCompletion="5">
+		<!-- A reward is given when evolving the Wind Spirit up to Lv. 5. -->
+		<handler name="spiritevolve">
+			<param name="element">WIND</param>
+		</handler>
+		<items>
+			<item id="91186" count="30" /> <!-- High-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1165" reward_id="2034" name="Earth Spirit Lv. 5" requiredCompletion="5">
+		<!-- A reward is given when evolving the Earth Spirit up to Lv. 5. -->
+		<handler name="spiritevolve">
+			<param name="element">EARTH</param>
+		</handler>
+		<items>
+			<item id="91186" count="30" /> <!-- High-grade Spirit's Blessing - Sealed -->
+		</items>
+	</reward>
+	<reward id="1116" reward_id="118" name="Attribute Monster Hunting" requiredCompletion="1800">
+		<!-- Weekly mission. A reward is given for killing attribute monsters. -->
+		<handler name="monster">
+			<param name="ids">20792,20794,20795,20796,20797,20798,20799,20800,20801,20802,20803,20849,20995,21661,21662,21663,21664,21665,21666,21667,21668,21669,21670,21671,21672,21673,21674,21675,21676,21678,21685,21686,21761,21762,21763,21764,21765,21766,21767,21768,21769,21770,21771,21772,21773,21774,21775,21776,21777,21778,21779,21780,21781,21782,21783,21784,21785,21786,21787,21788,21789,21790,21791,21792,21793,21813,21814,21815,21816,21817,21818,21819,21820,21821,21822,21823,21824,21825,21826,21827,21828,21829,21830,21831,21832</param>
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="91030" count="10" /> <!-- Blessed Soul - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1503" reward_id="1503" name="Explore Primeval Isle" requiredCompletion="200">
+		<!-- A reward is given for killing 200 monsters on the Primeval Isle. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22058,21969,22056,21962,21964,21966,21968,21974,22059,21976,21971</param>
+		</handler>
+		<items>
+			<item id="94879" count="50" /> <!-- Grace Potion (Time-limited) - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1505" reward_id="1505" name="Monster Purge" requiredCompletion="1">
+		<!-- A reward is given after receiving the reward for using the Purge system in the corresponding hunting zones. -->
+		<handler name="purge" />
+		<items>
+			<item id="95481" count="1" /> <!-- Aden Purge Crystal - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1509" reward_id="1509" name="Explore Dreamland" requiredCompletion="1">
+		<!-- A reward is given for killing one of the following monsters in the Dream Dungeon: Gustav, Gustav's Steward, Gabrielle, Gabrielle's Minion, Ventus, Rekario, Tiat, Baint. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">18678,18679,18680,18681,18682,18683,18684,18685</param>
+		</handler>
+		<items>
+			<item id="96925" count="1" /> <!-- Dream Orb - Sealed -->
+			<item id="93068" count="2" /> <!-- Red Lantern - 1st Place - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1510" reward_id="1510" name="Explore Dreamland's Secret Places" requiredCompletion="1">
+		<!-- A reward is given for killing Feline King or Feline Queen in the Cat Guild's Lair of the Dream Dungeon. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">18686,18687</param>
+		</handler>
+		<items>
+			<item id="96925" count="1" /> <!-- Dream Orb - Sealed -->
+		</items>
+	</reward>
+	<reward id="1511" reward_id="1511" name="Explore Alligator Island" requiredCompletion="100">
+		<!-- A reward is given for killing 100 Evolved monsters on Alligator Island. -->
+		<handler name="monster">
+			<param name="minLevel">70</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22192,22197</param>
+		</handler>
+		<items>
+			<item id="94780" count="2" /> <!-- Growth Rune Fragment - Sealed -->
+			<item id="97224" count="15" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1512" reward_id="1512" name="Incessant Training" requiredCompletion="1">
+		<!-- A reward is given for killing one of the following monsters in the Training Zone: Boojudu, Petron, Kerion, Furious Tukhak, Rilva, Ryun, Chel, Susceptor Primo, Susceptor Prime, Lakarta, Bykant, Hacepsute. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">25952,25953,25954,25955,25961,25962,25963</param>
+		</handler>
+		<items>
+			<item id="97145" count="50" /> <!-- Ancient Adena -->
+			<item id="98209" count="1" /> <!-- Purge Equipment Newbie Pack - Sealed -->
+		</items>
+	</reward>
+	<reward id="1513" reward_id="1513" name="Combat on Balok Battleground" requiredCompletion="10">
+		<!-- A reward is given for killing 10 monsters on the Balok Battleground. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22413,22414,22415,22416,22417</param>
+		</handler>
+		<items>
+			<item id="97145" count="50" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1514" reward_id="1514" name="Explore Goddard" requiredCompletion="1000">
+		<!-- A reward is given for killing 1000 monsters in the Gorde Canyon, Morgos' Military Base, Xilenos Fortress, Hot Springs. -->
+		<handler name="monster">
+			<param name="minLevel">85</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22426,22427,22428,22429,22431,22432,22433,22434,22435,22436,22437,22438,22439,22440,22441,22442,22443,22445,22446</param>
+		</handler>
+		<items>
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1515" reward_id="1515" name="Explore Antharas' Lair" requiredCompletion="300">
+		<!-- A reward is given for killing 300 monsters in Antharas' Lair. -->
+		<handler name="monster">
+			<param name="minLevel">85</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">20761,21085,20627,20623,20621,20407,20626,20625,20624,20622,20620,21084,20405,21089,21087,21086,20629,20628,22500</param>
+		</handler>
+		<items>
+			<item id="97246" count="10" /> <!-- Enria - Sealed -->
+		</items>
+	</reward>
+	<reward id="1516" reward_id="1516" name="Explore Frost Lord's Castle" requiredCompletion="300">
+		<!-- A reward is given for killing 300 monsters in the Frost Lord's Castle. -->
+		<handler name="monster">
+			<param name="minLevel">85</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22351,22346,22347,22345,22352,22349,22350,22348</param>
+		</handler>
+		<items>
+			<item id="97246" count="10" /> <!-- Enria - Sealed -->
+		</items>
+	</reward>
+	<reward id="1517" reward_id="1517" name="Explore Valakas' Temple" requiredCompletion="1">
+		<!-- A reward is given for defeating any of the following monsters during the 'Explore Valakas' Temple' command channel raid: Ifrit, Ifrin, Iff, Blazing Dragon. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">25964,25965,25966,25967</param>
+		</handler>
+		<items>
+			<item id="93068" count="2" /> <!-- Red Lantern - 1st Place - Sealed -->
+			<item id="94481" count="500" /> <!-- Clan XP - Sealed -->
+			<item id="97224" count="5" /> <!-- Mission Points -->
+			<item id="97145" count="20" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1518" reward_id="1518" name="Explore the Primeval Garden" requiredCompletion="1000">
+		<!-- A reward is given for killing 1000 monsters titled 'Swift Hunter' in the Primeval Garden. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22269,22270</param>
+		</handler>
+		<items>
+			<item id="93685" count="10" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1519" reward_id="1519" name="Explore the Garden of Eva" requiredCompletion="1000">
+		<!-- A reward is given for killing 1000 monsters titled 'Eva's Energy Reserve' in the Garden of Eva. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22528,22523</param>
+		</handler>
+		<items>
+			<item id="92020" count="10" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<!--
+	<reward id="1520" reward_id="1520" name="Daily Upgrade of Hidden Power" requiredCompletion="3">
+		Daily mission. A reward is given for 3 upgrades of the hidden power.
+		<handler name="monster">
+			<param name="minLevel">0</param>
+			<param name="maxLevel">0</param>
+		</handler>
+		<items>
+			<item id="97145" count="10" /> Ancient Adena
+		</items>
+	</reward>
+	<reward id="1521" reward_id="1521" name="Constant Upgrade of Hidden Power" requiredCompletion="30">
+		Weekly mission. A reward is given for 30 upgrades of the hidden power.
+		<handler name="monster">
+			<param name="minLevel">0</param>
+			<param name="maxLevel">0</param>
+		</handler>
+		<items>
+			<item id="97147" count="1" /> Hidden Power Booster - Sealed
+		</items>
+	</reward>
+	-->
+	<reward id="1522" reward_id="1522" name="Investigate the Primeval Garden" requiredCompletion="100">
+		<!-- Daily mission.\nA reward is given for killing 100 monsters titled 'Swift Hunter' in the Primeval Garden. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22269,22270</param>
+		</handler>
+		<items>
+			<item id="93685" count="1" /> <!-- Enchant Kit: Talisman of Speed - Sealed -->
+		</items>
+	</reward>
+	<reward id="1523" reward_id="1523" name="Investigate the Garden of Eva" requiredCompletion="100">
+		<!-- Daily mission. A reward is given for killing 100 monsters titled 'Eva's Energy Reserve' in the Garden of Eva. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22528,22523</param>
+		</handler>
+		<items>
+			<item id="92020" count="1" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+		</items>
+	</reward>
+	<reward id="1525" reward_id="1525" name="Hunt in the Tower of Insolence" requiredCompletion="100">
+		<!-- A reward is given for killing 100 monsters titled 'Magic Slave' in the Tower of Insolence. -->
+		<handler name="monster">
+			<param name="minLevel">80</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22564,22569,22574,22579,22584,22589,22593,22597,22601,22605,22609,22613</param>
+		</handler>
+		<items>
+			<item id="98037" count="2" /> <!-- +0 ~ +4 Cloak of Protection Pack - Sealed -->
+		</items>
+	</reward>
+	<!--
+	<reward id="1526" reward_id="1526" name="Explore Kelbim's Fortress and Pagan Temple" requiredCompletion="300">
+		A reward is given for killing 300 monsters in the following session zones: Kelbim's Fortress and Pagan Temple.
+		<handler name="monster">
+			<param name="minLevel">85</param>
+			<param name="maxLevel">99</param>
+			TODO: ids
+		</handler>
+		<items>
+			<item id="98199" count="1" /> Kelbim's Fortress' Time Stone - Sealed
+			<item id="98214" count="1" /> Pagan Temple's Time Stone - Sealed
+		</items>
+	</reward>
+	-->
+	<reward id="1527" reward_id="1527" name="Explore the Garden of Authority" requiredCompletion="100">
+		<!-- Daily mission. A reward is given for killing 100 monsters titled 'Bearer of Sacred Power' in the Garden of Authority. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22564,22569,22574,22579,22584,22589,22593,22597,22601,22605,22609,22613</param>
+		</handler>
+		<items>
+			<item id="93330" count="1" /> <!-- Enchant Kit: Talisman of Authority - Sealed -->
+		</items>
+	</reward>
+	<reward id="1528" reward_id="1528" name="Hunt in the Garden of Authority" requiredCompletion="1000">
+		<!-- A reward is given for killing 1000 monsters titled 'Bearer of Sacred Power' in the Garden of Authority. -->
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22564,22569,22574,22579,22584,22589,22593,22597,22601,22605,22609,22613</param>
+		</handler>
+		<items>
+			<item id="93330" count="10" /> <!-- Enchant Kit: Talisman of Authority - Sealed -->
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+		</items>
+	</reward>
+	<reward id="1529" reward_id="1529" name="Battle in Aztacan's Temple" requiredCompletion="50">
+		<!-- Daily mission. A reward is given for killing 50 monsters in Aztacan's Temple. Required level: 60-74. -->
+		<handler name="monster">
+			<param name="minLevel">60</param>
+			<param name="maxLevel">74</param>
+			<param name="ids">22741,22742,22743,22744,22745,22740,22746,22747,22748,22749,22750,22751,22752,22753,22754,22755,22756,22757</param>
+		</handler>
+		<items>
+			<item id="97418" count="1" /> <!-- Green Lantern (Time-limited) - Sealed -->
+			<item id="97247" count="1" /> <!-- Asofe - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1530" reward_id="1530" name="Battle in Aztacan's Temple" requiredCompletion="50">
+		<!-- Daily mission. A reward is given for killing 50 monsters in Aztacan's Temple. Required level: 75-79. -->
+		<handler name="monster">
+			<param name="minLevel">75</param>
+			<param name="maxLevel">79</param>
+			<param name="ids">22741,22742,22743,22744,22745,22740,22746,22747,22748,22749,22750,22751,22752,22753,22754,22755,22756,22757</param>
+		</handler>
+		<items>
+			<item id="97417" count="1" /> <!-- Blue Lantern (Time-limited) - Sealed -->
+			<item id="97247" count="3" /> <!-- Asofe - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1531" reward_id="1531" name="Battle in Aztacan's Temple" requiredCompletion="50">
+		<!-- Daily mission. A reward is given for killing 50 monsters in Aztacan's Temple. Required level 80-84. -->
+		<handler name="monster">
+			<param name="minLevel">80</param>
+			<param name="maxLevel">84</param>
+			<param name="ids">22741,22742,22743,22744,22745,22740,22746,22747,22748,22749,22750,22751,22752,22753,22754,22755,22756,22757</param>
+		</handler>
+		<items>
+			<item id="97416" count="2" /> <!-- Purple Lantern (Time-limited) - Sealed -->
+			<item id="97247" count="5" /> <!-- Asofe - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1532" reward_id="1532" name="Battle in Aztacan's Temple" requiredCompletion="50">
+		<!-- Daily mission. A reward is given for killing 50 monsters in Aztacan's Temple. Required level: 85+. -->
+		<handler name="monster">
+			<param name="minLevel">85</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">22741,22742,22743,22744,22745,22740,22746,22747,22748,22749,22750,22751,22752,22753,22754,22755,22756,22757</param>
+		</handler>
+		<items>
+			<item id="97415" count="2" /> <!-- Red Lantern (Time-limited) - Sealed -->
+			<item id="97247" count="7" /> <!-- Asofe - Sealed -->
+			<item id="97224" count="20" /> <!-- Mission Points -->
+		</items>
+	</reward>
+	<reward id="1533" reward_id="1533" name="Assault on the Clan Dungeon" requiredCompletion="1">
+		<!-- Weekly mission. A reward is given for killing one of the Clan Dungeon bosses: Turek, Quick Kookaburra, Darion's Lieutenant Byskan, or Radin's Messenger Anas. Required clan level: 3+. -->
+		<handler name="monster">
+			<param name="minLevel">80</param>
+			<param name="maxLevel">99</param>
+			<param name="ids">25997,25998,25999,26001</param>
+		</handler>
+		<items>
+			<item id="97415" count="5" /> <!-- Red Lantern (Time-limited) - Sealed -->
+			<item id="97145" count="100" /> <!-- Ancient Adena -->
+			<item id="94481" count="100" /> <!-- Clan XP - Sealed -->
+		</items>
+	</reward>
+	<!--
+	<reward id="5112" reward_id="5112" name="Death Knight Base's Defense" requiredCompletion="10">
+		Daily event mission. A reward is given for killing 10 monsters in the 'Death Knight Base's Defense' instance zone. (The event's end date: August 23, 2023.)
+		<handler name="monster">
+			<param name="minLevel">76</param>
+			<param name="maxLevel">99</param>
+		</handler>
+		<items>
+			<item id="99917" count="6" /> Hellfire Buff Scroll (Time-limited) - Sealed
+			<item id="93096" count="320" /> Red Libra Coin (Time-limited) - Sealed
+		</items>
+	</reward>
+	-->
+	<reward id="9999999" reward_id="9999999" name="Daily Hunting I (Lv. 21-40)" requiredCompletion="30">
+		<!-- Daily mission. A reward is given for killing any 30 monsters. Monsters that are lower than you for more than 15 levels do not count. -->
+		<handler name="monster">
+			<param name="minLevel">21</param>
+			<param name="maxLevel">40</param>
+		</handler>
+		<items>
+			<item id="90907" count="3" /> <!-- Soulshot Ticket - Sealed -->
+			<item id="3031" count="10" /> <!-- Spirit Ore - Sealed -->
+			<item id="91912" count="3" /> <!-- HP Potion -->
+		</items>
+	</reward>
+</list>

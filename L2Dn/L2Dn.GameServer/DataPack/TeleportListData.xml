@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/TeleportListData.xsd">
+	<teleport id="2" x="48789" y="145929" z="-2656" price="1000" /> <!-- Execution Grounds -->
+	<teleport id="3" x="48789" y="118352" z="-2176" price="1000" /> <!-- Partisan Hideaway -->
+	<teleport id="4" x="12019" y="119151" z="-3664" price="50000" /> <!-- Cruma Marshlands -->
+	<teleport id="5" x="17146" y="114176" z="-3440" price="1000" /> <!-- Cruma Tower -->
+	<teleport id="6" x="38291" y="148829" z="-3696" price="200" /> <!-- Mandragora Farm -->
+	<teleport id="7" x="15689" y="142953" z="-2696" price="1000" /> <!-- Dion -->
+	<teleport id="8" x="16016" y="163115" z="-3495" price="1000" /> <!-- Floran Village -->
+	<teleport id="9" x="27207" y="151325" z="-2952" price="20000" /> <!-- Dion Castle -->
+	<teleport id="11" x="26861" y="185229" z="-3472" price="3000" /> <!-- Bee Hive -->
+	<teleport id="13" x="10610" y="157122" z="-2472" price="1000" /> <!-- Floran Agricultural Area -->
+	<teleport id="18" x="97054" y="116372" z="-1256" price="1000" /> <!-- Dragon Valley -->
+	<teleport id="19" x="146911" y="116153" z="-720" price="24000" /> <!-- Antharas' Lair -->
+	<teleport id="21" price="770"> <!-- Death Pass -->
+		<location x="70610" y="118363" z="-3664" />
+		<location x="70576" y="128047" z="-3752" />
+		<location x="67018" y="108177" z="-3680" />
+		<location x="67882" y="99782" z="-3712" />
+	</teleport>
+	<teleport id="23" x="43408" y="206881" z="-3752" price="15000" /> <!-- Devil's Isle -->
+	<teleport id="24" x="47935" y="186810" z="-3480" price="2000" /> <!-- Giran Harbor -->
+	<teleport id="25" x="83386" y="148014" z="-3400" price="1000" /> <!-- Giran -->
+	<teleport id="29" price="770"> <!-- Gorgon Flower Garden -->
+		<location x="102369" y="137818" z="-3328" />
+		<location x="119184" y="135484" z="-3544" />
+		<location x="106615" y="138612" z="-3536" />
+	</teleport>
+	<teleport id="31" x="-17158" y="140933" z="-3762" price="200" /> <!-- Ruins of Despair -->
+	<teleport id="32" price="1000"> <!-- Ruins of Agony -->
+		<location x="-42307" y="120810" z="-3368" />
+		<location x="-47785" y="111957" z="-3584" />
+		<location x="-46166" y="108893" z="-3792" />
+		<location x="-57040" y="112462" z="-3064" />
+		<location x="-53117" y="119693" z="-2968" />
+	</teleport>
+	<teleport id="35" x="-80684" y="149770" z="-3040" price="1000" /> <!-- Gludin -->
+	<teleport id="36" x="-91080" y="149860" z="-3624" price="2000" /> <!-- Gludin Harbor -->
+	<teleport id="37" x="-14424" y="123972" z="-3120" price="1000" /> <!-- Gludio -->
+	<teleport id="38" x="-46427" y="147921" z="-2960" price="770" /> <!-- Abandoned Camp -->
+	<teleport id="39" x="-91509" y="107149" z="-3688" price="24000" /> <!-- Orc Baracks -->
+	<teleport id="40" x="-52729" y="183899" z="-3568" price="1000"/> <!-- Forgotten Temple -->
+	<teleport id="41" x="-57798" y="127629" z="-2928" price="50000" /> <!-- Fellmere Lake -->
+	<teleport id="42" x="-87328" y="142266" z="-3640" price="50000" /> <!-- Arena -->
+	<teleport id="43" x="-17358" y="102963" z="-1268" price="50000" /> <!-- Gludio Castle -->
+	<teleport id="44" x="-82505" y="86177" z="-3472" price="2000" /> <!-- Windy Hill -->
+	<teleport id="45" x="-35366" y="195449" z="-3328" price="1000" /> <!-- Red Rock Ridge -->
+	<teleport id="46" x="-49332" y="207879" z="-3736" price="50000" /> <!-- Langk Lizardmen Settlement -->
+	<teleport id="48" x="-114212" y="245920" z="-3680" price="20000" /> <!-- Talking Island -->
+	<teleport id="49" x="-84191" y="244531" z="-3728" price="1000" /> <!-- Talking Island Village -->
+	<teleport id="53" x="-113281" y="229862" z="-3688" price="1000" /> <!-- Elven Ruins -->
+	<teleport id="54" x="-96811" y="259153" z="-3616" price="1000" /> <!-- Talking Island Harbor -->
+	<teleport id="55" x="-106696" y="214691" z="-3424" price="200" /> <!-- Talking Island, Western Territory -->
+	<teleport id="56" x="-95336" y="240478" z="-3264" price="200" /> <!-- Talking Island, Eastern Territory -->
+	<teleport id="58" x="-69656" y="170875" z="-3440" price="48000"/> <!-- Fairy-invaded Lands -->
+	<teleport id="68" x="21362" y="51122" z="-3688" price="200" /> <!-- Elven Forest -->
+	<teleport id="69" x="50953" y="42105" z="-3480" price="200" /> <!-- Shadow of the Mother Tree -->
+	<teleport id="70" x="46916" y="51420" z="-2976" price="1000" /> <!-- Elven Village -->
+	<teleport id="75" x="9800" y="15596" z="-4568" price="1000" /> <!-- Dark Elf Village -->
+	<teleport id="77" x="-21966" y="40544" z="-3192" price="200" /> <!-- Swampland -->
+	<teleport id="79" x="64328" y="26803" z="-3768" price="770" /> <!-- Sea of Spores -->
+	<teleport id="82" x="82927" y="53255" z="-1488" price="1000" /> <!-- Oren -->
+	<teleport id="84" price="9000"> <!-- Plains of the Lizardmen -->
+		<location x="87252" y="85514" z="-3103" />
+		<location x="82911" y="92847" z="-3328" />
+		<location x="95842" y="89089" z="-3472" />
+		<location x="95198" y="76261" z="-3480" />
+		<location x="81160" y="75068" z="-3592" />
+	</teleport>
+	<teleport id="99" x="155310" y="-16339" z="-3320" price="20000" /> <!-- Blazing Swamp -->
+	<teleport id="101" x="187383" y="20498" z="-3584" price="2000" /> <!-- Seal of Shilen -->
+	<teleport id="102" x="178024" y="52164" z="-3984" price="24000" /> <!-- Giant's Cave -->
+	<teleport id="103" x="125760" y="41031" z="-4392" price="20000" /> <!-- Enchanted Valley -->
+	<teleport id="104" price="1500"> <!-- Cemetery -->
+		<location x="178863" y="20306" z="-3168" />
+		<location x="172204" y="20322" z="-3328" />
+		<location x="173668" y="9235" z="-2736" />
+	</teleport>
+	<teleport id="105" x="138012" y="81947" z="-3104" price="1800" /> <!-- Forest of Mirrors -->
+	<teleport id="106" x="166792" y="83672" z="-1984" price="20000" /> <!-- Anghel Waterfall -->
+	<teleport id="115" price="3000"> <!-- Silent Valley -->
+		<location x="184222" y="46666" z="-5794" />
+		<location x="171827" y="56589" z="-5624" />
+	</teleport>
+	<teleport id="117" price="2000"> <!-- Plains of Glory -->
+		<location x="138989" y="19915" z="-3616" />
+		<location x="131435" y="24184" z="-3728" />
+		<location x="139353" y="-904" z="-4136" />
+		<location x="132390" y="12644" z="-4040" />
+	</teleport>
+	<teleport id="118" price="1800"> <!-- Fields of Massacre -->
+		<location x="183543" y="-14974" z="-2768" />
+		<location x="179446" y="-7811" z="-3528" />
+		<location x="188259" y="-25385" z="-1456" />
+		<location x="163928" y="-10188" z="-3440" />
+	</teleport>
+	<teleport id="119" price="2500"> <!-- War-Torn Plains -->
+		<location x="159795" y="21131" z="-3696" />
+		<location x="162595" y="27467" z="-3728" />
+		<location x="164262" y="1849" z="-3480" />
+		<location x="153025" y="10061" z="-3928" />
+	</teleport>
+	<teleport id="131" x="-45158" y="-112583" z="-240" price="1000" /> <!-- Orc Village -->
+	<teleport id="135" x="-34614" y="-114721" z="-2104" price="200" /> <!-- Valley of Heroes -->
+	<teleport id="136" x="-10983" y="-117484" z="-2464" price="200" /> <!-- Immortal Plateau (north) -->
+	<teleport id="140" x="115190" y="-178176" z="-896" price="1000" /> <!-- Dwarven Village -->
+	<teleport id="144" x="112971" y="-174924" z="-608" price="200" /> <!-- Frozen Valley -->
+	<teleport id="145" x="124054" y="-200170" z="-3704" price="200" /> <!-- Western Mining Zone -->
+	<teleport id="181" x="147961" y="-55309" z="-2728" price="1000" /> <!-- Goddard -->
+	<teleport id="184" x="149542" y="-112693" z="-2065" price="24000" /> <!-- Hot Springs -->
+	<teleport id="189" x="146692" y="-68707" z="-3661" price="48000" /> <!-- Morgos' Military Base -->
+	<teleport id="193" x="164216" y="-47922" z="-3520" price="24000" /> <!-- Gorden Canyon -->
+	<teleport id="195" x="127167" y="-40919" z="-3585" price="48000" /> <!-- Xilenos Fortress -->
+	<teleport id="318" x="-22224" y="14168" z="-3232" price="200" /> <!-- Dark Forest -->
+	<teleport id="321" x="146856" y="25803" z="-2008" price="1000" /> <!-- Aden -->
+	<teleport id="324" x="146440" y="46723" z="-3432" price="2000" /> <!-- Coliseum -->
+	<teleport id="400" x="104793" y="80780" z="-2616" price="1000"/> <!-- Entrance to Catacomb of Forbidden Path -->
+	<teleport id="401" x="136927" y="80538" z="-3696" price="1000"/> <!-- Entrance to Catacomb of Witches -->
+	<teleport id="402" x="-24369" y="77816" z="-3424" price="1000"/> <!-- Entrance to Patriot's Necropolis -->
+	<teleport id="415" x="-116686" y="46482" z="360" price="1000" /> <!-- Kamael Village -->
+	<teleport id="417" x="-119618" y="51994" z="-832" price="200" /> <!-- Hill of Hope -->
+	<teleport id="418" x="-109670" y="45283" z="-1344" price="200" /> <!-- Golden Hills -->
+	<teleport id="419" x="116807" y="147708" z="-2782" price="50000" /> <!-- Giran Castle's Right Part -->
+	<teleport id="420" x="107954" y="145841" z="-3224" price="50000" /> <!-- Giran Castle's Front Part -->
+	<teleport id="421" x="117831" y="142657" z="-2733" price="50000" /> <!-- Giran Castle's Left Part -->
+	<teleport id="422" x="107698" y="143854" z="-3440" price="770" /> <!-- Giran Castle Warcamp -->
+	<teleport id="424" x="147932" y="-39016" z="-1984" price="770" /> <!-- Goddard Castle's Warcamp -->
+	<teleport id="425" x="152797" y="-49020" z="-2848" price="50000" /> <!-- Goddard Castle's Right Part -->
+	<teleport id="426" x="147558" y="-43697" z="-2313" price="50000" /> <!-- Goddard Castle's Front Part -->
+	<teleport id="427" x="139743" y="-46234" z="-2258" price="50000" /> <!-- Goddard Castle's Left Part -->
+	<teleport id="429" x="46213" y="152871" z="-2742" price="1000" /> <!-- Death Knight Base -->
+	<teleport id="430" x="45753" y="147564" z="-3680" price="200" /> <!-- 1st Training Grounds -->
+	<teleport id="431" x="52642" y="148105" z="-2424" price="200" /> <!-- 2nd Training Grounds -->
+	<teleport id="432" x="108149" y="-7183" z="-2605" price="50000" /> <!-- Orc Fortress -->
+	<teleport id="433" x="104712" y="4803" z="-3288" price="1000" /> <!-- Road to Orc Fortress -->
+	<teleport id="434" x="-48363" y="140230" z="-2944" price="18000" /> <!-- Sel Mahum Base -->
+	<teleport id="435" price="15000"> <!-- Dragon Valley (west) -->
+		<location x="75886" y="117511" z="-3752" />
+		<location x="82103" y="114066" z="-3144" />
+		<location x="85021" y="109046" z="-3200" />
+		<location x="93983" y="113863" z="-3120" />
+		<location x="87890" y="121193" z="-3056" />
+	</teleport>
+	<teleport id="436" price="18000"> <!-- Dragon Valley (east) -->
+		<location x="101676" y="113865" z="-3696" />
+		<location x="119029" y="116799" z="-3728" />
+		<location x="127474" y="116503" z="-3736" />
+		<location x="124836" y="109958" z="-3096" />
+		<location x="116098" y="119102" z="-3720" />
+	</teleport>
+	<teleport id="437" x="92821" y="18847" z="-3608" price="2000" /> <!-- Outskirts of the Ivory Tower -->
+	<teleport id="442" x="83996" y="16953" z="-3517" price="2000" /> <!-- Ivory Tower - Hellbound Portal -->
+	<teleport id="456" x="104277" y="58299" z="-3944" price="1000" /> <!-- Wind Village -->
+	<teleport id="457" x="107643" y="51995" z="-4800" price="200" /> <!-- Quiet Plain -->
+	<teleport id="458" x="109763" y="57475" z="-4360" price="200" /> <!-- Whispering Woods -->
+	<teleport id="462" x="151963" y="5508" z="-584" price="50000" /> <!-- Right Side of the Aden Castle -->
+	<teleport id="463" x="147469" y="11386" z="-760" price="50000" /> <!-- Front Side of the Aden Castle -->
+	<teleport id="464" x="143070" y="5588" z="-592" price="50000" /> <!-- Left Side of the Aden Castle -->
+	<teleport id="466" x="187557" y="58771" z="-4784" price="100" /> <!-- Giant's Inner Cave -->
+	<teleport id="472" x="-18407" y="181070" z="-3840" price="50000" /> <!-- Balok Battleground Camp -->
+	<teleport id="473" x="-12496" y="169822" z="-3960" price="1000" /> <!-- Balok Battleground -->
+	<teleport id="475" x="-93255" y="109021" z="-3696" price="200" special="true" /> <!-- Inner Orc Barracks -->
+	<teleport id="476" x="146904" y="-82561" z="-5128" price="400" special="true" /> <!-- Morgos' Military Base's Central Barracks -->
+	<teleport id="477" x="117730" y="-55849" z="-2328" price="50" special="true" /> <!-- Xilenos Fortress' Northern Gates -->
+	<teleport id="478" x="110649" y="-44557" z="-2520" price="50" special="true" /> <!-- Xilenos Fortress' Southern Gates -->
+	<teleport id="479" x="149788" y="-86949" z="-5032" price="50" special="true" /> <!-- Morgos' Military Base's Training Ground -->
+	<teleport id="480" x="134801" y="-74579" z="-3432" price="50" special="true" /> <!-- Morgos' Military Base's 3rd Barracks Entrance -->
+	<teleport id="481" x="152919" y="-78629" z="-4672" price="50" special="true" /> <!-- Morgos' Military Base's 7th Barracks Entrance -->
+	<teleport id="483" x="127427" y="-9715" z="-3728" price="20000" /> <!-- Ancient Battleground -->
+	<teleport id="484" x="82692" y="10527" z="-5288" price="20000" /> <!-- Ivory Tower Crater -->
+	<teleport id="485" x="-71411" y="258255" z="-3104" price="0" /> <!-- Grand Master Roien -->
+	<teleport id="486" x="-91008" y="248016" z="-3568" price="0" /> <!-- Grand Magister Gallint -->
+	<teleport id="487" x="-86650" y="242921" z="-3720" price="0" /> <!-- Armor Merchant Jackson -->
+	<teleport id="488" x="45985" y="41262" z="-3504" price="0" /> <!-- Water Guardian Nerupa -->
+	<teleport id="489" x="42787" y="50124" z="-2976" price="0" /> <!-- Trader Herbiel -->
+	<teleport id="490" x="28338" y="10987" z="-4232" price="0" /> <!-- Dark Elf Chief Mitraell -->
+	<teleport id="491" x="11876" y="15659" z="-4552" price="0" /> <!-- Grocer Vollodos -->
+	<teleport id="492" x="108522" y="-174099" z="-408" price="0" /> <!-- Foreman Laferon -->
+	<teleport id="493" x="116215" y="-177548" z="-880" price="0" /> <!-- Grocer Mion -->
+	<teleport id="494" x="115057" y="-177298" z="-864" price="0" /> <!-- Head Priest of the Earth Gerald -->
+	<teleport id="495" x="-56601" y="-113604" z="-672" price="0" /> <!-- Flame Guardian Vulkus -->
+	<teleport id="496" x="-57469" y="-113605" z="-672" price="0" /> <!-- First Vanguard Rider Sabitus -->
+	<teleport id="497" x="-45102" y="-113603" z="-192" price="0" /> <!-- Guardian Tanai -->
+	<teleport id="498" x="-44704" y="-111951" z="-240" price="0" /> <!-- Gantaki Zu Urutu -->
+	<teleport id="499" x="-124624" y="38176" z="1176" price="0" /> <!-- Elder Ragnir -->
+	<teleport id="500" x="-118070" y="45163" z="368" price="0" /> <!-- Newbie Guide -->
+	<teleport id="501" x="-116624" y="45061" z="376" price="0" /> <!-- Reahen -->
+	<teleport id="502" x="47493" y="153647" z="-2720" price="0" /> <!-- Head Trainer Kilremange -->
+	<teleport id="503" x="46045" y="152644" z="-2752" price="0" /> <!-- Quartermaster Mathorn -->
+	<teleport id="504" x="102720" y="59779" z="-3752" price="0" /> <!-- Queen Andra -->
+	<teleport id="505" x="102690" y="56046" z="-4032" price="0" /> <!-- Master Kerkir -->
+	<teleport id="506" x="105140" y="57530" z="-3928" price="0" /> <!-- Grocer Evia -->
+	<teleport id="507" x="-14451" y="121282" z="-2984" price="0" /> <!-- Captain Bathis -->
+	<teleport id="508" x="-12860" y="121709" z="-2960" price="0" /> <!-- High Priest Raymond -->
+	<teleport id="509" x="86868" y="148637" z="-3400" price="0" /> <!-- High Priest Maximilian -->
+	<teleport id="510" x="147465" y="22668" z="-1984" price="0" /> <!-- High Priest Orven -->
+	<teleport id="511" x="80759" y="-83494" z="-3640" price="0" /> <!-- Assassin Mentor Frost -->
+	<teleport id="512" x="76137" y="-80947" z="-3640" price="0" /> <!-- Training Mentor Aijul -->
+	<teleport id="513" x="80426" y="-84063" z="-3648" price="0" /> <!-- Grocer Serp -->
+	<teleport id="514" x="79041" y="-83006" z="-3640" price="1000" /> <!-- Assassin Hideout -->
+	<teleport id="515" x="80256" y="-79251" z="-4032" price="200" /> <!-- Basic Training Zone -->
+	<teleport id="516" x="86372" y="-83432" z="-3688" price="200" /> <!-- Combat Training Zone -->
+	<teleport id="517" x="8928" y="3553" z="-2504" price="200" /> <!-- Shillien's Garden -->
+	<teleport id="518" x="88075" y="114623" z="-2976" price="15000" /> <!-- Skeleton Area (Dragon Valley - west) -->
+	<teleport id="519" x="82132" y="114019" z="-3144" price="15000" /> <!-- Succubus Area (Dragon Valley - west) -->
+	<teleport id="520" x="90368" y="111632" z="-3656" price="15000" /> <!-- Wyrm Area (Dragon Valley - west) -->
+	<teleport id="521" x="92973" y="107597" z="-3008" price="15000" /> <!-- Dragon Area (Dragon Valley - west) -->
+	<teleport id="522" x="161438" y="22616" z="-3704" price="2500" /> <!-- Keber from the War-Torn Plains -->
+	<teleport id="523" x="181645" y="52823" z="-5984" price="3000" /> <!-- Keber from the Silent Valley -->
+	<teleport id="524" x="178024" y="52164" z="-3984" price="10000" /> <!-- Entrance to the Giant's Cave -->
+	<teleport id="525" x="155248" y="-107972" z="-2616" price="10000" /> <!-- Hot Springs Center -->
+	<teleport id="526" x="79503" y="71145" z="-3288" price="24000" /> <!-- Northern Plains of the Lizardmen -->
+	<teleport id="527" x="149370" y="-112869" z="-2064" price="0" /> <!-- Assistant Grill -->
+	<teleport id="528" x="164389" y="-47956" z="-3528" price="0" /> <!-- Assistant Crigon -->
+	<teleport id="529" x="170294" y="-56785" z="-3576" price="10000" /> <!-- Western Gorde Canyon Center -->
+	<teleport id="530" x="189528" y="-46119" z="-2872" price="10000" /> <!-- Eastern Gorde Canyon Center -->
+	<teleport id="531" x="-53093" y="141568" z="-2896" price="24000" /> <!-- Southern Sel Mahum Base -->
+	<teleport id="533" x="82447" y="149642" z="-3464" price="1000" /> <!-- Store -->
+	<teleport id="534" x="82624" y="149712" z="-3464" price="1000" /> <!-- Giran Blacksmith -->
+	<teleport id="535" x="82424" y="149712" z="-3464" price="1000" /> <!-- Giran Grocer -->
+	<teleport id="536" x="82524" y="149712" z="-3464" price="1000" /> <!-- Giran Warehouse Keeper -->
+	<teleport id="537" x="82324" y="149712" z="-3464" price="1000" /> <!-- Giran Equipment Merchant -->
+	<teleport id="538" x="82224" y="149712" z="-3464" price="1000" /> <!-- Giran Pet Manager -->
+	<teleport id="539" x="147545" y="27276" z="-2200" price="1000" /> <!-- Aden Blacksmith -->
+	<teleport id="540" x="147466" y="27255" z="-2200" price="1000" /> <!-- Aden Grocer -->
+	<teleport id="541" x="147402" y="27277" z="-2200" price="1000" /> <!-- Aden Warehouse Keeper -->
+	<teleport id="542" x="147321" y="27315" z="-2200" price="1000" /> <!-- Aden Equipment Merchant -->
+	<teleport id="543" x="147259" y="27356" z="-2200" price="1000" /> <!-- Aden Pet Manager -->
+	<teleport id="544" x="20053" y="184103" z="-3168" price="12000" /> <!-- Bee Hive's Inner Area -->
+	<teleport id="546" x="-66925" y="172096" z="-3496" price="48000"/> <!-- Fairy-invaded Lands (north) -->
+	<teleport id="547" x="-70464" y="172915" z="-3656" price="48000"/> <!-- Fairy-invaded Lands (south) -->
+	<teleport id="548" x="177544" y="61688" z="-4416" price="48000"/> <!-- Giant's Cave Center -->
+	<teleport id="549" x="192009" y="58325" z="-4808" price="48000"/> <!-- Giant's Cave's Inner Area -->
+	<teleport id="550" x="-69446" y="171168" z="-3432" price="0"/> <!-- Researcher Triadin -->
+	<teleport id="551" x="187608" y="62568" z="-4976" price="48000"/> <!-- Giant's Cave's Inner Area -->
+	<teleport id="552" x="125277" y="112290" z="-3176" price="18000"/> <!-- Inner Dragon Valley (east) -->
+</list>

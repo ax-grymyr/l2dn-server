@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39800" name="option_id_39800">
+		<!-- Skill Critical Damage +250 -->
+	</option>
+	<option id="39801" name="option_id_39801">
+		<!-- Skill Critical Damage +300 -->
+	</option>
+	<option id="39802" name="option_id_39802">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39803" name="option_id_39803">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39804" name="option_id_39804">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39805" name="option_id_39805">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39806" name="option_id_39806">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39807" name="option_id_39807">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39808" name="option_id_39808">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39809" name="option_id_39809">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39810" name="option_id_39810">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39811" name="option_id_39811">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="39812" name="option_id_39812">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="39813" name="option_id_39813">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="39814" name="option_id_39814">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="39815" name="option_id_39815">
+		<!-- Received damage -4% -->
+	</option>
+	<option id="39816" name="option_id_39816">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="39817" name="option_id_39817">
+		<!-- Received damage -6% -->
+	</option>
+	<option id="39818" name="option_id_39818">
+		<!-- Received damage -7% -->
+	</option>
+	<option id="39819" name="option_id_39819">
+		<!-- Received damage -8% -->
+	</option>
+	<option id="39820" name="option_id_39820">
+		<!-- Received damage -9% -->
+	</option>
+	<option id="39821" name="option_id_39821">
+		<!-- Received damage -10% -->
+	</option>
+	<option id="39822" name="option_id_39822">
+		<!-- P. Def. +15 -->
+	</option>
+	<option id="39823" name="option_id_39823">
+		<!-- P. Def. +21 -->
+	</option>
+	<option id="39824" name="option_id_39824">
+		<!-- P. Def. +27 -->
+	</option>
+	<option id="39825" name="option_id_39825">
+		<!-- P. Def. +33 -->
+	</option>
+	<option id="39826" name="option_id_39826">
+		<!-- P. Def. +40 -->
+	</option>
+	<option id="39827" name="option_id_39827">
+		<!-- P. Def. +47 -->
+	</option>
+	<option id="39828" name="option_id_39828">
+		<!-- P. Def. +54 -->
+	</option>
+	<option id="39829" name="option_id_39829">
+		<!-- P. Def. +61 -->
+	</option>
+	<option id="39830" name="option_id_39830">
+		<!-- P. Def. +69 -->
+	</option>
+	<option id="39831" name="option_id_39831">
+		<!-- P. Def. +77 -->
+	</option>
+	<option id="39832" name="option_id_39832">
+		<!-- P. Def. +85 -->
+	</option>
+	<option id="39833" name="option_id_39833">
+		<!-- P. Def. +94 -->
+	</option>
+	<option id="39834" name="option_id_39834">
+		<!-- P. Def. +103 -->
+	</option>
+	<option id="39835" name="option_id_39835">
+		<!-- P. Def. +112 -->
+	</option>
+	<option id="39836" name="option_id_39836">
+		<!-- P. Def. +122 -->
+	</option>
+	<option id="39837" name="option_id_39837">
+		<!-- P. Def. +149 -->
+	</option>
+	<option id="39838" name="option_id_39838">
+		<!-- P. Def. +203 -->
+	</option>
+	<option id="39839" name="option_id_39839">
+		<!-- P. Def. +233 -->
+	</option>
+	<option id="39840" name="option_id_39840">
+		<!-- P. Def. +250 -->
+	</option>
+	<option id="39841" name="option_id_39841">
+		<!-- P. Def. +300 -->
+	</option>
+	<option id="39842" name="option_id_39842">
+		<!-- M. Def. +15 -->
+	</option>
+	<option id="39843" name="option_id_39843">
+		<!-- M. Def. +21 -->
+	</option>
+	<option id="39844" name="option_id_39844">
+		<!-- M. Def. +27 -->
+	</option>
+	<option id="39845" name="option_id_39845">
+		<!-- M. Def. +33 -->
+	</option>
+	<option id="39846" name="option_id_39846">
+		<!-- M. Def. +40 -->
+	</option>
+	<option id="39847" name="option_id_39847">
+		<!-- M. Def. +47 -->
+	</option>
+	<option id="39848" name="option_id_39848">
+		<!-- M. Def. +54 -->
+	</option>
+	<option id="39849" name="option_id_39849">
+		<!-- M. Def. +61 -->
+	</option>
+	<option id="39850" name="option_id_39850">
+		<!-- M. Def. +69 -->
+	</option>
+	<option id="39851" name="option_id_39851">
+		<!-- M. Def. +77 -->
+	</option>
+	<option id="39852" name="option_id_39852">
+		<!-- M. Def. +85 -->
+	</option>
+	<option id="39853" name="option_id_39853">
+		<!-- M. Def. +94 -->
+	</option>
+	<option id="39854" name="option_id_39854">
+		<!-- M. Def. +103 -->
+	</option>
+	<option id="39855" name="option_id_39855">
+		<!-- M. Def. +112 -->
+	</option>
+	<option id="39856" name="option_id_39856">
+		<!-- M. Def. +122 -->
+	</option>
+	<option id="39857" name="option_id_39857">
+		<!-- M. Def. +149 -->
+	</option>
+	<option id="39858" name="option_id_39858">
+		<!-- M. Def. +203 -->
+	</option>
+	<option id="39859" name="option_id_39859">
+		<!-- M. Def. +233 -->
+	</option>
+	<option id="39860" name="option_id_39860">
+		<!-- M. Def. +250 -->
+	</option>
+	<option id="39861" name="option_id_39861">
+		<!-- M. Def. +300 -->
+	</option>
+	<option id="39862" name="option_id_39862">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39863" name="option_id_39863">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39864" name="option_id_39864">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39865" name="option_id_39865">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39866" name="option_id_39866">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39867" name="option_id_39867">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39868" name="option_id_39868">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39869" name="option_id_39869">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39870" name="option_id_39870">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39871" name="option_id_39871">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+	</option>
+	<option id="39872" name="option_id_39872">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+	</option>
+	<option id="39873" name="option_id_39873">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+	</option>
+	<option id="39874" name="option_id_39874">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+	</option>
+	<option id="39875" name="option_id_39875">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+	</option>
+	<option id="39876" name="option_id_39876">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+	</option>
+	<option id="39877" name="option_id_39877">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+	</option>
+	<option id="39878" name="option_id_39878">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+	</option>
+	<option id="39879" name="option_id_39879">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+	</option>
+	<option id="39880" name="option_id_39880">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+	</option>
+	<option id="39881" name="option_id_39881">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+	</option>
+	<option id="39882" name="option_id_39882">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39883" name="option_id_39883">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39884" name="option_id_39884">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39885" name="option_id_39885">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39886" name="option_id_39886">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39887" name="option_id_39887">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39888" name="option_id_39888">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39889" name="option_id_39889">
+		<!-- P./ M. Evasion +1 -->
+	</option>
+	<option id="39890" name="option_id_39890">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39891" name="option_id_39891">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39892" name="option_id_39892">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39893" name="option_id_39893">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39894" name="option_id_39894">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39895" name="option_id_39895">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39896" name="option_id_39896">
+		<!-- P./ M. Evasion +2 -->
+	</option>
+	<option id="39897" name="option_id_39897">
+		<!-- P./ M. Evasion +3 -->
+	</option>
+	<option id="39898" name="option_id_39898">
+		<!-- P./ M. Evasion +3 -->
+	</option>
+	<option id="39899" name="option_id_39899">
+		<!-- P./ M. Evasion +3 -->
+	</option>
+</list>

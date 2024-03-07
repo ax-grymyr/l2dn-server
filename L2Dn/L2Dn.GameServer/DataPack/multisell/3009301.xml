@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30093</npc> <!-- Groot -->
+	</npcs>
+	<item>
+		<ingredient count="30" id="93934" /> <!-- Dye Powder -->
+		<ingredient count="27000000" id="57" /> <!-- Adena -->
+		<production count="1" id="93935" /> <!-- Best Dye Pack +3/-1 -->
+	</item>
+	
+	<item>
+		<ingredient count="20" id="93934" /> <!-- Dye Powder -->
+		<ingredient count="18000000" id="57" /> <!-- Adena -->
+		<production count="1" id="93936" /> <!-- Best Dye Pack +4/-2 -->
+	</item>
+	
+	<item>
+		<ingredient count="10" id="93934" /> <!-- Dye Powder -->
+		<ingredient count="9000000" id="57" /> <!-- Adena -->
+		<production count="1" id="93937" /> <!-- Best Dye Pack +4/-3 -->
+	</item>
+</list>

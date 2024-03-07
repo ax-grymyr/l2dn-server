@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="2000" name="Old Tallum Helmet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Tallum Helmet. Can be sold in any shop. -->
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="68831" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2003" name="Gauntlet of Ghost Pattern" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Gauntlets of Ghost. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="3673" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2004" name="Adamantite Boot Design" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Adamantite Boots. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="3673" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2005" name="Broadsword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Broadsword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="2800" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2006" name="Willow Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Willow Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="2800" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2007" name="Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="2800" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2008" name="Cedar Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Cedar Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="5140" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2009" name="Dirk Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Dirk. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="5640" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2010" name="Brandish Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Brandish. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="5140" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2011" name="Short Spear Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Short Spear. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="8767" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2012" name="Sword of Reflection Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword of Reflection. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="9600" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2013" name="Forest Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Forest Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="9267" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2014" name="Iron Hammer Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Iron Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17400" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2015" name="Sword Breaker Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword Breaker. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="16400" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2016" name="Compound Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Compound Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17067" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2017" name="Saber Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Saber. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="15050" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2018" name="Assassin Knife Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Assassin Knife. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="15050" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2019" name="Trident Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Trident. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="9300" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2020" name="Temptation of Abyss Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Temptation of Abyss. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="11425" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2021" name="Spinebone Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Spinebone Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="15840" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2022" name="Mace of Judgment Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Mace of Judgment. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="12840" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2023" name="Conjuror's Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Conjuror's Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="16140" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2024" name="Elven Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Elven Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="14040" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2025" name="Dwarven Trident Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Dwarven Trident. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="14440" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2026" name="Two-handed Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Two-handed Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="16617" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2027" name="Spiked Club Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Spiked Club. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="15267" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2028" name="Shillien Knife Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Shillien Knife. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="16833" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2029" name="Gastraphetes Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Gastraphetes. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="16767" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2030" name="Tome of Blood Page" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Tome of Blood. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2031" name="Morning Star Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Morning Star. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2032" name="Goat Head Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Goat Head Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="21643" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2033" name="Winged Spear Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Winged Spear. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17929" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2034" name="Sword of Revolution Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword of Revolution. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="18929" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2035" name="Tarbar Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Tarbar. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2036" name="Skull Breaker Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Skull Breaker. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2037" name="Heavy Bone Club Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Heavy Bone Club. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2038" name="Maingauche Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Maingauche. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="18929" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2039" name="Bich'Hwa Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Bich'Hwa. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2040" name="Reinforced Longbow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Reinforced Longbow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17286" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2041" name="War Pick Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make War Pick. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="17929" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2042" name="Crucifix of Blood Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Crucifix of Blood. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="21643" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2043" name="Eye of Infinity Stone" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Eye of Infinity. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="21643" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2044" name="Cursed Maingauche Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Cursed Maingauche. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="18929" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2045" name="Blue Crystal Skull Part" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Blue Crystal Skull. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="21786" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2046" name="Demon's Fangs Fragment" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Demon's Fangs. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="21786" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2047" name="Claymore Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Claymore. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="22750" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2048" name="Bonebreaker Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Bonebreaker. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="24188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2049" name="Atuba Hammer Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Atuba Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="24188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2050" name="Ghost Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Ghost Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="22812" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2051" name="Staff of Life Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Staff of Life. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="22812" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2052" name="Mithril Dagger Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Mithril Dagger. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="23062" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2053" name="Scallop Jamadhr Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Scallop Jamadhr. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="24188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2054" name="Light Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Light Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="23500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2055" name="Glaive Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Glaive. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="24188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2056" name="Vajra Wand Frame" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Vajra Wand. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="22812" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2057" name="Ancient Reagent Remnant" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Ancient Reagent. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="22812" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2058" name="Atuba Mace Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Atuba Mace. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="24188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2059" name="Flamberge Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Flamberge. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="26925" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2060" name="Stormbringer Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Stormbringer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2061" name="Big Hammer Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Big Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25875" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2062" name="Scythe Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Scythe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2063" name="Battle Axe Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Battle Axe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25875" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2064" name="Silver Axe Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Silver Axe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25875" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2065" name="Skull Graver Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Skull Graver. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25875" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2066" name="Heavy Doom Hammer Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Heavy Doom Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2067" name="Crystal Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Crystal Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="27750" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2068" name="Stick of Faith Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Stick of Faith. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="27750" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2069" name="Heavy Doom Axe Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Heavy Doom Axe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2070" name="Cursed Dagger Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Cursed Dagger. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2071" name="Needle Wolverine Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Needle Wolverine. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2072" name="Dark Elven Dagger Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Dark Elven Dagger. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25188" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2073" name="Chakram Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Chakram. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25875" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2074" name="Crystallized Ice Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Frozen Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="28238" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2075" name="Orcish Glaive Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Orcish Glaive. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2076" name="Body Slasher Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Body Slasher. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="25500" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2077" name="Shamshir Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Shamshir. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2078" name="Katana Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Katana. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2079" name="Bec de Corbin Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Bec de Corbin. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="29111" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2080" name="Spirit Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Spirit Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2081" name="Raid Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Raid Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2082" name="Cursed Staff Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Cursed Staff. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="28378" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2083" name="Stiletto Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Stiletto. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2084" name="Soulfire Dirk Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Soulfire Dirk. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="30100" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2085" name="Elemental Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Elemental Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="28911" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2086" name="Noble Elven Bow Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Noble Elven Bow. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="28911" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2088" name="Horn of Glory Fragment" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Horn of Glory. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="28911" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2089" name="Caliburs Edge" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Caliburs. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2090" name="Delusional Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword of Delusion. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2091" name="Tsurugi Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Tsurugi. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2092" name="Homunkulus' Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Homunkulus' Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2093" name="Poleaxe Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Poleaxe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36800" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2094" name="Ultimate Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Ultimate Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2095" name="Sword of Nightmare Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword of Nightmare. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2096" name="Sword of Whispering Death Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Sword of Whispering Death. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="36700" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2097" name="War Axe Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make War Axe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="37340" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2098" name="Nirvana Axe Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Nirvana Axe. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="37340" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="2099" name="Stick of Eternity Shaft" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Stick of Eternity. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="35480" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

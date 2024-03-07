@@ -1,0 +1,2401 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_001" minZ="-3826" maxZ="-3226">
+				<node x="100910" y="111166" />
+				<node x="101935" y="111170" />
+				<node x="101926" y="112201" />
+				<node x="100909" y="112207" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_002" minZ="-3826" maxZ="-3226">
+				<node x="101931" y="111170" />
+				<node x="102956" y="111174" />
+				<node x="102947" y="112205" />
+				<node x="101930" y="112211" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_003" minZ="-3826" maxZ="-3226">
+				<node x="100923" y="112202" />
+				<node x="101948" y="112206" />
+				<node x="101938" y="113238" />
+				<node x="101177" y="113036" />
+			</territory>
+		</territories>
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_004" minZ="-3826" maxZ="-3226">
+				<node x="101950" y="112200" />
+				<node x="102975" y="112204" />
+				<node x="102966" y="113235" />
+				<node x="101949" y="113241" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_005" minZ="-3841" maxZ="-3341">
+				<node x="101448" y="114535" />
+				<node x="101203" y="113050" />
+				<node x="102467" y="113323" />
+				<node x="102052" y="114608" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_006" minZ="-3788" maxZ="-3288">
+				<node x="100995" y="115756" />
+				<node x="101555" y="115706" />
+				<node x="101920" y="116949" />
+				<node x="101210" y="117079" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_007" minZ="-3731" maxZ="-3231">
+				<node x="100916" y="117116" />
+				<node x="101965" y="116952" />
+				<node x="102237" y="117946" />
+				<node x="101029" y="117947" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_008" minZ="-3731" maxZ="-3131">
+				<node x="100861" y="117975" />
+				<node x="102225" y="117957" />
+				<node x="102941" y="118960" />
+				<node x="100785" y="118963" />
+			</territory>
+		</territories>
+		<npc id="22307" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_009" minZ="-3731" maxZ="-3131">
+				<node x="100910" y="118961" />
+				<node x="101935" y="118965" />
+				<node x="101926" y="119996" />
+				<node x="100909" y="120002" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_010" minZ="-3731" maxZ="-3131">
+				<node x="101928" y="118965" />
+				<node x="102953" y="118968" />
+				<node x="102943" y="120000" />
+				<node x="101926" y="120006" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_011" minZ="-3731" maxZ="-3131">
+				<node x="102958" y="119075" />
+				<node x="103744" y="119260" />
+				<node x="103743" y="120001" />
+				<node x="102942" y="119997" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_012" minZ="-3731" maxZ="-3131">
+				<node x="101209" y="119994" />
+				<node x="102234" y="119997" />
+				<node x="102224" y="121029" />
+				<node x="101207" y="121035" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_013" minZ="-3731" maxZ="-3131">
+				<node x="102230" y="119999" />
+				<node x="103255" y="120003" />
+				<node x="103246" y="121034" />
+				<node x="102229" y="121040" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_014" minZ="-3764" maxZ="-3164">
+				<node x="103255" y="120003" />
+				<node x="104280" y="120007" />
+				<node x="104271" y="121038" />
+				<node x="103254" y="121044" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_015" minZ="-3849" maxZ="-3249">
+				<node x="104312" y="120004" />
+				<node x="104836" y="120513" />
+				<node x="105328" y="121039" />
+				<node x="104311" y="121045" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_016" minZ="-3849" maxZ="-3249">
+				<node x="101238" y="121028" />
+				<node x="102263" y="121032" />
+				<node x="102254" y="122063" />
+				<node x="101237" y="122069" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_017" minZ="-3849" maxZ="-3249">
+				<node x="102259" y="121047" />
+				<node x="103284" y="121050" />
+				<node x="103274" y="122082" />
+				<node x="102257" y="122088" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_018" minZ="-3900" maxZ="-3300">
+				<node x="103296" y="121032" />
+				<node x="104321" y="121036" />
+				<node x="104312" y="122067" />
+				<node x="103295" y="122073" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_019" minZ="-3900" maxZ="-3300">
+				<node x="104319" y="121033" />
+				<node x="105344" y="121037" />
+				<node x="105335" y="122068" />
+				<node x="104318" y="122074" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_020" minZ="-3849" maxZ="-3249">
+				<node x="101430" y="122069" />
+				<node x="102455" y="122073" />
+				<node x="102446" y="123104" />
+				<node x="101429" y="123110" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_021" minZ="-3764" maxZ="-3164">
+				<node x="102419" y="122070" />
+				<node x="103444" y="122074" />
+				<node x="103435" y="123105" />
+				<node x="102418" y="123111" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_022" minZ="-3849" maxZ="-3249">
+				<node x="103480" y="122076" />
+				<node x="104505" y="122080" />
+				<node x="104496" y="123111" />
+				<node x="103479" y="123117" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_023" minZ="-3849" maxZ="-3249">
+				<node x="104503" y="122077" />
+				<node x="105528" y="122081" />
+				<node x="105519" y="123112" />
+				<node x="104502" y="123118" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_024" minZ="-3849" maxZ="-3249">
+				<node x="101437" y="123098" />
+				<node x="102462" y="123102" />
+				<node x="102453" y="124133" />
+				<node x="101860" y="123717" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_025" minZ="-3849" maxZ="-3249">
+				<node x="102460" y="123099" />
+				<node x="103485" y="123103" />
+				<node x="103476" y="124134" />
+				<node x="102459" y="124140" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_026" minZ="-3849" maxZ="-3249">
+				<node x="103487" y="123105" />
+				<node x="104512" y="123109" />
+				<node x="104508" y="124077" />
+				<node x="103475" y="124149" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_027" minZ="-3849" maxZ="-3249">
+				<node x="104510" y="123106" />
+				<node x="105535" y="123110" />
+				<node x="105526" y="124078" />
+				<node x="104511" y="123975" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_028" minZ="-3782" maxZ="-3182">
+				<node x="105502" y="123109" />
+				<node x="106456" y="123113" />
+				<node x="106070" y="123691" />
+				<node x="105495" y="124087" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_029" minZ="-3731" maxZ="-3131">
+				<node x="105475" y="122069" />
+				<node x="106500" y="122073" />
+				<node x="106491" y="123104" />
+				<node x="105474" y="123110" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_030" minZ="-3849" maxZ="-3249">
+				<node x="105340" y="121039" />
+				<node x="106365" y="121043" />
+				<node x="106356" y="122074" />
+				<node x="105339" y="122080" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_031" minZ="-3849" maxZ="-3249">
+				<node x="105806" y="120510" />
+				<node x="106358" y="120014" />
+				<node x="106349" y="121045" />
+				<node x="105332" y="121051" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_032" minZ="-3849" maxZ="-3249">
+				<node x="106356" y="120011" />
+				<node x="107381" y="120015" />
+				<node x="107372" y="121046" />
+				<node x="106355" y="121052" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_033" minZ="-3849" maxZ="-3249">
+				<node x="107389" y="119999" />
+				<node x="108414" y="120003" />
+				<node x="108405" y="121034" />
+				<node x="107388" y="121040" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_034" minZ="-3849" maxZ="-3249">
+				<node x="106363" y="121040" />
+				<node x="107388" y="121044" />
+				<node x="107379" y="122075" />
+				<node x="106362" y="122081" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_035" minZ="-3849" maxZ="-3249">
+				<node x="107396" y="121028" />
+				<node x="108421" y="121032" />
+				<node x="108412" y="122063" />
+				<node x="107395" y="122069" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_036" minZ="-3849" maxZ="-3249">
+				<node x="108419" y="121029" />
+				<node x="109444" y="121033" />
+				<node x="109435" y="122064" />
+				<node x="108418" y="122070" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_037" minZ="-3866" maxZ="-3266">
+				<node x="109309" y="121119" />
+				<node x="110334" y="121123" />
+				<node x="110325" y="122154" />
+				<node x="109308" y="122160" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_038" minZ="-3849" maxZ="-3249">
+				<node x="106532" y="122070" />
+				<node x="107557" y="122074" />
+				<node x="107546" y="122719" />
+				<node x="106531" y="123111" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_039" minZ="-3782" maxZ="-3182">
+				<node x="107518" y="122064" />
+				<node x="108543" y="122068" />
+				<node x="108539" y="122931" />
+				<node x="107516" y="122736" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_040" minZ="-3815" maxZ="-3215">
+				<node x="108541" y="122065" />
+				<node x="109566" y="122069" />
+				<node x="109557" y="123100" />
+				<node x="108540" y="122925" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_041" minZ="-3782" maxZ="-3182">
+				<node x="109568" y="122077" />
+				<node x="110593" y="122081" />
+				<node x="110584" y="123112" />
+				<node x="109567" y="123118" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_042" minZ="-3782" maxZ="-3182">
+				<node x="110600" y="122085" />
+				<node x="111599" y="122358" />
+				<node x="111616" y="123120" />
+				<node x="110599" y="123126" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_043" minZ="-3849" maxZ="-3249">
+				<node x="111537" y="122232" />
+				<node x="112491" y="121956" />
+				<node x="112674" y="122785" />
+				<node x="111519" y="123145" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_044" minZ="-3731" maxZ="-3131">
+				<node x="109155" y="123113" />
+				<node x="110180" y="123117" />
+				<node x="110171" y="124148" />
+				<node x="109154" y="124154" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_045" minZ="-3815" maxZ="-3215">
+				<node x="110182" y="123125" />
+				<node x="111207" y="123129" />
+				<node x="111198" y="124160" />
+				<node x="110181" y="124166" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_046" minZ="-3764" maxZ="-3164">
+				<node x="109292" y="124147" />
+				<node x="111179" y="124157" />
+				<node x="111031" y="125104" />
+				<node x="109322" y="125096" />
+			</territory>
+		</territories>
+		<npc id="22307" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_047" minZ="-3815" maxZ="-3215">
+				<node x="109664" y="125097" />
+				<node x="110683" y="125104" />
+				<node x="110697" y="126128" />
+				<node x="109663" y="126138" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_048" minZ="-3849" maxZ="-3249">
+				<node x="113240" y="120783" />
+				<node x="114265" y="120787" />
+				<node x="114256" y="121818" />
+				<node x="113239" y="121824" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_049" minZ="-3808" maxZ="-3208">
+				<node x="114254" y="120784" />
+				<node x="115279" y="120788" />
+				<node x="115270" y="121819" />
+				<node x="114253" y="121825" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_050" minZ="-3849" maxZ="-3249">
+				<node x="115278" y="120793" />
+				<node x="116303" y="120797" />
+				<node x="116294" y="121828" />
+				<node x="115277" y="121834" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_051" minZ="-3916" maxZ="-3316">
+				<node x="113550" y="119736" />
+				<node x="114575" y="119740" />
+				<node x="114566" y="120771" />
+				<node x="113549" y="120777" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_052" minZ="-3916" maxZ="-3316">
+				<node x="114571" y="119737" />
+				<node x="115596" y="119741" />
+				<node x="115587" y="120772" />
+				<node x="114570" y="120778" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_053" minZ="-3765" maxZ="-3165">
+				<node x="115571" y="119746" />
+				<node x="116596" y="119750" />
+				<node x="116587" y="120781" />
+				<node x="115570" y="120787" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_054" minZ="-3900" maxZ="-3300">
+				<node x="116601" y="119875" />
+				<node x="117495" y="119885" />
+				<node x="117152" y="120440" />
+				<node x="116590" y="120791" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_055" minZ="-3900" maxZ="-3300">
+				<node x="114267" y="119122" />
+				<node x="115572" y="119148" />
+				<node x="115585" y="119754" />
+				<node x="114288" y="119738" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22311" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_056" minZ="-3900" maxZ="-3300">
+				<node x="115579" y="119108" />
+				<node x="116609" y="119116" />
+				<node x="116622" y="119722" />
+				<node x="115600" y="119723" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_057" minZ="-3849" maxZ="-3249">
+				<node x="116614" y="118843" />
+				<node x="117639" y="118847" />
+				<node x="117630" y="119878" />
+				<node x="116613" y="119884" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_058" minZ="-3900" maxZ="-3300">
+				<node x="117642" y="118840" />
+				<node x="118295" y="118834" />
+				<node x="118242" y="119781" />
+				<node x="117631" y="119756" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_059" minZ="-3849" maxZ="-3249">
+				<node x="116080" y="117803" />
+				<node x="117105" y="117807" />
+				<node x="117096" y="118838" />
+				<node x="116079" y="118844" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_060" minZ="-3849" maxZ="-3249">
+				<node x="117098" y="117804" />
+				<node x="118123" y="117808" />
+				<node x="118114" y="118839" />
+				<node x="117097" y="118845" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_061" minZ="-3849" maxZ="-3249">
+				<node x="116042" y="116759" />
+				<node x="117067" y="116763" />
+				<node x="117058" y="117794" />
+				<node x="116041" y="117800" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_062" minZ="-3849" maxZ="-3249">
+				<node x="117062" y="116756" />
+				<node x="118087" y="116760" />
+				<node x="118078" y="117791" />
+				<node x="117061" y="117797" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_063" minZ="-3900" maxZ="-3300">
+				<node x="118875" y="115618" />
+				<node x="119900" y="115622" />
+				<node x="119891" y="116653" />
+				<node x="118874" y="116659" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_064" minZ="-3900" maxZ="-3300">
+				<node x="119896" y="115619" />
+				<node x="120921" y="115623" />
+				<node x="120912" y="116654" />
+				<node x="119895" y="116660" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_065" minZ="-3731" maxZ="-3131">
+				<node x="120879" y="115628" />
+				<node x="121904" y="115632" />
+				<node x="121895" y="116663" />
+				<node x="120878" y="116669" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_066" minZ="-3731" maxZ="-3131">
+				<node x="121891" y="115627" />
+				<node x="122916" y="115631" />
+				<node x="122907" y="116662" />
+				<node x="121890" y="116668" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_067" minZ="-3731" maxZ="-3131">
+				<node x="122912" y="115628" />
+				<node x="123937" y="115632" />
+				<node x="123928" y="116663" />
+				<node x="122911" y="116669" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_068" minZ="-3765" maxZ="-3165">
+				<node x="119874" y="114574" />
+				<node x="120899" y="114578" />
+				<node x="120890" y="115609" />
+				<node x="119873" y="115615" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_069" minZ="-3765" maxZ="-3165">
+				<node x="120891" y="114583" />
+				<node x="121916" y="114587" />
+				<node x="121907" y="115618" />
+				<node x="120890" y="115624" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_070" minZ="-3731" maxZ="-3131">
+				<node x="121884" y="114598" />
+				<node x="122909" y="114602" />
+				<node x="122900" y="115633" />
+				<node x="121883" y="115639" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_071" minZ="-3765" maxZ="-3165">
+				<node x="122922" y="114599" />
+				<node x="123947" y="114603" />
+				<node x="123938" y="115634" />
+				<node x="122921" y="115640" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_072" minZ="-3822" maxZ="-3222">
+				<node x="123922" y="114608" />
+				<node x="124947" y="114612" />
+				<node x="124938" y="115643" />
+				<node x="123921" y="115649" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_073" minZ="-3822" maxZ="-3222">
+				<node x="119817" y="113526" />
+				<node x="120842" y="113530" />
+				<node x="120833" y="114561" />
+				<node x="119816" y="114567" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_074" minZ="-3991" maxZ="-3391">
+				<node x="120872" y="113527" />
+				<node x="121897" y="113531" />
+				<node x="121888" y="114562" />
+				<node x="120871" y="114568" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_075" minZ="-3991" maxZ="-3391">
+				<node x="121906" y="113536" />
+				<node x="122931" y="113540" />
+				<node x="122922" y="114571" />
+				<node x="121905" y="114577" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_076" minZ="-3991" maxZ="-3391">
+				<node x="119809" y="112480" />
+				<node x="120834" y="112484" />
+				<node x="120825" y="113515" />
+				<node x="119808" y="113521" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_077" minZ="-3991" maxZ="-3391">
+				<node x="120830" y="112481" />
+				<node x="121855" y="112485" />
+				<node x="121846" y="113516" />
+				<node x="120829" y="113522" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_078" minZ="-3991" maxZ="-3391">
+				<node x="121864" y="112490" />
+				<node x="122889" y="112494" />
+				<node x="122880" y="113525" />
+				<node x="121863" y="113531" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_079" minZ="-3935" maxZ="-3335">
+				<node x="121731" y="111969" />
+				<node x="122250" y="111977" />
+				<node x="122249" y="112481" />
+				<node x="121737" y="112482" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_080" minZ="-3935" maxZ="-3335">
+				<node x="122246" y="111981" />
+				<node x="122765" y="111989" />
+				<node x="122764" y="112493" />
+				<node x="122252" y="112494" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_081" minZ="-3935" maxZ="-3335">
+				<node x="121730" y="111458" />
+				<node x="122249" y="111466" />
+				<node x="122248" y="111970" />
+				<node x="121736" y="111971" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_082" minZ="-3935" maxZ="-3335">
+				<node x="122245" y="111470" />
+				<node x="122764" y="111478" />
+				<node x="122763" y="111982" />
+				<node x="122251" y="111983" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_083" minZ="-3822" maxZ="-3222">
+				<node x="125558" y="114529" />
+				<node x="126583" y="114533" />
+				<node x="126574" y="115564" />
+				<node x="125557" y="115570" />
+			</territory>
+		</territories>
+		<npc id="22308" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_084" minZ="-3822" maxZ="-3222">
+				<node x="126577" y="114661" />
+				<node x="127602" y="114665" />
+				<node x="127593" y="115696" />
+				<node x="126576" y="115702" />
+			</territory>
+		</territories>
+		<npc id="22308" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_085" minZ="-3822" maxZ="-3222">
+				<node x="127598" y="114662" />
+				<node x="128623" y="114666" />
+				<node x="128614" y="115697" />
+				<node x="127597" y="115703" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_086" minZ="-3889" maxZ="-3289">
+				<node x="128649" y="114671" />
+				<node x="129674" y="114675" />
+				<node x="129665" y="115706" />
+				<node x="128648" y="115712" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_087" minZ="-3889" maxZ="-3289">
+				<node x="129657" y="114543" />
+				<node x="130682" y="114547" />
+				<node x="130673" y="115578" />
+				<node x="129656" y="115584" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_088" minZ="-3822" maxZ="-3222">
+				<node x="129655" y="113630" />
+				<node x="130680" y="113634" />
+				<node x="130671" y="114665" />
+				<node x="129654" y="114671" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_089" minZ="-3822" maxZ="-3222">
+				<node x="128631" y="113630" />
+				<node x="129656" y="113634" />
+				<node x="129647" y="114665" />
+				<node x="128630" y="114671" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_090" minZ="-3731" maxZ="-3131">
+				<node x="127597" y="113621" />
+				<node x="128622" y="113625" />
+				<node x="128613" y="114656" />
+				<node x="127596" y="114662" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_091" minZ="-3731" maxZ="-3131">
+				<node x="126576" y="113620" />
+				<node x="127601" y="113624" />
+				<node x="127592" y="114655" />
+				<node x="126575" y="114661" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_092" minZ="-3632" maxZ="-3032">
+				<node x="126072" y="112538" />
+				<node x="126591" y="112546" />
+				<node x="126590" y="113050" />
+				<node x="126078" y="113051" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_093" minZ="-3632" maxZ="-3032">
+				<node x="125592" y="112234" />
+				<node x="126111" y="112242" />
+				<node x="126110" y="112746" />
+				<node x="125598" y="112747" />
+			</territory>
+		</territories>
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_094" minZ="-3344" maxZ="-2744">
+				<node x="125144" y="111946" />
+				<node x="125663" y="111954" />
+				<node x="125662" y="112458" />
+				<node x="125150" y="112459" />
+			</territory>
+		</territories>
+		<npc id="22308" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_095" minZ="-3253" maxZ="-2653">
+				<node x="124620" y="111651" />
+				<node x="125139" y="111659" />
+				<node x="125138" y="112163" />
+				<node x="124626" y="112164" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_096" minZ="-3253" maxZ="-2653">
+				<node x="124096" y="111640" />
+				<node x="124615" y="111648" />
+				<node x="124614" y="112152" />
+				<node x="124102" y="112153" />
+			</territory>
+		</territories>
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_097" minZ="-3344" maxZ="-2744">
+				<node x="125143" y="111435" />
+				<node x="125662" y="111443" />
+				<node x="125661" y="111947" />
+				<node x="125149" y="111948" />
+			</territory>
+		</territories>
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_098" minZ="-3253" maxZ="-2653">
+				<node x="124615" y="111133" />
+				<node x="125134" y="111141" />
+				<node x="125133" y="111645" />
+				<node x="124621" y="111646" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_099" minZ="-3253" maxZ="-2653">
+				<node x="124097" y="111128" />
+				<node x="124616" y="111136" />
+				<node x="124615" y="111640" />
+				<node x="124103" y="111641" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_100" minZ="-3253" maxZ="-2653">
+				<node x="125132" y="110929" />
+				<node x="125651" y="110937" />
+				<node x="125650" y="111441" />
+				<node x="125138" y="111442" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_101" minZ="-3253" maxZ="-2653">
+				<node x="124612" y="110618" />
+				<node x="125131" y="110626" />
+				<node x="125130" y="111130" />
+				<node x="124618" y="111131" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_102" minZ="-3253" maxZ="-2653">
+				<node x="123502" y="108529" />
+				<node x="124021" y="108537" />
+				<node x="124020" y="109041" />
+				<node x="123508" y="109042" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_103" minZ="-3253" maxZ="-2653">
+				<node x="122982" y="108395" />
+				<node x="123501" y="108403" />
+				<node x="123500" y="108907" />
+				<node x="122988" y="108908" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_104" minZ="-3253" maxZ="-2653">
+				<node x="122456" y="108362" />
+				<node x="122975" y="108370" />
+				<node x="122974" y="108874" />
+				<node x="122462" y="108875" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_105" minZ="-3253" maxZ="-2653">
+				<node x="121409" y="107995" />
+				<node x="122434" y="107999" />
+				<node x="122425" y="109030" />
+				<node x="121408" y="109036" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_106" minZ="-3253" maxZ="-2653">
+				<node x="120382" y="107976" />
+				<node x="121407" y="107980" />
+				<node x="121398" y="109011" />
+				<node x="120381" y="109017" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_107" minZ="-3253" maxZ="-2653">
+				<node x="121406" y="109022" />
+				<node x="121925" y="109030" />
+				<node x="121924" y="109534" />
+				<node x="121412" y="109535" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_108" minZ="-3253" maxZ="-2653">
+				<node x="120894" y="109009" />
+				<node x="121413" y="109017" />
+				<node x="121412" y="109521" />
+				<node x="120900" y="109522" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_109" minZ="-3253" maxZ="-2653">
+				<node x="120366" y="109022" />
+				<node x="120885" y="109030" />
+				<node x="120884" y="109534" />
+				<node x="120372" y="109535" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_110" minZ="-3253" maxZ="-2653">
+				<node x="119838" y="109022" />
+				<node x="120357" y="109030" />
+				<node x="120356" y="109534" />
+				<node x="119844" y="109535" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_111" minZ="-3253" maxZ="-2653">
+				<node x="120174" y="109550" />
+				<node x="120693" y="109558" />
+				<node x="120692" y="110062" />
+				<node x="120180" y="110063" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_112" minZ="-3253" maxZ="-2653">
+				<node x="119342" y="109326" />
+				<node x="119861" y="109334" />
+				<node x="119860" y="109838" />
+				<node x="119348" y="109839" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_113" minZ="-3253" maxZ="-2653">
+				<node x="119137" y="109822" />
+				<node x="120162" y="109826" />
+				<node x="120153" y="110857" />
+				<node x="119136" y="110863" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_114" minZ="-3253" maxZ="-2653">
+				<node x="118110" y="109809" />
+				<node x="119135" y="109813" />
+				<node x="119126" y="110844" />
+				<node x="118109" y="110850" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_115" minZ="-3253" maxZ="-2653">
+				<node x="117077" y="109772" />
+				<node x="118102" y="109776" />
+				<node x="118093" y="110807" />
+				<node x="117076" y="110813" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_116" minZ="-3253" maxZ="-2653">
+				<node x="116050" y="109759" />
+				<node x="117075" y="109763" />
+				<node x="117066" y="110794" />
+				<node x="116049" y="110800" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_117" minZ="-3253" maxZ="-2653">
+				<node x="117248" y="110808" />
+				<node x="118116" y="110813" />
+				<node x="117978" y="111257" />
+				<node x="117460" y="111591" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_118" minZ="-3253" maxZ="-2653">
+				<node x="115325" y="109861" />
+				<node x="115844" y="109869" />
+				<node x="115843" y="110373" />
+				<node x="115331" y="110374" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_119" minZ="-3253" maxZ="-2653">
+				<node x="114797" y="109861" />
+				<node x="115316" y="109869" />
+				<node x="115315" y="110373" />
+				<node x="114803" y="110374" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_120" minZ="-3253" maxZ="-2653">
+				<node x="113776" y="109702" />
+				<node x="114801" y="109706" />
+				<node x="114666" y="110730" />
+				<node x="113775" y="110743" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_121" minZ="-3253" maxZ="-2653">
+				<node x="113641" y="110727" />
+				<node x="114666" y="110731" />
+				<node x="114657" y="111762" />
+				<node x="113640" y="111768" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_122" minZ="-3253" maxZ="-2653">
+				<node x="113756" y="111758" />
+				<node x="114781" y="111762" />
+				<node x="114772" y="112793" />
+				<node x="113755" y="112799" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_123" minZ="-3253" maxZ="-2653">
+				<node x="113227" y="112248" />
+				<node x="113746" y="112256" />
+				<node x="113745" y="112760" />
+				<node x="113233" y="112761" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_124" minZ="-3253" maxZ="-2653">
+				<node x="113232" y="111740" />
+				<node x="113751" y="111748" />
+				<node x="113750" y="112252" />
+				<node x="113238" y="112253" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_125" minZ="-3253" maxZ="-2653">
+				<node x="113277" y="110213" />
+				<node x="113796" y="110221" />
+				<node x="113795" y="110725" />
+				<node x="113283" y="110726" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_126" minZ="-3253" maxZ="-2653">
+				<node x="113261" y="109733" />
+				<node x="113780" y="109741" />
+				<node x="113779" y="110245" />
+				<node x="113267" y="110246" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_127" minZ="-3253" maxZ="-2653">
+				<node x="112735" y="109751" />
+				<node x="113254" y="109759" />
+				<node x="113253" y="110263" />
+				<node x="112741" y="110264" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_128" minZ="-3253" maxZ="-2653">
+				<node x="112215" y="109821" />
+				<node x="112734" y="109829" />
+				<node x="112733" y="110333" />
+				<node x="112221" y="110334" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_129" minZ="-3253" maxZ="-2653">
+				<node x="111694" y="110105" />
+				<node x="112213" y="110113" />
+				<node x="112212" y="110617" />
+				<node x="111700" y="110618" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_130" minZ="-3253" maxZ="-2653">
+				<node x="111170" y="110209" />
+				<node x="111689" y="110217" />
+				<node x="111688" y="110721" />
+				<node x="111176" y="110722" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_131" minZ="-3253" maxZ="-2653">
+				<node x="110715" y="110290" />
+				<node x="111289" y="110502" />
+				<node x="110929" y="111045" />
+				<node x="110299" y="110967" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_132" minZ="-3253" maxZ="-2653">
+				<node x="110005" y="110976" />
+				<node x="110738" y="110967" />
+				<node x="110604" y="111552" />
+				<node x="109900" y="111467" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_134" minZ="-3253" maxZ="-2653">
+				<node x="108698" y="111537" />
+				<node x="110033" y="111465" />
+				<node x="109905" y="112518" />
+				<node x="108483" y="112522" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_135" minZ="-3253" maxZ="-2653">
+				<node x="109346" y="112519" />
+				<node x="109865" y="112527" />
+				<node x="109864" y="113031" />
+				<node x="109352" y="113032" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_136" minZ="-3253" maxZ="-2653">
+				<node x="108844" y="112524" />
+				<node x="109363" y="112532" />
+				<node x="109362" y="113036" />
+				<node x="108850" y="113037" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_137" minZ="-3253" maxZ="-2653">
+				<node x="109232" y="113027" />
+				<node x="109751" y="113035" />
+				<node x="109750" y="113539" />
+				<node x="109238" y="113540" />
+			</territory>
+		</territories>
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_138" minZ="-3253" maxZ="-2653">
+				<node x="108706" y="113026" />
+				<node x="109225" y="113034" />
+				<node x="109224" y="113538" />
+				<node x="108712" y="113539" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_139" minZ="-3253" maxZ="-2653">
+				<node x="109185" y="113535" />
+				<node x="109704" y="113543" />
+				<node x="109703" y="114047" />
+				<node x="109191" y="114048" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_141" minZ="-3253" maxZ="-2653">
+				<node x="108876" y="115647" />
+				<node x="109395" y="115655" />
+				<node x="109394" y="116159" />
+				<node x="108882" y="116160" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_142" minZ="-3253" maxZ="-2653">
+				<node x="108690" y="116155" />
+				<node x="109209" y="116163" />
+				<node x="109208" y="116667" />
+				<node x="108696" y="116668" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_143" minZ="-3253" maxZ="-2653">
+				<node x="108780" y="116674" />
+				<node x="109299" y="116682" />
+				<node x="109298" y="117186" />
+				<node x="108786" y="117187" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_144" minZ="-3253" maxZ="-2653">
+				<node x="108268" y="116669" />
+				<node x="108787" y="116677" />
+				<node x="108786" y="117181" />
+				<node x="108274" y="117182" />
+			</territory>
+		</territories>
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_145" minZ="-3253" maxZ="-2653">
+				<node x="108347" y="117188" />
+				<node x="108866" y="117196" />
+				<node x="108865" y="117700" />
+				<node x="108353" y="117701" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_146" minZ="-3253" maxZ="-2653">
+				<node x="108330" y="117690" />
+				<node x="108849" y="117698" />
+				<node x="108848" y="118202" />
+				<node x="108336" y="118203" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_147" minZ="-3253" maxZ="-2653">
+				<node x="107817" y="117541" />
+				<node x="108336" y="117549" />
+				<node x="108335" y="118052" />
+				<node x="107823" y="118053" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_148" minZ="-3253" maxZ="-2653">
+				<node x="107289" y="117637" />
+				<node x="107808" y="117645" />
+				<node x="107807" y="118148" />
+				<node x="107295" y="118149" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_149" minZ="-3297" maxZ="-2797">
+				<node x="104763" y="117705" />
+				<node x="105013" y="117409" />
+				<node x="105584" y="117869" />
+				<node x="104997" y="117993" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_150" minZ="-3297" maxZ="-2797">
+				<node x="103432" y="116486" />
+				<node x="103741" y="116309" />
+				<node x="104038" y="116828" />
+				<node x="103563" y="116913" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_151" minZ="-3297" maxZ="-2797">
+				<node x="109729" y="119604" />
+				<node x="109850" y="119234" />
+				<node x="110621" y="119408" />
+				<node x="110297" y="119791" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_152" minZ="-3297" maxZ="-2797">
+				<node x="111330" y="118970" />
+				<node x="111996" y="118158" />
+				<node x="112352" y="118449" />
+				<node x="111610" y="119196" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_153" minZ="-3279" maxZ="-2679">
+				<node x="112496" y="117190" />
+				<node x="113521" y="117194" />
+				<node x="113512" y="118225" />
+				<node x="112495" y="118231" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_154" minZ="-3253" maxZ="-2653">
+				<node x="111523" y="116518" />
+				<node x="112548" y="116522" />
+				<node x="112539" y="117553" />
+				<node x="111522" y="117559" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_155" minZ="-3253" maxZ="-2653">
+				<node x="112032" y="115995" />
+				<node x="112584" y="115475" />
+				<node x="112575" y="116506" />
+				<node x="111558" y="116512" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_156" minZ="-3279" maxZ="-2679">
+				<node x="112499" y="116170" />
+				<node x="113524" y="116174" />
+				<node x="113515" y="117205" />
+				<node x="112498" y="117211" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_158" minZ="-3346" maxZ="-2746">
+				<node x="112520" y="115339" />
+				<node x="113534" y="115116" />
+				<node x="113525" y="116147" />
+				<node x="112508" y="116153" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_159" minZ="-3464" maxZ="-2864">
+				<node x="113533" y="114803" />
+				<node x="114558" y="114806" />
+				<node x="114511" y="115649" />
+				<node x="113531" y="115844" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_160" minZ="-3320" maxZ="-2720">
+				<node x="114515" y="114543" />
+				<node x="115657" y="114430" />
+				<node x="115669" y="115203" />
+				<node x="114514" y="115584" />
+			</territory>
+		</territories>
+		<npc id="22305" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_161" minZ="-3253" maxZ="-2653">
+				<node x="115655" y="114416" />
+				<node x="116174" y="114424" />
+				<node x="116173" y="114928" />
+				<node x="115661" y="114929" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_162" minZ="-3253" maxZ="-2653">
+				<node x="116798" y="113568" />
+				<node x="117221" y="113855" />
+				<node x="116497" y="114648" />
+				<node x="116124" y="114314" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_163" minZ="-3253" maxZ="-2653">
+				<node x="117330" y="112448" />
+				<node x="117774" y="112512" />
+				<node x="117644" y="113516" />
+				<node x="117217" y="113504" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+		<npc id="22312" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Mutated Drake -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_164" minZ="-3841" maxZ="-3341">
+				<node x="100852" y="115481" />
+				<node x="101385" y="114536" />
+				<node x="102037" y="114619" />
+				<node x="101430" y="115688" />
+			</territory>
+		</territories>
+		<npc id="22305" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Soldier -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_165" minZ="-3253" maxZ="-2653">
+				<node x="124349" y="109291" />
+				<node x="124868" y="109299" />
+				<node x="124867" y="109803" />
+				<node x="124355" y="109804" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Berserker -->
+		<npc id="22311" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake Minion -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_166" minZ="-3253" maxZ="-2653">
+				<node x="124028" y="108783" />
+				<node x="124547" y="108791" />
+				<node x="124546" y="109295" />
+				<node x="124034" y="109296" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+		<npc id="22310" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Elite Wizard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_de_167" minZ="-3253" maxZ="-2653">
+				<node x="124613" y="110095" />
+				<node x="125133" y="110104" />
+				<node x="125132" y="110607" />
+				<node x="124619" y="110608" />
+			</territory>
+		</territories>
+		<npc id="22306" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Lancer -->
+		<npc id="22308" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Minion -->
+		<npc id="22309" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dragontroop Wizard -->
+	</spawn>
+</list>

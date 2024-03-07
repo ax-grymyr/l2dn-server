@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="92800" name="Lance Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Lance. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92801" name="Deadman's Glory Stone" type="EtcItem">
+		<!-- Key material for Dwarves to make Deadman's Glory. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92802" name="Art of Battle Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Art of Battle Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92803" name="Staff of Evil Spirits Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Staff of Evil Spirits. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92804" name="Demon's Dagger Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Demon's Dagger. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92805" name="Bellion Cestus Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Bellion Cestus. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92806" name="Bow of Peril Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Bow of Peril. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92807" name="Knuckle Duster Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Knuckle Duster. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92808" name="Avadon Shield Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Avadon Shield. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92809" name="Sealed Dark Crystal Leather Armor Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Leather Armor. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92810" name="Sealed Tallum Leather Armor Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Leather Armor. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92811" name="Sealed Leather Armor of Nightmare Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Leather Armor of Nightmare. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92812" name="Sealed Majestic Leather Armor Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Leather Armor. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92813" name="Sealed Dark Crystal Legging Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Leggings. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92814" name="Sealed Tallum Tunic Texture" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Tunic. -->
+		<set name="icon" val="icon.etc_leather_yellow_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92815" name="Sealed Dark Crystal Robe Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Robe. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92816" name="Sealed Robe of Nightmare Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Robe of Nightmare. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92817" name="Sealed Majestic Robe Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Robe. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92818" name="Sealed Tallum Stocking Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Stockings. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92819" name="Sealed Dark Crystal Shield Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Shield. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92820" name="Sealed Shield of Nightmare Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Shield of Nightmare. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92821" name="Sealed Dark Crystal Boot Lining" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Boots. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_black_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92822" name="Sealed Tallum Boot Lining" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Boots. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_black_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92823" name="Sealed Boots of Nightmare Lining" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Boots of Nightmare. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_black_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92824" name="Sealed Majestic Boot Lining" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Boots. -->
+		<set name="icon" val="icon.etc_piece_of_cloth_black_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92825" name="Sealed Dark Crystal Glove Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Gloves. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92826" name="Sealed Tallum Glove Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Gloves. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92827" name="Sealed Gauntlets of Nightmare Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Gauntlets of Nightmare. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92828" name="Sealed Majestic Gauntlet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Gauntlets. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92829" name="Sealed Dark Crystal Breastplate Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Breastplate. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92830" name="Sealed Tallum Plate Armor Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Plate Armor. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92831" name="Sealed Armor of Nightmare Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Armor of Nightmare. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92832" name="Sealed Majestic Plate Armor Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Plate Armor. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92833" name="Sealed Dark Crystal Gaiter Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Gaiters. -->
+		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92834" name="Sealed Dark Crystal Helmet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Dark Crystal Helmet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92835" name="Sealed Tallum Helmet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tallum Helmet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92836" name="Sealed Helm of Nightmare Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Helm of Nightmare. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92837" name="Sealed Majestic Circlet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Circlet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92838" name="Dragon Slayer Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Dragon Slayer. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92839" name="Berserker Blade Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Berserker Blade. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92840" name="Heavy Sword Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Heavy Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92841" name="Meteor Shower Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Meteor Shower. -->
+		<set name="icon" val="icon.etc_squares_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92842" name="Elysian Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Elysian. -->
+		<set name="icon" val="icon.etc_squares_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92843" name="Soul Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Soul Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92844" name="Carnage Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Carnage Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92845" name="Bloody Orchid Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Bloody Orchid. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92846" name="Soul Separator Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Soul Separator. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92847" name="Dragon Grinder Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Dragon Grinder. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92848" name="Blood Tornado Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Blood Tornado. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92849" name="Tallum Glaive Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Tallum Glaive. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92850" name="Halberd Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Halberd. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92851" name="Dasparion's Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Dasparion's Staff. -->
+		<set name="icon" val="icon.etc_squares_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92852" name="Branch of the Mother Tree Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Branch of the Mother Tree. -->
+		<set name="icon" val="icon.etc_squares_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92853" name="Dark Legion's Edge Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Dark Legion's Edge. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92854" name="Sword of Miracles Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Miracles. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92855" name="Elemental Sword Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Elemental Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92856" name="Tallum Blade Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Tallum Blade. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92857" name="Sealed Phoenix Earring Gemstone" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Phoenix Earring. -->
+		<set name="icon" val="icon.etc_gem_blue_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92858" name="Sealed Majestic Earring Gemstone" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Earring. -->
+		<set name="icon" val="icon.etc_gem_blue_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92859" name="Sealed Phoenix Necklace Beads" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Phoenix Earring. -->
+		<set name="icon" val="BranchSys2.icon.etc_sealed_phoenixbeads_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92860" name="Sealed Majestic Necklace Beads" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Necklace. -->
+		<set name="icon" val="BranchSys2.icon.etc_sealed_majesticbeads_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92861" name="Sealed Phoenix Ring Gemstone" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Phoenix Ring. -->
+		<set name="icon" val="icon.etc_gem_blue_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92862" name="Sealed Majestic Ring Gemstone" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Majestic Ring. -->
+		<set name="icon" val="icon.etc_gem_blue_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92863" name="Forgotten Blade Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Forgotten Blade. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92864" name="Basalt Battlehammer Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Basalt Battlehammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92865" name="Imperial Staff Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Imperial Staff. -->
+		<set name="icon" val="icon.etc_bark_blue_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92866" name="Angel Slayer Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Angel Slayer. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92867" name="Dragon Hunter Axe Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Dragon Hunter Axe. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92868" name="Divine Spear Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Divine Spear. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92869" name="Demon Splinter Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Demon Splinter. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92870" name="Heaven's Divider Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Heaven's Divider. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92871" name="Arcana Mace Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Arcana Mace. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92872" name="Sealed Tateossian Earring Part" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tateossian Earring. -->
+		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92873" name="Sealed Tateossian Ring Gem" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tateossian Ring. -->
+		<set name="icon" val="icon.etc_crystal_ball_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92874" name="Sealed Tateossian Necklace Chain" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Tateossian Necklace. -->
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92875" name="Sealed Imperial Crusader Breastplate Part" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Breastplate. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92876" name="Sealed Imperial Crusader Gaiters Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Gaiters. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92877" name="Sealed Imperial Crusader Gauntlet Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Gauntlets. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92878" name="Sealed Imperial Crusader Boot Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Boots. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92879" name="Sealed Imperial Crusader Shield Fragment" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Shield. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92880" name="Sealed Imperial Crusader Helmet Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Imperial Crusader Helmet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92881" name="Sealed Draconic Leather Armor Part" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Draconic Leather Armor. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92882" name="Sealed Draconic Leather Glove Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Draconic Leather Gloves. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92883" name="Sealed Draconic Leather Boots Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Draconic Leather Boots. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92884" name="Sealed Draconic Leather Helmet Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Draconic Leather Helmet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92885" name="Sealed Major Arcana Robe Part" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Major Arcana Robe. -->
+		<set name="icon" val="icon.etc_plate_silver_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92886" name="Sealed Major Arcana Gloves Fabric" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Major Arcana Gloves. -->
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92887" name="Sealed Major Arcana Boots Design" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Major Arcana Boots. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92888" name="Sealed Major Arcana Circlet Pattern" type="EtcItem">
+		<!-- Key material for Dwarves to make Sealed Major Arcana Circlet. -->
+		<set name="icon" val="icon.etc_pouch_brown_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92889" name="Draconic Bow Shaft" type="EtcItem">
+		<!-- Key material for Dwarves to make Draconic Bow. -->
+		<set name="icon" val="icon.etc_branch_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92890" name="Steel Sword Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Steel Sword. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92891" name="Infernal Master Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Infernal Master. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92892" name="Spiritual Eye Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Spiritual Eye. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92893" name="Flaming Dragon Skull Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Flaming Dragon Skull. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92894" name="Lesser Giant's Hammer Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Lesser Giant's Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92895" name="Destroyer Hammer Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Destroyer Hammer. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92896" name="Doom Crusher Head" type="EtcItem">
+		<!-- Key material for Dwarves to make Doom Crusher. -->
+		<set name="icon" val="icon.etc_squares_gray_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92897" name="Sirra's Blade Edge" type="EtcItem">
+		<!-- Key material for Dwarves to make Sirra's Blade. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92898" name="Sword of Ipos Blade" type="EtcItem">
+		<!-- Key material for Dwarves to make Sword of Ipos. -->
+		<set name="icon" val="icon.etc_sword_body_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92899" name="Barakiel's Axe Piece" type="EtcItem">
+		<!-- Key material for Dwarves to make Barakiel's Axe. -->
+		<set name="icon" val="icon.etc_bark_gold_i00" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

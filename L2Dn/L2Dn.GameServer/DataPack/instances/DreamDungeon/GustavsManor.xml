@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="221" name="Gustavs Manor" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="60" empty="60" eject="60" />
+	<locations>
+		<enter type="FIXED">
+			<location x="57987" y="-32295" z="295" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="10" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+	</reenter>
+	<doorlist>
+		<door id="21170001" />
+		<door id="21170002" />
+		<door id="21170005" />
+		<door id="21170006" />
+		<door id="21170003" />
+		<door id="21170004" />
+	</doorlist>
+	<spawnlist>
+		<group name="GustavNPC_1"> <!-- on spawn -->
+			<npc id="34312" x="58106" y="-32039" z="303" heading="47518" respawnTime="0sec" /> <!-- Rascal -->
+		</group>
+		<group name="GustavNPC_2" spawnByDefault="false"> <!-- near gates -->
+			<npc id="34312" x="57820" y="-29562" z="571" heading="49913" respawnTime="0sec" /> <!-- Rascal -->
+		</group>
+		<group name="GustavNPC_3" spawnByDefault="false">
+		</group>
+		<group name="GustavNPC_4" spawnByDefault="false">
+			<npc id="34312" x="58520" y="-27499" z="580" heading="32420" respawnTime="0sec" /> <!-- Rascal -->
+		</group>
+		<group name="CatLair_TeleporterCat" spawnByDefault="false">
+			<npc id="34316" x="58520" y="-27499" z="580" heading="32420" respawnTime="0sec" /> <!-- Teleporter Cat -->
+		</group>
+		<group name="GustavMonsters_1" spawnByDefault="false"> <!-- near gates -->
+			<npc id="22391" x="57951" y="-30279" z="499" heading="49524" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22393" x="58321" y="-30138" z="499" heading="49577" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22392" x="58244" y="-29957" z="506" heading="49151" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22392" x="58123" y="-29715" z="570" heading="48603" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22394" x="57756" y="-30171" z="499" heading="48351" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22391" x="57541" y="-30302" z="453" heading="47093" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="57792" y="-29821" z="570" heading="48688" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22393" x="57963" y="-29759" z="570" heading="48688" respawnTime="0sec" /> <!-- Housekeeper -->
+		</group>
+		<group name="GustavMonsters_2" spawnByDefault="false"> <!-- inside manor -->
+			<npc id="22391" x="57538" y="-28430" z="568" heading="58032" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="57400" y="-28650" z="568" heading="44348" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22393" x="57438" y="-28910" z="568" heading="3213" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22391" x="57100" y="-29280" z="568" heading="41472" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="57202" y="-29566" z="568" heading="51966" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="56966" y="-28961" z="568" heading="13670" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22391" x="56774" y="-28333" z="568" heading="24012" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22393" x="56795" y="-28137" z="568" heading="52507" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22394" x="57101" y="-28587" z="568" heading="45595" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22394" x="57240" y="-28997" z="568" heading="56700" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22392" x="57425" y="-28234" z="568" heading="31162" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22392" x="58548" y="-28938" z="568" heading="1154" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22393" x="58734" y="-29185" z="568" heading="54811" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22394" x="58994" y="-29222" z="568" heading="2422" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22391" x="59069" y="-28918" z="568" heading="16751" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="59240" y="-28587" z="568" heading="8314" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="58961" y="-28411" z="568" heading="27607" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22394" x="58507" y="-28565" z="568" heading="38196" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22394" x="58321" y="-28872" z="568" heading="43838" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22393" x="58362" y="-28410" z="568" heading="14281" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22392" x="58635" y="-28437" z="568" heading="64805" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22392" x="58819" y="-28888" z="568" heading="52565" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="59231" y="-26650" z="568" heading="14114" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="59030" y="-26629" z="568" heading="31682" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22393" x="58809" y="-26816" z="568" heading="36779" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22394" x="58832" y="-26552" z="568" heading="16190" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22392" x="59034" y="-26428" z="568" heading="65034" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22392" x="59126" y="-26805" z="568" heading="39337" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="57130" y="-26536" z="575" heading="26265" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="56868" y="-26549" z="568" heading="35866" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22393" x="56687" y="-26737" z="568" heading="49151" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22394" x="56893" y="-26771" z="568" heading="1265" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22391" x="57095" y="-26782" z="568" heading="14880" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22393" x="57107" y="-26454" z="568" heading="22853" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22392" x="57210" y="-26608" z="568" heading="55111" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="58084" y="-26169" z="594" heading="65220" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="58247" y="-25960" z="594" heading="11646" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22394" x="58025" y="-25878" z="594" heading="30473" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22391" x="57806" y="-26018" z="594" heading="38847" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22392" x="57720" y="-26216" z="594" heading="36903" respawnTime="0sec" /> <!-- Touchy Servant -->
+			<npc id="22391" x="57550" y="-25939" z="594" heading="21599" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22391" x="57198" y="-27259" z="580" heading="55991" respawnTime="0sec" /> <!-- Mansion Manager -->
+			<npc id="22393" x="57195" y="-27569" z="580" heading="48826" respawnTime="0sec" /> <!-- Housekeeper -->
+			<npc id="22394" x="57207" y="-27775" z="580" heading="49813" respawnTime="0sec" /> <!-- Cursed Girl -->
+			<npc id="22392" x="57228" y="-27528" z="580" heading="15583" respawnTime="0sec" /> <!-- Touchy Servant -->
+		</group>
+		<group name="GustavMonsters_3" spawnByDefault="false">
+			<npc id="22394" x="58223" y="-25997" z="597" heading="36645" /> <!-- Cursed Girl -->
+			<npc id="22393" x="58951" y="-26742" z="571" heading="51106" /> <!-- Housekeeper -->
+			<npc id="22392" x="56993" y="-26440" z="571" heading="42979" /> <!-- Touchy Servant -->
+			<npc id="22391" x="56752" y="-26936" z="571" heading="5911" /> <!-- Mansion Manager -->
+		</group>
+		<group name="GustavMonsters_Boss_Gustav" spawnByDefault="false">
+			<npc id="18678" x="58032" y="-27507" z="583" heading="0" /> <!-- Gustav -->
+		</group>
+		<group name="GustavMonsters_Boss_GustavSteward" spawnByDefault="false">
+			<npc id="18679" x="58032" y="-27507" z="583" heading="0" /> <!-- Gustav Steward -->
+		</group>
+	</spawnlist>
+</instance>
+

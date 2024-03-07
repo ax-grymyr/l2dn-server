@@ -1,0 +1,1471 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90400" name="Vital Stone Jewelry Box Lv. 5" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90357" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90401" name="Melodys Luck Cube" additionalName="30-day" type="EtcItem">
+		<!-- Available for 30 d. Double-click to obtain a random reward. Can be used only once a day. Required level: 20. -->
+		<set name="icon" val="icon.etc_dkbrown_crystal_cube_pc_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90402" name="+6 Fire Dragon Pendant" additionalName="15-day" type="Armor">
+		<!-- Available for 15 d. M. Def. +16, acquired XP/ SP +10%, P./ M. Atk. +20. -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<stats>
+			<stat type="pDef">40</stat>
+		</stats>
+	</item>
+	<item id="90403" name="Melodys Teleport Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bookmark_scroll_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90404" min="1" max="1" chance="100" /> <!-- My Teleport Book - Sealed -->
+			<item id="90405" min="10" max="10" chance="100" /> <!-- My Teleport Scroll - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90404" name="My Teleport Book" additionalName="Sealed" type="EtcItem">
+		<!-- My Teleport Slots +1 (max - 48). -->
+		<set name="icon" val="icon.bookmark_book_i00" />
+		<set name="default_action" val="CALL_SKILL" />
+		<set name="weight" val="5" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39252" level="1" /> <!-- Increase number of teleport slots. -->
+		</skills>
+	</item>
+	<item id="90405" name="My Teleport Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to teleport to a previously saved location. -->
+		<set name="icon" val="icon.bookmark_scroll_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90406" name="Melodys Fish Stew Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90407" min="1" max="1" chance="100" /> <!-- Chef's Fish Stew - Victory - Sealed -->
+			<item id="90408" min="1" max="1" chance="100" /> <!-- Chef's Fish Stew - Fire - Sealed -->
+			<item id="90409" min="1" max="1" chance="100" /> <!-- Chef's Fish Stew - Water - Sealed -->
+			<item id="90410" min="1" max="1" chance="100" /> <!-- Chef's Fish Stew - Wind - Sealed -->
+			<item id="49697" min="2" max="2" chance="100" /> <!-- Special Pirate Fruit - Sealed -->
+			<item id="49772" min="2" max="2" chance="100" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90407" name="Chef's Fish Stew - Victory" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Accuracy +4. M. Accuracy +4. P. Evasion +4. M. Evasion +4. Atk. Spd. +10%. Casting Spd. +10%. HP Recovery Rate +20%. MP Recovery Rate +20%. P. Critical Rate +15%. M. Critical Rate +15%. P. Critical Damage +15%. M. Critical Damage +15%. Damage to monsters +15%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(The effect does not stack with other Prophecy-type buffs.)</font>. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39228" level="1" /> <!-- Chef's Fish Stew - Victory -->
+		</skills>
+	</item>
+	<item id="90408" name="Chef's Fish Stew - Fire" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +10%. M. Def. +10%. Atk. Spd. +10%. Casting Spd. +10%. Max HP +10%. HP Recovery Rate +10%. Damage to monsters +15%. P. Critical Rate +25%. M. Critical Rate +25%. Debuff Resistance +10%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(The effect does not stack with other Prophecy-type buffs.)</font>. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39229" level="1" /> <!-- Chef's Fish Stew - Fire -->
+		</skills>
+	</item>
+	<item id="90409" name="Chef's Fish Stew - Water" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +10%. M. Def. +10%. Atk. Spd. +10%. Casting Spd. +10%. Max MP +15%. MP Recovery Rate +10%. Skill MP Consumption -10%. Damage to monsters +15%. Debuff Resistance +10%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(The effect does not stack with other Prophecy-type buffs.)</font>. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39230" level="1" /> <!-- Chef's Fish Stew - Water -->
+		</skills>
+	</item>
+	<item id="90410" name="Chef's Fish Stew - Wind" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Accuracy +4. M. Accuracy +4. P. Evasion +4. M. Evasion +4. P. Critical Rate +15%. M. Critical Rate +15%. P. Critical Damage +25%. M. Critical Damage +25%. Speed +10%. Debuff Resistance +10%. Damage to monsters +15%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(The effect does not stack with other Prophecy-type buffs.)</font>. <font color=eeaa22>Can be exchanged for Aden Coins through the Game Assistant.</font> -->
+		<set name="icon" val="icon.fish_stew_residence_cha" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="39231" level="1" /> <!-- Chef's Fish Stew - Wind -->
+		</skills>
+	</item>
+	<item id="90411" name="Melodys Scroll Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49500" min="3" max="3" chance="100" /> <!-- Blessed Scroll of Escape -->
+			<item id="49542" min="1" max="1" chance="100" /> <!-- Improved Scroll of Resurrection - Sealed -->
+			<item id="49772" min="2" max="2" chance="100" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90412" name="Melodys Enhance Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_mineral_general_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49416" min="2" max="2" chance="100" /> <!-- Blade Spirit (Time-limited) - Sealed -->
+			<item id="94209" min="1" max="1" chance="100" /> <!-- Dim Life Stone Lv. 1 - Weapon - Sealed -->
+			<item id="49772" min="2" max="2" chance="100" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90413" name="Melodys Rice Cake Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_rice_cake_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49086" min="2" max="2" chance="100" /> <!-- Rice Cake of Fighting Spirit - Sealed -->
+			<item id="35669" min="1" max="1" chance="100" /> <!-- Angel Cat's Blessing - 30-day -->
+			<item id="49772" min="2" max="2" chance="100" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90414" name="Melodys Potion Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.five_vairy_potion" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49488" min="30" max="30" chance="100" /> <!-- Hero's Top-grade HP Replenishing Potion - Sealed -->
+			<item id="90415" min="30" max="30" chance="100" /> <!-- Hero's MP Recovery Potion - Sealed -->
+			<item id="49772" min="2" max="2" chance="100" /> <!-- Scroll of Mood Melody - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90415" name="Hero's MP Recovery Potion" additionalName="Sealed" type="EtcItem">
+		<!-- A magic potion that recovers MP. -->
+		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39258" level="1" /> <!-- Major Warrior Healing Potion -->
+		</skills>
+	</item>
+	<item id="90416" name="Melodys Growth Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_charge_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49495" min="1" max="1" chance="100" /> <!-- Hero's Dual Swords - 15-day -->
+			<item id="49507" min="1" max="1" chance="100" /> <!-- Fishing Rod Pack - 10-day -->
+			<item id="49508" min="2160" max="2160" chance="100" /> <!-- Common Bait - Sealed -->
+			<item id="38154" min="2160" max="2160" chance="100" /> <!-- Fishing Shot -->
+			<item id="49502" min="3" max="3" chance="100" /> <!-- Scroll of Escape: Giran Harbor -->
+			<item id="49487" min="20" max="20" chance="100" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90417" name="Melodys Fishing Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.fishing_zone_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90139" min="2160" max="2160" chance="100" /> <!-- Silver Bait - Sealed -->
+			<item id="49585" min="1" max="1" chance="100" /> <!-- Golden Mermaid's Tears - 7-day -->
+			<item id="90418" min="1" max="1" chance="100" /> <!-- Savior's XP Box - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90418" name="Savior's XP Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ev_kalie_treasure_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39259" level="1" /> <!-- Savior's Experience Box -->
+		</skills>
+	</item>
+	<item id="90419" name="Hero's Shining Dual Sword" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Atk. Spd. +5%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2330" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">200</stat>
+			<stat type="mAtk">102</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90420" name="Hero's Shining Staff" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Casting Spd. +12%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_sages_staff_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">160</stat>
+			<stat type="mAtk">138</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90421" name="Hero's Shining Bow" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. P. Critical +52. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_akat_long_bow_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="HORN" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">108</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="90422" name="Hero's Shining Dagger" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. P. Critical +66. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_grace_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">142</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="90423" name="Hero's Shining Spear" additionalName="30-day" type="Weapon">
+		<!-- Available for 30 days. Stun chance +25%. Cannot be enchanted/ augmented. -->
+		<set name="icon" val="icon.weapon_poleaxe_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">159</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="90424" name="Hero's Shining Helmet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">58</stat>
+		</stats>
+	</item>
+	<item id="90425" name="Hero's Shining Armor" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="10480" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">239</stat>
+		</stats>
+	</item>
+	<item id="90426" name="Hero's Shining Gauntlets" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="90427" name="Hero's Shining Boots" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Heavy armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t62_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1200" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="90428" name="Hero's Shining Helmet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="620" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">47</stat>
+		</stats>
+	</item>
+	<item id="90429" name="Hero's Shining Rags" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_ul_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="onepiece" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="5800" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">179</stat>
+		</stats>
+	</item>
+	<item id="90430" name="Hero's Shining Gloves" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="90431" name="Hero's Shining Shoes" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Light armor. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t45_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1210" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="90432" name="Hero's Shining Circlet" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="600" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">54</stat>
+		</stats>
+	</item>
+	<item id="90433" name="Hero's Shining Tunic" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1980" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">74</stat>
+			<stat type="maxMp">314</stat>
+		</stats>
+	</item>
+	<item id="90434" name="Hero's Shining Stockings" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="960" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">46</stat>
+			<stat type="maxMp">196</stat>
+		</stats>
+	</item>
+	<item id="90435" name="Hero's Shining Gloves" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="610" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">39</stat>
+		</stats>
+	</item>
+	<item id="90436" name="Hero's Shining Shoes" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Robe. Cannot be enchanted. -->
+		<set name="icon" val="icon.armor_t57_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1210" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">34</stat>
+		</stats>
+	</item>
+	<item id="90437" name="Aden Hero Hat" additionalName="60 days" type="Armor">
+		<!-- A gift for a returned adventurer. Available for 60 d. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.bm_romantic_chaperon_yellow" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="86400" />
+	</item>
+	<item id="90438" name="Fish Stew - Might Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +12%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90439" name="Fish Stew - Might Lv. 3" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +15%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90440" name="Fish Stew - Shield Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +12%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90441" name="Fish Stew - Shield Lv. 3" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +15%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90442" name="Fish Stew - Empower Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Atk. +65%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90443" name="Fish Stew - Empower Lv. 3" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Atk. +75%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90444" name="Fish Stew - Magic Barrier Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Def. +30%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90445" name="Fish Stew - Vampiric Rage Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. With a certain chance, absorbs 7% of the inflicted damage as HP. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90446" name="Fish Stew - Vampiric Rage Lv. 3" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. With a certain chance, absorbs 8% of the inflicted damage as HP. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90447" name="Fish Stew - Greater Might Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +4%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90448" name="Fish Stew - Greater Shield Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +5%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90449" name="Fish Stew - Wild Magic Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Critical Rate +10%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90450" name="Fish Stew - Berserker Spirit Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. -5%. M. Def. -10%. P. Evasion -2. P. Atk. +5%. M. Atk. +10%. Atk. Spd. +5%. Casting Spd. +5%. Speed +5. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90451" name="Fish Stew - Berserker Spirit Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. -8%. M. Def. -16%. P. Evasion -4. P. Atk. +8%. M. Atk. +16%. Atk. Spd. +8%. Casting Spd. +8%. Speed +8. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90452" name="Fish Stew - Decrease Weight Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Overweight limit +3000. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90453" name="Fish Stew - Decrease Weight Lv. 2" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Overweight limit +6000. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90454" name="Fish Stew - Decrease Weight Lv. 3" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Overweight limit +9000. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90455" name="Avadon Circlet (Heavy)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90456" name="Avadon Circlet (Light)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90457" name="Avadon Circlet (Robe)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90458" name="Zubei's Helmet (Heavy)" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90459" name="Zubei's Helmet (Light)" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90460" name="Zubei's Helmet (Robe)" type="Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="11" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="590" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">62</stat>
+		</stats>
+	</item>
+	<item id="90461" name="Blue Wolf Helmet (Heavy)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90462" name="Blue Wolf Helmet (Light)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90463" name="Blue Wolf Helmet (Robe)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90464" name="Doom Helmet (Heavy)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90465" name="Doom Helmet (Light)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90466" name="Doom Helmet (Robe)" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="17" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="580" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">66</stat>
+		</stats>
+	</item>
+	<item id="90467" name="Tallum Helmet (Heavy)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. Max HP +50. P. Atk. +4%. HP Recovery Rate +5.5% -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50218" level="1" /> <!-- A-grade: Tallum Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90468" name="Tallum Helmet (Light)" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +8% -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50220" level="1" /> <!-- A-grade: Tallum Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90469" name="Tallum Helmet (Robe)" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +5.5%. M. Def. +8% -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50219" level="1" /> <!-- A-grade: Tallum Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90470" name="Dark Crystal Helmet (Heavy)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. Max HP +100. P. Atk. +4%. HP Recovery Rate +5.5% -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50209" level="1" /> <!-- A-grade: Dark Crystal Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90471" name="Dark Crystal Helmet (Light)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +5.5%. P. Critical Damage +30 -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50211" level="1" /> <!-- A-grade: Dark Crystal Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90472" name="Dark Crystal Helmet (Robe)" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +5.5%. P. Def. +8% -->
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="71" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="570" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">69</stat>
+		</stats>
+		<skills>
+			<skill id="50210" level="1" /> <!-- A-grade: Dark Crystal Helmet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90473" name="Helm of Nightmare (Heavy)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8%. Reflects 5% of the received damage. -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="108" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50215" level="1" /> <!-- A-grade: Helm of Nightmare -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+			<skill id="83215" level="1" type="ON_BLESSING" /> <!-- Armor Blessing Effect -->
+			<skill id="83107" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Boss' Blessing Effect -->
+			<skill id="83108" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Boss' Blessing Effect -->
+			<skill id="83109" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Boss' Blessing Effect -->
+		</skills>
+	</item>
+	<item id="90474" name="Helm of Nightmare (Light)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +8% -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="108" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50217" level="1" /> <!-- A-grade: Helm of Nightmare -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90475" name="Helm of Nightmare (Robe)" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Rate +8%. M. Skill Critical Damage +30 -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="108" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="560" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50216" level="1" /> <!-- A-grade: Helm of Nightmare -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90476" name="Majestic Circlet (Heavy)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8% -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="163" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50212" level="1" /> <!-- A-grade: Majestic Circlet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90477" name="Majestic Circlet (Light)" type="Armor">
+		<!-- <Properties>. CON +1. Overweight limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +5.5%. P. Atk. +8% when using a bow. P. Atk. +8% when using firearms -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="163" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50214" level="1" /> <!-- A-grade: Majestic Circlet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90478" name="Majestic Circlet (Robe)" type="Armor">
+		<!-- <Properties>. MEN +1. Overweight limit +1500. M. Def. +10. Max MP +300. M. Atk. +8%. MP Recovery Rate +8% -->
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="163" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="550" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
+		<skills>
+			<skill id="50213" level="1" /> <!-- A-grade: Majestic Circlet -->
+			<skill id="50267" level="1" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: A-grade Helmet -->
+		</skills>
+	</item>
+	<item id="90479" name="Shiny Jewelry Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="material" val="PAPER" />
+		<capsuled_items>
+			<item id="90353" min="1" max="1" chance="12.5" /> <!-- Vital Stone Lv. 1 - Sealed -->
+			<item id="90343" min="1" max="1" chance="12.5" /> <!-- Pearl Lv. 1 - Sealed -->
+			<item id="90338" min="1" max="1" chance="12.5" /> <!-- Diamond Lv. 1 - Sealed -->
+			<item id="90333" min="1" max="1" chance="12.5" /> <!-- Sapphire Lv. 1 - Sealed -->
+			<item id="90328" min="1" max="1" chance="12.5" /> <!-- Ruby Lv. 1 - Sealed -->
+			<item id="90323" min="1" max="1" chance="12.5" /> <!-- Jade Lv. 1 - Sealed -->
+			<item id="90318" min="1" max="1" chance="12.5" /> <!-- Garnet Lv. 1 - Sealed -->
+			<item id="90313" min="1" max="1" chance="12.5" /> <!-- Topaz Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="90480" name="Stone: Save D-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for D-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.ench_am_stone_i03" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90481" name="Stone: Save C-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for C-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.ench_am_stone_i03" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90482" name="Stone: Save B-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for B-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.ench_am_stone_i03" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90483" name="Stone: Save A-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for A-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.ench_am_stone_i03" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90484" name="Stone: Enchant A-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for D-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is decreased by 1. -->
+		<set name="icon" val="icon.ench_am_stone_i01" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90485" name="Stone: Enchant B-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for C-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is decreased by 1. -->
+		<set name="icon" val="icon.ench_am_stone_i01" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90486" name="Stone: Enchant C-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for B-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is decreased by 1. -->
+		<set name="icon" val="icon.ench_am_stone_i01" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90487" name="Stone: Enchant D-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for A-grade armor when using a basic scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). In case of failure, the item is not crystallized but its enchant value is decreased by 1. -->
+		<set name="icon" val="icon.ench_am_stone_i01" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90488" name="Stone: Protect A-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for D-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.ench_am_stone_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90489" name="Stone: Protect B-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for C-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.ench_am_stone_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90490" name="Stone: Protect C-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for B-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.ench_am_stone_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90491" name="Stone: Protect D-grade Armor" type="EtcItem">
+		<!-- Enchant success rate +10% for A-grade armor when using a common scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for full-body armor). -->
+		<set name="icon" val="icon.ench_am_stone_i00" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90492" name="Giant's A-grade Enchant Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Enchant success rate +10% for A-grade armor when using an improved scroll. Only for items enchanted from +3 to +8 (from +4 to +8 for one-piece armor). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90493" name="Blessed A-grade Enchant Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The enchant success rate +10% for A-grade armor with a protecting scroll. Only for items enchanted between +3 and +8 (between +4 and +8 for one-piece armor). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90494" name="Eva's Scroll: Enchant Hair Accessory" type="EtcItem">
+		<!-- M. Def. +2. Starting from +5, an additional effect is enabled and HP/ MP/ CP are increased. The enchanting is safe up to +3. -->
+		<set name="icon" val="icon.scroll_of_unidentify_am_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90495" name="Scroll of Mood Melody" type="EtcItem">
+		<!-- For 20 min., grants the following effects: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk, Death Whisper, and Vampiric Rage. The effect remains after death. Note!. If used simultaneously with Shining Scroll of Mood Melody, only the latter effect will be active. -->
+		<set name="icon" val="icon.bm_magmeld" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90496" name="Earth Dragon Belt" type="Armor">
+		<!-- When equipped, inventory slots +6, weight limit +7000, CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +15%, HP Recovery Potions' Effect +100, received damage -6%. -->
+		<set name="icon" val="icon.bm_antaras_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35046" level="1" /> <!-- Land Dragon Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="90497" name="Fire Dragon Belt" type="Armor">
+		<!-- Inventory Slots +6, Weight Limit +7000, STR/ INT +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, HP Recovery Potions' Effect +100, P. Critical Damage/ M. Skill Critical Damage +4%. -->
+		<set name="icon" val="icon.bm_vallakas_belt" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="35047" level="1" /> <!-- Fire Dragon Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
+	</item>
+	<item id="90498" name="Mysterious Jewelry Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv5" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39268" level="1" /> <!-- Mysterious Jewelry Box -->
+		</skills>
+	</item>
+	<item id="90499" name="Special Dragon Fruit Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +12%. M. Atk. +12%. P. Def. +15%. M. Def. +15%. Max HP +25%. Max MP +25%. Max CP +25%. HP Recovery Rate +30%. MP Recovery Rate +30%. P. Critical Rate +10. M. Critical Rate +10. P. Critical Damage +5%. M. Critical Damage +5%. Acquired XP +10%. Acquired SP +10%. Absorbs 5% of the inflicted damage as HP. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.bm_dragon_fruit" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="39273" level="1" /> <!-- Special Dragons Fruit -->
+		</skills>
+	</item>
+</list>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2119720" id="57" />
+		<!-- Zubei's Helmet -->
+		<production count="1" id="503" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2319200" id="57" />
+		<!-- Zubei's Breastplate -->
+		<production count="1" id="357" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2199540" id="57" />
+		<!-- Zubei's Gaiters -->
+		<production count="1" id="383" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2239400" id="57" />
+		<!-- Zubei's Leather Shirt -->
+		<production count="1" id="2384" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2149660" id="57" />
+		<!-- Zubei's Leather Gaiters -->
+		<production count="1" id="2388" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2410000" id="57" />
+		<!-- Tunic of Zubei -->
+		<production count="1" id="2397" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2995400" id="57" />
+		<!-- Stockings of Zubei -->
+		<production count="1" id="2402" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Zubei's Gauntlets -->
+		<production count="1" id="612" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Zubei's Boots -->
+		<production count="1" id="554" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2083800" id="57" />
+		<!-- Zubei's Shield -->
+		<production count="1" id="633" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2119720" id="57" />
+		<!-- Avadon Circlet -->
+		<production count="1" id="2415" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2319200" id="57" />
+		<!-- Avadon Breastplate -->
+		<production count="1" id="2376" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2199540" id="57" />
+		<!-- Avadon Gaiters -->
+		<production count="1" id="2379" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3389200" id="57" />
+		<!-- Avadon Leather Armor -->
+		<production count="1" id="2390" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3389200" id="57" />
+		<!-- Avadon Robe -->
+		<production count="1" id="2406" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Avadon Gloves -->
+		<production count="1" id="2464" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Avadon Boots -->
+		<production count="1" id="600" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2083800" id="57" />
+		<!-- Avadon Shield -->
+		<production count="1" id="673" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2119720" id="57" />
+		<!-- Sealed Blue Wolf Helmet -->
+		<production count="1" id="2416" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3220000" id="57" />
+		<!-- Blue Wolf Breastplate -->
+		<production count="1" id="358" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2099540" id="57" />
+		<!-- Blue Wolf Gaiters -->
+		<production count="1" id="2380" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3530000" id="57" />
+		<!-- Blue Wolf Leather Armor -->
+		<production count="1" id="2391" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2410000" id="57" />
+		<!-- Blue Wolf Tunic -->
+		<production count="1" id="2398" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2995400" id="57" />
+		<!-- Blue Wolf Stokings -->
+		<production count="1" id="2403" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Blue Wolf Gloves -->
+		<production count="1" id="2487" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2079820" id="57" />
+		<!-- Sealed Blue Wolf Boots -->
+		<production count="1" id="2439" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2197200" id="57" />
+		<!-- Sealed Doom Helmet -->
+		<production count="1" id="2417" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4710000" id="57" />
+		<!-- Doom Breastplate -->
+		<production count="1" id="2381" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2410000" id="57" />
+		<!-- Doom Tunic -->
+		<production count="1" id="2399" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3530000" id="57" />
+		<!-- Leather Armor of Doom -->
+		<production count="1" id="2392" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="1995400" id="57" />
+		<!-- Doom Stokings -->
+		<production count="1" id="2404" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2398200" id="57" />
+		<!-- Sealed Doom Gloves -->
+		<production count="1" id="2475" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="2398200" id="57" />
+		<!-- Sealed Doom Boots -->
+		<production count="1" id="601" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="845000" id="57" />
+		<!-- Doom Shield -->
+		<production count="1" id="110" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4336000" id="57" />
+		<!-- Sealed Dark Crystal Helmet -->
+		<production count="1" id="5289" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="6671000" id="57" />
+		<!-- Dark Crystal Breastplate -->
+		<production count="1" id="365" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="5226000" id="57" />
+		<!-- Dark Crystal Gaiters -->
+		<production count="1" id="388" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="6671000" id="57" />
+		<!-- Dark Crystal Leather Armor -->
+		<production count="1" id="2385" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4670000" id="57" />
+		<!-- Dark Crystal Leggings -->
+		<production count="1" id="2389" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10341000" id="57" />
+		<!-- Dark Crystal Robe -->
+		<production count="1" id="2407" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Dark Crystal Gloves -->
+		<production count="1" id="5290" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Dark Crystal Boots -->
+		<production count="1" id="5291" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="5035000" id="57" />
+		<!-- Dark Crystal Shield -->
+		<production count="1" id="641" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4336000" id="57" />
+		<!-- Sealed Tallum Helmet -->
+		<production count="1" id="5294" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8788000" id="57" />
+		<!-- Tallum Plate Armor -->
+		<production count="1" id="2382" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8341000" id="57" />
+		<!-- Tallum Leather Armor -->
+		<production count="1" id="2393" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8671000" id="57" />
+		<!-- Tallum Tunic -->
+		<production count="1" id="2400" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3670000" id="57" />
+		<!-- Tallum Stockings -->
+		<production count="1" id="2405" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Tallum Gloves -->
+		<production count="1" id="5295" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Tallum Boots -->
+		<production count="1" id="5296" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="3336000" id="57" />
+		<!-- Sealed Majestic Circlet -->
+		<production count="1" id="5317" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8804000" id="57" />
+		<!-- Majestic Plate Armor -->
+		<production count="1" id="2383" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8341000" id="57" />
+		<!-- Majestic Leather Armor -->
+		<production count="1" id="2395" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8341000" id="57" />
+		<!-- Majestic Robe -->
+		<production count="1" id="2409" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Majestic Gauntlets -->
+		<production count="1" id="5318" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Majestic Boots -->
+		<production count="1" id="5319" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4336000" id="57" />
+		<!-- Sealed Helm of Nightmare -->
+		<production count="1" id="5312" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8804000" id="57" />
+		<!-- Armor of Nightmare -->
+		<production count="1" id="374" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8341000" id="57" />
+		<!-- Leather Armor of Nightmare -->
+		<production count="1" id="2394" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="8341000" id="57" />
+		<!-- Robe of Nightmare -->
+		<production count="1" id="2408" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Gauntlets of Nightmare -->
+		<production count="1" id="5313" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4890000" id="57" />
+		<!-- Sealed Boots of Nightmare -->
+		<production count="1" id="5314" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="4935000" id="57" />
+		<!-- Nightmare Shield -->
+		<production count="1" id="2498" />
+	</item>
+</list>

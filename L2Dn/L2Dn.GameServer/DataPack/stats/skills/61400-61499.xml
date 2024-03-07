@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61400" toLevel="1" name="AoE Skill Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61401" toLevel="1" name="AoE Damage Resistance 10%">
+		<!-- AoE Damage Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61402" toLevel="1" name="AoE Damage Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61403" toLevel="1" name="AoE Damage Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61404" toLevel="1" name="AoE Damage Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61405" toLevel="1" name="AoE Damage Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61406" toLevel="1" name="AoE Damage Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61407" toLevel="1" name="AoE Damage Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61408" toLevel="1" name="AoE Damage Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61409" toLevel="1" name="AoE Damage Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61410" toLevel="1" name="AoE Damage Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61411" toLevel="1" name="P. Skill Damage Resistance 10%">
+		<!-- P. Skill Damage Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61412" toLevel="1" name="P. Skill Damage Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61413" toLevel="1" name="P. Skill Damage Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61414" toLevel="1" name="P. Skill Damage Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61415" toLevel="1" name="P. Skill Damage Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61416" toLevel="1" name="P. Skill Damage Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61417" toLevel="1" name="P. Skill Damage Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61418" toLevel="1" name="P. Skill Damage Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61419" toLevel="1" name="P. Skill Damage Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61420" toLevel="1" name="P. Skill Damage Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61421" toLevel="1" name="M. Skill Damage Resistance 10%">
+		<!-- M. Skill Damage Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61422" toLevel="1" name="M. Skill Damage Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61423" toLevel="1" name="M. Skill Damage Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61424" toLevel="1" name="M. Skill Damage Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61425" toLevel="1" name="M. Skill Damage Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61426" toLevel="1" name="M. Skill Damage Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61427" toLevel="1" name="M. Skill Damage Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61428" toLevel="1" name="M. Skill Damage Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61429" toLevel="1" name="M. Skill Damage Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61430" toLevel="1" name="M. Skill Damage Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61431" toLevel="1" name="Received AoE Skill Damage 10%">
+		<!-- Received AoE Skill Damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61432" toLevel="1" name="Received AoE Skill Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61433" toLevel="1" name="Received AoE Skill Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61434" toLevel="1" name="Received AoE Skill Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61435" toLevel="1" name="Received AoE Skill Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61436" toLevel="1" name="Received AoE Skill Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61437" toLevel="1" name="Received AoE Skill Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61438" toLevel="1" name="Received AoE Skill Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61439" toLevel="1" name="Received AoE Skill Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61440" toLevel="1" name="Received AoE Skill Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61441" toLevel="1" name="Soulshot Damage 10%">
+		<!-- Soulshot damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61442" toLevel="1" name="Soulshot Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61443" toLevel="1" name="Soulshot Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61444" toLevel="1" name="Soulshot Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61445" toLevel="1" name="Soulshot Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61446" toLevel="1" name="Soulshot Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61447" toLevel="1" name="Soulshot Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61448" toLevel="1" name="Soulshot Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61449" toLevel="1" name="Soulshot Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61450" toLevel="1" name="Soulshot Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61451" toLevel="1" name="Spiritshot Damage 10%">
+		<!-- Spiritshot damage 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61452" toLevel="1" name="Spiritshot Damage 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61453" toLevel="1" name="Spiritshot Damage 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61454" toLevel="1" name="Spiritshot Damage 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61455" toLevel="1" name="Spiritshot Damage 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61456" toLevel="1" name="Spiritshot Damage 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61457" toLevel="1" name="Spiritshot Damage 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61458" toLevel="1" name="Spiritshot Damage 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61459" toLevel="1" name="Spiritshot Damage 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61460" toLevel="1" name="Spiritshot Damage 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61461" toLevel="1" name="Soulshot Damage Resistance 10%">
+		<!-- Soulshot Damage Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61462" toLevel="1" name="Soulshot Damage Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61463" toLevel="1" name="Soulshot Damage Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61464" toLevel="1" name="Soulshot Damage Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-40</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61465" toLevel="1" name="Soulshot Damage Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61466" toLevel="1" name="Soulshot Damage Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-60</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61467" toLevel="1" name="Soulshot Damage Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-70</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61468" toLevel="1" name="Soulshot Damage Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-80</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61469" toLevel="1" name="Soulshot Damage Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-90</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61470" toLevel="1" name="Soulshot Damage Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>-99.9</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61471" toLevel="1" name="Spiritshot Damage Resistance 10%">
+		<!-- Spiritshot Damage Resistance 10% -->
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61472" toLevel="1" name="Spiritshot Damage Resistance 20%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61473" toLevel="1" name="Spiritshot Damage Resistance 30%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61474" toLevel="1" name="Spiritshot Damage Resistance 40%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-40</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61475" toLevel="1" name="Spiritshot Damage Resistance 50%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61476" toLevel="1" name="Spiritshot Damage Resistance 60%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-60</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61477" toLevel="1" name="Spiritshot Damage Resistance 70%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-70</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61478" toLevel="1" name="Spiritshot Damage Resistance 80%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-80</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61479" toLevel="1" name="Spiritshot Damage Resistance 90%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-90</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61480" toLevel="1" name="Spiritshot Damage Resistance 100%">
+		<icon>icon.skill3080</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>-99.9</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="61481" toLevel="1" name="dist_Buff Skill Activation">
+		<!-- When the distance between the caster and their target is more than 500:. Recovers 500 HP to the caster. The buff is removed. -->
+		<icon>icon.skill0528</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61482" toLevel="1" name="dist_Planned Skill Activation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61483" toLevel="10" name="Test Damage Reflection Resistance">
+		<!-- Damage Reflection Resistance +10% -->
+		<icon>icon.accessory_earring_of_antaras_i02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61484" toLevel="10" name="Test Damage Reflection">
+		<!-- Reflects 10% of the received damage. -->
+		<icon>icon.skill0086</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61485" toLevel="19" name="Magic Lamp Charge +10">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61486" toLevel="12" name="Magic Lamp Charge +0.1">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61487" toLevel="4" name="pk Shield - Common/ Purple/ Chaotic Level Not Important">
+		<!-- Protects from everything in PvP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61488" toLevel="2" name="Buff Thief - 30-sec.">
+		<!-- For 30 sec., decreases the buff thievery rate. -->
+		<icon>icon.skill1440</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61489" toLevel="1" name="Rare Item Challenge Point Effect Boost - 1 Charge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61490" toLevel="1" name="Rare Item Challenge Point Effect Boost - 2 Charges">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61491" toLevel="1" name="Rare Item Challenge Points' Enhanced Charge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61492" toLevel="1" name="Rare Item Challenge Points' Charge Protection">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61493" toLevel="1" name="Rare Item Challenge Points' Charge Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61494" toLevel="1" name="Rare Item Challenge Points' Charge Stabilization">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61495" toLevel="1" name="Scroll of Blessing">
+		<!-- Turns a weapon into a blessed one. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61496" toLevel="1" name="Test Dance fan_with_relation">
+		<icon>icon.dance_of_warrior_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61497" toLevel="1" name="Test Dance point_blank_with_relation">
+		<icon>icon.dance_of_fire_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61498" toLevel="1" name="Test Dance range_with_relation">
+		<icon>icon.dance_of_fury_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61499" toLevel="1" name="Test Dance square_with_relation">
+		<icon>icon.song_of_earth_02</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

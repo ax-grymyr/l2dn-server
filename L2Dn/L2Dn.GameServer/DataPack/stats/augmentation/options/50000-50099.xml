@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="50000" name="fire_dra_pd_lv_1_0">
+		<passive_skill id="35006" level="1" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50001" name="fire_dra_pd_lv_1_1">
+		<passive_skill id="35007" level="1" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50002" name="fire_dra_pd_lv_1_2">
+		<passive_skill id="35007" level="2" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50003" name="fire_dra_pd_lv_1_3">
+		<passive_skill id="35007" level="3" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50004" name="fire_dra_pd_lv_1_4">
+		<passive_skill id="35007" level="4" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50005" name="fire_dra_pd_lv_1_5">
+		<passive_skill id="35007" level="5" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50006" name="fire_dra_pd_lv_1_7">
+		<passive_skill id="35007" level="7" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50007" name="fire_dra_pd_lv_1_7">
+		<passive_skill id="35007" level="7" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50008" name="fire_dra_pd_lv_1_8">
+		<passive_skill id="35007" level="8" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50009" name="fire_dra_pd_lv_1_9">
+		<passive_skill id="35007" level="9" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50010" name="fire_dra_pd_lv_1_10">
+		<passive_skill id="35007" level="10" /> <!-- Fire Dragon Pendant -->
+	</option>
+	<option id="50011" name="fire_dra_pd_lv_1_11">
+		<active_skill id="35000" level="1" /> <!-- Fire Dragon Blessing -->
+	</option>
+	<option id="50012" name="fire_dra_pd_lv_1_11">
+		<active_skill id="35001" level="1" /> <!-- Fire Dragon Protection -->
+	</option>
+	<option id="50013" name="earth_dra_pd_lv_1_0">
+		<passive_skill id="35004" level="1" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50014" name="earth_dra_pd_lv_1_1">
+		<passive_skill id="35005" level="1" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50015" name="earth_dra_pd_lv_1_2">
+		<passive_skill id="35005" level="2" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50016" name="earth_dra_pd_lv_1_3">
+		<passive_skill id="35005" level="3" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50017" name="earth_dra_pd_lv_1_4">
+		<passive_skill id="35005" level="4" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50018" name="earth_dra_pd_lv_1_5">
+		<passive_skill id="35005" level="5" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50019" name="earth_dra_pd_lv_1_7">
+		<passive_skill id="35005" level="7" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50020" name="earth_dra_pd_lv_1_7">
+		<passive_skill id="35005" level="7" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50021" name="earth_dra_pd_lv_1_8">
+		<passive_skill id="35005" level="8" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50022" name="earth_dra_pd_lv_1_9">
+		<passive_skill id="35005" level="9" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50023" name="earth_dra_pd_lv_1_10">
+		<passive_skill id="35005" level="10" /> <!-- Earth Dragon Pendant -->
+	</option>
+	<option id="50024" name="earth_dra_pd_lv_1_11">
+		<active_skill id="35002" level="1" /> <!-- Earth Dragon Breath -->
+	</option>
+	<option id="50025" name="earth_dra_pd_lv_1_11">
+		<active_skill id="35003" level="1" /> <!-- Earth Dragon Breath / Defense -->
+	</option>
+</list>

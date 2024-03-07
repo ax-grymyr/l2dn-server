@@ -1,0 +1,1429 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="91400" name="Manuscript: Armor Break" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51242" level="1" /> <!-- Manuscript: Armor Break -->
+		</skills>
+	</item>
+	<item id="91401" name="Manuscript: Disarm" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51241" level="1" /> <!-- Manuscript: Disarm -->
+		</skills>
+	</item>
+	<item id="91402" name="Manuscript: Spell Break" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51243" level="1" /> <!-- Manuscript: Spell Break -->
+		</skills>
+	</item>
+	<item id="91403" name="Manuscript: Flash" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51245" level="1" /> <!-- Manuscript: Flash -->
+		</skills>
+	</item>
+	<item id="91404" name="Manuscript: Jump" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51244" level="1" /> <!-- Manuscript: Jump -->
+		</skills>
+	</item>
+	<item id="91405" name="Manuscript: Berserker Mode" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Arrows of Light. Outdated and no longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<skills>
+			<skill id="51246" level="1" /> <!-- Manuscript: Berserker Mode -->
+		</skills>
+	</item>
+	<item id="91406" name="Pass to Sepulcher" type="EtcItem">
+		<!-- A pass for entry into the Four Sepulchers of Emperors. Ask the Nameless Spirit at the entrance of the sepulchers for instructions. -->
+		<set name="icon" val="icon.etc_memopad_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91407" name="Elmoreden Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_elmoaden_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51255" level="1" /> <!-- Elmoreden Treasure Chest -->
+		</skills>
+	</item>
+	<item id="91408" name="Elmoreden King" type="EtcItem">
+		<!-- Can be exchanged for various items through the Game Assistant. -->
+		<set name="icon" val="icon.bm_elmoaden_token" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91409" name="Elmoreden Relic Pouch" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.card_event_luck_pocket" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="90520" min="5" max="5" chance="4.761905" /> <!-- Fire Dragon's Blessing Scroll -->
+			<item id="91028" min="3" max="3" chance="4.761905" /> <!-- High-grade Maliss' HP Recovery Potion -->
+			<item id="91408" min="30" max="30" chance="4.761905" /> <!-- Elmoreden King -->
+			<item id="91105" min="1" max="1" chance="4.761905" /> <!-- Improved Stone: Enchant B-grade Armor -->
+			<item id="91104" min="1" max="1" chance="4.761905" /> <!-- Improved Stone: Enchant A-grade Armor -->
+			<item id="90486" min="1" max="1" chance="4.761905" /> <!-- Stone: Enchant C-grade Armor -->
+			<item id="90487" min="1" max="1" chance="4.761905" /> <!-- Stone: Enchant D-grade Armor -->
+			<item id="49666" min="1" max="1" chance="4.761905" /> <!-- B-grade Accessory Pack -->
+			<item id="49665" min="1" max="1" chance="4.761905" /> <!-- B-grade Armor Pack -->
+			<item id="33814" min="1" max="1" chance="4.761905" /> <!-- Improved Scroll: Enchant B-grade Armor -->
+			<item id="49485" min="1" max="1" chance="4.761905" /> <!-- Stable Scroll: Enchant B-grade Armor -->
+			<item id="33815" min="1" max="1" chance="4.761905" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+			<item id="22224" min="1" max="1" chance="4.761905" /> <!-- Stable Scroll: Enchant A-grade Armor -->
+			<item id="49761" min="1" max="1" chance="4.761905" /> <!-- A-grade Accessory Pack -->
+			<item id="49760" min="1" max="1" chance="4.761905" /> <!-- A-grade Armor Pack -->
+			<item id="94398" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Ring of Core - Sealed -->
+			<item id="94393" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Orfen's Earring - Sealed -->
+			<item id="94408" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Zaken's Earring - Sealed -->
+			<item id="94388" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+			<item id="94403" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Baium's Ring - Sealed -->
+			<item id="94418" min="1" max="1" chance="4.761905" /> <!-- Package: +2 Antharas' Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="91410" name="Elmoreden's Golden Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_elmoaden_gold_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91059" min="1" max="1" chance="4.761905" /> <!-- Talisman of Authority Fragment -->
+			<item id="91249" min="1" max="1" chance="4.761905" /> <!-- Dragon Varnish -->
+			<item id="90358" min="1" max="1" chance="4.761905" /> <!-- Shining Ore -->
+			<item id="95793" min="1" max="1" chance="4.761905" /> <!-- Aden's Soul Crystal Lv. 11 - Weapon -->
+			<item id="95794" min="1" max="1" chance="4.761905" /> <!-- Aden's Soul Crystal Lv. 12 - Weapon -->
+			<item id="95795" min="1" max="1" chance="4.761905" /> <!-- Aden's Soul Crystal Lv. 13 - Weapon -->
+			<item id="91215" min="1" max="1" chance="4.761905" /> <!-- Shining Scroll: Enchant Sayha's Cloak -->
+			<item id="49486" min="1" max="1" chance="4.761905" /> <!-- Stable Scroll: Enchant B-grade Weapon -->
+			<item id="33808" min="1" max="1" chance="4.761905" /> <!-- Improved Scroll: Enchant B-grade Weapon -->
+			<item id="22223" min="1" max="1" chance="4.761905" /> <!-- Stable Scroll: Enchant A-grade Weapon -->
+			<item id="33809" min="1" max="1" chance="4.761905" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="49790" min="1" max="1" chance="4.761905" /> <!-- +16 C-grade Weapon Pack -->
+			<item id="49789" min="1" max="1" chance="4.761905" /> <!-- +8 B-grade Weapon Pack -->
+			<item id="91012" min="1" max="1" chance="4.761905" /> <!-- Top-grade A-grade Weapon Pack -->
+			<item id="91075" min="1" max="1" chance="4.761905" /> <!-- Radiant Talisman of Authority Lv. 5 -->
+			<item id="91248" min="1" max="1" chance="4.761905" /> <!-- Blessed Dragon Pendant -->
+			<item id="91455" min="1" max="1" chance="4.761905" /> <!-- +10 Black Sayha's Cloak Chest -->
+			<item id="91454" min="1" max="1" chance="4.761905" /> <!-- +10 White Sayha's Cloak Chest -->
+			<item id="91456" min="1" max="1" chance="4.761905" /> <!-- +10 Red Sayha's Cloak Chest -->
+			<item id="91216" min="1" max="1" chance="4.761905" /> <!-- +16 B-grade Weapon Pack -->
+			<item id="91153" min="1" max="1" chance="4.761905" /> <!-- +15 Top-grade A-grade Weapon Pack -->
+		</capsuled_items>
+	</item>
+	<item id="91411" name="Elmoreden's Silver Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_elmoaden_silver_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49845" min="1" max="1" chance="4.347826" /> <!-- Sayha's Blessing -->
+			<item id="49846" min="1" max="1" chance="4.347826" /> <!-- Sayha's Silver Light Blessing -->
+			<item id="49847" min="1" max="1" chance="4.347826" /> <!-- Sayha's Golden Light Blessing -->
+			<item id="49081" min="1" max="1" chance="4.347826" /> <!-- XP Growth Scroll -->
+			<item id="10649" min="1" max="1" chance="4.347826" /> <!-- Feather of Blessing -->
+			<item id="91027" min="1" max="1" chance="4.347826" /> <!-- Dragon's Miracle Potion -->
+			<item id="91114" min="1" max="1" chance="4.347826" /> <!-- Old Inventory Expansion Coupon Lv. 2 -->
+			<item id="91113" min="1" max="1" chance="4.347826" /> <!-- Old Inventory Expansion Coupon Lv. 1 -->
+			<item id="90172" min="1" max="1" chance="4.347826" /> <!-- Gemstone of Border -->
+			<item id="49704" min="1" max="1" chance="4.347826" /> <!-- Talisman of Border Fragment -->
+			<item id="947" min="1" max="1" chance="4.347826" /> <!-- Scroll: Enchant B-grade Weapon -->
+			<item id="729" min="1" max="1" chance="4.347826" /> <!-- Scroll: Enchant A-grade Weapon -->
+			<item id="91250" min="1" max="1" chance="4.347826" /> <!-- Radiant Dragon Varnish -->
+			<item id="90138" min="1" max="1" chance="4.347826" /> <!-- Glittering Pendant Polish -->
+			<item id="91124" min="1" max="1" chance="4.347826" /> <!-- Radiant Spirit's Varnish -->
+			<item id="91214" min="1" max="1" chance="4.347826" /> <!-- Radiant Scroll: Enchant Sayha's Cloak -->
+			<item id="90497" min="1" max="1" chance="4.347826" /> <!-- Fire Dragon Belt -->
+			<item id="90496" min="1" max="1" chance="4.347826" /> <!-- Earth Dragon Belt -->
+			<item id="91148" min="1" max="1" chance="4.347826" /> <!-- Jewel Box Lv. 5 -->
+			<item id="91123" min="1" max="1" chance="4.347826" /> <!-- Petram's Necklace -->
+			<item id="91119" min="1" max="1" chance="4.347826" /> <!-- Ignis' Necklace -->
+			<item id="91121" min="1" max="1" chance="4.347826" /> <!-- Procella's Necklace -->
+			<item id="91117" min="1" max="1" chance="4.347826" /> <!-- Nebula's Necklace -->
+		</capsuled_items>
+	</item>
+	<item id="91412" name="Elmoreden XP Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- XP +500,000. Take 8 Elmoreden XP Scrolls and 2 Elmoreden Coins to the Game Assistant to exchange them for High Quality Elmoreden XP Scroll. -->
+		<set name="icon" val="icon.bm_elmoaden_exp_scrl" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91413" name="High Quality Elmoreden XP Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- XP +20,000,000. -->
+		<set name="icon" val="icon.bm_elmoaden_exp_scrl" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91414" name="+5 Dragon Pendant Lv. 2" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. M. Def. +25, received damage -15%, Atk. Spd./ Casting Spd. +3%, P. Critical Damage/ M. Skill Critical Damage +5%, acquired XP/ SP +20%. -->
+		<set name="icon" val="icon.bm_pendant_dragon_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">57</stat>
+		</stats>
+	</item>
+	<item id="91415" name="Bracelet of Authority" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Unlocks 5 talisman slots. HP/ MP Recovery Rate +15%, P. Accuracy +2, M. Accuracy +2, Weight Limit +10,000. -->
+		<set name="icon" val="icon.ertheia_bracelet_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91416" name="Talisman of Border Lv. 8" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. P./ M. Def. +34, P./ M. Evasion +2, Max HP/ MP/ CP +200, Speed +7, Atk. Spd./ Casting Spd. +15, acquired XP/ SP +5%. Enables Dimensional Border Power Lv. 2 (with a certain chance increases attack power). Enables Border Purification (removes Paralysis, Petrification, Poison, and Bleed). -->
+		<set name="icon" val="icon.bm_magic_square_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="bodypart" val="deco1" />
+	</item>
+	<item id="91417" name="Brooch Lv. 4" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, unlocks 5 jewel slots. Inventory slots +12. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91418" name="Ruby Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Soulshot/ Blessed Soulshot/ Beast Soulshot damage +16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91419" name="Sapphire Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91420" name="Diamond Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. P. Def. +130, Received P. Critical Damage -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91421" name="Pearl Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, M. Def. +74, received M. Skill Critical Damage -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_pearl_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91422" name="Queen Ant Doll Lv. 3" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 3>. P. Atk. +12%. P. Critical Damage +10%. P. Skill Critical Damage +10%. Max HP + 15%. Boosts stats when in inventory. <font color=bbaa88><Compound></font>. Materials: Queen Ant Doll Lv. 3. In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39303" level="3" /> <!-- Queen Ant Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="91423" name="Baium Doll Lv. 3" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 3>. Skill Cooldown -4%. P. Def. +15%. M. Def. +15%. Silence Resistance +45%. Fear Resistance +45%. Paralysis Resistance +25%. Knockback Resistance +25%. Pull Resistance +25%. Boosts stats when in inventory. <font color=bbaa88><Compound></font>. Materials: Baium Doll Lv. 3. In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39302" level="3" /> <!-- Baium Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="91424" name="Orfen Doll Lv. 3" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 3>. M. Atk. +15%. M. Skill Critical Damage +10%. Max MP +15%. Boosts stats when in inventory. <font color=bbaa88><Compound></font>. Materials: Orfen Doll Lv. 3. In case of failure, the doll's level remains the same, but materials disappear. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39304" level="3" /> <!-- Orfen Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="91425" name="Greater Vital Stone Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +30%, acquired XP while hunting in the attribute zones +50%, Sayha's Grace Consumption -35%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55472" level="10" /> <!-- Greater Vital Stone -->
+		</skills>
+	</item>
+	<item id="91426" name="Greater Aquamarine Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Max MP +20%, with a certain chance MP +200 when using skills. Recovers 10% MP when using basic skills. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55507" level="10" /> <!-- Greater Aquamarine -->
+		</skills>
+	</item>
+	<item id="91427" name="Greater Diamond Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, P. Def. +400, received P. Critical Damage -20%, received P. Critical Rate -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55475" level="10" /> <!-- Greater Diamond -->
+		</skills>
+	</item>
+	<item id="91428" name="Greater Pearl Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. M. Def. +250, Received M. Skill Critical Damage -20%, Received M. Skill Critical Rate -10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55476" level="10" /> <!-- Greater Pearl -->
+		</skills>
+	</item>
+	<item id="91429" name="Greater Topaz Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Disrupts the target's skill casting. Inflicts 6000 PvP damage. Activates a special ability that removes up to 3 debuffs. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55471" level="10" /> <!-- Greater Topaz -->
+		</skills>
+	</item>
+	<item id="91430" name="Greater Garnet Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +40%, Sleep/ Poison Resistance +10%. Grants immunity to debuffs for 25 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55485" level="10" /> <!-- Greater Garnet -->
+		</skills>
+	</item>
+	<item id="91431" name="Greater Ruby Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Soulshot/ Blessed Soulshot/ Beast Soulshot damage +20%, P. Atk. +7%, P. Critical Rate +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55477" level="10" /> <!-- Greater Ruby -->
+		</skills>
+	</item>
+	<item id="91432" name="Greater Sapphire Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Spiritshot, Blessed Spiritshot and Beast Spiritshot Damage +20%, M. Atk. +14%, M. Critical Rate +10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55481" level="10" /> <!-- Greater Sapphire -->
+		</skills>
+	</item>
+	<item id="91433" name="Greater Jade Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Atk. Spd./ Casting Spd. +20%, Speed +7%, Melee Weapon Resistance +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="55474" level="10" /> <!-- Greater Jade -->
+		</skills>
+	</item>
+	<item id="91434" name="Greater Cat's Eye Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. When equipped, P. Critical Damage/ M. Skill Critical Damage +20%, P./ M. Skill Power +7%, Buff Cancel Resistance +40%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="27440" level="10" /> <!-- Greater Cat's Eye -->
+		</skills>
+	</item>
+	<item id="91435" name="Greater Emerald Lv. 5" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. CON/ MEN/ DEX/ WIT/ STR/ INT +2, Damage Reflection Resistance +20%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="51237" level="10" /> <!-- Greater Emerald -->
+		</skills>
+	</item>
+	<item id="91436" name="Blessed Dragon Pendant" additionalName="30-day" type="Armor">
+		<!-- Available for 30 days. Contains the blessed dragon's energy. M. Def. +50, Acquired XP/ SP +30%, Atk./ Casting Spd. +10%, P. Critical Damage/ M. Skill Critical Damage +15%, P./ M. Atk. +20%, Damage Reflection Resistance +20%, Received Damage -30%. Activates the Dragon Meditation effect. Cannot be enchanted. -->
+		<set name="icon" val="icon.bm_pendant_dragon_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pDef">75</stat>
+		</stats>
+		<skills>
+			<skill id="45044" level="1" /> <!-- Blessed Dragon Pendant Lv1 -->
+		</skills>
+	</item>
+	<item id="91437" name="+10 White Sayha's Cloak" additionalName="30-day" type="Armor">
+		<!-- Available for 30 d. Max HP/ MP +15%, acquired XP/ SP +10%, P./ M. Critical Damage +15%, P. Def. +10%, M. Def. +6%, received P. Critical Damage/ received M. Skill Critical Damage -10%. -->
+		<set name="icon" val="icon.sayha2017_back_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="91438" name="Shining Golden Bait Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90182" min="1080" max="1080" chance="100" /> <!-- Shining Golden Bait -->
+		</capsuled_items>
+	</item>
+	<item id="91439" name="Greater Vital Stone Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_vital_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91425" min="1" max="1" chance="100" /> <!-- Greater Vital Stone Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91440" name="Greater Aquamarine Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_aquamarine_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91426" min="1" max="1" chance="100" /> <!-- Greater Aquamarine Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91441" name="Greater Diamond Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91427" min="1" max="1" chance="100" /> <!-- Greater Diamond Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91442" name="Greater Pearl Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91428" min="1" max="1" chance="100" /> <!-- Greater Pearl Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91443" name="Greater Topaz Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91429" min="1" max="1" chance="100" /> <!-- Greater Topaz Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91444" name="Greater Garnet Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_garnet_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91430" min="1" max="1" chance="100" /> <!-- Greater Garnet Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91445" name="Greater Ruby Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91431" min="1" max="1" chance="100" /> <!-- Greater Ruby Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91446" name="Greater Sapphire Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91432" min="1" max="1" chance="100" /> <!-- Greater Sapphire Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91447" name="Greater Jade Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_jade_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91433" min="1" max="1" chance="100" /> <!-- Greater Jade Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91448" name="Greater Cat's Eye Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_jewelbox_red_catseye_lavianrose" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91434" min="1" max="1" chance="100" /> <!-- Greater Cat's Eye Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91449" name="Greater Emerald Jewelry Box Lv. 5" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91435" min="1" max="1" chance="100" /> <!-- Greater Emerald Lv. 5 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91450" name="Zaken's Earring Box Lv. 3" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earthworm_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90820" min="1" max="1" chance="100" /> <!-- Zaken's Earring Lv. 3 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91451" name="Baium's Ring Box Lv. 3" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90950" min="1" max="1" chance="100" /> <!-- Baium's Ring Lv. 3 - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91452" name="Blessed Dragon Pendant Box" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_box_belief_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91436" min="1" max="1" chance="100" /> <!-- Blessed Dragon Pendant - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91453" name="+10 Sayha's Cloak Chest" additionalName="30-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91437" min="1" max="1" chance="100" /> <!-- +10 White Sayha's Cloak - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="91454" name="+10 White Sayha's Cloak Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51259" level="1" /> <!-- +10 White Sayha's Cloak Chest -->
+		</skills>
+	</item>
+	<item id="91455" name="+10 Black Sayha's Cloak Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51260" level="1" /> <!-- +10 Black Sayha's Cloak Chest -->
+		</skills>
+	</item>
+	<item id="91456" name="+10 Red Sayha's Cloak Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i03" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51261" level="1" /> <!-- +10 Red Sayha's Cloak Chest -->
+		</skills>
+	</item>
+	<item id="91457" name="Victory Balls Basket" additionalName="Sealed" type="EtcItem">
+		<!-- A basket with balls that bring victory. For 5 min., P. Atk. +15%, M. Atk. +23%, P./ M. Def. +15%, Atk. Spd./ Casting Spd. +15%, HP/ MP Recovery Rate +30%. -->
+		<set name="icon" val="BranchSys2.icon.br_soccer_ball_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51262" level="1" /> <!-- Victory Balls Basket -->
+		</skills>
+	</item>
+	<item id="91458" name="Red Mask of Victory" additionalName="Sealed" type="Armor">
+		<!-- Mask of Spirits that brings victory. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_worldcup_mask_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91459" name="Mark of Cheers" additionalName="Sealed" type="Armor">
+		<!-- A special fan mark that brings victory. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="BranchSys2.icon.br_worldcup_face_deco_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91460" name="Soccer Ball Afro Hair - Red" additionalName="Sealed" type="Armor">
+		<!-- An afro wig dyed like a red soccer ball. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="BranchSys2.icon.br_worldcup_hair_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91461" name="Balloon Stick of Cheers - Red" additionalName="Sealed" type="Weapon">
+		<!-- A stick of cheers that is used to support your favourite team. -->
+		<set name="icon" val="BranchSys2.icon.br_worldcup_stick_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="rhand" />
+		<set name="is_magic_weapon" val="true" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">1</stat>
+		</stats>
+	</item>
+	<item id="91462" name="Weapon Enhancement Stone" type="EtcItem">
+		<!-- Take it to Weapon Merchant Galladucci in Giran to exchange for Scroll: Enchant Weapon (D/ C/ B/ A-grade). -->
+		<set name="icon" val="icon.r95_soul_stone_i00" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91463" name="Armor Enhancement Stone" type="EtcItem">
+		<!-- Take it to Weapon Merchant Galladucci in Giran to exchange for Scroll: Enchant Armor (D/ C/ B/ A-grade). -->
+		<set name="icon" val="icon.r95_soul_stone_i02" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91464" name="High-grade Stable Scroll: Enchant D-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For items enchanted from +7 to +15.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51263" level="1" />
+		</skills>
+	</item>
+	<item id="91465" name="High-grade Stable Scroll: Enchant D-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For armor and accessories enchanted from +6 to +9</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51264" level="1" />
+		</skills>
+	</item>
+	<item id="91466" name="High-grade Stable Scroll: Enchant C-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For items enchanted from +7 to +15.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_c" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51265" level="1" />
+		</skills>
+	</item>
+	<item id="91467" name="High-grade Stable Scroll: Enchant C-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For armor and accessories enchanted from +6 to +9</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_c" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51266" level="1" />
+		</skills>
+	</item>
+	<item id="91468" name="High-grade Stable Scroll: Enchant B-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For items enchanted from +7 to +15.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_b" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51267" level="1" />
+		</skills>
+	</item>
+	<item id="91469" name="High-grade Stable Scroll: Enchant B-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For armor and accessories enchanted from +6 to +9</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_b" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51268" level="1" />
+		</skills>
+	</item>
+	<item id="91470" name="High-grade Stable Scroll: Enchant A-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +10, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +12, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +30, M. Atk. +18. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +36, M. Atk. +18. Bow, firearms: P. Atk. +48, M. Atk. +18. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For items enchanted from +7 to +15.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_a" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51269" level="1" />
+		</skills>
+	</item>
+	<item id="91471" name="High-grade Stable Scroll: Enchant A-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +4. Accessories: M. Def. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +9. Accessories: M. Def. +7. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. For armor and accessories enchanted from +6 to +9</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_a" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51270" level="1" />
+		</skills>
+	</item>
+	<item id="91472" name="+5 Sealed Agathion Virgo" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_virgo_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48048" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Virgo -->
+		</capsuled_items>
+	</item>
+	<item id="91473" name="+5 Sealed Agathion Capricorn" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_capr_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48049" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Capricorn -->
+		</capsuled_items>
+	</item>
+	<item id="91474" name="+5 Sealed Agathion Libra" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_lib_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48050" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Libra -->
+		</capsuled_items>
+	</item>
+	<item id="91475" name="+5 Sealed Agathion Taurus" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_tau_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48052" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Taurus -->
+		</capsuled_items>
+	</item>
+	<item id="91476" name="+5 Sealed Agathion Leo" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_leo_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48053" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Leo -->
+		</capsuled_items>
+	</item>
+	<item id="91477" name="+5 Sealed Agathion Gemini" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_gem_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48054" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Gemini -->
+		</capsuled_items>
+	</item>
+	<item id="91478" name="+5 Sealed Agathion Scorpio" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_sco_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48055" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Scorpio -->
+		</capsuled_items>
+	</item>
+	<item id="91479" name="+5 Sealed Agathion Aquarius" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_aqu_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48056" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Aquarius -->
+		</capsuled_items>
+	</item>
+	<item id="91480" name="+5 Sealed Agathion Sagittarius" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_sag_star_1" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="48058" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Sagittarius -->
+		</capsuled_items>
+	</item>
+	<item id="91481" name="Soul Crystal" additionalName="Sealed" type="EtcItem">
+		<!-- A crystal filled with the soul power of mighty warriors. Take it to Magic Books Trader Lorenzo in Aden to learn certification skills. -->
+		<set name="icon" val="icon.bm_dragon_shirt_upgrade_1" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="91482" name="Scroll: Detect Darkness" type="EtcItem">
+		<!-- A scroll for learning the Detect Darkness skill. <Classes>. Sagittarius, Moonlight Sentinel, Ghost Sentinel, Trickster. <Skill effect>. Allows to find invisible enemies nearby character. Target can't become invisible and cancel this effect for 2 sec. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="76" />
+		</cond>
+	</item>
+	<item id="91483" name="Scroll: Bind" type="EtcItem">
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="76" />
+		</cond>
+	</item>
+	<item id="91484" name="Scroll: Mass Chain Strike" type="EtcItem">
+		<!-- A scroll for learning the Mass Chain Strike skill. <Classes>. Phoenix Knight, Hell Knight, Eva's Templar, Shillien Templar. <Skill effect>. Pulls a selected target and nearby enemies to you and provokes them to attack. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="78" />
+		</cond>
+	</item>
+	<item id="91485" name="Scroll: Critical Vulnerability Decrease" type="EtcItem">
+		<!-- A scroll for learning the Critical Vulnerability Decrease skill. <Classes>. Phoenix Knight, Hell Knight, Eva's Templar, Shillien Templar. <Skill effect>. Decreases received Vital Point Atk. Rate and received P. Critical Rate. -->
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="76" />
+		</cond>
+	</item>
+	<item id="91486" name="Scroll: Full Swing" type="EtcItem">
+		<!-- A scroll for learning the Full Swing skill. <Class>. Titan. <Skill effect>. Widely swings a two-handed weapon to attack nearby enemies. <font color=ff6666>Note!</font>. The skill will be removed after learning a more powerful skill:. - Titanic Sweep -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="76" />
+		</cond>
+	</item>
+	<item id="91487" name="Scroll: Seal of Blockade" type="EtcItem">
+		<!-- A scroll for learning the Seal of Blockade skill. <Class>. Dominator. <Skill effect>. Blocks basic attacks of the target and nearby enemies in PvP. -->
+		<set name="icon" val="icon.etc_magic_book_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="113" addName="1">
+			<player level="79" />
+		</cond>
+	</item>
+	<item id="91488" name="Blessed S-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="1" />
+		<set name="price" val="300" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91489" name="Recipe: Blessed S-grade Soulshot (100%)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For Dwarves only. Recipe for Blessed S-grade Soulshots. Not used. Take it to Cat Guild's trader to get some adena. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="450000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="4004" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="91490" name="Mysterious S-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91491" name="Mysterious Blessed S-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91492" name="Mysterious S-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91493" name="Mysterious Blessed S-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with S-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91494" name="Scroll: Critical Creation Lv. 3" type="EtcItem">
+		<!-- A scroll for learning the Critical Creation Lv. 3 skill. <Class>. Maestro. <Skill effect>. Increases craft critical success rate. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91495" name="Scroll: Master of Creation Lv. 2" type="EtcItem">
+		<!-- A scroll for learning the Master of Creation Lv. 2 skill. <Class>. Maestro. <Skill effect>. Increases craft success rate. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91496" name="Scroll: Master of Creation Lv. 3" type="EtcItem">
+		<!-- A scroll for learning the Master of Creation Lv. 3 skill. <Class>. Maestro. <Skill effect>. Increases craft success rate. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="91497" name="S-grade Dual Sword Crafting Stamp" type="EtcItem">
+		<!-- Take this item together with some amount of Adena to Blacksmith Wilbert in Aden and there will be a chance that he will make S-grade dual swords. -->
+		<set name="icon" val="icon.etc_letter_white_i00" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="20" />
+		<set name="price" val="1000000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="91498" name="Tallum Blade and Dark Legion's Edge Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="80" min="1" max="1" chance="100" /> <!-- Tallum Blade -->
+		</capsuled_items>
+	</item>
+	<item id="91499" name="Forgotten Blade Crafting Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="6881" min="1" max="1" chance="100" /> <!-- Recipe: Forgotten Blade (30%) -->
+			<item id="92863" min="25" max="25" chance="100" /> <!-- Forgotten Blade Edge -->
+		</capsuled_items>
+	</item>
+</list>

@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="2700" name="Dieter's Key" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A key to the chest where Dieter has hidden the Scriptures of Knowledge. Take it to Astrologer Creta in Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2701" name="Creta's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Creta's letter describing the theft of the Scriptures of Knowledge. Take it to Magister Dieter in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2702" name="Dieter's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Magister Dieter to Armor Merchant Edroc in the Weapon Store of Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2703" name="Dieter's Diary" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Magister Dieter's diary. It may contain useful information for recovering the Scriptures of Knowledge. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2704" name="Raut's Envelope" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An empty envelope addressed to Warehouse Keeper Raut from Gludin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2705" name="Triff's Ring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A ring given by Drunkard Triff. Show it to those whom Triff has entrusted with the Scriptures of Knowledge. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2706" name="Scriptures of Knowledge - Chapter 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The first part of the Scriptures of Knowledge. Collect all four chapters. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2707" name="Scriptures of Knowledge - Chapter 2" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The second part of the Scriptures of Knowledge. Collect all four chapters. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2708" name="Scriptures of Knowledge - Chapter 3" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The third book of the Scriptures of Knowledge. Collect all four chapters. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2709" name="Scriptures of Knowledge - Chapter 4" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The fourth book of the Scriptures of Knowledge. Collect all four chapters. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2710" name="Valkon's Request" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A request of Warehouse Keeper Valkon from Giran. He asks you to bring back Crystal of Purity. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2711" name="Poitan's Notes" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blacksmith Poitan's accounting books. Take them to Elder Casian in the Wasteland. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2712" name="Scriptures of Knowledge" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The scripture of Elder Cronos. It is said to contain a vast knowledge of the past. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2713" name="Strong Liquor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. As the name indicates, it is strong liquor. Take it to Drunkard Triff in the harbor. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2714" name="Crystal of Purity" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An object that Warehouse Keeper Valkon in Giran has agreed to trade for the second chapter of the Scriptures of Knowledge. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2715" name="Casian's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. '10 Ghoul's Skins (Execution Grounds), 12 samples of Medusa's Blood (Gorgon Flower Garden), 5 samples of Fettered Soul Fluids (Death Pass), and 5 Reinforced Gargoyle's Nails (Ivory Tower Crater).' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2716" name="Ghoul's Skin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Skin of a Lesser Ghoul from the Execution Grounds. Collect 10 of these and take them to Elder Casian. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2717" name="Medusa's Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blood of Medusa from the Gorgon Flower Garden. Collect 12 samples and take them to Elder Casian. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2718" name="Fettered Soul Fluids" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ichor of Fettered Soul from Death Pass. Collect 5 samples and take them to Elder Casian. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2719" name="Reinforced Gargoyle's Nail" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A nail of a Gargoyle from Ivory Tower Crater. Collect 5 of these and take them to Elder Casian. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2720" name="Mark of Cronos" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark of Cronos, the most powerful wizard of the continent. Take it to Magister Mirien in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2721" name="Mark of Pilgrim" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark given to those who have passed the Trial of the Pilgrim. Required for changing your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2722" name="Book of Sage" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A book received from Elder Casian. Take it to Hermit Santiago in Orc Barracks. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2723" name="Mark of Trial" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark given by Hermit Santiago in Orc Barracks. Show it to Seer Tanapi in the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2724" name="Flame Spirit" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The proof that you have an understanding of the Fire Spirit. To get the next test, take it to Gauri Twinklerock in the Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2725" name="Essence of Flame" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A jewel obtained from Lava Salamander. Take it to Ancestor Martankus. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2726" name="Book of Gerald" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A book given by Priest Gerald. Looks very cheap. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2727" name="Grey Badge" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A badge given by Wanderer Dorf. Take it to Priest Primos in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2728" name="Picture of Nahir" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A picture of Nahir, a monster who lurks in the depths of the Elven Ruins on Talking Island. Find and kill him. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2729" name="Hair of Nahir" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Nahir's hair. Take it to Priest Foster on Talking Island. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2730" name="Einhasad's Statue" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Einhasad's statue obtained from Priest Foster. Take it to Andellia who lives near the Mother Tree in the Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2731" name="Book of Darkness" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A book given by Uruha. Written in blood. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2732" name="Debris of Willow" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Debris obtained from Black Willow. Take it to Uruha in the Neutral Zone. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2733" name="Tag of Rumor" type="EtcItem">
+		<!-- This contains rumors regarding Wanderer Dorf and Priest Gerald. -->
+		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2734" name="Mark of Trust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark given to those who have passed the Testimony of Trust. Required for changing your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2735" name="Letter to Elves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter requesting the trust of the Elves. Take it to Hierarch Asterios in the Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2736" name="Letter to Dark Elves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter requesting the trust of the Dark Elves. Take it to Great Hierarch Thifiell in the Dark Elf Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2737" name="Letter to Dwarves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter requesting the trust of the Dwarves. Take it to Lockirin at the Hall of Elders in the Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2738" name="Letter to Orcs" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter requesting the trust of the Orcs. Take it to Pa'agrio Lord Kakai in the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2739" name="Hollint's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from High Priest Hollint. Take it to Cardinal Seresin in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2740" name="Letter from Dark Elves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A scroll from Great Hierarch Thifiell. Take it, along with Letter from Elves, to High Priest Hollint in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2741" name="Letter from Elves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A scroll from Hierarch Asterios. Take it, along with Letter from Dark Elves, to High Priest Hollint in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2742" name="Letter from Dwarves" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A scroll from Lockirin of the Iron Gate Guild. Take it, along with Letter from Orcs, to Cardinal Seresin in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2743" name="Letter from Orcs" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A scroll from Pa'agrio Lord Kakai. Take it, along with Letter from Dwarves, to Cardinal Seresin in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2744" name="Hollint's Recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter for High Priest Biotin in the Temple of Einhasad on Talking Island. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2745" name="Order of Asterios" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Slay Luelle of the Zephyr Winds and Actea of the Verdant Wilds and bring back proof of their deaths. Luelle of the Zephyr Winds can be found to the south of the Elven Forest when hunting Lirein and Lirein Turen. Actea of the Verdant Wilds can be found to the south of the Elven Forest when hunting Dryad and Dryad Elder.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2746" name="Breath of Winds" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtained from the body of Luelle of the Zephyr Winds. Take it, along with Seed of Verdure, to Hierarch Asterios in the Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2747" name="Seed of Verdure" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtained from the body of Actea of the Verdant Wilds. Take it, along with Breath of Winds, to Hierarch Asterios in the Elven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2748" name="Thifiell's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Take it to Magister Clayton of the Dark Elf Guild in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2749" name="Guardian Basilisk Blood" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Blood taken from Guardian Basilisk in the Death Pass. Collect 5 samples to get Basilisk Plasma. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2750" name="Giant Aphid" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtained from killing Ant Soldiers in the Ant Nest. Collect 5 of these to get Honey Dew. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2751" name="Stakatos Fluids" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtained from killing Marsh Stakatos in Cruma Marshlands. Collect 5 of these to get Stakato Ichor. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2752" name="Basilisk Plasma" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Take it, along with Honey Dew and Stakato Ichor, to Magister Clayton of the Dark Elf Guild in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2753" name="Honey Dew" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Take it, along with Basilisk Plasma and Stakato Ichor, to Magister Clayton of the Dark Elf Guild in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2754" name="Stakato Ichor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Take it, along with Honey Dew and Basilisk Plasma, to Magister Clayton of the Dark Elf Guild in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2755" name="Order of Clayton" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Obtain Basilisk Plasma from Guardian Basilisks in the Death Pass, Stakato Ichor from Marsh Stakatos in Cruma Marshlands, Honey Dew from Ant Soldiers in the Ant Nest, and take them to Magister Clayton of the Dark Elf Guild in Dion.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2756" name="Parasite of Lota" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtained from killing Windsus. Collect 10 of these and take them to Priest Manakia of the Orc Guild in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2757" name="Kakai's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Pa'agrio Lord Kakai. Take it to Priest Manakia of the Orc Guild in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2758" name="Manakia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Priest Manakia of the Orc Guild in Giran. Take it to Pa'agrio Lord Kakai. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2759" name="Letter to Nikola" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Lockirin of the Iron Gate Guild. Take it to Maestro Nikola at Cruma Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2760" name="Order of Nikola" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Slay Porta in Cruma Tower, obtain Heartstone of Porta and take it to Maestro Nikola at Cruma Tower.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2761" name="Heartstone of Porta" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A heartstone from Porta. Take it to Maestro Nikola at Cruma Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2762" name="Mark of Duelist" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The mark given to those who have passed the Trial of the Duelist. Required for changing your class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2763" name="Order from Gludio" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Kill at least 10 Punchers in the Wasteland of Gludio and 10 Noble Ant Captains in the Ant Nest.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2764" name="Order from Dion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Kill at least 10 Marsh Stakato Drones in Cruma Marshlands of Dion and 10 Corpse Trackers in the Execution Grounds.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2765" name="Order from Giran" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Kill at least 10 Breka Orc Prefects in Breka's Stronghold of Dion and 10 Fettered Souls in the Death Pass.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2766" name="Order from Oren" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Kill at least 10 Leto Lizardman Overlords in the Plains of the Lizardmen in Oren and 10 Reinforced Monster Eyes in the Ivory Tower Crater. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2767" name="Order from Aden" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 'Kill 10 Tamlin Orcs and 10 Tamlin Orc Archers in Timak Outpost in the Aden Territory.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2768" name="Puncher's Shard" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A shard of the broken Puncher. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2769" name="Noble Ant's Feeler" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Noble Ant's feeler. Collect 10 of these and take the to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2770" name="Drone's Chitin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A chitin of Marsh Stakato Drone. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2771" name="Corpse Tracker Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A fang of Corpse Tracker. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2772" name="Prefect's Necklace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Breka Orc Prefect's necklace. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2773" name="Fettered Soul's Chain" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A chain that hangs on Fettered Soul's neck. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2774" name="Chief's Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Collect 10 Amulets of Leto Lizardman Overlords in the Plains of the Lizardmen and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2775" name="Reinforced Monster Eye Meat" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Reinforced Monster Eye's meat. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2776" name="Tamlin Orc's Ring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Tamlin Orc's ring. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2777" name="Tamlin Orc's Arrow" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An arrow used by Tamlin Orcs. Collect 10 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2778" name="Final Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Defeat Excuro and Krator at Cruma Tower, Grandis near Giran, Timak Orc Prefect near Oren, and Lakin near Aden. Do it 3 times. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2779" name="Excuro's Skin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Excuro's skin. Collect 3 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2780" name="Krator's Shard" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Krator's shard. Collect 3 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2781" name="Grandis' Skin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Grandis' skin. Collect 3 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2782" name="Timak Orc's Belt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Timak Orc's belt. Collect 3 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2783" name="Lakin's Mace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Lakin's mace. Collect 3 of these and take them to Duelist Kaien of the Warrior Guild in Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2784" name="Luther's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter given by Master Luther. Take it to Alex in Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2785" name="Alex's Warrant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A warrant written by Alex. Take it to Leirynn who can be found near the fishing spot of Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2786" name="Leirynn's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An order given by Leirynn. 'Slay 10 Delu Lizardman Shamans in the outskirts of Floran Village and bring back their tokens.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2787" name="Delu Totem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A totem of Delu Lizardman Shamans. Take it, along with other totems, to Leirynn who can be found near the fishing spot of Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2788" name="Leirynn's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An order given by Leirynn. 'Slay Delu Chief Kalkis at the west of Floran Village and bring back proof.' -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2789" name="Chief Kalkis' Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A proof that Kalkis has been slain. Take it to Leirynn who can be found near the fishing spot of Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2790" name="Leirynn's Report" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A report issued by Militiaman Leirynn. Take it to Captain Alex in Floran Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2791" name="Strange Map" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A strange map obtained from Delu Chief Kalkis. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2792" name="Lambert's Map" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A map with the name of Lambert, the former guard of Duke Ashton, written on it. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2793" name="Alex's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter written by Captain Alex. Take it to Drunkard Borys in Gludio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2794" name="Alex's Warrant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Captain Alex's order to find and recover Duke Ashton's lost gold. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2795" name="Wine Catalog" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A list of premium wines published by the Giran Traders' Guild. Show it to Grocer Tyra who can be found in the outskirts of the Spider Nest to the west from Dark Elven Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2796" name="Tyra's Contract" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A contract written by Grocer Tyra. It states that she will trade a bottle of Malrukian Wine for 10 pouches of Red Spore Dust. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2797" name="Red Spore Dust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Red spore dust obtained by slaying Giant Fungus. Collect 10 of these and take them to Grocer Tyra who can be found in the outskirts of the Spider Nest to the west from Dark Elven Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2798" name="Malrukian Wine" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Premium wine crafted following the recipes of the Maluk tribe. Take it to Drunkard Borys near the blacksmith' shop in Gludio. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="2799" name="Old Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An old order received from Drunkard Borys. Take it to Escort Jax at the south of the Wasteland. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

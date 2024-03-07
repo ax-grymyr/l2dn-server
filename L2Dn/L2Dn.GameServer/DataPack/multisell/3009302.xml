@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30093</npc> <!-- Groot -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93968" /> <!-- Best STR Dye <STR +3> -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93969" /> <!-- Best CON Dye <CON +3> -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93970" /> <!-- Best DEX Dye <DEX +3> -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93971" /> <!-- Best INT Dye <INT +3> -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93972" /> <!-- Best MEN Dye <MEN +3> -->
+	</item>
+	
+	<item>
+		<ingredient count="1" id="93974" /> <!-- Best Dye Coupon -->
+		<production count="10" id="93973" /> <!-- Best WIT Dye <WIT +3> -->
+	</item>
+</list>

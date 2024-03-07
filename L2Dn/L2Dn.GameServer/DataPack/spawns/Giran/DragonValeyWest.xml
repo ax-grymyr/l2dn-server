@@ -1,0 +1,2198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon001" minZ="-4082" maxZ="-3482">
+				<node x="76458" y="116630" />
+				<node x="77476" y="116635" />
+				<node x="77477" y="117661" />
+				<node x="76459" y="117656" />
+			</territory>
+		</territories>
+		<npc id="20236" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon002" minZ="-4082" maxZ="-3482">
+				<node x="77488" y="116397" />
+				<node x="78506" y="116402" />
+				<node x="78507" y="117428" />
+				<node x="77489" y="117423" />
+			</territory>
+		</territories>
+		<npc id="20236" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon003" minZ="-4082" maxZ="-3482">
+				<node x="78504" y="116046" />
+				<node x="79522" y="116051" />
+				<node x="79523" y="117077" />
+				<node x="78505" y="117072" />
+			</territory>
+		</territories>
+		<npc id="20236" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon004" minZ="-3886" maxZ="-3286">
+				<node x="79526" y="116197" />
+				<node x="80035" y="116188" />
+				<node x="80036" y="116706" />
+				<node x="79526" y="116715" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon005" minZ="-3886" maxZ="-3286">
+				<node x="80021" y="116070" />
+				<node x="80530" y="116061" />
+				<node x="80531" y="116579" />
+				<node x="80021" y="116588" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon006" minZ="-3886" maxZ="-3286">
+				<node x="80537" y="115948" />
+				<node x="81046" y="115939" />
+				<node x="81047" y="116457" />
+				<node x="80537" y="116466" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon007" minZ="-3997" maxZ="-3397">
+				<node x="79516" y="115157" />
+				<node x="80534" y="115162" />
+				<node x="80535" y="116188" />
+				<node x="79517" y="116183" />
+			</territory>
+		</territories>
+		<npc id="20236" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon008" minZ="-4082" maxZ="-3482">
+				<node x="79514" y="114674" />
+				<node x="80023" y="114665" />
+				<node x="80024" y="115183" />
+				<node x="79514" y="115192" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon009" minZ="-4082" maxZ="-3482">
+				<node x="80021" y="114666" />
+				<node x="80530" y="114657" />
+				<node x="80531" y="115175" />
+				<node x="80021" y="115184" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon010" minZ="-4082" maxZ="-3482">
+				<node x="79326" y="114162" />
+				<node x="79835" y="114153" />
+				<node x="79836" y="114671" />
+				<node x="79326" y="114680" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon011" minZ="-4082" maxZ="-3482">
+				<node x="79808" y="114151" />
+				<node x="80317" y="114142" />
+				<node x="80318" y="114660" />
+				<node x="79808" y="114669" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon012" minZ="-4082" maxZ="-3482">
+				<node x="80315" y="114143" />
+				<node x="80824" y="114134" />
+				<node x="80825" y="114652" />
+				<node x="80315" y="114661" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon013" minZ="-4082" maxZ="-3482">
+				<node x="79789" y="113629" />
+				<node x="80298" y="113620" />
+				<node x="80299" y="114138" />
+				<node x="79789" y="114147" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon014" minZ="-4082" maxZ="-3482">
+				<node x="80296" y="113621" />
+				<node x="80805" y="113612" />
+				<node x="80806" y="114130" />
+				<node x="80296" y="114139" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon015" minZ="-4082" maxZ="-3482">
+				<node x="80316" y="113099" />
+				<node x="80825" y="113090" />
+				<node x="80826" y="113608" />
+				<node x="80316" y="113617" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon016" minZ="-4081" maxZ="-3481">
+				<node x="80750" y="112418" />
+				<node x="81341" y="112548" />
+				<node x="81074" y="113052" />
+				<node x="80619" y="112989" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon017" minZ="-4081" maxZ="-3481">
+				<node x="80927" y="111954" />
+				<node x="81561" y="112122" />
+				<node x="81351" y="112549" />
+				<node x="80805" y="112436" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon018" minZ="-4081" maxZ="-3481">
+				<node x="81316" y="111608" />
+				<node x="81825" y="111599" />
+				<node x="81826" y="112117" />
+				<node x="81316" y="112126" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon019" minZ="-4081" maxZ="-3481">
+				<node x="81822" y="111600" />
+				<node x="82331" y="111591" />
+				<node x="82332" y="112109" />
+				<node x="81822" y="112118" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon020" minZ="-3944" maxZ="-3344">
+				<node x="82345" y="111742" />
+				<node x="82854" y="111733" />
+				<node x="82855" y="112251" />
+				<node x="82345" y="112260" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon021" minZ="-4081" maxZ="-3481">
+				<node x="81823" y="111084" />
+				<node x="82332" y="111075" />
+				<node x="82333" y="111593" />
+				<node x="81823" y="111602" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon022" minZ="-4081" maxZ="-3481">
+				<node x="82333" y="111237" />
+				<node x="82842" y="111228" />
+				<node x="82843" y="111746" />
+				<node x="82333" y="111755" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon023" minZ="-3944" maxZ="-3344">
+				<node x="82853" y="111223" />
+				<node x="83362" y="111214" />
+				<node x="83363" y="111732" />
+				<node x="82853" y="111741" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon024" minZ="-4081" maxZ="-3481">
+				<node x="81820" y="110567" />
+				<node x="82329" y="110558" />
+				<node x="82330" y="111076" />
+				<node x="81820" y="111085" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon025" minZ="-4081" maxZ="-3481">
+				<node x="82337" y="110724" />
+				<node x="82846" y="110715" />
+				<node x="82847" y="111233" />
+				<node x="82337" y="111242" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon026" minZ="-4081" maxZ="-3481">
+				<node x="82851" y="110708" />
+				<node x="83360" y="110699" />
+				<node x="83361" y="111217" />
+				<node x="82851" y="111226" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon027" minZ="-4081" maxZ="-3481">
+				<node x="83360" y="110698" />
+				<node x="83869" y="110689" />
+				<node x="83870" y="111207" />
+				<node x="83360" y="111216" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon028" minZ="-4081" maxZ="-3481">
+				<node x="83869" y="110672" />
+				<node x="84378" y="110663" />
+				<node x="84379" y="111181" />
+				<node x="83869" y="111190" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon029" minZ="-4081" maxZ="-3481">
+				<node x="82329" y="110207" />
+				<node x="82838" y="110198" />
+				<node x="82839" y="110716" />
+				<node x="82329" y="110725" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon030" minZ="-4081" maxZ="-3481">
+				<node x="82843" y="110191" />
+				<node x="83352" y="110182" />
+				<node x="83353" y="110700" />
+				<node x="82843" y="110709" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon031" minZ="-4081" maxZ="-3481">
+				<node x="83352" y="110183" />
+				<node x="83861" y="110174" />
+				<node x="83862" y="110692" />
+				<node x="83352" y="110701" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon032" minZ="-4081" maxZ="-3481">
+				<node x="83873" y="110157" />
+				<node x="84382" y="110148" />
+				<node x="84383" y="110666" />
+				<node x="83873" y="110675" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon033" minZ="-4082" maxZ="-3482">
+				<node x="85207" y="110186" />
+				<node x="85716" y="110177" />
+				<node x="85717" y="110695" />
+				<node x="85207" y="110704" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon034" minZ="-4082" maxZ="-3482">
+				<node x="85596" y="109884" />
+				<node x="86105" y="109875" />
+				<node x="86106" y="110393" />
+				<node x="85596" y="110402" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon035" minZ="-4082" maxZ="-3482">
+				<node x="86110" y="109868" />
+				<node x="86619" y="109859" />
+				<node x="86620" y="110377" />
+				<node x="86110" y="110386" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon036" minZ="-4082" maxZ="-3482">
+				<node x="86619" y="109986" />
+				<node x="87128" y="109977" />
+				<node x="87129" y="110495" />
+				<node x="86619" y="110504" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon037" minZ="-4082" maxZ="-3482">
+				<node x="87125" y="109978" />
+				<node x="87634" y="109969" />
+				<node x="87635" y="110487" />
+				<node x="87125" y="110496" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon038" minZ="-4082" maxZ="-3482">
+				<node x="87629" y="109965" />
+				<node x="88138" y="109956" />
+				<node x="88139" y="110474" />
+				<node x="87629" y="110483" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon039" minZ="-4082" maxZ="-3482">
+				<node x="85604" y="110401" />
+				<node x="86113" y="110392" />
+				<node x="86114" y="110910" />
+				<node x="85604" y="110919" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon040" minZ="-4082" maxZ="-3482">
+				<node x="86118" y="110385" />
+				<node x="86627" y="110376" />
+				<node x="86628" y="110894" />
+				<node x="86118" y="110903" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon041" minZ="-4082" maxZ="-3482">
+				<node x="86612" y="110419" />
+				<node x="87121" y="110410" />
+				<node x="87122" y="110928" />
+				<node x="86612" y="110937" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon042" minZ="-4082" maxZ="-3482">
+				<node x="87126" y="110403" />
+				<node x="87635" y="110394" />
+				<node x="87636" y="110912" />
+				<node x="87126" y="110921" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon043" minZ="-4082" maxZ="-3482">
+				<node x="87635" y="110400" />
+				<node x="88144" y="110391" />
+				<node x="88145" y="110909" />
+				<node x="87635" y="110918" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon044" minZ="-4082" maxZ="-3482">
+				<node x="86830" y="110797" />
+				<node x="87339" y="110788" />
+				<node x="87340" y="111306" />
+				<node x="86830" y="111315" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon045" minZ="-4082" maxZ="-3482">
+				<node x="87342" y="110791" />
+				<node x="87851" y="110782" />
+				<node x="87852" y="111300" />
+				<node x="87342" y="111309" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon046" minZ="-4082" maxZ="-3482">
+				<node x="87861" y="110778" />
+				<node x="88370" y="110769" />
+				<node x="88371" y="111287" />
+				<node x="87861" y="111296" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon047" minZ="-4082" maxZ="-3482">
+				<node x="88385" y="110984" />
+				<node x="88894" y="110975" />
+				<node x="88895" y="111493" />
+				<node x="88385" y="111502" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon048" minZ="-4082" maxZ="-3482">
+				<node x="88900" y="111061" />
+				<node x="89409" y="111052" />
+				<node x="89410" y="111570" />
+				<node x="88900" y="111579" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon049" minZ="-4082" maxZ="-3482">
+				<node x="89414" y="111004" />
+				<node x="89923" y="110995" />
+				<node x="89924" y="111513" />
+				<node x="89414" y="111522" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon050" minZ="-4059" maxZ="-3559">
+				<node x="93953" y="109505" />
+				<node x="94462" y="109496" />
+				<node x="94463" y="110014" />
+				<node x="93953" y="110023" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon051" minZ="-4059" maxZ="-3459">
+				<node x="94467" y="109553" />
+				<node x="94976" y="109544" />
+				<node x="94977" y="110062" />
+				<node x="94467" y="110071" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon052" minZ="-4059" maxZ="-3459">
+				<node x="94976" y="109592" />
+				<node x="95485" y="109583" />
+				<node x="95486" y="110101" />
+				<node x="94976" y="110110" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon055" minZ="-4059" maxZ="-3459">
+				<node x="94465" y="110047" />
+				<node x="94974" y="110038" />
+				<node x="94975" y="110556" />
+				<node x="94465" y="110565" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon056" minZ="-4059" maxZ="-3459">
+				<node x="94977" y="110058" />
+				<node x="95486" y="110049" />
+				<node x="95487" y="110567" />
+				<node x="94977" y="110576" />
+			</territory>
+		</territories>
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+		<npc id="20246" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Keeper -->
+		<npc id="20235" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Convict -->
+		<npc id="20134" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Maiden -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon057" minZ="-3331" maxZ="-2831">
+				<node x="81656" y="113047" />
+				<node x="82165" y="113038" />
+				<node x="82166" y="113556" />
+				<node x="81656" y="113565" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon058" minZ="-3331" maxZ="-2831">
+				<node x="82182" y="113044" />
+				<node x="82691" y="113035" />
+				<node x="82692" y="113553" />
+				<node x="82182" y="113562" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon059" minZ="-3331" maxZ="-2831">
+				<node x="82695" y="113017" />
+				<node x="83516" y="112863" />
+				<node x="83425" y="113321" />
+				<node x="82690" y="113532" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon060" minZ="-3331" maxZ="-2831">
+				<node x="83564" y="112660" />
+				<node x="84046" y="112545" />
+				<node x="84044" y="112926" />
+				<node x="83462" y="113139" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon061" minZ="-3331" maxZ="-2831">
+				<node x="84048" y="112280" />
+				<node x="84737" y="111981" />
+				<node x="84738" y="112499" />
+				<node x="84048" y="112771" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon062" minZ="-3331" maxZ="-2831">
+				<node x="85865" y="111836" />
+				<node x="86482" y="111818" />
+				<node x="86483" y="112336" />
+				<node x="85874" y="112319" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon063" minZ="-3451" maxZ="-2951">
+				<node x="86507" y="111824" />
+				<node x="87163" y="111819" />
+				<node x="87164" y="112337" />
+				<node x="86495" y="112342" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon064" minZ="-3451" maxZ="-2951">
+				<node x="87180" y="111919" />
+				<node x="87914" y="112001" />
+				<node x="87915" y="112519" />
+				<node x="87177" y="112368" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon065" minZ="-3331" maxZ="-2731">
+				<node x="88468" y="112312" />
+				<node x="89245" y="112458" />
+				<node x="89022" y="112924" />
+				<node x="88452" y="112770" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon066" minZ="-3331" maxZ="-2731">
+				<node x="89240" y="112465" />
+				<node x="90034" y="112538" />
+				<node x="90056" y="113461" />
+				<node x="89012" y="112923" />
+			</territory>
+		</territories>
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon067" minZ="-3314" maxZ="-2714">
+				<node x="90054" y="112498" />
+				<node x="91072" y="112503" />
+				<node x="91073" y="113529" />
+				<node x="90055" y="113524" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon068" minZ="-3314" maxZ="-2714">
+				<node x="91085" y="111529" />
+				<node x="92103" y="111534" />
+				<node x="92104" y="112560" />
+				<node x="91086" y="112555" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon069" minZ="-3314" maxZ="-2714">
+				<node x="92099" y="111508" />
+				<node x="93117" y="111513" />
+				<node x="93118" y="112539" />
+				<node x="92100" y="112534" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon070" minZ="-3314" maxZ="-2714">
+				<node x="93136" y="112091" />
+				<node x="94154" y="112096" />
+				<node x="94155" y="113122" />
+				<node x="93137" y="113117" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon071" minZ="-3314" maxZ="-2714">
+				<node x="94158" y="112163" />
+				<node x="94667" y="112154" />
+				<node x="94668" y="112672" />
+				<node x="94158" y="112681" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon072" minZ="-3314" maxZ="-2714">
+				<node x="94162" y="112679" />
+				<node x="94671" y="112670" />
+				<node x="94672" y="113188" />
+				<node x="94162" y="113197" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon073" minZ="-3314" maxZ="-2714">
+				<node x="91069" y="112485" />
+				<node x="92087" y="112490" />
+				<node x="92088" y="113516" />
+				<node x="91070" y="113511" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon074" minZ="-3314" maxZ="-2714">
+				<node x="92098" y="112516" />
+				<node x="93116" y="112521" />
+				<node x="93117" y="113547" />
+				<node x="92099" y="113542" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon075" minZ="-3314" maxZ="-2714">
+				<node x="91088" y="113501" />
+				<node x="92106" y="113506" />
+				<node x="92107" y="114532" />
+				<node x="91089" y="114527" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon076" minZ="-3314" maxZ="-2714">
+				<node x="92104" y="113524" />
+				<node x="93122" y="113529" />
+				<node x="93123" y="114555" />
+				<node x="92105" y="114550" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon077" minZ="-3314" maxZ="-2714">
+				<node x="93114" y="113113" />
+				<node x="94132" y="113118" />
+				<node x="94133" y="114144" />
+				<node x="93115" y="114139" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon078" minZ="-3314" maxZ="-2714">
+				<node x="92110" y="114532" />
+				<node x="93128" y="114537" />
+				<node x="93129" y="115563" />
+				<node x="92111" y="115558" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon079" minZ="-3314" maxZ="-2714">
+				<node x="93120" y="114121" />
+				<node x="94138" y="114126" />
+				<node x="94139" y="115152" />
+				<node x="93121" y="115147" />
+			</territory>
+		</territories>
+		<npc id="20412" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="4" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon080" minZ="-3323" maxZ="-2823">
+				<node x="82099" y="117173" />
+				<node x="82608" y="117164" />
+				<node x="82609" y="117682" />
+				<node x="82099" y="117691" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon081" minZ="-3323" maxZ="-2823">
+				<node x="82606" y="117165" />
+				<node x="83115" y="117156" />
+				<node x="83116" y="117674" />
+				<node x="82606" y="117683" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon082" minZ="-3318" maxZ="-2818">
+				<node x="83102" y="117236" />
+				<node x="84120" y="117241" />
+				<node x="84121" y="118267" />
+				<node x="83103" y="118262" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon083" minZ="-3318" maxZ="-2818">
+				<node x="84022" y="116891" />
+				<node x="85040" y="116896" />
+				<node x="85041" y="117922" />
+				<node x="84023" y="117917" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon084" minZ="-3318" maxZ="-2818">
+				<node x="83106" y="118263" />
+				<node x="84124" y="118268" />
+				<node x="84125" y="119294" />
+				<node x="83107" y="119289" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon085" minZ="-3318" maxZ="-2818">
+				<node x="84131" y="117874" />
+				<node x="85149" y="117879" />
+				<node x="85150" y="118905" />
+				<node x="84132" y="118900" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon086" minZ="-3318" maxZ="-2818">
+				<node x="83118" y="119299" />
+				<node x="84136" y="119304" />
+				<node x="84137" y="120330" />
+				<node x="83119" y="120325" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon087" minZ="-3318" maxZ="-2818">
+				<node x="84123" y="118903" />
+				<node x="85141" y="118908" />
+				<node x="85142" y="119934" />
+				<node x="84124" y="119929" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon088" minZ="-3318" maxZ="-2818">
+				<node x="85154" y="118904" />
+				<node x="86172" y="118909" />
+				<node x="86173" y="119935" />
+				<node x="85155" y="119930" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon089" minZ="-3318" maxZ="-2818">
+				<node x="84149" y="119932" />
+				<node x="85167" y="119937" />
+				<node x="85168" y="120963" />
+				<node x="84150" y="120958" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon090" minZ="-3318" maxZ="-2818">
+				<node x="85159" y="119933" />
+				<node x="86177" y="119938" />
+				<node x="86178" y="120964" />
+				<node x="85160" y="120959" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon091" minZ="-3318" maxZ="-2818">
+				<node x="86176" y="119941" />
+				<node x="87194" y="119946" />
+				<node x="87195" y="120972" />
+				<node x="86177" y="120967" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon092" minZ="-3318" maxZ="-2818">
+				<node x="87201" y="119956" />
+				<node x="88219" y="119961" />
+				<node x="88220" y="120987" />
+				<node x="87202" y="120982" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon093" minZ="-3318" maxZ="-2818">
+				<node x="88232" y="119712" />
+				<node x="89250" y="119717" />
+				<node x="89251" y="120743" />
+				<node x="88233" y="120738" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon094" minZ="-3318" maxZ="-2818">
+				<node x="89256" y="119569" />
+				<node x="90274" y="119574" />
+				<node x="90275" y="120600" />
+				<node x="89257" y="120595" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon095" minZ="-3318" maxZ="-2818">
+				<node x="90273" y="119577" />
+				<node x="91291" y="119582" />
+				<node x="91292" y="120608" />
+				<node x="90274" y="120603" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon096" minZ="-3318" maxZ="-2818">
+				<node x="90274" y="118548" />
+				<node x="91292" y="118553" />
+				<node x="91293" y="119579" />
+				<node x="90275" y="119574" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon097" minZ="-3318" maxZ="-2818">
+				<node x="91291" y="119028" />
+				<node x="92309" y="119033" />
+				<node x="92310" y="120059" />
+				<node x="91292" y="120054" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon098" minZ="-3318" maxZ="-2818">
+				<node x="91299" y="118035" />
+				<node x="92317" y="118040" />
+				<node x="92318" y="119066" />
+				<node x="91300" y="119061" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon099" minZ="-3318" maxZ="-2818">
+				<node x="92315" y="118088" />
+				<node x="93333" y="118093" />
+				<node x="93334" y="119119" />
+				<node x="92316" y="119114" />
+			</territory>
+		</territories>
+		<npc id="20236" count="3" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+		<npc id="20146" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Headless Knight -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon100" minZ="-3311" maxZ="-2811">
+				<node x="79967" y="110089" />
+				<node x="80476" y="110080" />
+				<node x="80477" y="110598" />
+				<node x="79967" y="110607" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon101" minZ="-3311" maxZ="-2811">
+				<node x="80340" y="109803" />
+				<node x="80849" y="109794" />
+				<node x="80850" y="110312" />
+				<node x="80340" y="110321" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon102" minZ="-3311" maxZ="-2811">
+				<node x="80853" y="109787" />
+				<node x="81362" y="109778" />
+				<node x="81363" y="110296" />
+				<node x="80853" y="110305" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon103" minZ="-3311" maxZ="-2811">
+				<node x="80847" y="109307" />
+				<node x="81356" y="109298" />
+				<node x="81357" y="109816" />
+				<node x="80847" y="109825" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon104" minZ="-3311" maxZ="-2811">
+				<node x="81360" y="109131" />
+				<node x="81869" y="109122" />
+				<node x="81870" y="109640" />
+				<node x="81360" y="109649" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon105" minZ="-3311" maxZ="-2811">
+				<node x="81868" y="109075" />
+				<node x="82377" y="109066" />
+				<node x="82378" y="109584" />
+				<node x="81868" y="109593" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon106" minZ="-3311" maxZ="-2811">
+				<node x="82381" y="108964" />
+				<node x="82890" y="108955" />
+				<node x="82891" y="109473" />
+				<node x="82381" y="109482" />
+			</territory>
+		</territories>
+		<npc id="20137" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon107" minZ="-3311" maxZ="-2811">
+				<node x="82897" y="108378" />
+				<node x="83915" y="108383" />
+				<node x="83916" y="109409" />
+				<node x="82898" y="109404" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon108" minZ="-3311" maxZ="-2811">
+				<node x="83919" y="108167" />
+				<node x="84937" y="108172" />
+				<node x="84938" y="109198" />
+				<node x="83920" y="109193" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon109" minZ="-3369" maxZ="-2869">
+				<node x="84946" y="107367" />
+				<node x="85964" y="107372" />
+				<node x="85965" y="108398" />
+				<node x="84947" y="108393" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon110" minZ="-3311" maxZ="-2811">
+				<node x="85970" y="107995" />
+				<node x="86988" y="108000" />
+				<node x="86989" y="109026" />
+				<node x="85971" y="109021" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon111" minZ="-3311" maxZ="-2811">
+				<node x="85954" y="107051" />
+				<node x="86972" y="107056" />
+				<node x="86973" y="108082" />
+				<node x="85955" y="108077" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon112" minZ="-3311" maxZ="-2811">
+				<node x="86787" y="107046" />
+				<node x="87805" y="107051" />
+				<node x="87806" y="108077" />
+				<node x="86788" y="108072" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon113" minZ="-3311" maxZ="-2811">
+				<node x="87615" y="107095" />
+				<node x="88633" y="107100" />
+				<node x="88634" y="108126" />
+				<node x="87616" y="108121" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon114" minZ="-3311" maxZ="-2811">
+				<node x="87606" y="106092" />
+				<node x="88624" y="106097" />
+				<node x="88625" y="107123" />
+				<node x="87607" y="107118" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon115" minZ="-3311" maxZ="-2811">
+				<node x="88629" y="106016" />
+				<node x="89647" y="106021" />
+				<node x="89648" y="107047" />
+				<node x="88630" y="107042" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon116" minZ="-3311" maxZ="-2811">
+				<node x="89651" y="105850" />
+				<node x="90669" y="105855" />
+				<node x="90670" y="106881" />
+				<node x="89652" y="106876" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon117" minZ="-3311" maxZ="-2811">
+				<node x="88640" y="107016" />
+				<node x="89658" y="107021" />
+				<node x="89659" y="108047" />
+				<node x="88641" y="108042" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon118" minZ="-3311" maxZ="-2811">
+				<node x="89658" y="106870" />
+				<node x="90676" y="106875" />
+				<node x="90677" y="107901" />
+				<node x="89659" y="107896" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon119" minZ="-3311" maxZ="-2811">
+				<node x="89658" y="106870" />
+				<node x="90676" y="106875" />
+				<node x="90677" y="107901" />
+				<node x="89659" y="107896" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon120" minZ="-3311" maxZ="-2811">
+				<node x="88520" y="107886" />
+				<node x="89538" y="107891" />
+				<node x="89539" y="108917" />
+				<node x="88521" y="108912" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon121" minZ="-3311" maxZ="-2811">
+				<node x="89424" y="107905" />
+				<node x="90442" y="107910" />
+				<node x="90443" y="108936" />
+				<node x="89425" y="108931" />
+			</territory>
+		</territories>
+		<npc id="20137" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Drake -->
+		<npc id="20241" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Thunder Wyrm -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon122" minZ="-3311" maxZ="-2811">
+				<node x="90679" y="107329" />
+				<node x="91697" y="107334" />
+				<node x="91698" y="108360" />
+				<node x="90680" y="108355" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon126" minZ="-4059" maxZ="-3559">
+				<node x="91873" y="109521" />
+				<node x="92382" y="109512" />
+				<node x="92383" y="110030" />
+				<node x="91873" y="110039" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon127" minZ="-4059" maxZ="-3559">
+				<node x="92401" y="109457" />
+				<node x="92910" y="109448" />
+				<node x="92911" y="109966" />
+				<node x="92401" y="109975" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon128" minZ="-4059" maxZ="-3559">
+				<node x="92913" y="109505" />
+				<node x="93422" y="109496" />
+				<node x="93423" y="110014" />
+				<node x="92913" y="110023" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon129" minZ="-4059" maxZ="-3559">
+				<node x="93425" y="109505" />
+				<node x="93934" y="109496" />
+				<node x="93935" y="110014" />
+				<node x="93425" y="110023" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon130" minZ="-3307" maxZ="-2807">
+				<node x="91697" y="107441" />
+				<node x="92206" y="107432" />
+				<node x="92207" y="107950" />
+				<node x="91697" y="107959" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon131" minZ="-3307" maxZ="-2807">
+				<node x="93809" y="107329" />
+				<node x="94318" y="107320" />
+				<node x="94319" y="107838" />
+				<node x="93809" y="107847" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon132" minZ="-3314" maxZ="-2714">
+				<node x="94658" y="112311" />
+				<node x="95167" y="112302" />
+				<node x="95168" y="112820" />
+				<node x="94658" y="112829" />
+			</territory>
+		</territories>
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon133" minZ="-3314" maxZ="-2714">
+				<node x="95154" y="112151" />
+				<node x="95663" y="112142" />
+				<node x="95664" y="112660" />
+				<node x="95154" y="112669" />
+			</territory>
+		</territories>
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon134" minZ="-3314" maxZ="-2814">
+				<node x="93336" y="118074" />
+				<node x="93944" y="118128" />
+				<node x="93901" y="118807" />
+				<node x="93345" y="118852" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon135" minZ="-3314" maxZ="-2814">
+				<node x="94019" y="117545" />
+				<node x="94610" y="117758" />
+				<node x="94360" y="118341" />
+				<node x="93676" y="118005" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon136" minZ="-3314" maxZ="-2814">
+				<node x="93948" y="118135" />
+				<node x="94372" y="118346" />
+				<node x="94200" y="118765" />
+				<node x="93903" y="118814" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon137" minZ="-3314" maxZ="-2814">
+				<node x="94554" y="116827" />
+				<node x="95167" y="117082" />
+				<node x="94607" y="117764" />
+				<node x="94021" y="117555" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon138" minZ="-3314" maxZ="-2814">
+				<node x="94786" y="116439" />
+				<node x="95295" y="116430" />
+				<node x="95164" y="117082" />
+				<node x="94556" y="116844" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon139" minZ="-3314" maxZ="-2814">
+				<node x="94802" y="115927" />
+				<node x="95311" y="115918" />
+				<node x="95312" y="116436" />
+				<node x="94802" y="116445" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon140" minZ="-3314" maxZ="-2814">
+				<node x="94626" y="115415" />
+				<node x="95135" y="115406" />
+				<node x="95136" y="115924" />
+				<node x="94626" y="115933" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon141" minZ="-3314" maxZ="-2714">
+				<node x="94146" y="114631" />
+				<node x="94655" y="114622" />
+				<node x="94656" y="115140" />
+				<node x="94146" y="115149" />
+			</territory>
+		</territories>
+		<npc id="20412" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Banshee -->
+		<npc id="20244" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Maluk Succubus -->
+		<npc id="20142" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Blood Queen -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon142" minZ="-3314" maxZ="-2814">
+				<node x="87730" y="119463" />
+				<node x="88239" y="119454" />
+				<node x="88240" y="119972" />
+				<node x="87730" y="119981" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon143" minZ="-3314" maxZ="-2814">
+				<node x="88242" y="119191" />
+				<node x="88751" y="119182" />
+				<node x="88752" y="119700" />
+				<node x="88242" y="119709" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon144" minZ="-3314" maxZ="-2814">
+				<node x="88754" y="119191" />
+				<node x="89263" y="119182" />
+				<node x="89264" y="119700" />
+				<node x="88754" y="119709" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon145" minZ="-3314" maxZ="-2814">
+				<node x="89266" y="119047" />
+				<node x="89775" y="119038" />
+				<node x="89776" y="119556" />
+				<node x="89266" y="119565" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon146" minZ="-3314" maxZ="-2814">
+				<node x="89762" y="119063" />
+				<node x="90271" y="119054" />
+				<node x="90272" y="119572" />
+				<node x="89762" y="119581" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon147" minZ="-3314" maxZ="-2814">
+				<node x="90274" y="118023" />
+				<node x="90783" y="118014" />
+				<node x="90784" y="118532" />
+				<node x="90274" y="118541" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon148" minZ="-3314" maxZ="-2814">
+				<node x="90786" y="118023" />
+				<node x="91295" y="118014" />
+				<node x="91296" y="118532" />
+				<node x="90786" y="118541" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon149" minZ="-3314" maxZ="-2814">
+				<node x="90402" y="117495" />
+				<node x="90911" y="117486" />
+				<node x="90912" y="118004" />
+				<node x="90402" y="118013" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon150" minZ="-3314" maxZ="-2814">
+				<node x="89802" y="115950" />
+				<node x="90038" y="115722" />
+				<node x="90504" y="117134" />
+				<node x="90293" y="117145" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon151" minZ="-3314" maxZ="-2814">
+				<node x="89226" y="114760" />
+				<node x="89670" y="115216" />
+				<node x="89254" y="115463" />
+				<node x="89041" y="115137" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon152" minZ="-3314" maxZ="-2814">
+				<node x="88653" y="114645" />
+				<node x="89225" y="114748" />
+				<node x="89042" y="115138" />
+				<node x="88619" y="114940" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon153" minZ="-3314" maxZ="-2814">
+				<node x="88128" y="114478" />
+				<node x="88646" y="114636" />
+				<node x="88622" y="114905" />
+				<node x="88130" y="114795" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon154" minZ="-3314" maxZ="-2814">
+				<node x="87510" y="114495" />
+				<node x="88124" y="114475" />
+				<node x="88131" y="114797" />
+				<node x="87588" y="114907" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon155" minZ="-3314" maxZ="-2814">
+				<node x="86850" y="114523" />
+				<node x="87484" y="114386" />
+				<node x="87588" y="114913" />
+				<node x="86897" y="115107" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon156" minZ="-3314" maxZ="-2814">
+				<node x="86202" y="114944" />
+				<node x="86392" y="115268" />
+				<node x="86093" y="115692" />
+				<node x="85801" y="115438" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon157" minZ="-3314" maxZ="-2814">
+				<node x="85833" y="115475" />
+				<node x="86089" y="115687" />
+				<node x="85622" y="116066" />
+				<node x="85278" y="115763" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon158" minZ="-3314" maxZ="-2814">
+				<node x="85098" y="115606" />
+				<node x="85520" y="115973" />
+				<node x="85064" y="116584" />
+				<node x="84506" y="116256" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20239" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran22_2221_dragon159" minZ="-3314" maxZ="-2814">
+				<node x="83506" y="116727" />
+				<node x="84015" y="116718" />
+				<node x="84016" y="117236" />
+				<node x="83506" y="117245" />
+			</territory>
+		</territories>
+		<npc id="20236" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant -->
+		<npc id="20237" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Archer -->
+		<npc id="20238" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Cave Servant Warrior -->
+		<npc id="20240" count="1" respawnTime="3sec" chaseRange="2500" /> <!-- Royal Cave Servant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_23_21_ditons_50" minZ="-4081" maxZ="-3481">
+				<node x="83869" y="110672" />
+				<node x="84378" y="110663" />
+				<node x="84379" y="111181" />
+				<node x="83869" y="111190" />
+			</territory>
+		</territories>
+		<npc id="20758" count="2" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Captain -->
+		<npc id="20759" count="2" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Warrior -->
+		<npc id="20760" count="5" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_23_21_ditons_100" minZ="-3314" maxZ="-2714">
+				<node x="94146" y="114631" />
+				<node x="94655" y="114622" />
+				<node x="94656" y="115140" />
+				<node x="94146" y="115149" />
+			</territory>
+		</territories>
+		<npc id="20758" count="2" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Captain -->
+		<npc id="20759" count="2" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Warrior -->
+		<npc id="20760" count="5" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t23_21_dragon_bearer47" minZ="-3314" maxZ="-2814">
+				<node x="89226" y="114760" />
+				<node x="89670" y="115216" />
+				<node x="89254" y="115463" />
+				<node x="89041" y="115137" />
+			</territory>
+		</territories>
+		<npc id="20758" count="1" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Captain -->
+		<npc id="20759" count="1" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Warrior -->
+		<npc id="20760" count="2" respawnTime="2min" chaseRange="2500" /> <!-- Dragon Bearer Archer -->
+	</spawn>
+</list>

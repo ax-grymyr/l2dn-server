@@ -1,0 +1,804 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39604" name="Sword Master">
+		<!-- P./ M. Atk. +75 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39605" name="Ambidexterity">
+		<!-- P./ M. Atk. +125 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39606" name="Flaming Robe Set">
+		<!-- P./ M. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39607" name="Majestic Collection">
+		<!-- Received damage -1% -->
+		<effects>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="39608" name="Armor and Shield of Nightmare">
+		<!-- Max CP +75 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39609" name="Avadon Shield and Armor">
+		<!-- Max HP +50 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39610" name="+0 Pistol Collector">
+		<!-- P. Def. +13 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39611" name="+5 Pistols and Cannons">
+		<!-- Knockback Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>1</KNOCKDOWN>
+			</effect>
+		</effects>
+	</option>
+	<option id="39612" name="Sealed Majestic Accessories">
+		<!-- Atk. Spd. +6 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39613" name="Sealed Phoenix Accessories">
+		<!-- Atk. Spd. +5 -->
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39614" name="Uncommon in Common">
+		<!-- Casting Spd. +6 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39615" name="+9 D-grade Weapons">
+		<!-- Hold Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<HOLD>1</HOLD>
+			</effect>
+		</effects>
+	</option>
+	<option id="39616" name="Enchanted Reinforced Leather Armor">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39617" name="Reinforced Leather Armor">
+		<!-- Max MP +25 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39618" name="Very Cheap Accessories">
+		<!-- M. Def. +5 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39619" name="Reinforced Leather Armor">
+		<!-- P. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39620" name="Cloak and Accessories of Protection">
+		<!-- Acquired XP/ SP +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39621" name="Wizard's Equipment">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39622" name="+5 Pistols and Cannons">
+		<!-- Knockback Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>1</KNOCKDOWN>
+			</effect>
+		</effects>
+	</option>
+	<option id="39623" name="Dual Swords Expert">
+		<!-- P. Def. +17 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39624" name="Ant Nest's Memento">
+		<!-- Max CP +50 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39625" name="Full Plate Boots' Hassle">
+		<!-- P. Def. +26 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39626" name="Divine Boots' Hassle">
+		<!-- M. Def. +26 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39627" name="Elven Equipment">
+		<!-- P. Def. +8 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39628" name="Cheap Blunt Weapons">
+		<!-- Max CP +25 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39629" name="Cheap Blunt Weapons">
+		<!-- Max HP +25 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39630" name="High-grade A-grade Weapon Set I">
+		<!-- M. Def. +17 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39631" name="High-grade A-grade Weapon Set II">
+		<!-- Suppression Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SUPPRESSION>1</SUPPRESSION>
+			</effect>
+		</effects>
+	</option>
+	<option id="39632" name="High-grade A-grade Weapon Set III">
+		<!-- Imprisonment Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>1</IMPRISON>
+			</effect>
+		</effects>
+	</option>
+	<option id="39633" name="Waste Sorting">
+		<!-- HP/ MP/ CP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39634" name="Sturdy Shields">
+		<!-- Suppression Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SUPPRESSION>1</SUPPRESSION>
+			</effect>
+		</effects>
+	</option>
+	<option id="39635" name="Tatters">
+		<!-- Pull Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PULL>1</PULL>
+			</effect>
+		</effects>
+	</option>
+	<option id="39636" name="Equipment of Seal">
+		<!-- M. Def. +13 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>13</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39637" name="Dark Soul">
+		<!-- Imprisonment Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>1</IMPRISON>
+			</effect>
+		</effects>
+	</option>
+	<option id="39638" name="Dark Dragon">
+		<!-- Pull Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PULL>1</PULL>
+			</effect>
+		</effects>
+	</option>
+	<option id="39639" name="Dark Mother Tree">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39640" name="Tallum Collection I">
+		<!-- P. Def. +18 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39641" name="Double Strike">
+		<!-- Hold Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<HOLD>1</HOLD>
+			</effect>
+		</effects>
+	</option>
+	<option id="39642" name="Tallum Collection II">
+		<!-- Knockback Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>1</KNOCKDOWN>
+			</effect>
+		</effects>
+	</option>
+	<option id="39643" name="Zubei's Boots and Gauntlets">
+		<!-- P. Def. +5 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39644" name="Avadon Boots and Gloves">
+		<!-- Casting Spd. +5 -->
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39645" name="Chain Mail Equipment">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39646" name="Dwarven Chain Mail Equipment">
+		<!-- Sayha's Grace charging rate +1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39647" name="Silver Steel">
+		<!-- M. Def. +8 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39648" name="Doom vs Zubei">
+		<!-- Max MP +50 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39649" name="Shattered Jewel">
+		<!-- Hold Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<HOLD>1</HOLD>
+			</effect>
+		</effects>
+	</option>
+	<option id="39650" name="Immortal's Gaze">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39651" name="Black Scorpion">
+		<!-- Sayha's Grace Consumption -1% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39652" name="Heavenly Splendor">
+		<!-- Imprisonment Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<IMPRISON>1</IMPRISON>
+			</effect>
+		</effects>
+	</option>
+	<option id="39653" name="Bloody Nightmare">
+		<!-- M. Def. +18 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39654" name="One-handed Swords">
+		<!-- Suppression Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SUPPRESSION>1</SUPPRESSION>
+			</effect>
+		</effects>
+	</option>
+	<option id="39655" name="Daggers">
+		<!-- Pull Resistance +1% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PULL>1</PULL>
+			</effect>
+		</effects>
+	</option>
+	<option id="39656" name="Ring of Insolence's Band">
+		<!-- P. Def. +20 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39657" name="Dragon Valley's Earring's Band">
+		<!-- M. Def. +20 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39658" name="Inner Strength">
+		<!-- Skill Cooldown -1%, Max HP/ MP/ CP +60 -->
+		<effects>
+			<effect name="Reuse">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-1</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39659" name="Important Equipment">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<passive_skill id="80602" level="1" /> <!-- Debuff Resistance -->
+	</option>
+	<option id="39660" name="+7 Agathion Collection">
+		<!-- Acquired Magic Lamp XP +2% -->
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39661" name="+5 Agathion Collection">
+		<!-- Debuff/ Anomaly Resistance +1% -->
+		<passive_skill id="80601" level="1" /> <!-- Debuff Resistance -->
+	</option>
+	<option id="39662" name="Purification">
+		<!-- CON/ MEN +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="39663" name="Cardinal">
+		<!-- P./ M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39664" name="Eva's Saint">
+		<!-- P./ M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39665" name="Shillien Saint">
+		<!-- P./ M. Atk. +30 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39666" name="Collector of Mid-grade Purge Equipment I">
+		<!-- M. Def. +23 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39667" name="Collector of Mid-grade Purge Equipment II">
+		<!-- HP Recovery Potions' Effect +5 -->
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39668" name="Collector of Mid-grade Purge Equipment III">
+		<!-- HP Recovery Potions' Effect +5 -->
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39669" name="Collector of High-grade Purge Equipment I">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39670" name="Collector of High-grade Purge Equipment II">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39671" name="Collector of High-grade Purge Equipment III">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39672" name="Enhanced Weapons - Cruma Tower">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39673" name="Enhanced Weapons - Silent Valley">
+		<!-- Received P. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39674" name="Enhanced Weapons - Plains of the Lizardmen">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39675" name="Enhanced Weapons - Tower of Insolence">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39676" name="Enhanced Weapons - Dragon Valley">
+		<!-- Received M. Skill Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39677" name="At the Origins">
+		<!-- P. Def. +23 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39678" name="+3 Eva's Protector">
+		<!-- P./ M. Def. +20 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39679" name="+4 Eva's Protector">
+		<!-- P./ M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39680" name="+4 Talisman Collection">
+		<!-- P./ M. Atk. +40 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39681" name="option_id_39681">
+		<!-- Acquired XP/ SP +10%, Max HP/ MP/ CP +250, P./ M. Atk. +50, P./ M. Def. +100 -->
+	</option>
+	<option id="39682" name="option_id_39682">
+		<!-- Max HP +25 -->
+	</option>
+	<option id="39683" name="option_id_39683">
+		<!-- Max HP +38 -->
+	</option>
+	<option id="39684" name="option_id_39684">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="39685" name="option_id_39685">
+		<!-- Max HP +63 -->
+	</option>
+	<option id="39686" name="option_id_39686">
+		<!-- Max HP +75 -->
+	</option>
+	<option id="39687" name="option_id_39687">
+		<!-- Max HP +88 -->
+	</option>
+	<option id="39688" name="option_id_39688">
+		<!-- Max HP +100 -->
+	</option>
+	<option id="39689" name="option_id_39689">
+		<!-- Max HP +113 -->
+	</option>
+	<option id="39690" name="option_id_39690">
+		<!-- Max HP +125 -->
+	</option>
+	<option id="39691" name="option_id_39691">
+		<!-- Max HP +138 -->
+	</option>
+	<option id="39692" name="option_id_39692">
+		<!-- Max HP +150 -->
+	</option>
+	<option id="39693" name="option_id_39693">
+		<!-- Max HP +163 -->
+	</option>
+	<option id="39694" name="option_id_39694">
+		<!-- Max HP +175 -->
+	</option>
+	<option id="39695" name="option_id_39695">
+		<!-- Max HP +188 -->
+	</option>
+	<option id="39696" name="option_id_39696">
+		<!-- Max HP +240 -->
+	</option>
+	<option id="39697" name="option_id_39697">
+		<!-- Max HP +300 -->
+	</option>
+	<option id="39698" name="option_id_39698">
+		<!-- Max HP +330 -->
+	</option>
+	<option id="39699" name="option_id_39699">
+		<!-- Max HP +360 -->
+	</option>
+</list>

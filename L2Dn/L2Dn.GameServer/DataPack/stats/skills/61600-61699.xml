@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61600" toLevel="1" name="Reputation Decrease - 1000 diff">
+		<!-- Rep. -1000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61601" toLevel="1" name="Reputation Decrease - 3000 diff">
+		<!-- Rep. -3000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61602" toLevel="1" name="Reputation Decrease - 5000 diff">
+		<!-- Rep. -5000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61603" toLevel="1" name="Reputation Decrease - 10000 diff">
+		<!-- Rep. -10000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61604" toLevel="1" name="Rep +10 per">
+		<!-- Rep. +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61605" toLevel="1" name="Rep +50 per">
+		<!-- Rep. +50% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61606" toLevel="1" name="Rep +100 per">
+		<!-- Rep. +100% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61607" toLevel="1" name="Rep +500 per">
+		<!-- Rep. +500% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61608" toLevel="1" name="Rep +1000 per">
+		<!-- Rep. +1000% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61609" toLevel="1" name="Rep +100 diff">
+		<!-- Rep. +100 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61610" toLevel="1" name="Rep +1000 diff">
+		<!-- Rep. +1000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61611" toLevel="1" name="Rep +3000 diff">
+		<!-- Rep. +3000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61612" toLevel="1" name="Rep +5000 diff">
+		<!-- Rep. +5000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61613" toLevel="1" name="Rep +10,000 diff">
+		<!-- Rep. +10000 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61614" toLevel="1" name="Damage Bonus - Sword (One-handed)">
+		<!-- Sword (one-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61615" toLevel="1" name="Damage Bonus - Sword (One-handed)">
+		<!-- Sword (one-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61616" toLevel="1" name="Damage Bonus - Sword (One-handed)">
+		<!-- Sword (one-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61617" toLevel="1" name="Damage Bonus - Sword (One-handed)">
+		<!-- Sword (one-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61618" toLevel="1" name="Damage Bonus - Sword (One-handed)">
+		<!-- Sword (one-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61619" toLevel="1" name="Damage Bonus - Sword (Two-handed)">
+		<!-- Sword (two-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61620" toLevel="1" name="Damage Bonus - Sword (Two-handed)">
+		<!-- Sword (two-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61621" toLevel="1" name="Damage Bonus - Sword (Two-handed)">
+		<!-- Sword (two-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61622" toLevel="1" name="Damage Bonus - Sword (Two-handed)">
+		<!-- Sword (two-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61623" toLevel="1" name="Damage Bonus - Sword (Two-handed)">
+		<!-- Sword (two-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61624" toLevel="1" name="Damage Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61625" toLevel="1" name="Damage Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61626" toLevel="1" name="Damage Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61627" toLevel="1" name="Damage Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61628" toLevel="1" name="Damage Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61629" toLevel="1" name="Damage Bonus - Ancient Sword">
+		<!-- Ancient sword damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61630" toLevel="1" name="Damage Bonus - Ancient Sword">
+		<!-- Ancient sword damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61631" toLevel="1" name="Damage Bonus - Ancient Sword">
+		<!-- Ancient sword damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61632" toLevel="1" name="Damage Bonus - Ancient Sword">
+		<!-- Ancient sword damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61633" toLevel="1" name="Damage Bonus - Ancient Sword">
+		<!-- Ancient sword damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61634" toLevel="1" name="Damage Bonus - Dagger">
+		<!-- Dagger damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61635" toLevel="1" name="Damage Bonus - Dagger">
+		<!-- Dagger damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61636" toLevel="1" name="Damage Bonus - Dagger">
+		<!-- Dagger damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61637" toLevel="1" name="Damage Bonus - Dagger">
+		<!-- Dagger damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61638" toLevel="1" name="Damage Bonus - Dagger">
+		<!-- Dagger damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61639" toLevel="1" name="Damage Bonus - Rapier">
+		<!-- Rapier damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61640" toLevel="1" name="Damage Bonus - Rapier">
+		<!-- Rapier damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61641" toLevel="1" name="Damage Bonus - Rapier">
+		<!-- Rapier damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61642" toLevel="1" name="Damage Bonus - Rapier">
+		<!-- Rapier damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61643" toLevel="1" name="Damage Bonus - Rapier">
+		<!-- Rapier damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61644" toLevel="1" name="Damage Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61645" toLevel="1" name="Damage Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61646" toLevel="1" name="Damage Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61647" toLevel="1" name="Damage Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61648" toLevel="1" name="Damage Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61649" toLevel="1" name="Damage Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61650" toLevel="1" name="Damage Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61651" toLevel="1" name="Damage Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61652" toLevel="1" name="Damage Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61653" toLevel="1" name="Damage Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61654" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61655" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61656" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61657" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61658" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61659" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61660" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61661" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61662" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61663" toLevel="1" name="Damage Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61664" toLevel="1" name="Damage Bonus - Spear">
+		<!-- Spear damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61665" toLevel="1" name="Damage Bonus - Spear">
+		<!-- Spear damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61666" toLevel="1" name="Damage Bonus - Spear">
+		<!-- Spear damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61667" toLevel="1" name="Damage Bonus - Spear">
+		<!-- Spear damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61668" toLevel="1" name="Damage Bonus - Spear">
+		<!-- Spear damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61669" toLevel="1" name="Damage Bonus - Fist Weapon">
+		<!-- Fist weapon damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61670" toLevel="1" name="Damage Bonus - Fist Weapon">
+		<!-- Fist weapon damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61671" toLevel="1" name="Damage Bonus - Fist Weapon">
+		<!-- Fist weapon damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61672" toLevel="1" name="Damage Bonus - Fist Weapon">
+		<!-- Fist weapon damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61673" toLevel="1" name="Damage Bonus - Fist Weapon">
+		<!-- Fist weapon damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61674" toLevel="1" name="Damage Bonus - Dual Swords">
+		<!-- Dual swords damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61675" toLevel="1" name="Damage Bonus - Dual Swords">
+		<!-- Dual swords damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61676" toLevel="1" name="Damage Bonus - Dual Swords">
+		<!-- Dual swords damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61677" toLevel="1" name="Damage Bonus - Dual Swords">
+		<!-- Dual swords damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61678" toLevel="1" name="Damage Bonus - Dual Swords">
+		<!-- Dual swords damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61679" toLevel="1" name="Damage Bonus - Bow">
+		<!-- Bow damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61680" toLevel="1" name="Damage Bonus - Bow">
+		<!-- Bow damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61681" toLevel="1" name="Damage Bonus - Bow">
+		<!-- Bow damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61682" toLevel="1" name="Damage Bonus - Bow">
+		<!-- Bow damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61683" toLevel="1" name="Damage Bonus - Bow">
+		<!-- Bow damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61684" toLevel="1" name="Damage Bonus - Fire Arm">
+		<!-- Fire arm damage bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61685" toLevel="1" name="Damage Bonus - Fire Arm">
+		<!-- Fire arm damage bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61686" toLevel="1" name="Damage Bonus - Fire Arm">
+		<!-- Fire arm damage bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61687" toLevel="1" name="Damage Bonus - Fire Arm">
+		<!-- Fire arm damage bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61688" toLevel="1" name="Damage Bonus - Fire Arm">
+		<!-- Fire arm damage bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61689" toLevel="1" name="Paralysis Atk. Rate">
+		<!-- Paralysis Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61690" toLevel="1" name="Paralysis Atk. Rate">
+		<!-- Paralysis Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61691" toLevel="1" name="Paralysis Atk. Rate">
+		<!-- Paralysis Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61692" toLevel="1" name="Paralysis Atk. Rate">
+		<!-- Paralysis Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61693" toLevel="1" name="Paralysis Atk. Rate">
+		<!-- Paralysis Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61694" toLevel="1" name="Shock Atk. Rate">
+		<!-- Shock Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61695" toLevel="1" name="Shock Atk. Rate">
+		<!-- Shock Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61696" toLevel="1" name="Shock Atk. Rate">
+		<!-- Shock Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61697" toLevel="1" name="Shock Atk. Rate">
+		<!-- Shock Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61698" toLevel="1" name="Shock Atk. Rate">
+		<!-- Shock Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61699" toLevel="1" name="Knockback Atk. Rate">
+		<!-- Knockback Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="224" parentClassId="223">
+		<skill skillName="Erosion" skillId="87361" skillLevel="2" getLevel="76" levelUpSp="590000">
+			<item id="98497,98486" count="1" /> <!-- Spellbook: Erosion Lv. 2 -->
+		</skill>
+		<skill skillName="Murder Attempt" skillId="87362" skillLevel="2" getLevel="76" levelUpSp="590000">
+			<item id="98498,98487" count="1" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+		</skill>
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blow" skillId="87301" skillLevel="11" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="12" getLevel="78" levelUpSp="1370000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="13" getLevel="80" levelUpSp="1370000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="14" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="15" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="16" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="17" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="18" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="19" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="20" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="21" getLevel="91" levelUpSp="150000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="22" getLevel="92" levelUpSp="170000000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="23" getLevel="93" levelUpSp="200000000" />
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sharp Blade" skillId="87367" skillLevel="2" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Sharp Blade" skillId="87367" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="6" getLevel="77" levelUpSp="590000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="7" getLevel="79" levelUpSp="1370000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="8" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="9" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="16" getLevel="91" levelUpSp="150000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="17" getLevel="92" levelUpSp="170000000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="18" getLevel="93" levelUpSp="200000000" />
+		<skill skillName="Assassination" skillId="87307" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98494,98483" count="1" /> <!-- Spellbook: Assassination -->
+		</skill>
+		<skill skillName="Clone Dance" skillId="87309" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98493,98482" count="1" /> <!-- Spellbook: Clone Dance -->
+		</skill>
+		<skill skillName="Clone Dance" skillId="87309" skillLevel="2" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Clone Dance" skillId="87309" skillLevel="3" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Limited" skillId="87381" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98495,98484" count="1" /> <!-- Spellbook: Constraint -->
+		</skill>
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="2" getLevel="79" levelUpSp="1370000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="4" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="5" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="6" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="7" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Relentless Attack" skillId="87319" skillLevel="8" getLevel="92" levelUpSp="170000000" />
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="4" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="5" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Return Motion" skillId="87323" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98500,98489" count="1" /> <!-- Spellbook: Return Motion -->
+		</skill>
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="16" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="17" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="18" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="9" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="10" getLevel="79" levelUpSp="1370000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="11" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Acquiring Kill Points" skillId="87390" skillLevel="1" getLevel="76" levelUpSp="0" autoGet="true" />
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="16" getLevel="91" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="17" getLevel="92" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="18" getLevel="93" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="9" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="10" getLevel="79" levelUpSp="1370000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="11" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Blow Boost" skillId="87395" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98502,98491" count="1" /> <!-- Spellbook: Blow Boost -->
+		</skill>
+		<skill skillName="Path of the Assassin" skillId="87394" skillLevel="1" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Might" skillId="87461" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Maximum Critical" skillId="87397" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98423,90045" count="16" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Maximum Critical" skillId="87397" skillLevel="2" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Maximum Critical" skillId="87397" skillLevel="3" getLevel="90" levelUpSp="84000000">
+			<item id="98554,98553" count="1" /> <!-- Spellbook: Maximum Critical -->
+		</skill>
+		<skill skillName="Shadow Boost" skillId="87396" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98501,98490" count="1" /> <!-- Spellbook: Shadow Boost -->
+		</skill>
+		<skill skillName="Empower" skillId="87463" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Silver Wolf" skillId="54246" skillLevel="1" getLevel="76" levelUpSp="590000" />
+		<skill skillName="Shadow Ally" skillId="87399" skillLevel="1" getLevel="76" levelUpSp="0" autoGet="true" />
+		<skill skillName="Shield" skillId="87462" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Haste" skillId="87465" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="87464" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Noda's Hidden Power" skillId="87400" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98499,98488" count="1" /> <!-- Spellbook: Noda's Hidden Power -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="87467" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Acumen" skillId="87466" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Focus" skillId="87469" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="87468" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="87471" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="87470" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Resolve to Kill" skillId="87345" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98496,98485" count="1" /> <!-- Spellbook: Resole to Kill -->
+		</skill>
+		<skill skillName="Clarity" skillId="87472" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Shadow Blast" skillId="87155" skillLevel="1" getLevel="76" levelUpSp="0" autoGet="true" />
+		<skill skillName="Time Distortion" skillId="87351" skillLevel="1" getLevel="76" levelUpSp="590000">
+			<item id="98492,98481" count="1" /> <!-- Spellbook: Time Distortion -->
+		</skill>
+		<skill skillName="Time Distortion: Master" skillId="87351" skillLevel="2" getLevel="76" levelUpSp="590000">
+			<item id="99897,99907" count="1" /> <!-- Spellbook: Time Distortion: Master -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="590000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="590000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+	</skillTree>
+</list>

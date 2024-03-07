@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LimitShop.xsd">
+	<product id="388" category="0">
+		<ingredient id="91663" count="1000" /> <!-- L-Coin -->
+		<production id="97638" accountDailyLimit="3" /> <!-- Daily Kit: Jewel Craft -->
+	</product>
+	<product id="9" category="1">
+		<ingredient id="91663" count="20" /> <!-- L-Coin -->
+		<production id="91641" /> <!-- Sayha's Blessing (Sealed) -->
+	</product>
+	<product id="12" category="1">
+		<ingredient id="91663" count="6" /> <!-- L-Coin -->
+		<production id="91690" /> <!-- Special HP Recovery Potion (Sealed) -->
+	</product>
+	<product id="13" category="1">
+		<ingredient id="91663" count="20" /> <!-- L-Coin -->
+		<production id="91689" /> <!-- Blessed Scroll of Escape (Sealed) -->
+	</product>
+	<product id="340" category="1">
+		<ingredient id="91663" count="800" /> <!-- L-Coin -->
+		<production id="91031" /> <!-- Water Spirit Evolution Stone -->
+	</product>
+	<product id="341" category="1">
+		<ingredient id="91663" count="800" /> <!-- L-Coin -->
+		<production id="91032" /> <!-- Fire Spirit Evolution Stone -->
+	</product>
+	<product id="342" category="1">
+		<ingredient id="91663" count="800" /> <!-- L-Coin -->
+		<production id="91033" /> <!-- Wind Spirit Evolution Stone -->
+	</product>
+	<product id="343" category="1">
+		<ingredient id="91663" count="800" /> <!-- L-Coin -->
+		<production id="91034" /> <!-- Earth Spirit Evolution Stone -->
+	</product>
+	<product id="567" category="1">
+		<ingredient id="91663" count="200" /> <!-- L-Coin -->
+		<production id="97147" /> <!-- Hidden Power Booster (Sealed) -->
+	</product>
+	<product id="14" category="2">
+		<ingredient id="91663" count="300" /> <!-- L-Coin -->
+		<production id="90404" /> <!-- My Teleport Book (Sealed) -->
+	</product>
+	<product id="15" category="2">
+		<ingredient id="91663" count="20" /> <!-- L-Coin -->
+		<production id="90405" /> <!-- My Teleport Scroll (Sealed) -->
+	</product>
+	<product id="16" category="2">
+		<ingredient id="91663" count="50" /> <!-- L-Coin -->
+		<production id="91996" /> <!-- Scroll of Escape Pack: Tower of Insolence (Floors 1-7) -->
+	</product>
+	<product id="17" category="2">
+		<ingredient id="91663" count="100" /> <!-- L-Coin -->
+		<production id="92973" /> <!-- Scroll of Escape Pack: Tower of Insolence (Floors 8-12) -->
+	</product>
+	<product id="410" category="2">
+		<ingredient id="91663" count="5000" /> <!-- L-Coin -->
+		<production id="94828" accountBuyLimit="1" /> <!-- Class Change Coupon (Sealed) -->
+	</product>
+	<product id="485" category="2">
+		<ingredient id="91663" count="350" /> <!-- L-Coin -->
+		<production id="91772" /> <!-- Scroll: PK (Sealed) -->
+	</product>
+	<product id="305" category="3">
+		<ingredient id="97145" count="15000" /> <!-- Ancient Adena -->
+		<production id="97176" accountBuyLimit="1" /> <!-- Spellbook Coupon - 2 Stars (Sealed) -->
+	</product>
+	<product id="306" category="3">
+		<ingredient id="97145" count="20000" /> <!-- Ancient Adena -->
+		<production id="95329" accountBuyLimit="1" /> <!-- Ring of Core (Sealed) -->
+	</product>
+	<product id="314" category="3">
+		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
+		<production id="95328" accountBuyLimit="1" /> <!-- Orfen's Earring (Sealed) -->
+	</product>
+	<product id="315" category="3">
+		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
+		<production id="95327" accountBuyLimit="1" /> <!-- Queen Ant's Ring (Sealed) -->
+	</product>
+	<product id="316" category="3">
+		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
+		<production id="95331" accountBuyLimit="1" /> <!-- Zaken's Earring (Sealed) -->
+	</product>
+	<product id="317" category="3">
+		<ingredient id="97145" count="80000" /> <!-- Ancient Adena -->
+		<production id="97177" accountBuyLimit="1" /> <!-- Spellbook Coupon - 3 Stars (Sealed) -->
+	</product>
+	<product id="318" category="3">
+		<ingredient id="97145" count="80000" /> <!-- Ancient Adena -->
+		<production id="95330" accountBuyLimit="1" /> <!-- Baium's Ring (Sealed) -->
+	</product>
+	<product id="319" category="3">
+		<ingredient id="97145" count="100000" /> <!-- Ancient Adena -->
+		<production id="95333" accountBuyLimit="1" /> <!-- Frintezza's Necklace (Sealed) -->
+	</product>
+	<product id="320" category="3">
+		<ingredient id="97145" count="300000" /> <!-- Ancient Adena -->
+		<production id="96614" /> <!-- Spellbook: Expanded Potential of Dyes (Sealed) -->
+	</product>
+	<product id="321" category="3">
+		<ingredient id="97145" count="800000" /> <!-- Ancient Adena -->
+		<production id="97178" /> <!-- Spellbook Coupon - 4 Stars (Sealed) -->
+	</product>
+	<product id="417" category="3">
+		<ingredient id="97145" count="7500" /> <!-- Ancient Adena -->
+		<production id="94155" accountBuyLimit="1" /> <!-- Orfen Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="418" category="3">
+		<ingredient id="97145" count="7500" /> <!-- Ancient Adena -->
+		<production id="94154" accountBuyLimit="1" /> <!-- Queen Ant Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="419" category="3">
+		<ingredient id="97145" count="10000" /> <!-- Ancient Adena -->
+		<production id="94648" accountBuyLimit="1" /> <!-- Core Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="420" category="3">
+		<ingredient id="97145" count="10000" /> <!-- Ancient Adena -->
+		<production id="94645" accountBuyLimit="1" /> <!-- Zaken Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="421" category="3">
+		<ingredient id="97145" count="15000" /> <!-- Ancient Adena -->
+		<production id="94153" accountBuyLimit="1" /> <!-- Baium Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="422" category="3">
+		<ingredient id="97145" count="15000" /> <!-- Ancient Adena -->
+		<production id="94509" accountBuyLimit="1" /> <!-- Frintezza Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="423" category="3">
+		<ingredient id="97145" count="30000" /> <!-- Ancient Adena -->
+		<production id="96601" accountBuyLimit="1" /> <!-- Antharas Doll Lv. 1 (Sealed) -->
+	</product>
+	<product id="431" category="3">
+		<ingredient id="97145" count="100000" /> <!-- Ancient Adena -->
+		<production id="94119" accountBuyLimit="1" /> <!-- Talisman of Baium (Sealed) -->
+	</product>
+	<product id="434" category="3">
+		<ingredient id="97145" count="300" /> <!-- Ancient Adena -->
+		<production id="91772" /> <!-- Scroll: PK (Sealed) -->
+	</product>
+	<product id="526" category="3">
+		<ingredient id="97145" count="5000" /> <!-- Ancient Adena -->
+		<production id="98814" accountBuyLimit="5" /> <!-- Special Armor Coupon (Sealed) -->
+	</product>
+	<product id="527" category="3">
+		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
+		<production id="98813" accountBuyLimit="1" /> <!-- Boss Weapon Coupon (Sealed) -->
+	</product>
+	<product id="528" category="3">
+		<ingredient id="97145" count="200000" /> <!-- Ancient Adena -->
+		<production id="98816" /> <!-- Package: +9 Cloak of Protection (Sealed) -->
+	</product>
+	<product id="529" category="3">
+		<ingredient id="97145" count="600000" /> <!-- Ancient Adena -->
+		<production id="93731" /> <!-- +9 Dragon Belt Pack (Sealed) -->
+	</product>
+	<product id="530" category="3">
+		<ingredient id="97145" count="800000" /> <!-- Ancient Adena -->
+		<production id="98815" /> <!-- Package: +9 Circlet of Hero (Sealed) -->
+	</product>
+	<product id="18" category="4" minLevel="76">
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="92400" accountDailyLimit="1" /> <!-- Forgotten Garden's Time Stone (Sealed) -->
+	</product>
+	<product id="103" category="4" minLevel="60">
+		<ingredient id="57" count="3000" /> <!-- Adena -->
+		<production id="91690" accountDailyLimit="300" /> <!-- Special HP Recovery Potion (Sealed) -->
+	</product>
+	<product id="132" category="4">
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="93948" accountDailyLimit="1" /> <!-- Extra Pass: Transcendent Instance Zone (Sealed) -->
+	</product>
+	<product id="133" category="4">
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="94690" accountDailyLimit="5" /> <!-- Package: Scroll: Boost Attack (10 pcs.) (Sealed) -->
+	</product>
+	<product id="146" category="4">
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="94777" accountDailyLimit="10" /> <!-- Berserker's Scroll (Sealed) -->
+	</product>
+	<product id="149" category="4">
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="94780" accountDailyLimit="3000" /> <!-- Growth Rune Fragment (Sealed) -->
+	</product>
+	<product id="208" category="4" minLevel="76">
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="91983" accountDailyLimit="2" /> <!-- Primeval Isle's Time Stone (Sealed) -->
+	</product>
+	<product id="231" category="4">
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="94781" /> <!-- Growth Rune Lv. 1 (Sealed) -->
+	</product>
+	<product id="282" category="4" minLevel="76">
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="96941" accountDailyLimit="1" /> <!-- Extra Pass: Training Zone (Sealed) -->
+	</product>
+	<product id="283" category="4">
+		<ingredient id="57" count="9000" /> <!-- Adena -->
+		<production id="90907" accountDailyLimit="100" /> <!-- Soulshot Ticket (Sealed) -->
+	</product>
+	<product id="284" category="4">
+		<ingredient id="57" count="300" /> <!-- Adena -->
+		<production id="3031" accountDailyLimit="2000" /> <!-- Spirit Ore (Sealed) -->
+	</product>
+	<product id="285" category="4">
+		<ingredient id="57" count="45000" /> <!-- Adena -->
+		<production id="93274" /> <!-- Sayha's Cookie (Sealed) -->
+	</product>
+	<product id="288" category="4">
+		<ingredient id="57" count="7000000" /> <!-- Adena -->
+		<production id="97791" accountDailyLimit="10" /> <!-- Daily Augmenting Stone Pack (Sealed) -->
+	</product>
+	<product id="370" category="4">
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="94691" accountDailyLimit="5" /> <!-- Package: Scroll: Boost Defense (10 pcs.) (Sealed) -->
+	</product>
+	<product id="448" category="4">
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="97145" accountDailyLimit="100" /> <!-- Ancient Adena -->
+	</product>
+	<product id="449" category="4">
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="98314" /> <!-- Sealed Collection Book (Sealed) -->
+	</product>
+	<product id="450" category="4">
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="98315" /> <!-- Scroll: Enchant Sealed Collection Book (Sealed) -->
+	</product>
+	<product id="465" category="4">
+		<ingredient id="57" count="100000" /> <!-- Adena -->
+		<production id="95724" accountDailyLimit="40" /> <!-- Daily Enchant Scroll Pack (Sealed) -->
+	</product>
+	<product id="520" category="4">
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="91767" accountDailyLimit="100" /> <!-- Enchant Kit: Talisman of Aden -->
+	</product>
+	<product id="533" category="4">
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="98422" /> <!-- Enchant Package: Ring of Insolence -->
+	</product>
+	<product id="534" category="4">
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="95723" /> <!-- Enchant Package: Dragon Valley's Earring -->
+	</product>
+	<product id="550" category="4" minLevel="60">
+		<ingredient id="57" count="5000000" /> <!-- Adena -->
+		<production id="98928" accountDailyLimit="2" /> <!-- Aztacan's Temple's Time Stone (Sealed) -->
+	</product>
+	<product id="558" category="4">
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="99995" /> <!-- Package: Pet's Pendant Lv. 1 (Sealed) -->
+	</product>
+	<product id="568" category="4">
+		<ingredient id="97145" count="1000" /> <!-- Ancient Adena -->
+		<production id="97147" accountDailyLimit="3" /> <!-- Hidden Power Booster (Sealed) -->
+	</product>
+	<product id="5061" category="4">
+		<ingredient id="57" count="1200" /> <!-- Adena -->
+		<production id="48400" accountBuyLimit="500" /> <!-- Item Seal Scroll -->
+	</product>
+	<product id="476" category="5">
+		<ingredient id="91663" count="4000" /> <!-- L-Coin -->
+		<production id="98453" /> <!-- Giran Seal Pack - 125 pcs. (Sealed) -->
+	</product>
+	<product id="5053" category="5">
+		<ingredient id="91663" count="75" /> <!-- L-Coin -->
+		<production id="99812" /> <!-- Pack of Seals (Time-limited) -->
+	</product>
+	<product id="5058" category="5">
+		<ingredient id="91663" count="2000" /> <!-- L-Coin -->
+		<production id="98780" /> <!-- Hunting Kit (Time-limited) -->
+	</product>
+	<product id="5059" category="5">
+		<ingredient id="91663" count="5000" /> <!-- L-Coin -->
+		<production id="94828" /> <!-- Class Change Coupon (Sealed) -->
+	</product>
+	<product id="5060" category="5">
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="99878" /> <!-- Red's Scroll of Blessing (Time-limited) -->
+	</product>
+</list>

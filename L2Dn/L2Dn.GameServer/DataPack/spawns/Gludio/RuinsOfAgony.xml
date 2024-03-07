@@ -1,0 +1,2570 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q001" minZ="-3614" maxZ="-3114">
+				<node x="-43295" y="118875" />
+				<node x="-43039" y="118944" />
+				<node x="-43001" y="119198" />
+				<node x="-43057" y="119412" />
+				<node x="-43256" y="119457" />
+				<node x="-43496" y="119414" />
+				<node x="-43574" y="119195" />
+				<node x="-43542" y="118952" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q002" minZ="-3605" maxZ="-3105">
+				<node x="-42829" y="117797" />
+				<node x="-42574" y="117866" />
+				<node x="-42535" y="118120" />
+				<node x="-42592" y="118334" />
+				<node x="-42790" y="118379" />
+				<node x="-43030" y="118336" />
+				<node x="-43108" y="118116" />
+				<node x="-43076" y="117873" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q003" minZ="-3615" maxZ="-3115">
+				<node x="-43844" y="117725" />
+				<node x="-43589" y="117794" />
+				<node x="-43550" y="118048" />
+				<node x="-43607" y="118262" />
+				<node x="-43805" y="118307" />
+				<node x="-44045" y="118264" />
+				<node x="-44123" y="118044" />
+				<node x="-44091" y="117801" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q004" minZ="-3649" maxZ="-3149">
+				<node x="-43407" y="116696" />
+				<node x="-43151" y="116765" />
+				<node x="-43113" y="117020" />
+				<node x="-43169" y="117234" />
+				<node x="-43368" y="117278" />
+				<node x="-43608" y="117235" />
+				<node x="-43686" y="117016" />
+				<node x="-43653" y="116773" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q005" minZ="-3677" maxZ="-3177">
+				<node x="-44245" y="116081" />
+				<node x="-43989" y="116150" />
+				<node x="-43951" y="116404" />
+				<node x="-44007" y="116618" />
+				<node x="-44206" y="116663" />
+				<node x="-44446" y="116620" />
+				<node x="-44524" y="116400" />
+				<node x="-44491" y="116157" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q006" minZ="-3230" maxZ="-2730">
+				<node x="-41564" y="115879" />
+				<node x="-41308" y="115948" />
+				<node x="-41270" y="116202" />
+				<node x="-41326" y="116416" />
+				<node x="-41525" y="116460" />
+				<node x="-41765" y="116417" />
+				<node x="-41843" y="116198" />
+				<node x="-41811" y="115955" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q007" minZ="-3274" maxZ="-2774">
+				<node x="-40655" y="116162" />
+				<node x="-40400" y="116231" />
+				<node x="-40361" y="116486" />
+				<node x="-40418" y="116700" />
+				<node x="-40616" y="116744" />
+				<node x="-40856" y="116701" />
+				<node x="-40934" y="116482" />
+				<node x="-40902" y="116239" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q009" minZ="-3261" maxZ="-2761">
+				<node x="-41513" y="114583" />
+				<node x="-41257" y="114652" />
+				<node x="-41219" y="114906" />
+				<node x="-41275" y="115120" />
+				<node x="-41474" y="115164" />
+				<node x="-41714" y="115121" />
+				<node x="-41792" y="114902" />
+				<node x="-41759" y="114659" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q010" minZ="-3183" maxZ="-2683">
+				<node x="-41528" y="112694" />
+				<node x="-41273" y="112763" />
+				<node x="-41234" y="113017" />
+				<node x="-41291" y="113231" />
+				<node x="-41489" y="113276" />
+				<node x="-41729" y="113233" />
+				<node x="-41807" y="113013" />
+				<node x="-41775" y="112770" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q011" minZ="-3128" maxZ="-2628">
+				<node x="-40081" y="113987" />
+				<node x="-39826" y="114056" />
+				<node x="-39787" y="114310" />
+				<node x="-39844" y="114524" />
+				<node x="-40042" y="114569" />
+				<node x="-40282" y="114526" />
+				<node x="-40360" y="114306" />
+				<node x="-40328" y="114063" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q012" minZ="-3583" maxZ="-3083">
+				<node x="-43137" y="114701" />
+				<node x="-42882" y="114770" />
+				<node x="-42843" y="115025" />
+				<node x="-42900" y="115239" />
+				<node x="-43098" y="115283" />
+				<node x="-43338" y="115240" />
+				<node x="-43416" y="115021" />
+				<node x="-43384" y="114778" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q013" minZ="-3596" maxZ="-3096">
+				<node x="-42817" y="113725" />
+				<node x="-42562" y="113794" />
+				<node x="-42523" y="114048" />
+				<node x="-42580" y="114262" />
+				<node x="-42778" y="114307" />
+				<node x="-43019" y="114264" />
+				<node x="-43097" y="114044" />
+				<node x="-43064" y="113801" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q014" minZ="-3089" maxZ="-2589">
+				<node x="-41208" y="111889" />
+				<node x="-40952" y="111958" />
+				<node x="-40914" y="112212" />
+				<node x="-40970" y="112426" />
+				<node x="-41169" y="112471" />
+				<node x="-41409" y="112428" />
+				<node x="-41487" y="112208" />
+				<node x="-41454" y="111965" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q015" minZ="-3581" maxZ="-3081">
+				<node x="-43124" y="112501" />
+				<node x="-42868" y="112570" />
+				<node x="-42830" y="112825" />
+				<node x="-42886" y="113038" />
+				<node x="-43085" y="113083" />
+				<node x="-43325" y="113040" />
+				<node x="-43403" y="112821" />
+				<node x="-43370" y="112578" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q016" minZ="-3883" maxZ="-3383">
+				<node x="-44228" y="113361" />
+				<node x="-43973" y="113430" />
+				<node x="-43934" y="113684" />
+				<node x="-43991" y="113898" />
+				<node x="-44189" y="113942" />
+				<node x="-44429" y="113899" />
+				<node x="-44507" y="113680" />
+				<node x="-44475" y="113437" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q017" minZ="-3700" maxZ="-3200">
+				<node x="-45180" y="115097" />
+				<node x="-44925" y="115166" />
+				<node x="-44886" y="115421" />
+				<node x="-44943" y="115634" />
+				<node x="-45141" y="115679" />
+				<node x="-45381" y="115636" />
+				<node x="-45459" y="115417" />
+				<node x="-45427" y="115174" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q018" minZ="-3614" maxZ="-3114">
+				<node x="-45361" y="116307" />
+				<node x="-45106" y="116376" />
+				<node x="-45067" y="116630" />
+				<node x="-45124" y="116844" />
+				<node x="-45322" y="116889" />
+				<node x="-45562" y="116846" />
+				<node x="-45640" y="116626" />
+				<node x="-45608" y="116383" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q019" minZ="-3625" maxZ="-3125">
+				<node x="-46111" y="115459" />
+				<node x="-45856" y="115528" />
+				<node x="-45817" y="115782" />
+				<node x="-45874" y="115996" />
+				<node x="-46072" y="116040" />
+				<node x="-46312" y="115997" />
+				<node x="-46390" y="115778" />
+				<node x="-46358" y="115535" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q020" minZ="-3774" maxZ="-3274">
+				<node x="-45806" y="114350" />
+				<node x="-45550" y="114419" />
+				<node x="-45512" y="114673" />
+				<node x="-45568" y="114887" />
+				<node x="-45767" y="114932" />
+				<node x="-46007" y="114889" />
+				<node x="-46085" y="114670" />
+				<node x="-46052" y="114427" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q021" minZ="-3744" maxZ="-3244">
+				<node x="-47061" y="114265" />
+				<node x="-46806" y="114334" />
+				<node x="-46767" y="114588" />
+				<node x="-46824" y="114802" />
+				<node x="-47022" y="114846" />
+				<node x="-47262" y="114803" />
+				<node x="-47340" y="114584" />
+				<node x="-47308" y="114341" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q022" minZ="-3716" maxZ="-3216">
+				<node x="-47136" y="113365" />
+				<node x="-46881" y="113434" />
+				<node x="-46842" y="113688" />
+				<node x="-46899" y="113902" />
+				<node x="-47097" y="113946" />
+				<node x="-47337" y="113903" />
+				<node x="-47415" y="113684" />
+				<node x="-47383" y="113441" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q023" minZ="-3717" maxZ="-3217">
+				<node x="-48445" y="113627" />
+				<node x="-48190" y="113696" />
+				<node x="-48151" y="113950" />
+				<node x="-48208" y="114164" />
+				<node x="-48406" y="114209" />
+				<node x="-48646" y="114166" />
+				<node x="-48724" y="113946" />
+				<node x="-48692" y="113703" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q024" minZ="-3711" maxZ="-3211">
+				<node x="-48140" y="112835" />
+				<node x="-47885" y="112904" />
+				<node x="-47846" y="113159" />
+				<node x="-47903" y="113372" />
+				<node x="-48101" y="113417" />
+				<node x="-48341" y="113374" />
+				<node x="-48419" y="113155" />
+				<node x="-48387" y="112912" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q025" minZ="-3892" maxZ="-3392">
+				<node x="-45106" y="111382" />
+				<node x="-44851" y="111451" />
+				<node x="-44812" y="111705" />
+				<node x="-44869" y="111919" />
+				<node x="-45067" y="111964" />
+				<node x="-45308" y="111921" />
+				<node x="-45386" y="111701" />
+				<node x="-45353" y="111458" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q026" minZ="-3877" maxZ="-3377">
+				<node x="-44984" y="110312" />
+				<node x="-44728" y="110381" />
+				<node x="-44690" y="110635" />
+				<node x="-44746" y="110849" />
+				<node x="-44945" y="110894" />
+				<node x="-45185" y="110851" />
+				<node x="-45263" y="110631" />
+				<node x="-45231" y="110388" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q027" minZ="-3897" maxZ="-3397">
+				<node x="-46046" y="110806" />
+				<node x="-45791" y="110875" />
+				<node x="-45752" y="111129" />
+				<node x="-45809" y="111343" />
+				<node x="-46007" y="111387" />
+				<node x="-46247" y="111344" />
+				<node x="-46325" y="111125" />
+				<node x="-46293" y="110882" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q028" minZ="-3861" maxZ="-3361">
+				<node x="-46852" y="110348" />
+				<node x="-46597" y="110417" />
+				<node x="-46558" y="110671" />
+				<node x="-46615" y="110885" />
+				<node x="-46813" y="110930" />
+				<node x="-47053" y="110887" />
+				<node x="-47131" y="110668" />
+				<node x="-47099" y="110425" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q029" minZ="-3916" maxZ="-3416">
+				<node x="-45974" y="109750" />
+				<node x="-45719" y="109819" />
+				<node x="-45680" y="110073" />
+				<node x="-45737" y="110287" />
+				<node x="-45935" y="110332" />
+				<node x="-46175" y="110289" />
+				<node x="-46253" y="110069" />
+				<node x="-46221" y="109827" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q030" minZ="-3881" maxZ="-3381">
+				<node x="-47085" y="108645" />
+				<node x="-46830" y="108714" />
+				<node x="-46791" y="108968" />
+				<node x="-46848" y="109182" />
+				<node x="-47046" y="109226" />
+				<node x="-47286" y="109183" />
+				<node x="-47364" y="108964" />
+				<node x="-47332" y="108721" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q031" minZ="-3805" maxZ="-3305">
+				<node x="-48448" y="108283" />
+				<node x="-48192" y="108352" />
+				<node x="-48154" y="108606" />
+				<node x="-48210" y="108820" />
+				<node x="-48409" y="108865" />
+				<node x="-48649" y="108822" />
+				<node x="-48727" y="108602" />
+				<node x="-48694" y="108359" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q032" minZ="-3815" maxZ="-3315">
+				<node x="-49428" y="108196" />
+				<node x="-49173" y="108265" />
+				<node x="-49134" y="108520" />
+				<node x="-49191" y="108734" />
+				<node x="-49389" y="108778" />
+				<node x="-49629" y="108735" />
+				<node x="-49707" y="108516" />
+				<node x="-49675" y="108273" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q033" minZ="-3789" maxZ="-3289">
+				<node x="-50829" y="108230" />
+				<node x="-50574" y="108299" />
+				<node x="-50535" y="108553" />
+				<node x="-50592" y="108767" />
+				<node x="-50790" y="108811" />
+				<node x="-51030" y="108768" />
+				<node x="-51108" y="108549" />
+				<node x="-51076" y="108306" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q034" minZ="-3804" maxZ="-3304">
+				<node x="-50128" y="108692" />
+				<node x="-49872" y="108761" />
+				<node x="-49834" y="109015" />
+				<node x="-49890" y="109229" />
+				<node x="-50089" y="109274" />
+				<node x="-50329" y="109231" />
+				<node x="-50407" y="109011" />
+				<node x="-50375" y="108768" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q035" minZ="-3772" maxZ="-3272">
+				<node x="-49386" y="109391" />
+				<node x="-49131" y="109460" />
+				<node x="-49092" y="109714" />
+				<node x="-49149" y="109928" />
+				<node x="-49347" y="109973" />
+				<node x="-49587" y="109930" />
+				<node x="-49665" y="109711" />
+				<node x="-49633" y="109468" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q036" minZ="-3631" maxZ="-3131">
+				<node x="-48476" y="109958" />
+				<node x="-48220" y="110027" />
+				<node x="-48182" y="110281" />
+				<node x="-48238" y="110495" />
+				<node x="-48437" y="110540" />
+				<node x="-48677" y="110497" />
+				<node x="-48755" y="110277" />
+				<node x="-48722" y="110034" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q037" minZ="-3707" maxZ="-3207">
+				<node x="-48204" y="109200" />
+				<node x="-47948" y="109269" />
+				<node x="-47910" y="109523" />
+				<node x="-47966" y="109737" />
+				<node x="-48165" y="109782" />
+				<node x="-48405" y="109739" />
+				<node x="-48483" y="109519" />
+				<node x="-48450" y="109277" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q038" minZ="-3872" maxZ="-3372">
+				<node x="-46698" y="111721" />
+				<node x="-46443" y="111790" />
+				<node x="-46404" y="112044" />
+				<node x="-46461" y="112258" />
+				<node x="-46659" y="112303" />
+				<node x="-46899" y="112260" />
+				<node x="-46977" y="112041" />
+				<node x="-46945" y="111798" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q039" minZ="-3392" maxZ="-2892">
+				<node x="-49516" y="106191" />
+				<node x="-49260" y="106260" />
+				<node x="-49222" y="106514" />
+				<node x="-49278" y="106728" />
+				<node x="-49477" y="106773" />
+				<node x="-49717" y="106730" />
+				<node x="-49795" y="106510" />
+				<node x="-49762" y="106267" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q040" minZ="-3402" maxZ="-2902">
+				<node x="-48461" y="106189" />
+				<node x="-48206" y="106258" />
+				<node x="-48167" y="106512" />
+				<node x="-48224" y="106726" />
+				<node x="-48422" y="106770" />
+				<node x="-48662" y="106727" />
+				<node x="-48740" y="106508" />
+				<node x="-48708" y="106265" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q041" minZ="-3481" maxZ="-2981">
+				<node x="-47543" y="106802" />
+				<node x="-47288" y="106871" />
+				<node x="-47249" y="107125" />
+				<node x="-47306" y="107339" />
+				<node x="-47504" y="107383" />
+				<node x="-47744" y="107340" />
+				<node x="-47822" y="107121" />
+				<node x="-47790" y="106878" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q042" minZ="-3467" maxZ="-2967">
+				<node x="-44733" y="107998" />
+				<node x="-44477" y="108067" />
+				<node x="-44439" y="108321" />
+				<node x="-44495" y="108535" />
+				<node x="-44694" y="108579" />
+				<node x="-44934" y="108536" />
+				<node x="-45012" y="108317" />
+				<node x="-44979" y="108074" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q043" minZ="-3521" maxZ="-3021">
+				<node x="-43347" y="108948" />
+				<node x="-43092" y="109017" />
+				<node x="-43053" y="109271" />
+				<node x="-43110" y="109485" />
+				<node x="-43308" y="109530" />
+				<node x="-43548" y="109487" />
+				<node x="-43626" y="109267" />
+				<node x="-43594" y="109024" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q044" minZ="-3337" maxZ="-2837">
+				<node x="-42828" y="107876" />
+				<node x="-42572" y="107945" />
+				<node x="-42534" y="108199" />
+				<node x="-42590" y="108413" />
+				<node x="-42789" y="108458" />
+				<node x="-43029" y="108415" />
+				<node x="-43107" y="108195" />
+				<node x="-43074" y="107952" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q045" minZ="-3410" maxZ="-2910">
+				<node x="-43810" y="107576" />
+				<node x="-43555" y="107645" />
+				<node x="-43516" y="107899" />
+				<node x="-43573" y="108113" />
+				<node x="-43771" y="108158" />
+				<node x="-44011" y="108115" />
+				<node x="-44089" y="107896" />
+				<node x="-44057" y="107653" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q046" minZ="-3627" maxZ="-3127">
+				<node x="-48528" y="110912" />
+				<node x="-48273" y="110981" />
+				<node x="-48234" y="111235" />
+				<node x="-48291" y="111449" />
+				<node x="-48489" y="111493" />
+				<node x="-48729" y="111450" />
+				<node x="-48807" y="111231" />
+				<node x="-48775" y="110988" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q047" minZ="-3647" maxZ="-3147">
+				<node x="-49335" y="111357" />
+				<node x="-49080" y="111426" />
+				<node x="-49041" y="111680" />
+				<node x="-49098" y="111894" />
+				<node x="-49296" y="111939" />
+				<node x="-49536" y="111896" />
+				<node x="-49614" y="111677" />
+				<node x="-49582" y="111434" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q048" minZ="-3626" maxZ="-3126">
+				<node x="-50431" y="110597" />
+				<node x="-50175" y="110666" />
+				<node x="-50137" y="110920" />
+				<node x="-50193" y="111134" />
+				<node x="-50392" y="111179" />
+				<node x="-50632" y="111136" />
+				<node x="-50710" y="110917" />
+				<node x="-50677" y="110674" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q049" minZ="-3813" maxZ="-3313">
+				<node x="-51952" y="108494" />
+				<node x="-51697" y="108563" />
+				<node x="-51658" y="108817" />
+				<node x="-51715" y="109031" />
+				<node x="-51913" y="109076" />
+				<node x="-52153" y="109033" />
+				<node x="-52231" y="108813" />
+				<node x="-52199" y="108570" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q050" minZ="-3656" maxZ="-3156">
+				<node x="-53290" y="109370" />
+				<node x="-53034" y="109439" />
+				<node x="-52996" y="109693" />
+				<node x="-53052" y="109907" />
+				<node x="-53251" y="109952" />
+				<node x="-53491" y="109909" />
+				<node x="-53569" y="109689" />
+				<node x="-53536" y="109446" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q051" minZ="-3639" maxZ="-3139">
+				<node x="-54051" y="110033" />
+				<node x="-53795" y="110102" />
+				<node x="-53757" y="110356" />
+				<node x="-53813" y="110570" />
+				<node x="-54012" y="110614" />
+				<node x="-54252" y="110571" />
+				<node x="-54330" y="110352" />
+				<node x="-54297" y="110109" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q052" minZ="-3653" maxZ="-3153">
+				<node x="-53514" y="111179" />
+				<node x="-53259" y="111248" />
+				<node x="-53220" y="111502" />
+				<node x="-53277" y="111716" />
+				<node x="-53475" y="111761" />
+				<node x="-53715" y="111718" />
+				<node x="-53793" y="111498" />
+				<node x="-53761" y="111255" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q053" minZ="-3632" maxZ="-3132">
+				<node x="-52569" y="110892" />
+				<node x="-52314" y="110961" />
+				<node x="-52275" y="111216" />
+				<node x="-52332" y="111429" />
+				<node x="-52530" y="111474" />
+				<node x="-52770" y="111431" />
+				<node x="-52848" y="111212" />
+				<node x="-52816" y="110969" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q054" minZ="-3651" maxZ="-3151">
+				<node x="-51561" y="111366" />
+				<node x="-51306" y="111435" />
+				<node x="-51267" y="111689" />
+				<node x="-51324" y="111903" />
+				<node x="-51522" y="111947" />
+				<node x="-51762" y="111904" />
+				<node x="-51840" y="111685" />
+				<node x="-51808" y="111442" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q055" minZ="-3637" maxZ="-3137">
+				<node x="-50361" y="112118" />
+				<node x="-50105" y="112187" />
+				<node x="-50067" y="112442" />
+				<node x="-50123" y="112656" />
+				<node x="-50322" y="112700" />
+				<node x="-50562" y="112657" />
+				<node x="-50640" y="112438" />
+				<node x="-50608" y="112195" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q056" minZ="-3646" maxZ="-3146">
+				<node x="-52711" y="112072" />
+				<node x="-52456" y="112141" />
+				<node x="-52417" y="112396" />
+				<node x="-52474" y="112609" />
+				<node x="-52672" y="112654" />
+				<node x="-52912" y="112611" />
+				<node x="-52990" y="112392" />
+				<node x="-52958" y="112149" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q057" minZ="-3624" maxZ="-3124">
+				<node x="-52109" y="112885" />
+				<node x="-51853" y="112954" />
+				<node x="-51815" y="113208" />
+				<node x="-51871" y="113422" />
+				<node x="-52070" y="113467" />
+				<node x="-52310" y="113424" />
+				<node x="-52388" y="113205" />
+				<node x="-52355" y="112962" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q058" minZ="-3638" maxZ="-3138">
+				<node x="-51377" y="112281" />
+				<node x="-51122" y="112350" />
+				<node x="-51083" y="112604" />
+				<node x="-51140" y="112818" />
+				<node x="-51338" y="112862" />
+				<node x="-51578" y="112819" />
+				<node x="-51656" y="112600" />
+				<node x="-51624" y="112357" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q059" minZ="-3628" maxZ="-3128">
+				<node x="-50364" y="113359" />
+				<node x="-50109" y="113428" />
+				<node x="-50070" y="113682" />
+				<node x="-50127" y="113896" />
+				<node x="-50325" y="113940" />
+				<node x="-50565" y="113897" />
+				<node x="-50643" y="113678" />
+				<node x="-50611" y="113435" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q060" minZ="-3719" maxZ="-3219">
+				<node x="-49617" y="114355" />
+				<node x="-49362" y="114424" />
+				<node x="-49323" y="114678" />
+				<node x="-49380" y="114892" />
+				<node x="-49578" y="114936" />
+				<node x="-49818" y="114893" />
+				<node x="-49896" y="114674" />
+				<node x="-49864" y="114431" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q061" minZ="-3720" maxZ="-3220">
+				<node x="-47937" y="115425" />
+				<node x="-47681" y="115494" />
+				<node x="-47643" y="115749" />
+				<node x="-47699" y="115963" />
+				<node x="-47898" y="116007" />
+				<node x="-48138" y="115964" />
+				<node x="-48216" y="115745" />
+				<node x="-48183" y="115502" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q062" minZ="-3654" maxZ="-3154">
+				<node x="-47332" y="116059" />
+				<node x="-47076" y="116128" />
+				<node x="-47038" y="116382" />
+				<node x="-47094" y="116596" />
+				<node x="-47293" y="116640" />
+				<node x="-47533" y="116597" />
+				<node x="-47611" y="116378" />
+				<node x="-47578" y="116135" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q063" minZ="-3641" maxZ="-3141">
+				<node x="-46513" y="116419" />
+				<node x="-46257" y="116488" />
+				<node x="-46219" y="116742" />
+				<node x="-46275" y="116956" />
+				<node x="-46474" y="117001" />
+				<node x="-46714" y="116958" />
+				<node x="-46792" y="116739" />
+				<node x="-46759" y="116496" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q064" minZ="-3621" maxZ="-3121">
+				<node x="-46106" y="117246" />
+				<node x="-45851" y="117314" />
+				<node x="-45812" y="117569" />
+				<node x="-45869" y="117783" />
+				<node x="-46067" y="117827" />
+				<node x="-46307" y="117784" />
+				<node x="-46385" y="117565" />
+				<node x="-46353" y="117322" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q065" minZ="-3593" maxZ="-3093">
+				<node x="-46038" y="118086" />
+				<node x="-45783" y="118155" />
+				<node x="-45744" y="118409" />
+				<node x="-45801" y="118623" />
+				<node x="-45999" y="118668" />
+				<node x="-46239" y="118625" />
+				<node x="-46317" y="118405" />
+				<node x="-46285" y="118162" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q066" minZ="-3803" maxZ="-3303">
+				<node x="-54000" y="107413" />
+				<node x="-53745" y="107482" />
+				<node x="-53706" y="107736" />
+				<node x="-53763" y="107950" />
+				<node x="-53961" y="107995" />
+				<node x="-54201" y="107952" />
+				<node x="-54279" y="107733" />
+				<node x="-54247" y="107490" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q067" minZ="-3785" maxZ="-3285">
+				<node x="-54730" y="106927" />
+				<node x="-54474" y="106996" />
+				<node x="-54436" y="107250" />
+				<node x="-54492" y="107464" />
+				<node x="-54691" y="107509" />
+				<node x="-54931" y="107466" />
+				<node x="-55009" y="107247" />
+				<node x="-54976" y="107004" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q068" minZ="-3791" maxZ="-3291">
+				<node x="-55364" y="107330" />
+				<node x="-55109" y="107399" />
+				<node x="-55070" y="107653" />
+				<node x="-55127" y="107867" />
+				<node x="-55325" y="107912" />
+				<node x="-55566" y="107869" />
+				<node x="-55644" y="107650" />
+				<node x="-55611" y="107407" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q069" minZ="-3838" maxZ="-3338">
+				<node x="-54720" y="108124" />
+				<node x="-54465" y="108193" />
+				<node x="-54426" y="108447" />
+				<node x="-54483" y="108661" />
+				<node x="-54681" y="108706" />
+				<node x="-54921" y="108663" />
+				<node x="-54999" y="108443" />
+				<node x="-54967" y="108200" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q070" minZ="-3787" maxZ="-3287">
+				<node x="-53684" y="108256" />
+				<node x="-53428" y="108325" />
+				<node x="-53390" y="108579" />
+				<node x="-53446" y="108793" />
+				<node x="-53645" y="108838" />
+				<node x="-53885" y="108795" />
+				<node x="-53963" y="108576" />
+				<node x="-53931" y="108333" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q071" minZ="-3790" maxZ="-3290">
+				<node x="-50832" y="109641" />
+				<node x="-50576" y="109710" />
+				<node x="-50538" y="109964" />
+				<node x="-50594" y="110178" />
+				<node x="-50793" y="110223" />
+				<node x="-51033" y="110180" />
+				<node x="-51111" y="109961" />
+				<node x="-51079" y="109718" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q072" minZ="-3891" maxZ="-3391">
+				<node x="-45326" y="112704" />
+				<node x="-45070" y="112773" />
+				<node x="-45032" y="113027" />
+				<node x="-45088" y="113241" />
+				<node x="-45287" y="113285" />
+				<node x="-45527" y="113242" />
+				<node x="-45605" y="113023" />
+				<node x="-45573" y="112780" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q073" minZ="-3445" maxZ="-2945">
+				<node x="-40617" y="111001" />
+				<node x="-40361" y="111070" />
+				<node x="-40323" y="111324" />
+				<node x="-40379" y="111538" />
+				<node x="-40578" y="111583" />
+				<node x="-40818" y="111540" />
+				<node x="-40896" y="111320" />
+				<node x="-40863" y="111077" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q074" minZ="-3381" maxZ="-2881">
+				<node x="-40809" y="109585" />
+				<node x="-40553" y="109654" />
+				<node x="-40515" y="109908" />
+				<node x="-40571" y="110122" />
+				<node x="-40770" y="110167" />
+				<node x="-41010" y="110124" />
+				<node x="-41088" y="109904" />
+				<node x="-41056" y="109661" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q075" minZ="-3657" maxZ="-3157">
+				<node x="-42142" y="110946" />
+				<node x="-41887" y="111015" />
+				<node x="-41848" y="111269" />
+				<node x="-41905" y="111483" />
+				<node x="-42103" y="111528" />
+				<node x="-42343" y="111485" />
+				<node x="-42421" y="111266" />
+				<node x="-42389" y="111023" />
+			</territory>
+		</territories>
+		<npc id="20051" count="2" respawnTime="3sec" /> <!-- Skeleton Bowman -->
+		<npc id="20054" count="4" respawnTime="3sec" /> <!-- Ruin Spartoi -->
+		<npc id="20060" count="4" respawnTime="3sec" /> <!-- Raging Spartoi -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q101" minZ="-2983" maxZ="-2483">
+				<node x="-44901" y="125032" />
+				<node x="-44427" y="125144" />
+				<node x="-44356" y="125629" />
+				<node x="-44462" y="126069" />
+				<node x="-44901" y="126145" />
+				<node x="-45389" y="126038" />
+				<node x="-45485" y="125599" />
+				<node x="-45397" y="125149" />
+			</territory>
+		</territories>
+		<npc id="20050" count="2" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="4" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q102" minZ="-2924" maxZ="-2424">
+				<node x="-44964" y="123381" />
+				<node x="-44491" y="123492" />
+				<node x="-44419" y="123977" />
+				<node x="-44525" y="124418" />
+				<node x="-44964" y="124494" />
+				<node x="-45452" y="124386" />
+				<node x="-45548" y="123947" />
+				<node x="-45460" y="123498" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q103" minZ="-2975" maxZ="-2475">
+				<node x="-46624" y="122697" />
+				<node x="-46151" y="122808" />
+				<node x="-46080" y="123293" />
+				<node x="-46185" y="123734" />
+				<node x="-46625" y="123810" />
+				<node x="-47113" y="123702" />
+				<node x="-47208" y="123263" />
+				<node x="-47120" y="122814" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q104" minZ="-3335" maxZ="-2535">
+				<node x="-45954" y="121167" />
+				<node x="-45481" y="121279" />
+				<node x="-45410" y="121764" />
+				<node x="-45515" y="122205" />
+				<node x="-45955" y="122281" />
+				<node x="-46443" y="122173" />
+				<node x="-46538" y="121734" />
+				<node x="-46450" y="121284" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q105" minZ="-3149" maxZ="-2349">
+				<node x="-47753" y="121334" />
+				<node x="-47279" y="121446" />
+				<node x="-47208" y="121931" />
+				<node x="-47314" y="122372" />
+				<node x="-47753" y="122448" />
+				<node x="-48241" y="122340" />
+				<node x="-48337" y="121901" />
+				<node x="-48249" y="121451" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q106" minZ="-3073" maxZ="-2273">
+				<node x="-48737" y="122724" />
+				<node x="-48264" y="122836" />
+				<node x="-48193" y="123321" />
+				<node x="-48298" y="123761" />
+				<node x="-48737" y="123837" />
+				<node x="-49226" y="123730" />
+				<node x="-49321" y="123291" />
+				<node x="-49233" y="122841" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q107" minZ="-3023" maxZ="-2223">
+				<node x="-48121" y="124894" />
+				<node x="-47648" y="125006" />
+				<node x="-47577" y="125491" />
+				<node x="-47682" y="125932" />
+				<node x="-48122" y="126008" />
+				<node x="-48610" y="125900" />
+				<node x="-48706" y="125461" />
+				<node x="-48618" y="125011" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q108b1" minZ="-2988" maxZ="-2488">
+				<node x="-50198" y="124347" />
+				<node x="-50289" y="124439" />
+				<node x="-50358" y="124358" />
+				<node x="-50267" y="124284" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q109" minZ="-3019" maxZ="-2219">
+				<node x="-48625" y="127589" />
+				<node x="-48151" y="127701" />
+				<node x="-48080" y="128186" />
+				<node x="-48186" y="128627" />
+				<node x="-48625" y="128703" />
+				<node x="-49113" y="128595" />
+				<node x="-49209" y="128156" />
+				<node x="-49121" y="127706" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q110" minZ="-3088" maxZ="-2288">
+				<node x="-51896" y="123571" />
+				<node x="-51423" y="123683" />
+				<node x="-51352" y="124168" />
+				<node x="-51457" y="124608" />
+				<node x="-51897" y="124684" />
+				<node x="-52385" y="124577" />
+				<node x="-52481" y="124138" />
+				<node x="-52393" y="123688" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q111" minZ="-2930" maxZ="-2130">
+				<node x="-50662" y="122279" />
+				<node x="-50189" y="122391" />
+				<node x="-50118" y="122876" />
+				<node x="-50223" y="123316" />
+				<node x="-50663" y="123392" />
+				<node x="-51151" y="123285" />
+				<node x="-51247" y="122846" />
+				<node x="-51158" y="122396" />
+			</territory>
+			<banned_territory name="gludio03_1821_q111b1" minZ="-2893" maxZ="-2393">
+				<node x="-50994" y="122324" />
+				<node x="-50870" y="122277" />
+				<node x="-50836" y="122423" />
+				<node x="-50967" y="122439" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q111b2" minZ="-2882" maxZ="-2382">
+				<node x="-50354" y="122213" />
+				<node x="-50193" y="122344" />
+				<node x="-50152" y="122465" />
+				<node x="-50440" y="122532" />
+				<node x="-50518" y="122434" />
+				<node x="-50522" y="122276" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q112" minZ="-3187" maxZ="-2387">
+				<node x="-52404" y="121941" />
+				<node x="-51931" y="122052" />
+				<node x="-51859" y="122537" />
+				<node x="-51965" y="122978" />
+				<node x="-52404" y="123054" />
+				<node x="-52892" y="122946" />
+				<node x="-52988" y="122507" />
+				<node x="-52900" y="122057" />
+			</territory>
+			<banned_territory name="gludio03_1821_q112b1" minZ="-2941" maxZ="-2441">
+				<node x="-51868" y="122585" />
+				<node x="-51807" y="122646" />
+				<node x="-51916" y="122859" />
+				<node x="-51992" y="122911" />
+				<node x="-52140" y="122821" />
+				<node x="-52146" y="122725" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q112b2" minZ="-3013" maxZ="-2513">
+				<node x="-52591" y="122471" />
+				<node x="-52614" y="122560" />
+				<node x="-52923" y="122817" />
+				<node x="-52930" y="122757" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q113" minZ="-2970" maxZ="-2170">
+				<node x="-51013" y="120772" />
+				<node x="-50540" y="120884" />
+				<node x="-50469" y="121369" />
+				<node x="-50574" y="121810" />
+				<node x="-51014" y="121886" />
+				<node x="-51502" y="121778" />
+				<node x="-51598" y="121339" />
+				<node x="-51444" y="121050" />
+			</territory>
+			<banned_territory name="gludio03_1821_q113b1" minZ="-2910" maxZ="-2410">
+				<node x="-51153" y="121709" />
+				<node x="-51240" y="121669" />
+				<node x="-51375" y="121493" />
+				<node x="-51334" y="121274" />
+				<node x="-51272" y="121209" />
+				<node x="-51012" y="121363" />
+				<node x="-51119" y="121482" />
+				<node x="-51102" y="121580" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q114" minZ="-2968" maxZ="-2168">
+				<node x="-52567" y="120227" />
+				<node x="-52094" y="120339" />
+				<node x="-52023" y="120824" />
+				<node x="-52128" y="121265" />
+				<node x="-52567" y="121341" />
+				<node x="-53056" y="121233" />
+				<node x="-53151" y="120794" />
+				<node x="-53063" y="120344" />
+			</territory>
+			<banned_territory name="gludio03_1821_q114b1" minZ="-2943" maxZ="-2443">
+				<node x="-52125" y="120684" />
+				<node x="-52169" y="120734" />
+				<node x="-52252" y="120677" />
+				<node x="-52218" y="120617" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q114b2" minZ="-2968" maxZ="-2468">
+				<node x="-52726" y="120237" />
+				<node x="-52841" y="120476" />
+				<node x="-53077" y="120356" />
+				<node x="-52960" y="120151" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q115" minZ="-3153" maxZ="-2353">
+				<node x="-54245" y="122135" />
+				<node x="-53771" y="122247" />
+				<node x="-53700" y="122732" />
+				<node x="-53806" y="123172" />
+				<node x="-54345" y="123245" />
+				<node x="-54629" y="123022" />
+				<node x="-54829" y="122702" />
+				<node x="-54741" y="122252" />
+			</territory>
+			<banned_territory name="gludio03_1821_q115b1" minZ="-2956" maxZ="-2456">
+				<node x="-53686" y="122296" />
+				<node x="-53710" y="122634" />
+				<node x="-54047" y="122382" />
+				<node x="-53929" y="122220" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q116" minZ="-3121" maxZ="-2321">
+				<node x="-54035" y="120647" />
+				<node x="-53562" y="120759" />
+				<node x="-53491" y="121244" />
+				<node x="-53596" y="121684" />
+				<node x="-54036" y="121760" />
+				<node x="-54524" y="121653" />
+				<node x="-54620" y="121213" />
+				<node x="-54531" y="120764" />
+			</territory>
+			<banned_territory name="gludio03_1821_q116b1" minZ="-2916" maxZ="-2416">
+				<node x="-53785" y="121389" />
+				<node x="-53808" y="121313" />
+				<node x="-53913" y="121297" />
+				<node x="-53897" y="121229" />
+				<node x="-53690" y="121271" />
+				<node x="-53661" y="121354" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q116b2" minZ="-2921" maxZ="-2421">
+				<node x="-53983" y="120704" />
+				<node x="-54027" y="120794" />
+				<node x="-54210" y="120738" />
+				<node x="-54153" y="120614" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q117" minZ="-3089" maxZ="-2289">
+				<node x="-54240" y="119436" />
+				<node x="-53767" y="119548" />
+				<node x="-53695" y="120033" />
+				<node x="-53801" y="120474" />
+				<node x="-54240" y="120550" />
+				<node x="-54729" y="120442" />
+				<node x="-54824" y="120003" />
+				<node x="-54736" y="119553" />
+			</territory>
+			<banned_territory name="gludio03_1821_q117b1" minZ="-2935" maxZ="-2435">
+				<node x="-54382" y="120039" />
+				<node x="-54469" y="120106" />
+				<node x="-54569" y="120035" />
+				<node x="-54499" y="119932" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q117b2" minZ="-2982" maxZ="-2482">
+				<node x="-53991" y="119767" />
+				<node x="-54036" y="119824" />
+				<node x="-54123" y="119761" />
+				<node x="-54086" y="119705" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q118" minZ="-3173" maxZ="-2373">
+				<node x="-53640" y="117329" />
+				<node x="-53166" y="117441" />
+				<node x="-53095" y="117926" />
+				<node x="-53201" y="118366" />
+				<node x="-53640" y="118442" />
+				<node x="-54128" y="118335" />
+				<node x="-54224" y="117896" />
+				<node x="-54136" y="117446" />
+			</territory>
+			<banned_territory name="gludio03_1821_q118b1" minZ="-3093" maxZ="-2593">
+				<node x="-53774" y="118097" />
+				<node x="-53946" y="118246" />
+				<node x="-54048" y="118183" />
+				<node x="-53856" y="117975" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q118b2" minZ="-3079" maxZ="-2579">
+				<node x="-53640" y="117714" />
+				<node x="-53690" y="117786" />
+				<node x="-53786" y="117713" />
+				<node x="-53742" y="117653" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q119" minZ="-3021" maxZ="-2221">
+				<node x="-51894" y="118737" />
+				<node x="-51421" y="118848" />
+				<node x="-51349" y="119333" />
+				<node x="-51455" y="119774" />
+				<node x="-51894" y="119850" />
+				<node x="-52382" y="119742" />
+				<node x="-52478" y="119303" />
+				<node x="-52390" y="118854" />
+			</territory>
+			<banned_territory name="gludio03_1821_q119b1" minZ="-2984" maxZ="-2484">
+				<node x="-51520" y="119069" />
+				<node x="-51514" y="119168" />
+				<node x="-51678" y="119289" />
+				<node x="-51808" y="119119" />
+				<node x="-51732" y="119052" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q120" minZ="-3050" maxZ="-2250">
+				<node x="-51981" y="117327" />
+				<node x="-51508" y="117439" />
+				<node x="-51436" y="117924" />
+				<node x="-51542" y="118365" />
+				<node x="-51981" y="118441" />
+				<node x="-52469" y="118333" />
+				<node x="-52565" y="117894" />
+				<node x="-52477" y="117444" />
+			</territory>
+			<banned_territory name="gludio03_1821_q120b1" minZ="-3017" maxZ="-2517">
+				<node x="-51818" y="117627" />
+				<node x="-51749" y="117689" />
+				<node x="-51777" y="117737" />
+				<node x="-51924" y="117719" />
+				<node x="-51922" y="117630" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q120b2" minZ="-2987" maxZ="-2487">
+				<node x="-52407" y="117892" />
+				<node x="-52393" y="118045" />
+				<node x="-52545" y="118020" />
+				<node x="-52541" y="117882" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q120b3" minZ="-3002" maxZ="-2502">
+				<node x="-52311" y="117642" />
+				<node x="-52362" y="117783" />
+				<node x="-52459" y="117742" />
+				<node x="-52414" y="117610" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q121" minZ="-3226" maxZ="-2426">
+				<node x="-50403" y="117653" />
+				<node x="-49930" y="117765" />
+				<node x="-49859" y="118250" />
+				<node x="-49964" y="118691" />
+				<node x="-50404" y="118767" />
+				<node x="-50892" y="118659" />
+				<node x="-50988" y="118220" />
+				<node x="-50900" y="117770" />
+			</territory>
+			<banned_territory name="gludio03_1821_q121b1" minZ="-3137" maxZ="-2637">
+				<node x="-50006" y="118230" />
+				<node x="-50155" y="118374" />
+				<node x="-50377" y="118258" />
+				<node x="-50355" y="118146" />
+				<node x="-50029" y="118161" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q122" minZ="-3205" maxZ="-2405">
+				<node x="-49299" y="118422" />
+				<node x="-48826" y="118534" />
+				<node x="-48754" y="119019" />
+				<node x="-48860" y="119460" />
+				<node x="-49299" y="119536" />
+				<node x="-49788" y="119428" />
+				<node x="-49883" y="118989" />
+				<node x="-49795" y="118539" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q123" minZ="-3373" maxZ="-2573">
+				<node x="-47782" y="117798" />
+				<node x="-47309" y="117910" />
+				<node x="-47237" y="118394" />
+				<node x="-47343" y="118835" />
+				<node x="-47782" y="118911" />
+				<node x="-48270" y="118804" />
+				<node x="-48366" y="118364" />
+				<node x="-48278" y="117915" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q124" minZ="-3658" maxZ="-2858">
+				<node x="-49042" y="116901" />
+				<node x="-48569" y="117013" />
+				<node x="-48498" y="117498" />
+				<node x="-48603" y="117939" />
+				<node x="-49043" y="118015" />
+				<node x="-49531" y="117907" />
+				<node x="-49626" y="117468" />
+				<node x="-49538" y="117018" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q125" minZ="-3369" maxZ="-2569">
+				<node x="-50548" y="116354" />
+				<node x="-50075" y="116465" />
+				<node x="-50003" y="116950" />
+				<node x="-50109" y="117391" />
+				<node x="-50548" y="117467" />
+				<node x="-51037" y="117359" />
+				<node x="-51132" y="116920" />
+				<node x="-51044" y="116470" />
+			</territory>
+			<banned_territory name="gludio03_1821_q125b1" minZ="-3220" maxZ="-2720">
+				<node x="-50741" y="116939" />
+				<node x="-50614" y="117029" />
+				<node x="-50773" y="117164" />
+				<node x="-50858" y="117115" />
+				<node x="-50839" y="116937" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q125b2" minZ="-3319" maxZ="-2819">
+				<node x="-50093" y="116577" />
+				<node x="-50084" y="116676" />
+				<node x="-50226" y="116683" />
+				<node x="-50239" y="116604" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q126" minZ="-3405" maxZ="-2605">
+				<node x="-51672" y="115505" />
+				<node x="-51199" y="115617" />
+				<node x="-51128" y="116102" />
+				<node x="-51233" y="116542" />
+				<node x="-51673" y="116618" />
+				<node x="-52161" y="116511" />
+				<node x="-52256" y="116072" />
+				<node x="-52168" y="115622" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q127" minZ="-3376" maxZ="-2576">
+				<node x="-54786" y="115905" />
+				<node x="-54313" y="116016" />
+				<node x="-54241" y="116501" />
+				<node x="-54347" y="116942" />
+				<node x="-54786" y="117018" />
+				<node x="-55275" y="116910" />
+				<node x="-55370" y="116471" />
+				<node x="-55282" y="116021" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q128b1" minZ="-3231" maxZ="-2731">
+				<node x="-55215" y="114596" />
+				<node x="-55203" y="114714" />
+				<node x="-55199" y="114816" />
+				<node x="-55377" y="114820" />
+				<node x="-55403" y="114716" />
+				<node x="-55293" y="114583" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q129" minZ="-3347" maxZ="-2547">
+				<node x="-53934" y="114482" />
+				<node x="-53461" y="114594" />
+				<node x="-53390" y="115079" />
+				<node x="-53495" y="115519" />
+				<node x="-53934" y="115595" />
+				<node x="-54423" y="115488" />
+				<node x="-54518" y="115049" />
+				<node x="-54430" y="114599" />
+			</territory>
+			<banned_territory name="gludio03_1821_q129b1" minZ="-3287" maxZ="-2787">
+				<node x="-54178" y="115034" />
+				<node x="-54012" y="115306" />
+				<node x="-54145" y="115408" />
+				<node x="-54307" y="115073" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q129b2" minZ="-3271" maxZ="-2771">
+				<node x="-54387" y="115084" />
+				<node x="-54294" y="115255" />
+				<node x="-54357" y="115343" />
+				<node x="-54599" y="115064" />
+				<node x="-54511" y="114995" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q130" minZ="-3378" maxZ="-2578">
+				<node x="-53947" y="112931" />
+				<node x="-53473" y="113043" />
+				<node x="-53402" y="113528" />
+				<node x="-53508" y="113969" />
+				<node x="-53947" y="114045" />
+				<node x="-54435" y="113937" />
+				<node x="-54531" y="113498" />
+				<node x="-54443" y="113048" />
+			</territory>
+			<banned_territory name="gludio03_1821_q130b1" minZ="-3330" maxZ="-2830">
+				<node x="-54398" y="113594" />
+				<node x="-54248" y="113629" />
+				<node x="-54240" y="113877" />
+				<node x="-54374" y="113855" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q130b2" minZ="-3331" maxZ="-2831">
+				<node x="-53906" y="113807" />
+				<node x="-53975" y="113851" />
+				<node x="-54043" y="113789" />
+				<node x="-53984" y="113726" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q130b3" minZ="-3389" maxZ="-2889">
+				<node x="-53549" y="113064" />
+				<node x="-53514" y="113132" />
+				<node x="-53605" y="113180" />
+				<node x="-53639" y="113108" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q131" minZ="-3286" maxZ="-2486">
+				<node x="-55620" y="112392" />
+				<node x="-55146" y="112503" />
+				<node x="-55075" y="112988" />
+				<node x="-55181" y="113429" />
+				<node x="-55620" y="113505" />
+				<node x="-56108" y="113397" />
+				<node x="-56204" y="112958" />
+				<node x="-56116" y="112509" />
+			</territory>
+			<banned_territory name="gludio03_1821_q131b1" minZ="-3228" maxZ="-2728">
+				<node x="-55562" y="112993" />
+				<node x="-55653" y="113036" />
+				<node x="-55722" y="112955" />
+				<node x="-55677" y="112888" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q132" minZ="-3475" maxZ="-2675">
+				<node x="-54743" y="111084" />
+				<node x="-54364" y="111284" />
+				<node x="-54198" y="111680" />
+				<node x="-54304" y="112121" />
+				<node x="-54754" y="112152" />
+				<node x="-55198" y="112119" />
+				<node x="-55294" y="111652" />
+				<node x="-55192" y="111236" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q133" minZ="-3415" maxZ="-2615">
+				<node x="-55826" y="109808" />
+				<node x="-55353" y="109920" />
+				<node x="-55282" y="110405" />
+				<node x="-55387" y="110845" />
+				<node x="-55826" y="110921" />
+				<node x="-56315" y="110814" />
+				<node x="-56410" y="110375" />
+				<node x="-56322" y="109925" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q134" minZ="-3624" maxZ="-2824">
+				<node x="-56962" y="108716" />
+				<node x="-56489" y="108828" />
+				<node x="-56417" y="109313" />
+				<node x="-56523" y="109753" />
+				<node x="-56962" y="109829" />
+				<node x="-57451" y="109722" />
+				<node x="-57546" y="109283" />
+				<node x="-57458" y="108833" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q135" minZ="-3617" maxZ="-2817">
+				<node x="-57577" y="110441" />
+				<node x="-57104" y="110552" />
+				<node x="-57033" y="111037" />
+				<node x="-57138" y="111478" />
+				<node x="-57577" y="111554" />
+				<node x="-58066" y="111446" />
+				<node x="-58161" y="111007" />
+				<node x="-58073" y="110558" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q136" minZ="-3600" maxZ="-2800">
+				<node x="-59335" y="110745" />
+				<node x="-58862" y="110857" />
+				<node x="-58791" y="111342" />
+				<node x="-58896" y="111782" />
+				<node x="-59336" y="111858" />
+				<node x="-59824" y="111751" />
+				<node x="-59920" y="111312" />
+				<node x="-59832" y="110862" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q137" minZ="-3578" maxZ="-2778">
+				<node x="-57938" y="111852" />
+				<node x="-57464" y="111963" />
+				<node x="-57393" y="112448" />
+				<node x="-57499" y="112889" />
+				<node x="-57938" y="112965" />
+				<node x="-58426" y="112858" />
+				<node x="-58522" y="112418" />
+				<node x="-58434" y="111969" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q138" minZ="-3098" maxZ="-2298">
+				<node x="-58398" y="113467" />
+				<node x="-57925" y="113579" />
+				<node x="-57854" y="114064" />
+				<node x="-57959" y="114505" />
+				<node x="-58398" y="114581" />
+				<node x="-58887" y="114473" />
+				<node x="-58982" y="114034" />
+				<node x="-58894" y="113584" />
+			</territory>
+			<banned_territory name="gludio03_1821_q138b1" minZ="-3005" maxZ="-2505">
+				<node x="-58420" y="114170" />
+				<node x="-58527" y="114236" />
+				<node x="-58624" y="114156" />
+				<node x="-58574" y="114079" />
+				<node x="-58477" y="114098" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q139" minZ="-3103" maxZ="-2303">
+				<node x="-57912" y="114926" />
+				<node x="-57439" y="115037" />
+				<node x="-57367" y="115522" />
+				<node x="-57473" y="115963" />
+				<node x="-57912" y="116039" />
+				<node x="-58400" y="115931" />
+				<node x="-58496" y="115492" />
+				<node x="-58408" y="115043" />
+			</territory>
+			<banned_territory name="gludio03_1821_q139b1" minZ="-3011" maxZ="-2511">
+				<node x="-57791" y="115587" />
+				<node x="-57952" y="115780" />
+				<node x="-58065" y="115701" />
+				<node x="-58140" y="115520" />
+				<node x="-58095" y="115442" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q139b2" minZ="-3026" maxZ="-2526">
+				<node x="-57831" y="115376" />
+				<node x="-57860" y="115457" />
+				<node x="-57998" y="115393" />
+				<node x="-57968" y="115325" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q139b3" minZ="-3061" maxZ="-2561">
+				<node x="-58232" y="115222" />
+				<node x="-58310" y="115302" />
+				<node x="-58416" y="115219" />
+				<node x="-58353" y="115139" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q140" minZ="-3154" maxZ="-2354">
+				<node x="-56475" y="115728" />
+				<node x="-56002" y="115840" />
+				<node x="-55930" y="116325" />
+				<node x="-56036" y="116766" />
+				<node x="-56475" y="116842" />
+				<node x="-56964" y="116734" />
+				<node x="-57059" y="116295" />
+				<node x="-56971" y="115845" />
+			</territory>
+			<banned_territory name="gludio03_1821_q140b1" minZ="-3029" maxZ="-2529">
+				<node x="-56606" y="116525" />
+				<node x="-56621" y="116678" />
+				<node x="-56764" y="116647" />
+				<node x="-56721" y="116509" />
+			</banned_territory>
+			<banned_territory name="gludio03_1821_q140b2" minZ="-3091" maxZ="-2591">
+				<node x="-56199" y="116455" />
+				<node x="-56204" y="116585" />
+				<node x="-56391" y="116584" />
+				<node x="-56421" y="116523" />
+				<node x="-56375" y="116427" />
+				<node x="-56322" y="116365" />
+			</banned_territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q141" minZ="-3293" maxZ="-2493">
+				<node x="-59184" y="116262" />
+				<node x="-58711" y="116374" />
+				<node x="-58639" y="116859" />
+				<node x="-58745" y="117299" />
+				<node x="-59184" y="117375" />
+				<node x="-59673" y="117268" />
+				<node x="-59768" y="116829" />
+				<node x="-59680" y="116379" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q142" minZ="-3133" maxZ="-2333">
+				<node x="-56331" y="117433" />
+				<node x="-55858" y="117545" />
+				<node x="-55786" y="118030" />
+				<node x="-55892" y="118470" />
+				<node x="-56331" y="118546" />
+				<node x="-56820" y="118439" />
+				<node x="-56915" y="118000" />
+				<node x="-56827" y="117550" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q143" minZ="-3101" maxZ="-2301">
+				<node x="-55802" y="118780" />
+				<node x="-55329" y="118892" />
+				<node x="-55257" y="119377" />
+				<node x="-55363" y="119818" />
+				<node x="-55802" y="119894" />
+				<node x="-56290" y="119786" />
+				<node x="-56386" y="119347" />
+				<node x="-56298" y="118897" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q144" minZ="-3192" maxZ="-2392">
+				<node x="-57226" y="119733" />
+				<node x="-56753" y="119844" />
+				<node x="-56682" y="120329" />
+				<node x="-56787" y="120770" />
+				<node x="-57227" y="120846" />
+				<node x="-57715" y="120738" />
+				<node x="-57811" y="120299" />
+				<node x="-57723" y="119850" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q145" minZ="-3220" maxZ="-2420">
+				<node x="-57867" y="118450" />
+				<node x="-57394" y="118561" />
+				<node x="-57323" y="119046" />
+				<node x="-57428" y="119487" />
+				<node x="-57868" y="119563" />
+				<node x="-58356" y="119455" />
+				<node x="-58451" y="119016" />
+				<node x="-58363" y="118567" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q146" minZ="-3399" maxZ="-2599">
+				<node x="-60575" y="112957" />
+				<node x="-60102" y="113069" />
+				<node x="-60031" y="113554" />
+				<node x="-60136" y="113994" />
+				<node x="-60576" y="114070" />
+				<node x="-61064" y="113963" />
+				<node x="-61159" y="113523" />
+				<node x="-61071" y="113074" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q147" minZ="-3372" maxZ="-2572">
+				<node x="-59592" y="111960" />
+				<node x="-59119" y="112072" />
+				<node x="-59048" y="112557" />
+				<node x="-59153" y="112998" />
+				<node x="-59593" y="113074" />
+				<node x="-60081" y="112966" />
+				<node x="-60177" y="112527" />
+				<node x="-60089" y="112077" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q148" minZ="-3149" maxZ="-2349">
+				<node x="-50283" y="126859" />
+				<node x="-49810" y="126971" />
+				<node x="-49739" y="127456" />
+				<node x="-49844" y="127896" />
+				<node x="-50283" y="127972" />
+				<node x="-50772" y="127865" />
+				<node x="-50867" y="127426" />
+				<node x="-50779" y="126976" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q149" minZ="-2966" maxZ="-2166">
+				<node x="-44186" y="128303" />
+				<node x="-43713" y="128415" />
+				<node x="-43642" y="128900" />
+				<node x="-43747" y="129341" />
+				<node x="-44187" y="129417" />
+				<node x="-44675" y="129309" />
+				<node x="-44771" y="128870" />
+				<node x="-44683" y="128420" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio03_1821_q150" minZ="-2991" maxZ="-2191">
+				<node x="-42750" y="129657" />
+				<node x="-42277" y="129768" />
+				<node x="-42205" y="130253" />
+				<node x="-42311" y="130694" />
+				<node x="-42750" y="130770" />
+				<node x="-43239" y="130662" />
+				<node x="-43334" y="130223" />
+				<node x="-43246" y="129774" />
+			</territory>
+		</territories>
+		<npc id="20050" count="4" respawnTime="3sec" /> <!-- Poisonous Thornleg -->
+		<npc id="20055" count="4" respawnTime="3sec" /> <!-- Monster Eye Watchman -->
+		<npc id="20059" count="6" respawnTime="3sec" /> <!-- Monster Eye Patrol -->
+		<npc id="20062" count="2" respawnTime="3sec" /> <!-- Tumran Bugbear -->
+		<npc id="20064" count="4" respawnTime="3sec" /> <!-- Tumran Bugbear Warrior -->
+	</spawn>
+</list>

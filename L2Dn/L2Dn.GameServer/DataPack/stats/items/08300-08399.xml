@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="8300" name="Recipe: Infernal Master (60%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Infernal Master. Requires Create Item Lv. 7. The success rate is 60%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="73200" />
+		<set name="recipe_id" val="814" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8313" name="Recipe: Spiritual Eye (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Spiritual Eye. Requires Create Item Lv. 7. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="73200" />
+		<set name="recipe_id" val="805" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8314" name="Recipe: Spiritual Eye (60%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Spiritual Eye. Requires Create Item Lv. 7. The success rate is 60%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="73200" />
+		<set name="recipe_id" val="804" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8315" name="Recipe: Flaming Dragon Skull (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Flaming Dragon Skull. Requires Create Item Lv. 8. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="108000" />
+		<set name="recipe_id" val="807" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8316" name="Recipe: Flaming Dragon Skull (60%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Flaming Dragon Skull. Requires Create Item Lv. 8. The success rate is 60%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="108000" />
+		<set name="recipe_id" val="806" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8317" name="Recipe: Lesser Giant's Hammer (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Lesser Giant's Hammer. Requires Create Item Lv. 3. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="28000" />
+		<set name="recipe_id" val="788" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8320" name="Recipe: Destroyer Hammer (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Destroyer Hammer. Requires Create Item Lv. 7. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="73200" />
+		<set name="recipe_id" val="813" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8325" name="Recipe: Doom Crusher (100%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Doom Crusher. Requires Create Item Lv. 8. The success rate is 100%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="108000" />
+		<set name="recipe_id" val="809" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8326" name="Recipe: Doom Crusher (60%)" type="EtcItem">
+		<!-- For Dwarves only. A recipe for Doom Crusher. Requires Create Item Lv. 8. The success rate is 60%. -->
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="108000" />
+		<set name="recipe_id" val="808" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="8327" name="Steel Sword Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Steel Sword. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="11912" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8331" name="Infernal Master Blade" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Infernal Master. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="11723" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8341" name="Spiritual Eye Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Spiritual Eye. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="11877" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8342" name="Flaming Dragon Skull Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Flaming Dragon Skull. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="14583" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8343" name="Lesser Giant's Hammer Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Lesser Giant's Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="19757" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8346" name="Destroyer Hammer Piece" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Destroyer Hammer. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="11862" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8349" name="Doom Crusher Head" type="EtcItem">
+		<!-- The item is not available. Key material for Dwarves to make Doom Crusher. No longer used. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="60" />
+		<set name="price" val="14586" />
+		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="8350" name="Chrono Maracas" type="Weapon">
+		<!-- Chronicle Letter V Souvenir!. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_chrono_maracas_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="3045" level="14" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Haste -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="8388" name="Spellbook: Attack Prowess" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Attack Prowess skill. <Class>. Prophet. <Skill effect>. Increases P./ M. Atk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8389" name="Spellbook: Defense Prowess" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Defense Prowess skill. <Class>. Prophet. <Skill effect>. Increases P./ M. Def. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="8397" name="Spellbook: Clarity" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Clarity skill. <Classes>. All classes after the 1st class change, except Orcs. <Skill effect>. Decreases MP Consumption for P./ M. skills, songs and dances. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="100000" />
+		<set name="commissionItemType" val="SPELLBOOK" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

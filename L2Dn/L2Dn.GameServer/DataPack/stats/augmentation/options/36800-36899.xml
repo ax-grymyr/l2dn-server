@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36800" name="option_id_36800">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="36801" name="option_id_36801">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="36802" name="option_id_36802">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="36803" name="option_id_36803">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="36804" name="option_id_36804">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="36805" name="option_id_36805">
+		<!-- M. Atk. +16. -->
+	</option>
+	<option id="36806" name="option_id_36806">
+		<!-- M. Atk. +22 -->
+	</option>
+	<option id="36807" name="option_id_36807">
+		<!-- M. Atk. +28 -->
+	</option>
+	<option id="36808" name="option_id_36808">
+		<!-- M. Atk. +34 -->
+	</option>
+	<option id="36809" name="option_id_36809">
+		<!-- M. Atk. +40 -->
+	</option>
+	<option id="36810" name="option_id_36810">
+		<!-- M. Atk. +46 -->
+	</option>
+	<option id="36811" name="option_id_36811">
+		<!-- M. Atk. +52 -->
+	</option>
+	<option id="36812" name="option_id_36812">
+		<!-- M. Atk. +58 -->
+	</option>
+	<option id="36813" name="option_id_36813">
+		<!-- M. Atk. +64 -->
+	</option>
+	<option id="36814" name="option_id_36814">
+		<!-- M. Atk. +70 -->
+	</option>
+	<option id="36815" name="option_id_36815">
+		<!-- M. Atk. +76 -->
+	</option>
+	<option id="36816" name="option_id_36816">
+		<!-- M. Atk. +82 -->
+	</option>
+	<option id="36817" name="option_id_36817">
+		<!-- M. Atk. +88 -->
+	</option>
+	<option id="36818" name="option_id_36818">
+		<!-- M. Atk. +94 -->
+	</option>
+	<option id="36819" name="option_id_36819">
+		<!-- M. Atk. +100 -->
+	</option>
+	<option id="36820" name="option_id_36820">
+		<!-- M. Atk. +110 -->
+	</option>
+	<option id="36821" name="option_id_36821">
+		<!-- M. Atk. +120 -->
+	</option>
+	<option id="36822" name="option_id_36822">
+		<!-- M. Atk. +150 -->
+	</option>
+	<option id="36823" name="option_id_36823">
+		<!-- M. Atk. +200 -->
+	</option>
+	<option id="36824" name="option_id_36824">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36825" name="option_id_36825">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36826" name="option_id_36826">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36827" name="option_id_36827">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36828" name="option_id_36828">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36829" name="option_id_36829">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36830" name="option_id_36830">
+		<!-- P. Accuracy +1.0 -->
+	</option>
+	<option id="36831" name="option_id_36831">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="36832" name="option_id_36832">
+		<!-- P. Accuracy +1.1 -->
+	</option>
+	<option id="36833" name="option_id_36833">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="36834" name="option_id_36834">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="36835" name="option_id_36835">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="36836" name="option_id_36836">
+		<!-- P. Accuracy +1.2 -->
+	</option>
+	<option id="36837" name="option_id_36837">
+		<!-- P. Accuracy +1.3 -->
+	</option>
+	<option id="36838" name="option_id_36838">
+		<!-- P. Accuracy +1.4 -->
+	</option>
+	<option id="36839" name="option_id_36839">
+		<!-- P. Accuracy +1.5 -->
+	</option>
+	<option id="36840" name="option_id_36840">
+		<!-- P. Accuracy +1.7 -->
+	</option>
+	<option id="36841" name="option_id_36841">
+		<!-- P. Accuracy +1.8 -->
+	</option>
+	<option id="36842" name="option_id_36842">
+		<!-- P. Accuracy +2.0 -->
+	</option>
+	<option id="36843" name="option_id_36843">
+		<!-- P. Accuracy +3.0 -->
+	</option>
+	<option id="36844" name="option_id_36844">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36845" name="option_id_36845">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36846" name="option_id_36846">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36847" name="option_id_36847">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36848" name="option_id_36848">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36849" name="option_id_36849">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36850" name="option_id_36850">
+		<!-- M. Accuracy +1.0 -->
+	</option>
+	<option id="36851" name="option_id_36851">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36852" name="option_id_36852">
+		<!-- M. Accuracy +1.1 -->
+	</option>
+	<option id="36853" name="option_id_36853">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36854" name="option_id_36854">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36855" name="option_id_36855">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36856" name="option_id_36856">
+		<!-- M. Accuracy +1.2 -->
+	</option>
+	<option id="36857" name="option_id_36857">
+		<!-- M. Accuracy +1.3 -->
+	</option>
+	<option id="36858" name="option_id_36858">
+		<!-- M. Accuracy +1.4 -->
+	</option>
+	<option id="36859" name="option_id_36859">
+		<!-- M. Accuracy +1.5 -->
+	</option>
+	<option id="36860" name="option_id_36860">
+		<!-- M. Accuracy +1.7 -->
+	</option>
+	<option id="36861" name="option_id_36861">
+		<!-- M. Accuracy +1.8 -->
+	</option>
+	<option id="36862" name="option_id_36862">
+		<!-- M. Accuracy +2.0 -->
+	</option>
+	<option id="36863" name="option_id_36863">
+		<!-- M. Accuracy +3.0 -->
+	</option>
+	<option id="36864" name="option_id_36864">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36865" name="option_id_36865">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36866" name="option_id_36866">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36867" name="option_id_36867">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36868" name="option_id_36868">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36869" name="option_id_36869">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36870" name="option_id_36870">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36871" name="option_id_36871">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36872" name="option_id_36872">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36873" name="option_id_36873">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36874" name="option_id_36874">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36875" name="option_id_36875">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36876" name="option_id_36876">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36877" name="option_id_36877">
+		<!-- Melee Weapon Resistance +1% -->
+	</option>
+	<option id="36878" name="option_id_36878">
+		<!-- Melee Weapon Resistance +2% -->
+	</option>
+	<option id="36879" name="option_id_36879">
+		<!-- Melee Weapon Resistance +2% -->
+	</option>
+	<option id="36880" name="option_id_36880">
+		<!-- Melee Weapon Resistance +3% -->
+	</option>
+	<option id="36881" name="option_id_36881">
+		<!-- Melee Weapon Resistance +3% -->
+	</option>
+	<option id="36882" name="option_id_36882">
+		<!-- Melee Weapon Resistance +4% -->
+	</option>
+	<option id="36883" name="option_id_36883">
+		<!-- Melee Weapon Resistance +5% -->
+	</option>
+	<option id="36884" name="option_id_36884">
+		<!-- Max HP +5 -->
+	</option>
+	<option id="36885" name="option_id_36885">
+		<!-- Max HP +6 -->
+	</option>
+	<option id="36886" name="option_id_36886">
+		<!-- Max HP +7 -->
+	</option>
+	<option id="36887" name="option_id_36887">
+		<!-- Max HP +8 -->
+	</option>
+	<option id="36888" name="option_id_36888">
+		<!-- Max HP +9 -->
+	</option>
+	<option id="36889" name="option_id_36889">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="36890" name="option_id_36890">
+		<!-- Max HP +12 -->
+	</option>
+	<option id="36891" name="option_id_36891">
+		<!-- Max HP +14 -->
+	</option>
+	<option id="36892" name="option_id_36892">
+		<!-- Max HP +16 -->
+	</option>
+	<option id="36893" name="option_id_36893">
+		<!-- Max HP +18 -->
+	</option>
+	<option id="36894" name="option_id_36894">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="36895" name="option_id_36895">
+		<!-- Max HP +22 -->
+	</option>
+	<option id="36896" name="option_id_36896">
+		<!-- Max HP +24 -->
+	</option>
+	<option id="36897" name="option_id_36897">
+		<!-- Max HP +26 -->
+	</option>
+	<option id="36898" name="option_id_36898">
+		<!-- Max HP +28 -->
+	</option>
+	<option id="36899" name="option_id_36899">
+		<!-- Max HP +30 -->
+	</option>
+</list>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="false" isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30093</npc> <!-- Groot -->
+	</npcs>
+	<item>
+		<ingredient id="57" count="27000000" /> <!-- Adena -->
+		<ingredient id="93934" count="30" /> <!-- Dye Powder -->
+		<production id="93935" count="1" chance="100" /> <!-- Best Dye Chest + 3 / -1 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="57" count="18000000" /> <!-- Adena -->
+		<ingredient id="93934" count="20" /> <!-- Dye Powder -->
+		<production id="93936" count="1" chance="100" /> <!-- Best Dye Chest + 4 / -2 3rd class class -->
+	</item>
+	<item>
+		<ingredient id="57" count="9000000" /> <!-- Adena -->
+		<ingredient id="93934" count="10" /> <!-- Dye Powder -->
+		<production id="93937" count="1" chance="100" /> <!-- Best Dye Chest + 4 / -3 3rd class transfer -->
+	</item>
+</list>

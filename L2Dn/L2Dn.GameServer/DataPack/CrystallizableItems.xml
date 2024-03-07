@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/CrystallizableItems.xsd">
+	<!-- Templates for generating automatically crystallization data. -->
+	<itemsOnEnchantFailure>
+		<weapon>
+			<item id="91462" enchant="7" chance="100" amountD="1" amountC="2" amountB="3" amountA="5" amountS="15" />
+			<item id="91462" enchant="8" chance="100" amountD="2" amountC="3" amountB="4" amountA="6" amountS="18" />
+			<item id="91462" enchant="9" chance="100" amountD="3" amountC="4" amountB="5" amountA="7" amountS="21" />
+			<item id="91462" enchant="10" chance="100" amountD="4" amountC="7" amountB="8" amountA="12" amountS="25" />
+			<item id="91462" enchant="11" chance="100" amountD="5" amountC="8" amountB="9" amountA="13" amountS="28" />
+			<item id="91462" enchant="12" chance="100" amountD="6" amountC="9" amountB="10" amountA="14" amountS="29" />
+			<item id="91462" enchant="13" chance="100" amountD="7" amountC="12" amountB="13" amountA="19" amountS="30" />
+			<item id="91462" enchant="14" chance="100" amountD="8" amountC="13" amountB="14" amountA="20" amountS="31" />
+			<item id="91462" enchant="15" chance="100" amountD="9" amountC="14" amountB="15" amountA="21" amountS="32" />
+			<item id="91462" enchant="16" chance="100" amountD="10" amountC="17" amountB="18" amountA="26" amountS="33" />
+			<item id="91462" enchant="17" chance="100" amountD="11" amountC="18" amountB="19" amountA="27" amountS="34" />
+			<item id="91462" enchant="18" chance="100" amountD="12" amountC="19" amountB="20" amountA="28" amountS="35" />
+			<item id="91462" enchant="19" chance="100" amountD="14" amountC="25" amountB="28" amountA="35" amountS="36" />
+		</weapon>
+		<armor>
+			<item id="91463" enchant="6" chance="100" amountD="1" amountC="2" amountB="3" amountA="5" amountS="10" />
+			<item id="91463" enchant="7" chance="100" amountD="2" amountC="3" amountB="4" amountA="6" amountS="15" />
+			<item id="91463" enchant="8" chance="100" amountD="3" amountC="4" amountB="5" amountA="7" amountS="20" />
+			<item id="91463" enchant="9" chance="100" amountD="5" amountC="7" amountB="9" amountA="13" amountS="25" />
+			<item id="91463" enchant="10" chance="100" amountD="6" amountC="8" amountB="10" amountA="14" amountS="27"/>
+			<item id="91463" enchant="11" chance="100" amountD="7" amountC="9" amountB="11" amountA="16" amountS="28" />
+			<item id="91463" enchant="12" chance="100" amountD="12" amountC="15" amountB="19" amountA="26" amountS="30" />
+		</armor>
+	</itemsOnEnchantFailure>
+</list>

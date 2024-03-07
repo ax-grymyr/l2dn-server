@@ -1,0 +1,2959 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="55700" toLevel="1" name="Scroll: Dance of Fire">
+		<!-- For 10 min., P. Critical Damage +35%. -->
+		<icon>icon.skill0274</icon>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>CRITICAL_DMG_UP</abnormalType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29014</itemConsumeId>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55701" toLevel="1" name="Release Agathion's Seal - Sin Eater">
+		<!-- Summon Sin Eater Agathion. -->
+		<operateType>A1</operateType>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<hitTime>3000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpMainjob" />
+		</conditions>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>9021</npcId> <!-- Sin Eater -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55702" toLevel="1" name="Hour of Penitence">
+		<!-- Hour of Penitence - 5 hours. Within this time monsters must be defeated and Crumbs of Penitence must be collected (Monsters that are 5 lvl lower than the character are not counted). Activates when Sin Eater is summoned. <Warning!> Removing the bracelet will end the Hour of Penitence. Remains after death. -->
+		<operateType>A2</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<abnormalType>EXP_BOTTLE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="55703" toLevel="1" name="Blessed Scroll: Enchant Weapon (A-grade)">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55704" toLevel="1" name="Blessed Scroll: Enchant Armor (A-grade)">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55705" toLevel="5" name="Red Cat's Eye">
+		<!-- P. Critical Damage +2%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55706" toLevel="5" name="Blue Cat's Eye">
+		<!-- M. Critical Damage +2%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55707" toLevel="1" name="Fortune Red Cat's Eye Chest">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55708" toLevel="1" name="Fortune Blue Cat's Eye Chest">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55709" toLevel="1" name="Shining Jewelry Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="55710" toLevel="1" name="Put on Lv. 4 Brooch">
+		<!-- Brooch radiates bright light. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<abnormalVisualEffect>AVE_BROOCH</abnormalVisualEffect>
+		<abnormalType>AVE_BROOCH</abnormalType>
+	</skill>
+	<skill id="55711" toLevel="1" name="Remove Lv. 4 Brooch">
+		<!-- Bright light fades. -->
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>AVE_BROOCH,10</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55712" toLevel="1" name="Lv. 4 Brooch">
+		<!-- Activates 5 jewel slots. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55713" toLevel="1" name="Lv. 4 Brooch - Additional Effect">
+		<!-- Inventory Slot + 12. -->
+		<operateType>P</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>12</amount>
+				<type>INVENTORY_NORMAL</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55714" toLevel="1" name="Shining Golden Boot">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55715" toLevel="1" name="Chef's Fish Stew Box">
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90793</itemConsumeId> <!-- Chef's Fish Stew Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90407" count="1" /> <!-- Chef's Fish Stew - Victory - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90408" count="1" /> <!-- Chef's Fish Stew - Fire - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90409" count="1" /> <!-- Chef's Fish Stew - Water - Sealed -->
+					</item>
+				</items>
+			</effect>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100">
+						<item id="90410" count="1" /> <!-- Chef's Fish Stew - Wind - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55716" toLevel="1" name="Letter Collector Spell">
+		<!-- Grants the power of the Letter Collector. For 1 hour Max. HP +5%, Max. MP +5%, Max. CP +5%, Speed +10, P. Atk. +8%, M. Atk. +10%. -->
+		<effectPoint>1</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>4000</hitTime>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<reuseDelay>3600000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<irreplacableBuff>true</irreplacableBuff>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55717" toLevel="1" name="Shilen's Treasure Chest">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="55718" toLevel="1" name="XP Rune 50%">
+		<!-- XP/SP gain +50%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55719" toLevel="1" name="Feather Rune">
+		<!-- Increases weight limit by 20%. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55720" toLevel="1" name="Irene' Hourglass - 1 Hour">
+		<!-- XP/SP gain + 50% for the duration of the effect. -->
+		<operateType>A2</operateType>
+		<affectRange>1000</affectRange>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VP_UP</abnormalType>
+		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
+		<magicLevel>1</magicLevel>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<reuseDelay>7200000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55721" toLevel="1" name="Storm Power">
+		<!-- Increases XP/SP gain by 50% for 2 hours. Cooldown - 2 hours. Effect remains after death. -->
+		<operateType>A2</operateType>
+		<affectRange>1000</affectRange>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>7200</abnormalTime>
+		<abnormalType>VP_UP</abnormalType>
+		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
+		<magicLevel>1</magicLevel>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<stayAfterDeath>true</stayAfterDeath>
+		<reuseDelay>7200000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55722" toLevel="1" name="Facelifting Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55723" toLevel="1" name="Facelifting Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55724" toLevel="1" name="Facelifting Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55725" toLevel="1" name="Dye Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55726" toLevel="1" name="Dye Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55727" toLevel="1" name="Dye Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55728" toLevel="1" name="Dye Potion">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="55729" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93669</itemConsumeId> <!-- Hair Style Change Potion - A -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle" />
+		</effects>
+	</skill>
+	<skill id="55730" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93670</itemConsumeId> <!-- Hair Style Change Potion - B -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>1</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55731" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93671</itemConsumeId> <!-- Hair Style Change Potion - C -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>2</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55732" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93672</itemConsumeId> <!-- Hair Style Change Potion - D -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>3</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55733" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93673</itemConsumeId> <!-- Hair Style Change Potion - E -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>4</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55734" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93674</itemConsumeId> <!-- Hair Style Change Potion - F -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>5</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55735" toLevel="1" name="Hair Style Change Potion">
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93675</itemConsumeId> <!-- Hair Style Change Potion - G -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeHairStyle">
+				<value>6</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55736" toLevel="1" name="Elmoreden Cloak Basic Effect">
+		<!-- Increases PvP Attack Damage when enchanted and bestows various passive and active skills. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55737" toLevel="20" name="Elmoreden Cloak Enchant Effect">
+		<!-- PVP Attack Damage +$s1. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">0.3</value>
+					<value level="2">0.5</value>
+					<value level="3">0.8</value>
+					<value level="4">1</value>
+					<value level="5">1.3</value>
+					<value level="6">1.5</value>
+					<value level="7">1.8</value>
+					<value level="8">2</value>
+					<value level="9">2.3</value>
+					<value level="10">2.5</value>
+					<value level="11">2.8</value>
+					<value level="12">3</value>
+					<value level="13">3.3</value>
+					<value level="14">3.5</value>
+					<value level="15">3.8</value>
+					<value level="16">4</value>
+					<value level="17">4.3</value>
+					<value level="18">4.5</value>
+					<value level="19">4.8</value>
+					<value level="20">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.3</value>
+					<value level="2">0.5</value>
+					<value level="3">0.8</value>
+					<value level="4">1</value>
+					<value level="5">1.3</value>
+					<value level="6">1.5</value>
+					<value level="7">1.8</value>
+					<value level="8">2</value>
+					<value level="9">2.3</value>
+					<value level="10">2.5</value>
+					<value level="11">2.8</value>
+					<value level="12">3</value>
+					<value level="13">3.3</value>
+					<value level="14">3.5</value>
+					<value level="15">3.8</value>
+					<value level="16">4</value>
+					<value level="17">4.3</value>
+					<value level="18">4.5</value>
+					<value level="19">4.8</value>
+					<value level="20">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">3</value>
+					<value level="11">3</value>
+					<value level="12">3</value>
+					<value level="13">3</value>
+					<value level="14">3</value>
+					<value level="15">3</value>
+					<value level="16">3</value>
+					<value level="17">3</value>
+					<value level="18">3</value>
+					<value level="19">3</value>
+					<value level="20">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ImmobileDamageBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">0</value>
+					<value level="13">0</value>
+					<value level="14">0</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+					<value level="18">10</value>
+					<value level="19">20</value>
+					<value level="20">30</value>
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="10">
+				<!-- Elmoreden Spirit Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55748</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="11" toLevel="14">
+				<!-- Elmoreden Spirit Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55748</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="15" toLevel="18">
+				<!-- Elmoreden Spirit Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55748</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="19" toLevel="20">
+				<!-- Elmoreden Spirit Shot -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55748</skillId>
+				<skillLevel>4</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="12" toLevel="12">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="13" toLevel="13">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="14" toLevel="14">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="15" toLevel="15">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>4</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="16" toLevel="16">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>5</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="17" toLevel="17">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>6</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="18" toLevel="18">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>7</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="19" toLevel="19">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>8</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="20" toLevel="20">
+				<!-- Wrath of Elmoreden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55749</skillId>
+				<skillLevel>9</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55738" toLevel="1" name="Aden Cloak Basic Effect">
+		<!-- Increases Magic PvE Damage when enchanted and bestows various passive and active skills. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55739" toLevel="20" name="Aden Cloak Enchant Effect">
+		<!-- Magic PVE Damage to normal monsters +$s1. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.3</value>
+					<value level="2">0.5</value>
+					<value level="3">0.8</value>
+					<value level="4">1</value>
+					<value level="5">1.3</value>
+					<value level="6">1.5</value>
+					<value level="7">1.8</value>
+					<value level="8">2</value>
+					<value level="9">2.3</value>
+					<value level="10">2.5</value>
+					<value level="11">2.8</value>
+					<value level="12">3</value>
+					<value level="13">3.3</value>
+					<value level="14">3.5</value>
+					<value level="15">3.8</value>
+					<value level="16">4</value>
+					<value level="17">4.3</value>
+					<value level="18">4.5</value>
+					<value level="19">4.8</value>
+					<value level="20">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">3</value>
+					<value level="11">3</value>
+					<value level="12">3</value>
+					<value level="13">3</value>
+					<value level="14">3</value>
+					<value level="15">3</value>
+					<value level="16">3</value>
+					<value level="17">3</value>
+					<value level="18">3</value>
+					<value level="19">3</value>
+					<value level="20">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">3</value>
+					<value level="15">4</value>
+					<value level="16">5</value>
+					<value level="17">6</value>
+					<value level="18">7</value>
+					<value level="19">8</value>
+					<value level="20">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>4</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="11" toLevel="11">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>5</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="12" toLevel="12">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>6</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="13" toLevel="13">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>7</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="14" toLevel="14">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>8</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="15" toLevel="15">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>9</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="16" toLevel="16">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>10</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="17" toLevel="17">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>11</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="18" toLevel="18">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>12</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="19" toLevel="19">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>13</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="20" toLevel="20">
+				<!-- Wrath of Aden -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55750</skillId>
+				<skillLevel>14</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55740" toLevel="1" name="Elmore Cloak Basic Effect">
+		<!-- Increases Physical Attack PvE Damage when enchanted and bestows various passive and active skills. -->
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55741" toLevel="20" name="Elmore Cloak Enchant Effect">
+		<!-- Physical PvE Damage to normal monsters +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">0.3</value>
+					<value level="2">0.5</value>
+					<value level="3">0.8</value>
+					<value level="4">1</value>
+					<value level="5">1.3</value>
+					<value level="6">1.5</value>
+					<value level="7">1.8</value>
+					<value level="8">2</value>
+					<value level="9">2.3</value>
+					<value level="10">2.5</value>
+					<value level="11">2.8</value>
+					<value level="12">3</value>
+					<value level="13">3.3</value>
+					<value level="14">3.5</value>
+					<value level="15">3.8</value>
+					<value level="16">4</value>
+					<value level="17">4.3</value>
+					<value level="18">4.5</value>
+					<value level="19">4.8</value>
+					<value level="20">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">0.3</value>
+					<value level="2">0.5</value>
+					<value level="3">0.8</value>
+					<value level="4">1</value>
+					<value level="5">1.3</value>
+					<value level="6">1.5</value>
+					<value level="7">1.8</value>
+					<value level="8">2</value>
+					<value level="9">2.3</value>
+					<value level="10">2.5</value>
+					<value level="11">2.8</value>
+					<value level="12">3</value>
+					<value level="13">3.3</value>
+					<value level="14">3.5</value>
+					<value level="15">3.8</value>
+					<value level="16">4</value>
+					<value level="17">4.3</value>
+					<value level="18">4.5</value>
+					<value level="19">4.8</value>
+					<value level="20">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">3</value>
+					<value level="11">3</value>
+					<value level="12">3</value>
+					<value level="13">3</value>
+					<value level="14">3</value>
+					<value level="15">3</value>
+					<value level="16">3</value>
+					<value level="17">3</value>
+					<value level="18">3</value>
+					<value level="19">3</value>
+					<value level="20">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">1</value>
+					<value level="13">2</value>
+					<value level="14">3</value>
+					<value level="15">4</value>
+					<value level="16">5</value>
+					<value level="17">6</value>
+					<value level="18">7</value>
+					<value level="19">8</value>
+					<value level="20">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>4</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="11" toLevel="11">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>5</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="12" toLevel="12">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>6</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="13" toLevel="13">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>7</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="14" toLevel="14">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>8</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="15" toLevel="15">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>9</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="16" toLevel="16">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>10</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="17" toLevel="17">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>11</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="18" toLevel="18">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>12</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="19" toLevel="19">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>13</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="20" toLevel="20">
+				<!-- Wrath of Elmore -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>55751</skillId>
+				<skillLevel>14</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55742" toLevel="1" name="Ferios Cloak Basic Effect">
+		<!-- Decreases received damage when enchanted and bestows various passive and active skills. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+	</skill>
+	<skill id="55743" toLevel="20" name="Ferios Cloak Enchant Effect">
+		<!-- Received damage -$s1. -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ImmobileDamageResist">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-5</value>
+					<value level="8">-7</value>
+					<value level="9">-9</value>
+					<value level="10">-11</value>
+					<value level="11">-13</value>
+					<value level="12">-15</value>
+					<value level="13">-17</value>
+					<value level="14">-18</value>
+					<value level="15">-20</value>
+					<value level="16">-22</value>
+					<value level="17">-24</value>
+					<value level="18">-26</value>
+					<value level="19">-28</value>
+					<value level="20">-30</value>
+				</amount>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">3</value>
+					<value level="11">3</value>
+					<value level="12">3</value>
+					<value level="13">3</value>
+					<value level="14">3</value>
+					<value level="15">3</value>
+					<value level="16">3</value>
+					<value level="17">3</value>
+					<value level="18">3</value>
+					<value level="19">3</value>
+					<value level="20">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="12" toLevel="12">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="13" toLevel="13">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="14" toLevel="14">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="15" toLevel="15">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>4</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="16" toLevel="16">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>5</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="17" toLevel="17">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>6</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="18" toLevel="18">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>7</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="19" toLevel="19">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>8</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="20" toLevel="20">
+				<!-- Recovery of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55752</skillId>
+				<skillLevel>9</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="18" toLevel="18">
+				<!-- Defense of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55753</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="19" toLevel="19">
+				<!-- Defense of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55753</skillId>
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamage" fromLevel="20" toLevel="20">
+				<!-- Defense of Ferios -->
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>55753</skillId>
+				<skillLevel>3</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55744" toLevel="1" name="Blessing of Elmoreden">
+		<!-- Makes you invincible for 10 sec and increases Speed by 100. -->
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>5</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="Speed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55745" toLevel="1" name="Spirit of Aden">
+		<!-- Increases PvE Damage by 100% when dealing magic attack. -->
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>1200000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55746" toLevel="1" name="Spirit of Elmore">
+		<!-- Increases PvE Damage by 100% when dealing physical attack. -->
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>300</coolTime>
+		<reuseDelay>1200000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55747" toLevel="1" name="Blessing of Ferios">
+		<!-- Makes you invincible for 20 sec. -->
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<reuseDelay>600000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+		</effects>
+	</skill>
+	<skill id="55748" toLevel="4" name="Elmoreden Spirit Shot">
+		<!-- Ignores CP in PvP, and deals $s1 fixed damage. -->
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>18000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectRange>1400</effectRange>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="RealDamage">
+				<power>
+					<value level="1">950</value>
+					<value level="2">1425</value>
+					<value level="3">1900</value>
+					<value level="4">2375</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55749" toLevel="9" name="Wrath of Elmoreden">
+		<!-- Decreases target's CP by $s1. -->
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>18000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectRange>1400</effectRange>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Cp">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+					<value level="4">-25</value>
+					<value level="5">-30</value>
+					<value level="6">-35</value>
+					<value level="7">-40</value>
+					<value level="8">-45</value>
+					<value level="9">-50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55750" toLevel="14" name="Wrath of Aden">
+		<!-- For $s1, PvE Damage +$s2 when dealing magic attacks. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">33</value>
+					<value level="3">36</value>
+					<value level="4">40</value>
+					<value level="5">44</value>
+					<value level="6">48</value>
+					<value level="7">53</value>
+					<value level="8">58</value>
+					<value level="9">64</value>
+					<value level="10">71</value>
+					<value level="11">78</value>
+					<value level="12">100</value>
+					<value level="13">100</value>
+					<value level="14">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55751" toLevel="14" name="Wrath of Elmore">
+		<!-- For $s1, PvE Damage +$s2 when dealing physical attacks. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<coolTime>500</coolTime>
+		<magicLevel>40</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">33</value>
+					<value level="3">36</value>
+					<value level="4">40</value>
+					<value level="5">44</value>
+					<value level="6">48</value>
+					<value level="7">53</value>
+					<value level="8">58</value>
+					<value level="9">64</value>
+					<value level="10">71</value>
+					<value level="11">78</value>
+					<value level="12">100</value>
+					<value level="13">100</value>
+					<value level="14">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">33</value>
+					<value level="3">36</value>
+					<value level="4">40</value>
+					<value level="5">44</value>
+					<value level="6">48</value>
+					<value level="7">53</value>
+					<value level="8">58</value>
+					<value level="9">64</value>
+					<value level="10">71</value>
+					<value level="11">78</value>
+					<value level="12">100</value>
+					<value level="13">100</value>
+					<value level="14">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55752" toLevel="9" name="Recovery of Ferios">
+		<!-- CP +$s1. -->
+		<operateType>A1</operateType>
+		<hitTime>300</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>18000</reuseDelay>
+		<effectPoint>867</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Cp">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">35</value>
+					<value level="3">40</value>
+					<value level="4">45</value>
+					<value level="5">50</value>
+					<value level="6">55</value>
+					<value level="7">60</value>
+					<value level="8">65</value>
+					<value level="9">70</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55753" toLevel="3" name="Defense of Ferios">
+		<!-- For $s1, P./M. Def. +$s2. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>300</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>689</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>SUB_TRIGGER_DEFENCE</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<castRange>1200</castRange>
+		<effectRange>1400</effectRange>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">1800</value>
+					<value level="2">2700</value>
+					<value level="3">3600</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1800</value>
+					<value level="2">2700</value>
+					<value level="3">3600</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55754" toLevel="8" name="Recovery of Elmoreden">
+		<!-- CP +$s1. -->
+		<operateType>A1</operateType>
+		<hitTime>300</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>689</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Cp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">53</value>
+					<value level="3">55</value>
+					<value level="4">58</value>
+					<value level="5">61</value>
+					<value level="6">64</value>
+					<value level="7">67</value>
+					<value level="8">70</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55755" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- P. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">9</value>
+					<value level="7">11</value>
+					<value level="8">12</value>
+					<value level="9">15</value>
+					<value level="10">31</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55756" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- M. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">11</value>
+					<value level="8">13</value>
+					<value level="9">16</value>
+					<value level="10">33</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55757" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- Atk. Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">13</value>
+					<value level="7">16</value>
+					<value level="8">18</value>
+					<value level="9">22</value>
+					<value level="10">45</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55758" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- Casting Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">13</value>
+					<value level="7">16</value>
+					<value level="8">18</value>
+					<value level="9">22</value>
+					<value level="10">45</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55759" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- P. Accuracy +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55760" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- M. Accuracy +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55761" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- Max HP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55762" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- Max MP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55763" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- Max CP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">49</value>
+					<value level="2">58</value>
+					<value level="3">76</value>
+					<value level="4">94</value>
+					<value level="5">112</value>
+					<value level="6">135</value>
+					<value level="7">157</value>
+					<value level="8">180</value>
+					<value level="9">225</value>
+					<value level="10">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55764" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- STR +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55765" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- CON +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55766" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- MEN +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55767" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- DEX +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55768" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- WIT +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55769" toLevel="2" name="Empire Cloak Augmentation">
+		<!-- INT +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55770" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- M. Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">0.8</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.2</value>
+					<value level="7">2.6</value>
+					<value level="8">3</value>
+					<value level="9">3.7</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55771" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- P. Skill Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55772" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- M. Skill Critical Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55773" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- P. Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55774" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- P. Skill Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0.9</value>
+					<value level="2">1</value>
+					<value level="3">1.3</value>
+					<value level="4">1.6</value>
+					<value level="5">1.9</value>
+					<value level="6">2.3</value>
+					<value level="7">2.7</value>
+					<value level="8">3</value>
+					<value level="9">3.8</value>
+					<value level="10">7.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55775" toLevel="10" name="Empire Cloak Augmentation">
+		<!-- M. Critical Damage Boost -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55776" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Stun Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<SHOCK>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55777" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Hold Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<HOLD>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55778" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Bleeding Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55779" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Paralysis Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<PARALYZE>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55780" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Mind Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<DERANGEMENT>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</DERANGEMENT>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55781" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Sleep Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<SLEEP>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55782" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Poison Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</INFECTION>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55784" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Pull Attack Success Rate +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<PULL>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</PULL>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55785" toLevel="9" name="Empire Cloak Augmentation">
+		<!-- Petrification Attack Success Rate -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<TURN_STONE>
+					<value level="1">1.5</value>
+					<value level="2">2.5</value>
+					<value level="3">3</value>
+					<value level="4">3.5</value>
+					<value level="5">4.5</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7.5</value>
+					<value level="9">15</value>
+				</TURN_STONE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55786" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Max HP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55787" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Max MP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55788" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Max CP +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55789" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- P. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55790" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- P. Def. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55791" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Atk. Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55792" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Speed +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">13</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55793" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- M. Atk. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55794" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- M. Def. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55795" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Casting Spd. +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55796" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- PvP Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55797" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Received PvP Damage -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55798" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- PvE Damage +$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55799" toLevel="3" name="Empire Cloak Augmentation">
+		<!-- Received PvE Damage -$s1 -->
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4.5</value>
+					<value level="3">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

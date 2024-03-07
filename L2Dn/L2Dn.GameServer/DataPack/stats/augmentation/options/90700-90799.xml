@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="90700" name="P. Def. +35">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90701" name="P. Def. +38">
+		<!-- P. Def. +38 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90702" name="P. Def. +41">
+		<!-- P. Def. +41 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90703" name="P. Def. +44">
+		<!-- P. Def. +44 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90704" name="P. Def. +48">
+		<!-- P. Def. +48 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90705" name="P. Def. +52">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90706" name="P. Def. +56">
+		<!-- P. Def. +56 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90707" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90708" name="P. Def. +65">
+		<!-- P. Def. +65 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90709" name="P. Def. +70">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90710" name="P. Def. +75">
+		<!-- P. Def. +75 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90711" name="P. Def. +81">
+		<!-- P. Def. +81 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90712" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90713" name="P. Def. +93">
+		<!-- P. Def. +93 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90714" name="P. Def. +96">
+		<!-- P. Def. +96 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90715" name="P. Def. +99">
+		<!-- P. Def. +99 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>99</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90716" name="P. Def. +102">
+		<!-- P. Def. +102 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90717" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90718" name="P. Def. +110">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90719" name="M. Def. +35">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90720" name="M. Def. +38">
+		<!-- M. Def. +38 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90721" name="M. Def. +41">
+		<!-- M. Def. +41 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90722" name="M. Def. +44">
+		<!-- M. Def. +44 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90723" name="M. Def. +48">
+		<!-- M. Def. +48 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90724" name="M. Def. +52">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90725" name="M. Def. +56">
+		<!-- M. Def. +56 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90726" name="M. Def. +60">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90727" name="M. Def. +65">
+		<!-- M. Def. +65 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90728" name="M. Def. +70">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90729" name="M. Def. +75">
+		<!-- M. Def. +75 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90730" name="M. Def. +81">
+		<!-- M. Def. +81 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90731" name="M. Def. +87">
+		<!-- M. Def. +87 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90732" name="M. Def. +93">
+		<!-- M. Def. +93 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90733" name="M. Def. +96">
+		<!-- M. Def. +96 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90734" name="M. Def. +99">
+		<!-- M. Def. +99 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>99</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90735" name="M. Def. +102">
+		<!-- M. Def. +102 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90736" name="M. Def. +106">
+		<!-- M. Def. +106 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90737" name="M. Def. +110">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90738" name="M. Def. +120">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90739" name="Max HP +125">
+		<!-- Max HP +125 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90740" name="Max HP +135">
+		<!-- Max HP +135 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90741" name="Max HP +146">
+		<!-- Max HP +146 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90742" name="Max HP +158">
+		<!-- Max HP +158 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90743" name="Max HP +171">
+		<!-- Max HP +171 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90744" name="Max HP +185">
+		<!-- Max HP +185 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90745" name="Max HP +200">
+		<!-- Max HP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90746" name="Max HP +216">
+		<!-- Max HP +216 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90747" name="Max HP +234">
+		<!-- Max HP +234 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90748" name="Max HP +253">
+		<!-- Max HP +253 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90749" name="Max HP +274">
+		<!-- Max HP +274 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90750" name="Max HP +296">
+		<!-- Max HP +296 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90751" name="Max HP +320">
+		<!-- Max HP +320 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90752" name="Max HP +360">
+		<!-- Max HP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90753" name="Max HP +377">
+		<!-- Max HP +377 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>377</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90754" name="Max HP +394">
+		<!-- Max HP +394 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>394</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90755" name="Max HP +412">
+		<!-- Max HP +412 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>412</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90756" name="Max HP +431">
+		<!-- Max HP +431 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>431</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90757" name="Max HP +451">
+		<!-- Max HP +451 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>451</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90758" name="Max HP +480">
+		<!-- Max HP +480 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90759" name="Max MP +125">
+		<!-- Max MP +125 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90760" name="Max MP +135">
+		<!-- Max MP +135 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90761" name="Max MP +146">
+		<!-- Max MP +146 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90762" name="Max MP +158">
+		<!-- Max MP +158 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90763" name="Max MP +171">
+		<!-- Max MP +171 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90764" name="Max MP +185">
+		<!-- Max MP +185 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90765" name="Max MP +200">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90766" name="Max MP +216">
+		<!-- Max MP +216 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90767" name="Max MP +234">
+		<!-- Max MP +234 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90768" name="Max MP +253">
+		<!-- Max MP +253 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90769" name="Max MP +274">
+		<!-- Max MP +274 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90770" name="Max MP +296">
+		<!-- Max MP +296 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90771" name="Max MP +320">
+		<!-- Max MP +320 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90772" name="Max MP +360">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90773" name="Max MP +377">
+		<!-- Max MP +377 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>377</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90774" name="Max MP +394">
+		<!-- Max MP +394 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>394</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90775" name="Max MP +412">
+		<!-- Max MP +412 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>412</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90776" name="Max MP +431">
+		<!-- Max MP +431 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>431</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90777" name="Max MP +451">
+		<!-- Max MP +451 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>451</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90778" name="Max MP +480">
+		<!-- Max MP +480 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90779" name="P. Def. +32">
+		<!-- P. Def. +32 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90780" name="P. Def. +35">
+		<!-- P. Def. +35 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90781" name="P. Def. +38">
+		<!-- P. Def. +38 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90782" name="P. Def. +41">
+		<!-- P. Def. +41 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90783" name="P. Def. +44">
+		<!-- P. Def. +44 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90784" name="P. Def. +48">
+		<!-- P. Def. +48 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90785" name="P. Def. +52">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90786" name="P. Def. +56">
+		<!-- P. Def. +56 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>56</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90787" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90788" name="P. Def. +65">
+		<!-- P. Def. +65 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90789" name="P. Def. +70">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90790" name="P. Def. +75">
+		<!-- P. Def. +75 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90791" name="P. Def. +81">
+		<!-- P. Def. +81 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90792" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90793" name="P. Def. +93">
+		<!-- P. Def. +93 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90794" name="P. Def. +96">
+		<!-- P. Def. +96 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>96</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90795" name="P. Def. +99">
+		<!-- P. Def. +99 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>99</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90796" name="P. Def. +102">
+		<!-- P. Def. +102 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>102</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90797" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90798" name="P. Def. +110">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="90799" name="M. Def. +35">
+		<!-- M. Def. +35 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

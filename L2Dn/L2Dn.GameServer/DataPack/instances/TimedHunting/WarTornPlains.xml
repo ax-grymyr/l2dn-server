@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="211" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- War-Torn Plains (70-79) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="168275" y="28836" z="-3608" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="70" />
+			<param name="max" value="79" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34126" x="168245" y="28751" z="-3608" heading="48103" /> <!-- Manager Debbie -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22116" x="168176" y="27755" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168013" y="27728" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="167893" y="27612" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168181" y="27979" z="-3648" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="167956" y="27911" z="-3648" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="167757" y="27779" z="-3648" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168504" y="27889" z="-3648" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168669" y="27750" z="-3648" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168179" y="27637" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168072" y="27603" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168304" y="27624" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168186" y="28098" z="-3632" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168465" y="27618" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168331" y="27730" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22116" x="168179" y="27613" z="-3656" heading="10630" /> <!-- Farcran -->
+			<npc id="22117" x="168713" y="28515" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="168709" y="28324" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="168713" y="28118" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="168550" y="28118" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="168550" y="28324" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="168550" y="28515" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167952" y="28515" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167952" y="28324" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167952" y="28118" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167775" y="28118" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167775" y="28324" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22117" x="167775" y="28515" z="-3600" heading="10630" /> <!-- Deprive -->
+			<npc id="22118" x="168713" y="28118" z="-3600" heading="10630" /> <!-- Hatar Ratman Boss -->
+			<npc id="22118" x="168550" y="28515" z="-3600" heading="10630" /> <!-- Hatar Ratman Boss -->
+			<npc id="22118" x="167952" y="28118" z="-3600" heading="10630" /> <!-- Hatar Ratman Boss -->
+			<npc id="22118" x="167775" y="28515" z="-3600" heading="10630" /> <!-- Hatar Ratman Boss -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22124" x="167952" y="28118" z="-3600" heading="10630" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="167775" y="28118" z="-3600" heading="10630" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="168713" y="28118" z="-3600" heading="10630" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="168550" y="28118" z="-3600" heading="10630" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="168250" y="28118" z="-3600" heading="10630" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22334" x="168234" y="28128" z="-3642" heading="16096" /> <!-- Fierce Guard -->
+		</group>
+	</spawnlist>
+</instance>

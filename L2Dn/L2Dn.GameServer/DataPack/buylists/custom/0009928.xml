@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="1060" price="0" /> <!-- Lesser Healing Potion -->
+	<item id="1061" price="0" /> <!-- Greater Healing Potion -->
+	<item id="1539" price="0" /> <!-- Greater Healing Potion -->
+	<item id="735" price="0" /> <!-- Alacrity Potion -->
+	<item id="1374" price="0" /> <!-- Greater Haste Potion -->
+	<item id="734" price="0" /> <!-- Haste Potion -->
+	<item id="1375" price="0" /> <!-- Greater Swift Attack Potion -->
+	<item id="6035" price="0" /> <!-- Magic Haste Potion -->
+	<item id="6036" price="0" /> <!-- Greater Magic Haste Potion -->
+	<item id="5591" price="0" /> <!-- CP Potion -->
+	<item id="5592" price="0" /> <!-- Greater CP Potion -->
+	<item id="1073" price="0" /> <!-- Beginner's Potion -->
+	<item id="5242" price="0" /> <!-- Hair Style Change Potion - A -->
+	<item id="5243" price="0" /> <!-- Hair Style Change Potion - B -->
+	<item id="5244" price="0" /> <!-- Hair Style Change Potion - C -->
+	<item id="5245" price="0" /> <!-- Hair Style Change Potion - D -->
+	<item id="5246" price="0" /> <!-- Hair Style Change Potion - E -->
+	<item id="5247" price="0" /> <!-- Hair Style Change Potion - F -->
+	<item id="5248" price="0" /> <!-- Hair Style Change Potion - G -->
+	<item id="5238" price="0" /> <!-- Dye Potion - A -->
+	<item id="5239" price="0" /> <!-- Dye Potion - B -->
+	<item id="5240" price="0" /> <!-- Dye Potion - C -->
+	<item id="5241" price="0" /> <!-- Dye Potion - D -->
+	<item id="5235" price="0" /> <!-- Facelifting Potion - A -->
+	<item id="5236" price="0" /> <!-- Facelifting Potion - B -->
+	<item id="5237" price="0" /> <!-- Facelifting Potion - C -->
+	<item id="5234" price="0" /> <!-- Mystery Potion -->
+	<item id="1540" price="0" /> <!-- Quick Healing Potion -->
+	<item id="4677" price="0" /> <!-- Potion of Critical Escape -->
+	<item id="4680" price="0" /> <!-- Potion of Critical Escape -->
+	<item id="49663" price="0" /> <!-- Special HP Recovery Potion -->
+	<item id="49690" price="0" /> <!-- Blue Dynasty Transformation potion -->
+	<item id="49691" price="0" /> <!-- Red Zubei Transformation potion -->
+	<item id="49693" price="0" /> <!-- Magical Potion of Leaping (Lv. 1) -->
+	<item id="49694" price="0" /> <!-- Magical Potion of Leaping (Lv. 2) -->
+	<item id="49695" price="0" /> <!-- Magical Potion of Leaping (Lv. 3) -->
+	<item id="90273" price="0" /> <!-- Magical Potion of Leaping (Lv. 4) -->
+	<item id="49854" price="0" /> <!-- Maliss'MP Replenishing Potion -->
+	<item id="90043" price="0" /> <!-- Dark Assassin Transformation Potion -->
+	<item id="90879" price="0" /> <!-- Sayha's Grace Potion -->
+	<item id="91027" price="0" /> <!-- Dragon Miracle Potion -->
+	<item id="91856" price="0" /> <!-- Special Dragon Miracle Potion Lv.1 -->
+	<item id="92410" price="0" /> <!-- Special Dragon Miracle Potion Lv.2 -->
+	<item id="91028" price="0" /> <!-- High-grade Maliss'HP Recovery Potion -->
+	<item id="91158" price="0" /> <!-- Maphr Potion -->
+	<item id="91189" price="0" /> <!-- Fire Attack Potion -->
+	<item id="91190" price="0" /> <!-- Water Attack Potion -->
+	<item id="91191" price="0" /> <!-- Wind Attack Potion -->
+	<item id="91192" price="0" /> <!-- Earth Attack Potion -->
+	<item id="91830" price="0" /> <!-- Improved Fire Attack Potion -->
+	<item id="91831" price="0" /> <!-- Improved Water Attack Potion -->
+	<item id="91832" price="0" /> <!-- Improved Wind Attack Potion -->
+	<item id="91833" price="0" /> <!-- Improved Earth Attack Potion -->
+	<item id="91757" price="0" /> <!-- Magic Lamp Charging Potion Potion -->
+	<item id="91774" price="0" /> <!-- Miraculous Rudolph Potion -->
+	<item id="93967" price="0" /> <!-- Pet's HP Potion -->
+	<item id="94221" price="0" /> <!-- Growth Potion -->
+</list>

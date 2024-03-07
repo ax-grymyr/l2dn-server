@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GiranSquareMerchants">
+		<group>
+			<npc id="30829" x="82224" y="149712" z="-3464" heading="53303" respawnTime="1min" /> <!-- Cooper - Pet Manager -->
+			<npc id="34217" x="82324" y="149712" z="-3464" heading="53376" respawnTime="1min" /> <!-- Dresen - Equipment Merchant -->
+			<npc id="30081" x="82424" y="149712" z="-3464" heading="53501" respawnTime="1min" /> <!-- Helvetia - Grocer -->
+			<npc id="30095" x="82524" y="149712" z="-3464" heading="53501" respawnTime="1min" /> <!-- Randolf - Warehouse Keeper -->
+			<npc id="30300" x="82624" y="149712" z="-3464" heading="53501" respawnTime="1min" /> <!-- Pushkin - Blacksmith -->
+			<!-- <npc id="31049" x="82724" y="149712" z="-3464" heading="53501" respawnTime="1min" /> Pepper - Tattoo Master -->
+			<npc id="34152" x="82824" y="149712" z="-3464" heading="53501" respawnTime="1min" /> <!-- Juni - Additional Services Advisor -->
+		</group>
+	</spawn>
+</list>

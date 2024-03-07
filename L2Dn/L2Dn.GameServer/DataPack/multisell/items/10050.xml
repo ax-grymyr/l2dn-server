@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<!-- Exchange +12 Purge Weapon Coupon -->
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95446" /> <!-- Excuro's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95447" /> <!-- Torfe's Claw - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95448" /> <!-- Giants' Club - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95449" /> <!-- Ancient Rapier - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95450" /> <!-- Guardian Messenger's Spear - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95451" /> <!-- Sealed Angel's Hammer - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95452" /> <!-- Lizardman Shaman's Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95453" /> <!-- Lizard Slayer - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95454" /> <!-- Deadman's Dagger - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95455" /> <!-- Dragon Bone Blade - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95456" /> <!-- Berserker's Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95457" /> <!-- Sel Mahum Sniper - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95458" /> <!-- Turek Orc Prefect's Dual Swords - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="95459" /> <!-- Butcher's Long Sword - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="97237" /> <!-- Spear of Xilenos - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="96723" /> <!-- Giant's Two-handed Staff - Sealed -->
+	</item>
+	<item>
+		<ingredient count="1" id="98418" /> <!-- +12 Purge Weapon Coupon (Time-limited) - Sealed -->
+		<production count="1" enchantmentLevel="12" id="96722" /> <!-- Giant's One-handed Axe - Sealed -->
+	</item>
+</list>

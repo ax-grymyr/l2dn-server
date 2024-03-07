@@ -1,0 +1,3307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat01" minZ="-3549" maxZ="-2649">
+				<node x="76794" y="66558" />
+				<node x="77826" y="66562" />
+				<node x="77830" y="67589" />
+				<node x="76799" y="67585" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat02" minZ="-3549" maxZ="-2649">
+				<node x="77818" y="66564" />
+				<node x="78850" y="66568" />
+				<node x="78854" y="67595" />
+				<node x="77823" y="67591" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat03" minZ="-3549" maxZ="-2649">
+				<node x="78836" y="66544" />
+				<node x="79867" y="66548" />
+				<node x="79872" y="67575" />
+				<node x="78840" y="67571" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat04" minZ="-3549" maxZ="-2649">
+				<node x="79860" y="66550" />
+				<node x="80891" y="66554" />
+				<node x="80896" y="67581" />
+				<node x="79864" y="67577" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat05" minZ="-3549" maxZ="-2649">
+				<node x="76811" y="67582" />
+				<node x="77843" y="67586" />
+				<node x="77847" y="68613" />
+				<node x="76815" y="68609" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat06" minZ="-3549" maxZ="-2649">
+				<node x="77830" y="67661" />
+				<node x="78862" y="67665" />
+				<node x="78866" y="68692" />
+				<node x="77834" y="68688" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat07" minZ="-3549" maxZ="-2649">
+				<node x="78853" y="67568" />
+				<node x="79884" y="67572" />
+				<node x="79888" y="68599" />
+				<node x="78857" y="68595" />
+			</territory>
+			<banned_territory name="oren21_2220_domat07b" minZ="-3741" maxZ="-2241">
+				<node x="79529" y="67764" />
+				<node x="79611" y="67759" />
+				<node x="79616" y="67828" />
+				<node x="79534" y="67833" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat08" minZ="-3549" maxZ="-2649">
+				<node x="79877" y="67574" />
+				<node x="80908" y="67578" />
+				<node x="80912" y="68605" />
+				<node x="79881" y="68601" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat09" minZ="-3549" maxZ="-2649">
+				<node x="77835" y="68606" />
+				<node x="78867" y="68610" />
+				<node x="78871" y="69637" />
+				<node x="77839" y="69633" />
+			</territory>
+			<banned_territory name="oren21_2220_domat09b" minZ="-3741" maxZ="-2241">
+				<node x="78732" y="68813" />
+				<node x="78814" y="68808" />
+				<node x="78819" y="68877" />
+				<node x="78737" y="68882" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat10" minZ="-3549" maxZ="-2649">
+				<node x="78859" y="68612" />
+				<node x="79891" y="68616" />
+				<node x="79895" y="69643" />
+				<node x="78863" y="69639" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat11" minZ="-3549" maxZ="-2649">
+				<node x="79877" y="68592" />
+				<node x="80908" y="68596" />
+				<node x="80912" y="69623" />
+				<node x="79881" y="69619" />
+			</territory>
+			<banned_territory name="oren21_2220_domat11b" minZ="-3741" maxZ="-2241">
+				<node x="80460" y="68896" />
+				<node x="80542" y="68891" />
+				<node x="80549" y="68968" />
+				<node x="80467" y="68974" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domat12" minZ="-3549" maxZ="-2649">
+				<node x="79893" y="69633" />
+				<node x="80924" y="69637" />
+				<node x="80928" y="70664" />
+				<node x="79897" y="70660" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay01" minZ="-3549" maxZ="-2649">
+				<node x="80884" y="67574" />
+				<node x="81915" y="67578" />
+				<node x="81920" y="68605" />
+				<node x="80888" y="68601" />
+			</territory>
+			<banned_territory name="oren21_2220_domay01b" minZ="-3476" maxZ="-2676">
+				<node x="81528" y="68526" />
+				<node x="81715" y="68555" />
+				<node x="81672" y="68727" />
+				<node x="81510" y="68691" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_domay01b1" minZ="-3741" maxZ="-2241">
+				<node x="81093" y="67717" />
+				<node x="81175" y="67711" />
+				<node x="81182" y="67789" />
+				<node x="81100" y="67794" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay02" minZ="-3549" maxZ="-2649">
+				<node x="81912" y="67559" />
+				<node x="82943" y="67563" />
+				<node x="82947" y="68590" />
+				<node x="81916" y="68586" />
+			</territory>
+			<banned_territory name="oren21_2220_domay02b" minZ="-3741" maxZ="-2241">
+				<node x="82673" y="67843" />
+				<node x="82764" y="67836" />
+				<node x="82773" y="67920" />
+				<node x="82682" y="67926" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay03" minZ="-3549" maxZ="-2649">
+				<node x="82956" y="67560" />
+				<node x="83987" y="67565" />
+				<node x="83992" y="68592" />
+				<node x="82960" y="68588" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay06" minZ="-3549" maxZ="-2649">
+				<node x="80884" y="68598" />
+				<node x="81915" y="68602" />
+				<node x="81919" y="69629" />
+				<node x="80888" y="69625" />
+			</territory>
+			<banned_territory name="oren21_2220_domay06b" minZ="-3476" maxZ="-2676">
+				<node x="81528" y="68526" />
+				<node x="81715" y="68555" />
+				<node x="81672" y="68727" />
+				<node x="81510" y="68691" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay07" minZ="-3549" maxZ="-2649">
+				<node x="81908" y="68598" />
+				<node x="82939" y="68602" />
+				<node x="82944" y="69629" />
+				<node x="81912" y="69625" />
+			</territory>
+			<banned_territory name="oren21_2220_domay07b" minZ="-3741" maxZ="-2241">
+				<node x="82439" y="69045" />
+				<node x="82530" y="69038" />
+				<node x="82538" y="69122" />
+				<node x="82447" y="69130" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay08" minZ="-3549" maxZ="-2649">
+				<node x="82937" y="68605" />
+				<node x="83968" y="68609" />
+				<node x="83972" y="69636" />
+				<node x="82941" y="69632" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay11" minZ="-3549" maxZ="-2649">
+				<node x="80886" y="69623" />
+				<node x="81917" y="69627" />
+				<node x="81922" y="70654" />
+				<node x="80890" y="70650" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay12" minZ="-3549" maxZ="-2649">
+				<node x="81910" y="69623" />
+				<node x="82941" y="69628" />
+				<node x="82946" y="70655" />
+				<node x="81914" y="70651" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_domay13" minZ="-3549" maxZ="-2649">
+				<node x="82932" y="69622" />
+				<node x="83963" y="69626" />
+				<node x="83968" y="70653" />
+				<node x="82936" y="70649" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma001" minZ="-3773" maxZ="-2973">
+				<node x="85989" y="72713" />
+				<node x="87020" y="72717" />
+				<node x="87024" y="73744" />
+				<node x="85993" y="73740" />
+			</territory>
+			<banned_territory name="oren21_2220_doma001b" minZ="-3812" maxZ="-2312">
+				<node x="86117" y="72133" />
+				<node x="86571" y="72203" />
+				<node x="86562" y="72828" />
+				<node x="85728" y="72923" />
+				<node x="85700" y="72281" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma002" minZ="-4015" maxZ="-3215">
+				<node x="87048" y="72730" />
+				<node x="88080" y="72734" />
+				<node x="88084" y="73761" />
+				<node x="87053" y="73757" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma003" minZ="-3773" maxZ="-2973">
+				<node x="88061" y="72699" />
+				<node x="89092" y="72703" />
+				<node x="89096" y="73731" />
+				<node x="88065" y="73726" />
+			</territory>
+			<banned_territory name="oren21_2220_doma003b" minZ="-3768" maxZ="-2268">
+				<node x="88465" y="72829" />
+				<node x="88571" y="72866" />
+				<node x="88654" y="72985" />
+				<node x="88589" y="73072" />
+				<node x="88404" y="72919" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma004" minZ="-3773" maxZ="-2973">
+				<node x="83934" y="73753" />
+				<node x="84965" y="73757" />
+				<node x="84969" y="74784" />
+				<node x="83938" y="74780" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma005" minZ="-3773" maxZ="-2973">
+				<node x="84950" y="73760" />
+				<node x="85981" y="73764" />
+				<node x="85986" y="74791" />
+				<node x="84954" y="74787" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma006" minZ="-3773" maxZ="-2973">
+				<node x="85988" y="73737" />
+				<node x="87020" y="73741" />
+				<node x="87024" y="74768" />
+				<node x="85993" y="74764" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma007" minZ="-3773" maxZ="-2973">
+				<node x="87013" y="73737" />
+				<node x="88044" y="73741" />
+				<node x="88048" y="74768" />
+				<node x="87017" y="74764" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma008" minZ="-3773" maxZ="-2973">
+				<node x="88042" y="73744" />
+				<node x="89073" y="73748" />
+				<node x="89077" y="74775" />
+				<node x="88046" y="74771" />
+			</territory>
+			<banned_territory name="oren21_2220_doma008b" minZ="-3772" maxZ="-2272">
+				<node x="89060" y="73644" />
+				<node x="89494" y="73580" />
+				<node x="89738" y="73895" />
+				<node x="89739" y="74164" />
+				<node x="89114" y="74429" />
+				<node x="88763" y="73904" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma009" minZ="-3773" maxZ="-2973">
+				<node x="89241" y="74387" />
+				<node x="90273" y="74391" />
+				<node x="90277" y="75418" />
+				<node x="89246" y="75414" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma010" minZ="-3773" maxZ="-3373">
+				<node x="83029" y="74872" />
+				<node x="84061" y="74877" />
+				<node x="84065" y="75904" />
+				<node x="83034" y="75899" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma011" minZ="-3773" maxZ="-2973">
+				<node x="83947" y="74779" />
+				<node x="84978" y="74783" />
+				<node x="84982" y="75810" />
+				<node x="83951" y="75806" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma012" minZ="-3773" maxZ="-2973">
+				<node x="84963" y="74785" />
+				<node x="85994" y="74790" />
+				<node x="85999" y="75817" />
+				<node x="84967" y="75813" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma013" minZ="-3773" maxZ="-2973">
+				<node x="85983" y="74783" />
+				<node x="87014" y="74787" />
+				<node x="87018" y="75814" />
+				<node x="85987" y="75810" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma014" minZ="-3773" maxZ="-2973">
+				<node x="87010" y="74768" />
+				<node x="88042" y="74772" />
+				<node x="88046" y="75799" />
+				<node x="87015" y="75795" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma015" minZ="-3773" maxZ="-2973">
+				<node x="88055" y="74769" />
+				<node x="89086" y="74774" />
+				<node x="89090" y="75801" />
+				<node x="88059" y="75796" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma016" minZ="-3773" maxZ="-2973">
+				<node x="89099" y="74771" />
+				<node x="90130" y="74775" />
+				<node x="90135" y="75802" />
+				<node x="89103" y="75798" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma017" minZ="-3773" maxZ="-2973">
+				<node x="91686" y="74042" />
+				<node x="92717" y="74046" />
+				<node x="92721" y="75073" />
+				<node x="91690" y="75069" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma018" minZ="-3773" maxZ="-2973">
+				<node x="90112" y="74777" />
+				<node x="91143" y="74782" />
+				<node x="91147" y="75809" />
+				<node x="90116" y="75804" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma019" minZ="-3825" maxZ="-3025">
+				<node x="91120" y="74805" />
+				<node x="92152" y="74809" />
+				<node x="92156" y="75836" />
+				<node x="91125" y="75832" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma020" minZ="-3773" maxZ="-2973">
+				<node x="92116" y="74758" />
+				<node x="93147" y="74762" />
+				<node x="93151" y="75789" />
+				<node x="92120" y="75785" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma021" minZ="-3773" maxZ="-2973">
+				<node x="92978" y="74942" />
+				<node x="94009" y="74946" />
+				<node x="94013" y="75973" />
+				<node x="92982" y="75969" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma022" minZ="-3773" maxZ="-2973">
+				<node x="80842" y="75815" />
+				<node x="81873" y="75819" />
+				<node x="81877" y="76846" />
+				<node x="80846" y="76842" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma023" minZ="-3773" maxZ="-2973">
+				<node x="81854" y="75815" />
+				<node x="82886" y="75819" />
+				<node x="82890" y="76846" />
+				<node x="81859" y="76842" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma024" minZ="-3773" maxZ="-2973">
+				<node x="82883" y="75822" />
+				<node x="83915" y="75826" />
+				<node x="83919" y="76853" />
+				<node x="82888" y="76849" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma025" minZ="-3773" maxZ="-2973">
+				<node x="83928" y="75823" />
+				<node x="84959" y="75827" />
+				<node x="84963" y="76854" />
+				<node x="83932" y="76850" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma026" minZ="-3773" maxZ="-2973">
+				<node x="84944" y="75830" />
+				<node x="85975" y="75834" />
+				<node x="85980" y="76861" />
+				<node x="84948" y="76857" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma027" minZ="-3773" maxZ="-2973">
+				<node x="85982" y="75807" />
+				<node x="87014" y="75811" />
+				<node x="87018" y="76838" />
+				<node x="85987" y="76834" />
+			</territory>
+			<banned_territory name="oren21_2220_doma027b" minZ="-3972" maxZ="-2472">
+				<node x="86455" y="76669" />
+				<node x="86725" y="76735" />
+				<node x="86801" y="77058" />
+				<node x="86565" y="77106" />
+				<node x="86380" y="76953" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma028" minZ="-3773" maxZ="-2973">
+				<node x="87007" y="75807" />
+				<node x="88038" y="75811" />
+				<node x="88042" y="76838" />
+				<node x="87011" y="76834" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma029" minZ="-3741" maxZ="-2941">
+				<node x="87931" y="75810" />
+				<node x="88962" y="75814" />
+				<node x="88966" y="76841" />
+				<node x="87935" y="76837" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma030" minZ="-3773" maxZ="-2973">
+				<node x="89080" y="75815" />
+				<node x="90111" y="75819" />
+				<node x="90116" y="76846" />
+				<node x="89084" y="76842" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma031" minZ="-3741" maxZ="-2941">
+				<node x="90219" y="75815" />
+				<node x="91251" y="75819" />
+				<node x="91255" y="76846" />
+				<node x="90224" y="76842" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma032" minZ="-3773" maxZ="-2973">
+				<node x="91088" y="75797" />
+				<node x="92119" y="75801" />
+				<node x="92124" y="76828" />
+				<node x="91092" y="76824" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma033" minZ="-3773" maxZ="-2973">
+				<node x="92112" y="75797" />
+				<node x="93144" y="75801" />
+				<node x="93148" y="76828" />
+				<node x="92117" y="76824" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma034" minZ="-3773" maxZ="-2973">
+				<node x="93141" y="75803" />
+				<node x="94173" y="75808" />
+				<node x="94177" y="76835" />
+				<node x="93146" y="76830" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma035" minZ="-3773" maxZ="-2973">
+				<node x="79819" y="76810" />
+				<node x="80850" y="76814" />
+				<node x="80854" y="77841" />
+				<node x="79823" y="77837" />
+			</territory>
+			<banned_territory name="oren21_2220_doma035b" minZ="-3724" maxZ="-2224">
+				<node x="79689" y="77292" />
+				<node x="79874" y="77233" />
+				<node x="79974" y="77313" />
+				<node x="79813" y="77535" />
+				<node x="79628" y="77382" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma036" minZ="-3773" maxZ="-2973">
+				<node x="80838" y="76794" />
+				<node x="81869" y="76799" />
+				<node x="81874" y="77826" />
+				<node x="80842" y="77822" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma037" minZ="-3741" maxZ="-2941">
+				<node x="81996" y="76804" />
+				<node x="83027" y="76808" />
+				<node x="83031" y="77835" />
+				<node x="82000" y="77831" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma038" minZ="-3773" maxZ="-2973">
+				<node x="82923" y="76797" />
+				<node x="83955" y="76801" />
+				<node x="83959" y="77829" />
+				<node x="82928" y="77824" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma039" minZ="-3773" maxZ="-2973">
+				<node x="83940" y="76804" />
+				<node x="84971" y="76808" />
+				<node x="84975" y="77835" />
+				<node x="83944" y="77831" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma040" minZ="-3773" maxZ="-2973">
+				<node x="84959" y="76801" />
+				<node x="85990" y="76806" />
+				<node x="85995" y="77833" />
+				<node x="84963" y="77829" />
+			</territory>
+			<banned_territory name="oren21_2220_doma040b" minZ="-3956" maxZ="-2456">
+				<node x="84970" y="77768" />
+				<node x="85240" y="77774" />
+				<node x="85217" y="77998" />
+				<node x="85031" y="77966" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma041" minZ="-3773" maxZ="-2973">
+				<node x="85987" y="76786" />
+				<node x="87018" y="76791" />
+				<node x="87022" y="77818" />
+				<node x="85991" y="77814" />
+			</territory>
+			<banned_territory name="oren21_2220_doma041b" minZ="-3972" maxZ="-2472">
+				<node x="86455" y="76669" />
+				<node x="86725" y="76735" />
+				<node x="86801" y="77058" />
+				<node x="86565" y="77106" />
+				<node x="86380" y="76953" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma042" minZ="-3773" maxZ="-2973">
+				<node x="87031" y="76788" />
+				<node x="88062" y="76792" />
+				<node x="88067" y="77819" />
+				<node x="87035" y="77815" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma043" minZ="-3773" maxZ="-2973">
+				<node x="88076" y="76789" />
+				<node x="89107" y="76793" />
+				<node x="89111" y="77820" />
+				<node x="88080" y="77816" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma044" minZ="-3741" maxZ="-2941">
+				<node x="89091" y="76792" />
+				<node x="90123" y="76796" />
+				<node x="90127" y="77823" />
+				<node x="89096" y="77819" />
+			</territory>
+			<banned_territory name="oren21_2220_doma044b" minZ="-3572" maxZ="-2072">
+				<node x="89704" y="76927" />
+				<node x="89890" y="76956" />
+				<node x="89848" y="77129" />
+				<node x="89685" y="77092" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma044b1" minZ="-3741" maxZ="-2241">
+				<node x="89300" y="77513" />
+				<node x="89383" y="77508" />
+				<node x="89389" y="77578" />
+				<node x="89306" y="77583" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma045" minZ="-3741" maxZ="-2941">
+				<node x="90010" y="76794" />
+				<node x="91041" y="76799" />
+				<node x="91045" y="77826" />
+				<node x="90014" y="77822" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma046" minZ="-3741" maxZ="-2941">
+				<node x="91162" y="76775" />
+				<node x="92193" y="76779" />
+				<node x="92198" y="77806" />
+				<node x="91166" y="77802" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma047" minZ="-3773" maxZ="-2973">
+				<node x="92137" y="76777" />
+				<node x="93168" y="76782" />
+				<node x="93172" y="77809" />
+				<node x="92141" y="77805" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma048" minZ="-3773" maxZ="-2973">
+				<node x="93181" y="76779" />
+				<node x="94213" y="76783" />
+				<node x="94217" y="77810" />
+				<node x="93186" y="77806" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma049" minZ="-3773" maxZ="-2973">
+				<node x="79818" y="77834" />
+				<node x="80850" y="77838" />
+				<node x="80854" y="78865" />
+				<node x="79822" y="78861" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma050" minZ="-3773" maxZ="-2973">
+				<node x="80831" y="77834" />
+				<node x="81862" y="77838" />
+				<node x="81866" y="78865" />
+				<node x="80835" y="78861" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma051" minZ="-3741" maxZ="-2941">
+				<node x="81863" y="77836" />
+				<node x="82894" y="77841" />
+				<node x="82899" y="78868" />
+				<node x="81867" y="78863" />
+			</territory>
+			<banned_territory name="oren21_2220_doma051b" minZ="-4008" maxZ="-2508">
+				<node x="82483" y="78053" />
+				<node x="82670" y="78082" />
+				<node x="82627" y="78254" />
+				<node x="82465" y="78218" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma051b1" minZ="-3741" maxZ="-2241">
+				<node x="82162" y="78483" />
+				<node x="82252" y="78477" />
+				<node x="82259" y="78544" />
+				<node x="82169" y="78550" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma052" minZ="-3741" maxZ="-2941">
+				<node x="82872" y="77805" />
+				<node x="83903" y="77810" />
+				<node x="83908" y="78837" />
+				<node x="82876" y="78833" />
+			</territory>
+			<banned_territory name="oren21_2220_doma052b" minZ="-3741" maxZ="-2741">
+				<node x="83104" y="77900" />
+				<node x="83189" y="77894" />
+				<node x="83196" y="77968" />
+				<node x="83112" y="77974" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma053" minZ="-3773" maxZ="-2973">
+				<node x="83920" y="77848" />
+				<node x="84952" y="77853" />
+				<node x="84956" y="78880" />
+				<node x="83925" y="78876" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma054" minZ="-3773" maxZ="-2973">
+				<node x="84959" y="77825" />
+				<node x="85990" y="77830" />
+				<node x="85994" y="78857" />
+				<node x="84963" y="78853" />
+			</territory>
+			<banned_territory name="oren21_2220_doma054b" minZ="-3956" maxZ="-2456">
+				<node x="84970" y="77768" />
+				<node x="85240" y="77774" />
+				<node x="85217" y="77998" />
+				<node x="85031" y="77966" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma054b1" minZ="-3681" maxZ="-2681">
+				<node x="85218" y="78483" />
+				<node x="85638" y="78496" />
+				<node x="85630" y="78881" />
+				<node x="85210" y="78868" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma055" minZ="-3773" maxZ="-2973">
+				<node x="85983" y="77825" />
+				<node x="87014" y="77830" />
+				<node x="87019" y="78857" />
+				<node x="85987" y="78853" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma056" minZ="-3773" maxZ="-2973">
+				<node x="87012" y="77832" />
+				<node x="88043" y="77837" />
+				<node x="88048" y="78864" />
+				<node x="87016" y="78859" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma057" minZ="-3773" maxZ="-2973">
+				<node x="88056" y="77834" />
+				<node x="89088" y="77838" />
+				<node x="89092" y="78865" />
+				<node x="88061" y="78861" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma058" minZ="-3741" maxZ="-2941">
+				<node x="89091" y="77725" />
+				<node x="90122" y="77729" />
+				<node x="90126" y="78756" />
+				<node x="89095" y="78752" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma059" minZ="-3773" maxZ="-2973">
+				<node x="90064" y="77815" />
+				<node x="91096" y="77819" />
+				<node x="91100" y="78846" />
+				<node x="90069" y="78842" />
+			</territory>
+			<banned_territory name="oren21_2220_doma059b" minZ="-3572" maxZ="-2072">
+				<node x="90625" y="78556" />
+				<node x="90811" y="78585" />
+				<node x="90769" y="78757" />
+				<node x="90606" y="78721" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma060" minZ="-3741" maxZ="-2941">
+				<node x="91015" y="77801" />
+				<node x="92046" y="77806" />
+				<node x="92050" y="78833" />
+				<node x="91019" y="78829" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma061" minZ="-3741" maxZ="-2941">
+				<node x="92173" y="77810" />
+				<node x="93205" y="77814" />
+				<node x="93209" y="78841" />
+				<node x="92178" y="78837" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma062" minZ="-3773" maxZ="-2973">
+				<node x="93162" y="77823" />
+				<node x="94193" y="77828" />
+				<node x="94198" y="78855" />
+				<node x="93166" y="78850" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma063" minZ="-3773" maxZ="-2973">
+				<node x="79854" y="78851" />
+				<node x="80885" y="78855" />
+				<node x="80889" y="79883" />
+				<node x="79858" y="79878" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma064" minZ="-3773" maxZ="-2973">
+				<node x="80874" y="78855" />
+				<node x="81905" y="78860" />
+				<node x="81909" y="79887" />
+				<node x="80878" y="79883" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma065" minZ="-3741" maxZ="-2941">
+				<node x="81917" y="78834" />
+				<node x="82948" y="78838" />
+				<node x="82953" y="79865" />
+				<node x="81921" y="79861" />
+			</territory>
+			<banned_territory name="oren21_2220_doma065b" minZ="-3741" maxZ="-2241">
+				<node x="82562" y="79770" />
+				<node x="82644" y="79766" />
+				<node x="82648" y="79832" />
+				<node x="82565" y="79835" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma066" minZ="-3741" maxZ="-2941">
+				<node x="82963" y="78942" />
+				<node x="83995" y="78946" />
+				<node x="83999" y="79973" />
+				<node x="82968" y="79969" />
+			</territory>
+			<banned_territory name="oren21_2220_doma066b" minZ="-4008" maxZ="-2508">
+				<node x="83301" y="79742" />
+				<node x="83487" y="79772" />
+				<node x="83445" y="79944" />
+				<node x="83282" y="79907" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma067" minZ="-3773" maxZ="-2973">
+				<node x="83975" y="78846" />
+				<node x="85006" y="78850" />
+				<node x="85010" y="79877" />
+				<node x="83979" y="79873" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma068" minZ="-3773" maxZ="-2973">
+				<node x="84994" y="78843" />
+				<node x="86026" y="78847" />
+				<node x="86030" y="79875" />
+				<node x="84999" y="79870" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma069" minZ="-3773" maxZ="-2973">
+				<node x="86022" y="78828" />
+				<node x="87053" y="78832" />
+				<node x="87057" y="79859" />
+				<node x="86026" y="79855" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma070" minZ="-3881" maxZ="-3081">
+				<node x="87098" y="78861" />
+				<node x="88130" y="78866" />
+				<node x="88134" y="79893" />
+				<node x="87103" y="79889" />
+			</territory>
+			<banned_territory name="oren21_2220_doma070b" minZ="-3681" maxZ="-2581">
+				<node x="87292" y="78783" />
+				<node x="87712" y="78796" />
+				<node x="87704" y="79180" />
+				<node x="87284" y="79168" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma071" minZ="-3773" maxZ="-2973">
+				<node x="88066" y="78827" />
+				<node x="89098" y="78832" />
+				<node x="89102" y="79859" />
+				<node x="88070" y="79855" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma072" minZ="-3741" maxZ="-2941">
+				<node x="89044" y="78923" />
+				<node x="90075" y="78927" />
+				<node x="90080" y="79954" />
+				<node x="89048" y="79950" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma073" minZ="-3741" maxZ="-2941">
+				<node x="90072" y="78829" />
+				<node x="91103" y="78833" />
+				<node x="91107" y="79860" />
+				<node x="90076" y="79856" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma074" minZ="-3741" maxZ="-2941">
+				<node x="91231" y="78845" />
+				<node x="92262" y="78850" />
+				<node x="92266" y="79877" />
+				<node x="91235" y="79872" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma075" minZ="-3773" maxZ="-2973">
+				<node x="92172" y="78819" />
+				<node x="93203" y="78823" />
+				<node x="93207" y="79850" />
+				<node x="92176" y="79846" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma076" minZ="-3773" maxZ="-2973">
+				<node x="93216" y="78820" />
+				<node x="94248" y="78825" />
+				<node x="94252" y="79852" />
+				<node x="93221" y="79848" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma077" minZ="-3773" maxZ="-2973">
+				<node x="79853" y="79875" />
+				<node x="80885" y="79879" />
+				<node x="80889" y="80907" />
+				<node x="79858" y="80902" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma078" minZ="-3773" maxZ="-2973">
+				<node x="80866" y="79875" />
+				<node x="81897" y="79879" />
+				<node x="81902" y="80907" />
+				<node x="80870" y="80902" />
+			</territory>
+			<banned_territory name="oren21_2220_doma078b" minZ="-3956" maxZ="-2456">
+				<node x="81134" y="80250" />
+				<node x="81404" y="80256" />
+				<node x="81380" y="80479" />
+				<node x="81195" y="80447" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma079" minZ="-3773" maxZ="-2973">
+				<node x="81895" y="79882" />
+				<node x="82926" y="79886" />
+				<node x="82930" y="80913" />
+				<node x="81899" y="80909" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma080" minZ="-3741" maxZ="-2941">
+				<node x="82943" y="79879" />
+				<node x="83974" y="79884" />
+				<node x="83978" y="80911" />
+				<node x="82947" y="80906" />
+			</territory>
+			<banned_territory name="oren21_2220_doma080b" minZ="-4008" maxZ="-2508">
+				<node x="83301" y="79742" />
+				<node x="83487" y="79772" />
+				<node x="83445" y="79944" />
+				<node x="83282" y="79907" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma080b1" minZ="-3741" maxZ="-2241">
+				<node x="83281" y="80652" />
+				<node x="83359" y="80647" />
+				<node x="83365" y="80726" />
+				<node x="83287" y="80731" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma081" minZ="-3741" maxZ="-2941">
+				<node x="83959" y="79886" />
+				<node x="84990" y="79890" />
+				<node x="84994" y="80917" />
+				<node x="83963" y="80913" />
+			</territory>
+			<banned_territory name="oren21_2220_doma081b" minZ="-3801" maxZ="-2301">
+				<node x="84212" y="80067" />
+				<node x="84313" y="80061" />
+				<node x="84317" y="80148" />
+				<node x="84216" y="80155" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma082" minZ="-4269" maxZ="-3469">
+				<node x="85026" y="79903" />
+				<node x="86057" y="79907" />
+				<node x="86062" y="80934" />
+				<node x="85030" y="80930" />
+			</territory>
+			<banned_territory name="oren21_2220_doma082b" minZ="-3751" maxZ="-2651">
+				<node x="85924" y="80421" />
+				<node x="86344" y="80433" />
+				<node x="86337" y="80818" />
+				<node x="85917" y="80806" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma083" minZ="-4125" maxZ="-3325">
+				<node x="86050" y="79899" />
+				<node x="87082" y="79903" />
+				<node x="87086" y="80931" />
+				<node x="86055" y="80926" />
+			</territory>
+			<banned_territory name="oren21_2220_doma083b" minZ="-3751" maxZ="-2651">
+				<node x="85924" y="80421" />
+				<node x="86344" y="80433" />
+				<node x="86337" y="80818" />
+				<node x="85917" y="80806" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma084" minZ="-3773" maxZ="-2973">
+				<node x="87047" y="79874" />
+				<node x="88078" y="79878" />
+				<node x="88083" y="80905" />
+				<node x="87051" y="80901" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma085" minZ="-3773" maxZ="-2973">
+				<node x="88092" y="79875" />
+				<node x="89123" y="79880" />
+				<node x="89127" y="80907" />
+				<node x="88096" y="80902" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma086" minZ="-3773" maxZ="-2973">
+				<node x="89104" y="79882" />
+				<node x="90135" y="79886" />
+				<node x="90140" y="80913" />
+				<node x="89108" y="80909" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma087" minZ="-3773" maxZ="-2973">
+				<node x="90100" y="79857" />
+				<node x="91131" y="79861" />
+				<node x="91135" y="80888" />
+				<node x="90104" y="80884" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma088" minZ="-3773" maxZ="-2973">
+				<node x="91124" y="79857" />
+				<node x="92155" y="79861" />
+				<node x="92159" y="80888" />
+				<node x="91128" y="80884" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma089" minZ="-3773" maxZ="-2973">
+				<node x="92153" y="79864" />
+				<node x="93184" y="79868" />
+				<node x="93188" y="80895" />
+				<node x="92157" y="80891" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma090" minZ="-3773" maxZ="-2973">
+				<node x="93197" y="79865" />
+				<node x="94229" y="79869" />
+				<node x="94233" y="80896" />
+				<node x="93202" y="80892" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma091" minZ="-3773" maxZ="-2973">
+				<node x="79839" y="80871" />
+				<node x="80870" y="80875" />
+				<node x="80874" y="81903" />
+				<node x="79843" y="81898" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma092" minZ="-3773" maxZ="-2973">
+				<node x="80862" y="80884" />
+				<node x="81894" y="80888" />
+				<node x="81898" y="81915" />
+				<node x="80867" y="81911" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma093" minZ="-3773" maxZ="-2973">
+				<node x="81899" y="80858" />
+				<node x="82930" y="80862" />
+				<node x="82934" y="81889" />
+				<node x="81903" y="81885" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma094" minZ="-3773" maxZ="-2973">
+				<node x="82943" y="80859" />
+				<node x="83975" y="80863" />
+				<node x="83979" y="81890" />
+				<node x="82948" y="81886" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma095" minZ="-3773" maxZ="-2973">
+				<node x="83960" y="80866" />
+				<node x="84991" y="80870" />
+				<node x="84995" y="81897" />
+				<node x="83964" y="81893" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma096" minZ="-3773" maxZ="-3373">
+				<node x="84979" y="80863" />
+				<node x="86010" y="80867" />
+				<node x="86015" y="81895" />
+				<node x="84983" y="81890" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma097" minZ="-3773" maxZ="-3373">
+				<node x="86007" y="80848" />
+				<node x="87038" y="80852" />
+				<node x="87042" y="81879" />
+				<node x="86011" y="81875" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma098" minZ="-3773" maxZ="-2973">
+				<node x="87051" y="80849" />
+				<node x="88082" y="80854" />
+				<node x="88087" y="81881" />
+				<node x="87055" y="81877" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma099" minZ="-4065" maxZ="-3265">
+				<node x="88128" y="80883" />
+				<node x="89159" y="80887" />
+				<node x="89163" y="81914" />
+				<node x="88132" y="81910" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma100" minZ="-3773" maxZ="-2973">
+				<node x="89108" y="80858" />
+				<node x="90139" y="80862" />
+				<node x="90144" y="81889" />
+				<node x="89112" y="81885" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma101" minZ="-3773" maxZ="-2973">
+				<node x="90085" y="80853" />
+				<node x="91116" y="80857" />
+				<node x="91120" y="81884" />
+				<node x="90089" y="81880" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma102" minZ="-3773" maxZ="-2973">
+				<node x="91112" y="80838" />
+				<node x="92144" y="80842" />
+				<node x="92148" y="81869" />
+				<node x="91117" y="81865" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma103" minZ="-3773" maxZ="-2973">
+				<node x="92157" y="80839" />
+				<node x="93188" y="80843" />
+				<node x="93192" y="81870" />
+				<node x="92161" y="81866" />
+			</territory>
+			<banned_territory name="oren21_2220_doma103b" minZ="-3600" maxZ="-2100">
+				<node x="92563" y="81797" />
+				<node x="92833" y="81803" />
+				<node x="92809" y="82026" />
+				<node x="92623" y="81994" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma104" minZ="-4029" maxZ="-3229">
+				<node x="93233" y="80872" />
+				<node x="94265" y="80877" />
+				<node x="94269" y="81904" />
+				<node x="93237" y="81900" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma105" minZ="-3773" maxZ="-2973">
+				<node x="79838" y="81895" />
+				<node x="80870" y="81899" />
+				<node x="80874" y="82927" />
+				<node x="79842" y="82922" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma106" minZ="-3773" maxZ="-2973">
+				<node x="80851" y="81895" />
+				<node x="81882" y="81899" />
+				<node x="81886" y="82927" />
+				<node x="80855" y="82922" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma107" minZ="-3773" maxZ="-2973">
+				<node x="81880" y="81902" />
+				<node x="82911" y="81906" />
+				<node x="82915" y="82933" />
+				<node x="81884" y="82929" />
+			</territory>
+			<banned_territory name="oren21_2220_doma107b" minZ="-3221" maxZ="-2221">
+				<node x="82433" y="82506" />
+				<node x="82853" y="82518" />
+				<node x="82846" y="82903" />
+				<node x="82426" y="82891" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma108" minZ="-3773" maxZ="-2973">
+				<node x="80854" y="82936" />
+				<node x="81886" y="82940" />
+				<node x="81890" y="83967" />
+				<node x="80859" y="83963" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma109" minZ="-3773" maxZ="-2973">
+				<node x="88136" y="81800" />
+				<node x="89167" y="81804" />
+				<node x="89172" y="82831" />
+				<node x="88140" y="82827" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma110" minZ="-3773" maxZ="-2973">
+				<node x="89089" y="81902" />
+				<node x="90120" y="81906" />
+				<node x="90125" y="82933" />
+				<node x="89093" y="82929" />
+			</territory>
+			<banned_territory name="oren21_2220_doma110b" minZ="-3600" maxZ="-2100">
+				<node x="89476" y="82679" />
+				<node x="89709" y="82655" />
+				<node x="89764" y="82804" />
+				<node x="89553" y="82862" />
+				<node x="89421" y="82796" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma111" minZ="-3773" maxZ="-2973">
+				<node x="90084" y="81889" />
+				<node x="91116" y="81893" />
+				<node x="91120" y="82920" />
+				<node x="90089" y="82916" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma112" minZ="-3773" maxZ="-2973">
+				<node x="91109" y="81889" />
+				<node x="92140" y="81893" />
+				<node x="92144" y="82920" />
+				<node x="91113" y="82916" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma113" minZ="-3773" maxZ="-3373">
+				<node x="92138" y="81896" />
+				<node x="93169" y="81900" />
+				<node x="93173" y="82927" />
+				<node x="92142" y="82923" />
+			</territory>
+			<banned_territory name="oren21_2220_doma113b" minZ="-3600" maxZ="-2100">
+				<node x="92563" y="81797" />
+				<node x="92833" y="81803" />
+				<node x="92809" y="82026" />
+				<node x="92623" y="81994" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma114" minZ="-4017" maxZ="-3417">
+				<node x="93214" y="81925" />
+				<node x="94245" y="81929" />
+				<node x="94250" y="82956" />
+				<node x="93218" y="82952" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma115" minZ="-3773" maxZ="-2973">
+				<node x="90102" y="82937" />
+				<node x="91133" y="82941" />
+				<node x="91138" y="83969" />
+				<node x="90106" y="83964" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma116" minZ="-3741" maxZ="-2941">
+				<node x="91124" y="82933" />
+				<node x="92155" y="82937" />
+				<node x="92159" y="83965" />
+				<node x="91128" y="83960" />
+			</territory>
+			<banned_territory name="oren21_2220_doma116b" minZ="-3741" maxZ="-2241">
+				<node x="91823" y="83605" />
+				<node x="91905" y="83600" />
+				<node x="91913" y="83685" />
+				<node x="91831" y="83690" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma117" minZ="-3773" maxZ="-2973">
+				<node x="92145" y="82937" />
+				<node x="93176" y="82941" />
+				<node x="93180" y="83969" />
+				<node x="92149" y="83964" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma118" minZ="-3773" maxZ="-2973">
+				<node x="93174" y="82944" />
+				<node x="94205" y="82948" />
+				<node x="94209" y="83975" />
+				<node x="93178" y="83971" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma119" minZ="-3773" maxZ="-2973">
+				<node x="90120" y="83985" />
+				<node x="91151" y="83990" />
+				<node x="91155" y="85017" />
+				<node x="90124" y="85013" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma120" minZ="-3741" maxZ="-2941">
+				<node x="91141" y="83981" />
+				<node x="92173" y="83986" />
+				<node x="92177" y="85013" />
+				<node x="91146" y="85009" />
+			</territory>
+			<banned_territory name="oren21_2220_doma120b" minZ="-4012" maxZ="-2512">
+				<node x="91833" y="84499" />
+				<node x="92019" y="84529" />
+				<node x="91977" y="84701" />
+				<node x="91814" y="84664" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma120b1" minZ="-3741" maxZ="-2241">
+				<node x="91171" y="84630" />
+				<node x="91257" y="84624" />
+				<node x="91263" y="84709" />
+				<node x="91178" y="84715" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma121" minZ="-3741" maxZ="-2941">
+				<node x="92166" y="83954" />
+				<node x="93197" y="83958" />
+				<node x="93201" y="84985" />
+				<node x="92170" y="84981" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma122" minZ="-3773" maxZ="-2973">
+				<node x="93192" y="83992" />
+				<node x="94223" y="83996" />
+				<node x="94227" y="85024" />
+				<node x="93196" y="85019" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma123" minZ="-3773" maxZ="-2973">
+				<node x="90125" y="85034" />
+				<node x="91157" y="85038" />
+				<node x="91161" y="86065" />
+				<node x="90130" y="86061" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma124" minZ="-3773" maxZ="-2973">
+				<node x="91144" y="85034" />
+				<node x="92175" y="85038" />
+				<node x="92179" y="86065" />
+				<node x="91148" y="86061" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma125" minZ="-3741" maxZ="-2941">
+				<node x="92178" y="85099" />
+				<node x="93210" y="85103" />
+				<node x="93214" y="86130" />
+				<node x="92183" y="86126" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma126" minZ="-3773" maxZ="-2973">
+				<node x="93197" y="85040" />
+				<node x="94228" y="85045" />
+				<node x="94233" y="86072" />
+				<node x="93201" y="86068" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma127" minZ="-4029" maxZ="-3229">
+				<node x="90160" y="86092" />
+				<node x="91192" y="86096" />
+				<node x="91196" y="87123" />
+				<node x="90165" y="87119" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma128" minZ="-3773" maxZ="-2973">
+				<node x="91147" y="86060" />
+				<node x="92178" y="86064" />
+				<node x="92182" y="87091" />
+				<node x="91151" y="87087" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma129" minZ="-3773" maxZ="-2973">
+				<node x="92171" y="86060" />
+				<node x="93202" y="86064" />
+				<node x="93207" y="87091" />
+				<node x="92175" y="87087" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma130" minZ="-4061" maxZ="-3261">
+				<node x="93232" y="86099" />
+				<node x="94263" y="86103" />
+				<node x="94268" y="87130" />
+				<node x="93236" y="87126" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma131" minZ="-3773" maxZ="-2973">
+				<node x="90133" y="87089" />
+				<node x="91164" y="87093" />
+				<node x="91168" y="88120" />
+				<node x="90137" y="88116" />
+			</territory>
+			<banned_territory name="oren21_2220_doma131b" minZ="-4012" maxZ="-2512">
+				<node x="90549" y="87438" />
+				<node x="90842" y="87646" />
+				<node x="90667" y="87843" />
+				<node x="90288" y="87668" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma132" minZ="-3741" maxZ="-2941">
+				<node x="91154" y="87055" />
+				<node x="92186" y="87059" />
+				<node x="92190" y="88086" />
+				<node x="91159" y="88082" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma133" minZ="-3741" maxZ="-2941">
+				<node x="92136" y="87093" />
+				<node x="93168" y="87097" />
+				<node x="93172" y="88124" />
+				<node x="92141" y="88120" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma134" minZ="-3741" maxZ="-2941">
+				<node x="93333" y="87092" />
+				<node x="94364" y="87096" />
+				<node x="94368" y="88123" />
+				<node x="93337" y="88119" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma135" minZ="-3773" maxZ="-2973">
+				<node x="90139" y="88121" />
+				<node x="91171" y="88125" />
+				<node x="91175" y="89152" />
+				<node x="90144" y="89148" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma136" minZ="-3741" maxZ="-2941">
+				<node x="91161" y="88177" />
+				<node x="92192" y="88181" />
+				<node x="92197" y="89208" />
+				<node x="91165" y="89204" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma137" minZ="-3773" maxZ="-2973">
+				<node x="92182" y="88121" />
+				<node x="93213" y="88125" />
+				<node x="93218" y="89152" />
+				<node x="92186" y="89148" />
+			</territory>
+			<banned_territory name="oren21_2220_doma137b" minZ="-4012" maxZ="-2512">
+				<node x="92972" y="88338" />
+				<node x="93159" y="88367" />
+				<node x="93117" y="88539" />
+				<node x="92954" y="88503" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma138" minZ="-3773" maxZ="-2973">
+				<node x="93211" y="88127" />
+				<node x="94242" y="88132" />
+				<node x="94247" y="89159" />
+				<node x="93215" y="89155" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma139" minZ="-3773" maxZ="-2973">
+				<node x="94241" y="88126" />
+				<node x="95273" y="88130" />
+				<node x="95277" y="89157" />
+				<node x="94246" y="89153" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma140" minZ="-3773" maxZ="-2973">
+				<node x="89483" y="88403" />
+				<node x="90515" y="88407" />
+				<node x="90519" y="89434" />
+				<node x="89487" y="89430" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma141" minZ="-3773" maxZ="-2973">
+				<node x="91162" y="89149" />
+				<node x="92194" y="89154" />
+				<node x="92198" y="90181" />
+				<node x="91167" y="90177" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma142" minZ="-3741" maxZ="-2941">
+				<node x="92190" y="89145" />
+				<node x="93221" y="89150" />
+				<node x="93225" y="90177" />
+				<node x="92194" y="90173" />
+			</territory>
+			<banned_territory name="oren21_2220_doma142b" minZ="-3741" maxZ="-2241">
+				<node x="93100" y="89376" />
+				<node x="93183" y="89371" />
+				<node x="93189" y="89463" />
+				<node x="93107" y="89468" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma143" minZ="-3773" maxZ="-2973">
+				<node x="93216" y="89156" />
+				<node x="94247" y="89160" />
+				<node x="94251" y="90188" />
+				<node x="93220" y="90183" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma144" minZ="-3773" maxZ="-2973">
+				<node x="94246" y="89155" />
+				<node x="95277" y="89159" />
+				<node x="95282" y="90186" />
+				<node x="94250" y="90182" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma145" minZ="-3773" maxZ="-2973">
+				<node x="86031" y="90170" />
+				<node x="87063" y="90175" />
+				<node x="87067" y="91202" />
+				<node x="86036" y="91197" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma146" minZ="-3773" maxZ="-2973">
+				<node x="87056" y="90170" />
+				<node x="88087" y="90175" />
+				<node x="88091" y="91202" />
+				<node x="87060" y="91197" />
+			</territory>
+			<banned_territory name="oren21_2220_doma146b" minZ="-3392" maxZ="-1892">
+				<node x="87410" y="90091" />
+				<node x="87709" y="90124" />
+				<node x="87689" y="90575" />
+				<node x="87364" y="90601" />
+				<node x="87281" y="90334" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma147" minZ="-3773" maxZ="-2973">
+				<node x="88085" y="90177" />
+				<node x="89116" y="90181" />
+				<node x="89120" y="91208" />
+				<node x="88089" y="91204" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma148" minZ="-3773" maxZ="-2973">
+				<node x="89115" y="90175" />
+				<node x="90146" y="90180" />
+				<node x="90151" y="91207" />
+				<node x="89119" y="91203" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma149" minZ="-3773" maxZ="-2973">
+				<node x="90149" y="90179" />
+				<node x="91180" y="90183" />
+				<node x="91185" y="91211" />
+				<node x="90153" y="91206" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma150" minZ="-3773" maxZ="-2973">
+				<node x="91167" y="90179" />
+				<node x="92199" y="90183" />
+				<node x="92203" y="91211" />
+				<node x="91172" y="91206" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma151" minZ="-3773" maxZ="-2973">
+				<node x="92192" y="90179" />
+				<node x="93223" y="90183" />
+				<node x="93227" y="91211" />
+				<node x="92196" y="91206" />
+			</territory>
+			<banned_territory name="oren21_2220_doma151b" minZ="-3508" maxZ="-2008">
+				<node x="92384" y="90749" />
+				<node x="92670" y="90841" />
+				<node x="92677" y="91042" />
+				<node x="92351" y="91068" />
+				<node x="92288" y="90926" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma152" minZ="-3773" maxZ="-2973">
+				<node x="93221" y="90186" />
+				<node x="94252" y="90190" />
+				<node x="94256" y="91217" />
+				<node x="93225" y="91213" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma153" minZ="-4040" maxZ="-3240">
+				<node x="93899" y="90204" />
+				<node x="94930" y="90208" />
+				<node x="94934" y="91236" />
+				<node x="93903" y="91231" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma154" minZ="-3773" maxZ="-2973">
+				<node x="86036" y="91199" />
+				<node x="87067" y="91203" />
+				<node x="87071" y="92230" />
+				<node x="86040" y="92226" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma155" minZ="-3773" maxZ="-2973">
+				<node x="87060" y="91199" />
+				<node x="88092" y="91203" />
+				<node x="88096" y="92230" />
+				<node x="87065" y="92226" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma157" minZ="-3741" maxZ="-2941">
+				<node x="89123" y="91200" />
+				<node x="90154" y="91205" />
+				<node x="90158" y="92232" />
+				<node x="89127" y="92227" />
+			</territory>
+			<banned_territory name="oren21_2220_doma157b" minZ="-3741" maxZ="-2241">
+				<node x="89769" y="91893" />
+				<node x="89880" y="91886" />
+				<node x="89886" y="91993" />
+				<node x="89775" y="92000" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma158" minZ="-3773" maxZ="-2973">
+				<node x="90154" y="91208" />
+				<node x="91185" y="91212" />
+				<node x="91189" y="92239" />
+				<node x="90158" y="92235" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma159" minZ="-3773" maxZ="-2973">
+				<node x="91172" y="91208" />
+				<node x="92203" y="91212" />
+				<node x="92208" y="92239" />
+				<node x="91176" y="92235" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma160" minZ="-3773" maxZ="-2973">
+				<node x="92196" y="91208" />
+				<node x="93228" y="91212" />
+				<node x="93232" y="92239" />
+				<node x="92201" y="92235" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma161" minZ="-3773" maxZ="-2973">
+				<node x="93225" y="91215" />
+				<node x="94257" y="91219" />
+				<node x="94261" y="92246" />
+				<node x="93230" y="92242" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma162" minZ="-3773" maxZ="-2973">
+				<node x="94256" y="91213" />
+				<node x="95287" y="91217" />
+				<node x="95291" y="92245" />
+				<node x="94260" y="92240" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma163" minZ="-3773" maxZ="-2973">
+				<node x="92207" y="92253" />
+				<node x="93239" y="92258" />
+				<node x="93243" y="93285" />
+				<node x="92212" y="93281" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma164" minZ="-3773" maxZ="-2973">
+				<node x="91183" y="92253" />
+				<node x="92214" y="92258" />
+				<node x="92219" y="93285" />
+				<node x="91187" y="93280" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma165" minZ="-3773" maxZ="-2973">
+				<node x="90159" y="92250" />
+				<node x="91190" y="92254" />
+				<node x="91195" y="93281" />
+				<node x="90163" y="93277" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma166" minZ="-3741" maxZ="-2941">
+				<node x="89125" y="92246" />
+				<node x="90156" y="92250" />
+				<node x="90160" y="93277" />
+				<node x="89129" y="93273" />
+			</territory>
+			<banned_territory name="oren21_2220_doma166b" minZ="-3564" maxZ="-2064">
+				<node x="89473" y="92259" />
+				<node x="89659" y="92288" />
+				<node x="89617" y="92460" />
+				<node x="89454" y="92424" />
+			</banned_territory>
+			<banned_territory name="oren21_2220_doma166b1" minZ="-3741" maxZ="-2241">
+				<node x="89522" y="92628" />
+				<node x="89612" y="92623" />
+				<node x="89619" y="92724" />
+				<node x="89529" y="92729" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma167" minZ="-3741" maxZ="-2941">
+				<node x="88175" y="92270" />
+				<node x="89206" y="92275" />
+				<node x="89210" y="93302" />
+				<node x="88179" y="93297" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma168" minZ="-3741" maxZ="-2941">
+				<node x="87048" y="92241" />
+				<node x="88079" y="92245" />
+				<node x="88083" y="93272" />
+				<node x="87052" y="93268" />
+			</territory>
+			<banned_territory name="oren21_2220_doma168b" minZ="-3564" maxZ="-2064">
+				<node x="87490" y="92657" />
+				<node x="87676" y="92686" />
+				<node x="87634" y="92859" />
+				<node x="87471" y="92822" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma169" minZ="-3741" maxZ="-2941">
+				<node x="86041" y="92241" />
+				<node x="87072" y="92245" />
+				<node x="87077" y="93272" />
+				<node x="86045" y="93268" />
+			</territory>
+			<banned_territory name="oren21_2220_doma169b" minZ="-3741" maxZ="-2241">
+				<node x="86610" y="92395" />
+				<node x="86692" y="92390" />
+				<node x="86700" y="92476" />
+				<node x="86617" y="92481" />
+			</banned_territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma170" minZ="-3773" maxZ="-2973">
+				<node x="85019" y="92245" />
+				<node x="86051" y="92249" />
+				<node x="86055" y="93276" />
+				<node x="85024" y="93272" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma171" minZ="-3773" maxZ="-2973">
+				<node x="83217" y="93203" />
+				<node x="84249" y="93207" />
+				<node x="84253" y="94235" />
+				<node x="83221" y="94230" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma172" minZ="-3773" maxZ="-2973">
+				<node x="83987" y="93269" />
+				<node x="85018" y="93274" />
+				<node x="85023" y="94301" />
+				<node x="83991" y="94297" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma173" minZ="-3773" maxZ="-2973">
+				<node x="85024" y="93273" />
+				<node x="86055" y="93278" />
+				<node x="86060" y="94305" />
+				<node x="85028" y="94300" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma174" minZ="-3741" maxZ="-2941">
+				<node x="85942" y="93292" />
+				<node x="86974" y="93297" />
+				<node x="86978" y="94324" />
+				<node x="85946" y="94319" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma175" minZ="-3741" maxZ="-2941">
+				<node x="87081" y="93292" />
+				<node x="88113" y="93297" />
+				<node x="88117" y="94324" />
+				<node x="87086" y="94319" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma176" minZ="-3773" maxZ="-2973">
+				<node x="88096" y="93280" />
+				<node x="89127" y="93284" />
+				<node x="89131" y="94311" />
+				<node x="88100" y="94307" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma177" minZ="-3773" maxZ="-2973">
+				<node x="83232" y="94236" />
+				<node x="84263" y="94240" />
+				<node x="84268" y="95267" />
+				<node x="83236" y="95263" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma178" minZ="-3773" maxZ="-2973">
+				<node x="84269" y="94306" />
+				<node x="85300" y="94310" />
+				<node x="85305" y="95337" />
+				<node x="84273" y="95333" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma179" minZ="-3773" maxZ="-2973">
+				<node x="85287" y="94306" />
+				<node x="86319" y="94310" />
+				<node x="86323" y="95337" />
+				<node x="85292" y="95333" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_doma180" minZ="-3773" maxZ="-2973">
+				<node x="86312" y="94306" />
+				<node x="87343" y="94310" />
+				<node x="87347" y="95338" />
+				<node x="86316" y="95333" />
+			</territory>
+		</territories>
+		<npc id="22151" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman -->
+		<npc id="22152" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22155" count="2" respawnTime="3sec" chaseRange="3000" /> <!-- Tanta Lizardman Summoner -->
+	</spawn>
+</list>

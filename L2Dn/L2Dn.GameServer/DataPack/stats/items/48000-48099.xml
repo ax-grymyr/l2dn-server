@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="48016" name="White Knight Suit" additionalName="Sealed" type="Armor">
+		<!-- N Shop Platinum exclusive item. An evening dress. When equipped, it is impossible to wear armor. Hats, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.white_knight_suit" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48017" name="High Priest Costume" type="Armor">
+		<!-- A healer's outfit. -->
+		<set name="icon" val="icon.bm2018_healer_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48018" name="Chevalier Garment" type="Armor">
+		<set name="icon" val="icon.chevalier_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48019" name="Kat the Cat Costume" type="Armor">
+		<set name="icon" val="icon.cat_the_cat_change_0" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48020" name="Wild Wolf Costume" type="Armor">
+		<!-- A wild wolf's costume. -->
+		<set name="icon" val="icon.bm2018_barbarian_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48021" name="Valkyrie Costume" type="Armor">
+		<!-- Valkyrie Costume -->
+		<set name="icon" val="icon.bm2018_valkyrie_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48022" name="Teddy Bear Wear" type="Armor">
+		<!-- When equipped, headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="48046" name="Scroll: Enchant Agathion" type="EtcItem">
+		<!-- Only for Zodiac agathions. Increases M. Def. The enchanting is safe up to +3, the maximum enchant value is +10. Starting from +1, the agathion's secondary skills are enhanced with each enchant value. -->
+		<set name="icon" val="icon.star_scrl_of_ench_ag" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="51047" level="1" /> <!-- Scroll: Enchant Agathion -->
+		</skills>
+	</item>
+	<item id="48047" name="Scroll: Enchant High-grade Agathion" type="EtcItem">
+		<!-- Only for Zodiac agathions. Increases M. Def. The enchanting is safe up to +3, the maximum enchant value is +10. Starting from +1, the agathion's secondary skills are enhanced with each enchant value. The enchanting is random from +1 to +3. Cannot be used with items enchanted to more than +8. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.star_giantscrl_of_ench_ag" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="51048" level="1" /> <!-- Scroll: Enchant High-grade Agathion -->
+		</skills>
+	</item>
+	<item id="48048" name="Agathion Virgo" type="Armor">
+		<!-- Increases M. Def. When enchanted to +6 and higher, increases Fear/ Silence Atk. Rate. Equipping it in the main slot summons Agathion Virgo. Note!. If Agathion Petram is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_virgo_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54013" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Virgo -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48049" name="Agathion Capricorn" type="Armor">
+		<!-- Increases M. Skill Critical Rate. When enchanted to +6 and higher, decreases M. Skill/ Song/ Dance Cooldown. Equipping it in the main slot summons Agathion Capricorn. Note!. If Agathion Nebula is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_capr_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54015" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Capricorn -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48050" name="Agathion Libra" type="Armor">
+		<!-- Increases Casting Spd. When enchanted to +6 and higher, decreases M. Skill/ Song/ Dance MP Consumption. Equipping it in the main slot summons Agathion Libra. Note!. If Agathion Procella is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_lib_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54016" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Libra -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48052" name="Agathion Taurus" type="Armor">
+		<!-- Increases P. Def. When enchanted to +6 and higher, increases Shock Atk. Rate. Equipping it in the main slot summons Agathion Taurus. Note!. If Agathion Petram is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_tau_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54009" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Taurus -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48053" name="Agathion Leo" type="Armor">
+		<!-- Increases P. Atk. When enchanted to +6 and higher, increases Paralysis Atk. Rate. Equipping it in the main slot summons Agathion Leo. Note!. If Agathion Ignis is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_leo_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54010" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Leo -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48054" name="Agathion Gemini" type="Armor">
+		<!-- Increases the acquired XP/ SP bonus from Sayha's Grace. When enchanted to +6 and higher, increases Max HP/ MP. Equipping it in the main slot summons Agathion Gemini. Note!. If Agathion Joy is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_gem_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54017" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Gemini -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48055" name="Agathion Scorpio" type="Armor">
+		<!-- Increases P. Critical Rate. When enchanted to +6 and higher, decreases P. Skill/ Song/ Dance Cooldown. Equipping it in the main slot summons Agathion Scorpio. Note!. If Agathion Nebula is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_sco_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54011" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Scorpio -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48056" name="Agathion Aquarius" type="Armor">
+		<!-- Increases M. Atk. When enchanted to +6 and higher, increases Hold/ Sleep Atk. Rate. Equipping it in the main slot summons Agathion Aquarius. Note!. If Agathion Ignis is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_aqu_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54014" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Aquarius -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48058" name="Agathion Sagittarius" type="Armor">
+		<!-- Increases Atk. Spd. When enchanted to +6 and higher, decreases P. Skill/ Song/ Dance MP Consumption. Equipping it in the main slot summons Agathion Sagittarius. Note!. If Agathion Procella is equipped, only it will be active. -->
+		<set name="icon" val="icon.agathion_sag_star_1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="agathion" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="54012" level="1" type="ON_EQUIP" /> <!-- Summon Agathion Sagittarius -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+		</skills>
+	</item>
+	<item id="48066" name="Zodiac Agathion Box" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.star_agathion_cube" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51046" level="1" /> <!-- Zodiac Agathion Box -->
+		</skills>
+	</item>
+</list>

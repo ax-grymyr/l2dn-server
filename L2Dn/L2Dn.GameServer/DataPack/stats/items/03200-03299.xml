@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="3200" name="Black Willow Leaf" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A leaf obtained by slaying Black Willow Lurker. Take it to Blight Treant who can be found at the Shillien Temple in the eastern part of Dark Elf Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3201" name="Blight Treant Sap" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sap of Blight Treant. Take it to Arkenia at the Altar of Rites. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3202" name="Arkenia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter written by Arkenia that the initiation ceremony of the Shillien Circle is complete. Take it to Great Hierarch Thifiell in Dark Elf Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3203" name="Mark of Glory" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Testimony of Glory. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3204" name="Vokian's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Obtain 10 units of each of the following items: Manashen Shard from Manashen Gargoyles in the Ivory Tower Crater, Tyrant's Talons from Tyrants in the Wasteland, and Guardian Basilisk Fang from Guardian Basilisks in the Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3205" name="Manashen Shard" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Shard of the broken Manashen. Collect 10 and take them back to Prefect Vokian at the Orc Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3206" name="Tyrant's Talons" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The talons plucked from a slain Tyrant. Collect 10 and take them back to Prefect Vokian at the Orc Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3207" name="Guardian Basilisk Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The fangs of a Guardian Basilisk slain in Death Pass. Collect 10 and take them back to Prefect Vokian at the Orc Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3208" name="Vokian's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An order from Prefect Vokian of the Giran's Orc Guild to find Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3209" name="Necklace of Authority" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Symbol given to those representing Pa'agrio Lord Kakai. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3210" name="Chianta's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Orders of Gandi Chief Chianta to collect 5 Flame Scepters from chiefs of lesser Orc tribes. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3211" name="Scepter of Breka" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter obtained from the Breka Orc chief. Take it along with 4 other tribes' scepters to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3212" name="Scepter of Enku" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter obtained from the Enku Orc chief. Take it along with 4 other tribes' scepters to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3213" name="Scepter of Vuku" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter obtained from the Vuku Orc chief. Take it along with 4 other tribes' scepters to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3214" name="Scepter of Turek" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter obtained from the Turek Orc chief. Take it along with 4 other tribes' scepters to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3215" name="Scepter of Tunath" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter obtained from the Tunath Orc chief. Take it along with 4 other tribes' scepters to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3216" name="Chianta's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gandi Chief Chianta's orders. The instructions are to come back for further orders after reaching level 38. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3217" name="Chianta's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gandi Chief Chianta's orders to collect 20 of Timak and Tamlin Orc heads. You can find the former in Timak Orc Barracks and the latter - near the Hunters' Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3218" name="Tamlin Orc Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A severed head of a Tamlin Orc. Collect 20 of these and take them to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3219" name="Timak Orc Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A severed head of a Timak Orc. Collect 20 of these and take them to Gandi Chief Chianta in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3220" name="Scepter Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Box containing the 5 flame scepters recovered from the lesser orc tribes. Take this to Seer Tanapi of the Orc Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3221" name="Pashika's Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A head of Voltar's son Pashika. Take it to Breka Chief Voltar in Breka's Stronghold. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3222" name="Vultus' Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A head of Voltar's son Vultus. Take it to Breka Chief Voltar in Breka's Stronghold. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3223" name="Gloves of Voltar" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gloves thrown out by Breka Chief Voltar. Slay Pashika and Vultus, sons of Voltar. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3224" name="Enku Overlord Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The head of Enku Orc Prefect. Show it to Enku Chief Kepra it the south-eastern part of the Plains of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3225" name="Gloves of Kepra" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gloves thrown down by Enku Chief Kepra. Go and slay Enku Orc Prefect. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3226" name="Makum Bugbear Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The head of Makum Bugbear. Show it to Turek Chief Burai. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3227" name="Gloves of Burai" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Gloves thrown down by Turek Chief Burai. Go and slay Makum Bugbears. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3228" name="Manakia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Priest Manakia of the Orc Guild in Giran. Take it to Breka Chief. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3229" name="Manakia's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter of Priest Manakia of the Orc Guild of Giran. Take it to Enku Orc Chief. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3230" name="Kasman's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Prefect Kasman's letter. Take this and go to the Vuku Orc Chief. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3231" name="Kasman's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Prefect Kasman's letter. Take this and go to the Turek Orc Chief. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3232" name="Kasman's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Prefect Kasman's letter. Take this and go to the Lennunt Orc Chief. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3233" name="Driko's Contract" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Vuku Chief Driko's contract. The contract contains instructions to hunt the Marsh Stakato Drones in the Cruma Marshlands. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3234" name="Marsh Stakato Drone Husk" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The husks of a Marsh Stakato Drone. Collect 30 of these and take them to Vuku Chief Driko. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3235" name="Tanapi's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Seer Tanapi's orders. Hunt the Ragna Orc Chief and seers and recover the scepter of Tantosc. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3236" name="Scepter of Tantos" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The flame scepter of the now-perished Tantos tribe. Take this to Seer Tanapi. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3237" name="Ritual Box" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Box containing the scepters recovered from the Orcs of the Tantos tribe. Take this to Pa'agrio Lord Kakai. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3238" name="Mark of Prosperity" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Testimony of Prosperity. Required for the class change. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3239" name="Ring of Trials I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ring given to those Dwarves attempting the Testimony of Prosperity. Find the 4 proofs of prosperity. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3240" name="Ring of Trials I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ring given to those Dwarves attempting the Testimony of Prosperity. Find Maphr's tablet, which contains the ultimate secrets of geometry. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3241" name="Old Account Book" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An old account book of Lockirin from the Iron Gate Guild. Can be considered the proof of wealth. Take it to Warehouse Keeper Parman in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3242" name="Blessed Seed" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A blessed seed that symbolizes fertility. Take it to Warehouse Keeper Parman in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3243" name="Emily's Recipe" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Recipe good for childbirth and childbirth recovery. The proof of fertility. Take this to Warehouse Keeper Parman of Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3244" name="Lilith's Elven Wafer" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Food regarded as the secret to the Elves' longevity. The proof of health. Take this to Warehouse Keeper Parman of Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3245" name="Maphr Tablet Fragment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fragment of Maphr's tablet, which contains the ultimate secrets of geometry. Take this to Warehouse Keeper Parman of Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3246" name="Collection License" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. License that allows the bearer to collect guild contributions. Seek out those who still owe contributions and collect the funds from them. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3247" name="Lockirin's Notice I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Notice that guild contributions are due. Take this to Elder Spiron of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3248" name="Lockirin's Notice I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A note about the guild contributions. Take it to Elder Balanki of the Elder Council in the Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3249" name="Lockirin's Notice I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Notice that guild contributions are due. Take this to Elder Keef of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3250" name="Lockirin's Notice I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Notice that guild contributions are due. Take this to Elder Filaur of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3251" name="Lockirin's Notice I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Notice that guild contributions are due. Take this to Elder Arin of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3252" name="Contribution of Shari" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trader Shari's guild contribution. Take this to Elder Spiron of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3253" name="Contribution of Mion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trader Mion's guild contribution. Take this to Elder Balanki of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3254" name="Contribution of Maryse" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trader Maryse Redbonnet's guild contribution. Take this to Elder Balanki of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3255" name="Maryse's Request" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A note containing Maryse Redbonnet's request that you bring back 10 Animal Skins for crafting. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3256" name="Contribution of Toma" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Trader Master Toma's guild contribution. Take this to Elder Arin of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3257" name="Receipt of Bolter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Miner Bolter's receipt. Take this to Elder Filaur of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3258" name="Receipt of Contribution I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A receipt from Elder Spiron. Collect 5 receipts from various guilds and take them to First Elder Lockirin in the Hall of Elders of the Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3259" name="Receipt of Contribution I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The contribution receipt received from Elder Balanki. Collect 5 receipts from various guilds and take them to First Elder Lockirin at the Hall of Elders of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3260" name="Receipt of Contribution I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The contribution receipt received from Elder Keef. Collect 5 receipts from various guilds and take them to First Elder Lockirin at the Hall of Elders of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3261" name="Receipt of Contribution I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The contribution receipt received from Elder Filaur. Collect 5 receipts from various guilds and take them to First Elder Lockirin at the Hall of Elders of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3262" name="Receipt of Contribution I" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The contribution receipt received from Elder Arin. Collect 5 receipts from various guilds and take them to First Elder Lockirin at the Hall of Elders of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3263" name="Procuration of Torocco" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The bearer of this procuration hereby agrees to make contributions on behalf of Torocco. Take this to Elder Keef of the Elder Council of Dwarven Village. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3264" name="Bright's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A list of ingredients written by Guard Bright: 20 Mandragora Petals, 10 bunches of Crimson Moss. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3265" name="Mandragora Petal" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Mandragora Petal. Collect 20 of these and take them to Guard Bright at the eastern part of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3266" name="Crimson Moss" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Crimson Moss obtained from giant red ants. Collect 10 of these and take them to Guard Bright at the eastern part of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3267" name="Mandragora Bouquet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A bouquet made of Mandragora Petals and Crimson Moss. Take it to Emily in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3268" name="Parman's Instructions" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Note containing Warehouse Keeper Parman's instructions. The instructions are to come back after reaching level 38. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3269" name="Parman's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Warehouse Keeper Parman's letter. Bring it to Maestro Nikola. You can find him near Cruma Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3270" name="Clay Dough" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Piece of clay that Maestro Nikola has given when you met near Cruma Tower. Use this to make a copy of the keyhole from the Lesser Giant's box. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3271" name="Pattern of Keyhole" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The keyhole pattern made from clay dough. Take this to Maestro Nikola. You can find him near Cruma Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3272" name="Nikola's List" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. 20 Stakato Shells obtained by slaying Stakato in Cruma Marshlands, 10 Toad Lord Sacs obtained by slaying a Toad Lord in Cruma Marshlands, 10 Spider Thorns obtained by slaying a Marsh Spider in Cruma Marshlands and 10 D-grade Crystals. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3273" name="Stakato Shell" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A shell of Marsh Stakato. Key ingredient for making Lesser Giant's Key. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3274" name="Toad Lord Sac" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A venom sac from the neck of Toad Lord. Key ingredient for making Lesser Giant's Key. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3275" name="Marsh Spider's Thorn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Thorn removed from the shell of a Marsh Spider. Key ingredient in making the Lesser Giant's Key. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3276" name="Mark of Champion" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Test of the Champion. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3277" name="Ascalon's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Veteran Ascalon's letter. Take this to Mason in the Town of Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3278" name="Mason's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Mason to Veteran Ascalon in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3279" name="Iron Rose Ring" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ring given by Mason. The ring is engraved with the symbol of the iron rose. Complete the revenge in place of Mason. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3280" name="Ascalon's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Veteran Ascalon's letter. Take it to Merchant Groot in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3281" name="White Rose Insignia" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An insignia given by Dye Merchant Groot. It was formerly worn by healers of the Iron Rose. Help Groot in his material gathering. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3282" name="Groot's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter from Trader Groot to Veteran Ascalon in Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3283" name="Ascalon's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Veteran Ascalon's letter. Take this to Captain Mouen of the Town of Oren. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3284" name="Mouen's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Orders to collect 10 heads of Road Scavengers or Road Collectors in Death Pass. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3285" name="Mouen's Order" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Orders to destroy the Leto Lizardmen on the Plains of the Lizardmen and bring back 10 of their fangs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3286" name="Mouen's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Letter from Captain Mouen to Veteran Ascalon of Town of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3287" name="Harpy's Egg" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An egg obtained after slaying a Harpy. Collect 30 of these and take them to Merchant Groot in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3288" name="Medusa's Venom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Venom obtained after slaying a Medusa. Collect 30 of these and take them to Merchant Groot in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3289" name="Windsus Bile" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Bile obtained after slaying a Windsus. Collect 30 of these and take them to Merchant Groot in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3290" name="Bloody Axe Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The head of Bloody Axe. Collect 10 of these and return to Mason in Dion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3291" name="Road Ratman Head" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The severed head of a Road Scavenger or Road Collector. Collect 10 of them and take them to Captain Mouen. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3292" name="Leto Lizardman Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fang from a slain Leto Lizardman from the Plains of the Lizardmen. Collect 10 of these and take them to Captain Mouen. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3293" name="Mark of Sagittarius" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A mark given to those who have passed the Test of the Sagittarius. Required for changing class. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3294" name="Bernard's Introduction" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Take this letter and go to Sagittarius Hamil of the Village of Floran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3295" name="Hamil's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Deliver this letter to Sir Aron Tanford who can be found near the Ol Mahum Checkpoint at the southern part of the Wastelands. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3296" name="Hamil's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Sagittarius Hamil to Prefect Vokian of the Orc Guild in Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3297" name="Hamil's Letter" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A letter from Sagittarius Hamil to Magister Gauen at the Ivory Tower. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3298" name="Hunter's 1st Rune" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Stone engraved with a hunter's rune. Collect 10 of these and take them to Hamil of the Village of Floran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3299" name="Hunter's 2nd Rune" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Rune obtained from Breka Orcs. Collect 10 of these and take them, along with the Snake Amulet, to Prefect Vokian of the Orc Guild of Giran. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+</list>

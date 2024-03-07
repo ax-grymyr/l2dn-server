@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="45473" name="Blue Mackerel" type="EtcItem">
+		<!-- Can be exchanged for various items through the Fishing Guildsmen. -->
+		<set name="icon" val="icon.fish_normal_i04" />
+		<set name="material" val="FISH" />
+		<set name="price" val="3000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="45481" name="Fresh Blue Mackerel" type="EtcItem">
+		<!-- Can be exchanged for various items through the Fishing Guildsmen. -->
+		<set name="icon" val="icon.fish_normal_i12" />
+		<set name="material" val="FISH" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="45488" name="Golden Treasure Chest" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i08" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51009" level="1" /> <!-- Golden Treasure Chest -->
+		</skills>
+	</item>
+	<item id="45492" name="Fishing Rod" additionalName="1-day" type="Weapon">
+		<!-- Available for 1 day. Requires 1 Fishing Shot. -->
+		<set name="icon" val="icon.weapon_fishing_rod_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="1440" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="45493" name="Fishing Rod Pack" additionalName="1-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="100" />
+		<set name="price" val="20514" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="45492" min="1" max="1" chance="100" /> <!-- Fishing Rod - 1-day -->
+		</capsuled_items>
+	</item>
+	<item id="45495" name="Normal Bait" type="EtcItem">
+		<!-- Necessary for fishing. -->
+		<set name="icon" val="icon.etc_huge_lure" />
+		<set name="bodypart" val="lhand" />
+		<set name="default_action" val="EQUIP" />
+		<set name="etcitem_type" val="LURE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="7" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

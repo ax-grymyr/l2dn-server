@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30097</npc> <!-- Galladucci -->
+	</npcs>
+	<!-- C-grade weapon for crafting ingredients -->
+	<item>
+		<ingredient id="92476" count="2390" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4780000" /> <!-- Adena -->
+		<production id="203" count="1" /> <!-- Pa'agrio Axe -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2390" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4780000" /> <!-- Adena -->
+		<production id="303" count="1" /> <!-- Widow Maker -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2390" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4780000" /> <!-- Adena -->
+		<production id="301" count="1" /> <!-- Scorpion -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="84" count="1" /> <!-- Homunkulus' Sword -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="200" count="1" /> <!-- Sage's Staff -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="265" count="1" /> <!-- Fisted Blade -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="95" count="1" /> <!-- Poleaxe -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="197" count="1" /> <!-- Paradia Staff -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="199" count="1" /> <!-- Pa'agrio Hammer -->
+	</item>
+	<item>
+		<ingredient id="92476" count="2150" /> <!-- Metal Ingot -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="7898" count="1" /> <!-- Karik Horn -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="75" count="1" /> <!-- Caliburs -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="77" count="1" /> <!-- Tsurugi -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="198" count="1" /> <!-- Inferno Staff -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="91883" count="1" /> <!-- Immortal Edge -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="162" count="1" /> <!-- War Axe -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="134" count="1" /> <!-- Sword of Nightmare -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="283" count="1" /> <!-- Akat Longbow -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="7882" count="1" /> <!-- Pa'agrio Sword -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="91897" count="1" /> <!-- Blinzlasher -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="76" count="1" /> <!-- Sword of Delusion -->
+	</item>
+	<item>
+		<ingredient id="92477" count="2150" /> <!-- Wood -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="202" count="1" /> <!-- Mace of Underworld -->
+	</item>
+	<item>
+		<ingredient id="92478" count="4300" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="174" count="1" /> <!-- Nirvana Axe -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="145" count="1" /> <!-- Sword of Whispering Death -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="201" count="1" /> <!-- Club of Nature -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="233" count="1" /> <!-- Dark Screamer -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="132" count="1" /> <!-- Ultimate Sword -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="231" count="1" /> <!-- Grace Dagger -->
+	</item>
+	<item>
+		<ingredient id="92478" count="2150" /> <!-- Varnish -->
+		<ingredient id="57" count="4300000" /> <!-- Adena -->
+		<production id="196" count="1" /> <!-- Stick of Eternity -->
+	</item>
+	<item>
+		<ingredient id="92478" count="1440" /> <!-- Varnish -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="74" count="1" /> <!-- Katana -->
+	</item>
+	<item>
+		<ingredient id="92478" count="1440" /> <!-- Varnish -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="195" count="1" /> <!-- Cursed Staff -->
+	</item>
+	<item>
+		<ingredient id="92478" count="1440" /> <!-- Varnish -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="325" count="1" /> <!-- Horn of Glory -->
+	</item>
+	<item>
+		<ingredient id="92479" count="2870" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="94" count="1" /> <!-- Bec de Corbin -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="282" count="1" /> <!-- Elemental Bow -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="131" count="1" /> <!-- Spirit Sword -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="227" count="1" /> <!-- Stiletto -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="91898" count="1" /> <!-- Chevalier Rapier -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="73" count="1" /> <!-- Shamshir -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="242" count="1" /> <!-- Soulfire Dirk -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="133" count="1" /> <!-- Raid Sword -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="4233" count="1" /> <!-- Knuckle Duster -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1440" /> <!-- Metallograph -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="285" count="1" /> <!-- Noble Elven Bow -->
+	</item>
+	<item>
+		<ingredient id="92479" count="1150" /> <!-- Metallograph -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="191" count="1" /> <!-- Heavy Doom Hammer -->
+	</item>
+	<item>
+		<ingredient id="92480" count="2870" /> <!-- Leather -->
+		<ingredient id="57" count="2870000" /> <!-- Adena -->
+		<production id="2502" count="1" /> <!-- Dwarven War Hammer -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="194" count="1" /> <!-- Heavy Doom Axe -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="71" count="1" /> <!-- Flamberge -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="89" count="1" /> <!-- Big Hammer -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="192" count="1" /> <!-- Crystal Staff -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="263" count="1" /> <!-- Chakram -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="226" count="1" /> <!-- Cursed Dagger -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="161" count="1" /> <!-- Silver Axe -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="298" count="1" /> <!-- Orcish Glaive -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="281" count="1" /> <!-- Frozen Bow -->
+	</item>
+	<item>
+		<ingredient id="92480" count="1150" /> <!-- Leather -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="193" count="1" /> <!-- Stick of Faith -->
+	</item>
+	<item>
+		<ingredient id="92481" count="2290" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="96" count="1" /> <!-- Scythe -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="72" count="1" /> <!-- Stormbringer -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="173" count="1" /> <!-- Skull Graver -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="91884" count="1" /> <!-- Schlager -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="91899" count="1" /> <!-- Soldat Estoc -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="160" count="1" /> <!-- Battle Axe -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="302" count="1" /> <!-- Body Slasher -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="7887" count="1" /> <!-- Mysterious Sword -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="232" count="1" /> <!-- Dark Elven Dagger -->
+	</item>
+	<item>
+		<ingredient id="92481" count="1150" /> <!-- Cloth -->
+		<ingredient id="57" count="2290000" /> <!-- Adena -->
+		<production id="230" count="1" /> <!-- Wolverine Fang -->
+	</item>
+</list>

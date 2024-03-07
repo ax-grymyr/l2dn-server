@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49100" toLevel="1" name="Pet's HP Recovery Potion">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49101" toLevel="1" name="1st Pet Evolution">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49102" toLevel="1" name="2nd Pet Evolution">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49103" toLevel="1" name="Energy Burst - Presentation">
+		<icon>icon.skill1417</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>1500</hitTime>
+		<mpConsume>6</mpConsume>
+	</skill>
+	<skill id="49104" toLevel="1" name="Entrenching Cancel">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49105" toLevel="5" name="Chain Block">
+		<!-- Makes you immobilized. Prevents from using magic skills. Decreases range of all attacks. -->
+		<icon>icon.skill16856</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>1000</coolTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-780</value>
+			<value level="3">-800</value>
+			<value level="4">-820</value>
+			<value level="5">-850</value>
+		</effectPoint>
+	</skill>
+	<skill id="49142" toLevel="20" name="Arrow Feather">
+		<!-- <Attack skill>. Shoots the target with a feather. Deals P. skill damage corresponding to P. Atk. Additionally, P. Atk.: 115. Limits the target's invisibility. -->
+		<icon>icon.pet_feather_arrow</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>700</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-250</value>
+			<value level="3">-400</value>
+			<value level="4">-500</value>
+			<value level="5">-600</value>
+			<value level="6">-700</value>
+			<value level="7">-750</value>
+			<value level="8">-800</value>
+			<value level="9">-850</value>
+			<value level="10">-900</value>
+			<value level="11">-900</value>
+			<value level="12">-900</value>
+			<value level="13">-900</value>
+			<value level="14">-900</value>
+			<value level="15">-900</value>
+			<value level="16">-900</value>
+			<value level="17">-900</value>
+			<value level="18">-900</value>
+			<value level="19">-900</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">6</value>
+			<value level="2">14</value>
+			<value level="3">22</value>
+			<value level="4">28</value>
+			<value level="5">34</value>
+			<value level="6">39</value>
+			<value level="7">42</value>
+			<value level="8">45</value>
+			<value level="9">48</value>
+			<value level="10">50</value>
+			<value level="11">52</value>
+			<value level="12">54</value>
+			<value level="13">56</value>
+			<value level="14">58</value>
+			<value level="15">60</value>
+			<value level="16">62</value>
+			<value level="17">64</value>
+			<value level="18">66</value>
+			<value level="19">68</value>
+			<value level="20">70</value>
+		</mpConsume>
+	</skill>
+	<skill id="49163" toLevel="20" name="Fox Fire">
+		<!-- <<font color="00FF00">Attack/ changing skill</font>>. Attacks the target twice with mysterious fox fire. Melee: Attacks with fox fire enhanced by powerful spells. Long range: Shoots with fox fire that tracks the target. Deals P. skill damage corresponding to P. Atk. Base P. Atk.: 110% -->
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49164" toLevel="20" name="Fox Fire">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49165" toLevel="20" name="Fox Fire">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+	</skill>
+	<skill id="49167" toLevel="8" name="Remorse">
+		<!-- You feel remorse, and your attack power is decreased. P. Atk. -10%. M. Atk. -10% -->
+		<icon>icon.skill16872</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<coolTime>500</coolTime>
+	</skill>
+</list>

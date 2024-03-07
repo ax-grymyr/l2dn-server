@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34500" name="decre_crit_dmg">
+		<!-- All received Critical Damage -5% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34501" name="decre_crit_dmg">
+		<!-- All received Critical Damage -6% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34502" name="decre_crit_dmg">
+		<!-- All received Critical Damage -7% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34503" name="decre_crit_dmg">
+		<!-- All received Critical Damage -8% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34504" name="decre_crit_dmg">
+		<!-- All received Critical Damage -9% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34505" name="decre_crit_dmg">
+		<!-- All received Critical Damage -10% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34506" name="decre_crit_dmg">
+		<!-- All received Critical Damage -11% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34507" name="decre_crit_dmg">
+		<!-- All received Critical Damage -12% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34508" name="decre_crit_dmg">
+		<!-- All received Critical Damage -15% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34509" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34510" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34511" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34512" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34513" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34514" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34515" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34516" name="decre_crit_dmg">
+		<!-- All received Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34517" name="decre_crit_dmg">
+		<!-- All received Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34518" name="decre_crit_dmg">
+		<!-- All received Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34519" name="decre_crit_dmg">
+		<!-- All received Critical Rate -4% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34520" name="decre_crit_dmg">
+		<!-- All received Critical Rate -5% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34521" name="decre_crit_dmg">
+		<!-- All received Critical Rate -6% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34522" name="decre_crit_dmg">
+		<!-- All received Critical Rate -7% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34523" name="decre_crit_dmg">
+		<!-- All received Critical Rate -8% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34524" name="decre_crit_dmg">
+		<!-- All received Critical Rate -9% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34525" name="decre_crit_dmg">
+		<!-- All received Critical Rate -10% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34526" name="decre_crit_dmg">
+		<!-- All received Critical Rate -11% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34527" name="decre_crit_dmg">
+		<!-- All received Critical Rate -12% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34528" name="decre_crit_dmg">
+		<!-- All received Critical Rate -15% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34529" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34530" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34531" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34532" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34533" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34534" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34535" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34536" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34537" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34538" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34539" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34540" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34541" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34542" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34543" name="speed">
+		<!-- Speed +1 -->
+		<effects>
+			<effect name="Speed">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34544" name="speed">
+		<!-- Speed +2 -->
+		<effects>
+			<effect name="Speed">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34545" name="speed">
+		<!-- Speed +2 -->
+		<effects>
+			<effect name="Speed">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34546" name="speed">
+		<!-- Speed +3 -->
+		<effects>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34547" name="speed">
+		<!-- Speed +4 -->
+		<effects>
+			<effect name="Speed">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34548" name="speed">
+		<!-- Speed +5 -->
+		<effects>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34549" name="max_hp">
+		<!-- Max HP +25 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34550" name="max_hp">
+		<!-- Max HP +38 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34551" name="max_hp">
+		<!-- Max HP +50 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34552" name="max_hp">
+		<!-- Max HP +63 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34553" name="max_hp">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34554" name="max_hp">
+		<!-- Max HP +88 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34555" name="max_hp">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34556" name="max_hp">
+		<!-- Max HP +113 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>113</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34557" name="max_hp">
+		<!-- Max HP +125 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34558" name="max_hp">
+		<!-- Max HP +138 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>138</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34559" name="max_hp">
+		<!-- Max HP +150 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34560" name="max_hp">
+		<!-- Max HP +163 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>163</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34561" name="max_hp">
+		<!-- Max HP +175 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>175</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34562" name="max_hp">
+		<!-- Max HP +188 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34563" name="max_hp">
+		<!-- Max HP +240 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34564" name="max_hp">
+		<!-- Max HP +300 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34565" name="max_hp">
+		<!-- Max HP +330 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34566" name="max_hp">
+		<!-- Max HP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34567" name="max_hp">
+		<!-- Max HP +400 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34568" name="max_hp">
+		<!-- Max HP +500 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34569" name="max_mp">
+		<!-- Max MP +25 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34570" name="max_mp">
+		<!-- Max MP +38 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34571" name="max_mp">
+		<!-- Max MP +50 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34572" name="max_mp">
+		<!-- Max MP +63 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34573" name="max_mp">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34574" name="max_mp">
+		<!-- Max MP +88 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34575" name="max_mp">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34576" name="max_mp">
+		<!-- Max MP +113 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>113</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34577" name="max_mp">
+		<!-- Max MP +125 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34578" name="max_mp">
+		<!-- Max MP +138 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>138</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34579" name="max_mp">
+		<!-- Max MP +150 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34580" name="max_mp">
+		<!-- Max MP +163 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>163</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34581" name="max_mp">
+		<!-- Max MP +175 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>175</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34582" name="max_mp">
+		<!-- Max MP +188 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>188</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34583" name="max_mp">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34584" name="max_mp">
+		<!-- Max MP +300 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34585" name="max_mp">
+		<!-- Max MP +330 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>330</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34586" name="max_mp">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34587" name="max_mp">
+		<!-- Max MP +400 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34588" name="max_mp">
+		<!-- Max MP +500 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34589" name="max_cp">
+		<!-- Max CP +25 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34590" name="max_cp">
+		<!-- Max CP +38 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34591" name="max_cp">
+		<!-- Max CP +50 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34592" name="max_cp">
+		<!-- Max CP +63 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34593" name="max_cp">
+		<!-- Max CP +75 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34594" name="max_cp">
+		<!-- Max CP +88 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34595" name="max_cp">
+		<!-- Max CP +100 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34596" name="max_cp">
+		<!-- Max CP +113 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>113</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34597" name="max_cp">
+		<!-- Max CP +125 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34598" name="max_cp">
+		<!-- Max CP +138 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>138</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34599" name="max_cp">
+		<!-- Max CP +150 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

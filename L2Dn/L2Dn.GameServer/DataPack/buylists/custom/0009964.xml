@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="862" price="0" /> <!-- Majestic Earring -->
+	<item id="871" price="0" /> <!-- Phoenix Earring -->
+	<item id="6324" price="0" /> <!-- Sealed Phoenix Earring -->
+	<item id="6327" price="0" /> <!-- Sealed Majestic Earring -->
+</list>

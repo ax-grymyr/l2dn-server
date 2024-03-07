@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34177"> <!-- Kiku -->
+		<teleport type="OTHER">
+			<location x="-118864" y="215841" z="-13048" /> <!-- Forgotten Primeval Garden Entrance -->
+			<location x="-115315 " y="208056" z="-12960" /> <!-- Inner part of the Forgotten Primeval Garden -->
+		</teleport>
+	</npc>
+</list>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="8938" name="Tallum Blade*Damascus Sword" type="Weapon">
+		<!-- When enchanting dual swords, two-handed swords/ blunts and fists, the P. Atk. bonus is higher than that of one-handed weapons. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="2157" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1890" />
+		<set name="price" val="26968400" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="DUALSWORD" />
+		<set name="isAppearanceable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">137</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="50403" level="1" type="ON_BLESSING" /> <!-- Weapon Blessing Effect -->
+			<skill id="50406" level="1" type="ON_BLESSING" type_value="5" /> <!-- +5 A-grade Weapon Blessing Effect -->
+			<skill id="50407" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 A-grade Weapon Blessing Effect -->
+			<skill id="50408" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 A-grade Weapon Blessing Effect -->
+			<skill id="50409" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 A-grade Weapon Blessing Effect -->
+			<skill id="50410" level="1" type="ON_BLESSING" type_value="9" /> <!-- +9 A-grade Weapon Blessing Effect -->
+			<skill id="50411" level="1" type="ON_BLESSING" type_value="10" /> <!-- +10 A-grade Weapon Blessing Effect -->
+		</skills>
+	</item>
+</list>

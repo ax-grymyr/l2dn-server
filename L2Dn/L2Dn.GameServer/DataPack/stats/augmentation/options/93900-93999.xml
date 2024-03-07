@@ -1,0 +1,1139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93900" name="HP/ MP Recovery Rate +2.1">
+		<!-- HP/ MP Recovery Rate +2.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93901" name="HP/ MP Recovery Rate +2.2">
+		<!-- HP/ MP Recovery Rate +2.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93902" name="HP/ MP Recovery Rate +2.3">
+		<!-- HP/ MP Recovery Rate +2.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93903" name="HP/ MP Recovery Rate +2.4">
+		<!-- HP/ MP Recovery Rate +2.4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93904" name="HP/ MP Recovery Rate +2.5">
+		<!-- HP/ MP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93905" name="HP/ MP Recovery Rate +2.6">
+		<!-- HP/ MP Recovery Rate +2.6 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93906" name="HP/ MP Recovery Rate +2.7">
+		<!-- HP/ MP Recovery Rate +2.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93907" name="HP/ MP Recovery Rate +2.8">
+		<!-- HP/ MP Recovery Rate +2.8 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93908" name="HP/ MP Recovery Rate +2.9">
+		<!-- HP/ MP Recovery Rate +2.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93909" name="HP/ MP Recovery Rate +3">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93910" name="HP/ MP Recovery Rate +3.1">
+		<!-- HP/ MP Recovery Rate +3.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93911" name="HP/ MP Recovery Rate +3.2">
+		<!-- HP/ MP Recovery Rate +3.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93912" name="HP/ MP Recovery Rate +3.3">
+		<!-- HP/ MP Recovery Rate +3.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93913" name="HP/ MP Recovery Rate +3.5">
+		<!-- HP/ MP Recovery Rate +3.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93914" name="HP/ MP Recovery Rate +3.7">
+		<!-- HP/ MP Recovery Rate +3.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93915" name="HP/ MP Recovery Rate +3.9">
+		<!-- HP/ MP Recovery Rate +3.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93916" name="HP/ MP Recovery Rate +4.1">
+		<!-- HP/ MP Recovery Rate +4.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93917" name="HP/ MP Recovery Rate +4.3">
+		<!-- HP/ MP Recovery Rate +4.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93918" name="HP/ MP Recovery Rate +5">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93919" name="HP/ MP Recovery Rate +2">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93920" name="HP/ MP Recovery Rate +2.1">
+		<!-- HP/ MP Recovery Rate +2.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93921" name="HP/ MP Recovery Rate +2.2">
+		<!-- HP/ MP Recovery Rate +2.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93922" name="HP/ MP Recovery Rate +2.3">
+		<!-- HP/ MP Recovery Rate +2.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93923" name="HP/ MP Recovery Rate +2.4">
+		<!-- HP/ MP Recovery Rate +2.4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93924" name="HP/ MP Recovery Rate +2.5">
+		<!-- HP/ MP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93925" name="HP/ MP Recovery Rate +2.6">
+		<!-- HP/ MP Recovery Rate +2.6 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93926" name="HP/ MP Recovery Rate +2.7">
+		<!-- HP/ MP Recovery Rate +2.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93927" name="HP/ MP Recovery Rate +2.8">
+		<!-- HP/ MP Recovery Rate +2.8 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93928" name="HP/ MP Recovery Rate +2.9">
+		<!-- HP/ MP Recovery Rate +2.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93929" name="HP/ MP Recovery Rate +3">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93930" name="HP/ MP Recovery Rate +3.1">
+		<!-- HP/ MP Recovery Rate +3.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93931" name="HP/ MP Recovery Rate +3.2">
+		<!-- HP/ MP Recovery Rate +3.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93932" name="HP/ MP Recovery Rate +3.3">
+		<!-- HP/ MP Recovery Rate +3.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93933" name="HP/ MP Recovery Rate +3.5">
+		<!-- HP/ MP Recovery Rate +3.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93934" name="HP/ MP Recovery Rate +3.7">
+		<!-- HP/ MP Recovery Rate +3.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93935" name="HP/ MP Recovery Rate +3.9">
+		<!-- HP/ MP Recovery Rate +3.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93936" name="HP/ MP Recovery Rate +4.1">
+		<!-- HP/ MP Recovery Rate +4.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93937" name="HP/ MP Recovery Rate +4.3">
+		<!-- HP/ MP Recovery Rate +4.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93938" name="HP/ MP Recovery Rate +5">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93939" name="HP/ MP Recovery Rate +2">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93940" name="HP/ MP Recovery Rate +2.1">
+		<!-- HP/ MP Recovery Rate +2.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93941" name="HP/ MP Recovery Rate +2.2">
+		<!-- HP/ MP Recovery Rate +2.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93942" name="HP/ MP Recovery Rate +2.3">
+		<!-- HP/ MP Recovery Rate +2.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93943" name="HP/ MP Recovery Rate +2.4">
+		<!-- HP/ MP Recovery Rate +2.4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93944" name="HP/ MP Recovery Rate +2.5">
+		<!-- HP/ MP Recovery Rate +2.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93945" name="HP/ MP Recovery Rate +2.6">
+		<!-- HP/ MP Recovery Rate +2.6 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93946" name="HP/ MP Recovery Rate +2.7">
+		<!-- HP/ MP Recovery Rate +2.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93947" name="HP/ MP Recovery Rate +2.8">
+		<!-- HP/ MP Recovery Rate +2.8 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93948" name="HP/ MP Recovery Rate +2.9">
+		<!-- HP/ MP Recovery Rate +2.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93949" name="HP/ MP Recovery Rate +3">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93950" name="HP/ MP Recovery Rate +3.1">
+		<!-- HP/ MP Recovery Rate +3.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93951" name="HP/ MP Recovery Rate +3.2">
+		<!-- HP/ MP Recovery Rate +3.2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93952" name="HP/ MP Recovery Rate +3.3">
+		<!-- HP/ MP Recovery Rate +3.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93953" name="HP/ MP Recovery Rate +3.5">
+		<!-- HP/ MP Recovery Rate +3.5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93954" name="HP/ MP Recovery Rate +3.7">
+		<!-- HP/ MP Recovery Rate +3.7 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93955" name="HP/ MP Recovery Rate +3.9">
+		<!-- HP/ MP Recovery Rate +3.9 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93956" name="HP/ MP Recovery Rate +4.1">
+		<!-- HP/ MP Recovery Rate +4.1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93957" name="HP/ MP Recovery Rate +4.3">
+		<!-- HP/ MP Recovery Rate +4.3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93958" name="HP/ MP Recovery Rate +5">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93959" name="P. Def. +60">
+		<!-- P. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93960" name="P. Def. +64">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93961" name="P. Def. +68">
+		<!-- P. Def. +68 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93962" name="P. Def. +72">
+		<!-- P. Def. +72 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93963" name="P. Def. +76">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93964" name="P. Def. +80">
+		<!-- P. Def. +80 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93965" name="P. Def. +85">
+		<!-- P. Def. +85 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93966" name="P. Def. +90">
+		<!-- P. Def. +90 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93967" name="P. Def. +95">
+		<!-- P. Def. +95 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93968" name="P. Def. +100">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93969" name="P. Def. +106">
+		<!-- P. Def. +106 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93970" name="P. Def. +112">
+		<!-- P. Def. +112 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93971" name="P. Def. +118">
+		<!-- P. Def. +118 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93972" name="P. Def. +120">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93973" name="P. Def. +130">
+		<!-- P. Def. +130 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93974" name="P. Def. +141">
+		<!-- P. Def. +141 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93975" name="P. Def. +153">
+		<!-- P. Def. +153 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93976" name="P. Def. +166">
+		<!-- P. Def. +166 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93977" name="P. Def. +180">
+		<!-- P. Def. +180 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93978" name="P. Def. +200">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93979" name="M. Def. +60">
+		<!-- M. Def. +60 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93980" name="M. Def. +64">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93981" name="M. Def. +68">
+		<!-- M. Def. +68 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93982" name="M. Def. +72">
+		<!-- M. Def. +72 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93983" name="M. Def. +76">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93984" name="M. Def. +80">
+		<!-- M. Def. +80 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93985" name="M. Def. +85">
+		<!-- M. Def. +85 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93986" name="M. Def. +90">
+		<!-- M. Def. +90 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93987" name="M. Def. +95">
+		<!-- M. Def. +95 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93988" name="M. Def. +100">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93989" name="M. Def. +106">
+		<!-- M. Def. +106 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93990" name="M. Def. +112">
+		<!-- M. Def. +112 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93991" name="M. Def. +118">
+		<!-- M. Def. +118 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93992" name="M. Def. +120">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93993" name="M. Def. +130">
+		<!-- M. Def. +130 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93994" name="M. Def. +141">
+		<!-- M. Def. +141 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93995" name="M. Def. +153">
+		<!-- M. Def. +153 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93996" name="M. Def. +166">
+		<!-- M. Def. +166 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93997" name="M. Def. +180">
+		<!-- M. Def. +180 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93998" name="M. Def. +200">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93999" name="P. Accuracy +2">
+		<!-- P. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92810" price="0" /> <!-- Sealed Tallum Leather Armor Pattern -->
+	<item id="92814" price="0" /> <!-- Sealed Tallum Tunic Texture -->
+	<item id="92818" price="0" /> <!-- Sealed Tallum Stocking Fabric -->
+	<item id="92822" price="0" /> <!-- Sealed Tallum Boot Lining -->
+	<item id="92826" price="0" /> <!-- Sealed Tallum Glove Design -->
+	<item id="92830" price="0" /> <!-- Sealed Tallum Plate Armor Pattern -->
+	<item id="92835" price="0" /> <!-- Sealed Tallum Helmet Design -->
+	<item id="92809" price="0" /> <!-- Sealed Dark Crystal Leather Armor Pattern -->
+	<item id="92813" price="0" /> <!-- Sealed Dark Crystal Legging Design -->
+	<item id="92815" price="0" /> <!-- Sealed Dark Crystal Robe Fabric -->
+	<item id="92819" price="0" /> <!-- Sealed Dark Crystal Shield Fragment -->
+	<item id="92821" price="0" /> <!-- Sealed Dark Crystal Boot Lining -->
+	<item id="92825" price="0" /> <!-- Sealed Dark Crystal Glove Design -->
+	<item id="92829" price="0" /> <!-- Sealed Dark Crystal Breastplate Pattern -->
+	<item id="92833" price="0" /> <!-- Sealed Dark Crystal Gaiter Pattern -->
+	<item id="92829" price="0" /> <!-- Sealed Dark Crystal Helmet Design -->
+	<item id="92811" price="0" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
+	<item id="92816" price="0" /> <!-- Sealed Robe of Nightmare Fabric -->
+	<item id="92820" price="0" /> <!-- Sealed Shield of Nightmare Fragment -->
+	<item id="92823" price="0" /> <!-- Sealed Boots of Nightmare Lining -->
+	<item id="92827" price="0" /> <!-- Sealed Gauntlets of Nightmare Design -->
+	<item id="92831" price="0" /> <!-- Sealed Armor of Nightmare Pattern -->
+	<item id="92836" price="0" /> <!-- Sealed Helm of Nightmare Design -->
+	<item id="92812" price="0" /> <!-- Sealed Majestic Leather Armor Fabric -->
+	<item id="92817" price="0" /> <!-- Sealed Majestic Robe Fabric -->
+	<item id="92824" price="0" /> <!-- Sealed Majestic Boot Lining -->
+	<item id="92828" price="0" /> <!-- Sealed Majestic Gauntlet Design -->
+	<item id="92832" price="0" /> <!-- Sealed Majestic Plate Armor Pattern -->
+	<item id="92837" price="0" /> <!-- Sealed Majestic Circlet Design -->
+</list>

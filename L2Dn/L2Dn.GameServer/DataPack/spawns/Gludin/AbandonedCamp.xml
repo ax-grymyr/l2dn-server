@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q01" minZ="-3165" maxZ="-2565">
+				<node x="-45202" y="140634" />
+				<node x="-44170" y="140638" />
+				<node x="-44166" y="141665" />
+				<node x="-45197" y="141661" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q02" minZ="-3165" maxZ="-2565">
+				<node x="-43838" y="140631" />
+				<node x="-42806" y="140635" />
+				<node x="-42718" y="141568" />
+				<node x="-43662" y="141609" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q03" minZ="-3165" maxZ="-2565">
+				<node x="-45649" y="141388" />
+				<node x="-44617" y="141392" />
+				<node x="-44613" y="142419" />
+				<node x="-45644" y="142415" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q04" minZ="-3165" maxZ="-2565">
+				<node x="-46458" y="142279" />
+				<node x="-45426" y="142283" />
+				<node x="-45422" y="143310" />
+				<node x="-46453" y="143306" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q05" minZ="-3165" maxZ="-2565">
+				<node x="-45645" y="142415" />
+				<node x="-44613" y="142419" />
+				<node x="-44609" y="143446" />
+				<node x="-45640" y="143442" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q06" minZ="-3165" maxZ="-2565">
+				<node x="-44834" y="141934" />
+				<node x="-43802" y="141938" />
+				<node x="-43798" y="142965" />
+				<node x="-44829" y="142961" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q07" minZ="-3165" maxZ="-2565">
+				<node x="-46909" y="143303" />
+				<node x="-45877" y="143307" />
+				<node x="-45873" y="144334" />
+				<node x="-46904" y="144330" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q08" minZ="-3165" maxZ="-2565">
+				<node x="-46101" y="143335" />
+				<node x="-45069" y="143339" />
+				<node x="-45065" y="144366" />
+				<node x="-46096" y="144362" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q09" minZ="-3165" maxZ="-2565">
+				<node x="-47256" y="144009" />
+				<node x="-46224" y="144013" />
+				<node x="-46220" y="145040" />
+				<node x="-47251" y="145036" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q10" minZ="-3165" maxZ="-2565">
+				<node x="-45892" y="144312" />
+				<node x="-44860" y="144316" />
+				<node x="-44856" y="145343" />
+				<node x="-45887" y="145339" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q11" minZ="-3165" maxZ="-2565">
+				<node x="-47795" y="145703" />
+				<node x="-46883" y="145689" />
+				<node x="-46759" y="146734" />
+				<node x="-47790" y="146730" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q12" minZ="-3165" maxZ="-2565">
+				<node x="-46581" y="146110" />
+				<node x="-45549" y="146114" />
+				<node x="-45545" y="147141" />
+				<node x="-46576" y="147137" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q13" minZ="-3165" maxZ="-2565">
+				<node x="-49463" y="147883" />
+				<node x="-48431" y="147887" />
+				<node x="-48427" y="148914" />
+				<node x="-49458" y="148910" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q14" minZ="-3165" maxZ="-2565">
+				<node x="-50144" y="148701" />
+				<node x="-49112" y="148705" />
+				<node x="-49108" y="149732" />
+				<node x="-50139" y="149728" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q15" minZ="-3165" maxZ="-2565">
+				<node x="-50458" y="150439" />
+				<node x="-49426" y="150443" />
+				<node x="-49422" y="151470" />
+				<node x="-50453" y="151466" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q16" minZ="-3165" maxZ="-2565">
+				<node x="-49469" y="150722" />
+				<node x="-48437" y="150726" />
+				<node x="-48433" y="151753" />
+				<node x="-49464" y="151749" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q17" minZ="-3165" maxZ="-2565">
+				<node x="-48445" y="150728" />
+				<node x="-47413" y="150732" />
+				<node x="-47409" y="151759" />
+				<node x="-48440" y="151755" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q18" minZ="-3165" maxZ="-2565">
+				<node x="-48725" y="151735" />
+				<node x="-47693" y="151739" />
+				<node x="-47689" y="152766" />
+				<node x="-48720" y="152762" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q19" minZ="-3165" maxZ="-2565">
+				<node x="-47576" y="152078" />
+				<node x="-46544" y="152082" />
+				<node x="-46540" y="153109" />
+				<node x="-47571" y="153105" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="gludio69_1822_q20" minZ="-3165" maxZ="-2565">
+				<node x="-48462" y="152631" />
+				<node x="-47430" y="152635" />
+				<node x="-47426" y="153662" />
+				<node x="-48457" y="153658" />
+			</territory>
+		</territories>
+		<npc id="20063" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Shooter -->
+		<npc id="20066" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Officer -->
+		<npc id="20076" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Commander -->
+		<npc id="20438" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum General -->
+		<npc id="20439" count="2" respawnTime="3sec" chaseRange="2500" /> <!-- Ol Mahum Sergeant -->
+	</spawn>
+</list>

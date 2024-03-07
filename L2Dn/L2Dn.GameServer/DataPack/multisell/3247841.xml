@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange La Vie En Rose's Jewel Powder -->
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="20" id="94526" />
+		<!-- Amber Kit Lv.4 -->
+		<production count="1" id="92109" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="30" id="94526" />
+		<!-- Opal Kit Lv.4 -->
+		<production count="1" id="92119" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="40" id="94526" />
+		<!-- Coral Kit Lv.4 -->
+		<production count="1" id="92129" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="50" id="94526" />
+		<!-- Onyx Kit Lv.4 -->
+		<production count="1" id="92139" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="50" id="94526" />
+		<!-- Spinel Kit Lv.4 -->
+		<production count="1" id="92149" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="40" id="94526" />
+		<!-- Zircon Kit Lv.4 -->
+		<production count="1" id="92159" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="20" id="94526" />
+		<!-- Moonstone Kit Lv.4 -->
+		<production count="1" id="92169" />
+	</item>
+	<item>
+		<!-- Gemstone Powder -->
+		<ingredient count="1" id="94526" />
+		<!-- Random Jewel Box Lv. 1-6 -->
+		<production count="1" id="94763" />
+	</item>
+
+</list>

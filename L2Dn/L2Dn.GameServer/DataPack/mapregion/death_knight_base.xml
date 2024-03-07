@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: Remove "castle" attributes from here, it should be loaded from TaxZones -->
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/MapRegion.xsd">
+	<!-- Death Knight Base -->
+	<region name="death_knight_base" town="Death Knight Base" castle="2" locId="916" bbs="5">
+		<respawnPoint X="47485" Y="152730" Z="-2728" />
+		<respawnPoint X="48120" Y="147377" Z="-3431" isChaotic="true" />
+		<respawnPoint X="36218" Y="148110" Z="-3644" isChaotic="true" />
+		<map X="21" Y="22" />
+	</region>
+</list>

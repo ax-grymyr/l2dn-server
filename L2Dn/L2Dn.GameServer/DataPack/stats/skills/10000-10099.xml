@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="10015" toLevel="6" name="Chain Strike">
+		<!-- <Pull Skill>. Pulls the enemy. -->
+		<icon>icon.skill10015</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<activateRate>190</activateRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">82</value>
+			<value level="3">84</value>
+			<value level="4">86</value>
+			<value level="5">88</value>
+			<value level="6">90</value>
+		</magicLevel>
+		<operateType>A2</operateType>
+		<mpConsume>
+			<value level="1">69</value>
+			<value level="2">73</value>
+			<value level="3">77</value>
+			<value level="4">81</value>
+			<value level="5">85</value>
+			<value level="6">89</value>
+		</mpConsume>
+		<castRange>700</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>1000</coolTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>
+			<value level="1">-4132</value>
+			<value level="2">-4198</value>
+			<value level="3">-4265</value>
+			<value level="4">-4333</value>
+			<value level="5">-4402</value>
+			<value level="6">-4472</value>
+		</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1200</effectRange>
+		<trait>PULL</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>35016</allowedSkills>
+			</effect>
+			<effect name="GetAgro" />
+		</effects>
+	</skill>
+	<skill id="10094" toLevel="5" name="Mass Lightning Strike">
+		<!-- <Paralyzing skill>. A powerful lightning strike. Attacks the target and enemies around them with 1997 power. Paralyzes for 3 sec. Critical. -->
+		<icon>icon.skll10094</icon>
+		<affectLimit>1-20</affectLimit>
+		<affectRange>200</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<operateType>A1</operateType>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">80</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">94</value>
+			<value level="2">94</value>
+			<value level="3">96</value>
+			<value level="4">97</value>
+			<value level="5">99</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<castRange>400</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>
+			<value level="1">-6100</value>
+			<value level="2">-6175</value>
+			<value level="3">-6250</value>
+			<value level="4">-6325</value>
+			<value level="5">-6400</value>
+		</effectPoint>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1997</value>
+					<value level="2">2096</value>
+					<value level="3">2179</value>
+					<value level="4">2266</value>
+					<value level="5">2356</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45481</skillId> <!-- Mass Lightning Strike -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+</list>

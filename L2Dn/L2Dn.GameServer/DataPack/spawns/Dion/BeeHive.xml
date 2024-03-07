@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f001" minZ="-3793" maxZ="-3493">
+				<node x="28899" y="182345" />
+				<node x="29410" y="182344" />
+				<node x="29409" y="182861" />
+				<node x="28898" y="182863" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f002" minZ="-3793" maxZ="-3493">
+				<node x="29413" y="182344" />
+				<node x="29925" y="182343" />
+				<node x="29924" y="182861" />
+				<node x="29412" y="182862" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f003" minZ="-3793" maxZ="-3493">
+				<node x="29928" y="182343" />
+				<node x="30440" y="182342" />
+				<node x="30439" y="182860" />
+				<node x="29927" y="182861" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f004" minZ="-3793" maxZ="-3493">
+				<node x="30443" y="182343" />
+				<node x="30954" y="182341" />
+				<node x="30953" y="182859" />
+				<node x="30442" y="182861" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f005" minZ="-3793" maxZ="-3493">
+				<node x="28902" y="182860" />
+				<node x="29414" y="182859" />
+				<node x="29413" y="183377" />
+				<node x="28901" y="183378" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f006" minZ="-3793" maxZ="-3493">
+				<node x="29417" y="182859" />
+				<node x="29928" y="182858" />
+				<node x="29927" y="183376" />
+				<node x="29416" y="183377" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f007" minZ="-3793" maxZ="-3493">
+				<node x="29932" y="182859" />
+				<node x="30443" y="182858" />
+				<node x="30442" y="183376" />
+				<node x="29931" y="183377" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f008" minZ="-3793" maxZ="-3493">
+				<node x="30446" y="182858" />
+				<node x="30958" y="182857" />
+				<node x="30957" y="183375" />
+				<node x="30445" y="183376" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f009" minZ="-3793" maxZ="-3493">
+				<node x="30862" y="182754" />
+				<node x="31374" y="182753" />
+				<node x="31373" y="183271" />
+				<node x="30861" y="183272" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f010" minZ="-3793" maxZ="-3493">
+				<node x="28386" y="183409" />
+				<node x="28898" y="183408" />
+				<node x="28897" y="183926" />
+				<node x="28385" y="183927" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f011" minZ="-3793" maxZ="-3493">
+				<node x="28901" y="183383" />
+				<node x="29413" y="183382" />
+				<node x="29412" y="183900" />
+				<node x="28900" y="183901" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f012" minZ="-3793" maxZ="-3493">
+				<node x="29416" y="183382" />
+				<node x="29927" y="183381" />
+				<node x="29926" y="183899" />
+				<node x="29415" y="183900" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f013" minZ="-3793" maxZ="-3493">
+				<node x="29931" y="183382" />
+				<node x="30442" y="183381" />
+				<node x="30441" y="183899" />
+				<node x="29930" y="183900" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f014" minZ="-3793" maxZ="-3493">
+				<node x="30445" y="183381" />
+				<node x="30957" y="183380" />
+				<node x="30956" y="183898" />
+				<node x="30444" y="183899" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f015" minZ="-3793" maxZ="-3493">
+				<node x="30861" y="183277" />
+				<node x="31373" y="183276" />
+				<node x="31372" y="183794" />
+				<node x="30860" y="183795" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f016" minZ="-3793" maxZ="-3493">
+				<node x="28385" y="183932" />
+				<node x="28897" y="183931" />
+				<node x="28896" y="184449" />
+				<node x="28384" y="184450" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f017" minZ="-3793" maxZ="-3493">
+				<node x="28905" y="183898" />
+				<node x="29417" y="183897" />
+				<node x="29416" y="184415" />
+				<node x="28904" y="184416" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f018" minZ="-3793" maxZ="-3493">
+				<node x="29420" y="183897" />
+				<node x="29931" y="183896" />
+				<node x="29930" y="184414" />
+				<node x="29419" y="184415" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f019" minZ="-3793" maxZ="-3493">
+				<node x="29935" y="183897" />
+				<node x="30446" y="183896" />
+				<node x="30445" y="184414" />
+				<node x="29934" y="184415" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f020" minZ="-3793" maxZ="-3493">
+				<node x="30449" y="183896" />
+				<node x="30961" y="183895" />
+				<node x="30960" y="184413" />
+				<node x="30448" y="184414" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f021" minZ="-3793" maxZ="-3493">
+				<node x="30967" y="183894" />
+				<node x="31478" y="183893" />
+				<node x="31477" y="184411" />
+				<node x="30966" y="184412" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f022" minZ="-3793" maxZ="-3493">
+				<node x="28389" y="184447" />
+				<node x="28901" y="184446" />
+				<node x="28900" y="184964" />
+				<node x="28388" y="184965" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f023" minZ="-3793" maxZ="-3493">
+				<node x="28905" y="184418" />
+				<node x="29416" y="184417" />
+				<node x="29415" y="184935" />
+				<node x="28904" y="184936" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f024" minZ="-3793" maxZ="-3493">
+				<node x="29419" y="184417" />
+				<node x="29931" y="184416" />
+				<node x="29930" y="184934" />
+				<node x="29418" y="184935" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f025" minZ="-3793" maxZ="-3493">
+				<node x="29934" y="184417" />
+				<node x="30446" y="184416" />
+				<node x="30445" y="184934" />
+				<node x="29933" y="184935" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f026" minZ="-3793" maxZ="-3493">
+				<node x="30449" y="184416" />
+				<node x="30960" y="184415" />
+				<node x="30959" y="184933" />
+				<node x="30448" y="184934" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f027" minZ="-3793" maxZ="-3493">
+				<node x="30976" y="184421" />
+				<node x="31488" y="184420" />
+				<node x="31487" y="184938" />
+				<node x="30975" y="184939" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f028" minZ="-3793" maxZ="-3493">
+				<node x="28908" y="184934" />
+				<node x="29420" y="184933" />
+				<node x="29419" y="185451" />
+				<node x="28907" y="185452" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f029" minZ="-3793" maxZ="-3493">
+				<node x="29423" y="184933" />
+				<node x="29935" y="184932" />
+				<node x="29934" y="185450" />
+				<node x="29422" y="185451" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f030" minZ="-3793" maxZ="-3493">
+				<node x="29938" y="184933" />
+				<node x="30450" y="184931" />
+				<node x="30449" y="185449" />
+				<node x="29937" y="185450" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f031" minZ="-3793" maxZ="-3493">
+				<node x="30452" y="184932" />
+				<node x="30964" y="184931" />
+				<node x="30963" y="185449" />
+				<node x="30451" y="185450" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f032" minZ="-3793" maxZ="-3493">
+				<node x="31054" y="184907" />
+				<node x="31565" y="184906" />
+				<node x="31564" y="185424" />
+				<node x="31053" y="185425" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f033" minZ="-3793" maxZ="-3493">
+				<node x="28908" y="185457" />
+				<node x="29419" y="185456" />
+				<node x="29418" y="185974" />
+				<node x="28907" y="185975" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f034" minZ="-3793" maxZ="-3493">
+				<node x="29422" y="185456" />
+				<node x="29934" y="185455" />
+				<node x="29933" y="185973" />
+				<node x="29421" y="185974" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f035" minZ="-3793" maxZ="-3493">
+				<node x="29937" y="185456" />
+				<node x="30449" y="185454" />
+				<node x="30448" y="185972" />
+				<node x="29936" y="185973" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f036" minZ="-3793" maxZ="-3493">
+				<node x="30452" y="185455" />
+				<node x="30963" y="185454" />
+				<node x="30962" y="185972" />
+				<node x="30451" y="185973" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f037" minZ="-3793" maxZ="-3493">
+				<node x="30979" y="185459" />
+				<node x="31491" y="185458" />
+				<node x="31490" y="185976" />
+				<node x="30978" y="185977" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f038" minZ="-3793" maxZ="-3493">
+				<node x="31332" y="185414" />
+				<node x="31843" y="185413" />
+				<node x="31842" y="185931" />
+				<node x="31331" y="185932" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f039" minZ="-3793" maxZ="-3493">
+				<node x="28911" y="185972" />
+				<node x="29423" y="185971" />
+				<node x="29422" y="186489" />
+				<node x="28910" y="186490" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f040" minZ="-3793" maxZ="-3493">
+				<node x="29426" y="185971" />
+				<node x="29937" y="185970" />
+				<node x="29936" y="186488" />
+				<node x="29425" y="186489" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f041" minZ="-3793" maxZ="-3493">
+				<node x="29941" y="185971" />
+				<node x="30452" y="185970" />
+				<node x="30451" y="186488" />
+				<node x="29940" y="186489" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f042" minZ="-3793" maxZ="-3493">
+				<node x="30455" y="185970" />
+				<node x="30967" y="185969" />
+				<node x="30966" y="186487" />
+				<node x="30454" y="186488" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f043" minZ="-3793" maxZ="-3493">
+				<node x="30983" y="185975" />
+				<node x="31494" y="185974" />
+				<node x="31493" y="186492" />
+				<node x="30982" y="186493" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f044" minZ="-3793" maxZ="-3493">
+				<node x="31443" y="185963" />
+				<node x="31955" y="185962" />
+				<node x="31954" y="186480" />
+				<node x="31442" y="186481" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f045" minZ="-3793" maxZ="-3493">
+				<node x="29170" y="186497" />
+				<node x="29681" y="186496" />
+				<node x="29680" y="187014" />
+				<node x="29169" y="187015" />
+			</territory>
+		</territories>
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f046" minZ="-3793" maxZ="-3493">
+				<node x="29684" y="186496" />
+				<node x="30196" y="186495" />
+				<node x="30195" y="187013" />
+				<node x="29683" y="187014" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22295" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Kima -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_f047" minZ="-3793" maxZ="-3493">
+				<node x="30199" y="186496" />
+				<node x="30711" y="186495" />
+				<node x="30710" y="187013" />
+				<node x="30198" y="187014" />
+			</territory>
+		</territories>
+		<npc id="22293" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Bear -->
+		<npc id="22294" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Hog -->
+		<npc id="22296" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h01" minZ="-3685" maxZ="-3335">
+				<node x="24244" y="185489" />
+				<node x="24756" y="185488" />
+				<node x="24755" y="186005" />
+				<node x="24243" y="186007" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h02" minZ="-3709" maxZ="-3359">
+				<node x="24784" y="185334" />
+				<node x="25296" y="185333" />
+				<node x="25295" y="185851" />
+				<node x="24783" y="185852" />
+			</territory>
+			<banned_territory name="dion14_2023_h02b" minZ="-3685" maxZ="-3285">
+				<node x="25072" y="185667" />
+				<node x="25292" y="185670" />
+				<node x="25286" y="185846" />
+				<node x="25066" y="185843" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h03" minZ="-3685" maxZ="-3335">
+				<node x="25325" y="185420" />
+				<node x="25837" y="185419" />
+				<node x="25836" y="185937" />
+				<node x="25324" y="185938" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h04" minZ="-3685" maxZ="-3335">
+				<node x="24193" y="185798" />
+				<node x="24704" y="185797" />
+				<node x="24703" y="186315" />
+				<node x="24192" y="186316" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h05" minZ="-3685" maxZ="-3335">
+				<node x="24696" y="185852" />
+				<node x="25208" y="185851" />
+				<node x="25207" y="186369" />
+				<node x="24695" y="186370" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h06" minZ="-3685" maxZ="-3335">
+				<node x="25226" y="185851" />
+				<node x="25738" y="185850" />
+				<node x="25737" y="186368" />
+				<node x="25225" y="186369" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h07" minZ="-3685" maxZ="-3335">
+				<node x="25746" y="185938" />
+				<node x="26257" y="185937" />
+				<node x="26256" y="186455" />
+				<node x="25745" y="186456" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h08" minZ="-3685" maxZ="-3335">
+				<node x="22705" y="186372" />
+				<node x="23217" y="186371" />
+				<node x="23216" y="186889" />
+				<node x="22704" y="186890" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h09" minZ="-3685" maxZ="-3335">
+				<node x="23295" y="186343" />
+				<node x="23806" y="186342" />
+				<node x="23805" y="186860" />
+				<node x="23293" y="186861" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h10" minZ="-3685" maxZ="-3335">
+				<node x="23672" y="186179" />
+				<node x="24184" y="186178" />
+				<node x="24183" y="186696" />
+				<node x="23671" y="186697" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h11" minZ="-3685" maxZ="-3335">
+				<node x="24193" y="186321" />
+				<node x="24705" y="186320" />
+				<node x="24704" y="186838" />
+				<node x="24192" y="186839" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h12" minZ="-3685" maxZ="-3335">
+				<node x="24708" y="186322" />
+				<node x="25220" y="186321" />
+				<node x="25219" y="186839" />
+				<node x="24707" y="186840" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h13" minZ="-3685" maxZ="-3335">
+				<node x="25219" y="186321" />
+				<node x="25731" y="186320" />
+				<node x="25730" y="186838" />
+				<node x="25218" y="186839" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h14" minZ="-3685" maxZ="-3335">
+				<node x="25741" y="186473" />
+				<node x="26253" y="186472" />
+				<node x="26252" y="186989" />
+				<node x="25740" y="186991" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h15" minZ="-3685" maxZ="-3335">
+				<node x="26256" y="186473" />
+				<node x="26768" y="186472" />
+				<node x="26767" y="186990" />
+				<node x="26255" y="186991" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h16" minZ="-3685" maxZ="-3335">
+				<node x="23154" y="186753" />
+				<node x="23666" y="186752" />
+				<node x="23665" y="187270" />
+				<node x="23153" y="187271" />
+			</territory>
+			<banned_territory name="dion14_2023_h16b" minZ="-3685" maxZ="-3285">
+				<node x="23329" y="186950" />
+				<node x="23549" y="186953" />
+				<node x="23543" y="187130" />
+				<node x="23323" y="187127" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h17" minZ="-3685" maxZ="-3335">
+				<node x="23676" y="186694" />
+				<node x="24188" y="186693" />
+				<node x="24187" y="187211" />
+				<node x="23675" y="187212" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h18" minZ="-3685" maxZ="-3335">
+				<node x="24197" y="186863" />
+				<node x="24708" y="186862" />
+				<node x="24707" y="187380" />
+				<node x="24196" y="187381" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h19" minZ="-3685" maxZ="-3335">
+				<node x="24705" y="186860" />
+				<node x="25217" y="186859" />
+				<node x="25216" y="187377" />
+				<node x="24704" y="187378" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h20" minZ="-3685" maxZ="-3335">
+				<node x="25223" y="186864" />
+				<node x="25735" y="186862" />
+				<node x="25734" y="187380" />
+				<node x="25222" y="187382" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h21" minZ="-3685" maxZ="-3335">
+				<node x="25745" y="187015" />
+				<node x="26257" y="187014" />
+				<node x="26256" y="187532" />
+				<node x="25744" y="187533" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h22" minZ="-3685" maxZ="-3335">
+				<node x="26198" y="187025" />
+				<node x="26710" y="187024" />
+				<node x="26709" y="187542" />
+				<node x="26197" y="187543" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h23" minZ="-3685" maxZ="-3335">
+				<node x="26964" y="186946" />
+				<node x="27476" y="186945" />
+				<node x="27475" y="187463" />
+				<node x="26963" y="187464" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h24" minZ="-3685" maxZ="-3335">
+				<node x="23198" y="187292" />
+				<node x="23710" y="187290" />
+				<node x="23709" y="187808" />
+				<node x="23197" y="187809" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h25" minZ="-3685" maxZ="-3335">
+				<node x="23666" y="187339" />
+				<node x="24178" y="187338" />
+				<node x="24177" y="187856" />
+				<node x="23665" y="187857" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h26" minZ="-3685" maxZ="-3335">
+				<node x="24194" y="187389" />
+				<node x="24706" y="187388" />
+				<node x="24705" y="187906" />
+				<node x="24193" y="187907" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h27" minZ="-3685" maxZ="-3335">
+				<node x="24709" y="187389" />
+				<node x="25221" y="187388" />
+				<node x="25220" y="187906" />
+				<node x="24708" y="187907" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h28" minZ="-3685" maxZ="-3335">
+				<node x="25220" y="187389" />
+				<node x="25732" y="187388" />
+				<node x="25731" y="187906" />
+				<node x="25219" y="187907" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h29" minZ="-3685" maxZ="-3335">
+				<node x="25746" y="187546" />
+				<node x="26258" y="187545" />
+				<node x="26257" y="188063" />
+				<node x="25745" y="188064" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h30" minZ="-3685" maxZ="-3335">
+				<node x="26261" y="187546" />
+				<node x="26773" y="187545" />
+				<node x="26772" y="188063" />
+				<node x="26260" y="188064" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h31" minZ="-3685" maxZ="-3335">
+				<node x="26800" y="187518" />
+				<node x="27312" y="187517" />
+				<node x="27311" y="188035" />
+				<node x="26799" y="188036" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h32" minZ="-3685" maxZ="-3335">
+				<node x="23261" y="187762" />
+				<node x="23773" y="187761" />
+				<node x="23772" y="188279" />
+				<node x="23260" y="188280" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h33" minZ="-3685" maxZ="-3335">
+				<node x="23670" y="187854" />
+				<node x="24182" y="187853" />
+				<node x="24181" y="188371" />
+				<node x="23669" y="188372" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h34" minZ="-3685" maxZ="-3335">
+				<node x="24198" y="187877" />
+				<node x="24709" y="187876" />
+				<node x="24708" y="188394" />
+				<node x="24197" y="188395" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h35" minZ="-3685" maxZ="-3335">
+				<node x="24706" y="187874" />
+				<node x="25218" y="187873" />
+				<node x="25217" y="188391" />
+				<node x="24705" y="188392" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h36" minZ="-3685" maxZ="-3335">
+				<node x="25224" y="187904" />
+				<node x="25736" y="187903" />
+				<node x="25735" y="188421" />
+				<node x="25223" y="188422" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h37" minZ="-3685" maxZ="-3335">
+				<node x="25750" y="188061" />
+				<node x="26262" y="188060" />
+				<node x="26261" y="188578" />
+				<node x="25749" y="188579" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h38" minZ="-3685" maxZ="-3335">
+				<node x="26258" y="188058" />
+				<node x="26770" y="188057" />
+				<node x="26769" y="188575" />
+				<node x="26257" y="188576" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h39" minZ="-3685" maxZ="-3335">
+				<node x="26776" y="188061" />
+				<node x="27288" y="188060" />
+				<node x="27287" y="188578" />
+				<node x="26775" y="188579" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h40" minZ="-3685" maxZ="-3335">
+				<node x="23671" y="188380" />
+				<node x="24183" y="188378" />
+				<node x="24182" y="188896" />
+				<node x="23670" y="188897" />
+			</territory>
+			<banned_territory name="dion14_2023_h40b" minZ="-3685" maxZ="-3185">
+				<node x="24039" y="188416" />
+				<node x="24173" y="188416" />
+				<node x="24172" y="188551" />
+				<node x="24038" y="188550" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h41" minZ="-3685" maxZ="-3335">
+				<node x="24199" y="188403" />
+				<node x="24711" y="188402" />
+				<node x="24710" y="188920" />
+				<node x="24198" y="188921" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h42" minZ="-3685" maxZ="-3335">
+				<node x="24714" y="188403" />
+				<node x="25226" y="188402" />
+				<node x="25225" y="188920" />
+				<node x="24713" y="188921" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h43" minZ="-3685" maxZ="-3335">
+				<node x="25225" y="188403" />
+				<node x="25737" y="188402" />
+				<node x="25736" y="188920" />
+				<node x="25224" y="188921" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h44" minZ="-3685" maxZ="-3335">
+				<node x="25740" y="188586" />
+				<node x="26252" y="188585" />
+				<node x="26251" y="189103" />
+				<node x="25739" y="189104" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h45" minZ="-3685" maxZ="-3335">
+				<node x="26261" y="188587" />
+				<node x="26773" y="188586" />
+				<node x="26772" y="189104" />
+				<node x="26260" y="189105" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h46" minZ="-3685" maxZ="-3335">
+				<node x="26804" y="188590" />
+				<node x="27315" y="188589" />
+				<node x="27314" y="189107" />
+				<node x="26803" y="189108" />
+			</territory>
+			<banned_territory name="dion14_2023_h46b" minZ="-3653" maxZ="-3153">
+				<node x="27172" y="188706" />
+				<node x="27306" y="188707" />
+				<node x="27305" y="188841" />
+				<node x="27171" y="188841" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h47" minZ="-3685" maxZ="-3335">
+				<node x="27310" y="188351" />
+				<node x="27821" y="188350" />
+				<node x="27820" y="188868" />
+				<node x="27309" y="188869" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h48" minZ="-3685" maxZ="-3335">
+				<node x="27722" y="188581" />
+				<node x="28234" y="188580" />
+				<node x="28233" y="189098" />
+				<node x="27721" y="189099" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h49" minZ="-3685" maxZ="-3335">
+				<node x="23229" y="189062" />
+				<node x="23741" y="189061" />
+				<node x="23739" y="189579" />
+				<node x="23228" y="189580" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h50" minZ="-3685" maxZ="-3335">
+				<node x="23675" y="188914" />
+				<node x="24187" y="188913" />
+				<node x="24186" y="189431" />
+				<node x="23674" y="189432" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h51" minZ="-3685" maxZ="-3335">
+				<node x="24197" y="188918" />
+				<node x="24709" y="188917" />
+				<node x="24708" y="189435" />
+				<node x="24196" y="189436" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h52" minZ="-3685" maxZ="-3335">
+				<node x="24711" y="188915" />
+				<node x="25223" y="188914" />
+				<node x="25222" y="189432" />
+				<node x="24710" y="189433" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h53" minZ="-3685" maxZ="-3335">
+				<node x="25229" y="188918" />
+				<node x="25741" y="188917" />
+				<node x="25740" y="189435" />
+				<node x="25228" y="189436" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h54" minZ="-3685" maxZ="-3335">
+				<node x="25750" y="189075" />
+				<node x="26261" y="189074" />
+				<node x="26260" y="189592" />
+				<node x="25749" y="189593" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h55" minZ="-3685" maxZ="-3335">
+				<node x="26258" y="189098" />
+				<node x="26769" y="189097" />
+				<node x="26768" y="189615" />
+				<node x="26257" y="189616" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h56" minZ="-3685" maxZ="-3335">
+				<node x="26776" y="189102" />
+				<node x="27288" y="189101" />
+				<node x="27287" y="189619" />
+				<node x="26775" y="189620" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h57" minZ="-3685" maxZ="-3335">
+				<node x="27297" y="188850" />
+				<node x="27809" y="188849" />
+				<node x="27808" y="189367" />
+				<node x="27296" y="189368" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h58" minZ="-3685" maxZ="-3335">
+				<node x="23166" y="189425" />
+				<node x="23678" y="189424" />
+				<node x="23677" y="189942" />
+				<node x="23165" y="189943" />
+			</territory>
+			<banned_territory name="dion14_2023_h58b" minZ="-3653" maxZ="-3153">
+				<node x="23541" y="189761" />
+				<node x="23676" y="189761" />
+				<node x="23675" y="189896" />
+				<node x="23541" y="189896" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h59" minZ="-3685" maxZ="-3335">
+				<node x="23685" y="189429" />
+				<node x="24196" y="189428" />
+				<node x="24195" y="189946" />
+				<node x="23684" y="189947" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h60" minZ="-3685" maxZ="-3335">
+				<node x="24202" y="189444" />
+				<node x="24714" y="189443" />
+				<node x="24713" y="189961" />
+				<node x="24201" y="189962" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h61" minZ="-3685" maxZ="-3335">
+				<node x="24710" y="189441" />
+				<node x="25222" y="189440" />
+				<node x="25221" y="189958" />
+				<node x="24709" y="189959" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h62" minZ="-3685" maxZ="-3335">
+				<node x="25226" y="189449" />
+				<node x="25738" y="189448" />
+				<node x="25737" y="189966" />
+				<node x="25225" y="189967" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h63" minZ="-3685" maxZ="-3335">
+				<node x="25746" y="189598" />
+				<node x="26258" y="189597" />
+				<node x="26257" y="190115" />
+				<node x="25745" y="190116" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h64" minZ="-3685" maxZ="-3335">
+				<node x="26255" y="189622" />
+				<node x="26766" y="189621" />
+				<node x="26765" y="190139" />
+				<node x="26254" y="190140" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h65" minZ="-3685" maxZ="-3335">
+				<node x="26776" y="189625" />
+				<node x="27288" y="189624" />
+				<node x="27287" y="190142" />
+				<node x="26775" y="190143" />
+			</territory>
+		</territories>
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h66" minZ="-3685" maxZ="-3335">
+				<node x="27335" y="189614" />
+				<node x="27847" y="189613" />
+				<node x="27846" y="190131" />
+				<node x="27334" y="190132" />
+			</territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22300" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Strong Kima -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_h67" minZ="-3685" maxZ="-3335">
+				<node x="27431" y="189414" />
+				<node x="27943" y="189413" />
+				<node x="27942" y="189931" />
+				<node x="27430" y="189932" />
+			</territory>
+			<banned_territory name="dion14_2023_h67b" minZ="-3653" maxZ="-3153">
+				<node x="27552" y="189503" />
+				<node x="27686" y="189503" />
+				<node x="27685" y="189638" />
+				<node x="27551" y="189638" />
+			</banned_territory>
+		</territories>
+		<npc id="22298" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Mighty Bear -->
+		<npc id="22299" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Stubborn Hog -->
+		<npc id="22301" count="1" respawnTime="3sec" chaseRange="1000" /> <!-- Big Honeybee -->
+	</spawn>
+</list>

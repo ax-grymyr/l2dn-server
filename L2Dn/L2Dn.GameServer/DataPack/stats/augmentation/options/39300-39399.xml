@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39300" name="Col_197">
+		<!-- M. Def. +18 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39301" name="Col_198">
+		<!-- P. Def. +18 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>18</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39302" name="Col_199">
+		<!-- M. Def. +21 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39303" name="Col_200">
+		<!-- P. Def. +21 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39304" name="Col_201">
+		<!-- M. Def. +23 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39305" name="Col_202">
+		<!-- P. Def. +23 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39306" name="Col_203">
+		<!-- P./ M. Def. +42 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39307" name="Col_204">
+		<!-- P./ M. Atk. +30 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39308" name="Col_205">
+		<!-- Inventory slots +1 -->
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</option>
+	<option id="39309" name="Col_206">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39310" name="Col_207">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39311" name="Col_208">
+		<!-- M. Atk. +25 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39312" name="Col_209">
+		<!-- P. Atk. +25 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>25</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39313" name="Col_210">
+		<!-- Soulshot/ Spiritshot damage +1% -->
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39314" name="Col_211">
+		<!-- Skill Critical Damage +1% -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39315" name="Col_212">
+		<!-- P./ M. Def. +60 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39316" name="Col_213">
+		<!-- Skill Power +2% -->
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39317" name="Col_214">
+		<!-- Received Skill Critical Damage -2% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39318" name="Col_215">
+		<!-- Firearms Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<PISTOLS>2</PISTOLS>
+			</effect>
+		</effects>
+	</option>
+	<option id="39319" name="Col_216">
+		<!-- STR +1/ INT +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="39320" name="Col_217">
+		<!-- STR +1/ INT +1/ DEX +1/ WIT +1 -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</option>
+	<option id="39321" name="option_id_39321">
+		<!-- Acquired XP/ SP +5%, P./ M. Def. +100, Atk. Spd./ Casting Spd. +25 -->
+	</option>
+	<option id="39322" name="option_id_39322">
+		<!-- Acquired XP/ SP +15%, P./ M. Atk. +50, PvP damage +2%, received PvP damage -5%, Speed +2 -->
+	</option>
+</list>

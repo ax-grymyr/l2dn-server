@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/vip.xsd">
+	<!--
+		tier: tier of the vip
+		points-requires: points required to get to that tier
+		points-lose: points player will lose after a while.
+
+		PS. Client data made for Sylph! Probably works on essence aswell!
+
+l2.ini
+[VipSystem]
+UseVipInfoWndAden=false
+
+ -> needs to be true
+
+L2 Store needs to be true aswell!
+
+ItemIds: 71314, 71315, 71316, 71317, 71268, 71269
+
+
+ItemName_ClassicAden-eu.dat
+
+item_name_begin	id=71314	name=[VIP Gain Scroll - 800]	additionalname=[]	description=[VIP Points +800.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71315	name=[VIP Gain Scroll - 2400]	additionalname=[]	description=[VIP Points +2400.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71316	name=[VIP Gain Scroll - 80]	additionalname=[]	description=[VIP Points +80.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71317	name=[VIP Gain Scroll - 240]	additionalname=[]	description=[VIP Points +240.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71268	name=[VIP Gain Scroll]	additionalname=[]	description=[VIP Points +27.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71269	name=[Good VIP Gain Scroll]	additionalname=[]	description=[VIP Points +273.]	popup=-1	default_action=[action_skill_reduce_on_skill_success]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71177	name=[Daily Present - VIP 1]	additionalname=[]	description=[Double-click to obtain a Scroll of Escape and 3 HP Replenishing Potions.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71178	name=[Daily Present - VIP 2]	additionalname=[]	description=[Double-click to obtain a Scroll of Resurrection and 3 HP Replenishing Potions.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71179	name=[Daily Present - VIP 3]	additionalname=[]	description=[Double-click to obtain a Scroll of Escape, Scroll of Resurrection, 5 HP Replenishing Potions.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71180	name=[Daily Present - VIP 4]	additionalname=[]	description=[Double-click to obtain a Scroll of Escape, Scroll of Resurrection, 3 HP Replenishing Potions.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71181	name=[Daily Present - VIP 5]	additionalname=[]	description=[Double-click to obtain a Blessed Scroll of Escape, 3 High-grade HP Replenishing Potions, 40 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71182	name=[Daily Present - VIP 6]	additionalname=[]	description=[Double-click to obtain a Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 100 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=71183	name=[Daily Present - VIP 7]	additionalname=[]	description=[Double-click to obtain a Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 150 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=99027	name=[Daily Present - VIP 8]	additionalname=[]	description=[CHANGE ME Double-click to obtain a Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 150 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=99028	name=[Daily Present - VIP 9]	additionalname=[]	description=[CHANGE ME Double-click to obtain a Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 150 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+item_name_begin	id=99029	name=[Daily Present - VIP 10]	additionalname=[]	description=[CHANGE ME Double-click to obtain a Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 High-grade HP Replenishing Potions, 150 VIP Coins.]	popup=-1	default_action=[action_peel]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None]	is_trade=0	is_drop=0	is_destruct=1	is_private_store=0	keep_type=1	is_npctrade=0	is_commission_store=0	item_name_end
+
+ItemName_ClassicAden-eu.dat [end]
+item_ex_begin	id=71314	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71315	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71316	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71317	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71268	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71269	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71177	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71178	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71179	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71180	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71181	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71182	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=71183	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=99027	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=99028	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+item_ex_begin	id=99029	keep_type_selection=normal	keep_type_enchant={0;0;0}	item_ex_end
+
+
+ProductName_ClassicAden-eu.dat
+product_name_begin	id=2090044	outer_name=[VIP Gain Scroll]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090045	outer_name=[Good VIP Gain Scroll]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090046	outer_name=[VIP Gain Scroll - 80]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090047	outer_name=[VIP Gain Scroll - 240]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090048	outer_name=[VIP Gain Scroll - 800]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090049	outer_name=[VIP Gain Scroll - 2400]	description=[]	icon=[BranchIcon.Icon.g_bm_vip_potion_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090050	outer_name=[Daily Present - VIP 1]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i00]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090051	outer_name=[Daily Present - VIP 2]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i01]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090052	outer_name=[Daily Present - VIP 3]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i02]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090053	outer_name=[Daily Present - VIP 4]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i03]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090054	outer_name=[Daily Present - VIP 5]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i04]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090055	outer_name=[Daily Present - VIP 6]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i05]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090056	outer_name=[Daily Present - VIP 7]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i06]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090057	outer_name=[Daily Present - VIP 8]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i08]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090058	outer_name=[Daily Present - VIP 9]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i09]	icon_panel=[None]	mainsubject=[]	product_name_end
+product_name_begin	id=2090059	outer_name=[Daily Present - VIP 10]	description=[]	icon=[BranchIcon.Icon.etc_vip_present_i10]	icon_panel=[None]	mainsubject=[]	product_name_end
+
+
+EtcItemgrp_ClassicAden.dat
+item_begin	tag=2	object_id=71314	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71315	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[icon.panel_2]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71316	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71317	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[icon.panel_2]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71268	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71269	drop_type=0	drop_anim_type=3	drop_radius=6	drop_height=3	drop_texture={{[dropitems.drop_scroll_m00];{[dropitemstex.drop_scroll_t00]}}}	icon={[BranchIcon.Icon.g_bm_vip_potion_i00];[None];[None];[None];[None]}	durability=-1	weight=5	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[icon.panel_2]	complete_item_dropsound_type=[None]	inventory_type=consumable	mesh={[None]}	texture={[None]}	drop_sound=[ItemSound.itemdrop_scroll]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=scroll	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71177	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i00];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71178	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i01];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71179	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i02];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71180	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i03];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71181	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i04];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71182	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i05];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=71183	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i06];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=99027	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i08];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=99028	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i09];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+item_begin	tag=2	object_id=99029	drop_type=0	drop_anim_type=3	drop_radius=5	drop_height=6	drop_texture={{[None];{[None]}}}	icon={[BranchIcon.Icon.etc_vip_present_i10];[None];[None];[None];[None]}	durability=-1	weight=10	material_type=paper	crystallizable=0	related_quest_id={}	color=1	is_attribution=0	property_params=0	icon_panel=[None]	complete_item_dropsound_type=[None]	inventory_type=etc	mesh={[None]}	texture={[None]}	drop_sound=[None]	equip_sound=[None]	consume_type=consume_type_stackable	etcitem_type=none	crystal_type=crystal_free	item_end
+
+
+Placeholders!!!! The skill exist and is edited. Only client side need to be done. But we cannot open skillgrp yet due missing grp enum.
+
+SkillName_ClassicAden-eu.dat
+skill_begin	skill_id=59723	skill_level=1	skill_sublevel=0	name=[VIP Lv. 8]	desc=[You can obtain a daily VIP chest Lv. 8. Acquired XP/ SP +35%, item drop rate +300%, Death XP Penalty -30%. Increases PvP/ PvE damage, STR/ DEX/ CON/ INT/ WIT/ MEN +2. You can use the world chat at any level (world chat messages +50).]	desc_param=[]	enchant_name=[none]	enchant_name_param=[]	enchant_desc=[none]	enchant_desc_param=[]	skill_end
+skill_begin	skill_id=59724	skill_level=1	skill_sublevel=0	name=[VIP Lv. 9]	desc=[You can obtain a daily VIP chest Lv. 9. Acquired XP/ SP +40%, item drop rate +300%, Death XP Penalty -40%. Increases PvP/ PvE damage, STR/ DEX/ CON/ INT/ WIT/ MEN +3. You can use the world chat at any level (world chat messages +50).]	desc_param=[]	enchant_name=[none]	enchant_name_param=[]	enchant_desc=[none]	enchant_desc_param=[]	skill_end
+skill_begin	skill_id=59725	skill_level=1	skill_sublevel=0	name=[VIP Lv. 10]	desc=[You can obtain a daily VIP chest Lv. 10. Acquired XP/ SP +50%, item drop rate +300%, Death XP Penalty -50%. Increases PvP/ PvE damage, STR/ DEX/ CON/ INT/ WIT/ MEN +4. You can use the world chat at any level (world chat messages +50).]	desc_param=[]	enchant_name=[none]	enchant_name_param=[]	enchant_desc=[none]	enchant_desc_param=[]	skill_end
+
+Skillgrp_ClassicAden.dat [Sylph]
+skill_begin	skill_id=59723	skill_level=1	skill_sublevel=0	icon_type=40	icon_hide=0	MagicType=default	operate_type=2	mp_consume=0	cast_range=-1	cast_style=0	hit_time=0.0	cool_time=0.0	reuse_delay=0.0	effect_point=0	is_magic=0	origin_skill=0	is_double=0	animation={[None]}	skill_visual_effect=[None]	icon=[BranchIcon.Icon.g_skill_vip8]	icon_panel=[None]	debuff=0	resist_cast=0	enchant_skill_level=0	enchant_icon=[None]	hp_consume=0	rumble_self=-1	rumble_target=-1	level_hide=0	dp_consume=0	energy_consume=0	dbdelete=0	abnormal_time=0	trait_type=None	target_type=none	affect_scope=none	skill_end
+skill_begin	skill_id=59724	skill_level=1	skill_sublevel=0	icon_type=40	icon_hide=0	MagicType=default	operate_type=2	mp_consume=0	cast_range=-1	cast_style=0	hit_time=0.0	cool_time=0.0	reuse_delay=0.0	effect_point=0	is_magic=0	origin_skill=0	is_double=0	animation={[None]}	skill_visual_effect=[None]	icon=[BranchIcon.Icon.g_skill_vip9]	icon_panel=[None]	debuff=0	resist_cast=0	enchant_skill_level=0	enchant_icon=[None]	hp_consume=0	rumble_self=-1	rumble_target=-1	level_hide=0	dp_consume=0	energy_consume=0	dbdelete=0	abnormal_time=0	trait_type=None	target_type=none	affect_scope=none	skill_end
+skill_begin	skill_id=59725	skill_level=1	skill_sublevel=0	icon_type=40	icon_hide=0	MagicType=default	operate_type=2	mp_consume=0	cast_range=-1	cast_style=0	hit_time=0.0	cool_time=0.0	reuse_delay=0.0	effect_point=0	is_magic=0	origin_skill=0	is_double=0	animation={[None]}	skill_visual_effect=[None]	icon=[BranchIcon.Icon.g_skill_vip10]	icon_panel=[None]	debuff=0	resist_cast=0	enchant_skill_level=0	enchant_icon=[None]	hp_consume=0	rumble_self=-1	rumble_target=-1	level_hide=0	dp_consume=0	energy_consume=0	dbdelete=0	abnormal_time=0	trait_type=None	target_type=none	affect_scope=none	skill_end
+ -->
+
+	<vip tier="0" points-required="0" points-lose="0">
+		<bonus/>
+	</vip>
+	<vip tier="1" points-required="300" points-lose="300">
+		<bonus skill="55024" />
+	</vip>
+	<vip tier="2" points-required="1000" points-lose="600">
+		<bonus skill="55025" />
+	</vip>
+	<vip tier="3" points-required="2000" points-lose="660">
+		<bonus skill="55026" />
+	</vip>
+	<vip tier="4" points-required="3500" points-lose="1320">
+		<bonus skill="55027" />
+	</vip>
+	<vip tier="5" points-required="7000" points-lose="2640">
+		<bonus skill="55028" />
+	</vip>
+	<vip tier="6" points-required="20000" points-lose="5280">
+		<bonus skill="55029" />
+	</vip>
+	<vip tier="7" points-required="40000" points-lose="10560">
+		<bonus skill="55030" />
+	</vip>
+	<vip tier="8" points-required="60000" points-lose="15740">
+		<bonus skill="59723" />
+	</vip>
+	<vip tier="9" points-required="80000" points-lose="21120">
+		<bonus skill="59724" />
+	</vip>
+	<vip tier="10" points-required="120000" points-lose="31680">
+		<bonus skill="59725" />
+	</vip>
+</list>

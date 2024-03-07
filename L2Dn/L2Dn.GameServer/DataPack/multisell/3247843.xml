@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- STR Dye -->
+	<item>
+		<ingredient id="96355" count="1" /> <!-- STR Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96356" count="1" /> <!-- STR Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96357" count="1" /> <!-- STR Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96358" count="1" /> <!-- STR Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96359" count="1" /> <!-- STR Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96360" count="1" /> <!-- STR Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96361" count="1" /> <!-- STR Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96362" count="1" /> <!-- STR Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96363" count="1" /> <!-- STR Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96364" count="1" /> <!-- STR Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96365" count="1" /> <!-- STR Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96366" count="1" /> <!-- STR Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96367" count="1" /> <!-- STR Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96368" count="1" /> <!-- STR Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96369" count="1" /> <!-- STR Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96370" count="1" /> <!-- STR Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96371" count="1" /> <!-- STR Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96372" count="1" /> <!-- STR Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96373" count="1" /> <!-- STR Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96374" count="1" /> <!-- STR Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<!-- CON Dye -->
+	<item>
+		<ingredient id="96375" count="1" /> <!-- CON Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96376" count="1" /> <!-- CON Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96377" count="1" /> <!-- CON Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96378" count="1" /> <!-- CON Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96379" count="1" /> <!-- CON Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96380" count="1" /> <!-- CON Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96381" count="1" /> <!-- CON Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96382" count="1" /> <!-- CON Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96383" count="1" /> <!-- CON Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96384" count="1" /> <!-- CON Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96385" count="1" /> <!-- CON Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96386" count="1" /> <!-- CON Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96387" count="1" /> <!-- CON Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96388" count="1" /> <!-- CON Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96389" count="1" /> <!-- CON Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96390" count="1" /> <!-- CON Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96391" count="1" /> <!-- CON Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96392" count="1" /> <!-- CON Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96393" count="1" /> <!-- CON Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96394" count="1" /> <!-- CON Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<!-- DEX Dye -->
+	<item>
+		<ingredient id="96395" count="1" /> <!-- DEX Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96396" count="1" /> <!-- DEX Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96397" count="1" /> <!-- DEX Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96398" count="1" /> <!-- DEX Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96399" count="1" /> <!-- DEX Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96400" count="1" /> <!-- DEX Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96401" count="1" /> <!-- DEX Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96402" count="1" /> <!-- DEX Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96403" count="1" /> <!-- DEX Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96404" count="1" /> <!-- DEX Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96405" count="1" /> <!-- DEX Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96406" count="1" /> <!-- DEX Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96407" count="1" /> <!-- DEX Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96408" count="1" /> <!-- DEX Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96409" count="1" /> <!-- DEX Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96410" count="1" /> <!-- DEX Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96411" count="1" /> <!-- DEX Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96412" count="1" /> <!-- DEX Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96413" count="1" /> <!-- DEX Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96414" count="1" /> <!-- DEX Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<!-- MEN Dye -->
+	<item>
+		<ingredient id="96435" count="1" /> <!-- MEN Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96436" count="1" /> <!-- MEN Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96437" count="1" /> <!-- MEN Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96438" count="1" /> <!-- MEN Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96439" count="1" /> <!-- MEN Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96440" count="1" /> <!-- MEN Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96441" count="1" /> <!-- MEN Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96442" count="1" /> <!-- MEN Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96443" count="1" /> <!-- MEN Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96444" count="1" /> <!-- MEN Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96445" count="1" /> <!-- MEN Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96446" count="1" /> <!-- MEN Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96447" count="1" /> <!-- MEN Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96448" count="1" /> <!-- MEN Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96449" count="1" /> <!-- MEN Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96450" count="1" /> <!-- MEN Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96451" count="1" /> <!-- MEN Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96452" count="1" /> <!-- MEN Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96453" count="1" /> <!-- MEN Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96454" count="1" /> <!-- MEN Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<!-- INT Dye -->
+	<item>
+		<ingredient id="96415" count="1" /> <!-- INT Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96416" count="1" /> <!-- INT Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96417" count="1" /> <!-- INT Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96418" count="1" /> <!-- INT Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96419" count="1" /> <!-- INT Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96420" count="1" /> <!-- INT Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96421" count="1" /> <!-- INT Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96422" count="1" /> <!-- INT Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96423" count="1" /> <!-- INT Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96424" count="1" /> <!-- INT Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96425" count="1" /> <!-- INT Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96426" count="1" /> <!-- INT Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96427" count="1" /> <!-- INT Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96428" count="1" /> <!-- INT Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96429" count="1" /> <!-- INT Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96430" count="1" /> <!-- INT Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96431" count="1" /> <!-- INT Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96432" count="1" /> <!-- INT Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96433" count="1" /> <!-- INT Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96434" count="1" /> <!-- INT Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<!-- WIT Dye -->
+	<item>
+		<ingredient id="96455" count="1" /> <!-- WIT Dye Lv. 1 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="35" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96456" count="1" /> <!-- WIT Dye Lv. 2 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="1" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96457" count="1" /> <!-- WIT Dye Lv. 3 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="2" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96458" count="1" /> <!-- WIT Dye Lv. 4 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="3" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96459" count="1" /> <!-- WIT Dye Lv. 5 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="4" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96460" count="1" /> <!-- WIT Dye Lv. 6 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="5" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96461" count="1" /> <!-- WIT Dye Lv. 7 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="6" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="12" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96462" count="1" /> <!-- WIT Dye Lv. 8 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="7" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="14" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96463" count="1" /> <!-- WIT Dye Lv. 9 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="8" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="16" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96464" count="1" /> <!-- WIT Dye Lv. 10 -->
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="9" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="18" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96465" count="1" /> <!-- WIT Dye Lv. 11 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="10" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="20" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96466" count="1" /> <!-- WIT Dye Lv. 12 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="15" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96467" count="1" /> <!-- WIT Dye Lv. 13 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="19" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="38" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96468" count="1" /> <!-- WIT Dye Lv. 14 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="25" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96469" count="1" /> <!-- WIT Dye Lv. 15 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="30" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="60" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96470" count="1" /> <!-- WIT Dye Lv. 16 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="40" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="80" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96471" count="1" /> <!-- WIT Dye Lv. 17 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="50" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="100" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96472" count="1" /> <!-- WIT Dye Lv. 18 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="70" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="140" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96473" count="1" /> <!-- WIT Dye Lv. 19 -->
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="90" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="180" chance="45" /> <!-- Dye Powder High -->
+	</item>
+	<item>
+		<ingredient id="96474" count="1" /> <!-- WIT Dye Lv. 20 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="96623" count="1" chance="10" /> <!-- Dye Powder list -->
+		<production id="96623" count="160" chance="45" /> <!-- Dye Powder High -->
+		<production id="96623" count="320" chance="45" /> <!-- Dye Powder High -->
+	</item>
+</list>

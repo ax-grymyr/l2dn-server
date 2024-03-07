@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<item>
+		<ingredient id="57" count="20000000" /> <!-- Adena -->
+		<production id="97204" count="1" /> <!-- Scroll Morgos Military-->
+	</item>
+</list>

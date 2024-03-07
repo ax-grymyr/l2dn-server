@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Giran Seals -->
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Enchant Kit: Circlet of Hero -->
+		<production count="1" id="94168" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="10" id="92314" />
+		<!-- Enchant Kit: Talisman of Authority -->
+		<production count="1" id="93330" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Package: Einhasad's Pendant Lv. 1 -->
+		<production count="1" id="93304" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="400" id="92314" />
+		<!-- Package: Frintezza's Doll Lv. 1 -->
+		<production count="1" id="94513" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="400" id="92314" />
+		<!-- Package: Baium Doll Lv. 1 -->
+		<production count="1" id="94156" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="300" id="92314" />
+		<!-- Package: Queen Ant Doll Lv. 1 -->
+		<production count="1" id="94159" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="300" id="92314" />
+		<!-- Package: Orfen Doll Lv. 1 -->
+		<production count="1" id="94162" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Package: Agathion Ignis -->
+		<production count="1" id="93134" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Package: Agathion Nebula -->
+		<production count="1" id="93135" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Package: Agathion Procella -->
+		<production count="1" id="93136" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Package: Agathion Petram -->
+		<production count="1" id="93137" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Package: Agathion Joy -->
+		<production count="1" id="93138" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="5" id="92314" />
+		<!-- Life Stone Lv. 2 - Weapon Event -->
+		<production count="1" id="94210" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="5" id="92314" />
+		<!-- Life Stone Lv. 2 - Armor Event -->
+		<production count="1" id="94212" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="5" id="92314" />
+		<!-- Life Stone - Accesories (Event) -->
+		<production count="1" id="94424" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="5" id="92314" />
+		<!-- Mid-grade Life Stone - Shield/ Sigil -->
+		<production count="1" id="93122" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Special HP Recovery Potion -->
+		<production count="20" id="94382" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Sayha's Blessing -->
+		<production count="5" id="91641" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Soulshot Ticket -->
+		<production count="50" id="90907" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Sayha's Storm Lv. 3 -->
+		<production count="3" id="91712" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Scroll: Enchant Defense -->
+		<production count="5" id="94271" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Scroll: Enchant Attack -->
+		<production count="5" id="94269" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="6" id="92314" />
+		<!-- Reinforced Jewel Box -->
+		<production count="1" id="92034" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="2" id="92314" />
+		<!-- Venir's Talisman Fragment -->
+		<production count="3" id="91076" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="2" id="92314" />
+		<!-- Scroll: Enchant B-grade Weapon -->
+		<production count="1" id="93406" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="1" id="92314" />
+		<!-- Scroll: Enchant C-grade Weapon -->
+		<production count="1" id="93408" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="100" id="92314" />
+		<!-- A-grade Weapon Coupon -->
+		<production count="1" id="93448" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="60" id="92314" />
+		<!-- A-grade Armor Coupon -->
+		<production count="1" id="93449" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Enchanted B-grade Weapon Coupon -->
+		<production count="1" id="93499" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="10" id="92314" />
+		<!-- Enchanted C-grade Weapon Coupon -->
+		<production count="1" id="93498" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of STR (STR + 4 CON - 2) -->
+		<production count="1" id="49995" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of DEX (DEX + 4 CON - 2) -->
+		<production count="1" id="90000" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of CON (CON + 4 STR - 2) -->
+		<production count="1" id="49997" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of INT (INT + 4 MEN - 2) -->
+		<production count="1" id="90001" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of WIT (WIT + 4 MEN - 2) -->
+		<production count="1" id="90006" />
+	</item>
+	<item>
+		<!-- Giran Seal -->
+		<ingredient count="20" id="92314" />
+		<!-- Best Dye of MEN (MEN + 4 INT - 2) -->
+		<production count="1" id="90003" />
+	</item>
+</list>

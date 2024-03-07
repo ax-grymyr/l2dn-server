@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48800" toLevel="1" name="Archeon's Spirit">
+		<!-- Imbued with Archeon's spirit. Another guardian's spirit cannot be absorbed. Allows to destroy Archeon's Guardian Totem. -->
+		<icon>icon.skill30011</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48801" toLevel="1" name="Trazenta's Spirit">
+		<!-- Imbued with Trazenta's spirit. Another guardian's spirit cannot be absorbed. Allows to destroy Trazenta's Guardian Totem. -->
+		<icon>icon.skill30011</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48802" toLevel="1" name="Kaztar's Spirit">
+		<!-- Imbued with Kaztar's spirit. Another guardian's spirit cannot be absorbed. Allows to destroy Kaztar's Guardian Totem. -->
+		<icon>icon.skill30011</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48803" toLevel="1" name="Giran's Blessing">
+		<!-- Acquired XP/ SP +100%. PvE damage +20%. Received PvE damage -20% -->
+		<icon>icon.skill4416_castleguard</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48804" toLevel="1" name="Presence of Tantar Aztacan">
+		<!-- You feel Aztacan's presence. Damage bonus -50%. Recovery Potions' Effect +50%. Received Healing -50% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48805" toLevel="1" name="Presence of Tantar Aztacan">
+		<!-- You feel Aztacan's presence. Received AoE Skill Damage -90% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48806" toLevel="1" name="Presence of Tantar Aztacan">
+		<!-- You feel Aztacan's presence. Debuff Resistance -90%. Anomaly Resistance -90% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48807" toLevel="1" name="Dazzling Garden Spring Wind">
+		<!-- Atk. Spd. +50. Casting Spd. +50. Speed +2. MP Recovery Rate +8. Skill MP Consumption -2%. P. Def. +300. M. Def. +300. Max HP +300. Max MP +300. Acquired XP/ SP +15%. P. Atk. +200. M. Atk. +200. PvE damage +3% -->
+		<icon>icon.ev_garden_buff2</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48808" toLevel="1" name="Garden Manager Mino's Special Support">
+		<!-- Grants Garden Manager Mino's special support. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2. Core Doll's Sorcery Lv. 2. Talisman of Baium. Einhasad's Pendant Lv. 5 -->
+		<icon>icon.ev_garden_areabuff1</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48809" toLevel="1" name="Laughter Day's Energy">
+		<!-- You feel the Laughter Day's energy all around you. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2. Core Doll's Sorcery Lv. 2. Talisman of Baium. Einhasad's Pendant Lv. 5 -->
+		<icon>icon.skill1276</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48810" toLevel="1" name="Tricker's Support">
+		<!-- Thanks to Tricker's Support, speed is increased. -->
+		<icon>icon.s_tricker_speed_up</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48811" toLevel="1" name="Tiu's Gratitude">
+		<!-- Gratitude for participating in the Whack-a-mole event. Max HP +300. Max MP +300. P. Atk. +200. M. Atk. +200. P. Def. +300. M. Def. +300. Atk. Spd. +50. Casting Spd. +50. Speed +2. PvE damage +3%. MP Recovery Rate +8. Skill MP Consumption -2%. Acquired XP/ SP +15% -->
+		<icon>icon.s_tiu_reward_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48812" toLevel="1" name="Tricker's Encouragement">
+		<!-- Grants you Tricker's support when a Rare Mole is defeated. PvE damage +25%. Received PvE damage -25%. Absorbs 3% of the inflicted damage as MP (triggered with a certain chance). -->
+		<icon>icon.s_tricker_power_up</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48813" toLevel="5" name="Damage of Limit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48814" toLevel="1" name="Clan Raid - Berserker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>15000</reuseDelay>
+	</skill>
+	<skill id="48815" toLevel="1" name="Clan Raid Attack - Large Area Fear">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="48816" toLevel="1" name="Clan Raid Attack - Large Area Fear">
+		<!-- The state of fear. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="48817" toLevel="1" name="Clan Raid - Self-destruction">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="48818" toLevel="1" name="Clan Raid - Cure">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="48819" toLevel="1" name="New Server Support Buff">
+		<!-- Grants a buff as a support for a new server. <Effect>. With a certain chance, absorbs 3% of inflicted damage as MP. Zaken Doll's Sorcery Lv. 2. Queen Ant Doll's Sorcery Lv. 2. Orfen Doll's Sorcery Lv. 2. Core Doll's Sorcery Lv. 2. Talisman of Baium. Einhasad's Pendant Lv. 5 -->
+		<icon>icon.skill19209</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48820" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1900</effectPoint>
+	</skill>
+	<skill id="48821" toLevel="1" name="Hellfire">
+		<!-- <Debuff>. P. Def. -40%. M. Def. -40%. P. Atk. -5000. M. Atk. -5000 -->
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1900</effectPoint>
+	</skill>
+	<skill id="48822" toLevel="1" name="Burning Field">
+		<icon>icon.skill11134</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="48823" toLevel="1" name="Burning Swamp">
+		<!-- Unable to use rush skills. -->
+		<icon>icon.skill10326</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<coolTime>500</coolTime>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="48824" toLevel="1" name="Flame Grip">
+		<!-- Immobilizes the enemy. The enemy cannot move, attack, teleport, target, use skills, recover HP/ MP/ CP. -->
+		<icon>icon.s_burning_grip</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalType>FLAME_GRIP</abnormalType>
+		<abnormalVisualEffect>H_DK_BONEPRISON_RE_A_AVE</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<activateRate>60</activateRate>
+		<isMagic>1</isMagic><!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<trait>IMPRISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48825" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1900</effectPoint>
+	</skill>
+	<skill id="48826" toLevel="1" name="Frozen Field">
+		<icon>icon.skill30009</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="48827" toLevel="1" name="Freezing Swamp">
+		<!-- Unable to use rush skills. -->
+		<icon>icon.skill6301</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>-1800</effectPoint>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalVisualEffect>H_DK_RE_BURNINGFIELD_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic><!-- Static Skill -->
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DisableSkill">
+				<disable>994;45159;45252;45253;47822;47824;47561;47563;47565</disable>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48828" toLevel="1" name="Frost Grip">
+		<!-- Immobilizes the enemy. The enemy cannot move, attack, teleport, target, use skills, recover HP/ MP/ CP. -->
+		<icon>icon.s_freezing_grip</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalType>FROST_GRIP</abnormalType>
+		<abnormalVisualEffect>H_DK_ICE_BONEPRISON_RE_A_AVE</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<activateRate>60</activateRate>
+		<isMagic>1</isMagic><!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<trait>IMPRISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48829" toLevel="1" name="Hellfire">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1900</effectPoint>
+	</skill>
+	<skill id="48830" toLevel="1" name="Lightning Storm">
+		<icon>icon.skill1450</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+	<skill id="48831" toLevel="1" name="Storm Swamp">
+		<!-- Unable to use rush skills. -->
+		<icon>icon.skill1458</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>-1800</effectPoint>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalVisualEffect>H_DK_RE_BURNINGFIELD_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic><!-- Static Skill -->
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DisableSkill">
+				<disable>994;45159;45252;45253;47822;47824;47561;47563;47565</disable>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48832" toLevel="1" name="Lightning Grip">
+		<!-- Immobilizes the enemy. The enemy cannot move, attack, teleport, target, use skills, recover HP/ MP/ CP. -->
+		<icon>icon.s_lightning_grip</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalType>LIGHTNING_GRIP</abnormalType>
+		<abnormalVisualEffect>H_DK_LAZER_BONEPRISON_RE_A_AVE</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<activateRate>60</activateRate>
+		<isMagic>1</isMagic><!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<trait>IMPRISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48833" toLevel="1" name="Clan Raid - Totem Installation">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+	</skill>
+	<skill id="48834" toLevel="1" name="Red's Blessing Reward">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48835" toLevel="1" name="Mutated Mole Curse">
+		<!-- Paralizes for 10 sec. when the Mutated Mole is defeated. -->
+		<icon>icon.skill1540</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-666</effectPoint>
+	</skill>
+	<skill id="48836" toLevel="4" name="Leona's XP Blessing">
+		<!-- Leona's blessing.\nAcquired XP +100%\nAcquired SP +100% -->
+		<icon>
+			<value level="1">icon.s_ev_2023_hero_exp1</value>
+			<value level="2">icon.s_ev_2023_hero_exp2</value>
+			<value level="3">icon.s_ev_2023_hero_exp3</value>
+			<value level="4">icon.s_ev_2023_hero_exp4</value>
+		</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48837" toLevel="1" name="Aries' Fury">
+		<!-- Aries' powerful attack stuns and immobilizes you. -->
+		<icon>icon.skill0101</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48838" toLevel="1" name="Aries' Attack">
+		<!-- Inflicts a powerful blow on the single target. -->
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48839" toLevel="1" name="Researcher's Special Support">
+		<!-- Max HP +200\nMax MP +200\nP. Atk. +200\nM. Atk. +200\nP. Def. +200\nM. Def. +200\nMP Recovery Rate +8\nPvE damage +3% -->
+		<icon>icon.s_npc_ev_2023_odd_oman_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48840" toLevel="1" name="Transformation - GM 1">
+		<!-- Test transformation skill 1 -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="48841" toLevel="1" name="Transformation - GM 2">
+		<!-- Test transformation skill 2 -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="48842" toLevel="1" name="Transformation - GM 3">
+		<!-- Test transformation skill 3 -->
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="48843" toLevel="1" name="Watermelon Breath">
+		<!-- Smells like fresh watermelon.\n\nSpeed +300\nP. Skill Cooldown -10%\nM. Skill Cooldown -10% -->
+		<icon>icon.fafurion_raging_waves_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="48844" toLevel="1" name="Servitor's Fury">
+		<!-- You are knocked down from a servitor's fury. -->
+		<icon>icon.skill0518</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<hitTime>3000</hitTime>
+		<reuseDelay>8000</reuseDelay>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48845" toLevel="1" name="Servitor's Rage">
+		<!-- You are stunned from a servitor's rage. -->
+		<icon>icon.skill0774</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>1500</hitTime>
+		<coolTime>1000</coolTime>
+		<reuseDelay>8000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+</list>

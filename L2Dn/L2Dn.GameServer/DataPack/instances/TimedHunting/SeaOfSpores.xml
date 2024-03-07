@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="208" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Sea of Spores (40-49) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="43421" y="17214" z="-4392" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="40" />
+			<param name="max" value="49" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34124" x="43727" y="17230" z="-4392" heading="48103" /> <!-- Manager Joon -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22107" x="44112" y="18389" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="44312" y="18315" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="44617" y="18134" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="44798" y="17946" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="45007" y="17638" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="45191" y="17278" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="45284" y="16961" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="45234" y="16680" z="-4384" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="45098" y="16422" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22107" x="44875" y="16207" z="-4392" heading="29693" /> <!-- Rotting Tree -->
+			<npc id="22108" x="44126" y="16295" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44302" y="16384" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44456" y="16510" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44688" y="16831" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44784" y="17237" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44773" y="17234" z="-4384" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44736" y="17431" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44602" y="17812" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44307" y="18080" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="44117" y="18161" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22108" x="43934" y="18233" z="-4392" heading="48103" /> <!-- Giant Fungus -->
+			<npc id="22109" x="44369" y="16295" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44498" y="16510" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44624" y="16831" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44661" y="17618" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44464" y="17234" z="-4384" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44342" y="17431" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="44197" y="17618" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="43747" y="17966" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+			<npc id="22109" x="43569" y="18161" z="-4392" heading="29693" /> <!-- Dire Wyrm -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22122" x="44498" y="16510" z="-4392" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="44613" y="17033" z="-4392" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="44464" y="17234" z="-4384" heading="29693" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="44197" y="17618" z="-4392" heading="29693" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="43747" y="17966" z="-4392" heading="29693" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22331" x="44461" y="17025" z="-4394" heading="30212" /> <!-- Poison Guard -->
+		</group>
+	</spawnlist>
+</instance>

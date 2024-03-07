@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="209" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Cemetery (50-59) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="178396" y="20314" z="-3240" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="50" />
+			<param name="max" value="59" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34121" x="178592" y="20285" z="-3240" heading="33093" /> <!-- Manager Deekhin -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22111" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Tortured Undead -->
+			<npc id="22110" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22112" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178227" y="20512" z="-3252" heading="60534" /> <!-- Soul of Ruins -->
+			<npc id="22110" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22110" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22111" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Tortured Undead -->
+			<npc id="22111" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Tortured Undead -->
+			<npc id="22112" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="178257" y="20175" z="-3252" heading="4554" /> <!-- Soul of Ruins -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22123" x="178257" y="20175" z="-3252" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="178257" y="20175" z="-3252" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="178227" y="20512" z="-3252" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="178227" y="20512" z="-3252" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="178227" y="20512" z="-3252" heading="48103" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22332" x="177773" y="20345" z="-3251" heading="186" /> <!-- Grave Warden -->
+		</group>
+	</spawnlist>
+</instance>

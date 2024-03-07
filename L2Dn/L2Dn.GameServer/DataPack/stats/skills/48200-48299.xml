@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48200" toLevel="1" name="Ant Prophecy">
+		<!-- PvE damage +5%. All Critical Rate +50. All Critical Damage +100. Sayha's Grace Consumption -10% -->
+		<icon>icon.skill3630</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>11700</abnormalTime>
+		<canBeDispelled>false</canBeDispelled>
+		<castRange>300</castRange>
+		<effectRange>1500</effectRange>
+		<hitTime>300</hitTime>
+		<isMagic>2</isMagic>
+		<magicLevel>76</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>100</reuseDelay>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48201" toLevel="1" name="Raid Boss (Lv. 85)">
+		<!-- A rift that appeared after an earthquake had weakened Maphr's Seal. It shifted to the material world and brought chaos and pain with it. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48202" toLevel="1" name="Katuba's Strike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48203" toLevel="1" name="Katuba's Stun">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48204" toLevel="1" name="Katuba's Knock Down">
+		<!-- Temporarily knocked down and immobilized. -->
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48205" toLevel="10" name="Blood Spear">
+		<!-- Attacks the target with an arrow of darkness. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48206" toLevel="10" name="Dark Bomb">
+		<!-- Attacks the enemy with Darkness Bombs. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48207" toLevel="10" name="Dark Strike">
+		<!-- Powerful P. Atk. on enemy. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48208" toLevel="10" name="Drain">
+		<!-- Decreases HP/ MP of the target and restores player's HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48209" toLevel="10" name="Spirit Wind">
+		<!-- The power of mighty spirit increases Atk. Spd. and Casting Spd. -->
+		<icon>icon.skill1062</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48210" toLevel="3" name="See Creature">
+		<!-- Attacks target and increases Speed. -->
+		<icon>icon.skill1204</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48211" toLevel="10" name="Red Sphere">
+		<!-- Attacks the enemy with an exploding fire sphere. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48212" toLevel="10" name="Rush">
+		<!-- Rushes to the target, inflicts damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48213" toLevel="12" name="Fear">
+		<!-- Enemy is afflicted with Fear and moving against own will. -->
+		<icon>icon.skill1092</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-162</value>
+			<value level="2">-204</value>
+			<value level="3">-243</value>
+			<value level="4">-285</value>
+			<value level="5">-331</value>
+			<value level="6">-379</value>
+			<value level="7">-418</value>
+			<value level="8">-457</value>
+			<value level="9">-495</value>
+			<value level="10">-532</value>
+			<value level="11">-549</value>
+			<value level="12">-566</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>90</magicLevel>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">20</value>
+			<value level="3">23</value>
+			<value level="4">27</value>
+			<value level="5">30</value>
+			<value level="6">35</value>
+			<value level="7">39</value>
+			<value level="8">44</value>
+			<value level="9">48</value>
+			<value level="10">52</value>
+			<value level="11">54</value>
+			<value level="12">55</value>
+		</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>DERANGEMENT</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="48214" toLevel="12" name="Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill1613</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-230</value>
+			<value level="2">-250</value>
+			<value level="3">-270</value>
+			<value level="4">-290</value>
+			<value level="5">-310</value>
+			<value level="6">-330</value>
+			<value level="7">-350</value>
+			<value level="8">-370</value>
+			<value level="9">-390</value>
+			<value level="10">-410</value>
+			<value level="11">-430</value>
+			<value level="12">-450</value>
+		</effectPoint>
+	</skill>
+	<skill id="48215" toLevel="1" name="Raid Boss (Lv. 85)">
+		<!-- Deiman has always been a Beleth's henchman and he came to Hellbound with him. When Beleth made the deal with demons, Deiman gained their power, too. Now he's a half-demon and, while waiting for his master to restore his powers, he sends him pure magic energy using Beleth's Magic Circles. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48216" toLevel="1" name="Deiman's Attack">
+		<!-- Inflicts great damage on the enemies near the target. -->
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48217" toLevel="1" name="Deiman's Long Range Knockback">
+		<!-- Decreases HP/ MP of the target and restores player's HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48218" toLevel="1" name="Boss Mass Blood Siphon">
+		<!-- Decreases HP/ MP of the target and restores player's HP. -->
+		<icon>icon.skill0289</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48219" toLevel="1" name="Stun">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48220" toLevel="1" name="Hold">
+		<!-- Holds the target. -->
+		<icon>icon.skill4047</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48221" toLevel="1" name="Fear">
+		<!-- Enemy is afflicted with Fear and moving against own will. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48222" toLevel="1" name="Raid Boss (Lv. 85)">
+		<!-- Vampire Queen Satina came to Hellbound after forming an alliance with Beleth. She conducts experiments with the magic that permeates this place in order to help the fallen wizard restore his powers quicker. At the same time, however, the queen is planning to secretely bestow new powers onto her subjects. The experiments take place in Satina's Laboratory where Beleth's followers are imbued with demonic power and Hellbound magic is being transfered to vampires. -->
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48223" toLevel="1" name="Satina's Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48224" toLevel="1" name="Satina's Range Attack">
+		<icon>icon.skill0289</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48225" toLevel="1" name="Sleep">
+		<!-- Immobilizes and puts a target into sleep. -->
+		<icon>icon.skill4046</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48226" toLevel="1" name="Silence">
+		<!-- Physical and magic skills are all blocked. -->
+		<icon>icon.skill1064</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48227" toLevel="1" name="Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48228" toLevel="10" name="Blood Siphon Resistance">
+		<!-- Resistant to Blood Siphon. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48229" toLevel="10" name="Drain Resistance">
+		<!-- Resistant to HP Drain. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48230" toLevel="10" name="Critical Damage Resistance">
+		<!-- Resistant to Critical Damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48231" toLevel="1" name="Beleth' Curse">
+		<!-- A powerful curse cast by Beleth. Local effect. Atk. Spd. -50%. Casting Spd. -50%. Constantly drains HP. Basic attacks can't be used. Skills can't be used. -->
+		<icon>icon.skill0046</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<effectPoint>0</effectPoint>
+		<isDebuff>true</isDebuff>
+		<trait>INFECTION</trait>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>0</isMagic>
+		<operateType>A2</operateType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>123</power>
+				<ticks>3</ticks>
+			</effect>
+			<effect name="BlockSkill">
+				<magicTypes>1;2;3;4;5;22</magicTypes>
+			</effect>
+			<effect name="PhysicalAttackMute">
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48232" toLevel="1" name="Orfen's Rage">
+		<!-- Orfen's rage makes the enemy's soul leave their body. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48233" toLevel="1" name="Orfen's Prophecy">
+		<!-- PvE damage +5%. Skill MP Consumption -5%. P. Def. +300. M. Def. +300. Sayha's Grace Consumption -10% -->
+		<icon>icon.skill6435</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48234" toLevel="1" name="Core Plasma">
+		<!-- Core plasma makes the enemy's soul leave their body. -->
+		<icon>icon.skill10324</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48235" toLevel="1" name="Core Prophecy">
+		<!-- PvE damage +5%. Received PvE damage -5%. P. Def. +300. M. Def. +300. HP Recovery Potions' Effect +20. Sayha's Grace Consumption -10% -->
+		<icon>icon.skill32633</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48236" toLevel="1" name="Baium's Prophecy">
+		<!-- PvE damage +5%. P. Skill Power +5%. M. Skill Power +5%. Atk. Spd. +50. Casting Spd. +50. Sayha's Grace Consumption -10% -->
+		<icon>icon.skill10318</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48237" toLevel="1" name="Core Plasma">
+		<!-- Core plasma makes the enemy's soul leave their body. -->
+		<icon>icon.skill10324</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48238" toLevel="1" name="Baium Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48239" toLevel="1" name="Baium's Wind Of Force">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48240" toLevel="1" name="Baium's Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48241" toLevel="1" name="Baium's Earth Shaker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48242" toLevel="1" name="Baium's Lightning">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48243" toLevel="1" name="Baium's Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48244" toLevel="1" name="Knock Down">
+		<!-- Temporarily knocked down and immobilized. -->
+		<icon>icon.skill0518</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48245" toLevel="1" name="Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill0523</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48246" toLevel="1" name="Fear">
+		<!-- Afflicted with Fear and moving against own will. -->
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48247" toLevel="1" name="Trix' Random Transformation Effect">
+		<icon>icon.random_transform_00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48248" toLevel="1" name="Freezing Paralysis">
+		<!-- Freezes the target and immobilizes it. -->
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48249" toLevel="1" name="Electric Shock">
+		<!-- Hits the target with electricity and immobilizes it. -->
+		<icon>icon.skill1095</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48250" toLevel="1" name="Flame Bind">
+		<!-- Surrounds the target with flames and immobilizes it. -->
+		<icon>icon.skill0834</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48251" toLevel="1" name="Swift Fist">
+		<!-- Stuns for 2 sec. -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48252" toLevel="1" name="Force of Silence">
+		<!-- Skills are unusable for 2 sec. -->
+		<icon>icon.armor_t94_g_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48253" toLevel="1" name="Hell Lightning">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.hellbound_talisman_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48254" toLevel="1" name="Queen Ant's Rain of Stones">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.skill4282_new</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<hitTime>3500</hitTime>
+		<castRange>1800</castRange>
+		<effectPoint>-1000</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>2000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48255" toLevel="1" name="Baium's Thunder Bolt">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.skill1469</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48256" toLevel="1" name="Zaken's Blood Prison">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.skill32100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48257" toLevel="1" name="Orfen's Poison Storm">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.skill6435</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48258" toLevel="1" name="Core's Plasmic Shock">
+		<!-- Deals 1500 fixed damage. -->
+		<icon>icon.skill32633</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48259" toLevel="1" name="Dragon's Protection">
+		<!-- The barrier's HP: 20000. Can be activated up to 3 time(s). The barrier disappears when its HP is 0 or after all trigger attempts. -->
+		<icon>icon.dragon_belt_grace</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48260" toLevel="40" name="Received P. Skill Critical Damage Decrease">
+		<!-- Received P. Skill Critical Damage -500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48261" toLevel="40" name="Received M. Skill Critical Damage Decrease">
+		<!-- Received M. Skill Critical Damage -500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48262" toLevel="40" name="All Received Critical Damage Decrease">
+		<!-- All Received Critical Damage -500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48263" toLevel="10" name="Basic Critical Rate Increase">
+		<!-- Basic Critical Rate +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48264" toLevel="10" name="P. Skill Critical Rate Increase">
+		<!-- P. Skill Critical Rate +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48265" toLevel="10" name="M. Skill Critical Rate Increase">
+		<!-- M. Skill Critical Rate +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48266" toLevel="10" name="All Critical Rate Increase">
+		<!-- All Critical Rate +10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48267" toLevel="10" name="Received Basic Critical Rate Decrease">
+		<!-- Received basic Critical Damage -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48268" toLevel="10" name="Received P. Skill Critical Rate Decrease">
+		<!-- Received P. Skill Critical Damage -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48269" toLevel="10" name="Received M. Skill Critical Rate Decrease">
+		<!-- Received M. Skill Critical Damage -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48270" toLevel="10" name="All Received Critical Rate Decrease">
+		<!-- All Received Critical Damage -10% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48271" toLevel="18" name="Neutralization Resistance Increase">
+		<!-- Neutralization Resistance +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48272" toLevel="20" name="Increase P. Def.">
+		<!-- P. Def. +500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48273" toLevel="20" name="Magic Defense Bonus">
+		<!-- M. Def. +500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48274" toLevel="20" name="P./ M. Def. Increase">
+		<!-- P./ M. Def. +500 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48275" toLevel="6" name="Number Lottery 1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48276" toLevel="6" name="5 Wins">
+		<!-- I've guessed Solasol's toy number right 5 times in a row. -->
+		<icon>
+			<value level="1">icon.ev_sb_5_18th_lucky_win</value>
+			<value level="2">icon.ev_sb_6_18th_lucky_win</value>
+			<value level="3">icon.ev_sb_7_18th_lucky_win</value>
+			<value level="4">icon.ev_sb_8_18th_lucky_win</value>
+			<value level="5">icon.ev_sb_9_18th_lucky_win</value>
+			<value level="6">icon.ev_sb_10_18th_lucky_win</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48277" toLevel="1" name="Presentation Effect - Raid">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48278" toLevel="20" name="Basic Critical Rate Increase">
+		<!-- Basic Critical Rate +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48279" toLevel="20" name="P. Skill Critical Rate Increase">
+		<!-- P. Skill Critical Rate +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48280" toLevel="20" name="M. Skill Critical Rate Increase">
+		<!-- M. Skill Critical Rate +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48281" toLevel="20" name="All Critical Rate Increase">
+		<!-- All Critical Rate +5 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48282" toLevel="5" name="Fire Shot">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48283" toLevel="5" name="Vicious Strike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48284" toLevel="5" name="Power Strike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48285" toLevel="18" name="Blow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-2</effectPoint>
+	</skill>
+	<skill id="48286" toLevel="5" name="Stun Attack">
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-1</value>
+			<value level="2">-100</value>
+			<value level="3">-100</value>
+			<value level="4">-100</value>
+			<value level="5">-100</value>
+		</effectPoint>
+	</skill>
+	<skill id="48287" toLevel="5" name="Paralysis">
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48288" toLevel="5" name="Fear">
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48289" toLevel="8" name="Prominence">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48290" toLevel="8" name="Twister">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48291" toLevel="8" name="Burning">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48292" toLevel="8" name="Aura Burn">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48293" toLevel="8" name="Blaze">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48294" toLevel="1" name="Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48295" toLevel="1" name="Fear">
+		<!-- Inflicts Fear on nearby enemies for 5 sec. -->
+		<icon>icon.skill1169</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48296" toLevel="1" name="Blow">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48297" toLevel="1" name="Increases Atk. Spd.">
+		<!-- Atk. Spd. +30% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48298" toLevel="1" name="Increase P. Atk.">
+		<!-- P. Atk. +30% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48299" toLevel="1" name="Increases P. Def.">
+		<!-- P. Def. +30% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+</list>

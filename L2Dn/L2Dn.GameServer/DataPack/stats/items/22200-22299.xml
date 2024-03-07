@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="22221" name="Stable Scroll: Enchant S-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +15, M. Atk. +10. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +19, M. Atk. +10. Bow, firearms: P. Atk. +31, M. Atk. +10. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +43, M. Atk. +43. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +77, M. Atk. +43. Bow, firearms: P. Atk. +126, M. Atk. +43. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +7 and higher.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_s" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="22361" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="22222" name="Stable Scroll: Enchant S-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +7. Accessories: M. Def. +5. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +26. Accessories: M. Def. +20. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +6 or higher.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_s" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="22361" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="22223" name="Stable Scroll: Enchant A-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +10, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +12, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +30, M. Atk. +18. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +36, M. Atk. +18. Bow, firearms: P. Atk. +48, M. Atk. +18. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +7 and higher.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_a" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<skills>
+			<skill id="22361" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="22224" name="Stable Scroll: Enchant A-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +4. Accessories: M. Def. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +9. Accessories: M. Def. +7. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +6 or higher.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_a" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="22362" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+</list>

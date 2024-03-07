@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="91600" name="Received M. Skill Critical Damage -32">
+		<!-- Received M. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91601" name="Received M. Skill Critical Damage -34">
+		<!-- Received M. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91602" name="Received M. Skill Critical Damage -36">
+		<!-- Received M. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91603" name="Received M. Skill Critical Damage -38">
+		<!-- Received M. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91604" name="Received M. Skill Critical Damage -40">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91605" name="Received M. Skill Critical Damage -43">
+		<!-- Received M. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91606" name="Received M. Skill Critical Damage -46">
+		<!-- Received M. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91607" name="Received M. Skill Critical Damage -49">
+		<!-- Received M. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91608" name="Received M. Skill Critical Damage -52">
+		<!-- Received M. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91609" name="Received M. Skill Critical Damage -55">
+		<!-- Received M. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91610" name="Received M. Skill Critical Damage -58">
+		<!-- Received M. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91611" name="Received M. Skill Critical Damage -62">
+		<!-- Received M. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91612" name="Received M. Skill Critical Damage -65">
+		<!-- Received M. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91613" name="Received M. Skill Critical Damage -70">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91614" name="Received M. Skill Critical Damage -75">
+		<!-- Received M. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91615" name="Received M. Skill Critical Damage -81">
+		<!-- Received M. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91616" name="Received M. Skill Critical Damage -87">
+		<!-- Received M. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91617" name="Received M. Skill Critical Damage -94">
+		<!-- Received M. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91618" name="Received M. Skill Critical Damage -100">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91619" name="Received M. Skill Critical Damage -30">
+		<!-- Received M. Skill Critical Damage -30 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91620" name="Received M. Skill Critical Damage -32">
+		<!-- Received M. Skill Critical Damage -32 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91621" name="Received M. Skill Critical Damage -34">
+		<!-- Received M. Skill Critical Damage -34 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91622" name="Received M. Skill Critical Damage -36">
+		<!-- Received M. Skill Critical Damage -36 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91623" name="Received M. Skill Critical Damage -38">
+		<!-- Received M. Skill Critical Damage -38 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91624" name="Received M. Skill Critical Damage -40">
+		<!-- Received M. Skill Critical Damage -40 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91625" name="Received M. Skill Critical Damage -43">
+		<!-- Received M. Skill Critical Damage -43 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-43</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91626" name="Received M. Skill Critical Damage -46">
+		<!-- Received M. Skill Critical Damage -46 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91627" name="Received M. Skill Critical Damage -49">
+		<!-- Received M. Skill Critical Damage -49 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-49</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91628" name="Received M. Skill Critical Damage -52">
+		<!-- Received M. Skill Critical Damage -52 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91629" name="Received M. Skill Critical Damage -55">
+		<!-- Received M. Skill Critical Damage -55 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91630" name="Received M. Skill Critical Damage -58">
+		<!-- Received M. Skill Critical Damage -58 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91631" name="Received M. Skill Critical Damage -62">
+		<!-- Received M. Skill Critical Damage -62 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-62</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91632" name="Received M. Skill Critical Damage -65">
+		<!-- Received M. Skill Critical Damage -65 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-65</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91633" name="Received M. Skill Critical Damage -70">
+		<!-- Received M. Skill Critical Damage -70 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91634" name="Received M. Skill Critical Damage -75">
+		<!-- Received M. Skill Critical Damage -75 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91635" name="Received M. Skill Critical Damage -81">
+		<!-- Received M. Skill Critical Damage -81 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-81</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91636" name="Received M. Skill Critical Damage -87">
+		<!-- Received M. Skill Critical Damage -87 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-87</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91637" name="Received M. Skill Critical Damage -94">
+		<!-- Received M. Skill Critical Damage -94 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91638" name="Received M. Skill Critical Damage -100">
+		<!-- Received M. Skill Critical Damage -100 -->
+		<effects>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91639" name="P. Atk. +60">
+		<!-- P. Atk. +60 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91640" name="P. Atk. +64">
+		<!-- P. Atk. +64 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91641" name="P. Atk. +68">
+		<!-- P. Atk. +68 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91642" name="P. Atk. +72">
+		<!-- P. Atk. +72 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91643" name="P. Atk. +76">
+		<!-- P. Atk. +76 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91644" name="P. Atk. +80">
+		<!-- P. Atk. +80 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91645" name="P. Atk. +85">
+		<!-- P. Atk. +85 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91646" name="P. Atk. +90">
+		<!-- P. Atk. +90 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91647" name="P. Atk. +95">
+		<!-- P. Atk. +95 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91648" name="P. Atk. +100">
+		<!-- P. Atk. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91649" name="P. Atk. +106">
+		<!-- P. Atk. +106 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91650" name="P. Atk. +112">
+		<!-- P. Atk. +112 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91651" name="P. Atk. +118">
+		<!-- P. Atk. +118 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91652" name="P. Atk. +120">
+		<!-- P. Atk. +120 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91653" name="P. Atk. +130">
+		<!-- P. Atk. +130 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91654" name="P. Atk. +141">
+		<!-- P. Atk. +141 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91655" name="P. Atk. +153">
+		<!-- P. Atk. +153 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91656" name="P. Atk. +166">
+		<!-- P. Atk. +166 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91657" name="P. Atk. +180">
+		<!-- P. Atk. +180 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91658" name="P. Atk. +200">
+		<!-- P. Atk. +200 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91659" name="P. Atk. +60">
+		<!-- P. Atk. +60 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91660" name="P. Atk. +64">
+		<!-- P. Atk. +64 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91661" name="P. Atk. +68">
+		<!-- P. Atk. +68 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91662" name="P. Atk. +72">
+		<!-- P. Atk. +72 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91663" name="P. Atk. +76">
+		<!-- P. Atk. +76 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91664" name="P. Atk. +80">
+		<!-- P. Atk. +80 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91665" name="P. Atk. +85">
+		<!-- P. Atk. +85 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91666" name="P. Atk. +90">
+		<!-- P. Atk. +90 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91667" name="P. Atk. +95">
+		<!-- P. Atk. +95 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91668" name="P. Atk. +100">
+		<!-- P. Atk. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91669" name="P. Atk. +106">
+		<!-- P. Atk. +106 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91670" name="P. Atk. +112">
+		<!-- P. Atk. +112 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91671" name="P. Atk. +118">
+		<!-- P. Atk. +118 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91672" name="P. Atk. +120">
+		<!-- P. Atk. +120 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91673" name="P. Atk. +130">
+		<!-- P. Atk. +130 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91674" name="P. Atk. +141">
+		<!-- P. Atk. +141 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91675" name="P. Atk. +153">
+		<!-- P. Atk. +153 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91676" name="P. Atk. +166">
+		<!-- P. Atk. +166 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91677" name="P. Atk. +180">
+		<!-- P. Atk. +180 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91678" name="P. Atk. +200">
+		<!-- P. Atk. +200 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91679" name="P. Atk. +60">
+		<!-- P. Atk. +60 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91680" name="P. Atk. +64">
+		<!-- P. Atk. +64 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91681" name="P. Atk. +68">
+		<!-- P. Atk. +68 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91682" name="P. Atk. +72">
+		<!-- P. Atk. +72 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>72</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91683" name="P. Atk. +76">
+		<!-- P. Atk. +76 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91684" name="P. Atk. +80">
+		<!-- P. Atk. +80 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91685" name="P. Atk. +85">
+		<!-- P. Atk. +85 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91686" name="P. Atk. +90">
+		<!-- P. Atk. +90 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91687" name="P. Atk. +95">
+		<!-- P. Atk. +95 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91688" name="P. Atk. +100">
+		<!-- P. Atk. +100 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91689" name="P. Atk. +106">
+		<!-- P. Atk. +106 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>106</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91690" name="P. Atk. +112">
+		<!-- P. Atk. +112 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91691" name="P. Atk. +118">
+		<!-- P. Atk. +118 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>118</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91692" name="P. Atk. +120">
+		<!-- P. Atk. +120 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91693" name="P. Atk. +130">
+		<!-- P. Atk. +130 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91694" name="P. Atk. +141">
+		<!-- P. Atk. +141 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>141</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91695" name="P. Atk. +153">
+		<!-- P. Atk. +153 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91696" name="P. Atk. +166">
+		<!-- P. Atk. +166 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>166</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91697" name="P. Atk. +180">
+		<!-- P. Atk. +180 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>180</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91698" name="P. Atk. +200">
+		<!-- P. Atk. +200 -->
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="91699" name="M. Atk. +60">
+		<!-- M. Atk. +60 -->
+		<effects>
+			<effect name="MAtk">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

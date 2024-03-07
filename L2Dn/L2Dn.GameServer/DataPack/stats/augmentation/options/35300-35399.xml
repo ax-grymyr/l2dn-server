@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="35300" name="option_id_35300">
+		<!-- Max HP +390 -->
+	</option>
+	<option id="35301" name="option_id_35301">
+		<!-- Max HP +480 -->
+	</option>
+	<option id="35302" name="option_id_35302">
+		<!-- Max MP +10 -->
+	</option>
+	<option id="35303" name="option_id_35303">
+		<!-- Max MP +15 -->
+	</option>
+	<option id="35304" name="option_id_35304">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="35305" name="option_id_35305">
+		<!-- Max MP +25 -->
+	</option>
+	<option id="35306" name="option_id_35306">
+		<!-- Max MP +30 -->
+	</option>
+	<option id="35307" name="option_id_35307">
+		<!-- Max MP +35 -->
+	</option>
+	<option id="35308" name="option_id_35308">
+		<!-- Max MP +40 -->
+	</option>
+	<option id="35309" name="option_id_35309">
+		<!-- Max MP +45 -->
+	</option>
+	<option id="35310" name="option_id_35310">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="35311" name="option_id_35311">
+		<!-- Max MP +55 -->
+	</option>
+	<option id="35312" name="option_id_35312">
+		<!-- Max MP +60 -->
+	</option>
+	<option id="35313" name="option_id_35313">
+		<!-- Max MP +65 -->
+	</option>
+	<option id="35314" name="option_id_35314">
+		<!-- Max MP +70 -->
+	</option>
+	<option id="35315" name="option_id_35315">
+		<!-- Max MP +75 -->
+	</option>
+	<option id="35316" name="option_id_35316">
+		<!-- Max MP +80 -->
+	</option>
+	<option id="35317" name="option_id_35317">
+		<!-- Max MP +100 -->
+	</option>
+	<option id="35318" name="option_id_35318">
+		<!-- Max MP +110 -->
+	</option>
+	<option id="35319" name="option_id_35319">
+		<!-- Max MP +120 -->
+	</option>
+	<option id="35320" name="option_id_35320">
+		<!-- Max MP +130 -->
+	</option>
+	<option id="35321" name="option_id_35321">
+		<!-- Max MP +180 -->
+	</option>
+	<option id="35322" name="option_id_35322">
+		<!-- Max MP +25 -->
+	</option>
+	<option id="35323" name="option_id_35323">
+		<!-- Max MP +38 -->
+	</option>
+	<option id="35324" name="option_id_35324">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="35325" name="option_id_35325">
+		<!-- Max MP +63 -->
+	</option>
+	<option id="35326" name="option_id_35326">
+		<!-- Max MP +75 -->
+	</option>
+	<option id="35327" name="option_id_35327">
+		<!-- Max MP +88 -->
+	</option>
+	<option id="35328" name="option_id_35328">
+		<!-- Max MP +100 -->
+	</option>
+	<option id="35329" name="option_id_35329">
+		<!-- Max MP +113 -->
+	</option>
+	<option id="35330" name="option_id_35330">
+		<!-- Max MP +125 -->
+	</option>
+	<option id="35331" name="option_id_35331">
+		<!-- Max MP +138 -->
+	</option>
+	<option id="35332" name="option_id_35332">
+		<!-- Max MP +150 -->
+	</option>
+	<option id="35333" name="option_id_35333">
+		<!-- Max MP +163 -->
+	</option>
+	<option id="35334" name="option_id_35334">
+		<!-- Max MP +175 -->
+	</option>
+	<option id="35335" name="option_id_35335">
+		<!-- Max MP +188 -->
+	</option>
+	<option id="35336" name="option_id_35336">
+		<!-- Max MP +200 -->
+	</option>
+	<option id="35337" name="option_id_35337">
+		<!-- Max MP +300 -->
+	</option>
+	<option id="35338" name="option_id_35338">
+		<!-- Max MP +330 -->
+	</option>
+	<option id="35339" name="option_id_35339">
+		<!-- Max MP +360 -->
+	</option>
+	<option id="35340" name="option_id_35340">
+		<!-- Max MP +390 -->
+	</option>
+	<option id="35341" name="option_id_35341">
+		<!-- Max MP +480 -->
+	</option>
+	<option id="35342" name="option_id_35342">
+		<!-- P. Def. +4 -->
+	</option>
+	<option id="35343" name="option_id_35343">
+		<!-- P. Def. +7 -->
+	</option>
+	<option id="35344" name="option_id_35344">
+		<!-- P. Def. +10. -->
+	</option>
+	<option id="35345" name="option_id_35345">
+		<!-- P. Def. +13 -->
+	</option>
+	<option id="35346" name="option_id_35346">
+		<!-- P. Def. +16 -->
+	</option>
+	<option id="35347" name="option_id_35347">
+		<!-- P. Def. +19 -->
+	</option>
+	<option id="35348" name="option_id_35348">
+		<!-- P. Def. +22 -->
+	</option>
+	<option id="35349" name="option_id_35349">
+		<!-- P. Def. +25 -->
+	</option>
+	<option id="35350" name="option_id_35350">
+		<!-- P. Def. +28 -->
+	</option>
+	<option id="35351" name="option_id_35351">
+		<!-- P. Def. +31 -->
+	</option>
+	<option id="35352" name="option_id_35352">
+		<!-- P. Def. +34 -->
+	</option>
+	<option id="35353" name="option_id_35353">
+		<!-- P. Def. +37 -->
+	</option>
+	<option id="35354" name="option_id_35354">
+		<!-- P. Def. +40 -->
+	</option>
+	<option id="35355" name="option_id_35355">
+		<!-- P. Def. +43 -->
+	</option>
+	<option id="35356" name="option_id_35356">
+		<!-- P. Def. +46 -->
+	</option>
+	<option id="35357" name="option_id_35357">
+		<!-- P. Def. +56 -->
+	</option>
+	<option id="35358" name="option_id_35358">
+		<!-- P. Def. +66 -->
+	</option>
+	<option id="35359" name="option_id_35359">
+		<!-- P. Def. +76 -->
+	</option>
+	<option id="35360" name="option_id_35360">
+		<!-- P. Def. +86 -->
+	</option>
+	<option id="35361" name="option_id_35361">
+		<!-- P. Def. +96 -->
+	</option>
+	<option id="35362" name="option_id_35362">
+		<!-- P. Def. +8 -->
+	</option>
+	<option id="35363" name="option_id_35363">
+		<!-- P. Def. +11 -->
+	</option>
+	<option id="35364" name="option_id_35364">
+		<!-- P. Def. +14 -->
+	</option>
+	<option id="35365" name="option_id_35365">
+		<!-- P. Def. +17 -->
+	</option>
+	<option id="35366" name="option_id_35366">
+		<!-- P. Def. +20 -->
+	</option>
+	<option id="35367" name="option_id_35367">
+		<!-- P. Def. +23 -->
+	</option>
+	<option id="35368" name="option_id_35368">
+		<!-- P. Def. +26 -->
+	</option>
+	<option id="35369" name="option_id_35369">
+		<!-- P. Def. +29 -->
+	</option>
+	<option id="35370" name="option_id_35370">
+		<!-- P. Def. +32 -->
+	</option>
+	<option id="35371" name="option_id_35371">
+		<!-- P. Def. +35 -->
+	</option>
+	<option id="35372" name="option_id_35372">
+		<!-- P. Def. +38 -->
+	</option>
+	<option id="35373" name="option_id_35373">
+		<!-- P. Def. +41 -->
+	</option>
+	<option id="35374" name="option_id_35374">
+		<!-- P. Def. +44 -->
+	</option>
+	<option id="35375" name="option_id_35375">
+		<!-- P. Def. +47 -->
+	</option>
+	<option id="35376" name="option_id_35376">
+		<!-- P. Def. +50 -->
+	</option>
+	<option id="35377" name="option_id_35377">
+		<!-- P. Def. +60 -->
+	</option>
+	<option id="35378" name="option_id_35378">
+		<!-- P. Def. +80 -->
+	</option>
+	<option id="35379" name="option_id_35379">
+		<!-- P. Def. +90 -->
+	</option>
+	<option id="35380" name="option_id_35380">
+		<!-- P. Def. +100 -->
+	</option>
+	<option id="35381" name="option_id_35381">
+		<!-- P. Def. +110 -->
+	</option>
+	<option id="35382" name="option_id_35382">
+		<!-- M. Def. +4 -->
+	</option>
+	<option id="35383" name="option_id_35383">
+		<!-- M. Def. +7 -->
+	</option>
+	<option id="35384" name="option_id_35384">
+		<!-- M. Def. +10 -->
+	</option>
+	<option id="35385" name="option_id_35385">
+		<!-- M. Def. +13 -->
+	</option>
+	<option id="35386" name="option_id_35386">
+		<!-- M. Def. +16 -->
+	</option>
+	<option id="35387" name="option_id_35387">
+		<!-- M. Def. +19 -->
+	</option>
+	<option id="35388" name="option_id_35388">
+		<!-- M. Def. +22 -->
+	</option>
+	<option id="35389" name="option_id_35389">
+		<!-- M. Def. +25 -->
+	</option>
+	<option id="35390" name="option_id_35390">
+		<!-- M. Def. +28 -->
+	</option>
+	<option id="35391" name="option_id_35391">
+		<!-- M. Def. +31 -->
+	</option>
+	<option id="35392" name="option_id_35392">
+		<!-- M. Def. +34 -->
+	</option>
+	<option id="35393" name="option_id_35393">
+		<!-- M. Def. +37 -->
+	</option>
+	<option id="35394" name="option_id_35394">
+		<!-- M. Def. +40 -->
+	</option>
+	<option id="35395" name="option_id_35395">
+		<!-- M. Def. +43 -->
+	</option>
+	<option id="35396" name="option_id_35396">
+		<!-- M. Def. +46 -->
+	</option>
+	<option id="35397" name="option_id_35397">
+		<!-- M. Def. +56 -->
+	</option>
+	<option id="35398" name="option_id_35398">
+		<!-- M. Def. +66 -->
+	</option>
+	<option id="35399" name="option_id_35399">
+		<!-- M. Def. +76 -->
+	</option>
+</list>

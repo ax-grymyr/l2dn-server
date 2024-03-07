@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Exchange Mysterious Pack Lv. 6 -->
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="1" id="94494" />
+		<!-- Package: Einhasad's Pendant Lv. 1 -->
+		<production count="4" id="93304" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="1" id="94494" />
+		<!-- Enchant Kit: Circlet of Hero -->
+		<production count="4" id="94168" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="4" id="94494" />
+		<!-- Opal Lv. 4 -->
+		<production count="1" id="92049" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="4" id="94494" />
+		<!-- Amber Lv. 4 -->
+		<production count="1" id="92039" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="4" id="94494" />
+		<!-- Moonstone Lv. 4 -->
+		<production count="1" id="92099" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="7" id="94494" />
+		<!-- Spinel Lv. 4 -->
+		<production count="1" id="92079" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="7" id="94494" />
+		<!-- Zircon Lv. 4 -->
+		<production count="1" id="92089" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="7" id="94494" />
+		<!-- Onyx Lv. 4 -->
+		<production count="1" id="92069" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="7" id="94494" />
+		<!-- Coral Lv. 4 -->
+		<production count="1" id="92059" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="5" id="94494" />
+		<!-- Ring of Core -->
+		<production count="1" id="6662" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="7" id="94494" />
+		<!-- Advanced Pet Training Guide -->
+		<production count="1" id="94117" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="10" id="94494" />
+		<!-- Boots of Evasion Sealed -->
+		<production count="1" id="94086" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="10" id="94494" />
+		<!-- Helmet of Mana Sealed -->
+		<production count="1" id="94084" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="15" id="94494" />
+		<!-- Sigil of Inevitability Sealed -->
+		<production count="1" id="94300" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="15" id="94494" />
+		<!-- Shield of Vengeance Sealed -->
+		<production count="1" id="94302" />
+	</item>
+	<item>
+		<!-- Mysterious Pack Lv. 6 -->
+		<ingredient count="30" id="94494" />
+		<!-- Sealed Stun Gauntlets -->
+		<production count="1" id="94264" />
+	</item>
+</list>

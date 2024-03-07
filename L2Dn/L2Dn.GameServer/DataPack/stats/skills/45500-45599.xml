@@ -1,0 +1,2447 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="45500" toLevel="7" name="Indestructible Sound">
+		<!-- Imprisons by Momentum power. -->
+		<icon>icon.skill1624</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>TURN_STONE</abnormalType>
+		<abnormalVisualEffect>WA_UNBREAKABLE_SONIC_AVE</abnormalVisualEffect>
+		<activateRate>60</activateRate>
+		<effectPoint>
+			<value level="1">-410</value>
+			<value level="2">-420</value>
+			<value level="3">-430</value>
+			<value level="4">-440</value>
+			<value level="5">-450</value>
+			<value level="6">-460</value>
+			<value level="7">-470</value>
+		</effectPoint>
+		<operateType>A2</operateType>
+		<trait>IMPRISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>47966</skillId> <!-- Indestructible Sound -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="45501" toLevel="1" name="Destroyer's Roar">
+		<!-- Speed -90% -->
+		<icon>icon.skill10514</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<activateRate>40</activateRate>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<effectPoint>-137</effectPoint>
+		<affectRange>200</affectRange>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45502" toLevel="8" name="Symphony">
+		<!-- Unable to use magic. -->
+		<icon>icon.skill0098</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-295</value>
+			<value level="2">-320</value>
+			<value level="3">-340</value>
+			<value level="4">-360</value>
+			<value level="5">-380</value>
+			<value level="6">-400</value>
+			<value level="7">-420</value>
+			<value level="8">-440</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<isDebuff>true</isDebuff>
+		<trait>SILENCE</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mute" />
+		</effects>
+	</skill>
+	<skill id="45503" toLevel="1" name="Death Sting">
+		<!-- Unable to use magic. -->
+		<icon>icon.skill0990</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<castRange>700</castRange>
+		<effectPoint>-415</effectPoint>
+		<effectRange>1400</effectRange>
+		<isDebuff>true</isDebuff>
+		<trait>SILENCE</trait>
+		<operateType>A2</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mute" />
+		</effects>
+	</skill>
+	<skill id="45504" toLevel="4" name="Throwing Spear">
+		<!-- The body is bound and unable to move. -->
+		<icon>icon.skill1625</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>ROOT_PHYSICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-450</value>
+			<value level="3">-500</value>
+			<value level="4">-550</value>
+		</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>1400</effectRange>
+		<isDebuff>true</isDebuff>
+		<trait>ANOMALY</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Root" />
+		</effects>
+	</skill>
+	<skill id="45505" toLevel="1" name="Vampiric Mist">
+		<!-- Speed -30%. Atk. Spd. -30%. P. Atk. -30%. P. Accuracy -8 -->
+		<icon>icon.skill1495</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
+		<activateRate>80</activateRate>
+		<affectLimit>10-10</affectLimit>
+		<affectRange>300</affectRange>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-679</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PAtk">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45506" toLevel="4" name="Armor Break">
+		<!-- Speed -30% -->
+		<icon>icon.skill0516</icon>
+		<castRange>40</castRange>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<abnormalVisualEffect>SPEED_DOWN</abnormalVisualEffect>
+		<activateRate>70</activateRate>
+		<affectLimit>6-12</affectLimit>
+		<affectRange>200</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-200</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<trait>ANOMALY</trait>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-35</value>
+					<value level="3">-40</value>
+					<value level="4">-50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45507" toLevel="9" name="Blizzard">
+		<!-- Speed -50% -->
+		<icon>icon.skill1290</icon>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-2100</value>
+			<value level="2">-2110</value>
+			<value level="3">-2120</value>
+			<value level="4">-2130</value>
+			<value level="5">-2140</value>
+			<value level="6">-2150</value>
+			<value level="7">-2160</value>
+			<value level="8">-2170</value>
+			<value level="9">-2180</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>20</lvlBonusRate>
+		<trait>ANOMALY</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45508" toLevel="10" name="Ice Bolt">
+		<!-- Speed -20% -->
+		<icon>icon.skill1184</icon>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-25</value>
+			<value level="2">-40</value>
+			<value level="3">-55</value>
+			<value level="4">-75</value>
+			<value level="5">-90</value>
+			<value level="6">-105</value>
+			<value level="7">-120</value>
+			<value level="8">-145</value>
+			<value level="9">-170</value>
+			<value level="10">-195</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>20</lvlBonusRate>
+		<trait>ANOMALY</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45509" toLevel="35" name="Frost Bolt">
+		<!-- Speed -20% -->
+		<icon>icon.skill1236</icon>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-210</value>
+			<value level="2">-220</value>
+			<value level="3">-230</value>
+			<value level="4">-240</value>
+			<value level="5">-250</value>
+			<value level="6">-260</value>
+			<value level="7">-270</value>
+			<value level="8">-280</value>
+			<value level="9">-290</value>
+			<value level="10">-300</value>
+			<value level="11">-310</value>
+			<value level="12">-320</value>
+			<value level="13">-330</value>
+			<value level="14">-340</value>
+			<value level="15">-350</value>
+			<value level="16">-360</value>
+			<value level="17">-370</value>
+			<value level="18">-380</value>
+			<value level="19">-390</value>
+			<value level="20">-385</value>
+			<value level="21">-400</value>
+			<value level="22">-405</value>
+			<value level="23">-410</value>
+			<value level="24">-415</value>
+			<value level="25">-420</value>
+			<value level="26">-425</value>
+			<value level="27">-430</value>
+			<value level="28">-435</value>
+			<value level="29">-440</value>
+			<value level="30">-445</value>
+			<value level="31">-450</value>
+			<value level="32">-455</value>
+			<value level="33">-460</value>
+			<value level="34">-465</value>
+			<value level="35">-470</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>20</lvlBonusRate>
+		<trait>ANOMALY</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45510" toLevel="35" name="Freezing Strike">
+		<!-- Speed -20% -->
+		<icon>icon.skill0105</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="45511" toLevel="1" name="Hamstring Shot">
+		<!-- Speed is decreased by 30% -->
+		<icon>icon.skill0354</icon>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<castRange>700</castRange>
+		<effectPoint>-405</effectPoint>
+		<effectRange>1400</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<trait>ANOMALY</trait>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45512" toLevel="1" name="Throw Dagger">
+		<!-- Speed -60. -->
+		<icon>icon.skill10539</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<effectPoint>-400</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectRange>900</effectRange>
+		<operateType>A2</operateType>
+		<trait>ANOMALY</trait>
+		<magicCriticalRate>5</magicCriticalRate>
+		<castRange>600</castRange>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45513" toLevel="65" name="Bloody Strike">
+		<!-- Constantly drains HP. -->
+		<icon>icon.skill0223</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="45514" toLevel="9" name="Inferno">
+		<!-- HP is draining. -->
+		<icon>icon.skill1289</icon>
+		<abnormalLevel>10</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-2100</value>
+			<value level="2">-2110</value>
+			<value level="3">-2120</value>
+			<value level="4">-2130</value>
+			<value level="5">-2140</value>
+			<value level="6">-2150</value>
+			<value level="7">-2160</value>
+			<value level="8">-2170</value>
+			<value level="9">-2180</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<trait>INFECTION</trait>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">60</value>
+					<value level="2">80</value>
+					<value level="3">100</value>
+					<value level="4">120</value>
+					<value level="5">150</value>
+					<value level="6">180</value>
+					<value level="7">210</value>
+					<value level="8">240</value>
+					<value level="9">270</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45515" toLevel="19" name="Ice Dagger">
+		<!-- Inflicts damage over time. -->
+		<icon>icon.skill1237</icon>
+		<abnormalLevel>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">5</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">6</value>
+			<value level="7">6</value>
+			<value level="8">6</value>
+			<value level="9">6</value>
+			<value level="10">7</value>
+			<value level="11">7</value>
+			<value level="12">7</value>
+			<value level="13">7</value>
+			<value level="14">7</value>
+			<value level="15">8</value>
+			<value level="16">8</value>
+			<value level="17">8</value>
+			<value level="18">8</value>
+			<value level="19">8</value>
+		</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-230</value>
+			<value level="2">-240</value>
+			<value level="3">-250</value>
+			<value level="4">-260</value>
+			<value level="5">-270</value>
+			<value level="6">-280</value>
+			<value level="7">-290</value>
+			<value level="8">-300</value>
+			<value level="9">-310</value>
+			<value level="10">-320</value>
+			<value level="11">-330</value>
+			<value level="12">-340</value>
+			<value level="13">-350</value>
+			<value level="14">-360</value>
+			<value level="15">-370</value>
+			<value level="16">-380</value>
+			<value level="17">-390</value>
+			<value level="18">-400</value>
+			<value level="19">-410</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<trait>INFECTION</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">44</value>
+					<value level="2">44</value>
+					<value level="3">44</value>
+					<value level="4">44</value>
+					<value level="5">54</value>
+					<value level="6">54</value>
+					<value level="7">54</value>
+					<value level="8">54</value>
+					<value level="9">54</value>
+					<value level="10">62</value>
+					<value level="11">62</value>
+					<value level="12">62</value>
+					<value level="13">62</value>
+					<value level="14">62</value>
+					<value level="15">67</value>
+					<value level="16">67</value>
+					<value level="17">67</value>
+					<value level="18">67</value>
+					<value level="19">68</value>
+				</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45516" toLevel="3" name="Fire Vortex">
+		<!-- Atk. Spd. -10%. Casting Spd. -10%. Speed -10%. Constantly consumes MP. -->
+		<icon>icon.skill1339</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>MULTI_DEBUFF_FIRE</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<trait>INFECTION</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ManaDamOverTime">
+				<power>
+					<value level="1">12</value>
+					<value level="2">16</value>
+					<value level="3">20</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="Speed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45517" toLevel="3" name="Ice Vortex">
+		<!-- Speed -20%. Constantly consumes MP. -->
+		<icon>icon.skill1340</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>MULTI_DEBUFF_WATER</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<trait>INFECTION</trait>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ManaDamOverTime">
+				<power>
+					<value level="1">12</value>
+					<value level="2">16</value>
+					<value level="3">20</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45518" toLevel="3" name="Wind Vortex">
+		<!-- Atk. Spd. -15%. Casting Spd. -15%. Constantly consumes MP. -->
+		<icon>icon.skill1341</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>MULTI_DEBUFF_WIND</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>WIND</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<trait>INFECTION</trait>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ManaDamOverTime">
+				<power>
+					<value level="1">12</value>
+					<value level="2">16</value>
+					<value level="3">20</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45519" toLevel="3" name="Dark Vortex">
+		<!-- P. Critical Rate -10%. M. Skill Critical Rate -10%. Constantly consumes MP. -->
+		<icon>icon.skill1343</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>MULTI_DEBUFF_UNHOLY</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-500</value>
+			<value level="2">-502</value>
+			<value level="3">-504</value>
+		</effectPoint>
+		<effectRange>1400</effectRange>
+		<attributeType>DARK</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<trait>INFECTION</trait>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ManaDamOverTime">
+				<power>
+					<value level="1">12</value>
+					<value level="2">16</value>
+					<value level="3">20</value>
+				</power>
+				<ticks>2</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45520" toLevel="5" name="Poison Blade Dance">
+		<!-- Inflicts Poison, constantly drains HP. -->
+		<icon>icon.skill0084</icon>
+		<abnormalLevel>
+			<value level="1">6</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">9</value>
+			<value level="5">10</value>
+		</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<subordinationAbnormalType>POISON</subordinationAbnormalType>
+		<abnormalType>POISON</abnormalType>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<activateRate>35</activateRate>
+		<affectLimit>6-12</affectLimit>
+		<affectRange>150</affectRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-845</value>
+			<value level="2">-920</value>
+			<value level="3">-1100</value>
+			<value level="4">-1190</value>
+			<value level="5">-1280</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>INFECTION</trait>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">50</value>
+					<value level="2">58</value>
+					<value level="3">63</value>
+					<value level="4">69</value>
+					<value level="5">76</value> <!-- Guessed -->
+				</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45521" toLevel="15" name="Bleed">
+		<!-- Speed -20%. Constantly drains HP. -->
+		<icon>icon.skill10300</icon>
+		<castRange>600</castRange>
+		<abnormalLevel>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">5</value>
+			<value level="4">6</value>
+			<value level="5">7</value>
+			<value level="6">8</value>
+			<value level="7">9</value>
+			<value level="8">10</value>
+			<value level="9">11</value>
+			<value level="10">12</value>
+			<value level="11">13</value>
+			<value level="12">14</value>
+			<value level="13">15</value>
+			<value level="14">16</value>
+			<value level="15">17</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>
+			<value level="1">-140</value>
+			<value level="2">-180</value>
+			<value level="3">-265</value>
+			<value level="4">-310</value>
+			<value level="5">-350</value>
+			<value level="6">-370</value>
+			<value level="7">-400</value>
+			<value level="8">-405</value>
+			<value level="9">-410</value>
+			<value level="10">-415</value>
+			<value level="11">-420</value>
+			<value level="12">-425</value>
+			<value level="13">-430</value>
+			<value level="14">-435</value>
+			<value level="15">-440</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>INFECTION</trait>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">60</value>
+					<value level="2">60</value>
+					<value level="3">80</value>
+					<value level="4">100</value>
+					<value level="5">120</value>
+					<value level="6">140</value>
+					<value level="7">140</value>
+					<value level="8">140</value>
+					<value level="9">140</value>
+					<value level="10">140</value>
+					<value level="11">160</value>
+					<value level="12">160</value>
+					<value level="13">160</value>
+					<value level="14">160</value>
+					<value level="15">160</value>
+				</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45522" toLevel="2" name="Flying Dagger">
+		<!-- Atk. Spd. -10%. Casting Spd. -10%. Speed -20%. Constantly drains MP. -->
+		<icon>icon.flying_dagger</icon>
+		<castRange>600</castRange>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<effectPoint>
+			<value level="1">-420</value>
+			<value level="2">-445</value>
+		</effectPoint>
+		<effectRange>450</effectRange>
+		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<trait>INFECTION</trait>
+		<basicProperty>PHYSICAL</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">220</value>
+					<value level="2">290</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45523" toLevel="1" name="Exclusion - Cancel Suppression">
+		<icon>icon.skill0000</icon>
+		<affectRange>1000</affectRange>
+		<effectPoint>1000</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>76</magicLevel>
+		<mpConsume>
+			<value level="1">80</value>
+			<value level="2">85</value>
+		</mpConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>
+					<value level="1">ATTACK_TIME_UP,40</value>
+				</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45524" toLevel="1" name="Exclusion - Damage">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>0</abnormalTime>
+	</skill>
+	<skill id="45525" toLevel="1" name="Shining Oath">
+		<!-- M. Atk. +50. Healing Power +100. <Skill upgrade>. Divine Beam → Shining Beam -->
+		<icon>icon.s_shining_oath</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">50</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">100</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">250</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">500</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">100</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">200</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">400</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>45241</existingSkillId> <!-- Divine Beam -->
+				<replacementSkillId>45438</replacementSkillId> <!-- Shining Beam -->
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45526" toLevel="1" name="Sea Burst">
+		<icon>icon.s_aquatic_buster</icon>
+		<isMagic>1</isMagic>
+		<magicLevel>78</magicLevel>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>160</power>
+				<raceModifier>1.3</raceModifier>
+				<races>DEMONIC;UNDEAD</races>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45527" toLevel="20" name="Transcendent Shining Beam">
+		<!-- Cleanses the target with the power of light granted by the unbreakable oath. Attacks an enemy with magic. Power 126. Deals heavy damage to demons/ undead. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_shining_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="45528" toLevel="20" name="Transcendent Sea Beam">
+		<!-- Cleanses the target with the power of water granted by the unbreakable oath. Attacks an enemy with magic. Power 126. Deals heavy damage to demons/ undead. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_aquatic_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="45529" toLevel="20" name="Transcendent Dark Beam">
+		<!-- Cleanses the target with the power of abyss granted by the unbreakable oath. Attacks an enemy with magic. Power 126. Deals heavy damage to demons/ undead. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.s_darkness_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="45530" toLevel="1" name="Tranquility">
+		<!-- For party members. For 12 sec. Max HP +5000. Recovers 100% HP per 3 sec. -->
+		<icon>icon.serenity</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>12</abnormalTime>
+		<magicLevel>76</magicLevel>
+		<mpConsume>105</mpConsume>
+		<itemConsumeCount>50</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<effectPoint>100</effectPoint>
+		<affectRange>1200</affectRange>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+				<heal>true</heal>
+			</effect>
+			<effect name="HealOverTime">
+				<power>50000</power>
+				<ticks>3</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45531" toLevel="1" name="Tranquility">
+		<icon>icon.serenity</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>3</abnormalTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="HealPercent"> <!-- Instant Heal -->
+				<power>100</power>
+			</effect>
+			<effect name="HealPercent">
+				<delay>3000</delay>
+				<power>100</power>
+			</effect>
+			<effect name="HealPercent">
+				<delay>6000</delay>
+				<power>100</power>
+			</effect>
+			<effect name="HealPercent">
+				<delay>9000</delay>
+				<power>100</power>
+			</effect>
+			<effect name="HealPercent">
+				<delay>11000</delay>
+				<power>100</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45532" toLevel="1" name="Tranquility">
+		<icon>icon.serenity</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="45533" toLevel="1" name="Exclusion">
+		<!-- <Knockback/ Suppression skill>. <<font color="00FF00">Allies</font>>. Cancels Suppression skills. Can cancel Ultimate Suppression skills. <<font color="FF0000">Enemies</font>>. Deals magic damage with 130 power. Knockback/ Suppression/ Rush Block effect. <font color="FF8800">Suppression Effect</font>. Duration: 5 sec. Greatly decreases Atk. Spd./ Casting Spd. and Speed. P./ M. Skill Cooldown +5%. Can be cancelled with debuff/ anomaly-removing skills or Ultimate Suppression-removing skills. <font color="FF8800">Rush Block Effect</font>. Duration: 10 sec. Speed buffs cannot be applied. Rush skills cannot be used. -->
+		<icon>icon.expel</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>90000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<activateRate>100</activateRate>
+		<magicLevel>76</magicLevel>
+		<affectRange>300</affectRange>
+		<affectLimit>10-10</affectLimit>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>130</power>
+			</effect>
+			<effect name="KnockBack">
+				<distance>250</distance>
+				<speed>600</speed>
+				<knockDown>false</knockDown>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45535</skillId> <!-- Exclusion -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47244</skillId> <!-- Rush Block -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45523</skillId> <!-- Exclusion - Cancel Suppression -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45534" toLevel="1" name="Dark Disruption">
+		<!-- Deals magic damage to the target and enemies around them. Power 130. Duration: 10 sec. HP Recovery Potions' Effect -500. Removes the following buffs and blocks them for 10 sec.:. - Special class transformation -->
+		<icon>icon.banish</icon>
+		<itemConsumeId>3031</itemConsumeId>
+		<itemConsumeCount>100</itemConsumeCount>
+		<castRange>600</castRange>
+		<effectRange>1100</effectRange>
+		<affectRange>300</affectRange>
+		<affectLimit>7-12</affectLimit>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>105</mpConsume>
+		<operateType>A2</operateType>
+		<effectPoint>-500</effectPoint>
+		<reuseDelay>90000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>130</power>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>OVERWHELMING_POWER,-1;SPECIAL_CLASS_TRANSFORM,-1;CHANGEBODY,-1;BLAZING_FURY,-1;LEGENDARY_ARCHER,-1</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>OVERWHELMING_POWER;SPECIAL_CLASS_TRANSFORM;CHANGEBODY;BLAZING_FURY;LEGENDARY_ARCHER</slot>
+			</effect>
+			<effect name="BlockSkill">
+				<magicTypes>47970;54206;45413;397;398;54102;1800;1801;1802;393;394;45151;45152;45539;47831;47832;47380;47384;47388;47392;47927</magicTypes>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45535" toLevel="1" name="Exclusion">
+		<!-- Greatly decreases Atk. Spd./ Casting Spd./ Speed. P./ M. Skill Cooldown +5%. Can be cancelled with Ultimate Suppression-removing skills or debuff/ anomaly-removing skills. -->
+		<icon>icon.expel</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>5</abnormalTime>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>ATTACK_TIME_UP</abnormalType>
+		<trait>SUPPRESSION</trait>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-500</effectPoint>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-23</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45536" toLevel="1" name="Tranquility">
+		<icon>icon.serenity</icon>
+		<abnormalTime>10</abnormalTime>
+		<isMagic>1</isMagic>
+		<operateType>A2</operateType>
+		<effectPoint>100</effectPoint>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<effects>
+			<effect name="HealPercent">
+				<amount>
+					<value level="1">100</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45537" toLevel="1" name="Exclusion">
+		<icon>icon.expel</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-500</effectPoint>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<effectRange>200</effectRange>
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+		<trait>SHOCK</trait>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="KnockBack">
+				<distance>50</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45538" toLevel="1" name="Meteor">
+		<!-- <Skill with fixed cooldown>. Decreases CP of the target and nearby enemies for 30% and deals three magic strikes with 380 power. Enemies with a debuff/ anomaly applied take additional damage. Duration: 3 sec. M. Def. -30% -->
+		<icon>icon.meteor</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>2</abnormalTime>
+		<mpConsume>131</mpConsume>
+		<castRange>700</castRange>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-400</effectPoint>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectLimit>1-20</affectLimit>
+		<affectRange>450</affectRange>
+		<abnormalLevel>1</abnormalLevel>
+		<hitTime>4000</hitTime>
+		<itemConsumeCount>100</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>80</magicLevel>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MaxCp">
+				<amount>0.7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<power>380</power>
+			</effect>
+			<effect name="MagicalDefence" abnormalTime="3">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45539" toLevel="1" name="Rolling Dice">
+		<!-- <Skill with fixed cast time>. Duration: 20 min. P. Atk. +60%. P. Critical Rate +15. P. Critical Damage +15%. P. Skill Critical Rate +15%. P. Skill Critical Damage +15%. Additionally one of the following effects:. - Atk. Spd. +55%. - Speed +30. - Max HP +55% -->
+		<icon>icon.rolling_dice</icon>
+		<abnormalType>ROLLING_DICE</abnormalType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<hitTime>2000</hitTime>
+		<magicLevel>76</magicLevel>
+		<itemConsumeId>3031</itemConsumeId>
+		<itemConsumeCount>50</itemConsumeCount>
+		<isMagic>2</isMagic>
+		<mpConsume>150</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>7000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CallRandomSkill">
+				<skills>45540,1;45541,1;45542,1</skills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45540" toLevel="1" name="Rolling Dice - Haste">
+		<!-- P. Atk. +60%. P. Critical Rate +15. P. Critical Damage +15%. P. Skill Critical Rate +15%. P. Skill Critical Damage +15%. Atk. Spd. +55% -->
+		<icon>icon.rolling_dice_buff1</icon>
+		<abnormalType>ROLLING_DICE</abnormalType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<effectPoint>100</effectPoint>
+		<magicLevel>76</magicLevel>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_Y_ROLLING_DICEA_AVE</abnormalVisualEffect>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<!-- Skill Effect Rolling Dice - Haste -->
+			<effect name="PhysicalAttackSpeed">
+				<amount>55</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45541" toLevel="1" name="Rolling Dice - Wind Walk">
+		<!-- P. Atk. +60%. P. Critical Rate +15. P. Critical Damage +15%. P. Skill Critical Rate +15%. P. Skill Critical Damage +15%. Speed +30 -->
+		<icon>icon.rolling_dice_buff2</icon>
+		<abnormalType>ROLLING_DICE</abnormalType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<effectPoint>100</effectPoint>
+		<magicLevel>76</magicLevel>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_Y_ROLLING_DICEB_AVE</abnormalVisualEffect>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<!-- Main Effects -->
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<!-- Skill Effect Rolling Dice - Wind Walk -->
+			<effect name="Speed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45542" toLevel="1" name="Rolling Dice - Resilience">
+		<!-- P. Atk. +60%. P. Critical Rate +15. P. Critical Damage +15%. P. Skill Critical Rate +15%. P. Skill Critical Damage +15%. Max HP +55% -->
+		<icon>icon.rolling_dice_buff3</icon>
+		<abnormalType>ROLLING_DICE</abnormalType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<effectPoint>100</effectPoint>
+		<magicLevel>76</magicLevel>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_Y_ROLLING_DICEC_AVE</abnormalVisualEffect>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<!-- Main Effects -->
+			<effect name="PAtk">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<!-- Skill Effect Rolling Dice - Resilience -->
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45543" toLevel="2" name="Song of Wind">
+		<!-- Elven wind-praising song. Speed +30. Suppression Resistance +5% -->
+		<icon>icon.song_of_wind_02</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<effectPoint>200</effectPoint>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>SONG_OF_WIND</abnormalType>
+		<hitTime>2500</hitTime>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<SUPPRESSION>
+					<value level="1">0</value>
+					<value level="2">5</value>
+				</SUPPRESSION>
+			</effect>
+			<effect name="Synergy">
+				<!-- Party Solidarity -->
+				<optionalSlots>DANCE_OF_FURY;DANCE_OF_FIRE;DANCE_OF_WARRIOR;SONG_OF_EARTH;SONG_OF_WIND;SONG_OF_HUNTER</optionalSlots>
+				<requiredSlots>SONG_OF_WIND</requiredSlots>
+				<partyBuffSkillId>45403</partyBuffSkillId>
+				<minSlot>2</minSlot>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45544" toLevel="2" name="Dance of Fury">
+		<!-- Dark Elven fury-praising dance. Atk. Spd. +150. Casting Spd. +100. Skill Cooldown -5% -->
+		<icon>icon.dance_of_fury_02</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<effectPoint>200</effectPoint>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>DANCE_OF_FURY</abnormalType>
+		<hitTime>2500</hitTime>
+		<isMagic>3</isMagic> <!-- Dance Skill -->
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Synergy">
+				<!-- Party Solidarity -->
+				<optionalSlots>DANCE_OF_FURY;DANCE_OF_FIRE;DANCE_OF_WARRIOR;SONG_OF_EARTH;SONG_OF_WIND;SONG_OF_HUNTER</optionalSlots>
+				<requiredSlots>DANCE_OF_FURY</requiredSlots>
+				<partyBuffSkillId>45403</partyBuffSkillId>
+				<minSlot>2</minSlot>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45545" toLevel="1" name="Meteor">
+		<icon>icon.meteor</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-400</effectPoint>
+		<activateRate>1500</activateRate>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>350</affectRange>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<hitTime>1500</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>380</power>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>45546</skillId> <!-- Meteor -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45546" toLevel="1" name="Meteor">
+		<!-- The meteor deals continuous damage. M. Def. -30% -->
+		<icon>icon.meteor</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>3</abnormalTime>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalType>MD_DOWN</abnormalType>
+		<activateRate>3000</activateRate>
+		<affectScope>RANGE</affectScope>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>350</affectRange>
+		<castRange>900</castRange>
+		<effectRange>1200</effectRange>
+		<effectPoint>-400</effectPoint>
+		<isMagic>1</isMagic>
+		<basicProperty>MAGIC</basicProperty>
+		<hitTime>3000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>380</power>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45547" toLevel="20" name="Hellfire">
+		<!-- <Debuff: PvP>. P. Def. -40%. M. Def. -40%. P. Atk. -250. M. Atk. -250. <Debuff: PvE>. P. Def. -40%. M. Def. -40% -->
+		<icon>icon.hell_fire_human</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1540</value>
+			<value level="3">-1560</value>
+			<value level="4">-1580</value>
+			<value level="5">-1600</value>
+			<value level="6">-1620</value>
+			<value level="7">-1640</value>
+			<value level="8">-1660</value>
+			<value level="9">-1680</value>
+			<value level="10">-1700</value>
+			<value level="11">-1720</value>
+			<value level="12">-1740</value>
+			<value level="13">-1760</value>
+			<value level="14">-1780</value>
+			<value level="15">-1800</value>
+			<value level="16">-1820</value>
+			<value level="17">-1840</value>
+			<value level="18">-1860</value>
+			<value level="19">-1880</value>
+			<value level="20">-1900</value>
+		</effectPoint>
+	</skill>
+	<skill id="45548" toLevel="1" name="Tranquility">
+		<icon>icon.serenity</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="45549" toLevel="1" name="Shillien's Curse">
+		<!-- Sword/ Blunt Resistance -10%. Skill Power -10% -->
+		<icon>icon.curse_of_shilen</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<affectRange>450</affectRange>
+		<effectPoint>-6100</effectPoint>
+		<hitTime>1800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>
+					<value level="1">-10</value>
+				</SWORD>
+				<BLUNT>
+					<value level="1">-10</value>
+				</BLUNT>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45550" toLevel="1" name="Shillien's Curse">
+		<!-- With a certain chance, removes up to 3 buffs. Max HP/ MP/ CP -20%. Skill Power -10% -->
+		<icon>icon.curse_of_shilen</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<affectRange>450</affectRange>
+		<effectPoint>-6100</effectPoint>
+		<hitTime>1800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<operateType>A2</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>BUFF</slot>
+				<rate>6</rate>
+				<max>3</max>
+			</effect>
+			<effect name="MaxCp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">-10</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">-12</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">-14</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">-10</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">-12</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">-14</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">-16</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45551" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45552" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45553" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45554" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45555" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45556" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45557" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45558" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45559" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45560" toLevel="1" name="Pa'agrio's Touch">
+		<icon>icon.touch_of_paagrio1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<mpConsume>0</mpConsume>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<coolTime>0</coolTime>
+		<reuseDelay>0</reuseDelay>
+		<effectPoint>0</effectPoint>
+		<hpConsume>0</hpConsume>
+		<abnormalTime>3</abnormalTime>
+	</skill>
+	<skill id="45561" toLevel="1" name="Hidden Dagger">
+		<!-- When using the Lethal Blow/ Dark Blow/ Backstab skills:. With a certain chance, makes an <font color="FFBB00">additional attack</font>. <Trigger rate>. Lethal Blow: 2%. Dark Blow: 4%. Backstab: 5% -->
+		<icon>icon.s_hidden_dagger</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>344</attackSkillId> <!-- Lethal Blow -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>DAGGER</allowWeapons>
+				<skillId>45562</skillId> <!-- Hidden Dagger -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>47341</attackSkillId> <!-- Dark Blow -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>4</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>DAGGER</allowWeapons>
+				<skillId>45562</skillId> <!-- Hidden Dagger -->
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>47334</attackSkillId> <!-- Backstab -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>DAGGER</allowWeapons>
+				<skillId>45562</skillId> <!-- Hidden Dagger -->
+				<skillLevel>3</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45562" toLevel="3" name="Hidden Dagger">
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<icon>icon.s_hidden_dagger</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AdditionalPhysicalAttack">
+				<power>
+					<value level="1">5000</value> <!-- for Lethal Blow -->
+					<value level="2">5000</value> <!-- for Dark Blow -->
+					<value level="3">5000</value> <!-- for Backstab -->
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45563" toLevel="5" name="Transcendent Dark Blow">
+		<!-- A shadow attacks the target's vital spots. Power 8200. A shadow attacks from the side opposite to yours. Critical. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.skill0928_1</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-830</value>
+			<value level="3">-860</value>
+			<value level="4">-880</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">55</value>
+			<value level="3">59</value>
+			<value level="4">62</value>
+			<value level="5">65</value>
+		</mpConsume>
+	</skill>
+	<skill id="45564" toLevel="20" name="Transcendent Essential Divine Beam">
+		<!-- Purifies with holy light. Inflicts magic damage with 140 power. Deals heavy damage to demons/ undead. Applies Essential Defense Reduction that decreases an enemy's P. Def. <Essential Defense Reduction>. <PvP effect>. P. Def. -100. <PvE effect>. P. Def. -30%. The skill can only be used in transcendent instance zones. -->
+		<icon>icon.essential_holy_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="45566" toLevel="20" name="Shining Beam">
+		<!-- Cleanses the target with the power of light granted by the unbreakable oath. Attacks 3 enemies with magic. Power 126. PvP: attacks up to 3 enemies. PvE: attacks up to 3 enemies. Deals heavy damage to demons/ undead. -->
+		<icon>icon.s_shining_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>20</attributeValue>
+		<hitTime>3000</hitTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">126</value>
+					<value level="2">128</value>
+					<value level="3">130</value>
+					<value level="4">134</value>
+					<value level="5">137</value>
+					<value level="6">140</value>
+					<value level="7">144</value>
+					<value level="8">147</value>
+					<value level="9">150</value>
+					<value level="10">154</value>
+					<value level="11">158</value>
+					<value level="12">162</value>
+					<value level="13">167</value>
+					<value level="14">170</value>
+					<value level="15">176</value>
+					<value level="16">181</value>
+					<value level="17">187</value>
+					<value level="18">192</value>
+					<value level="19">198</value>
+					<value level="20">203</value>
+				</power>
+				<raceModifier>1.3</raceModifier>
+				<races>DEMONIC;UNDEAD</races>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45567" toLevel="20" name="Sea Beam">
+		<!-- Cleanses the target with the power of water granted by the unbreakable oath. Attacks 3 enemies with magic. Power 126. PvP: attacks up to 3 enemies. PvE: attacks up to 3 enemies. Deals heavy damage to demons/ undead. -->
+		<icon>icon.s_aquatic_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>20</attributeValue>
+		<hitTime>3000</hitTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">126</value>
+					<value level="2">128</value>
+					<value level="3">130</value>
+					<value level="4">134</value>
+					<value level="5">137</value>
+					<value level="6">140</value>
+					<value level="7">144</value>
+					<value level="8">147</value>
+					<value level="9">150</value>
+					<value level="10">154</value>
+					<value level="11">158</value>
+					<value level="12">162</value>
+					<value level="13">167</value>
+					<value level="14">170</value>
+					<value level="15">176</value>
+					<value level="16">181</value>
+					<value level="17">187</value>
+					<value level="18">192</value>
+					<value level="19">198</value>
+					<value level="20">203</value>
+				</power>
+				<raceModifier>1.3</raceModifier>
+				<races>DEMONIC;UNDEAD</races>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45568" toLevel="20" name="Dark Beam">
+		<!-- Cleanses the target with the power of abyss granted by the unbreakable oath. Attacks 3 enemies with magic. Power 126. PvP: attacks up to 3 enemies. PvE: attacks up to 3 enemies. Deals heavy damage to demons/ undead. -->
+		<icon>icon.s_darkness_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<affectLimit>3-3</affectLimit>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>20</attributeValue>
+		<effectRange>1200</effectRange>
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">126</value>
+					<value level="2">128</value>
+					<value level="3">130</value>
+					<value level="4">134</value>
+					<value level="5">137</value>
+					<value level="6">140</value>
+					<value level="7">144</value>
+					<value level="8">147</value>
+					<value level="9">150</value>
+					<value level="10">154</value>
+					<value level="11">158</value>
+					<value level="12">162</value>
+					<value level="13">167</value>
+					<value level="14">170</value>
+					<value level="15">176</value>
+					<value level="16">181</value>
+					<value level="17">187</value>
+					<value level="18">192</value>
+					<value level="19">198</value>
+					<value level="20">203</value>
+				</power>
+				<raceModifier>1.3</raceModifier>
+				<races>DEMONIC;UNDEAD</races>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="45569" toLevel="20" name="Divine Beam">
+		<!-- Cleanses the target with the power of light granted by the unbreakable oath. Attacks 3 enemies with magic. Power 138. PvP: attacks up to 3 enemies. PvE: attacks up to 3 enemies. Deals heavy damage to demons/ undead. -->
+		<icon>icon.s_shining_ray</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<castRange>700</castRange>
+		<hitTime>3000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-770</value>
+			<value level="3">-780</value>
+			<value level="4">-790</value>
+			<value level="5">-800</value>
+			<value level="6">-810</value>
+			<value level="7">-820</value>
+			<value level="8">-830</value>
+			<value level="9">-840</value>
+			<value level="10">-850</value>
+			<value level="11">-860</value>
+			<value level="12">-870</value>
+			<value level="13">-880</value>
+			<value level="14">-890</value>
+			<value level="15">-900</value>
+			<value level="16">-910</value>
+			<value level="17">-920</value>
+			<value level="18">-930</value>
+			<value level="19">-940</value>
+			<value level="20">-950</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">56</value>
+			<value level="2">57</value>
+			<value level="3">58</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">59</value>
+			<value level="7">60</value>
+			<value level="8">60</value>
+			<value level="9">62</value>
+			<value level="10">62</value>
+			<value level="11">63</value>
+			<value level="12">63</value>
+			<value level="13">64</value>
+			<value level="14">64</value>
+			<value level="15">65</value>
+			<value level="16">68</value>
+			<value level="17">71</value>
+			<value level="18">74</value>
+			<value level="19">77</value>
+			<value level="20">80</value>
+		</mpConsume>
+	</skill>
+	<skill id="45570" toLevel="1" name="Holy Buster">
+		<icon>icon.s_holy_buster</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="45571" toLevel="1" name="Shining Wave">
+		<!-- M. Atk. +100. When using the Divine Beam/ Shining Beam skills:. With a certain chance, makes an <font color="FFBB00">additional attack</font> on 3 enemies. PvP: attacks up to 3 enemies. PvE: attacks up to 3 enemies. The <font color="FFBB00">additional attack</font> deals heavy damage to demons/ undead. -->
+		<icon>icon.s_shining_buster</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="45572" toLevel="1" name="Sea Burst">
+		<!-- M. Atk. +100. When using the Divine Beam/ Sea Beam skills:. With a certain chance, makes an <font color="FFBB00">additional attack</font>. PvP: Attacks up to 3 targets. PvE: Attacks up to 3 targets. The <font color="FFBB00">additional attack</font> deals heavy damage to demons/ undead. -->
+		<icon>icon.s_aquatic_buster</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="45573" toLevel="1" name="Dark Wave">
+		<!-- M. Atk. +100. When using the Divine Beam/ Dark Beam skills:. With a certain chance, makes an <font color="FFBB00">additional attack</font>. PvP: attacks up to 3 targets. PvE: attacks up to 3 targets. The <font color="FFBB00">additional attack</font> deals heavy damage to demons/ undead. -->
+		<icon>icon.s_darkness_buster</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="45574" toLevel="1" name="Shaman's MP Recovery">
+		<!-- Recovers 1% MP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+</list>

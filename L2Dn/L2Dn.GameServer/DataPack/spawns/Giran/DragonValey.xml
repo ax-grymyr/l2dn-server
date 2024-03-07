@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="23_21_npc_031201">
+		<group>
+			<npc id="31045" x="122716" y="110720" z="-3728" heading="16384" respawnTime="60sec" /> <!-- Kitzka - Trader of the Valley -->
+			<npc id="31044" x="122904" y="110828" z="-3728" heading="24576" respawnTime="60sec" /> <!-- Galman - Trader of the Valley -->
+			<npc id="30834" x="105792" y="114290" z="-3136" heading="49000" respawnTime="60sec" /> <!-- Cema - Magic Trader -->
+			<npc id="19133" x="130797" y="115117" z="-3721" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130741" y="115114" z="-3725" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130685" y="115105" z="-3728" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130630" y="115104" z="-3733" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130583" y="115101" z="-3738" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130536" y="115096" z="-3744" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130485" y="115090" z="-3753" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19133" x="130439" y="115087" z="-3760" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130482" y="115141" z="-3752" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130439" y="115135" z="-3757" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130531" y="115142" z="-3745" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130578" y="115144" z="-3738" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130627" y="115144" z="-3733" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130685" y="115150" z="-3727" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130736" y="115154" z="-3724" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19136" x="130793" y="115151" z="-3721" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130786" y="115192" z="-3721" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130728" y="115193" z="-3723" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130677" y="115192" z="-3726" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130622" y="115179" z="-3733" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130568" y="115179" z="-3739" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130522" y="115175" z="-3745" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130471" y="115180" z="-3751" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="19137" x="130429" y="115170" z="-3757" heading="51929" respawnTime="60sec" /> <!-- Expedition Member -->
+			<npc id="31713" x="130641" y="115011" z="-3735" heading="51929" respawnTime="60sec" /> <!-- Fellow - Balthus Knight -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran01_qm2321_01" minZ="-3460" maxZ="-2260">
+				<node x="116152" y="127176" />
+				<node x="118560" y="127056" />
+				<node x="118776" y="128632" />
+				<node x="117652" y="130068" />
+				<node x="115928" y="128716" />
+			</territory>
+		</territories>
+		<npc id="27108" count="1" respawnTime="180sec" respawnRandom="0sec" /> <!-- Gorgon Queen Stheno - Quest Monster -->
+	</spawn>
+	<spawn name="npc1">
+		<group>
+			<npc id="30754" x="73211" y="118492" z="-3696" heading="40960" /> <!-- Gilmore - Antharas' Watchman -->
+			<npc id="30630" x="69976" y="109692" z="-3702" heading="0" respawnTime="60sec" /> <!-- Orim - Shadow -->
+			<npc id="31616" x="72952" y="118793" z="-3640" heading="41449" respawnTime="60sec" /> <!-- Hermit -->
+		</group>
+	</spawn>
+</list>

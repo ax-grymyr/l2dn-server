@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90472" price="0" /> <!-- Dark Crystal Helmet - Robe Armor -->
+	<item id="92306" price="0" /> <!-- Dark Crystal Helmet - Robe Armor - Sealed -->
+	<item id="2407" price="0" /> <!-- Dark Crystal Robe Armor - Robe Armor -->
+	<item id="92270" price="0" /> <!-- Dark Crystal Robe Armor - Robe - Sealed -->
+	<item id="5767" price="0" /> <!-- Dark Crystal Gloves - Robe Armor -->
+	<item id="92279" price="0" /> <!-- Dark Crystal Gloves - Robe - Sealed -->
+	<item id="5779" price="0" /> <!-- Dark Crystal Boots - Robe Armor -->
+	<item id="92291" price="0" /> <!-- Dark Crystal Boots - Robe - Sealed -->
+	<item id="92260" price="0" /> <!-- Dark Crystal Shield - Sealed -->
+	<item id="92275" price="0" /> <!-- Dark Crystal Gloves - Sealed -->
+	<item id="93091" price="0" /> <!-- Dark Crystal Sigil -->
+	<item id="93117" price="0" /> <!-- Dark Crystal Sigil - Sealed -->
+	<item id="90469" price="0" /> <!-- Tallum Helm - Robe Armor -->
+	<item id="92303" price="0" /> <!-- Tallum Helmet - Robe - Sealed -->
+	<item id="2400" price="0" /> <!-- Tallum Tunic - Robe Armor -->
+	<item id="92268" price="0" /> <!-- Tallum Tunic - Robe - Sealed -->
+	<item id="2405" price="0" /> <!-- Tallum Stockings - Robe Armor -->
+	<item id="92269" price="0" /> <!-- Tallum Stockings - Robe - Sealed -->
+	<item id="5770" price="0" /> <!-- Tallum Gloves - Robe Armor -->
+	<item id="92282" price="0" /> <!-- Tallum Gloves - Robe - Sealed -->
+	<item id="5782" price="0" /> <!-- Tallum Boots - Robe Armor -->
+	<item id="92294" price="0" /> <!-- Tallum Boots - Robe - Sealed -->
+	<item id="92118" price="0" /> <!-- Tallum Sigil - Sealed -->
+	<item id="90475" price="0" /> <!-- Helm of Nightmare - Robe Armor -->
+	<item id="92309" price="0" /> <!-- Helm of Nightmare - Robe - Sealed -->
+	<item id="2408" price="0" /> <!-- Robe Armor of Nightmare - Robe Armor -->
+	<item id="92271" price="0" /> <!-- Robe Armor of Nightmare - Robe Armor - Sealed -->
+	<item id="5773" price="0" /> <!-- Gauntlets of Nightmare - Robe Armor -->
+	<item id="92285" price="0" /> <!-- Gauntlets of Nightmare - Robe - Sealed -->
+	<item id="5785" price="0" /> <!-- Boots of Nightmare - Robe Armor -->
+	<item id="92287" price="0" /> <!-- Boots of Nightmare - Robe - Sealed -->
+	<item id="92276" price="0" /> <!-- Shield of Nightmare - Sealed -->
+	<item id="90478" price="0" /> <!-- Majestic Circlet - Robe Armor -->
+	<item id="92312" price="0" /> <!-- Majestic Circlet - Robe Armor - Sealed -->
+	<item id="2409" price="0" /> <!-- Majestic Robe Armor - Robe Armor -->
+	<item id="92272" price="0" /> <!-- Majestic Robe Armor - Sealed -->
+	<item id="5776" price="0" /> <!-- Majestic Gauntlets - Robe Armor -->
+	<item id="92288" price="0" /> <!-- Majestic Gauntlets - Robe - Sealed -->
+	<item id="5788" price="0" /> <!-- Majestic Boots - Robe Armor -->
+	<item id="92300" price="0" /> <!-- Majestic Boots - Robe - Sealed -->
+	<item id="93094" price="0" /> <!-- Majestic Sigil -->
+	<item id="93733" price="0" /> <!-- Flaming Tunic -->
+	<item id="93735" price="0" /> <!-- Flaming Tunic - Sealed -->
+	<item id="93734" price="0" /> <!-- Flaming Stockings -->
+	<item id="93736" price="0" /> <!-- Flaming Stockings - Sealed -->
+</list>

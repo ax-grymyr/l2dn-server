@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49200" toLevel="1" name="Latent Ability">
+		<!-- Increases one of the pet's 6 stats at random. -->
+		<icon>icon.etc_men_symbol_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49201" toLevel="3" name="STR +1">
+		<!-- STR +1 -->
+		<icon>icon.statbonus_str</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>STR</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49202" toLevel="3" name="DEX +1">
+		<!-- DEX +1 -->
+		<icon>icon.statbonus_dex</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>DEX</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49203" toLevel="3" name="CON +1">
+		<!-- CON +1 -->
+		<icon>icon.statbonus_con</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>CON</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49204" toLevel="3" name="INT +1">
+		<!-- INT +1 -->
+		<icon>icon.statbonus_int</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>INT</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49205" toLevel="3" name="WIT +1">
+		<!-- WIT +1 -->
+		<icon>icon.statbonus_wit</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>WIT</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49206" toLevel="3" name="MEN +1">
+		<!-- MEN +1 -->
+		<icon>icon.statbonus_men</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<stat>MEN</stat>
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49207" toLevel="5" name="Steel Skin">
+		<!-- <Stats increase with level>. Required level: 40. Stats change depending on level. P. Def. +20. M. Def. +15 -->
+		<icon>icon.skill10017</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatAddForLevel" fromLevel="1" toLevel="1">
+				<stat>PHYSICAL_DEFENCE</stat>
+				<level>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>20,40,60,80,100,120,140,160,180,200,220,240,260,280,300,320,340,360,380,400,420,440,460,480,500,520,540,560,580,600,620,640,660,680,700,720,740,760,780,800,820,840,860,880,900,920,940,960,980,1000,1020,1040,1060,1080,1100,1120,1140,1160,1180,1200,1220,1240,1260,1280,1300,1320,1340,1360,1380,1400,1420,1440,1460,1480,1500,1520,1540,1560,1580,1600,1620,1640,1660,1680,1700,1720,1740,1760,1780,1800,1820,1840,1860,1880,1900,1920,1940,1960,1980</amount>
+			</effect>
+			<effect name="StatAddForLevel" fromLevel="1" toLevel="1">
+				<stat>MAGICAL_DEFENCE</stat>
+				<level>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>15,30,45,60,75,90,105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140,1155,1170,1185,1200,1215,1230,1245,1260,1275,1290,1305,1320,1335,1350,1365,1380,1395,1410,1425,1440,1455,1470,1485</amount>
+			</effect>
+			<effect name="StatAddForLevel" fromLevel="2" toLevel="5">
+				<stat>PHYSICAL_DEFENCE</stat>
+				<level>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>25,50,75,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1125,1150,1175,1200,1225,1250,1275,1300,1325,1350,1375,1400,1425,1450,1475,1500,1525,1550,1575,1600,1625,1650,1675,1700,1725,1750,1775,1800,1825,1850,1875,1900,1925,1950,1975,2000,2025,2050,2075,2100,2125,2150,2175,2200,2225,2250,2275,2300,2325,2350,2375,2400,2425,2450,2475</amount>
+			</effect>
+			<effect name="StatAddForLevel" fromLevel="2" toLevel="5">
+				<stat>MAGICAL_DEFENCE</stat>
+				<level>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>20,40,60,80,100,120,140,160,180,200,220,240,260,280,300,320,340,360,380,400,420,440,460,480,500,520,540,560,580,600,620,640,660,680,700,720,740,760,780,800,820,840,860,880,900,920,940,960,980,1000,1020,1040,1060,1080,1100,1120,1140,1160,1180,1200,1220,1240,1260,1280,1300,1320,1340,1360,1380,1400,1420,1440,1460,1480,1500,1520,1540,1560,1580,1600,1620,1640,1660,1680,1700,1720,1740,1760,1780,1800,1820,1840,1860,1880,1900,1920,1940,1960,1980</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49208" toLevel="3" name="Physical Training">
+		<!-- HP Recovery Potions' Effect +50%. Received damage -5% -->
+		<icon>icon.skill11534</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+		</effects>
+	</skill>
+</list>

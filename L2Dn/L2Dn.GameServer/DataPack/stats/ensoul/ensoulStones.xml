@@ -1,0 +1,1313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/ensoulStones.xsd">
+	<stone id="90534" slotType="1">
+		<option id="400" />
+		<option id="420" />
+	</stone>
+	<stone id="90535" slotType="1">
+		<option id="401" />
+		<option id="421" />
+	</stone>
+	<stone id="90536" slotType="1">
+		<option id="402" />
+		<option id="422" />
+	</stone>
+	<stone id="90537" slotType="1">
+		<option id="403" />
+		<option id="423" />
+	</stone>
+	<stone id="90538" slotType="1">
+		<option id="404" />
+		<option id="424" />
+	</stone>
+	<stone id="90539" slotType="1">
+		<option id="405" />
+		<option id="425" />
+	</stone>
+	<stone id="90540" slotType="1">
+		<option id="406" />
+		<option id="426" />
+	</stone>
+	<stone id="90541" slotType="1">
+		<option id="407" />
+		<option id="427" />
+	</stone>
+	<stone id="90542" slotType="1">
+		<option id="408" />
+		<option id="428" />
+	</stone>
+	<stone id="90543" slotType="1">
+		<option id="409" />
+		<option id="429" />
+	</stone>
+	<stone id="90544" slotType="1">
+		<option id="410" />
+		<option id="430" />
+	</stone>
+	<stone id="90545" slotType="1">
+		<option id="411" />
+		<option id="431" />
+	</stone>
+	<stone id="90546" slotType="1">
+		<option id="412" />
+		<option id="432" />
+	</stone>
+	<stone id="90547" slotType="1">
+		<option id="413" />
+		<option id="433" />
+	</stone>
+	<stone id="90548" slotType="1">
+		<option id="414" />
+		<option id="434" />
+	</stone>
+	<stone id="90549" slotType="1">
+		<option id="415" />
+		<option id="435" />
+	</stone>
+	<stone id="90550" slotType="1">
+		<option id="416" />
+		<option id="436" />
+	</stone>
+	<stone id="90551" slotType="1">
+		<option id="417" />
+		<option id="437" />
+	</stone>
+	<stone id="90552" slotType="1">
+		<option id="418" />
+		<option id="438" />
+	</stone>
+	<stone id="90553" slotType="1">
+		<option id="419" />
+		<option id="439" />
+	</stone>
+	<stone id="90554" slotType="1">
+		<option id="440" />
+		<option id="460" />
+	</stone>
+	<stone id="90555" slotType="1">
+		<option id="441" />
+		<option id="461" />
+	</stone>
+	<stone id="90556" slotType="1">
+		<option id="442" />
+		<option id="462" />
+	</stone>
+	<stone id="90557" slotType="1">
+		<option id="443" />
+		<option id="463" />
+	</stone>
+	<stone id="90558" slotType="1">
+		<option id="444" />
+		<option id="464" />
+	</stone>
+	<stone id="90559" slotType="1">
+		<option id="445" />
+		<option id="465" />
+	</stone>
+	<stone id="90560" slotType="1">
+		<option id="446" />
+		<option id="466" />
+	</stone>
+	<stone id="90561" slotType="1">
+		<option id="447" />
+		<option id="467" />
+	</stone>
+	<stone id="90562" slotType="1">
+		<option id="448" />
+		<option id="468" />
+	</stone>
+	<stone id="90563" slotType="1">
+		<option id="449" />
+		<option id="469" />
+	</stone>
+	<stone id="90564" slotType="1">
+		<option id="450" />
+		<option id="470" />
+	</stone>
+	<stone id="90565" slotType="1">
+		<option id="451" />
+		<option id="471" />
+	</stone>
+	<stone id="90566" slotType="1">
+		<option id="452" />
+		<option id="472" />
+	</stone>
+	<stone id="90567" slotType="1">
+		<option id="453" />
+		<option id="473" />
+	</stone>
+	<stone id="90568" slotType="1">
+		<option id="454" />
+		<option id="474" />
+	</stone>
+	<stone id="90569" slotType="1">
+		<option id="455" />
+		<option id="475" />
+	</stone>
+	<stone id="90570" slotType="1">
+		<option id="456" />
+		<option id="476" />
+	</stone>
+	<stone id="90571" slotType="1">
+		<option id="457" />
+		<option id="477" />
+	</stone>
+	<stone id="90572" slotType="1">
+		<option id="458" />
+		<option id="478" />
+	</stone>
+	<stone id="90573" slotType="1">
+		<option id="459" />
+		<option id="479" />
+	</stone>
+	<stone id="90574" slotType="1">
+		<option id="480" />
+		<option id="500" />
+	</stone>
+	<stone id="90575" slotType="1">
+		<option id="481" />
+		<option id="501" />
+	</stone>
+	<stone id="90576" slotType="1">
+		<option id="482" />
+		<option id="502" />
+	</stone>
+	<stone id="90577" slotType="1">
+		<option id="483" />
+		<option id="503" />
+	</stone>
+	<stone id="90578" slotType="1">
+		<option id="484" />
+		<option id="504" />
+	</stone>
+	<stone id="90579" slotType="1">
+		<option id="485" />
+		<option id="505" />
+	</stone>
+	<stone id="90580" slotType="1">
+		<option id="486" />
+		<option id="506" />
+	</stone>
+	<stone id="90581" slotType="1">
+		<option id="487" />
+		<option id="507" />
+	</stone>
+	<stone id="90582" slotType="1">
+		<option id="488" />
+		<option id="508" />
+	</stone>
+	<stone id="90583" slotType="1">
+		<option id="489" />
+		<option id="509" />
+	</stone>
+	<stone id="90584" slotType="1">
+		<option id="490" />
+		<option id="510" />
+	</stone>
+	<stone id="90585" slotType="1">
+		<option id="491" />
+		<option id="511" />
+	</stone>
+	<stone id="90586" slotType="1">
+		<option id="492" />
+		<option id="512" />
+	</stone>
+	<stone id="90587" slotType="1">
+		<option id="493" />
+		<option id="513" />
+	</stone>
+	<stone id="90588" slotType="1">
+		<option id="494" />
+		<option id="514" />
+	</stone>
+	<stone id="90589" slotType="1">
+		<option id="495" />
+		<option id="515" />
+	</stone>
+	<stone id="90590" slotType="1">
+		<option id="496" />
+		<option id="516" />
+	</stone>
+	<stone id="90591" slotType="1">
+		<option id="497" />
+		<option id="517" />
+	</stone>
+	<stone id="90592" slotType="1">
+		<option id="498" />
+		<option id="518" />
+	</stone>
+	<stone id="90593" slotType="1">
+		<option id="499" />
+		<option id="519" />
+	</stone>
+	<stone id="90594" slotType="1">
+		<option id="520" />
+		<option id="540" />
+	</stone>
+	<stone id="90595" slotType="1">
+		<option id="521" />
+		<option id="541" />
+	</stone>
+	<stone id="90596" slotType="1">
+		<option id="522" />
+		<option id="542" />
+	</stone>
+	<stone id="90597" slotType="1">
+		<option id="523" />
+		<option id="543" />
+	</stone>
+	<stone id="90598" slotType="1">
+		<option id="524" />
+		<option id="544" />
+	</stone>
+	<stone id="90599" slotType="1">
+		<option id="525" />
+		<option id="545" />
+	</stone>
+	<stone id="90600" slotType="1">
+		<option id="526" />
+		<option id="546" />
+	</stone>
+	<stone id="90601" slotType="1">
+		<option id="527" />
+		<option id="547" />
+	</stone>
+	<stone id="90602" slotType="1">
+		<option id="528" />
+		<option id="548" />
+	</stone>
+	<stone id="90603" slotType="1">
+		<option id="529" />
+		<option id="549" />
+	</stone>
+	<stone id="90604" slotType="1">
+		<option id="530" />
+		<option id="550" />
+	</stone>
+	<stone id="90605" slotType="1">
+		<option id="531" />
+		<option id="551" />
+	</stone>
+	<stone id="90606" slotType="1">
+		<option id="532" />
+		<option id="552" />
+	</stone>
+	<stone id="90607" slotType="1">
+		<option id="533" />
+		<option id="553" />
+	</stone>
+	<stone id="90608" slotType="1">
+		<option id="534" />
+		<option id="554" />
+	</stone>
+	<stone id="90609" slotType="1">
+		<option id="535" />
+		<option id="555" />
+	</stone>
+	<stone id="90610" slotType="1">
+		<option id="536" />
+		<option id="556" />
+	</stone>
+	<stone id="90611" slotType="1">
+		<option id="537" />
+		<option id="557" />
+	</stone>
+	<stone id="90612" slotType="1">
+		<option id="538" />
+		<option id="558" />
+	</stone>
+	<stone id="90613" slotType="1">
+		<option id="539" />
+		<option id="559" />
+	</stone>
+	<stone id="90614" slotType="1">
+		<option id="560" />
+		<option id="580" />
+	</stone>
+	<stone id="90615" slotType="1">
+		<option id="561" />
+		<option id="581" />
+	</stone>
+	<stone id="90616" slotType="1">
+		<option id="562" />
+		<option id="582" />
+	</stone>
+	<stone id="90617" slotType="1">
+		<option id="563" />
+		<option id="583" />
+	</stone>
+	<stone id="90618" slotType="1">
+		<option id="564" />
+		<option id="584" />
+	</stone>
+	<stone id="90619" slotType="1">
+		<option id="565" />
+		<option id="585" />
+	</stone>
+	<stone id="90620" slotType="1">
+		<option id="566" />
+		<option id="586" />
+	</stone>
+	<stone id="90621" slotType="1">
+		<option id="567" />
+		<option id="587" />
+	</stone>
+	<stone id="90622" slotType="1">
+		<option id="568" />
+		<option id="588" />
+	</stone>
+	<stone id="90623" slotType="1">
+		<option id="569" />
+		<option id="589" />
+	</stone>
+	<stone id="90624" slotType="1">
+		<option id="570" />
+		<option id="590" />
+	</stone>
+	<stone id="90625" slotType="1">
+		<option id="571" />
+		<option id="591" />
+	</stone>
+	<stone id="90626" slotType="1">
+		<option id="572" />
+		<option id="592" />
+	</stone>
+	<stone id="90627" slotType="1">
+		<option id="573" />
+		<option id="593" />
+	</stone>
+	<stone id="90628" slotType="1">
+		<option id="574" />
+		<option id="594" />
+	</stone>
+	<stone id="90629" slotType="1">
+		<option id="575" />
+		<option id="595" />
+	</stone>
+	<stone id="90630" slotType="1">
+		<option id="576" />
+		<option id="596" />
+	</stone>
+	<stone id="90631" slotType="1">
+		<option id="577" />
+		<option id="597" />
+	</stone>
+	<stone id="90632" slotType="1">
+		<option id="578" />
+		<option id="598" />
+	</stone>
+	<stone id="90633" slotType="1">
+		<option id="579" />
+		<option id="599" />
+	</stone>
+	<stone id="90634" slotType="1">
+		<option id="600" />
+		<option id="620" />
+	</stone>
+	<stone id="90635" slotType="1">
+		<option id="601" />
+		<option id="621" />
+	</stone>
+	<stone id="90636" slotType="1">
+		<option id="602" />
+		<option id="622" />
+	</stone>
+	<stone id="90637" slotType="1">
+		<option id="603" />
+		<option id="623" />
+	</stone>
+	<stone id="90638" slotType="1">
+		<option id="604" />
+		<option id="624" />
+	</stone>
+	<stone id="90639" slotType="1">
+		<option id="605" />
+		<option id="625" />
+	</stone>
+	<stone id="90640" slotType="1">
+		<option id="606" />
+		<option id="626" />
+	</stone>
+	<stone id="90641" slotType="1">
+		<option id="607" />
+		<option id="627" />
+	</stone>
+	<stone id="90642" slotType="1">
+		<option id="608" />
+		<option id="628" />
+	</stone>
+	<stone id="90643" slotType="1">
+		<option id="609" />
+		<option id="629" />
+	</stone>
+	<stone id="90644" slotType="1">
+		<option id="610" />
+		<option id="630" />
+	</stone>
+	<stone id="90645" slotType="1">
+		<option id="611" />
+		<option id="631" />
+	</stone>
+	<stone id="90646" slotType="1">
+		<option id="612" />
+		<option id="632" />
+	</stone>
+	<stone id="90647" slotType="1">
+		<option id="613" />
+		<option id="633" />
+	</stone>
+	<stone id="90648" slotType="1">
+		<option id="614" />
+		<option id="634" />
+	</stone>
+	<stone id="90649" slotType="1">
+		<option id="615" />
+		<option id="635" />
+	</stone>
+	<stone id="90650" slotType="1">
+		<option id="616" />
+		<option id="636" />
+	</stone>
+	<stone id="90651" slotType="1">
+		<option id="617" />
+		<option id="637" />
+	</stone>
+	<stone id="90652" slotType="1">
+		<option id="618" />
+		<option id="638" />
+	</stone>
+	<stone id="90653" slotType="1">
+		<option id="619" />
+		<option id="639" />
+	</stone>
+	<stone id="90654" slotType="1">
+		<option id="640" />
+		<option id="660" />
+	</stone>
+	<stone id="90655" slotType="1">
+		<option id="641" />
+		<option id="661" />
+	</stone>
+	<stone id="90656" slotType="1">
+		<option id="642" />
+		<option id="662" />
+	</stone>
+	<stone id="90657" slotType="1">
+		<option id="643" />
+		<option id="663" />
+	</stone>
+	<stone id="90658" slotType="1">
+		<option id="644" />
+		<option id="664" />
+	</stone>
+	<stone id="90659" slotType="1">
+		<option id="645" />
+		<option id="665" />
+	</stone>
+	<stone id="90660" slotType="1">
+		<option id="646" />
+		<option id="666" />
+	</stone>
+	<stone id="90661" slotType="1">
+		<option id="647" />
+		<option id="667" />
+	</stone>
+	<stone id="90662" slotType="1">
+		<option id="648" />
+		<option id="668" />
+	</stone>
+	<stone id="90663" slotType="1">
+		<option id="649" />
+		<option id="669" />
+	</stone>
+	<stone id="90664" slotType="1">
+		<option id="650" />
+		<option id="670" />
+	</stone>
+	<stone id="90665" slotType="1">
+		<option id="651" />
+		<option id="671" />
+	</stone>
+	<stone id="90666" slotType="1">
+		<option id="652" />
+		<option id="672" />
+	</stone>
+	<stone id="90667" slotType="1">
+		<option id="653" />
+		<option id="673" />
+	</stone>
+	<stone id="90668" slotType="1">
+		<option id="654" />
+		<option id="674" />
+	</stone>
+	<stone id="90669" slotType="1">
+		<option id="655" />
+		<option id="675" />
+	</stone>
+	<stone id="90670" slotType="1">
+		<option id="656" />
+		<option id="676" />
+	</stone>
+	<stone id="90671" slotType="1">
+		<option id="657" />
+		<option id="677" />
+	</stone>
+	<stone id="90672" slotType="1">
+		<option id="658" />
+		<option id="678" />
+	</stone>
+	<stone id="90673" slotType="1">
+		<option id="659" />
+		<option id="679" />
+	</stone>
+	<stone id="90674" slotType="1">
+		<option id="680" />
+		<option id="700" />
+	</stone>
+	<stone id="90675" slotType="1">
+		<option id="681" />
+		<option id="701" />
+	</stone>
+	<stone id="90676" slotType="1">
+		<option id="682" />
+		<option id="702" />
+	</stone>
+	<stone id="90677" slotType="1">
+		<option id="683" />
+		<option id="703" />
+	</stone>
+	<stone id="90678" slotType="1">
+		<option id="684" />
+		<option id="704" />
+	</stone>
+	<stone id="90679" slotType="1">
+		<option id="685" />
+		<option id="705" />
+	</stone>
+	<stone id="90680" slotType="1">
+		<option id="686" />
+		<option id="706" />
+	</stone>
+	<stone id="90681" slotType="1">
+		<option id="687" />
+		<option id="707" />
+	</stone>
+	<stone id="90682" slotType="1">
+		<option id="688" />
+		<option id="708" />
+	</stone>
+	<stone id="90683" slotType="1">
+		<option id="689" />
+		<option id="709" />
+	</stone>
+	<stone id="90684" slotType="1">
+		<option id="690" />
+		<option id="710" />
+	</stone>
+	<stone id="90685" slotType="1">
+		<option id="691" />
+		<option id="711" />
+	</stone>
+	<stone id="90686" slotType="1">
+		<option id="692" />
+		<option id="712" />
+	</stone>
+	<stone id="90687" slotType="1">
+		<option id="693" />
+		<option id="713" />
+	</stone>
+	<stone id="90688" slotType="1">
+		<option id="694" />
+		<option id="714" />
+	</stone>
+	<stone id="90689" slotType="1">
+		<option id="695" />
+		<option id="715" />
+	</stone>
+	<stone id="90690" slotType="1">
+		<option id="696" />
+		<option id="716" />
+	</stone>
+	<stone id="90691" slotType="1">
+		<option id="697" />
+		<option id="717" />
+	</stone>
+	<stone id="90692" slotType="1">
+		<option id="698" />
+		<option id="718" />
+	</stone>
+	<stone id="90693" slotType="1">
+		<option id="699" />
+		<option id="719" />
+	</stone>
+	<stone id="91163" slotType="2">
+		<option id="1001" />
+	</stone>
+	<stone id="91164" slotType="2">
+		<option id="1002" />
+	</stone>
+	<stone id="91165" slotType="2">
+		<option id="1003" />
+	</stone>
+	<stone id="91166" slotType="2">
+		<option id="1004" />
+	</stone>
+	<stone id="91167" slotType="2">
+		<option id="1005" />
+	</stone>
+	<stone id="91168" slotType="2">
+		<option id="1006" />
+	</stone>
+	<stone id="91169" slotType="2">
+		<option id="1007" />
+	</stone>
+	<stone id="91170" slotType="2">
+		<option id="1008" />
+	</stone>
+	<stone id="91171" slotType="2">
+		<option id="1009" />
+	</stone>
+	<stone id="91172" slotType="2">
+		<option id="1010" />
+	</stone>
+	<stone id="91173" slotType="2">
+		<option id="1011" />
+	</stone>
+	<stone id="91174" slotType="2">
+		<option id="1012" />
+	</stone>
+	<stone id="91175" slotType="2">
+		<option id="1013" />
+	</stone>
+	<stone id="91176" slotType="2">
+		<option id="1014" />
+	</stone>
+	<stone id="91177" slotType="2">
+		<option id="1015" />
+	</stone>
+	<stone id="91178" slotType="2">
+		<option id="1016" />
+	</stone>
+	<stone id="91179" slotType="2">
+		<option id="1017" />
+	</stone>
+	<stone id="91180" slotType="2">
+		<option id="1018" />
+	</stone>
+	<stone id="91181" slotType="2">
+		<option id="1019" />
+	</stone>
+	<stone id="91182" slotType="2">
+		<option id="1020" />
+	</stone>
+	<stone id="92920" slotType="2">
+		<option id="1021" />
+	</stone>
+	<stone id="92921" slotType="2">
+		<option id="1022" />
+	</stone>
+	<stone id="92922" slotType="2">
+		<option id="1023" />
+	</stone>
+	<stone id="92923" slotType="2">
+		<option id="1024" />
+	</stone>
+	<stone id="92924" slotType="2">
+		<option id="1025" />
+	</stone>
+	<stone id="92925" slotType="2">
+		<option id="1026" />
+	</stone>
+	<stone id="92926" slotType="2">
+		<option id="1027" />
+	</stone>
+	<stone id="92927" slotType="2">
+		<option id="1028" />
+	</stone>
+	<stone id="92928" slotType="2">
+		<option id="1029" />
+	</stone>
+	<stone id="92929" slotType="2">
+		<option id="1030" />
+	</stone>
+	<stone id="95783" slotType="1">
+		<option id="1101" />
+		<option id="1151" />
+		<option id="1201" />
+		<option id="1251" />
+		<option id="1301" />
+		<option id="1351" />
+		<option id="1401" />
+		<option id="1451" />
+		<option id="1501" />
+		<option id="1551" />
+		<option id="1601" />
+		<option id="1651" />
+		<option id="1701" />
+		<option id="1751" />
+		<option id="1801" />
+	</stone>
+	<stone id="95784" slotType="1">
+		<option id="1102" />
+		<option id="1152" />
+		<option id="1202" />
+		<option id="1252" />
+		<option id="1302" />
+		<option id="1352" />
+		<option id="1402" />
+		<option id="1452" />
+		<option id="1502" />
+		<option id="1552" />
+		<option id="1602" />
+		<option id="1652" />
+		<option id="1702" />
+		<option id="1752" />
+		<option id="1802" />
+	</stone>
+	<stone id="95785" slotType="1">
+		<option id="1103" />
+		<option id="1153" />
+		<option id="1203" />
+		<option id="1253" />
+		<option id="1303" />
+		<option id="1353" />
+		<option id="1403" />
+		<option id="1453" />
+		<option id="1503" />
+		<option id="1553" />
+		<option id="1603" />
+		<option id="1653" />
+		<option id="1703" />
+		<option id="1753" />
+		<option id="1803" />
+	</stone>
+	<stone id="95786" slotType="1">
+		<option id="1104" />
+		<option id="1154" />
+		<option id="1204" />
+		<option id="1254" />
+		<option id="1304" />
+		<option id="1354" />
+		<option id="1404" />
+		<option id="1454" />
+		<option id="1504" />
+		<option id="1554" />
+		<option id="1604" />
+		<option id="1654" />
+		<option id="1704" />
+		<option id="1754" />
+		<option id="1804" />
+	</stone>
+	<stone id="95787" slotType="1">
+		<option id="1105" />
+		<option id="1155" />
+		<option id="1205" />
+		<option id="1255" />
+		<option id="1305" />
+		<option id="1355" />
+		<option id="1405" />
+		<option id="1455" />
+		<option id="1505" />
+		<option id="1555" />
+		<option id="1605" />
+		<option id="1655" />
+		<option id="1705" />
+		<option id="1755" />
+		<option id="1805" />
+	</stone>
+	<stone id="95788" slotType="1">
+		<option id="1106" />
+		<option id="1156" />
+		<option id="1206" />
+		<option id="1256" />
+		<option id="1306" />
+		<option id="1356" />
+		<option id="1406" />
+		<option id="1456" />
+		<option id="1506" />
+		<option id="1556" />
+		<option id="1606" />
+		<option id="1656" />
+		<option id="1706" />
+		<option id="1756" />
+		<option id="1806" />
+	</stone>
+	<stone id="95789" slotType="1">
+		<option id="1107" />
+		<option id="1157" />
+		<option id="1207" />
+		<option id="1257" />
+		<option id="1307" />
+		<option id="1357" />
+		<option id="1407" />
+		<option id="1457" />
+		<option id="1507" />
+		<option id="1557" />
+		<option id="1607" />
+		<option id="1657" />
+		<option id="1707" />
+		<option id="1757" />
+		<option id="1807" />
+	</stone>
+	<stone id="95790" slotType="1">
+		<option id="1108" />
+		<option id="1158" />
+		<option id="1208" />
+		<option id="1258" />
+		<option id="1308" />
+		<option id="1358" />
+		<option id="1408" />
+		<option id="1458" />
+		<option id="1508" />
+		<option id="1558" />
+		<option id="1608" />
+		<option id="1658" />
+		<option id="1708" />
+		<option id="1758" />
+		<option id="1808" />
+	</stone>
+	<stone id="95791" slotType="1">
+		<option id="1109" />
+		<option id="1159" />
+		<option id="1209" />
+		<option id="1259" />
+		<option id="1309" />
+		<option id="1359" />
+		<option id="1409" />
+		<option id="1459" />
+		<option id="1509" />
+		<option id="1559" />
+		<option id="1609" />
+		<option id="1659" />
+		<option id="1709" />
+		<option id="1759" />
+		<option id="1809" />
+	</stone>
+	<stone id="95792" slotType="1">
+		<option id="1110" />
+		<option id="1160" />
+		<option id="1210" />
+		<option id="1260" />
+		<option id="1310" />
+		<option id="1360" />
+		<option id="1410" />
+		<option id="1460" />
+		<option id="1510" />
+		<option id="1560" />
+		<option id="1610" />
+		<option id="1660" />
+		<option id="1710" />
+		<option id="1760" />
+		<option id="1810" />
+	</stone>
+	<stone id="95793" slotType="1">
+		<option id="1111" />
+		<option id="1161" />
+		<option id="1211" />
+		<option id="1261" />
+		<option id="1311" />
+		<option id="1361" />
+		<option id="1411" />
+		<option id="1461" />
+		<option id="1511" />
+		<option id="1561" />
+		<option id="1611" />
+		<option id="1661" />
+		<option id="1711" />
+		<option id="1761" />
+		<option id="1811" />
+	</stone>
+	<stone id="95794" slotType="1">
+		<option id="1112" />
+		<option id="1162" />
+		<option id="1212" />
+		<option id="1262" />
+		<option id="1312" />
+		<option id="1362" />
+		<option id="1412" />
+		<option id="1462" />
+		<option id="1512" />
+		<option id="1562" />
+		<option id="1612" />
+		<option id="1662" />
+		<option id="1712" />
+		<option id="1762" />
+		<option id="1812" />
+	</stone>
+	<stone id="95795" slotType="1">
+		<option id="1113" />
+		<option id="1163" />
+		<option id="1213" />
+		<option id="1263" />
+		<option id="1313" />
+		<option id="1363" />
+		<option id="1413" />
+		<option id="1463" />
+		<option id="1513" />
+		<option id="1563" />
+		<option id="1613" />
+		<option id="1663" />
+		<option id="1713" />
+		<option id="1763" />
+		<option id="1813" />
+	</stone>
+	<stone id="95796" slotType="1">
+		<option id="1114" />
+		<option id="1164" />
+		<option id="1214" />
+		<option id="1264" />
+		<option id="1314" />
+		<option id="1364" />
+		<option id="1414" />
+		<option id="1464" />
+		<option id="1514" />
+		<option id="1564" />
+		<option id="1614" />
+		<option id="1664" />
+		<option id="1714" />
+		<option id="1764" />
+		<option id="1814" />
+	</stone>
+	<stone id="95797" slotType="1">
+		<option id="1115" />
+		<option id="1165" />
+		<option id="1215" />
+		<option id="1265" />
+		<option id="1315" />
+		<option id="1365" />
+		<option id="1415" />
+		<option id="1465" />
+		<option id="1515" />
+		<option id="1565" />
+		<option id="1615" />
+		<option id="1665" />
+		<option id="1715" />
+		<option id="1765" />
+		<option id="1815" />
+	</stone>
+	<stone id="95798" slotType="1">
+		<option id="1116" />
+		<option id="1166" />
+		<option id="1216" />
+		<option id="1266" />
+		<option id="1316" />
+		<option id="1366" />
+		<option id="1416" />
+		<option id="1466" />
+		<option id="1516" />
+		<option id="1566" />
+		<option id="1616" />
+		<option id="1666" />
+		<option id="1716" />
+		<option id="1766" />
+		<option id="1816" />
+	</stone>
+	<stone id="95799" slotType="1">
+		<option id="1117" />
+		<option id="1167" />
+		<option id="1217" />
+		<option id="1267" />
+		<option id="1317" />
+		<option id="1367" />
+		<option id="1417" />
+		<option id="1467" />
+		<option id="1517" />
+		<option id="1567" />
+		<option id="1617" />
+		<option id="1667" />
+		<option id="1717" />
+		<option id="1767" />
+		<option id="1817" />
+	</stone>
+	<stone id="95800" slotType="1">
+		<option id="1118" />
+		<option id="1168" />
+		<option id="1218" />
+		<option id="1268" />
+		<option id="1318" />
+		<option id="1368" />
+		<option id="1418" />
+		<option id="1468" />
+		<option id="1518" />
+		<option id="1568" />
+		<option id="1618" />
+		<option id="1668" />
+		<option id="1718" />
+		<option id="1768" />
+		<option id="1818" />
+	</stone>
+	<stone id="95801" slotType="1">
+		<option id="1119" />
+		<option id="1169" />
+		<option id="1219" />
+		<option id="1269" />
+		<option id="1319" />
+		<option id="1369" />
+		<option id="1419" />
+		<option id="1469" />
+		<option id="1519" />
+		<option id="1569" />
+		<option id="1619" />
+		<option id="1669" />
+		<option id="1719" />
+		<option id="1769" />
+		<option id="1819" />
+	</stone>
+	<stone id="95802" slotType="1">
+		<option id="1120" />
+		<option id="1170" />
+		<option id="1220" />
+		<option id="1270" />
+		<option id="1320" />
+		<option id="1370" />
+		<option id="1420" />
+		<option id="1470" />
+		<option id="1520" />
+		<option id="1570" />
+		<option id="1620" />
+		<option id="1670" />
+		<option id="1720" />
+		<option id="1770" />
+		<option id="1820" />
+	</stone>
+	<stone id="95803" slotType="2">
+		<option id="1851" />
+		<option id="1901" />
+	</stone>
+	<stone id="95804" slotType="2">
+		<option id="1852" />
+		<option id="1902" />
+	</stone>
+	<stone id="95805" slotType="2">
+		<option id="1853" />
+		<option id="1903" />
+	</stone>
+	<stone id="95806" slotType="2">
+		<option id="1854" />
+		<option id="1904" />
+	</stone>
+	<stone id="95807" slotType="2">
+		<option id="1855" />
+		<option id="1905" />
+	</stone>
+	<stone id="95808" slotType="2">
+		<option id="1856" />
+		<option id="1906" />
+	</stone>
+	<stone id="95809" slotType="2">
+		<option id="1857" />
+		<option id="1907" />
+	</stone>
+	<stone id="95810" slotType="2">
+		<option id="1858" />
+		<option id="1908" />
+	</stone>
+	<stone id="95811" slotType="2">
+		<option id="1859" />
+		<option id="1909" />
+	</stone>
+	<stone id="95812" slotType="2">
+		<option id="1860" />
+		<option id="1910" />
+	</stone>
+	<stone id="95813" slotType="2">
+		<option id="1861" />
+		<option id="1911" />
+	</stone>
+	<stone id="95814" slotType="2">
+		<option id="1862" />
+		<option id="1912" />
+	</stone>
+	<stone id="95815" slotType="2">
+		<option id="1863" />
+		<option id="1913" />
+	</stone>
+	<stone id="95816" slotType="2">
+		<option id="1864" />
+		<option id="1914" />
+	</stone>
+	<stone id="95817" slotType="2">
+		<option id="1865" />
+		<option id="1915" />
+	</stone>
+	<stone id="95818" slotType="2">
+		<option id="1866" />
+		<option id="1916" />
+	</stone>
+	<stone id="95819" slotType="2">
+		<option id="1867" />
+		<option id="1917" />
+	</stone>
+	<stone id="95820" slotType="2">
+		<option id="1868" />
+		<option id="1918" />
+	</stone>
+	<stone id="95821" slotType="2">
+		<option id="1869" />
+		<option id="1919" />
+	</stone>
+	<stone id="95822" slotType="2">
+		<option id="1870" />
+		<option id="1920" />
+	</stone>
+	<stone id="96901" slotType="1">
+		<option id="1941" />
+		<option id="2001" />
+		<option id="1961" />
+		<option id="1981" />
+		<option id="2021" />
+		<option id="1921" />
+	</stone>
+	<stone id="96902" slotType="1">
+		<option id="1942" />
+		<option id="2002" />
+		<option id="1962" />
+		<option id="1982" />
+		<option id="2022" />
+		<option id="1922" />
+	</stone>
+	<stone id="96903" slotType="1">
+		<option id="1943" />
+		<option id="2003" />
+		<option id="1963" />
+		<option id="1983" />
+		<option id="2023" />
+		<option id="1923" />
+	</stone>
+	<stone id="96904" slotType="1">
+		<option id="1944" />
+		<option id="2004" />
+		<option id="1964" />
+		<option id="1984" />
+		<option id="2024" />
+		<option id="1924" />
+	</stone>
+	<stone id="96905" slotType="1">
+		<option id="1945" />
+		<option id="2005" />
+		<option id="1965" />
+		<option id="1985" />
+		<option id="2025" />
+		<option id="1925" />
+	</stone>
+	<stone id="96906" slotType="1">
+		<option id="1946" />
+		<option id="2006" />
+		<option id="1966" />
+		<option id="1986" />
+		<option id="2026" />
+		<option id="1926" />
+	</stone>
+	<stone id="96907" slotType="1">
+		<option id="1947" />
+		<option id="2007" />
+		<option id="1967" />
+		<option id="1987" />
+		<option id="2027" />
+		<option id="1927" />
+	</stone>
+	<stone id="96908" slotType="1">
+		<option id="1948" />
+		<option id="2008" />
+		<option id="1968" />
+		<option id="1988" />
+		<option id="2028" />
+		<option id="1928" />
+	</stone>
+	<stone id="96909" slotType="1">
+		<option id="1949" />
+		<option id="2009" />
+		<option id="1969" />
+		<option id="1989" />
+		<option id="2029" />
+		<option id="1929" />
+	</stone>
+	<stone id="96910" slotType="1">
+		<option id="1950" />
+		<option id="2010" />
+		<option id="1970" />
+		<option id="1990" />
+		<option id="2030" />
+		<option id="1930" />
+	</stone>
+	<stone id="96911" slotType="1">
+		<option id="1951" />
+		<option id="2011" />
+		<option id="1971" />
+		<option id="1991" />
+		<option id="2031" />
+		<option id="1931" />
+	</stone>
+	<stone id="96912" slotType="1">
+		<option id="1952" />
+		<option id="2012" />
+		<option id="1972" />
+		<option id="1992" />
+		<option id="2032" />
+		<option id="1932" />
+	</stone>
+	<stone id="96913" slotType="1">
+		<option id="1953" />
+		<option id="2013" />
+		<option id="1973" />
+		<option id="1993" />
+		<option id="2033" />
+		<option id="1933" />
+	</stone>
+	<stone id="96914" slotType="1">
+		<option id="1954" />
+		<option id="2014" />
+		<option id="1974" />
+		<option id="1994" />
+		<option id="2034" />
+		<option id="1934" />
+	</stone>
+	<stone id="96915" slotType="1">
+		<option id="1955" />
+		<option id="2015" />
+		<option id="1975" />
+		<option id="1995" />
+		<option id="2035" />
+		<option id="1935" />
+	</stone>
+	<stone id="96916" slotType="1">
+		<option id="1956" />
+		<option id="2016" />
+		<option id="1976" />
+		<option id="1996" />
+		<option id="2036" />
+		<option id="1936" />
+	</stone>
+	<stone id="96917" slotType="1">
+		<option id="1957" />
+		<option id="2017" />
+		<option id="1977" />
+		<option id="1997" />
+		<option id="2037" />
+		<option id="1937" />
+	</stone>
+	<stone id="96918" slotType="1">
+		<option id="1958" />
+		<option id="2018" />
+		<option id="1978" />
+		<option id="1998" />
+		<option id="2038" />
+		<option id="1938" />
+	</stone>
+	<stone id="96919" slotType="1">
+		<option id="1959" />
+		<option id="2019" />
+		<option id="1979" />
+		<option id="1999" />
+		<option id="2039" />
+		<option id="1939" />
+	</stone>
+	<stone id="96920" slotType="1">
+		<option id="1960" />
+		<option id="2020" />
+		<option id="1980" />
+		<option id="2000" />
+		<option id="2040" />
+		<option id="1940" />
+	</stone>
+</list>

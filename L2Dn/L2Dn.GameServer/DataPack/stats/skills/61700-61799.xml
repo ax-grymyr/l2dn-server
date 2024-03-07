@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="61700" toLevel="1" name="Knockback Atk. Rate">
+		<!-- Knockback Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61701" toLevel="1" name="Knockback Atk. Rate">
+		<!-- Knockback Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61702" toLevel="1" name="Knockback Atk. Rate">
+		<!-- Knockback Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61703" toLevel="1" name="Knockback Atk. Rate">
+		<!-- Knockback Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61704" toLevel="1" name="Sleep Atk. Rate">
+		<!-- Sleep Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61705" toLevel="1" name="Sleep Atk. Rate">
+		<!-- Sleep Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61706" toLevel="1" name="Sleep Atk. Rate">
+		<!-- Sleep Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61707" toLevel="1" name="Sleep Atk. Rate">
+		<!-- Sleep Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61708" toLevel="1" name="Sleep Atk. Rate">
+		<!-- Sleep Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61709" toLevel="1" name="Imprisonment Atk. Rate">
+		<!-- Imprisonment Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61710" toLevel="1" name="Imprisonment Atk. Rate">
+		<!-- Imprisonment Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61711" toLevel="1" name="Imprisonment Atk. Rate">
+		<!-- Imprisonment Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61712" toLevel="1" name="Imprisonment Atk. Rate">
+		<!-- Imprisonment Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61713" toLevel="1" name="Imprisonment Atk. Rate">
+		<!-- Imprisonment Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61714" toLevel="1" name="Pull Atk. Rate">
+		<!-- Pull Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61715" toLevel="1" name="Pull Atk. Rate">
+		<!-- Pull Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61716" toLevel="1" name="Pull Atk. Rate">
+		<!-- Pull Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61717" toLevel="1" name="Pull Atk. Rate">
+		<!-- Pull Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61718" toLevel="1" name="Pull Atk. Rate">
+		<!-- Pull Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61719" toLevel="1" name="Fear Atk. Rate">
+		<!-- Fear Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61720" toLevel="1" name="Fear Atk. Rate">
+		<!-- Fear Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61721" toLevel="1" name="Fear Atk. Rate">
+		<!-- Fear Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61722" toLevel="1" name="Fear Atk. Rate">
+		<!-- Fear Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61723" toLevel="1" name="Fear Atk. Rate">
+		<!-- Fear Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61724" toLevel="1" name="Silence Atk. Rate">
+		<!-- Silence Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61725" toLevel="1" name="Silence Atk. Rate">
+		<!-- Silence Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61726" toLevel="1" name="Silence Atk. Rate">
+		<!-- Silence Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61727" toLevel="1" name="Silence Atk. Rate">
+		<!-- Silence Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61728" toLevel="1" name="Silence Atk. Rate">
+		<!-- Silence Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61729" toLevel="1" name="Hold Atk. Rate">
+		<!-- Hold Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61730" toLevel="1" name="Hold Atk. Rate">
+		<!-- Hold Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61731" toLevel="1" name="Hold Atk. Rate">
+		<!-- Hold Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61732" toLevel="1" name="Hold Atk. Rate">
+		<!-- Hold Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61733" toLevel="1" name="Hold Atk. Rate">
+		<!-- Hold Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61734" toLevel="1" name="Suppression Atk. Rate">
+		<!-- Suppression Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61735" toLevel="1" name="Suppression Atk. Rate">
+		<!-- Suppression Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61736" toLevel="1" name="Suppression Atk. Rate">
+		<!-- Suppression Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61737" toLevel="1" name="Suppression Atk. Rate">
+		<!-- Suppression Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61738" toLevel="1" name="Suppression Atk. Rate">
+		<!-- Suppression Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61739" toLevel="1" name="Infection Atk. Rate">
+		<!-- Infection Atk. Rate +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61740" toLevel="1" name="Infection Atk. Rate">
+		<!-- Infection Atk. Rate +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61741" toLevel="1" name="Infection Atk. Rate">
+		<!-- Infection Atk. Rate +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61742" toLevel="1" name="Infection Atk. Rate">
+		<!-- Infection Atk. Rate +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61743" toLevel="1" name="Infection Atk. Rate">
+		<!-- Infection Atk. Rate +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61744" toLevel="1" name="Damage Resistance Bonus -Sword (One-handed)">
+		<!-- Sword (one-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61745" toLevel="1" name="Damage Resistance Bonus -Sword (One-handed)">
+		<!-- Sword (one-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61746" toLevel="1" name="Damage Resistance Bonus -Sword (One-handed)">
+		<!-- Sword (one-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61747" toLevel="1" name="Damage Resistance Bonus -Sword (One-handed)">
+		<!-- Sword (one-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61748" toLevel="1" name="Damage Resistance Bonus -Sword (One-handed)">
+		<!-- Sword (one-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61749" toLevel="1" name="Damage Resistance Bonus -Sword (Two-handed)">
+		<!-- Sword (two-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61750" toLevel="1" name="Damage Resistance Bonus -Sword (Two-handed)">
+		<!-- Sword (two-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61751" toLevel="1" name="Damage Resistance Bonus -Sword (Two-handed)">
+		<!-- Sword (two-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61752" toLevel="1" name="Damage Resistance Bonus -Sword (Two-handed)">
+		<!-- Sword (two-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61753" toLevel="1" name="Damage Resistance Bonus -Sword (Two-handed)">
+		<!-- Sword (two-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61754" toLevel="1" name="Damage Resistance Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61755" toLevel="1" name="Damage Resistance Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61756" toLevel="1" name="Damage Resistance Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61757" toLevel="1" name="Damage Resistance Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61758" toLevel="1" name="Damage Resistance Bonus - Magic Sword (One-handed)">
+		<!-- Magic sword (one-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61759" toLevel="1" name="Damage Resistance Bonus - Ancient Sword">
+		<!-- Ancient sword resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61760" toLevel="1" name="Damage Resistance Bonus - Ancient Sword">
+		<!-- Ancient sword resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61761" toLevel="1" name="Damage Resistance Bonus - Ancient Sword">
+		<!-- Ancient sword resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61762" toLevel="1" name="Damage Resistance Bonus - Ancient Sword">
+		<!-- Ancient sword resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61763" toLevel="1" name="Damage Resistance Bonus - Ancient Sword">
+		<!-- Ancient sword resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61764" toLevel="1" name="Damage Resistance Bonus - Dagger">
+		<!-- Dagger resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61765" toLevel="1" name="Damage Resistance Bonus - Dagger">
+		<!-- Dagger resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61766" toLevel="1" name="Damage Resistance Bonus - Dagger">
+		<!-- Dagger resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61767" toLevel="1" name="Damage Resistance Bonus - Dagger">
+		<!-- Dagger resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61768" toLevel="1" name="Damage Resistance Bonus - Dagger">
+		<!-- Dagger resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61769" toLevel="1" name="Damage Resistance Bonus - Rapier">
+		<!-- Rapier resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61770" toLevel="1" name="Damage Resistance Bonus - Rapier">
+		<!-- Rapier resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61771" toLevel="1" name="Damage Resistance Bonus - Rapier">
+		<!-- Rapier resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61772" toLevel="1" name="Damage Resistance Bonus - Rapier">
+		<!-- Rapier resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61773" toLevel="1" name="Damage Resistance Bonus - Rapier">
+		<!-- Rapier resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61774" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61775" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61776" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61777" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61778" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (One-handed)">
+		<!-- Blunt weapon (one-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61779" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61780" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61781" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61782" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61783" toLevel="1" name="Damage Resistance Bonus - Blunt Weapon (Two-handed)">
+		<!-- Blunt weapon (two-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61784" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61785" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61786" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61787" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61788" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (One-handed)">
+		<!-- Magic blunt weapon (one-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61789" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61790" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61791" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61792" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61793" toLevel="1" name="Damage Resistance Bonus - Magic Blunt Weapon (Two-handed)">
+		<!-- Magic blunt weapon (two-handed) resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61794" toLevel="1" name="Damage Resistance Bonus - Spear">
+		<!-- Spear resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61795" toLevel="1" name="Damage Resistance Bonus - Spear">
+		<!-- Spear resistance bonus +80% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61796" toLevel="1" name="Damage Resistance Bonus - Spear">
+		<!-- Spear resistance bonus +85% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61797" toLevel="1" name="Damage Resistance Bonus - Spear">
+		<!-- Spear resistance bonus +95% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61798" toLevel="1" name="Damage Resistance Bonus - Spear">
+		<!-- Spear resistance bonus +100% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="61799" toLevel="1" name="Damage Resistance Bonus - Fist Weapon">
+		<!-- Fist weapon resistance bonus +75% -->
+		<icon>icon.skill3080</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

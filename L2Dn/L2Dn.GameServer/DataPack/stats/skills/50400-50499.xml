@@ -1,0 +1,5928 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="50400" toLevel="1" name="Weapon Blessing Effect">
+		<!-- Atk. Spd. +30, Casting Spd. +30. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50401" toLevel="1" name="Weapon Blessing Effect">
+		<!-- Arrows do not consume MP. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CheapShot" />
+		</effects>
+	</skill>
+	<skill id="50402" toLevel="1" name="Weapon Blessing Effect">
+		<!-- Vital Point Attack Rate +5%. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="FatalBlowRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50403" toLevel="1" name="Weapon Blessing Effect">
+		<!-- P. Skill Critical Damage +50. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50404" toLevel="1" name="Weapon Blessing Effect">
+		<!-- P. Skill Critical Damage +50. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50405" toLevel="1" name="Weapon Blessing Effect">
+		<!-- Attack range +20, the number of targets +1. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackRange">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HitNumber">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50406" toLevel="1" name="+5 A-grade Weapon Blessing Effect">
+		<!-- Attribute Attack +15. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackAttributeAdd">
+				<amount>15</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50407" toLevel="1" name="+6 A-grade Weapon Blessing Effect">
+		<!-- P. Atk. +90, M. Atk. +110. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50408" toLevel="1" name="+7 A-grade Weapon Blessing Effect">
+		<!-- All Critical Rate +4%. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50409" toLevel="1" name="+8 A-grade Weapon Blessing Effect">
+		<!-- Skill Power +4% -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50410" toLevel="1" name="+9 A-grade Weapon Blessing Effect">
+		<!-- All Critical Damage +80. Increases Max Critical Rate. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxPhysicalCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxMagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50411" toLevel="1" name="+10 A-grade Weapon Blessing Effect">
+		<!-- Soulshot/ Spiritshot damage +10%. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50412" toLevel="1" name="+5 Boss Weapon Blessing Effect">
+		<!-- Attribute Attack +20. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="AttackAttributeAdd">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50413" toLevel="1" name="+6 Boss' Weapon Blessing Effect">
+		<!-- P. Atk. +130, M. Atk. +170. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>170</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50414" toLevel="1" name="+7 Boss' Weapon Blessing Effect">
+		<!-- All Critical Rate +5% -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50415" toLevel="1" name="+8 Boss' Weapon Blessing Effect">
+		<!-- Skill Power +5% -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50416" toLevel="1" name="+9 Boss' Weapon Blessing Effect">
+		<!-- All Critical Damage +150. Increases Max Critical Rate. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxPhysicalCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxMagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50417" toLevel="1" name="+10 Boss' Weapon Blessing Effect">
+		<!-- Soulshot/ Spiritshot damage +15%. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50418" toLevel="1" name="+0 Weapon of Immortality Blessing Effect">
+		<!-- Skill Power +10%/ Attribute Attack +30 -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50419" toLevel="1" name="+1 Weapon of Immortality Blessing Effect">
+		<!-- All Critical Damage +200. Increases Max Critical Rate. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxPhysicalCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AddMaxMagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50420" toLevel="1" name="+2 Weapon of Immortality Blessing Effect">
+		<!-- Soulshot/ Spiritshot damage +20%. -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50421" toLevel="1" name="+16 A-grade Weapon Blessing Effect">
+		<!-- Skill Cooldown -5% -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50422" toLevel="1" name="+20 A-grade Weapon Blessing Effect">
+		<!-- STR/ INT/ DEX/ WIT/ CON/ MEN +1 -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50423" toLevel="1" name="+25 A-grade Weapon Blessing Effect">
+		<!-- Damage +5% -->
+		<icon>icon.bless_effect_enchant</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50424" toLevel="6" name="Berserker's Wrath">
+		<!-- P. Def. -450. M. Def. -450 -->
+		<icon>icon.berserker_sigil_debuff</icon>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<abnormalTime>3</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>8000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-100</value>
+			<value level="3">-200</value>
+			<value level="4">-300</value>
+			<value level="5">-400</value>
+			<value level="6">-500</value>
+		</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>
+					<value level="1">185</value>
+					<value level="2">192</value>
+					<value level="3">198</value>
+					<value level="4">206</value>
+					<value level="5">218</value>
+					<value level="6">230</value>
+				</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-450</value>
+					<value level="2">-500</value>
+					<value level="3">-550</value>
+					<value level="4">-600</value>
+					<value level="5">-650</value>
+					<value level="6">-700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-450</value>
+					<value level="2">-500</value>
+					<value level="3">-550</value>
+					<value level="4">-600</value>
+					<value level="5">-650</value>
+					<value level="6">-700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+		<pvpEffects>
+			<effect name="CallSkill">
+				<skillId>50292</skillId> <!-- Berserker's Wrath -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+				</skillLevel>
+			</effect>
+		</pvpEffects>
+	</skill>
+	<skill id="50425" toLevel="1" name="Plush Cat">
+		<!-- <Effect>. P. Atk. +100. M. Atk. +100. P. Def. +100. M. Def. +100. Acquired XP +10%. Acquired SP +10% -->
+		<icon>icon.accessory_cat_the_cat_cap_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50426" toLevel="8" name="Death Knight's Ring Event">
+		<!-- A ring containing a Death Knight's power. Max HP +100. Max MP +22. P. Atk. +100. M. Atk. +100. Atk. Spd. +20. Casting Spd. +20. Speed +1. All Critical Rate +1%. All Critical Damage +1%. Imprisonment Atk. Rate and Resistance +1000. Pull Atk. Rate and Resistance +1001 -->
+		<icon>
+			<value level="1">icon.ring_of_deathknight_i00</value>
+			<value level="2">icon.ring_of_deathknight_i00</value>
+			<value level="3">icon.skill0000</value>
+			<value level="4">icon.skill0000</value>
+			<value level="5">icon.skill0000</value>
+			<value level="6">icon.skill0000</value>
+			<value level="7">icon.skill0000</value>
+			<value level="8">icon.skill0000</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50427" toLevel="4" name="Frintezza's Necklace">
+		<!-- A necklace imbued with Frintezza's power. <Effect>. Max. MP +30. Sleep Resistance +10%. Sleep Atk. Rate +10%. Skill Power +5%. Skill Cooldown -5%. All Critical Rate +2%. All Critical Damage +20 -->
+		<icon>
+			<value level="1">icon.accessory_necklace_of_frintessa_i00</value>
+			<value level="2">icon.accessory_necklace_of_frintessa_i03</value>
+			<value level="3">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="4">icon.accessory_necklace_of_frintessa_i05</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="50428" toLevel="1" name="A-grade: Stun Gauntlets">
+		<!-- Gauntlets imbued with mighty power. STR +1. INT +1. Overweight limit +1000. M. Def. +50. Max HP +200. Atk. Spd. +10%. Casting Spd. +18% -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>18</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50429" toLevel="1" name="Stun Gauntlets">
+		<!-- Gauntlets imbued with mighty energy. Uses the mighty energy to deliver <font color="FFBB00">an additional attack</font> with a 1% chance. Swift Fist: attacks with strong fist dealing additional damage equal to 103% of P. Atk. and stuns the enemy for 3 sec. -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50431</skillId> <!-- Swift Fist -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50431</skillId> <!-- Swift Fist -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50430" toLevel="10" name="+1 Stun Gauntlets">
+		<!-- Gauntlets imbued with mighty energy. Uses the mighty energy to deliver <font color="FFBB00">an additional attack</font> with a 1% chance. Swift Fist: attacks with strong fist dealing additional damage equal to 105% of P. Atk. and stuns the enemy for 3 sec. -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">6</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50431</skillId> <!-- Swift Fist -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">6</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50431</skillId> <!-- Swift Fist -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50431" toLevel="11" name="Swift Fist">
+		<!-- <<font color="FFBB00">Additional attack</font>>. A powerful fist attack. -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<castRange>900</castRange>
+		<effectPoint>-300</effectPoint>
+		<effectRange>1100</effectRange>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<isMagic>1</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<basicProperty>MAGIC</basicProperty>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="MAtkByPAtk">
+				<stat>PHYSICAL_ATTACK</stat>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">12</value>
+					<value level="6">15</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50432" toLevel="1" name="A-grade: Sigil of Inevitability">
+		<!-- A sigil imbued with the energy of destruction. Atk. Spd. +5. Casting Spd. +5. All Critical Rate +1%. Max MP +20. <Fatal Power>. With a 1% chance after an attack, kills the enemy instantly, Skill Power +1% for 3 sec. -->
+		<icon>icon.elos_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50434</skillId> <!-- Fatal Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50434</skillId> <!-- Fatal Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50433" toLevel="10" name="+1 Sigil of Inevitability">
+		<!-- A sigil imbued with the energy of destruction. Atk. Spd. +10. Casting Spd. +10. All Critical Rate +1%. Max MP +30. <Fatal Power>. With a 1% chance after an attack, kills the enemy instantly, Skill Power +1% for 3 sec. -->
+		<icon>icon.elos_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">45</value>
+					<value level="6">60</value>
+					<value level="7">100</value>
+					<value level="8">120</value>
+					<value level="9">160</value>
+					<value level="10">250</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">45</value>
+					<value level="6">60</value>
+					<value level="7">100</value>
+					<value level="8">120</value>
+					<value level="9">160</value>
+					<value level="10">250</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">80</value>
+					<value level="5">150</value>
+					<value level="6">180</value>
+					<value level="7">250</value>
+					<value level="8">300</value>
+					<value level="9">400</value>
+					<value level="10">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">5</value>
+					<value level="8">7</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50434</skillId> <!-- Fatal Power -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">6</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">5</value>
+					<value level="8">7</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50434</skillId> <!-- Fatal Power -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">6</value>
+					<value level="9">7</value>
+					<value level="10">8</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">5</value>
+					<value level="9">3</value>
+					<value level="10">5</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50435</skillId> <!-- Fatal Impulse -->
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">5</value>
+					<value level="9">3</value>
+					<value level="10">5</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50435</skillId> <!-- Fatal Impulse -->
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50434" toLevel="8" name="Fatal Power">
+		<!-- Skill Power +1% -->
+		<icon>icon.skill10076</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">8</value>
+					<value level="7">9</value>
+					<value level="8">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50435" toLevel="6" name="Fatal Impulse">
+		<!-- All Critical Damage +50. -->
+		<icon>icon.skill10064</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">200</value>
+					<value level="4">300</value>
+					<value level="5">400</value>
+					<value level="6">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">200</value>
+					<value level="4">300</value>
+					<value level="5">400</value>
+					<value level="6">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">200</value>
+					<value level="4">300</value>
+					<value level="5">400</value>
+					<value level="6">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50436" toLevel="1" name="A-grade: Shield of Vengeance">
+		<!-- A shield imbued with the power of vengeance. All received Critical Rate -1%. Max HP +20. <Protective Barrier>. With a 1% chance, Shield Defense Rate and P./ M. Def. +5% for 5 sec. when hit. (Trigger cooldown: 60 sec.) -->
+		<icon>icon.shield_of_revenge</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50438</skillId> <!-- Protective Barrier -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>1</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50438</skillId> <!-- Protective Barrier -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50437" toLevel="10" name="+1 Shield of Vengeance">
+		<!-- A shield imbued with the power of vengeance. All received Critical Rate -2%. Max HP +30. Shield Defense +20. <Protective Barrier>. With a 1% chance, Shield Defense Rate and P./ M. Def. +5% for 5 sec. when hit. (Trigger cooldown: 60 sec.) -->
+		<icon>icon.shield_of_revenge</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-5</value>
+					<value level="5">-8</value>
+					<value level="6">-9</value>
+					<value level="7">-10</value>
+					<value level="8">-11</value>
+					<value level="9">-12</value>
+					<value level="10">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-5</value>
+					<value level="5">-8</value>
+					<value level="6">-9</value>
+					<value level="7">-10</value>
+					<value level="8">-11</value>
+					<value level="9">-12</value>
+					<value level="10">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">200</value>
+					<value level="6">250</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">450</value>
+					<value level="10">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">60</value>
+					<value level="4">100</value>
+					<value level="5">200</value>
+					<value level="6">400</value>
+					<value level="7">700</value>
+					<value level="8">1000</value>
+					<value level="9">1500</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50438</skillId> <!-- Protective Barrier -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50438</skillId> <!-- Protective Barrier -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="10">
+				<attackerType>Playable</attackerType>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+				<minDamage>50</minDamage>
+				<skillId>50439</skillId> <!-- Retribution Defense -->
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50438" toLevel="11" name="Protective Barrier">
+		<!-- Shield Defense Rate +5%. P. Def. +5%. , M. Def. +5% -->
+		<icon>icon.skill1515</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+		</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<reuseDelay>60000</reuseDelay>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">60</value>
+					<value level="10">80</value>
+					<value level="11">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">60</value>
+					<value level="10">80</value>
+					<value level="11">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">60</value>
+					<value level="10">80</value>
+					<value level="11">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50439" toLevel="6" name="Retribution Defense">
+		<!-- Reflects 5% of the received damage. -->
+		<icon>icon.skill10021_2</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<reuseDelay>60000</reuseDelay>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+					<value level="4">60</value>
+					<value level="5">100</value>
+					<value level="6">150</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50440" toLevel="15" name="Chocolate Doll">
+		<!-- Chocolate Doll's effect. Soulshot/ Spiritshot damage +1%. Acquired XP/ SP +1% -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>P</operateType>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="12">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+					<value level="5">7</value>
+					<value level="6">10</value>
+					<value level="7">11</value>
+					<value level="8">13</value>
+					<value level="9">15</value>
+					<value level="10">17</value>
+					<value level="11">20</value>
+					<value level="12">21</value>
+					<value level="13">23</value>
+					<value level="14">25</value>
+					<value level="15">30</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+					<value level="5">7</value>
+					<value level="6">10</value>
+					<value level="7">11</value>
+					<value level="8">13</value>
+					<value level="9">15</value>
+					<value level="10">17</value>
+					<value level="11">20</value>
+					<value level="12">21</value>
+					<value level="13">23</value>
+					<value level="14">25</value>
+					<value level="15">30</value>
+				</amount>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="5">0</value>
+					<value level="6">10</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">80</value>
+					<value level="10">120</value>
+					<value level="11">170</value>
+					<value level="12">230</value>
+					<value level="13">300</value>
+					<value level="14">380</value>
+					<value level="15">700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="5">0</value>
+					<value level="6">10</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">80</value>
+					<value level="10">120</value>
+					<value level="11">170</value>
+					<value level="12">230</value>
+					<value level="13">300</value>
+					<value level="14">380</value>
+					<value level="15">700</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50441" toLevel="4" name="Antharas' Earring">
+		<!-- An earring imbued with the Earth Dragon's power. <Effect>. Max MP +28. Bleed Atk. Rate +10%. Stun Atk. Rate +5%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Bleed Resistance +10%. Stun Resistance +5%. Silence Resistance +5%. Fear Resistance +5%. Received Healing +280. Skill MP Consumption +281. Absorbs +282 of the inflicted damage as HP. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_antaras_i00</value>
+			<value level="2">icon.accessory_earring_of_antaras_i01</value>
+			<value level="3">icon.accessory_earring_of_antaras_i02</value>
+			<value level="4">icon.accessory_earring_of_antaras_i04</value>
+		</icon>
+		<magicLevel>75</magicLevel>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+				</INFECTION>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</FEAR>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SHOCK>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+				</INFECTION>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</FEAR>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SHOCK>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">6</value>
+					<value level="4">10</value>
+				</amount>
+				<chance>80</chance>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+					<value level="4">-15</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+					<value level="4">-15</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="DamageShieldResist">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50442" toLevel="4" name="Zaken's Earring">
+		<!-- An earring imbued with Zaken's power. <Effect>. Max MP +22. Bleed Atk. Rate +10%. Stun Atk. Rate +5%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Bleed Resistance +10%. Stun Resistance +5%. Silence Resistance +5%. Fear Resistance +5%. Received Healing +220. HP Recovery Rate +221. MP Consumption +222 -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_zaken_i00</value>
+			<value level="2">icon.accessory_earring_of_zaken_i02</value>
+			<value level="3">icon.accessory_earring_of_zaken_i03</value>
+			<value level="4">icon.accessory_earring_of_zaken_i04</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">22</value>
+					<value level="2">28</value>
+					<value level="3">34</value>
+					<value level="4">45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</FEAR>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</FEAR>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">10</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpDrain">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">8</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50443" toLevel="4" name="Baium's Ring">
+		<!-- A ring imbued with power of Baium. <Effect>. Max MP +15. Atk. Spd. +3%. Casting Spd. +3%. P. Accuracy +2. M. Accuracy +2. Skill Power +3%. Bleed Atk. Rate +5%. Stun Atk. Rate +10%. Bleed Resistance +5%. Stun Resistance +150 -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_baium_i00</value>
+			<value level="2">icon.accessory_ring_of_baium_i02</value>
+			<value level="3">icon.accessory_ring_of_baium_i03</value>
+			<value level="4">icon.accessory_ring_of_baium_i04</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">21</value>
+					<value level="3">27</value>
+					<value level="4">35</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">8</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SkillPowerAdd">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">10</value>
+					<value level="4">20</value>
+				</amount>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</INFECTION>
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SHOCK>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</INFECTION>
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">30</value>
+				</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50444" toLevel="7" name="Queen Ant's Ring">
+		<!-- A ring imbued with Queen Ant's power. Max MP +9. P. Accuracy +1. M. Accuracy +1. P. Atk. +4%. M. Atk. +4%. Infection Atk. Rate +10%. Infection Resistance +10% -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_queen_ant_i03</value>
+			<value level="2">icon.accessory_ring_of_queen_ant_i03</value>
+			<value level="3">icon.accessory_ring_of_queen_ant_i03</value>
+			<value level="4">icon.accessory_ring_of_queen_ant_i03</value>
+			<value level="5">icon.accessory_ring_of_queen_ant_i04</value>
+			<value level="6">icon.accessory_ring_of_queen_ant_i05</value>
+			<value level="7">icon.accessory_ring_of_queen_ant_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">9</value>
+					<value level="2">15</value>
+					<value level="3">21</value>
+					<value level="4">30</value>
+					<value level="5">40</value>
+					<value level="6">50</value>
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">7</value>
+					<value level="4">9</value>
+					<value level="5">11</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">35</value>
+					<value level="4">65</value>
+					<value level="5">95</value>
+					<value level="6">125</value>
+					<value level="7">125</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">35</value>
+					<value level="4">65</value>
+					<value level="5">95</value>
+					<value level="6">125</value>
+					<value level="7">125</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage" fromLevel="3" toLevel="7">
+				<amount>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage" fromLevel="3" toLevel="7">
+				<amount>
+					<value level="3">5</value>
+					<value level="4">10</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50451</skillId> <!-- Queen Ant Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50451</skillId> <!-- Queen Ant Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50445" toLevel="7" name="Ring of Core">
+		<!-- A ring imbued with Core's power. Max MP +9. P. Evasion +1. M. Evasion +1. P. Def. +2%. M. Def. +2%. Received damage -2%. Silence Atk. Rate +10%. Fear Atk. Rate +10%. Silence Resistance +10%. Fear Resistance +90 -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_core_i03</value>
+			<value level="2">icon.accessory_ring_of_core_i03</value>
+			<value level="3">icon.accessory_ring_of_core_i03</value>
+			<value level="4">icon.accessory_ring_of_core_i03</value>
+			<value level="5">icon.accessory_ring_of_core_i04</value>
+			<value level="6">icon.accessory_ring_of_core_i05</value>
+			<value level="7">icon.accessory_ring_of_core_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">9</value>
+					<value level="2">15</value>
+					<value level="3">21</value>
+					<value level="4">30</value>
+					<value level="5">40</value>
+					<value level="6">50</value>
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">6</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<FEAR>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SLEEP>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">20</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50452</skillId> <!-- Core Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50452</skillId> <!-- Core Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50446" toLevel="7" name="Baium's Ring">
+		<!-- A ring imbued with Baium's power. Max MP +15. P. Accuracy +2. M. Accuracy +2. Atk. Spd. +3%. Casting Spd. +3%. Skill Power +3%. Infection Atk. Rate +5%. Shock Atk. Rate +10%. Infection Resistance +5%. Shock Resistance +150 -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_baium_i03</value>
+			<value level="2">icon.accessory_ring_of_baium_i03</value>
+			<value level="3">icon.accessory_ring_of_baium_i03</value>
+			<value level="4">icon.accessory_ring_of_baium_i03</value>
+			<value level="5">icon.accessory_ring_of_baium_i04</value>
+			<value level="6">icon.accessory_ring_of_baium_i05</value>
+			<value level="7">icon.accessory_ring_of_baium_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">21</value>
+					<value level="3">27</value>
+					<value level="4">40</value>
+					<value level="5">55</value>
+					<value level="6">70</value>
+					<value level="7">70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">35</value>
+					<value level="4">65</value>
+					<value level="5">95</value>
+					<value level="6">125</value>
+					<value level="7">125</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value level="3">35</value>
+					<value level="4">65</value>
+					<value level="5">95</value>
+					<value level="6">125</value>
+					<value level="7">125</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">9</value>
+					<value level="6">12</value>
+					<value level="7">12</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">7</value>
+					<value level="5">9</value>
+					<value level="6">12</value>
+					<value level="7">12</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="SkillPowerAdd">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">10</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">18</value>
+					<value level="6">23</value>
+					<value level="7">23</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">18</value>
+					<value level="6">23</value>
+					<value level="7">23</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50453</skillId> <!-- Baium Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50453</skillId> <!-- Baium Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50447" toLevel="7" name="Orfen's Earring">
+		<!-- An earring imbued with Orfen's power. Max MP +19. Received Healing +2%. Skill MP Consumption -2%. Hold Atk. Rate +10%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Hold Resistance +10%. Silence Resistance +5%. Fear Resistance +5% -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_orfen_i03</value>
+			<value level="2">icon.accessory_earring_of_orfen_i03</value>
+			<value level="3">icon.accessory_earring_of_orfen_i03</value>
+			<value level="4">icon.accessory_earring_of_orfen_i03</value>
+			<value level="5">icon.accessory_earring_of_orfen_i04</value>
+			<value level="6">icon.accessory_earring_of_orfen_i05</value>
+			<value level="7">icon.accessory_earring_of_orfen_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">19</value>
+					<value level="2">25</value>
+					<value level="3">31</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">60</value>
+					<value level="7">60</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">100</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">100</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<HOLD>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</HOLD>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</HOLD>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="MpVampiricAttack" fromLevel="3" toLevel="7">
+				<amount>3</amount>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value fromLevel="2" toLevel="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50471</skillId> <!-- Orfen Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50471</skillId> <!-- Orfen Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50454</skillId> <!-- Orfen Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50454</skillId> <!-- Orfen Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50448" toLevel="7" name="Zaken's Earring">
+		<!-- An earring imbued with Zaken's power. Max MP +22. Received Healing +4%. Skill MP Consumption -2%. HP Recovery Rate +10%. Infection Atk. Rate +10%. Shock Atk. Rate +5%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Infection Resistance +10%. Shock Resistance +220. Silence Resistance +221. Fear Resistance +222 -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_zaken_i03</value>
+			<value level="2">icon.accessory_earring_of_zaken_i03</value>
+			<value level="3">icon.accessory_earring_of_zaken_i03</value>
+			<value level="4">icon.accessory_earring_of_zaken_i03</value>
+			<value level="5">icon.accessory_earring_of_zaken_i04</value>
+			<value level="6">icon.accessory_earring_of_zaken_i05</value>
+			<value level="7">icon.accessory_earring_of_zaken_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">22</value>
+					<value level="2">28</value>
+					<value level="3">34</value>
+					<value level="4">45</value>
+					<value level="5">60</value>
+					<value level="6">90</value>
+					<value level="7">90</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">200</value>
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">150</value>
+					<value level="5">250</value>
+					<value level="6">350</value>
+					<value level="7">350</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">150</value>
+					<value level="5">250</value>
+					<value level="6">350</value>
+					<value level="7">350</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-5</value>
+					<value level="5">-6</value>
+					<value level="6">-8</value>
+					<value level="7">-8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-5</value>
+					<value level="5">-6</value>
+					<value level="6">-8</value>
+					<value level="7">-8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-4</value>
+					<value level="4">-5</value>
+					<value level="5">-6</value>
+					<value level="6">-8</value>
+					<value level="7">-8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">10</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value>
+					<value level="5">15</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="VampiricAttack" fromLevel="3" toLevel="7">
+				<amount>8</amount>
+				<chance>100</chance>
+			</effect>
+			<effect name="AdditionalPotionHp" fromLevel="4" toLevel="7">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">200</value>
+					<value level="4">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">200</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50472</skillId> <!-- Zaken Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50472</skillId> <!-- Zaken Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50455</skillId> <!-- Zaken Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50455</skillId> <!-- Zaken Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50449" toLevel="7" name="Antharas' Earring">
+		<!-- An earring imbued with the Earth Dragon's power. Max MP +28. Received Healing +6%. Skill MP Consumption -3%. Absorbs 3% of the inflicted damage as HP. Infection Atk. Rate +10%. Shock Atk. Rate +5%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Infection Resistance +10%. Shock Resistance +280. Silence Resistance +281. Fear Resistance +282 -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_antaras_i02</value>
+			<value level="2">icon.accessory_earring_of_antaras_i02</value>
+			<value level="3">icon.accessory_earring_of_antaras_i02</value>
+			<value level="4">icon.accessory_earring_of_antaras_i02</value>
+			<value level="5">icon.accessory_earring_of_antaras_i04</value>
+			<value level="6">icon.accessory_earring_of_antaras_i05</value>
+			<value level="7">icon.accessory_earring_of_antaras_i06</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">28</value>
+					<value level="2">34</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">70</value>
+					<value level="6">100</value>
+					<value level="7">100</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value fromLevel="2" toLevel="3">1</value>
+					<value fromLevel="4" toLevel="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="2">0</value>
+					<value fromLevel="3" toLevel="4">1</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+					<value level="7">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">150</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">50</value>
+					<value level="5">150</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">200</value>
+					<value level="5">350</value>
+					<value level="6">500</value>
+					<value level="7">500</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">200</value>
+					<value level="5">350</value>
+					<value level="6">500</value>
+					<value level="7">500</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">17</value>
+					<value level="5">20</value>
+					<value level="6">30</value>
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+					<value level="4">-7</value>
+					<value level="5">-8</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-3</value>
+					<value level="2">-4</value>
+					<value level="3">-6</value>
+					<value level="4">-7</value>
+					<value level="5">-8</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+					<value fromLevel="3" toLevel="5">8</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<chance>80</chance>
+			</effect>
+			<effect name="AttackTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">30</value>
+					<value level="5">30</value>
+					<value level="6">30</value>
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="DefenceTrait">
+				<INFECTION>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">30</value>
+					<value level="5">30</value>
+					<value level="6">30</value>
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</INFECTION>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+				<FEAR>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</FEAR>
+			</effect>
+			<effect name="DamageShieldResist">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">7</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
+					<value level="6">30</value>
+					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50473</skillId> <!-- Antharas Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50473</skillId> <!-- Antharas Power - Recovery -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50456</skillId> <!-- Antharas Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50456</skillId> <!-- Antharas Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50450" toLevel="7" name="Frintezza's Necklace">
+		<!-- A necklace imbued with Frintezza's power. Max. MP +30. Skill Power +5%. Skill Cooldown -5%. All Critical Rate +2%. All Critical Damage +20. Sleep Atk. Rate +10%. Sleep Resistance +10% -->
+		<icon>
+			<value level="1">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="2">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="3">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="4">icon.accessory_necklace_of_frintessa_i04</value>
+			<value level="5">icon.accessory_necklace_of_frintessa_i05</value>
+			<value level="6">icon.accessory_necklace_of_frintessa_i06</value>
+			<value level="7">icon.accessory_necklace_of_frintessa_i07</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">36</value>
+					<value level="3">50</value>
+					<value level="4">65</value>
+					<value level="5">90</value>
+					<value level="6">120</value>
+					<value level="7">120</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SkillPowerAdd">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">18</value>
+					<value level="5">23</value>
+					<value level="6">25</value>
+					<value level="7">25</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+					<value level="4">-10</value>
+					<value level="5">-12</value>
+					<value level="6">-15</value>
+					<value level="7">-15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-6</value>
+					<value level="3">-8</value>
+					<value level="4">-10</value>
+					<value level="5">-12</value>
+					<value level="6">-15</value>
+					<value level="7">-15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">10</value>
+					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">150</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">150</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">150</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">300</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SLEEP>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SLEEP>
+			</effect>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">5</value>
+					<value level="4">6</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50457</skillId> <!-- Frintezza Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="7">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>3</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50457</skillId> <!-- Frintezza Power -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50451" toLevel="2" name="Queen Ant Power">
+		<!-- Grants immunity to debuffs that decrease P./ M. Atk. -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_queen_ant_i05</value>
+			<value level="2">icon.accessory_ring_of_queen_ant_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>PA_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>5</max>
+			</effect>
+			<effect name="PAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50452" toLevel="2" name="Core Power">
+		<!-- Grants immunity to debuffs that decrease P./ M. Def. -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_core_i05</value>
+			<value level="2">icon.accessory_ring_of_core_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>5</max>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50453" toLevel="2" name="Baium Power">
+		<!-- Damage +10% -->
+		<icon>
+			<value level="1">icon.accessory_ring_of_baium_i05</value>
+			<value level="2">icon.accessory_ring_of_baium_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>PA_UP_SPECIAL</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50454" toLevel="2" name="Orfen Power">
+		<!-- Inflicts Hold on the enemy. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_orfen_i05</value>
+			<value level="2">icon.accessory_earring_of_orfen_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50455" toLevel="2" name="Zaken Power">
+		<!-- Inflicts Silence on the enemy. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_zaken_i05</value>
+			<value level="2">icon.accessory_earring_of_zaken_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SILENCE</trait>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+		</effects>
+	</skill>
+	<skill id="50456" toLevel="2" name="Antharas Power">
+		<!-- Stuns the target and immobilizes it. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_antaras_i05</value>
+			<value level="2">icon.accessory_earring_of_antaras_i06</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="50457" toLevel="2" name="Frintezza Power">
+		<!-- The state of Anxiety caused by Frintezza Power. -->
+		<icon>
+			<value level="1">icon.accessory_necklace_of_frintessa_i06</value>
+			<value level="2">icon.accessory_necklace_of_frintessa_i07</value>
+		</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>30</lvlBonusRate>
+		<operateType>A2</operateType>
+		<reuseDelay>180000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="50458" toLevel="1" name="Pirate's Earring">
+		<!-- Max. MP +34. MP Consumption -2%. P. Def. +500. Damage Reflection +5%. Absorbs 2% of inflicted damage as HP. -->
+		<icon>icon.accessory_earring_of_zaken_i03</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-2</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>5</amount>
+			</effect>
+			<effect name="HpDrain">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50459" toLevel="11" name="Blessed Dragon Belt">
+		<!-- A belt imbued with dragon power. <Effect>. Weight limit +1000. Max HP +20. Max MP +10. Мax CP +20. P. Def. +10. M. Def. +10. DEX +1. WIT +1 -->
+		<icon>icon.dragon_belt_2</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">2000</value>
+					<value level="3">3000</value>
+					<value level="4">4000</value>
+					<value level="5">5000</value>
+					<value level="6">6000</value>
+					<value level="7">7000</value>
+					<value level="8">8000</value>
+					<value level="9">9000</value>
+					<value level="10">10000</value>
+					<value level="11">12000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">150</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">350</value>
+					<value level="9">500</value>
+					<value level="10">800</value>
+					<value level="11">1500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">100</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">250</value>
+					<value level="9">300</value>
+					<value level="10">400</value>
+					<value level="11">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">50</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">500</value>
+					<value level="8">600</value>
+					<value level="9">800</value>
+					<value level="10">1200</value>
+					<value level="11">1500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">40</value>
+					<value level="7">50</value>
+					<value level="8">65</value>
+					<value level="9">90</value>
+					<value level="10">125</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+					<value level="5">30</value>
+					<value level="6">40</value>
+					<value level="7">50</value>
+					<value level="8">65</value>
+					<value level="9">90</value>
+					<value level="10">125</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">6</value>
+					<value level="6">6</value>
+					<value level="7">6</value>
+					<value level="8">8</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+					<value level="11">12</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">4</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+					<value level="6">3</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">4</value>
+					<value level="10">4</value>
+					<value level="11">6</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>
+					<value level="5">80</value>
+					<value level="6">100</value>
+					<value level="7">120</value>
+					<value level="8">135</value>
+					<value level="9">175</value>
+					<value level="10">250</value>
+					<value level="11">400</value>
+				</amount>
+			</effect>
+			<effect name="AdditionalPotionMp">
+				<amount>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">65</value>
+					<value level="10">90</value>
+					<value level="11">120</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">20</value>
+					<value level="8">30</value>
+					<value level="9">50</value>
+					<value level="10">100</value>
+					<value level="11">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">50</value>
+					<value level="10">100</value>
+					<value level="11">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+					<value level="11">70</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+					<value level="11">70</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-2</value>
+					<value level="8">-3</value>
+					<value level="9">-4</value>
+					<value level="10">-7</value>
+					<value level="11">-12</value>
+				</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">-2</value>
+					<value level="8">-3</value>
+					<value level="9">-4</value>
+					<value level="10">-7</value>
+					<value level="11">-12</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="9">5</value>
+					<value level="10">10</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="11">
+				<!-- Dragon's Protection -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="10">4</value>
+					<value level="11">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>50460</skillId> <!-- Dragon's Protection -->
+				<skillLevel>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+					<value level="11">7</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="11">
+				<!-- Dragon's Protection -->
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="10">4</value>
+					<value level="11">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>50460</skillId> <!-- Dragon's Protection -->
+				<skillLevel>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+					<value level="11">7</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByMagicType" fromLevel="5" toLevel="11">
+				<!-- Dragon's Protection -->
+				<magicTypes>0;1</magicTypes>
+				<skillId>50460</skillId> <!-- Dragon's Protection -->
+				<chance>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="10">4</value>
+					<value level="11">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</chance>
+				<skillLevel>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+					<value level="11">7</value>
+				</skillLevel>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50460" toLevel="7" name="Dragon's Protection">
+		<!-- The barrier's HP: 20000. Can be activated up to 1 time(s). The barrier disappears when its HP is 0 or after all trigger attempts. -->
+		<icon>icon.dragon_belt_grace</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>10</abnormalTime>
+		<effectPoint>100</effectPoint>
+		<isMagic>4</isMagic>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>ABSORB</abnormalType>
+		<abnormalVisualEffect>AVE_ABSORB2_SHIELD</abnormalVisualEffect>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<basicProperty>NONE</basicProperty>
+		<reuseDelay>60000</reuseDelay>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effects>
+			<effect name="AbsorbDamage">
+				<amount>
+					<value level="5">20000</value>
+					<value level="6">30000</value>
+					<value level="7">40000</value>
+				</amount>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50461" toLevel="6" name="Pet Earring">
+		<!-- P. Atk. +1000. M. Atk. +1000. MP Recovery Rate +2 -->
+		<icon>BranchSys2.icon.g_accessory_event_earring</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1200</value>
+					<value level="3">1400</value>
+					<value level="4">1800</value>
+					<value level="5">2400</value>
+					<value level="6">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1200</value>
+					<value level="3">1400</value>
+					<value level="4">1800</value>
+					<value level="5">2400</value>
+					<value level="6">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">5</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>
+					<value level="2">20</value>
+					<value level="3">50</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">200</value>
+				</amount>
+			</effect>
+			<effect name="SkillPowerAdd">
+				<amount>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">5</value>
+				</amount>
+			</effect>
+			<effect name="FeedModify">
+				<amount>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">30</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50462" toLevel="6" name="Pet Ring">
+		<!-- P. Def. +1000. M. Def. +500. Acquired XP +50% -->
+		<icon>BranchSys2.icon.g_accessory_event_ring</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1200</value>
+					<value level="3">1500</value>
+					<value level="4">1800</value>
+					<value level="5">2100</value>
+					<value level="6">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">700</value>
+					<value level="3">1000</value>
+					<value level="4">1300</value>
+					<value level="5">1600</value>
+					<value level="6">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModifyPet">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">52</value>
+					<value level="3">54</value>
+					<value level="4">56</value>
+					<value level="5">58</value>
+					<value level="6">2000</value>
+				</amount>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">-0</value>
+					<value level="2">-2</value>
+					<value level="3">-5</value>
+					<value level="4">-9</value>
+					<value level="5">-13</value>
+					<value level="6">-18</value>
+				</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>
+					<value level="1">-0</value>
+					<value level="2">-2</value>
+					<value level="3">-5</value>
+					<value level="4">-9</value>
+					<value level="5">-13</value>
+					<value level="6">-18</value>
+				</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="FeedModify">
+				<amount>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">20</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50463" toLevel="5" name="Zaken Doll's Sorcery">
+		<!-- A doll imbued with Zaken' power. <Effect>. Skill Critical Rate +10. Skill Critical Damage +100. HP Recovery Potions' Effect +20. Absorbs 1% of the inflicted damage as HP. -->
+		<icon>
+			<value level="1">icon.bm_zaken_doll_30d</value>
+			<value level="2">icon.bm_zaken_doll_30d</value>
+			<value level="3">icon.bm_zaken_doll_30d</value>
+			<value level="4">icon.bm_zaken_doll_30d_00</value>
+			<value level="5">icon.bm_zaken_doll_30d_01</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">70</value>
+					<value level="5">80</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">70</value>
+					<value level="5">80</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">300</value>
+					<value level="5">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AdditionalPotionHp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">50</value>
+					<value level="3">80</value>
+					<value level="4">110</value>
+					<value level="5">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">3</value>
+				</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50464" toLevel="5" name="Core Doll's Sorcery">
+		<!-- A doll imbued with Core's power. <Effect>. Received Skill Critical Damage -5%. Received Skill Critical Rate -2%. Shock Resistance +10%. Sleep Resistance +10%. Knockback Resistance +5% -->
+		<icon>
+			<value level="1">icon.bm_core_doll_30d</value>
+			<value level="2">icon.bm_core_doll_30d</value>
+			<value level="3">icon.bm_core_doll_30d</value>
+			<value level="4">icon.bm_core_doll_30d_00</value>
+			<value level="5">icon.bm_core_doll_30d_01</value>
+		</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-17</value>
+					<value level="5">-20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-17</value>
+					<value level="5">-20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-5</value>
+					<value level="3">-8</value>
+					<value level="4">-10</value>
+					<value level="5">-12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-5</value>
+					<value level="3">-8</value>
+					<value level="4">-10</value>
+					<value level="5">-12</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+					<value level="5">35</value>
+				</SHOCK>
+				<SLEEP>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+					<value level="5">35</value>
+				</SLEEP>
+				<KNOCKBACK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">20</value>
+					<value level="4">20</value>
+					<value level="5">20</value>
+				</KNOCKBACK>
+				<PARALYZE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">10</value>
+					<value level="5">20</value>
+				</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50465" toLevel="11" name="Necklace of Spirits">
+		<!-- A necklace imbued with the power of spirits. P. Atk. +5. M. Atk. +5. P. Def. +5. M. Def. +5. Atk. Spd. +2. Casting Spd. +2 -->
+		<icon>icon.necklace_of_elemental</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">50</value>
+					<value level="3">50</value>
+					<value level="4">50</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">50</value>
+					<value level="8">50</value>
+					<value level="9">50</value>
+					<value level="10">50</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">30</value>
+					<value level="7">50</value>
+					<value level="8">100</value>
+					<value level="9">300</value>
+					<value level="10">500</value>
+					<value level="11">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">30</value>
+					<value level="7">50</value>
+					<value level="8">100</value>
+					<value level="9">300</value>
+					<value level="10">500</value>
+					<value level="11">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">25</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">70</value>
+					<value level="10">100</value>
+					<value level="11">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">7</value>
+					<value level="3">10</value>
+					<value level="4">15</value>
+					<value level="5">20</value>
+					<value level="6">25</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">70</value>
+					<value level="10">100</value>
+					<value level="11">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">12</value>
+					<value level="7">15</value>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">12</value>
+					<value level="7">15</value>
+					<value level="8">20</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+					<value level="11">50</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="8">0</value>
+					<value level="9">1</value>
+					<value level="10">2</value>
+					<value level="11">3</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="8">0</value>
+					<value level="9">1</value>
+					<value level="10">2</value>
+					<value level="11">3</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value fromLevel="1" toLevel="6">0</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">50</value>
+					<value level="10">100</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value fromLevel="1" toLevel="6">0</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">50</value>
+					<value level="10">100</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50466" toLevel="10" name="Talisman of Hellbound">
+		<!-- A talisman imbued with the power of Hellbound. Max HP +100. P. Atk. +50. M. Atk. +50. P. Def. +100. M. Def. +100 -->
+		<icon>icon.hellbound_talisman_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">2000</value>
+					<value level="9">3000</value>
+					<value level="10">5000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">150</value>
+					<value level="4">200</value>
+					<value level="5">250</value>
+					<value level="6">300</value>
+					<value level="7">350</value>
+					<value level="8">400</value>
+					<value level="9">450</value>
+					<value level="10">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">150</value>
+					<value level="4">200</value>
+					<value level="5">250</value>
+					<value level="6">300</value>
+					<value level="7">350</value>
+					<value level="8">400</value>
+					<value level="9">450</value>
+					<value level="10">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">600</value>
+					<value level="7">700</value>
+					<value level="8">800</value>
+					<value level="9">900</value>
+					<value level="10">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">300</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">600</value>
+					<value level="7">700</value>
+					<value level="8">800</value>
+					<value level="9">900</value>
+					<value level="10">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">2</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">5</value>
+					<value level="7">6</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">35</value>
+					<value level="6">50</value>
+					<value level="7">70</value>
+					<value level="8">100</value>
+					<value level="9">150</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">35</value>
+					<value level="6">50</value>
+					<value level="7">70</value>
+					<value level="8">100</value>
+					<value level="9">150</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value fromLevel="1" toLevel="5">0</value>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">5</value>
+					<value level="9">7</value>
+					<value level="10">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">3</value>
+					<value level="8">7</value>
+					<value level="9">12</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">3</value>
+					<value level="8">7</value>
+					<value level="9">12</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">3</value>
+					<value level="8">7</value>
+					<value level="9">12</value>
+					<value level="10">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>
+					<value fromLevel="1" toLevel="7">0</value>
+					<value level="8">-2</value>
+					<value level="9">-5</value>
+					<value level="10">-10</value>
+				</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50467</skillId> <!-- Hell Lightning -->
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50467</skillId> <!-- Hell Lightning -->
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">6</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50467" toLevel="6" name="Hell Lightning">
+		<!-- Deals 1000 fixed damage. -->
+		<icon>icon.hellbound_talisman_i00</icon>
+		<operateType>A1</operateType>
+		<abnormalLevel>
+			<value level="1">2</value>
+			<value level="2">3</value>
+			<value level="3">4</value>
+			<value level="4">5</value>
+			<value level="5">6</value>
+			<value level="6">7</value>
+		</abnormalLevel>
+		<castRange>700</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<reuseDelay>300000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="RealDamage">
+				<power>
+					<value level="1">1000</value>
+					<value level="2">1500</value>
+					<value level="3">2000</value>
+					<value level="4">3000</value>
+					<value level="5">4000</value>
+					<value level="6">5000</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50468" toLevel="11" name="Hellbound Ring">
+		<!-- <Effect>. Paralysis Resistance +1% -->
+		<icon>icon.accessary_ring_of_anguish_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DefenceTrait">
+				<PARALYZE>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">12</value>
+					<value level="8">14</value>
+					<value level="9">18</value>
+					<value level="10">22</value>
+					<value level="11">30</value>
+				</PARALYZE>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">50</value>
+					<value level="3">100</value>
+					<value level="4">150</value>
+					<value level="5">200</value>
+					<value level="6">300</value>
+					<value level="7">400</value>
+					<value level="8">500</value>
+					<value level="9">600</value>
+					<value level="10">800</value>
+					<value level="11">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">30</value>
+					<value level="8">45</value>
+					<value level="9">90</value>
+					<value level="10">180</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">30</value>
+					<value level="8">45</value>
+					<value level="9">90</value>
+					<value level="10">180</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="7">0</value>
+					<value level="8">1</value>
+					<value level="9">1</value>
+					<value level="10">2</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value fromLevel="1" toLevel="7">0</value>
+					<value level="8">1</value>
+					<value level="9">1</value>
+					<value level="10">2</value>
+					<value level="11">5</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50469" toLevel="1" name="Half Mask of Glory">
+		<!-- All Critical Damage +100. -->
+		<icon>icon.accessory_half_face_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50470" toLevel="25" name="Growth Rune">
+		<!-- Acquired XP +1%. Acquired SP +1% -->
+		<icon>
+			<value level="1">icon.pc_new_cafe_rune_i00</value>
+			<value level="2">icon.pc_new_cafe_rune_i00</value>
+			<value level="3">icon.pc_new_cafe_rune_i00</value>
+			<value level="4">icon.pc_new_cafe_rune_i00</value>
+			<value level="5">icon.pc_new_cafe_rune_i00</value>
+			<value level="6">icon.pc_new_cafe_rune_i01</value>
+			<value level="7">icon.pc_new_cafe_rune_i01</value>
+			<value level="8">icon.pc_new_cafe_rune_i01</value>
+			<value level="9">icon.pc_new_cafe_rune_i01</value>
+			<value level="10">icon.pc_new_cafe_rune_i01</value>
+			<value level="11">icon.pc_new_cafe_rune_i02</value>
+			<value level="12">icon.pc_new_cafe_rune_i02</value>
+			<value level="13">icon.pc_new_cafe_rune_i02</value>
+			<value level="14">icon.pc_new_cafe_rune_i02</value>
+			<value level="15">icon.pc_new_cafe_rune_i02</value>
+			<value level="16">icon.pc_new_cafe_rune_i03</value>
+			<value level="17">icon.pc_new_cafe_rune_i03</value>
+			<value level="18">icon.pc_new_cafe_rune_i03</value>
+			<value level="19">icon.pc_new_cafe_rune_i03</value>
+			<value level="20">icon.pc_new_cafe_rune_i03</value>
+			<value level="21">icon.pc_new_cafe_rune_i04</value>
+			<value level="22">icon.pc_new_cafe_rune_i04</value>
+			<value level="23">icon.pc_new_cafe_rune_i04</value>
+			<value level="24">icon.pc_new_cafe_rune_i04</value>
+			<value level="25">icon.pc_new_cafe_rune_i04</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="11">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+					<value level="21">21</value>
+					<value level="22">22</value>
+					<value level="23">23</value>
+					<value level="24">24</value>
+					<value level="25">25</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+					<value level="9">9</value>
+					<value level="10">10</value>
+					<value level="11">11</value>
+					<value level="11">12</value>
+					<value level="13">13</value>
+					<value level="14">14</value>
+					<value level="15">15</value>
+					<value level="16">16</value>
+					<value level="17">17</value>
+					<value level="18">18</value>
+					<value level="19">19</value>
+					<value level="20">20</value>
+					<value level="21">21</value>
+					<value level="22">22</value>
+					<value level="23">23</value>
+					<value level="24">24</value>
+					<value level="25">25</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">70</value>
+					<value level="10">100</value>
+					<value level="11">120</value>
+					<value level="11">150</value>
+					<value level="13">180</value>
+					<value level="14">210</value>
+					<value level="15">240</value>
+					<value level="16">270</value>
+					<value level="17">300</value>
+					<value level="18">330</value>
+					<value level="19">360</value>
+					<value level="20">390</value>
+					<value level="21">420</value>
+					<value level="22">450</value>
+					<value level="23">480</value>
+					<value level="24">510</value>
+					<value level="25">540</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">50</value>
+					<value level="9">70</value>
+					<value level="10">100</value>
+					<value level="11">120</value>
+					<value level="11">150</value>
+					<value level="13">180</value>
+					<value level="14">210</value>
+					<value level="15">240</value>
+					<value level="16">270</value>
+					<value level="17">300</value>
+					<value level="18">330</value>
+					<value level="19">360</value>
+					<value level="20">390</value>
+					<value level="21">420</value>
+					<value level="22">450</value>
+					<value level="23">480</value>
+					<value level="24">510</value>
+					<value level="25">540</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value fromLevel="1" toLevel="9">0</value>
+					<value level="10">100</value>
+					<value level="11">120</value>
+					<value level="11">150</value>
+					<value level="13">180</value>
+					<value level="14">210</value>
+					<value level="15">240</value>
+					<value level="16">270</value>
+					<value level="17">300</value>
+					<value level="18">330</value>
+					<value level="19">360</value>
+					<value level="20">390</value>
+					<value level="21">420</value>
+					<value level="22">450</value>
+					<value level="23">480</value>
+					<value level="24">510</value>
+					<value level="25">540</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value fromLevel="1" toLevel="9">0</value>
+					<value level="10">100</value>
+					<value level="11">120</value>
+					<value level="11">150</value>
+					<value level="13">180</value>
+					<value level="14">210</value>
+					<value level="15">240</value>
+					<value level="16">270</value>
+					<value level="17">300</value>
+					<value level="18">330</value>
+					<value level="19">360</value>
+					<value level="20">390</value>
+					<value level="21">420</value>
+					<value level="22">450</value>
+					<value level="23">480</value>
+					<value level="24">510</value>
+					<value level="25">540</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate" fromLevel="21" toLevel="25">
+				<amount>
+					<value level="21">-0.4</value>
+					<value level="22">-0.8</value>
+					<value level="23">-1.2</value>
+					<value level="24">-1.6</value>
+					<value level="25">-2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate" fromLevel="21" toLevel="25">
+				<amount>
+					<value level="21">-0.4</value>
+					<value level="22">-0.8</value>
+					<value level="23">-1.2</value>
+					<value level="24">-1.6</value>
+					<value level="25">-2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage" fromLevel="21" toLevel="25">
+				<amount>
+					<value level="21">-0.4</value>
+					<value level="22">-0.8</value>
+					<value level="23">-1.2</value>
+					<value level="24">-1.6</value>
+					<value level="25">-2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage" fromLevel="21" toLevel="25">
+				<amount>
+					<value level="21">-0.4</value>
+					<value level="22">-0.8</value>
+					<value level="23">-1.2</value>
+					<value level="24">-1.6</value>
+					<value level="25">-2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50471" toLevel="1" name="Orfen Power - Recovery">
+		<icon>icon.accessory_earring_of_orfen_i05</icon>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ManaHealPercent">
+				<power>10</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50472" toLevel="1" name="Zaken Power - Recovery">
+		<icon>icon.accessory_earring_of_zaken_i05</icon>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>10</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50473" toLevel="1" name="Antharas Power - Recovery">
+		<icon>icon.accessory_earring_of_antaras_i05</icon>
+		<castRange>700</castRange>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>30</power>
+			</effect>
+			<effect name="ManaHealPercent">
+				<power>30</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50474" toLevel="1" name="Swift Fist">
+		<!-- Stuns the target and immobilizes it. -->
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="50475" toLevel="1" name="A-grade: Breastplate of Protection">
+		<!-- CON +2. STR +2. Overweight limit +1500. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t901_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>25</PARALYZE>
+				<SHOCK>25</SHOCK>
+				<SLEEP>25</SLEEP>
+				<HOLD>25</HOLD>
+				<FEAR>25</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50476" toLevel="1" name="Breastplate of Protection">
+		<!-- Shield Defense +100. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t901_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShieldDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50477" toLevel="10" name="+1 Breastplate of Protection">
+		<!-- Shield Defense +150. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t901_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">150</value>
+					<value level="2">200</value>
+					<value level="3">250</value>
+					<value level="4">300</value>
+					<value level="5">400</value>
+					<value level="6">500</value>
+					<value level="7">600</value>
+					<value level="8">700</value>
+					<value level="9">800</value>
+					<value level="10">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">2</value>
+					<value level="10">3</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50478" toLevel="1" name="A-grade: Gaiters of Protection">
+		<!-- CON +2. Overweight limit +1000. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t901_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>25</PARALYZE>
+				<SHOCK>25</SHOCK>
+				<SLEEP>25</SLEEP>
+				<HOLD>25</HOLD>
+				<FEAR>25</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50479" toLevel="1" name="Gaiters of Protection">
+		<!-- <Damage Limit>. With a 2% chance, limits received damage to 5000 for 5 sec. when hit. (Trigger cooldown: 10 sec.) -->
+		<icon>icon.armor_t901_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50482</skillId> <!-- Damage Limit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50482</skillId> <!-- Damage Limit -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50480" toLevel="10" name="+1 Gaiters of Protection">
+		<!-- <Damage Limit>. With a 2% chance, limits received damage to 4800 for 5 sec. when hit. (Trigger cooldown: 10 sec.) -->
+		<icon>icon.armor_t901_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50482</skillId> <!-- Damage Limit -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50482</skillId> <!-- Damage Limit -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50481" toLevel="3" name="Counter Paralysis">
+		<!-- Paralyzes the target and immobilizes it. -->
+		<icon>icon.skill1095</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">3</value>
+			<value level="2">4</value>
+			<value level="3">5</value>
+		</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<effectPoint>-500</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<operateType>A2</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="50482" toLevel="11" name="Damage Limit">
+		<!-- Received damage limit: 5000 -->
+		<icon>icon.skill10020_2</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+		</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<effects>
+			<effect name="GetDamageLimit">
+				<amount>
+					<value level="1">5000</value>
+					<value level="2">4800</value>
+					<value level="3">4600</value>
+					<value level="4">4400</value>
+					<value level="5">4200</value>
+					<value level="6">4000</value>
+					<value level="7">3600</value>
+					<value level="8">3200</value>
+					<value level="9">2800</value>
+					<value level="10">2400</value>
+					<value level="11">2000</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50483" toLevel="1" name="A-grade: Leather Armor of Protection">
+		<!-- DEX +2. STR +2. Overweight limit +1500. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t902_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50484" toLevel="1" name="Leather Armor of Protection">
+		<!-- P. Evasion +1. M. Evasion +1. Skill Evasion +1%. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t902_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>1</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>1</amount>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50485" toLevel="10" name="+1 Leather Armor of Protection">
+		<!-- P. Evasion +2. M. Evasion +2. Skill Evasion +2%. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t902_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">9</value>
+					<value level="8">11</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">9</value>
+					<value level="8">11</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">9</value>
+					<value level="8">11</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">9</value>
+					<value level="8">11</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">2</value>
+					<value level="10">3</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50486" toLevel="1" name="A-grade: Leather Leggings of Protection">
+		<!-- DEX +2. Overweight limit +1000. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t902_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>25</PARALYZE>
+				<SHOCK>25</SHOCK>
+				<SLEEP>25</SLEEP>
+				<HOLD>25</HOLD>
+				<FEAR>25</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50487" toLevel="1" name="Leather Leggings of Protection">
+		<!-- <Critical Damage Defense>. With a 2% chance for 5 sec., when hit:. All received Critical Rate -10%. All received Critical Damage -10%. (Trigger cooldown: 10 sec.) -->
+		<icon>icon.armor_t902_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50489</skillId> <!-- Critical Damage Defense -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50488" toLevel="10" name="+1 Leather Leggings of Protection">
+		<!-- <Critical Damage Defense>. With a 2% chance for 5 sec., when hit:. All received Critical Rate -12%. All received Critical Damage -12%. (Trigger cooldown: 10 sec.) -->
+		<icon>icon.armor_t902_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50489</skillId> <!-- Critical Damage Defense -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">2</value>
+					<value level="10">3</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50489" toLevel="11" name="Critical Damage Defense">
+		<!-- All received Critical Rate -10%. All received Critical Damage -10% -->
+		<icon>icon.skill10021_2</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+		</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<operateType>A2</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-18</value>
+					<value level="6">-20</value>
+					<value level="7">-25</value>
+					<value level="8">-30</value>
+					<value level="9">-35</value>
+					<value level="10">-40</value>
+					<value level="11">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-18</value>
+					<value level="6">-20</value>
+					<value level="7">-25</value>
+					<value level="8">-30</value>
+					<value level="9">-35</value>
+					<value level="10">-40</value>
+					<value level="11">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-18</value>
+					<value level="6">-20</value>
+					<value level="7">-25</value>
+					<value level="8">-30</value>
+					<value level="9">-35</value>
+					<value level="10">-40</value>
+					<value level="11">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-18</value>
+					<value level="6">-20</value>
+					<value level="7">-25</value>
+					<value level="8">-30</value>
+					<value level="9">-35</value>
+					<value level="10">-40</value>
+					<value level="11">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-18</value>
+					<value level="6">-20</value>
+					<value level="7">-25</value>
+					<value level="8">-30</value>
+					<value level="9">-35</value>
+					<value level="10">-40</value>
+					<value level="11">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50490" toLevel="1" name="A-grade: Tunic of Protection">
+		<!-- WIT +2. MEN +2. Overweight limit +1500. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t903_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>25</PARALYZE>
+				<SHOCK>25</SHOCK>
+				<SLEEP>25</SLEEP>
+				<HOLD>25</HOLD>
+				<FEAR>25</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50491" toLevel="1" name="Tunic of Protection">
+		<!-- Max MP +500. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t903_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>2</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50492" toLevel="10" name="+1 Tunic of Protection">
+		<!-- Max MP +600. <Counter Paralysis>. With a 2% chance, paralyzes the enemy for 3 sec., when hit. -->
+		<icon>icon.armor_t903_u_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">600</value>
+					<value level="2">700</value>
+					<value level="3">800</value>
+					<value level="4">900</value>
+					<value level="5">1000</value>
+					<value level="6">1400</value>
+					<value level="7">1800</value>
+					<value level="8">2200</value>
+					<value level="9">2600</value>
+					<value level="10">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>Creature</attackerType>
+				<chance>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">4</value>
+					<value level="6">6</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+				</chance>
+				<targetType>ENEMY_ONLY</targetType>
+				<minDamage>1</minDamage>
+				<skillId>50481</skillId> <!-- Counter Paralysis -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">1</value>
+					<value level="8">1</value>
+					<value level="9">2</value>
+					<value level="10">3</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50493" toLevel="1" name="A-grade: Stockings of Protection">
+		<!-- WIT +2. Overweight limit +1000. Paralysis Resistance +25%. Shock Resistance +25%. Sleep Resistance +25%. Hold Resistance +25%. Silence Resistance +25%. Fear Resistance +25% -->
+		<icon>icon.armor_t903_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>25</PARALYZE>
+				<SHOCK>25</SHOCK>
+				<SLEEP>25</SLEEP>
+				<HOLD>25</HOLD>
+				<FEAR>25</FEAR>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50494" toLevel="1" name="Stockings of Protection">
+		<!-- <Defense Shield>. When hit, creates a barrier for 5 sec. that absorbs 3000 damage with a 2% chance. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.armor_t903_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<hpPercent>60</hpPercent>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50496</skillId> <!-- Defense Shield -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<hpPercent>60</hpPercent>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50496</skillId> <!-- Defense Shield -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50495" toLevel="10" name="+1 Stockings of Protection">
+		<!-- <Defense Shield>. When hit, creates a barrier for 5 sec. that absorbs 3500 damage with a 2% chance. (Trigger cooldown: 15 sec.) -->
+		<icon>icon.armor_t903_l_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<hpPercent>60</hpPercent>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50496</skillId> <!-- Defense Shield -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>2</chance>
+				<targetType>SELF</targetType>
+				<hpPercent>60</hpPercent>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>50496</skillId> <!-- Defense Shield -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50496" toLevel="11" name="Defense Shield">
+		<!-- Absorbs 3000 of the damage. -->
+		<icon>icon.skill10021_3</icon>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">5</value>
+			<value level="4">5</value>
+			<value level="5">10</value>
+			<value level="6">10</value>
+			<value level="7">10</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+			<value level="11">10</value>
+		</abnormalTime>
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckSkill">
+				<skillId>1556</skillId> <!-- Arcane Shield -->
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MpShield">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">40</value>
+					<value level="3">40</value>
+					<value level="4">40</value>
+					<value level="5">40</value>
+					<value level="6">40</value>
+					<value level="7">42</value>
+					<value level="8">44</value>
+					<value level="9">46</value>
+					<value level="10">48</value>
+					<value level="11">50</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50497" toLevel="1" name="Weapon Blessing Effect">
+		<!-- P. Skill Critical Damage +50. -->
+		<icon>icon.bless_effect_base</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="50498" toLevel="1" name="Aden's Pistols">
+		<!-- <Level bonus effect>. P./ M. Atk. increase according to your level. <Lv. 40-49>. P. Atk. +33. M. Atk. +10. <Lv. 50-59>. P. Atk. +63. M. Atk. +19. <Lv. 60-64>. P. Atk. +96. M. Atk. +29. <Lv. 65-69>. P. Atk. +129. M. Atk. +38. <Lv. 70-74>. P. Atk. +159. M. Atk. +47. <Lv. 75+>. P. Atk. +192. M. Atk. +57 -->
+		<icon>icon.shooter_d</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatAddForLevel">
+				<stat>WEAPON_BONUS_PHYSICAL_ATTACK</stat>
+				<level>40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>33,33,33,33,33,33,33,33,33,33,63,63,63,63,63,63,63,63,63,63,96,96,96,96,96,129,129,129,129,129,159,159,159,159,159,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192</amount>
+			</effect>
+			<effect name="StatAddForLevel">
+				<stat>WEAPON_BONUS_MAGIC_ATTACK</stat>
+				<level>40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99</level>
+				<amount>10,10,10,10,10,10,10,10,10,10,19,19,19,19,19,19,19,19,19,19,29,29,29,29,29,38,38,38,38,38,47,47,47,47,47,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="50499" toLevel="1" name="Anakim's Divine Pistols">
+		<!-- A weapon imbued with Anakim's soul. Uses Anakim's power to deliver <font color="FFBB00">an additional attack</font>. Anakim's Holy Blast: a spirit attack according to M. Atk. -->
+		<icon>icon.shooter_boss_anakim</icon>
+		<operateType>P</operateType>
+	</skill>
+</list>

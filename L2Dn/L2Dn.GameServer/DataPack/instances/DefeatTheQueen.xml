@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="217" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="60" empty="0" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-21844" y="183637" z="-5712" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="CommandChannel" />
+		<condition type="CommandChannelLeader" />
+		<condition type="GroupMin">
+			<param name="limit" value="1" /> <!-- 1 for tester only, change on live server -->
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="100" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="65" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Distance" />
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="18020" x="-21809" y="182106" z="-5712" heading="50142" /> <!-- Queen Ant -->
+			<npc id="18023" x="-22298" y="182451" z="-5725" heading="50119" /> <!-- Escort Ant -->
+			<npc id="18024" x="-21723" y="182723" z="-5725" heading="6711" /> <!-- Royal Guard Ant -->
+			<npc id="18023" x="-21476" y="182756" z="-5725" heading="1241" /> <!-- Escort Ant -->
+			<npc id="18024" x="-21116" y="182559" z="-5725" heading="57277" /> <!-- Royal Guard Ant -->
+			<npc id="18023" x="-20956" y="182249" z="-5722" heading="37557" /> <!-- Escort Ant -->
+			<npc id="18024" x="-21108" y="181947" z="-5723" heading="48268" /> <!-- Royal Guard Ant -->
+			<npc id="18023" x="-21710" y="183339" z="-5724" heading="12298" /> <!-- Escort Ant -->
+			<npc id="18024" x="-21335" y="183302" z="-5722" heading="59140" /> <!-- Royal Guard Ant -->
+			<npc id="18023" x="-21388" y="182696" z="-5725" heading="39026" /> <!-- Escort Ant -->
+		</group>
+	</spawnlist>
+</instance>

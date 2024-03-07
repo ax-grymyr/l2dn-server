@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="227" parentClassId="226">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="3" getLevel="60" levelUpSp="0">
+			<item id="57" count="6000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Erosion" skillId="87361" skillLevel="1" getLevel="60" levelUpSp="70000">
+			<item id="98423,90045" count="3" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Murder Attempt" skillId="87362" skillLevel="1" getLevel="60" levelUpSp="70000">
+			<item id="98423,90045" count="3" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Blow" skillId="87301" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="4" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="5" getLevel="56" levelUpSp="50000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="6" getLevel="62" levelUpSp="80000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="7" getLevel="66" levelUpSp="120000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="8" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="9" getLevel="72" levelUpSp="220000" />
+		<skill skillName="Blow" skillId="87301" skillLevel="10" getLevel="74" levelUpSp="220000" />
+		<skill skillName="Sharp Blade" skillId="87367" skillLevel="1" getLevel="50" levelUpSp="30000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="2" getLevel="55" levelUpSp="40000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="3" getLevel="65" levelUpSp="100000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="4" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Shadow Attack" skillId="87304" skillLevel="5" getLevel="75" levelUpSp="220000" />
+		<skill skillName="Forward Move" skillId="87321" skillLevel="1" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Forward Move" skillId="87321" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="98539,98538" count="1" /> <!-- Spellbook: Forward Move Lv. 2 -->
+		</skill>
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="4" getLevel="47" levelUpSp="20000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="5" getLevel="54" levelUpSp="40000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="6" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="7" getLevel="68" levelUpSp="160000" />
+		<skill skillName="Dagger Expert" skillId="87391" skillLevel="8" getLevel="73" levelUpSp="220000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="4" getLevel="47" levelUpSp="20000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="5" getLevel="54" levelUpSp="40000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="6" getLevel="61" levelUpSp="70000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="7" getLevel="68" levelUpSp="160000" />
+		<skill skillName="Light Armor Expert" skillId="87392" skillLevel="8" getLevel="73" levelUpSp="220000" />
+		<skill skillName="Assassin's Secret Notes - 1st Page" skillId="54243" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Might" skillId="87461" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Assassin's Secret Notes - 2nd Page" skillId="54244" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="Assassin's Secret Notes - 3rd Page" skillId="54245" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="Empower" skillId="87463" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Shield" skillId="87462" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Haste" skillId="87465" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Magic Barrier" skillId="87464" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Acumen" skillId="87466" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Focus" skillId="87469" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Berserker Spirit" skillId="87468" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Wild Magic" skillId="87471" skillLevel="2" getLevel="40" levelUpSp="8000" />
+		<skill skillName="Death Whisper" skillId="87470" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="HP Recovery" skillId="87473" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Clarity" skillId="87472" skillLevel="3" getLevel="40" levelUpSp="8000" />
+		<skill skillName="MP Recovery" skillId="87474" skillLevel="2" getLevel="40" levelUpSp="8000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="87474" skillLevel="3" getLevel="60" levelUpSp="70000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="30000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="70000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+	</skillTree>
+</list>

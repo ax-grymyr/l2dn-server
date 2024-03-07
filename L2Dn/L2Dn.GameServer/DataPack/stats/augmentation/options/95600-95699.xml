@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95600" name="option_id_95600">
+		<!-- P./ M. Evasion +2.6 -->
+	</option>
+	<option id="95601" name="option_id_95601">
+		<!-- P./ M. Evasion +2.7 -->
+	</option>
+	<option id="95602" name="option_id_95602">
+		<!-- P./ M. Evasion +2.8 -->
+	</option>
+	<option id="95603" name="option_id_95603">
+		<!-- P./ M. Evasion +2.9 -->
+	</option>
+	<option id="95604" name="option_id_95604">
+		<!-- P./ M. Evasion +3 -->
+	</option>
+	<option id="95605" name="option_id_95605">
+		<!-- P./ M. Evasion +3.2 -->
+	</option>
+	<option id="95606" name="option_id_95606">
+		<!-- P./ M. Evasion +3.4 -->
+	</option>
+	<option id="95607" name="option_id_95607">
+		<!-- P./ M. Evasion +3.6 -->
+	</option>
+	<option id="95608" name="option_id_95608">
+		<!-- P./ M. Evasion +3.9 -->
+	</option>
+	<option id="95609" name="option_id_95609">
+		<!-- P./ M. Evasion +4.3 -->
+	</option>
+	<option id="95610" name="option_id_95610">
+		<!-- P./ M. Evasion +5 -->
+	</option>
+	<option id="95611" name="option_id_95611">
+		<!-- Skill Critical Damage +70 -->
+	</option>
+	<option id="95612" name="option_id_95612">
+		<!-- Skill Critical Damage +77 -->
+	</option>
+	<option id="95613" name="option_id_95613">
+		<!-- Skill Critical Damage +84 -->
+	</option>
+	<option id="95614" name="option_id_95614">
+		<!-- Skill Critical Damage +92 -->
+	</option>
+	<option id="95615" name="option_id_95615">
+		<!-- Skill Critical Damage +101 -->
+	</option>
+	<option id="95616" name="option_id_95616">
+		<!-- Skill Critical Damage +111 -->
+	</option>
+	<option id="95617" name="option_id_95617">
+		<!-- Skill Critical Damage +121 -->
+	</option>
+	<option id="95618" name="option_id_95618">
+		<!-- Skill Critical Damage +132 -->
+	</option>
+	<option id="95619" name="option_id_95619">
+		<!-- Skill Critical Damage +144 -->
+	</option>
+	<option id="95620" name="option_id_95620">
+		<!-- Skill Critical Damage +157 -->
+	</option>
+	<option id="95621" name="option_id_95621">
+		<!-- Skill Critical Damage +172 -->
+	</option>
+	<option id="95622" name="option_id_95622">
+		<!-- Skill Critical Damage +188 -->
+	</option>
+	<option id="95623" name="option_id_95623">
+		<!-- Skill Critical Damage +205 -->
+	</option>
+	<option id="95624" name="option_id_95624">
+		<!-- Skill Critical Damage +233 -->
+	</option>
+	<option id="95625" name="option_id_95625">
+		<!-- Skill Critical Damage +243 -->
+	</option>
+	<option id="95626" name="option_id_95626">
+		<!-- Skill Critical Damage +253 -->
+	</option>
+	<option id="95627" name="option_id_95627">
+		<!-- Skill Critical Damage +264 -->
+	</option>
+	<option id="95628" name="option_id_95628">
+		<!-- Skill Critical Damage +275 -->
+	</option>
+	<option id="95629" name="option_id_95629">
+		<!-- Skill Critical Damage +286 -->
+	</option>
+	<option id="95630" name="option_id_95630">
+		<!-- Skill Critical Damage +300 -->
+	</option>
+	<option id="95631" name="option_id_95631">
+		<!-- Received damage -3.5% -->
+	</option>
+	<option id="95632" name="option_id_95632">
+		<!-- Received damage -3.7% -->
+	</option>
+	<option id="95633" name="option_id_95633">
+		<!-- Received damage -3.9% -->
+	</option>
+	<option id="95634" name="option_id_95634">
+		<!-- Received damage -4.1% -->
+	</option>
+	<option id="95635" name="option_id_95635">
+		<!-- Received damage -4.4% -->
+	</option>
+	<option id="95636" name="option_id_95636">
+		<!-- Received damage -4.7% -->
+	</option>
+	<option id="95637" name="option_id_95637">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="95638" name="option_id_95638">
+		<!-- Received damage -5.3% -->
+	</option>
+	<option id="95639" name="option_id_95639">
+		<!-- Received damage -5.6% -->
+	</option>
+	<option id="95640" name="option_id_95640">
+		<!-- Received damage -6% -->
+	</option>
+	<option id="95641" name="option_id_95641">
+		<!-- Received damage -6.4% -->
+	</option>
+	<option id="95642" name="option_id_95642">
+		<!-- Received damage -6.8% -->
+	</option>
+	<option id="95643" name="option_id_95643">
+		<!-- Received damage -7.2% -->
+	</option>
+	<option id="95644" name="option_id_95644">
+		<!-- Received damage -8% -->
+	</option>
+	<option id="95645" name="option_id_95645">
+		<!-- Received damage -8.2% -->
+	</option>
+	<option id="95646" name="option_id_95646">
+		<!-- Received damage -8.4% -->
+	</option>
+	<option id="95647" name="option_id_95647">
+		<!-- Received damage -8.6% -->
+	</option>
+	<option id="95648" name="option_id_95648">
+		<!-- Received damage -8.8% -->
+	</option>
+	<option id="95649" name="option_id_95649">
+		<!-- Received damage -9.2% -->
+	</option>
+	<option id="95650" name="option_id_95650">
+		<!-- Received damage -10% -->
+	</option>
+	<option id="95651" name="option_id_95651">
+		<!-- P./ M. Atk. +50, Atk. Spd./ Casting Spd. +10 -->
+	</option>
+	<option id="95652" name="option_id_95652">
+		<!-- P. Atk./ M. Atk./ P. Def./ M. Def. +50, Atk. Spd./ Casting Spd. +20, Speed +1 -->
+	</option>
+	<option id="95653" name="option_id_95653">
+		<!-- P./ M. Atk. +50, P./ M. Def. +50, Atk. Spd./ Casting Spd. +20, acquired XP/ SP +5%, HP/ MP Recovery Rate +4 -->
+	</option>
+	<option id="95654" name="option_id_95654">
+		<!-- Received PvP damage -1% -->
+	</option>
+	<option id="95655" name="option_id_95655">
+		<!-- CON/ MEN +1, received PvP damage -1% -->
+	</option>
+	<option id="95656" name="option_id_95656">
+		<!-- Received AoE Skill Damage -1% -->
+	</option>
+	<option id="95657" name="option_id_95657">
+		<!-- Suppression Resistance +2%, Dagger Resistance +1% -->
+	</option>
+	<option id="95658" name="option_id_95658">
+		<!-- Suppression Resistance +2%, Dagger Resistance +1.5% -->
+	</option>
+	<option id="95659" name="option_id_95659">
+		<!-- Received Skill Critical Rate -1%, received Skill Critical Damage -1% -->
+	</option>
+	<option id="95660" name="option_id_95660">
+		<!-- Received AoE Skill Damage -1%, Resistance to All Weapons +1% -->
+	</option>
+	<option id="95661" name="option_id_95661">
+		<!-- Dagger Resistance +0.5% -->
+	</option>
+	<option id="95662" name="option_id_95662">
+		<!-- Suppression Resistance +1% -->
+	</option>
+	<option id="95663" name="option_id_95663">
+		<!-- PvE damage +2%, received PvE damage -2%, acquired XP/ SP +5%, HP/ MP Recovery Rate +4 -->
+	</option>
+	<option id="95664" name="option_id_95664">
+		<!-- P./ M. Def. +100, Knockback/ Suppression/ Hold Resistance +1% -->
+	</option>
+	<option id="95665" name="option_id_95665">
+		<!-- PvE damage +2%, acquired XP/ SP +2%, HP/ MP Recovery Rate +2 -->
+	</option>
+	<option id="95666" name="option_id_95666">
+		<!-- P. Atk. +10 -->
+	</option>
+	<option id="95667" name="option_id_95667">
+		<!-- P. Atk. +16 -->
+	</option>
+	<option id="95668" name="option_id_95668">
+		<!-- P. Atk. +22 -->
+	</option>
+	<option id="95669" name="option_id_95669">
+		<!-- P. Atk. +28 -->
+	</option>
+	<option id="95670" name="option_id_95670">
+		<!-- P. Atk. +34 -->
+	</option>
+	<option id="95671" name="option_id_95671">
+		<!-- P. Atk. +40 -->
+	</option>
+	<option id="95672" name="option_id_95672">
+		<!-- P. Atk. +46 -->
+	</option>
+	<option id="95673" name="option_id_95673">
+		<!-- P. Atk. +52 -->
+	</option>
+	<option id="95674" name="option_id_95674">
+		<!-- P. Atk. +58 -->
+	</option>
+	<option id="95675" name="option_id_95675">
+		<!-- P. Atk. +64 -->
+	</option>
+	<option id="95676" name="option_id_95676">
+		<!-- P. Atk. +70 -->
+	</option>
+	<option id="95677" name="option_id_95677">
+		<!-- P. Atk. +76 -->
+	</option>
+	<option id="95678" name="option_id_95678">
+		<!-- P. Atk. +82 -->
+	</option>
+	<option id="95679" name="option_id_95679">
+		<!-- P. Atk. +88 -->
+	</option>
+	<option id="95680" name="option_id_95680">
+		<!-- P. Atk. +94 -->
+	</option>
+	<option id="95681" name="option_id_95681">
+		<!-- P. Atk. +100 -->
+	</option>
+	<option id="95682" name="option_id_95682">
+		<!-- P. Atk. +110 -->
+	</option>
+	<option id="95683" name="option_id_95683">
+		<!-- P. Atk. +120 -->
+	</option>
+	<option id="95684" name="option_id_95684">
+		<!-- P. Atk. +150 -->
+	</option>
+	<option id="95685" name="option_id_95685">
+		<!-- P. Atk. +200 -->
+	</option>
+	<option id="95686" name="option_id_95686">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="95687" name="option_id_95687">
+		<!-- M. Atk. +16 -->
+	</option>
+	<option id="95688" name="option_id_95688">
+		<!-- M. Atk. +22 -->
+	</option>
+	<option id="95689" name="option_id_95689">
+		<!-- M. Atk. +28 -->
+	</option>
+	<option id="95690" name="option_id_95690">
+		<!-- M. Atk. +34 -->
+	</option>
+	<option id="95691" name="option_id_95691">
+		<!-- M. Atk. +40 -->
+	</option>
+	<option id="95692" name="option_id_95692">
+		<!-- M. Atk. +46 -->
+	</option>
+	<option id="95693" name="option_id_95693">
+		<!-- M. Atk. +52 -->
+	</option>
+	<option id="95694" name="option_id_95694">
+		<!-- M. Atk. +58 -->
+	</option>
+	<option id="95695" name="option_id_95695">
+		<!-- M. Atk. +64 -->
+	</option>
+	<option id="95696" name="option_id_95696">
+		<!-- M. Atk. +70 -->
+	</option>
+	<option id="95697" name="option_id_95697">
+		<!-- M. Atk. +76 -->
+	</option>
+	<option id="95698" name="option_id_95698">
+		<!-- M. Atk. +82 -->
+	</option>
+	<option id="95699" name="option_id_95699">
+		<!-- M. Atk. +88 -->
+	</option>
+</list>

@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38400" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38401" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38402" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38403" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38404" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38405" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38406" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38407" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38408" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38409" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38410" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38411" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38412" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38413" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38414" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38415" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38416" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38417" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38418" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38419" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38420" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38421" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38422" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38423" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38424" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38425" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38426" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38427" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38428" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38429" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38430" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38431" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38432" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38433" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38434" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38435" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38436" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38437" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +1 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38438" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38439" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38440" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38441" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +3 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38442" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +4 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38443" name="hp_mp_recovery_rate_ls_accessory">
+		<!-- HP/ MP Recovery Rate +5 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38444" name="p_def_ls_accessory">
+		<!-- P. Def. +10. -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38445" name="p_def_ls_accessory">
+		<!-- P. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38446" name="p_def_ls_accessory">
+		<!-- P. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38447" name="p_def_ls_accessory">
+		<!-- P. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38448" name="p_def_ls_accessory">
+		<!-- P. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38449" name="p_def_ls_accessory">
+		<!-- P. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38450" name="p_def_ls_accessory">
+		<!-- P. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38451" name="p_def_ls_accessory">
+		<!-- P. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38452" name="p_def_ls_accessory">
+		<!-- P. Def. +58 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38453" name="p_def_ls_accessory">
+		<!-- P. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38454" name="p_def_ls_accessory">
+		<!-- P. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38455" name="p_def_ls_accessory">
+		<!-- P. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38456" name="p_def_ls_accessory">
+		<!-- P. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38457" name="p_def_ls_accessory">
+		<!-- P. Def. +88 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38458" name="p_def_ls_accessory">
+		<!-- P. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38459" name="p_def_ls_accessory">
+		<!-- P. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38460" name="p_def_ls_accessory">
+		<!-- P. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38461" name="p_def_ls_accessory">
+		<!-- P. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38462" name="p_def_ls_accessory">
+		<!-- P. Def. +150 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38463" name="p_def_ls_accessory">
+		<!-- P. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38464" name="p_def_ls_accessory">
+		<!-- M. Def. +10 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38465" name="p_def_ls_accessory">
+		<!-- M. Def. +16 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>16</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38466" name="p_def_ls_accessory">
+		<!-- M. Def. +22 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>22</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38467" name="p_def_ls_accessory">
+		<!-- M. Def. +28 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>28</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38468" name="p_def_ls_accessory">
+		<!-- M. Def. +34 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>34</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38469" name="p_def_ls_accessory">
+		<!-- M. Def. +40 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38470" name="p_def_ls_accessory">
+		<!-- M. Def. +46 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>46</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38471" name="p_def_ls_accessory">
+		<!-- M. Def. +52 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>52</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38472" name="p_def_ls_accessory">
+		<!-- M. Def. +58 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>58</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38473" name="p_def_ls_accessory">
+		<!-- M. Def. +64 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>64</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38474" name="p_def_ls_accessory">
+		<!-- M. Def. +70 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38475" name="p_def_ls_accessory">
+		<!-- M. Def. +76 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>76</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38476" name="p_def_ls_accessory">
+		<!-- M. Def. +82 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38477" name="p_def_ls_accessory">
+		<!-- M. Def. +88 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>88</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38478" name="p_def_ls_accessory">
+		<!-- M. Def. +94 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38479" name="p_def_ls_accessory">
+		<!-- M. Def. +100 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38480" name="p_def_ls_accessory">
+		<!-- M. Def. +110 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>110</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38481" name="p_def_ls_accessory">
+		<!-- M. Def. +120 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>120</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38482" name="p_def_ls_accessory">
+		<!-- M. Def. +150 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38483" name="p_def_ls_accessory">
+		<!-- M. Def. +200 -->
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38484" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38485" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38486" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38487" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38488" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38489" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38490" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38491" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38492" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38493" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38494" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38495" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38496" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38497" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.6 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38498" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +1.8 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38499" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

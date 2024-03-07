@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48500" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 3% of the inflicted damage as MP -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MpVampiricAttack">
+				<amount>8</amount>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48501" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. A chance to absorb 8% of the inflicted damage as HP -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48502" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48503" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Def. +1000 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48504" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Max HP +33%. Max MP +33% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48505" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Speed +12 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48506" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -15% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48507" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Damage -300 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48508" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All received Critical Rate -15% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48509" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Received PvE damage -10% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48510" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. HP Recovery Potions' Effect +100 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48511" toLevel="1" name="Summon Watermelon">
+		<!-- Summons Watermelon during the event. -->
+		<icon>icon.skill17695</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48512" toLevel="1" name="Summon Prime Watermelon">
+		<!-- Summons Prime Watermelon during the event. -->
+		<icon>icon.skill17696</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48513" toLevel="1" name="Oppressive Heat">
+		<!-- You lose conscience from dancing in the oppressive heat. -->
+		<icon>icon.skill5008_psycho</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48514" toLevel="1" name="Chaotic Core's Rage">
+		<icon>icon.skill4038</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48515" toLevel="1" name="Chaotic Core's Curse">
+		<!-- You are weakened by Chaotic Core's powers. Atk. Spd. -50% -->
+		<icon>icon.skill4038</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<activateRate>140</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<abnormalType>ATTACK_TIME_UP</abnormalType>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SUPPRESSION</trait>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48516" toLevel="1" name="Chaotic Orfen's Rage">
+		<icon>icon.skill4038</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48517" toLevel="1" name="Chaotic Orfen's Curse">
+		<!-- You are weakened by Chaotic Orfen's powers. Casting Spd. -50% -->
+		<icon>icon.skill4038</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<activateRate>140</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<abnormalType>ATTACK_TIME_UP</abnormalType>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SUPPRESSION</trait>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48518" toLevel="1" name="Chaotic Queen Ant's Rage">
+		<icon>icon.skill4038</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48519" toLevel="1" name="Chaotic Queen Ant's Curse">
+		<!-- You are weakened by Chaotic Queen Ant's powers. Speed -50% -->
+		<icon>icon.skill4038</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<activateRate>140</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<abnormalType>ATTACK_TIME_UP</abnormalType>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SUPPRESSION</trait>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48520" toLevel="1" name="Chaotic Zaken's Rage">
+		<icon>icon.skill4038</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48521" toLevel="1" name="Chaotic Zaken's Curse">
+		<!-- You are weakened by Chaotic Zaken's power. Received PvE damage +20% -->
+		<icon>icon.skill4038</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<activateRate>140</activateRate>
+		<basicProperty>MAGIC</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>2000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48522" toLevel="25" name="Damage Decrease Ignore">
+		<!-- Damage Decrease Ignore +200 -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48523" toLevel="1" name="Balok">
+		<!-- An evil monster created by Beleth. Balok is able to travel between the Aden continent and the Hellbound. He is armed with a sword called Velakia granted to him by Beleth himself. It is rumored that the stronger Balok's opponents are, the more powerful he becomes. -->
+		<icon>icon.skillboss</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48524" toLevel="1" name="Lord Balok">
+		<!-- An evil monster created by Beleth. Balok is able to travel between the Aden continent and the Hellbound. He is armed with a sword called Velakia granted to him by Beleth himself. It is rumored that the stronger Balok's opponents are, the more powerful he becomes. -->
+		<icon>icon.skillboss</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48525" toLevel="1" name="Balok's Hand">
+		<!-- Balok's deadly lightning. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48526" toLevel="1" name="Hold">
+		<!-- Unable to move. -->
+		<icon>icon.skill4047</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48527" toLevel="1" name="Balok's Swing">
+		<!-- Balok's wide swing. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48528" toLevel="1" name="Bleed">
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48529" toLevel="1" name="Balok's Wave">
+		<!-- Balok attacks enemies at the front. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48530" toLevel="1" name="Paralysis">
+		<!-- Paralyzed and unable to move momentarily. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48531" toLevel="1" name="Balok's Hell">
+		<!-- Balok attacks nearby enemies. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48532" toLevel="1" name="Balok's Sphere">
+		<!-- Balok attacks with a sphere. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48533" toLevel="1" name="Burning Fire">
+		<!-- You are engulfed in flames, and your HP decreases. -->
+		<icon>icon.skill0514</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48534" toLevel="1" name="Balok's Game">
+		<!-- Balok attacks nearby enemies. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48535" toLevel="1" name="Paralysis">
+		<!-- Paralyzed and unable to move momentarily. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48536" toLevel="1" name="Aerial Yoke">
+		<!-- Enemies are bound in the air, unable to do anything. -->
+		<icon>icon.skill11050</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48537" toLevel="1" name="Balok's Armor">
+		<!-- Balok reflects received damage. -->
+		<icon>icon.skill1238</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48538" toLevel="1" name="Aerial Yoke Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48539" toLevel="1" name="Will to Fight">
+		<!-- Your will to fight decreases received damage from strong characters. -->
+		<icon>icon.immolation</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GetDamageLimit">
+				<amount>30000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48540" toLevel="1" name="Balok's Strike">
+		<!-- Powerful P. Atk. on enemy. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48541" toLevel="1" name="Balok's Bomb">
+		<!-- Attacks the enemy with Darkness Bombs. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48542" toLevel="1" name="Kesma's Lightning">
+		<!-- Kesma's deadly lightning. -->
+		<icon>icon.skill1469</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48543" toLevel="1" name="Kesma's Attack">
+		<!-- An attack used by Kesma. -->
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48544" toLevel="1" name="Prais' Fire Slash">
+		<!-- Fire Slash used by Prais. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48545" toLevel="1" name="Prais' Breath">
+		<!-- Breath used by Prais. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48546" toLevel="1" name="Burning Fire">
+		<!-- You are engulfed in flames, and your HP decreases. -->
+		<icon>icon.skill0514</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48547" toLevel="1" name="Vira's Gravitational Sphere">
+		<!-- In 2 sec. after unleashing makes an explosion that deals heavy damage. -->
+		<icon>icon.skill50004</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48548" toLevel="1" name="Vira's Bomb">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48549" toLevel="1" name="Vira's Bomb">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48550" toLevel="1" name="Vira's Dark Attack">
+		<!-- Vira's Dark Attack -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48551" toLevel="1" name="Heeder's Thrust">
+		<!-- Heeder's Thrust -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48552" toLevel="1" name="Heeder's Attack Step">
+		<!-- Heeder's Attack Step -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48553" toLevel="1" name="Hearak's Growth">
+		<!-- Increases your body's size. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48554" toLevel="1" name="Hearak's Damage Reflection">
+		<!-- Hearak reflects received damage. -->
+		<icon>icon.skill1232</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48555" toLevel="1" name="Hearak's Roar">
+		<!-- Hearak's Roar -->
+		<icon>icon.skill1285</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48556" toLevel="1" name="Hearak's Blade">
+		<!-- Hearak's Blade -->
+		<icon>icon.skill1469</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48557" toLevel="1" name="Stun">
+		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48558" toLevel="1" name="Hot Springs' Effect">
+		<!-- Increases your head's size. -->
+		<icon>icon.skill_spring_green</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48559" toLevel="1" name="Hot Springs' Effect">
+		<!-- Increases your body's size. -->
+		<icon>icon.skill_spring_yellow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48560" toLevel="1" name="Hot Springs' Effect">
+		<!-- Increases your head's and body's size. -->
+		<icon>icon.skill_spring_red</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48561" toLevel="1" name="Scroll of Escape: Morgos' Military Base's Central Barracks">
+		<icon>icon.skill0000</icon>
+		<hitTime>2000</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97204</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		 <operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>146904</x>
+				<y>-82561</y>
+				<z>-5128</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48562" toLevel="1" name="Xilenos' Secret Hall">
+		<!-- The Xilenos' Secret Hall is open only for the clan that killed Morgos' Commando Captain. -->
+		<icon>icon.skill_silenoi_camp</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48563" toLevel="4" name="Fire Shot">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48564" toLevel="4" name="Power Shot">
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48565" toLevel="4" name="Aura Spike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48566" toLevel="4" name="Storm Assault">
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48567" toLevel="4" name="Splash">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48568" toLevel="4" name="Earth Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48569" toLevel="4" name="Fatal Blow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48570" toLevel="4" name="Storm Strike">
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48571" toLevel="4" name="Rough Blow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48572" toLevel="4" name="Twister">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48573" toLevel="4" name="Spring">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48574" toLevel="4" name="Prominence">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48575" toLevel="4" name="Blaze">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48576" toLevel="4" name="Aura Burn">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48577" toLevel="18" name="Victory in Lucky Box Event Lv. 1">
+		<!-- You've won 1 time(s) in the Lucky Box event. -->
+		<icon>
+			<value level="1">icon.ev_sb_1_18th_lucky_win</value>
+			<value level="2">icon.ev_sb_2_18th_lucky_win</value>
+			<value level="3">icon.ev_sb_3_18th_lucky_win</value>
+			<value level="4">icon.ev_sb_4_18th_lucky_win</value>
+			<value level="5">icon.ev_sb_5_18th_lucky_win</value>
+			<value level="6">icon.ev_sb_6_18th_lucky_win</value>
+			<value level="7">icon.ev_sb_7_18th_lucky_win</value>
+			<value level="8">icon.ev_sb_8_18th_lucky_win</value>
+			<value level="9">icon.ev_sb_9_18th_lucky_win</value>
+			<value level="10">icon.ev_sb_10_18th_lucky_win</value>
+			<value level="11">icon.ev_sb_11_18th_lucky_win</value>
+			<value level="12">icon.ev_sb_12_18th_lucky_win</value>
+			<value level="13">icon.ev_sb_13_18th_lucky_win</value>
+			<value level="14">icon.ev_sb_14_18th_lucky_win</value>
+			<value level="15">icon.ev_sb_15_18th_lucky_win</value>
+			<value level="16">icon.ev_sb_16_18th_lucky_win</value>
+			<value level="17">icon.ev_sb_17_18th_lucky_win</value>
+			<value level="18">icon.ev_sb_18_18th_lucky_win</value>
+		</icon>
+		<operateType>T</operateType>
+	</skill>
+	<skill id="48578" toLevel="1" name="Defeat in Lucky Box Event">
+		<!-- Your head's size increases due to your defeat in the Lucky Box event. -->
+		<icon>icon.skill2513</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48579" toLevel="1" name="Max BP Recharge">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48580" toLevel="1" name="BP">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48581" toLevel="1" name="Ivory Tower's Grace">
+		<!-- A buff from Grand Magister Kreia of the Ivory Tower given to brave adventurers who dared going to the Balok Battleground. P. Atk. +800. M. Atk. +800. P. Def. +500. M. Def. +500 -->
+		<icon>icon.skill10278</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48582" toLevel="1" name="Ivory Tower's Grace">
+		<!-- A buff from Grand Magister Kreia of the Ivory Tower given to brave adventurers who dared going to the Balok Battleground. P. Atk. +1600. M. Atk. +1600. P. Def. +1000. M. Def. +1000. HP Recovery Potions' Effect +150. Atk. Spd. +150. Casting Spd. +150 -->
+		<icon>icon.skill10278</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48583" toLevel="20" name="Soulshot Damage Resistance 5%">
+		<!-- Soulshot Damage Resistance +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+					<value level="5">-25</value>
+					<value level="6">-30</value>
+					<value level="7">-35</value>
+					<value level="8">-40</value>
+					<value level="9">-45</value>
+					<value level="10">-50</value>
+					<value level="11">-55</value>
+					<value level="12">-60</value>
+					<value level="13">-65</value>
+					<value level="14">-70</value>
+					<value level="15">-75</value>
+					<value level="16">-80</value>
+					<value level="17">-85</value>
+					<value level="18">-90</value>
+					<value level="19">-95</value>
+					<value level="20">-100</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48584" toLevel="20" name="Spiritshot Damage Resistance 5%">
+		<!-- Spiritshot Damage Resistance +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SpiritshotResistance">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+					<value level="5">-25</value>
+					<value level="6">-30</value>
+					<value level="7">-35</value>
+					<value level="8">-40</value>
+					<value level="9">-45</value>
+					<value level="10">-50</value>
+					<value level="11">-55</value>
+					<value level="12">-60</value>
+					<value level="13">-65</value>
+					<value level="14">-70</value>
+					<value level="15">-75</value>
+					<value level="16">-80</value>
+					<value level="17">-85</value>
+					<value level="18">-90</value>
+					<value level="19">-95</value>
+					<value level="20">-100</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48585" toLevel="20" name="Soulshot/ Spiritshot Damage Resistance 5%">
+		<!-- Soulshot/ Spiritshot Damage Resistance +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="SoulshotResistance">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+					<value level="5">-25</value>
+					<value level="6">-30</value>
+					<value level="7">-35</value>
+					<value level="8">-40</value>
+					<value level="9">-45</value>
+					<value level="10">-50</value>
+					<value level="11">-55</value>
+					<value level="12">-60</value>
+					<value level="13">-65</value>
+					<value level="14">-70</value>
+					<value level="15">-75</value>
+					<value level="16">-80</value>
+					<value level="17">-85</value>
+					<value level="18">-90</value>
+					<value level="19">-95</value>
+					<value level="20">-100</value>
+				</amount>
+			</effect>
+			<effect name="SpiritshotResistance">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+					<value level="5">-25</value>
+					<value level="6">-30</value>
+					<value level="7">-35</value>
+					<value level="8">-40</value>
+					<value level="9">-45</value>
+					<value level="10">-50</value>
+					<value level="11">-55</value>
+					<value level="12">-60</value>
+					<value level="13">-65</value>
+					<value level="14">-70</value>
+					<value level="15">-75</value>
+					<value level="16">-80</value>
+					<value level="17">-85</value>
+					<value level="18">-90</value>
+					<value level="19">-95</value>
+					<value level="20">-100</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48586" toLevel="20" name="Melee Weapon Resistance 5%">
+		<!-- Melee Weapon Resistance +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48587" toLevel="20" name="Bow/ Firearms Resistance">
+		<!-- Bow/ Firearms Resistance. -->
+		<icon>icon.skill4071</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48588" toLevel="20" name="Resistance to All Weapons 5%">
+		<!-- Resistance to All Weapons +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48589" toLevel="20" name="Received AoE Skill Damage -5%">
+		<!-- Received AoE Skill Damage -5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48590" toLevel="20" name="Skill Power When Hit -5%">
+		<!-- Skill Power when hit -5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48591" toLevel="20" name="P. Skill Evasion 5%">
+		<!-- P. Skill Evasion +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48592" toLevel="20" name="M. Skill Evasion 5%">
+		<!-- M. Skill Evasion +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48593" toLevel="20" name="Skill Evasion 5%">
+		<!-- Skill Evasion +5% -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48594" toLevel="1" name="Return">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48595" toLevel="1" name="Death Portal">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48596" toLevel="1" name="Holiday Blessing">
+		<!-- Max HP +100. Max MP +100. Acquired XP/ SP +10% -->
+		<icon>icon.etc_x_mas_tree_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48597" toLevel="1" name="Beast Attack">
+		<icon>icon.s_arc_impale</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48598" toLevel="1" name="Beast Wave">
+		<icon>icon.s_brandish_wave</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48599" toLevel="1" name="Beast Spirit">
+		<icon>icon.s_phantom_charge</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+</list>

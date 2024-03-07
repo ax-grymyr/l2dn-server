@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="96300" name="option_id_96300">
+		<!-- M. Evasion +2 -->
+	</option>
+	<option id="96301" name="option_id_96301">
+		<!-- M. Evasion +2.1 -->
+	</option>
+	<option id="96302" name="option_id_96302">
+		<!-- M. Evasion +2.2 -->
+	</option>
+	<option id="96303" name="option_id_96303">
+		<!-- M. Evasion +2.3 -->
+	</option>
+	<option id="96304" name="option_id_96304">
+		<!-- M. Evasion +2.4 -->
+	</option>
+	<option id="96305" name="option_id_96305">
+		<!-- M. Evasion +3 -->
+	</option>
+	<option id="96306" name="option_id_96306">
+		<!-- Received damage -1.2% -->
+	</option>
+	<option id="96307" name="option_id_96307">
+		<!-- Received damage -1.2% -->
+	</option>
+	<option id="96308" name="option_id_96308">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="96309" name="option_id_96309">
+		<!-- Received damage -1.3% -->
+	</option>
+	<option id="96310" name="option_id_96310">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="96311" name="option_id_96311">
+		<!-- Received damage -1.4% -->
+	</option>
+	<option id="96312" name="option_id_96312">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="96313" name="option_id_96313">
+		<!-- Received damage -1.5% -->
+	</option>
+	<option id="96314" name="option_id_96314">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="96315" name="option_id_96315">
+		<!-- Received damage -1.6% -->
+	</option>
+	<option id="96316" name="option_id_96316">
+		<!-- Received damage -1.7% -->
+	</option>
+	<option id="96317" name="option_id_96317">
+		<!-- Received damage -1.8% -->
+	</option>
+	<option id="96318" name="option_id_96318">
+		<!-- Received damage -1.9% -->
+	</option>
+	<option id="96319" name="option_id_96319">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="96320" name="option_id_96320">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="96321" name="option_id_96321">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="96322" name="option_id_96322">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="96323" name="option_id_96323">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="96324" name="option_id_96324">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="96325" name="option_id_96325">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="96326" name="option_id_96326">
+		<!-- Received Healing +2% -->
+	</option>
+	<option id="96327" name="option_id_96327">
+		<!-- Received Healing +2.1% -->
+	</option>
+	<option id="96328" name="option_id_96328">
+		<!-- Received Healing +2.2% -->
+	</option>
+	<option id="96329" name="option_id_96329">
+		<!-- Received Healing +2.3% -->
+	</option>
+	<option id="96330" name="option_id_96330">
+		<!-- Received Healing +2.4% -->
+	</option>
+	<option id="96331" name="option_id_96331">
+		<!-- Received Healing +2.5% -->
+	</option>
+	<option id="96332" name="option_id_96332">
+		<!-- Received Healing +2.6% -->
+	</option>
+	<option id="96333" name="option_id_96333">
+		<!-- Received Healing +2.7% -->
+	</option>
+	<option id="96334" name="option_id_96334">
+		<!-- Received Healing +2.8% -->
+	</option>
+	<option id="96335" name="option_id_96335">
+		<!-- Received Healing +2.9% -->
+	</option>
+	<option id="96336" name="option_id_96336">
+		<!-- Received Healing +3% -->
+	</option>
+	<option id="96337" name="option_id_96337">
+		<!-- Received Healing +3.1% -->
+	</option>
+	<option id="96338" name="option_id_96338">
+		<!-- Received Healing +3.2% -->
+	</option>
+	<option id="96339" name="option_id_96339">
+		<!-- Received Healing +3.3% -->
+	</option>
+	<option id="96340" name="option_id_96340">
+		<!-- Received Healing +3.5% -->
+	</option>
+	<option id="96341" name="option_id_96341">
+		<!-- Received Healing +3.7% -->
+	</option>
+	<option id="96342" name="option_id_96342">
+		<!-- Received Healing +3.9% -->
+	</option>
+	<option id="96343" name="option_id_96343">
+		<!-- Received Healing +4.1% -->
+	</option>
+	<option id="96344" name="option_id_96344">
+		<!-- Received Healing +4.3% -->
+	</option>
+	<option id="96345" name="option_id_96345">
+		<!-- Received Healing +5% -->
+	</option>
+	<option id="96346" name="option_id_96346">
+		<!-- P. Def. +60 -->
+	</option>
+	<option id="96347" name="option_id_96347">
+		<!-- P. Def. +64 -->
+	</option>
+	<option id="96348" name="option_id_96348">
+		<!-- P. Def. +68 -->
+	</option>
+	<option id="96349" name="option_id_96349">
+		<!-- P. Def. +72 -->
+	</option>
+	<option id="96350" name="option_id_96350">
+		<!-- P. Def. +76 -->
+	</option>
+	<option id="96351" name="option_id_96351">
+		<!-- P. Def. +80 -->
+	</option>
+	<option id="96352" name="option_id_96352">
+		<!-- P. Def. +85 -->
+	</option>
+	<option id="96353" name="option_id_96353">
+		<!-- P. Def. +90 -->
+	</option>
+	<option id="96354" name="option_id_96354">
+		<!-- P. Def. +95 -->
+	</option>
+	<option id="96355" name="option_id_96355">
+		<!-- P. Def. +100 -->
+	</option>
+	<option id="96356" name="option_id_96356">
+		<!-- P. Def. +106 -->
+	</option>
+	<option id="96357" name="option_id_96357">
+		<!-- P. Def. +112 -->
+	</option>
+	<option id="96358" name="option_id_96358">
+		<!-- P. Def. +118 -->
+	</option>
+	<option id="96359" name="option_id_96359">
+		<!-- P. Def. +120 -->
+	</option>
+	<option id="96360" name="option_id_96360">
+		<!-- P. Def. +130 -->
+	</option>
+	<option id="96361" name="option_id_96361">
+		<!-- P. Def. +141 -->
+	</option>
+	<option id="96362" name="option_id_96362">
+		<!-- P. Def. +153 -->
+	</option>
+	<option id="96363" name="option_id_96363">
+		<!-- P. Def. +166 -->
+	</option>
+	<option id="96364" name="option_id_96364">
+		<!-- P. Def. +180 -->
+	</option>
+	<option id="96365" name="option_id_96365">
+		<!-- P. Def. +200 -->
+	</option>
+	<option id="96366" name="option_id_96366">
+		<!-- M. Def. +60 -->
+	</option>
+	<option id="96367" name="option_id_96367">
+		<!-- M. Def. +64 -->
+	</option>
+	<option id="96368" name="option_id_96368">
+		<!-- M. Def. +68 -->
+	</option>
+	<option id="96369" name="option_id_96369">
+		<!-- M. Def. +72 -->
+	</option>
+	<option id="96370" name="option_id_96370">
+		<!-- M. Def. +76 -->
+	</option>
+	<option id="96371" name="option_id_96371">
+		<!-- M. Def. +80 -->
+	</option>
+	<option id="96372" name="option_id_96372">
+		<!-- M. Def. +85 -->
+	</option>
+	<option id="96373" name="option_id_96373">
+		<!-- M. Def. +90 -->
+	</option>
+	<option id="96374" name="option_id_96374">
+		<!-- M. Def. +95 -->
+	</option>
+	<option id="96375" name="option_id_96375">
+		<!-- M. Def. +100 -->
+	</option>
+	<option id="96376" name="option_id_96376">
+		<!-- M. Def. +106 -->
+	</option>
+	<option id="96377" name="option_id_96377">
+		<!-- M. Def. +112 -->
+	</option>
+	<option id="96378" name="option_id_96378">
+		<!-- M. Def. +118 -->
+	</option>
+	<option id="96379" name="option_id_96379">
+		<!-- M. Def. +120 -->
+	</option>
+	<option id="96380" name="option_id_96380">
+		<!-- M. Def. +130 -->
+	</option>
+	<option id="96381" name="option_id_96381">
+		<!-- M. Def. +141 -->
+	</option>
+	<option id="96382" name="option_id_96382">
+		<!-- M. Def. +153 -->
+	</option>
+	<option id="96383" name="option_id_96383">
+		<!-- M. Def. +166 -->
+	</option>
+	<option id="96384" name="option_id_96384">
+		<!-- M. Def. +180 -->
+	</option>
+	<option id="96385" name="option_id_96385">
+		<!-- M. Def. +200 -->
+	</option>
+	<option id="96386" name="option_id_96386">
+		<!-- P. Accuracy +2 -->
+	</option>
+	<option id="96387" name="option_id_96387">
+		<!-- P. Accuracy +2.1 -->
+	</option>
+	<option id="96388" name="option_id_96388">
+		<!-- P. Accuracy +2.2 -->
+	</option>
+	<option id="96389" name="option_id_96389">
+		<!-- P. Accuracy +2.3 -->
+	</option>
+	<option id="96390" name="option_id_96390">
+		<!-- P. Accuracy +2.4 -->
+	</option>
+	<option id="96391" name="option_id_96391">
+		<!-- P. Accuracy +2.5 -->
+	</option>
+	<option id="96392" name="option_id_96392">
+		<!-- P. Accuracy +2.6 -->
+	</option>
+	<option id="96393" name="option_id_96393">
+		<!-- P. Accuracy +2.7 -->
+	</option>
+	<option id="96394" name="option_id_96394">
+		<!-- P. Accuracy +2.8 -->
+	</option>
+	<option id="96395" name="option_id_96395">
+		<!-- P. Accuracy +2.9 -->
+	</option>
+	<option id="96396" name="option_id_96396">
+		<!-- P. Accuracy +3 -->
+	</option>
+	<option id="96397" name="option_id_96397">
+		<!-- P. Accuracy +3.1 -->
+	</option>
+	<option id="96398" name="option_id_96398">
+		<!-- P. Accuracy +3.2 -->
+	</option>
+	<option id="96399" name="option_id_96399">
+		<!-- P. Accuracy +3.3 -->
+	</option>
+</list>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="94885" price="0" /> <!-- Scofield -->
+	<item id="94886" price="0" /> <!-- Zephyrus -->
+	<item id="94888" price="0" /> <!-- Anakim's Divine Pistols -->
+	<item id="95419" price="0" /> <!-- Scofield - Sealed -->
+	<item id="95420" price="0" /> <!-- Zephyrus - Sealed -->
+	<item id="95422" price="0" /> <!-- Anakim's Divine Pistols - Sealed -->
+	<item id="94895" price="0" /> <!-- A-grade Elemental Orb - Sealed -->
+</list>

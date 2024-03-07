@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="69" price="0" /> <!-- Bastard Sword -->
+	<item id="123" price="0" /> <!-- Saber -->
+	<item id="125" price="0" /> <!-- Spinebone Sword -->
+	<item id="126" price="0" /> <!-- Artisan's Sword -->
+	<item id="127" price="0" /> <!-- Crimson Sword -->
+	<item id="128" price="0" /> <!-- Knight's Sword -->
+	<item id="129" price="0" /> <!-- Sword of Revolution -->
+	<item id="130" price="0" /> <!-- Elven Sword -->
+	<item id="2499" price="0" /> <!-- Elven Long Sword -->
+	<item id="93028" price="0" /> <!-- Aden Sword -->
+</list>

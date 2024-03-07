@@ -1,0 +1,1645 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="29700" name="Minor Blessed Scroll of Resurrection" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Magic scroll that resurrects a dead party member and restores most of his or her XP. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="5" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29701" name="Rare Accessory Pack Lv. 1" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain one of the following items: Queen Ant's Ring Lv. 1 (30-day), Orfen's Earring Lv. 1 (30-day), Ring of Core Lv. 1 (30-day). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55043" level="1" /> <!-- Rare Accessory Pack -->
+		</skills>
+	</item>
+	<item id="29702" name="Chant of Vampire Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Amulet: Chant of Vampire. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29703" name="Body of Avatar Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain Spellbook: Body of Avatar. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29704" name="Fire Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Fire Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55091" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55091" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29705" name="Fire Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Fire Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55093" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55093" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29706" name="Fire Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Fire Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55095" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55095" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29707" name="Fire Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Fire Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55097" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55097" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29708" name="Fire Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Fire Dragon's energy. Can be enchanted to +10 with Pendant Polish/ Shining Pendant Polish. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55099" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55099" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29709" name="Water Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Water Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55101" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55101" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29710" name="Water Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Water Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55103" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55103" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29711" name="Water Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Water Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55105" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55105" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29712" name="Water Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Water Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55107" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55107" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29713" name="Water Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Water Dragon's energy. Can be enchanted to +10 with Pendant Polish/ Shining Pendant Polish. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55109" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55109" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29714" name="Wind Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Wind Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55111" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55111" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29715" name="Wind Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Wind Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55113" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55113" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29716" name="Wind Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Wind Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55115" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55115" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29717" name="Wind Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Wind Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55117" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55117" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29718" name="Wind Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Wind Dragon's energy. Can be enchanted to +10 with Pendant Polish/ Shining Pendant Polish. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55119" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55119" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29719" name="Earth Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Earth Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55122" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55122" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29720" name="Earth Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Earth Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55124" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55124" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29721" name="Earth Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Earth Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55126" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55126" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29722" name="Earth Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Earth Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Two pendants of the same level can be combined by the Game Assistant to add new effects. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55128" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55128" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29723" name="Earth Dragon Pendant" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A pendant that contains the Earth Dragon's energy. Can be enchanted to +10 with Pendant Polish/ Shining Pendant Polish. The number of effects is increased by the enchanting. The enchanting is safe up to +1, after that in case of failure, the item disappears. Note! After combining the pendant's enchant value is reset. Enhanced pendants can't be used for combining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="55130" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Fire Dragon Pendant Enchant Effect -->
+			<skill id="55130" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Fire Dragon Pendant Enchant Effect -->
+		</skills>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="29724" name="Fire Dragon Pendant Pack" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Fire Dragon Pendant Lv. 1 and Pendant Polish (10 pcs). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29704" min="1" max="1" chance="100" /> <!-- Fire Dragon Pendant - Not Available -->
+			<item id="49469" min="10" max="10" chance="100" /> <!-- Pendant Polish -->
+		</capsuled_items>
+	</item>
+	<item id="29725" name="Water Dragon Pendant Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Water Dragon Pendant Lv. 1 and Pendant Polish (10 pcs). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29726" name="Wind Dragon Pendant Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Wind Dragon Pendant Lv. 1 and Pendant Polish (10 pcs). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29727" name="Earth Dragon Pendant Pack" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1 Earth Dragon Pendant Lv. 1 and Pendant Polish (10 pcs). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29728" name="Special Fire Dragon Pendant Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 10 Fire Dragon Pendant Chests. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29724" min="10" max="10" chance="100" /> <!-- Fire Dragon Pendant Pack - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29729" name="Special Water Dragon Pendant Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 10 Water Dragon Pendant Chests. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29730" name="Special Wind Dragon Pendant Chest" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 10 Wind Dragon Pendant Chests. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29731" name="Special Earth Dragon Pendant Pack" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 10 Earth Dragon Pendant Packs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29732" name="Kit: Shining Polish and Fire Dragon Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 30 Fire Dragon Pendant Chests and a Shining Pendant Polish. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29724" min="30" max="30" chance="100" /> <!-- Fire Dragon Pendant Pack - Not Available -->
+			<item id="90138" min="1" max="1" chance="100" /> <!-- Glittering Pendant Polish -->
+		</capsuled_items>
+	</item>
+	<item id="29733" name="Kit: Shining Polish and Water Dragon Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 30 Water Dragon Pendant Chests and a Shining Pendant Polish. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29734" name="Kit: Shining Polish and Wind Dragon Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 30 Wind Dragon Pendant Chests and a Shining Pendant Polish. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29735" name="Kit: Shining Polish and Earth Dragon Pendant" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 30 Earth Dragon Pendant Packs and Shining Pendant Polish (1 pc.). -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29736" name="Diana's Earring" additionalName="Quest" type="EtcItem">
+		<!-- Diana's onyx earring. Take it to Diana in the Talking Island Village. -->
+		<set name="icon" val="icon.accessary_mage_earing_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29737" name="Diana's Ring" additionalName="Quest" type="EtcItem">
+		<!-- Diana's sapphire ring. Take it to Diana in the Talking Island Village. -->
+		<set name="icon" val="icon.accessary_ring_of_binding_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29738" name="Diana's Necklace" additionalName="Quest" type="EtcItem">
+		<!-- Diana's ruby necklace. Take it to Diana in the Talking Island Village. -->
+		<set name="icon" val="icon.item_normal142" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29739" name="Diana's recommendation" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Allows to participate in the Mr. and Ms. Lineage 2 contest. Save it until the very end of the contest. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="29740" name="Scroll: Enchant B-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For B-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers, spears. P. Atk. +5 for two-handed swords/ blunts, fists, dual swords. P. Atk. +8 for bows. M. Atk. +3 for all weapons. Starting from +4, P./ M. Atk. bonus is doubled. Can be safely enchanted up to +3. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29741" name="Scroll: Enchant B-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For B-grade armor and accessories. P. Def. +1. When enchanted to +4 or higher, P. Def. +3, HP is increased with each enchant value. Can be safely enchanted up to +4. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29742" name="Protecting Scroll: Enchant B-grade Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For B-grade weapons. P. Atk. +4 for one-handed swords/ blunts, daggers and spears. P. Atk. +5 for two-handed swords/ blunts, dual swords, and fist weapons. P. Atk. +8 for bows. M. Atk. +3 for all weapons. When enchanted to +4 and higher, P./ M. Atk. bonus is doubled. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29743" name="Protecting Scroll: Enchant B-grade Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. For B-grade armor and accessories. P. Def. +1. When enchanted to +4 and higher, P. Def. +3, Max HP is increased with each enchant value. The enchanting is safe up to +4. In case of failure the item does not disappear, but its enchant value is reset to 0. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29744" name="Shaft with Antharas treasures" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain one of Antharas treasures. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="29745" name="Premium Coin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A coin given as a bonus for buying event items. Can be exchanged for various items by the Game Assistant. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="29746" name="Mysterious B-grade Soulshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases a weapon's physical power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SOULSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+		<skills>
+			<skill id="55139" level="1" /> <!-- Player Commendation - Soulshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="29747" name="Mysterious Blessed B-grade Spiritshot" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Increases weapons' magic power. Used with B-grade weapons. Take it to the Game Assistant to exchange for a new Spiritshot. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SPIRITSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55140" level="1" /> <!-- Player Commendation - Blessed Spiritshot (B-grade) -->
+		</skills>
+	</item>
+	<item id="29748" name="Package: Mysterious B-grade Soulshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Mysterious B-grade Soulshots. Take them to the Game Assistant to exchange for new Soulshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29746" min="100" max="100" chance="100" /> <!-- Mysterious B-grade Soulshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29749" name="Package: Mysterious Blessed B-grade Spiritshots (100 pcs.)" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 100 Blessed B-grade Spiritshots. Take them to the Game Assistant to exchange for new Spiritshots. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29747" min="100" max="100" chance="100" /> <!-- Mysterious Blessed B-grade Spiritshot - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29750" name="Sniper's B-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 3000 Soulshots, 12 XP/ SP Scrolls (30%), and 12 2nd Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29746" min="3000" max="3000" chance="100" /> <!-- Mysterious B-grade Soulshot - Not Available -->
+			<item id="29648" min="12" max="12" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29012" min="15" max="15" chance="100" /> <!-- 2nd Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29751" name="Mystic's B-grade Mysterious Package" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Double-click to obtain 1000 Blessed Spiritshots, 12 XP/ SP Scrolls (30%), and 12 2nd Class Buff Scrolls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29747" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed B-grade Spiritshot - Not Available -->
+			<item id="29648" min="12" max="12" chance="100" /> <!-- XP/SP Scroll - Normal - Not Available -->
+			<item id="29012" min="15" max="15" chance="100" /> <!-- 2nd Class Buff Scroll - Not Available -->
+		</capsuled_items>
+	</item>
+	<item id="29752" name="Halloween Outfit" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. When equipped, it is impossible to wear armor. Weapons, headgear and accessories are not removed. Headgear is invisible. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<item id="29753" name="Blue Talisman - P. Crit." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Critical Rate +10. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3271" level="1" /> <!-- Blue Talisman - P. Crit. -->
+		</skills>
+	</item>
+	<item id="29754" name="Blue Talisman - P. Atk." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Atk. +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3272" level="1" /> <!-- Blue Talisman - P. Atk. -->
+		</skills>
+	</item>
+	<item id="29755" name="Blue Talisman - P. Def." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Def. +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3273" level="1" /> <!-- Blue Talisman - P. Def. -->
+		</skills>
+	</item>
+	<item id="29756" name="Blue Talisman - P. Skills Evasion" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Skills Evasion +10%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3274" level="1" /> <!-- Blue Talisman - Physical Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="29757" name="Blue Talisman - M. Crit." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Critical +10. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3275" level="1" /> <!-- Blue Talisman - M. Crit. -->
+		</skills>
+	</item>
+	<item id="29758" name="Blue Talisman - M. Atk." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Atk. +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3276" level="1" /> <!-- Blue Talisman - M. Atk. -->
+		</skills>
+	</item>
+	<item id="29759" name="Blue Talisman - M. Def." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Def. +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3277" level="1" /> <!-- Blue Talisman - M. Def. -->
+		</skills>
+	</item>
+	<item id="29760" name="Blue Talisman - M. Skills Evasion" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Skills Evasion +10%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3278" level="1" /> <!-- Blue Talisman - Magic Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="29761" name="Blue Talisman - Max. HP" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Max. HP +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3279" level="1" /> <!-- Blue Talisman - Max. HP -->
+		</skills>
+	</item>
+	<item id="29762" name="Blue Talisman - Max. MP" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Max. MP +3%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3280" level="1" /> <!-- Blue Talisman - Max. MP -->
+		</skills>
+	</item>
+	<item id="29763" name="Grey Talisman Box - Guard" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Can protect from Debuffs 5 times for 10 sec. when used. Reuse Time is 5 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3281" level="1" /> <!-- Grey Talisman Box - Guard -->
+		</skills>
+	</item>
+	<item id="29764" name="Grey Talisman - Denial" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Removes a Debuff when used. Reuse Time is 5 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3282" level="1" /> <!-- Grey Talisman - Denial -->
+		</skills>
+	</item>
+	<item id="29765" name="Grey Talisman - Benefaction" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. When used, P. Def. +1800 and M. Def. +1620, Buff-canceling Attack Resistance +80% for 10 seconds. Reuse Time is 15 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3283" level="1" /> <!-- Grey Talisman - Benefaction -->
+		</skills>
+	</item>
+	<item id="29766" name="Grey Talisman - Blocking" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Restricts enemy's HP recovery up to 70% for 15 sec. when used. Reuse Time is 3 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3284" level="1" /> <!-- Grey Talisman - Block -->
+		</skills>
+	</item>
+	<item id="29767" name="Grey Talisman - Gravity" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Atk. Spd. and Casting Spd. -20% for 15 sec. when used. Reuse Time is 3 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3285" level="1" /> <!-- Grey Talisman - Gravity -->
+		</skills>
+	</item>
+	<item id="29768" name="Grey Talisman - Bond" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Target's Speed -30% for 15 sec. when used. Reuse Time is 3 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3286" level="1" /> <!-- Grey Talisman - Bond -->
+		</skills>
+	</item>
+	<item id="29769" name="White Talisman - P. Crit." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Critical Rate +20. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3271" level="1" /> <!-- Blue Talisman - P. Crit. -->
+		</skills>
+	</item>
+	<item id="29770" name="White Talisman - P. Atk." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Atk. +4%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3272" level="1" /> <!-- Blue Talisman - P. Atk. -->
+		</skills>
+	</item>
+	<item id="29771" name="White Talisman - P. Def" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Def. +5%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3273" level="1" /> <!-- Blue Talisman - P. Def. -->
+		</skills>
+	</item>
+	<item id="29772" name="White Talisman - P. Skills Evasion" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Skills Evasion +15%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3274" level="1" /> <!-- Blue Talisman - Physical Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="29773" name="White Talisman - M. Crit." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Critical +20. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3275" level="1" /> <!-- Blue Talisman - M. Crit. -->
+		</skills>
+	</item>
+	<item id="29774" name="White Talisman - M. Atk." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Atk. +4%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3276" level="1" /> <!-- Blue Talisman - M. Atk. -->
+		</skills>
+	</item>
+	<item id="29775" name="White Talisman - M. Def." additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Def. +5%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3277" level="1" /> <!-- Blue Talisman - M. Def. -->
+		</skills>
+	</item>
+	<item id="29776" name="White Talisman - M. Skills Evasion" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. M. Skills Evasion +15%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3278" level="1" /> <!-- Blue Talisman - Magic Skill Evasion Rate -->
+		</skills>
+	</item>
+	<item id="29777" name="White Talisman - Max. HP" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Max. HP +5%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3279" level="1" /> <!-- Blue Talisman - Max. HP -->
+		</skills>
+	</item>
+	<item id="29778" name="White Talisman - Max. MP" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Max. MP +5%. Effects from two such talismans do not stack. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3280" level="1" /> <!-- Blue Talisman - Max. MP -->
+		</skills>
+	</item>
+	<item id="29779" name="Yellow Talisman - Guard" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Can protect from Debuffs 5 times for 10 sec. when used. Reuse Time is 4 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3287" level="1" /> <!-- Yellow Talisman - Guard -->
+		</skills>
+	</item>
+	<item id="29780" name="Yellow Talisman - Denial" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Removes a Debuff when used. Reuse Time is 4 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3288" level="1" /> <!-- Yellow Talisman - Denial -->
+		</skills>
+	</item>
+	<item id="29781" name="Yellow Talisman - Benefaction" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. P. Def. +3600 and M. Def. +3240 for 10 sec. when used. Buff-canceling Attack Resistance +80%. Reuse Time is 15 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3289" level="1" /> <!-- Yellow Talisman - Benefaction -->
+		</skills>
+	</item>
+	<item id="29782" name="Yellow Talisman - Blocking" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Restricts enemy's HP recovery up to 70% for 15 sec. when used. Reuse Time is 2 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3290" level="1" /> <!-- Yellow Talisman - Block -->
+		</skills>
+	</item>
+	<item id="29783" name="Yellow Talisman - Gravity" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Atk. Spd. and Casting Spd. -20% for 15 sec. when used. Reuse Time is 2 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3291" level="1" /> <!-- Yellow Talisman - Gravity -->
+		</skills>
+	</item>
+	<item id="29784" name="Yellow Talisman - Bond" additionalName="1 hour" type="Armor">
+		<!-- A 1-hour item. Target's Speed -30% for 15 sec. when used. Reuse Time is 2 minutes. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<set name="icon" val="icon.etc_talisman_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="60" />
+		<set name="bodypart" val="talisman" />
+		<skills>
+			<skill id="3292" level="1" /> <!-- Yellow Talisman - Bond -->
+		</skills>
+	</item>
+	<item id="29785" name="Blue Talisman Box - P. Crit." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - P. Crit. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29753" min="1" max="1" chance="100" /> <!-- Blue Talisman - P. Crit. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29786" name="Blue Talisman Box - P. Atk." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - P. Atk. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29754" min="1" max="1" chance="100" /> <!-- Blue Talisman - P. Atk. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29787" name="Blue Talisman Box - P. Def." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - P. Def. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29755" min="1" max="1" chance="100" /> <!-- Blue Talisman - P. Def. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29788" name="Blue Talisman Box - P. Skills Evasion" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - P. Skills Evasion (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29756" min="1" max="1" chance="100" /> <!-- Blue Talisman - P. Skills Evasion - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29789" name="Blue Talisman Box - M. Crit." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - M. Crit. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29757" min="1" max="1" chance="100" /> <!-- Blue Talisman - M. Crit. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29790" name="Blue Talisman Box - M. Atk." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - M. Atk. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29758" min="1" max="1" chance="100" /> <!-- Blue Talisman - M. Atk. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29791" name="Blue Talisman Box - M. Def." additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - M. Def. (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29759" min="1" max="1" chance="100" /> <!-- Blue Talisman - M. Def. - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29792" name="Blue Talisman Box - M. Skills Evasion" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - M. Skills Evasion (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29760" min="1" max="1" chance="100" /> <!-- Blue Talisman - M. Skills Evasion - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29793" name="Blue Talisman Box - Max. HP" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - Max. HP (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29761" min="1" max="1" chance="100" /> <!-- Blue Talisman - Max. HP - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29794" name="Blue Talisman Box - Max. MP" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Blue Talisman - Max. MP (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29762" min="1" max="1" chance="100" /> <!-- Blue Talisman - Max. MP - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29795" name="Grey Talisman Box - Guard" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Grey Talisman - Guard (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29763" min="1" max="1" chance="100" /> <!-- Grey Talisman - Guard - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29796" name="Grey Talisman Box - Denial" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Grey Talisman - Denial (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29764" min="1" max="1" chance="100" /> <!-- Grey Talisman - Denial - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29797" name="Grey Talisman Box - Benefaction" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Grey Talisman - Benefaction (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29765" min="1" max="1" chance="100" /> <!-- Grey Talisman - Benefaction - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29798" name="Grey Talisman Box - Blocking" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Grey Talisman - Blocking (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29766" min="1" max="1" chance="100" /> <!-- Grey Talisman - Blocking - 1 hour -->
+		</capsuled_items>
+	</item>
+	<item id="29799" name="Grey Talisman Box - Gravity" additionalName="1 hour" type="EtcItem">
+		<!-- By double-clicking it, you will get Grey Talisman - Gravity (for 1 hour). <Note:>. For items obtained from a chest, there are restrictions regarding movement. -->
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="29767" min="1" max="1" chance="100" /> <!-- Grey Talisman - Gravity - 1 hour -->
+		</capsuled_items>
+	</item>
+</list>

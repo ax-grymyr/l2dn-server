@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Dyes -->
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- STR Dye Lv. 2 -->
+		<production count="1" id="96356" />
+	</item>
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- CON Dye Lv. 2 -->
+		<production count="1" id="96376" />
+	</item>
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- DEX Dye Lv. 2 -->
+		<production count="1" id="96396" />
+	</item>
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- INT Dye Lv. 2 -->
+		<production count="1" id="96416" />
+	</item>
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- MEN Dye Lv. 2 -->
+		<production count="1" id="96436" />
+	</item>
+	<item>
+		<!-- Best Dye Coupon Sealed -->
+		<ingredient count="1" id="93974" />
+		<!-- WIT Dye Lv. 2 -->
+		<production count="1" id="96456" />
+	</item>
+	<item>
+		<!-- Faded Best STR Dye (STR +3) -->
+		<ingredient count="1" id="93968" />
+		<!-- STR Dye Lv. 2 -->
+		<production count="1" id="96356" />
+	</item>
+	<item>
+		<!-- Faded Best CON Dye (CON +3) -->
+		<ingredient count="1" id="93969" />
+		<!-- CON Dye Lv. 2 -->
+		<production count="1" id="96376" />
+	</item>
+	<item>
+		<!-- Faded Best DEX Dye (DEX +3) -->
+		<ingredient count="1" id="93970" />
+		<!-- DEX Dye Lv. 2 -->
+		<production count="1" id="96396" />
+	</item>
+	<item>
+		<!-- Faded Best INT Dye (INT +3) -->
+		<ingredient count="1" id="93971" />
+		<!-- INT Dye Lv. 2 -->
+		<production count="1" id="96416" />
+	</item>
+	<item>
+		<!-- Faded Best MEN Dye (MEN +3) -->
+		<ingredient count="1" id="93972" />
+		<!-- MEN Dye Lv. 2 -->
+		<production count="1" id="96436" />
+	</item>
+	<item>
+		<!-- Faded Best WIT Dye (WIT +3) -->
+		<ingredient count="1" id="93973" />
+		<!-- WIT Dye Lv. 2 -->
+		<production count="1" id="96456" />
+	</item>
+</list>

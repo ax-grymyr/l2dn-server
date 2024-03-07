@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="34355"> <!-- Kugin -->
+		<teleport type="OTHER">
+			<location x="82800" y="251690" z="-10600" /> <!-- Garden of Eva -->
+			<location x="-114918 " y="216290" z="-13216" /> <!-- Primeval Garden -->
+			<location x="-55358" y="85255" z="-4480"/> <!-- Garden of Authority -->
+		</teleport>
+	</npc>
+</list>

@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38600" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +2.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38601" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +3.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38602" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +3.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38603" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +5.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38604" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38605" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38606" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38607" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38608" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38609" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.1 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38610" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38611" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38612" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38613" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38614" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.3 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38615" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38616" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.4 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38617" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.6 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38618" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +1.8 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38619" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +2.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38620" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +2.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38621" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +3.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38622" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +3.5 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38623" name="m_evasion_ls_accessory">
+		<!-- M. Evasion +5.0 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38624" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38625" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38626" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38627" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38628" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38629" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38630" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38631" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38632" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38633" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38634" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38635" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38636" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38637" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38638" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38639" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38640" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38641" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38642" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -4% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38643" name="received_pSkill_critical_rate_ls_accessory">
+		<!-- Received P. Skill Critical Rate -5% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38644" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38645" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38646" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38647" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38648" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38649" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38650" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38651" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38652" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38653" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38654" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38655" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38656" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38657" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38658" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38659" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38660" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38661" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38662" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -4% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38663" name="received_mSkill_critical_rate_ls_accessory">
+		<!-- Received M. Skill Critical Rate -5% -->
+		<effects>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38664" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38665" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38666" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38667" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38668" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38669" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38670" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38671" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38672" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38673" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38674" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38675" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38676" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38677" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -1% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38678" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38679" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -2% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38680" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38681" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -3% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38682" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -4% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38683" name="received_p_mSkill_critical_rate_ls_accessory">
+		<!-- Received Skill Critical Rate -5% -->
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>-6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38692" name="option_id_38692">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38693" name="option_id_38693">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38694" name="option_id_38694">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38695" name="option_id_38695">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38696" name="option_id_38696">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38697" name="option_id_38697">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38698" name="option_id_38698">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="38699" name="option_id_38699">
+		<!-- Received damage -1% -->
+	</option>
+</list>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90459" price="0" /> <!-- Zubei's Helmet - Light Armor -->
+	<item id="93548" price="0" /> <!-- Zubei's Helmet (Light) - Sealed -->
+	<item id="2384" price="0" /> <!-- Zubei's Leather Shirt - Light Armor -->
+	<item id="93508" price="0" /> <!-- Zubei's Leather Shirt - Sealed -->
+	<item id="2388" price="0" /> <!-- Zubei's Leather Gaiters - Light Armor -->
+	<item id="93509" price="0" /> <!-- Zubei's Leather Gaiters - Sealed -->
+	<item id="5711" price="0" /> <!-- Zubei's Gauntlets - Light Armor -->
+	<item id="93521" price="0" /> <!-- Zubei's Gauntlets (Light) - Sealed -->
+	<item id="5727" price="0" /> <!-- Zubei's Boots - Light Armor -->
+	<item id="93533" price="0" /> <!-- Zubei's Boots (Light) - Sealed -->
+	<item id="90462" price="0" /> <!-- Blue Wolf Helmet - Light Armor -->
+	<item id="93551" price="0" /> <!-- Blue Wolf Helmet (Light) - Sealed -->
+	<item id="2391" price="0" /> <!-- Blue Wolf Leather Armor - Light Armor -->
+	<item id="93511" price="0" /> <!-- Blue Wolf Leather Armor - Sealed -->
+	<item id="5719" price="0" /> <!-- Blue Wolf Gloves - Light Armor -->
+	<item id="93527" price="0" /> <!-- Blue Wolf Gloves (Light) - Sealed -->
+	<item id="5735" price="0" /> <!-- Blue Wolf Boots - Light Armor -->
+	<item id="93539" price="0" /> <!-- Zubei's Boots (Light) - Sealed -->
+	<item id="90456" price="0" /> <!-- Avadon Circlet - Light Armor -->
+	<item id="93545" price="0" /> <!-- Avadon Circlet (Light) - Sealed -->
+	<item id="2390" price="0" /> <!-- Avadon Leather Armor - Light Armor -->
+	<item id="93510" price="0" /> <!-- Avadon Leather Armor - Sealed -->
+	<item id="5715" price="0" /> <!-- Avadon Gloves - Light Armor -->
+	<item id="93524" price="0" /> <!-- Avadon Gloves (Light) - Sealed -->
+	<item id="5731" price="0" /> <!-- Avadon Boots - Light Armor -->
+	<item id="93536" price="0" /> <!-- Zubei's Boots (Light) - Sealed -->
+	<item id="2392" price="0" /> <!-- Leather Armor of Doom - Light Armor -->
+	<item id="93512" price="0" /> <!-- Leather Armor of Doom - Sealed -->
+	<item id="90465" price="0" /> <!-- Doom Helmet - Light Armor -->
+	<item id="93554" price="0" /> <!-- Doom Helmet (Light) - Sealed -->
+	<item id="5723" price="0" /> <!-- Doom Gloves - Light Armor -->
+	<item id="93530" price="0" /> <!-- Doom Gloves (Light) - Sealed -->
+	<item id="5739" price="0" /> <!-- Doom Boots - Light Armor -->
+	<item id="93542" price="0" /> <!-- Doom Boots (Light) - Sealed -->
+</list>

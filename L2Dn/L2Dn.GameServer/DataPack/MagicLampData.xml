@@ -1,0 +1,32 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/MagicLampData.xsd">
+	<levelRange fromLevel="1" toLevel="44">
+		<lamp type="RED" exp="800000" sp="27000" chance="20" />
+		<lamp type="PURPLE" exp="300000" sp="81000" chance="30" />
+		<lamp type="BLUE" exp="200000" sp="27000" chance="40" />
+		<lamp type="GREEN" exp="100000" sp="13500" chance="10" />
+	</levelRange>
+	<levelRange fromLevel="45" toLevel="60">
+		<lamp type="RED" exp="1350000" sp="27000" chance="20" />
+		<lamp type="PURPLE" exp="1150000" sp="81000" chance="30" />
+		<lamp type="BLUE" exp="750000" sp="27000" chance="40" />
+		<lamp type="GREEN" exp="400000" sp="13500" chance="10" />
+	</levelRange>
+	<levelRange fromLevel="61" toLevel="69">
+		<lamp type="RED" exp="60000000" sp="1350000" chance="20" />
+		<lamp type="PURPLE" exp="4000000" sp="405000" chance="30" />
+		<lamp type="BLUE" exp="3600000" sp="135000" chance="40" />
+		<lamp type="GREEN" exp="2400000" sp="67500" chance="10" />
+	</levelRange>
+	<levelRange fromLevel="70" toLevel="80">
+		<lamp type="RED" exp="65000000" sp="1350000" chance="20" />
+		<lamp type="PURPLE" exp="4500000" sp="405000" chance="30" />
+		<lamp type="BLUE" exp="4000000" sp="135000" chance="40" />
+		<lamp type="GREEN" exp="3200000" sp="67500" chance="10" />
+	</levelRange>
+	<levelRange fromLevel="81" toLevel="999">
+		<lamp type="RED" exp="100000000" sp="2700000" chance="20" />
+		<lamp type="PURPLE" exp="30000000" sp="910000" chance="30" />
+		<lamp type="BLUE" exp="10000000" sp="270000" chance="40" />
+		<lamp type="GREEN" exp="5000000" sp="135000" chance="10" />
+	</levelRange>
+</list>

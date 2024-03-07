@@ -1,0 +1,3079 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="22500" level="90" type="Monster" name="Cave Death Knight" element="EARTH">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="78" /> <!-- Great Sword -->
+		<acquire exp="4066070" sp="40654" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="314500.6" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="42" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.88" />
+			<height normal="41.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48047" level="1" /> <!-- Earth Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="63639" max="70388" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.12" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93255" min="1" max="1" chance="0.004" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+				<item id="93256" min="1" max="1" chance="0.004" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+				<item id="94184" min="1" max="1" chance="0.009" /> <!-- Scroll of Blessing: Weapon -->
+				<item id="94186" min="1" max="1" chance="0.014" /> <!-- Augmenting Stone: Weapon -->
+				<item id="94188" min="1" max="1" chance="0.028" /> <!-- Augmenting Stone: Armor -->
+				<item id="94423" min="1" max="1" chance="0.028" /> <!-- Augmenting Stone: Accessory -->
+				<item id="92812" min="1" max="1" chance="0.428" /> <!-- Sealed Majestic Leather Armor Fabric -->
+				<item id="92817" min="1" max="1" chance="0.428" /> <!-- Sealed Majestic Robe Fabric -->
+				<item id="92824" min="1" max="1" chance="2.084" /> <!-- Sealed Majestic Boot Lining -->
+				<item id="92828" min="1" max="1" chance="2.084" /> <!-- Sealed Majestic Gauntlet Design -->
+				<item id="92832" min="1" max="1" chance="0.321" /> <!-- Sealed Majestic Plate Armor Pattern -->
+				<item id="92837" min="1" max="1" chance="1.389" /> <!-- Sealed Majestic Circlet Design -->
+				<item id="92901" min="1" max="1" chance="0.105" /> <!-- Naga's Storm Piece -->
+				<item id="92902" min="1" max="1" chance="0.105" /> <!-- Tiphon's Spear Edge -->
+				<item id="5316" min="1" max="1" chance="0.019" /> <!-- Sealed Majestic Plate Armor -->
+				<item id="5317" min="1" max="1" chance="0.081" /> <!-- Sealed Majestic Circlet -->
+				<item id="5318" min="1" max="1" chance="0.122" /> <!-- Sealed Majestic Gauntlets -->
+				<item id="5319" min="1" max="1" chance="0.122" /> <!-- Sealed Majestic Boots -->
+				<item id="5323" min="1" max="1" chance="0.025" /> <!-- Sealed Majestic Leather Armor -->
+				<item id="5329" min="1" max="1" chance="0.025" /> <!-- Sealed Majestic Robe -->
+				<item id="8682" min="1" max="1" chance="0.006" /> <!-- Naga's Storm -->
+				<item id="8683" min="1" max="1" chance="0.006" /> <!-- Tiphon's Spear -->
+			</drop>
+			<spoil>
+				<item id="5338" min="1" max="1" chance="0.177" /> <!-- Recipe: Sealed Majestic Leather Armor (60%) -->
+				<item id="5339" min="1" max="1" chance="0.106" /> <!-- Recipe: Sealed Majestic Leather Armor (100%) -->
+				<item id="5352" min="1" max="1" chance="0.177" /> <!-- Recipe: Sealed Majestic Robe (60%) -->
+				<item id="5353" min="1" max="1" chance="0.106" /> <!-- Recipe: Sealed Majestic Robe (100%) -->
+				<item id="5382" min="1" max="1" chance="0.865" /> <!-- Recipe: Sealed Majestic Boots (60%) -->
+				<item id="5383" min="1" max="1" chance="0.519" /> <!-- Recipe: Sealed Majestic Boots (100%) -->
+				<item id="5406" min="1" max="1" chance="0.865" /> <!-- Recipe: Sealed Majestic Gauntlets (60%) -->
+				<item id="5407" min="1" max="1" chance="0.519" /> <!-- Recipe: Sealed Majestic Gauntlets (100%) -->
+				<item id="5422" min="1" max="1" chance="0.133" /> <!-- Recipe: Sealed Majestic Plate Armor (60%) -->
+				<item id="5423" min="1" max="1" chance="0.08" /> <!-- Recipe: Sealed Majestic Plate Armor (100%) -->
+				<item id="5432" min="1" max="1" chance="0.577" /> <!-- Recipe: Sealed Majestic Circlet (60%) -->
+				<item id="5433" min="1" max="1" chance="0.346" /> <!-- Recipe: Sealed Majestic Circlet (100%) -->
+				<item id="8698" min="1" max="1" chance="0.043" /> <!-- Recipe: Naga's Storm (60%) -->
+				<item id="8699" min="1" max="1" chance="0.026" /> <!-- Recipe: Naga's Storm (100%) -->
+				<item id="8700" min="1" max="1" chance="0.043" /> <!-- Recipe: Tiphon's Spear (60%) -->
+				<item id="8701" min="1" max="1" chance="0.026" /> <!-- Recipe: Tiphon's Spear (100%) -->
+			</spoil>
+		</dropLists>
+	</npc>
+	<npc id="22501" level="75" type="Monster" name="Krakia Bathus" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="152824" sp="1524" attributeExp="908" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="53936.07" hpRegen="8.5" mp="2770.2" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" grown="32" />
+			<height normal="46.15" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1306" max="1444" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22502" level="75" type="Monster" name="Krakia Krakos" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) - Not Available -->
+		<acquire exp="152824" sp="1524" attributeExp="908" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="53936.07" hpRegen="8.5" mp="2770.2" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="319.24623" magical="233.61053" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" grown="32" />
+			<height normal="36" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1306" max="1444" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22503" level="75" type="Monster" name="Krakia Lotus" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="152824" sp="1524" attributeExp="908" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="53936.07" hpRegen="8.5" mp="2770.2" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" grown="32" />
+			<height normal="46.15" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1306" max="1444" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22504" level="75" type="Monster" name="Rakzan" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="152824" sp="1524" attributeExp="908" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="53936.07" hpRegen="8.5" mp="2770.2" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="65" grown="48" />
+			<height normal="79" grown="93" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1306" max="1444" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22505" level="75" type="Monster" name="Weiss Khan" title="Labyrinth Guardian" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1518750" sp="15188" attributeExp="908" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="539360.1" hpRegen="8.5" mp="2770.2" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" grown="18" />
+			<height normal="42.5" grown="46" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1958" max="2166" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22506" level="82" type="Monster" name="Weiss Ele" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="231348" sp="2313" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="73584.18" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" grown="12" />
+			<height normal="35" grown="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1772" max="1959" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22507" level="82" type="Monster" name="Bamonti" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="231348" sp="2313" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="73584.18" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19" grown="14" />
+			<height normal="43" grown="50" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1772" max="1959" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22508" level="82" type="Monster" name="Seknus" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="231348" sp="2313" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="73584.18" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" grown="21" />
+			<height normal="50" grown="76" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1772" max="1959" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22509" level="82" type="Monster" name="Demonic Bathus" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="231348" sp="2313" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="73584.18" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" grown="32" />
+			<height normal="46.15" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1772" max="1959" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22510" level="82" type="Monster" name="Demonic Krakos" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) - Not Available -->
+		<acquire exp="231348" sp="2313" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="73584.18" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" grown="32" />
+			<height normal="36" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1772" max="1959" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22511" level="82" type="Monster" name="Demonic Lotus" title="Labyrinth Guardian" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2689600" sp="26896" attributeExp="1173" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="735839.9" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="1688.456" magical="864.744" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="419.73" magical="230.358" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" grown="32" />
+			<height normal="46.15" grown="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2659" max="2939" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22512" level="88" type="Monster" name="Demonic Rakzan" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" grown="48" />
+			<height normal="79" grown="93" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4590" max="5074" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22513" level="88" type="Monster" name="Demonic Weiss Khan" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" grown="18" />
+			<height normal="42.5" grown="46" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4590" max="5074" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22514" level="88" type="Monster" name="Demonic Weiss Ele" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" grown="12" />
+			<height normal="35" grown="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4590" max="5074" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22515" level="88" type="Monster" name="Demonic Bamonti" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19" grown="14" />
+			<height normal="43" grown="50" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="4590" max="5074" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22516" level="88" type="Monster" name="Demonic Seknus" title="Labyrinth Guardian" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="4646400" sp="46464" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1783560" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" grown="21" />
+			<height normal="50" grown="76" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="6884" max="7610" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22517" level="88" type="Monster" name="Noctum" title="Gravekeeper" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="60.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22518" level="88" type="Monster" name="Demonic Noctum" title="Gravekeeper" element="FIRE">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="438628" sp="4383" attributeExp="1760" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="178355.7" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="60.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48044" level="1" /> <!-- Fire Attribute Monster -->
+		</skillList>
+	</npc>
+	<npc id="22519" level="80" type="Monster" name="Delh Lizardman" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="38122" sp="378" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5765.307075" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="17" />
+			<height normal="25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Acumen -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22520" level="80" type="Monster" name="Delh Lizardman Rogue" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="41366" sp="410" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="11530.38" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="40.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Acumen -->
+				<item id="95803" min="1" max="1" chance="0.0005" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22521" level="80" type="Monster" name="Delh Lizardman Soldier" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="41366" sp="410" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="11530.38" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="65" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Acumen -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22522" level="80" type="Monster" name="Delh Lizardman Wizard" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="38122" sp="378" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="10204.43" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="17" />
+			<height normal="44" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="903" max="998" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Acumen -->
+				<item id="95803" min="1" max="1" chance="0.0005" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22523" level="80" type="Monster" name="Delh Giant" title="Eva's Energy Reserve" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="51206" sp="512" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="17296.2" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="85" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="31.5" />
+			<height normal="52" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+			<skill id="5620" level="2" /> <!-- Melee Attack Vulnerability -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1079" max="1193" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.00010" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.00001" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.00002" /> <!-- Master's Book: Acumen -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22524" level="90" type="Monster" name="Garden Priest" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="165845" sp="1652" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="78625.32" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="53" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3485" max="3848" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22525" level="88" type="Monster" name="Garden Archer" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="88814" sp="883" attributeExp="1258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="29433.54" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="75" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="57.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2663" max="2943" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22526" level="88" type="Monster" name="Garden Patrol" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<equipment rhand="97523" lhand="97524" /> <!-- Monsters Only - Demonic_Footman's_Sword2 - Not Available / Monsters Only - Dragontroop_Soldier's_Shield2 - Not Available -->
+		<acquire exp="88814" sp="883" attributeExp="1258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="29433.54" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="56" />
+				<run ground="210" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.2" />
+			<height normal="40.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2663" max="2943" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22527" level="90" type="Monster" name="Garden Guard Captain" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="165845" sp="1652" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="78625.32" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="52.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3485" max="3848" chance="70" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22528" level="90" type="Monster" name="Garden Apostle" title="Eva's Energy Reserve" element="WATER">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="234598" sp="2341" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="117938" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="75" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="72.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="48045" level="1" /> <!-- Water Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3853" max="4255" chance="70" /> <!-- Adena -->
+				<item id="92399" min="1" max="1" chance="0.003" /> <!-- Forgotten Garden's Time Stone -->
+				<item id="94135" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Might -->
+				<item id="94136" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Shield -->
+				<item id="94361" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Empower -->
+				<item id="94362" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Magic Barrier -->
+				<item id="94363" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Focus -->
+				<item id="94364" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Death Whisper -->
+				<item id="94365" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Wind Walk -->
+				<item id="94366" min="1" max="1" chance="0.0001" /> <!-- Master's Book: Berserker Spirit -->
+				<item id="94367" min="1" max="1" chance="0.0002" /> <!-- Master's Book: Clarity -->
+				<item id="94368" min="1" max="1" chance="0.0002" /> <!-- Master's Book: Wild Magic -->
+				<item id="94369" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Haste -->
+				<item id="94370" min="1" max="1" chance="0.0003" /> <!-- Master's Book: Acumen -->
+				<item id="95803" min="1" max="1" chance="0.012" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22529" level="85" type="Monster" name="Nephilim Royal Guard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="86700" sp="867" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="65" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="39.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22530" level="85" type="Monster" name="Nephilim Cardinal">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="86700" sp="867" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" grown="14" />
+			<height normal="44" grown="56" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22531" level="85" type="Monster" name="Nephilim Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="86700" sp="867" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="65" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="15.6" />
+			<height normal="48" grown="57.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22532" level="90" type="Monster" name="Lilim's Guard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="234" lhand="234" /> <!-- Demon's Dagger / Demon's Dagger -->
+		<acquire exp="202500" sp="2025" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="990000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="34.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22533" level="90" type="Monster" name="Lilim's Assassin">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="202500" sp="2025" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="990000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="29.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22534" level="90" type="Monster" name="Lilim Soldier">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord - Not Available / Nephilim Lord -->
+		<acquire exp="202500" sp="2025" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="990000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="56" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="43.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22535" level="85" type="Monster" name="Lith Guard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="5795" /> <!-- Tomb Guard A - Not Available -->
+		<acquire exp="65025" sp="650" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="53" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22536" level="85" type="Monster" name="Lith Medium">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="5797" /> <!-- Tomb Savant A - Not Available -->
+		<acquire exp="65025" sp="650" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="25" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="40" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22537" level="85" type="Monster" name="Lith Prefect">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="5796" /> <!-- Tomb Guard B - Not Available -->
+		<acquire exp="65025" sp="650" attributeExp="1700" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="185625.3" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="53" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22538" level="90" type="Monster" name="Lilim's Guard" title="Elder">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="234" lhand="234" /> <!-- Demon's Dagger / Demon's Dagger -->
+		<acquire exp="132676" sp="1320" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="9900000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="34.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22539" level="90" type="Monster" name="Lilim's Assassin" title="Elder">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="132676" sp="1320" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="9900000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="29.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22540" level="90" type="Monster" name="Lilim Soldier" title="Elder">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord - Not Available / Nephilim Lord -->
+		<acquire exp="132676" sp="1320" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="9900000" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="56" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="43.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+	</npc>
+	<npc id="22541" level="85" type="Monster" name="Labyrinth Executioner">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="63973" sp="636" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="556960.8" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="51" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="64" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22542" level="85" type="Monster" name="Lost Watchman">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="63973" sp="636" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="556960.8" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="100" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.25" />
+			<height normal="42.05" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22543" level="85" type="Monster" name="Labyrinth Leader">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="63973" sp="636" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="556960.8" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22544" level="85" type="Monster" name="Foreman" title="Herald of Purification">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="69360" sp="694" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="696201.3" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="68" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="48539" level="1" /> <!-- Will to Fight -->
+		</skillList>
+	</npc>
+	<npc id="22545" level="90" type="Monster" name="Vanguard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="29.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22546" level="90" type="Monster" name="Summoner Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="28.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22547" level="90" type="Monster" name="Wizard Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="52.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+	</npc>
+	<npc id="22548" level="90" type="Monster" name="Assaulter Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22549" level="90" type="Monster" name="Archer Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="6" />
+			<height normal="22.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22550" level="90" type="Monster" name="Warrior Commmander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="6" />
+			<height normal="22.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22551" level="90" type="Monster" name="Healer Commander" title="Kelbim's Legion">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="321649.36709" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="22" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+	</npc>
+	<npc id="22552" level="91" type="Monster" name="Elite Fortress Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="97301" /> <!-- Gorde's Flame Spear -->
+		<acquire exp="1706457" sp="17059" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="87404.43" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22553" level="91" type="Monster" name="Elite Fortress Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92404" lhand="94301" /> <!-- Zaken's Blood Sword / Shield of Vengeance -->
+		<acquire exp="1706457" sp="17059" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="87404.43" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22554" level="91" type="Monster" name="Elite Fortress Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92421" /> <!-- Queen Ant's Stone Breaker -->
+		<acquire exp="1706457" sp="17059" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="87404.43" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22555" level="91" type="Monster" name="Elite Fortress Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="96268" /> <!-- Beleth' Soul Eater -->
+		<acquire exp="1706457" sp="17059" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="87404.43" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22556" level="86" type="Monster" name="Outer Castle's Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8683" /> <!-- Tiphon's Spear -->
+		<acquire exp="185070" sp="1849" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35125.95" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22557" level="86" type="Monster" name="Outer Castle's Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8678" lhand="2498" /> <!-- Sirra's Blade / Shield of Nightmare -->
+		<acquire exp="185070" sp="1849" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35125.95" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22558" level="86" type="Monster" name="Outer Castle's Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8687" /> <!-- Cabrio's Hand -->
+		<acquire exp="185070" sp="1849" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35125.95" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22559" level="86" type="Monster" name="Outer Castle's Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8688" /> <!-- Daimon Crystal -->
+		<acquire exp="185070" sp="1849" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35125.95" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+	</npc>
+	<npc id="22560" level="85" type="Monster" name="Resurrected Spirit" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="48731" sp="484" attributeExp="842" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12196.48485" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="28.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1064" max="1177" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22561" level="85" type="Monster" name="Resurrected Scout" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="48731" sp="484" attributeExp="935" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12196.48485" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="110" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="30" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1064" max="1177" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22562" level="85" type="Monster" name="Resurrected Recruit" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="48731" sp="484" attributeExp="1029" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12196.48485" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="27" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1064" max="1177" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22563" level="85" type="Monster" name="Resurrected Archer" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="48731" sp="484" attributeExp="1122" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12196.48485" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="26.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1064" max="1177" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.014" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22564" level="85" type="Monster" name="Soulless Warrior" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="72317" sp="723" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12196.48485" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="43" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1580" max="1748" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.007" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="95436" min="1" max="1" chance="0.003" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.003" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22565" level="86" type="Monster" name="Decayed Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="74028" sp="740" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="55" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11.7" />
+			<height normal="36.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1692" max="1870" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22566" level="86" type="Monster" name="Decayed Evil Hound" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="74028" sp="740" attributeExp="1041" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="16.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1692" max="1870" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22567" level="86" type="Monster" name="Decayed Royal Guard" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="74028" sp="740" attributeExp="1135" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1692" max="1870" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22568" level="86" type="Monster" name="Decayed Archer" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="74028" sp="740" attributeExp="1135" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="55" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11.7" />
+			<height normal="36.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="1692" max="1870" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.025" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22569" level="86" type="Monster" name="Possessed Judge" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="106189" sp="1058" attributeExp="1230" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19480.2256" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="51" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2584" max="2856" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.013" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="95436" min="1" max="1" chance="0.005" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.005" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22570" level="87" type="Monster" name="Brainwashed Maid" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="108673" sp="1082" attributeExp="861" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25549.6843239" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2178" max="2410" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22571" level="87" type="Monster" name="Brainwashed Elder" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="108673" sp="1082" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25549.6843239" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="28.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2178" max="2410" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22572" level="87" type="Monster" name="Brainwashed Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="141275" sp="1408" attributeExp="1053" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37302.53" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2178" max="2410" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22573" level="87" type="Monster" name="Brainwashed Archer" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="94359" /> <!-- For Monster only (Crossbow) -->
+		<acquire exp="108673" sp="1082" attributeExp="1148" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25549.6843239" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="30" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="2178" max="2410" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.017" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.009" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22574" level="87" type="Monster" name="Maluk Hound" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="171718" sp="1711" attributeExp="1244" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25549.6843239" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="26" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3241" max="3585" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.013" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.007" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="95436" min="1" max="1" chance="0.005" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.005" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22575" level="88" type="Monster" name="Hallate's Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
+		<acquire exp="228394" sp="2277" attributeExp="871" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44763.29" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="27" />
+				<run ground="110" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" grown="14.5" />
+			<height normal="29" grown="36" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3601" max="3983" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22576" level="88" type="Monster" name="Hallate's Watchman" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="175688" sp="1750" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="63" />
+				<run ground="139" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.5" />
+			<height normal="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3601" max="3983" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22577" level="88" type="Monster" name="Hallate's Knight" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="142" /> <!-- Keshanberk -->
+		<acquire exp="175688" sp="1750" attributeExp="1065" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="40" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" grown="25" />
+			<height normal="40" grown="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3601" max="3983" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22578" level="88" type="Monster" name="Hallate's Shaman" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="175688" sp="1750" attributeExp="1162" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="33.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="3601" max="3983" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.018" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.01" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.007" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22579" level="88" type="Monster" name="Skeleton Death Lord" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="78" /> <!-- Great Sword -->
+		<acquire exp="267743" sp="2672" attributeExp="1258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="42" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.88" />
+			<height normal="41.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5314" max="5877" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.014" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.007" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.01" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.005" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.005" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22580" level="89" type="Monster" name="Supreme Platinum Tribe Soldier" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="79" /> <!-- Damascus Sword -->
+		<acquire exp="273862" sp="2733" attributeExp="881" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36791.5454269" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="17" />
+			<height normal="32" grown="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5918" max="6542" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22581" level="89" type="Monster" name="Supreme Platinum Tribe Shaman" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="273862" sp="2733" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36791.5454269" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5918" max="6542" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22582" level="89" type="Monster" name="Supreme Platinum Tribe Guard" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="356021" sp="3557" attributeExp="1077" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="53715.82" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="26" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5918" max="6542" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22583" level="89" type="Monster" name="Supreme Platinum Tribe Knight" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="273862" sp="2733" attributeExp="1175" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36791.5454269" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" />
+			<height normal="28.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="5918" max="6542" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.033" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.018" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.012" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22584" level="89" type="Monster" name="Platinum Tribe Duke" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="403540" sp="4032" attributeExp="1273" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36791.5454269" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="15" />
+			<height normal="28" grown="34" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="8663" max="9577" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.024" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.013" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.018" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.009" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.009" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22585" level="90" type="Monster" name="Evolved Platinum Tribe Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="389733" sp="3896" attributeExp="891" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44149.8545147" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="15" />
+			<height normal="28" grown="34" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="9197" max="10172" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22586" level="90" type="Monster" name="Evolved Platinum Tribe Elite Soldier" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="467680" sp="4674" attributeExp="990" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="64458.86" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" grown="16.5" />
+			<height normal="31.1" grown="37.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="9197" max="10172" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22587" level="90" type="Monster" name="Evolved Platinum Tribe Archer" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="389733" sp="3896" attributeExp="1089" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44149.8545147" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="27" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="9197" max="10172" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22588" level="90" type="Monster" name="Evolved Platinum Tribe Gladiator" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="389733" sp="3896" attributeExp="1188" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44149.8545147" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" grown="18.7" />
+			<height normal="35.5" grown="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="9197" max="10172" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.056" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.031" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.02" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22589" level="90" type="Monster" name="Platinum Tribe Lord" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="567514" sp="5670" attributeExp="1287" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44149.8545147" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="17" />
+			<height normal="32" grown="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="13189" max="14587" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.04" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.022" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.029" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.015" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.015" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22590" level="91" type="Monster" name="Heavenly Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> <!-- Sword of Valhalla -->
+		<acquire exp="580195" sp="5797" attributeExp="1101" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52979.8254128" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="12214" max="13501" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22591" level="91" type="Monster" name="Heavenly Hierarch" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
+		<acquire exp="580195" sp="5797" attributeExp="1201" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52979.8254128" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="50" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="12214" max="13501" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22592" level="91" type="Monster" name="Heavenly Royal Knight" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
+		<acquire exp="696234" sp="6956" attributeExp="1201" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="77350.63" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="30" grown="36.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="12214" max="13501" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.08" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.044" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.029" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22593" level="91" type="Monster" name="Heavenly Guard" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> <!-- Sword of Valhalla -->
+		<acquire exp="734424" sp="7337" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52979.8254128" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="60" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="17234" max="19051" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.057" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.031" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.042" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.021" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.021" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22594" level="92" type="Monster" name="Mutated Messenger Angel" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
+		<acquire exp="794810" sp="7948" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="63575.7905002" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="30" grown="36.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="17175" max="18980" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22595" level="92" type="Monster" name="Mutated Prime Messenger" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> <!-- Sword of Valhalla -->
+		<acquire exp="953772" sp="9530" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="92820.88" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="17175" max="18980" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22596" level="92" type="Monster" name="Mutated Archer Messenger" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) - Not Available -->
+		<acquire exp="794810" sp="7948" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="63575.7905002" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="30" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="17175" max="18980" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.129" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.071" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.047" /> <!-- Dye Booster -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22597" level="92" type="Monster" name="Black Daeva" title="Magic Slave" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="1150796" sp="11503" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="63575.7905002" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="44" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="23899" max="26410" chance="70" /> <!-- Adena -->
+				<item id="91767" min="1" max="1" chance="0.089" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+				<item id="93303" min="1" max="1" chance="0.049" /> <!-- Package: Cloak of Protection - Sealed -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+				<item id="96623" min="1" max="1" chance="0.065" /> <!-- Dye Booster -->
+				<item id="95436" min="1" max="1" chance="0.034" /> <!-- Guardian Messenger's Spear -->
+				<item id="95437" min="1" max="1" chance="0.034" /> <!-- Sealed Angel's Hammer -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22598" level="93" type="Monster" name="Dark Warrior" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> <!-- Sword of Valhalla -->
+		<acquire exp="1175949" sp="11754" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76290.9485954" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="22133" max="24464" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22599" level="93" type="Monster" name="Dark Magus" element="WIND">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
+		<acquire exp="1175949" sp="11754" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76290.9485954" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="50" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="48046" level="1" /> <!-- Wind Attribute Monster -->
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="57" min="22133" max="24464" chance="70" /> <!-- Adena -->
+				<item id="97830" min="1" max="1" chance="0.007" /> <!-- Tower of Insolence's Time Stone -->
+			</drop>
+		</dropLists>
+	</npc>
+</list>

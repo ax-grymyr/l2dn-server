@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="50200" name="option_id_50200">
+		<!-- Item skill: Max HP +2% -->
+	</option>
+	<option id="50201" name="option_id_50201">
+		<!-- Item skill: Max HP +4% -->
+	</option>
+	<option id="50202" name="option_id_50202">
+		<!-- Item skill: Max HP +8%, Max MP +2% -->
+	</option>
+	<option id="50203" name="option_id_50203">
+		<!-- Item skill: Max HP +12%, Max MP +6%, Max CP +6% -->
+	</option>
+	<option id="50204" name="option_id_50204">
+		<!-- Item skill: Max HP +16%, Max MP +10%, Max CP +10% -->
+	</option>
+	<option id="50205" name="option_id_50205">
+		<!-- Item skill: Max HP +20%, Max MP +14%, Max CP +14%, received P./ M. Damage -4% -->
+	</option>
+</list>

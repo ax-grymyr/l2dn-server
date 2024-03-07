@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/hennaPatternPotential.xsd">
+	<enchantFees>
+		<fee step="1">
+			<requiredItem id="97147" count="1" /> <!-- Hidden Power Booster-->
+			<dailyCount>20</dailyCount>
+			<enchantExp count="0" chance="50" />
+			<enchantExp count="1" chance="50" />
+		</fee>
+	</enchantFees>
+	<resetCount>
+		<reset itemid="91663" count="1000" /> <!-- 1 -->
+		<reset itemid="91663" count="1000" />
+		<reset itemid="91663" count="1000" />
+		<reset itemid="91663" count="2000" />
+		<reset itemid="91663" count="2000" />
+		<reset itemid="91663" count="5000" />
+		<reset itemid="91663" count="5000" />
+		<reset itemid="91663" count="5000" />
+		<reset itemid="91663" count="5000" />
+		<reset itemid="91663" count="5000" /> <!-- 10 -->
+	</resetCount>
+	<experiencePoints>
+		<hiddenPower level="1" exp="20" /> <!-- How many points do you need to fill a skillbonus. -->
+		<hiddenPower level="2" exp="30" />
+		<hiddenPower level="3" exp="40" />
+		<hiddenPower level="4" exp="50" />
+		<hiddenPower level="5" exp="100" />
+		<hiddenPower level="6" exp="110" />
+		<hiddenPower level="7" exp="120" />
+		<hiddenPower level="8" exp="130" />
+		<hiddenPower level="9" exp="140" />
+		<hiddenPower level="10" exp="150" />
+		<hiddenPower level="11" exp="170" />
+		<hiddenPower level="12" exp="190" />
+		<hiddenPower level="13" exp="210" />
+		<hiddenPower level="14" exp="230" />
+		<hiddenPower level="15" exp="250" />
+		<hiddenPower level="16" exp="300" />
+		<hiddenPower level="17" exp="350" />
+		<hiddenPower level="18" exp="400" />
+		<hiddenPower level="19" exp="500" />
+		<hiddenPower level="20" exp="600" />
+	</experiencePoints>
+	<hiddenPotentials>
+		<poten id="1" slotId="1" maxSkillLevel="20" skillId="83001" /> <!-- P and M. Atk. -->
+		<poten id="2" slotId="1" maxSkillLevel="20" skillId="83002" /> <!-- P and M. Def. -->
+		<poten id="3" slotId="1" maxSkillLevel="20" skillId="83003" /> <!-- Atk Spdeed and Casting Spdpeed. -->
+		<poten id="4" slotId="2" maxSkillLevel="20" skillId="83004" /> <!-- Skill damage bonus in PvE -->
+		<poten id="5" slotId="2" maxSkillLevel="20" skillId="83005" /> <!-- You Received skill damage in PvE -->
+		<poten id="6" slotId="2" maxSkillLevel="20" skillId="83006" /> <!-- Skill Damage Bonus in PvP -->
+		<poten id="7" slotId="2" maxSkillLevel="20" skillId="83007" /> <!-- Received skill damage in PvP -->
+		<poten id="8" slotId="3" maxSkillLevel="20" skillId="83008" /> <!-- Skill Critical Damage -->
+		<poten id="9" slotId="3" maxSkillLevel="20" skillId="83009" /> <!-- Skill Critical Rate -->
+		<poten id="10" slotId="3" maxSkillLevel="20" skillId="83010" /> <!-- You Received Skill Critical Damage -->
+		<poten id="11" slotId="3" maxSkillLevel="20" skillId="83011" /> <!-- You Received Skill Critical Rate -->
+		<poten id="12" slotId="4" maxSkillLevel="20" skillId="83012" /> <!-- Soulshot and Spiritshot damage -->
+		<poten id="13" slotId="4" maxSkillLevel="20" skillId="83013" /> <!-- Soulshot and Spiritshot Damage Resistance -->
+		<poten id="14" slotId="4" maxSkillLevel="20" skillId="83014" /> <!-- Damage decrease -->
+		<poten id="15" slotId="4" maxSkillLevel="20" skillId="83015" /> <!-- Damage decrease ignore -->
+		<poten id="16" slotId="4" maxSkillLevel="20" skillId="83016" /> <!-- Anomaly Atk Rate -->
+	</hiddenPotentials>
+</list>

@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48400" toLevel="25" name="Red's Blessing Lv. 1">
+		<!-- Applies a buff when used. <font color=EEAA22><Buff effect></font>. STR/ INT +1. DEX/ WIT +1. CON/ MEN +1. The buff is leveling up every hour (there are 24 levels). With each buff renewal you will receive Red Libra Coin (Time-limited) 20 pcs. <font color=ff6666>Note!</font>. You cannot get the buff and the gift if you are dead. You cannot get the buff and the gift while teleporting. You cannot get the gift if your inventory is full. -->
+		<icon>icon.ev_libra_red_buff1</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>EVENT_BUFF</abnormalType>
+		<hitTime>1000</hitTime>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<stayAfterDeath>true</stayAfterDeath>
+		<canBeDispelled>false</canBeDispelled>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isSharedWithSummon>false</isSharedWithSummon>
+		<effects>
+			<effect name="Restoration" fromLevel="2" toLevel="24">
+				<itemId>93096</itemId> <!-- Red Libra Coin (Time-limited) - Sealed -->
+				<itemCount>20</itemCount>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR,INT,DEX,WIT,CON,MEN</stat>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill" fromLevel="1" toLevel="23">
+				<skillId>48400</skillId> <!-- Red's Blessing Lv. 1 -->
+				<skillLevel>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">9</value>
+					<value level="9">10</value>
+					<value level="10">11</value>
+					<value level="11">12</value>
+					<value level="12">13</value>
+					<value level="13">14</value>
+					<value level="14">15</value>
+					<value level="15">16</value>
+					<value level="16">17</value>
+					<value level="17">18</value>
+					<value level="18">19</value>
+					<value level="19">20</value>
+					<value level="20">21</value>
+					<value level="21">22</value>
+					<value level="22">23</value>
+					<value level="23">24</value>
+				</skillLevel>
+			</effect>
+		</endEffects>
+	</skill>
+	<skill id="48401" toLevel="9" name="Red's Blessing Reward Lv. 1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48402" toLevel="2" name="Ice Shot">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48403" toLevel="1" name="Decrease Speed">
+		<!-- Due to Apherus' influence, your Speed is decreased. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48404" toLevel="1" name="Apherus' Annihilation Reward">
+		<!-- Apherus from the Garden of Genesis. Annihilation buffs. For 1 min.:. Acquired XP +50%. Acquired SP +50% -->
+		<icon>icon.bm_sayha_rune</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48405" toLevel="2" name="Stone Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48406" toLevel="2" name="Stone Stun Attack">
+		<!-- Powerful strike, which stuns the enemy. -->
+		<icon>icon.skill10554</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48407" toLevel="1" name="Apherus' Paralysis">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48408" toLevel="1" name="Apherus' Ranged Attack">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48409" toLevel="2" name="Spring">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48410" toLevel="1" name="Apherus' Paralysis">
+		<!-- Paralyzed and unable to move temporarily. -->
+		<icon>icon.skill1042</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48411" toLevel="1" name="Combat Support Buff">
+		<!-- Acquired XP/ SP +5%. P. Atk. +50. M. Atk. +50. P. Def. +50. M. Def. +50. The effect remains after death. You can cancel the effect by yourself. -->
+		<icon>icon.etc_training_scroll_kalie_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48412" toLevel="1" name="Cyclone Charge">
+		<!-- A lightning bolt deals magic damage and paralyzes for 5 sec. Power 80. -->
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48413" toLevel="1" name="Cyclone Cutter">
+		<!-- A wind blade makes a powerful attack decreasing HP. Power 400. -->
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48414" toLevel="1" name="Cyclone Destruction">
+		<!-- A strong whirlwind deals magic damage to nearby enemies knocking them down. Power 25. -->
+		<icon>icon.skill10262</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48415" toLevel="3" name="Aura Burn">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48416" toLevel="3" name="Twister">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48417" toLevel="3" name="Ice Shot">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48418" toLevel="3" name="Prominence">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48419" toLevel="4" name="Arrow Multishot">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48420" toLevel="3" name="Power Strike">
+		<!-- Powerful P. Atk. on enemy. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48421" toLevel="1" name="Dark Knight's Roar">
+		<!-- A roar filled with powerful dark energy. The special class transformation is not available. -->
+		<icon>icon.skill19208</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48422" toLevel="1" name="Suppression">
+		<!-- Speed decreased. -->
+		<icon>icon.skill133917</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48423" toLevel="1" name="Dark Knight's Swing">
+		<!-- Dark Knight's powerful attack. -->
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48424" toLevel="1" name="Dark Knight's Swing">
+		<!-- Knocked down by a powerful dark attack. -->
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48425" toLevel="1" name="Banshee's Swamp">
+		<!-- Banshee's ability that removes basic buffs and transformations. -->
+		<icon>icon.skill50003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48426" toLevel="1" name="Banshee's Bomb">
+		<!-- Banshee makes a powerful attack. -->
+		<icon>icon.skill50004</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48427" toLevel="1" name="Darion's Powers">
+		<!-- Darion is a demon that made a deal with Beleth obtaining incredible powers at the cost of his own health. -->
+		<icon>icon.skill11769</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48428" toLevel="1" name="Darion's Damage Reflection">
+		<!-- The effect lasts for 5 sec. Reflects 100% of the received damage. -->
+		<icon>icon.skill1232</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48429" toLevel="1" name="Darion's Roar">
+		<!-- Darion's roar pulls you closer rendering you unable to move and attack. -->
+		<icon>icon.skill1400</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48430" toLevel="1" name="Darion's Stunning Vicious Chain Strike">
+		<!-- Pulls the enemy to your character. -->
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48431" toLevel="1" name="Darion's Stunning Vicious Chain Strike">
+		<!-- Unable to move. -->
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48432" toLevel="1" name="Darion's Shield Crush">
+		<!-- Darion's powerful attack. -->
+		<icon>icon.skill10012</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48433" toLevel="1" name="Darion's Shield Crush">
+		<!-- Knocked down. -->
+		<icon>icon.skill10012</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48434" toLevel="1" name="Darion's Cubic Sword">
+		<!-- Darion summons Cubic Sword. -->
+		<icon>icon.skill0010</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48435" toLevel="1" name="Darion's Bleed">
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
+		<icon>icon.skill1380</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48436" toLevel="1" name="Darion's Seal">
+		<!-- Unable to attack. -->
+		<icon>icon.skill1380</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48437" toLevel="1" name="Darion's Hold">
+		<!-- Unable to move. -->
+		<icon>icon.skill1380</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48438" toLevel="1" name="Death Chain">
+		<!-- Beleth' powerful chain attack. -->
+		<icon>icon.rupture</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48439" toLevel="1" name="Death Summon">
+		<!-- For summoning. -->
+		<icon>icon.skill6320</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48440" toLevel="1" name="Death Pull">
+		<!-- Pulls nearby enemies to you. -->
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48441" toLevel="1" name="Death Pull">
+		<!-- Pulled. -->
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48442" toLevel="1" name="Big Death Bang">
+		<!-- Beleth' powerful bomb attack. -->
+		<icon>icon.skill1285</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48443" toLevel="1" name="Big Death Bang">
+		<!-- Knocked back. -->
+		<icon>icon.skill1285</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48444" toLevel="1" name="Death Thunder">
+		<!-- Beleth' deadly lightning. -->
+		<icon>icon.skill1469</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48445" toLevel="1" name="Death Gaze">
+		<!-- A powerful curse cast by Beleth. Local effect. Atk. Spd. -50%. Casting Spd. -50%. Constantly drains HP. Basic attacks can't be used. Skills can't be used. -->
+		<icon>icon.skill0046</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48446" toLevel="1" name="Death Prison">
+		<!-- Beleth' curse leaves you suspended in the air. -->
+		<icon>icon.skill11050</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48447" toLevel="1" name="Death Healing">
+		<!-- Beleth' curse deals you damage while you are healing. -->
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48448" toLevel="1" name="Capture Effect">
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48449" toLevel="1" name="Steel Citadel's 1st Floor Capture Effect">
+		<!-- Steel Citadel's 1st Floor capture effect. Melee Weapon Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48450" toLevel="1" name="Steel Citadel's 2nd Floor Capture Effect">
+		<!-- Steel Citadel's 2nd Floor capture effect. Bow Resistance +5%. Firearms Resistance +5%. M. Def. +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48451" toLevel="1" name="Steel Citadel's 3rd Floor Capture Effect">
+		<!-- Steel Citadel's 3rd Floor capture effect. Melee Weapon Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48452" toLevel="1" name="Steel Citadel's 4th Floor Capture Effect">
+		<!-- Steel Citadel's 4th Floor capture effect. Bow Resistance +5%. Firearms Resistance +5%. M. Def. +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48453" toLevel="1" name="Steel Citadel's 5th Floor Capture Effect">
+		<!-- Steel Citadel's 5th Floor capture effect. Debuff Resistance +5%. Anomaly Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48454" toLevel="1" name="Steel Citadel's 6th Floor Capture Effect">
+		<!-- Steel Citadel's 6th Floor capture effect. Melee Weapon Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48455" toLevel="1" name="Steel Citadel's 7th Floor Capture Effect">
+		<!-- Steel Citadel's 7th Floor capture effect. Bow Resistance +5%. Firearms Resistance +5%. M. Def. +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48456" toLevel="1" name="Steel Citadel's 8th Floor Capture Effect">
+		<!-- Steel Citadel's 8th Floor capture effect. Melee Weapon Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48457" toLevel="1" name="Steel Citadel's 9th Floor Capture Effect">
+		<!-- Steel Citadel's 9th Floor capture effect. Bow Resistance +5%. Firearms Resistance +5%. M. Def. +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48458" toLevel="1" name="Steel Citadel's 10th Floor Capture Effect">
+		<!-- Steel Citadel's 10th Floor capture effect. Debuff Resistance +5%. Anomaly Resistance +5% -->
+		<icon>icon.skill6319</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48459" toLevel="1" name="Darion's Power">
+		<!-- A shard that Darion got from Beleth when making a deal with him. Teleports to Beleth' Chamber. -->
+		<icon>icon.skill0060</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48460" toLevel="1" name="Tarask's Ranged Attack">
+		<icon>icon.skill33915</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48461" toLevel="1" name="Earth Stone Curse">
+		<!-- The earth energy greatly slows you down dealing continuous damage. Atk. Spd. -50%. Casting Spd. -50%. Speed -50% -->
+		<icon>icon.skill33917</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48462" toLevel="1" name="Tarask Dragon's Ground Shaker">
+		<icon>icon.skill33916</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48463" toLevel="1" name="Knock back.">
+		<icon>icon.skill33917</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48464" toLevel="1" name="Beleth' Self Heal">
+		<!-- Beleth recovers HP. -->
+		<icon>icon.skill1216</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48465" toLevel="1" name="Darion's Health Decrease">
+		<!-- Darion is losing HP. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48466" toLevel="1" name="Golem Mammoth' Mass Chain Strike">
+		<!-- Pulled. -->
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48467" toLevel="1" name="Golem Mammoth' Mass Stun Attack">
+		<!-- Unable to move for 5 sec. due to Stun. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48468" toLevel="10" name="Dazzle Resistance">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48469" toLevel="1" name="Beoro's Roar">
+		<!-- Beoro attacks someone beside a pet. Immobilizes the enemy for 30 sec. Cannot be removed by debuff-/ anomaly-cancelling skills. -->
+		<icon>icon.skill4111</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<canCastWhileDisabled>true</canCastWhileDisabled>
+		<canBeDispelled>false</canBeDispelled>
+		<activateRate>-1</activateRate>
+		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48470" toLevel="1" name="Beoro's Bite">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48471" toLevel="1" name="Beoro's Vicious Strike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48472" toLevel="1" name="Dagger Vulnerability">
+		<icon>icon.skill4461</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48473" toLevel="1" name="Beoro's Fear">
+		<!-- Afflicted with Fear and moving against own will. -->
+		<icon>icon.skill1092</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<trait>INFECTION</trait>
+		<activateRate>200</activateRate>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<operateType>A2</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<effectPoint>-137</effectPoint>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>DERANGEMENT</trait>
+		<affectLimit>70-80</affectLimit>
+		<affectRange>900</affectRange>
+		<magicLevel>90</magicLevel>
+		<mpConsume>57</mpConsume>
+		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48474" toLevel="1" name="Damage of Limit">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48475" toLevel="3" name="Cave Control Device Effect">
+		<!-- A buff for the members of the clan that captured the Cave Control Device. Acquired XP +10%. Acquired SP +10% -->
+		<icon>
+			<value level="1">icon.skill_exp_sp_up_01</value>
+			<value level="2">icon.skill_exp_sp_up_02</value>
+			<value level="3">icon.skill_exp_sp_up_03</value>
+		</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>-1</abnormalTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<canBeDispelled>false</canBeDispelled>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48476" toLevel="1" name="Giant's Stun Strike">
+		<!-- Powerful strike, which stuns the enemy. -->
+		<icon>icon.skill10554</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48477" toLevel="2" name="Giant's Arrow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48478" toLevel="2" name="Giant's Fatal Blow">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48479" toLevel="2" name="Giant's Aura Spike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48480" toLevel="1" name="Giant's Power Shot">
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48481" toLevel="1" name="Giant's Wave">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48482" toLevel="1" name="Giant's Fatal Strike">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48483" toLevel="1" name="Zaken's Prophecy">
+		<!-- PvE damage +5%. Max HP +500. Max MP +500. P. Def. +300. M. Def. +300. HP Recovery Potions' Effect +20. Sayha's Grace Consumption -10% -->
+		<icon>icon.skill50006</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48484" toLevel="1" name="Cemetery Grounds' Abilities">
+		<!-- Imbues with the cemetery energy. Greatly increases Atk. Spd./ Casting Spd./ Speed. With a certain chance, absorbs 3% of the inflicted damage as MP. -->
+		<icon>icon.skilltransform1</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48485" toLevel="1" name="Dream's Vicious Strike">
+		<!-- Powerful P. Atk. on enemy. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48486" toLevel="1" name="Magic Strike of Dream">
+		<!-- Makes a ranged magic attack. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48487" toLevel="1" name="Dream's Arrow Shot">
+		<!-- Makes a ranged physical attack. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48488" toLevel="1" name="Dream's Ranged Attack">
+		<!-- Deals physical damage to the target and nearby enemies. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48489" toLevel="1" name="Training Time">
+		<!-- Helps you train in the instance zone. Sustains Sayha's Grace. -->
+		<icon>icon.skill6024</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="48490" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48491" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Atk. +1000 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MAtk">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48492" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Atk. Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48493" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Casting Spd. +24% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48494" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. P. Skill Critical Rate +11% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48495" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. M. Skill Critical Rate +21% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>21</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48496" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +500 -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48497" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Soulshot damage +10%. Spiritshot damage +10% -->
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48498" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. Skill Power +10% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48499" toLevel="1" name="Mentor's Advice">
+		<!-- Your mentor's valuable advice makes you stronger. All Critical Damage +15% -->
+		<icon>icon.skill30852</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<operateType>A2</operateType>
+		<basicProperty>NONE</basicProperty>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

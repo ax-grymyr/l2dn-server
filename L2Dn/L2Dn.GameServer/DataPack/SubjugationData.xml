@@ -1,0 +1,167 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Subjugation.xsd">
+	<purge name="Cruma Tower Purge" category="1" hottimes="12-14;19-23">
+		<npc id="22200" points="200" /> <!-- Porta -->
+		<npc id="22201" points="200" /> <!-- Excuro -->
+		<npc id="22202" points="200" /> <!-- Mordeo -->
+		<npc id="22203" points="200" /> <!-- Ricenseo -->
+		<npc id="22204" points="200" /> <!-- Krator -->
+		<npc id="22205" points="200" /> <!-- Catherok -->
+		<npc id="22206" points="200" /> <!-- Premo -->
+		<npc id="22207" points="200" /> <!-- Validus -->
+		<npc id="22208" points="200" /> <!-- Dicor -->
+		<npc id="22209" points="200" /> <!-- Perum -->
+		<npc id="22210" points="200" /> <!-- Torfe -->
+		<npc id="29006" points="200" /> <!-- Core -->
+		<npc id="29007" points="200" /> <!-- Death Knight -->
+		<npc id="29008" points="200" /> <!-- Doom Wraith -->
+	</purge>
+	<purge name="Silent Valley Purge" category="2" hottimes="12-14;19-23">
+		<npc id="20968" points="300" /> <!-- Forgotten Face -->
+		<npc id="20969" points="300" /> <!-- Giant's Shadow -->
+		<npc id="20971" points="300" /> <!-- Warrior of Ancient Times -->
+		<npc id="20972" points="300" /> <!-- Shaman of Ancient Times -->
+		<npc id="20973" points="300" /> <!-- Forgotten Ancient Creature -->
+	</purge>
+	<purge name="Plains of the Lizardmen Purge" category="3" hottimes="12-14;19-23">
+		<npc id="22151" points="400" /> <!-- Tanta Lizardman -->
+		<npc id="22152" points="400" /> <!-- Tanta Lizardman Warrior -->
+		<npc id="22153" points="400" /> <!-- Tanta Lizardman Berserker -->
+		<npc id="22154" points="400" /> <!-- Tanta Lizardman Archer -->
+		<npc id="22156" points="400" /> <!-- Greg -->
+	</purge>
+	<purge name="Tower of Insolence Purge" category="4" hottimes="12-14;19-23">
+		<npc id="21989" points="400" /> <!-- Ghost of the Tower -->
+		<npc id="21990" points="400" /> <!-- Tower Watchman -->
+		<npc id="21991" points="400" /> <!-- Ghastly Warrior -->
+		<npc id="21992" points="400" /> <!-- Archer of Despair -->
+		<npc id="21994" points="400" /> <!-- Crendion -->
+		<npc id="21995" points="400" /> <!-- Swordsman of Ordeal -->
+		<npc id="21996" points="400" /> <!-- Hound of Destruction -->
+		<npc id="21997" points="400" /> <!-- Royal Guard of Insolence -->
+		<npc id="21998" points="400" /> <!-- Archer of Insolence -->
+		<npc id="21999" points="400" /> <!-- Haughty Judge -->
+		<npc id="22001" points="400" /> <!-- Corrupted Sage -->
+		<npc id="22000" points="400" /> <!-- Corrupted Ghost -->
+		<npc id="22002" points="400" /> <!-- Corrupted Warrior -->
+		<npc id="22003" points="400" /> <!-- Archer of Abyss -->
+		<npc id="22004" points="400" /> <!-- Hound of Grief -->
+		<npc id="22005" points="400" /> <!-- Hallate's Inspector -->
+		<npc id="22006" points="400" /> <!-- Hallate's Knight -->
+		<npc id="22007" points="400" /> <!-- Hallate's Commander -->
+		<npc id="22008" points="400" /> <!-- Hallate's Maid -->
+		<npc id="22009" points="400" /> <!-- Erin Ediunce -->
+		<npc id="22010" points="400" /> <!-- Platinum Tribe Soldier -->
+		<npc id="22011" points="400" /> <!-- Platinum Tribe Shaman -->
+		<npc id="22012" points="400" /> <!-- Platinum Tribe Guard -->
+		<npc id="22013" points="400" /> <!-- Platinum Tribe Knight -->
+		<npc id="22014" points="400" /> <!-- Platinum Tribe Officer -->
+		<npc id="22015" points="400" /> <!-- Platinum Tribe Warrior -->
+		<npc id="22016" points="400" /> <!-- Platinum Tribe Elite Soldier -->
+		<npc id="22017" points="400" /> <!-- Platinum Tribe Archer -->
+		<npc id="22018" points="400" /> <!-- Platinum Tribe Gladiator -->
+		<npc id="22019" points="400" /> <!-- Platinum Tribe Prefect -->
+		<npc id="22020" points="400" /> <!-- Guardian Angel -->
+		<npc id="22021" points="400" /> <!-- Guardian Archangel -->
+		<npc id="22022" points="400" /> <!-- Guardian Angel Messenger -->
+		<npc id="22024" points="400" /> <!-- Angel Messenger of Insolence -->
+		<npc id="22025" points="400" /> <!-- Prime Messenger of Insolence -->
+		<npc id="22026" points="400" /> <!-- Wise Messenger of Insolence -->
+		<npc id="22028" points="400" /> <!-- Virtuous Guardian Angel -->
+		<npc id="22029" points="400" /> <!-- Messenger Commander -->
+		<npc id="22030" points="400" /> <!-- Messenger Scout -->
+		<npc id="22032" points="400" /> <!-- Sealed Angel -->
+		<npc id="22033" points="400" /> <!-- Sealed Guardian Angel -->
+		<npc id="22035" points="400" /> <!-- Tower Guardian Archangel -->
+		<npc id="22038" points="400" /> <!-- Tower Guardian Shaman -->
+		<npc id="22039" points="400" /> <!-- Tower Guardian Messenger -->
+	</purge>
+	<purge name="Dragon Valley Purge" category="5" hottimes="12-14;19-23">
+		<npc id="22309" points="400" /> <!-- Dragontroop Wizard -->
+		<npc id="22308" points="400" /> <!-- Dragontroop Minion -->
+		<npc id="22306" points="400" /> <!-- Dragontroop Lancer -->
+		<npc id="22307" points="400" /> <!-- Dragontroop Berserker -->
+		<npc id="22305" points="400" /> <!-- Dragontroop Soldier -->
+		<npc id="22310" points="400" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="22311" points="400" /> <!-- Drake Minion -->
+		<npc id="22312" points="400" /> <!-- Mutated Drake -->
+		<npc id="22310" points="400" /> <!-- Dragontroop Elite Wizard -->
+		<npc id="20239" points="400" /> <!-- Cave Servant Captain -->
+		<npc id="20238" points="400" /> <!-- Cave Servant Warrior -->
+		<npc id="20236" points="400" /> <!-- Cave Servant -->
+		<npc id="20237" points="400" /> <!-- Cave Servant Archer -->
+		<npc id="20235" points="400" /> <!-- Convict -->
+		<npc id="20146" points="400" /> <!-- Headless Knight -->
+		<npc id="20412" points="400" /> <!-- Cave Banshee -->
+		<npc id="20246" points="400" /> <!-- Cave Keeper -->
+		<npc id="20240" points="400" /> <!-- Royal Cave Servant -->
+		<npc id="20241" points="400" /> <!-- Gargoyle Hunter -->
+		<npc id="20242" points="400" /> <!-- Dustwind Gargoyle -->
+		<npc id="20243" points="400" /> <!-- Thunder Wyrm -->
+		<npc id="20244" points="400" /> <!-- Maluk Succubus -->
+	</purge>
+	<purge name="Sel Mahum Base Purge" category="6" hottimes="12-14;19-23">
+		<npc id="22238" points="400" /> <!-- Sel Mahum Raider -->
+		<npc id="22237" points="400" /> <!-- Sel Mahum Sniper -->
+		<npc id="22239" points="400" /> <!-- Sel Mahum Berserker -->
+		<npc id="22240" points="400" /> <!-- Sel Mahum Mage -->
+		<npc id="22241" points="400" /> <!-- Sel Mahum Thief -->
+		<npc id="22242" points="400" /> <!-- Sel Mahum Wizard -->
+		<npc id="22243" points="400" /> <!-- Sel Mahum Knight -->
+		<npc id="22244" points="400" /> <!-- Sel Mahum Footman -->
+		<npc id="22245" points="400" /> <!-- Sel Mahum Bowman -->
+		<npc id="22254" points="400" /> <!-- Sel Mahum Knight Captain -->
+		<npc id="22253" points="400" /> <!-- Sel Mahum Elder -->
+		<npc id="22255" points="400" /> <!-- Sel Mahum Escort Captain -->
+		<npc id="22256" points="400" /> <!-- Sel Mahum Archer -->
+	</purge>
+	<purge name="Orc Barracks Purge" category="7" hottimes="12-14;19-23">
+		<npc id="22135" points="400" /> <!-- Turek Orc -->
+		<npc id="22137" points="400" /> <!-- Turek Orc Marksman -->
+		<npc id="22138" points="400" /> <!-- Turek Orc Warrior -->
+		<npc id="22139" points="400" /> <!-- Turek Orc Shaman -->
+		<npc id="22141" points="400" /> <!-- Turek Orc Elite -->
+		<npc id="22143" points="400" /> <!-- Turek Orc Sniper -->
+		<npc id="22144" points="400" /> <!-- Turek Orc Prefect -->
+		<npc id="22145" points="400" /> <!-- Turek Orc Elder -->
+	</purge>
+	<purge name="Giant Cave Purge" category="8" hottimes="12-14;19-23">
+		<npc id="22370" points="400" /> <!-- Mutated Warrior -->
+		<npc id="22372" points="400" /> <!-- Mutated Archer -->
+		<npc id="22371" points="400" /> <!-- Mutated Tracker -->
+		<npc id="22369" points="400" /> <!-- Giant Mercenary -->
+		<npc id="22376" points="400" /> <!-- Lesser Giant Soldier -->
+		<npc id="22375" points="400" /> <!-- Giant Aggregation -->
+		<npc id="22377" points="400" /> <!-- Lesser Giant Archer -->
+		<npc id="22378" points="400" /> <!-- Lesser Giant Wizard -->
+		<npc id="22384" points="400" /> <!-- Evolved Lesser Giant Commander -->
+		<npc id="22383" points="400" /> <!-- Evolved Lesser Giant Mercenary -->
+		<npc id="22386" points="400" /> <!-- Evolved Lesser Giant Shooter -->
+		<npc id="22385" points="400" /> <!-- Evolved Lesser Giant Elder -->
+		<npc id="22412" points="400" /> <!-- Evolved Lesser Giant Lord -->
+	</purge>
+	<purge name="Goddard Territory Purge" category="9" hottimes="12-14;19-23">
+		<npc id="22479" points="400" /> <!-- xilenos warrior -->
+		<npc id="22481" points="400" /> <!-- xilenos shooter -->
+		<npc id="22485" points="400" /> <!-- xilenos scout -->
+		<npc id="22483" points="400" /> <!-- xilenos elder -->
+		<npc id="22434" points="400" /> <!-- Gorde antilope -->
+		<npc id="22436" points="400" /> <!-- Gorde Buffalo -->
+		<npc id="22435" points="400" /> <!-- Gorde Bandersnatch -->
+		<npc id="22433" points="400" /> <!-- Gorde Grenel -->
+		<npc id="22439" points="400" /> <!-- Gorde warrior -->
+		<npc id="22441" points="400" /> <!-- Gorde Hunter -->
+		<npc id="22442" points="400" /> <!-- Gorde Wizard -->
+		<npc id="22440" points="400" /> <!-- Gorde Soldier -->
+		<npc id="22443" points="400" /> <!-- Eye Wachman -->
+		<npc id="22426" points="400" /> <!-- Tailed warrior -->
+		<npc id="22427" points="400" /> <!-- Tailed Hunter -->
+		<npc id="22428" points="400" /> <!-- Tailed berserker -->
+		<npc id="22429" points="400" /> <!-- Tailed wizard -->
+		<npc id="22462" points="400" /> <!-- Morgos sentry -->
+		<npc id="22463" points="400" /> <!-- Morgos elite guard -->
+		<npc id="22457" points="400" /> <!-- Morgos command -->
+		<npc id="22465" points="400" /> <!-- bloodhound -->
+		<npc id="22453" points="400" /> <!-- Morgos guard -->
+		<npc id="22456" points="400" /> <!-- Morgos wizard-->
+	</purge>
+</list>

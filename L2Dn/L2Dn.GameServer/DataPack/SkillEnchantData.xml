@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/SkillEnchantData.xsd">
+	<!-- List of skills to enchant -->
+	<skills>
+		<skill id="367" starLevel="3" maxEnchantLevel="3" /> <!-- Dance of Medusa -->
+		<skill id="437" starLevel="3" maxEnchantLevel="3" /> <!-- Song of Silence -->
+		<skill id="45059" starLevel="2" maxEnchantLevel="3" /> <!-- Einhasad's Expert Blessing -->
+		<skill id="45177" starLevel="0" maxEnchantLevel="3" /> <!-- MP Recovery -->
+		<skill id="45272" starLevel="2" maxEnchantLevel="3" /> <!-- Deadly Resilience -->
+		<skill id="45273" starLevel="2" maxEnchantLevel="3" /> <!-- Sounds of Muse -->
+		<skill id="45274" starLevel="2" maxEnchantLevel="3" /> <!-- Dancer's Play -->
+		<skill id="45275" starLevel="2" maxEnchantLevel="3" /> <!-- Spell of Power -->
+		<skill id="45276" starLevel="2" maxEnchantLevel="3" /> <!-- Spell of Fatality -->
+		<skill id="45277" starLevel="2" maxEnchantLevel="3" /> <!-- Splash Attack -->
+		<skill id="45278" starLevel="2" maxEnchantLevel="3" /> <!-- Titan Spirit -->
+		<skill id="45279" starLevel="2" maxEnchantLevel="3" /> <!-- Khavatari Spirit -->
+		<skill id="45280" starLevel="2" maxEnchantLevel="3" /> <!-- Instigator -->
+		<skill id="45281" starLevel="3" maxEnchantLevel="3" /> <!-- Trophy Thief -->
+		<skill id="45282" starLevel="2" maxEnchantLevel="3" /> <!-- Hammer Rumble -->
+		<skill id="45283" starLevel="2" maxEnchantLevel="3" /> <!-- Holy Buster -->
+		<skill id="45284" starLevel="2" maxEnchantLevel="3" /> <!-- Eva's Summoner -->
+		<skill id="45285" starLevel="2" maxEnchantLevel="3" /> <!-- Shillien's Summoner -->
+		<skill id="45286" starLevel="2" maxEnchantLevel="3" /> <!-- Einhasad's Summoner -->
+		<skill id="45290" starLevel="2" maxEnchantLevel="3" /> <!-- Mighty Children of Shillien -->
+		<skill id="45291" starLevel="2" maxEnchantLevel="3" /> <!-- Mighty Children of Shillien -->
+		<skill id="45294" starLevel="2" maxEnchantLevel="3" /> <!-- Mighty Children of Eva -->
+		<skill id="45295" starLevel="2" maxEnchantLevel="3" /> <!-- Knight's Power -->
+		<skill id="45312" starLevel="3" maxEnchantLevel="3" /> <!-- Hellfire -->
+		<skill id="45389" starLevel="3" maxEnchantLevel="3" /> <!-- Devour -->
+		<skill id="45417" starLevel="3" maxEnchantLevel="3" /> <!-- Titanic Break -->
+		<skill id="45423" starLevel="3" maxEnchantLevel="3" /> <!-- Burning Strike -->
+		<skill id="45430" starLevel="1" maxEnchantLevel="3" /> <!-- Sea Oath -->
+		<skill id="45431" starLevel="1" maxEnchantLevel="3" /> <!-- Dark Oath -->
+		<skill id="45453" starLevel="3" maxEnchantLevel="3" /> <!-- Flame Burst -->
+		<skill id="45458" starLevel="3" maxEnchantLevel="3" /> <!-- Blood Bond -->
+		<skill id="45525" starLevel="1" maxEnchantLevel="3" /> <!-- Shining Oath -->
+		<skill id="47001" starLevel="3" maxEnchantLevel="3" /> <!-- Goring Charge -->
+		<skill id="47084" starLevel="2" maxEnchantLevel="3" /> <!-- Long Range Attack -->
+		<skill id="47210" starLevel="2" maxEnchantLevel="3" /> <!-- Life Gain -->
+		<skill id="47242" starLevel="3" maxEnchantLevel="3" /> <!-- Balanced Body -->
+		<skill id="47248" starLevel="3" maxEnchantLevel="3" /> <!-- Eva's Nocturne -->
+		<skill id="47255" starLevel="3" maxEnchantLevel="3" /> <!-- Nemesis -->
+		<skill id="47263" starLevel="2" maxEnchantLevel="3" /> <!-- Sacred Power -->
+		<skill id="47280" starLevel="2" maxEnchantLevel="3" /> <!-- Knight's Power -->
+		<skill id="47315" starLevel="3" maxEnchantLevel="3" /> <!-- Shield of Security -->
+		<skill id="47316" starLevel="3" maxEnchantLevel="3" /> <!-- Lunatic Crusher -->
+		<skill id="47318" starLevel="3" maxEnchantLevel="3" /> <!-- Eva's Care -->
+		<skill id="47320" starLevel="3" maxEnchantLevel="3" /> <!-- Shillien's Curse -->
+		<skill id="47341" starLevel="3" maxEnchantLevel="3" /> <!-- Dark Blow -->
+		<skill id="47365" starLevel="2" maxEnchantLevel="3" /> <!-- Fatal Accuracy -->
+		<skill id="47402" starLevel="3" maxEnchantLevel="3" /> <!-- Chain Arrest -->
+		<skill id="47404" starLevel="3" maxEnchantLevel="3" /> <!-- Flame Arrow -->
+		<skill id="47406" starLevel="3" maxEnchantLevel="3" /> <!-- Arrow Shower -->
+		<skill id="47408" starLevel="3" maxEnchantLevel="3" /> <!-- Piercing Arrow -->
+		<skill id="47417" starLevel="2" maxEnchantLevel="3" /> <!-- Dexterous Body -->
+		<skill id="47442" starLevel="3" maxEnchantLevel="3" /> <!-- Fire Spiral -->
+		<skill id="47445" starLevel="3" maxEnchantLevel="3" /> <!-- Dark Spiral -->
+		<skill id="47448" starLevel="3" maxEnchantLevel="3" /> <!-- Ice Spiral -->
+		<skill id="47451" starLevel="3" maxEnchantLevel="3" /> <!-- Wind Spiral -->
+		<skill id="47454" starLevel="2" maxEnchantLevel="3" /> <!-- Magic Circle -->
+		<skill id="47471" starLevel="1" maxEnchantLevel="3" /> <!-- Demolition Formula -->
+		<skill id="47511" starLevel="3" maxEnchantLevel="3" /> <!-- Hellfire -->
+		<skill id="47513" starLevel="3" maxEnchantLevel="3" /> <!-- Hellfire -->
+		<skill id="47537" starLevel="1" maxEnchantLevel="3" /> <!-- Flame Trace -->
+		<skill id="47538" starLevel="1" maxEnchantLevel="3" /> <!-- Frost Trace -->
+		<skill id="47539" starLevel="1" maxEnchantLevel="3" /> <!-- Lightning Trace -->
+		<skill id="47811" starLevel="3" maxEnchantLevel="3" /> <!-- Giant's Stomp -->
+		<skill id="47910" starLevel="3" maxEnchantLevel="3" /> <!-- Summon Cubic of Secrets -->
+		<skill id="47912" starLevel="3" maxEnchantLevel="3" /> <!-- Summon Elemental Cubic -->
+		<skill id="47914" starLevel="3" maxEnchantLevel="3" /> <!-- Summon Phantom Cubic -->
+		<skill id="47928" starLevel="3" maxEnchantLevel="3" /> <!-- Blade Wave -->
+		<skill id="47933" starLevel="2" maxEnchantLevel="3" /> <!-- Sword Spirit -->
+		<skill id="47941" starLevel="3" maxEnchantLevel="3" /> <!-- Spear Cage -->
+		<skill id="47975" starLevel="2" maxEnchantLevel="3" /> <!-- Powerful Disarm -->
+		<skill id="47976" starLevel="3" maxEnchantLevel="3" /> <!-- Soul Mark -->
+		<skill id="47977" starLevel="2" maxEnchantLevel="3" /> <!-- Shock Impact -->
+		<skill id="47988" starLevel="3" maxEnchantLevel="3" /> <!-- Resonance -->
+		<skill id="47989" starLevel="2" maxEnchantLevel="3" /> <!-- Lightning Mastery -->
+		<skill id="87013" starLevel="3" maxEnchantLevel="3" /> <!-- Great Attack -->
+		<skill id="87034" starLevel="2" maxEnchantLevel="3" /> <!-- Essential Holy Buster -->
+		<skill id="87309" starLevel="3" maxEnchantLevel="3" /> <!-- Clone Dance -->
+		<skill id="87400" starLevel="2" maxEnchantLevel="3" /> <!-- Noda's Hidden Power -->
+		<skill id="87474" starLevel="0" maxEnchantLevel="3" /> <!-- MP Recovery -->
+	</skills>
+	<!-- Enchant levels -->
+	<stars>
+		<star level="0" expMax="900000" expOnFail="90000" feeAdena="1000000" />
+		<star level="1" expMax="900000" expOnFail="90000" feeAdena="1000000" />
+		<star level="2" expMax="900000" expOnFail="90000" feeAdena="1000000" />
+		<star level="3" expMax="900000" expOnFail="90000" feeAdena="1000000" />
+	</stars>
+	<chances>
+		<chance enchantLevel="0" chance="70" />
+		<chance enchantLevel="1" chance="50" />
+		<chance enchantLevel="2" chance="30" />
+		<chance enchantLevel="3" chance="10" />
+	</chances>
+	<!-- Items for enchant -->
+	<itemsPoints>
+		<star level="0">
+			<item id="90045" exp="10000" starLevel="0"/> <!-- Magic Tablet -->
+			<item id="98423" exp="10000" starLevel="0"/> <!-- Magic Tablet - Sealed -->
+			<item id="98232" exp="10000" starLevel="0"/> <!-- SP Pouch - Sealed -->
+		</star>
+		<star level="1">
+			<!-- 1 star skill items -->
+			<item id="90045" exp="1500" starLevel="1" /> <!-- Magic Tablet -->
+			<item id="98423" exp="1500" starLevel="1" /> <!-- Magic Tablet - Sealed -->
+			<item id="98232" exp="2250" starLevel="1" /> <!-- SP Pouch - Sealed -->
+			<!-- Spellbook - 1 star -->
+			<item id="95517" exp="300000" starLevel="1" /> <!-- Master's Book: Might - Sealed -->
+			<item id="95518" exp="300000" starLevel="1" /> <!-- Master's Book: Shield - Sealed -->
+			<item id="95533" exp="300000" starLevel="1" /> <!-- Master's Book: Empower - Sealed -->
+			<item id="95534" exp="300000" starLevel="1" /> <!-- Master's Book: Magic Barrier - Sealed -->
+			<item id="95535" exp="300000" starLevel="1" /> <!-- Master's Book: Focus - Sealed -->
+			<item id="95536" exp="300000" starLevel="1" /> <!-- Master's Book: Death Whisper - Sealed -->
+			<item id="95537" exp="300000" starLevel="1" /> <!-- Master's Book: Wind Walk - Sealed -->
+			<item id="95538" exp="300000" starLevel="1" /> <!-- Master's Book: Haste - Sealed -->
+			<item id="95539" exp="300000" starLevel="1" /> <!-- Master's Book: Acumen - Sealed -->
+			<item id="95769" exp="300000" starLevel="1" /> <!-- Master's Book: Berserker Spirit - Sealed -->
+			<item id="95770" exp="300000" starLevel="1" /> <!-- Master's Book: Clarity - Sealed -->
+			<item id="95771" exp="300000" starLevel="1" /> <!-- Master's Book: Wild Magic - Sealed -->
+			<item id="98502" exp="300000" starLevel="1" /> <!-- Spellbook: Blow Boost - Sealed -->
+			<item id="98491" exp="300000" starLevel="1" /> <!-- Spellbook: Blow Boost -->
+			<item id="98498" exp="300000" starLevel="1" /> <!-- Spellbook: Murder Attempt Lv. 2 - Sealed -->
+			<item id="98487" exp="300000" starLevel="1" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+			<item id="98497" exp="300000" starLevel="1" /> <!-- Spellbook: Erosion Lv. 2 - Sealed -->
+			<item id="98486" exp="300000" starLevel="1" /> <!-- Spellbook: Erosion Lv. 2 -->
+			<item id="98539" exp="300000" starLevel="1" /> <!-- Spellbook: Forward Move Lv. 2 - Sealed -->
+			<item id="98538" exp="300000" starLevel="1" /> <!-- Spellbook: Forward Move Lv. 2 -->
+			<item id="95515" exp="300000" starLevel="1" /> <!-- Spellbook: Knight's Help - Sealed -->
+			<item id="93871" exp="300000" starLevel="1" /> <!-- Spellbook: Knight's Help -->
+			<item id="96274" exp="300000" starLevel="1" /> <!-- Spellbook: Masterpiece Shield - Sealed -->
+			<item id="96273" exp="300000" starLevel="1" /> <!-- Spellbook: Masterpiece Shield -->
+			<item id="95516" exp="300000" starLevel="1" /> <!-- Spellbook: Amazing Spike Thrust Mastery - Sealed -->
+			<item id="94134" exp="300000" starLevel="1" /> <!-- Spellbook: Amazing Spike Thrust Mastery -->
+			<item id="95512" exp="300000" starLevel="1" /> <!-- Spellbook: Amazing Thunder Storm Mastery - Sealed -->
+			<item id="93867" exp="300000" starLevel="1" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+			<item id="97114" exp="300000" starLevel="1" /> <!-- Spellbook: Wild Charge - Sealed -->
+			<item id="97106" exp="300000" starLevel="1" /> <!-- Spellbook: Wild Charge -->
+			<item id="96673" exp="300000" starLevel="1" /> <!-- Spellbook: Fast Run Lv. 3 - Sealed -->
+			<item id="96661" exp="300000" starLevel="1" /> <!-- Spellbook: Fast Run Lv. 3 -->
+			<item id="95523" exp="300000" starLevel="1" /> <!-- Spellbook: Buff Thief - Sealed -->
+			<item id="94141" exp="300000" starLevel="1" /> <!-- Spellbook: Buff Thief -->
+			<item id="95522" exp="300000" starLevel="1" /> <!-- Spellbook: Dark Sense - Sealed -->
+			<item id="94140" exp="300000" starLevel="1" /> <!-- Spellbook: Dark Sense -->
+			<item id="96900" exp="300000" starLevel="1" /> <!-- Spellbook: Perfect Mastery - Sealed -->
+			<item id="96886" exp="300000" starLevel="1" /> <!-- Spellbook: Perfect Mastery -->
+			<item id="95521" exp="300000" starLevel="1" /> <!-- Spellbook: Esprit - Sealed -->
+			<item id="94139" exp="300000" starLevel="1" /> <!-- Spellbook: Esprit -->
+			<item id="95520" exp="300000" starLevel="1" /> <!-- Spellbook: Pain of Sagittarius - Sealed -->
+			<item id="94138" exp="300000" starLevel="1" /> <!-- Spellbook: Pain of Sagittarius -->
+			<item id="97858" exp="300000" starLevel="1" /> <!-- Spellbook: Improved Sleep - Sealed -->
+			<item id="97844" exp="300000" starLevel="1" /> <!-- Spellbook: Improved Sleep -->
+			<item id="95526" exp="300000" starLevel="1" /> <!-- Spellbook: Wild Beat - Sealed -->
+			<item id="94321" exp="300000" starLevel="1" /> <!-- Spellbook: Wild Beat -->
+			<item id="95527" exp="300000" starLevel="1" /> <!-- Spellbook: Crazy Waltz - Sealed -->
+			<item id="94322" exp="300000" starLevel="1" /> <!-- Spellbook: Crazy Waltz -->
+			<item id="95528" exp="300000" starLevel="1" /> <!-- Spellbook: Frantic Pace - Sealed -->
+			<item id="94323" exp="300000" starLevel="1" /> <!-- Spellbook: Frantic Pace -->
+			<item id="95508" exp="300000" starLevel="1" /> <!-- Spellbook: Death Guard - Sealed -->
+			<item id="93388" exp="300000" starLevel="1" /> <!-- Spellbook: Death Guard -->
+			<item id="95511" exp="300000" starLevel="1" /> <!-- Spellbook: Drain Magic Energy - Sealed -->
+			<item id="93633" exp="300000" starLevel="1" /> <!-- Spellbook: Drain Magic Energy -->
+			<item id="95509" exp="300000" starLevel="1" /> <!-- Spellbook: Bone Cage - Sealed -->
+			<item id="93392" exp="300000" starLevel="1" /> <!-- Spellbook: Bone Cage -->
+			<item id="95553" exp="300000" starLevel="1" /> <!-- Spellbook: Pa'agrio's Cure - Sealed -->
+			<item id="94669" exp="300000" starLevel="1" /> <!-- Spellbook: Pa'agrio's Cure -->
+			<item id="95560" exp="300000" starLevel="1" /> <!-- Spellbook: Chant of Healing - Sealed -->
+			<item id="94676" exp="300000" starLevel="1" /> <!-- Spellbook: Chant of Healing -->
+		</star>
+		<star level="2">
+			<!-- 2 star skill items -->
+			<item id="90045" exp="500" starLevel="2" /> <!-- Magic Tablet -->
+			<item id="98423" exp="500" starLevel="2" /> <!-- Magic Tablet - Sealed -->
+			<item id="98232" exp="750" starLevel="2" /> <!-- SP Pouch - Sealed -->
+			<item id="90045" exp="300" starLevel="2" /> <!-- Magic Tablet -->
+			<item id="98423" exp="300" starLevel="2" /> <!-- Magic Tablet - Sealed -->
+			<item id="98232" exp="450" starLevel="2" /> <!-- SP Pouch - Sealed -->
+			<!-- Spellbook - 1 star -->
+			<item id="95517" exp="50000" starLevel="2" /> <!-- Master's Book: Might - Sealed -->
+			<item id="95518" exp="50000" starLevel="2" /> <!-- Master's Book: Shield - Sealed -->
+			<item id="95533" exp="50000" starLevel="2" /> <!-- Master's Book: Empower - Sealed -->
+			<item id="95534" exp="50000" starLevel="2" /> <!-- Master's Book: Magic Barrier - Sealed -->
+			<item id="95535" exp="50000" starLevel="2" /> <!-- Master's Book: Focus - Sealed -->
+			<item id="95536" exp="50000" starLevel="2" /> <!-- Master's Book: Death Whisper - Sealed -->
+			<item id="95537" exp="50000" starLevel="2" /> <!-- Master's Book: Wind Walk - Sealed -->
+			<item id="95538" exp="50000" starLevel="2" /> <!-- Master's Book: Haste - Sealed -->
+			<item id="95539" exp="50000" starLevel="2" /> <!-- Master's Book: Acumen - Sealed -->
+			<item id="95769" exp="50000" starLevel="2" /> <!-- Master's Book: Berserker Spirit - Sealed -->
+			<item id="95770" exp="50000" starLevel="2" /> <!-- Master's Book: Clarity - Sealed -->
+			<item id="95771" exp="50000" starLevel="2" /> <!-- Master's Book: Wild Magic - Sealed -->
+			<item id="98502" exp="50000" starLevel="2" /> <!-- Spellbook: Blow Boost - Sealed -->
+			<item id="98491" exp="50000" starLevel="2" /> <!-- Spellbook: Blow Boost -->
+			<item id="98498" exp="50000" starLevel="2" /> <!-- Spellbook: Murder Attempt Lv. 2 - Sealed -->
+			<item id="98487" exp="50000" starLevel="2" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+			<item id="98497" exp="50000" starLevel="2" /> <!-- Spellbook: Erosion Lv. 2 - Sealed -->
+			<item id="98486" exp="50000" starLevel="2" /> <!-- Spellbook: Erosion Lv. 2 -->
+			<item id="98539" exp="50000" starLevel="2" /> <!-- Spellbook: Forward Move Lv. 2 - Sealed -->
+			<item id="98538" exp="50000" starLevel="2" /> <!-- Spellbook: Forward Move Lv. 2 -->
+			<item id="95515" exp="50000" starLevel="2" /> <!-- Spellbook: Knight's Help - Sealed -->
+			<item id="93871" exp="50000" starLevel="2" /> <!-- Spellbook: Knight's Help -->
+			<item id="96274" exp="50000" starLevel="2" /> <!-- Spellbook: Masterpiece Shield - Sealed -->
+			<item id="96273" exp="50000" starLevel="2" /> <!-- Spellbook: Masterpiece Shield -->
+			<item id="95516" exp="50000" starLevel="2" /> <!-- Spellbook: Amazing Spike Thrust Mastery - Sealed -->
+			<item id="94134" exp="50000" starLevel="2" /> <!-- Spellbook: Amazing Spike Thrust Mastery -->
+			<item id="95512" exp="50000" starLevel="2" /> <!-- Spellbook: Amazing Thunder Storm Mastery - Sealed -->
+			<item id="93867" exp="50000" starLevel="2" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+			<item id="97114" exp="50000" starLevel="2" /> <!-- Spellbook: Wild Charge - Sealed -->
+			<item id="97106" exp="50000" starLevel="2" /> <!-- Spellbook: Wild Charge -->
+			<item id="96673" exp="50000" starLevel="2" /> <!-- Spellbook: Fast Run Lv. 3 - Sealed -->
+			<item id="96661" exp="50000" starLevel="2" /> <!-- Spellbook: Fast Run Lv. 3 -->
+			<item id="95523" exp="50000" starLevel="2" /> <!-- Spellbook: Buff Thief - Sealed -->
+			<item id="94141" exp="50000" starLevel="2" /> <!-- Spellbook: Buff Thief -->
+			<item id="95522" exp="50000" starLevel="2" /> <!-- Spellbook: Dark Sense - Sealed -->
+			<item id="94140" exp="50000" starLevel="2" /> <!-- Spellbook: Dark Sense -->
+			<item id="96900" exp="50000" starLevel="2" /> <!-- Spellbook: Perfect Mastery - Sealed -->
+			<item id="96886" exp="50000" starLevel="2" /> <!-- Spellbook: Perfect Mastery -->
+			<item id="95521" exp="50000" starLevel="2" /> <!-- Spellbook: Esprit - Sealed -->
+			<item id="94139" exp="50000" starLevel="2" /> <!-- Spellbook: Esprit -->
+			<item id="95520" exp="50000" starLevel="2" /> <!-- Spellbook: Pain of Sagittarius - Sealed -->
+			<item id="94138" exp="50000" starLevel="2" /> <!-- Spellbook: Pain of Sagittarius -->
+			<item id="97858" exp="50000" starLevel="2" /> <!-- Spellbook: Improved Sleep - Sealed -->
+			<item id="97844" exp="50000" starLevel="2" /> <!-- Spellbook: Improved Sleep -->
+			<item id="95526" exp="50000" starLevel="2" /> <!-- Spellbook: Wild Beat - Sealed -->
+			<item id="94321" exp="50000" starLevel="2" /> <!-- Spellbook: Wild Beat -->
+			<item id="95527" exp="50000" starLevel="2" /> <!-- Spellbook: Crazy Waltz - Sealed -->
+			<!-- Spellbook - 2 stars -->
+			<item id="98501" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Boost - Sealed -->
+			<item id="98490" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Boost -->
+			<item id="98499" exp="300000" starLevel="2" /> <!-- Spellbook: Noda's Hidden Power - Sealed -->
+			<item id="98488" exp="300000" starLevel="2" /> <!-- Spellbook: Noda's Hidden Power -->
+			<item id="98554" exp="300000" starLevel="2" /> <!-- Spellbook: Maximum Critical Lv. 3 - Sealed -->
+			<item id="98553" exp="300000" starLevel="2" /> <!-- Spellbook: Maximum Critical Lv. 3 -->
+			<item id="98500" exp="300000" starLevel="2" /> <!-- Spellbook: Return Motion - Sealed -->
+			<item id="98489" exp="300000" starLevel="2" /> <!-- Spellbook: Return Motion -->
+			<item id="97803" exp="300000" starLevel="2" /> <!-- Spellbook: Extended Life - Sealed -->
+			<item id="97802" exp="300000" starLevel="2" /> <!-- Spellbook: Extended Life -->
+			<item id="96278" exp="300000" starLevel="2" /> <!-- Spellbook: Knight's Assault - Sealed -->
+			<item id="96277" exp="300000" starLevel="2" /> <!-- Spellbook: Knight's Assault -->
+			<item id="97746" exp="300000" starLevel="2" /> <!-- Spellbook: Master of Aggression - Sealed -->
+			<item id="97745" exp="300000" starLevel="2" /> <!-- Spellbook: Master of Aggression -->
+			<item id="96276" exp="300000" starLevel="2" /> <!-- Spellbook: Knight's Power - Sealed -->
+			<item id="96275" exp="300000" starLevel="2" /> <!-- Spellbook: Knight's Power -->
+			<item id="96282" exp="300000" starLevel="2" /> <!-- Spellbook: Shield Throwing - Sealed -->
+			<item id="96281" exp="300000" starLevel="2" /> <!-- Spellbook: Shield Throwing -->
+			<item id="96280" exp="300000" starLevel="2" /> <!-- Spellbook: Chain Strike (Shock) - Sealed -->
+			<item id="96279" exp="300000" starLevel="2" /> <!-- Spellbook: Chain Strike (Shock) -->
+			<item id="97331" exp="300000" starLevel="2" /> <!-- Spellbook: Blade Throw - Sealed -->
+			<item id="97321" exp="300000" starLevel="2" /> <!-- Spellbook: Blade Throw -->
+			<item id="97336" exp="300000" starLevel="2" /> <!-- Spellbook: Unleashed Power - Sealed -->
+			<item id="97326" exp="300000" starLevel="2" /> <!-- Spellbook: Unleashed Power -->
+			<item id="98280" exp="300000" starLevel="2" /> <!-- Spellbook: Splash Attack - Sealed -->
+			<item id="98262" exp="300000" starLevel="2" /> <!-- Spellbook: Splash Attack -->
+			<item id="97332" exp="300000" starLevel="2" /> <!-- Spellbook: Sword Spirit Lv. 2 - Sealed -->
+			<item id="97322" exp="300000" starLevel="2" /> <!-- Spellbook: Sword Spirit Lv. 2 -->
+			<item id="97337" exp="300000" starLevel="2" /> <!-- Spellbook: Anger Lv. 2 - Sealed -->
+			<item id="97327" exp="300000" starLevel="2" /> <!-- Spellbook: Anger Lv. 2 -->
+			<item id="97115" exp="300000" starLevel="2" /> <!-- Spellbook: Threatening Swing - Sealed -->
+			<item id="97107" exp="300000" starLevel="2" /> <!-- Spellbook: Threatening Swing -->
+			<item id="98283" exp="300000" starLevel="2" /> <!-- Spellbook: Instigator - Sealed -->
+			<item id="98265" exp="300000" starLevel="2" /> <!-- Spellbook: Instigator -->
+			<item id="97118" exp="300000" starLevel="2" /> <!-- Spellbook: Wild Assault - Sealed -->
+			<item id="97110" exp="300000" starLevel="2" /> <!-- Spellbook: Wild Assault -->
+			<item id="97113" exp="300000" starLevel="2" /> <!-- Spellbook: Final Secret Lv. 2 - Sealed -->
+			<item id="97105" exp="300000" starLevel="2" /> <!-- Spellbook: Final Secret Lv. 2 -->
+			<item id="98281" exp="300000" starLevel="2" /> <!-- Spellbook: Titan Spirit - Sealed -->
+			<item id="98263" exp="300000" starLevel="2" /> <!-- Spellbook: Titan Spirit -->
+			<item id="98282" exp="300000" starLevel="2" /> <!-- Spellbook: Khavatari Spirit - Sealed -->
+			<item id="98264" exp="300000" starLevel="2" /> <!-- Spellbook: Khavatari Spirit -->
+			<item id="95865" exp="300000" starLevel="2" /> <!-- Spellbook: Golden Stone - Sealed -->
+			<item id="95857" exp="300000" starLevel="2" /> <!-- Spellbook: Golden Stone -->
+			<item id="95868" exp="300000" starLevel="2" /> <!-- Spellbook: Life Gain - Sealed -->
+			<item id="95860" exp="300000" starLevel="2" /> <!-- Spellbook: Life Gain -->
+			<item id="95866" exp="300000" starLevel="2" /> <!-- Spellbook: Crushing Leap - Sealed -->
+			<item id="95858" exp="300000" starLevel="2" /> <!-- Spellbook: Crushing Leap -->
+			<item id="95867" exp="300000" starLevel="2" /> <!-- Spellbook: Adena Stun - Sealed -->
+			<item id="95859" exp="300000" starLevel="2" /> <!-- Spellbook: Adena Stun -->
+			<item id="96053" exp="300000" starLevel="2" /> <!-- Spellbook: Advanced Cleanse - Sealed -->
+			<item id="96039" exp="300000" starLevel="2" /> <!-- Spellbook: Advanced Cleanse -->
+			<item id="97474" exp="300000" starLevel="2" /> <!-- Spellbook: Lightning Mastery - Sealed -->
+			<item id="97473" exp="300000" starLevel="2" /> <!-- Spellbook: Lightning Mastery -->
+			<item id="95500" exp="300000" starLevel="2" /> <!-- Spellbook: Light Master Lv. 2 - Sealed -->
+			<item id="91944" exp="300000" starLevel="2" /> <!-- Spellbook: Light Master Lv. 2 -->
+			<item id="95501" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Master Lv. 2 - Sealed -->
+			<item id="91945" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+			<item id="95498" exp="300000" starLevel="2" /> <!-- Spellbook: Collect Light Souls Lv. 2 - Sealed -->
+			<item id="91942" exp="300000" starLevel="2" /> <!-- Spellbook: Collect Light Souls Lv. 2 -->
+			<item id="95499" exp="300000" starLevel="2" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 - Sealed -->
+			<item id="91943" exp="300000" starLevel="2" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 -->
+			<item id="97462" exp="300000" starLevel="2" /> <!-- Spellbook: Shock Impact - Sealed -->
+			<item id="97461" exp="300000" starLevel="2" /> <!-- Spellbook: Shock Impact -->
+			<item id="97458" exp="300000" starLevel="2" /> <!-- Spellbook: Powerful Disarm - Sealed -->
+			<item id="97457" exp="300000" starLevel="2" /> <!-- Spellbook: Powerful Disarm -->
+			<item id="97470" exp="300000" starLevel="2" /> <!-- Spellbook: Fragarach - Sealed -->
+			<item id="97469" exp="300000" starLevel="2" /> <!-- Spellbook: Fragarach -->
+			<item id="96676" exp="300000" starLevel="2" /> <!-- Spellbook: Rogue Mastery - Sealed -->
+			<item id="96664" exp="300000" starLevel="2" /> <!-- Spellbook: Rogue Mastery -->
+			<item id="96675" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Assault - Sealed -->
+			<item id="96663" exp="300000" starLevel="2" /> <!-- Spellbook: Shadow Assault -->
+			<item id="96674" exp="300000" starLevel="2" /> <!-- Spellbook: Fatal Accuracy - Sealed -->
+			<item id="96662" exp="300000" starLevel="2" /> <!-- Spellbook: Fatal Accuracy -->
+			<item id="95561" exp="300000" starLevel="2" /> <!-- Spellbook: Flying Dagger - Sealed -->
+			<item id="94806" exp="300000" starLevel="2" /> <!-- Spellbook: Flying Dagger -->
+			<item id="96895" exp="300000" starLevel="2" /> <!-- Spellbook: Devious Shot - Sealed -->
+			<item id="96881" exp="300000" starLevel="2" /> <!-- Spellbook: Devious Shot -->
+			<item id="96897" exp="300000" starLevel="2" /> <!-- Spellbook: Alacrity - Sealed -->
+			<item id="96883" exp="300000" starLevel="2" /> <!-- Spellbook: Alacrity -->
+			<item id="96890" exp="300000" starLevel="2" /> <!-- Spellbook: Thorn Shot - Sealed -->
+			<item id="96876" exp="300000" starLevel="2" /> <!-- Spellbook: Thorn Shot -->
+			<item id="96899" exp="300000" starLevel="2" /> <!-- Spellbook: Dexterous Body - Sealed -->
+			<item id="96885" exp="300000" starLevel="2" /> <!-- Spellbook: Dexterous Body -->
+			<item id="96898" exp="300000" starLevel="2" /> <!-- Spellbook: Eagle Eye - Sealed -->
+			<item id="96884" exp="300000" starLevel="2" /> <!-- Spellbook: Eagle Eye -->
+			<item id="96896" exp="300000" starLevel="2" /> <!-- Spellbook: Steady Aim - Sealed -->
+			<item id="96882" exp="300000" starLevel="2" /> <!-- Spellbook: Steady Aim -->
+			<item id="97857" exp="300000" starLevel="2" /> <!-- Spellbook: Perfect Abilities Lv. 3 - Sealed -->
+			<item id="97843" exp="300000" starLevel="2" /> <!-- Spellbook: Perfect Abilities Lv. 3 -->
+			<item id="97855" exp="300000" starLevel="2" /> <!-- Spellbook: Tower Shield Lv. 2 - Sealed -->
+			<item id="97841" exp="300000" starLevel="2" /> <!-- Spellbook: Tower Shield Lv. 2 -->
+			<item id="97853" exp="300000" starLevel="2" /> <!-- Spellbook: Fatal Crush - Sealed -->
+			<item id="97839" exp="300000" starLevel="2" /> <!-- Spellbook: Fatal Crush -->
+			<item id="98276" exp="300000" starLevel="2" /> <!-- Spellbook: Sounds of Muse - Sealed -->
+			<item id="98258" exp="300000" starLevel="2" /> <!-- Spellbook: Sounds of Muse -->
+			<item id="95524" exp="300000" starLevel="2" /> <!-- Spellbook: Sword Symphony - Sealed -->
+			<item id="94319" exp="300000" starLevel="2" /> <!-- Spellbook: Sword Symphony -->
+			<item id="95525" exp="300000" starLevel="2" /> <!-- Spellbook: Dance of Blood - Sealed -->
+			<item id="94320" exp="300000" starLevel="2" /> <!-- Spellbook: Dance of Blood -->
+			<item id="98277" exp="300000" starLevel="2" /> <!-- Spellbook: Dancer's Play - Sealed -->
+			<item id="98259" exp="300000" starLevel="2" /> <!-- Spellbook: Dancer's Play -->
+			<item id="98234" exp="300000" starLevel="2" /> <!-- Spellbook: Acceleration Lv. 2 - Sealed -->
+			<item id="98257" exp="300000" starLevel="2" /> <!-- Spellbook: Deadly Resilience -->
+			<item id="98234" exp="300000" starLevel="2" /> <!-- Spellbook: Acceleration Lv. 2 - Sealed -->
+			<item id="98233" exp="300000" starLevel="2" /> <!-- Spellbook: Acceleration Lv. 2 -->
+			<item id="98284" exp="300000" starLevel="2" /> <!-- Spellbook: Long Range Attack Lv. 3 - Sealed -->
+			<item id="98266" exp="300000" starLevel="2" /> <!-- Spellbook: Long Range Attack Lv. 3 -->
+			<item id="95358" exp="300000" starLevel="2" /> <!-- Spellbook: Time Burst Lv. 2 - Sealed -->
+			<item id="95357" exp="300000" starLevel="2" /> <!-- Spellbook: Time Burst Lv. 2 -->
+			<item id="95364" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Spirit Lv. 3 - Sealed -->
+			<item id="95363" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Spirit Lv. 3 -->
+			<item id="95655" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Care Lv. 2 - Sealed -->
+			<item id="95654" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Care Lv. 2 -->
+			<item id="95360" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Wind Lv. 2 - Sealed -->
+			<item id="95359" exp="300000" starLevel="2" /> <!-- Spellbook: Elemental Wind Lv. 2 -->
+			<item id="97046" exp="300000" starLevel="2" /> <!-- Spellbook: Heavy Sleep - Sealed -->
+			<item id="97041" exp="300000" starLevel="2" /> <!-- Spellbook: Heavy Sleep -->
+			<item id="97045" exp="300000" starLevel="2" /> <!-- Spellbook: Magic Circle - Sealed -->
+			<item id="97040" exp="300000" starLevel="2" /> <!-- Spellbook: Magic Circle -->
+			<item id="98287" exp="300000" starLevel="2" /> <!-- Spellbook: Einhasad's Expert Blessing - Sealed -->
+			<item id="98269" exp="300000" starLevel="2" /> <!-- Spellbook: Einhasad's Expert Blessing -->
+			<item id="98290" exp="300000" starLevel="2" /> <!-- Spellbook: Einhasad's Summoner - Sealed -->
+			<item id="98272" exp="300000" starLevel="2" /> <!-- Spellbook: Einhasad's Summoner -->
+			<item id="98289" exp="300000" starLevel="2" /> <!-- Spellbook: Shillien's Summoner - Sealed -->
+			<item id="98271" exp="300000" starLevel="2" /> <!-- Spellbook: Shillien's Summoner -->
+			<item id="98286" exp="300000" starLevel="2" /> <!-- Spellbook: Mighty Children of Shillien - Sealed -->
+			<item id="98268" exp="300000" starLevel="2" /> <!-- Spellbook: Mighty Children of Shillien -->
+			<item id="97198" exp="300000" starLevel="2" /> <!-- Spellbook: Chains of Pain - Sealed -->
+			<item id="97189" exp="300000" starLevel="2" /> <!-- Spellbook: Chains of Pain -->
+			<item id="97199" exp="300000" starLevel="2" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 - Sealed -->
+			<item id="97190" exp="300000" starLevel="2" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 -->
+			<item id="96061" exp="300000" starLevel="2" /> <!-- Spellbook: Sacred Power - Sealed -->
+			<item id="96047" exp="300000" starLevel="2" /> <!-- Spellbook: Sacred Power -->
+			<item id="96060" exp="300000" starLevel="2" /> <!-- Spellbook: Divine Recovery - Sealed -->
+			<item id="96046" exp="300000" starLevel="2" /> <!-- Spellbook: Divine Recovery -->
+			<item id="96063" exp="300000" starLevel="2" /> <!-- Spellbook: Unleashing - Sealed -->
+			<item id="96050" exp="300000" starLevel="2" /> <!-- Spellbook: Unleashing -->
+			<item id="96056" exp="300000" starLevel="2" /> <!-- Spellbook: Eva's Power - Sealed -->
+			<item id="96042" exp="300000" starLevel="2" /> <!-- Spellbook: Eva's Power -->
+			<item id="98288" exp="300000" starLevel="2" /> <!-- Spellbook: Eva's Summoner - Sealed -->
+			<item id="98270" exp="300000" starLevel="2" /> <!-- Spellbook: Eva's Summoner -->
+			<item id="98285" exp="300000" starLevel="2" /> <!-- Spellbook: Mighty Children of Eva - Sealed -->
+			<item id="98267" exp="300000" starLevel="2" /> <!-- Spellbook: Mighty Children of Eva -->
+			<item id="96059" exp="300000" starLevel="2" /> <!-- Spellbook: Shillien's Power - Sealed -->
+			<item id="96045" exp="300000" starLevel="2" /> <!-- Spellbook: Shillien's Power -->
+			<item id="96062" exp="300000" starLevel="2" /> <!-- Spellbook: Improved Resilience - Sealed -->
+			<item id="96048" exp="300000" starLevel="2" /> <!-- Spellbook: Improved Resilience -->
+			<item id="96064" exp="300000" starLevel="2" /> <!-- Spellbook: Holy Buster - Sealed -->
+			<item id="96049" exp="300000" starLevel="2" /> <!-- Spellbook: Holy Buster -->
+			<item id="95549" exp="300000" starLevel="2" /> <!-- Spellbook: Burning Assault - Sealed -->
+			<item id="94506" exp="300000" starLevel="2" /> <!-- Spellbook: Burning Assault -->
+			<item id="95556" exp="300000" starLevel="2" /> <!-- Spellbook: Seal of Infection - Sealed -->
+			<item id="94672" exp="300000" starLevel="2" /> <!-- Spellbook: Seal of Infection -->
+			<item id="98278" exp="300000" starLevel="2" /> <!-- Spellbook: Spell of Power - Sealed -->
+			<item id="98260" exp="300000" starLevel="2" /> <!-- Spellbook: Spell of Power -->
+			<item id="98279" exp="300000" starLevel="2" /> <!-- Spellbook: Spell of Fatality - Sealed -->
+			<item id="98261" exp="300000" starLevel="2" /> <!-- Spellbook: Spell of Fatality -->
+			<item id="95559" exp="300000" starLevel="2" /> <!-- Spellbook: Cold Flames - Sealed -->
+			<item id="94675" exp="300000" starLevel="2" /> <!-- Spellbook: Cold Flames -->
+		</star>
+		<star level="3">
+			<!-- 3 star skill items -->
+			<item id="90045" exp="300" starLevel="3" /> <!-- Magic Tablet -->
+			<item id="98423" exp="300" starLevel="3" /> <!-- Magic Tablet - Sealed -->
+			<item id="98232" exp="450" starLevel="3" /> <!-- SP Pouch - Sealed -->
+			<!-- Spellbook - 1 star -->
+			<item id="95517" exp="28000" starLevel="3" /> <!-- Master's Book: Might - Sealed -->
+			<item id="95518" exp="28000" starLevel="3" /> <!-- Master's Book: Shield - Sealed -->
+			<item id="95533" exp="28000" starLevel="3" /> <!-- Master's Book: Empower - Sealed -->
+			<item id="95534" exp="28000" starLevel="3" /> <!-- Master's Book: Magic Barrier - Sealed -->
+			<item id="95535" exp="28000" starLevel="3" /> <!-- Master's Book: Focus - Sealed -->
+			<item id="95536" exp="28000" starLevel="3" /> <!-- Master's Book: Death Whisper - Sealed -->
+			<item id="95537" exp="28000" starLevel="3" /> <!-- Master's Book: Wind Walk - Sealed -->
+			<item id="95538" exp="28000" starLevel="3" /> <!-- Master's Book: Haste - Sealed -->
+			<item id="95539" exp="28000" starLevel="3" /> <!-- Master's Book: Acumen - Sealed -->
+			<item id="95769" exp="28000" starLevel="3" /> <!-- Master's Book: Berserker Spirit - Sealed -->
+			<item id="95770" exp="28000" starLevel="3" /> <!-- Master's Book: Clarity - Sealed -->
+			<item id="95771" exp="28000" starLevel="3" /> <!-- Master's Book: Wild Magic - Sealed -->
+			<item id="98502" exp="28000" starLevel="3" /> <!-- Spellbook: Blow Boost - Sealed -->
+			<item id="98491" exp="28000" starLevel="3" /> <!-- Spellbook: Blow Boost -->
+			<item id="98498" exp="28000" starLevel="3" /> <!-- Spellbook: Murder Attempt Lv. 2 - Sealed -->
+			<item id="98487" exp="28000" starLevel="3" /> <!-- Spellbook: Murder Attempt Lv. 2 -->
+			<item id="98497" exp="28000" starLevel="3" /> <!-- Spellbook: Erosion Lv. 2 - Sealed -->
+			<item id="98486" exp="28000" starLevel="3" /> <!-- Spellbook: Erosion Lv. 2 -->
+			<item id="98539" exp="28000" starLevel="3" /> <!-- Spellbook: Forward Move Lv. 2 - Sealed -->
+			<item id="98538" exp="28000" starLevel="3" /> <!-- Spellbook: Forward Move Lv. 2 -->
+			<item id="95515" exp="28000" starLevel="3" /> <!-- Spellbook: Knight's Help - Sealed -->
+			<item id="93871" exp="28000" starLevel="3" /> <!-- Spellbook: Knight's Help -->
+			<item id="96274" exp="28000" starLevel="3" /> <!-- Spellbook: Masterpiece Shield - Sealed -->
+			<item id="96273" exp="28000" starLevel="3" /> <!-- Spellbook: Masterpiece Shield -->
+			<item id="95516" exp="28000" starLevel="3" /> <!-- Spellbook: Amazing Spike Thrust Mastery - Sealed -->
+			<item id="94134" exp="28000" starLevel="3" /> <!-- Spellbook: Amazing Spike Thrust Mastery -->
+			<item id="95512" exp="28000" starLevel="3" /> <!-- Spellbook: Amazing Thunder Storm Mastery - Sealed -->
+			<item id="93867" exp="28000" starLevel="3" /> <!-- Spellbook: Amazing Thunder Storm Mastery -->
+			<item id="97114" exp="28000" starLevel="3" /> <!-- Spellbook: Wild Charge - Sealed -->
+			<item id="97106" exp="28000" starLevel="3" /> <!-- Spellbook: Wild Charge -->
+			<item id="96673" exp="28000" starLevel="3" /> <!-- Spellbook: Fast Run Lv. 3 - Sealed -->
+			<item id="96661" exp="28000" starLevel="3" /> <!-- Spellbook: Fast Run Lv. 3 -->
+			<item id="95523" exp="28000" starLevel="3" /> <!-- Spellbook: Buff Thief - Sealed -->
+			<item id="94141" exp="28000" starLevel="3" /> <!-- Spellbook: Buff Thief -->
+			<item id="95522" exp="28000" starLevel="3" /> <!-- Spellbook: Dark Sense - Sealed -->
+			<item id="94140" exp="28000" starLevel="3" /> <!-- Spellbook: Dark Sense -->
+			<item id="96900" exp="28000" starLevel="3" /> <!-- Spellbook: Perfect Mastery - Sealed -->
+			<item id="96886" exp="28000" starLevel="3" /> <!-- Spellbook: Perfect Mastery -->
+			<item id="95521" exp="28000" starLevel="3" /> <!-- Spellbook: Esprit - Sealed -->
+			<item id="94139" exp="28000" starLevel="3" /> <!-- Spellbook: Esprit -->
+			<item id="95520" exp="28000" starLevel="3" /> <!-- Spellbook: Pain of Sagittarius - Sealed -->
+			<item id="94138" exp="28000" starLevel="3" /> <!-- Spellbook: Pain of Sagittarius -->
+			<item id="97858" exp="28000" starLevel="3" /> <!-- Spellbook: Improved Sleep - Sealed -->
+			<item id="97844" exp="28000" starLevel="3" /> <!-- Spellbook: Improved Sleep -->
+			<item id="95526" exp="28000" starLevel="3" /> <!-- Spellbook: Wild Beat - Sealed -->
+			<item id="94321" exp="28000" starLevel="3" /> <!-- Spellbook: Wild Beat -->
+			<item id="95527" exp="28000" starLevel="3" /> <!-- Spellbook: Crazy Waltz - Sealed -->
+			<item id="94322" exp="28000" starLevel="3" /> <!-- Spellbook: Crazy Waltz -->
+			<item id="95528" exp="28000" starLevel="3" /> <!-- Spellbook: Frantic Pace - Sealed -->
+			<item id="94323" exp="28000" starLevel="3" /> <!-- Spellbook: Frantic Pace -->
+			<item id="95508" exp="28000" starLevel="3" /> <!-- Spellbook: Death Guard - Sealed -->
+			<item id="93388" exp="28000" starLevel="3" /> <!-- Spellbook: Death Guard -->
+			<item id="95511" exp="28000" starLevel="3" /> <!-- Spellbook: Drain Magic Energy - Sealed -->
+			<item id="93633" exp="28000" starLevel="3" /> <!-- Spellbook: Drain Magic Energy -->
+			<item id="95509" exp="28000" starLevel="3" /> <!-- Spellbook: Bone Cage - Sealed -->
+			<item id="93392" exp="28000" starLevel="3" /> <!-- Spellbook: Bone Cage -->
+			<item id="95553" exp="28000" starLevel="3" /> <!-- Spellbook: Pa'agrio's Cure - Sealed -->
+			<item id="94669" exp="28000" starLevel="3" /> <!-- Spellbook: Pa'agrio's Cure -->
+			<item id="95560" exp="28000" starLevel="3" /> <!-- Spellbook: Chant of Healing - Sealed -->
+			<item id="94676" exp="28000" starLevel="3" /> <!-- Spellbook: Chant of Healing -->
+			<!-- Spellbook - 2 stars -->
+			<item id="98501" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Boost - Sealed -->
+			<item id="98490" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Boost -->
+			<item id="98499" exp="90000" starLevel="3" /> <!-- Spellbook: Noda's Hidden Power - Sealed -->
+			<item id="98488" exp="90000" starLevel="3" /> <!-- Spellbook: Noda's Hidden Power -->
+			<item id="98554" exp="90000" starLevel="3" /> <!-- Spellbook: Maximum Critical Lv. 3 - Sealed -->
+			<item id="98553" exp="90000" starLevel="3" /> <!-- Spellbook: Maximum Critical Lv. 3 -->
+			<item id="98500" exp="90000" starLevel="3" /> <!-- Spellbook: Return Motion - Sealed -->
+			<item id="98489" exp="90000" starLevel="3" /> <!-- Spellbook: Return Motion -->
+			<item id="97803" exp="90000" starLevel="3" /> <!-- Spellbook: Extended Life - Sealed -->
+			<item id="97802" exp="90000" starLevel="3" /> <!-- Spellbook: Extended Life -->
+			<item id="96278" exp="90000" starLevel="3" /> <!-- Spellbook: Knight's Assault - Sealed -->
+			<item id="96277" exp="90000" starLevel="3" /> <!-- Spellbook: Knight's Assault -->
+			<item id="97746" exp="90000" starLevel="3" /> <!-- Spellbook: Master of Aggression - Sealed -->
+			<item id="97745" exp="90000" starLevel="3" /> <!-- Spellbook: Master of Aggression -->
+			<item id="96276" exp="90000" starLevel="3" /> <!-- Spellbook: Knight's Power - Sealed -->
+			<item id="96275" exp="90000" starLevel="3" /> <!-- Spellbook: Knight's Power -->
+			<item id="96282" exp="90000" starLevel="3" /> <!-- Spellbook: Shield Throwing - Sealed -->
+			<item id="96281" exp="90000" starLevel="3" /> <!-- Spellbook: Shield Throwing -->
+			<item id="96280" exp="90000" starLevel="3" /> <!-- Spellbook: Chain Strike (Shock) - Sealed -->
+			<item id="96279" exp="90000" starLevel="3" /> <!-- Spellbook: Chain Strike (Shock) -->
+			<item id="97331" exp="90000" starLevel="3" /> <!-- Spellbook: Blade Throw - Sealed -->
+			<item id="97321" exp="90000" starLevel="3" /> <!-- Spellbook: Blade Throw -->
+			<item id="97336" exp="90000" starLevel="3" /> <!-- Spellbook: Unleashed Power - Sealed -->
+			<item id="97326" exp="90000" starLevel="3" /> <!-- Spellbook: Unleashed Power -->
+			<item id="98280" exp="90000" starLevel="3" /> <!-- Spellbook: Splash Attack - Sealed -->
+			<item id="98262" exp="90000" starLevel="3" /> <!-- Spellbook: Splash Attack -->
+			<item id="97332" exp="90000" starLevel="3" /> <!-- Spellbook: Sword Spirit Lv. 2 - Sealed -->
+			<item id="97322" exp="90000" starLevel="3" /> <!-- Spellbook: Sword Spirit Lv. 2 -->
+			<item id="97337" exp="90000" starLevel="3" /> <!-- Spellbook: Anger Lv. 2 - Sealed -->
+			<item id="97327" exp="90000" starLevel="3" /> <!-- Spellbook: Anger Lv. 2 -->
+			<item id="97115" exp="90000" starLevel="3" /> <!-- Spellbook: Threatening Swing - Sealed -->
+			<item id="97107" exp="90000" starLevel="3" /> <!-- Spellbook: Threatening Swing -->
+			<item id="98283" exp="90000" starLevel="3" /> <!-- Spellbook: Instigator - Sealed -->
+			<item id="98265" exp="90000" starLevel="3" /> <!-- Spellbook: Instigator -->
+			<item id="97118" exp="90000" starLevel="3" /> <!-- Spellbook: Wild Assault - Sealed -->
+			<item id="97110" exp="90000" starLevel="3" /> <!-- Spellbook: Wild Assault -->
+			<item id="97113" exp="90000" starLevel="3" /> <!-- Spellbook: Final Secret Lv. 2 - Sealed -->
+			<item id="97105" exp="90000" starLevel="3" /> <!-- Spellbook: Final Secret Lv. 2 -->
+			<item id="98281" exp="90000" starLevel="3" /> <!-- Spellbook: Titan Spirit - Sealed -->
+			<item id="98263" exp="90000" starLevel="3" /> <!-- Spellbook: Titan Spirit -->
+			<item id="98282" exp="90000" starLevel="3" /> <!-- Spellbook: Khavatari Spirit - Sealed -->
+			<item id="98264" exp="90000" starLevel="3" /> <!-- Spellbook: Khavatari Spirit -->
+			<item id="95865" exp="90000" starLevel="3" /> <!-- Spellbook: Golden Stone - Sealed -->
+			<item id="95857" exp="90000" starLevel="3" /> <!-- Spellbook: Golden Stone -->
+			<item id="95868" exp="90000" starLevel="3" /> <!-- Spellbook: Life Gain - Sealed -->
+			<item id="95860" exp="90000" starLevel="3" /> <!-- Spellbook: Life Gain -->
+			<item id="95866" exp="90000" starLevel="3" /> <!-- Spellbook: Crushing Leap - Sealed -->
+			<item id="95858" exp="90000" starLevel="3" /> <!-- Spellbook: Crushing Leap -->
+			<item id="95867" exp="90000" starLevel="3" /> <!-- Spellbook: Adena Stun - Sealed -->
+			<item id="95859" exp="90000" starLevel="3" /> <!-- Spellbook: Adena Stun -->
+			<item id="96053" exp="90000" starLevel="3" /> <!-- Spellbook: Advanced Cleanse - Sealed -->
+			<item id="96039" exp="90000" starLevel="3" /> <!-- Spellbook: Advanced Cleanse -->
+			<item id="97474" exp="90000" starLevel="3" /> <!-- Spellbook: Lightning Mastery - Sealed -->
+			<item id="97473" exp="90000" starLevel="3" /> <!-- Spellbook: Lightning Mastery -->
+			<item id="95500" exp="90000" starLevel="3" /> <!-- Spellbook: Light Master Lv. 2 - Sealed -->
+			<item id="91944" exp="90000" starLevel="3" /> <!-- Spellbook: Light Master Lv. 2 -->
+			<item id="95501" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Master Lv. 2 - Sealed -->
+			<item id="91945" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+			<item id="95498" exp="90000" starLevel="3" /> <!-- Spellbook: Collect Light Souls Lv. 2 - Sealed -->
+			<item id="91942" exp="90000" starLevel="3" /> <!-- Spellbook: Collect Light Souls Lv. 2 -->
+			<item id="95499" exp="90000" starLevel="3" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 - Sealed -->
+			<item id="91943" exp="90000" starLevel="3" /> <!-- Spellbook: Collect Shadow Souls Lv. 2 -->
+			<item id="97462" exp="90000" starLevel="3" /> <!-- Spellbook: Shock Impact - Sealed -->
+			<item id="97461" exp="90000" starLevel="3" /> <!-- Spellbook: Shock Impact -->
+			<item id="97458" exp="90000" starLevel="3" /> <!-- Spellbook: Powerful Disarm - Sealed -->
+			<item id="97457" exp="90000" starLevel="3" /> <!-- Spellbook: Powerful Disarm -->
+			<item id="97470" exp="90000" starLevel="3" /> <!-- Spellbook: Fragarach - Sealed -->
+			<item id="97469" exp="90000" starLevel="3" /> <!-- Spellbook: Fragarach -->
+			<item id="96676" exp="90000" starLevel="3" /> <!-- Spellbook: Rogue Mastery - Sealed -->
+			<item id="96664" exp="90000" starLevel="3" /> <!-- Spellbook: Rogue Mastery -->
+			<item id="96675" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Assault - Sealed -->
+			<item id="96663" exp="90000" starLevel="3" /> <!-- Spellbook: Shadow Assault -->
+			<item id="96674" exp="90000" starLevel="3" /> <!-- Spellbook: Fatal Accuracy - Sealed -->
+			<item id="96662" exp="90000" starLevel="3" /> <!-- Spellbook: Fatal Accuracy -->
+			<item id="95561" exp="90000" starLevel="3" /> <!-- Spellbook: Flying Dagger - Sealed -->
+			<item id="94806" exp="90000" starLevel="3" /> <!-- Spellbook: Flying Dagger -->
+			<item id="96895" exp="90000" starLevel="3" /> <!-- Spellbook: Devious Shot - Sealed -->
+			<item id="96881" exp="90000" starLevel="3" /> <!-- Spellbook: Devious Shot -->
+			<item id="96897" exp="90000" starLevel="3" /> <!-- Spellbook: Alacrity - Sealed -->
+			<item id="96883" exp="90000" starLevel="3" /> <!-- Spellbook: Alacrity -->
+			<item id="96890" exp="90000" starLevel="3" /> <!-- Spellbook: Thorn Shot - Sealed -->
+			<item id="96876" exp="90000" starLevel="3" /> <!-- Spellbook: Thorn Shot -->
+			<item id="96899" exp="90000" starLevel="3" /> <!-- Spellbook: Dexterous Body - Sealed -->
+			<item id="96885" exp="90000" starLevel="3" /> <!-- Spellbook: Dexterous Body -->
+			<item id="96898" exp="90000" starLevel="3" /> <!-- Spellbook: Eagle Eye - Sealed -->
+			<item id="96884" exp="90000" starLevel="3" /> <!-- Spellbook: Eagle Eye -->
+			<item id="96896" exp="90000" starLevel="3" /> <!-- Spellbook: Steady Aim - Sealed -->
+			<item id="96882" exp="90000" starLevel="3" /> <!-- Spellbook: Steady Aim -->
+			<item id="97857" exp="90000" starLevel="3" /> <!-- Spellbook: Perfect Abilities Lv. 3 - Sealed -->
+			<item id="97843" exp="90000" starLevel="3" /> <!-- Spellbook: Perfect Abilities Lv. 3 -->
+			<item id="97855" exp="90000" starLevel="3" /> <!-- Spellbook: Tower Shield Lv. 2 - Sealed -->
+			<item id="97841" exp="90000" starLevel="3" /> <!-- Spellbook: Tower Shield Lv. 2 -->
+			<item id="97853" exp="90000" starLevel="3" /> <!-- Spellbook: Fatal Crush - Sealed -->
+			<item id="97839" exp="90000" starLevel="3" /> <!-- Spellbook: Fatal Crush -->
+			<item id="98276" exp="90000" starLevel="3" /> <!-- Spellbook: Sounds of Muse - Sealed -->
+			<item id="98258" exp="90000" starLevel="3" /> <!-- Spellbook: Sounds of Muse -->
+			<item id="95524" exp="90000" starLevel="3" /> <!-- Spellbook: Sword Symphony - Sealed -->
+			<item id="94319" exp="90000" starLevel="3" /> <!-- Spellbook: Sword Symphony -->
+			<item id="95525" exp="90000" starLevel="3" /> <!-- Spellbook: Dance of Blood - Sealed -->
+			<item id="94320" exp="90000" starLevel="3" /> <!-- Spellbook: Dance of Blood -->
+			<item id="98277" exp="90000" starLevel="3" /> <!-- Spellbook: Dancer's Play - Sealed -->
+			<item id="98259" exp="90000" starLevel="3" /> <!-- Spellbook: Dancer's Play -->
+			<item id="98234" exp="90000" starLevel="3" /> <!-- Spellbook: Acceleration Lv. 2 - Sealed -->
+			<item id="98257" exp="90000" starLevel="3" /> <!-- Spellbook: Deadly Resilience -->
+			<item id="98234" exp="90000" starLevel="3" /> <!-- Spellbook: Acceleration Lv. 2 - Sealed -->
+			<item id="98233" exp="90000" starLevel="3" /> <!-- Spellbook: Acceleration Lv. 2 -->
+			<item id="98284" exp="90000" starLevel="3" /> <!-- Spellbook: Long Range Attack Lv. 3 - Sealed -->
+			<item id="98266" exp="90000" starLevel="3" /> <!-- Spellbook: Long Range Attack Lv. 3 -->
+			<item id="95358" exp="90000" starLevel="3" /> <!-- Spellbook: Time Burst Lv. 2 - Sealed -->
+			<item id="95357" exp="90000" starLevel="3" /> <!-- Spellbook: Time Burst Lv. 2 -->
+			<item id="95364" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Spirit Lv. 3 - Sealed -->
+			<item id="95363" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Spirit Lv. 3 -->
+			<item id="95655" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Care Lv. 2 - Sealed -->
+			<item id="95654" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Care Lv. 2 -->
+			<item id="95360" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Wind Lv. 2 - Sealed -->
+			<item id="95359" exp="90000" starLevel="3" /> <!-- Spellbook: Elemental Wind Lv. 2 -->
+			<item id="97046" exp="90000" starLevel="3" /> <!-- Spellbook: Heavy Sleep - Sealed -->
+			<item id="97041" exp="90000" starLevel="3" /> <!-- Spellbook: Heavy Sleep -->
+			<item id="97045" exp="90000" starLevel="3" /> <!-- Spellbook: Magic Circle - Sealed -->
+			<item id="97040" exp="90000" starLevel="3" /> <!-- Spellbook: Magic Circle -->
+			<item id="98287" exp="90000" starLevel="3" /> <!-- Spellbook: Einhasad's Expert Blessing - Sealed -->
+			<item id="98269" exp="90000" starLevel="3" /> <!-- Spellbook: Einhasad's Expert Blessing -->
+			<item id="98290" exp="90000" starLevel="3" /> <!-- Spellbook: Einhasad's Summoner - Sealed -->
+			<item id="98272" exp="90000" starLevel="3" /> <!-- Spellbook: Einhasad's Summoner -->
+			<item id="98289" exp="90000" starLevel="3" /> <!-- Spellbook: Shillien's Summoner - Sealed -->
+			<item id="98271" exp="90000" starLevel="3" /> <!-- Spellbook: Shillien's Summoner -->
+			<item id="98286" exp="90000" starLevel="3" /> <!-- Spellbook: Mighty Children of Shillien - Sealed -->
+			<item id="98268" exp="90000" starLevel="3" /> <!-- Spellbook: Mighty Children of Shillien -->
+			<item id="97198" exp="90000" starLevel="3" /> <!-- Spellbook: Chains of Pain - Sealed -->
+			<item id="97189" exp="90000" starLevel="3" /> <!-- Spellbook: Chains of Pain -->
+			<item id="97199" exp="90000" starLevel="3" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 - Sealed -->
+			<item id="97190" exp="90000" starLevel="3" /> <!-- Spellbook: Servitor Ultimate Defense Lv. 3 -->
+			<item id="96061" exp="90000" starLevel="3" /> <!-- Spellbook: Sacred Power - Sealed -->
+			<item id="96047" exp="90000" starLevel="3" /> <!-- Spellbook: Sacred Power -->
+			<item id="96060" exp="90000" starLevel="3" /> <!-- Spellbook: Divine Recovery - Sealed -->
+			<item id="96046" exp="90000" starLevel="3" /> <!-- Spellbook: Divine Recovery -->
+			<item id="96063" exp="90000" starLevel="3" /> <!-- Spellbook: Unleashing - Sealed -->
+			<item id="96050" exp="90000" starLevel="3" /> <!-- Spellbook: Unleashing -->
+			<item id="96056" exp="90000" starLevel="3" /> <!-- Spellbook: Eva's Power - Sealed -->
+			<item id="96042" exp="90000" starLevel="3" /> <!-- Spellbook: Eva's Power -->
+			<item id="98288" exp="90000" starLevel="3" /> <!-- Spellbook: Eva's Summoner - Sealed -->
+			<item id="98270" exp="90000" starLevel="3" /> <!-- Spellbook: Eva's Summoner -->
+			<item id="98285" exp="90000" starLevel="3" /> <!-- Spellbook: Mighty Children of Eva - Sealed -->
+			<item id="98267" exp="90000" starLevel="3" /> <!-- Spellbook: Mighty Children of Eva -->
+			<item id="96059" exp="90000" starLevel="3" /> <!-- Spellbook: Shillien's Power - Sealed -->
+			<item id="96045" exp="90000" starLevel="3" /> <!-- Spellbook: Shillien's Power -->
+			<item id="96062" exp="90000" starLevel="3" /> <!-- Spellbook: Improved Resilience - Sealed -->
+			<item id="96048" exp="90000" starLevel="3" /> <!-- Spellbook: Improved Resilience -->
+			<item id="96064" exp="90000" starLevel="3" /> <!-- Spellbook: Holy Buster - Sealed -->
+			<item id="96049" exp="90000" starLevel="3" /> <!-- Spellbook: Holy Buster -->
+			<item id="95549" exp="90000" starLevel="3" /> <!-- Spellbook: Burning Assault - Sealed -->
+			<item id="94506" exp="90000" starLevel="3" /> <!-- Spellbook: Burning Assault -->
+			<item id="95556" exp="90000" starLevel="3" /> <!-- Spellbook: Seal of Infection - Sealed -->
+			<item id="94672" exp="90000" starLevel="3" /> <!-- Spellbook: Seal of Infection -->
+			<item id="98278" exp="90000" starLevel="3" /> <!-- Spellbook: Spell of Power - Sealed -->
+			<item id="98260" exp="90000" starLevel="3" /> <!-- Spellbook: Spell of Power -->
+			<item id="98279" exp="90000" starLevel="3" /> <!-- Spellbook: Spell of Fatality - Sealed -->
+			<item id="98261" exp="90000" starLevel="3" /> <!-- Spellbook: Spell of Fatality -->
+			<item id="95559" exp="90000" starLevel="3" /> <!-- Spellbook: Cold Flames - Sealed -->
+			<item id="94675" exp="90000" starLevel="3" /> <!-- Spellbook: Cold Flames -->
+			<!-- Spellbook - 3 stars -->
+			<item id="98496" exp="300000" starLevel="3" /> <!-- Spellbook: Resolve to Kill - Sealed -->
+			<item id="98485" exp="300000" starLevel="3" /> <!-- Spellbook: Resolve to Kill -->
+			<item id="98493" exp="300000" starLevel="3" /> <!-- Spellbook: Clone Dance - Sealed -->
+			<item id="98482" exp="300000" starLevel="3" /> <!-- Spellbook: Clone Dance -->
+			<item id="98495" exp="300000" starLevel="3" /> <!-- Spellbook: Constraint - Sealed -->
+			<item id="98484" exp="300000" starLevel="3" /> <!-- Spellbook: Constraint -->
+			<item id="96608" exp="300000" starLevel="3" /> <!-- Spellbook: Lunatic Crusher - Sealed -->
+			<item id="96607" exp="300000" starLevel="3" /> <!-- Spellbook: Lunatic Crusher -->
+			<item id="96606" exp="300000" starLevel="3" /> <!-- Spellbook: Shield of Security - Sealed -->
+			<item id="96605" exp="300000" starLevel="3" /> <!-- Spellbook: Shield of Security -->
+			<item id="96288" exp="300000" starLevel="3" /> <!-- Spellbook: Ultimate Defense Lv. 3 - Sealed -->
+			<item id="96287" exp="300000" starLevel="3" /> <!-- Spellbook: Ultimate Defense Lv. 3 -->
+			<item id="96612" exp="300000" starLevel="3" /> <!-- Spellbook: Shillien's Curse - Sealed -->
+			<item id="96611" exp="300000" starLevel="3" /> <!-- Spellbook: Shillien's Curse -->
+			<item id="96610" exp="300000" starLevel="3" /> <!-- Spellbook: Eva's Care - Sealed -->
+			<item id="96609" exp="300000" starLevel="3" /> <!-- Spellbook: Eva's Care -->
+			<item id="97112" exp="300000" starLevel="3" /> <!-- Spellbook: Master of Combat Lv. 3 - Sealed -->
+			<item id="97104" exp="300000" starLevel="3" /> <!-- Spellbook: Master of Combat Lv. 3 -->
+			<item id="97330" exp="300000" starLevel="3" /> <!-- Spellbook: Slashing Blades - Sealed -->
+			<item id="97320" exp="300000" starLevel="3" /> <!-- Spellbook: Slashing Blades -->
+			<item id="97335" exp="300000" starLevel="3" /> <!-- Spellbook: Spear Rumble - Sealed -->
+			<item id="97325" exp="300000" starLevel="3" /> <!-- Spellbook: Spear Rumble -->
+			<item id="97117" exp="300000" starLevel="3" /> <!-- Spellbook: Darkness Unleashing - Sealed -->
+			<item id="97109" exp="300000" starLevel="3" /> <!-- Spellbook: Darkness Unleashing -->
+			<item id="97116" exp="300000" starLevel="3" /> <!-- Spellbook: Wild Growl Lv. 2 - Sealed -->
+			<item id="97108" exp="300000" starLevel="3" /> <!-- Spellbook: Wild Growl Lv. 2 -->
+			<item id="95543" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Sweep - Sealed -->
+			<item id="94500" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Sweep -->
+			<item id="95544" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Break - Sealed -->
+			<item id="94501" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Break -->
+			<item id="95540" exp="300000" starLevel="3" /> <!-- Spellbook: Life Force Harmony - Sealed -->
+			<item id="94497" exp="300000" starLevel="3" /> <!-- Spellbook: Life Force Harmony -->
+			<item id="95548" exp="300000" starLevel="3" /> <!-- Spellbook: Burning Strike - Sealed -->
+			<item id="94505" exp="300000" starLevel="3" /> <!-- Spellbook: Burning Strike -->
+			<item id="95550" exp="300000" starLevel="3" /> <!-- Spellbook: Armor Break - Sealed -->
+			<item id="94507" exp="300000" starLevel="3" /> <!-- Spellbook: Armor Break -->
+			<item id="95546" exp="300000" starLevel="3" /> <!-- Spellbook: Rabbit Spirit Totem Lv. 2 - Sealed -->
+			<item id="94503" exp="300000" starLevel="3" /> <!-- Spellbook: Rabbit Spirit Totem Lv. 2 -->
+			<item id="95545" exp="300000" starLevel="3" /> <!-- Spellbook: Ogre Spirit Totem Lv. 2 - Sealed -->
+			<item id="94502" exp="300000" starLevel="3" /> <!-- Spellbook: Ogre Spirit Totem Lv. 2 -->
+			<item id="95547" exp="300000" starLevel="3" /> <!-- Spellbook: Puma Spirit Totem Lv. 2 - Sealed -->
+			<item id="94504" exp="300000" starLevel="3" /> <!-- Spellbook: Puma Spirit Totem Lv. 2 -->
+			<item id="95870" exp="300000" starLevel="3" /> <!-- Spellbook: Mechanical Masterpiece - Sealed -->
+			<item id="95862" exp="300000" starLevel="3" /> <!-- Spellbook: Mechanical Masterpiece -->
+			<item id="98292" exp="300000" starLevel="3" /> <!-- Spellbook: Hammer Rumble - Sealed -->
+			<item id="98274" exp="300000" starLevel="3" /> <!-- Spellbook: Hammer Rumble -->
+			<item id="96052" exp="300000" starLevel="3" /> <!-- Spellbook: Balanced Body - Sealed -->
+			<item id="96038" exp="300000" starLevel="3" /> <!-- Spellbook: Balanced Body -->
+			<item id="95871" exp="300000" starLevel="3" /> <!-- Spellbook: Blacksmith' Attack - Sealed -->
+			<item id="98291" exp="300000" starLevel="3" /> <!-- Spellbook: Trophy Thief - Sealed -->
+			<item id="98273" exp="300000" starLevel="3" /> <!-- Spellbook: Trophy Thief -->
+			<item id="95863" exp="300000" starLevel="3" /> <!-- Spellbook: Blacksmith' Attack -->
+			<item id="95864" exp="300000" starLevel="3" /> <!-- Spellbook: Fortune Time - Sealed -->
+			<item id="95856" exp="300000" starLevel="3" /> <!-- Spellbook: Fortune Time -->
+			<item id="97472" exp="300000" starLevel="3" /> <!-- Spellbook: Lightning Tornado - Sealed -->
+			<item id="97471" exp="300000" starLevel="3" /> <!-- Spellbook: Lightning Tornado -->
+			<item id="97468" exp="300000" starLevel="3" /> <!-- Spellbook: Resonance - Sealed -->
+			<item id="97467" exp="300000" starLevel="3" /> <!-- Spellbook: Resonance -->
+			<item id="97456" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Mark - Sealed -->
+			<item id="97455" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Mark -->
+			<item id="97460" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Guard Lv. 3 - Sealed -->
+			<item id="97459" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Guard Lv. 3 -->
+			<item id="95506" exp="300000" starLevel="3" /> <!-- Spellbook: Lightning Storm - Sealed -->
+			<item id="93386" exp="300000" starLevel="3" /> <!-- Spellbook: Lightning Storm -->
+			<item id="95504" exp="300000" starLevel="3" /> <!-- Spellbook: Burning Field - Sealed -->
+			<item id="93384" exp="300000" starLevel="3" /> <!-- Spellbook: Burning Field -->
+			<item id="96678" exp="300000" starLevel="3" /> <!-- Spellbook: Dark Blow - Sealed -->
+			<item id="96666" exp="300000" starLevel="3" /> <!-- Spellbook: Dark Blow -->
+			<item id="96679" exp="300000" starLevel="3" /> <!-- Spellbook: Reversed Pull - Sealed -->
+			<item id="96667" exp="300000" starLevel="3" /> <!-- Spellbook: Reversed Pull -->
+			<item id="96680" exp="300000" starLevel="3" /> <!-- Spellbook: Synchro Freedom - Sealed -->
+			<item id="96668" exp="300000" starLevel="3" /> <!-- Spellbook: Synchro Freedom -->
+			<item id="96681" exp="300000" starLevel="3" /> <!-- Spellbook: Ethereal Blood - Sealed -->
+			<item id="96669" exp="300000" starLevel="3" /> <!-- Spellbook: Ethereal Blood -->
+			<item id="96893" exp="300000" starLevel="3" /> <!-- Spellbook: Arrow Shower - Sealed -->
+			<item id="96879" exp="300000" starLevel="3" /> <!-- Spellbook: Arrow Shower -->
+			<item id="96891" exp="300000" starLevel="3" /> <!-- Spellbook: Chain Arrest - Sealed -->
+			<item id="96877" exp="300000" starLevel="3" /> <!-- Spellbook: Chain Arrest -->
+			<item id="96892" exp="300000" starLevel="3" /> <!-- Spellbook: Flame Arrow - Sealed -->
+			<item id="96878" exp="300000" starLevel="3" /> <!-- Spellbook: Flame Arrow -->
+			<item id="96894" exp="300000" starLevel="3" /> <!-- Spellbook: Piercing Arrow - Sealed -->
+			<item id="96880" exp="300000" starLevel="3" /> <!-- Spellbook: Piercing Arrow -->
+			<item id="95505" exp="300000" starLevel="3" /> <!-- Spellbook: Frozen Field - Sealed -->
+			<item id="93385" exp="300000" starLevel="3" /> <!-- Spellbook: Frozen Field -->
+			<item id="95519" exp="300000" starLevel="3" /> <!-- Spellbook: Devour - Sealed -->
+			<item id="94137" exp="300000" starLevel="3" /> <!-- Spellbook: Devour -->
+			<item id="95510" exp="300000" starLevel="3" /> <!-- Spellbook: Hellfire - Sealed -->
+			<item id="93631" exp="300000" starLevel="3" /> <!-- Spellbook: Hellfire -->
+			<item id="95640" exp="300000" starLevel="3" /> <!-- Spellbook: Extra Hit - Sealed -->
+			<item id="95356" exp="300000" starLevel="3" /> <!-- Spellbook: Extra Hit -->
+			<item id="95366" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Spirit Lv. 4 - Sealed -->
+			<item id="95365" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Spirit Lv. 4 -->
+			<item id="95353" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Changing - Sealed -->
+			<item id="95352" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Changing -->
+			<item id="95513" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Burst - Sealed -->
+			<item id="93869" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Burst -->
+			<item id="97044" exp="300000" starLevel="3" /> <!-- Spellbook: Spiral - Sealed -->
+			<item id="97039" exp="300000" starLevel="3" /> <!-- Spellbook: Spiral -->
+			<item id="97197" exp="300000" starLevel="3" /> <!-- Spellbook: Ray of Light - Sealed -->
+			<item id="97188" exp="300000" starLevel="3" /> <!-- Spellbook: Ray of Light -->
+			<item id="95514" exp="300000" starLevel="3" /> <!-- Spellbook: Ethereal Strike - Sealed -->
+			<item id="93870" exp="300000" starLevel="3" /> <!-- Spellbook: Ethereal Strike -->
+			<item id="97854" exp="300000" starLevel="3" /> <!-- Spellbook: Essential Energy - Sealed -->
+			<item id="97840" exp="300000" starLevel="3" /> <!-- Spellbook: Essential Energy -->
+			<item id="97856" exp="300000" starLevel="3" /> <!-- Spellbook: Great Attack Lv. 3 - Sealed -->
+			<item id="97842" exp="300000" starLevel="3" /> <!-- Spellbook: Great Attack Lv. 3 -->
+			<item id="97848" exp="300000" starLevel="3" /> <!-- Spellbook: Dance Mastery - Sealed -->
+			<item id="97834" exp="300000" starLevel="3" /> <!-- Spellbook: Dance Mastery -->
+			<item id="97847" exp="300000" starLevel="3" /> <!-- Spellbook: Music Mastery - Sealed -->
+			<item id="97833" exp="300000" starLevel="3" /> <!-- Spellbook: Music Mastery -->
+			<item id="96058" exp="300000" starLevel="3" /> <!-- Spellbook: Nemesis - Sealed -->
+			<item id="96044" exp="300000" starLevel="3" /> <!-- Spellbook: Nemesis -->
+			<item id="98559" exp="300000" starLevel="3" /> <!-- Spellbook: Healing Lv. 4 - Sealed -->
+			<item id="98558" exp="300000" starLevel="3" /> <!-- Spellbook: Healing Lv. 4 -->
+			<item id="96055" exp="300000" starLevel="3" /> <!-- Spellbook: Eva's Nocturne - Sealed -->
+			<item id="96041" exp="300000" starLevel="3" /> <!-- Spellbook: Eva's Nocturne -->
+			<item id="95554" exp="300000" starLevel="3" /> <!-- Spellbook: Debuff Master - Sealed -->
+			<item id="94670" exp="300000" starLevel="3" /> <!-- Spellbook: Debuff Master -->
+			<item id="98324" exp="300000" starLevel="3" /> <!-- Spellbook: Bloody Strike - Sealed -->
+			<item id="98323" exp="300000" starLevel="3" /> <!-- Spellbook: Bloody Strike -->
+			<item id="95558" exp="300000" starLevel="3" /> <!-- Spellbook: Blood Bond - Sealed -->
+			<item id="94674" exp="300000" starLevel="3" /> <!-- Spellbook: Blood Bond -->
+			<item id="95555" exp="300000" starLevel="3" /> <!-- Spellbook: Flame Burst - Sealed -->
+			<item id="94671" exp="300000" starLevel="3" /> <!-- Spellbook: Flame Burst -->
+			<item id="98494" exp="300000" starLevel="3" /> <!-- Spellbook: Assassination - Sealed -->
+			<item id="98483" exp="300000" starLevel="3" /> <!-- Spellbook: Assassination -->
+			<item id="96284" exp="300000" starLevel="3" /> <!-- Spellbook: Power of Life - Sealed -->
+			<item id="96283" exp="300000" starLevel="3" /> <!-- Spellbook: Power of Life -->
+			<item id="96286" exp="300000" starLevel="3" /> <!-- Spellbook: Toughness - Sealed -->
+			<item id="96285" exp="300000" starLevel="3" /> <!-- Spellbook: Toughness -->
+			<item id="97329" exp="300000" starLevel="3" /> <!-- Spellbook: Blade Wave - Sealed -->
+			<item id="97319" exp="300000" starLevel="3" /> <!-- Spellbook: Blade Wave -->
+			<item id="97334" exp="300000" starLevel="3" /> <!-- Spellbook: Spear Cage - Sealed -->
+			<item id="97324" exp="300000" starLevel="3" /> <!-- Spellbook: Spear Cage -->
+			<item id="97232" exp="300000" starLevel="3" /> <!-- Spellbook: Giant's Stomp - Sealed -->
+			<item id="97102" exp="300000" starLevel="3" /> <!-- Spellbook: Giant's Stomp -->
+			<item id="95542" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Weapon - Sealed -->
+			<item id="94499" exp="300000" starLevel="3" /> <!-- Spellbook: Titanic Weapon -->
+			<item id="97464" exp="300000" starLevel="3" /> <!-- Spellbook: Death Pain - Sealed -->
+			<item id="97463" exp="300000" starLevel="3" /> <!-- Spellbook: Death Pain -->
+			<item id="96677" exp="300000" starLevel="3" /> <!-- Spellbook: Seclusion - Sealed -->
+			<item id="96665" exp="300000" starLevel="3" /> <!-- Spellbook: Seclusion -->
+			<item id="96889" exp="300000" starLevel="3" /> <!-- Spellbook: Deadly Shooter - Sealed -->
+			<item id="96875" exp="300000" starLevel="3" /> <!-- Spellbook: Deadly Shooter -->
+			<item id="96888" exp="300000" starLevel="3" /> <!-- Spellbook: True Aim - Sealed -->
+			<item id="96874" exp="300000" starLevel="3" /> <!-- Spellbook: True Aim -->
+			<item id="97852" exp="300000" starLevel="3" /> <!-- Spellbook: Unique Seal of Damage - Sealed -->
+			<item id="97838" exp="300000" starLevel="3" /> <!-- Spellbook: Unique Seal of Damage -->
+			<item id="97849" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Silence Lv. 4 - Sealed -->
+			<item id="97835" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Silence Lv. 4 -->
+			<item id="97850" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Medusa Lv. 4 - Sealed -->
+			<item id="97836" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Medusa Lv. 4 -->
+			<item id="95531" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Warrior Lv. 2 - Sealed -->
+			<item id="94326" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Warrior Lv. 2 -->
+			<item id="95532" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Fire Lv. 2 - Sealed -->
+			<item id="94327" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Fire Lv. 2 -->
+			<item id="95568" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Fury Lv. 2 - Sealed -->
+			<item id="95349" exp="300000" starLevel="3" /> <!-- Spellbook: Dance of Fury Lv. 2 -->
+			<item id="95529" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Earth Lv. 2 - Sealed -->
+			<item id="94324" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Earth Lv. 2 -->
+			<item id="95567" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Wind Lv. 2 - Sealed -->
+			<item id="95348" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Wind Lv. 2 -->
+			<item id="95530" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Hunter Lv. 2 - Sealed -->
+			<item id="94325" exp="300000" starLevel="3" /> <!-- Spellbook: Song of Hunter Lv. 2 -->
+			<item id="95351" exp="300000" starLevel="3" /> <!-- Spellbook: Goring Charge - Sealed -->
+			<item id="95350" exp="300000" starLevel="3" /> <!-- Spellbook: Goring Charge -->
+			<item id="98447" exp="300000" starLevel="3" /> <!-- Spellbook: Powerful Servitor Share - Sealed -->
+			<item id="98446" exp="300000" starLevel="3" /> <!-- Spellbook: Powerful Servitor Share -->
+			<item id="97194" exp="300000" starLevel="3" /> <!-- Spellbook: Cubic of Secrets Lv. 2 - Sealed -->
+			<item id="97185" exp="300000" starLevel="3" /> <!-- Spellbook: Cubic of Secrets Lv. 2 -->
+			<item id="97195" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Cubic Lv. 2 - Sealed -->
+			<item id="97186" exp="300000" starLevel="3" /> <!-- Spellbook: Elemental Cubic Lv. 2 -->
+			<item id="97196" exp="300000" starLevel="3" /> <!-- Spellbook: Phantom Cubic Lv. 2 - Sealed -->
+			<item id="97187" exp="300000" starLevel="3" /> <!-- Spellbook: Phantom Cubic Lv. 2 -->
+			<item id="97042" exp="300000" starLevel="3" /> <!-- Spellbook: Faery Shield - Sealed -->
+			<item id="97037" exp="300000" starLevel="3" /> <!-- Spellbook: Faery Shield -->
+			<item id="97043" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Guardian - Sealed -->
+			<item id="97038" exp="300000" starLevel="3" /> <!-- Spellbook: Soul Guardian -->
+			<item id="96054" exp="300000" starLevel="3" /> <!-- Spellbook: Treatment - Sealed -->
+			<item id="96040" exp="300000" starLevel="3" /> <!-- Spellbook: Treatment -->
+			<item id="96051" exp="300000" starLevel="3" /> <!-- Spellbook: Sensation - Sealed -->
+			<item id="96037" exp="300000" starLevel="3" /> <!-- Spellbook: Sensation -->
+			<item id="96057" exp="300000" starLevel="3" /> <!-- Spellbook: Duress - Sealed -->
+			<item id="96043" exp="300000" starLevel="3" /> <!-- Spellbook: Duress -->
+			<item id="95503" exp="300000" starLevel="3" /> <!-- Spellbook: Divine Beam - Sealed -->
+			<item id="93103" exp="300000" starLevel="3" /> <!-- Spellbook: Divine Beam -->
+		</star>
+	</itemsPoints>
+</list>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="110" parentClassId="40">
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<item id="95513,93869" count="1" /> <!-- Spellbook: Elemental Burst -->
+		</skill>
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="2" getLevel="77" levelUpSp="570000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="3" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="4" getLevel="79" levelUpSp="1240000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="5" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Thunder Explosion" skillId="45380" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Body to Mind" skillId="1157" skillLevel="6" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Body to Mind" skillId="1157" skillLevel="7" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Body to Mind" skillId="1157" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Body to Mind" skillId="1157" skillLevel="9" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Body to Mind" skillId="1157" skillLevel="10" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="2" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="3" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="4" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="5" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="6" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="7" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="8" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Demon Wind" skillId="1291" skillLevel="9" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Faery Shield" skillId="47440" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<removeSkill id="1556" onlyReplaceByLearn="true" /> <!-- Arcane Shield -->
+			<item id="97042,97037" count="1" /> <!-- Spellbook: Faery Shield -->
+		</skill>
+		<skill skillName="Arcane Power" skillId="337" skillLevel="1" getLevel="77" levelUpSp="570000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="2" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="3" getLevel="79" levelUpSp="1240000" />
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="4" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Arcane Power" skillId="337" skillLevel="5" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="6" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="7" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Test - Arcane Power" skillId="337" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="1" getLevel="80" levelUpSp="1240000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="2" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="3" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="4" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Arcane Shield" skillId="1556" skillLevel="5" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="2" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Mana Regeneration" skillId="1047" skillLevel="5" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Hurricane" skillId="1239" skillLevel="32" getLevel="77" levelUpSp="570000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="33" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="34" getLevel="79" levelUpSp="1240000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="35" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="36" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="37" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="38" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="39" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="40" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="41" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="42" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="43" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="44" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="45" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Hurricane" skillId="1239" skillLevel="31" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="16" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="17" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="18" getLevel="79" levelUpSp="1240000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="19" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="20" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="21" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="22" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="23" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="24" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="25" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Tempest" skillId="1176" skillLevel="26" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Wind Spiral" skillId="47451" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<removeSkill id="1341" onlyReplaceByLearn="true" /> <!-- Wind Vortex -->
+			<item id="97044,97039" count="1" /> <!-- Spellbook: Spiral -->
+		</skill>
+		<skill skillName="Wind Spiral" skillId="47451" skillLevel="2" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Wind Spiral" skillId="47451" skillLevel="3" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Magic Circle" skillId="47454" skillLevel="1" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Magic Circle" skillId="47454" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="97045,97040" count="1" /> <!-- Spellbook: Magic Circle -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Meteor" skillId="45538" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<item id="95565,95346" count="1" /> <!-- Spellbook: Meteor -->
+		</skill>
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<removeSkill id="47462" onlyReplaceByLearn="true" /> <!-- Sleep -->
+			<item id="97046,97041" count="1" /> <!-- Spellbook: Heavy Sleep -->
+		</skill>
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="2" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="3" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="4" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="5" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Heavy Sleep" skillId="47461" skillLevel="6" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="4" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="5" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="6" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="7" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="8" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="9" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="10" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="11" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="47462" skillLevel="12" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="5" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="6" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="7" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="12" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Wizard's Attack Mastery" skillId="47463" skillLevel="13" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="16" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="17" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="18" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="19" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="20" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="21" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="22" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Silence" skillId="1064" skillLevel="15" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="5" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="6" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="7" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="8" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="10" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="11" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="12" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Wizard's Armor Mastery" skillId="47464" skillLevel="13" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Wizard's Recovery Mastery" skillId="47465" skillLevel="5" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wizard's Recovery Mastery" skillId="47465" skillLevel="6" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Wizard's Recovery Mastery" skillId="47465" skillLevel="7" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Wizard's Recovery Mastery" skillId="47465" skillLevel="8" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="4" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="5" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="6" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="7" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Mount Saber-toothed Cougar" skillId="1835" skillLevel="1" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Mighty Children of Shillien" skillId="45291" skillLevel="1" getLevel="76" levelUpSp="570000">
+			<removeSkill id="964" onlyReplaceByLearn="true" /> <!-- Children of Shillien -->
+			<item id="98286,98268" count="1" /> <!-- Spellbook: Mighty Children of Shillien -->
+		</skill>
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="14" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="15" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="16" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="17" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="18" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="19" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="20" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="21" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="22" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="23" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="24" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="25" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Magic Wound" skillId="1263" skillLevel="26" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="45107" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="20" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="21" getLevel="78" levelUpSp="1240000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="22" getLevel="79" levelUpSp="1240000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="23" getLevel="80" levelUpSp="1240000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="24" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="25" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="26" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="27" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Clarity" skillId="45113" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Wind Vortex" skillId="1341" skillLevel="1" getLevel="76" levelUpSp="570000" />
+		<skill skillName="Wind Vortex" skillId="1341" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wind Vortex" skillId="1341" skillLevel="3" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="570000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="570000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+	</skillTree>
+</list>

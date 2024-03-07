@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="UnknownMonsterSpawns">
+		<group>
+			<npc id="20205" x="32603" y="141374" z="-3208" heading="11975" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="32657" y="135396" z="-3280" heading="0" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20205" x="32663" y="137441" z="-3123" heading="27139" respawnTime="24sec" /> <!-- Dire Wolf -->
+			<npc id="20206" x="80" y="161534" z="-3131" heading="44906" respawnTime="29sec" /> <!-- Cardiff Werewolf -->
+			<npc id="20266" x="32678" y="138543" z="-3169" heading="49550" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="32709" y="129231" z="-3455" heading="53568" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20266" x="33419" y="131007" z="-3294" heading="33276" respawnTime="24sec" /> <!-- Monster Eye Overseer -->
+			<npc id="20268" x="83724" y="130960" z="-3651" heading="19111" respawnTime="33sec" /> <!-- Breka Orc Archer -->
+			<npc id="20269" x="90107" y="131066" z="-3629" heading="63622" respawnTime="33sec" /> <!-- Breka Orc Shaman -->
+			<npc id="20271" x="87135" y="130964" z="-3668" heading="35318" respawnTime="33sec" /> <!-- Breka Orc Warrior -->
+			<npc id="20380" x="-37046" y="65464" z="-3717" heading="0" respawnTime="20sec" /> <!-- Stone Giant Guardian -->
+			<npc id="20433" x="-21456" y="32675" z="-2954" heading="35389" respawnTime="16sec" /> <!-- Festering Bat -->
+			<npc id="20571" x="98045" y="10914" z="-3590" heading="57180" respawnTime="25sec" /> <!-- Tarlk Bugbear Warrior -->
+			<npc id="20573" x="81311" y="69" z="-3719" heading="23948" respawnTime="41sec" /> <!-- Tarlk Basilisk -->
+			<npc id="20573" x="98185" y="-2965" z="-3699" heading="3368" respawnTime="41sec" /> <!-- Tarlk Basilisk -->
+			<npc id="20574" x="77644" y="-155" z="-3723" heading="43730" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20574" x="79180" y="-137" z="-3723" heading="60257" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20574" x="83938" y="107" z="-3723" heading="23054" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20574" x="93738" y="-59" z="-3723" heading="32085" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20574" x="94648" y="-130" z="-3721" heading="31193" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20574" x="98844" y="76" z="-3671" heading="12035" respawnTime="41sec" /> <!-- Elder Tarlk Basilisk -->
+			<npc id="20576" x="98065" y="-10676" z="-3258" heading="52866" respawnTime="41sec" /> <!-- Oel Mahum Shaman -->
+			<npc id="20576" x="98204" y="-6796" z="-3341" heading="38339" respawnTime="41sec" /> <!-- Oel Mahum Shaman -->
+			<npc id="20576" x="98261" y="-11738" z="-3246" heading="51636" respawnTime="41sec" /> <!-- Oel Mahum Shaman -->
+			<npc id="20576" x="98270" y="-12685" z="-3181" heading="34115" respawnTime="41sec" /> <!-- Oel Mahum Shaman -->
+			<npc id="20630" x="132272" y="65526" z="-3723" heading="26830" respawnTime="23sec" /> <!-- Taik Orc -->
+			<npc id="20679" x="163659" y="38928" z="-3832" heading="0" respawnTime="27sec" /> <!-- Marsh Stalker -->
+			<npc id="20832" x="41177" y="196600" z="-4653" heading="45796" respawnTime="55sec" /> <!-- Zaken's Pikeman -->
+			<npc id="20836" x="38704" y="196474" z="-4657" heading="55491" respawnTime="55sec" /> <!-- Pirate Zombie -->
+			<npc id="20836" x="40053" y="196547" z="-4696" heading="0" respawnTime="55sec" /> <!-- Pirate Zombie -->
+			<npc id="20922" x="-24461" y="98326" z="-3727" heading="29680" respawnTime="32sec" /> <!-- Maille Lizardman Warrior -->
+			<npc id="20922" x="-32918" y="109173" z="-2607" heading="14413" respawnTime="32sec" /> <!-- Maille Lizardman Warrior -->
+			<npc id="20922" x="-32973" y="103935" z="-2619" heading="61696" respawnTime="32sec" /> <!-- Maille Lizardman Warrior -->
+			<npc id="20923" x="-29210" y="98297" z="-3727" heading="34254" respawnTime="32sec" /> <!-- Maille Lizardman Shaman -->
+			<npc id="20923" x="-30630" y="98409" z="-3727" heading="44218" respawnTime="32sec" /> <!-- Maille Lizardman Shaman -->
+			<npc id="20924" x="-29791" y="98298" z="-3727" heading="41658" respawnTime="32sec" /> <!-- Maille Lizardman Matriarch -->
+			<npc id="20924" x="-32712" y="104766" z="-2693" heading="57603" respawnTime="32sec" /> <!-- Maille Lizardman Matriarch -->
+			<npc id="20925" x="-32744" y="113678" z="-3956" heading="0" respawnTime="32sec" /> <!-- Giant Araneid -->
+			<npc id="20925" x="-32745" y="107879" z="-2628" heading="13796" respawnTime="32sec" /> <!-- Giant Araneid -->
+			<npc id="20925" x="-32879" y="106280" z="-2635" heading="52543" respawnTime="32sec" /> <!-- Giant Araneid -->
+			<npc id="20925" x="-32919" y="119353" z="-2575" heading="23451" respawnTime="32sec" /> <!-- Giant Araneid -->
+			<npc id="20927" x="-27085" y="98421" z="-3727" heading="26925" respawnTime="32sec" /> <!-- King of the Araneid -->
+			<npc id="20947" x="77882" y="65607" z="-2947" heading="10501" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20947" x="79815" y="65303" z="-2974" heading="11770" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20947" x="86228" y="65525" z="-3417" heading="53399" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20947" x="88744" y="65323" z="-3716" heading="32256" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20947" x="93237" y="65474" z="-3394" heading="1332" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20947" x="95803" y="65331" z="-2823" heading="65253" respawnTime="33sec" /> <!-- Connabi -->
+			<npc id="20956" x="109677" y="-3" z="-3610" heading="13159" respawnTime="37sec" /> <!-- Knight of the Past -->
+			<npc id="20963" x="130917" y="-6675" z="-3547" heading="1535" respawnTime="37sec" /> <!-- Bloody Lord -->
+			<npc id="21015" x="-39815" y="196686" z="-3399" heading="0" respawnTime="25sec" /> <!-- Ol Mahum Van Captain -->
+			<npc id="21017" x="163760" y="39106" z="-3832" heading="0" respawnTime="27sec" /> <!-- Fallen Orc -->
+			<npc id="21604" x="41924" y="196473" z="-4657" heading="7823" respawnTime="180sec" /> <!-- Ancient Holy Ground's Vision -->
+		</group>
+	</spawn>
+</list>

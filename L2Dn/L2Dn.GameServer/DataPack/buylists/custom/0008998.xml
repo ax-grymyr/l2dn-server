@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="6" price="0" /> <!-- Apprentice's Wand -->
+	<item id="7" price="0" /> <!-- Apprentice's Rod -->
+	<item id="747" price="0" /> <!-- Wand of Adept -->
+</list>

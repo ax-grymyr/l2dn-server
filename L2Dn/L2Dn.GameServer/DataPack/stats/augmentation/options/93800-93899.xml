@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93800" name="option_id_93800">
+		<!-- Received damage -2.1% -->
+	</option>
+	<option id="93801" name="option_id_93801">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="93802" name="option_id_93802">
+		<!-- Received damage -2.3% -->
+	</option>
+	<option id="93803" name="option_id_93803">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="93804" name="option_id_93804">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="93805" name="option_id_93805">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="93806" name="option_id_93806">
+		<!-- Received damage -2.7% -->
+	</option>
+	<option id="93807" name="option_id_93807">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="93808" name="option_id_93808">
+		<!-- Received damage -2.9% -->
+	</option>
+	<option id="93809" name="option_id_93809">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="93810" name="option_id_93810">
+		<!-- Received damage -3.1% -->
+	</option>
+	<option id="93811" name="option_id_93811">
+		<!-- Received damage -3.2% -->
+	</option>
+	<option id="93812" name="option_id_93812">
+		<!-- Received damage -3.3% -->
+	</option>
+	<option id="93813" name="option_id_93813">
+		<!-- Received damage -3.5% -->
+	</option>
+	<option id="93814" name="option_id_93814">
+		<!-- Received damage -3.7% -->
+	</option>
+	<option id="93815" name="option_id_93815">
+		<!-- Received damage -3.9% -->
+	</option>
+	<option id="93816" name="option_id_93816">
+		<!-- Received damage -4.1% -->
+	</option>
+	<option id="93817" name="option_id_93817">
+		<!-- Received damage -4.3% -->
+	</option>
+	<option id="93818" name="option_id_93818">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="93819" name="option_id_93819">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="93820" name="option_id_93820">
+		<!-- Received damage -2.1% -->
+	</option>
+	<option id="93821" name="option_id_93821">
+		<!-- Received damage -2.2% -->
+	</option>
+	<option id="93822" name="option_id_93822">
+		<!-- Received damage -2.3% -->
+	</option>
+	<option id="93823" name="option_id_93823">
+		<!-- Received damage -2.4% -->
+	</option>
+	<option id="93824" name="option_id_93824">
+		<!-- Received damage -2.5% -->
+	</option>
+	<option id="93825" name="option_id_93825">
+		<!-- Received damage -2.6% -->
+	</option>
+	<option id="93826" name="option_id_93826">
+		<!-- Received damage -2.7% -->
+	</option>
+	<option id="93827" name="option_id_93827">
+		<!-- Received damage -2.8% -->
+	</option>
+	<option id="93828" name="option_id_93828">
+		<!-- Received damage -2.9% -->
+	</option>
+	<option id="93829" name="option_id_93829">
+		<!-- Received damage -3% -->
+	</option>
+	<option id="93830" name="option_id_93830">
+		<!-- Received damage -3.1% -->
+	</option>
+	<option id="93831" name="option_id_93831">
+		<!-- Received damage -3.2% -->
+	</option>
+	<option id="93832" name="option_id_93832">
+		<!-- Received damage -3.3% -->
+	</option>
+	<option id="93833" name="option_id_93833">
+		<!-- Received damage -3.5% -->
+	</option>
+	<option id="93834" name="option_id_93834">
+		<!-- Received damage -3.7% -->
+	</option>
+	<option id="93835" name="option_id_93835">
+		<!-- Received damage -3.9% -->
+	</option>
+	<option id="93836" name="option_id_93836">
+		<!-- Received damage -4.1% -->
+	</option>
+	<option id="93837" name="option_id_93837">
+		<!-- Received damage -4.3% -->
+	</option>
+	<option id="93838" name="option_id_93838">
+		<!-- Received damage -5% -->
+	</option>
+	<option id="93839" name="Received Healing +3.5%">
+		<!-- Received Healing +3.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93840" name="Received Healing +3.6%">
+		<!-- Received Healing +3.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93841" name="Received Healing +3.7%">
+		<!-- Received Healing +3.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93842" name="Received Healing +3.8%">
+		<!-- Received Healing +3.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93843" name="Received Healing +3.9%">
+		<!-- Received Healing +3.9% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93844" name="Received Healing +4.1%">
+		<!-- Received Healing +4.1% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93845" name="Received Healing +4.2%">
+		<!-- Received Healing +4.2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93846" name="Received Healing +4.3%">
+		<!-- Received Healing +4.3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93847" name="Received Healing +4.4%">
+		<!-- Received Healing +4.4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93848" name="Received Healing +4.5%">
+		<!-- Received Healing +4.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93849" name="Received Healing +4.6%">
+		<!-- Received Healing +4.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93850" name="Received Healing +4.7%">
+		<!-- Received Healing +4.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93851" name="Received Healing +4.8%">
+		<!-- Received Healing +4.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93852" name="Received Healing +5%">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93853" name="Received Healing +5.5%">
+		<!-- Received Healing +5.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93854" name="Received Healing +6%">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93855" name="Received Healing +6.5%">
+		<!-- Received Healing +6.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93856" name="Received Healing +7%">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93857" name="Received Healing +8%">
+		<!-- Received Healing +8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>8.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93858" name="Received Healing +10%">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93859" name="Received Healing +3.5%">
+		<!-- Received Healing +3.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93860" name="Received Healing +3.6%">
+		<!-- Received Healing +3.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93861" name="Received Healing +3.7%">
+		<!-- Received Healing +3.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93862" name="Received Healing +3.8%">
+		<!-- Received Healing +3.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93863" name="Received Healing +3.9%">
+		<!-- Received Healing +3.9% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93864" name="Received Healing +4.1%">
+		<!-- Received Healing +4.1% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93865" name="Received Healing +4.2%">
+		<!-- Received Healing +4.2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93866" name="Received Healing +4.3%">
+		<!-- Received Healing +4.3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93867" name="Received Healing +4.4%">
+		<!-- Received Healing +4.4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93868" name="Received Healing +4.5%">
+		<!-- Received Healing +4.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93869" name="Received Healing +4.6%">
+		<!-- Received Healing +4.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93870" name="Received Healing +4.7%">
+		<!-- Received Healing +4.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93871" name="Received Healing +4.8%">
+		<!-- Received Healing +4.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93872" name="Received Healing +5%">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93873" name="Received Healing +5.5%">
+		<!-- Received Healing +5.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93874" name="Received Healing +6%">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93875" name="Received Healing +6.5%">
+		<!-- Received Healing +6.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93876" name="Received Healing +7%">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93877" name="Received Healing +8%">
+		<!-- Received Healing +8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>8.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93878" name="Received Healing +10%">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93879" name="Received Healing +3.5%">
+		<!-- Received Healing +3.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93880" name="Received Healing +3.6%">
+		<!-- Received Healing +3.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93881" name="Received Healing +3.7%">
+		<!-- Received Healing +3.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93882" name="Received Healing +3.8%">
+		<!-- Received Healing +3.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93883" name="Received Healing +3.9%">
+		<!-- Received Healing +3.9% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>3.9</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93884" name="Received Healing +4.1%">
+		<!-- Received Healing +4.1% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93885" name="Received Healing +4.2%">
+		<!-- Received Healing +4.2% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93886" name="Received Healing +4.3%">
+		<!-- Received Healing +4.3% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93887" name="Received Healing +4.4%">
+		<!-- Received Healing +4.4% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93888" name="Received Healing +4.5%">
+		<!-- Received Healing +4.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93889" name="Received Healing +4.6%">
+		<!-- Received Healing +4.6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93890" name="Received Healing +4.7%">
+		<!-- Received Healing +4.7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.7</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93891" name="Received Healing +4.8%">
+		<!-- Received Healing +4.8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>4.8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93892" name="Received Healing +5%">
+		<!-- Received Healing +5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93893" name="Received Healing +5.5%">
+		<!-- Received Healing +5.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>5.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93894" name="Received Healing +6%">
+		<!-- Received Healing +6% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93895" name="Received Healing +6.5%">
+		<!-- Received Healing +6.5% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>6.5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93896" name="Received Healing +7%">
+		<!-- Received Healing +7% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>7.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93897" name="Received Healing +8%">
+		<!-- Received Healing +8% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>8.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93898" name="Received Healing +10%">
+		<!-- Received Healing +10% -->
+		<effects>
+			<effect name="HealEffect">
+				<amount>10.0</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="93899" name="HP/ MP Recovery Rate +2.0">
+		<!-- HP/ MP Recovery Rate +2 -->
+		<effects>
+			<effect name="HpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

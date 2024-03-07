@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Dimensional Merchant / Everywhere -->
+	</npcs>
+	<!-- Agathion Spirit -->
+	<item>
+		<!-- Agathion Leo -->
+		<ingredient count="1" id="94732" />
+		<!-- Package: Agathion Ignis -->
+		<production count="1" id="93134" />
+	</item>
+	<item>
+		<!-- Agathion Aquarius -->
+		<ingredient count="1" id="94732" />
+		<!-- Package: Agathion Nebula -->
+		<production count="1" id="93135" />
+	</item>
+	<item>
+		<!-- Agathion Scorpio -->
+		<ingredient count="1" id="94732" />
+		<!-- Package: Agathion Procella -->
+		<production count="1" id="93136" />
+	</item>
+	<item>
+		<!-- Agathion Capricorn -->
+		<ingredient count="1" id="94732" />
+		<!-- Package: Agathion Petram -->
+		<production count="1" id="93137" />
+	</item>
+	<item>
+		<!-- Agathion Sagittarius -->
+		<ingredient count="1" id="94732" />
+		<!-- Package: Agathion Joy -->
+		<production count="1" id="93138" />
+	</item>
+</list>

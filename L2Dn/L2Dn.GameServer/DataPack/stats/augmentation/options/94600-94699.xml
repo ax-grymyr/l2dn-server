@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="94600" name="option_id_94600">
+		<!-- Received P. Skill Critical Damage -74 -->
+	</option>
+	<option id="94601" name="option_id_94601">
+		<!-- Received P. Skill Critical Damage -79 -->
+	</option>
+	<option id="94602" name="option_id_94602">
+		<!-- Received P. Skill Critical Damage -84 -->
+	</option>
+	<option id="94603" name="option_id_94603">
+		<!-- Received P. Skill Critical Damage -89 -->
+	</option>
+	<option id="94604" name="option_id_94604">
+		<!-- Received P. Skill Critical Damage -94 -->
+	</option>
+	<option id="94605" name="option_id_94605">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="94606" name="option_id_94606">
+		<!-- Received P. Skill Critical Damage -106 -->
+	</option>
+	<option id="94607" name="option_id_94607">
+		<!-- Received P. Skill Critical Damage -112 -->
+	</option>
+	<option id="94608" name="option_id_94608">
+		<!-- Received P. Skill Critical Damage -119 -->
+	</option>
+	<option id="94609" name="option_id_94609">
+		<!-- Received P. Skill Critical Damage -126 -->
+	</option>
+	<option id="94610" name="option_id_94610">
+		<!-- Received P. Skill Critical Damage -133 -->
+	</option>
+	<option id="94611" name="option_id_94611">
+		<!-- Received P. Skill Critical Damage -141 -->
+	</option>
+	<option id="94612" name="option_id_94612">
+		<!-- Received P. Skill Critical Damage -150 -->
+	</option>
+	<option id="94613" name="option_id_94613">
+		<!-- Received P. Skill Critical Damage -168 -->
+	</option>
+	<option id="94614" name="option_id_94614">
+		<!-- Received P. Skill Critical Damage -189 -->
+	</option>
+	<option id="94615" name="option_id_94615">
+		<!-- Received P. Skill Critical Damage -212 -->
+	</option>
+	<option id="94616" name="option_id_94616">
+		<!-- Received P. Skill Critical Damage -238 -->
+	</option>
+	<option id="94617" name="option_id_94617">
+		<!-- Received P. Skill Critical Damage -267 -->
+	</option>
+	<option id="94618" name="option_id_94618">
+		<!-- Received P. Skill Critical Damage -300 -->
+	</option>
+	<option id="94619" name="option_id_94619">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="94620" name="option_id_94620">
+		<!-- Received M. Skill Critical Damage -74 -->
+	</option>
+	<option id="94621" name="option_id_94621">
+		<!-- Received M. Skill Critical Damage -79 -->
+	</option>
+	<option id="94622" name="option_id_94622">
+		<!-- Received M. Skill Critical Damage -84 -->
+	</option>
+	<option id="94623" name="option_id_94623">
+		<!-- Received M. Skill Critical Damage -89 -->
+	</option>
+	<option id="94624" name="option_id_94624">
+		<!-- Received M. Skill Critical Damage -94 -->
+	</option>
+	<option id="94625" name="option_id_94625">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="94626" name="option_id_94626">
+		<!-- Received M. Skill Critical Damage -106 -->
+	</option>
+	<option id="94627" name="option_id_94627">
+		<!-- Received M. Skill Critical Damage -112 -->
+	</option>
+	<option id="94628" name="option_id_94628">
+		<!-- Received M. Skill Critical Damage -119 -->
+	</option>
+	<option id="94629" name="option_id_94629">
+		<!-- Received M. Skill Critical Damage -126 -->
+	</option>
+	<option id="94630" name="option_id_94630">
+		<!-- Received M. Skill Critical Damage -133 -->
+	</option>
+	<option id="94631" name="option_id_94631">
+		<!-- Received M. Skill Critical Damage -141 -->
+	</option>
+	<option id="94632" name="option_id_94632">
+		<!-- Received M. Skill Critical Damage -150 -->
+	</option>
+	<option id="94633" name="option_id_94633">
+		<!-- Received M. Skill Critical Damage -168 -->
+	</option>
+	<option id="94634" name="option_id_94634">
+		<!-- Received M. Skill Critical Damage -189 -->
+	</option>
+	<option id="94635" name="option_id_94635">
+		<!-- Received M. Skill Critical Damage -212 -->
+	</option>
+	<option id="94636" name="option_id_94636">
+		<!-- Received M. Skill Critical Damage -238 -->
+	</option>
+	<option id="94637" name="option_id_94637">
+		<!-- Received M. Skill Critical Damage -267 -->
+	</option>
+	<option id="94638" name="option_id_94638">
+		<!-- Received M. Skill Critical Damage -300 -->
+	</option>
+	<option id="94639" name="option_id_94639">
+		<!-- Received Skill Critical Damage -70 -->
+	</option>
+	<option id="94640" name="option_id_94640">
+		<!-- Received Skill Critical Damage -74 -->
+	</option>
+	<option id="94641" name="option_id_94641">
+		<!-- Received Skill Critical Damage -79 -->
+	</option>
+	<option id="94642" name="option_id_94642">
+		<!-- Received Skill Critical Damage -84 -->
+	</option>
+	<option id="94643" name="option_id_94643">
+		<!-- Received Skill Critical Damage -89 -->
+	</option>
+	<option id="94644" name="option_id_94644">
+		<!-- Received Skill Critical Damage -94 -->
+	</option>
+	<option id="94645" name="option_id_94645">
+		<!-- Received Skill Critical Damage -100 -->
+	</option>
+	<option id="94646" name="option_id_94646">
+		<!-- Received Skill Critical Damage -106 -->
+	</option>
+	<option id="94647" name="option_id_94647">
+		<!-- Received Skill Critical Damage -112 -->
+	</option>
+	<option id="94648" name="option_id_94648">
+		<!-- Received Skill Critical Damage -119 -->
+	</option>
+	<option id="94649" name="option_id_94649">
+		<!-- Received Skill Critical Damage -126 -->
+	</option>
+	<option id="94650" name="option_id_94650">
+		<!-- Received Skill Critical Damage -133 -->
+	</option>
+	<option id="94651" name="option_id_94651">
+		<!-- Received Skill Critical Damage -141 -->
+	</option>
+	<option id="94652" name="option_id_94652">
+		<!-- Received Skill Critical Damage -150 -->
+	</option>
+	<option id="94653" name="option_id_94653">
+		<!-- Received Skill Critical Damage -168 -->
+	</option>
+	<option id="94654" name="option_id_94654">
+		<!-- Received Skill Critical Damage -189 -->
+	</option>
+	<option id="94655" name="option_id_94655">
+		<!-- Received Skill Critical Damage -212 -->
+	</option>
+	<option id="94656" name="option_id_94656">
+		<!-- Received Skill Critical Damage -238 -->
+	</option>
+	<option id="94657" name="option_id_94657">
+		<!-- Received Skill Critical Damage -267 -->
+	</option>
+	<option id="94658" name="option_id_94658">
+		<!-- Received Skill Critical Damage -300 -->
+	</option>
+	<option id="94659" name="Max HP +125">
+		<!-- Max HP +125 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94660" name="Max HP +135">
+		<!-- Max HP +135 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94661" name="Max HP +146">
+		<!-- Max HP +146 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94662" name="Max HP +158">
+		<!-- Max HP +158 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94663" name="Max HP +171">
+		<!-- Max HP +171 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94664" name="Max HP +185">
+		<!-- Max HP +185 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94665" name="Max HP +200">
+		<!-- Max HP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94666" name="Max HP +216">
+		<!-- Max HP +216 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94667" name="Max HP +234">
+		<!-- Max HP +234 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94668" name="Max HP +253">
+		<!-- Max HP +253 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94669" name="Max HP +274">
+		<!-- Max HP +274 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94670" name="Max HP +296">
+		<!-- Max HP +296 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94671" name="Max HP +320">
+		<!-- Max HP +320 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94672" name="Max HP +360">
+		<!-- Max HP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94673" name="Max HP +400">
+		<!-- Max HP +400 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94674" name="Max HP +420">
+		<!-- Max HP +420 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94675" name="Max HP +440">
+		<!-- Max HP +440 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>440</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94676" name="Max HP +460">
+		<!-- Max HP +460 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>460</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94677" name="Max HP +480">
+		<!-- Max HP +480 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94678" name="Max HP +500">
+		<!-- Max HP +500 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94679" name="Max MP +125">
+		<!-- Max MP +125 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94680" name="Max MP +135">
+		<!-- Max MP +135 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94681" name="Max MP +146">
+		<!-- Max MP +146 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94682" name="Max MP +158">
+		<!-- Max MP +158 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94683" name="Max MP +171">
+		<!-- Max MP +171 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94684" name="Max MP +185">
+		<!-- Max MP +185 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94685" name="Max MP +200">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94686" name="Max MP +216">
+		<!-- Max MP +216 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94687" name="Max MP +234">
+		<!-- Max MP +234 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94688" name="Max MP +253">
+		<!-- Max MP +253 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94689" name="Max MP +274">
+		<!-- Max MP +274 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94690" name="Max MP +296">
+		<!-- Max MP +296 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94691" name="Max MP +320">
+		<!-- Max MP +320 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94692" name="Max MP +360">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94693" name="Max MP +400">
+		<!-- Max MP +400 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94694" name="Max MP +420">
+		<!-- Max MP +420 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94695" name="Max MP +440">
+		<!-- Max MP +440 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>440</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94696" name="Max MP +460">
+		<!-- Max MP +460 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>460</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94697" name="Max MP +480">
+		<!-- Max MP +480 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94698" name="Max MP +500">
+		<!-- Max MP +500 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="94699" name="Max CP +125">
+		<!-- Max CP +125 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

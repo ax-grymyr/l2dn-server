@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Aztacan_Temple_Mobs">
+		<group>
+			<npc id="22741" x="19057" y="225854" z="-14769" heading="25850" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19378" y="225807" z="-14769" heading="64046" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19374" y="225809" z="-14769" heading="58673" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19487" y="225723" z="-14769" heading="58673" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="19566" y="225695" z="-14769" heading="61983" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19829" y="225654" z="-14769" heading="63947" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19807" y="225658" z="-14769" heading="63947" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19807" y="225658" z="-14769" heading="63947" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19686" y="225505" z="-14769" heading="36523" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19516" y="225441" z="-14769" heading="35923" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="19261" y="224788" z="-14769" heading="671" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19261" y="224788" z="-14769" heading="671" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19347" y="224955" z="-14769" heading="11423" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19347" y="224955" z="-14769" heading="11423" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19347" y="224955" z="-14769" heading="11423" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19551" y="225007" z="-14769" heading="2603" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="19603" y="225235" z="-14769" heading="3322" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19970" y="225331" z="-14769" heading="2568" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="20263" y="225331" z="-14769" heading="60750" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="20622" y="225261" z="-14769" heading="659" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="20741" y="225640" z="-14769" heading="17246" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="20742" y="225635" z="-14769" heading="17246" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="21295" y="226179" z="-14769" heading="2217" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21295" y="226179" z="-14769" heading="2217" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="21486" y="226191" z="-14769" heading="696" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="21711" y="226057" z="-14769" heading="57017" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="21975" y="225894" z="-14769" heading="60363" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22741" x="22039" y="225859" z="-14769" heading="60363" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="22188" y="225793" z="-14769" heading="61072" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="22616" y="225672" z="-14769" heading="64853" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="22875" y="225564" z="-14769" heading="48855" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="22933" y="225342" z="-14769" heading="63878" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="23127" y="225348" z="-14769" heading="2164" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="22246" y="225536" z="-14769" heading="51678" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="22246" y="225536" z="-14769" heading="51678" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="22270" y="225360" z="-14769" heading="50565" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="22270" y="225360" z="-14769" heading="50565" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="22270" y="225360" z="-14769" heading="50565" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="22270" y="225360" z="-14769" heading="50565" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="21642" y="225802" z="-14769" heading="234" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21642" y="225802" z="-14769" heading="234" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="20843" y="225748" z="-14769" heading="234" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="20843" y="225748" z="-14769" heading="234" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22744" x="21642" y="225802" z="-14769" heading="234" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="22377" y="224098" z="-14763" heading="50968" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="22427" y="223912" z="-14763" heading="51936" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="22386" y="223521" z="-14764" heading="47222" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="22389" y="223532" z="-14765" heading="47222" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="22347" y="223223" z="-14765" heading="47749" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="22255" y="222718" z="-14767" heading="47140" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="22255" y="222714" z="-14769" heading="47140" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="22040" y="222400" z="-14769" heading="42889" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="21631" y="222295" z="-14769" heading="33695" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="21631" y="222295" z="-14769" heading="33695" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21287" y="222378" z="-14769" heading="30298" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="21287" y="222378" z="-14769" heading="9199" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="21635" y="222655" z="-14756" heading="5781" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="21635" y="222655" z="-14756" heading="5781" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21630" y="222980" z="-14760" heading="16514" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="21781" y="223262" z="-14767" heading="11361" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="21782" y="223264" z="-14769" heading="11361" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21907" y="223405" z="-14769" heading="8811" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="22035" y="223549" z="-14769" heading="8811" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21705" y="223740" z="-14769" heading="27280" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="21391" y="223578" z="-14769" heading="39672" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="21354" y="223549" z="-14769" heading="39672" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="21074" y="223703" z="-14769" heading="27523" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="20692" y="223693" z="-14769" heading="33025" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="20623" y="223691" z="-14769" heading="33025" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="20628" y="223692" z="-14769" heading="43510" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="20446" y="223389" z="-14769" heading="43510" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="20243" y="223071" z="-14769" heading="43234" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="20139" y="222907" z="-14769" heading="43234" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19998" y="222659" z="-14769" heading="43825" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="19884" y="222456" z="-14769" heading="43825" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19884" y="222456" z="-14769" heading="43825" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="20062" y="222511" z="-14769" heading="3131" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="20548" y="222661" z="-14769" heading="3131" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="20585" y="222673" z="-14769" heading="3131" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="20931" y="222835" z="-14769" heading="4567" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="20931" y="222835" z="-14769" heading="4567" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="21196" y="223000" z="-14768" heading="5808" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="21196" y="223000" z="-14768" heading="5808" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="21196" y="223000" z="-14768" heading="5808" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="21196" y="223000" z="-14768" heading="5808" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="19724" y="223530" z="-14769" heading="37664" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19588" y="223646" z="-14769" heading="25402" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19588" y="223646" z="-14769" heading="25402" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19507" y="223474" z="-14769" heading="44554" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19421" y="223292" z="-14769" heading="44554" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19421" y="223292" z="-14769" heading="44554" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22747" x="22059" y="219102" z="-14902" heading="48287" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="22039" y="218851" z="-14901" heading="48343" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="22020" y="218600" z="-14901" heading="47441" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="21955" y="218255" z="-14890" heading="46168" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="21937" y="218194" z="-14890" heading="46168" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21893" y="218044" z="-14891" heading="42140" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21663" y="217755" z="-14893" heading="42140" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21410" y="217749" z="-14889" heading="32992" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21410" y="217749" z="-14889" heading="32992" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="20939" y="217820" z="-14891" heading="30261" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="20522" y="217852" z="-14906" heading="32732" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="20522" y="217852" z="-14906" heading="22241" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="20354" y="218119" z="-14904" heading="22241" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="20913" y="218232" z="-14893" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21157" y="218303" z="-14893" heading="2951" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="21250" y="218330" z="-14895" heading="2951" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="21532" y="218558" z="-14906" heading="7091" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="21538" y="218620" z="-14906" heading="15265" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="21511" y="218990" z="-14909" heading="41960" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21628" y="219050" z="-14909" heading="7412" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="21810" y="219348" z="-14907" heading="12031" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="21811" y="219324" z="-14906" heading="46519" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="21696" y="218877" z="-14911" heading="46519" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="22557" y="219206" z="-14894" heading="51913" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="22708" y="218752" z="-14902" heading="51261" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="22745" y="218576" z="-14899" heading="47444" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="22727" y="218155" z="-14889" heading="50294" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="22847" y="217817" z="-14892" heading="53595" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="23047" y="217683" z="-14899" heading="59378" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="23047" y="217683" z="-14899" heading="59378" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23047" y="217683" z="-14899" heading="59378" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="23496" y="217814" z="-14891" heading="3081" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="23755" y="217739" z="-14888" heading="62596" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="23755" y="217739" z="-14888" heading="62596" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="24129" y="217692" z="-14900" heading="64243" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="24384" y="217734" z="-14898" heading="4943" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="24412" y="217942" z="-14894" heading="16952" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="24401" y="218157" z="-14896" heading="16952" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="24144" y="218154" z="-14890" heading="32197" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23801" y="218151" z="-14886" heading="33059" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23398" y="218236" z="-14892" heading="28357" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23236" y="218337" z="-14892" heading="26905" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="23205" y="218506" z="-14894" heading="10259" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="23325" y="218685" z="-14905" heading="10259" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23415" y="218772" z="-14905" heading="8051" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23589" y="218942" z="-14906" heading="8051" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23589" y="218942" z="-14906" heading="8051" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="23690" y="218804" z="-14901" heading="55741" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="23996" y="218846" z="-14884" heading="1285" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="24107" y="218913" z="-14884" heading="5694" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="24482" y="217196" z="-14893" heading="41081" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="24154" y="216902" z="-14897" heading="39861" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23591" y="216742" z="-14890" heading="31307" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23254" y="216517" z="-14886" heading="41736" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23137" y="216173" z="-14882" heading="46376" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23101" y="216041" z="-14882" heading="46376" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23053" y="215810" z="-14882" heading="46961" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23026" y="215683" z="-14882" heading="46961" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23187" y="215293" z="-14883" heading="54084" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23392" y="215169" z="-14884" heading="61788" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="23997" y="214976" z="-14891" heading="62696" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="24483" y="215253" z="-14897" heading="8781" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="24571" y="215567" z="-14898" heading="15039" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="24570" y="215981" z="-14893" heading="16873" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="24464" y="216333" z="-14888" heading="21930" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="24391" y="216459" z="-14888" heading="33011" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="24012" y="216450" z="-14890" heading="33011" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23667" y="216254" z="-14893" heading="40520" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="23732" y="216138" z="-14893" heading="54515" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23741" y="216123" z="-14895" heading="54515" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="23878" y="216201" z="-14895" heading="54515" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="23741" y="216123" z="-14895" heading="54515" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="23797" y="216079" z="-14895" heading="54515" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="23960" y="215422" z="-14915" heading="29298" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="23960" y="215422" z="-14915" heading="29298" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="23960" y="215422" z="-14915" heading="29298" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="23960" y="215422" z="-14915" heading="29298" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="23960" y="215422" z="-14915" heading="29298" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="22028" y="215524" z="-14908" heading="33345" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="21764" y="215360" z="-14910" heading="40038" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="21321" y="215040" z="-14896" heading="38389" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="20977" y="214984" z="-14892" heading="32804" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="20658" y="214983" z="-14892" heading="32804" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="20602" y="215296" z="-14887" heading="18221" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="20500" y="215729" z="-14881" heading="18888" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="20498" y="215915" z="-14880" heading="15251" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="20667" y="216463" z="-14889" heading="8831" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="20887" y="216712" z="-14892" heading="8831" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21193" y="216775" z="-14894" heading="64851" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21255" y="216770" z="-14894" heading="64851" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21710" y="216741" z="-14896" heading="55730" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21940" y="216426" z="-14890" heading="55730" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21639" y="216204" z="-14891" heading="39403" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21589" y="216166" z="-14891" heading="39403" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21166" y="215883" z="-14897" heading="38131" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="20985" y="215686" z="-14894" heading="42790" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="20971" y="215477" z="-14890" heading="53432" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="20971" y="215477" z="-14890" heading="53432" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21226" y="215198" z="-14898" heading="59798" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="21226" y="215198" z="-14898" heading="59798" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21349" y="215218" z="-14898" heading="1715" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="21720" y="215280" z="-14910" heading="16851" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="21701" y="215704" z="-14912" heading="25950" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="21371" y="215990" z="-14899" heading="24732" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="21277" y="216080" z="-14897" heading="24732" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="21153" y="216261" z="-14889" heading="21965" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="20844" y="216291" z="-14886" heading="35678" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="20791" y="216276" z="-14887" heading="35678" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="20791" y="216276" z="-14887" heading="35678" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22741" x="17023" y="225207" z="-14769" heading="20619" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17013" y="225272" z="-14769" heading="17849" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="16964" y="225620" z="-14769" heading="17806" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="16731" y="225702" z="-14769" heading="34932" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="16544" y="225662" z="-14769" heading="34932" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16117" y="225387" z="-14769" heading="40118" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="16130" y="225146" z="-14769" heading="32608" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="15538" y="225352" z="-14769" heading="26921" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="15527" y="225360" z="-14769" heading="26921" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="15366" y="225030" z="-14769" heading="44975" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="15348" y="224988" z="-14769" heading="44975" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15437" y="224865" z="-14769" heading="55685" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15146" y="224738" z="-14769" heading="29400" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="14874" y="224829" z="-14769" heading="29400" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14671" y="224984" z="-14769" heading="25926" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="14600" y="225214" z="-14769" heading="16096" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14438" y="225661" z="-14769" heading="24192" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14295" y="225623" z="-14769" heading="35477" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14248" y="225241" z="-14769" heading="49832" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="14261" y="225042" z="-14769" heading="49832" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14397" y="224796" z="-14769" heading="54419" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14655" y="224789" z="-14769" heading="65282" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14836" y="224898" z="-14769" heading="6537" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="15240" y="225286" z="-14769" heading="10939" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="15364" y="225502" z="-14769" heading="59" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="15746" y="223536" z="-14769" heading="53819" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15683" y="223527" z="-14769" heading="34181" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15125" y="223543" z="-14769" heading="29302" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14557" y="223820" z="-14769" heading="27486" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="14557" y="223820" z="-14769" heading="27486" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14114" y="223689" z="-14769" heading="38347" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14031" y="223487" z="-14769" heading="45085" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="14030" y="223424" z="-14769" heading="49123" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14030" y="223115" z="-14769" heading="43691" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14080" y="222962" z="-14767" heading="63059" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14704" y="222854" z="-14761" heading="64800" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="15011" y="222782" z="-14761" heading="60516" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15455" y="222616" z="-14769" heading="63" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15737" y="222712" z="-14769" heading="8941" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="16016" y="223052" z="-14769" heading="9955" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16305" y="223618" z="-14769" heading="12449" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="16046" y="223671" z="-14769" heading="33922" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="16046" y="223671" z="-14769" heading="33922" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15907" y="223784" z="-14769" heading="25648" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15907" y="223784" z="-14769" heading="25648" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16243" y="223966" z="-14769" heading="5198" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="16435" y="223811" z="-14769" heading="56304" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="16624" y="223580" z="-14769" heading="56304" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="16624" y="223580" z="-14769" heading="56304" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16742" y="223630" z="-14765" heading="4235" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="16842" y="223832" z="-14758" heading="15257" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17091" y="223863" z="-14758" heading="1291" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17091" y="223863" z="-14758" heading="1291" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17256" y="223682" z="-14762" heading="48826" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17275" y="223426" z="-14764" heading="51124" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17353" y="223350" z="-14767" heading="1052" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17615" y="223376" z="-14768" heading="1052" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17747" y="223628" z="-14769" heading="11094" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="17747" y="223628" z="-14769" heading="11094" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="17747" y="223628" z="-14769" heading="11094" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="18024" y="223751" z="-14769" heading="4358" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="18024" y="223751" z="-14769" heading="4358" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="16423" y="223185" z="-14769" heading="37973" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16145" y="223091" z="-14769" heading="36325" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15981" y="222856" z="-14769" heading="44239" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="15812" y="222937" z="-14769" heading="28097" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="15236" y="223169" z="-14769" heading="33276" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="14951" y="223189" z="-14769" heading="30533" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="14429" y="223091" z="-14769" heading="33214" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14158" y="223080" z="-14769" heading="33214" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="13849" y="223078" z="-14768" heading="32835" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="13602" y="223293" z="-14768" heading="25260" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="13614" y="223284" z="-14769" heading="25260" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="13697" y="223120" z="-14769" heading="25260" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="13218" y="223256" z="-14769" heading="37798" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="12902" y="223065" z="-14769" heading="38471" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="12806" y="222815" z="-14769" heading="42642" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="12668" y="222624" z="-14769" heading="42642" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="12356" y="222581" z="-14769" heading="34180" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="12147" y="222553" z="-14769" heading="39561" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="11952" y="222552" z="-14768" heading="32821" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="11858" y="222461" z="-14763" heading="40789" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="11623" y="222576" z="-14762" heading="26329" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="11510" y="222712" z="-14762" heading="17933" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="11368" y="223010" z="-14769" heading="23881" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="11326" y="223057" z="-14769" heading="23881" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="11231" y="223262" z="-14769" heading="8088" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="11565" y="223489" z="-14769" heading="1800" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="11674" y="223508" z="-14769" heading="1800" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="11822" y="223329" z="-14769" heading="51169" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="11942" y="222893" z="-14769" heading="52084" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="12147" y="223206" z="-14769" heading="9126" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="12315" y="223057" z="-14769" heading="57968" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="12274" y="222798" z="-14769" heading="47514" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="12165" y="222803" z="-14769" heading="47514" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="12274" y="222798" z="-14769" heading="47514" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="12162" y="222949" z="-14769" heading="23489" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="12034" y="223418" z="-14769" heading="51304" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="12034" y="223421" z="-14769" heading="51304" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="11935" y="223255" z="-14769" heading="43565" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="11907" y="223207" z="-14769" heading="43565" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="11857" y="222960" z="-14769" heading="47100" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="11805" y="222695" z="-14769" heading="47100" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22747" x="12737" y="219318" z="-14883" heading="48152" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="12710" y="219001" z="-14883" heading="48041" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12567" y="218602" z="-14891" heading="44803" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12385" y="218740" z="-14890" heading="26507" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12141" y="218950" z="-14890" heading="25340" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11912" y="219472" z="-14893" heading="20674" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="11707" y="219353" z="-14901" heading="39845" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="11707" y="219353" z="-14901" heading="46584" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11657" y="219154" z="-14905" heading="46584" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="11695" y="218887" z="-14901" heading="50626" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11639" y="218821" z="-14901" heading="50626" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11639" y="218821" z="-14901" heading="50626" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="11778" y="218652" z="-14897" heading="52730" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11850" y="218073" z="-14893" heading="46651" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11588" y="217951" z="-14894" heading="37313" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="11812" y="217836" z="-14893" heading="60588" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="11937" y="217809" z="-14893" heading="63358" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12300" y="217799" z="-14898" heading="551" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12445" y="217807" z="-14906" heading="551" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="12573" y="217779" z="-14906" heading="63289" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="12577" y="217718" z="-14906" heading="19122" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="12231" y="218580" z="-14895" heading="26192" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12165" y="218629" z="-14895" heading="26192" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12052" y="218714" z="-14894" heading="26041" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="12052" y="218714" z="-14894" heading="26041" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="11908" y="218911" z="-14895" heading="22967" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="12497" y="219300" z="-14888" heading="24575" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12740" y="219297" z="-14884" heading="64732" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12724" y="219360" z="-14885" heading="18918" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="12628" y="219524" z="-14892" heading="22148" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="12561" y="219415" z="-14889" heading="43424" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22741" x="14067" y="220712" z="-14755" heading="7917" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14321" y="220985" z="-14756" heading="9385" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14551" y="220690" z="-14753" heading="56247" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="14529" y="220566" z="-14753" heading="46892" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14448" y="219950" z="-14754" heading="49165" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="14448" y="219888" z="-14754" heading="49165" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14578" y="219290" z="-14764" heading="54793" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="14578" y="219290" z="-14764" heading="54793" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="14958" y="219248" z="-14769" heading="2421" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15398" y="219220" z="-14769" heading="65206" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15398" y="219220" z="-14769" heading="65206" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15695" y="219316" z="-14769" heading="9809" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15734" y="219369" z="-14769" heading="9809" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15762" y="219720" z="-14769" heading="18969" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15762" y="219720" z="-14769" heading="18969" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="15602" y="220160" z="-14769" heading="23015" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15310" y="220652" z="-14769" heading="21086" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15281" y="220712" z="-14769" heading="21086" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15088" y="220804" z="-14769" heading="29465" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14958" y="220652" z="-14769" heading="41772" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="14933" y="220527" z="-14769" heading="47093" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14896" y="220260" z="-14769" heading="48437" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14890" y="219884" z="-14769" heading="49493" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="14891" y="219867" z="-14769" heading="49493" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14978" y="219785" z="-14769" heading="39186" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14647" y="219551" z="-14769" heading="39186" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14707" y="219565" z="-14769" heading="2116" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22741" x="14954" y="219598" z="-14769" heading="941" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15460" y="219720" z="-14769" heading="63660" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15833" y="219606" z="-14769" heading="61219" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15845" y="219601" z="-14769" heading="60019" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="16064" y="219473" z="-14769" heading="60019" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16064" y="219473" z="-14769" heading="60019" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15959" y="219837" z="-14769" heading="19299" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="15871" y="220018" z="-14769" heading="22216" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15523" y="220568" z="-14769" heading="22283" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="15459" y="220688" z="-14769" heading="20707" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15342" y="220956" z="-14769" heading="20707" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15140" y="220717" z="-14768" heading="41333" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22741" x="15055" y="220625" z="-14766" heading="41333" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="14617" y="220178" z="-14758" heading="40802" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14405" y="219972" z="-14757" heading="40802" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14405" y="219972" z="-14757" heading="40802" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="13971" y="220017" z="-14778" heading="31414" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="13918" y="220150" z="-14778" heading="31372" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="13985" y="220691" z="-14758" heading="53698" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="13985" y="220691" z="-14758" heading="53698" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="14369" y="220728" z="-14752" heading="1002" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="14863" y="220868" z="-14762" heading="12498" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="15135" y="221271" z="-14769" heading="7973" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="15081" y="221134" z="-14769" heading="45235" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="15081" y="221134" z="-14769" heading="45235" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15183" y="220891" z="-14769" heading="53348" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15141" y="220780" z="-14769" heading="45821" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="15020" y="220412" z="-14769" heading="35581" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="14604" y="220311" z="-14763" heading="34429" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="14047" y="220221" z="-14763" heading="34429" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22747" x="12864" y="217094" z="-14891" heading="44762" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12853" y="216790" z="-14895" heading="48490" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12986" y="216274" z="-14888" heading="48782" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="12984" y="216209" z="-14888" heading="48782" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12912" y="215910" z="-14895" heading="46152" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12878" y="215789" z="-14899" heading="46474" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12831" y="215453" z="-14913" heading="53584" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12913" y="215271" z="-14908" heading="53584" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12828" y="215032" z="-14893" heading="45819" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12584" y="214925" z="-14893" heading="36552" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12193" y="214948" z="-14893" heading="30913" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12099" y="215035" z="-14888" heading="24882" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11998" y="215237" z="-14885" heading="16054" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12011" y="215423" z="-14885" heading="15379" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12226" y="215894" z="-14898" heading="6431" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11994" y="216025" z="-14885" heading="27406" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="11797" y="215902" z="-14880" heading="38589" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="11746" y="215686" z="-14881" heading="46733" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11617" y="215828" z="-14878" heading="24033" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="11573" y="215878" z="-14877" heading="24033" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="11586" y="216128" z="-14881" heading="15821" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="11742" y="216568" z="-14895" heading="10088" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="12134" y="216747" z="-14886" heading="2137" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="12501" y="216906" z="-14904" heading="4522" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12655" y="216797" z="-14898" heading="59151" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12758" y="216724" z="-14895" heading="59151" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12877" y="216642" z="-14892" heading="41117" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12680" y="216323" z="-14891" heading="44648" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12427" y="215743" z="-14897" heading="44970" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="12427" y="215743" z="-14897" heading="44970" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12397" y="215320" z="-14906" heading="51103" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12285" y="215471" z="-14903" heading="23005" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="12209" y="215573" z="-14901" heading="23005" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11959" y="215885" z="-14887" heading="23715" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11831" y="216077" z="-14882" heading="21500" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="11655" y="216407" z="-14895" heading="21500" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="11715" y="216376" z="-14890" heading="60561" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="11647" y="216386" z="-14893" heading="31245" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="11828" y="216572" z="-14894" heading="8331" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="12055" y="216460" z="-14889" heading="60551" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="12055" y="216460" z="-14889" heading="60551" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="12413" y="216227" z="-14893" heading="58404" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="12413" y="216227" z="-14893" heading="58404" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="12316" y="216239" z="-14893" heading="58404" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="12413" y="216227" z="-14893" heading="58404" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="10446" y="215306" z="-14899" heading="33366" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="10174" y="215506" z="-14905" heading="22574" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10162" y="216100" z="-14891" heading="14370" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10271" y="216184" z="-14889" heading="5961" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="10431" y="216287" z="-14889" heading="5961" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10588" y="216762" z="-14891" heading="31388" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="10396" y="216787" z="-14893" heading="31388" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10092" y="216794" z="-14892" heading="30064" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="10092" y="216794" z="-14892" heading="30064" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9673" y="216725" z="-14887" heading="42201" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9595" y="216623" z="-14887" heading="42373" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9367" y="216152" z="-14881" heading="46776" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9353" y="216089" z="-14880" heading="46776" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="9439" y="215572" z="-14880" heading="51687" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9789" y="215326" z="-14886" heading="60554" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9884" y="215437" z="-14886" heading="60554" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9884" y="215437" z="-14886" heading="18012" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9884" y="215437" z="-14886" heading="18012" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="10074" y="215601" z="-14908" heading="22297" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9991" y="215733" z="-14906" heading="21758" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9751" y="216103" z="-14891" heading="22510" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9696" y="216187" z="-14889" heading="22510" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9570" y="216365" z="-14884" heading="22808" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9240" y="216669" z="-14908" heading="25003" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="9240" y="216669" z="-14908" heading="25003" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="9829" y="216183" z="-14889" heading="60369" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9884" y="216154" z="-14893" heading="60369" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9884" y="216154" z="-14893" heading="60369" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9884" y="216154" z="-14893" heading="60369" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="9884" y="216154" z="-14893" heading="46243" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="9527" y="215779" z="-14885" heading="24094" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9287" y="215782" z="-14878" heading="32637" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="8954" y="215913" z="-14886" heading="20259" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="8895" y="216067" z="-14891" heading="20259" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="8780" y="216295" z="-14892" heading="21220" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="8879" y="216363" z="-14895" heading="837" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="9020" y="216374" z="-14895" heading="837" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9019" y="216316" z="-14892" heading="54517" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9235" y="215929" z="-14880" heading="54944" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9456" y="215550" z="-14880" heading="55263" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="9525" y="215445" z="-14880" heading="55263" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9729" y="215182" z="-14883" heading="59345" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10139" y="215023" z="-14892" heading="3279" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="10345" y="215090" z="-14898" heading="3279" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="10271" y="215459" z="-14904" heading="17078" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="10494" y="215843" z="-14903" heading="6711" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10527" y="216101" z="-14887" heading="15025" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10600" y="216314" z="-14888" heading="13212" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="10631" y="216413" z="-14888" heading="13212" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="10662" y="216213" z="-14888" heading="50770" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="10832" y="215826" z="-14896" heading="47354" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10789" y="215473" z="-14901" heading="48371" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10779" y="215337" z="-14905" heading="48371" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="10828" y="215195" z="-14898" heading="52617" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="10828" y="215195" z="-14898" heading="52617" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="9052" y="217611" z="-14892" heading="28003" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="8908" y="217760" z="-14892" heading="14558" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="8908" y="217760" z="-14892" heading="14558" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="8892" y="218394" z="-14890" heading="17849" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="8937" y="218499" z="-14895" heading="5235" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9247" y="218737" z="-14903" heading="10371" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9386" y="218950" z="-14909" heading="10371" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9380" y="219357" z="-14900" heading="17838" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="9380" y="219357" z="-14900" heading="17838" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9754" y="219295" z="-14897" heading="63843" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10126" y="218943" z="-14891" heading="56697" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="10126" y="218943" z="-14891" heading="56697" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10168" y="218715" z="-14887" heading="51490" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10473" y="218199" z="-14887" heading="57979" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="10552" y="217874" z="-14905" heading="50294" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="10295" y="217761" z="-14900" heading="37088" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="9814" y="217956" z="-14891" heading="15655" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9635" y="218368" z="-14890" heading="23115" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9564" y="218464" z="-14895" heading="23115" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9550" y="218684" z="-14907" heading="17046" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="9740" y="218712" z="-14904" heading="1534" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9820" y="218724" z="-14904" heading="1534" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9820" y="218724" z="-14904" heading="1534" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="9946" y="218633" z="-14899" heading="59011" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9946" y="218633" z="-14899" heading="59011" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="10123" y="218672" z="-14889" heading="2262" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10123" y="218672" z="-14889" heading="2262" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10123" y="218672" z="-14889" heading="2262" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9761" y="218922" z="-14901" heading="26298" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="9604" y="219035" z="-14914" heading="26298" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="10094" y="219275" z="-14882" heading="6739" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10139" y="219231" z="-14882" heading="57574" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10418" y="218966" z="-14883" heading="57769" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="10577" y="218693" z="-14877" heading="52424" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10586" y="218668" z="-14877" heading="52424" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="10297" y="218237" z="-14885" heading="42991" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="10266" y="218181" z="-14884" heading="43676" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="10138" y="217960" z="-14882" heading="43676" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9702" y="217883" z="-14891" heading="34736" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="9702" y="217883" z="-14891" heading="34736" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="9403" y="217770" z="-14895" heading="37742" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="9293" y="217919" z="-14892" heading="19141" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="9218" y="218196" z="-14889" heading="21042" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="9127" y="218386" z="-14890" heading="19730" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22741" x="17130" y="219782" z="-14769" heading="12981" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17264" y="220318" z="-14769" heading="14230" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="17299" y="220494" z="-14769" heading="14346" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="17331" y="220653" z="-14769" heading="14346" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="17331" y="220653" z="-14769" heading="14346" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="17331" y="220653" z="-14769" heading="14346" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="17241" y="219969" z="-14769" heading="54571" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="17268" y="219719" z="-14767" heading="49698" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17440" y="219118" z="-14760" heading="53622" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17573" y="219084" z="-14761" heading="64513" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17960" y="219015" z="-14760" heading="63700" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="18195" y="219195" z="-14763" heading="6159" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="18190" y="219563" z="-14768" heading="20335" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17980" y="219912" z="-14769" heading="22148" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17753" y="220231" z="-14769" heading="21117" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17832" y="220331" z="-14769" heading="9220" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17913" y="220431" z="-14769" heading="9220" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18424" y="220673" z="-14769" heading="13199" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="18424" y="220673" z="-14769" heading="13199" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18644" y="220746" z="-14765" heading="63875" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="18776" y="220725" z="-14763" heading="63875" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="18758" y="220412" z="-14762" heading="47611" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="18461" y="219887" z="-14763" heading="41255" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="18344" y="219763" z="-14769" heading="54551" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18590" y="219482" z="-14769" heading="60447" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="18645" y="219452" z="-14769" heading="60447" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19084" y="219422" z="-14769" heading="7103" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19107" y="219441" z="-14769" heading="7103" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19107" y="219441" z="-14769" heading="7103" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19107" y="219441" z="-14769" heading="7103" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19107" y="219441" z="-14769" heading="7103" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="19083" y="219125" z="-14769" heading="36632" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18883" y="219131" z="-14769" heading="29731" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="18597" y="219312" z="-14769" heading="24432" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="18202" y="219570" z="-14769" heading="27545" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="18110" y="219999" z="-14769" heading="17523" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="18089" y="220193" z="-14769" heading="17523" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="18812" y="220481" z="-14760" heading="21765" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18744" y="220924" z="-14769" heading="17950" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="18978" y="221014" z="-14769" heading="4653" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19270" y="221223" z="-14769" heading="6479" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19330" y="221112" z="-14769" heading="54392" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19420" y="220950" z="-14769" heading="54392" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="19241" y="220636" z="-14761" heading="43363" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="19048" y="220363" z="-14760" heading="42733" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="18873" y="220095" z="-14765" heading="43136" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="18847" y="220054" z="-14769" heading="43136" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="18790" y="219851" z="-14769" heading="46296" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19051" y="219845" z="-14769" heading="65335" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="17677" y="222447" z="-14769" heading="9498" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="17909" y="222659" z="-14769" heading="7336" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22741" x="17999" y="222735" z="-14769" heading="7336" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22741" x="18437" y="222748" z="-14769" heading="64561" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="18952" y="222779" z="-14769" heading="10250" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="19110" y="223202" z="-14769" heading="33221" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="19078" y="223022" z="-14769" heading="55806" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="19045" y="222827" z="-14769" heading="47015" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="19040" y="222802" z="-14769" heading="47015" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="15753" y="222484" z="-14759" heading="23484" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="15440" y="222720" z="-14769" heading="28350" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="15536" y="222599" z="-14769" heading="62131" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="15505" y="222698" z="-14769" heading="62131" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="15396" y="222632" z="-14767" heading="38391" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="15281" y="222564" z="-14766" heading="38391" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+			<npc id="22741" x="16776" y="225275" z="-14769" heading="23071" respawnTime="60sec" /> <!-- Harid Lizardman Warrior -->
+			<npc id="22742" x="16551" y="225507" z="-14769" heading="26428" respawnTime="60sec" /> <!-- Harid Lizardman Shaman -->
+			<npc id="22740" x="16373" y="225539" z="-14769" heading="33456" respawnTime="60sec" /> <!-- Harid Lizardman Berserker -->
+			<npc id="22743" x="16363" y="225443" z="-14769" heading="48069" respawnTime="60sec" /> <!-- Harid Lizardman -->
+			<npc id="22745" x="16363" y="225443" z="-14769" heading="48069" respawnTime="60sec" /> <!-- Tantar Herbalist - Harid Watchman -->
+			<npc id="22744" x="16340" y="225351" z="-14769" heading="46596" respawnTime="60sec" /> <!-- Tantar Warrior - Harid Watchman -->
+		</group>
+	</spawn>
+	<spawn name="Before_Mobs" spawnByDefault="false">
+		<group>
+			<npc id="22747" x="17844" y="215478" z="-15150" heading="55285" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17878" y="215662" z="-15150" heading="11275" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="17989" y="215964" z="-15152" heading="19410" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="17726" y="216357" z="-15150" heading="27802" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="17663" y="216389" z="-15152" heading="27802" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17423" y="216415" z="-15153" heading="31493" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="17014" y="216378" z="-15152" heading="28799" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="16676" y="216485" z="-15150" heading="30271" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16153" y="216601" z="-15147" heading="32837" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="15724" y="216576" z="-15152" heading="34031" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15516" y="216420" z="-15152" heading="41679" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="15389" y="216227" z="-15153" heading="43376" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15164" y="215911" z="-15150" heading="42338" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="15178" y="215738" z="-15151" heading="53666" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22747" x="15170" y="215335" z="-15153" heading="48621" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15163" y="215183" z="-15153" heading="48621" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="15209" y="215139" z="-15153" heading="57730" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="15331" y="215027" z="-15153" heading="57730" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15681" y="214877" z="-15153" heading="61322" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="15865" y="214659" z="-15153" heading="55197" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="15865" y="214659" z="-15153" heading="55197" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15840" y="214562" z="-15153" heading="55197" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="15840" y="214562" z="-15153" heading="56373" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="16035" y="214454" z="-15153" heading="56373" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16194" y="214400" z="-15153" heading="62121" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="16477" y="214322" z="-15153" heading="62730" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16625" y="214593" z="-15148" heading="8931" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="16749" y="214737" z="-15148" heading="8931" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17029" y="215005" z="-15148" heading="7459" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="17220" y="215156" z="-15148" heading="5620" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="17350" y="215234" z="-15148" heading="5620" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17350" y="215234" z="-15148" heading="5620" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="17185" y="215505" z="-15148" heading="17568" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="17170" y="215630" z="-15148" heading="17568" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17055" y="215936" z="-15148" heading="24625" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16678" y="216248" z="-15148" heading="24441" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="16634" y="216294" z="-15148" heading="24441" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16470" y="216386" z="-15150" heading="34838" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16032" y="216175" z="-15149" heading="36823" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="15987" y="216157" z="-15149" heading="36823" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="15927" y="216022" z="-15149" heading="44789" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="15937" y="216185" z="-15149" heading="46482" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15940" y="215992" z="-15149" heading="46482" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="15942" y="215821" z="-15150" heading="46482" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="15941" y="215874" z="-15150" heading="46482" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="15939" y="215986" z="-15150" heading="46482" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="15864" y="216219" z="-15149" heading="65106" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15702" y="216295" z="-15149" heading="63926" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="15690" y="216301" z="-15149" heading="60623" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15690" y="216301" z="-15149" heading="62919" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16927" y="215248" z="-15147" heading="62919" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="16989" y="215267" z="-15147" heading="3233" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17055" y="215289" z="-15148" heading="3233" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16802" y="215410" z="-15150" heading="28114" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="16451" y="215482" z="-15147" heading="30657" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="16023" y="215373" z="-15148" heading="36234" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="15679" y="215290" z="-15153" heading="43365" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="15728" y="215042" z="-15153" heading="51229" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22747" x="15939" y="214316" z="-15153" heading="51734" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16026" y="214089" z="-15153" heading="52969" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16240" y="213962" z="-15153" heading="60699" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22747" x="16295" y="213935" z="-15153" heading="60699" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16519" y="213852" z="-15153" heading="61834" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16729" y="213782" z="-15153" heading="62180" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="16790" y="213961" z="-15150" heading="3329" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="17222" y="214057" z="-15149" heading="1585" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="17318" y="214072" z="-15153" heading="1585" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="17484" y="214180" z="-15153" heading="6016" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="17726" y="214383" z="-15153" heading="5882" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22747" x="17995" y="214560" z="-15153" heading="6046" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="18178" y="214651" z="-15148" heading="4531" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="18216" y="214775" z="-15150" heading="13279" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="18228" y="214814" z="-15153" heading="13279" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="18108" y="214859" z="-15150" heading="29025" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="18181" y="215655" z="-15153" heading="14669" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="18222" y="215932" z="-15153" heading="14851" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="18318" y="216009" z="-15153" heading="6105" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="18318" y="216009" z="-15153" heading="6105" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="18321" y="215990" z="-15153" heading="6105" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="18468" y="216196" z="-15153" heading="11718" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="18468" y="216196" z="-15153" heading="11718" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="18468" y="216196" z="-15153" heading="11718" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="18548" y="216279" z="-15153" heading="11718" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="18468" y="216196" z="-15153" heading="11718" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+			<npc id="22747" x="16803" y="215896" z="-15149" heading="36201" respawnTime="60sec" /> <!-- Zenta Lizardman Warrior -->
+			<npc id="22749" x="16803" y="215896" z="-15149" heading="36201" respawnTime="60sec" /> <!-- Zenta Lizardman Archer -->
+			<npc id="22748" x="16803" y="215896" z="-15149" heading="36201" respawnTime="60sec" /> <!-- Zenta Lizardman Shaman -->
+			<npc id="22751" x="16803" y="215896" z="-15149" heading="36201" respawnTime="60sec" /> <!-- Tantar Herbalist - Zenta Watchman -->
+			<npc id="22750" x="16354" y="215790" z="-15148" heading="35186" respawnTime="60sec" /> <!-- Tantar Warrior - Zenta Watchman -->
+		</group>
+	</spawn>
+	<spawn name="Defensive_Totems" spawnByDefault="true">
+		<group>
+			<npc id="34414" x="17549" y="225324" z="-14769" heading="51027" respawnTime="60sec" /> <!-- Siben - Tantar Researcher -->
+		</group>
+	</spawn>
+	<spawn name="boss_guardianmobs" spawnByDefault="false">
+		<group>
+			<npc id="18970" x="16795" y="217569" z="-15028" heading="50718" /> <!-- Trazenta - Southern Gate Keeper -->
+			<npc id="18968" x="18599" y="215546" z="-15153" heading="32881" /> <!-- Inis - Eastern Gate Keeper -->
+			<npc id="18971" x="16871" y="213742" z="-15153" heading="12201" /> <!-- Kaztar - Northern Gate Keeper -->
+			<npc id="18969" x="14683" y="215640" z="-15143" heading="1154" /> <!-- Archeon - Western Gate Keeper -->
+		</group>
+	</spawn>
+</list>

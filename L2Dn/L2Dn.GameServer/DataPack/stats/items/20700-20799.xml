@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="20728" name="Scroll: Summon Lucky Lamp" type="EtcItem">
+		<!-- Allows to resurrect at the place of death. You are invisible for 5 sec after resurrection. Monsters' attacks have no effect for 2 min. While the effect is active, Speed -50%. -->
+		<set name="icon" val="BranchSys.icon.br_lamp_orange_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="20792" name="Flavorful Cheese Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A hat shaped like a mouth-watering piece of cheese. Upon closer examination, you can see an orange mouse on top of it. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="20793" name="Sweet Cheese Hat" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A hat shaped like a mouth-watering piece of cheese. Upon closer examination, you can see an purple mouse on top of it. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

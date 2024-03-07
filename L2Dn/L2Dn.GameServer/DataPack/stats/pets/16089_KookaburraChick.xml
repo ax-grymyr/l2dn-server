@@ -1,0 +1,1721 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/PetData.xsd">
+	<pet id="16089" itemId="93963" index="19" evolveLevel="None" type="15">
+		<set name="food" val="93966" />
+		<set name="hungry_limit" val="50" />
+		<set name="load" val="45540" />
+		<skills>
+			<skill minLevel="1" skillId="6618" skillLevel="1" />
+			<skill minLevel="60" skillId="6618" skillLevel="2" />
+			<skill minLevel="65" skillId="6618" skillLevel="3" />
+			<skill minLevel="70" skillId="6618" skillLevel="4" />
+			<skill minLevel="75" skillId="6618" skillLevel="5" />
+			<skill minLevel="80" skillId="6618" skillLevel="6" />
+			<skill minLevel="85" skillId="6618" skillLevel="7" />
+			<skill minLevel="60" skillId="6681" skillLevel="1" />
+			<skill minLevel="60" skillId="6683" skillLevel="1" />
+		</skills>
+		<stats>
+			<stat level="1">
+				<set name="max_meal" val="3000" />
+				<set name="exp" val="0" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="12" />
+				<set name="consume_meal_in_normal" val="2" />
+				<set name="org_pattack" val="113.74" />
+				<set name="org_pdefend" val="67.5" />
+				<set name="org_mattack" val="173.35" />
+				<set name="org_mdefend" val="36" />
+				<set name="org_hp" val="104" />
+				<set name="org_mp" val="40" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="2">
+				<set name="max_meal" val="3090" />
+				<set name="exp" val="68" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="12" />
+				<set name="consume_meal_in_normal" val="2" />
+				<set name="org_pattack" val="115" />
+				<set name="org_pdefend" val="68.25" />
+				<set name="org_mattack" val="175.27" />
+				<set name="org_mdefend" val="36.4" />
+				<set name="org_hp" val="119.47" />
+				<set name="org_mp" val="47.28" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="3">
+				<set name="max_meal" val="3183" />
+				<set name="exp" val="364" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="13" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="116.27" />
+				<set name="org_pdefend" val="69" />
+				<set name="org_mattack" val="177.2" />
+				<set name="org_mdefend" val="36.8" />
+				<set name="org_hp" val="135.11" />
+				<set name="org_mp" val="54.64" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="4">
+				<set name="max_meal" val="3278" />
+				<set name="exp" val="1169" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="13" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="117.53" />
+				<set name="org_pdefend" val="69.75" />
+				<set name="org_mattack" val="179.13" />
+				<set name="org_mdefend" val="37.2" />
+				<set name="org_hp" val="150.92" />
+				<set name="org_mp" val="62.08" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="5">
+				<set name="max_meal" val="3376" />
+				<set name="exp" val="2885" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="14" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="118.8" />
+				<set name="org_pdefend" val="70.5" />
+				<set name="org_mattack" val="181.05" />
+				<set name="org_mdefend" val="37.6" />
+				<set name="org_hp" val="166.9" />
+				<set name="org_mp" val="69.6" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="6">
+				<set name="max_meal" val="3477" />
+				<set name="exp" val="6039" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="15" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="120.06" />
+				<set name="org_pdefend" val="71.25" />
+				<set name="org_mattack" val="182.98" />
+				<set name="org_mdefend" val="38" />
+				<set name="org_hp" val="183.05" />
+				<set name="org_mp" val="77.2" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="7">
+				<set name="max_meal" val="3581" />
+				<set name="exp" val="11288" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="15" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="121.32" />
+				<set name="org_pdefend" val="72" />
+				<set name="org_mattack" val="184.9" />
+				<set name="org_mdefend" val="38.4" />
+				<set name="org_hp" val="199.37" />
+				<set name="org_mp" val="84.88" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="8">
+				<set name="max_meal" val="3688" />
+				<set name="exp" val="19424" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="16" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="122.59" />
+				<set name="org_pdefend" val="72.75" />
+				<set name="org_mattack" val="186.83" />
+				<set name="org_mdefend" val="38.8" />
+				<set name="org_hp" val="215.86" />
+				<set name="org_mp" val="92.64" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="9">
+				<set name="max_meal" val="3799" />
+				<set name="exp" val="31379" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="16" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="123.85" />
+				<set name="org_pdefend" val="73.5" />
+				<set name="org_mattack" val="188.76" />
+				<set name="org_mdefend" val="39.2" />
+				<set name="org_hp" val="232.52" />
+				<set name="org_mp" val="100.48" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="10">
+				<set name="max_meal" val="3913" />
+				<set name="exp" val="48230" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="17" />
+				<set name="consume_meal_in_normal" val="3" />
+				<set name="org_pattack" val="125.12" />
+				<set name="org_pdefend" val="74.25" />
+				<set name="org_mattack" val="190.68" />
+				<set name="org_mdefend" val="39.6" />
+				<set name="org_hp" val="249.35" />
+				<set name="org_mp" val="108.4" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="0.9" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="11">
+				<set name="max_meal" val="4030" />
+				<set name="exp" val="71203" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="18" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="126.38" />
+				<set name="org_pdefend" val="75" />
+				<set name="org_mattack" val="192.61" />
+				<set name="org_mdefend" val="40" />
+				<set name="org_hp" val="266.35" />
+				<set name="org_mp" val="116.4" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="12">
+				<set name="max_meal" val="4151" />
+				<set name="exp" val="101678" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="18" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="127.64" />
+				<set name="org_pdefend" val="75.75" />
+				<set name="org_mattack" val="194.54" />
+				<set name="org_mdefend" val="40.4" />
+				<set name="org_hp" val="283.52" />
+				<set name="org_mp" val="124.48" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="13">
+				<set name="max_meal" val="4276" />
+				<set name="exp" val="141194" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="19" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="128.91" />
+				<set name="org_pdefend" val="76.5" />
+				<set name="org_mattack" val="196.46" />
+				<set name="org_mdefend" val="40.8" />
+				<set name="org_hp" val="300.86" />
+				<set name="org_mp" val="132.64" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="14">
+				<set name="max_meal" val="4404" />
+				<set name="exp" val="191455" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="20" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="130.17" />
+				<set name="org_pdefend" val="77.25" />
+				<set name="org_mattack" val="198.39" />
+				<set name="org_mdefend" val="41.2" />
+				<set name="org_hp" val="318.37" />
+				<set name="org_mp" val="140.88" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="15">
+				<set name="max_meal" val="4536" />
+				<set name="exp" val="254331" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="21" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="131.43" />
+				<set name="org_pdefend" val="78" />
+				<set name="org_mattack" val="200.31" />
+				<set name="org_mdefend" val="41.6" />
+				<set name="org_hp" val="336.05" />
+				<set name="org_mp" val="149.2" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="16">
+				<set name="max_meal" val="4672" />
+				<set name="exp" val="331868" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="22" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="132.7" />
+				<set name="org_pdefend" val="78.75" />
+				<set name="org_mattack" val="202.24" />
+				<set name="org_mdefend" val="42" />
+				<set name="org_hp" val="353.9" />
+				<set name="org_mp" val="157.6" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="17">
+				<set name="max_meal" val="4812" />
+				<set name="exp" val="426289" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="22" />
+				<set name="consume_meal_in_normal" val="4" />
+				<set name="org_pattack" val="133.96" />
+				<set name="org_pdefend" val="79.5" />
+				<set name="org_mattack" val="204.17" />
+				<set name="org_mdefend" val="42.4" />
+				<set name="org_hp" val="371.92" />
+				<set name="org_mp" val="166.08" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="18">
+				<set name="max_meal" val="4956" />
+				<set name="exp" val="540001" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="23" />
+				<set name="consume_meal_in_normal" val="5" />
+				<set name="org_pattack" val="135.23" />
+				<set name="org_pdefend" val="80.25" />
+				<set name="org_mattack" val="206.09" />
+				<set name="org_mdefend" val="42.8" />
+				<set name="org_hp" val="390.11" />
+				<set name="org_mp" val="174.64" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="19">
+				<set name="max_meal" val="5105" />
+				<set name="exp" val="675597" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="24" />
+				<set name="consume_meal_in_normal" val="5" />
+				<set name="org_pattack" val="136.49" />
+				<set name="org_pdefend" val="81" />
+				<set name="org_mattack" val="208.02" />
+				<set name="org_mdefend" val="43.2" />
+				<set name="org_hp" val="408.47" />
+				<set name="org_mp" val="183.28" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="20">
+				<set name="max_meal" val="5258" />
+				<set name="exp" val="835864" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="25" />
+				<set name="consume_meal_in_normal" val="5" />
+				<set name="org_pattack" val="137.75" />
+				<set name="org_pdefend" val="81.75" />
+				<set name="org_mattack" val="209.94" />
+				<set name="org_mdefend" val="43.6" />
+				<set name="org_hp" val="427" />
+				<set name="org_mp" val="192" />
+				<set name="org_hp_regen" val="2" />
+				<set name="org_mp_regen" val="1.2" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="21">
+				<set name="max_meal" val="5416" />
+				<set name="exp" val="1020171" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="26" />
+				<set name="consume_meal_in_normal" val="5" />
+				<set name="org_pattack" val="139.02" />
+				<set name="org_pdefend" val="82.5" />
+				<set name="org_mattack" val="211.87" />
+				<set name="org_mdefend" val="44" />
+				<set name="org_hp" val="455.6" />
+				<set name="org_mp" val="205.2" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="22">
+				<set name="max_meal" val="5578" />
+				<set name="exp" val="1232124" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="27" />
+				<set name="consume_meal_in_normal" val="5" />
+				<set name="org_pattack" val="140.28" />
+				<set name="org_pdefend" val="83.25" />
+				<set name="org_mattack" val="213.8" />
+				<set name="org_mdefend" val="44.4" />
+				<set name="org_hp" val="484.46" />
+				<set name="org_mp" val="218.52" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="23">
+				<set name="max_meal" val="5745" />
+				<set name="exp" val="1475870" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="28" />
+				<set name="consume_meal_in_normal" val="6" />
+				<set name="org_pattack" val="141.54" />
+				<set name="org_pdefend" val="84" />
+				<set name="org_mattack" val="215.72" />
+				<set name="org_mdefend" val="44.8" />
+				<set name="org_hp" val="513.58" />
+				<set name="org_mp" val="231.96" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="24">
+				<set name="max_meal" val="5917" />
+				<set name="exp" val="1756178" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="30" />
+				<set name="consume_meal_in_normal" val="6" />
+				<set name="org_pattack" val="142.81" />
+				<set name="org_pdefend" val="84.75" />
+				<set name="org_mattack" val="217.65" />
+				<set name="org_mdefend" val="45.2" />
+				<set name="org_hp" val="542.96" />
+				<set name="org_mp" val="245.52" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="25">
+				<set name="max_meal" val="6095" />
+				<set name="exp" val="2078532" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="31" />
+				<set name="consume_meal_in_normal" val="6" />
+				<set name="org_pattack" val="144.07" />
+				<set name="org_pdefend" val="85.5" />
+				<set name="org_mattack" val="219.57" />
+				<set name="org_mdefend" val="45.6" />
+				<set name="org_hp" val="572.6" />
+				<set name="org_mp" val="259.2" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="26">
+				<set name="max_meal" val="6278" />
+				<set name="exp" val="2452463" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="32" />
+				<set name="consume_meal_in_normal" val="6" />
+				<set name="org_pattack" val="145.34" />
+				<set name="org_pdefend" val="86.25" />
+				<set name="org_mattack" val="221.5" />
+				<set name="org_mdefend" val="46" />
+				<set name="org_hp" val="602.5" />
+				<set name="org_mp" val="273" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="27">
+				<set name="max_meal" val="6466" />
+				<set name="exp" val="2886223" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="33" />
+				<set name="consume_meal_in_normal" val="7" />
+				<set name="org_pattack" val="146.6" />
+				<set name="org_pdefend" val="87" />
+				<set name="org_mattack" val="223.43" />
+				<set name="org_mdefend" val="46.4" />
+				<set name="org_hp" val="632.66" />
+				<set name="org_mp" val="286.92" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="28">
+				<set name="max_meal" val="6660" />
+				<set name="exp" val="3389384" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="35" />
+				<set name="consume_meal_in_normal" val="7" />
+				<set name="org_pattack" val="147.86" />
+				<set name="org_pdefend" val="87.75" />
+				<set name="org_mattack" val="225.35" />
+				<set name="org_mdefend" val="46.8" />
+				<set name="org_hp" val="663.08" />
+				<set name="org_mp" val="300.96" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="29">
+				<set name="max_meal" val="6860" />
+				<set name="exp" val="3973052" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="36" />
+				<set name="consume_meal_in_normal" val="7" />
+				<set name="org_pattack" val="149.13" />
+				<set name="org_pdefend" val="88.5" />
+				<set name="org_mattack" val="227.28" />
+				<set name="org_mdefend" val="47.2" />
+				<set name="org_hp" val="693.76" />
+				<set name="org_mp" val="315.12" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="30">
+				<set name="max_meal" val="7066" />
+				<set name="exp" val="4650105" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="37" />
+				<set name="consume_meal_in_normal" val="7" />
+				<set name="org_pattack" val="150.39" />
+				<set name="org_pdefend" val="89.25" />
+				<set name="org_mattack" val="229.21" />
+				<set name="org_mdefend" val="47.6" />
+				<set name="org_hp" val="724.7" />
+				<set name="org_mp" val="329.4" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.5" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="31">
+				<set name="max_meal" val="7278" />
+				<set name="exp" val="5442259" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="39" />
+				<set name="consume_meal_in_normal" val="8" />
+				<set name="org_pattack" val="151.65" />
+				<set name="org_pdefend" val="90" />
+				<set name="org_mattack" val="231.13" />
+				<set name="org_mdefend" val="48" />
+				<set name="org_hp" val="755.9" />
+				<set name="org_mp" val="343.8" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="32">
+				<set name="max_meal" val="7496" />
+				<set name="exp" val="6369078" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="40" />
+				<set name="consume_meal_in_normal" val="8" />
+				<set name="org_pattack" val="152.92" />
+				<set name="org_pdefend" val="90.75" />
+				<set name="org_mattack" val="233.06" />
+				<set name="org_mdefend" val="48.4" />
+				<set name="org_hp" val="787.36" />
+				<set name="org_mp" val="358.32" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="33">
+				<set name="max_meal" val="7721" />
+				<set name="exp" val="7453456" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="42" />
+				<set name="consume_meal_in_normal" val="8" />
+				<set name="org_pattack" val="154.18" />
+				<set name="org_pdefend" val="91.5" />
+				<set name="org_mattack" val="234.98" />
+				<set name="org_mdefend" val="48.8" />
+				<set name="org_hp" val="819.08" />
+				<set name="org_mp" val="372.96" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="34">
+				<set name="max_meal" val="7953" />
+				<set name="exp" val="8722179" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="44" />
+				<set name="consume_meal_in_normal" val="9" />
+				<set name="org_pattack" val="155.45" />
+				<set name="org_pdefend" val="92.25" />
+				<set name="org_mattack" val="236.91" />
+				<set name="org_mdefend" val="49.2" />
+				<set name="org_hp" val="851.06" />
+				<set name="org_mp" val="387.72" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="35">
+				<set name="max_meal" val="8192" />
+				<set name="exp" val="10206584" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="46" />
+				<set name="consume_meal_in_normal" val="9" />
+				<set name="org_pattack" val="156.71" />
+				<set name="org_pdefend" val="93" />
+				<set name="org_mattack" val="238.84" />
+				<set name="org_mdefend" val="49.6" />
+				<set name="org_hp" val="883.3" />
+				<set name="org_mp" val="402.6" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="36">
+				<set name="max_meal" val="8438" />
+				<set name="exp" val="11958183" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="47" />
+				<set name="consume_meal_in_normal" val="9" />
+				<set name="org_pattack" val="157.97" />
+				<set name="org_pdefend" val="93.75" />
+				<set name="org_mattack" val="240.76" />
+				<set name="org_mdefend" val="50" />
+				<set name="org_hp" val="915.8" />
+				<set name="org_mp" val="417.6" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="37">
+				<set name="max_meal" val="8691" />
+				<set name="exp" val="14025069" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="49" />
+				<set name="consume_meal_in_normal" val="10" />
+				<set name="org_pattack" val="159.24" />
+				<set name="org_pdefend" val="94.5" />
+				<set name="org_mattack" val="242.69" />
+				<set name="org_mdefend" val="50.4" />
+				<set name="org_hp" val="948.56" />
+				<set name="org_mp" val="432.72" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="38">
+				<set name="max_meal" val="8952" />
+				<set name="exp" val="16463995" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="51" />
+				<set name="consume_meal_in_normal" val="10" />
+				<set name="org_pattack" val="160.5" />
+				<set name="org_pdefend" val="95.25" />
+				<set name="org_mattack" val="244.61" />
+				<set name="org_mdefend" val="50.8" />
+				<set name="org_hp" val="981.58" />
+				<set name="org_mp" val="447.96" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="39">
+				<set name="max_meal" val="9221" />
+				<set name="exp" val="19341927" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="53" />
+				<set name="consume_meal_in_normal" val="11" />
+				<set name="org_pattack" val="161.77" />
+				<set name="org_pdefend" val="96" />
+				<set name="org_mattack" val="246.54" />
+				<set name="org_mdefend" val="51.2" />
+				<set name="org_hp" val="1014.86" />
+				<set name="org_mp" val="463.32" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="40">
+				<set name="max_meal" val="9498" />
+				<set name="exp" val="22737888" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="55" />
+				<set name="consume_meal_in_normal" val="11" />
+				<set name="org_pattack" val="163.03" />
+				<set name="org_pdefend" val="96.75" />
+				<set name="org_mattack" val="248.47" />
+				<set name="org_mdefend" val="51.6" />
+				<set name="org_hp" val="1048.4" />
+				<set name="org_mp" val="478.8" />
+				<set name="org_hp_regen" val="3" />
+				<set name="org_mp_regen" val="1.8" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="41">
+				<set name="max_meal" val="9783" />
+				<set name="exp" val="26779080" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="58" />
+				<set name="consume_meal_in_normal" val="12" />
+				<set name="org_pattack" val="164.29" />
+				<set name="org_pdefend" val="97.5" />
+				<set name="org_mattack" val="250.39" />
+				<set name="org_mdefend" val="52" />
+				<set name="org_hp" val="1096.5" />
+				<set name="org_mp" val="504.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="42">
+				<set name="max_meal" val="10076" />
+				<set name="exp" val="31588100" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="60" />
+				<set name="consume_meal_in_normal" val="12" />
+				<set name="org_pattack" val="165.56" />
+				<set name="org_pdefend" val="98.25" />
+				<set name="org_mattack" val="252.32" />
+				<set name="org_mdefend" val="52.4" />
+				<set name="org_hp" val="1144.97" />
+				<set name="org_mp" val="531" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="43">
+				<set name="max_meal" val="10378" />
+				<set name="exp" val="37310833" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="62" />
+				<set name="consume_meal_in_normal" val="12" />
+				<set name="org_pattack" val="166.82" />
+				<set name="org_pdefend" val="99" />
+				<set name="org_mattack" val="254.24" />
+				<set name="org_mdefend" val="52.8" />
+				<set name="org_hp" val="1193.81" />
+				<set name="org_mp" val="557.4" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="44">
+				<set name="max_meal" val="10689" />
+				<set name="exp" val="44120885" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="65" />
+				<set name="consume_meal_in_normal" val="13" />
+				<set name="org_pattack" val="168.08" />
+				<set name="org_pdefend" val="99.75" />
+				<set name="org_mattack" val="256.17" />
+				<set name="org_mdefend" val="53.2" />
+				<set name="org_hp" val="1243.02" />
+				<set name="org_mp" val="584" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="45">
+				<set name="max_meal" val="11010" />
+				<set name="exp" val="52224847" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="67" />
+				<set name="consume_meal_in_normal" val="13" />
+				<set name="org_pattack" val="169.35" />
+				<set name="org_pdefend" val="100.5" />
+				<set name="org_mattack" val="258.1" />
+				<set name="org_mdefend" val="53.6" />
+				<set name="org_hp" val="1292.6" />
+				<set name="org_mp" val="610.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="46">
+				<set name="max_meal" val="11340" />
+				<set name="exp" val="61949602" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="70" />
+				<set name="consume_meal_in_normal" val="14" />
+				<set name="org_pattack" val="170.61" />
+				<set name="org_pdefend" val="101.25" />
+				<set name="org_mattack" val="260.02" />
+				<set name="org_mdefend" val="54" />
+				<set name="org_hp" val="1342.55" />
+				<set name="org_mp" val="637.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="47">
+				<set name="max_meal" val="11680" />
+				<set name="exp" val="73619307" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="73" />
+				<set name="consume_meal_in_normal" val="15" />
+				<set name="org_pattack" val="171.88" />
+				<set name="org_pdefend" val="102" />
+				<set name="org_mattack" val="261.95" />
+				<set name="org_mdefend" val="54.4" />
+				<set name="org_hp" val="1392.87" />
+				<set name="org_mp" val="665" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="48">
+				<set name="max_meal" val="12030" />
+				<set name="exp" val="87622954" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="76" />
+				<set name="consume_meal_in_normal" val="15" />
+				<set name="org_pattack" val="173.14" />
+				<set name="org_pdefend" val="102.75" />
+				<set name="org_mattack" val="263.87" />
+				<set name="org_mdefend" val="54.8" />
+				<set name="org_hp" val="1443.56" />
+				<set name="org_mp" val="692.4" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="49">
+				<set name="max_meal" val="12391" />
+				<set name="exp" val="104427330" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="79" />
+				<set name="consume_meal_in_normal" val="16" />
+				<set name="org_pattack" val="174.4" />
+				<set name="org_pdefend" val="103.5" />
+				<set name="org_mattack" val="265.8" />
+				<set name="org_mdefend" val="55.2" />
+				<set name="org_hp" val="1494.62" />
+				<set name="org_mp" val="720" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="50">
+				<set name="max_meal" val="12763" />
+				<set name="exp" val="124592581" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="82" />
+				<set name="consume_meal_in_normal" val="16" />
+				<set name="org_pattack" val="175.67" />
+				<set name="org_pdefend" val="104.25" />
+				<set name="org_mattack" val="267.73" />
+				<set name="org_mdefend" val="55.6" />
+				<set name="org_hp" val="1546.05" />
+				<set name="org_mp" val="747.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.1" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="51">
+				<set name="max_meal" val="13146" />
+				<set name="exp" val="148790883" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="85" />
+				<set name="consume_meal_in_normal" val="17" />
+				<set name="org_pattack" val="176.93" />
+				<set name="org_pdefend" val="105" />
+				<set name="org_mattack" val="269.65" />
+				<set name="org_mdefend" val="56" />
+				<set name="org_hp" val="1597.85" />
+				<set name="org_mp" val="775.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="52">
+				<set name="max_meal" val="13540" />
+				<set name="exp" val="177828845" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="89" />
+				<set name="consume_meal_in_normal" val="18" />
+				<set name="org_pattack" val="178.19" />
+				<set name="org_pdefend" val="105.75" />
+				<set name="org_mattack" val="271.58" />
+				<set name="org_mdefend" val="56.4" />
+				<set name="org_hp" val="1650.02" />
+				<set name="org_mp" val="804" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="53">
+				<set name="max_meal" val="13946" />
+				<set name="exp" val="212674399" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="92" />
+				<set name="consume_meal_in_normal" val="18" />
+				<set name="org_pattack" val="179.46" />
+				<set name="org_pdefend" val="106.5" />
+				<set name="org_mattack" val="273.51" />
+				<set name="org_mdefend" val="56.8" />
+				<set name="org_hp" val="1702.56" />
+				<set name="org_mp" val="832.4" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="54">
+				<set name="max_meal" val="14364" />
+				<set name="exp" val="254489064" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="96" />
+				<set name="consume_meal_in_normal" val="19" />
+				<set name="org_pattack" val="180.72" />
+				<set name="org_pdefend" val="107.25" />
+				<set name="org_mattack" val="275.43" />
+				<set name="org_mdefend" val="57.2" />
+				<set name="org_hp" val="1755.47" />
+				<set name="org_mp" val="861" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="55">
+				<set name="max_meal" val="14795" />
+				<set name="exp" val="304666662" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="100" />
+				<set name="consume_meal_in_normal" val="20" />
+				<set name="org_pattack" val="181.99" />
+				<set name="org_pdefend" val="108" />
+				<set name="org_mattack" val="277.36" />
+				<set name="org_mdefend" val="57.6" />
+				<set name="org_hp" val="1808.75" />
+				<set name="org_mp" val="889.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="56">
+				<set name="max_meal" val="15239" />
+				<set name="exp" val="364879780" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="104" />
+				<set name="consume_meal_in_normal" val="21" />
+				<set name="org_pattack" val="183.25" />
+				<set name="org_pdefend" val="108.75" />
+				<set name="org_mattack" val="279.28" />
+				<set name="org_mdefend" val="58" />
+				<set name="org_hp" val="1862.4" />
+				<set name="org_mp" val="918.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="57">
+				<set name="max_meal" val="15696" />
+				<set name="exp" val="437135521" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="108" />
+				<set name="consume_meal_in_normal" val="22" />
+				<set name="org_pattack" val="184.51" />
+				<set name="org_pdefend" val="109.5" />
+				<set name="org_mattack" val="281.21" />
+				<set name="org_mdefend" val="58.4" />
+				<set name="org_hp" val="1916.42" />
+				<set name="org_mp" val="948" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="58">
+				<set name="max_meal" val="16167" />
+				<set name="exp" val="523842410" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="112" />
+				<set name="consume_meal_in_normal" val="22" />
+				<set name="org_pattack" val="185.78" />
+				<set name="org_pdefend" val="110.25" />
+				<set name="org_mattack" val="283.14" />
+				<set name="org_mdefend" val="58.8" />
+				<set name="org_hp" val="1970.81" />
+				<set name="org_mp" val="977.4" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="59">
+				<set name="max_meal" val="16652" />
+				<set name="exp" val="627890678" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="117" />
+				<set name="consume_meal_in_normal" val="23" />
+				<set name="org_pattack" val="187.04" />
+				<set name="org_pdefend" val="111" />
+				<set name="org_mattack" val="285.06" />
+				<set name="org_mdefend" val="59.2" />
+				<set name="org_hp" val="2025.57" />
+				<set name="org_mp" val="1007" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="60">
+				<set name="max_meal" val="17152" />
+				<set name="exp" val="752748598" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="121" />
+				<set name="consume_meal_in_normal" val="24" />
+				<set name="org_pattack" val="188.3" />
+				<set name="org_pdefend" val="111.75" />
+				<set name="org_mattack" val="286.99" />
+				<set name="org_mdefend" val="59.6" />
+				<set name="org_hp" val="2080.7" />
+				<set name="org_mp" val="1036.8" />
+				<set name="org_hp_regen" val="4" />
+				<set name="org_mp_regen" val="2.4" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="61">
+				<set name="max_meal" val="17667" />
+				<set name="exp" val="902578103" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="126" />
+				<set name="consume_meal_in_normal" val="25" />
+				<set name="org_pattack" val="189.57" />
+				<set name="org_pdefend" val="112.5" />
+				<set name="org_mattack" val="288.91" />
+				<set name="org_mdefend" val="60" />
+				<set name="org_hp" val="2136.2" />
+				<set name="org_mp" val="1066.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="62">
+				<set name="max_meal" val="18197" />
+				<set name="exp" val="1082373509" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="131" />
+				<set name="consume_meal_in_normal" val="26" />
+				<set name="org_pattack" val="190.83" />
+				<set name="org_pdefend" val="113.25" />
+				<set name="org_mattack" val="290.84" />
+				<set name="org_mdefend" val="60.4" />
+				<set name="org_hp" val="2192.07" />
+				<set name="org_mp" val="1097" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="63">
+				<set name="max_meal" val="18743" />
+				<set name="exp" val="1298127996" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="137" />
+				<set name="consume_meal_in_normal" val="27" />
+				<set name="org_pattack" val="192.1" />
+				<set name="org_pdefend" val="114" />
+				<set name="org_mattack" val="292.77" />
+				<set name="org_mdefend" val="60.8" />
+				<set name="org_hp" val="2248.31" />
+				<set name="org_mp" val="1127.4" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="64">
+				<set name="max_meal" val="19305" />
+				<set name="exp" val="1557033381" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="142" />
+				<set name="consume_meal_in_normal" val="28" />
+				<set name="org_pattack" val="193.36" />
+				<set name="org_pdefend" val="114.75" />
+				<set name="org_mattack" val="294.69" />
+				<set name="org_mdefend" val="61.2" />
+				<set name="org_hp" val="2304.92" />
+				<set name="org_mp" val="1158" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="65">
+				<set name="max_meal" val="19884" />
+				<set name="exp" val="1867719842" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="148" />
+				<set name="consume_meal_in_normal" val="30" />
+				<set name="org_pattack" val="194.62" />
+				<set name="org_pdefend" val="115.5" />
+				<set name="org_mattack" val="296.62" />
+				<set name="org_mdefend" val="61.6" />
+				<set name="org_hp" val="2361.9" />
+				<set name="org_mp" val="1188.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="66">
+				<set name="max_meal" val="20481" />
+				<set name="exp" val="2240543596" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="154" />
+				<set name="consume_meal_in_normal" val="31" />
+				<set name="org_pattack" val="195.89" />
+				<set name="org_pdefend" val="116.25" />
+				<set name="org_mattack" val="298.54" />
+				<set name="org_mdefend" val="62" />
+				<set name="org_hp" val="2419.25" />
+				<set name="org_mp" val="1219.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="67">
+				<set name="max_meal" val="21095" />
+				<set name="exp" val="2687932100" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="160" />
+				<set name="consume_meal_in_normal" val="32" />
+				<set name="org_pattack" val="197.15" />
+				<set name="org_pdefend" val="117" />
+				<set name="org_mattack" val="300.47" />
+				<set name="org_mdefend" val="62.4" />
+				<set name="org_hp" val="2476.97" />
+				<set name="org_mp" val="1251" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="68">
+				<set name="max_meal" val="21728" />
+				<set name="exp" val="3229272190" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="166" />
+				<set name="consume_meal_in_normal" val="33" />
+				<set name="org_pattack" val="198.42" />
+				<set name="org_pdefend" val="117.75" />
+				<set name="org_mattack" val="302.4" />
+				<set name="org_mdefend" val="62.8" />
+				<set name="org_hp" val="2535.06" />
+				<set name="org_mp" val="1282.4" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="69">
+				<set name="max_meal" val="22380" />
+				<set name="exp" val="3884293700" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="173" />
+				<set name="consume_meal_in_normal" val="35" />
+				<set name="org_pattack" val="199.68" />
+				<set name="org_pdefend" val="118.5" />
+				<set name="org_mattack" val="304.32" />
+				<set name="org_mdefend" val="63.2" />
+				<set name="org_hp" val="2593.52" />
+				<set name="org_mp" val="1314" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="70">
+				<set name="max_meal" val="23051" />
+				<set name="exp" val="4683419941" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="180" />
+				<set name="consume_meal_in_normal" val="36" />
+				<set name="org_pattack" val="200.94" />
+				<set name="org_pdefend" val="119.25" />
+				<set name="org_mattack" val="306.25" />
+				<set name="org_mdefend" val="63.6" />
+				<set name="org_hp" val="2652.35" />
+				<set name="org_mp" val="1345.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="2.7" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="71">
+				<set name="max_meal" val="23743" />
+				<set name="exp" val="5666345218" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="187" />
+				<set name="consume_meal_in_normal" val="37" />
+				<set name="org_pattack" val="202.21" />
+				<set name="org_pdefend" val="120" />
+				<set name="org_mattack" val="308.17" />
+				<set name="org_mdefend" val="64" />
+				<set name="org_hp" val="2711.55" />
+				<set name="org_mp" val="1377.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="72">
+				<set name="max_meal" val="24455" />
+				<set name="exp" val="6885172561" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="194" />
+				<set name="consume_meal_in_normal" val="39" />
+				<set name="org_pattack" val="203.47" />
+				<set name="org_pdefend" val="120.75" />
+				<set name="org_mattack" val="310.1" />
+				<set name="org_mdefend" val="64.4" />
+				<set name="org_hp" val="2771.12" />
+				<set name="org_mp" val="1410" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="73">
+				<set name="max_meal" val="25189" />
+				<set name="exp" val="8408706740" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="202" />
+				<set name="consume_meal_in_normal" val="40" />
+				<set name="org_pattack" val="204.73" />
+				<set name="org_pdefend" val="121.5" />
+				<set name="org_mattack" val="312.03" />
+				<set name="org_mdefend" val="64.8" />
+				<set name="org_hp" val="2831.06" />
+				<set name="org_mp" val="1442.4" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="74">
+				<set name="max_meal" val="25945" />
+				<set name="exp" val="10328359805" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="210" />
+				<set name="consume_meal_in_normal" val="42" />
+				<set name="org_pattack" val="206" />
+				<set name="org_pdefend" val="122.25" />
+				<set name="org_mattack" val="313.95" />
+				<set name="org_mdefend" val="65.2" />
+				<set name="org_hp" val="2891.37" />
+				<set name="org_mp" val="1475" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="75">
+				<set name="max_meal" val="26723" />
+				<set name="exp" val="12766319199" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="219" />
+				<set name="consume_meal_in_normal" val="44" />
+				<set name="org_pattack" val="207.26" />
+				<set name="org_pdefend" val="123" />
+				<set name="org_mattack" val="315.88" />
+				<set name="org_mdefend" val="65.6" />
+				<set name="org_hp" val="2952.05" />
+				<set name="org_mp" val="1507.8" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="1" />
+				<set name="spiritshot_count" val="1" />
+			</stat>
+			<stat level="76">
+				<set name="max_meal" val="27257" />
+				<set name="exp" val="15886907222" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="227" />
+				<set name="consume_meal_in_normal" val="45" />
+				<set name="org_pattack" val="208.53" />
+				<set name="org_pdefend" val="123.75" />
+				<set name="org_mattack" val="317.81" />
+				<set name="org_mdefend" val="66" />
+				<set name="org_hp" val="3025.85" />
+				<set name="org_mp" val="1545.49" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="77">
+				<set name="max_meal" val="27802" />
+				<set name="exp" val="19943671652" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="232" />
+				<set name="consume_meal_in_normal" val="46" />
+				<set name="org_pattack" val="209.79" />
+				<set name="org_pdefend" val="124.5" />
+				<set name="org_mattack" val="319.73" />
+				<set name="org_mdefend" val="66.4" />
+				<set name="org_hp" val="3101.49" />
+				<set name="org_mp" val="1584.12" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="78">
+				<set name="max_meal" val="28358" />
+				<set name="exp" val="25420303633" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="237" />
+				<set name="consume_meal_in_normal" val="47" />
+				<set name="org_pattack" val="211.05" />
+				<set name="org_pdefend" val="125.25" />
+				<set name="org_mattack" val="321.66" />
+				<set name="org_mdefend" val="66.8" />
+				<set name="org_hp" val="3179.02" />
+				<set name="org_mp" val="1623.72" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="79">
+				<set name="max_meal" val="28925" />
+				<set name="exp" val="33087588407" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="241" />
+				<set name="consume_meal_in_normal" val="48" />
+				<set name="org_pattack" val="212.32" />
+				<set name="org_pdefend" val="126" />
+				<set name="org_mattack" val="323.58" />
+				<set name="org_mdefend" val="67.2" />
+				<set name="org_hp" val="3258.49" />
+				<set name="org_mp" val="1664.31" />
+				<set name="org_hp_regen" val="5" />
+				<set name="org_mp_regen" val="3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="80">
+				<set name="max_meal" val="29504" />
+				<set name="exp" val="44588515567" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="246" />
+				<set name="consume_meal_in_normal" val="49" />
+				<set name="org_pattack" val="213.58" />
+				<set name="org_pdefend" val="126.75" />
+				<set name="org_mattack" val="325.51" />
+				<set name="org_mdefend" val="67.6" />
+				<set name="org_hp" val="3339.95" />
+				<set name="org_mp" val="1705.91" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="81">
+				<set name="max_meal" val="30094" />
+				<set name="exp" val="61839906307" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="251" />
+				<set name="consume_meal_in_normal" val="50" />
+				<set name="org_pattack" val="214.84" />
+				<set name="org_pdefend" val="127.5" />
+				<set name="org_mattack" val="327.44" />
+				<set name="org_mdefend" val="68" />
+				<set name="org_hp" val="3440.14" />
+				<set name="org_mp" val="1757.08" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="82">
+				<set name="max_meal" val="30696" />
+				<set name="exp" val="87716992417" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="256" />
+				<set name="consume_meal_in_normal" val="51" />
+				<set name="org_pattack" val="216.11" />
+				<set name="org_pdefend" val="128.25" />
+				<set name="org_mattack" val="329.36" />
+				<set name="org_mdefend" val="68.4" />
+				<set name="org_hp" val="3543.34" />
+				<set name="org_mp" val="1809.79" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="83">
+				<set name="max_meal" val="31310" />
+				<set name="exp" val="126532621582" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="261" />
+				<set name="consume_meal_in_normal" val="52" />
+				<set name="org_pattack" val="217.37" />
+				<set name="org_pdefend" val="129" />
+				<set name="org_mattack" val="331.29" />
+				<set name="org_mdefend" val="68.8" />
+				<set name="org_hp" val="3649.64" />
+				<set name="org_mp" val="1864.08" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="84">
+				<set name="max_meal" val="31936" />
+				<set name="exp" val="184756065330" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="266" />
+				<set name="consume_meal_in_normal" val="53" />
+				<set name="org_pattack" val="218.64" />
+				<set name="org_pdefend" val="129.75" />
+				<set name="org_mattack" val="333.21" />
+				<set name="org_mdefend" val="69.2" />
+				<set name="org_hp" val="3759.12" />
+				<set name="org_mp" val="1920" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="85">
+				<set name="max_meal" val="32575" />
+				<set name="exp" val="272091230951" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="272" />
+				<set name="consume_meal_in_normal" val="54" />
+				<set name="org_pattack" val="219.9" />
+				<set name="org_pdefend" val="130.5" />
+				<set name="org_mattack" val="335.14" />
+				<set name="org_mdefend" val="69.6" />
+				<set name="org_hp" val="3871.89" />
+				<set name="org_mp" val="1977.6" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="86">
+				<set name="max_meal" val="33227" />
+				<set name="exp" val="403093979383" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="277" />
+				<set name="consume_meal_in_normal" val="55" />
+				<set name="org_pattack" val="221.16" />
+				<set name="org_pdefend" val="131.25" />
+				<set name="org_mattack" val="337.07" />
+				<set name="org_mdefend" val="70" />
+				<set name="org_hp" val="3988.04" />
+				<set name="org_mp" val="2036.92" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="87">
+				<set name="max_meal" val="33892" />
+				<set name="exp" val="599598102032" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="283" />
+				<set name="consume_meal_in_normal" val="57" />
+				<set name="org_pattack" val="222.43" />
+				<set name="org_pdefend" val="132" />
+				<set name="org_mattack" val="338.99" />
+				<set name="org_mdefend" val="70.4" />
+				<set name="org_hp" val="4107.68" />
+				<set name="org_mp" val="2098.02" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="88">
+				<set name="max_meal" val="34570" />
+				<set name="exp" val="953305522799" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="288" />
+				<set name="consume_meal_in_normal" val="58" />
+				<set name="org_pattack" val="223.69" />
+				<set name="org_pdefend" val="132.75" />
+				<set name="org_mattack" val="340.92" />
+				<set name="org_mdefend" val="70.8" />
+				<set name="org_hp" val="4230.91" />
+				<set name="org_mp" val="2160.96" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="89">
+				<set name="max_meal" val="35261" />
+				<set name="exp" val="1660720364334" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="294" />
+				<set name="consume_meal_in_normal" val="59" />
+				<set name="org_pattack" val="224.95" />
+				<set name="org_pdefend" val="133.5" />
+				<set name="org_mattack" val="342.84" />
+				<set name="org_mdefend" val="71.2" />
+				<set name="org_hp" val="4357.83" />
+				<set name="org_mp" val="2225.78" />
+				<set name="org_hp_regen" val="6" />
+				<set name="org_mp_regen" val="3.3" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="90">
+				<set name="max_meal" val="35966" />
+				<set name="exp" val="3775890740522" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="300" />
+				<set name="consume_meal_in_normal" val="60" />
+				<set name="org_pattack" val="226.22" />
+				<set name="org_pdefend" val="134.25" />
+				<set name="org_mattack" val="344.77" />
+				<set name="org_mdefend" val="71.6" />
+				<set name="org_hp" val="4488.56" />
+				<set name="org_mp" val="2292.55" />
+				<set name="org_hp_regen" val="7" />
+				<set name="org_mp_regen" val="3.6" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="91">
+				<set name="max_meal" val="36685" />
+				<set name="exp" val="14351742621463" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="306" />
+				<set name="consume_meal_in_normal" val="61" />
+				<set name="org_pattack" val="227.48" />
+				<set name="org_pdefend" val="135" />
+				<set name="org_mattack" val="346.7" />
+				<set name="org_mdefend" val="72" />
+				<set name="org_hp" val="4623.21" />
+				<set name="org_mp" val="2361.32" />
+				<set name="org_hp_regen" val="7.1" />
+				<set name="org_mp_regen" val="3.63" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="92">
+				<set name="max_meal" val="37419" />
+				<set name="exp" val="60885490897603" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="312" />
+				<set name="consume_meal_in_normal" val="62" />
+				<set name="org_pattack" val="228.75" />
+				<set name="org_pdefend" val="135.75" />
+				<set name="org_mattack" val="348.62" />
+				<set name="org_mdefend" val="72.4" />
+				<set name="org_hp" val="4761.9" />
+				<set name="org_mp" val="2432.15" />
+				<set name="org_hp_regen" val="7.2" />
+				<set name="org_mp_regen" val="3.66" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="93">
+				<set name="max_meal" val="38167" />
+				<set name="exp" val="265633983312619" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="318" />
+				<set name="consume_meal_in_normal" val="64" />
+				<set name="org_pattack" val="230.01" />
+				<set name="org_pdefend" val="136.5" />
+				<set name="org_mattack" val="350.55" />
+				<set name="org_mdefend" val="72.8" />
+				<set name="org_hp" val="4904.75" />
+				<set name="org_mp" val="2505.11" />
+				<set name="org_hp_regen" val="7.3" />
+				<set name="org_mp_regen" val="3.69" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="94">
+				<set name="max_meal" val="38930" />
+				<set name="exp" val="1166527349938690" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="325" />
+				<set name="consume_meal_in_normal" val="65" />
+				<set name="org_pattack" val="231.27" />
+				<set name="org_pdefend" val="137.25" />
+				<set name="org_mattack" val="352.47" />
+				<set name="org_mdefend" val="73.2" />
+				<set name="org_hp" val="5051.89" />
+				<set name="org_mp" val="2580.26" />
+				<set name="org_hp_regen" val="7.4" />
+				<set name="org_mp_regen" val="3.72" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="95">
+				<set name="max_meal" val="39709" />
+				<set name="exp" val="5130458163093410" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="331" />
+				<set name="consume_meal_in_normal" val="66" />
+				<set name="org_pattack" val="232.54" />
+				<set name="org_pdefend" val="138" />
+				<set name="org_mattack" val="354.4" />
+				<set name="org_mdefend" val="73.6" />
+				<set name="org_hp" val="5203.44" />
+				<set name="org_mp" val="2657.66" />
+				<set name="org_hp_regen" val="7.5" />
+				<set name="org_mp_regen" val="3.75" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="96">
+				<set name="max_meal" val="40503" />
+				<set name="exp" val="28914043042021700" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="338" />
+				<set name="consume_meal_in_normal" val="68" />
+				<set name="org_pattack" val="233.8" />
+				<set name="org_pdefend" val="138.75" />
+				<set name="org_mattack" val="356.33" />
+				<set name="org_mdefend" val="74" />
+				<set name="org_hp" val="5359.54" />
+				<set name="org_mp" val="2737.38" />
+				<set name="org_hp_regen" val="7.6" />
+				<set name="org_mp_regen" val="3.78" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="97">
+				<set name="max_meal" val="41313" />
+				<set name="exp" val="143075250460878000" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="345" />
+				<set name="consume_meal_in_normal" val="69" />
+				<set name="org_pattack" val="235.06" />
+				<set name="org_pdefend" val="139.5" />
+				<set name="org_mattack" val="358.25" />
+				<set name="org_mdefend" val="74.4" />
+				<set name="org_hp" val="5520.32" />
+				<set name="org_mp" val="2819.5" />
+				<set name="org_hp_regen" val="7.7" />
+				<set name="org_mp_regen" val="3.81" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="98">
+				<set name="max_meal" val="42139" />
+				<set name="exp" val="691049046071386000" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="351" />
+				<set name="consume_meal_in_normal" val="70" />
+				<set name="org_pattack" val="236.33" />
+				<set name="org_pdefend" val="140.25" />
+				<set name="org_mattack" val="360.18" />
+				<set name="org_mdefend" val="74.8" />
+				<set name="org_hp" val="5685.92" />
+				<set name="org_mp" val="2904.08" />
+				<set name="org_hp_regen" val="7.8" />
+				<set name="org_mp_regen" val="3.84" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="99">
+				<set name="max_meal" val="42982" />
+				<set name="exp" val="3321323265001830000" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="358" />
+				<set name="consume_meal_in_normal" val="72" />
+				<set name="org_pattack" val="237.59" />
+				<set name="org_pdefend" val="141" />
+				<set name="org_mattack" val="362.11" />
+				<set name="org_mdefend" val="75.2" />
+				<set name="org_hp" val="5856.49" />
+				<set name="org_mp" val="2991.2" />
+				<set name="org_hp_regen" val="7.9" />
+				<set name="org_mp_regen" val="3.87" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+			<stat level="100">
+				<set name="max_meal" val="43842" />
+				<set name="exp" val="3321323265001870000" />
+				<set name="get_exp_type" val="65" />
+				<set name="consume_meal_in_battle" val="366" />
+				<set name="consume_meal_in_normal" val="73" />
+				<set name="org_pattack" val="500" />
+				<set name="org_pdefend" val="500" />
+				<set name="org_mattack" val="500" />
+				<set name="org_mdefend" val="500" />
+				<set name="org_hp" val="6032.18" />
+				<set name="org_mp" val="3080.93" />
+				<set name="org_hp_regen" val="8.5" />
+				<set name="org_mp_regen" val="4" />
+				<set name="soulshot_count" val="2" />
+				<set name="spiritshot_count" val="2" />
+			</stat>
+		</stats>
+	</pet>
+</pets>

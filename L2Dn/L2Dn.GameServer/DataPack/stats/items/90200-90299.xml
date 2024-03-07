@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90200" name="Wolf Pelts" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Pelt of the Wolf who used to loiter on the outskirts of the village and raid tombs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90201" name="Orc Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Amulets that Orcs wear on their necks or hands. Despite looking like simple trinkets, they mean a lot to Orcs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90202" name="Werewolf's Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fang of a graverobbing Werewolf -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90203" name="Broken Sword" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A sword taken from an Orc Warrior who wandered near the village. The sword is in a very bad condition and is not suitable for use. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90204" name="Inventory Book" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials requested by Harry. Wooden pole, wooden door panels, Stone Powder -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90205" name="Wooden pole" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A wooden pole stolen by an Orc Captain and his Lieutenant. How about we put this pole on fire? -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90206" name="Wooden door panel" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. All what's left of a door taken by a Werewolf. Just what did he need it for? -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90207" name="Stone Powder" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Stone powder taken from Stone Golems and Destroyers. Used for building stone walls. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90208" name="Lector's Note" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials requested by Lector. Essence of Water, Spider's Silk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90209" name="Cobweb" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A light and shiny cobweb made by Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90210" name="Essence of Water" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Essence of Water obtained from Undine. Used for coloring Silk of Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90211" name="Lector's Note" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials requested by Lector. Essence of Water, Spider's Silk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90212" name="Cobweb" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A light and shiny cobweb made by Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90213" name="Essence of Water" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Essence of Water obtained from Undine. Used for coloring Silk of Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90214" name="Lector's Note" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials requested by Lector. Essence of Water, Spider's Silk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90215" name="Cobweb" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A light and shiny cobweb made by Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90216" name="Essence of Water" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Essence of Water obtained from Undine. Used for coloring Silk of Giant Spiders. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90217" name="Mark of Security" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Document of Sentinel Kendell listing tasks that need to be done to restore forest's balance. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90218" name="Tail of a Gray Wolf" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Tail taken from a Gray Wolf as a hunting trophy. The fur is good but it's not usable because of a foul smell. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90219" name="Goblin's Pack of Knickknacks" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A belt Pack of Knickknacks of a Goblin Raider. Contains various trash, but for Goblins it would be treasures. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90220" name="Kaboo Orc Sturdy Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. One of Amulets that Kaboo Orcs wear round their necks. Looks splendid. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90221" name="Mushroom Spore Powder" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Mushroom Spore Powder obtained from a Spore Fungus. Necessary for checking on spore ripening before harvest. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90222" name="Note about Required Ingredients" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Note that states the item needed for the entrance to the underground fortress. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90223" name="Orcs' Bandage" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Bandage of a Kaboo Orc Warrior. More elastic than an Elven bandage, created specifically for a close combat. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90224" name="Dryad's Crimson Herb" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Crimson Herb from the head of a Dryad. Put it onto your eyes to be able to see in the dark. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90225" name="Spider Venom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Venom of a spider dwelling in the Elven Forest. Highly poisonous for Orcs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90226" name="Brooch Lv. 1" additionalName="30-day" type="Armor">
+		<!-- A Lv. 1 brooch. Available for 30 d. Unlocks 2 jewel slots. -->
+		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90227" name="Jade Lv. 5" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. Atk. Spd./ Casting Spd. +14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="4320" />
+	</item>
+	<item id="90228" name="Medications Research" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Herbiel's research of a method of instant suppression of bleeding. These notes list necessary ingredients and various information, but the handwriting is really unreadable. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90229" name="Spider Ichor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Scavenger Spider Ichor. Obtained from spider guts in a very small quantity, hardens fast. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90230" name="Moonstone Beast's Scales" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Scales taken from the snout of Moonstone Beast. Has a yellowish iridescent glow and a peculiar smell that Elves find intolerable. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90231" name="Medications Research" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Herbiel's research of a method of instant suppression of bleeding. These notes list necessary ingredients and various information, but the handwriting is really unreadable. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90232" name="Spider Ichor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Scavenger Spider Ichor. Obtained from spider guts in a very small quantity, hardens fast. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90233" name="Moonstone Beast's Scales" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Scales taken from the snout of Moonstone Beast. Has a yellowish iridescent glow and a peculiar smell that Elves find intolerable. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90234" name="Medications Research" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Herbiel's research of a method of instant suppression of bleeding. These notes list necessary ingredients and various information, but the handwriting is really unreadable. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90235" name="Antidote" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Antidote from Gludio. So effective that it put Gludio on a par with the Ivory Tower in the business of making magical potions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90236" name="Arachnid Tracker Thorn" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Thorn from the paw of an Arachnid Tracker. Contains venom, that's why Goblins use it as a poisonous dart. Herbiel wants to make a syringe from it. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90237" name="Hunting Plan" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of Hierarch Talos that specifies materials needed for organizing a Hunting Festival. The event is called Shillien's Hunt and is intended to be festive, rather than formal. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90238" name="Wolf Tail" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Adornments made from colorful tails symbolize various trophies caught by hunters. During the festival tails are used to tally up the scores. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90239" name="Goblin Poisonous Dart" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. When Dark Elves go on a hunt, Goblins try to hamper them. They paralyze animals by throwing spears with poisonous darts at them to ruin the party. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90240" name="Imp Wing" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Imps chase after Goblins, and Goblins steal the trophies. Imp Wings are the marks left by Imps. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90241" name="Fungus Juice" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Despite the name, Green Fungus is brown-colored. And the juice of that walking fungus is red. Dark Elves use it to color wolf tails. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90242" name="Balor Orc Fang" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Balor Orc paint their fangs black by custom. You need to slay Balor Orcs who are impeding the hunt and gather their fangs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90243" name="Armor Design" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Payne's documents that contain designs of a new armor and lists of required materials. That armor is absolutely new, and nobody knows what kind of look it's going to have. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90244" name="Zombie Forest Elf Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Zombie Forest Elf Tooth. Filled with dark energy and the power of a Zombie spirit. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90245" name="Bat Skin" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Red-tinted black Bat Skin. Very popular among Dark Elf traders due to its unusual shine. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90246" name="Stone Giant's Shining Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Shiny rock fragment obtained while hunting Stone Giants. It will look great as a belt adornment. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90247" name="Old Bone Fragment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A small Bone Fragment that drops from a slain Dark Horror. Emits dark energy that increases magical abilities. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90248" name="Vital Stone Lv. 5" additionalName="3-day" type="Armor">
+		<!-- Available for 3 d. While Sayha's Grace is active, acquired XP/ SP +15%, Sayha's Grace Consumption -30%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="4320" />
+	</item>
+	<item id="90249" name="Supplies Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials needed for the shield that Vollodos wants to make. An urgent order. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90250" name="Stone Giant Guardian's Core" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Core that drops from a Stone Giant Guardian. Since it's light and durable, it is often placed as an adornment in the center of a shield. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90251" name="Crystalline Beast's Shinedust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Dust made from the skin of Crystalline Beasts or scales of Moonstone Beasts. It can repel magic and is often used for treating materials that require an additional protection from magic. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90252" name="Giant Spider Skin Fragment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Spider Skin Fragment. Spider skins are very smooth and strong. It is often used for joining together armor parts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90253" name="Supplies Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials needed for the shield that Vollodos wants to make. An urgent order. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90254" name="Stone Giant Guardian's Core" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Core that drops from a Stone Giant Guardian. Since it's light and durable, it is often placed as an adornment in the center of a shield. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90255" name="Crystalline Beast's Shinedust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Dust made from the skin of Crystalline Beasts or scales of Moonstone Beasts. It can repel magic and is often used for treating materials that require an additional protection from magic. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90256" name="Giant Spider Skin Fragment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Spider Skin Fragment. Spider skins are very smooth and strong. It is often used for joining together armor parts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90257" name="Supplies Certificate" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of materials needed for the shield that Vollodos wants to make. An urgent order. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90258" name="Stone Giant Guardian's Core" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Core that drops from a Stone Giant Guardian. Since it's light and durable, it is often placed as an adornment in the center of a shield. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90259" name="Crystalline Beast's Shinedust" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Dust made from the skin of Crystalline Beasts or scales of Moonstone Beasts. It can repel magic and is often used for treating materials that require an additional protection from magic. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90260" name="Giant Spider Skin Fragment" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Spider Skin Fragment. Spider skins are very smooth and strong. It is often used for joining together armor parts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90261" name="Tribal Chronicle" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Tiku's list that has all important tasks for his tribe. Not easily readable because of his bad handwriting. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90262" name="Kasha Wolf Fur" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fur of a Kasha Wolf. Much more valuable than its skin. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90263" name="Ashes of Ancestors" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Remains that were dug up by Goblin Grave Robber on ancestors' graveyard. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90264" name="Imp Necklace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Necklaces of Rakeclaw Imp Hunter who follow Goblin Grave Robbers and team up with them so they can feed on small animals or insects that appear out of raided tombs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90265" name="Mountain Fungus Spores" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Green Spore from Mountain Fungus. Orcs use it as one of ingredients for making poison for their traps. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90266" name="Maraku Werewolf Claw" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Maraku Werewolf Claw. Werewolves kidnapped Orc kids who went out for a walk near the Village. They need to be punished for it. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90267" name="Eye of Seer Tears" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Clear liquid from the pupil of the Eye of Seer. Heals wounds, speeds up recovery. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90268" name="Required Materials" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sumari's list specifying materials that gear requires. Looks like it was written by someone other than Sumari. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90269" name="Blackwing Bat Wing" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Membrane of a Blackwing Bat Wing. Very smooth and elastic. It will be a good material for a cloak or armor lining. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90270" name="Grave Robber's Belt" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. The Belt of Goblin Grave Robber Leader. It has various digging equipment attached. Can be altered to make a sword belt. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90271" name="Golem Ore" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ore that dropped from a Greystone Golem. Melts well, and thus often used for making various weapons. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90272" name="Evil Eye Patrol Hide" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Thick hide of an Evil Eye Patrol. After a proper treatment, turns into a very smooth and strong leather, suitable for coating armor. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90273" name="Magic Potion of Leaping Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- XP +37,000,000, SP +111,000. Required level: 45+. -->
+		<set name="icon" val="icon.etc_earth_potion_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90274" name="List of Materials" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Document listing materials needed for making a drill and an Exquisite Hammer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90275" name="Bear's Shin Bone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Kasha Bear's Shin bone. Used for making an Exquisite Hammer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90276" name="Sharp Spider Leg" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sharp Leg of Kasha Spider. Suitable for making a drill because of its hardness and an exceptionally sharp tip. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90277" name="List of Materials" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Document listing materials needed for making a drill and an Exquisite Hammer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90278" name="Bear's Shin Bone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Kasha Bear's Shin bone. Used for making an Exquisite Hammer. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90279" name="Sharp Spider Leg" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sharp Leg of Kasha Spider. Suitable for making a drill because of its hardness and an exceptionally sharp tip. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90280" name="Necklace Materials Ticket" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Note listing necessary materials, as well as Uska's belongings that were stolen by Imps. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90281" name="Red Gem" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Sumari asked Uska to use that gorgeous sparkling red jewel to adorn a necklace. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90282" name="Hard Lens" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Lens of Evil Eye Seer. Becomes very hard when dried. Ground Lens is used as a polisher for gems. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90283" name="Bounty Poster" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Bounty Poster with a reward for catching monsters who stole items from the shipping that was delivered by Weapon Merchant Reep. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90284" name="Black Wolf Tooth" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Black Wolf Tooth. Goblins use it for defense against wolves. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90285" name="Goblin's Navigation Device" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Navigation Device that Goblins used for scouting. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90286" name="Feather-adorned Utuku Orc Amulet" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Utuku Orcs like to wear seal-shaped Amulets on their belts. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90287" name="Goblin Brigand's Old Sword" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Goblin Brigands' Old Sword -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90288" name="Garum Werewolf Tail" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Tail chopped off a Garum Werewolf. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90289" name="Goblin Brigand Lieutenant's Necklace" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A Necklace that belongs to the Goblin Brigand Leader or his Lieutenant. Adorned with a plain pendant. It shows the commanding status of its owner. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90290" name="Temple Reconstruction Request" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. List of things for repairs of an inner room of Maphr's Temple -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90291" name="Barbed Bat Wing Sac" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A beautiful Sparkling Barbed Bat Wing Sac. Often used by dwarves to adorn weapons or as curtains at their homes. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90292" name="Puma Fur" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Fur of Northern Highlands Puma. Usually serves as a decoration of a house interior, but can be used as a cape material as well. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="etcitem_type" val="MATERIAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90293" name="Goblin Jewel" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Shiny small shard of a rock found among Goblin Brigand's junk. Goblins consider it a jewel and steal it from each other in a heartbeat if they can. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90294" name="Golem Ore" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Ore that can be found in the bodies of Golems or other magical creatures similar to them. This ore is used for producing a gleaming silver-like metal which is very malleable and easy to work with, and thus is used for making jewelry. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90296" name="Maintenance Request" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Materials required for the restoration of the broken Maphr's statue. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90297" name="Hunter Tarantula's Venom" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Though lethal, Hunter Tarantula's Venom is used as glue thanks to its ability to harden instantly. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90298" name="Plunder Tarantula's Kidney Stone" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A transparent stone that can be found in a body of Plunder Tarantula. Very smooth and shiny, used as an adornment. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90299" name="Maintenance Request" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Completed order for materials required for the restoration of the broken Maphr's statue. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SHOW_HTML" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="Bypass" />
+		<set name="material" val="PAPER" />
+	</item>
+</list>

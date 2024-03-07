@@ -1,0 +1,1925 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="93000" name="Test - Awoken Weapon: One-handed Sword" additionalName="Test" type="Weapon">
+		<!-- Test Item. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="1530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="bodypart" val="rhand" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+	<item id="93001" name="Test - Awoken Weapon: One-handed Blunt Weapon" additionalName="Test" type="Weapon">
+		<!-- Test Item. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1800" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="bodypart" val="rhand" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="rEvas">8</stat>
+			<stat type="randomDamage">19</stat>
+		</stats>
+	</item>
+	<item id="93002" name="Sayha's Blessing Pouch" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.pouch_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91641" min="1" max="3" chance="100" /> <!-- Sayha's Blessing - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93003" name="Sayha's Grace" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Sayha's Grace Consumption -10%. Duration: 20 min. -->
+		<set name="icon" val="icon.high_stone_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40059" level="1" /> <!-- Sayha's Grace -->
+		</skills>
+	</item>
+	<item id="93004" name="A-grade Accessories" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.accessory_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93005" name="B-grade Accessories" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.accessory_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93006" name="C-grade Accessories" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.accessory_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93007" name="A-grade Armor" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93008" name="B-grade Armor" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93009" name="C-grade Armor" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93010" name="A-grade Weapon" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93011" name="B-grade Weapon" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93012" name="C-grade Weapon" additionalName="Info Icon" type="EtcItem">
+		<!-- The item is not available. For raid reward information. The item is only to show the icon. -->
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93013" name="Queen Ant Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery Lv. 2>. P. Atk. +8%. P. Critical Damage +8%. P. Skill Critical Damage +8%. Max HP +12%. Available for 7 d. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39303" level="2" /> <!-- Queen Ant Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93014" name="Baium Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 2>. Skill Cooldown -3%. P. Def. +12%. M. Def. +12%. Silence Resistance +40%. Fear Resistance +40%. Paralysis Resistance +20%. Knockback Resistance +20%. Pull Resistance +20%. Available for 7 d. Boosts parameters when in inventory. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39302" level="2" /> <!-- Baium Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93015" name="Orfen Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery Lv. 2>. M. Atk. +8%. M. Skill Critical Damage +8%. Max MP +12%. Available for 7 d. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39304" level="2" /> <!-- Orfen Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93016" name="Queen Ant Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Queen Ant Doll's Sorcery>. P. Atk. +12%. P. Critical Damage +10%. P. Skill Critical Damage +10%. Max HP +15%. Available for 7 d. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39303" level="3" /> <!-- Queen Ant Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93017" name="Baium Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Baium Doll's Sorcery Lv. 3>. Skill Cooldown -4%. P. Def. +15%. M. Def. +15%. Silence Resistance +45%. Fear Resistance +45%. Paralysis Resistance +25%. Knockback Resistance +25%. Pull Resistance +25%. Available for 7 d. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39302" level="3" /> <!-- Baium Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93018" name="Orfen Doll" additionalName="7-day" type="EtcItem">
+		<!-- <Orfen Doll's Sorcery>. M. Atk. +15%. M. Skill Critical Damage +10%. Max MP +15%. Available for 7 d. Boosts stats when in inventory. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="39304" level="3" /> <!-- Orfen Doll's Sorcery -->
+		</skills>
+	</item>
+	<item id="93019" name="Package: Queen Ant Doll (Time-limited)" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain the following. Queen Ant Doll (7-day) -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93016" min="1" max="1" chance="100" /> <!-- Queen Ant Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93020" name="Package: Baium Doll (Time-litimed)" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain the following. Baium Doll (7-day) -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93017" min="1" max="1" chance="100" /> <!-- Baium Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93021" name="Package: Orfen Doll (Time-litimed)" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain the following. Orfen Doll (7-day) -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93018" min="1" max="1" chance="100" /> <!-- Orfen Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93022" name="Package: Queen Ant Doll Lv. 2" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93013" min="1" max="1" chance="100" /> <!-- Queen Ant Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93023" name="Package: Baium Doll Lv. 2" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93014" min="1" max="1" chance="100" /> <!-- Baium Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93024" name="Package: Orfen Doll Lv. 2" additionalName="7-day" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93015" min="1" max="1" chance="100" /> <!-- Orfen Doll - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="93025" name="A-grade Weapon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92930" min="1" max="1" chance="4.5454545" /> <!-- Tallum Blade - Sealed -->
+			<item id="92931" min="1" max="1" chance="4.5454545" /> <!-- Dragon Slayer - Sealed -->
+			<item id="92932" min="1" max="1" chance="4.5454545" /> <!-- Halberd - Sealed -->
+			<item id="92933" min="1" max="1" chance="4.5454545" /> <!-- Elemental Sword - Sealed -->
+			<item id="92934" min="1" max="1" chance="4.5454545" /> <!-- Sword of Miracles - Sealed -->
+			<item id="92935" min="1" max="1" chance="4.5454545" /> <!-- Elysian - Sealed -->
+			<item id="92936" min="1" max="1" chance="4.5454545" /> <!-- Dasparion's Staff - Sealed -->
+			<item id="92937" min="1" max="1" chance="4.5454545" /> <!-- Branch of the Mother Tree - Sealed -->
+			<item id="92938" min="1" max="1" chance="4.5454545" /> <!-- Bloody Orchid - Sealed -->
+			<item id="92939" min="1" max="1" chance="4.5454545" /> <!-- Soul Separator - Sealed -->
+			<item id="92940" min="1" max="1" chance="4.5454545" /> <!-- Bloody Tornado - Sealed -->
+			<item id="92941" min="1" max="1" chance="4.5454545" /> <!-- Dragon Grinder - Sealed -->
+			<item id="92942" min="1" max="1" chance="4.5454545" /> <!-- Carnage Bow - Sealed -->
+			<item id="92943" min="1" max="1" chance="4.5454545" /> <!-- Soul Bow - Sealed -->
+			<item id="92944" min="1" max="1" chance="4.5454545" /> <!-- Tallum Glaive - Sealed -->
+			<item id="92945" min="1" max="1" chance="4.5454545" /> <!-- Dark Legion's Edge - Sealed -->
+			<item id="92946" min="1" max="1" chance="4.5454545" /> <!-- Meteor Shower - Sealed -->
+			<item id="92950" min="1" max="1" chance="4.5454545" /> <!-- Infernal Master - Sealed -->
+			<item id="92951" min="1" max="1" chance="4.5454545" /> <!-- Spiritual Eye - Sealed -->
+			<item id="92952" min="1" max="1" chance="4.5454545" /> <!-- Flaming Dragon Skull - Sealed -->
+			<item id="92953" min="1" max="1" chance="4.5454545" /> <!-- Destroyer Hammer - Sealed -->
+			<item id="92954" min="1" max="1" chance="4.5454555" /> <!-- Doom Crusher - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93026" name="A-grade Armor Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="5287" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Breastplate -->
+			<item id="5288" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Gaiters -->
+			<item id="5289" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Helmet -->
+			<item id="5290" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Gloves -->
+			<item id="5291" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Boots -->
+			<item id="5293" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Plate Armor -->
+			<item id="5294" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Helmet -->
+			<item id="5295" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Gloves -->
+			<item id="5296" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Boots -->
+			<item id="5297" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Leather Armor -->
+			<item id="5298" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Leggings -->
+			<item id="5301" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Leather Armor -->
+			<item id="5304" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Tunic -->
+			<item id="5305" min="1" max="1" chance="3.44" /> <!-- Sealed Tallum Stockings -->
+			<item id="5308" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Robe -->
+			<item id="5311" min="1" max="1" chance="3.44" /> <!-- Sealed Armor of Nightmare -->
+			<item id="5312" min="1" max="1" chance="3.44" /> <!-- Sealed Helm of Nightmare -->
+			<item id="5313" min="1" max="1" chance="3.44" /> <!-- Sealed Gauntlets of Nightmare -->
+			<item id="5314" min="1" max="1" chance="3.44" /> <!-- Sealed Boots of Nightmare -->
+			<item id="5316" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Plate Armor -->
+			<item id="5317" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Circlet -->
+			<item id="5318" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Gauntlets -->
+			<item id="5319" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Boots -->
+			<item id="5320" min="1" max="1" chance="3.44" /> <!-- Sealed Leather Armor of Nightmare -->
+			<item id="5323" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Leather Armor -->
+			<item id="5326" min="1" max="1" chance="3.44" /> <!-- Sealed Robe of Nightmare -->
+			<item id="5329" min="1" max="1" chance="3.44" /> <!-- Sealed Majestic Robe -->
+			<item id="5292" min="1" max="1" chance="3.44" /> <!-- Sealed Dark Crystal Shield -->
+			<item id="5315" min="1" max="1" chance="3.44" /> <!-- Sealed Shield of Nightmare -->
+		</capsuled_items>
+	</item>
+	<item id="93027" name="PA Treasure Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92996" min="1" max="1" chance="19.9994" /> <!-- Ancient Resources - Sealed -->
+			<item id="92997" min="1" max="1" chance="19.9994" /> <!-- Old Unknown Resources - Sealed -->
+			<item id="92998" min="1" max="1" chance="19.9994" /> <!-- Old Shining Resources - Sealed -->
+			<item id="92999" min="1" max="1" chance="19.9994" /> <!-- Old High-grade Resources - Sealed -->
+			<item id="91763" min="1" max="1" chance="19.9994" /> <!-- PA Coin - Sealed -->
+			<item id="49683" min="1" max="1" chance="0.001" /> <!-- Talisman of Baium -->
+			<item id="93025" min="1" max="1" chance="0.001" /> <!-- A-grade Weapon Pack - Sealed -->
+			<item id="93026" min="1" max="1" chance="0.001" /> <!-- A-grade Armor Pack - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93028" name="Aden's Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_spinebone_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1450" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+		<skills>
+			<skill id="50370" level="1" /> <!-- Aden's Sword -->
+		</skills>
+	</item>
+	<item id="93029" name="Aden's Dagger" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.weapon_knife_o'_silenus_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1070" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">69</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">-3.75</stat>
+		</stats>
+		<skills>
+			<skill id="50371" level="1" /> <!-- Aden's Dagger -->
+		</skills>
+	</item>
+	<item id="93030" name="Aden's Bow" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_gastraphetes_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="reuse_delay" val="1500" />
+		<stats>
+			<stat type="pAtk">179</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+			<stat type="accCombat">-3.75</stat>
+		</stats>
+		<skills>
+			<skill id="50372" level="1" /> <!-- Aden's Bow -->
+		</skills>
+	</item>
+	<item id="93031" name="Aden's Club" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_war_pick_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1730" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="accCombat">8</stat>
+		</stats>
+		<skills>
+			<skill id="50373" level="1" /> <!-- Aden's Club -->
+		</skills>
+	</item>
+	<item id="93032" name="Aden's Two-handed Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_flamberge_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+		<skills>
+			<skill id="50374" level="1" /> <!-- Aden's Two-handed Sword -->
+		</skills>
+	</item>
+	<item id="93033" name="Aden's Two-handed Blunt Weapon" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_ghost_staff_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">77</stat>
+			<stat type="mAtk">69</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="accCombat">8</stat>
+		</stats>
+		<skills>
+			<skill id="50375" level="1" /> <!-- Aden's Two-handed Blunt Weapon -->
+		</skills>
+	</item>
+	<item id="93034" name="Aden's Spear" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_dwarven_trident_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2060" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="accCombat">-3.75</stat>
+		</stats>
+		<skills>
+			<skill id="50376" level="1" /> <!-- Aden's Spear -->
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+	</item>
+	<item id="93035" name="Aden's Fists" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_baghnakh_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1510" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="accCombat">8</stat>
+		</stats>
+		<skills>
+			<skill id="50377" level="1" /> <!-- Aden's Fists -->
+		</skills>
+	</item>
+	<item id="93036" name="Aden's Rapier" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Orcs/ Sylphs/ Dwarves/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">76</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
+		<skills>
+			<skill id="50378" level="1" /> <!-- Aden's Rapier -->
+		</skills>
+	</item>
+	<item id="93037" name="Aden's Ancient Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Humans/ Elves/ Dark Elves/ Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_schlaeger_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="enchant_enabled" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">87</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="accCombat">5</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
+		<skills>
+			<skill id="50379" level="1" /> <!-- Aden's Ancient Sword -->
+		</skills>
+	</item>
+	<item id="93038" name="Scroll: Enchant Aden's Weapon" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, fists, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same. Only for Aden's weapons. Maximum enchant value: +16.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="2019" level="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+		</skills>
+	</item>
+	<item id="93039" name="Worthy Warrior Transformation (No Face)" type="Armor">
+		<!-- When equipped, headgear, weapons and accessories are not removed. -->
+		<set name="icon" val="icon.gomdori_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="93040" name="Scroll: Enchant Adventurer's Agathion Griffin" additionalName="Sealed" type="EtcItem">
+		<!-- For Adventurer's Agathion Griffin only. Increases M. Def. when the agathion is enchanted. -->
+		<set name="icon" val="icon.star_scrl_of_ench_ag_2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40089" level="1" /> <!-- Scroll: Enchant Adventurer's Agathion Griffin -->
+		</skills>
+	</item>
+	<item id="93041" name="Adventurer's Cloak" additionalName="Sealed" type="Armor">
+		<set name="icon" val="icon.amor_goodness_cloak" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50302" level="1" /> <!-- Adventurer's Cloak -->
+		</skills>
+	</item>
+	<item id="93042" name="Adventurer's Belt" additionalName="Sealed" type="Armor">
+		<!-- Inventory slots +2, weight limit +1000. -->
+		<set name="icon" val="icon.belt_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50301" level="1" /> <!-- Adventurer's Belt -->
+		</skills>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
+	</item>
+	<item id="93043" name="Adventurer's Scroll: Enchant Hair Accessory" additionalName="Sealed" type="EtcItem">
+		<!-- For Adventurer's Sheep Hat. When enchanted, M. Def. +2. -->
+		<set name="icon" val="icon.scroll_of_unidentify_am_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" /> <!-- BLESS_ENCHT_AM -->
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40056" level="1" /> <!-- Scroll: Enchant Talisman of Eva -->
+		</skills>
+	</item>
+	<item id="93044" name="Adventurer's Sheep Hat" additionalName="Sealed" type="Armor">
+		<!-- A hat shaped like a sheep. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+	</item>
+	<item id="93045" name="Scroll: Enchant Adventurer's Cloak" additionalName="Sealed" type="EtcItem">
+		<!-- For Adventurer's Cloak only. -->
+		<set name="icon" val="icon.sayha2017_scrl" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" /> <!-- BLESS_ENCHT_AM -->
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40056" level="1" /> <!-- Scroll: Enchant Talisman of Eva -->
+		</skills>
+	</item>
+	<item id="93046" name="Scroll: Enchant Adventurer's Belt" additionalName="Sealed" type="EtcItem">
+		<!-- For Adventurer's Belt only. -->
+		<set name="icon" val="icon.etc_training_scroll_kalie_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" /> <!-- BLESS_ENCHT_AM -->
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40056" level="1" /> <!-- Scroll: Enchant Talisman of Eva -->
+		</skills>
+	</item>
+	<item id="93047" name="Samurai Long Sword" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_samurai_old_longsword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1380" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="pAtkRange">40</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+	<item id="93048" name="Demon's Staff" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_demons_staff_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="990" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="C" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">134</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93049" name="Ecliptic Axe" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="C" />
+		<set name="bodypart" val="rhand" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93050" name="Crystal Dagger" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders.></font> -->
+		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93051" name="Eminence Bow" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_eminence_bow_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1720" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">323</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="93052" name="Orcish Poleaxe" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="1950" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+	</item>
+	<item id="93053" name="Katana*Katana" additionalName="Sealed" type="Weapon">
+		<!-- When enchanting dual swords, two-handed swords/ blunts and fists, the P. Atk. bonus is higher than that of one-handed weapons. <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2270" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93054" name="Yaksa Mace" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1640" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="C" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93055" name="Berserker Blade" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_berserker_blade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1380" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93056" name="Great Pata" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_great_pata_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;90" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1460" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93057" name="Admiral's Estoc" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Orcs/ Sylphs/ Dwarves/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_blink_slasher_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="RAPIER" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="C" />
+		<set name="bodypart" val="rhand" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">149</stat>
+			<stat type="mAtk">110</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">60</stat>
+		</stats>
+	</item>
+	<item id="93058" name="Saber Tooth" additionalName="Sealed" type="Weapon">
+		<!-- <font color=ff6666><Unavailable to Humans/ Elves/ Dark Elves/ Sylphs/ Vanguard Riders/ Assassins.></font> -->
+		<set name="icon" val="icon.weapon_invincible_blade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ANCIENTSWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="2" />
+		<set name="ensoulSpecialSlots" val="1" />
+		<set name="crystal_type" val="C" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pAtk">172</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">5</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93059" name="Spellbook: Mount Glory of Champion" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn how to ride Glorious Steed. <Classes>. All classes (excluding Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider). <Skill effect>. Allows to mount Glorious Steed. Rider classes (Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider) can use the item after the 3rd class change to learn the Wild Health skill that enhances their mount beast's abilities. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40095" level="1" /> <!-- Spellbook: Mount Glory of Champion -->
+		</skills>
+	</item>
+	<item id="93060" name="Spellbook: Mount White Wing" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn how to ride White Wing. <Classes>. All classes (excluding Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider). <Skill effect>. Allows to mount White Wing. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40096" level="1" /> <!-- Spellbook: Mount White Wing -->
+		</skills>
+	</item>
+	<item id="93061" name="Spellbook: Mount Shining Lady" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn how to ride Shining Lady. Shining Lady can use the Silent Ride skill. <Classes>. All classes (excluding Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider). <Skill effect>. Allows to mount Shining Lady. Rider classes (Orc Lancer/ Wolf Master/ Dragoon/ Vanguard Rider) can use the item after the 3rd class change to learn the Wild Movement skill that enhances their mount beast's abilities. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40097" level="1" /> <!-- Spellbook: Mount Shining Lady -->
+		</skills>
+	</item>
+	<item id="93062" name="Hat of Glory" additionalName="Sealed" type="Armor">
+		<!-- A plumed hat with wide flaps. STR +1, INT+1, HP +300. <font color=eeaa22>Equipped in the left head accessory slot.</font> -->
+		<set name="icon" val="icon.accessory_archer_hat_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<skills>
+			<skill id="50304" level="1" /> <!-- Hat of Glory -->
+		</skills>
+	</item>
+	<item id="93063" name="Inventory Expansion Ticket of Glory" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn Expand Inventory of Glory. <Classes>. All. <Skill effect>. Increases the number of inventory slots. -->
+		<set name="icon" val="icon.etc_summon_subjob_skillbook_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40093" level="1" /> <!-- Inventory Expansion Ticket of Glory -->
+		</skills>
+	</item>
+	<item id="93064" name="Weight Limit Ticket of Glory" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn Increased Weight Limit of Glory. <Classes>. All. <Skill effect>. Increases weight limit. -->
+		<set name="icon" val="icon.etc_summon_subjob_skillbook_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40094" level="1" /> <!-- Weight Limit Ticket of Glory -->
+		</skills>
+	</item>
+	<item id="93065" name="Adventurer's Rough Jewel Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- Fragments of an unknown jewel. Max HP +10. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_crystal_piece_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="50187" level="2" /> <!-- Adventurer's Rough Jewel -->
+		</skills>
+	</item>
+	<item id="93066" name="Top-grade Candy Ingredients" additionalName="Sealed" type="EtcItem">
+		<!-- After charging, craft points +50,000. -->
+		<set name="icon" val="icon.etc_lucky_pocket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93067" name="Sayha's Grace" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Sayha's Grace Consumption -10%. Duration: 20 min. -->
+		<set name="icon" val="icon.high_stone_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="40098" level="1" /> <!-- Sayha's Grace -->
+		</skills>
+	</item>
+	<item id="93068" name="Red Lantern - 1st Place" additionalName="Sealed" type="EtcItem">
+		<!-- XP +100,000,000, SP +270,000. Cannot be exchanged for the lit lantern. -->
+		<set name="icon" val="icon.r99_soul_stone_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50140" level="1" /> <!-- Red Lantern - 1st Place -->
+		</skills>
+	</item>
+	<item id="93069" name="Purple Lantern - 2nd Place" additionalName="Sealed" type="EtcItem">
+		<!-- XP +30,000,000, SP +81,000. Cannot be exchanged for the lit lantern. -->
+		<set name="icon" val="icon.r99_soul_stone_i05" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50141" level="1" /> <!-- Purple Lantern - 2nd Place -->
+		</skills>
+	</item>
+	<item id="93070" name="Blue Lantern - 3rd Place" additionalName="Sealed" type="EtcItem">
+		<!-- XP +10,000,000, SP +27,000. Cannot be exchanged for the lit lantern. -->
+		<set name="icon" val="icon.r99_soul_stone_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50142" level="1" /> <!-- Blue Lantern - 3rd Place -->
+		</skills>
+	</item>
+	<item id="93071" name="Green Lantern - 4th Place" additionalName="Sealed" type="EtcItem">
+		<!-- XP +5,000,000, SP +13,500. Cannot be exchanged for the lit lantern. -->
+		<set name="icon" val="icon.r99_soul_stone_i04" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50143" level="1" /> <!-- Green Lantern - 4th Place -->
+		</skills>
+	</item>
+	<item id="93072" name="Star Candy" additionalName="Sealed" type="EtcItem">
+		<!-- Sayha's Grace points +10,000. -->
+		<set name="icon" val="BranchSys.icon.br_valentine_agathion_pack_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="54090" level="1" /> <!-- Star Candy -->
+		</skills>
+	</item>
+	<item id="93073" name="Sayha's Storm Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. Sayha's Grace Consumption +100%. Acquired XP +200%. Acquired SP +200%. Duration: 20 min. Cooldown: 1 min. The effect remains after death. <font color=eeaa22>(Requires 35,000+ Sayha's Grace.)</font> -->
+		<set name="icon" val="icon.bm_sayha_storm" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="51436" level="1" /> <!-- Sayha's Storm Lv. 3 (Event) -->
+		</skills>
+	</item>
+	<item id="93074" name="Blue Lantern - 3rd Place" additionalName="Sealed" type="EtcItem">
+		<!-- Quest item. XP +10,000,000, SP +27,000. Cannot be exchanged for the lit lantern. -->
+		<set name="icon" val="icon.r99_soul_stone_i02" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="50142" level="1" /> <!-- Blue Lantern -->
+		</skills>
+	</item>
+	<item id="93075" name="Gloves of Silence" type="Armor">
+		<!-- <Properties>. STR +1. INT +1. Max HP +150. Atk. Spd. +8%. Casting Spd. +15% -->
+		<set name="icon" val="icon.armor_t94_g_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="enchant_enabled" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50305" level="1" /> <!-- Gloves of Silence -->
+			<skill id="50307" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="83222" level="3" type="ON_BLESSING" /> <!-- Armor Blessing Effect -->
+			<skill id="83197" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83198" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83199" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93076" name="Gloves of Silence" additionalName="Sealed" type="Armor">
+		<!-- <Properties>. STR +1. INT +1. Max HP +150. Atk. Spd. +8%. Casting Spd. +15% -->
+		<set name="icon" val="icon.armor_t94_g_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="540" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
+		<skills>
+			<skill id="50305" level="1" /> <!-- Gloves of Silence -->
+			<skill id="50307" level="1" type="ON_ENCHANT" type_value="1" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="2" type="ON_ENCHANT" type_value="2" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="3" type="ON_ENCHANT" type_value="3" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="4" type="ON_ENCHANT" type_value="4" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="5" type="ON_ENCHANT" type_value="5" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="6" type="ON_ENCHANT" type_value="6" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="7" type="ON_ENCHANT" type_value="7" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="8" type="ON_ENCHANT" type_value="8" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="9" type="ON_ENCHANT" type_value="9" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="50307" level="10" type="ON_ENCHANT" type_value="10" /> <!-- Enchant Effect: Gloves of Silence -->
+			<skill id="83222" level="3" type="ON_BLESSING" /> <!-- Armor Blessing Effect -->
+			<skill id="83197" level="1" type="ON_BLESSING" type_value="6" /> <!-- +6 Blessing Effect -->
+			<skill id="83198" level="1" type="ON_BLESSING" type_value="7" /> <!-- +7 Blessing Effect -->
+			<skill id="83199" level="1" type="ON_BLESSING" type_value="8" /> <!-- +8 Blessing Effect -->
+		</skills>
+	</item>
+	<item id="93077" name="Fortune Letter Box" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="3875" min="1" max="1" chance="5.884" /> <!-- Letter A - Sealed -->
+			<item id="3876" min="1" max="1" chance="5.876" /> <!-- Letter C - Sealed -->
+			<item id="3877" min="1" max="1" chance="5.876" /> <!-- Letter E - Sealed -->
+			<item id="3878" min="1" max="1" chance="5.876" /> <!-- Letter F - Sealed -->
+			<item id="3879" min="1" max="1" chance="5.876" /> <!-- Letter G - Sealed -->
+			<item id="3880" min="1" max="1" chance="5.876" /> <!-- Letter H - Sealed -->
+			<item id="3881" min="1" max="1" chance="5.876" /> <!-- Letter I - Sealed -->
+			<item id="3882" min="1" max="1" chance="5.876" /> <!-- Letter L - Sealed -->
+			<item id="3883" min="1" max="1" chance="5.876" /> <!-- Letter N - Sealed -->
+			<item id="3884" min="1" max="1" chance="5.876" /> <!-- Letter O - Sealed -->
+			<item id="3885" min="1" max="1" chance="5.876" /> <!-- Letter R - Sealed -->
+			<item id="3886" min="1" max="1" chance="5.876" /> <!-- Letter S - Sealed -->
+			<item id="3887" min="1" max="1" chance="5.876" /> <!-- Letter T - Sealed -->
+			<item id="3888" min="1" max="1" chance="0.1" /> <!-- Number II - Sealed -->
+			<item id="13417" min="1" max="1" chance="5.876" /> <!-- Letter Y - Sealed -->
+			<item id="34956" min="1" max="1" chance="5.876" /> <!-- Letter M - Sealed -->
+			<item id="92021" min="1" max="1" chance="5.876" /> <!-- Letter D - Sealed -->
+			<item id="92022" min="1" max="1" chance="5.876" /> <!-- Letter P - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93078" name="Special Box of Useful Items" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sayha2017_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91781" min="2" max="2" chance="100" /> <!-- Old Sayha's Buff Scroll - Sealed -->
+			<item id="91780" min="2" max="2" chance="100" /> <!-- Old Battle Scroll - Sealed -->
+			<item id="91712" min="2" max="2" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="49674" min="2" max="2" chance="100" /> <!-- XP Growth Scroll - Sealed -->
+			<item id="92990" min="1" max="1" chance="100" /> <!-- Boss' Weapon Pack - Sealed -->
+			<item id="91119" min="1" max="1" chance="100" /> <!-- Ignis' Necklace -->
+			<item id="91121" min="1" max="1" chance="100" /> <!-- Procella's Necklace -->
+			<item id="91123" min="1" max="1" chance="100" /> <!-- Petram's Necklace -->
+			<item id="91117" min="1" max="1" chance="100" /> <!-- Nebula's Necklace -->
+			<item id="93075" min="1" max="1" chance="100" /> <!-- Gloves of Silence -->
+			<item id="93076" min="1" max="1" chance="100" /> <!-- Gloves of Silence - Sealed -->
+			<item id="92401" min="1" max="1" chance="100" /> <!-- Spellbook: White Guardian -->
+			<item id="91944" min="1" max="1" chance="100" /> <!-- Spellbook: Light Master Lv. 2 -->
+			<item id="91945" min="1" max="1" chance="100" /> <!-- Spellbook: Shadow Master Lv. 2 -->
+			<item id="90934" min="1" max="1" chance="100" /> <!-- Brooch Lv. 3 -->
+			<item id="49703" min="1" max="1" chance="100" /> <!-- Talisman Bracelet Lv. 4 -->
+			<item id="92034" min="1" max="1" chance="100" /> <!-- Reinforced Jewelry Box -->
+			<item id="91227" min="1" max="1" chance="100" /> <!-- Sayha's Cloak Coupon -->
+			<item id="91159" min="1" max="1" chance="100" /> <!-- Agathion Exchange Coupon -->
+			<item id="91952" min="1" max="1" chance="100" /> <!-- Ring of Insolence -->
+			<item id="91953" min="1" max="1" chance="100" /> <!-- Dragon Valley's Earring -->
+			<item id="91864" min="1" max="1" chance="100" /> <!-- Dragon Belt Pack - Sealed -->
+			<item id="92020" min="1" max="1" chance="100" /> <!-- Enchant Kit: Talisman of Eva - Sealed -->
+			<item id="91767" min="1" max="1" chance="100" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+			<item id="91757" min="2" max="2" chance="100" /> <!-- Magic Lamp Charging Potion - Sealed -->
+			<item id="93080" min="1" max="1" chance="100" /> <!-- Charging Stone of Regular Craft - 1 Charge - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="93079" name="Treasure Chest of Glory" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="95803" min="1" max="1" chance="100" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			<item id="95812" min="1" max="1" chance="100" /> <!-- Hardin's Soul Crystal Lv. 10 - Rare -->
+			<item id="91145" min="1" max="1" chance="2.941176" /> <!-- Venir's Talisman Lv. 24 - Sealed -->
+			<item id="91982" min="1" max="1" chance="2.941176" /> <!-- +10 Special White Sayha's Cloak Chest -->
+			<item id="95812" min="1" max="1" chance="2.941176" /> <!-- Hardin's Soul Crystal Lv. 10 - Rare -->
+			<item id="94413" min="1" max="1" chance="2.941176" /> <!-- Package: +2 Frintezza's Necklace - Sealed -->
+			<item id="94418" min="1" max="1" chance="2.941176" /> <!-- Package: +2 Antharas' Earring - Sealed -->
+			<item id="94388" min="1" max="1" chance="2.941176" /> <!-- Package: +2 Queen Ant's Ring - Sealed -->
+			<item id="91601" min="1" max="1" chance="2.941176" /> <!-- Dimensional Talisman Lv. 10 -->
+			<item id="91075" min="1" max="1" chance="2.941176" /> <!-- Radiant Talisman of Authority Lv. 5 -->
+			<item id="94408" min="1" max="1" chance="2.941176" /> <!-- Package: +2 Zaken's Earring - Sealed -->
+			<item id="94403" min="1" max="1" chance="2.941176" /> <!-- Package: +2 Baium's Ring - Sealed -->
+			<item id="49683" min="1" max="1" chance="2.941176" /> <!-- Talisman of Baium -->
+			<item id="91248" min="1" max="1" chance="2.941176" /> <!-- Blessed Dragon Pendant -->
+			<item id="91625" min="1" max="1" chance="2.941176" /> <!-- S-grade Weapon Pack -->
+			<item id="92401" min="1" max="1" chance="2.941176" /> <!-- Spellbook: White Guardian -->
+			<item id="91626" min="1" max="1" chance="2.941176" /> <!-- S-grade Armor Pack -->
+			<item id="91722" min="1" max="1" chance="2.941176" /> <!-- Scroll: Enchant Special Sayha's Cloak -->
+			<item id="91304" min="1" max="1" chance="2.941176" /> <!-- Brooch Lv. 5 -->
+			<item id="91717" min="1" max="1" chance="2.941176" /> <!-- High-grade Stable Scroll: Enchant S-grade Weapon -->
+			<item id="91623" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant High-grade Agathion -->
+			<item id="22221" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant S-grade Weapon -->
+			<item id="91718" min="1" max="1" chance="2.941176" /> <!-- High-grade Stable Scroll: Enchant S-grade Armor -->
+			<item id="22222" min="1" max="1" chance="2.941176" /> <!-- Stable Scroll: Enchant S-grade Armor -->
+			<item id="91470" min="1" max="1" chance="2.941176" /> <!-- High-grade Stable Scroll: Enchant A-grade Weapon -->
+			<item id="91471" min="1" max="1" chance="2.941176" /> <!-- High-grade Stable Scroll: Enchant A-grade Armor -->
+			<item id="91468" min="1" max="1" chance="2.941176" /> <!-- High-grade Stable Scroll: Enchant B-grade Weapon -->
+			<item id="95803" min="1" max="1" chance="2.941176" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			<item id="91356" min="1" max="1" chance="2.941176" /> <!-- Jewel Energy -->
+			<item id="90144" min="2" max="2" chance="2.941176" /> <!-- Transformation Scroll: White Assassin -->
+			<item id="91282" min="2" max="2" chance="2.941176" /> <!-- Mysterious Transformation Box -->
+			<item id="91028" min="2" max="2" chance="2.941176" /> <!-- High-grade Maliss' HP Recovery Potion -->
+			<item id="91713" min="3" max="3" chance="2.941176" /> <!-- Sayha's Storm -->
+			<item id="13016" min="5" max="5" chance="2.941176" /> <!-- My Teleport Scroll -->
+			<item id="49845" min="3" max="3" chance="2.941176" /> <!-- Sayha's Blessing -->
+		</capsuled_items>
+	</item>
+	<item id="93080" name="Charging Stone of Random Craft - 1 Charge" additionalName="Sealed" type="EtcItem">
+		<!-- After charging, a number of craft efforts +1. -->
+		<set name="icon" val="icon.etc_chaser_stone" />
+		<set name="material" val="LIQUID" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="40086" level="1" /> <!-- Craft points 1000000 -->
+		</skills>
+	</item>
+	<item id="93081" name="Memorable Achievement Reward for Lv. 90" type="EtcItem">
+		<!-- Obtained after Lv. 90 is achieved. You can get a special reward. -->
+		<set name="icon" val="icon.etc_question_mark_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93082" name="Stone of Purity" additionalName="Sealed" type="EtcItem">
+		<!-- After charging, craft points +100,000. -->
+		<set name="icon" val="icon.etc_crystal_ball_white_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93083" name="Wooden Sigil" type="Armor">
+		<set name="icon" val="icon.arcana_sigil_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="920" />
+		<stats>
+			<stat type="pDef">4</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93084" name="Elven Sigil" type="Armor">
+		<set name="icon" val="icon.weapon_pricklelotus_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1350" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">7</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93085" name="Chain Sigil" type="Armor">
+		<set name="icon" val="icon.belleface_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1220" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93086" name="Sigil of Demon" type="Armor">
+		<set name="icon" val="icon.verper_sigil_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1280" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">17</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93087" name="Sigil of Blue Wolf" type="Armor">
+		<set name="icon" val="icon.airtoil_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="DAMASCUS" />
+		<set name="weight" val="1210" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">25</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93088" name="Avadon Sigil" type="Armor">
+		<set name="icon" val="icon.dynasty_sigil_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="DAMASCUS" />
+		<set name="weight" val="1210" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">21</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93089" name="Doom Sigil" type="Armor">
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1200" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">23</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93090" name="Zubei's Sigil" type="Armor">
+		<set name="icon" val="icon.weapon_dynaksus_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1210" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">21</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93091" name="Dark Crystal Sigil" type="Armor">
+		<set name="icon" val="icon.weapon_r110_sigil" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1190" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">24</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93092" name="Tallum Sigil" type="Armor">
+		<set name="icon" val="icon.weapon_tysandy_sigil_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1190" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">24</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93093" name="Sigil of Nightmare" type="Armor">
+		<set name="icon" val="icon.verper_sigil_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1180" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">25</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93094" name="Majestic Sigil" type="Armor">
+		<set name="icon" val="icon.weapon_karyen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="SIGIL" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="1180" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">43</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="93095" name="Test - Quest is Beginning" additionalName="Test" type="EtcItem">
+		<!-- Test Item. Quest item for testing. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="START_QUEST" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="93096" name="Red Libra Coin (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A coin minted in the Red Libra Guild. <How to use>. Grocer Pink. Special craft: Spellbook Coupon - 3 Stars -->
+		<set name="icon" val="icon.etc_coins_gold_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93097" name="Red Libra Gold Bar" type="EtcItem">
+		<!-- Can be obtained after playing dice for Red Libra Coins with Wealthy Merchant Red. Required for sealed equipment exchanging through Craftsman Black. -->
+		<set name="icon" val="icon.etc_lump_gold_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="93098" name="Battle Scroll (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +200. M. Atk. +350. P. Def. +200. M. Def. +200. Atk. Spd. +50. Casting Spd. +50. Max HP +500. Max MP +500. Max CP +500. P. Critical Rate +30. M. Critical Rate +30. Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.ev_charge_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="40106" level="1" /> <!-- Battle Scroll (Event) Lv1 -->
+		</skills>
+	</item>
+	<item id="93099" name="Life Stone Lv. 1 - Shield/ Sigil" type="EtcItem">
+		<set name="icon" val="icon.r_mineral_special_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="2" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

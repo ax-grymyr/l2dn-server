@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="212" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Dragon Valley (80-99) -->
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="127062" y="114038" z="-3512" />
+		</enter>
+		<exit type="TOWN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="80" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group>
+			<npc id="34120" x="127023" y="113938" z="-3512" heading="12505" /> <!-- Manager Kate -->
+		</group>
+		<group name="monsters" spawnByDefault="false">
+			<npc id="22147" x="127607" y="114301" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127656" y="114309" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127595" y="114370" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127644" y="114378" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127582" y="114439" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127632" y="114447" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127570" y="114508" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127619" y="114516" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127558" y="114577" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22147" x="127607" y="114585" z="-3520" heading="35762" /> <!-- Cave Maiden -->
+			<npc id="22148" x="127846" y="113833" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127895" y="113842" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127834" y="113902" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127883" y="113911" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127822" y="113971" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127871" y="113980" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127809" y="114040" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127859" y="114049" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127797" y="114109" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22148" x="127847" y="114118" z="-3520" heading="33282" /> <!-- Cave Keeper -->
+			<npc id="22149" x="127846" y="113833" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127895" y="113842" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127834" y="113902" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127883" y="113911" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127822" y="113971" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127871" y="113980" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127809" y="114040" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127859" y="114049" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127797" y="114109" z="-3520" heading="33282" /> <!-- Headless Knight -->
+			<npc id="22149" x="127847" y="114118" z="-3520" heading="33282" /> <!-- Headless Knight -->
+		</group>
+		<group name="treasures" spawnByDefault="false">
+			<npc id="22150" x="127388" y="114437" z="-3520" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="127676" y="113754" z="-3520" heading="37604" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="128011" y="113804" z="-3520" heading="32767" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="127856" y="114423" z="-3520" heading="48103" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="127428" y="114729" z="-3520" heading="37604" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="126998" y="114644" z="-3520" heading="32767" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian" spawnByDefault="false">
+			<npc id="22335" x="127720" y="114210" z="-3536" heading="35014" /> <!-- Dragon Warden -->
+		</group>
+	</spawnlist>
+</instance>

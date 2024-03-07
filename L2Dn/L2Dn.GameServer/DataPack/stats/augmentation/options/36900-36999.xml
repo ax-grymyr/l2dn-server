@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="36900" name="option_id_36900">
+		<!-- Max HP +32 -->
+	</option>
+	<option id="36901" name="option_id_36901">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="36902" name="option_id_36902">
+		<!-- Max HP +40 -->
+	</option>
+	<option id="36903" name="option_id_36903">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="36904" name="option_id_36904">
+		<!-- Max MP +5 -->
+	</option>
+	<option id="36905" name="option_id_36905">
+		<!-- Max MP +6 -->
+	</option>
+	<option id="36906" name="option_id_36906">
+		<!-- Max MP +7 -->
+	</option>
+	<option id="36907" name="option_id_36907">
+		<!-- Max MP +8 -->
+	</option>
+	<option id="36908" name="option_id_36908">
+		<!-- Max MP +9 -->
+	</option>
+	<option id="36909" name="option_id_36909">
+		<!-- Max MP +10 -->
+	</option>
+	<option id="36910" name="option_id_36910">
+		<!-- Max MP +12 -->
+	</option>
+	<option id="36911" name="option_id_36911">
+		<!-- Max MP +14 -->
+	</option>
+	<option id="36912" name="option_id_36912">
+		<!-- Max MP +16 -->
+	</option>
+	<option id="36913" name="option_id_36913">
+		<!-- Max MP +18 -->
+	</option>
+	<option id="36914" name="option_id_36914">
+		<!-- Max MP +20 -->
+	</option>
+	<option id="36915" name="option_id_36915">
+		<!-- Max MP +22 -->
+	</option>
+	<option id="36916" name="option_id_36916">
+		<!-- Max MP +24 -->
+	</option>
+	<option id="36917" name="option_id_36917">
+		<!-- Max MP +26 -->
+	</option>
+	<option id="36918" name="option_id_36918">
+		<!-- Max MP +28 -->
+	</option>
+	<option id="36919" name="option_id_36919">
+		<!-- Max MP +30 -->
+	</option>
+	<option id="36920" name="option_id_36920">
+		<!-- Max MP +32 -->
+	</option>
+	<option id="36921" name="option_id_36921">
+		<!-- Max MP +35 -->
+	</option>
+	<option id="36922" name="option_id_36922">
+		<!-- Max MP +40 -->
+	</option>
+	<option id="36923" name="option_id_36923">
+		<!-- Max MP +50 -->
+	</option>
+	<option id="36924" name="option_id_36924">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36925" name="option_id_36925">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36926" name="option_id_36926">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36927" name="option_id_36927">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36928" name="option_id_36928">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36929" name="option_id_36929">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36930" name="option_id_36930">
+		<!-- P. Evasion +1.0 -->
+	</option>
+	<option id="36931" name="option_id_36931">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="36932" name="option_id_36932">
+		<!-- P. Evasion +1.1 -->
+	</option>
+	<option id="36933" name="option_id_36933">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="36934" name="option_id_36934">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="36935" name="option_id_36935">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="36936" name="option_id_36936">
+		<!-- P. Evasion +1.2 -->
+	</option>
+	<option id="36937" name="option_id_36937">
+		<!-- P. Evasion +1.3 -->
+	</option>
+	<option id="36938" name="option_id_36938">
+		<!-- P. Evasion +1.4 -->
+	</option>
+	<option id="36939" name="option_id_36939">
+		<!-- P. Evasion +1.5 -->
+	</option>
+	<option id="36940" name="option_id_36940">
+		<!-- P. Evasion +1.7 -->
+	</option>
+	<option id="36941" name="option_id_36941">
+		<!-- P. Evasion +1.8 -->
+	</option>
+	<option id="36942" name="option_id_36942">
+		<!-- P. Evasion +2.0 -->
+	</option>
+	<option id="36943" name="option_id_36943">
+		<!-- P. Evasion +3.0 -->
+	</option>
+	<option id="36944" name="option_id_36944">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36945" name="option_id_36945">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36946" name="option_id_36946">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36947" name="option_id_36947">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36948" name="option_id_36948">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36949" name="option_id_36949">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36950" name="option_id_36950">
+		<!-- M. Evasion +1.0 -->
+	</option>
+	<option id="36951" name="option_id_36951">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36952" name="option_id_36952">
+		<!-- M. Evasion +1.1 -->
+	</option>
+	<option id="36953" name="option_id_36953">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36954" name="option_id_36954">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36955" name="option_id_36955">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36956" name="option_id_36956">
+		<!-- M. Evasion +1.2 -->
+	</option>
+	<option id="36957" name="option_id_36957">
+		<!-- M. Evasion +1.3 -->
+	</option>
+	<option id="36958" name="option_id_36958">
+		<!-- M. Evasion +1.4 -->
+	</option>
+	<option id="36959" name="option_id_36959">
+		<!-- M. Evasion +1.5 -->
+	</option>
+	<option id="36960" name="option_id_36960">
+		<!-- M. Evasion +1.7 -->
+	</option>
+	<option id="36961" name="option_id_36961">
+		<!-- M. Evasion +1.8 -->
+	</option>
+	<option id="36962" name="option_id_36962">
+		<!-- M. Evasion +2.0 -->
+	</option>
+	<option id="36963" name="option_id_36963">
+		<!-- M. Evasion +3.0 -->
+	</option>
+	<option id="36964" name="option_id_36964">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36965" name="option_id_36965">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36966" name="option_id_36966">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36967" name="option_id_36967">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36968" name="option_id_36968">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36969" name="option_id_36969">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36970" name="option_id_36970">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36971" name="option_id_36971">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36972" name="option_id_36972">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36973" name="option_id_36973">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36974" name="option_id_36974">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36975" name="option_id_36975">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36976" name="option_id_36976">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36977" name="option_id_36977">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36978" name="option_id_36978">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36979" name="option_id_36979">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36980" name="option_id_36980">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36981" name="option_id_36981">
+		<!-- Received P. Skill Critical Rate -1% -->
+	</option>
+	<option id="36982" name="option_id_36982">
+		<!-- Received P. Skill Critical Rate -2% -->
+	</option>
+	<option id="36983" name="option_id_36983">
+		<!-- Received P. Skill Critical Rate -2% -->
+	</option>
+	<option id="36984" name="option_id_36984">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36985" name="option_id_36985">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36986" name="option_id_36986">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36987" name="option_id_36987">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36988" name="option_id_36988">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36989" name="option_id_36989">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36990" name="option_id_36990">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36991" name="option_id_36991">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36992" name="option_id_36992">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36993" name="option_id_36993">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36994" name="option_id_36994">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36995" name="option_id_36995">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36996" name="option_id_36996">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36997" name="option_id_36997">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36998" name="option_id_36998">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+	<option id="36999" name="option_id_36999">
+		<!-- Received M. Skill Critical Rate -1% -->
+	</option>
+</list>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="86001" toLevel="1" name="Wine Lover's Christmas Collection I">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86002" toLevel="1" name="Wine Lover's Christmas Collection II">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86003" toLevel="1" name="Antharas Doll I">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86004" toLevel="1" name="Doll II">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86005" toLevel="1" name="Talisman Kit">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86006" toLevel="1" name="Venir's Research">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86007" toLevel="1" name="Special Local Goods II">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86008" toLevel="1" name="Hunter's Mark">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86009" toLevel="1" name="Time-limited Purge Weapon Collection">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86010" toLevel="1" name="+7 Sealed Collection Book">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86011" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86012" toLevel="1" name="Received Skill Critical Damage Decrease">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86013" toLevel="1" name="Received AoE Skill Damage Decrease">
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86014" toLevel="1" name="Manager's Key Card">
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="86015" toLevel="1" name="Sacrificial Fire and Ice">
+		<operateType>A2</operateType>
+	</skill>
+</list>

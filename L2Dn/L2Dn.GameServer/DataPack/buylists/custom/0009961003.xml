@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="6661" price="0" /> <!-- Orfen's Earring -->
+	<item id="92328" price="0" /> <!-- Orfen's Earring Lv. 1 -->
+	<item id="49575" price="0" /> <!-- Orfen's Earring Lv. 2 -->
+	<item id="49578" price="0" /> <!-- Orfen's Earring Lv. 3 -->
+	<item id="91379" price="0" /> <!-- Orfen's Earring Lv. 4 -->
+	<item id="90763" price="0" /> <!-- Zaken's Earring -->
+	<item id="90764" price="0" /> <!-- Zaken's Earring Lv. 2 -->
+	<item id="90765" price="0" /> <!-- Zaken's Earring Lv. 3 -->
+	<item id="91382" price="0" /> <!-- Zaken's Earring Lv. 4 -->
+	<item id="90992" price="0" /> <!-- Antharas' Earring -->
+	<item id="91138" price="0" /> <!-- Antharas' Earring Lv. 2 -->
+	<item id="91139" price="0" /> <!-- Antharas' Earring Lv. 3 -->
+	<item id="91383" price="0" /> <!-- Antharas' Earring Lv. 4 -->
+	<item id="6660" price="0" /> <!-- Queen Ant's Ring -->
+	<item id="92327" price="0" /> <!-- Queen Ant's Ring Lv. 1 -->
+	<item id="49574" price="0" /> <!-- Queen Ant's Ring Lv. 2 -->
+	<item id="49577" price="0" /> <!-- Queen Ant's Ring Lv. 3 -->
+	<item id="91378" price="0" /> <!-- Queen Ant's Ring Lv. 4 -->
+	<item id="6662" price="0" /> <!-- Ring of Core -->
+	<item id="92239" price="0" /> <!-- Ring of Core Lv. 1 -->
+	<item id="49576" price="0" /> <!-- Ring of Core Lv. 2 -->
+	<item id="49579" price="0" /> <!-- Ring of Core Lv. 3 -->
+	<item id="91380" price="0" /> <!-- Ring of Core Lv. 4 -->
+	<item id="49041" price="0" /> <!-- Ring (Novice) -->
+	<item id="49580" price="0" /> <!-- Baium's Ring -->
+	<item id="49581" price="0" /> <!-- Baium's Ring Lv. 2 -->
+	<item id="49582" price="0" /> <!-- Baium's Ring Lv. 3 -->
+	<item id="91381" price="0" /> <!-- Baium's Ring Lv. 4 -->
+	<item id="91550" price="0" /> <!-- Frintezza's Necklace -->
+	<item id="91551" price="0" /> <!-- Frintezza's Necklace Lv. 2 -->
+	<item id="91552" price="0" /> <!-- Frintezza's Necklace Lv. 3 -->
+	<item id="91553" price="0" /> <!-- Frintezza's Necklace Lv. 3 -->
+</list>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="214" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="30" empty="3000000" />
+	<removeBuffs type="ALL" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-114343" y="-77747" z="-11442" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="CommandChannel" />
+		<condition type="CommandChannelLeader" />
+		<condition type="GroupMin">
+			<param name="limit" value="1" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="100" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="90" />
+		</condition>
+		<condition type="Distance" />
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" /> <!-- Retail is 1 day week Only -->
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group name="sealstone" spawnByDefault="true">
+			<npc id="34178" x="-114324" y="-78273" z="-11433" heading="15825" /> <!-- Seal Stone -->
+		</group>
+		<group name="animael" spawnByDefault="false">
+			<npc id="34176" x="-114324" y="-78273" z="-11433" heading="15474" /> <!-- Animael -->
+		</group>
+		<group name="NormalMobs" spawnByDefault="false">
+			<npc id="22272" x="-114091" y="-77461" z="-11443" heading="16383" respawnTime="60sec" />
+			<npc id="22271" x="-114048" y="-77429" z="-11443" heading="6673" respawnTime="60sec" />
+			<npc id="22271" x="-114045" y="-77406" z="-11443" heading="24645" respawnTime="60sec" />
+			<npc id="22271" x="-113837" y="-76943" z="-11443" heading="8327" respawnTime="60sec" />
+			<npc id="22271" x="-113945" y="-76923" z="-11443" heading="30858" respawnTime="60sec" />
+			<npc id="22271" x="-114859" y="-76897" z="-11443" heading="58120" respawnTime="60sec" />
+			<npc id="22271" x="-114785" y="-76841" z="-11443" heading="55942" respawnTime="60sec" />
+			<npc id="22271" x="-114711" y="-76987" z="-11443" heading="61107" respawnTime="60sec" />
+			<npc id="22271" x="-114699" y="-77113" z="-11443" heading="16383" respawnTime="60sec" />
+			<npc id="22271" x="-114723" y="-77045" z="-11443" heading="57831" respawnTime="60sec" />
+			<npc id="22271" x="-114852" y="-78363" z="-11443" heading="657" respawnTime="60sec" />
+			<npc id="22271" x="-114984" y="-78475" z="-11443" heading="1141" respawnTime="60sec" />
+			<npc id="22271" x="-114916" y="-78442" z="-11443" heading="65129" respawnTime="60sec" />
+			<npc id="22271" x="-114841" y="-78428" z="-11443" heading="63813" respawnTime="60sec" />
+			<npc id="22271" x="-114938" y="-78411" z="-11443" heading="9120" respawnTime="60sec" />
+			<npc id="22271" x="-113616" y="-78459" z="-11443" heading="30680" respawnTime="60sec" />
+			<npc id="22271" x="-113622" y="-78398" z="-11443" heading="28616" respawnTime="60sec" />
+			<npc id="22271" x="-113591" y="-78301" z="-11442" heading="37105" respawnTime="60sec" />
+			<npc id="22271" x="-113604" y="-78239" z="-11443" heading="35386" respawnTime="60sec" />
+			<npc id="22271" x="-113693" y="-78249" z="-11443" heading="29763" respawnTime="60sec" />
+			<npc id="22271" x="-113568" y="-78336" z="-11442" heading="28986" respawnTime="60sec" />
+			<npc id="22271" x="-113818" y="-78174" z="-11443" heading="55979" respawnTime="60sec" />
+			<npc id="22272" x="-114618" y="-77313" z="-11443" heading="22097" respawnTime="60sec" />
+			<npc id="22272" x="-113589" y="-78333" z="-11443" heading="30535" respawnTime="60sec" />
+			<npc id="22272" x="-114840" y="-78561" z="-11443" heading="32322" respawnTime="60sec" />
+			<npc id="22271" x="-113933" y="-77703" z="-11443" heading="1785" respawnTime="60sec" />
+			<npc id="22271" x="-113872" y="-77793" z="-11443" heading="60399" respawnTime="60sec" />
+			<npc id="22271" x="-114852" y="-77864" z="-11443" heading="13028" respawnTime="60sec" />
+			<npc id="22271" x="-114822" y="-77925" z="-11443" heading="17015" respawnTime="60sec" />
+			<npc id="22272" x="-114554" y="-78998" z="-11443" heading="8750" respawnTime="60sec" />
+			<npc id="22271" x="-114193" y="-78871" z="-11441" heading="32032" respawnTime="60sec" />
+			<npc id="22271" x="-114105" y="-79053" z="-11443" heading="2811" respawnTime="60sec" />
+			<npc id="22271" x="-114456" y="-79050" z="-11443" heading="30111" respawnTime="60sec" />
+			<npc id="22272" x="-113845" y="-78477" z="-11443" heading="62467" respawnTime="60sec" />
+			<npc id="22271" x="-114676" y="-78345" z="-11439" heading="30937" respawnTime="60sec" />
+		</group>
+		<group name="ruipwave_1" spawnByDefault="false">
+			<npc id="22273" x="-113945" y="-76923" z="-11443" heading="30858" respawnTime="60sec" />
+			<npc id="22273" x="-114840" y="-78561" z="-11443" heading="32322" respawnTime="60sec" />
+			<npc id="22273" x="-114852" y="-77864" z="-11443" heading="13028" respawnTime="60sec" />
+			<npc id="22273" x="-114676" y="-78345" z="-11439" heading="30937" respawnTime="60sec" />
+			<npc id="22273" x="-113845" y="-78477" z="-11443" heading="62467" respawnTime="60sec" />
+			<npc id="22273" x="-114676" y="-78345" z="-11439" heading="30937" respawnTime="60sec" />
+			<npc id="22273" x="-113568" y="-78336" z="-11442" heading="28986" respawnTime="60sec" />
+			<npc id="22273" x="-113872" y="-77793" z="-11443" heading="60399" respawnTime="60sec" />
+			<npc id="22273" x="-113589" y="-78333" z="-11443" heading="30535" respawnTime="60sec" />
+			<npc id="22273" x="-113818" y="-78174" z="-11443" heading="55979" respawnTime="60sec" />
+		</group>
+	</spawnlist>
+</instance>

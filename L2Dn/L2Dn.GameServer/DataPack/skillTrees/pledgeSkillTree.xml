@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skillTrees.xsd">
+	<skillTree type="pledgeSkillTree">
+		<!-- Clan Skills -->
+		<skill skillName="Clan Luck" skillId="390" skillLevel="1" getLevel="1">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Clan Fortune" skillId="392" skillLevel="1" getLevel="1">
+			<item id="57" count="10000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Clan Fortune" skillId="392" skillLevel="2" getLevel="2">
+			<item id="57" count="300000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Clan Fortune" skillId="392" skillLevel="3" getLevel="3" />
+		<skill skillName="Clan Fortune" skillId="392" skillLevel="4" getLevel="3" />
+		<skill skillName="Clan Body" skillId="370" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Body" skillId="370" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Orc Fortress Owner" skillId="52016" skillLevel="1" getLevel="1" residenceSkill="true">
+			<socialClass>VAGABOND</socialClass>
+			<residenceId>122</residenceId>
+		</skill>
+		<skill skillName="Clan Body" skillId="370" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Spirituality" skillId="371" skillLevel="1" getLevel="3" levelUpSp="10000">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Spirituality" skillId="371" skillLevel="2" getLevel="3" levelUpSp="20000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Spirituality" skillId="371" skillLevel="3" getLevel="3" levelUpSp="50000">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Soul" skillId="372" skillLevel="1" getLevel="4" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Soul" skillId="372" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Soul" skillId="372" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Regeneration" skillId="373" skillLevel="1" getLevel="4" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Regeneration" skillId="373" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Regeneration" skillId="373" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Morale" skillId="374" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Morale" skillId="374" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Morale" skillId="374" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Clarity" skillId="375" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Clarity" skillId="375" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Clarity" skillId="375" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Might" skillId="376" skillLevel="1" getLevel="4" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Might" skillId="376" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Might" skillId="376" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Shield" skillId="377" skillLevel="1" getLevel="4" levelUpSp="1000">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Shield" skillId="377" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Shield" skillId="377" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Empower" skillId="378" skillLevel="1" getLevel="4" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Empower" skillId="378" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Empower" skillId="378" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan M. Def." skillId="379" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan M. Def." skillId="379" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan M. Def." skillId="379" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Guidance" skillId="380" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Guidance" skillId="380" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Guidance" skillId="380" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Agility" skillId="381" skillLevel="1" getLevel="3" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Agility" skillId="381" skillLevel="2" getLevel="3" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Agility" skillId="381" skillLevel="3" getLevel="3" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Wind Walk" skillId="389" skillLevel="1" getLevel="4" levelUpSp="1500">
+			<item id="49758" count="2" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Wind Walk" skillId="389" skillLevel="2" getLevel="4" levelUpSp="3000">
+			<item id="49758" count="20" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Wind Walk" skillId="389" skillLevel="3" getLevel="4" levelUpSp="7500">
+			<item id="49758" count="30" /> <!-- Blood Crystal -->
+		</skill>
+		<skill skillName="Clan Imperium" skillId="391" skillLevel="1" getLevel="4" />
+		<skill skillName="No Clan Return" skillId="19113" skillLevel="1" getLevel="3">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="No Clan Resurrection" skillId="19114" skillLevel="1" getLevel="3">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<!-- Castle/Fort Skills -->
+		<skill skillName="Residence Body" skillId="590" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>4</residenceId>
+			<residenceId>7</residenceId>
+			<residenceId>101</residenceId>
+			<residenceId>111</residenceId>
+			<residenceId>121</residenceId>
+		</skill>
+		<skill skillName="Residence Spirit" skillId="591" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>2</residenceId>
+			<residenceId>109</residenceId>
+			<residenceId>120</residenceId>
+		</skill>
+		<skill skillName="Residence Soul" skillId="592" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>3</residenceId>
+			<residenceId>9</residenceId>
+			<residenceId>108</residenceId>
+			<residenceId>119</residenceId>
+		</skill>
+		<skill skillName="Residence Health" skillId="593" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>1</residenceId>
+			<residenceId>8</residenceId>
+			<residenceId>106</residenceId>
+			<residenceId>121</residenceId>
+		</skill>
+		<skill skillName="Residence Moral" skillId="594" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>7</residenceId>
+			<residenceId>105</residenceId>
+			<residenceId>120</residenceId>
+		</skill>
+		<skill skillName="Residence Clarity" skillId="595" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>6</residenceId>
+			<residenceId>104</residenceId>
+			<residenceId>119</residenceId>
+		</skill>
+		<skill skillName="Residence Might" skillId="596" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>5</residenceId>
+			<residenceId>107</residenceId>
+			<residenceId>118</residenceId>
+		</skill>
+		<skill skillName="Residence Shield" skillId="597" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>2</residenceId>
+			<residenceId>110</residenceId>
+			<residenceId>117</residenceId>
+		</skill>
+		<skill skillName="Residence Empower" skillId="598" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>4</residenceId>
+			<residenceId>107</residenceId>
+			<residenceId>116</residenceId>
+		</skill>
+		<skill skillName="Residence Magic Barrier" skillId="599" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>6</residenceId>
+			<residenceId>8</residenceId>
+			<residenceId>108</residenceId>
+			<residenceId>115</residenceId>
+		</skill>
+		<skill skillName="Residence Guidance" skillId="600" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>1</residenceId>
+			<residenceId>9</residenceId>
+			<residenceId>110</residenceId>
+			<residenceId>112</residenceId>
+		</skill>
+		<skill skillName="Residence Agility" skillId="601" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>3</residenceId>
+			<residenceId>103</residenceId>
+			<residenceId>118</residenceId>
+		</skill>
+		<skill skillName="Residence Shield Block" skillId="602" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>5</residenceId>
+			<residenceId>102</residenceId>
+			<residenceId>117</residenceId>
+		</skill>
+		<skill skillName="Residence Shield Defense" skillId="603" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>7</residenceId>
+			<residenceId>101</residenceId>
+			<residenceId>116</residenceId>
+		</skill>
+		<skill skillName="Residence Resist Typhoon" skillId="604" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>8</residenceId>
+			<residenceId>102</residenceId>
+			<residenceId>115</residenceId>
+		</skill>
+		<skill skillName="Residence Resist Lava" skillId="605" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>4</residenceId>
+			<residenceId>103</residenceId>
+			<residenceId>114</residenceId>
+		</skill>
+		<skill skillName="Residence Fortitude" skillId="606" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>1</residenceId>
+			<residenceId>104</residenceId>
+			<residenceId>113</residenceId>
+		</skill>
+		<skill skillName="Residence Freedom" skillId="607" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>6</residenceId>
+			<residenceId>105</residenceId>
+			<residenceId>112</residenceId>
+		</skill>
+		<skill skillName="Residence Vigilance" skillId="608" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>5</residenceId>
+			<residenceId>106</residenceId>
+			<residenceId>111</residenceId>
+		</skill>
+		<skill skillName="Residence Movement" skillId="609" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>2</residenceId>
+			<residenceId>114</residenceId>
+		</skill>
+		<skill skillName="Residence Death Fortune" skillId="610" skillLevel="1" getLevel="4" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>3</residenceId>
+			<residenceId>9</residenceId>
+			<residenceId>109</residenceId>
+			<residenceId>113</residenceId>
+			<residenceId>117</residenceId>
+		</skill>
+		
+		<!-- Territory Skills -->
+		<skill skillName="Gludio Territory Benefaction" skillId="848" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>81</residenceId>
+		</skill>
+		<skill skillName="Dion Territory Benefaction" skillId="849" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>82</residenceId>
+		</skill>
+		<skill skillName="Giran Territory Benefaction" skillId="850" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>83</residenceId>
+		</skill>
+		<skill skillName="Oren Territory Benefaction" skillId="851" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>84</residenceId>
+		</skill>
+		<skill skillName="Aden Territory Benefaction" skillId="852" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>85</residenceId>
+		</skill>
+		<skill skillName="Innadril Territory Benefaction" skillId="853" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>86</residenceId>
+		</skill>
+		<skill skillName="Goddard Territory Benefaction" skillId="854" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>87</residenceId>
+		</skill>
+		<skill skillName="Rune Territory Benefaction" skillId="855" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>88</residenceId>
+		</skill>
+		<skill skillName="Schuttgart Territory Benefaction" skillId="856" skillLevel="1" getLevel="5" residenceSkill="true">
+			<socialClass>APPRENTICE</socialClass>
+			<residenceId>89</residenceId>
+		</skill>
+	</skillTree>
+</list>

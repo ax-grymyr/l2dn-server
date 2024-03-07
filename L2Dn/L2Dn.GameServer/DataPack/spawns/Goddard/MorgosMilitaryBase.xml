@@ -1,0 +1,629 @@
+﻿<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Outside_Military_base">
+		<group>
+			<npc id="34320" x="146789" y="-69139" z="-3664" heading="16979" respawnTime="60sec" /> <!-- Muss - Assistant -->
+			<npc id="34327" x="147424" y="-82664" z="-5165" heading="63211" respawnTime="60sec" /> <!-- Yand -->
+		</group>
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_01" minZ="-3700" maxZ="-3736">
+				<node x="137539" y="-89966" />
+				<node x="136896" y="-89941" />
+				<node x="136906" y="-90614" />
+				<node x="137578" y="-90612" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="137238" y="-90272" z="-3736" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="10" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22450" count="10" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_02" minZ="-4290" maxZ="-4300">
+				<node x="135528" y="-83164" />
+				<node x="136378" y="-83124" />
+				<node x="136234" y="-82061" />
+				<node x="135528" y="-82248" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="135957" y="-82670" z="-4304" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22450" count="10" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shaman -->
+		<npc id="22447" count="10" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_03" minZ="-4000" maxZ="-4000">
+				<node x="137473" y="-75189" />
+				<node x="136622" y="-75004" />
+				<node x="136617" y="-75793" />
+				<node x="137418" y="-75700" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="136983" y="-75407" z="-4004" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="9" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22449" count="5" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Thrower -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_04" minZ="-4100" maxZ="-4158">
+				<node x="142479" y="-74921" />
+				<node x="143212" y="-74562" />
+				<node x="143657" y="-75271" />
+				<node x="143019" y="-75681" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations><location x="143096" y="-75126" z="-4150" chance="100" /></locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="15" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22449" count="9" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Thrower -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_05" minZ="-4600" maxZ="-4640">
+				<node x="148575" y="-76595" />
+				<node x="149400" y="-76663" />
+				<node x="149364" y="-77357" />
+				<node x="148601" y="-77395" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="148972" y="-76969" z="-647" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="8" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22449" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Thrower -->
+		<npc id="22450" count="4" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shaman -->
+		<npc id="22448" count="4" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shield Bearer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_06" minZ="-4110" maxZ="-4110">
+				<node x="152922" y="-76847" />
+				<node x="153014" y="-76066" />
+				<node x="153837" y="-76280" />
+				<node x="153683" y="-76961" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="153324" y="-76518" z="-4409" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="7" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22449" count="4" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Thrower -->
+		<npc id="22450" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shaman -->
+		<npc id="22448" count="7" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shield Bearer -->
+		<npc id="22454" count="3" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Raider -->
+		<npc id="22455" count="3" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Barracks_07" minZ="-4685" maxZ="-4685">
+				<node x="154024" y="-79724" />
+				<node x="154394" y="-79089" />
+				<node x="155053" y="-79478" />
+				<node x="154613" y="-80090" />
+			</territory>
+		</territories>
+		<npc id="22451" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="154530" y="-79587" z="-4692" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Officer -->
+		<npc id="22447" count="5" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Footman -->
+		<npc id="22449" count="4" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Thrower -->
+		<npc id="22450" count="3" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shaman -->
+		<npc id="22448" count="8" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Shield Bearer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_01" minZ="-4150" maxZ="-4210">
+				<node x="141860" y="-72086" />
+				<node x="141414" y="-71676" />
+				<node x="141710" y="-71349" />
+				<node x="142255" y="-71555" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="1" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="1" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_02" minZ="-4240" maxZ="-4270">
+				<node x="138740" y="-77818" />
+				<node x="138676" y="-78451" />
+				<node x="139191" y="-78497" />
+				<node x="139419" y="-77941" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_03" minZ="-3288" maxZ="-3357">
+				<node x="134962" y="-71163" />
+				<node x="134680" y="-70633" />
+				<node x="133901" y="-70929" />
+				<node x="133912" y="-71680" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_04" minZ="-3327" maxZ="-3373">
+				<node x="138592" y="-69104" />
+				<node x="138652" y="-68613" />
+				<node x="138171" y="-68727" />
+				<node x="138257" y="-69155" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="1" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_05" minZ="-4600" maxZ="-4687">
+				<node x="143612" y="-78048" />
+				<node x="143481" y="-78457" />
+				<node x="144696" y="-78375" />
+				<node x="144302" y="-77700" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="1" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="1" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_06" minZ="-4640" maxZ="-4668">
+				<node x="138329" y="-81272" />
+				<node x="137923" y="-80770" />
+				<node x="137489" y="-81319" />
+				<node x="138035" y="-81782" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_07" minZ="-4580" maxZ="-4620">
+				<node x="138700" y="-84085" />
+				<node x="138424" y="-83478" />
+				<node x="137892" y="-83935" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_08" minZ="-4137" maxZ="-4165">
+				<node x="137332" y="-87044" />
+				<node x="136680" y="-87440" />
+				<node x="137747" y="-87675" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_09" minZ="-4300" maxZ="-4300">
+				<node x="147358" y="-75349" />
+				<node x="147843" y="-75459" />
+				<node x="147772" y="-74847" />
+				<node x="147204" y="-74715" />
+			</territory>
+		</territories>
+		<npc id="22462" count="3" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="3" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_10" minZ="-3850" maxZ="-3878">
+				<node x="152072" y="-72301" />
+				<node x="152760" y="-72258" />
+				<node x="152956" y="-72899" />
+				<node x="152454" y="-73161" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_11" minZ="-4060" maxZ="-4080">
+				<node x="156489" y="-77727" />
+				<node x="156979" y="-78162" />
+				<node x="156670" y="-78719" />
+				<node x="156042" y="-78250" />
+			</territory>
+		</territories>
+		<npc id="22462" count="3" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="3" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Camp_12" minZ="-3650" maxZ="-3650">
+				<node x="157683" y="-86343" />
+				<node x="157419" y="-86822" />
+				<node x="157110" y="-86574" />
+				<node x="157006" y="-86171" />
+			</territory>
+		</territories>
+		<npc id="22462" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Morgos' Sentry -->
+		<npc id="22463" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Elite Guard -->
+		<npc id="22464" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Commando -->
+		<npc id="22465" count="2" respawnTime="60sec" respawnRandom="30sec" /> <!-- Bloodhound -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Fortress_plain_1" minZ="-5100" maxZ="-5130">
+				<node x="146025" y="-82109" />
+				<node x="145936" y="-81079" />
+				<node x="145169" y="-81463" />
+				<node x="145575" y="-82176" />
+			</territory>
+		</territories>
+		<npc id="22454" count="8" respawnTime="60sec" respawnRandom="60sec" /> <!-- Morgos' Raider -->
+		<npc id="22456" count="8" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Wizard -->
+		<npc id="22453" count="5" respawnTime="60sec" respawnRandom="30sec">
+			<locations>
+				<location x="145741" y="-81606" z="-5135" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Guard -->
+		<npc id="22457" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="145741" y="-81606" z="-5135" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Commander -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="Morgos_Fortress_plain_2" minZ="-5100" maxZ="-5130">
+				<node x="146097" y="-83055" />
+				<node x="145251" y="-82883" />
+				<node x="145167" y="-83798" />
+				<node x="146019" y="-83928" />
+			</territory>
+		</territories>
+		<npc id="22454" count="5" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Raider -->
+		<npc id="22455" count="5" respawnTime="60sec" respawnRandom="30sec" /> <!-- Morgos' Sniper -->
+		<npc id="22453" count="5" respawnTime="60sec" respawnRandom="30sec">
+			<locations>
+				<location x="145643" y="-83415" z="-5133" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Guard -->
+		<npc id="22457" count="1" respawnTime="120sec" respawnRandom="60sec">
+			<locations>
+				<location x="145643" y="-83415" z="-5133" chance="100" />
+			</locations>
+		</npc> <!-- Morgos' Commander -->
+	</spawn>
+	<spawn name="Training_base">
+		<group name="1st_base">
+			<!-- First line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148307" y="-88384" z="-4939" heading="11973" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148541" y="-88476" z="-4939" heading="12113" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148756" y="-88561" z="-4939" heading="12515" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148950" y="-88632" z="-4939" heading="11843" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149163" y="-88737" z="-4939" heading="12040" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149393" y="-88823" z="-4939" heading="12670" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149611" y="-88902" z="-4939" heading="12706" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<!-- Second line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148670" y="-88169" z="-4939" heading="61429" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148429" y="-88069" z="-4939" heading="60121" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22461" respawnTime="120sec" respawnRandom="60sec">
+				<locations>
+					<location x="149191" y="-88390" z="-4939" heading="12021" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Training Mentor -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149512" y="-88520" z="-4939" heading="32767" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149735" y="-88611" z="-4939" heading="29173" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<!-- Last line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148569" y="-87725" z="-4939" heading="45796" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="148826" y="-87840" z="-4939" heading="46038" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149023" y="-87930" z="-4939" heading="45409" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149210" y="-88002" z="-4939" heading="45044" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149426" y="-88094" z="-4939" heading="44877" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149638" y="-88188" z="-4939" heading="44347" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149871" y="-88283" z="-4940" heading="45149" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+		</group>
+		<group>
+			<npc id="22487" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149746" y="-86905" z="-5043" heading="12205" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Messenger -->
+		</group>
+		<group name="2nd_base_part1">
+			<!-- 1st line -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149339" y="-85629" z="-5087" heading="5562" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149519" y="-85698" z="-5086" heading="12587" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149776" y="-85796" z="-5086" heading="21026" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<!-- 2nd line -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149428" y="-85392" z="-5094" heading="61614" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22461" respawnTime="120sec" respawnRandom="60sec">
+				<locations>
+					<location x="149616" y="-85469" z="-5086" heading="12415" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Training Mentor -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149868" y="-85575" z="-5086" heading="29908" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<!-- Last line -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149524" y="-85152" z="-5086" heading="52933" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149712" y="-85237" z="-5086" heading="45692" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="149960" y="-85326" z="-5087" heading="37372" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+		</group>
+		<group name="2nd_base_part2">
+			<!-- 1st line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150155" y="-85973" z="-5087" heading="3871" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150400" y="-86069" z="-5086" heading="11837" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150594" y="-86145" z="-5087" heading="20053" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<!-- 2nd line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150255" y="-85734" z="-5088" heading="61436" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22461" respawnTime="120sec" respawnRandom="60sec">
+				<locations>
+					<location x="150492" y="-85832" z="-5087" heading="13640" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Training Mentor -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150693" y="-85917" z="-5086" heading="28699" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<!-- last line -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150346" y="-85503" z="-5086" heading="52490" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150583" y="-85616" z="-5086" heading="49151" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+			<npc id="22460" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150794" y="-85678" z="-5086" heading="36967" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Sergeant -->
+		</group>
+		<group>
+			<npc id="22487" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150650" y="-84381" z="-5213" heading="11344" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Messenger -->
+		</group>
+		<group name="3rd_base">
+			<!-- 1st line -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150361" y="-83232" z="-5273" heading="12496" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150622" y="-83344" z="-5274" heading="12996" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150905" y="-83455" z="-5274" heading="12594" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151226" y="-83595" z="-5273" heading="12200" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151433" y="-83671" z="-5273" heading="12001" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151731" y="-83806" z="-5273" heading="12192" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<!-- 2nd line -->
+			<npc id="22461" respawnTime="120sec" respawnRandom="60sec">
+				<locations>
+					<location x="151154" y="-83285" z="-5273" heading="12204" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Training Mentor -->
+			<!-- 3rd line -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150520" y="-82754" z="-5271" heading="12734" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="150812" y="-82876" z="-5271" heading="12554" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151093" y="-82977" z="-5271" heading="12641" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151419" y="-83112" z="-5271" heading="12938" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151623" y="-83192" z="-5271" heading="12738" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+			<npc id="22459" respawnTime="60sec" respawnRandom="30sec">
+				<locations>
+					<location x="151944" y="-83324" z="-5271" heading="12572" chance="100" />
+				</locations>
+			</npc> <!-- Morgos' Recruit -->
+		</group>
+	</spawn>
+</list>

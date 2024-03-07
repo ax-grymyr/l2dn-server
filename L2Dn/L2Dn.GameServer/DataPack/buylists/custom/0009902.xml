@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90012" price="0" /> <!-- Low-grade Life Stone -->
+	<item id="90013" price="0" /> <!-- Mid-grade Life Stone -->
+	<item id="90014" price="0" /> <!-- High-grade Life Stone -->
+	<item id="90015" price="0" /> <!-- Top-grade Life Stone -->
+	<item id="90016" price="0" /> <!-- Shining Life Stone - Weapon -->
+	<item id="90856" price="0" /> <!-- Life Stone Lv.1 - Hair Accessory -->
+	<item id="90857" price="0" /> <!-- Life Stone Lv.2 - Hair Accessory -->
+	<item id="93099" price="0" /> <!-- Life Stone Lv.1 - Shield/Sigil -->
+	<item id="93121" price="0" /> <!-- Life Stone Lv.1 - Shield/Sigil -->
+	<item id="93100" price="0" /> <!-- Life Stone Lv.2 - Shield/Sigil -->
+	<item id="93122" price="0" /> <!-- Life Stone Lv.2 - Shield/Sigil -->
+	<item id="93101" price="0" /> <!-- High-grade Life Stone Lv.1 - Shield/Sigil -->
+	<item id="93123" price="0" /> <!-- High-grade Life Stone Lv.1 - Shield/Sigil -->
+	<item id="93102" price="0" /> <!-- Top-grade Life Stone - Shield/Sigil -->
+	<item id="93124" price="0" /> <!-- Top-grade Life Stone - Shield/Sigil -->
+	<item id="94185" price="0" /> <!-- Life Stone Lv.1 - Weapon -->
+	<item id="94186" price="0" /> <!-- Life Stone Lv.2 - Weapon -->
+	<item id="94187" price="0" /> <!-- Life Stone Lv.1 - Armor -->
+	<item id="94188" price="0" /> <!-- Life Stone Lv.2 - Armor -->
+	<item id="94303" price="0" /> <!-- Life Stone - Circlet -->
+	<item id="94423" price="0" /> <!-- Life Stone - Accessories -->
+
+
+
+
+
+
+
+
+
+</list>

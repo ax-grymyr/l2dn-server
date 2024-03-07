@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="93100" name="option_id_93100">
+		<!-- Received P. Skill Critical Damage -74 -->
+	</option>
+	<option id="93101" name="option_id_93101">
+		<!-- Received P. Skill Critical Damage -79 -->
+	</option>
+	<option id="93102" name="option_id_93102">
+		<!-- Received P. Skill Critical Damage -84 -->
+	</option>
+	<option id="93103" name="option_id_93103">
+		<!-- Received P. Skill Critical Damage -89 -->
+	</option>
+	<option id="93104" name="option_id_93104">
+		<!-- Received P. Skill Critical Damage -94 -->
+	</option>
+	<option id="93105" name="option_id_93105">
+		<!-- Received P. Skill Critical Damage -100 -->
+	</option>
+	<option id="93106" name="option_id_93106">
+		<!-- Received P. Skill Critical Damage -106 -->
+	</option>
+	<option id="93107" name="option_id_93107">
+		<!-- Received P. Skill Critical Damage -112 -->
+	</option>
+	<option id="93108" name="option_id_93108">
+		<!-- Received P. Skill Critical Damage -119 -->
+	</option>
+	<option id="93109" name="option_id_93109">
+		<!-- Received P. Skill Critical Damage -126 -->
+	</option>
+	<option id="93110" name="option_id_93110">
+		<!-- Received P. Skill Critical Damage -133 -->
+	</option>
+	<option id="93111" name="option_id_93111">
+		<!-- Received P. Skill Critical Damage -141 -->
+	</option>
+	<option id="93112" name="option_id_93112">
+		<!-- Received P. Skill Critical Damage -150 -->
+	</option>
+	<option id="93113" name="option_id_93113">
+		<!-- Received P. Skill Critical Damage -168 -->
+	</option>
+	<option id="93114" name="option_id_93114">
+		<!-- Received P. Skill Critical Damage -189 -->
+	</option>
+	<option id="93115" name="option_id_93115">
+		<!-- Received P. Skill Critical Damage -212 -->
+	</option>
+	<option id="93116" name="option_id_93116">
+		<!-- Received P. Skill Critical Damage -238 -->
+	</option>
+	<option id="93117" name="option_id_93117">
+		<!-- Received P. Skill Critical Damage -267 -->
+	</option>
+	<option id="93118" name="option_id_93118">
+		<!-- Received P. Skill Critical Damage -300 -->
+	</option>
+	<option id="93119" name="option_id_93119">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="93120" name="option_id_93120">
+		<!-- Received M. Skill Critical Damage -74 -->
+	</option>
+	<option id="93121" name="option_id_93121">
+		<!-- Received M. Skill Critical Damage -79 -->
+	</option>
+	<option id="93122" name="option_id_93122">
+		<!-- Received M. Skill Critical Damage -84 -->
+	</option>
+	<option id="93123" name="option_id_93123">
+		<!-- Received M. Skill Critical Damage -89 -->
+	</option>
+	<option id="93124" name="option_id_93124">
+		<!-- Received M. Skill Critical Damage -94 -->
+	</option>
+	<option id="93125" name="option_id_93125">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="93126" name="option_id_93126">
+		<!-- Received M. Skill Critical Damage -106 -->
+	</option>
+	<option id="93127" name="option_id_93127">
+		<!-- Received M. Skill Critical Damage -112 -->
+	</option>
+	<option id="93128" name="option_id_93128">
+		<!-- Received M. Skill Critical Damage -119 -->
+	</option>
+	<option id="93129" name="option_id_93129">
+		<!-- Received M. Skill Critical Damage -126 -->
+	</option>
+	<option id="93130" name="option_id_93130">
+		<!-- Received M. Skill Critical Damage -133 -->
+	</option>
+	<option id="93131" name="option_id_93131">
+		<!-- Received M. Skill Critical Damage -141 -->
+	</option>
+	<option id="93132" name="option_id_93132">
+		<!-- Received M. Skill Critical Damage -150 -->
+	</option>
+	<option id="93133" name="option_id_93133">
+		<!-- Received M. Skill Critical Damage -168 -->
+	</option>
+	<option id="93134" name="option_id_93134">
+		<!-- Received M. Skill Critical Damage -189 -->
+	</option>
+	<option id="93135" name="option_id_93135">
+		<!-- Received M. Skill Critical Damage -212 -->
+	</option>
+	<option id="93136" name="option_id_93136">
+		<!-- Received M. Skill Critical Damage -238 -->
+	</option>
+	<option id="93137" name="option_id_93137">
+		<!-- Received M. Skill Critical Damage -267 -->
+	</option>
+	<option id="93138" name="option_id_93138">
+		<!-- Received M. Skill Critical Damage -300 -->
+	</option>
+	<option id="93139" name="option_id_93139">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="93140" name="option_id_93140">
+		<!-- Received M. Skill Critical Damage -74 -->
+	</option>
+	<option id="93141" name="option_id_93141">
+		<!-- Received M. Skill Critical Damage -79 -->
+	</option>
+	<option id="93142" name="option_id_93142">
+		<!-- Received M. Skill Critical Damage -84 -->
+	</option>
+	<option id="93143" name="option_id_93143">
+		<!-- Received M. Skill Critical Damage -89 -->
+	</option>
+	<option id="93144" name="option_id_93144">
+		<!-- Received M. Skill Critical Damage -94 -->
+	</option>
+	<option id="93145" name="option_id_93145">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="93146" name="option_id_93146">
+		<!-- Received M. Skill Critical Damage -106 -->
+	</option>
+	<option id="93147" name="option_id_93147">
+		<!-- Received M. Skill Critical Damage -112 -->
+	</option>
+	<option id="93148" name="option_id_93148">
+		<!-- Received M. Skill Critical Damage -119 -->
+	</option>
+	<option id="93149" name="option_id_93149">
+		<!-- Received M. Skill Critical Damage -126 -->
+	</option>
+	<option id="93150" name="option_id_93150">
+		<!-- Received M. Skill Critical Damage -133 -->
+	</option>
+	<option id="93151" name="option_id_93151">
+		<!-- Received M. Skill Critical Damage -141 -->
+	</option>
+	<option id="93152" name="option_id_93152">
+		<!-- Received M. Skill Critical Damage -150 -->
+	</option>
+	<option id="93153" name="option_id_93153">
+		<!-- Received M. Skill Critical Damage -168 -->
+	</option>
+	<option id="93154" name="option_id_93154">
+		<!-- Received M. Skill Critical Damage -189 -->
+	</option>
+	<option id="93155" name="option_id_93155">
+		<!-- Received M. Skill Critical Damage -212 -->
+	</option>
+	<option id="93156" name="option_id_93156">
+		<!-- Received M. Skill Critical Damage -238 -->
+	</option>
+	<option id="93157" name="option_id_93157">
+		<!-- Received M. Skill Critical Damage -267 -->
+	</option>
+	<option id="93158" name="option_id_93158">
+		<!-- Received M. Skill Critical Damage -300 -->
+	</option>
+	<option id="93159" name="option_id_93159">
+		<!-- Received M. Skill Critical Damage -70 -->
+	</option>
+	<option id="93160" name="option_id_93160">
+		<!-- Received M. Skill Critical Damage -74 -->
+	</option>
+	<option id="93161" name="option_id_93161">
+		<!-- Received M. Skill Critical Damage -79 -->
+	</option>
+	<option id="93162" name="option_id_93162">
+		<!-- Received M. Skill Critical Damage -84 -->
+	</option>
+	<option id="93163" name="option_id_93163">
+		<!-- Received M. Skill Critical Damage -89 -->
+	</option>
+	<option id="93164" name="option_id_93164">
+		<!-- Received M. Skill Critical Damage -94 -->
+	</option>
+	<option id="93165" name="option_id_93165">
+		<!-- Received M. Skill Critical Damage -100 -->
+	</option>
+	<option id="93166" name="option_id_93166">
+		<!-- Received M. Skill Critical Damage -106 -->
+	</option>
+	<option id="93167" name="option_id_93167">
+		<!-- Received M. Skill Critical Damage -112 -->
+	</option>
+	<option id="93168" name="option_id_93168">
+		<!-- Received M. Skill Critical Damage -119 -->
+	</option>
+	<option id="93169" name="option_id_93169">
+		<!-- Received M. Skill Critical Damage -126 -->
+	</option>
+	<option id="93170" name="option_id_93170">
+		<!-- Received M. Skill Critical Damage -133 -->
+	</option>
+	<option id="93171" name="option_id_93171">
+		<!-- Received M. Skill Critical Damage -141 -->
+	</option>
+	<option id="93172" name="option_id_93172">
+		<!-- Received M. Skill Critical Damage -150 -->
+	</option>
+	<option id="93173" name="option_id_93173">
+		<!-- Received M. Skill Critical Damage -168 -->
+	</option>
+	<option id="93174" name="option_id_93174">
+		<!-- Received M. Skill Critical Damage -189 -->
+	</option>
+	<option id="93175" name="option_id_93175">
+		<!-- Received M. Skill Critical Damage -212 -->
+	</option>
+	<option id="93176" name="option_id_93176">
+		<!-- Received M. Skill Critical Damage -238 -->
+	</option>
+	<option id="93177" name="option_id_93177">
+		<!-- Received M. Skill Critical Damage -267 -->
+	</option>
+	<option id="93178" name="option_id_93178">
+		<!-- Received M. Skill Critical Damage -300 -->
+	</option>
+	<option id="93179" name="option_id_93179">
+		<!-- Received Skill Critical Damage -70 -->
+	</option>
+	<option id="93180" name="option_id_93180">
+		<!-- Received Skill Critical Damage -74 -->
+	</option>
+	<option id="93181" name="option_id_93181">
+		<!-- Received Skill Critical Damage -79 -->
+	</option>
+	<option id="93182" name="option_id_93182">
+		<!-- Received Skill Critical Damage -84 -->
+	</option>
+	<option id="93183" name="option_id_93183">
+		<!-- Received Skill Critical Damage -89 -->
+	</option>
+	<option id="93184" name="option_id_93184">
+		<!-- Received Skill Critical Damage -94 -->
+	</option>
+	<option id="93185" name="option_id_93185">
+		<!-- Received Skill Critical Damage -100 -->
+	</option>
+	<option id="93186" name="option_id_93186">
+		<!-- Received Skill Critical Damage -106 -->
+	</option>
+	<option id="93187" name="option_id_93187">
+		<!-- Received Skill Critical Damage -112 -->
+	</option>
+	<option id="93188" name="option_id_93188">
+		<!-- Received Skill Critical Damage -119 -->
+	</option>
+	<option id="93189" name="option_id_93189">
+		<!-- Received Skill Critical Damage -126 -->
+	</option>
+	<option id="93190" name="option_id_93190">
+		<!-- Received Skill Critical Damage -133 -->
+	</option>
+	<option id="93191" name="option_id_93191">
+		<!-- Received Skill Critical Damage -141 -->
+	</option>
+	<option id="93192" name="option_id_93192">
+		<!-- Received Skill Critical Damage -150 -->
+	</option>
+	<option id="93193" name="option_id_93193">
+		<!-- Received Skill Critical Damage -168 -->
+	</option>
+	<option id="93194" name="option_id_93194">
+		<!-- Received Skill Critical Damage -189 -->
+	</option>
+	<option id="93195" name="option_id_93195">
+		<!-- Received Skill Critical Damage -212 -->
+	</option>
+	<option id="93196" name="option_id_93196">
+		<!-- Received Skill Critical Damage -238 -->
+	</option>
+	<option id="93197" name="option_id_93197">
+		<!-- Received Skill Critical Damage -267 -->
+	</option>
+	<option id="93198" name="option_id_93198">
+		<!-- Received Skill Critical Damage -300 -->
+	</option>
+	<option id="93199" name="option_id_93199">
+		<!-- Received Skill Critical Damage -70 -->
+	</option>
+</list>

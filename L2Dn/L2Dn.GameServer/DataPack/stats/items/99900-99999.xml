@@ -1,0 +1,1444 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99900" name="Spellbook: Frost Grip" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Frost Grip skill. <Class> Death Knight (Elves) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99901" name="Spellbook: Flame Grip" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flame Grip skill. <Class> Death Knight (Humans) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99902" name="Spellbook: Rage Charge" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Rage Charge skill. <Class> Death Knight (all races) <Skill effect> Rushes to enemy and attacks with a mighty fist. Upon attack recovers DP and applies a debuff called Furious Blast on the enemy. <Furious Blast> Decreases P./ M. Def. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99903" name="Spellbook: Stigma of Evil" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Stigma of Evil skill. <Class> Death Knight (all races) <Skill effect> Attacks enemy and puts a Mark of Demise on them. Branded with the Mark of Demise, enemies decrease their Debuff/ Anomaly Resistance, also they take additional damage when suffering from Hellfire. When the marked enemy is killed, the caster gets a Soul Steal buff. <Soul Steal> Increases P. Atk. and P./ M. Def. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99904" name="Spellbook: Lightning Trace" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Lightning Trace skill. <Class> Death Knight (Dark Elves) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Lightning Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99905" name="Spellbook: Frost Trace" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Frost Trace skill. <Class> Death Knight (Elves) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Frost Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99906" name="Spellbook: Flame Trace" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Flame Trace skill. <Class> Death Knight (Humans) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Flame Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99907" name="Spellbook: Time Distortion: Master" type="EtcItem">
+		<!-- A spellbook for learning the Time Distortion: Master skill. <Class> Assassin <Skill effect> Distorts time around you, dealing damage and decreasing all types of Speed. Applies the Enhanced Time Master buff when using the skill. <Enhanced Time Master> Boosts attack abilities, grants immunity to the Time Distortion skill. -->
+		<set name="icon" val="icon.codex_of_incuse_forgetting" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99908" name="Spellbook: Ultimate Death Knight: Master" type="EtcItem">
+		<!-- A spellbook for learning the Ultimate Death Knight: Master skill. <Class> Death Knight (all races) <Skill effect> Transforms into a Death Knight who is cursed by the Fire Dragon Valakas, but possesses great powers. Increases P. Atk./ Skill Power/ P. Skill Critical Rate/ P. Critical Damage/ P. Skill Critical Damage/ Atk. Spd./ Speed/ P. Def./ Resistance to All Weapons/ Holy Resistance. Decreases penalty of Received Healing. There is a certain chance to apply an Impending Death Whisper buff after an attack. <Impending Death Whisper> Increases Hold/ Suppression Resistance. All skills don't consume DP. -->
+		<set name="icon" val="icon.unique_skill_book01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99909" name="Spellbook: Lightning Grip" type="EtcItem">
+		<!-- A spellbook for learning the Lightning Grip skill. <Class> Death Knight (Dark Elves) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99910" name="Spellbook: Frost Grip" type="EtcItem">
+		<!-- A spellbook for learning the Frost Grip skill. <Class> Death Knight (Elves) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99911" name="Spellbook: Flame Grip" type="EtcItem">
+		<!-- A spellbook for learning the Flame Grip skill. <Class> Death Knight (Humans) <Skill effect> Catches and holds enemies. Only Death Knights can attack the caught enemies. The enemies cannot move and use recovery. -->
+		<set name="icon" val="icon.etc_magic_book_red_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99912" name="Spellbook: Rage Charge" type="EtcItem">
+		<!-- A spellbook for learning the Rage Charge skill. <Class> Death Knight (all races) <Skill effect> Rushes to enemy and attacks with a mighty fist. Upon attack recovers DP and applies a debuff called Furious Blast on the enemy. <Furious Blast> Decreases P./ M. Def. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99913" name="Spellbook: Stigma of Evil" type="EtcItem">
+		<!-- A spellbook for learning the Stigma of Evil skill. <Class> Death Knight (all races) <Skill effect> Attacks enemy and puts a Mark of Demise on them. Branded with the Mark of Demise, enemies decrease their Debuff/ Anomaly Resistance, also they take additional damage when suffering from Hellfire. When the marked enemy is killed, the caster gets a Soul Steal buff. <Soul Steal> Increases P. Atk. and P./ M. Def. -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99914" name="Spellbook: Lightning Trace" type="EtcItem">
+		<!-- A spellbook for learning the Lightning Trace skill. <Class> Death Knight (Dark Elves) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Lightning Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99915" name="Spellbook: Frost Trace" type="EtcItem">
+		<!-- A spellbook for learning the Frost Trace skill. <Class> Death Knight (Elves) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Frost Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99916" name="Spellbook: Flame Trace" type="EtcItem">
+		<!-- A spellbook for learning the Flame Trace skill. <Class> Death Knight (Humans) <Skill effect> Increases P. Skill Critical Rate. <Skill upgrade> Wipeout → Flame Wipeout -->
+		<set name="icon" val="icon.etc_spell_books_black_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99917" name="Hellfire Buff Scroll (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff to the pet when used. <Skill effect> P. Atk. +200 M. Atk. +200 With a 1% chance, activates the Hellfire XP skill after an attack. Deals AoE damage depending on your attack type. - Inflicts physical damage on the enemy with 8000 power (P. Atk.). - Inflicts magic damage on the enemy with 130 power (M. Atk.). (Trigger cooldown: 60 sec.) - Duration: 20 min. - Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.hell_fire_buff_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99918" name="Baium's Ring Fragment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to obtain +2 Baium's Ring through the Special Craft <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.ring_of_baium_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99919" name="Queen Ant's Ring Fragment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to obtain +2 Queen Ant's Ring through the Special Craft <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.queen_ant_essence_i01" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99920" name="Package: +3 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95330" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Baium's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99921" name="Package: +2 Baium's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_baium_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95330" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Baium's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99922" name="Package: +3 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95327" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Queen Ant's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99923" name="Package: +2 Queen Ant's Ring (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95327" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Queen Ant's Ring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99924" name="Package: Berserker's Shield (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shield_of_immortal" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98984" min="1" max="1" chance="100" /> <!-- Berserker's Shield - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99925" name="Package: Berserker's Sigil (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.sigil_of_immortal" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98985" min="1" max="1" chance="100" /> <!-- Berserker's Sigil - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99926" name="Package: +8 Cloak of Protection" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93301" min="1" max="1" minEnchant="8" maxEnchant="8" chance="100" /> <!-- Cloak of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99927" name="Kit: Pet Supplies (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i10" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98970" min="50000" max="50000" chance="100" /> <!-- Pet Food - Sealed -->
+			<item id="98971" min="50000" max="50000" chance="100" /> <!-- Pet's HP Recovery Potion - Sealed -->
+			<item id="94636" min="500" max="500" chance="100" /> <!-- Pet's XP Growth Scroll - Sealed -->
+			<item id="97432" min="500" max="500" chance="100" /> <!-- Scroll: Boost Pet's Attack - Sealed -->
+			<item id="97433" min="500" max="500" chance="100" /> <!-- Scroll: Boost Pet's Defense - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99928" name="Circlet of Hero Pouch (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_lucky_pocket_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97178" min="1" max="1" chance="3.448276" /> <!-- Spellbook Coupon - 4 Stars - Sealed -->
+			<item id="97133" min="1" max="1" chance="3.448276" /> <!-- Frost Lord's Weapon Coupon - Sealed -->
+			<item id="97132" min="1" max="1" chance="3.448276" /> <!-- Armor of Protection Coupon - Sealed -->
+			<item id="97131" min="1" max="1" chance="3.448276" /> <!-- Boss Weapon Coupon - Sealed -->
+			<item id="94385" min="1" max="1" chance="3.448276" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+			<item id="94383" min="1" max="1" chance="3.448276" /> <!-- Scroll: Enchant Rare Accessories -->
+			<item id="90992" min="1" max="1" chance="3.448276" /> <!-- Antharas' Earring -->
+			<item id="91550" min="1" max="1" chance="3.448276" /> <!-- Frintezza's Necklace -->
+			<item id="49580" min="1" max="1" chance="3.448276" /> <!-- Baium's Ring -->
+			<item id="96600" min="1" max="1" chance="3.448276" /> <!-- Beleth' Ring -->
+			<item id="90763" min="1" max="1" chance="3.448276" /> <!-- Zaken's Earring -->
+			<item id="6660" min="1" max="1" chance="3.448276" /> <!-- Queen Ant's Ring -->
+			<item id="6661" min="1" max="1" chance="3.448276" /> <!-- Orfen's Earring -->
+			<item id="6662" min="1" max="1" chance="3.448276" /> <!-- Ring of Core -->
+			<item id="94329" min="1" max="1" chance="3.448276" /> <!-- Package: Giran Seal (500 pcs.) - Sealed -->
+			<item id="93739" min="1" max="1" chance="3.448276" /> <!-- Package: Giran Seal (1000 pcs.) - Sealed -->
+			<item id="97796" min="1" max="1" chance="3.448276" /> <!-- Package: Circlet of Hero (100 pcs.) - Sealed -->
+			<item id="98224" min="1" max="1" chance="3.448276" /> <!-- Package: Circlet of Hero (200 pcs.) - Sealed -->
+			<item id="96206" min="1" max="1" chance="3.448276" /> <!-- Package: +6 Circlet of Hero (Time-limited) - Sealed -->
+			<item id="98040" min="1" max="1" chance="3.448276" /> <!-- Incredible Upgrade Stone - Sealed -->
+			<item id="94328" min="1" max="1" chance="3.448276" /> <!-- Elixir Powder - Sealed -->
+			<item id="96623" min="1" max="1" chance="3.448276" /> <!-- Dye Booster -->
+			<item id="95783" min="1" max="1" chance="3.448276" /> <!-- Aden's Soul Crystal Lv. 1 - Weapon -->
+			<item id="97788" min="1" max="1" chance="3.448276" /> <!-- Augmenting Stone: Special Equipment - Sealed -->
+			<item id="92314" min="10" max="10" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="5" max="5" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="2" max="2" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="1" max="1" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="94168" min="1" max="1" chance="3.448276" /> <!-- Enchant Kit: Circlet of Hero - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99929" name="Special Week Attendance Reward Pack VII (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98022" min="3" max="3" chance="100" /> <!-- Black Coupon (Time-limited) - Sealed -->
+			<item id="98040" min="1" max="1" chance="100" /> <!-- Incredible Upgrade Stone - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99930" name="Special Week Attendance Reward Pack VI (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97597" min="20" max="20" chance="100" /> <!-- Jewel Craft Coupon - Sealed -->
+			<item id="98914" min="1" max="1" chance="100" /> <!-- Jewel Box Lv. 5 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99931" name="Special Week Attendance Reward Pack V (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94780" min="100" max="100" chance="100" /> <!-- Growth Rune Fragment - Sealed -->
+			<item id="97170" min="1" max="1" chance="100" /> <!-- Doll Pack Lv. 1 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99932" name="Special Week Attendance Reward Pack IV (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98674" min="1" max="1" chance="100" /> <!-- Stat Collection Pack (Time-limited) - Sealed -->
+			<item id="97145" min="600" max="600" chance="100" /> <!-- Ancient Adena -->
+		</capsuled_items>
+	</item>
+	<item id="99933" name="Special Week Attendance Reward Pack III (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98423" min="10" max="10" chance="100" /> <!-- Magic Tablet - Sealed -->
+			<item id="97652" min="1" max="1" chance="100" /> <!-- Master's Book Chest - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99934" name="Special Week Attendance Reward Pack II (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98463" min="10" max="10" chance="100" /> <!-- Package: Ring of Insolence/ Dragon Valley's Earring (Time-limited) - Sealed -->
+			<item id="98941" min="10" max="10" chance="100" /> <!-- Package: Hunter's Earring - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99935" name="Special Week Attendance Reward Pack I (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_special_jewelbox_lv4" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97147" min="4" max="4" chance="100" /> <!-- Hidden Power Booster - Sealed -->
+			<item id="94328" min="10" max="10" chance="100" /> <!-- Elixir Powder - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99936" name="Black Coupon/ Death Knight's Ring Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99939" min="1" max="1" chance="100" /> <!-- Death Knight's Ring - Sealed -->
+			<item id="98022" min="1" max="1" chance="100" /> <!-- Black Coupon (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99937" name="+5 Talisman of Eva/ Speed/ Authority Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92455" min="1" max="1" chance="33.33333" /> <!-- +5 Talisman of Eva Pack - Sealed -->
+			<item id="92464" min="1" max="1" chance="33.33333" /> <!-- +5 Talisman of Speed Pack - Sealed -->
+			<item id="97953" min="1" max="1" chance="33.33333" /> <!-- +5 Talisman of Authority Pack - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99938" name="Talisman of Eva/ Speed/ Authority Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one of the talismans. <font color=EEAA22><Items for exchange></font> Enchant Kit: Talisman of Authority - 1 pc. required Enchant Kit: Talisman of Eva - 1 pc. required Enchant Kit: Talisman of Speed - 1 pc. required -->
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99939" name="Death Knight's Ring" additionalName="Sealed" type="Armor">
+		<!-- <Properties> Max HP +100 Max MP +22 P. Atk. +100 M. Atk. +100 Atk. Spd. +20 Casting Spd. +20 Speed +1 All Critical Rate +1% All Critical Damage +1% Imprisonment Atk. Rate and Resistance +2% Pull Atk. Rate and Resistance +2% <font color=ff6666>Cannot be enchanted, augmented and equipped on a pet.</font> <font color=ff6666>Effects of two identical rings do not stack.</font> -->
+		<set name="icon" val="icon.ring_of_deathknight_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">32</stat>
+		</stats>
+	</item>
+	<item id="99940" name="Aztacan's Treasure Chest (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_dragon_present_3" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="99945" min="44" max="44" chance="20" /> <!-- Mammon Shard (Time-limited) - Sealed -->
+			<item id="99945" min="10" max="10" chance="20" /> <!-- Mammon Shard (Time-limited) - Sealed -->
+			<item id="99945" min="2" max="2" chance="20" /> <!-- Mammon Shard (Time-limited) - Sealed -->
+			<item id="99945" min="1" max="1" chance="20" /> <!-- Mammon Shard (Time-limited) - Sealed -->
+			<item id="94258" min="1" max="1" chance="20" /> <!-- Package: Einhasad's Pendant Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99941" name="Collector of Low-grade Purge Equipment Kit II (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i08" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95459" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Butcher's Long Sword - Sealed -->
+			<item id="95457" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Sel Mahum Sniper - Sealed -->
+			<item id="95451" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Sealed Angel's Hammer - Sealed -->
+			<item id="95454" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Deadman's Dagger - Sealed -->
+			<item id="95446" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Excuro's Staff - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99942" name="Sel Mahum Base Purge Kit I (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95456" min="1" max="1" chance="100" /> <!-- Berserker's Sword - Sealed -->
+			<item id="95457" min="1" max="1" chance="100" /> <!-- Sel Mahum Sniper - Sealed -->
+			<item id="91745" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Talisman of Aden - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99943" name="Dragon Valley Purge Kit I (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_treasure_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95454" min="1" max="1" chance="100" /> <!-- Deadman's Dagger - Sealed -->
+			<item id="95455" min="1" max="1" chance="100" /> <!-- Dragon Bone Blade - Sealed -->
+			<item id="91745" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Talisman of Aden - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99944" name="Garden of Genesis Kit (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_green_box_02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97502" min="5" max="5" chance="100" /> <!-- Trace of Spring Wind (Time-limited) - Sealed -->
+			<item id="96083" min="4" max="4" chance="100" /> <!-- Garden of Genesis' Time Stone (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99945" name="Mammon Shard (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used to created Einhasad's Pendant Lv. 4 through the Special Craft. -->
+		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="99946" name="Purge Collection Coupon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose one Kit: Purge Collection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.bm_weapon_ticket_c" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99947" name="Armor of Protection Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Armor of Protection <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.protection_armor_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99948" name="Frost Lord's Weapon Coupon" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose Frost Lord's Weapon <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.frozen_weapon_ticket_i00" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99949" name="Hellbound Predator's Prize" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="99950" min="1" max="1" chance="12.5" /> <!-- Plush Cat (Time-limited) - Sealed -->
+			<item id="94718" min="1" max="1" chance="12.5" /> <!-- Hellbound Ring -->
+			<item id="99951" min="7" max="7" chance="12.5" /> <!-- Scroll: Enchant Hellbound Ring - Sealed -->
+			<item id="99951" min="5" max="5" chance="12.5" /> <!-- Scroll: Enchant Hellbound Ring - Sealed -->
+			<item id="99951" min="3" max="3" chance="12.5" /> <!-- Scroll: Enchant Hellbound Ring - Sealed -->
+			<item id="94717" min="7" max="7" chance="12.5" /> <!-- Hellbound Energy - Sealed -->
+			<item id="94717" min="5" max="5" chance="12.5" /> <!-- Hellbound Energy - Sealed -->
+			<item id="94717" min="3" max="3" chance="12.5" /> <!-- Hellbound Energy - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99950" name="Plush Cat (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <Fierce Predator's Power> P. Atk. +100 M. Atk. +100 P. Def. +100 M. Def. +100 Acquired XP +10% Acquired SP +10% When in inventory, Fierce Predator's Power boosts stats. -->
+		<set name="icon" val="icon.accessory_cat_the_cat_cap_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99951" name="Scroll: Enchant Hellbound Ring" additionalName="Sealed" type="EtcItem">
+		<!-- Required for enchanting Hellbound Ring. The maximum enchant value is +10. -->
+		<set name="icon" val="icon.etc_penalty_recovery_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="99952" name="+9 Agathion Dragon Egg Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_valakas_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98235" min="1" max="1" minEnchant="9" maxEnchant="9" chance="100" /> <!-- Agathion Dragon Egg - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99953" name="Package: Gran Kain's Pendant" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pendant_of_grankain_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98782" min="1" max="1" chance="100" /> <!-- Gran Kain's Pendant - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99954" name="Package: Agathion Valakas" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.agathion_valakas_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98236" min="1" max="1" chance="100" /> <!-- Agathion Valakas - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99955" name="Package: Heavenly Cloak" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.nobless_cloak_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97452" min="1" max="1" chance="100" /> <!-- Heavenly Cloak - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99956" name="Diamond Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99985" min="1" max="1" chance="100" /> <!-- Diamond Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99957" name="Ruby Jewelry Box Lv. 1" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99993" min="1" max="1" chance="100" /> <!-- Ruby Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99958" name="Appearance Stone: Ultimate Death Knight's Flame Sword Lv. 2" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.fire_sword_aden0000" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pAtk">660</stat>
+			<stat type="mAtk">327</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="99959" name="Ultimate Death Knight Transformation Lv. 2" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="R99" />
+		<set name="material" val="CLOTH" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99960" name="Shining Jewel Pouch (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_golden_spice_blessed_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97178" min="1" max="1" chance="3.846154" /> <!-- Spellbook Coupon - 4 Stars - Sealed -->
+			<item id="97133" min="1" max="1" chance="3.846154" /> <!-- Frost Lord's Weapon Coupon - Sealed -->
+			<item id="97132" min="1" max="1" chance="3.846154" /> <!-- Armor of Protection Coupon - Sealed -->
+			<item id="97131" min="1" max="1" chance="3.846154" /> <!-- Boss Weapon Coupon - Sealed -->
+			<item id="94385" min="1" max="1" chance="3.846154" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+			<item id="94383" min="1" max="1" chance="3.846154" /> <!-- Scroll: Enchant Rare Accessories -->
+			<item id="99961" min="1" max="1" chance="3.846154" /> <!-- Package: Jewel Craft Coupon (500 pcs.) - Sealed -->
+			<item id="98065" min="1" max="1" chance="3.846154" /> <!-- Package: Jewel Craft Coupon (1000 pcs.) - Sealed -->
+			<item id="94329" min="1" max="1" chance="3.846154" /> <!-- Package: Giran Seal (500 pcs.) - Sealed -->
+			<item id="93739" min="1" max="1" chance="3.846154" /> <!-- Package: Giran Seal (1000 pcs.) - Sealed -->
+			<item id="98449" min="1" max="1" chance="3.846154" /> <!-- Lv. 6 Jewel Coupon (Time-limited) - Sealed -->
+			<item id="98040" min="1" max="1" chance="3.846154" /> <!-- Incredible Upgrade Stone - Sealed -->
+			<item id="94328" min="1" max="1" chance="3.846154" /> <!-- Elixir Powder - Sealed -->
+			<item id="96623" min="1" max="1" chance="3.846154" /> <!-- Dye Booster -->
+			<item id="95803" min="1" max="1" chance="3.846154" /> <!-- Hardin's Soul Crystal Lv. 1 - Rare -->
+			<item id="96985" min="1" max="1" chance="3.846154" /> <!-- Package: Brooch Lv. 3 - Sealed -->
+			<item id="99956" min="1" max="1" chance="3.846154" /> <!-- Diamond Jewelry Box Lv. 1 -->
+			<item id="99957" min="1" max="1" chance="3.846154" /> <!-- Ruby Jewelry Box Lv. 1 -->
+			<item id="92314" min="10" max="10" chance="3.846154" /> <!-- Giran Seal -->
+			<item id="92314" min="5" max="5" chance="3.846154" /> <!-- Giran Seal -->
+			<item id="92314" min="2" max="2" chance="3.846154" /> <!-- Giran Seal -->
+			<item id="92314" min="1" max="1" chance="3.846154" /> <!-- Giran Seal -->
+			<item id="97597" min="5" max="5" chance="3.846154" /> <!-- Jewel Craft Coupon - Sealed -->
+			<item id="97597" min="4" max="4" chance="3.846154" /> <!-- Jewel Craft Coupon - Sealed -->
+			<item id="97597" min="3" max="3" chance="3.846154" /> <!-- Jewel Craft Coupon - Sealed -->
+			<item id="97597" min="2" max="2" chance="3.846154" /> <!-- Jewel Craft Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99961" name="Package: Jewel Craft Coupon (500 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_jewel_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97597" min="500" max="500" chance="100" /> <!-- Jewel Craft Coupon - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99962" name="Diamond Jewelry Box Lv. 8" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99978" min="1" max="1" chance="100" /> <!-- Diamond Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99963" name="Diamond Jewelry Box Lv. 7" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99979" min="1" max="1" chance="100" /> <!-- Diamond Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99964" name="Diamond Jewelry Box Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99980" min="1" max="1" chance="100" /> <!-- Diamond Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99965" name="Diamond Jewelry Box Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99981" min="1" max="1" chance="100" /> <!-- Diamond Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99966" name="Diamond Jewelry Box Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99982" min="1" max="1" chance="100" /> <!-- Diamond Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99967" name="Diamond Jewelry Box Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99983" min="1" max="1" chance="100" /> <!-- Diamond Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99968" name="Diamond Jewelry Box Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99984" min="1" max="1" chance="100" /> <!-- Diamond Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99969" name="Diamond Jewelry Box Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99985" min="1" max="1" chance="100" /> <!-- Diamond Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99970" name="Ruby Jewelry Box Lv. 8" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99986" min="1" max="1" chance="100" /> <!-- Ruby Lv. 8 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99971" name="Ruby Jewelry Box Lv. 7" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99987" min="1" max="1" chance="100" /> <!-- Ruby Lv. 7 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99972" name="Ruby Jewelry Box Lv. 6" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99988" min="1" max="1" chance="100" /> <!-- Ruby Lv. 6 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99973" name="Ruby Jewelry Box Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99989" min="1" max="1" chance="100" /> <!-- Ruby Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99974" name="Ruby Jewelry Box Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99990" min="1" max="1" chance="100" /> <!-- Ruby Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99975" name="Ruby Jewelry Box Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99991" min="1" max="1" chance="100" /> <!-- Ruby Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99976" name="Ruby Jewelry Box Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99992" min="1" max="1" chance="100" /> <!-- Ruby Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99977" name="Ruby Jewelry Box Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="99993" min="1" max="1" chance="100" /> <!-- Ruby Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99978" name="Diamond Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -500 Received AoE Skill Damage -5% <Special effects> With a certain chance, applies the following buff when hit: Received damage -5% Suppression Resistance +5% P. Def. +500 M. Def. +500 Duration: 5 sec. Trigger cooldown: 10 sec. Probability: 5% -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="8" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99979" name="Diamond Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -400 Received AoE Skill Damage -4% <Special effects> With a certain chance, applies the following buff when hit: Received damage -3% Suppression Resistance +3% Duration: 5 sec. Trigger cooldown: 10 sec. Probability: 3% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="7" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99980" name="Diamond Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -300 Received AoE Skill Damage -3% <Special effects> With a certain chance, applies the following buff when hit: Received damage -2% Suppression Resistance +2% Duration: 5 sec. Trigger cooldown: 10 sec. Probability: 2% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="6" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99981" name="Diamond Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -200 Received AoE Skill Damage -2% <Special effects> With a certain chance, applies the following buff when hit: Received damage -1% Suppression Resistance +1% Duration: 5 sec. Trigger cooldown: 10 sec. Probability: 1% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="5" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99982" name="Diamond Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -120 Received AoE Skill Damage -1.2% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="4" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99983" name="Diamond Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -90 Received AoE Skill Damage -0.9% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="3" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99984" name="Diamond Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -60 Received AoE Skill Damage -0.6% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="2" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99985" name="Diamond Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> All received Critical Damage -30 Received AoE Skill Damage -0.3% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_diamond_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50670" level="1" /> <!-- Diamond -->
+		</skills>
+	</item>
+	<item id="99986" name="Ruby Lv. 8" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +800 M. Atk. +800 PvE damage +8% <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 7385. Additional M. Atk. Power 187. Number of targets: 6 Trigger rate: 5% <When triggered in PvP> Additional attack with fixed 1200 damage.</font> Number of targets: 6 Trigger rate: 5% -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99987" name="Ruby Lv. 7" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +600 M. Atk. +600 PvE damage +5% <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 7182. Additional M. Atk. Power 178. Number of targets: 5 Trigger rate: 4% <When triggered in PvP> Additional attack with fixed 1100 damage.</font> Number of targets: 5 Trigger rate: 4% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99988" name="Ruby Lv. 6" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +400 M. Atk. +400 PvE damage +3% <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 6979. Additional M. Atk. Power 170. Number of targets: 4 Trigger rate: 3% <When triggered in PvP> Additional attack with fixed 1000 damage.</font> Number of targets: 4 Trigger rate: 3% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99989" name="Ruby Lv. 5" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +300 M. Atk. +300 PvE damage +1% <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 6776. Additional M. Atk. Power 162. Number of targets: 3 Trigger rate: 2% <When triggered in PvP> Additional attack with fixed 900 damage.</font> Number of targets: 3 Trigger rate: 2% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99990" name="Ruby Lv. 4" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +200 M. Atk. +200 <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 6573. Additional M. Atk. Power 154. Number of targets: 2 Trigger rate: 1% <When triggered in PvP> Additional attack with fixed 800 damage. Number of targets: 2 Trigger rate: 1% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99991" name="Ruby Lv. 3" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +150 M. Atk. +150 <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 6370. Additional M. Atk. Power 146. Number of targets: 1 Trigger rate: 1% <When triggered in PvP> Additional attack with fixed 700 damage. Number of targets: 1 Trigger rate: 1% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99992" name="Ruby Lv. 2" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +100 M. Atk. +100 <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 6167. Additional M. Atk. Power 138. Number of targets: 1 Trigger rate: 1% <When triggered in PvP> Additional attack with fixed 500 damage. Number of targets: 1 Trigger rate: 1% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99993" name="Ruby Lv. 1" additionalName="Sealed" type="Armor">
+		<!-- <font color=bbaa88><Properties></font> P. Atk. +50 M. Atk. +50 <When triggered in PvE> According to the attack type (P./ M.), the following effects are triggered: Additional P. Atk. Power 5964. Additional M. Atk. Power 130. Number of targets: 1 Trigger rate: 1% <When triggered in PvP> Additional attack with fixed 300 damage. Number of targets: 1 Trigger rate: 1% <font color=bbaa88><Compound></font> Materials: identical Jewels and Jewelry Boxes In case of failure, the current level remains the same, but materials disappear. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.etc_bm_jewel_ruby_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="99994" name="Adena Buff Scroll (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect> Acquired adena +5% - Duration: 20 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.ev_adena_buff_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99995" name="Package: Pet's Pendant Lv. 1" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: Pet's Pendants and packages of the same level In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.br_rudolf_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97388" min="1" max="1" chance="100" /> <!-- Pet's Pendant Lv. 1 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99996" name="Package: Pet's Pendant Lv. 2" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: Pet's Pendants and packages of the same level In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.br_rudolf_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97389" min="1" max="1" chance="100" /> <!-- Pet's Pendant Lv. 2 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99997" name="Package: Pet's Pendant Lv. 3" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: Pet's Pendants and packages of the same level In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.br_rudolf_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97390" min="1" max="1" chance="100" /> <!-- Pet's Pendant Lv. 3 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99998" name="Package: Pet's Pendant Lv. 4" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Compound></font> Materials: Pet's Pendants and packages of the same level In case of failure, the current level remains the same, but materials disappear. Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.br_rudolf_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97391" min="1" max="1" chance="100" /> <!-- Pet's Pendant Lv. 4 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="99999" name="Package: Pet's Pendant Lv. 5" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="BranchSys.Icon.br_rudolf_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97392" min="1" max="1" chance="100" /> <!-- Pet's Pendant Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

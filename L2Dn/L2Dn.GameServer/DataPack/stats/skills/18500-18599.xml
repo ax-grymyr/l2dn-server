@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="18564" toLevel="1" name="Shiny Jewelry Box">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90368</itemConsumeId> <!-- Shiny Jewelry Box -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="12.5">
+						<item id="90369" count="1" /> <!-- Topaz Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90370" count="1" /> <!-- Garnet Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90371" count="1" /> <!-- Jade Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90372" count="1" /> <!-- Ruby Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90373" count="1" /> <!-- Sapphire Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90374" count="1" /> <!-- Diamond Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90375" count="1" /> <!-- Pearl Chest -->
+					</item>
+					<item chance="12.5">
+						<item id="90376" count="1" /> <!-- Vital Stone Chest -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="18566" toLevel="10" name="Garnet">
+		<!-- Pull/ Paralysis/ Silence/ Fear/ Stun Resistance +3%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_garnet</value>
+			<value level="2">icon.etc_bm_jewel_garnet</value>
+			<value level="3">icon.etc_bm_jewel_garnet</value>
+			<value level="4">icon.etc_bm_jewel_garnet</value>
+			<value level="5">icon.etc_bm_jewel_garnet</value>
+			<value level="6">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</SHOCK>
+				<PULL>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PULL>
+				<PARALYZE>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PARALYZE>
+				<INFECTION>
+					<value level="10">10</value>
+				</INFECTION>
+				<SLEEP>
+					<value level="10">10</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="18567" toLevel="7" name="Garnet - Special Property">
+		<!-- Grants immunity to debuffs for 5 sec. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_garnet</value>
+			<value level="2">icon.etc_bm_jewel_garnet</value>
+			<value level="3">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="6">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="18571" toLevel="1" name="Hero's Basics - I">
+		<!-- Acquired XP/ SP +3%. -->
+		<icon>icon.skill18571</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18572" toLevel="1" name="Hero's Basics - II">
+		<!-- Acquired XP/ SP +7%. -->
+		<icon>icon.skill18572</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18573" toLevel="1" name="Hero's Basics - III">
+		<!-- Acquired XP/ SP +3%, Death XP Penalty -20%. -->
+		<icon>icon.skill18573</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18575" toLevel="1" name="Call to Hunt - I">
+		<!-- Max HP/ MP/ CP +200, P./ M. Atk. +5%, P./ M. Def. +5%. -->
+		<icon>icon.skill18575</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18576" toLevel="1" name="Call to Hunt - II">
+		<!-- P. Critical Damage +45, M. Skill Critical Damage +30, P. Critical Rate/ M. Skill Critical Rate +10. -->
+		<icon>icon.skill18576</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18577" toLevel="1" name="Call to Battle">
+		<!-- Received PvP Damage -5%, Debuff Resistance +10%. -->
+		<icon>icon.skill18577</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18578" toLevel="1" name="Song Contest">
+		<!-- World Chat Points +20 (reset at 7:00 a.m.). -->
+		<icon>icon.skill18578</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18588" toLevel="1" name="Fortune Chest">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>90359</itemConsumeId> <!-- Fortune Chest -->
+		<magicLevel>1</magicLevel>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="12.5">
+						<item id="90360" count="1" /> <!-- Topaz Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90361" count="1" /> <!-- Garnet Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90362" count="1" /> <!-- Jade Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90363" count="1" /> <!-- Ruby Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90364" count="1" /> <!-- Sapphire Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90365" count="1" /> <!-- Diamond Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90366" count="1" /> <!-- Pearl Fortune Box -->
+					</item>
+					<item chance="12.5">
+						<item id="90367" count="1" /> <!-- Vital Stone Fortune Box -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+</list>

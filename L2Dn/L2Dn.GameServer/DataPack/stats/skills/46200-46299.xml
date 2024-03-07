@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="46201" toLevel="1" name="Damage Decrease old pk 5 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46202" toLevel="1" name="Damage Decrease old pk 10 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46203" toLevel="1" name="Damage Decrease old pk 15 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46204" toLevel="1" name="Damage Decrease old pk 20 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46205" toLevel="1" name="Damage Decrease old pk 25 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46206" toLevel="1" name="Damage Decrease old pk 30 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46207" toLevel="1" name="Damage Decrease old pk 35 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46208" toLevel="1" name="Damage Decrease old pk 40 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46209" toLevel="1" name="Damage Decrease old pk 45 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46210" toLevel="1" name="Damage Decrease old pk 50 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46211" toLevel="1" name="Damage Decrease old pk 55 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46212" toLevel="1" name="Damage Decrease old pk 60 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46213" toLevel="1" name="Damage Decrease old pk 65 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46214" toLevel="1" name="Damage Decrease old pk 70 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46215" toLevel="1" name="Damage Decrease old pk 75 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46216" toLevel="1" name="Damage Decrease old pk 80 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46217" toLevel="1" name="Damage Decrease old pk 85 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46218" toLevel="1" name="Damage Decrease old pk 90 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46219" toLevel="1" name="Damage Decrease old pk 95 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46220" toLevel="1" name="Damage Decrease old pk 100 per">
+		<!-- Damage Decrease old pk $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46221" toLevel="1" name="Damage Decrease old enemy_all 5 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46222" toLevel="1" name="Damage Decrease old enemy_all 10 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46223" toLevel="1" name="Damage Decrease old enemy_all 15 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46224" toLevel="1" name="Damage Decrease old enemy_all 20 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46225" toLevel="1" name="Damage Decrease old enemy_all 25 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46226" toLevel="1" name="Damage Decrease old enemy_all 30 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46227" toLevel="1" name="Damage Decrease old enemy_all 35 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46228" toLevel="1" name="Damage Decrease old enemy_all 40 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46229" toLevel="1" name="Damage Decrease old enemy_all 45 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46230" toLevel="1" name="Damage Decrease old enemy_all 50 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46231" toLevel="1" name="Damage Decrease old enemy_all 55 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46232" toLevel="1" name="Damage Decrease old enemy_all 60 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46233" toLevel="1" name="Damage Decrease old enemy_all 65 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46234" toLevel="1" name="Damage Decrease old enemy_all 70 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46235" toLevel="1" name="Damage Decrease old enemy_all 75 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46236" toLevel="1" name="Damage Decrease old enemy_all 80 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46237" toLevel="1" name="Damage Decrease old enemy_all 85 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46238" toLevel="1" name="Damage Decrease old enemy_all 90 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46239" toLevel="1" name="Damage Decrease old enemy_all 95 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46240" toLevel="1" name="Damage Decrease old enemy_all 100 per">
+		<!-- Damage Decrease old enemy_all $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46241" toLevel="1" name="Damage Decrease new 5 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46242" toLevel="1" name="Damage Decrease new 10 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46243" toLevel="1" name="Damage Decrease new 15 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46244" toLevel="1" name="Damage Decrease new 20 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46245" toLevel="1" name="Damage Decrease new 25 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46246" toLevel="1" name="Damage Decrease new 30 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46247" toLevel="1" name="Damage Decrease new 35 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46248" toLevel="1" name="Damage Decrease new 40 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46249" toLevel="1" name="Damage Decrease new 45 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46250" toLevel="1" name="Damage Decrease new 50 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46251" toLevel="1" name="Damage Decrease new 55 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46252" toLevel="1" name="Damage Decrease new 60 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46253" toLevel="1" name="Damage Decrease new 65 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46254" toLevel="1" name="Damage Decrease new 70 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46255" toLevel="1" name="Damage Decrease new 75 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46256" toLevel="1" name="Damage Decrease new 80 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46257" toLevel="1" name="Damage Decrease new 85 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46258" toLevel="1" name="Damage Decrease new 90 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46259" toLevel="1" name="Damage Decrease new 95 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46260" toLevel="1" name="Damage Decrease new 100 per">
+		<!-- Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46261" toLevel="20" name="Test Divine Inspiration">
+		<!-- Max Buffs +$s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46262" toLevel="20" name="Test Expand Trade">
+		<!-- The number of items that can be bought and sold at private stores +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46263" toLevel="20" name="Test Expand Warehouse">
+		<!-- The number of items that can be stored in private warehouses and freight +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46264" toLevel="10" name="Test Expand Inventory">
+		<!-- The number of items an individual can possess +$s1. -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46265" toLevel="1" name="Critical Damage Decrease new 5 per">
+		<!-- Critical Damage Decrease new $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46266" toLevel="1" name="Critical Damage Decrease new 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46267" toLevel="1" name="Critical Damage Decrease new 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46268" toLevel="1" name="Critical Damage Decrease new 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46269" toLevel="1" name="Critical Damage Decrease new 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46270" toLevel="1" name="Critical Damage Decrease new 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46271" toLevel="1" name="Critical Damage Decrease new 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46272" toLevel="1" name="Critical Damage Decrease new 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46273" toLevel="1" name="Critical Damage Decrease new 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46274" toLevel="1" name="Critical Damage Decrease new 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46275" toLevel="1" name="Critical Damage Decrease new 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46276" toLevel="1" name="Critical Damage Decrease new 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46277" toLevel="1" name="Critical Damage Decrease new 65 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46278" toLevel="1" name="Critical Damage Decrease new 70 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46279" toLevel="1" name="Critical Damage Decrease new 75 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46280" toLevel="1" name="Critical Damage Decrease new 80 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46281" toLevel="1" name="Critical Damage Decrease new 85 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46282" toLevel="1" name="Critical Damage Decrease new 90 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46283" toLevel="1" name="Critical Damage Decrease new 95 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46284" toLevel="1" name="Critical Damage Decrease new 100 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46285" toLevel="16" name="Test Atk. Spd.">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46286" toLevel="16" name="Test Casting Spd.">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46287" toLevel="5" name="Test Speed">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46288" toLevel="1" name="Skill Range Decrease 5 per">
+		<!-- Skill Range/ Attack Range $s1 -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46289" toLevel="1" name="Skill Range Decrease 10 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46290" toLevel="1" name="Skill Range Decrease 15 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46291" toLevel="1" name="Skill Range Decrease 20 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46292" toLevel="1" name="Skill Range Decrease 25 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46293" toLevel="1" name="Skill Range Decrease 30 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46294" toLevel="1" name="Skill Range Decrease 35 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46295" toLevel="1" name="Skill Range Decrease 40 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46296" toLevel="1" name="Skill Range Decrease 45 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46297" toLevel="1" name="Skill Range Decrease 50 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46298" toLevel="1" name="Skill Range Decrease 55 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="46299" toLevel="1" name="Skill Range Decrease 60 per">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

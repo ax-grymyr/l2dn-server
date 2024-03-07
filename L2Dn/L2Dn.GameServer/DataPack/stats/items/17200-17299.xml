@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="17270" name="Agathion Nevit's Messenger Kanna" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. Double-click to summon Agathion Nevit's Messenger Kanna. Cannot be exchanged, dropped, sold in the private store, or transferred within the account through Game Assistants. Can be stored in the private warehouse. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="8522" level="1" /> <!-- Summon Agathion Nevit's Messenger Kanna -->
+		</skills>
+		<stats>
+			<stat type="mDef">40</stat>
+		</stats>
+	</item>
+</list>

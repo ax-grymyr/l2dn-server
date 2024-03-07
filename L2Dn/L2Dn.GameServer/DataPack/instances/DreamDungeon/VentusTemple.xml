@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="223" name="Ventus Temple" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="60" empty="60" eject="60" />
+	<locations>
+		<enter type="FIXED">
+			<location x="217511" y="47841" z="-8547" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="10" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group name="VentusNPC_1">
+			<npc id="34314" x="217507" y="48249" z="-8515" heading="49329" respawnTime="3700sec" /> <!-- Ventus' Maid -->
+		</group>
+		<group name="VentusNPC_2" spawnByDefault="false">
+			<npc id="34314" x="213022" y="51933" z="-8419" heading="49660" respawnTime="60sec" /> <!-- Ventus' Maid -->
+		</group>
+		<group name="VentusNPC_3" spawnByDefault="false">
+			<npc id="18675" x="213024" y="51048" z="-8410" heading="49258" respawnTime="60sec" /> <!-- Broken Ballista -->
+		</group>
+		<group name="VentusNPC_4" spawnByDefault="false">
+			<npc id="34314" x="213022" y="50456" z="-8400" heading="16383" respawnTime="60sec" /> <!-- Ventus' Maid -->
+		</group>
+		<group name="CatLair_TeleporterCat" spawnByDefault="false">
+			<npc id="34316" x="213022" y="50456" z="-8400" heading="16383" respawnTime="0sec" /> <!-- Teleporter Cat -->
+		</group>
+		<group name="VentusMonsters" spawnByDefault="false">
+			<npc id="22401" x="217793" y="49345" z="-8515" heading="49541" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217655" y="49343" z="-8515" heading="49936" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217503" y="49346" z="-8515" heading="49276" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217350" y="49335" z="-8515" heading="50343" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217216" y="49346" z="-8515" heading="49528" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22399" x="217231" y="49490" z="-8516" heading="46249" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217356" y="49460" z="-8515" heading="49764" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217507" y="49427" z="-8515" heading="45116" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217766" y="49485" z="-8515" heading="43240" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217651" y="49439" z="-8515" heading="50126" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22400" x="217309" y="49542" z="-8515" heading="47997" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217449" y="49545" z="-8515" heading="52192" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217566" y="49545" z="-8515" heading="47854" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217684" y="49517" z="-8515" heading="50632" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22401" x="217828" y="52283" z="-8583" heading="49556" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217701" y="52272" z="-8580" heading="50237" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217504" y="52274" z="-8580" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217601" y="52278" z="-8580" heading="49741" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217412" y="52284" z="-8580" heading="48177" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217299" y="52269" z="-8580" heading="47769" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="217182" y="52276" z="-8583" heading="49151" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22399" x="217188" y="52393" z="-8583" heading="47831" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217293" y="52372" z="-8580" heading="50201" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217461" y="52349" z="-8580" heading="49031" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217600" y="52354" z="-8580" heading="49088" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217720" y="52344" z="-8579" heading="49151" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="217832" y="52347" z="-8583" heading="47041" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22400" x="217189" y="52490" z="-8583" heading="49458" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217335" y="52491" z="-8580" heading="48058" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217475" y="52484" z="-8580" heading="47188" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217603" y="52468" z="-8580" heading="48815" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="217749" y="52478" z="-8581" heading="51384" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22401" x="214786" y="54881" z="-8675" heading="64238" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="214787" y="54675" z="-8675" heading="121" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="214802" y="54510" z="-8675" heading="64735" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22399" x="214673" y="54509" z="-8675" heading="1369" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="214700" y="54676" z="-8675" heading="826" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="214698" y="54879" z="-8675" heading="1722" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22400" x="214621" y="54892" z="-8675" heading="63660" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="214627" y="54671" z="-8675" heading="63255" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="214604" y="54500" z="-8675" heading="1645" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22399" x="212897" y="54514" z="-8675" heading="64792" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212904" y="54609" z="-8675" heading="61025" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212909" y="54710" z="-8675" heading="61355" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212830" y="54616" z="-8675" heading="60607" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212833" y="54704" z="-8675" heading="65131" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212831" y="54812" z="-8675" heading="65006" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212834" y="54511" z="-8675" heading="1046" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212923" y="54808" z="-8675" heading="1057" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22400" x="211068" y="54688" z="-8675" heading="2555" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="211068" y="54546" z="-8675" heading="65048" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22400" x="211067" y="54833" z="-8675" heading="64545" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22401" x="211002" y="54831" z="-8675" heading="60" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="211002" y="54690" z="-8675" heading="65305" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="211005" y="54550" z="-8675" heading="546" respawnTime="3700sec" /> <!-- Ancient Guard -->
+		<!--
+		</group>
+		<group name="VentusDreamMonsters" spawnByDefault="false" >
+		-->
+			<npc id="22402" x="210909" y="54547" z="-8675" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="210903" y="54687" z="-8675" heading="64600" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="210903" y="54830" z="-8675" heading="89" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="210601" y="54424" z="-8672" heading="49092" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="210585" y="54891" z="-8671" heading="15949" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="211924" y="54457" z="-8675" heading="12620" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="211923" y="54839" z="-8675" heading="49862" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		</group>
+		<group name="VentusDreamMonsters_01" spawnByDefault="false">
+			<npc id="22402" x="216990" y="49410" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="216990" y="50300" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="218010" y="49410" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="218010" y="50300" z="-8528" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		<!--
+		</group>
+		<group name="VentusDreamMonsters_02" spawnByDefault="false" >
+		-->
+			<npc id="22402" x="216990" y="52120" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="216990" y="52350" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="218010" y="52120" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="218010" y="52350" z="-8593" heading="48647" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		<!--
+		</group>
+		<group name="VentusDreamMonsters_03" spawnByDefault="false" >
+		-->
+			<npc id="22402" x="214700" y="54230" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214700" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214300" y="54230" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214300" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="215080" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="215080" y="54280" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		<!--
+		</group>
+		<group name="VentusDreamMonsters_04" spawnByDefault="false" >
+		-->
+			<npc id="22402" x="212480" y="54655" z="-8685" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="213216" y="54655" z="-8685" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		<!--
+		</group>
+		<group name="VentusDreamMonsters_05" spawnByDefault="false" >
+		-->
+			<npc id="22402" x="214700" y="54230" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214700" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214300" y="54230" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="214300" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="215080" y="55070" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="215080" y="54280" z="-8672" heading="267" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+		</group>
+		<group name="VentusMonsters_2" spawnByDefault="false">
+			<npc id="22402" x="213028" y="51631" z="-8407" heading="15805" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22402" x="213025" y="52135" z="-8407" heading="49331" respawnTime="3700sec" /> <!-- Ancient Guard Captain -->
+			<npc id="22401" x="213207" y="51862" z="-8419" heading="31175" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22401" x="212858" y="51862" z="-8419" heading="64590" respawnTime="3700sec" /> <!-- Ancient Guard -->
+			<npc id="22400" x="213198" y="51689" z="-8419" heading="24878" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+			<npc id="22399" x="213204" y="52035" z="-8419" heading="36991" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22399" x="212854" y="51711" z="-8419" heading="7497" respawnTime="3700sec" /> <!-- Ancient Swordsman -->
+			<npc id="22400" x="212871" y="52024" z="-8419" heading="54503" respawnTime="3700sec" /> <!-- Ancient Thrower -->
+		</group>
+		<group name="VentusBoss_Ventus" spawnByDefault="false">
+			<npc id="18682" x="213023" y="50365" z="-8412" heading="16383" respawnTime="0sec" />
+		</group>
+		<group name="VentusBoss_Rekario" spawnByDefault="false">
+			<npc id="18683" x="213023" y="50365" z="-8412" heading="16383" respawnTime="0sec" />
+		</group>
+	</spawnlist>
+</instance>

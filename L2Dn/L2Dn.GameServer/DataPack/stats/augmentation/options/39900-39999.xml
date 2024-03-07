@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="39900" name="option_id_39900">
+	</option>
+	<option id="39901" name="option_id_39901">
+	</option>
+	<option id="39902" name="option_id_39902">
+	</option>
+	<option id="39903" name="option_id_39903">
+	</option>
+	<option id="39904" name="option_id_39904">
+	</option>
+	<option id="39905" name="option_id_39905">
+	</option>
+	<option id="39906" name="option_id_39906">
+	</option>
+	<option id="39907" name="option_id_39907">
+	</option>
+	<option id="39908" name="option_id_39908">
+	</option>
+	<option id="39909" name="option_id_39909">
+	</option>
+	<option id="39910" name="option_id_39910">
+	</option>
+	<option id="39911" name="option_id_39911">
+	</option>
+	<option id="39912" name="option_id_39912">
+	</option>
+	<option id="39913" name="option_id_39913">
+	</option>
+	<option id="39914" name="option_id_39914">
+	</option>
+	<option id="39915" name="option_id_39915">
+	</option>
+	<option id="39916" name="option_id_39916">
+	</option>
+	<option id="39917" name="option_id_39917">
+	</option>
+	<option id="39918" name="option_id_39918">
+	</option>
+	<option id="39919" name="option_id_39919">
+	</option>
+	<option id="39920" name="option_id_39920">
+	</option>
+	<option id="39921" name="option_id_39921">
+	</option>
+	<option id="39934" name="option_id_39934">
+		<!-- Acquired XP/ SP +5%, Max HP/ MP/ CP +35, P./ M. Def. +30, XP recovery fee -25% -->
+	</option>
+	<option id="39935" name="option_id_39935">
+		<!-- Max HP/ MP/ CP +15, P./ M. Def. +20, XP recovery fee -15% -->
+	</option>
+	<option id="39936" name="Growth Rune Collection III">
+		<!-- Acquired XP/ SP +1%, P./ M. Def. +20 -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39937" name="Growth Rune Collection IV">
+		<!-- Acquired XP/ SP +1%, P./ M. Def. +40, acquired Magic Lamp XP +1% -->
+		<effects>
+			<effect name="ExpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>1</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="39938" name="option_id_39938">
+		<!-- Acquired XP/ SP +5%, Max HP/ MP/ CP +100, P./ M. Atk. +50, P./ M. Def. +100 -->
+	</option>
+	<option id="39939" name="option_id_39939">
+		<!-- Acquired XP/ SP +10%, Max HP/ MP/ CP +200, P./ M. Atk. +100, P./ M. Def. +200 -->
+	</option>
+	<option id="39963" name="option_id_39963">
+		<!-- P. Def. +10. -->
+	</option>
+	<option id="39964" name="option_id_39964">
+		<!-- P. Def. +16 -->
+	</option>
+	<option id="39965" name="option_id_39965">
+		<!-- P. Def. +22 -->
+	</option>
+	<option id="39966" name="option_id_39966">
+		<!-- P. Def. +28 -->
+	</option>
+	<option id="39967" name="option_id_39967">
+		<!-- P. Def. +34 -->
+	</option>
+	<option id="39968" name="option_id_39968">
+		<!-- P. Def. +40 -->
+	</option>
+	<option id="39969" name="option_id_39969">
+		<!-- P. Def. +46 -->
+	</option>
+	<option id="39970" name="option_id_39970">
+		<!-- P. Def. +52 -->
+	</option>
+	<option id="39971" name="option_id_39971">
+		<!-- P. Def. +58 -->
+	</option>
+	<option id="39972" name="option_id_39972">
+		<!-- P. Def. +64 -->
+	</option>
+	<option id="39973" name="option_id_39973">
+		<!-- P. Def. +70 -->
+	</option>
+	<option id="39974" name="option_id_39974">
+		<!-- P. Def. +76 -->
+	</option>
+	<option id="39975" name="option_id_39975">
+		<!-- P. Def. +82 -->
+	</option>
+	<option id="39976" name="option_id_39976">
+		<!-- P. Def. +88 -->
+	</option>
+	<option id="39977" name="option_id_39977">
+		<!-- P. Def. +94 -->
+	</option>
+	<option id="39978" name="option_id_39978">
+		<!-- P. Def. +100 -->
+	</option>
+	<option id="39979" name="option_id_39979">
+		<!-- P. Def. +110 -->
+	</option>
+	<option id="39980" name="option_id_39980">
+		<!-- P. Def. +120 -->
+	</option>
+	<option id="39981" name="option_id_39981">
+		<!-- P. Def. +150 -->
+	</option>
+	<option id="39982" name="option_id_39982">
+		<!-- P. Def. +200 -->
+	</option>
+	<option id="39983" name="option_id_39983">
+		<!-- M. Def. +10 -->
+	</option>
+	<option id="39984" name="option_id_39984">
+		<!-- M. Def. +16 -->
+	</option>
+	<option id="39985" name="option_id_39985">
+		<!-- M. Def. +22 -->
+	</option>
+	<option id="39986" name="option_id_39986">
+		<!-- M. Def. +28 -->
+	</option>
+	<option id="39987" name="option_id_39987">
+		<!-- M. Def. +34 -->
+	</option>
+	<option id="39988" name="option_id_39988">
+		<!-- M. Def. +40 -->
+	</option>
+	<option id="39989" name="option_id_39989">
+		<!-- M. Def. +46 -->
+	</option>
+	<option id="39990" name="option_id_39990">
+		<!-- M. Def. +52 -->
+	</option>
+	<option id="39991" name="option_id_39991">
+		<!-- M. Def. +58 -->
+	</option>
+	<option id="39992" name="option_id_39992">
+		<!-- M. Def. +64 -->
+	</option>
+	<option id="39993" name="option_id_39993">
+		<!-- M. Def. +70 -->
+	</option>
+	<option id="39994" name="option_id_39994">
+		<!-- M. Def. +76 -->
+	</option>
+	<option id="39995" name="option_id_39995">
+		<!-- M. Def. +82 -->
+	</option>
+	<option id="39996" name="option_id_39996">
+		<!-- M. Def. +88 -->
+	</option>
+	<option id="39997" name="option_id_39997">
+		<!-- M. Def. +94 -->
+	</option>
+	<option id="39998" name="option_id_39998">
+		<!-- M. Def. +100 -->
+	</option>
+	<option id="39999" name="option_id_39999">
+		<!-- M. Def. +110 -->
+	</option>
+</list>

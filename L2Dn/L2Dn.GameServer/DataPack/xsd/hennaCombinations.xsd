@@ -1,0 +1,33 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="henna" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reward" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:int" name="dyeId" use="required"/>
+											<xs:attribute type="xs:int" name="id" use="optional" />
+											<xs:attribute type="xs:short" name="count" use="optional" />
+											<xs:attribute type="xs:string" name="type" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:short" name="dyeId" use="required" />
+						<xs:attribute type="xs:int" name="itemOne" use="optional" />
+						<xs:attribute type="xs:long" name="countOne" use="optional" />
+						<xs:attribute type="xs:int" name="itemTwo" use="required" />
+						<xs:attribute type="xs:long" name="countTwo" use="optional" />
+						<xs:attribute type="xs:long" name="commission" use="optional" />
+						<xs:attribute type="xs:float" name="chance" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

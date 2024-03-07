@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- Everywhere -->
+	</npcs>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="98492" count="1" /> <!-- Spellbook: Time Distortion - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97845" count="1" /> <!-- Spellbook: Amadeus - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97846" count="1" /> <!-- Spellbook: Flamenco - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97851" count="1" /> <!-- Spellbook: Crusader Transformation - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97466" count="1" /> <!-- Spellbook: Leopold - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97328" count="1" /> <!-- Spellbook: Challenger - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97333" count="1" /> <!-- Spellbook: Great Sweep - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97454" count="1" /> <!-- Spellbook: Overwhelming Power - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97191" count="1" /> <!-- Spellbook: Cat Emperor - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97192" count="1" /> <!-- Spellbook: Unicorn Guard - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97193" count="1" /> <!-- Spellbook: Lord Raise - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="97119" count="1" /> <!-- Spellbook: Wild Evolution - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96887" count="1" /> <!-- Spellbook: Legendary Archer - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96682" count="1" /> <!-- Spellbook: Critical Assault - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96683" count="1" /> <!-- Spellbook: Fury Blade - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96684" count="1" /> <!-- Spellbook: Mortal Piercing - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96294" count="1" /> <!-- Spellbook: Shelter - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96296" count="1" /> <!-- Spellbook: Condemnation - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96290" count="1" /> <!-- Spellbook: Phoenix Shield - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="96292" count="1" /> <!-- Spellbook: Hell - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95562" count="1" /> <!-- Spellbook: Tranquility - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95563" count="1" /> <!-- Spellbook: Exclusion - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95564" count="1" /> <!-- Spellbook: Dark Disruption - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95565" count="1" /> <!-- Spellbook: Meteor - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95566" count="1" /> <!-- Spellbook: Rolling Dice - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95551" count="1" /> <!-- Spellbook: Cacophony of War - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95552" count="1" /> <!-- Spellbook: Pa'agrio's Touch - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95557" count="1" /> <!-- Spellbook: Team Building - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95541" count="1" /> <!-- Spellbook: Titan Champion - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95507" count="1" /> <!-- Spellbook: Ultimate Death Knight Transformation - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95355" count="1" /> <!-- Spellbook: Dragon Strike - Sealed -->
+	</item>
+	<item>
+		<ingredient id="97124" count="1" /> <!-- Spellbook Coupon - 4 Stars (Time-limited) - Sealed -->
+		<production id="95869" count="1" /> <!-- Spellbook: Prime Master Transformation - Sealed -->
+	</item>
+</list>

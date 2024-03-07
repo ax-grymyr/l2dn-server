@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="14" parentClassId="11">
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="1" getLevel="40" levelUpSp="0">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Potion Mastery" skillId="45184" skillLevel="2" getLevel="50" levelUpSp="0">
+			<item id="57" count="3000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blaze" skillId="1220" skillLevel="9" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="10" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="11" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="12" getLevel="46" levelUpSp="22000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="13" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="14" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="15" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="16" getLevel="54" levelUpSp="57000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="17" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="18" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="19" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="20" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="21" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="22" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="23" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="24" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="25" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Blaze" skillId="1220" skillLevel="26" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Pirate Transformation" skillId="1800" skillLevel="1" getLevel="45" levelUpSp="0" autoGet="true" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="4" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="5" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="6" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="7" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="8" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="9" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="10" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="11" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="12" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="13" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="14" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="15" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="16" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="17" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Summon Mew the Cat" skillId="1225" skillLevel="18" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Dark Assassin Transformation" skillId="1801" skillLevel="1" getLevel="60" levelUpSp="0" autoGet="true" />
+		<skill skillName="White Assassin Transformation" skillId="1802" skillLevel="1" getLevel="70" levelUpSp="0" autoGet="true" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="1" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="2" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="3" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Power Supremacy" skillId="1611" skillLevel="4" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="6" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="7" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="8" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="9" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="10" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="11" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="12" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="13" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="14" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="15" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="16" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="17" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="18" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="19" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Shield" skillId="1040" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Ultimate Defense" skillId="1299" skillLevel="1" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Test - Servitor Ultimate Defense" skillId="1299" skillLevel="2" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Servitor Cure" skillId="1300" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Cure" skillId="1300" skillLevel="2" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Servitor Cure" skillId="1300" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Servitor Blessing" skillId="1301" skillLevel="1" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="4" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="5" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="6" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="7" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="8" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="9" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="10" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="11" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="12" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="13" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="14" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="15" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="16" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="17" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Summon Kat the Cat" skillId="1111" skillLevel="18" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Spell Master" skillId="1829" skillLevel="1" getLevel="40" levelUpSp="0" autoGet="true">
+			<removeSkill id="1177" onlyReplaceByLearn="true" /> <!-- Wind Strike -->
+			<removeSkill id="1147" onlyReplaceByLearn="true" /> <!-- Fireball -->
+			<removeSkill id="1184" onlyReplaceByLearn="true" /> <!-- Ice Bolt -->
+		</skill>
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="4" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="5" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="6" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="7" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="8" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="9" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="10" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="11" getLevel="46" levelUpSp="22000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="12" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="13" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="14" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="15" getLevel="54" levelUpSp="57000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="16" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="17" getLevel="57" levelUpSp="58000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="18" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="19" getLevel="59" levelUpSp="70000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="20" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="21" getLevel="61" levelUpSp="85000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="22" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="23" getLevel="63" levelUpSp="110000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="24" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="25" getLevel="65" levelUpSp="130000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="26" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="27" getLevel="67" levelUpSp="170000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="28" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="29" getLevel="69" levelUpSp="200000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="30" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="31" getLevel="71" levelUpSp="250000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="32" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="33" getLevel="73" levelUpSp="290000" />
+		<skill skillName="Servitor Recharge" skillId="1126" skillLevel="34" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="4" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="5" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="6" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="7" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="8" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="9" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="10" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="11" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="12" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="13" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="14" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="15" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="16" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="17" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="18" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="19" getLevel="46" levelUpSp="22000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="20" getLevel="47" levelUpSp="22000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="21" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="22" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="23" getLevel="51" levelUpSp="36000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="24" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="25" getLevel="54" levelUpSp="57000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="26" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="27" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="28" getLevel="57" levelUpSp="58000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="29" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="30" getLevel="59" levelUpSp="70000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="31" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="32" getLevel="61" levelUpSp="85000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="33" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="34" getLevel="63" levelUpSp="110000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="35" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="36" getLevel="65" levelUpSp="130000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="37" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="38" getLevel="67" levelUpSp="170000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="39" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="40" getLevel="69" levelUpSp="200000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="41" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="42" getLevel="71" levelUpSp="250000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="43" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="44" getLevel="73" levelUpSp="290000" />
+		<skill skillName="Servitor Heal" skillId="1127" skillLevel="45" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Higher Mana Gain" skillId="47466" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Might" skillId="1068" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Transfer Pain" skillId="1262" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Test - Transfer Pain" skillId="1262" skillLevel="2" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Test - Transfer Pain" skillId="1262" skillLevel="3" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Test - Transfer Pain" skillId="1262" skillLevel="4" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Transfer Pain" skillId="1262" skillLevel="5" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="1" getLevel="40" levelUpSp="10000">
+			<removeSkill id="228" onlyReplaceByLearn="true" /> <!-- Fast Spellcasting -->
+			<removeSkill id="249" onlyReplaceByLearn="true" /> <!-- Weapon Mastery -->
+			<removeSkill id="1829" onlyReplaceByLearn="true" /> <!-- Spell Master -->
+			<removeSkill id="1177" onlyReplaceByLearn="true" /> <!-- Wind Strike -->
+			<removeSkill id="1147" onlyReplaceByLearn="true" /> <!-- Fireball -->
+			<removeSkill id="1184" onlyReplaceByLearn="true" /> <!-- Ice Bolt -->
+		</skill>
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="2" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summoner's Attack Mastery" skillId="47918" skillLevel="4" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="1" getLevel="40" levelUpSp="10000">
+			<removeSkill id="244" onlyReplaceByLearn="true" /> <!-- Armor Mastery -->
+			<removeSkill id="234" onlyReplaceByLearn="true" /> <!-- Robe Mastery -->
+			<removeSkill id="47270" onlyReplaceByLearn="true" /> <!-- Anti Magic -->
+		</skill>
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="2" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summoner's Armor Mastery" skillId="47919" skillLevel="4" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="1" getLevel="40" levelUpSp="10000">
+			<removeSkill id="213" onlyReplaceByLearn="true" /> <!-- Mana Boost -->
+			<removeSkill id="164" onlyReplaceByLearn="true" /> <!-- Quick Recovery -->
+			<removeSkill id="229" onlyReplaceByLearn="true" /> <!-- Quick Mana Recovery -->
+			<removeSkill id="212" onlyReplaceByLearn="true" /> <!-- Quick HP Recovery -->
+		</skill>
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="2" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="3" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summoner's Recovery Mastery" skillId="47920" skillLevel="4" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Empower" skillId="45105" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Increased Power of Magic" skillId="1073" skillLevel="2" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Wild Magic" skillId="45106" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="4" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="5" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="6" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="7" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="8" getLevel="41" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="9" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="10" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="11" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="12" getLevel="42" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="13" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="14" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="15" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="16" getLevel="43" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="17" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="18" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="19" getLevel="46" levelUpSp="22000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="20" getLevel="47" levelUpSp="22000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="21" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="22" getLevel="50" levelUpSp="36000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="23" getLevel="51" levelUpSp="36000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="24" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="25" getLevel="54" levelUpSp="57000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="26" getLevel="55" levelUpSp="57000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="27" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="28" getLevel="57" levelUpSp="58000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="29" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="30" getLevel="59" levelUpSp="70000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="31" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="32" getLevel="61" levelUpSp="85000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="33" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="34" getLevel="63" levelUpSp="110000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="35" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="36" getLevel="65" levelUpSp="130000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="37" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="38" getLevel="67" levelUpSp="170000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="39" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="40" getLevel="69" levelUpSp="200000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="41" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="42" getLevel="71" levelUpSp="250000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="43" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="44" getLevel="73" levelUpSp="290000" />
+		<skill skillName="Swift Servitor Heal" skillId="45362" skillLevel="45" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Haste" skillId="45111" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="2" getLevel="40" levelUpSp="10000" />
+		<skill skillName="HP Recovery" skillId="45176" skillLevel="2" getLevel="40" levelUpSp="10000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Servitor Wind Walk" skillId="1144" skillLevel="1" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Servitor Wind Walk" skillId="1144" skillLevel="2" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Servitor Wind Walk" skillId="1144" skillLevel="3" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Clarity" skillId="45113" skillLevel="3" getLevel="40" levelUpSp="10000" />
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="2" getLevel="40" levelUpSp="10000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="MP Recovery" skillId="45177" skillLevel="3" getLevel="60" levelUpSp="70000">
+			<item id="98423,90045" count="23" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Summon Friend" skillId="1403" skillLevel="1" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="1" getLevel="40" levelUpSp="10000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="2" getLevel="44" levelUpSp="14000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="3" getLevel="48" levelUpSp="22000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="4" getLevel="52" levelUpSp="36000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="5" getLevel="56" levelUpSp="57000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="6" getLevel="58" levelUpSp="58000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="7" getLevel="60" levelUpSp="70000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="8" getLevel="62" levelUpSp="85000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="9" getLevel="64" levelUpSp="110000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="10" getLevel="66" levelUpSp="130000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="11" getLevel="68" levelUpSp="170000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="12" getLevel="70" levelUpSp="200000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="13" getLevel="72" levelUpSp="250000" />
+		<skill skillName="Summon Kai the Cat" skillId="1276" skillLevel="14" getLevel="74" levelUpSp="290000" />
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="1" getLevel="52" levelUpSp="36000">
+			<item id="95495,8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="2" getLevel="61" levelUpSp="85000">
+			<item id="95496,8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+		</skill>
+	</skillTree>
+</list>

@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="47700" toLevel="2" name="Storm Piercing">
+		<!-- <<font color="FF8000">Effect combo skill</font>>\n\nShoots an arrow imbued with powerful storm energy.\nAttacks <font color="FF8000">twice</font>. Power $s1.\n\nIgnores $s2 of the target's defense.\nCritical.\n\nWith a certain chance, applies <font color="FFBB00">Arrow Break</font> to the target.\n\n<font color="FFBB00">Arrow Break effect</font>\nDuration: 10 sec.\n\nP. Atk. $s3\nM. Atk. $s3\nP. Def. $s3\nM. Def. $s3\n\nFor 3 sec., applies <font color="EFFF04">Storm Mark</font> to the target.\n\n<If <font color="EFFF04">Fire Mark</font> and <font color="EFFF04">Aqua Mark</font> are applied>\nWhen using this skill:\nActivates <font color="EFFF04">Mega-impulse</font> (deals heavy damage).\n\nThe skill affects a single target due to the Target Lock effect. -->
+		<icon>icon.s_archer_storm_piercing</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2500</hitTime>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>
+			<value level="1">-850</value>
+			<value level="2">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">127</value>
+			<value level="2">135</value>
+		</mpConsume>
+	</skill>
+	<skill id="47701" toLevel="6" name="Ultimate Rising Attack">
+		<!-- P. Def. is decreased.\nP. Def. -30% -->
+		<icon>icon.full_rising_attack</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1600</value>
+			<value level="3">-1660</value>
+			<value level="4">-1700</value>
+			<value level="5">-1760</value>
+			<value level="6">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47703" toLevel="1" name="Meteor">
+		<icon>icon.meteor</icon>
+		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1600</effectPoint>
+	</skill>
+	<skill id="47704" toLevel="3" name="Burning Field">
+		<icon>icon.s_burning_field_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1700</value>
+			<value level="3">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47705" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47706" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47707" toLevel="45" name="Triple Slash - Master">
+		<!-- Attacks the target with $s1 power.\nIgnores Shield Defense.\nIgnores $s2 of the target's defense.\nCritical. -->
+		<icon>icon.final_sonic_slash</icon>
+		<operateType>A1</operateType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>0</isMagic>
+		<castRange>150</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1800</hitTime>
+		<reuseDelay>1000</reuseDelay>
+		<effectPoint>
+			<value level="1">-800</value>
+			<value level="2">-840</value>
+			<value level="3">-880</value>
+			<value level="4">-920</value>
+			<value level="5">-960</value>
+			<value level="6">-1000</value>
+			<value level="7">-1040</value>
+			<value level="8">-1080</value>
+			<value level="9">-1120</value>
+			<value level="10">-1160</value>
+			<value level="11">-1200</value>
+			<value level="12">-1240</value>
+			<value level="13">-1260</value>
+			<value level="14">-1280</value>
+			<value level="15">-1300</value>
+			<value level="16">-1320</value>
+			<value level="17">-1340</value>
+			<value level="18">-1360</value>
+			<value level="19">-1380</value>
+			<value level="20">-1400</value>
+			<value level="21">-1420</value>
+			<value level="22">-1440</value>
+			<value level="23">-1460</value>
+			<value level="24">-1480</value>
+			<value level="25">-1500</value>
+			<value level="26">-1520</value>
+			<value level="27">-1540</value>
+			<value level="28">-1560</value>
+			<value level="29">-1580</value>
+			<value level="30">-1600</value>
+			<value level="31">-1620</value>
+			<value level="32">-1640</value>
+			<value level="33">-1660</value>
+			<value level="34">-1680</value>
+			<value level="35">-1700</value>
+			<value level="36">-1720</value>
+			<value level="37">-1740</value>
+			<value level="38">-1760</value>
+			<value level="39">-1780</value>
+			<value level="40">-1800</value>
+			<value level="41">-1820</value>
+			<value level="42">-1840</value>
+			<value level="43">-1860</value>
+			<value level="44">-1880</value>
+			<value level="45">-1900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">36</value>
+			<value level="2">38</value>
+			<value level="3">39</value>
+			<value level="4">42</value>
+			<value level="5">44</value>
+			<value level="6">45</value>
+			<value level="7">45</value>
+			<value level="8">46</value>
+			<value level="9">47</value>
+			<value level="10">48</value>
+			<value level="11">48</value>
+			<value level="12">49</value>
+			<value level="13">50</value>
+			<value level="14">51</value>
+			<value level="15">51</value>
+			<value level="16">52</value>
+			<value level="17">53</value>
+			<value level="18">54</value>
+			<value level="19">54</value>
+			<value level="20">55</value>
+			<value level="21">56</value>
+			<value level="22">57</value>
+			<value level="23">57</value>
+			<value level="24">58</value>
+			<value level="25">59</value>
+			<value level="26">60</value>
+			<value level="27">60</value>
+			<value level="28">61</value>
+			<value level="29">62</value>
+			<value level="30">63</value>
+			<value level="31">63</value>
+			<value level="32">64</value>
+			<value level="33">65</value>
+			<value level="34">66</value>
+			<value level="35">66</value>
+			<value level="36">67</value>
+			<value level="37">68</value>
+			<value level="38">69</value>
+			<value level="39">69</value>
+			<value level="40">70</value>
+			<value level="41">72</value>
+			<value level="42">74</value>
+			<value level="43">76</value>
+			<value level="44">78</value>
+			<value level="45">80</value>
+		</mpConsume>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">1873</value>
+					<value level="2">2080</value>
+					<value level="3">2288</value>
+					<value level="4">2603</value>
+					<value level="5">2919</value>
+					<value level="6">3027</value>
+					<value level="7">3135</value>
+					<value level="8">3241</value>
+					<value level="9">3348</value>
+					<value level="10">3456</value>
+					<value level="11">3565</value>
+					<value level="12">3674</value>
+					<value level="13">3780</value>
+					<value level="14">3889</value>
+					<value level="15">3999</value>
+					<value level="16">4109</value>
+					<value level="17">4219</value>
+					<value level="18">4329</value>
+					<value level="19">4440</value>
+					<value level="20">4551</value>
+					<value level="21">4661</value>
+					<value level="22">4772</value>
+					<value level="23">4885</value>
+					<value level="24">4997</value>
+					<value level="25">5108</value>
+					<value level="26">6207</value>
+					<value level="27">6294</value>
+					<value level="28">6383</value>
+					<value level="29">6473</value>
+					<value level="30">6560</value>
+					<value level="31">6648</value>
+					<value level="32">6738</value>
+					<value level="33">6827</value>
+					<value level="34">6916</value>
+					<value level="35">7005</value>
+					<value level="36">7093</value>
+					<value level="37">7184</value>
+					<value level="38">7272</value>
+					<value level="39">7363</value>
+					<value level="40">7452</value>
+					<value level="41">7675</value>
+					<value level="42">7905</value>
+					<value level="43">8142</value>
+					<value level="44">8386</value>
+					<value level="45">8637</value>
+				</power>
+				<pDefMod>0.85</pDefMod>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47708" toLevel="1" name="Summon Blade Destruction">
+		<icon>icon.skill1540</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47709" toLevel="1" name="Blade Destruction">
+		<icon>icon.skill1540</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="47710" toLevel="50" name="Rising Attack">
+		<!-- P. Def. $s1 -->
+		<icon>icon.rising_attack</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>
+			<value level="1">-720</value>
+			<value level="2">-740</value>
+			<value level="3">-760</value>
+			<value level="4">-780</value>
+			<value level="5">-800</value>
+			<value level="6">-820</value>
+			<value level="7">-840</value>
+			<value level="8">-860</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+			<value level="11">-920</value>
+			<value level="12">-940</value>
+			<value level="13">-960</value>
+			<value level="14">-980</value>
+			<value level="15">-1000</value>
+			<value level="16">-1020</value>
+			<value level="17">-1040</value>
+			<value level="18">-1060</value>
+			<value level="19">-1080</value>
+			<value level="20">-1100</value>
+			<value level="21">-1120</value>
+			<value level="22">-1140</value>
+			<value level="23">-1160</value>
+			<value level="24">-1180</value>
+			<value level="25">-1200</value>
+			<value level="26">-1220</value>
+			<value level="27">-1240</value>
+			<value level="28">-1260</value>
+			<value level="29">-1280</value>
+			<value level="30">-1300</value>
+			<value level="31">-1320</value>
+			<value level="32">-1340</value>
+			<value level="33">-1360</value>
+			<value level="34">-1380</value>
+			<value level="35">-1400</value>
+			<value level="36">-1420</value>
+			<value level="37">-1440</value>
+			<value level="38">-1460</value>
+			<value level="39">-1480</value>
+			<value level="40">-1500</value>
+			<value level="41">-1520</value>
+			<value level="42">-1540</value>
+			<value level="43">-1560</value>
+			<value level="44">-1580</value>
+			<value level="45">-1600</value>
+			<value level="46">-1640</value>
+			<value level="47">-1680</value>
+			<value level="48">-1720</value>
+			<value level="49">-1760</value>
+			<value level="50">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47711" toLevel="50" name="Amazing Rising Attack">
+		<!-- P. Def. $s1 -->
+		<icon>icon.arc_rising_attack</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>
+			<value level="1">-720</value>
+			<value level="2">-740</value>
+			<value level="3">-760</value>
+			<value level="4">-780</value>
+			<value level="5">-800</value>
+			<value level="6">-820</value>
+			<value level="7">-840</value>
+			<value level="8">-860</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+			<value level="11">-920</value>
+			<value level="12">-940</value>
+			<value level="13">-960</value>
+			<value level="14">-980</value>
+			<value level="15">-1000</value>
+			<value level="16">-1020</value>
+			<value level="17">-1040</value>
+			<value level="18">-1060</value>
+			<value level="19">-1080</value>
+			<value level="20">-1100</value>
+			<value level="21">-1120</value>
+			<value level="22">-1140</value>
+			<value level="23">-1160</value>
+			<value level="24">-1180</value>
+			<value level="25">-1200</value>
+			<value level="26">-1220</value>
+			<value level="27">-1240</value>
+			<value level="28">-1260</value>
+			<value level="29">-1280</value>
+			<value level="30">-1300</value>
+			<value level="31">-1320</value>
+			<value level="32">-1340</value>
+			<value level="33">-1360</value>
+			<value level="34">-1380</value>
+			<value level="35">-1400</value>
+			<value level="36">-1420</value>
+			<value level="37">-1440</value>
+			<value level="38">-1460</value>
+			<value level="39">-1480</value>
+			<value level="40">-1500</value>
+			<value level="41">-1520</value>
+			<value level="42">-1540</value>
+			<value level="43">-1560</value>
+			<value level="44">-1580</value>
+			<value level="45">-1600</value>
+			<value level="46">-1640</value>
+			<value level="47">-1680</value>
+			<value level="48">-1720</value>
+			<value level="49">-1760</value>
+			<value level="50">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47712" toLevel="4" name="Blade Wave">
+		<!-- P. Def. $s1 -->
+		<icon>icon.blade_wave_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+	</skill>
+	<skill id="47713" toLevel="4" name="Blade Wave - Challenger">
+		<!-- P. Def. $s1 -->
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+	</skill>
+	<skill id="47714" toLevel="1" name="Battle Heart">
+		<!-- Momentarily recovers 35% of Max HP.\nMomentarily recovers 1000 CP.\n\nMax HP +35% -->
+		<icon>icon.s_dethrone_fire_source_1</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<hitTime>1500</hitTime>
+		<reuseDelay>150000</reuseDelay>
+		<effectPoint>650</effectPoint>
+		<mpConsume>60</mpConsume>
+		<magicLevel>78</magicLevel>
+		<basicProperty>NONE</basicProperty>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
+			</effect>
+			<effect name="Cp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="47715" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47717" toLevel="3" name="Frozen Field">
+		<icon>icon.s_freezing_area_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1700</value>
+			<value level="3">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47718" toLevel="3" name="Lightning Storm">
+		<icon>icon.s_lightning_storm_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1600</value>
+			<value level="2">-1700</value>
+			<value level="3">-1800</value>
+		</effectPoint>
+	</skill>
+	<skill id="47719" toLevel="1" name="Challenger: Master">
+		<!-- <Skill with fixed cast time>\n\nImbues your sword with will to victory granting great power.\n\nP. Atk. +20%\nP. Skill Power +15%\nP. Skill Critical Rate +20%\nP. Skill Critical Damage +20%\nP. Skill Damage +10%\nShock Atk. Rate +10%\nImprisonment Atk. Rate +10%\nMax HP +10%\nMax HP +2500\nAtk. Spd. +20%\nSpeed +10\n\nTemporarily enhances the following skills:\n<font color="FF8000">Blade Wave</font> → <font color="FF8000">Blade Wave - Challenger</font>\n<font color="FF8000">Triple Slash</font> → <font color="FF8000">Triple Slash - Master</font>\n<font color="FF8000">Slashing Blades</font> → <font color="FF8000">Slashing Blades - Master</font> -->
+		<icon>icon.contender_master</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47721" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47722" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="47723" toLevel="1" name="Blade Assault">
+		<!-- <font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Challenger: Master</font>.\n\nAttacks the target with a blade imbued with the power of destruction.\nIf the target is too far, charges to them and attacks.\n\nAttacks the target twice. Power 12,000.\nIgnores 20% of the target's defense.\nCritical.\n\nFor 10 sec., applies the following debuff to the target:\nImprisonment Resistance -20%\n\nWith a certain chance, applies the following debuff to surrounding enemies for 5 sec.:\nReceived AoE Skill Damage +10%\nFixed number of attacks: 1\n\nKilling the target with <font color="FF8000">Blade Assault</font> reduces the skill's cooldown.\nWhen the target is killed, the skill can be used consecutively for 3 sec.\n(Max 2 times) -->
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47724" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47725" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47726" toLevel="1" name="Blade Assault">
+		<!-- <font color="FF0000">Note!</font>\nAvailable only while transformed into <font color="00FF00">Challenger: Master</font>.\n\nAttacks the target with a blade imbued with the power of destruction.\nIf the target is too far, charges to them and attacks.\n\nAttacks the target twice. Power 12,000.\nIgnores 20% of the target's defense.\nCritical.\n\nFor 10 sec., applies the following debuff to the target:\nImprisonment Resistance -20%\n\nWith a certain chance, applies the following debuff to surrounding enemies for 5 sec.:\nReceived AoE Skill Damage +10%\nFixed number of attacks: 1\n\nKilling the target with <font color="FF8000">Blade Assault</font> reduces the skill's cooldown.\nWhen the target is killed, the skill can be used consecutively for 3 sec.\n(Max 2 times) -->
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47727" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47728" toLevel="1" name="Blade Assault">
+		<icon>icon.blade_assault1</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-1980</effectPoint>
+		<mpConsume>400</mpConsume>
+	</skill>
+	<skill id="47729" toLevel="4" name="Blade Wave">
+		<icon>icon.blade_wave_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>500</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47730" toLevel="4" name="Blade Wave">
+		<icon>icon.blade_wave_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>500</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47731" toLevel="4" name="Blade Wave - Challenger">
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47732" toLevel="4" name="Blade Wave - Challenger">
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47733" toLevel="4" name="Blade Wave - Master">
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47734" toLevel="4" name="Blade Wave - Master">
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47735" toLevel="4" name="Blade Wave">
+		<icon>icon.blade_wave_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>500</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47736" toLevel="4" name="Blade Wave - Challenger">
+		<icon>icon.blade_wave_contender_new</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>1000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>
+			<value level="1">-1640</value>
+			<value level="2">-1700</value>
+			<value level="3">-1760</value>
+			<value level="4">-1820</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">91</value>
+			<value level="2">96</value>
+			<value level="3">102</value>
+			<value level="4">109</value>
+		</mpConsume>
+	</skill>
+	<skill id="47737" toLevel="1" name="Blade Assault">
+		<!-- Fixed number of attacks: 1. -->
+		<icon>icon.blade_assault_debuff1</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-1800</effectPoint>
+	</skill>
+</list>

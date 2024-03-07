@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="92900" name="Max MP +32">
+		<!-- Max MP +32 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92901" name="Max MP +35">
+		<!-- Max MP +35 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92902" name="Max MP +38">
+		<!-- Max MP +38 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92903" name="Max MP +41">
+		<!-- Max MP +41 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92904" name="Max MP +44">
+		<!-- Max MP +44 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92905" name="Max MP +47">
+		<!-- Max MP +47 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92906" name="Max MP +51">
+		<!-- Max MP +51 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92907" name="Max MP +55">
+		<!-- Max MP +55 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92908" name="Max MP +59">
+		<!-- Max MP +59 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92909" name="Max MP +63">
+		<!-- Max MP +63 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92910" name="Max MP +68">
+		<!-- Max MP +68 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92911" name="Max MP +73">
+		<!-- Max MP +73 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92912" name="Max MP +75">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92913" name="Max MP +78">
+		<!-- Max MP +78 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92914" name="Max MP +82">
+		<!-- Max MP +82 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92915" name="Max MP +86">
+		<!-- Max MP +86 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92916" name="Max MP +90">
+		<!-- Max MP +90 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92917" name="Max MP +94">
+		<!-- Max MP +94 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92918" name="Max MP +100">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92919" name="Max MP +30">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92920" name="Max MP +32">
+		<!-- Max MP +32 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>32</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92921" name="Max MP +35">
+		<!-- Max MP +35 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92922" name="Max MP +38">
+		<!-- Max MP +38 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>38</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92923" name="Max MP +41">
+		<!-- Max MP +41 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92924" name="Max MP +44">
+		<!-- Max MP +44 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>44</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92925" name="Max MP +47">
+		<!-- Max MP +47 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92926" name="Max MP +51">
+		<!-- Max MP +51 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>51</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92927" name="Max MP +55">
+		<!-- Max MP +55 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92928" name="Max MP +59">
+		<!-- Max MP +59 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>59</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92929" name="Max MP +63">
+		<!-- Max MP +63 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92930" name="Max MP +68">
+		<!-- Max MP +68 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>68</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92931" name="Max MP +73">
+		<!-- Max MP +73 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>73</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92932" name="Max MP +75">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92933" name="Max MP +78">
+		<!-- Max MP +78 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>78</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92934" name="Max MP +82">
+		<!-- Max MP +82 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92935" name="Max MP +86">
+		<!-- Max MP +86 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>86</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92936" name="Max MP +90">
+		<!-- Max MP +90 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>90</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92937" name="Max MP +94">
+		<!-- Max MP +94 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92938" name="Max MP +100">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92939" name="P. Evasion +2">
+		<!-- P. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92940" name="P. Evasion +2.1">
+		<!-- P. Evasion +2.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92941" name="P. Evasion +2.2">
+		<!-- P. Evasion +2.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92942" name="P. Evasion +2.3">
+		<!-- P. Evasion +2.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92943" name="P. Evasion +2.4">
+		<!-- P. Evasion +2.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92944" name="P. Evasion +2.5">
+		<!-- P. Evasion +2.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92945" name="P. Evasion +2.6">
+		<!-- P. Evasion +2.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92946" name="P. Evasion +2.7">
+		<!-- P. Evasion +2.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92947" name="P. Evasion +2.8">
+		<!-- P. Evasion +2.8 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92948" name="P. Evasion +2.9">
+		<!-- P. Evasion +2.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92949" name="P. Evasion +3">
+		<!-- P. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92950" name="P. Evasion +3.1">
+		<!-- P. Evasion +3.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92951" name="P. Evasion +3.2">
+		<!-- P. Evasion +3.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92952" name="P. Evasion +3.3">
+		<!-- P. Evasion +3.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92953" name="P. Evasion +3.5">
+		<!-- P. Evasion +3.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92954" name="P. Evasion +3.7">
+		<!-- P. Evasion +3.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92955" name="P. Evasion +3.9">
+		<!-- P. Evasion +3.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92956" name="P. Evasion +4.1">
+		<!-- P. Evasion +4.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92957" name="P. Evasion +4.3">
+		<!-- P. Evasion +4.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92958" name="P. Evasion +5">
+		<!-- P. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92959" name="P. Evasion +2">
+		<!-- P. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92960" name="P. Evasion +2.1">
+		<!-- P. Evasion +2.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92961" name="P. Evasion +2.2">
+		<!-- P. Evasion +2.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92962" name="P. Evasion +2.3">
+		<!-- P. Evasion +2.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92963" name="P. Evasion +2.4">
+		<!-- P. Evasion +2.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92964" name="P. Evasion +2.5">
+		<!-- P. Evasion +2.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92965" name="P. Evasion +2.6">
+		<!-- P. Evasion +2.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92966" name="P. Evasion +2.7">
+		<!-- P. Evasion +2.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92967" name="P. Evasion +2.8">
+		<!-- P. Evasion +2.8 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92968" name="P. Evasion +2.9">
+		<!-- P. Evasion +2.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92969" name="P. Evasion +3">
+		<!-- P. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92970" name="P. Evasion +3.1">
+		<!-- P. Evasion +3.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92971" name="P. Evasion +3.2">
+		<!-- P. Evasion +3.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92972" name="P. Evasion +3.3">
+		<!-- P. Evasion +3.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92973" name="P. Evasion +3.5">
+		<!-- P. Evasion +3.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92974" name="P. Evasion +3.7">
+		<!-- P. Evasion +3.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92975" name="P. Evasion +3.9">
+		<!-- P. Evasion +3.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92976" name="P. Evasion +4.1">
+		<!-- P. Evasion +4.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92977" name="P. Evasion +4.3">
+		<!-- P. Evasion +4.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92978" name="P. Evasion +5">
+		<!-- P. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92979" name="P. Evasion +2">
+		<!-- P. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92980" name="P. Evasion +2.1">
+		<!-- P. Evasion +2.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92981" name="P. Evasion +2.2">
+		<!-- P. Evasion +2.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92982" name="P. Evasion +2.3">
+		<!-- P. Evasion +2.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92983" name="P. Evasion +2.4">
+		<!-- P. Evasion +2.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92984" name="P. Evasion +2.5">
+		<!-- P. Evasion +2.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92985" name="P. Evasion +2.6">
+		<!-- P. Evasion +2.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92986" name="P. Evasion +2.7">
+		<!-- P. Evasion +2.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92987" name="P. Evasion +2.8">
+		<!-- P. Evasion +2.8 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92988" name="P. Evasion +2.9">
+		<!-- P. Evasion +2.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92989" name="P. Evasion +3">
+		<!-- P. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92990" name="P. Evasion +3.1">
+		<!-- P. Evasion +3.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92991" name="P. Evasion +3.2">
+		<!-- P. Evasion +3.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92992" name="P. Evasion +3.3">
+		<!-- P. Evasion +3.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92993" name="P. Evasion +3.5">
+		<!-- P. Evasion +3.5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92994" name="P. Evasion +3.7">
+		<!-- P. Evasion +3.7 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92995" name="P. Evasion +3.9">
+		<!-- P. Evasion +3.9 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92996" name="P. Evasion +4.1">
+		<!-- P. Evasion +4.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92997" name="P. Evasion +4.3">
+		<!-- P. Evasion +4.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92998" name="P. Evasion +5">
+		<!-- P. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="92999" name="M. Evasion +2">
+		<!-- M. Evasion +2 -->
+		<effects>
+			<effect name="MagicalEvasion">
+				<amount>2.0</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

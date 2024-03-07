@@ -1,0 +1,1654 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="49400" name="Conjuror's Staff" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1030" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49401" name="Staff of Mana" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. M. Atk. +20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1040" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49402" name="Staff of Mana" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. Casting Spd. +6%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1040" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49403" name="Staff of Mana" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1040" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49404" name="Staff of Magic" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. M. Atk. +20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">57</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49405" name="Staff of Magic" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. Casting Spd. +6%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">57</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49406" name="Staff of Magic" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">57</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49407" name="Atuba Hammer" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. M. Atk. +20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49408" name="Atuba Hammer" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. Casting Spd. +6%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49409" name="Atuba Hammer" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49410" name="Ghost Staff" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. M. Atk. +20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49411" name="Ghost Staff" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. Casting Spd. +6%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49412" name="Ghost Staff" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49413" name="Atuba Mace" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. M. Atk. +20. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49414" name="Atuba Mace" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. Casting Spd. +6%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49415" name="Atuba Mace" additionalName="Not Available" type="Weapon">
+		<!-- The item is not available. <Soul crystal property>. MP Recovery Rate +20%. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49416" name="Blade Spirit (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Take it to Collector Pona in Giran to exchange for Elemental Stone. -->
+		<set name="icon" val="icon.etc_soul_of_blade" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49417" name="Spirit Energy" type="EtcItem">
+		<!-- Not used. -->
+		<set name="icon" val="icon.etc_power_of_soul" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49418" name="Cube of Sayha" additionalName="30-day" type="EtcItem">
+		<!-- Available for 30 d. Double-click to obtain 1 Scroll: Summon Storm and 1 Sayha's Treasure Chest. (Can be used only once a day.) -->
+		<set name="icon" val="icon.sa_cube" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+	</item>
+	<item id="49419" name="Cube of Sayha" additionalName="90-day" type="EtcItem">
+		<!-- Available for 90 d. Double-click to obtain 1 Scroll: Summon Storm and 1 Sayha's Treasure Chest. (Can be used only once a day.) -->
+		<set name="icon" val="icon.sa_cube" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="129600" />
+	</item>
+	<item id="49420" name="Scroll: Summon Storm" additionalName="Sealed" type="EtcItem">
+		<!-- Fills you with the Storm Energy. For 2 h., acquired XP/ SP while hunting +50%. Cooldown: 2 h. Required level: 1-40. The effect remains after death. The effect stacks with Irene's Hourglass and XP and SP Rune. -->
+		<set name="icon" val="icon.scrl_of_storm" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49421" name="Package: Cube of Sayha (30-day)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shirt_special_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49418" min="1" max="1" chance="100" /> <!-- Cube of Sayha - 30-day -->
+		</capsuled_items>
+	</item>
+	<item id="49422" name="Package: Cube of Sayha (90-day)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.shirt_special_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49419" min="1" max="1" chance="100" /> <!-- Cube of Sayha - 90-day -->
+		</capsuled_items>
+	</item>
+	<item id="49423" name="Spellbook: Dual Weapon Defense" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Dual Weapon Defense skill. <Class>. Gladiator. <Skill effect>. Increases P. Skill Evasion. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49424" name="Spellbook: Fell Swoop" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Fell Swoop skill. <Class>. Warlord. <Skill effect>. Increases a number of attacked enemies. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49425" name="Spellbook: Dynamic Recovery" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Dynamic Recovery skill. <Class>. Destroyer. <Skill effect>. Momentarily recovers HP. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49426" name="Spellbook: Break Duress" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Break Duress skill. <Class>. Tyrant. <Skill effect>. Uses spirit energy to remove Paralysis, Shock or Sleep debuffs. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49427" name="Spellbook: Shield Deflect Magic" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Shield Deflect Magic skill. <Classes>. Paladin, Dark Avenger, Temple Knight, Shillien Knight. <Skill effect>. Reflects attack magic back to the enemy. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49428" name="Spellbook: Aegis" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Aegis skill. <Classes>. Temple Knight, Shillien Knight. <Skill effect>. Enables Shield Defense for attacks from all directions. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49429" name="Spellbook: Hide" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Hide skill. <Classes>. Treasure Hunter, Plains Walker, Abyss Walker. <Skill effect>. Grants invisibility. The effect is cancelled upon any action except movement. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49430" name="Spellbook: Mystic Immunity" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Mystic Immunity skill. <Class>. Prophet. <Skill effect>. Grants immunity to debuffs and anomalies. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49431" name="Spellbook: Divine Power" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Divine Power skill. <Class>. Bishop. <Skill effect>. Increases Healing Power. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49432" name="Spellbook: Stigma of Shillien" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. A spellbook for learning the Stigma of Shillien skill. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49433" name="Amulet: Chant of Battle" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. An amulet for learning the Chant of Battle skill. <Class>. Warcryer. <Skill effect>. Decreases received P. Critical Rate, increases P. Atk. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="49434" name="Sayha's Treasure Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ev_kalie_treasure_box" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="32050" level="1" /> <!-- Sayha's Treasure Chest -->
+		</skills>
+	</item>
+	<item id="49435" name="Scroll: Berserker Spirit" type="EtcItem">
+		<!-- For 20 min., P. Def. -5%, M. Def. -10%, P. Evasion -2, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="32051" level="1" /> <!-- Berserker Spirit -->
+		</skills>
+	</item>
+	<item id="49436" name="Blue Mackerel: One-handed Sword" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1450" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49437" name="Trumpetfish: Dagger" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1070" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">42</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49438" name="Shark: Two-handed Sword" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing3" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2020" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49439" name="Squid: Spear" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing4" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2060" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+		</skills>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="49440" name="Sea Horse: Two-handed Magic Blunt Weapon" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing5" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="1000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">77</stat>
+			<stat type="mAtk">69</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49441" name="Lobster: Fist Weapon" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing6" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1510" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49442" name="Giant Crab: Bow" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing7" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1820" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">179</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+	</item>
+	<item id="49443" name="Turtle: Shield" additionalName="7-day" type="Armor">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing10" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1320" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">142</stat>
+		</stats>
+	</item>
+	<item id="49444" name="Blue Mackerel: Dual Sword" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing11" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2530" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49445" name="Blue Mackerel: One-handed Blunt Weapon" additionalName="7-day" type="Weapon">
+		<!-- 7-day -->
+		<set name="icon" val="icon.wp_fishing1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1720" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49446" name="Blue Mackerel Chest: One-handed Sword" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49436" min="1" max="1" chance="100" /> <!-- Blue Mackerel - One-handed Sword - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49447" name="Trumpetfish Chest: Dagger" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49437" min="1" max="1" chance="100" /> <!-- Trumpetfish - Dagger - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49448" name="Shark Chest: Two-handed Sword" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49438" min="1" max="1" chance="100" /> <!-- Shark - Two-handed Sword - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49449" name="Squid Chest: Spear" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49439" min="1" max="1" chance="100" /> <!-- Squid - Spear - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49450" name="Sea Horse Chest: Two-handed Magic Blunt Weapon" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49440" min="1" max="1" chance="100" /> <!-- Sea Horse: Two-handed Magic Blunt Weapon - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49451" name="Lobster Chest: Fist Weapon" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49441" min="1" max="1" chance="100" /> <!-- Lobster - Fist Weapon - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49452" name="Giant Crab Chest: Bow" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49442" min="1" max="1" chance="100" /> <!-- Giant Crab - Bow - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49453" name="Turtle Chest: Shield" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49443" min="1" max="1" chance="100" /> <!-- Turtle - Shield - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49454" name="Blue Mackerel Chest: Dual Sword" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49444" min="1" max="1" chance="100" /> <!-- Blue Mackerel - Dual Swords - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49455" name="Blue Mackerel Chest: One-handed Blunt Weapon" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_d_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49445" min="1" max="1" chance="100" /> <!-- Blue Mackerel - One-handed Blunt Weapon - 7-day -->
+		</capsuled_items>
+	</item>
+	<item id="49456" name="Blade Spirit Chest (5 pcs.)" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49416" min="5" max="5" chance="100" /> <!-- Blade Spirit (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49457" name="Letter Collector's Gift" type="EtcItem">
+		<!-- Letter Collector's gift. For 1 h., acquired XP/ SP +10%, Max HP/ MP +10%, Speed +5. Changes the armor appearance to that of Santa Outfit. Will be deleted after the event. -->
+		<set name="icon" val="icon.shield_bread_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<skills>
+			<skill id="39046" level="1" /> <!-- Venezia Rune - High-Grade -->
+		</skills>
+	</item>
+	<item id="49458" name="Agathion Pisces" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Pisces. Available for 15 days. <Active skill>. Agathion Teleport: Teleports to Gludio/ Dion/ Giran/ Oren. Cooldown: 60 min. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="17619" level="1" type="ON_EQUIP" /> <!-- Release Agathion - Pisces -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="39053" level="1" /> <!-- Agathion Teleport: Gludio -->
+			<skill id="39054" level="1" /> <!-- Agathion Teleport: Dion -->
+			<skill id="39055" level="1" /> <!-- Agathion Teleport: Giran -->
+			<skill id="39056" level="1" /> <!-- Agathion Teleport: Oren -->
+		</skills>
+	</item>
+	<item id="49459" name="Agathion Cancer" additionalName="Not Available" type="Armor">
+		<!-- The item is not available. A bracelet for summoning Agathion Cancer. Available for 15 days. <Active skill>. Agathion Teleport: Teleports to Gludio/ Dion/ Giran/ Oren. Cooldown: 60 min. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="17621" level="1" /> <!-- Release Agathion - Cancer -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="39053" level="1" /> <!-- Agathion Teleport: Gludio -->
+			<skill id="39054" level="1" /> <!-- Agathion Teleport: Dion -->
+			<skill id="39055" level="1" /> <!-- Agathion Teleport: Giran -->
+			<skill id="39056" level="1" /> <!-- Agathion Teleport: Oren -->
+		</skills>
+	</item>
+	<item id="49460" name="Fish Stew - Might Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Atk. +8%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39047" level="1" /> <!-- Fish Stew: Might -->
+		</skills>
+	</item>
+	<item id="49461" name="Fish Stew - Shield Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. P. Def. +8%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39048" level="1" /> <!-- Fish Stew: Shield -->
+		</skills>
+	</item>
+	<item id="49462" name="Fish Stew - Magic Barrier Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Def. +23%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39049" level="1" /> <!-- Fish Stew: Magic Barrier -->
+		</skills>
+	</item>
+	<item id="49463" name="Fish Stew - Vampiric Rage Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. With a certain chance, absorbs 6% of the inflicted damage as HP. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39050" level="1" /> <!-- Fish Stew: Vampiric Rage -->
+		</skills>
+	</item>
+	<item id="49464" name="Fish Stew - Empower Lv. 1" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect>. M. Atk. +55%. Duration: 20 min. -->
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="39051" level="1" /> <!-- Fish Stew: Empower -->
+		</skills>
+	</item>
+	<item id="49465" name="Fishing Rod" additionalName="For NPC" type="Weapon">
+		<set name="icon" val="icon.weapon_fishing_rod_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="49466" name="Hero's XP Amulet" additionalName="30-day" type="EtcItem">
+		<!-- Available for 30 d. When in inventory, acquired XP/ SP while hunting +20%. -->
+		<set name="icon" val="icon.skill19226" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="time" val="43200" />
+		<skills>
+			<skill id="39057" level="1" /> <!-- Hero Experience Rune -->
+		</skills>
+	</item>
+	<item id="49467" name="Fire Dragon Pendant" additionalName="Sealed" type="Armor">
+		<!-- Pendant that contains the Fire Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Starting from +4, grants passive skills -->
+		<set name="icon" val="icon.bm_pendant_pve" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="49468" name="Earth Dragon Pendant" additionalName="Sealed" type="Armor">
+		<!-- A pendant that contains the Earth Dragon's energy. Can be enchanted up to +10 with Pendant Polish/ Shining Pendant Polish. Starting from +4, grants passive skills -->
+		<set name="icon" val="icon.bm_pendant_pvp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+	</item>
+	<item id="49469" name="Pendant Polish" type="EtcItem">
+		<!-- Enhances pendants' parameters. Up to +3, the enchanting chance is 100%. The maximum enchantment level is +10. Starting from +4, activates special effects depending on the item type. -->
+		<set name="icon" val="icon.bm_pendant_varnish" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="2209" level="1" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+		</skills>
+	</item>
+	<item id="49470" name="Shining Pendant Polish" type="EtcItem">
+		<!-- Enhances pendants' parameters. Can be used with Fire/ Earth Dragon Pendant up to +8. In case of failure, the pendant does not disappear, and its enchant value remains the same. Starting from +4, activates special effects depending on the item type. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.bm_pendant_varnish_premium" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39063" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49471" name="Fire Dragon Pendant Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pendant_pve_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49467" min="1" max="1" chance="100" /> <!-- Fire Dragon Pendant - Sealed -->
+			<item id="49469" min="10" max="10" chance="100" /> <!-- Pendant Polish -->
+		</capsuled_items>
+	</item>
+	<item id="49472" name="Earth Dragon Pendant Pack" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_pendant_pvp_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49468" min="1" max="1" chance="100" /> <!-- Earth Dragon Pendant - Sealed -->
+			<item id="49469" min="10" max="10" chance="100" /> <!-- Pendant Polish -->
+		</capsuled_items>
+	</item>
+	<item id="49473" name="Mr. K's Hand of God Gift Basket" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.mrk_basket_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="13519" min="1" max="1" chance="100" /> <!-- Black Mask <STR+1 INT+1> -->
+			<item id="49081" min="30" max="30" chance="100" /> <!-- XP Growth Scroll -->
+			<item id="49086" min="50" max="50" chance="100" /> <!-- Rice Cake of Fighting Spirit - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49474" name="Scroll Fragment: Enchant Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49475" name="Scroll Fragment: Enchant Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49476" name="Refined Scroll Part: Enchant Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49477" name="Queen Ant's Ring Lv. 1" additionalName="15-day" type="Armor">
+		<!-- <Properties>. P. Atk. +4%. M. Atk. +4%. P. Accuracy +1. M. Accuracy +1. Max MP +9. Infection Atk. Rate and Resistance +10%. Available for 15 d. Effects of two identical rings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="commissionItemType" val="RING" />
+		<set name="handler" val="ItemSkills" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
+		</skills>
+		<stats>
+			<stat type="mDef">32</stat>
+			<stat type="maxMp">9</stat>
+		</stats>
+	</item>
+	<item id="49478" name="Refined Scroll Part: Enchant Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49479" name="Stable Scroll Part: Enchant Weapon" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49480" name="Stable Scroll Part: Enchant Armor" additionalName="Not Available" type="EtcItem">
+		<!-- The item is not available. Not used. Can be sold for adena to any trader. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="49481" name="Stable Scroll: Enchant D-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +6 or higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39063" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49482" name="Stable Scroll: Enchant D-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +7 and higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_d" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39064" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49483" name="Stable Scroll: Enchant C-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +6 or higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_c" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39065" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49484" name="Stable Scroll: Enchant C-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +7 and higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_c" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39066" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49485" name="Stable Scroll: Enchant B-grade Armor" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. Armor: P. Def. +1. Accessories: M. Def. +1. <font color=bbaa88><When enchanted to +4 or higher></font>. Armor: P. Def. +3. Accessories: M. Def. +3. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +6 or higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_am_b" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39067" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49486" name="Stable Scroll: Enchant B-grade Weapon" type="EtcItem">
+		<!-- <font color=bbaa88><When enchanted from +1 to +3></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +4, M. Atk. +3. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +5, M. Atk. +3. Bow, firearms: P. Atk. +8, M. Atk. +3. <font color=bbaa88><When enchanted to +4 or higher></font>. One-handed sword/ blunt weapon, dagger, rapier, spear: P. Atk. +8, M. Atk. +6. Two-handed sword/ blunt weapon, dual swords, fist weapon, ancient sword: P. Atk. +10, M. Atk. +6. Bow, firearms: P. Atk. +16, M. Atk. +6. <font color=eeaa22>Safe enchanting to +4. In case of failure the enchant value remains the same.</font>. <font color=ff6666>Cannot be used with items enchanted to +7 and higher.</font>. <font color=ff6666>Cannot be used for mass enchanting.</font> -->
+		<set name="icon" val="icon.giant_scrl_of_ench_wp_b" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_WEAPON" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39068" level="1" /> <!-- Solid Scroll -->
+		</skills>
+	</item>
+	<item id="49487" name="Soulshot Ticket (Tradable within account)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for Soulshots and Blessed Spiritshots through the Game Assistant. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i03" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="49488" name="Hero's Top-grade HP Replenishing Potion" additionalName="Sealed" type="EtcItem">
+		<!-- Magical potion that quickly restores HP. Lasts 15 sec. -->
+		<set name="icon" val="icon.etc_reagent_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="10000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_event_restricted" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="39069" level="1" /> <!-- Major Healing Potion -->
+		</skills>
+	</item>
+	<item id="49489" name="Chest of Enchant Scroll's Parts" additionalName="Not Available" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49474" min="1" max="1" chance="20" /> <!-- Scroll Part: Enchant Weapon -->
+			<item id="49475" min="1" max="1" chance="50" /> <!-- Scroll Part: Enchant Armor -->
+			<item id="49476" min="1" max="1" chance="2" /> <!-- Refined Scroll Part: Enchant Weapon -->
+			<item id="49478" min="1" max="1" chance="13" /> <!-- Refined Scroll Part: Enchant Armor -->
+			<item id="49479" min="1" max="1" chance="2" /> <!-- Solid Scroll Part: Enchant Weapon -->
+			<item id="49480" min="1" max="1" chance="13" /> <!-- Solid Scroll Part: Enchant Armor -->
+		</capsuled_items>
+	</item>
+	<item id="49490" name="Fishing Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_elite_marguene_collection_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="45492" min="1" max="1" chance="100" /> <!-- Fishing Rod - 1-day -->
+			<item id="49487" min="1" max="1" chance="100" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49508" min="720" max="720" chance="100" /> <!-- Common Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49491" name="D-grade Weapon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_e_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="70" min="1" max="1" chance="7.692307" /> <!-- Claymore -->
+			<item id="159" min="1" max="1" chance="7.692307" /> <!-- Bonebreaker -->
+			<item id="187" min="1" max="1" chance="7.692307" /> <!-- Atuba Hammer -->
+			<item id="188" min="1" max="1" chance="7.692307" /> <!-- Ghost Staff -->
+			<item id="189" min="1" max="1" chance="7.692307" /> <!-- Staff of Life -->
+			<item id="190" min="1" max="1" chance="7.692307" /> <!-- Atuba Mace -->
+			<item id="225" min="1" max="1" chance="7.692307" /> <!-- Mithril Dagger -->
+			<item id="262" min="1" max="1" chance="7.692307" /> <!-- Scallop Jamadhr -->
+			<item id="280" min="1" max="1" chance="7.692307" /> <!-- Light Bow -->
+			<item id="297" min="1" max="1" chance="7.692307" /> <!-- Glaive -->
+			<item id="322" min="1" max="1" chance="7.692307" /> <!-- Vajra Wand -->
+			<item id="323" min="1" max="1" chance="7.692307" /> <!-- Ancient Reagent -->
+			<item id="2499" min="1" max="1" chance="7.692307" /> <!-- Elven Long Sword -->
+		</capsuled_items>
+	</item>
+	<item id="49492" name="C-grade Weapon Pack" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_raid_e_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="135" min="1" max="1" chance="7.692307" /> <!-- Samurai Long Sword -->
+			<item id="204" min="1" max="1" chance="7.692307" /> <!-- Deadman's Staff -->
+			<item id="205" min="1" max="1" chance="7.692307" /> <!-- Ghoul's Staff -->
+			<item id="206" min="1" max="1" chance="7.692307" /> <!-- Demon's Staff -->
+			<item id="228" min="1" max="1" chance="7.692307" /> <!-- Crystal Dagger -->
+			<item id="266" min="1" max="1" chance="7.692307" /> <!-- Great Pata -->
+			<item id="286" min="1" max="1" chance="7.692307" /> <!-- Eminence Bow -->
+			<item id="299" min="1" max="1" chance="7.692307" /> <!-- Orcish Poleaxe -->
+			<item id="2503" min="1" max="1" chance="7.692307" /> <!-- Yaksa Mace -->
+			<item id="7888" min="1" max="1" chance="7.692307" /> <!-- Ecliptic Sword -->
+			<item id="7891" min="1" max="1" chance="7.692307" /> <!-- Ecliptic Axe -->
+			<item id="7897" min="1" max="1" chance="7.692307" /> <!-- Dwarven Hammer -->
+			<item id="5286" min="1" max="1" chance="7.692307" /> <!-- Berserker Blade -->
+		</capsuled_items>
+	</item>
+	<item id="49493" name="Orfen's Earring Lv. 1" additionalName="15-day" type="Armor">
+		<!-- <Properties>. MP Consumption -2%. Received Healing +2%. Max MP +19. Silence Atk. Rate and Resistance +5%. Fear Atk. Rate and Resistance +5%. Hold Atk. Rate and Resistance +10%. Available for 15 d. Effects of two identical earrings do not stack. Cannot be enchanted. -->
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="commissionItemType" val="EARRING" />
+		<set name="handler" val="ItemSkills" />
+		<set name="time" val="21600" />
+		<skills>
+			<skill id="3560" level="1" /> <!-- Orfen's Earring -->
+		</skills>
+		<stats>
+			<stat type="mDef">51</stat>
+			<stat type="maxMp">19</stat>
+		</stats>
+	</item>
+	<item id="49494" name="Buff Scroll Chest" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.new_user_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="3927" min="1" max="1" chance="100" /> <!-- Scroll: Death Whisper -->
+			<item id="3929" min="1" max="1" chance="100" /> <!-- Scroll: Acumen -->
+			<item id="3930" min="1" max="1" chance="100" /> <!-- Scroll: Haste -->
+			<item id="3932" min="1" max="1" chance="100" /> <!-- Scroll: Empower -->
+			<item id="3934" min="1" max="1" chance="100" /> <!-- Scroll: Wind Walk -->
+		</capsuled_items>
+	</item>
+	<item id="49495" name="Hero's Dual Swords" additionalName="15-day" type="Weapon">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="2460" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="21600" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="49496" name="Luck Cube" additionalName="7-day" type="EtcItem">
+		<!-- Available for 7 days. Required level: 20. Double-click to obtain one of the following items: Soulshot Ticket, Buff Scroll Pack, Hero's Top-grade HP Replenishing Potion, Angel Cat's Blessing, Improved Scroll of Escape, Pack of Enchant Scroll's Parts, Fishing Kit, My Teleport Scroll Kit, D-grade Weapon Pack, C-grade Weapon Pack. Can be used only once a day. -->
+		<set name="icon" val="icon.special_cube_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+	</item>
+	<item id="49497" name="Hero's Fishing Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_elite_marguene_collection_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="45492" min="1" max="1" chance="100" /> <!-- Fishing Rod - 1-day -->
+			<item id="49487" min="1" max="1" chance="100" /> <!-- Soulshot Ticket (Tradable within account) - Sealed -->
+			<item id="49508" min="720" max="720" chance="100" /> <!-- Common Bait - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="49498" name="My Teleport Scroll Kit" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="13015" min="1" max="1" chance="100" /> <!-- My Teleport Book -->
+			<item id="13016" min="30" max="30" chance="100" /> <!-- My Teleport Scroll -->
+		</capsuled_items>
+	</item>
+	<item id="49499" name="Angel Cat's Energy" additionalName="30-day" type="EtcItem">
+		<!-- For 30 min., Max HP/ MP +5%, acquired XP/ SP while hunting +20%. The effect remains after death. -->
+		<set name="icon" val="icon.skilltransform4" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="reuse_delay" val="60000" />
+		<set name="time" val="43200" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="5" />
+		<set name="material" val="LIQUID" />
+		<skills>
+			<skill id="39074" level="1" /> <!-- Angel Cat's Energy -->
+		</skills>
+	</item>
+</list>

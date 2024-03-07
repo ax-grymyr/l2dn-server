@@ -1,0 +1,1395 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="98600" name="Package: Mid-grade HP Recovery Potion (100 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.medium_healing_potion_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97799" min="100" max="100" chance="100" /> <!-- Mid-grade HP Recovery Potion -->
+		</capsuled_items>
+	</item>
+	<item id="98601" name="Package: Elmoreden Tower's Time Stone (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.timezone_refill_oman_a_60" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96124" min="2" max="2" chance="100" /> <!-- Elmoreden Tower's Time Stone - Sealed -->
+			<item id="96729" min="6" max="6" chance="100" /> <!-- Einhasad's Protection - Sealed -->
+			<item id="91712" min="6" max="6" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="91757" min="2" max="2" chance="100" /> <!-- Magic Lamp Charging Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98602" name="Package: Extra Pass: Training Zone (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_ticket_blue_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96941" min="1" max="1" chance="100" /> <!-- Extra Pass: Training Zone - Sealed -->
+			<item id="96729" min="3" max="3" chance="100" /> <!-- Einhasad's Protection - Sealed -->
+			<item id="91712" min="3" max="3" chance="100" /> <!-- Sayha's Storm - Sealed -->
+			<item id="91757" min="1" max="1" chance="100" /> <!-- Magic Lamp Charging Potion - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98603" name="Monthly Gift Box (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98604" min="1" max="1" chance="100" /> <!-- Monthly Gift - Ticket (Time-limited) - Sealed -->
+			<item id="98605" min="1" max="1" chance="100" /> <!-- Monthly Gift - Collector's Equipment (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98604" name="Monthly Gift - Ticket (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_valakas_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97425" min="2" max="2" chance="100" /> <!-- Extra Pass: Transcendent Instance Zone (Time-limited) - Sealed -->
+			<item id="94615" min="4" max="4" chance="100" /> <!-- Forgotten Garden's Time Stone (Time-limited) - Sealed -->
+			<item id="94620" min="4" max="4" chance="100" /> <!-- Primeval Isle's Time Stone (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98605" name="Monthly Gift - Collector's Equipment (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98606" min="2" max="2" chance="100" /> <!-- Package: Collector's Weapon C - Sealed -->
+			<item id="98607" min="2" max="2" chance="100" /> <!-- Package: Collector's Armor C - Sealed -->
+			<item id="98608" min="2" max="2" chance="100" /> <!-- Package: Collector's Weapon B - Sealed -->
+			<item id="98609" min="2" max="2" chance="100" /> <!-- Package: Collector's Armor B - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98606" name="Package: Collector's Weapon C" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_pasis_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97653" min="1" max="1" chance="100" /> <!-- Collector's Weapon C - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98607" name="Package: Collector's Armor C" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.pirate_crew_change" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97654" min="1" max="1" chance="100" /> <!-- Collector's Armor C - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98608" name="Package: Collector's Weapon B" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.weapon_pasis_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98089" min="1" max="1" chance="100" /> <!-- Collector's Weapon B - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98609" name="Package: Collector's Armor B" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.pirate_crew_change" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98090" min="1" max="1" chance="100" /> <!-- Collector's Armor B - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98610" name="Blessed Talisman of Authority" additionalName="Sealed" type="Armor">
+		<!-- A talisman that contains the energy of authority. Can be enchanted up to +10 with Scroll: Enchant Accessories. Enables special effects depending on its enchant value. Enchanting is not safe even to +1. Effects of two identical talismans do not stack. When using Incredible Upgrade Stone, enchanting is safe starting from +8. -->
+		<set name="icon" val="icon.bless_tallisman_of_power_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50352" level="2" /> <!-- Blessed Talisman of Authority -->
+			<skill id="50352" level="4" type="ON_ENCHANT" type_value="1" /> <!-- Blessed Talisman of Authority +1 -->
+			<skill id="50352" level="6" type="ON_ENCHANT" type_value="2" /> <!-- Blessed Talisman of Authority +2 -->
+			<skill id="50352" level="8" type="ON_ENCHANT" type_value="3" /> <!-- Blessed Talisman of Authority +3 -->
+			<skill id="50352" level="10" type="ON_ENCHANT" type_value="4" /> <!-- Blessed Talisman of Authority +4 -->
+			<skill id="50352" level="12" type="ON_ENCHANT" type_value="5" /> <!-- Blessed Talisman of Authority +5 -->
+			<skill id="50352" level="14" type="ON_ENCHANT" type_value="6" /> <!-- Blessed Talisman of Authority +6 -->
+			<skill id="50352" level="16" type="ON_ENCHANT" type_value="7" /> <!-- Blessed Talisman of Authority +7 -->
+			<skill id="50352" level="18" type="ON_ENCHANT" type_value="8" /> <!-- Blessed Talisman of Authority +8 -->
+			<skill id="50352" level="20" type="ON_ENCHANT" type_value="9" /> <!-- Blessed Talisman of Authority +9 -->
+			<skill id="50352" level="22" type="ON_ENCHANT" type_value="10" /> <!-- Blessed Talisman of Authority +10 -->
+		</skills>
+	</item>
+	<item id="98611" name="Scroll: Enchant Accessories" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for enchanting head accessory, cloak, belt, agathion, talisman, Gran Kain's Pendant and Hunter's Earring. -->
+		<set name="icon" val="icon.bm_blessed_scrl_of_ench_lbracelet_charm" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="98612" name="Package: Magic Fire (10 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_soul_of_shilen" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98425" min="10" max="10" chance="100" /> <!-- Magic Fire (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98613" name="Package: Sayha's Gust (10 pcs.) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.ev_magic_flame_game_wind2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98424" min="10" max="10" chance="100" /> <!-- Sayha's Gust (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98614" name="Freya's Ice Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Emits Freya's ice energy. <How to use> Bring to NPC Jinia in any town to get a buff. -->
+		<set name="icon" val="icon.ev_2022_freya_reward_item" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98615" name="Adventurer's Enchant Scroll" additionalName="Sealed" type="EtcItem">
+		<!-- A scroll for enchanting Agathion/ Cloak/ Belt/ Head Accessory/ Adventurer's Talisman. -->
+		<set name="icon" val="icon.etc_training_scroll_kalie_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98616" name="Sincerely Presented Casket" additionalName="Live Broadcast Gift" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.love_mark" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97175" min="1" max="1" chance="33.33333" /> <!-- Spellbook Coupon - 1 Star - Sealed -->
+			<item id="97176" min="1" max="1" chance="33.33333" /> <!-- Spellbook Coupon - 2 Stars - Sealed -->
+			<item id="97177" min="1" max="1" chance="33.33333" /> <!-- Spellbook Coupon - 3 Stars - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98617" name="Sweet Red Wine (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Applies a buff when used. <Buff effect> P. Atk. +50 M. Atk. +50 P. Def. +50 M. Def. +50 Acquired XP/ SP +10% HP Recovery Rate +3 MP Recovery Rate +3 Duration: 60 min. Cooldown: 1 min. The effect remains after death. -->
+		<set name="icon" val="icon.ev_sweet_red_wine" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98618" name="Wonder Grape (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a material in the Special Craft. -->
+		<set name="icon" val="icon.ev_mysterious_grape" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98619" name="Wine Lover's Badge (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be added to a collection or used as a material in the Special Craft. -->
+		<set name="icon" val="icon.ev_wine_fan_badge" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98620" name="Christmas Sock (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- <font color=bbaa88><Properties></font> CON +1 MEN +1 P. Def. +100 M. Def. +100 acquired XP/ SP +5% HP Recovery Rate +4 MP Recovery Rate +4 Boosts stats when in inventory. <font color=eeaa22>Merry Christmas!</font> -->
+		<set name="icon" val="BranchSys.icon.br_xmas_present_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="98621" name="Frozen Canyon's Time Stone (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Prolongs your session zone's raid for 60 min. <Hunting zone> Frozen Canyon -->
+		<set name="icon" val="icon.ev_220216_refill_60_harnak_limit" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98622" name="Assassin's Dagger" type="Weapon">
+		<set name="icon" val="icon.assassin_dagger" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="98623" name="Appearance Stone: Assassin's Dagger" additionalName="Sealed" type="EtcItem">
+		<!-- Changes the appearance of a weapon to that of Assassin's Dagger. Can be used only on daggers. -->
+		<set name="icon" val="icon.shape_shifting_dagger_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98624" name="Spellbook: Mount Twilight Wyvern" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to learn how to ride Twilight Wyvern. -->
+		<set name="icon" val="icon.etc_spellbook_red_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98625" name="Spellbook: Throne of Legend" additionalName="Sealed" type="EtcItem">
+		<!-- A spellbook for learning the Throne of Legend skill. Skill effect: You sit on the Throne of Legend continuously recovering HP. -->
+		<set name="icon" val="icon.etc_summon_subjob_skillbook_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98626" name="Legendary Teleport Stone" additionalName="Sealed" type="EtcItem">
+		<!-- Teleports to the nearest town. The item does not disappear upon use. -->
+		<set name="icon" val="icon.hero_recall_stone" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98627" name="Appearance Stone: Formal Wear" additionalName="Sealed" type="EtcItem">
+		<!-- An Appearance Stone to change your appearance to Formal Wear. Can be used for Upper Armor and Full-body. All armor takes the appearance of Formal Wear. Effect can be removed using an appearance restoration scroll. -->
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98628" name="Package: Special Equipment Certificate (200 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.red_save_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98294" min="200" max="200" chance="100" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98629" name="Package: Special Equipment Certificate (500 pcs.)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.blue_save_ticket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98294" min="500" max="500" chance="100" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98630" name="Pack of Seals (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="92314" min="1" max="1" chance="100" /> <!-- Giran Seal -->
+			<item id="98042" min="1" max="1" chance="3.448276" /> <!-- Spellbook Chest - 4 Stars - Sealed -->
+			<item id="96300" min="1" max="1" chance="3.448276" /> <!-- Spellbook: Dragon Slayer -->
+			<item id="96613" min="1" max="1" chance="3.448276" /> <!-- Spellbook: Expanded Potential of Dyes -->
+			<item id="96297" min="1" max="1" chance="3.448276" /> <!-- Frost Lord's Weapon Pack - Sealed -->
+			<item id="96650" min="1" max="1" chance="3.448276" /> <!-- Armor of Protection Pack - Sealed -->
+			<item id="98063" min="1" max="1" chance="3.448276" /> <!-- Boss' Weapon Pack - Sealed -->
+			<item id="98300" min="1" max="1" chance="3.448276" /> <!-- Special Armor Pack - Sealed -->
+			<item id="90992" min="1" max="1" chance="3.448276" /> <!-- Antharas' Earring -->
+			<item id="91550" min="1" max="1" chance="3.448276" /> <!-- Frintezza's Necklace -->
+			<item id="49580" min="1" max="1" chance="3.448276" /> <!-- Baium's Ring -->
+			<item id="49683" min="1" max="1" chance="3.448276" /> <!-- Talisman of Baium -->
+			<item id="94385" min="1" max="1" chance="3.448276" /> <!-- Improved Scroll: Enchant Rare Accessories -->
+			<item id="94383" min="1" max="1" chance="3.448276" /> <!-- Scroll: Enchant Rare Accessories -->
+			<item id="98628" min="1" max="1" chance="3.448276" /> <!-- Package: Special Equipment Certificate (200 pcs.) - Sealed -->
+			<item id="98629" min="1" max="1" chance="3.448276" /> <!-- Package: Special Equipment Certificate (500 pcs.) - Sealed -->
+			<item id="93739" min="1" max="1" chance="3.448276" /> <!-- Package: Giran Seal (1000 pcs.) - Sealed -->
+			<item id="97859" min="1" max="1" chance="3.448276" /> <!-- Stable Scroll: Enchant Rare Accessories -->
+			<item id="93255" min="1" max="1" chance="3.448276" /> <!-- Improved Scroll: Enchant A-grade Weapon -->
+			<item id="93256" min="1" max="1" chance="3.448276" /> <!-- Improved Scroll: Enchant A-grade Armor -->
+			<item id="93257" min="1" max="1" chance="3.448276" /> <!-- Cursed Scroll: Enchant A-grade Weapon -->
+			<item id="93258" min="1" max="1" chance="3.448276" /> <!-- Cursed Scroll: Enchant A-grade Armor -->
+			<item id="96623" min="1" max="1" chance="3.448276" /> <!-- Dye Booster -->
+			<item id="98294" min="1" max="1" chance="3.448276" /> <!-- Special Equipment Certificate (Time-limited) - Sealed -->
+			<item id="91690" min="30" max="30" chance="3.448276" /> <!-- Special HP Recovery Potion - Sealed -->
+			<item id="92314" min="20" max="20" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="10" max="10" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="5" max="5" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="2" max="2" chance="3.448276" /> <!-- Giran Seal -->
+			<item id="92314" min="1" max="1" chance="3.448276" /> <!-- Giran Seal -->
+		</capsuled_items>
+	</item>
+	<item id="98631" name="Token of Freya Elimination Team (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- A proof of defeating Freya. <How to use> Add it to a collection to get additional stat bonuses. Special Craft - Freya Elimination Team -->
+		<set name="icon" val="icon.bm_sayha_token" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98632" name="Snowman Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98633" name="Snowman Doll Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98634" name="Snowman Doll Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98635" name="Snowman Doll Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98636" name="Snowman Doll Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> <font color=EEAA22>Snowman Doll Lv. 5: Dye Powder</font> Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98637" name="Snowman Doll Lv. 6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder <font color=EEAA22>Snowman Doll Lv. 6: Jewelry Box Lv. 2</font> Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 6></font> PvE damage +1%, P./ M. Atk. +5, P./ M. Def. +10, acquired XP/ SP +1%, MEN +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98638" name="Snowman Doll Lv. 7 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 <font color=EEAA22>Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack</font> Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 7></font> PvE damage +1%, P./ M. Atk. +10, P./ M. Def. +20, acquired XP/ SP +2%, MEN +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98639" name="Snowman Doll Lv. 8 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack <font color=EEAA22>Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack</font> Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 8></font> PvE damage +2%, P./ M. Atk. +15, P./ M. Def. +30, acquired XP/ SP +3%, MEN +1, CON +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98640" name="Snowman Doll Lv. 9 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack <font color=EEAA22>Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1</font> Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 9></font> PvE damage +2%, P./ M. Atk. +20, P./ M. Def. +40, acquired XP/ SP +4%, MEN +1, CON +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98641" name="Snowman Doll Lv. 10 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 <font color=EEAA22>Snowman Doll Lv. 10: +5 Special Equipment Pack</font> Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 10></font> PvE damage +2%, P./ M. Atk. +25, P./ M. Def. +50, acquired XP/ SP +5%, MEN +1, CON +1, WIT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98642" name="Snowman Doll Lv. 11 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack <font color=EEAA22>Snowman Doll Lv. 11: Doll Pack Lv. 1-2</font> Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 11></font> PvE damage +3%, P./ M. Atk. +30, P./ M. Def. +60, acquired XP/ SP +6%, MEN +1, CON +1, WIT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98643" name="Snowman Doll Lv. 12 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 <font color=EEAA22>Snowman Doll Lv. 12: Jewelry Box Lv. 5-6</font> Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 12></font> PvE damage +3%, P./ M. Atk. +35, P./ M. Def. +70, acquired XP/ SP +7%, MEN +1, CON +1, WIT +1, DEX +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98644" name="Snowman Doll Lv. 13 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 <font color=EEAA22>Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars</font> Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 13></font> Received P. Skill Critical Rate -1%, received P. Skill Critical Damage -1%, PvE damage +3%, P./ M. Atk. +40, P./ M. Def. +80, acquired XP/ SP +8%, MEN +1, CON +1, WIT +1, DEX +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98645" name="Snowman Doll Lv. 14 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars <font color=EEAA22>Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack</font> Snowman Doll Lv. 15: +7 Boss Weapon Coupon <font color=bbaa88><Snowman Doll Lv. 14></font> Received P. Skill Critical Rate -3%, received P. Skill Critical Damage -3%, PvE damage +4%, P./ M. Atk. +45, P./ M. Def. +90, acquired XP/ SP +9%, MEN +1, CON +1, WIT +1, DEX +1, INT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98646" name="Snowman Doll Lv. 15 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Dye Powder Snowman Doll Lv. 6: Jewelry Box Lv. 2 Snowman Doll Lv. 7: +0 ~ +4 Talisman Pack Snowman Doll Lv. 8: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 9: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 10: +5 Special Equipment Pack Snowman Doll Lv. 11: Doll Pack Lv. 1-2 Snowman Doll Lv. 12: Jewelry Box Lv. 5-6 Snowman Doll Lv. 13: Spellbook Coupon - 3 Stars Snowman Doll Lv. 14: +1 ~ +3 Rare Accessory Pack <font color=EEAA22>Snowman Doll Lv. 15: +7 Boss Weapon Coupon</font> <font color=bbaa88><Snowman Doll Lv. 15></font> Received P. Skill Critical Rate -5%, received P. Skill Critical Damage -5%, PvE damage +5%, P./ M. Atk. +50, P./ M. Def. +100, acquired XP/ SP +10%, all stats +1 <font color=bbaa88><When triggered: Fast Moving></font> With a 2% chance, Speed +5 for 3 sec. after an attack. -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98647" name="Snowman Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98648" name="Snowman Doll Lv. 2 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98649" name="Snowman Doll Lv. 3 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98650" name="Snowman Doll Lv. 4 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98651" name="Snowman Doll Lv. 5 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> <font color=EEAA22>Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero</font> Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98652" name="Snowman Doll Lv. 6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero <font color=EEAA22>Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.)</font> Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 6></font> PvE damage +1%, P./ M. Atk. +5, P./ M. Def. +10, acquired XP/ SP +1%, MEN +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98653" name="Snowman Doll Lv. 7 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) <font color=EEAA22>Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1</font> Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 7></font> PvE damage +1%, P./ M. Atk. +10, P./ M. Def. +20, acquired XP/ SP +2%, MEN +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98654" name="Snowman Doll Lv. 8 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 <font color=EEAA22>Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.)</font> Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 8></font> PvE damage +2%, P./ M. Atk. +15, P./ M. Def. +30, acquired XP/ SP +3%, MEN +1, CON +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98655" name="Snowman Doll Lv. 9 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) <font color=EEAA22>Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.)</font> Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 9></font> PvE damage +2%, P./ M. Atk. +20, P./ M. Def. +40, acquired XP/ SP +4%, MEN +1, CON +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98656" name="Snowman Doll Lv. 10 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) <font color=EEAA22>Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack</font> Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 10></font> PvE damage +2%, P./ M. Atk. +25, P./ M. Def. +50, acquired XP/ SP +5%, MEN +1, CON +1, WIT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98657" name="Snowman Doll Lv. 11 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack <font color=EEAA22>Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack</font> Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 11></font> PvE damage +3%, P./ M. Atk. +30, P./ M. Def. +60, acquired XP/ SP +6%, MEN +1, CON +1, WIT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98658" name="Snowman Doll Lv. 12 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack <font color=EEAA22>Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection</font> Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 12></font> PvE damage +3%, P./ M. Atk. +35, P./ M. Def. +70, acquired XP/ SP +7%, MEN +1, CON +1, WIT +1, DEX +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98659" name="Snowman Doll Lv. 13 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection <font color=EEAA22>Snowman Doll Lv. 13: Jewelry Box Lv. 5</font> Snowman Doll Lv. 14: Rare Accessory Pack Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 13></font> Received Critical Rate -1%, received P. Skill Critical Damage -1%, PvE damage +3%, P./ M. Atk. +40, P./ M. Def. +80, acquired XP/ SP +8%, MEN +1, CON +1, WIT +1, DEX +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98660" name="Snowman Doll Lv. 14 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 <font color=EEAA22>Snowman Doll Lv. 14: Rare Accessory Pack</font> Snowman Doll Lv. 15: Special Armor Pack <font color=bbaa88><Snowman Doll Lv. 14></font> Received Critical Rate -3%, received P. Skill Critical Damage -3%, PvE damage +4%, P./ M. Atk. +45, P./ M. Def. +90, acquired XP/ SP +9%, MEN +1, CON +1, WIT +1, DEX +1, INT +1 -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98661" name="Snowman Doll Lv. 15 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be crafted using Snow Crystal collected in the Frozen Canyon. Use <font color=EEAA22>Snow Crystals</font> to upgrade it through compounding. <font color=bbaa88><Item to create></font> Special Craft - Snowman Doll <font color=bbaa88><Received items></font> Snowman Doll Lv. 5: Enchant Kit: Circlet of Hero Snowman Doll Lv. 6: Package: Cloak of Protection (2 pcs.) Snowman Doll Lv. 7: Package: Einhasad's Pendant Lv. 1 Snowman Doll Lv. 8: Scroll: Enchant A-grade Armor (6 pcs.) Snowman Doll Lv. 9: Scroll: Enchant A-grade Weapon (3 pcs.) Snowman Doll Lv. 10: Blessed/ Cursed Enchant Scroll Pack Snowman Doll Lv. 11: +6 ~ +8 Talisman of Aden Pack Snowman Doll Lv. 12: Package: +6 ~ +8 Cloak of Protection Snowman Doll Lv. 13: Jewelry Box Lv. 5 Snowman Doll Lv. 14: Rare Accessory Pack <font color=EEAA22>Snowman Doll Lv. 15: Special Armor Pack</font> <font color=bbaa88><Snowman Doll Lv. 15></font> Received Critical Rate -5%, received P. Skill Critical Damage -5%, PvE damage +5%, P./ M. Atk. +50, P./ M. Def. +100, acquired XP/ SP +10%, all stats +1 <font color=bbaa88><When triggered: Fast Moving></font> With a 2% chance, Speed +5 for 3 sec. after an attack. -->
+		<set name="icon" val="icon.weapon_snowman_stick_i00" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98662" name="Stat Collection - Zaken's Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Zaken's Crystal in Stat Collection. -->
+		<set name="icon" val="icon.dragon_blood" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98663" name="Stat Collection - Orfen's Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Orfen's Crystal in Stat Collection. -->
+		<set name="icon" val="icon.orfen_crystal" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98664" name="Stat Collection - Core's Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Core's Crystal in Stat Collection. -->
+		<set name="icon" val="icon.core_crystal" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98665" name="Stat Collection - Baium's Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Baium's Crystal in Stat Collection. -->
+		<set name="icon" val="icon.baium_crystal" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98666" name="Stat Collection - Queen Ant's Crystal (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Queen Ant's Crystal in Stat Collection. -->
+		<set name="icon" val="icon.queen_ant_crystal" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98667" name="Stat Collection - Baium Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Baium Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_baium_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98668" name="Stat Collection - Queen Ant Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Queen Ant Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_queen_ant_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98669" name="Stat Collection - Orfen Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Orfen Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_orfen_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98670" name="Stat Collection - Frintezza Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Frintezza Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_doll_frintessa_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98671" name="Stat Collection - Zaken Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Zaken Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_zaken_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98672" name="Stat Collection - Core Doll Lv. 1 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be used as a replacement for Core Doll Lv. 1 in Stat Collection. -->
+		<set name="icon" val="icon.bm_core_doll_30d" />
+		<set name="default_action" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98673" name="Purge Weapon Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_week_package" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="95446" min="1" max="1" chance="5.555555" /> <!-- Excuro's Staff - Sealed -->
+			<item id="95447" min="1" max="1" chance="5.555555" /> <!-- Torfe's Claw - Sealed -->
+			<item id="95448" min="1" max="1" chance="5.555555" /> <!-- Giants' Club - Sealed -->
+			<item id="95449" min="1" max="1" chance="5.555555" /> <!-- Ancient Rapier - Sealed -->
+			<item id="95450" min="1" max="1" chance="5.555555" /> <!-- Guardian Messenger's Spear - Sealed -->
+			<item id="95451" min="1" max="1" chance="5.555555" /> <!-- Sealed Angel's Hammer - Sealed -->
+			<item id="95452" min="1" max="1" chance="5.555555" /> <!-- Lizardman Shaman's Staff - Sealed -->
+			<item id="95453" min="1" max="1" chance="5.555555" /> <!-- Lizard Slayer - Sealed -->
+			<item id="95454" min="1" max="1" chance="5.555555" /> <!-- Deadman's Dagger - Sealed -->
+			<item id="95455" min="1" max="1" chance="5.555555" /> <!-- Dragon Bone Blade - Sealed -->
+			<item id="95456" min="1" max="1" chance="5.555555" /> <!-- Berserker's Sword - Sealed -->
+			<item id="95457" min="1" max="1" chance="5.555555" /> <!-- Sel Mahum Sniper - Sealed -->
+			<item id="95458" min="1" max="1" chance="5.555555" /> <!-- Turek Orc Prefect's Dual Swords - Sealed -->
+			<item id="95459" min="1" max="1" chance="5.555555" /> <!-- Butcher's Long Sword - Sealed -->
+			<item id="96722" min="1" max="1" chance="5.555555" /> <!-- Giant's One-handed Axe - Sealed -->
+			<item id="96723" min="1" max="1" chance="5.555555" /> <!-- Giant's Two-handed Staff - Sealed -->
+			<item id="97237" min="1" max="1" chance="5.555555" /> <!-- Spear of Xilenos - Sealed -->
+			<item id="97239" min="1" max="1" chance="5.555555" /> <!-- Shield of Xilenos - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98674" name="Stat Collection Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="98662" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Zaken's Crystal (Time-limited) - Sealed -->
+			<item id="98663" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Orfen's Crystal (Time-limited) - Sealed -->
+			<item id="98664" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Core's Crystal (Time-limited) - Sealed -->
+			<item id="98665" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Baium's Crystal (Time-limited) - Sealed -->
+			<item id="98666" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Queen Ant's Crystal (Time-limited) - Sealed -->
+			<item id="98667" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Baium Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98668" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Queen Ant Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98669" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Orfen Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98670" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Frintezza Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98671" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Zaken Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98672" min="1" max="1" chance="9.090909" /> <!-- Stat Collection - Core Doll Lv. 1 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98675" name="Stat Collection Pack: Spellbook Coupon - 2 Stars (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97122" min="1" max="1" chance="100" /> <!-- Spellbook Coupon - 2 Stars (Time-limited) - Sealed -->
+			<item id="98662" min="1" max="1" chance="100" /> <!-- Stat Collection - Zaken's Crystal (Time-limited) - Sealed -->
+			<item id="98663" min="1" max="1" chance="100" /> <!-- Stat Collection - Orfen's Crystal (Time-limited) - Sealed -->
+			<item id="98664" min="1" max="1" chance="100" /> <!-- Stat Collection - Core's Crystal (Time-limited) - Sealed -->
+			<item id="98665" min="1" max="1" chance="100" /> <!-- Stat Collection - Baium's Crystal (Time-limited) - Sealed -->
+			<item id="98666" min="1" max="1" chance="100" /> <!-- Stat Collection - Queen Ant's Crystal (Time-limited) - Sealed -->
+			<item id="98667" min="1" max="1" chance="100" /> <!-- Stat Collection - Baium Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98668" min="1" max="1" chance="100" /> <!-- Stat Collection - Queen Ant Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98669" min="1" max="1" chance="100" /> <!-- Stat Collection - Orfen Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98670" min="1" max="1" chance="100" /> <!-- Stat Collection - Frintezza Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98671" min="1" max="1" chance="100" /> <!-- Stat Collection - Zaken Doll Lv. 1 (Time-limited) - Sealed -->
+			<item id="98672" min="1" max="1" chance="100" /> <!-- Stat Collection - Core Doll Lv. 1 (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98676" name="Support Pack of Freya Elimination Team (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91840" min="5" max="5" chance="100" /> <!-- XP Growth Scroll (Time-limited) - Sealed -->
+			<item id="93073" min="5" max="5" chance="100" /> <!-- Sayha's Storm (Time-limited) - Sealed -->
+			<item id="93848" min="10" max="10" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="98471" min="50" max="50" chance="100" /> <!-- Soulshot Ticket (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98677" name="Jewelry Box Lv. 5-6 (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="96705" min="1" max="1" chance="6.25" /> <!-- Beryl Lv. 6 - Sealed -->
+			<item id="92040" min="1" max="1" chance="6.25" /> <!-- Amber Lv. 6 - Sealed -->
+			<item id="92050" min="1" max="1" chance="6.25" /> <!-- Opal Lv. 6 - Sealed -->
+			<item id="92060" min="1" max="1" chance="6.25" /> <!-- Coral Lv. 6 - Sealed -->
+			<item id="92070" min="1" max="1" chance="6.25" /> <!-- Onyx Lv. 6 - Sealed -->
+			<item id="92080" min="1" max="1" chance="6.25" /> <!-- Spinel Lv. 6 - Sealed -->
+			<item id="92090" min="1" max="1" chance="6.25" /> <!-- Zircon Lv. 6 - Sealed -->
+			<item id="92100" min="1" max="1" chance="6.25" /> <!-- Moonstone Lv. 6 - Sealed -->
+			<item id="96704" min="1" max="1" chance="6.25" /> <!-- Beryl Lv. 5 - Sealed -->
+			<item id="94518" min="1" max="1" chance="6.25" /> <!-- Amber Lv. 5 - Sealed -->
+			<item id="94519" min="1" max="1" chance="6.25" /> <!-- Opal Lv. 5 - Sealed -->
+			<item id="94520" min="1" max="1" chance="6.25" /> <!-- Coral Lv. 5 - Sealed -->
+			<item id="94521" min="1" max="1" chance="6.25" /> <!-- Onyx Lv. 5 - Sealed -->
+			<item id="94522" min="1" max="1" chance="6.25" /> <!-- Spinel Lv. 5 - Sealed -->
+			<item id="94523" min="1" max="1" chance="6.25" /> <!-- Zircon Lv. 5 - Sealed -->
+			<item id="94524" min="1" max="1" chance="6.25" /> <!-- Moonstone Lv. 5 - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98678" name="Blessed/ Cursed Enchant Scroll Pack (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93268" min="1" max="1" chance="25" /> <!-- Improved Scroll: Enchant A-grade Weapon - Sealed -->
+			<item id="93269" min="1" max="1" chance="25" /> <!-- Improved Scroll: Enchant A-grade Armor - Sealed -->
+			<item id="93270" min="1" max="1" chance="25" /> <!-- Cursed Scroll: Enchant A-grade Weapon - Sealed -->
+			<item id="93271" min="1" max="1" chance="25" /> <!-- Cursed Scroll: Enchant A-grade Armor - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98679" name="+7 Boss Weapon Coupon (Sealed) (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to choose 1 Boss Weapon enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.bm_weapon_ticket_a" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98680" name="Package: +7 Zaken's Blood Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Zaken's Blood Sword enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.special_weapon_onehandsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93291" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Zaken's Blood Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98681" name="Package: +7 Core's Plasmic Bow (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Core's Plasmic Bow enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_karupis_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93292" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Core's Plasmic Bow - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98682" name="Package: +7 Orfen's Venom Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Orfen's Venom Sword enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93293" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Orfen's Venom Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98683" name="Package: +7 Baium's Thunder Breaker (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Baium's Thunder Breaker enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_terakan_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93294" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Baium's Thunder Breaker - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98684" name="Package: +7 Queen Ant's Stone Breaker (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Queen Ant's Stone Breaker enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.special_weapon_onehandblunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93295" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98685" name="Package: +7 Anakim's Divine Pistols (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Anakim's Divine Pistols enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.shooter_boss_anakim" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95422" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Anakim's Divine Pistols - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98686" name="Package: +7 Beleth' Soul Eater (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Beleth' Soul Eater enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.staff_of_bereth" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96269" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Beleth' Soul Eater - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98687" name="Package: +7 Gorde's Flame Spear (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Gorde's Flame Spear enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_r110_spear_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97302" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Gorde's Flame Spear - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98688" name="Package: +7 Galaxia's Ancient Sword (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Galaxia's Ancient Sword enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97957" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Galaxia's Ancient Sword - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98689" name="Package: +7 Phiriel's Rapier (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Phiriel's Rapier enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_heavenstair_rapier_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97959" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Phiriel's Rapier - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98690" name="Package: +7 Anais' Fists (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Anais' Fists enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="icon.weapon_vesper_fighter_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97961" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Anais' Fists - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98691" name="Package: +7 Juriel's Dual Swords (Sealed)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain Juriel's Dual Swords enchanted to +7 <font color=ff6666>(unexchangeable)</font>. -->
+		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97963" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Juriel's Dual Swords - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98692" name="Punitive Force Supplies of Frozen Canyon (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_freya_sirr_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91840" min="2" max="2" chance="100" /> <!-- XP Growth Scroll (Time-limited) - Sealed -->
+			<item id="93073" min="2" max="2" chance="100" /> <!-- Sayha's Storm (Time-limited) - Sealed -->
+			<item id="93848" min="5" max="5" chance="100" /> <!-- Sayha's Cookie (Time-limited) - Sealed -->
+			<item id="98471" min="20" max="20" chance="100" /> <!-- Soulshot Ticket (Time-limited) - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98693" name="+6 ~ +8 Talisman of Aden Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92450" min="1" max="1" chance="33.33333" /> <!-- +8 Talisman of Aden Pack - Sealed -->
+			<item id="92449" min="1" max="1" chance="33.33333" /> <!-- +7 Talisman of Aden Pack - Sealed -->
+			<item id="92448" min="1" max="1" chance="33.33333" /> <!-- +6 Talisman of Aden Pack - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98694" name="Package: +6 ~ +8 Cloak of Protection (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93301" min="1" max="1" minEnchant="8" maxEnchant="8" chance="33.33333" /> <!-- Cloak of Protection - Sealed -->
+			<item id="93301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Cloak of Protection - Sealed -->
+			<item id="93301" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Cloak of Protection - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98695" name="Rare Accessory Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_gold_lure_special_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49580" min="1" max="1" chance="10" /> <!-- Baium's Ring -->
+			<item id="95330" min="1" max="1" chance="10" /> <!-- Baium's Ring - Sealed -->
+			<item id="6660" min="1" max="1" chance="10" /> <!-- Queen Ant's Ring -->
+			<item id="95327" min="1" max="1" chance="10" /> <!-- Queen Ant's Ring - Sealed -->
+			<item id="90763" min="1" max="1" chance="10" /> <!-- Zaken's Earring -->
+			<item id="95331" min="1" max="1" chance="10" /> <!-- Zaken's Earring - Sealed -->
+			<item id="6661" min="1" max="1" chance="10" /> <!-- Orfen's Earring -->
+			<item id="95328" min="1" max="1" chance="10" /> <!-- Orfen's Earring - Sealed -->
+			<item id="6662" min="1" max="1" chance="10" /> <!-- Ring of Core -->
+			<item id="95329" min="1" max="1" chance="10" /> <!-- Ring of Core - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98696" name="Special Armor Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.present_of_destination_event" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="94083" min="1" max="1" chance="16.66667" /> <!-- Helmet of Mana -->
+			<item id="94084" min="1" max="1" chance="16.66667" /> <!-- Helmet of Mana - Sealed -->
+			<item id="94301" min="1" max="1" chance="16.66667" /> <!-- Shield of Vengeance -->
+			<item id="94302" min="1" max="1" chance="16.66667" /> <!-- Shield of Vengeance - Sealed -->
+			<item id="94299" min="1" max="1" chance="16.66667" /> <!-- Sigil of Inevitability -->
+			<item id="94300" min="1" max="1" chance="16.66667" /> <!-- Sigil of Inevitability - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98697" name="Soulshot Ticket (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Can be exchanged for Soulshots and Blessed Spiritshots. -->
+		<set name="icon" val="icon.etc_exchange_ticket_i03" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="98698" name="Goodbye 2022 Pack (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="98063" min="1" max="1" chance="8.333333" /> <!-- Boss' Weapon Pack - Sealed -->
+			<item id="98300" min="1" max="1" chance="8.333333" /> <!-- Special Armor Pack - Sealed -->
+			<item id="95327" min="1" max="1" chance="8.333333" /> <!-- Queen Ant's Ring - Sealed -->
+			<item id="95328" min="1" max="1" chance="8.333333" /> <!-- Orfen's Earring - Sealed -->
+			<item id="95329" min="1" max="1" chance="8.333333" /> <!-- Ring of Core - Sealed -->
+			<item id="94328" min="1" max="1" chance="8.333333" /> <!-- Elixir Powder - Sealed -->
+			<item id="97147" min="2" max="2" chance="8.333333" /> <!-- Hidden Power Booster - Sealed -->
+			<item id="91757" min="2" max="2" chance="8.333333" /> <!-- Magic Lamp Charging Potion - Sealed -->
+			<item id="94777" min="2" max="2" chance="8.333333" /> <!-- Berserker's Scroll - Sealed -->
+			<item id="94269" min="2" max="2" chance="8.333333" /> <!-- Scroll: Boost Attack - Sealed -->
+			<item id="94271" min="2" max="2" chance="8.333333" /> <!-- Scroll: Boost Defense - Sealed -->
+			<item id="91641" min="5" max="5" chance="8.333333" /> <!-- Sayha's Blessing - Sealed -->
+		</capsuled_items>
+	</item>
+	<item id="98699" name="Starter Kit of Special Edition (Time-limited)" additionalName="Sealed" type="EtcItem">
+		<!-- Double-click to obtain various items. -->
+		<set name="icon" val="icon.bm_month_package" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94166" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Circlet of Hero - Sealed -->
+			<item id="97259" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Piercing Mask - Sealed -->
+			<item id="93297" min="1" max="1" chance="100" /> <!-- Einhasad’s Pendant Lv. 2 - Sealed -->
+			<item id="93301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- Cloak of Protection - Sealed -->
+			<item id="91862" min="1" max="1" minEnchant="4" maxEnchant="4" chance="100" /> <!-- Dragon Belt - Sealed -->
+		</capsuled_items>
+	</item>
+</list>

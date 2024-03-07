@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/teleporterData.xsd">
+	<npc id="18017"> <!-- Teleport - Giant's Cave -->
+		<teleport type="OTHER"> <!-- Guessed -->
+			<location x="183607" y="47538" z="-4378" feeCount="15000" /> <!-- Eastern entrance -->
+			<location x="181216" y="50362" z="-4378" feeCount="10000" /> <!-- South-eastern entrance -->
+			<location x="174470" y="52854" z="-4378" feeCount="10000" /> <!-- Southern entrance -->
+			<location x="191991" y="55917" z="-4644" feeCount="15000" /> <!-- Eastern inner part -->
+			<location x="179072" y="61682" z="-4316" feeCount="15000" /> <!-- Southern inner part -->
+		</teleport>
+	</npc>
+</list>

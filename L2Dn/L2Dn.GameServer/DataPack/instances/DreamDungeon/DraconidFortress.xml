@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="224" name="DraconidFortress" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="60" empty="60" eject="60" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-250260" y="220057" z="-12451" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="10" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+	</reenter>
+	<doorlist>
+		<door id="12240028">
+			<openStatus default="close" />
+		</door>
+		<door id="12240029">
+			<openStatus default="close" />
+		</door>
+		<door id="12240030">
+			<openStatus default="close" />
+		</door>
+		<door id="12240031">
+			<openStatus default="close" />
+		</door>
+	</doorlist>
+	<spawnlist>
+		<group name="DraconidNPC_1">
+			<npc id="34315" x="-250639" y="219976" z="-12436" heading="64496" respawnTime="3700sec" /> <!-- Red Draconid Traitor -->
+		</group>
+		<group name="DraconidNPC_2" spawnByDefault="false">
+			<npc id="34315" x="-251445" y="214792" z="-11987" heading="15086" respawnTime="3700sec" /> <!-- Red Draconid Traitor -->
+		</group>
+		<group name="DraconidNPC_3" spawnByDefault="false">
+			<npc id="34315" x="-251445" y="212316" z="-11987" heading="15086" respawnTime="3700sec" /> <!-- Red Draconid Traitor -->
+		</group>
+		<group name="DraconidNPC_4" spawnByDefault="false">
+			<npc id="34315" x="-250410" y="209272" z="-11952" heading="49625" respawnTime="0sec" /> <!-- Red Draconid Traitor -->
+		</group>
+		<group name="CatLair_TeleporterCat" spawnByDefault="false">
+			<npc id="34316" x="-250410" y="209272" z="-11952" heading="49625" respawnTime="0sec" /> <!-- Teleporter Cat -->
+		</group>
+		<group name="DraconidMonsters" spawnByDefault="false">
+			<npc id="22403" x="-250861" y="217564" z="-12292" heading="62119" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250632" y="217607" z="-12291" heading="64067" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250503" y="217438" z="-12292" heading="37535" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-250662" y="217399" z="-12292" heading="31662" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-250782" y="217401" z="-12292" heading="42312" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250952" y="217568" z="-12292" heading="18965" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250396" y="217630" z="-12286" heading="5283" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-250394" y="217392" z="-12292" heading="39805" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-252073" y="217599" z="-12293" heading="29203" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-252330" y="217596" z="-12293" heading="32912" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-252390" y="217457" z="-12292" heading="50329" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-252201" y="217378" z="-12292" heading="55345" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251953" y="217411" z="-12292" heading="64106" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251790" y="217527" z="-12293" heading="10323" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251949" y="217691" z="-12277" heading="26547" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-252204" y="217495" z="-12292" heading="34961" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-252632" y="216540" z="-12250" heading="61500" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-252780" y="216586" z="-12250" heading="29674" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-253048" y="216466" z="-12250" heading="30164" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-253000" y="216320" z="-12251" heading="52144" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-252741" y="216250" z="-12250" heading="62495" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-252971" y="216495" z="-12250" heading="28799" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-252836" y="216414" z="-12250" heading="59814" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-252554" y="216421" z="-12250" heading="61958" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-250321" y="216518" z="-12250" heading="39237" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250275" y="216656" z="-12251" heading="22295" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249969" y="216717" z="-12251" heading="2058" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249741" y="216615" z="-12251" heading="59803" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249875" y="216361" z="-12251" heading="45796" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250060" y="216436" z="-12250" heading="25681" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250059" y="216600" z="-12250" heading="10933" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249905" y="216492" z="-12250" heading="33600" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251294" y="216684" z="-12251" heading="19254" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251491" y="216732" z="-12250" heading="31096" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251685" y="216705" z="-12251" heading="34555" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251657" y="216572" z="-12250" heading="54536" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22404" x="-251496" y="216532" z="-12251" heading="62633" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22406" x="-251486" y="216385" z="-12251" heading="48596" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251323" y="216505" z="-12251" heading="6684" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251410" y="216632" z="-12251" heading="15536" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+		</group>
+		<group name="DraconidMonsters_02" spawnByDefault="false">
+			<npc id="22403" x="-251751" y="212892" z="-12085" heading="1770" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251583" y="212900" z="-12081" heading="65233" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251554" y="213110" z="-12069" heading="14000" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251351" y="213051" z="-12069" heading="61111" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251120" y="212812" z="-12085" heading="61543" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250998" y="212996" z="-12085" heading="12678" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251043" y="213127" z="-12085" heading="21342" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251248" y="212901" z="-12082" heading="38956" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+		</group>
+		<group name="DraconidMonsters_03" spawnByDefault="false">
+			<npc id="22403" x="-251160" y="209701" z="-11957" heading="36535" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251231" y="209450" z="-11958" heading="46903" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251019" y="209386" z="-11958" heading="63714" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-250832" y="209579" z="-11958" heading="9482" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-250947" y="209714" z="-11957" heading="17308" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-250964" y="209563" z="-11957" heading="50422" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251215" y="209568" z="-11957" heading="35000" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251035" y="209815" z="-11959" heading="2665" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251239" y="208477" z="-11959" heading="47759" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251102" y="208230" z="-11960" heading="8718" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250915" y="208464" z="-11957" heading="9556" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-250961" y="208641" z="-11957" heading="18642" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251128" y="208725" z="-11959" heading="33494" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251088" y="208467" z="-11961" heading="50864" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-251020" y="208352" z="-11957" heading="52861" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251212" y="208343" z="-11958" heading="15815" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251216" y="207452" z="-11957" heading="49027" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251097" y="207242" z="-11957" heading="54841" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250933" y="207357" z="-11957" heading="6356" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-250997" y="207607" z="-11958" heading="26977" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-251115" y="207609" z="-11957" heading="32367" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-251109" y="207411" z="-11963" heading="49467" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-250971" y="207483" z="-11957" heading="5015" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-251202" y="207337" z="-11957" heading="36027" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249730" y="207247" z="-11957" heading="39738" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249554" y="207445" z="-11957" heading="16383" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249812" y="207561" z="-11957" heading="31659" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249909" y="207401" z="-11957" heading="45766" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249748" y="207368" z="-11963" heading="12691" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249681" y="207531" z="-11957" heading="8291" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249792" y="207501" z="-11958" heading="36279" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249555" y="207276" z="-11958" heading="52104" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249583" y="208522" z="-11957" heading="17023" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249745" y="208648" z="-11957" heading="36736" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249921" y="208481" z="-11957" heading="47924" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249824" y="208332" z="-11957" heading="56617" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249693" y="208354" z="-11957" heading="10630" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249708" y="208507" z="-11963" heading="18442" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249820" y="208439" z="-11957" heading="38038" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249622" y="208622" z="-11957" heading="6880" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249581" y="209575" z="-11957" heading="15704" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249781" y="209740" z="-11957" heading="25896" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249898" y="209529" z="-11957" heading="50512" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249750" y="209406" z="-11957" heading="61086" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+			<npc id="22403" x="-249667" y="209516" z="-11961" heading="3146" respawnTime="3700sec" /> <!-- Red Draconid Mage -->
+			<npc id="22404" x="-249822" y="209647" z="-11957" heading="26201" respawnTime="3700sec" /> <!-- Red Draconid Warrior -->
+			<npc id="22405" x="-249778" y="209546" z="-11962" heading="1297" respawnTime="3700sec" /> <!-- Red Draconid Hero -->
+			<npc id="22406" x="-249641" y="209700" z="-11957" heading="8479" respawnTime="3700sec" /> <!-- Red Draconid Lieutenant -->
+		</group>
+		<group name="DraconidMonsters_04" spawnByDefault="false">
+			<npc id="18676" x="-250402" y="207166" z="-11954" heading="16383" respawnTime="3700sec" /> <!-- Red Draconid Follower -->
+		</group>
+		<group name="DraconidMonsters_BossTiad" spawnByDefault="false">
+			<npc id="18684" x="-250410" y="209272" z="-11952" heading="49625" respawnTime="0sec" /> <!-- Tiad -->
+		</group>
+		<group name="DraconidMonsters_BossBaint" spawnByDefault="false">
+			<npc id="18685" x="-250410" y="209272" z="-11952" heading="49625" respawnTime="0sec" /> <!-- Baint -->
+		</group>
+	</spawnlist>
+</instance>

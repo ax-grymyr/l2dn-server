@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skillTrees.xsd">
+	<skillTree type="classSkillTree" classId="105" parentClassId="30">
+		<skill skillId="45430" skillLevel="1" skillName="Sea Oath" getLevel="76" levelUpSp="740000">
+			<item id="98867,98873" count="1"/> <!-- Spellbook: Sea Oath-->
+		</skill>
+		<skill skillId="45434" skillLevel="1" skillName="Sea Burst" getLevel="76" levelUpSp="740000">
+			<item id="98886,98887" count="1"/> <!-- Spellbook: Saint's Burst -->
+		</skill>
+		<skill skillName="Evolution Defense" skillId="45188" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="32" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="33" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="34" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="35" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="21" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="22" getLevel="77" levelUpSp="680000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="23" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="24" getLevel="79" levelUpSp="1490000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="25" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="26" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="27" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="28" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="29" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="30" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Might of Heaven" skillId="1028" skillLevel="31" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Evolution Power" skillId="45189" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="2" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Detection" skillId="45190" skillLevel="3" getLevel="88" levelUpSp="84000000">
+			<item id="57" count="30000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Weakness" skillId="1164" skillLevel="20" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="21" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="22" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="23" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="24" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="25" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Weakness" skillId="1164" skillLevel="26" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Holy Buster" skillId="47245" skillLevel="1" getLevel="78" levelUpSp="1490000">
+			<item id="96064,96049" count="1" /> <!-- Spellbook: Holy Buster -->
+		</skill>
+		<skill skillName="Mass Cure" skillId="1550" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mass Cure" skillId="1550" skillLevel="2" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Remove" skillId="47247" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="96054,96040" count="1" /> <!-- Spellbook: Treatment -->
+		</skill>
+		<skill skillName="Shield" skillId="1040" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95518,94136" count="1" /> <!-- Master's Book: Shield -->
+		</skill>
+		<skill skillName="Mass Vitalize" skillId="1552" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mass Vitalize" skillId="1552" skillLevel="2" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Eva's Nocturne" skillId="47248" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<removeSkill id="1273" onlyReplaceByLearn="true" /> <!-- Eva's Serenade -->
+			<item id="96055,96041" count="1" /> <!-- Spellbook: Eva's Nocturne -->
+		</skill>
+		<skill skillName="Eva's Power" skillId="47249" skillLevel="1" getLevel="78" levelUpSp="1490000">
+			<item id="96056,96042" count="1" /> <!-- Spellbook: Eva's Power -->
+		</skill>
+		<skill skillName="Wild Magic" skillId="1303" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="95771,94368" count="1" /> <!-- Master's Book: Wild Magic -->
+		</skill>
+		<skill skillName="Unleashing" skillId="47259" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<removeSkill id="1533" onlyReplaceByLearn="true" /> <!-- Enlightenment -->
+			<item id="96063,96050" count="1" /> <!-- Spellbook: Unleashing -->
+		</skill>
+		<skill skillName="Divine Recovery" skillId="47261" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="96060,96046" count="1" /> <!-- Spellbook: Divine Recovery -->
+		</skill>
+		<skill skillName="Divine Recovery" skillId="47261" skillLevel="2" getLevel="80" levelUpSp="1490000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Divine Recovery" skillId="47261" skillLevel="3" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sacred Power" skillId="47263" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="96061,96047" count="1" /> <!-- Spellbook: Sacred Power -->
+		</skill>
+		<skill skillName="Improved Resilience" skillId="47265" skillLevel="1" getLevel="82" levelUpSp="17000000">
+			<removeSkill id="1259" onlyReplaceByLearn="true" /> <!-- Resilience -->
+			<item id="96062,96048" count="1" /> <!-- Spellbook: Improved Resilience -->
+		</skill>
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="8" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="9" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="10" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="11" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Priest's Armor Mastery" skillId="47267" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="8" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="9" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="10" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="11" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="12" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="13" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Priest's Attack Mastery" skillId="47268" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="6" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="7" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mana Effect Boost" skillId="47269" skillLevel="9" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Spell Master" skillId="1830" skillLevel="4" getLevel="80" levelUpSp="1490000">
+			<item id="57" count="500000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="5" getLevel="77" levelUpSp="680000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="6" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="8" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="9" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="10" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Anti Magic" skillId="47270" skillLevel="11" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="6" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Priest's Recovery Mastery" skillId="47271" skillLevel="7" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mount Pegasus" skillId="1834" skillLevel="1" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Might" skillId="1068" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95517,94135" count="1" /> <!-- Master's Book: Might -->
+		</skill>
+		<skill skillName="Sleep" skillId="1069" skillLevel="46" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="47" getLevel="77" levelUpSp="680000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="48" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="49" getLevel="79" levelUpSp="1490000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="50" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="51" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="52" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="53" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="54" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="55" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="56" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="57" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="58" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="59" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Sleep" skillId="1069" skillLevel="60" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Acumen" skillId="45104" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95539,94370" count="1" /> <!-- Master's Book: Acumen -->
+		</skill>
+		<skill skillName="Empower" skillId="45105" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95533,94361" count="1" /> <!-- Master's Book: Empower -->
+		</skill>
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="33" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="34" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="35" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="36" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="37" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="38" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="39" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="40" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="41" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="42" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="43" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="44" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Dryad Root" skillId="1201" skillLevel="45" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Magic Barrier" skillId="45108" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="95534,94362" count="1" /> <!-- Master's Book: Magic Barrier -->
+		</skill>
+		<skill skillName="Wind Walk" skillId="1204" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="95537,94365" count="1" /> <!-- Master's Book: Wind Walk -->
+		</skill>
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="2" getLevel="77" levelUpSp="680000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="3" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="4" getLevel="79" levelUpSp="1490000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="5" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Mana Gain" skillId="1460" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Focus" skillId="45109" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95535,94363" count="1" /> <!-- Master's Book: Focus -->
+		</skill>
+		<skill skillName="Death Whisper" skillId="45110" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95536,94364" count="1" /> <!-- Master's Book: Death Whisper -->
+		</skill>
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="20" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="21" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="22" getLevel="79" levelUpSp="1490000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="23" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="24" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="25" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="26" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Wind Shackle" skillId="1206" skillLevel="27" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Root Mastery" skillId="45238" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Root Mastery" skillId="45238" skillLevel="2" getLevel="79" levelUpSp="1490000">
+			<item id="57" count="2000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Root Mastery" skillId="45238" skillLevel="3" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Root Mastery" skillId="45238" skillLevel="4" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Haste" skillId="45111" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="95538,94369" count="1" /> <!-- Master's Book: Haste -->
+		</skill>
+		<skill skillName="Sleep Mastery" skillId="45239" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="57" count="1000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sleep Mastery" skillId="45239" skillLevel="2" getLevel="79" levelUpSp="1490000">
+			<item id="57" count="2000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sleep Mastery" skillId="45239" skillLevel="3" getLevel="82" levelUpSp="17000000">
+			<item id="57" count="5000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Sleep Mastery" skillId="45239" skillLevel="4" getLevel="85" levelUpSp="84000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Berserker Spirit" skillId="45112" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="95769,94366" count="1" /> <!-- Master's Book: Berserker Spirit -->
+		</skill>
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<removeSkill id="1031" onlyReplaceByLearn="true" /> <!-- Divine Strike -->
+			<removeSkill id="1177" onlyReplaceByLearn="true" /> <!-- Wind Strike -->
+			<removeSkill id="1184" onlyReplaceByLearn="true" /> <!-- Ice Bolt -->
+			<item id="95503,93103" count="1" /> <!-- Spellbook: Divine Beam -->
+		</skill>
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="2" getLevel="77" levelUpSp="680000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="3" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="4" getLevel="79" levelUpSp="1490000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="5" getLevel="80" levelUpSp="1490000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="6" getLevel="81" levelUpSp="16000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="7" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="8" getLevel="83" levelUpSp="24000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="9" getLevel="84" levelUpSp="24000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="10" getLevel="85" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="11" getLevel="86" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="12" getLevel="87" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="13" getLevel="88" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="14" getLevel="89" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="15" getLevel="90" levelUpSp="84000000" />
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="16" getLevel="91" levelUpSp="150000000">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="17" getLevel="92" levelUpSp="170000000">
+			<item id="57" count="15000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Divine Beam" skillId="45241" skillLevel="18" getLevel="93" levelUpSp="200000000">
+			<item id="57" count="20000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Prophecy of Water" skillId="1355" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Prophecy of Water" skillId="1355" skillLevel="2" getLevel="82" levelUpSp="17000000" />
+		<skill skillName="Expanded Potential of Dyes" skillId="45269" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="96614,96613" count="1" /> <!-- Spellbook: Expanded Potential of Dyes -->
+		</skill>
+		<skill skillName="White Guardian Transformation" skillId="54102" skillLevel="1" getLevel="80" levelUpSp="0">
+			<item id="95502,92401" count="1" /> <!-- Spellbook: White Guardian -->
+		</skill>
+		<skill skillName="Extended Life" skillId="45271" skillLevel="1" getLevel="85" levelUpSp="0">
+			<item id="97803,97802" count="1" /> <!-- Spellbook: Extended Life -->
+		</skill>
+		<skill skillName="Dragon Slayer Appearance" skillId="54231" skillLevel="1" getLevel="82" levelUpSp="0">
+			<item id="96780,96300" count="1" /> <!-- Spellbook: Dragon Slayer -->
+		</skill>
+		<skill skillName="Exclusion" skillId="45533" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<item id="95563,94862" count="1" /> <!-- Spellbook: Exclusion -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="1" getLevel="76" levelUpSp="0">
+			<item id="57" count="10000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="2" getLevel="80" levelUpSp="0">
+			<item id="57" count="40000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="3" getLevel="85" levelUpSp="0">
+			<item id="57" count="100000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Blessed by Sayha" skillId="45408" skillLevel="4" getLevel="90" levelUpSp="0">
+			<item id="57" count="200000000" /> <!-- Adena -->
+		</skill>
+		<skill skillName="Eva's Blessing" skillId="1506" skillLevel="1" getLevel="80" levelUpSp="1490000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Mighty Children of Eva" skillId="45294" skillLevel="1" getLevel="76" levelUpSp="680000">
+			<removeSkill id="53008" onlyReplaceByLearn="true" /> <!-- Children of Eva -->
+			<item id="98285,98267" count="1" /> <!-- Spellbook: Mighty Children of Eva -->
+		</skill>
+		<skill skillName="Cure" skillId="1012" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="98559,98558" count="1" /> <!-- Spellbook: Healing Lv. 4 -->
+		</skill>
+		<skill skillName="Clarity" skillId="1397" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="95770,94367" count="1" /> <!-- Master's Book: Clarity -->
+		</skill>
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="14" getLevel="76" levelUpSp="680000" />
+		<skill skillName="Eva's Serenade" skillId="1273" skillLevel="15" getLevel="78" levelUpSp="1490000" />
+		<skill skillName="Enlightenment" skillId="1533" skillLevel="1" getLevel="78" levelUpSp="1490000">
+			<item id="98423,90045" count="31" /> <!-- Magic Tablet -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="3" getLevel="76" levelUpSp="680000">
+			<item id="96093,8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+		</skill>
+		<skill skillName="Divine Inspiration" skillId="1405" skillLevel="4" getLevel="76" levelUpSp="680000">
+			<item id="96094,8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+		</skill>
+	</skillTree>
+</list>

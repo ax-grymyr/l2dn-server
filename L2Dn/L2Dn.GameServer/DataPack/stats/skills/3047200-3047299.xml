@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="1047212" toLevel="1" name="Life Gain Lv. 2">
+		<!-- The effect is determined by Max HP. <Max HP 15,000 - 39,999>. - P. Atk. <font color="C270F6">+280</font>. - P. Skill Power <font color="C270F6">+1.3%</font>. <font color="C270F6"><Enchant effect>. Increases P. Atk./ P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalType>LIFE_GAIN</abnormalType>
+		<abnormalVisualEffect>V_VITAL_GAIN_LV1</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">350</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047213" toLevel="1" name="Life Gain Lv. 3">
+		<!-- The effect is determined by Max HP. <Max HP 40,000 - 79,999>. - P. Atk. <font color="C270F6">+400</font>. - P. Skill Power <font color="C270F6">+2.3%</font>. <font color="C270F6"><Enchant effect>. Increases P. Atk./ P. Skill Power.</font> -->
+		<icon>icon.skill0000</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalType>LIFE_GAIN</abnormalType>
+		<abnormalVisualEffect>V_VITAL_GAIN_LV1</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047214" toLevel="1" name="Life Gain Lv. 4">
+		<!-- The effect is determined by Max HP. <Max HP 80,000 - 99,999>. - P. Atk. <font color="C270F6">+600</font>. - P. Skill Power <font color="C270F6">+3.5%</font>. - Debuff Resistance <font color="C270F6">+6%</font>. - Anomaly Resistance <font color="C270F6">+6%</font>. <font color="C270F6"><Enchant effect>. Increases P. Atk./ P. Skill Power. Increases Debuff/ Anomaly Resistance.</font> -->
+		<icon>icon.skill0000</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalType>LIFE_GAIN</abnormalType>
+		<abnormalVisualEffect>V_VITAL_GAIN_LV1</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">4.5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047215" toLevel="1" name="Life Gain Lv. 5">
+		<!-- The effect is determined by Max HP. <Max HP 100,000 - 150,000>. - P. Atk. <font color="C270F6">+1050</font>. - P. Skill Power <font color="C270F6">+7%</font>. - Debuff Resistance <font color="C270F6">+11%</font>. - Anomaly Resistance <font color="C270F6">+11%</font>. <font color="C270F6"><Enchant effect>. Increases P. Atk./ P. Skill Power. Increases Debuff/ Anomaly Resistance.</font> -->
+		<icon>icon.skill0000</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalType>LIFE_GAIN</abnormalType>
+		<abnormalVisualEffect>V_VITAL_GAIN_LV1</abnormalVisualEffect>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">1550</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">9</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1047230" toLevel="1" name="Life Gain Lv. 1">
+		<!-- The effect is determined by Max HP. <Max HP is less than 15,000>. - P. Atk. <font color="C270F6">+20</font>. <font color="C270F6"><Enchant effect>. Increases P. Atk.</font> -->
+		<icon>icon.skill0000</icon>
+		<magicLevel>40</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalType>LIFE_GAIN</abnormalType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">-1</value>
+		</abnormalTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<irreplacableBuff>true</irreplacableBuff>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="3047246" toLevel="1" name="Holy Buster">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<mpConsume>1</mpConsume>
+		<hitTime>2000</hitTime>
+		<coolTime>800</coolTime>
+		<reuseDelay>
+			<value level="1">10000</value>
+			<value toLevel="1" fromLevel="1" fromSubLevel="1001" toSubLevel="1001">7000</value>
+		</reuseDelay>
+		<effectPoint>-700</effectPoint>
+		<isMagic>1</isMagic>
+		<affectRange>200</affectRange>
+		<effectRange>1000</effectRange>
+		<attributeType>HOLY</attributeType>
+		<attributeValue>300</attributeValue>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>518</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="AttackTrait">
+				<UNDEAD_WEAKNESS>10</UNDEAD_WEAKNESS>
+				<DEMONIC_WEAKNESS>10</DEMONIC_WEAKNESS>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3047255" toLevel="3" name="Nemesis">
+		<!-- <font color="C270F6"><PvP effect>. P. Atk. -300. P. Def. -300. <PvE effect>. P. Atk. -300. P. Def. -20%</font> -->
+		<icon>icon.s_nemesis</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<targetType>ENEMY_ONLY</targetType>
+		<effects>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">-300</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">-600</value>
+					<value fromLevel="3" toLevel="3" fromSubLevel="1003" toSubLevel="1003">-900</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence" fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">
+				<amount>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">-300</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">-600</value>
+					<value fromLevel="3" toLevel="3" fromSubLevel="1003" toSubLevel="1003">-900</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3047264" toLevel="4" name="Sacred Power Lv. 1">
+		<!-- The effect is determined by M. Def. <M. Def. is less than 1500>. - M. Atk. <font color="C270F6">+180. <Enchant effect>. Increases M. Atk.</font> -->
+		<icon>
+			<value level="1">icon.skill0000</value>
+			<value level="2">icon.skill0000</value>
+			<value level="3">icon.skill0000</value>
+			<value level="4">icon.s_sacred_power</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+</list>

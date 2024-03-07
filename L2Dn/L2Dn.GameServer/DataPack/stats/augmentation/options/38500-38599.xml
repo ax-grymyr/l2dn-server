@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="38500" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38501" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38502" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +3.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38503" name="p_accuracy_ls_accessory">
+		<!-- P. Accuracy +5.0 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38504" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38505" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38506" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38507" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38508" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38509" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.1 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38510" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38511" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.2 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38512" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38513" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38514" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.3 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38515" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38516" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.4 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38517" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.6 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38518" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +1.8 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38519" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38520" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +2.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38521" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38522" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +3.5 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>3.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38523" name="m_accuracy_ls_accessory">
+		<!-- M. Accuracy +5.0 -->
+		<effects>
+			<effect name="MagicAccuracy">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38524" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38525" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38526" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38527" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38528" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38529" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38530" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38531" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38532" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38533" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38534" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38535" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38536" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38537" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +2% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>2</SWORD>
+				<DUAL>2</DUAL>
+				<POLE>2</POLE>
+				<FIST>2</FIST>
+				<DUALFIST>2</DUALFIST>
+				<DAGGER>2</DAGGER>
+				<DUALDAGGER>2</DUALDAGGER>
+				<ANCIENTSWORD>2</ANCIENTSWORD>
+				<RAPIER>2</RAPIER>
+				<BLUNT>2</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38538" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +3% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>3</SWORD>
+				<DUAL>3</DUAL>
+				<POLE>3</POLE>
+				<FIST>3</FIST>
+				<DUALFIST>3</DUALFIST>
+				<DAGGER>3</DAGGER>
+				<DUALDAGGER>3</DUALDAGGER>
+				<ANCIENTSWORD>3</ANCIENTSWORD>
+				<RAPIER>3</RAPIER>
+				<BLUNT>3</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38539" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +3% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>3</SWORD>
+				<DUAL>3</DUAL>
+				<POLE>3</POLE>
+				<FIST>3</FIST>
+				<DUALFIST>3</DUALFIST>
+				<DAGGER>3</DAGGER>
+				<DUALDAGGER>3</DUALDAGGER>
+				<ANCIENTSWORD>3</ANCIENTSWORD>
+				<RAPIER>3</RAPIER>
+				<BLUNT>3</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38540" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +4% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>4</SWORD>
+				<DUAL>4</DUAL>
+				<POLE>4</POLE>
+				<FIST>4</FIST>
+				<DUALFIST>4</DUALFIST>
+				<DAGGER>4</DAGGER>
+				<DUALDAGGER>4</DUALDAGGER>
+				<ANCIENTSWORD>4</ANCIENTSWORD>
+				<RAPIER>4</RAPIER>
+				<BLUNT>4</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38541" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +5% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>5</SWORD>
+				<DUAL>5</DUAL>
+				<POLE>5</POLE>
+				<FIST>5</FIST>
+				<DUALFIST>5</DUALFIST>
+				<DAGGER>5</DAGGER>
+				<DUALDAGGER>5</DUALDAGGER>
+				<ANCIENTSWORD>5</ANCIENTSWORD>
+				<RAPIER>5</RAPIER>
+				<BLUNT>5</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38542" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +7% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>7</SWORD>
+				<DUAL>7</DUAL>
+				<POLE>7</POLE>
+				<FIST>7</FIST>
+				<DUALFIST>7</DUALFIST>
+				<DAGGER>7</DAGGER>
+				<DUALDAGGER>7</DUALDAGGER>
+				<ANCIENTSWORD>7</ANCIENTSWORD>
+				<RAPIER>7</RAPIER>
+				<BLUNT>7</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38543" name="melee_weapon_resistance_ls_accessory">
+		<!-- Melee Weapon Resistance +10% -->
+		<effects>
+			<effect name="DefenceTrait">
+				<SWORD>10</SWORD>
+				<DUAL>10</DUAL>
+				<POLE>10</POLE>
+				<FIST>10</FIST>
+				<DUALFIST>10</DUALFIST>
+				<DAGGER>10</DAGGER>
+				<DUALDAGGER>10</DUALDAGGER>
+				<ANCIENTSWORD>10</ANCIENTSWORD>
+				<RAPIER>10</RAPIER>
+				<BLUNT>10</BLUNT>
+			</effect>
+		</effects>
+	</option>
+	<option id="38544" name="max_hp_ls_accessory">
+		<!-- Max HP +5 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38545" name="max_hp_ls_accessory">
+		<!-- Max HP +8 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38546" name="max_hp_ls_accessory">
+		<!-- Max HP +11 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38547" name="max_hp_ls_accessory">
+		<!-- Max HP +14 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38548" name="max_hp_ls_accessory">
+		<!-- Max HP +17 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38549" name="max_hp_ls_accessory">
+		<!-- Max HP +20 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38550" name="max_hp_ls_accessory">
+		<!-- Max HP +23 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38551" name="max_hp_ls_accessory">
+		<!-- Max HP +26 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38552" name="max_hp_ls_accessory">
+		<!-- Max HP +30 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38553" name="max_hp_ls_accessory">
+		<!-- Max HP +33 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38554" name="max_hp_ls_accessory">
+		<!-- Max HP +36 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38555" name="max_hp_ls_accessory">
+		<!-- Max HP +39 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38556" name="max_hp_ls_accessory">
+		<!-- Max HP +42 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38557" name="max_hp_ls_accessory">
+		<!-- Max HP +45 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38558" name="max_hp_ls_accessory">
+		<!-- Max HP +48 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38559" name="max_hp_ls_accessory">
+		<!-- Max HP +60 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38560" name="max_hp_ls_accessory">
+		<!-- Max HP +70 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38561" name="max_hp_ls_accessory">
+		<!-- Max HP +75 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38562" name="max_hp_ls_accessory">
+		<!-- Max HP +80 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38563" name="max_hp_ls_accessory">
+		<!-- Max HP +100 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38564" name="max_mp_ls_accessory">
+		<!-- Max MP +5 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38565" name="max_mp_ls_accessory">
+		<!-- Max MP +8 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38566" name="max_mp_ls_accessory">
+		<!-- Max MP +11 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>11</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38567" name="max_mp_ls_accessory">
+		<!-- Max MP +14 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>14</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38568" name="max_mp_ls_accessory">
+		<!-- Max MP +17 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>17</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38569" name="max_mp_ls_accessory">
+		<!-- Max MP +20 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38570" name="max_mp_ls_accessory">
+		<!-- Max MP +23 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>23</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38571" name="max_mp_ls_accessory">
+		<!-- Max MP +26 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38572" name="max_mp_ls_accessory">
+		<!-- Max MP +30 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38573" name="max_mp_ls_accessory">
+		<!-- Max MP +33 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38574" name="max_mp_ls_accessory">
+		<!-- Max MP +36 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>36</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38575" name="max_mp_ls_accessory">
+		<!-- Max MP +39 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>39</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38576" name="max_mp_ls_accessory">
+		<!-- Max MP +42 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>42</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38577" name="max_mp_ls_accessory">
+		<!-- Max MP +45 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>45</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38578" name="max_mp_ls_accessory">
+		<!-- Max MP +48 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>48</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38579" name="max_mp_ls_accessory">
+		<!-- Max MP +60 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38580" name="max_mp_ls_accessory">
+		<!-- Max MP +70 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38581" name="max_mp_ls_accessory">
+		<!-- Max MP +75 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>75</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38582" name="max_mp_ls_accessory">
+		<!-- Max MP +80 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38583" name="max_mp_ls_accessory">
+		<!-- Max MP +100 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38584" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38585" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38586" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38587" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38588" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38589" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38590" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38591" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38592" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38593" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38594" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38595" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38596" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38597" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.6 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38598" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +1.8 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="38599" name="p_evasion_ls_accessory">
+		<!-- P. Evasion +2.0 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

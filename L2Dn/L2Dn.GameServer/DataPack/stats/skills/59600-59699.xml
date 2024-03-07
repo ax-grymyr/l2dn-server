@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="59600" toLevel="1" name="Demon - Legendary Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59601" toLevel="1" name="Demon - Mythic Transformation">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59602" toLevel="1" name="Shadow Master">
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> If a character is attacked when the transformation is active, it summons a clone every 120 sec. The clone provokes the enemies while the character is hiding for 10 sec. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59603" toLevel="1" name="Shadow Master">
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> If a character is attacked when the transformation is active, it summons a clone every 60 sec. The clone provokes the enemies while the character is hiding for 20 sec. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59604" toLevel="2" name="Shadow Master - Decoy">
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>100000</reuseDelay>
+	</skill>
+	<skill id="59605" toLevel="2" name="Shadow Master - Hide">
+		<!-- Grants invisibility for $s1. Effect cancels upon any action except for moving. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59606" toLevel="1" name="Shadow Master - Decoy Provocation">
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59607" toLevel="1" name="Admiral">
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> When the transformation is active: P./ M. Atk. +150% in case of successful attack or skill usage, P./ M. Def. +150% in case of receiving damage. Cooldown: 100 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59608" toLevel="1" name="Admiral">
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> When the transformation is active: P./ M. Atk. +200% in case of successful attack or skill usage, P./ M. Def. +200% in case of receiving damage. Cooldown: 600 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59609" toLevel="2" name="Admiral - Attack Release">
+		<!-- The Admiral's power is stacking. The attack/ defense buff cannot be activated. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>100000</reuseDelay>
+	</skill>
+	<skill id="59610" toLevel="2" name="Admiral - Defense Release">
+		<!-- The Admiral's power is stacking. The attack/ defense buff cannot be activated. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>100000</reuseDelay>
+	</skill>
+	<skill id="59611" toLevel="2" name="Admiral - Attack">
+		<!-- For $s1 P. Atk/ M. Atk +$s2. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59612" toLevel="2" name="Admiral - Defense">
+		<!-- For $s1 P./ M. Def. +$s2. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59613" toLevel="1" name="Nymph">
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 100 sec. the target receives the Lure debuff when attacks or uses skills. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59614" toLevel="1" name="Nymph">
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 60 sec. the target receives the Lure debuff when attacks or uses skills. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59615" toLevel="1" name="Nymph - Lure">
+		<!-- Lures the enemy for 3 sec. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<isDebuff>true</isDebuff>
+		<castRange>1200</castRange>
+		<reuseDelay>100000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="59616" toLevel="1" name="Nymph - Lure">
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<isDebuff>true</isDebuff>
+		<castRange>1200</castRange>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="59617" toLevel="1" name="Demon">
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> Every 60 sec. when receiving damage the Barrier is activated for 20 sec. In 10 sec. after the Barrier effect is over, activates Inferno that deals 1000 damage to all attacking enemies. -->
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59618" toLevel="1" name="Demon - Force Barrier">
+		<!-- All received damage is reduced to 1. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>90000</reuseDelay>
+		<effectPoint>20</effectPoint>
+	</skill>
+	<skill id="59619" toLevel="1" name="Demon - Inferno">
+		<!-- Deals 1000 damage to all attacking enemies. -->
+		<operateType>A2</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59620" toLevel="1" name="Demon - Inferno">
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59631" toLevel="1" name="+8 Weapon Pack (S-grade)">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59632" toLevel="1" name="+5 Dragon Pendant Chest Lv. 4">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59633" toLevel="1" name="+6 Fire Dragon Pendant Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59634" toLevel="1" name="Dragon Scroll (Event)">
+		<operateType>A2</operateType>
+		<reuseDelay>60000</reuseDelay>
+		<hitTime>4000</hitTime>
+		<abnormalTime>1200</abnormalTime>
+		<itemConsumeId>71741</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<canBeDispelled>false</canBeDispelled>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalLevel>1</abnormalLevel>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PAtk">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59635" toLevel="9" name="Dimensional Border Power">
+		<!-- P./ M. Atk. +$s1, P./ M. Critical Damage +$s2. -->
+		<operateType>P</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>30000</reuseDelay>
+	</skill>
+	<skill id="59636" toLevel="10" name="Dimensional Guard">
+		<!-- For $s1 success rate of attacks targeting the character's vital points -$s2. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>180000</reuseDelay>
+		<mpConsume>100</mpConsume>
+	</skill>
+	<skill id="59637" toLevel="1" name="Dimensional Barrier">
+		<!-- For 15 sec., makes you immune to 10 attacks of enemy. -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>300000</reuseDelay>
+		<mpConsume>200</mpConsume>
+	</skill>
+	<skill id="59638" toLevel="1" name="Blessing Chest">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59639" toLevel="1" name="Aden Supply Box">
+		<icon>icon.skill0000</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91779</itemConsumeId> <!-- Aden Supply Box -->
+		<magicLevel>1</magicLevel>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="2.5">
+						<item id="947" count="1" /> <!-- Scroll: Enchant B-grade Weapon -->
+					</item>
+					<item chance="2.5">
+						<item id="948" count="1" /> <!-- Scroll: Enchant B-grade Armor -->
+					</item>
+					<item chance="2.5">
+						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+					</item>
+					<item chance="2.5">
+						<item id="6660" count="1" /> <!-- Queen Ant's Ring -->
+					</item>
+					<item chance="2.5">
+						<item id="6661" count="1" /> <!-- Orfen's Earring -->
+					</item>
+					<item chance="2.5">
+						<item id="6662" count="1" /> <!-- Ring of Core -->
+					</item>
+					<item chance="2.5">
+						<item id="8618" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 1 -->
+					</item>
+					<item chance="2.5">
+						<item id="8619" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 2 -->
+					</item>
+					<item chance="2.5">
+						<item id="8620" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 3 -->
+					</item>
+					<item chance="2.5">
+						<item id="8621" count="1" /> <!-- Spellbook: Divine Inspiration Lv. 4 -->
+					</item>
+					<item chance="2.5">
+						<item id="49471" count="1" /> <!-- Fire Dragon Pendant Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="49472" count="1" /> <!-- Earth Dragon Pendant Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="49580" count="1" /> <!-- Baium's Ring -->
+					</item>
+					<item chance="2.5">
+						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="49674" count="1" /> <!-- XP Growth Scroll - Sealed -->
+					</item>
+					<item chance="2.5">
+						<item id="49683" count="1" /> <!-- Talisman of Baium -->
+					</item>
+					<item chance="2.5">
+						<item id="49790" count="1" /> <!-- +16 C-grade Weapon Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="90137" count="1" /> <!-- Matte Pendant Polish -->
+					</item>
+					<item chance="2.5">
+						<item id="90496" count="1" /> <!-- Earth Dragon Belt -->
+					</item>
+					<item chance="2.5">
+						<item id="90497" count="1" /> <!-- Fire Dragon Belt -->
+					</item>
+					<item chance="2.5">
+						<item id="90703" count="1" /> <!-- Sealed Soul Crystal Lv. 10 -->
+					</item>
+					<item chance="2.5">
+						<item id="90763" count="1" /> <!-- Zaken's Earring -->
+					</item>
+					<item chance="2.5">
+						<item id="90992" count="1" /> <!-- Antharas' Earring -->
+					</item>
+					<item chance="2.5">
+						<item id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+					</item>
+					<item chance="2.5">
+						<item id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+					</item>
+					<item chance="2.5">
+						<item id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+					</item>
+					<item chance="2.5">
+						<item id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
+					</item>
+					<item chance="2.5">
+						<item id="91113" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 1 -->
+					</item>
+					<item chance="2.5">
+						<item id="91114" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 2 -->
+					</item>
+					<item chance="2.5">
+						<item id="91115" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 3 -->
+					</item>
+					<item chance="2.5">
+						<item id="91148" count="1" /> <!-- Jewel Box Lv. 5 -->
+					</item>
+					<item chance="2.5">
+						<item id="91216" count="1" /> <!-- +16 B-grade Weapon Pack -->
+					</item>
+					<item chance="2.5">
+						<item id="91296" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 4 -->
+					</item>
+					<item chance="2.5">
+						<item id="91297" count="1" /> <!-- Old Inventory Expansion Coupon Lv. 5 -->
+					</item>
+					<item chance="2.5">
+						<item id="91741" count="1" /> <!-- Einhasad's Protection - Sealed -->
+					</item>
+					<item chance="2.5">
+						<item id="91767" count="1" /> <!-- Enchant Kit: Talisman of Aden - Sealed -->
+					</item>
+					<item chance="2.5">
+						<item id="91780" count="1" /> <!-- Old Battle Scroll - Sealed -->
+					</item>
+					<item chance="2.5">
+						<item id="91781" count="1" /> <!-- Old Sayha's Buff Scroll - Sealed -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59640" toLevel="1" name="Kamael's Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59641" toLevel="1" name="Improved Supply Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59642" toLevel="1" name="Sealed Samurai Long Sword Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59643" toLevel="1" name="Sealed Mace of Underworld Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59644" toLevel="1" name="Sealed Demon's Staff Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59645" toLevel="1" name="Sealed Crystal Dagger Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59646" toLevel="1" name="Sealed Eminence Bow Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59647" toLevel="1" name="Sealed Orcish Poleaxe Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59648" toLevel="1" name="Sealed Katana*Katana Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59649" toLevel="1" name="Sealed Yaksa Mace Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59650" toLevel="1" name="Sealed Berserker Blade Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59651" toLevel="1" name="Sealed Great Pata Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59652" toLevel="1" name="Sealed Admiral's Estoc Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59653" toLevel="1" name="Sealed Saber Tooth Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59654" toLevel="1" name="Sealed Samurai Long Sword Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59655" toLevel="1" name="Sealed Mace of Underworld Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59656" toLevel="1" name="Sealed Demon's Staff Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59657" toLevel="1" name="Sealed Crystal Dagger Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59658" toLevel="1" name="Sealed Eminence Bow Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59659" toLevel="1" name="Sealed Orcish Poleaxe Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59660" toLevel="1" name="Sealed Katana*Katana Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59661" toLevel="1" name="Sealed Yaksa Mace Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59662" toLevel="1" name="Sealed Berserker Blade Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59663" toLevel="1" name="Sealed Great Pata Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59664" toLevel="1" name="Sealed Admiral's Estoc Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59665" toLevel="1" name="Sealed Saber Tooth Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59666" toLevel="1" name="Sealed Samurai Long Sword Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59667" toLevel="1" name="Sealed Mace of Underworld Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59668" toLevel="1" name="Sealed Demon's Staff Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59669" toLevel="1" name="Sealed Crystal Dagger Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59670" toLevel="1" name="Sealed Eminence Bow Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59671" toLevel="1" name="Sealed Orcish Poleaxe Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59672" toLevel="1" name="Sealed Katana*Katana Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59673" toLevel="1" name="Sealed Yaksa Mace Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59674" toLevel="1" name="Sealed Berserker Blade Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59675" toLevel="1" name="Sealed Great Pata Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59676" toLevel="1" name="Sealed Admiral's Estoc Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59677" toLevel="1" name="Sealed Saber Tooth Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59678" toLevel="1" name="Chronicle Pack">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59679" toLevel="1" name="15th Anniversary Gift Box">
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="59680" toLevel="1" name="XP Scroll Lv. 1">
+		<!-- XP +20,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71821</itemConsumeId> <!-- XP Scroll Lv. 1 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>20000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59681" toLevel="1" name="XP Scroll Lv. 2">
+		<!-- XP +4,000,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71822</itemConsumeId> <!-- XP Scroll Lv. 2 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>4000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59682" toLevel="1" name="XP Scroll Lv. 3">
+		<!-- XP +100,000,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71823</itemConsumeId> <!-- XP Scroll Lv. 3 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>100000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59683" toLevel="1" name="XP Scroll Lv. 4">
+		<!-- XP +200,000,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71824</itemConsumeId> <!-- XP Scroll Lv. 4 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>200000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59684" toLevel="1" name="XP Scroll Lv. 5">
+		<!-- XP +200,005,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71825</itemConsumeId> <!-- XP Scroll Lv. 4 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>200005000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59685" toLevel="1" name="XP Scroll Lv. 6">
+		<!-- XP +400,000,000. -->
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71826</itemConsumeId> <!-- XP Scroll Lv. 4 -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLevel>1</magicLevel>
+		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="GiveXp">
+				<xp>400000000</xp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59686" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59687" toLevel="1" name="null">
+		<!-- null -->
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59688" toLevel="2" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59689" toLevel="2" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59690" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59691" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59692" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59693" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59694" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59695" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59696" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59697" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59698" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59699" toLevel="1" name="">
+		<!-- AUTO GENERATED SKILL TODO: FIX IT -->
+		<operateType>A1</operateType>
+	</skill>
+</list>

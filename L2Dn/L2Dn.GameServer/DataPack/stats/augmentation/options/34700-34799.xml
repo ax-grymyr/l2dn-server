@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="34700" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +2% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>2</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34701" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +3% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>3</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34702" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +4% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>4</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34703" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +5% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>5</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34704" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +6% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>6</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34705" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +7% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>7</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34706" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +8% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>8</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34707" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +9% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>9</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34708" name="debuff_res">
+		<!-- Debuff/ Anomaly Resistance +10% -->
+		<effects>
+			<effect name="DispelByCategory">
+				<amount>10</amount>
+				<attribute>BUFF</attribute>
+			</effect>
+		</effects>
+	</option>
+	<option id="34709" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34710" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34711" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34712" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34713" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34714" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34715" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34716" name="p_m_evasion">
+		<!-- P./ M. Evasion +1 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34717" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34718" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34719" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34720" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34721" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34722" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34723" name="p_m_evasion">
+		<!-- P./ M. Evasion +2 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34724" name="p_m_evasion">
+		<!-- P./ M. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34725" name="p_m_evasion">
+		<!-- P./ M. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34726" name="p_m_evasion">
+		<!-- P./ M. Evasion +3 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34727" name="p_m_evasion">
+		<!-- P./ M. Evasion +4 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34728" name="p_m_evasion">
+		<!-- P./ M. Evasion +5 -->
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34729" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +15 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34730" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +21 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>21</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34731" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +27 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>27</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34732" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +33 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34733" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +40 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34734" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +47 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>47</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34735" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +54 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>54</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34736" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +61 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>61</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34737" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +69 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>69</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34738" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +77 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>77</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34739" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +85 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>85</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34740" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +94 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>94</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34741" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +103 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>103</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34742" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +112 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>112</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34743" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +122 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>122</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34744" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +149 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>149</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34745" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +203 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>203</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34746" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +233 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>233</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34747" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +250 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>250</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34748" name="skill_crit_dmg">
+		<!-- Skill Critical Damage +300 -->
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="34749" name="option_id_34749">
+	</option>
+	<option id="34750" name="option_id_34750">
+	</option>
+	<option id="34751" name="option_id_34751">
+	</option>
+	<option id="34752" name="option_id_34752">
+	</option>
+	<option id="34753" name="option_id_34753">
+	</option>
+	<option id="34754" name="option_id_34754">
+	</option>
+	<option id="34755" name="option_id_34755">
+	</option>
+	<option id="34756" name="option_id_34756">
+	</option>
+	<option id="34757" name="option_id_34757">
+	</option>
+	<option id="34758" name="option_id_34758">
+	</option>
+	<option id="34759" name="option_id_34759">
+	</option>
+	<option id="34760" name="option_id_34760">
+	</option>
+	<option id="34761" name="option_id_34761">
+	</option>
+	<option id="34762" name="option_id_34762">
+	</option>
+	<option id="34763" name="option_id_34763">
+	</option>
+	<option id="34764" name="option_id_34764">
+	</option>
+	<option id="34765" name="option_id_34765">
+	</option>
+	<option id="34766" name="option_id_34766">
+	</option>
+	<option id="34767" name="option_id_34767">
+	</option>
+	<option id="34768" name="option_id_34768">
+	</option>
+	<option id="34769" name="option_id_34769">
+	</option>
+	<option id="34770" name="option_id_34770">
+	</option>
+	<option id="34771" name="option_id_34771">
+	</option>
+	<option id="34772" name="option_id_34772">
+	</option>
+	<option id="34773" name="option_id_34773">
+	</option>
+	<option id="34774" name="option_id_34774">
+	</option>
+	<option id="34775" name="option_id_34775">
+	</option>
+	<option id="34776" name="option_id_34776">
+	</option>
+	<option id="34777" name="option_id_34777">
+	</option>
+	<option id="34778" name="option_id_34778">
+	</option>
+	<option id="34779" name="option_id_34779">
+	</option>
+	<option id="34780" name="option_id_34780">
+	</option>
+	<option id="34781" name="option_id_34781">
+	</option>
+	<option id="34782" name="option_id_34782">
+		<!-- Max HP +10 -->
+	</option>
+	<option id="34783" name="option_id_34783">
+		<!-- Max HP +15 -->
+	</option>
+	<option id="34784" name="option_id_34784">
+		<!-- Max HP +20 -->
+	</option>
+	<option id="34785" name="option_id_34785">
+		<!-- Max HP +25 -->
+	</option>
+	<option id="34786" name="option_id_34786">
+		<!-- Max HP +30 -->
+	</option>
+	<option id="34787" name="option_id_34787">
+		<!-- Max HP +35 -->
+	</option>
+	<option id="34788" name="option_id_34788">
+		<!-- Max HP +40 -->
+	</option>
+	<option id="34789" name="option_id_34789">
+		<!-- Max HP +45 -->
+	</option>
+	<option id="34790" name="option_id_34790">
+		<!-- Max HP +50 -->
+	</option>
+	<option id="34791" name="option_id_34791">
+		<!-- Max HP +55 -->
+	</option>
+	<option id="34792" name="option_id_34792">
+		<!-- Max HP +60 -->
+	</option>
+	<option id="34793" name="option_id_34793">
+		<!-- Max HP +65 -->
+	</option>
+	<option id="34794" name="option_id_34794">
+		<!-- Max HP +70 -->
+	</option>
+	<option id="34795" name="option_id_34795">
+		<!-- Max HP +75 -->
+	</option>
+	<option id="34796" name="option_id_34796">
+		<!-- Max HP +80 -->
+	</option>
+	<option id="34797" name="option_id_34797">
+		<!-- Max HP +100 -->
+	</option>
+	<option id="34798" name="option_id_34798">
+		<!-- Max HP +110 -->
+	</option>
+	<option id="34799" name="option_id_34799">
+		<!-- Max HP +120 -->
+	</option>
+</list>

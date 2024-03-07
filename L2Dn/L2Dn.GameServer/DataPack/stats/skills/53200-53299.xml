@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="53201" toLevel="9" name="Whiplash">
+		<!-- Cannot move due to shock. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-770</value>
+			<value level="2">-810</value>
+			<value level="3">-820</value>
+			<value level="4">-830</value>
+			<value level="5">-840</value>
+			<value level="6">-850</value>
+			<value level="7">-850</value>
+			<value level="8">-850</value>
+			<value level="9">-850</value>
+		</effectPoint>
+	</skill>
+	<skill id="53202" toLevel="14" name="Cursed Strike">
+		<!-- Cannot move due to shock. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-580</value>
+			<value level="2">-620</value>
+			<value level="3">-660</value>
+			<value level="4">-700</value>
+			<value level="5">-720</value>
+			<value level="6">-740</value>
+			<value level="7">-760</value>
+			<value level="8">-780</value>
+			<value level="9">-790</value>
+			<value level="10">-800</value>
+			<value level="11">-850</value>
+			<value level="12">-900</value>
+			<value level="13">-950</value>
+			<value level="14">-990</value>
+		</effectPoint>
+	</skill>
+	<skill id="53203" toLevel="9" name="Dark Curse">
+		<!-- Atk. Spd. -23%. Casting Spd. -23% -->
+		<icon>icon.skill1400</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-770</value>
+			<value level="2">-810</value>
+			<value level="3">-820</value>
+			<value level="4">-830</value>
+			<value level="5">-840</value>
+			<value level="6">-840</value>
+			<value level="7">-840</value>
+			<value level="8">-840</value>
+			<value level="9">-840</value>
+		</effectPoint>
+	</skill>
+</list>
